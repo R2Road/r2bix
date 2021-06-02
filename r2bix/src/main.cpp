@@ -13,7 +13,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	SetConsoleTitle( TEXT( "cpp_playground" ) );
+	SetConsoleTitle( TEXT( "r2bix" ) );
 
 	//
 	// Environment : Size
