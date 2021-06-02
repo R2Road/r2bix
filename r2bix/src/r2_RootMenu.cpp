@@ -64,8 +64,6 @@ namespace r2
 				, []()->const char* { return "Exit"; }
 				, []()->eTestResult { return eTestResult::Exit; }
 			);
-
-			ret->AddSplit();
 		}
 
 		return ret;
