@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="base">
+      <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="renderer">
+      <UniqueIdentifier>{be80c73b-e527-4390-b97a-375d1ec30d49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="menu">
+      <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test">
+      <UniqueIdentifier>{67d9768a-fea8-45b6-946a-ffcda4f541b1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\r2_Director.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_Renderer.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_GridIndexConverter.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_VisibleResource.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_Camera.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_RectInt.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_Size.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_PointInt.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_RootMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_Menu.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\camera_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rect_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\visibleresource_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\animation_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2_FrameManager.cpp">
+      <Filter>renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\key_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\r2_Director.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_eTestResult.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Singleton.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_iTest.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Renderer.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_GridIndexConverter.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_VisibleResource.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Camera.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Rect.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_RectInt.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Size.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Point.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_PointInt.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_iRenderable.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_RootMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_Menu.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\camera_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rect_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\visibleresource_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\animation_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2_FrameManager.h">
+      <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\key_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
