@@ -17,8 +17,10 @@ namespace r2
 	{
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
-			, GetTitle()
-			, "> Inprogress : Renderer"
+			, GetTitle(),
+			"\n" "> Inprogress : flickering check"
+			"\n" "> To do : Command - Double Buffering"
+			"\n" "> To do : Renderer"
 		) );
 
 		{
