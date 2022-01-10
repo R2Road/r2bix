@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "r2_eTestResult.h"
+#include "base/r2_eTestResult.h"
 #include "r2_RectInt.h"
 
 namespace rect_test

@@ -3,7 +3,7 @@
 
 #include <Windows.h>
 
-#include "r2_eTestResult.h"
+#include "base/r2_eTestResult.h"
 
 #include "r2_Camera.h"
 #include "r2_iRenderable.h"

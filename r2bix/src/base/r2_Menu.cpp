@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "../pch.h"
 #include "r2_Menu.h"
 
 #include <cctype> // std::toupper

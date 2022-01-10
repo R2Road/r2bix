@@ -3,7 +3,7 @@
 
 #include <conio.h>
 
-#include "r2_eTestResult.h"
+#include "base/r2_eTestResult.h"
 
 namespace key_test
 {

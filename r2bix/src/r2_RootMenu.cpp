@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "r2_RootMenu.h"
 
-#include "r2_Director.h"
-#include "r2_eTestResult.h"
+#include "base/r2_Director.h"
+#include "base/r2_eTestResult.h"
 
 #include "key_test.h"
 #include "rect_test.h"
@@ -60,6 +60,7 @@ namespace r2
 
 
 			ret->AddSplit();
+
 
 			ret->AddChild(
 				27

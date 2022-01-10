@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\animation_test.cpp" />
+    <ClCompile Include="src\base\r2_Director.cpp" />
+    <ClCompile Include="src\base\r2_Menu.cpp" />
     <ClCompile Include="src\camera_test.cpp" />
     <ClCompile Include="src\key_test.cpp" />
     <ClCompile Include="src\pch.cpp">
@@ -30,7 +32,6 @@
     </ClCompile>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\r2_Camera.cpp" />
-    <ClCompile Include="src\r2_Director.cpp" />
     <ClCompile Include="src\r2_FrameManager.cpp" />
     <ClCompile Include="src\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\r2_PointInt.cpp" />
@@ -41,17 +42,19 @@
     <ClCompile Include="src\rect_test.cpp" />
     <ClCompile Include="src\renderer_test.cpp" />
     <ClCompile Include="src\r2_RootMenu.cpp" />
-    <ClCompile Include="src\r2_Menu.cpp" />
     <ClCompile Include="src\visibleresource_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\animation_test.h" />
+    <ClInclude Include="src\base\r2_Director.h" />
+    <ClInclude Include="src\base\r2_eTestResult.h" />
+    <ClInclude Include="src\base\r2_iTest.h" />
+    <ClInclude Include="src\base\r2_Menu.h" />
+    <ClInclude Include="src\base\r2_Singleton.h" />
     <ClInclude Include="src\camera_test.h" />
     <ClInclude Include="src\key_test.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\r2_Camera.h" />
-    <ClInclude Include="src\r2_Director.h" />
-    <ClInclude Include="src\r2_eTestResult.h" />
     <ClInclude Include="src\r2_FrameManager.h" />
     <ClInclude Include="src\r2_GridIndexConverter.h" />
     <ClInclude Include="src\r2_Point.h" />
@@ -64,10 +67,7 @@
     <ClInclude Include="src\r2_VisibleResource.h" />
     <ClInclude Include="src\rect_test.h" />
     <ClInclude Include="src\renderer_test.h" />
-    <ClInclude Include="src\r2_iTest.h" />
-    <ClInclude Include="src\r2_Menu.h" />
     <ClInclude Include="src\r2_RootMenu.h" />
-    <ClInclude Include="src\r2_Singleton.h" />
     <ClInclude Include="src\visibleresource_test.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

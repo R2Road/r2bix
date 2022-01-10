@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "r2_eTestResult.h"
+#include "base/r2_eTestResult.h"
 
 #include "r2_FrameManager.h"
 #include "r2_iRenderable.h"

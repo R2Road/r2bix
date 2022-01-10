@@ -1,7 +1,7 @@
 #pragma once
 
-#include "r2_iTest.h"
-#include "r2_Singleton.h"
+#include "base/r2_iTest.h"
+#include "base/r2_Singleton.h"
 
 #include "r2_Renderer.h"
 #include "r2_VisibleResource.h"
