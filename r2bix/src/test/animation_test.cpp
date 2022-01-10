@@ -6,9 +6,9 @@
 
 #include "base/r2_eTestResult.h"
 
-#include "r2_FrameManager.h"
-#include "r2_iRenderable.h"
-#include "r2_VisibleResource.h"
+#include "renderer/r2_FrameManager.h"
+#include "renderer/r2_iRenderable.h"
+#include "renderer/r2_VisibleResource.h"
 
 namespace animation_test
 {

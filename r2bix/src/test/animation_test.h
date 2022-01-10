@@ -3,8 +3,8 @@
 #include "base/r2_iTest.h"
 #include "base/r2_Singleton.h"
 
-#include "r2_Camera.h"
-#include "r2_Renderer.h"
+#include "renderer/r2_Camera.h"
+#include "renderer/r2_Renderer.h"
 
 namespace animation_test
 {

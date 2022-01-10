@@ -3,8 +3,8 @@
 #include "base/r2_iTest.h"
 #include "base/r2_Singleton.h"
 
-#include "r2_Renderer.h"
-#include "r2_VisibleResource.h"
+#include "renderer/r2_Renderer.h"
+#include "renderer/r2_VisibleResource.h"
 
 namespace visibleresource_test
 {
