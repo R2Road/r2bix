@@ -29,13 +29,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\r2\r2_PointInt.cpp" />
+    <ClCompile Include="src\r2\r2_RectInt.cpp" />
+    <ClCompile Include="src\r2\r2_Size.cpp" />
+    <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\r2_Camera.cpp" />
     <ClCompile Include="src\r2_FrameManager.cpp" />
     <ClCompile Include="src\r2_GridIndexConverter.cpp" />
-    <ClCompile Include="src\r2_PointInt.cpp" />
-    <ClCompile Include="src\r2_RectInt.cpp" />
     <ClCompile Include="src\r2_Renderer.cpp" />
-    <ClCompile Include="src\r2_Size.cpp" />
     <ClCompile Include="src\r2_VisibleResource.cpp" />
     <ClCompile Include="src\test\animation_test.cpp" />
     <ClCompile Include="src\test\camera_test.cpp" />
@@ -52,16 +53,18 @@
     <ClInclude Include="src\base\r2_Singleton.h" />
     <ClInclude Include="src\menu\r2_RootMenu.h" />
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\r2\r2_Point.h" />
+    <ClInclude Include="src\r2\r2_PointInt.h" />
+    <ClInclude Include="src\r2\r2_Rect.h" />
+    <ClInclude Include="src\r2\r2_RectInt.h" />
+    <ClInclude Include="src\r2\r2_Size.h" />
+    <ClInclude Include="src\r2\r2_Timer.h" />
+    <ClInclude Include="src\r2\r2_Timer_Float.h" />
     <ClInclude Include="src\r2_Camera.h" />
     <ClInclude Include="src\r2_FrameManager.h" />
     <ClInclude Include="src\r2_GridIndexConverter.h" />
-    <ClInclude Include="src\r2_Point.h" />
-    <ClInclude Include="src\r2_PointInt.h" />
-    <ClInclude Include="src\r2_Rect.h" />
-    <ClInclude Include="src\r2_RectInt.h" />
     <ClInclude Include="src\r2_iRenderable.h" />
     <ClInclude Include="src\r2_Renderer.h" />
-    <ClInclude Include="src\r2_Size.h" />
     <ClInclude Include="src\r2_VisibleResource.h" />
     <ClInclude Include="src\test\animation_test.h" />
     <ClInclude Include="src\test\camera_test.h" />

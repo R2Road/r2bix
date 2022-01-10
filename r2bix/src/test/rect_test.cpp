@@ -6,7 +6,7 @@
 #include <Windows.h>
 
 #include "base/r2_eTestResult.h"
-#include "r2_RectInt.h"
+#include "r2/r2_RectInt.h"
 
 namespace rect_test
 {

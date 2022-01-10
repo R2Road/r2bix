@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "r2_GridIndexConverter.h"
-#include "r2_RectInt.h"
+#include "r2/r2_RectInt.h"
 
 namespace r2
 {
