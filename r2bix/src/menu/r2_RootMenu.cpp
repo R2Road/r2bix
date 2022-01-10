@@ -62,6 +62,12 @@ namespace r2
 			ret->AddSplit();
 
 
+			ret->AddChild( 32, animation_test::Basic::GetInstance() ); // SPACE
+
+
+			ret->AddSplit();
+
+
 			ret->AddChild(
 				27
 				, []()->const char* { return "Exit"; }

@@ -24,6 +24,7 @@
     <ClCompile Include="src\base\r2_Menu.cpp" />
     <ClCompile Include="src\camera_test.cpp" />
     <ClCompile Include="src\key_test.cpp" />
+    <ClCompile Include="src\menu\r2_RootMenu.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -41,7 +42,6 @@
     <ClCompile Include="src\r2_VisibleResource.cpp" />
     <ClCompile Include="src\rect_test.cpp" />
     <ClCompile Include="src\renderer_test.cpp" />
-    <ClCompile Include="src\r2_RootMenu.cpp" />
     <ClCompile Include="src\visibleresource_test.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +53,7 @@
     <ClInclude Include="src\base\r2_Singleton.h" />
     <ClInclude Include="src\camera_test.h" />
     <ClInclude Include="src\key_test.h" />
+    <ClInclude Include="src\menu\r2_RootMenu.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\r2_Camera.h" />
     <ClInclude Include="src\r2_FrameManager.h" />
@@ -67,7 +68,6 @@
     <ClInclude Include="src\r2_VisibleResource.h" />
     <ClInclude Include="src\rect_test.h" />
     <ClInclude Include="src\renderer_test.h" />
-    <ClInclude Include="src\r2_RootMenu.h" />
     <ClInclude Include="src\visibleresource_test.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -143,7 +143,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>vld\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vld\include;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -170,7 +170,7 @@ xcopy "$(ProjectDir)vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>vld\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vld\include;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -197,6 +197,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -218,6 +219,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
