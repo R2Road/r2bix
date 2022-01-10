@@ -16,6 +16,9 @@
     <Filter Include="r2">
       <UniqueIdentifier>{fcf9b28f-6f2a-4644-b365-01d919e85a1c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="research">
+      <UniqueIdentifier>{0816d7e8-1eea-40da-b028-99c353a97dcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -76,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="src\menu\r2_ResearchMenu.cpp">
       <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\research\flickering_research.cpp">
+      <Filter>research</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="src\menu\r2_ResearchMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\research\flickering_research.h">
+      <Filter>research</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

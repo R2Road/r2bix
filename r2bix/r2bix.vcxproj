@@ -39,6 +39,7 @@
     <ClCompile Include="src\renderer\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\renderer\r2_Renderer.cpp" />
     <ClCompile Include="src\renderer\r2_VisibleResource.cpp" />
+    <ClCompile Include="src\research\flickering_research.cpp" />
     <ClCompile Include="src\test\animation_test.cpp" />
     <ClCompile Include="src\test\camera_test.cpp" />
     <ClCompile Include="src\test\key_test.cpp" />
@@ -68,6 +69,7 @@
     <ClInclude Include="src\renderer\r2_iRenderable.h" />
     <ClInclude Include="src\renderer\r2_Renderer.h" />
     <ClInclude Include="src\renderer\r2_VisibleResource.h" />
+    <ClInclude Include="src\research\flickering_research.h" />
     <ClInclude Include="src\test\animation_test.h" />
     <ClInclude Include="src\test\camera_test.h" />
     <ClInclude Include="src\test\key_test.h" />

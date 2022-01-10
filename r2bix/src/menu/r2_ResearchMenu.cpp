@@ -5,6 +5,8 @@
 #include "base/r2_eTestResult.h"
 #include "r2_RootMenu.h"
 
+#include "research/flickering_research.h"
+
 namespace r2
 {
 	MenuUp ResearchMenu::Create( Director& director )
@@ -16,7 +18,7 @@ namespace r2
 		) );
 
 		{
-			//ret->AddChild( '1', key_test::Basic::GetInstance() );
+			ret->AddChild( '1', flickering_research::Basic::GetInstance() );
 
 
 			ret->AddSplit();

@@ -14,6 +14,20 @@ namespace r2
 	}
 
 	template<class _Elem, class _Traits>
+	inline std::basic_ostream<_Elem, _Traits>& linefeed2( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	{
+		return _Ostr << r2::linefeed << r2::linefeed;
+	}
+
+	template<class _Elem, class _Traits>
+	inline std::basic_ostream<_Elem, _Traits>& linefeed3( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	{
+		return _Ostr << r2::linefeed << r2::linefeed << r2::linefeed;
+	}
+
+
+
+	template<class _Elem, class _Traits>
 	inline std::basic_ostream<_Elem, _Traits>& split( std::basic_ostream<_Elem, _Traits>& _Ostr )
 	{
 		_Ostr << r2::linefeed << "====================================================================" << r2::linefeed << r2::linefeed;
