@@ -64,7 +64,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 
@@ -118,7 +118,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
 }
