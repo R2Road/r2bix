@@ -30,6 +30,7 @@ namespace flickering_research
 				system( "cls" );
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+				std::cout << "[Any Key] End" << r2::linefeed2;
 
 				std::cout << r2::split;
 
@@ -54,12 +55,8 @@ namespace flickering_research
 				//
 				if( _kbhit() )
 				{
-					switch( _getch() )
-					{
-					case 27: // ESC
-						process = false;
-						break;
-					}
+					_getch(); // need
+					process = false;
 				}
 
 			} while( process );
@@ -92,7 +89,7 @@ namespace flickering_research
 				system( "cls" );
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-				std::cout << "[ESC] Stop" << r2::linefeed2;
+				std::cout << "[Any Key] End" << r2::linefeed2;
 
 				std::cout << r2::split;
 
@@ -108,12 +105,8 @@ namespace flickering_research
 				//
 				if( _kbhit() )
 				{
-					switch( _getch() )
-					{
-					case 27: // ESC
-						process = false;
-						break;
-					}
+					_getch(); // need
+					process = false;
 				}
 
 			} while( process );
