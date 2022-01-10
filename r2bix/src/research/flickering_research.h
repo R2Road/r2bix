@@ -11,4 +11,11 @@ namespace flickering_research
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class Try_1 : public r2::iTest, public r2::SingleTon<Try_1>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

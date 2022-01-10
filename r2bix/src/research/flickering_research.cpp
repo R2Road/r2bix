@@ -2,6 +2,7 @@
 #include "flickering_research.h"
 
 #include <conio.h>
+#include <string_view>
 
 #include "base/r2_eTestResult.h"
 
@@ -44,6 +45,60 @@ namespace flickering_research
 					std::cout << v;
 
 					++current_x;
+				}
+
+				std::cout << r2::linefeed << r2::split;
+
+				//
+				// Input
+				//
+				if( _kbhit() )
+				{
+					switch( _getch() )
+					{
+					case 27: // ESC
+						process = false;
+						break;
+					}
+				}
+
+			} while( process );
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc Try_1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Flickering Try_1";
+		};
+	}
+	r2::iTest::DoFunc Try_1::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			r2::VisibleResource visible_resource( 19, 19 );
+			visible_resource.FillAll( 'a' );
+
+			std::string_view str_view;
+
+			bool process = true;
+			do
+			{
+				system( "cls" );
+
+				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+				std::cout << "[ESC] Stop" << r2::linefeed2;
+
+				std::cout << r2::split;
+
+				for( int current_y = 0; visible_resource.GetHeight() > current_y; ++current_y )
+				{
+					std::cout << visible_resource.GetLine( current_y ) << r2::linefeed;
 				}
 
 				std::cout << r2::linefeed << r2::split;

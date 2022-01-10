@@ -40,6 +40,11 @@ namespace r2
 
 		return mChars[target_linear_index];
 	}
+	std::string_view VisibleResource::GetLine( const std::size_t y ) const
+	{
+		std::string_view temp( &mChars[0] );
+		return temp.substr( mGridIndexConverter.To_Linear( 0, y ), mGridIndexConverter.GetWidth() );
+	}
 
 	void VisibleResource::FillAll( const char c )
 	{

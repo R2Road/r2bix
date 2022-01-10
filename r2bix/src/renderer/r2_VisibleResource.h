@@ -34,6 +34,8 @@ namespace r2
 		const r2::RectInt& GetVisibleRect() const { return mVisibleRect; }
 		const ContainerT& GetContainer() const { return mChars; }
 		ValueT Get( const std::size_t x, const std::size_t y ) const;
+		std::string_view GetLine( const std::size_t y ) const;
+
 
 		//
 		//
