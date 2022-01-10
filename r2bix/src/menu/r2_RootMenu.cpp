@@ -6,6 +6,7 @@
 
 #include "menu/r2_ResearchMenu.h"
 
+#include "test/framebuffer_test.h"
 #include "test/key_test.h"
 #include "test/rect_test.h"
 #include "test/visibleresource_test.h"
@@ -44,6 +45,7 @@ namespace r2
 
 			ret->AddChild( 'q', renderer_test::TestRenderable::GetInstance() );
 			ret->AddChild( 'w', renderer_test::TestRenderer::GetInstance() );
+			ret->AddChild( 'e', framebuffer_test::Basic::GetInstance() );
 
 
 			ret->AddLineFeed();

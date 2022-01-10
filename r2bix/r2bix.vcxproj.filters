@@ -83,6 +83,9 @@
     <ClCompile Include="src\research\flickering_research.cpp">
       <Filter>research</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\framebuffer_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -166,6 +169,9 @@
     </ClInclude>
     <ClInclude Include="src\research\flickering_research.h">
       <Filter>research</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\framebuffer_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
