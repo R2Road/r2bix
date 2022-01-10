@@ -36,29 +36,11 @@
     <ClCompile Include="src\r2_PointInt.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\camera_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\rect_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\visibleresource_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\animation_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2_FrameManager.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\key_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\r2_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
@@ -67,6 +49,24 @@
     </ClCompile>
     <ClCompile Include="src\menu\r2_RootMenu.cpp">
       <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\animation_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\camera_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\key_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\rect_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\renderer_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\visibleresource_test.cpp">
+      <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,28 +100,10 @@
     <ClInclude Include="src\r2_iRenderable.h">
       <Filter>renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\camera_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\rect_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\visibleresource_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\animation_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2_FrameManager.h">
       <Filter>renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\key_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\r2_Director.h">
       <Filter>base</Filter>
     </ClInclude>
@@ -139,6 +121,24 @@
     </ClInclude>
     <ClInclude Include="src\menu\r2_RootMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\animation_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\camera_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\key_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\rect_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\renderer_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\visibleresource_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

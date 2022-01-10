@@ -4,12 +4,12 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
 
-#include "key_test.h"
-#include "rect_test.h"
-#include "visibleresource_test.h"
-#include "renderer_test.h"
-#include "camera_test.h"
-#include "animation_test.h"
+#include "test/key_test.h"
+#include "test/rect_test.h"
+#include "test/visibleresource_test.h"
+#include "test/renderer_test.h"
+#include "test/camera_test.h"
+#include "test/animation_test.h"
 
 namespace r2
 {

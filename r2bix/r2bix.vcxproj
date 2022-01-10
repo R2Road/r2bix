@@ -19,11 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\animation_test.cpp" />
     <ClCompile Include="src\base\r2_Director.cpp" />
     <ClCompile Include="src\base\r2_Menu.cpp" />
-    <ClCompile Include="src\camera_test.cpp" />
-    <ClCompile Include="src\key_test.cpp" />
     <ClCompile Include="src\menu\r2_RootMenu.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -40,19 +37,19 @@
     <ClCompile Include="src\r2_Renderer.cpp" />
     <ClCompile Include="src\r2_Size.cpp" />
     <ClCompile Include="src\r2_VisibleResource.cpp" />
-    <ClCompile Include="src\rect_test.cpp" />
-    <ClCompile Include="src\renderer_test.cpp" />
-    <ClCompile Include="src\visibleresource_test.cpp" />
+    <ClCompile Include="src\test\animation_test.cpp" />
+    <ClCompile Include="src\test\camera_test.cpp" />
+    <ClCompile Include="src\test\key_test.cpp" />
+    <ClCompile Include="src\test\rect_test.cpp" />
+    <ClCompile Include="src\test\renderer_test.cpp" />
+    <ClCompile Include="src\test\visibleresource_test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\animation_test.h" />
     <ClInclude Include="src\base\r2_Director.h" />
     <ClInclude Include="src\base\r2_eTestResult.h" />
     <ClInclude Include="src\base\r2_iTest.h" />
     <ClInclude Include="src\base\r2_Menu.h" />
     <ClInclude Include="src\base\r2_Singleton.h" />
-    <ClInclude Include="src\camera_test.h" />
-    <ClInclude Include="src\key_test.h" />
     <ClInclude Include="src\menu\r2_RootMenu.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\r2_Camera.h" />
@@ -66,9 +63,12 @@
     <ClInclude Include="src\r2_Renderer.h" />
     <ClInclude Include="src\r2_Size.h" />
     <ClInclude Include="src\r2_VisibleResource.h" />
-    <ClInclude Include="src\rect_test.h" />
-    <ClInclude Include="src\renderer_test.h" />
-    <ClInclude Include="src\visibleresource_test.h" />
+    <ClInclude Include="src\test\animation_test.h" />
+    <ClInclude Include="src\test\camera_test.h" />
+    <ClInclude Include="src\test\key_test.h" />
+    <ClInclude Include="src\test\rect_test.h" />
+    <ClInclude Include="src\test\renderer_test.h" />
+    <ClInclude Include="src\test\visibleresource_test.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
