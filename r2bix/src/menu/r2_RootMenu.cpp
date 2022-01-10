@@ -4,6 +4,8 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
 
+#include "menu/r2_ResearchMenu.h"
+
 #include "test/key_test.h"
 #include "test/rect_test.h"
 #include "test/visibleresource_test.h"
@@ -62,7 +64,15 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild( 32, animation_test::Basic::GetInstance() ); // SPACE
+			ret->AddChild(
+				32
+				, []()->const char* { return r2::ResearchMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::ResearchMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 
 			ret->AddSplit();

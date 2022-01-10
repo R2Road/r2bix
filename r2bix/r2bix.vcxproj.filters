@@ -74,6 +74,9 @@
     <ClCompile Include="src\renderer\r2_VisibleResource.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\r2_ResearchMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="src\renderer\r2_Renderer.h">
       <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_ResearchMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
