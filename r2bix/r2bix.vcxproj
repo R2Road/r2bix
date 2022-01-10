@@ -35,6 +35,7 @@
     <ClCompile Include="src\r2\r2_Size.cpp" />
     <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\renderer\r2_Camera.cpp" />
+    <ClCompile Include="src\renderer\r2_FrameBuffer.cpp" />
     <ClCompile Include="src\renderer\r2_FrameManager.cpp" />
     <ClCompile Include="src\renderer\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\renderer\r2_Renderer.cpp" />
@@ -65,6 +66,7 @@
     <ClInclude Include="src\r2\r2_Timer.h" />
     <ClInclude Include="src\r2\r2_Timer_Float.h" />
     <ClInclude Include="src\renderer\r2_Camera.h" />
+    <ClInclude Include="src\renderer\r2_FrameBuffer.h" />
     <ClInclude Include="src\renderer\r2_FrameManager.h" />
     <ClInclude Include="src\renderer\r2_GridIndexConverter.h" />
     <ClInclude Include="src\renderer\r2_iRenderable.h" />
