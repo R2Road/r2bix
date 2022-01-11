@@ -8,8 +8,9 @@ namespace r2
 	FrameBuffer::FrameBuffer( const std::size_t width, const std::size_t height ) :
 		mGridIndexConverter( width + 1u, height )
 		, mChars(
-			( ( width + 1u ) * height )
-			+ 1u // for \0
+			( width * height )		// for buffer
+			+ ( 1u * height )		// for linefeed
+			+ 1u					// for \0
 			, 32
 		)
 	{
