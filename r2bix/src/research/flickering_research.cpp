@@ -91,7 +91,7 @@ namespace flickering_research
 				system( "cls" );
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-				std::cout << "[Any Key] End" << r2::linefeed2;
+				std::cout << "[Any Key] End" << r2::linefeed;
 
 				std::cout << r2::split;
 
@@ -100,7 +100,7 @@ namespace flickering_research
 					std::cout << visible_resource.GetLine( current_y ) << r2::linefeed;
 				}
 
-				std::cout << r2::linefeed << r2::split;
+				std::cout << r2::split;
 
 				//
 				// Input
@@ -133,21 +133,19 @@ namespace flickering_research
 			r2::FrameBuffer frame_buffer( 5, 5 );
 			frame_buffer.FillAll( 'c' );
 
-			std::string_view str_view;
-
 			bool process = true;
 			do
 			{
 				system( "cls" );
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-				std::cout << "[Any Key] End" << r2::linefeed2;
+				std::cout << "[Any Key] End" << r2::linefeed;
 
 				std::cout << r2::split;
 
 				std::cout << &( *frame_buffer.begin() );
 
-				std::cout << r2::linefeed << r2::split;
+				std::cout << r2::split;
 
 				//
 				// Input
