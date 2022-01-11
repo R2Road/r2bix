@@ -22,22 +22,13 @@ namespace framebuffer_test
 
 			std::cout << r2::split;
 
-			r2::FrameBuffer frame_buffer( 19, 19 );
+			r2::FrameBuffer frame_buffer( 5, 5 );
 			frame_buffer.FillAll( 'c' );
 
 			{
-				int current_x = 0;
 				for( const auto v : frame_buffer )
 				{
-					if( frame_buffer.GetWidth() <= current_x )
-					{
-						std::cout << r2::linefeed;
-						current_x = 0;
-					}
-
 					std::cout << v;
-
-					++current_x;
 				}
 			}
 			std::cout << r2::linefeed;
