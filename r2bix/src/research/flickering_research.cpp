@@ -3,6 +3,7 @@
 
 #include <conio.h>
 #include <string_view>
+#include <Windows.h>
 
 #include "base/r2_eTestResult.h"
 
@@ -139,14 +140,55 @@ namespace flickering_research
 			{
 				system( "cls" );
 
-				//std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-				//std::cout << "[Any Key] End" << r2::linefeed2;
+				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+				std::cout << "[Any Key] End" << r2::linefeed2;
 
-				//std::cout << r2::split;
+				std::cout << r2::split;
 
 				std::cout << &( *frame_buffer.begin() );
 
-				//std::cout << r2::linefeed << r2::split;
+				std::cout << r2::linefeed << r2::split;
+
+				//
+				// Input
+				//
+				if( _kbhit() )
+				{
+					_getch(); // need
+					process = false;
+				}
+
+			} while( process );
+
+			return r2::eTestResult::RunTest_Without_Pause;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc PageByPage_WithOut_CLS::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Flickering : Print Page By Page Without CLS";
+		};
+	}
+	r2::iTest::DoFunc PageByPage_WithOut_CLS::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			r2::FrameBuffer frame_buffer( 50, 50 );
+			frame_buffer.FillAll( 'c' );
+
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+			COORD pos = { 0, 0 };
+
+			bool process = true;
+			do
+			{
+				SetConsoleCursorPosition( stdHandle, pos );
+
+				std::cout << &( *frame_buffer.begin() );
 
 				//
 				// Input
