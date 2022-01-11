@@ -67,14 +67,14 @@ namespace flickering_research
 
 
 
-	r2::iTest::TitleFunc Try_1::GetTitleFunction() const
+	r2::iTest::TitleFunc LineByLine::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Flickering Try_1";
+			return "Flickering : Print Line By Line";
 		};
 	}
-	r2::iTest::DoFunc Try_1::GetDoFunction()
+	r2::iTest::DoFunc LineByLine::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
