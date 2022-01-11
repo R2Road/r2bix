@@ -30,7 +30,7 @@ namespace flickering_research
 				system( "cls" );
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-				std::cout << "[Any Key] End" << r2::linefeed2;
+				std::cout << "[Any Key] End" << r2::linefeed;
 
 				std::cout << r2::split;
 
