@@ -22,16 +22,15 @@ namespace framebuffer_test
 
 			std::cout << r2::split;
 
-			r2::FrameBuffer frame_buffer( 5, 5 );
-			frame_buffer.FillAll( 'c' );
-
 			{
+				r2::FrameBuffer frame_buffer( 5, 5 );
+				frame_buffer.FillAll( 'c' );
+
 				for( const auto v : frame_buffer )
 				{
 					std::cout << v;
 				}
 			}
-			std::cout << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -56,13 +55,12 @@ namespace framebuffer_test
 
 			std::cout << r2::split;
 
-			r2::FrameBuffer frame_buffer( 5, 5 );
-			frame_buffer.FillAll( 'c' );
-
 			{
+				r2::FrameBuffer frame_buffer( 5, 5 );
+				frame_buffer.FillAll( 'c' );
+
 				std::cout << &( *frame_buffer.begin() );
 			}
-			std::cout << r2::linefeed;
 
 			std::cout << r2::split;
 
