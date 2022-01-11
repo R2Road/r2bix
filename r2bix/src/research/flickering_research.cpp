@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "flickering_research.h"
 
-#include <conio.h>
-#include <Windows.h>
+#include <conio.h> // _kbhit(), _getch()
+#include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
 
 #include "base/r2_eTestResult.h"
 
