@@ -7,6 +7,7 @@
 #include "base/r2_eTestResult.h"
 
 #include "renderer/r2_VisibleResource.h"
+#include "renderer/r2_FrameBuffer.h"
 
 namespace flickering_research
 {
@@ -99,6 +100,53 @@ namespace flickering_research
 				}
 
 				std::cout << r2::linefeed << r2::split;
+
+				//
+				// Input
+				//
+				if( _kbhit() )
+				{
+					_getch(); // need
+					process = false;
+				}
+
+			} while( process );
+
+			return r2::eTestResult::RunTest_Without_Pause;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc PageByPage::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Flickering : Print Page By Page";
+		};
+	}
+	r2::iTest::DoFunc PageByPage::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			r2::FrameBuffer frame_buffer( 5, 5 );
+			frame_buffer.FillAll( 'c' );
+
+			std::string_view str_view;
+
+			bool process = true;
+			do
+			{
+				system( "cls" );
+
+				//std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+				//std::cout << "[Any Key] End" << r2::linefeed2;
+
+				//std::cout << r2::split;
+
+				std::cout << &( *frame_buffer.begin() );
+
+				//std::cout << r2::linefeed << r2::split;
 
 				//
 				// Input

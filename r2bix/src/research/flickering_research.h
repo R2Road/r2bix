@@ -18,4 +18,11 @@ namespace flickering_research
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class PageByPage : public r2::iTest, public r2::SingleTon<PageByPage>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }
