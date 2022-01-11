@@ -46,6 +46,7 @@ namespace r2
 			ret->AddChild( 'q', renderer_test::TestRenderable::GetInstance() );
 			ret->AddChild( 'w', renderer_test::TestRenderer::GetInstance() );
 			ret->AddChild( 'e', framebuffer_test::Basic::GetInstance() );
+			ret->AddChild( 'r', framebuffer_test::DrawAtOnce::GetInstance() );
 
 
 			ret->AddLineFeed();
