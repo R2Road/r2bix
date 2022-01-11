@@ -5,7 +5,7 @@
 
 namespace flickering_research
 {
-	class Basic : public r2::iTest, public r2::SingleTon<Basic>
+	class OneByOne : public r2::iTest, public r2::SingleTon<OneByOne>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

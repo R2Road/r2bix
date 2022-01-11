@@ -18,7 +18,7 @@ namespace r2
 		) );
 
 		{
-			ret->AddChild( '1', flickering_research::Basic::GetInstance() );
+			ret->AddChild( '1', flickering_research::OneByOne::GetInstance() );
 			ret->AddChild( '2', flickering_research::Try_1::GetInstance() );
 
 

@@ -10,14 +10,14 @@
 
 namespace flickering_research
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iTest::TitleFunc OneByOne::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Flickering Basic";
+			return "Flickering : Print One By One";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iTest::DoFunc OneByOne::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
