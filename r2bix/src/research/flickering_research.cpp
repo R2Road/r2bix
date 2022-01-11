@@ -2,7 +2,6 @@
 #include "flickering_research.h"
 
 #include <conio.h>
-#include <string_view>
 #include <Windows.h>
 
 #include "base/r2_eTestResult.h"
@@ -82,8 +81,6 @@ namespace flickering_research
 		{
 			r2::VisibleResource visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
-
-			std::string_view str_view;
 
 			bool process = true;
 			do
