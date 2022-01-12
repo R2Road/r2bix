@@ -19,9 +19,11 @@ namespace r2
 
 		{
 			ret->AddChild( '1', flickering_research::OneByOne::GetInstance() );
-			ret->AddChild( '2', flickering_research::LineByLine::GetInstance() );
-			ret->AddChild( '3', flickering_research::PageByPage::GetInstance() );
-			ret->AddChild( '4', flickering_research::PageByPage_WithOut_CLS::GetInstance() );
+			ret->AddChild( '2', flickering_research::OneByOne_WithOut_CLS::GetInstance() );
+
+			ret->AddChild( '3', flickering_research::LineByLine::GetInstance() );
+			ret->AddChild( '4', flickering_research::PageByPage::GetInstance() );
+			ret->AddChild( '5', flickering_research::PageByPage_WithOut_CLS::GetInstance() );
 
 
 			ret->AddSplit();

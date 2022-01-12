@@ -65,6 +65,63 @@ namespace flickering_research
 			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
+	r2::iTest::TitleFunc OneByOne_WithOut_CLS::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Flickering : Print One By One WithOut CLS";
+		};
+	}
+	r2::iTest::DoFunc OneByOne_WithOut_CLS::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "[Any Key] End" << r2::linefeed;
+
+			std::cout << r2::split;
+			std::cout << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed;
+			std::cout << r2::split;
+
+			r2::VisibleResource visible_resource( 19, 19 );
+			visible_resource.FillAll( 'a' );
+
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+			COORD pos = { 0, 6 };
+
+			bool process = true;
+			do
+			{
+				SetConsoleCursorPosition( stdHandle, pos );
+
+				int current_x = 0;
+				for( const auto v : visible_resource )
+				{
+					if( visible_resource.GetWidth() <= current_x )
+					{
+						std::cout << r2::linefeed;
+						current_x = 0;
+					}
+
+					std::cout << v;
+
+					++current_x;
+				}
+
+				//
+				// Input
+				//
+				if( _kbhit() )
+				{
+					_getch(); // need
+					process = false;
+				}
+
+			} while( process );
+
+			return r2::eTestResult::RunTest_Without_Pause;
+		};
+	}
 
 
 
