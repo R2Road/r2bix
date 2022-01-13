@@ -7,6 +7,6 @@ namespace r2
 	class iRenderable
 	{
 	public:
-		virtual void Draw( const r2::Camera* const camera ) = 0;
+		virtual void Render( const r2::Camera* const camera ) = 0;
 	};
 }

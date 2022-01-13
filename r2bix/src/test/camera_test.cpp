@@ -60,7 +60,7 @@ namespace camera_test
 			, mVisibleResource( width, chars )
 		{}
 
-		void Draw( const r2::Camera* const camera ) override
+		void Render( const r2::Camera* const camera ) override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD pos = {
@@ -184,7 +184,7 @@ namespace camera_test
 			, mRect( { x, y, mVisibleResource.GetWidth(), mVisibleResource.GetHeight() } )
 		{}
 
-		void Draw( const r2::Camera* const camera ) override
+		void Render( const r2::Camera* const camera ) override
 		{
 			if( !camera->GetRect().IntersectsRect( mRect ) )
 			{

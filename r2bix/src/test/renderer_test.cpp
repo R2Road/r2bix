@@ -18,7 +18,7 @@ namespace renderer_test
 			, mVisibleResource( width, chars )
 		{}
 
-		void Draw( const r2::Camera* const camera ) override
+		void Render( const r2::Camera* const camera ) override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD pos = {
@@ -64,7 +64,7 @@ namespace renderer_test
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			r2::Camera camera;
-			tr2.Draw( &camera);
+			tr2.Render( &camera);
 
 			return r2::eTestResult::RunTest;
 		};
