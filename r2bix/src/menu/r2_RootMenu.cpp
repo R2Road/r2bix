@@ -33,11 +33,18 @@ namespace r2
 			ret->AddSplit();
 
 
-			ret->AddChild( '2', visibleresource_test::FillAll::GetInstance() );
-			ret->AddChild( '3', visibleresource_test::Fill::GetInstance() );
-			ret->AddChild( '4', visibleresource_test::DrawWithPosition::GetInstance() );
-			ret->AddChild( '5', visibleresource_test::InitWithChars::GetInstance() );
-			ret->AddChild( '6', visibleresource_test::VisibleRect::GetInstance() );
+			ret->AddChild( '2', framebuffer_test::Basic::GetInstance() );
+			ret->AddChild( '3', framebuffer_test::DrawAtOnce::GetInstance() );
+
+
+			ret->AddLineFeed();
+
+
+			ret->AddChild( '4', visibleresource_test::FillAll::GetInstance() );
+			ret->AddChild( '5', visibleresource_test::Fill::GetInstance() );
+			ret->AddChild( '6', visibleresource_test::DrawWithPosition::GetInstance() );
+			ret->AddChild( '7', visibleresource_test::InitWithChars::GetInstance() );
+			ret->AddChild( '8', visibleresource_test::VisibleRect::GetInstance() );
 
 
 			ret->AddLineFeed();
@@ -45,8 +52,6 @@ namespace r2
 
 			ret->AddChild( 'q', renderer_test::TestRenderable::GetInstance() );
 			ret->AddChild( 'w', renderer_test::TestRenderer::GetInstance() );
-			ret->AddChild( 'e', framebuffer_test::Basic::GetInstance() );
-			ret->AddChild( 'r', framebuffer_test::DrawAtOnce::GetInstance() );
 
 
 			ret->AddLineFeed();
