@@ -76,15 +76,15 @@ namespace visible_resource_test
 			r2::VisibleResource vr( 30, 20 );
 			vr.Fill( 0, 0, '0' );
 			vr.Fill( vr.GetEndX(), 0, '0' );
-			vr.Fill( vr.GetEndX(), vr.GetHeight() - 1u, '0' );
-			vr.Fill( 0, vr.GetHeight() - 1u, '0' );
+			vr.Fill( vr.GetEndX(), vr.GetEndY(), '0' );
+			vr.Fill( 0, vr.GetEndY(), '0' );
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "const r2::VisibleResource vr( 30, 20 );" << r2::linefeed;
 			std::cout << r2::tab2 << "vr.Fill( 0, 0, '0' );" << r2::linefeed;
 			std::cout << r2::tab2 << "vr.Fill( vr.GetEndX(), 0, '0' );" << r2::linefeed;
-			std::cout << r2::tab2 << "vr.Fill( vr.GetEndX(), vr.GetHeight() - 1u, '0' );" << r2::linefeed;
-			std::cout << r2::tab2 << "vr.Fill( 0, vr.GetHeight() - 1u, '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "vr.Fill( vr.GetEndX(), vr.GetEndY(), '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "vr.Fill( 0, vr.GetEndY(), '0' );" << r2::linefeed;
 
 			std::cout << r2::split;
 
