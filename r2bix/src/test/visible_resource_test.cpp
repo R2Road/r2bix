@@ -27,6 +27,13 @@ namespace visible_resource_test
 
 			const r2::VisibleResource visible_resource( 30, 20, '0' );
 
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 30, 20, '0' );" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ View" << r2::linefeed2;
+
 			std::size_t x = 0;
 			for( const char element : visible_resource )
 			{
