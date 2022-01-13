@@ -18,6 +18,7 @@ namespace r2
 		VisibleResource( const std::string_view str );
 		VisibleResource( const std::size_t width, const std::string_view str );
 		VisibleResource( const std::size_t width, const std::size_t height );
+		explicit VisibleResource( const std::size_t width, const std::size_t height, const char fill_char );
 
 	public:
 		//

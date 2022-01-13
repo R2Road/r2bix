@@ -25,8 +25,7 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			r2::VisibleResource visible_resource( 30, 20 );
-			visible_resource.FillAll( '0' );
+			const r2::VisibleResource visible_resource( 30, 20, '0' );
 
 			std::size_t x = 0;
 			for( const char element : visible_resource )
