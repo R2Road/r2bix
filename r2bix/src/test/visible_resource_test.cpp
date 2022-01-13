@@ -48,8 +48,6 @@ namespace visible_resource_test
 
 
 
-	Fill::Fill() : mVisibleResource( 30, 20 ) {}
-
 	r2::iTest::TitleFunc Fill::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -59,26 +57,25 @@ namespace visible_resource_test
 	}
 	r2::iTest::DoFunc Fill::GetDoFunction()
 	{
-		GetInstance().mVisibleResource.Fill( 0, 0, '0' );
-		GetInstance().mVisibleResource.Fill( GetInstance().mVisibleResource.GetWidth() - 1u, 0, '0' );
-		GetInstance().mVisibleResource.Fill( GetInstance().mVisibleResource.GetWidth() - 1u, GetInstance().mVisibleResource.GetHeight() - 1u, '0' );
-		GetInstance().mVisibleResource.Fill( 0, GetInstance().mVisibleResource.GetHeight() - 1u, '0' );
-
-		const auto& vr = GetInstance().mVisibleResource;
-
-		return [vr]()->r2::eTestResult
+		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
+			r2::VisibleResource visible_resource( 30, 20 );
+			visible_resource.Fill( 0, 0, '0' );
+			visible_resource.Fill( visible_resource.GetWidth() - 1u, 0, '0' );
+			visible_resource.Fill( visible_resource.GetWidth() - 1u, visible_resource.GetHeight() - 1u, '0' );
+			visible_resource.Fill( 0, visible_resource.GetHeight() - 1u, '0' );
+
 			std::size_t x = 0;
-			for( const char element : vr )
+			for( const char element : visible_resource )
 			{
 				std::cout << element;
 
 				++x;
-				if( vr.GetWidth() <= x )
+				if( visible_resource.GetWidth() <= x )
 				{
 					x = 0u;
 					std::cout << r2::linefeed;
