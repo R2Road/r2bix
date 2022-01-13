@@ -7,6 +7,7 @@
 
 #include "renderer/r2_Camera.h"
 #include "renderer/r2_iRenderable.h"
+#include "renderer/r2_VisibleResource.h"
 
 namespace visible_resource_test
 {
@@ -211,10 +212,6 @@ namespace visible_resource_test
 
 
 
-	VisibleRect::VisibleRect() :
-		mVisibleResource( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" )
-	{}
-
 	r2::iTest::TitleFunc VisibleRect::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -224,40 +221,52 @@ namespace visible_resource_test
 	}
 	r2::iTest::DoFunc VisibleRect::GetDoFunction()
 	{
-		auto visible_rect = GetInstance().mVisibleResource.GetVisibleRect();
-		visible_rect.SetOrigin( visible_rect.GetOrigin().GetX() + 2, visible_rect.GetOrigin().GetY() + 1 );
-		visible_rect.SetSize( visible_rect.GetSize().GetWidth() - 2, visible_rect.GetSize().GetHeight() - 1 );
-		GetInstance().mVisibleResource.SetVisibleRect( visible_rect );
-
-
-		return [&vr = GetInstance().mVisibleResource]()->r2::eTestResult
+		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
 			{
-				std::size_t x = 0;
+				r2::VisibleResource vr( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" );
+
+				auto rect = vr.GetVisibleRect();
+				rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );
+				rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );
+				vr.SetVisibleRect( rect );
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2::VisibleResource vr( 5, \"aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg\" );" << r2::linefeed2;
+				std::cout << r2::tab2 << "auto rect = vr.GetVisibleRect();" << r2::linefeed;
+				std::cout << r2::tab2 << "rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );" << r2::linefeed;
+				std::cout << r2::tab2 << "rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );" << r2::linefeed;
+				std::cout << r2::tab2 << "vr.SetVisibleRect( rect );" << r2::linefeed;
+
+				std::cout << r2::split;
+
+				std::cout << r2::tab << "+ View All" << r2::linefeed2;
+
+				std::size_t cur_x = 0;
 				for( const char element : vr )
 				{
 					std::cout << element;
 
-					++x;
-					if( vr.GetWidth() <= x )
+					++cur_x;
+					if( vr.GetWidth() <= cur_x )
 					{
-						x = 0u;
+						cur_x = 0u;
 						std::cout << r2::linefeed;
 					}
 				}
-				if( 0u != x )
+				if( 0u != cur_x )
 				{
 					std::cout << r2::linefeed;
 				}
-			}
 
-			std::cout << r2::split;
+				std::cout << r2::split;
 
-			{
+				std::cout << r2::tab << "+ View With Rect" << r2::linefeed2;
+
 				for( int y = vr.GetVisibleRect().GetMinY(); y < vr.GetVisibleRect().GetMaxY(); ++y )
 				{
 					for( int x = vr.GetVisibleRect().GetMinX(); x < vr.GetVisibleRect().GetMaxX(); ++x )
