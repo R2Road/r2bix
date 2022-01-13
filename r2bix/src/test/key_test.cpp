@@ -25,17 +25,14 @@ namespace key_test
 
 			bool process = true;
 			int input = 0;
-			while( process )
+			do
 			{
 				input = _getch();
 
 				std::cout << "Key : " << input << r2::linefeed;
 
-				if( 27 == input )
-				{
-					process = false;
-				}
-			}
+				process = ( 27 != input ); // ESC
+			} while( process );
 
 			std::cout << r2::split;
 
