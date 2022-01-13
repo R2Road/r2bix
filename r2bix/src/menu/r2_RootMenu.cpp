@@ -42,7 +42,6 @@ namespace r2
 
 			ret->AddChild( '4', visible_resource_test::FillAll::GetInstance() );
 			ret->AddChild( '5', visible_resource_test::Fill::GetInstance() );
-			ret->AddChild( '6', visible_resource_test::DrawWithPosition::GetInstance() );
 			ret->AddChild( '7', visible_resource_test::InitWithChars::GetInstance() );
 			ret->AddChild( '8', visible_resource_test::VisibleRect::GetInstance() );
 

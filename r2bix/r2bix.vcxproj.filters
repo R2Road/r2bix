@@ -89,6 +89,9 @@
     <ClCompile Include="src\test\visible_resource_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\research\visible_resource_research.cpp">
+      <Filter>research</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -178,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="src\test\visible_resource_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\research\visible_resource_research.h">
+      <Filter>research</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

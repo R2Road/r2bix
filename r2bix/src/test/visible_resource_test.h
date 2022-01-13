@@ -22,13 +22,6 @@ namespace visible_resource_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class DrawWithPosition : public r2::iTest, public r2::SingleTon<DrawWithPosition>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
-
 	class InitWithChars : public r2::iTest, public r2::SingleTon<InitWithChars>
 	{
 	public:
