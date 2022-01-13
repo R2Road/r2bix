@@ -21,16 +21,16 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
 			, GetTitle(),
-			"\n" "> Inprogress : flickering check"
-			"\n" "> To do : Command - Double Buffering"
-			"\n" "> To do : Renderer"
+					"> Inprogress : flickering check"
+			"\n"	"> To do : Command - Double Buffering"
+			"\n"	"> To do : Renderer"
 		) );
 
 		{
 			ret->AddChild( '1', key_test::Basic::GetInstance() );
 
 
-			ret->AddSplit();
+			ret->AddLineFeed();
 
 
 			ret->AddChild( '2', framebuffer_test::Basic::GetInstance() );
