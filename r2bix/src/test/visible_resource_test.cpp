@@ -70,19 +70,30 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			r2::VisibleResource visible_resource( 30, 20 );
-			visible_resource.Fill( 0, 0, '0' );
-			visible_resource.Fill( visible_resource.GetWidth() - 1u, 0, '0' );
-			visible_resource.Fill( visible_resource.GetWidth() - 1u, visible_resource.GetHeight() - 1u, '0' );
-			visible_resource.Fill( 0, visible_resource.GetHeight() - 1u, '0' );
+			r2::VisibleResource vr( 30, 20 );
+			vr.Fill( 0, 0, '0' );
+			vr.Fill( vr.GetWidth() - 1u, 0, '0' );
+			vr.Fill( vr.GetWidth() - 1u, vr.GetHeight() - 1u, '0' );
+			vr.Fill( 0, vr.GetHeight() - 1u, '0' );
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 30, 20 );" << r2::linefeed;
+			std::cout << r2::tab2 << "visible_resource.Fill( 0, 0, '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "visible_resource.Fill( vr.GetWidth() - 1u, 0, '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "visible_resource.Fill( vr.GetWidth() - 1u, vr.GetHeight() - 1u, '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "visible_resource.Fill( 0, vr.GetHeight() - 1u, '0' );" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ View" << r2::linefeed2;
 
 			std::size_t x = 0;
-			for( const char element : visible_resource )
+			for( const char element : vr )
 			{
 				std::cout << element;
 
 				++x;
-				if( visible_resource.GetWidth() <= x )
+				if( vr.GetWidth() <= x )
 				{
 					x = 0u;
 					std::cout << r2::linefeed;
