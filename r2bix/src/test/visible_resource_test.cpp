@@ -112,14 +112,14 @@ namespace visible_resource_test
 
 
 
-	r2::iTest::TitleFunc InitWithChars::GetTitleFunction() const
+	r2::iTest::TitleFunc InitWithChars_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Visible Resource - Init With Chars";
+			return "Visible Resource - Init With Chars 1";
 		};
 	}
-	r2::iTest::DoFunc InitWithChars::GetDoFunction()
+	r2::iTest::DoFunc InitWithChars_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

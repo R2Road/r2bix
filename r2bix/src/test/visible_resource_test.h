@@ -22,7 +22,7 @@ namespace visible_resource_test
 		DoFunc GetDoFunction() override;
 	};
 
-	class InitWithChars : public r2::iTest, public r2::SingleTon<InitWithChars>
+	class InitWithChars_1 : public r2::iTest, public r2::SingleTon<InitWithChars_1>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
