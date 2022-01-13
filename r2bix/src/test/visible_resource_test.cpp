@@ -32,18 +32,20 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "+ View" << r2::linefeed2;
-
-			std::size_t x = 0;
-			for( const char element : visible_resource )
 			{
-				std::cout << element;
+				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
-				++x;
-				if( visible_resource.GetWidth() <= x )
+				std::size_t x = 0;
+				for( const char element : visible_resource )
 				{
-					x = 0u;
-					std::cout << r2::linefeed;
+					std::cout << element;
+
+					++x;
+					if( visible_resource.GetWidth() <= x )
+					{
+						x = 0u;
+						std::cout << r2::linefeed;
+					}
 				}
 			}
 
@@ -85,18 +87,20 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "+ View" << r2::linefeed2;
-
-			std::size_t x = 0;
-			for( const char element : vr )
 			{
-				std::cout << element;
+				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
-				++x;
-				if( vr.GetWidth() <= x )
+				std::size_t x = 0;
+				for( const char element : vr )
 				{
-					x = 0u;
-					std::cout << r2::linefeed;
+					std::cout << element;
+
+					++x;
+					if( vr.GetWidth() <= x )
+					{
+						x = 0u;
+						std::cout << r2::linefeed;
+					}
 				}
 			}
 
