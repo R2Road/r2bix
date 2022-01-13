@@ -154,6 +154,27 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc InitWithChars_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Visible Resource - Init With Chars 2";
+		};
+	}
+	r2::iTest::DoFunc InitWithChars_2::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
 				const r2::VisibleResource visible_resource_2( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
@@ -164,7 +185,7 @@ namespace visible_resource_test
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
-				x = 0;
+				std::size_t x = 0;
 				for( const char element : visible_resource_2 )
 				{
 					std::cout << element;
