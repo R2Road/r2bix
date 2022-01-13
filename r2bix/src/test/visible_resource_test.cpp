@@ -133,11 +133,6 @@ namespace visible_resource_test
 
 
 
-	InitWithChars::InitWithChars() :
-		mVisibleResource1( "Init With Chars" )
-		, mVisibleResource2( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" )
-	{}
-
 	r2::iTest::TitleFunc InitWithChars::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -147,24 +142,23 @@ namespace visible_resource_test
 	}
 	r2::iTest::DoFunc InitWithChars::GetDoFunction()
 	{
-		const auto& vr1 = GetInstance().mVisibleResource1;
-		const auto& vr2 = GetInstance().mVisibleResource2;
-
-		return [vr1, vr2]()->r2::eTestResult
+		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
-
+			
 			std::size_t x = 0;
 
 			{
-				for( const char element : vr1 )
+				const r2::VisibleResource visible_resource_1( "Init With Chars" );
+
+				for( const char element : visible_resource_1 )
 				{
 					std::cout << element;
 
 					++x;
-					if( vr1.GetWidth() <= x )
+					if( visible_resource_1.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -175,13 +169,15 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
+				const r2::VisibleResource visible_resource_2( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" );
+
 				x = 0;
-				for( const char element : vr2 )
+				for( const char element : visible_resource_2 )
 				{
 					std::cout << element;
 
 					++x;
-					if( vr2.GetWidth() <= x )
+					if( visible_resource_2.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
