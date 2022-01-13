@@ -33,8 +33,8 @@ namespace r2
 		int GetWidth() const { return mGridIndexConverter.GetWidth(); }
 		int GetHeight() const { return mGridIndexConverter.GetHeight(); }
 
-		int GetEndX() const { return mGridIndexConverter.GetWidth() - 1; }
-		int GetEndY() const { return mGridIndexConverter.GetHeight() - 1; }
+		int GetXEnd() const { return mGridIndexConverter.GetWidth() - 1; }
+		int GetYEnd() const { return mGridIndexConverter.GetHeight() - 1; }
 
 		const r2::RectInt& GetVisibleRect() const { return mVisibleRect; }
 		const ContainerT& GetContainer() const { return mChars; }
