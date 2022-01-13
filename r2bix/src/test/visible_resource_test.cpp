@@ -90,8 +90,6 @@ namespace visible_resource_test
 
 
 
-	DrawWithPosition::DrawWithPosition() : mVisibleResource( 10, 10 ) {}
-
 	r2::iTest::TitleFunc DrawWithPosition::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -101,27 +99,25 @@ namespace visible_resource_test
 	}
 	r2::iTest::DoFunc DrawWithPosition::GetDoFunction()
 	{
-		GetInstance().mVisibleResource.FillAll( '0' );
-
-		const auto& vr = GetInstance().mVisibleResource;
-
-		return [vr]()->r2::eTestResult
+		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
+
+			const r2::VisibleResource visible_resource( 10, 10, '0' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD pos = { 10, 5 };
 			SetConsoleCursorPosition( stdHandle, pos );
 
 			int count = 0;
-			for( const char element : vr )
+			for( const char element : visible_resource )
 			{
 				std::cout << element;
 
 				++count;
-				if( vr.GetWidth() <= count )
+				if( visible_resource.GetWidth() <= count )
 				{
 					count = 0;
 					pos.Y += 1;
