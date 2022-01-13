@@ -11,14 +11,8 @@ namespace visibleresource_test
 	class FillAll : public r2::iTest, public r2::SingleTon<FillAll>
 	{
 	public:
-		FillAll();
-
-	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
-
-	private:
-		r2::VisibleResource mVisibleResource;
 	};
 
 	class Fill : public r2::iTest, public r2::SingleTon<Fill>

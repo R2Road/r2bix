@@ -10,8 +10,6 @@
 
 namespace visibleresource_test
 {
-	FillAll::FillAll() : mVisibleResource( 30, 20 ) {}
-
 	r2::iTest::TitleFunc FillAll::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -21,23 +19,22 @@ namespace visibleresource_test
 	}
 	r2::iTest::DoFunc FillAll::GetDoFunction()
 	{
-		GetInstance().mVisibleResource.FillAll( '0' );
-
-		const auto& vr = GetInstance().mVisibleResource;
-
-		return [vr]()->r2::eTestResult
+		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
+			r2::VisibleResource visible_resource( 30, 20 );
+			visible_resource.FillAll( '0' );
+
 			std::size_t x = 0;
-			for( const char element : vr )
+			for( const char element : visible_resource )
 			{
 				std::cout << element;
 
 				++x;
-				if( vr.GetWidth() <= x )
+				if( visible_resource.GetWidth() <= x )
 				{
 					x = 0u;
 					std::cout << r2::linefeed;
