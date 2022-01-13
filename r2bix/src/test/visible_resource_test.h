@@ -6,7 +6,7 @@
 #include "renderer/r2_Renderer.h"
 #include "renderer/r2_VisibleResource.h"
 
-namespace visibleresource_test
+namespace visible_resource_test
 {
 	class FillAll : public r2::iTest, public r2::SingleTon<FillAll>
 	{

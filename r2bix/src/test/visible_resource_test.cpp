@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "visibleresource_test.h"
+#include "visible_resource_test.h"
 
 #include <Windows.h>
 
@@ -8,7 +8,7 @@
 #include "renderer/r2_Camera.h"
 #include "renderer/r2_iRenderable.h"
 
-namespace visibleresource_test
+namespace visible_resource_test
 {
 	r2::iTest::TitleFunc FillAll::GetTitleFunction() const
 	{

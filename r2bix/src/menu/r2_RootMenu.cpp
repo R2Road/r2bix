@@ -9,7 +9,7 @@
 #include "test/framebuffer_test.h"
 #include "test/key_test.h"
 #include "test/rect_test.h"
-#include "test/visibleresource_test.h"
+#include "test/visible_resource_test.h"
 #include "test/renderer_test.h"
 #include "test/camera_test.h"
 #include "test/animation_test.h"
@@ -40,11 +40,11 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( '4', visibleresource_test::FillAll::GetInstance() );
-			ret->AddChild( '5', visibleresource_test::Fill::GetInstance() );
-			ret->AddChild( '6', visibleresource_test::DrawWithPosition::GetInstance() );
-			ret->AddChild( '7', visibleresource_test::InitWithChars::GetInstance() );
-			ret->AddChild( '8', visibleresource_test::VisibleRect::GetInstance() );
+			ret->AddChild( '4', visible_resource_test::FillAll::GetInstance() );
+			ret->AddChild( '5', visible_resource_test::Fill::GetInstance() );
+			ret->AddChild( '6', visible_resource_test::DrawWithPosition::GetInstance() );
+			ret->AddChild( '7', visible_resource_test::InitWithChars::GetInstance() );
+			ret->AddChild( '8', visible_resource_test::VisibleRect::GetInstance() );
 
 
 			ret->AddLineFeed();

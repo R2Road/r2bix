@@ -47,9 +47,6 @@
     <ClCompile Include="src\test\renderer_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\visibleresource_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2\r2_PointInt.cpp">
       <Filter>r2</Filter>
     </ClCompile>
@@ -89,6 +86,9 @@
     <ClCompile Include="src\renderer\r2_FrameBuffer.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\visible_resource_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -123,9 +123,6 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\test\renderer_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\visibleresource_test.h">
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -178,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="src\renderer\r2_FrameBuffer.h">
       <Filter>renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\visible_resource_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
