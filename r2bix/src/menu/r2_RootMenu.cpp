@@ -12,7 +12,6 @@
 #include "test/framebuffer_test.h"
 #include "test/key_test.h"
 #include "test/rect_test.h"
-#include "test/camera_test.h"
 #include "test/animation_test.h"
 
 namespace r2
