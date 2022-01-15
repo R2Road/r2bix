@@ -22,7 +22,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
 			, GetTitle(),
-					"> Inprogress : flickering check"
+					"> Inprogress : Update Camera Test"
 			"\n"	"> To do : Command - Double Buffering"
 			"\n"	"> To do : Renderer"
 		) );
