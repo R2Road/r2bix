@@ -5,11 +5,11 @@
 #include "base/r2_eTestResult.h"
 
 #include "menu/r2_ResearchMenu.h"
+#include "menu/r2_VisibleResourceMenu.h"
 
 #include "test/framebuffer_test.h"
 #include "test/key_test.h"
 #include "test/rect_test.h"
-#include "test/visible_resource_test.h"
 #include "test/renderer_test.h"
 #include "test/camera_test.h"
 #include "test/animation_test.h"
@@ -40,11 +40,15 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( '4', visible_resource_test::FillAll::GetInstance() );
-			ret->AddChild( '5', visible_resource_test::Fill::GetInstance() );
-			ret->AddChild( '6', visible_resource_test::InitWithChars_1::GetInstance() );
-			ret->AddChild( '7', visible_resource_test::InitWithChars_2::GetInstance() );
-			ret->AddChild( '8', visible_resource_test::VisibleRect::GetInstance() );
+			ret->AddChild(
+				'4'
+				, []()->const char* { return r2::VisibleResourceMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::VisibleResourceMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 
 			ret->AddLineFeed();

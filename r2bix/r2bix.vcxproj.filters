@@ -92,6 +92,9 @@
     <ClCompile Include="src\research\visible_resource_research.cpp">
       <Filter>research</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\r2_VisibleResourceMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -184,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="src\research\visible_resource_research.h">
       <Filter>research</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_VisibleResourceMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
