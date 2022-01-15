@@ -29,20 +29,21 @@ namespace r2
 
 		{
 			ret->AddChild( '1', key_test::Basic::GetInstance() );
+			ret->AddChild( '2', rect_test::Basic::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( '2', framebuffer_test::Basic::GetInstance() );
-			ret->AddChild( '3', framebuffer_test::DrawAtOnce::GetInstance() );
+			ret->AddChild( '3', framebuffer_test::Basic::GetInstance() );
+			ret->AddChild( '4', framebuffer_test::DrawAtOnce::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
 			ret->AddChild(
-				'4'
+				'q'
 				, []()->const char* { return r2::VisibleResourceMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -51,7 +52,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'5'
+				'w'
 				, []()->const char* { return r2::CameraMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -60,7 +61,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'6'
+				'e'
 				, []()->const char* { return r2::RendererMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -68,12 +69,6 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
-
-			ret->AddLineFeed();
-
-
-			ret->AddChild( 'a', rect_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
