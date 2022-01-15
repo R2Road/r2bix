@@ -5,13 +5,13 @@
 #include "base/r2_eTestResult.h"
 
 #include "menu/r2_CameraMenu.h"
+#include "menu/r2_RendererMenu.h"
 #include "menu/r2_ResearchMenu.h"
 #include "menu/r2_VisibleResourceMenu.h"
 
 #include "test/framebuffer_test.h"
 #include "test/key_test.h"
 #include "test/rect_test.h"
-#include "test/renderer_test.h"
 #include "test/camera_test.h"
 #include "test/animation_test.h"
 
@@ -59,13 +59,15 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
-
-
-			ret->AddLineFeed();
-
-
-			ret->AddChild( 'q', renderer_test::TestRenderable::GetInstance() );
-			ret->AddChild( 'w', renderer_test::TestRenderer::GetInstance() );
+			ret->AddChild(
+				'6'
+				, []()->const char* { return r2::RendererMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::RendererMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 
 			ret->AddLineFeed();

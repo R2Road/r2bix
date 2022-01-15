@@ -98,6 +98,9 @@
     <ClCompile Include="src\menu\r2_CameraMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\r2_RendererMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -195,6 +198,9 @@
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_CameraMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_RendererMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
