@@ -4,6 +4,7 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestResult.h"
 
+#include "menu/r2_CameraMenu.h"
 #include "menu/r2_ResearchMenu.h"
 #include "menu/r2_VisibleResourceMenu.h"
 
@@ -49,6 +50,15 @@ namespace r2
 					return eTestResult::ChangeScene;
 				}
 			);
+			ret->AddChild(
+				'5'
+				, []()->const char* { return r2::CameraMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::CameraMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 
 
 			ret->AddLineFeed();
@@ -62,9 +72,6 @@ namespace r2
 
 
 			ret->AddChild( 'a', rect_test::Basic::GetInstance() );
-			ret->AddChild( 's', camera_test::CameraRect::GetInstance() );
-			ret->AddChild( 'd', camera_test::CameraMove1::GetInstance() );
-			ret->AddChild( 'f', camera_test::CameraMove2::GetInstance() );
 
 
 			ret->AddSplit();

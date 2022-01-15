@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\base\r2_Director.cpp" />
     <ClCompile Include="src\base\r2_Menu.cpp" />
+    <ClCompile Include="src\menu\r2_CameraMenu.cpp" />
     <ClCompile Include="src\menu\r2_ResearchMenu.cpp" />
     <ClCompile Include="src\menu\r2_RootMenu.cpp" />
     <ClCompile Include="src\menu\r2_VisibleResourceMenu.cpp" />
@@ -57,6 +58,7 @@
     <ClInclude Include="src\base\r2_iTest.h" />
     <ClInclude Include="src\base\r2_Menu.h" />
     <ClInclude Include="src\base\r2_Singleton.h" />
+    <ClInclude Include="src\menu\r2_CameraMenu.h" />
     <ClInclude Include="src\menu\r2_ResearchMenu.h" />
     <ClInclude Include="src\menu\r2_RootMenu.h" />
     <ClInclude Include="src\menu\r2_VisibleResourceMenu.h" />
