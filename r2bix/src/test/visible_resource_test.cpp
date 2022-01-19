@@ -228,12 +228,10 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2::VisibleResource visible_resource( 10, 10, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2::VisibleResource visible_resource( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 10, 10, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
-
-				std::cout << r2::split;
+				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 8, 8, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
@@ -261,11 +259,9 @@ namespace visible_resource_test
 				const r2::VisibleResource visible_resource( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 3, 3, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 3, 3, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
-				std::cout << r2::split;
-
-				std::cout << r2::tab << "+ View" << r2::linefeed2;
+				std::cout << r2::tab << "+ View : Overflow Test" << r2::linefeed2;
 
 				std::size_t x = 0;
 				for( const char element : visible_resource )
@@ -291,9 +287,7 @@ namespace visible_resource_test
 				const r2::VisibleResource visible_resource( 6, 6, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 6, 6, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
-
-				std::cout << r2::split;
+				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 6, 6, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
