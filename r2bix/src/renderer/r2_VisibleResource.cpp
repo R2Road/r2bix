@@ -15,7 +15,7 @@ namespace r2
 
 		//std::copy( str.begin(), str.end(), mChars.begin() );
 
-		memcpy( &mChars[0], str.data(), mChars.size() );
+		memcpy_s( &mChars[0], mChars.size(), str.data(), str.size() );
 	}
 	VisibleResource::VisibleResource( const std::size_t width, const std::string_view str ) :
 		mGridIndexConverter( width, ( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) )
@@ -23,8 +23,7 @@ namespace r2
 		, mVisibleRect( 0, 0, mGridIndexConverter.GetWidth(), mGridIndexConverter.GetHeight() )
 	{
 		assert( 0u < mGridIndexConverter.GetWidth() && 0u < mGridIndexConverter.GetHeight() );
-
-		memcpy( &mChars[0], str.data(), mChars.size() );
+		memcpy_s( &mChars[0], mChars.size(), str.data(), str.size() );
 	}
 	VisibleResource::VisibleResource( const std::size_t width, const std::size_t height ) :
 		mGridIndexConverter( width, height )
