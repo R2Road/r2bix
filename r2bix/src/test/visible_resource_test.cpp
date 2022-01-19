@@ -287,6 +287,36 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
+			{
+				const r2::VisibleResource visible_resource( 6, 6, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 6, 6, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
+
+				std::cout << r2::split;
+
+				std::cout << r2::tab << "+ View" << r2::linefeed2;
+
+				std::size_t x = 0;
+				for( const char element : visible_resource )
+				{
+					std::cout << element;
+
+					++x;
+					if( visible_resource.GetWidth() <= x )
+					{
+						x = 0u;
+						std::cout << r2::linefeed;
+					}
+				}
+				if( 0u != x )
+				{
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
 			return r2::eTestResult::RunTest;
 		};
 	}
