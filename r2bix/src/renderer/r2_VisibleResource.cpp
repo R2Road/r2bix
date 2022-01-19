@@ -40,6 +40,14 @@ namespace r2
 	{
 		assert( 0u < width && 0u < height );
 	}
+	VisibleResource::VisibleResource( const std::size_t width, const std::size_t height, const char fill_char, const std::string_view str ) :
+		mGridIndexConverter( width, height )
+		, mChars( width * height, fill_char )
+		, mVisibleRect( 0, 0, mGridIndexConverter.GetWidth(), mGridIndexConverter.GetHeight() )
+	{
+		assert( 0u < width && 0u < height );
+		memcpy_s( &mChars[0], mChars.size(), str.data(), str.size() );
+	}
 
 	VisibleResource::ValueT VisibleResource::Get( std::size_t x, std::size_t y ) const
 	{

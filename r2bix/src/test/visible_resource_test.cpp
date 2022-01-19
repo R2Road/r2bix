@@ -212,6 +212,57 @@ namespace visible_resource_test
 
 
 
+	r2::iTest::TitleFunc InitWithChars_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Visible Resource - Init With Chars 3";
+		};
+	}
+	r2::iTest::DoFunc InitWithChars_3::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			{
+				const r2::VisibleResource visible_resource( 10, 10, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 10, 10, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
+
+				std::cout << r2::split;
+
+				std::cout << r2::tab << "+ View" << r2::linefeed2;
+
+				std::size_t x = 0;
+				for( const char element : visible_resource )
+				{
+					std::cout << element;
+
+					++x;
+					if( visible_resource.GetWidth() <= x )
+					{
+						x = 0u;
+						std::cout << r2::linefeed;
+					}
+				}
+				if( 0u != x )
+				{
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
 	r2::iTest::TitleFunc VisibleRect::GetTitleFunction() const
 	{
 		return []()->const char*
