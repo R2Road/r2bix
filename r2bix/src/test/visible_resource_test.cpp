@@ -131,21 +131,21 @@ namespace visible_resource_test
 			std::size_t x = 0;
 
 			{
-				const r2::VisibleResource visible_resource_1( "Init With Chars" );
+				const r2::VisibleResource visible_resource( "Init With Chars" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource_1( \"Init With Chars\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( \"Init With Chars\" );" << r2::linefeed;
 
 				std::cout << r2::split;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
-				for( const char element : visible_resource_1 )
+				for( const char element : visible_resource )
 				{
 					std::cout << element;
 
 					++x;
-					if( visible_resource_1.GetWidth() <= x )
+					if( visible_resource.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -177,22 +177,22 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2::VisibleResource visible_resource_2( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2::VisibleResource visible_resource( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource_2( 5, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 5, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
 
 				std::cout << r2::split;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
 				std::size_t x = 0;
-				for( const char element : visible_resource_2 )
+				for( const char element : visible_resource )
 				{
 					std::cout << element;
 
 					++x;
-					if( visible_resource_2.GetWidth() <= x )
+					if( visible_resource.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
