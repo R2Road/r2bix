@@ -46,7 +46,7 @@ namespace r2
 		, mVisibleRect( 0, 0, mGridIndexConverter.GetWidth(), mGridIndexConverter.GetHeight() )
 	{
 		assert( 0u < width && 0u < height );
-		memcpy_s( &mChars[0], mChars.size(), str.data(), str.size() );
+		memcpy_s( &mChars[0], mChars.size(), str.data(), std::min( str.size(), mChars.size() ) );
 	}
 
 	VisibleResource::ValueT VisibleResource::Get( std::size_t x, std::size_t y ) const
