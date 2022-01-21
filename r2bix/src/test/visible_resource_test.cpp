@@ -283,11 +283,32 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
+			return r2::eTestResult::RunTest;
+		};
+	}
+
+
+
+	r2::iTest::TitleFunc InitWithChars_4::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Visible Resource - Init With Chars 4";
+		};
+	}
+	r2::iTest::DoFunc InitWithChars_4::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				const r2::VisibleResource visible_resource( 6, 6, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2::VisibleResource visible_resource( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 6, 6, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
+				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 7, 7, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 

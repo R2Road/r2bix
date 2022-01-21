@@ -37,6 +37,12 @@ namespace visible_resource_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+	class InitWithChars_4 : public r2::iTest, public r2::SingleTon<InitWithChars_4>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 
 	class VisibleRect : public r2::iTest, public r2::SingleTon<VisibleRect>
 	{

@@ -23,7 +23,8 @@ namespace r2
 			ret->AddChild( '3', visible_resource_test::InitWithChars_1::GetInstance() );
 			ret->AddChild( '4', visible_resource_test::InitWithChars_2::GetInstance() );
 			ret->AddChild( '5', visible_resource_test::InitWithChars_3::GetInstance() );
-			ret->AddChild( '6', visible_resource_test::VisibleRect::GetInstance() );
+			ret->AddChild( '6', visible_resource_test::InitWithChars_4::GetInstance() );
+			ret->AddChild( '7', visible_resource_test::VisibleRect::GetInstance() );
 
 
 			ret->AddSplit();
