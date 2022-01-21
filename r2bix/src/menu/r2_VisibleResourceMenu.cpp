@@ -20,11 +20,21 @@ namespace r2
 		{
 			ret->AddChild( '1', visible_resource_test::FillAll::GetInstance() );
 			ret->AddChild( '2', visible_resource_test::Fill::GetInstance() );
-			ret->AddChild( '3', visible_resource_test::InitWithChars_1::GetInstance() );
-			ret->AddChild( '4', visible_resource_test::InitWithChars_2::GetInstance() );
-			ret->AddChild( '5', visible_resource_test::InitWithChars_3::GetInstance() );
-			ret->AddChild( '6', visible_resource_test::InitWithChars_4::GetInstance() );
-			ret->AddChild( '7', visible_resource_test::VisibleRect::GetInstance() );
+
+
+			ret->AddLineFeed();
+
+
+			ret->AddChild( 'q', visible_resource_test::InitWithChars_1::GetInstance() );
+			ret->AddChild( 'w', visible_resource_test::InitWithChars_2::GetInstance() );
+			ret->AddChild( 'e', visible_resource_test::InitWithChars_3::GetInstance() );
+			ret->AddChild( 'r', visible_resource_test::InitWithChars_4::GetInstance() );
+
+
+			ret->AddLineFeed();
+
+
+			ret->AddChild( 'a', visible_resource_test::VisibleRect::GetInstance() );
 
 
 			ret->AddSplit();
