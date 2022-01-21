@@ -87,7 +87,7 @@ namespace flickering_research
 			visible_resource.FillAll( 'a' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD pos = { 0, 6 };
+			const COORD pos = { 0, 6 };
 
 			bool process = true;
 			do
@@ -233,7 +233,7 @@ namespace flickering_research
 			frame_buffer.FillAll( 'c' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD pos = { 0, 0 };
+			const COORD pos = { 0, 0 };
 
 			bool process = true;
 			do
@@ -277,7 +277,7 @@ namespace flickering_research
 			frame_buffer_2.FillAll( 'a' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-			COORD pos = { 0, 0 };
+			const COORD pos = { 0, 0 };
 			bool bDrawTarget = true;
 
 			bool process = true;
