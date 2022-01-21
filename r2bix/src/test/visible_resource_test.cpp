@@ -353,23 +353,14 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
+			r2::VisibleResource vr( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" );
+
+			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+			std::cout << r2::tab2 << "r2::VisibleResource vr( 5, \"aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg\" );" << r2::linefeed;
+
+			std::cout << r2::split;
+
 			{
-				r2::VisibleResource vr( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" );
-
-				auto rect = vr.GetVisibleRect();
-				rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );
-				rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );
-				vr.SetVisibleRect( rect );
-
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::VisibleResource vr( 5, \"aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg\" );" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto rect = vr.GetVisibleRect();" << r2::linefeed;
-				std::cout << r2::tab2 << "rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );" << r2::linefeed;
-				std::cout << r2::tab2 << "rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );" << r2::linefeed;
-				std::cout << r2::tab2 << "vr.SetVisibleRect( rect );" << r2::linefeed;
-
-				std::cout << r2::split;
-
 				std::cout << r2::tab << "+ View All" << r2::linefeed2;
 
 				std::size_t cur_x = 0;
@@ -388,10 +379,22 @@ namespace visible_resource_test
 				{
 					std::cout << r2::linefeed;
 				}
+			}
 
-				std::cout << r2::split;
+			std::cout << r2::split;
 
+			{
 				std::cout << r2::tab << "+ View With Rect" << r2::linefeed2;
+
+				auto rect = vr.GetVisibleRect();
+				rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );
+				rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );
+				vr.SetVisibleRect( rect );
+
+				std::cout << r2::tab2 << "auto rect = vr.GetVisibleRect();" << r2::linefeed;
+				std::cout << r2::tab2 << "rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );" << r2::linefeed;
+				std::cout << r2::tab2 << "rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );" << r2::linefeed;
+				std::cout << r2::tab2 << "vr.SetVisibleRect( rect );" << r2::linefeed2;
 
 				for( int y = vr.GetVisibleRect().GetMinY(); y < vr.GetVisibleRect().GetMaxY(); ++y )
 				{
