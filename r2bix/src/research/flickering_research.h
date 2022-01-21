@@ -32,7 +32,7 @@ namespace flickering_research
 		DoFunc GetDoFunction() override;
 	};
 
-	class PageByPage_WithOut_CLS : public r2::iTest, public r2::SingleTon<PageByPage_WithOut_CLS>
+	class PageByPage_WithOut_CLS_1 : public r2::iTest, public r2::SingleTon<PageByPage_WithOut_CLS_1>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

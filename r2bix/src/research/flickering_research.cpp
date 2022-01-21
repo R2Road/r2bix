@@ -218,14 +218,14 @@ namespace flickering_research
 
 
 
-	r2::iTest::TitleFunc PageByPage_WithOut_CLS::GetTitleFunction() const
+	r2::iTest::TitleFunc PageByPage_WithOut_CLS_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Flickering : Print Page By Page Without CLS";
+			return "Flickering : Print Page By Page Without CLS 1";
 		};
 	}
-	r2::iTest::DoFunc PageByPage_WithOut_CLS::GetDoFunction()
+	r2::iTest::DoFunc PageByPage_WithOut_CLS_1::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{
@@ -263,7 +263,7 @@ namespace flickering_research
 	{
 		return []()->const char*
 		{
-			return "Flickering : Print Page By Page Without CLS";
+			return "Flickering : Print Page By Page Without CLS 2";
 		};
 	}
 	r2::iTest::DoFunc PageByPage_WithOut_CLS_2::GetDoFunction()
