@@ -256,4 +256,58 @@ namespace flickering_research
 			return r2::eTestResult::RunTest_Without_Pause;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc PageByPage_WithOut_CLS_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Flickering : Print Page By Page Without CLS";
+		};
+	}
+	r2::iTest::DoFunc PageByPage_WithOut_CLS_2::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			r2::FrameBuffer frame_buffer_1( 50, 50 );
+			frame_buffer_1.FillAll( 'c' );
+
+			r2::FrameBuffer frame_buffer_2( 50, 50 );
+			frame_buffer_2.FillAll( 'a' );
+
+			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+			COORD pos = { 0, 0 };
+			bool bDrawTarget = true;
+
+			bool process = true;
+			do
+			{
+				SetConsoleCursorPosition( stdHandle, pos );
+
+				if( bDrawTarget )
+				{
+					std::cout << &( *frame_buffer_1.begin() );
+				}
+				else
+				{
+					std::cout << &( *frame_buffer_2.begin() );
+				}
+
+				bDrawTarget = !bDrawTarget;
+
+				//
+				// Input
+				//
+				if( _kbhit() )
+				{
+					_getch(); // need
+					process = false;
+				}
+
+			} while( process );
+
+			return r2::eTestResult::RunTest_Without_Pause;
+		};
+	}
 }

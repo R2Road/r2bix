@@ -30,6 +30,7 @@ namespace r2
 			ret->AddChild( 'e', flickering_research::LineByLine::GetInstance() );
 			ret->AddChild( 'r', flickering_research::PageByPage::GetInstance() );
 			ret->AddChild( 't', flickering_research::PageByPage_WithOut_CLS::GetInstance() );
+			ret->AddChild( 'y', flickering_research::PageByPage_WithOut_CLS_2::GetInstance() );
 
 
 			ret->AddSplit();
