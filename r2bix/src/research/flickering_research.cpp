@@ -229,7 +229,7 @@ namespace flickering_research
 	{
 		return []()->r2::eTestResult
 		{
-			r2::FrameBuffer frame_buffer( 50, 50 );
+			r2::FrameBuffer frame_buffer( 100, 40 );
 			frame_buffer.FillAll( 'c' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -270,10 +270,10 @@ namespace flickering_research
 	{
 		return []()->r2::eTestResult
 		{
-			r2::FrameBuffer frame_buffer_1( 50, 50 );
+			r2::FrameBuffer frame_buffer_1( 100, 40 );
 			frame_buffer_1.FillAll( 'c' );
 
-			r2::FrameBuffer frame_buffer_2( 50, 50 );
+			r2::FrameBuffer frame_buffer_2( 100, 40 );
 			frame_buffer_2.FillAll( 'a' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
