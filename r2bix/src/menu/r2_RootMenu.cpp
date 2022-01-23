@@ -5,11 +5,11 @@
 #include "base/r2_eTestResult.h"
 
 #include "menu/r2_CameraMenu.h"
+#include "menu/r2_FrameBufferMenu.h"
 #include "menu/r2_RendererMenu.h"
 #include "menu/r2_ResearchMenu.h"
 #include "menu/r2_VisibleResourceMenu.h"
 
-#include "test/framebuffer_test.h"
 #include "test/key_test.h"
 #include "test/rect_test.h"
 #include "test/animation_test.h"
@@ -34,15 +34,17 @@ namespace r2
 			ret->AddLineFeed();
 
 
-			ret->AddChild( '3', framebuffer_test::Basic::GetInstance() );
-			ret->AddChild( '4', framebuffer_test::DrawAtOnce::GetInstance() );
-
-
-			ret->AddLineFeed();
-
-
 			ret->AddChild(
 				'q'
+				, []()->const char* { return r2::FrameBufferMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::FrameBufferMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
+			ret->AddChild(
+				'w'
 				, []()->const char* { return r2::VisibleResourceMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -51,7 +53,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'w'
+				'e'
 				, []()->const char* { return r2::CameraMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
@@ -60,7 +62,7 @@ namespace r2
 				}
 			);
 			ret->AddChild(
-				'e'
+				'r'
 				, []()->const char* { return r2::RendererMenu::GetTitle(); }
 				, [&director]()->eTestResult
 				{
