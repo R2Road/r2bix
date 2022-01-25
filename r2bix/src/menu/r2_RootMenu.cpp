@@ -6,11 +6,11 @@
 
 #include "menu/r2_CameraMenu.h"
 #include "menu/r2_FrameBufferMenu.h"
+#include "menu/r2_InputMenu.h"
 #include "menu/r2_RendererMenu.h"
 #include "menu/r2_ResearchMenu.h"
 #include "menu/r2_VisibleResourceMenu.h"
 
-#include "test/key_test.h"
 #include "test/rect_test.h"
 #include "test/animation_test.h"
 
@@ -28,7 +28,15 @@ namespace r2
 		) );
 
 		{
-			ret->AddChild( '1', key_test::Basic::GetInstance() );
+			ret->AddChild(
+				'1'
+				, []()->const char* { return r2::InputMenu::GetTitle(); }
+				, [&director]()->eTestResult
+				{
+					director.Setup( r2::InputMenu::Create( director ) );
+					return eTestResult::ChangeScene;
+				}
+			);
 			ret->AddChild( '2', rect_test::Basic::GetInstance() );
 
 
