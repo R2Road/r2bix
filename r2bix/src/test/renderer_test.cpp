@@ -13,7 +13,7 @@ namespace renderer_test
 	class TempRenderable : public r2::iRenderable
 	{
 	public:
-		TempRenderable( const int x, const int y, const std::size_t width, const char* chars) :
+		TempRenderable( const int x, const int y, const uint32_t width, const char* chars) :
 			mPoint( { x, y } )
 			, mVisibleResource( width, chars )
 		{}
@@ -94,7 +94,7 @@ namespace renderer_test
 		std::string str( "# " );
 		str += GetInstance().GetTitleFunction()();
 		str += " #";
-		static TempRenderable tr0( 0, 0, str.length(), str.c_str() );
+		static TempRenderable tr0( 0, 0, static_cast<uint32_t>( str.length() ), str.c_str() );
 		rd.Add( &tr0 );
 
 		static TempRenderable tr1( 2, 2, 3u, "###" "# #" "###" );
