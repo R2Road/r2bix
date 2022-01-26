@@ -135,4 +135,92 @@ namespace window_input_test
 			return r2::eTestResult::RunTest;
 		};
 	}
+
+
+
+	r2::iTest::TitleFunc Listener::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Window Input : Listener";
+		};
+	}
+	r2::iTest::DoFunc Listener::GetDoFunction()
+	{
+		return []()->r2::eTestResult
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "[ESC] Exit" << r2::linefeed;
+
+			HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE );
+			DWORD last_console_mode;
+
+			{
+				//
+				// Backup
+				//
+				if( !GetConsoleMode( hStdInputHandle, &last_console_mode ) )
+				{
+					assert( false && "GetConsoleMode( hStdInputHandle, &last_console_mode )" );
+				}
+
+				//
+				// Setup
+				//
+				const DWORD new_console_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;
+				if( !SetConsoleMode( hStdInputHandle, new_console_mode ) )
+				{
+					assert( false && "SetConsoleMode( hStdInputHandle, new_console_mode )" );
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				INPUT_RECORD input_records[128];
+				DWORD current_record_count;
+				bool process = true;
+
+				do
+				{
+					if( !ReadConsoleInput(
+						hStdInputHandle				// input buffer handle
+						, input_records				// buffer to read into
+						, 128						// size of read buffer
+						, &current_record_count		// number of records read
+					) )
+					{
+						assert( false && "ReadConsoleInput" );
+					}
+
+					for( DWORD i = 0; current_record_count > i; ++i )
+					{
+						if( KEY_EVENT == input_records[i].EventType )
+						{
+							if( 27 == input_records[i].Event.KeyEvent.wVirtualKeyCode )
+							{
+								process = false;
+							}
+						}
+					}
+				} while( process );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
+				_getch();
+
+				//
+				// Rollback
+				//
+				SetConsoleMode( hStdInputHandle, last_console_mode );
+			}
+
+			std::cout << r2::split;
+
+			return r2::eTestResult::RunTest;
+		};
+	}
 }
