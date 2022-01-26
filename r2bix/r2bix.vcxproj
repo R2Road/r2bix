@@ -54,6 +54,7 @@
     <ClCompile Include="src\test\rect_test.cpp" />
     <ClCompile Include="src\test\renderer_test.cpp" />
     <ClCompile Include="src\test\visible_resource_test.cpp" />
+    <ClCompile Include="src\test\window_input_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\base\r2_Director.h" />
@@ -92,6 +93,7 @@
     <ClInclude Include="src\test\rect_test.h" />
     <ClInclude Include="src\test\renderer_test.h" />
     <ClInclude Include="src\test\visible_resource_test.h" />
+    <ClInclude Include="src\test\window_input_test.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
