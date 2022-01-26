@@ -15,7 +15,7 @@ namespace animation_test
 	class Renderable4AnimationTest : public r2::iRenderable
 	{
 	public:
-		Renderable4AnimationTest( const int x, const int y, const std::size_t width, const char* chars ) :
+		Renderable4AnimationTest( const int x, const int y, const uint32_t width, const char* chars ) :
 			mVisibleResource( width, chars )
 			, mRect( { x, y, mVisibleResource.GetWidth(), mVisibleResource.GetHeight() } )
 		{}
