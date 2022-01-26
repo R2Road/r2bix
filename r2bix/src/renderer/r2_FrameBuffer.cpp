@@ -6,7 +6,7 @@
 namespace r2
 {
 	FrameBuffer::FrameBuffer( const std::size_t width, const std::size_t height ) :
-		mGridIndexConverter( width + 1u, height )
+		mGridIndexConverter( static_cast<int>( width + 1u ), static_cast<int>( height ) )
 		, mChars(
 			( width * height )		// for buffer
 			+ ( 1u * height )		// for linefeed
@@ -19,8 +19,8 @@ namespace r2
 		//
 		// 4 Linefeed
 		//
-		const auto target_x = mGridIndexConverter.GetWidth() - 1u;
-		for( std::size_t y = 0u; mGridIndexConverter.GetHeight() > y; ++y )
+		const auto target_x = mGridIndexConverter.GetWidth() - 1;
+		for( int y = 0u; mGridIndexConverter.GetHeight() > y; ++y )
 		{
 			mChars[static_cast<std::size_t>( mGridIndexConverter.To_Linear( target_x, y ) )] = '\n';
 		}
