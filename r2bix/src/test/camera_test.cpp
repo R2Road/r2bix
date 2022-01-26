@@ -55,7 +55,7 @@ namespace camera_test
 	class TempRenderable : public r2::iRenderable
 	{
 	public:
-		TempRenderable( const int x, const int y, const std::size_t width, const char* chars ) :
+		TempRenderable( const int x, const int y, const uint32_t width, const char* chars ) :
 			mPoint( { x, y } )
 			, mVisibleResource( width, chars )
 		{}
@@ -109,19 +109,19 @@ namespace camera_test
 			std::string str( "# " );
 			str += GetInstance().GetTitleFunction()( );
 			str += " #";
-			static TempRenderable tr( 0, 0, str.length(), str.c_str() );
+			static TempRenderable tr( 0, 0, static_cast<uint32_t>( str.length() ), str.c_str() );
 			GetInstance().mRenderer.Add( &tr );
 		}
 
 		{
 			std::string_view str( "[ESC] Return to Root" );
-			static TempRenderable tr( 0, 1, str.length(), str.data() );
+			static TempRenderable tr( 0, 1, static_cast<uint32_t>( str.length() ), str.data() );
 			GetInstance().mRenderer.Add( &tr );
 		}
 
 		{
 			std::string_view str( "[W,A,S,D] Move Camera" );
-			static TempRenderable tr( 0, 2, str.length(), str.data() );
+			static TempRenderable tr( 0, 2, static_cast<uint32_t>( str.length() ), str.data() );
 			GetInstance().mRenderer.Add( &tr );
 		}
 
@@ -179,7 +179,7 @@ namespace camera_test
 	class Renderable4CameraTest : public r2::iRenderable
 	{
 	public:
-		Renderable4CameraTest( const int x, const int y, const std::size_t width, const char* chars ) :
+		Renderable4CameraTest( const int x, const int y, const uint32_t width, const char* chars ) :
 			mVisibleResource( width, chars )
 			, mRect( { x, y, mVisibleResource.GetWidth(), mVisibleResource.GetHeight() } )
 		{}
@@ -244,19 +244,19 @@ namespace camera_test
 			std::string str( "# " );
 			str += GetInstance().GetTitleFunction()( );
 			str += " #";
-			static Renderable4CameraTest tr( 0, 0, str.length(), str.c_str() );
+			static Renderable4CameraTest tr( 0, 0, static_cast<uint32_t>( str.length() ), str.c_str() );
 			GetInstance().mRenderer.Add( &tr );
 		}
 
 		{
 			std::string_view str( "[ESC] Return to Root" );
-			static Renderable4CameraTest tr( 0, 1, str.length(), str.data() );
+			static Renderable4CameraTest tr( 0, 1, static_cast<uint32_t>( str.length() ), str.data() );
 			GetInstance().mRenderer.Add( &tr );
 		}
 
 		{
 			std::string_view str( "[W,A,S,D] Move Camera" );
-			static Renderable4CameraTest tr( 0, 2, str.length(), str.data() );
+			static Renderable4CameraTest tr( 0, 2, static_cast<uint32_t>( str.length() ), str.data() );
 			GetInstance().mRenderer.Add( &tr );
 		}
 
