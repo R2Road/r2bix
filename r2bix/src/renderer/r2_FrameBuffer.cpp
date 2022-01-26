@@ -5,7 +5,7 @@
 
 namespace r2
 {
-	FrameBuffer::FrameBuffer( const std::size_t width, const std::size_t height ) :
+	FrameBuffer::FrameBuffer( const uint32_t width, const uint32_t height ) :
 		mGridIndexConverter( static_cast<int>( width + 1u ), static_cast<int>( height ) )
 		, mChars(
 			( width * height )		// for buffer
