@@ -98,45 +98,19 @@ namespace window_input_test
 
 					for( DWORD i = 0; current_record_count > i; ++i )
 					{
-						switch( input_records[i].EventType )
+						if( KEY_EVENT == input_records[i].EventType )
 						{
-						case KEY_EVENT: // keyboard input
 							std::cout << "================== KEY_EVENT ==================" << r2::linefeed;
-							std::cout << "input_records[i].EventType : " << input_records[i].EventType << r2::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.uChar.AsciiChar : " << input_records[i].Event.KeyEvent.uChar.AsciiChar << r2::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.bKeyDown : " << input_records[i].Event.KeyEvent.bKeyDown << r2::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.wVirtualKeyCode : " << input_records[i].Event.KeyEvent.wVirtualKeyCode << r2::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.wVirtualScanCode : " << input_records[i].Event.KeyEvent.wVirtualScanCode << r2::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.wRepeatCount : " << input_records[i].Event.KeyEvent.wRepeatCount << r2::linefeed;
-							std::cout << "input_records[i].Event.KeyEvent.dwControlKeyState : " << input_records[i].Event.KeyEvent.dwControlKeyState << r2::linefeed;
+							std::cout << "EventType : " << input_records[i].EventType << r2::linefeed;
+							std::cout << "Event.KeyEvent.uChar.AsciiChar : " << input_records[i].Event.KeyEvent.uChar.AsciiChar << r2::linefeed;
+							std::cout << "Event.KeyEvent.bKeyDown : " << input_records[i].Event.KeyEvent.bKeyDown << r2::linefeed;
+							std::cout << "Event.KeyEvent.wVirtualKeyCode : " << input_records[i].Event.KeyEvent.wVirtualKeyCode << r2::linefeed;
 							std::cout << "===============================================" << r2::linefeed;
 
 							if( 27 == input_records[i].Event.KeyEvent.wVirtualKeyCode )
 							{
 								process = false;
 							}
-
-							break;
-
-						case MOUSE_EVENT: // mouse input
-							std::cout << "MOUSE_EVENT" << r2::linefeed;
-							break;
-
-						case WINDOW_BUFFER_SIZE_EVENT: // scrn buf. resizing
-							std::cout << "WINDOW_BUFFER_SIZE_EVENT" << r2::linefeed;
-							break;
-
-						case FOCUS_EVENT:  // disregard focus events
-							std::cout << "FOCUS_EVENT" << r2::linefeed;
-							break;
-
-						case MENU_EVENT:   // disregard menu events
-							std::cout << "MENU_EVENT" << r2::linefeed;
-							break;
-
-						default:
-							std::cout << "Unknown event type" << r2::linefeed;
-							break;
 						}
 					}
 				} while( process );
