@@ -48,7 +48,7 @@ namespace window_input_test
 				}
 
 				std::cout << r2::tab << "+ Backup Console Mode" << r2::linefeed2;
-				std::cout << r2::tab2 << "GetConsoleMode( hStdInputHandle, &last_console_mode )" << r2::linefeed2;
+				std::cout << r2::tab2 << "GetConsoleMode( hStdInputHandle, &last_console_mode )" << r2::linefeed;
 
 				std::cout << r2::linefeed;
 				ShowCurrentConsoleMode();
@@ -101,7 +101,6 @@ namespace window_input_test
 						if( KEY_EVENT == input_records[i].EventType )
 						{
 							std::cout << "================== KEY_EVENT ==================" << r2::linefeed;
-							std::cout << "EventType : " << input_records[i].EventType << r2::linefeed;
 							std::cout << "Event.KeyEvent.uChar.AsciiChar : " << input_records[i].Event.KeyEvent.uChar.AsciiChar << r2::linefeed;
 							std::cout << "Event.KeyEvent.bKeyDown : " << input_records[i].Event.KeyEvent.bKeyDown << r2::linefeed;
 							std::cout << "Event.KeyEvent.wVirtualKeyCode : " << input_records[i].Event.KeyEvent.wVirtualKeyCode << r2::linefeed;
