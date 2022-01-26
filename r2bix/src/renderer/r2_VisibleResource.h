@@ -16,11 +16,11 @@ namespace r2
 		using ConstIteratorT = typename ContainerT::const_iterator;
 
 		explicit VisibleResource( const std::string_view str );
-		explicit VisibleResource( const std::size_t width, const std::string_view str );
-		explicit VisibleResource( const std::size_t width, const std::size_t height );
-		explicit VisibleResource( const std::size_t width, const std::size_t height, const char fill_char );
-		explicit VisibleResource( const std::size_t width, const std::size_t height, const std::string_view str );
-		explicit VisibleResource( const std::size_t width, const std::size_t height, const char fill_char, const std::string_view str );
+		explicit VisibleResource( const uint32_t width, const std::string_view str );
+		explicit VisibleResource( const uint32_t width, const uint32_t height );
+		explicit VisibleResource( const uint32_t width, const uint32_t height, const char fill_char );
+		explicit VisibleResource( const uint32_t width, const uint32_t height, const std::string_view str );
+		explicit VisibleResource( const uint32_t width, const uint32_t height, const char fill_char, const std::string_view str );
 
 	public:
 		//
@@ -40,15 +40,15 @@ namespace r2
 
 		const r2::RectInt& GetVisibleRect() const { return mVisibleRect; }
 		const ContainerT& GetContainer() const { return mChars; }
-		ValueT Get( const std::size_t x, const std::size_t y ) const;
-		std::string_view GetLine( const std::size_t y ) const;
+		ValueT Get( const uint32_t x, const uint32_t y ) const;
+		std::string_view GetLine( const uint32_t y ) const;
 
 
 		//
 		//
 		//
 		void FillAll( const char c );
-		void Fill( std::size_t x, std::size_t y, const char c );
+		void Fill( const uint32_t x, const uint32_t y, const char c );
 		void SetVisibleRect( const r2::RectInt& rect ) { mVisibleRect = rect; }
 
 	private:
