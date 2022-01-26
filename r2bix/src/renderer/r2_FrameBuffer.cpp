@@ -11,7 +11,7 @@ namespace r2
 			( width * height )		// for buffer
 			+ ( 1u * height )		// for linefeed
 			+ 1u					// for \0
-			, 32					// Character : Space
+			, 32					// Fill : Character : Space
 		)
 	{
 		assert( 0u < width && 0u < height && "FrameBuffer::FrameBuffer" );
