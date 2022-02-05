@@ -30,7 +30,7 @@ namespace r2
 	{
 		if( !mDescriptionString.empty() )
 		{
-			std::cout << "+ Message" << r2::linefeed << r2::linefeed;
+			std::cout << "+ Message" << r2::linefeed2;
 			
 			std::cout << mDescriptionString << r2::linefeed;
 
@@ -40,7 +40,7 @@ namespace r2
 
 	void Menu::ShowMenu() const
 	{
-		std::cout << "+ Menu" << r2::linefeed << r2::linefeed;
+		std::cout << "+ Menu" << r2::linefeed2;
 
 		for( const auto t : mTests )
 		{
