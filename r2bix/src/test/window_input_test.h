@@ -11,11 +11,4 @@ namespace window_input_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-
-	class Listener : public r2::iTest, public r2::SingleTon<Listener>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
 }
