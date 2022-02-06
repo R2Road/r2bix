@@ -19,6 +19,9 @@
     <Filter Include="research">
       <UniqueIdentifier>{0816d7e8-1eea-40da-b028-99c353a97dcb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="input">
+      <UniqueIdentifier>{59856341-1623-4080-9a5d-44841072825a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -109,6 +112,9 @@
     </ClCompile>
     <ClCompile Include="src\test\window_input_test.cpp">
       <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\r2_KeyboardInputCollector.cpp">
+      <Filter>input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="src\test\window_input_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\r2_KeyboardInputCollector.h">
+      <Filter>input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

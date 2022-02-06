@@ -5,6 +5,8 @@
 
 #include "base/r2_eTestResult.h"
 
+#include "input/r2_KeyboardInputCollector.h"
+
 namespace window_input_test
 {
 	r2::iTest::TitleFunc TestKeyboardInputCollector::GetTitleFunction() const
@@ -20,39 +22,20 @@ namespace window_input_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
-			std::cout << "[SPACE] Do" << r2::linefeed;
 
-			std::cout << r2::split;
-
-			std::cout << r2::tab << "+ Key Info : VK_SPACE" << r2::linefeed << r2::linefeed3;
+			r2::KeyboardInputCollector keyboard_input_collector;
 
 			std::cout << r2::split;
 
 			{
-				int key_value = 0;
-
 				while( 1 )
 				{
-					//
-					// Process
-					//
-					key_value = GetAsyncKeyState( VK_SPACE );
-
-					//
-					// View
-					//
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 9 } );
-					printf_s(
-						"\t\t" "Key State : %c \n"
-						"\t\t" "Key Value : hex : %8x \n"
-						, ( key_value & 0x8000 ? 'O' : 'X' )
-						, key_value
-					);
+					keyboard_input_collector.Collect();
 
 					//
 					// ESC
 					//
-					if( GetKeyState( VK_ESCAPE ) & 0x8000 )
+					if( keyboard_input_collector.IsPressed( VK_ESCAPE ) )
 					{
 						break;
 					}
