@@ -2,9 +2,9 @@
 
 #include <windows.h>
 
-#include "input/r2_KeyboardInputCollector.h"
+#include "input/r2_input_KeyboardInputCollector.h"
 
-namespace r2
+namespace r2_input
 {
 	KeyboardInputCollector::KeyboardInputCollector() :
 		mObservationKeyList( { VK_ESCAPE } )
@@ -14,7 +14,7 @@ namespace r2
 	//
 	// Getter
 	//
-	bool KeyboardInputCollector::IsPressed( const r2_input::KeyCodeTypeT key_code ) const
+	bool KeyboardInputCollector::IsPressed( const KeyCodeTypeT key_code ) const
 	{
 		return mKeyStatusList[key_code];
 	}

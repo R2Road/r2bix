@@ -113,10 +113,10 @@
     <ClCompile Include="src\test\window_input_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\input\r2_KeyboardInputCollector.cpp">
+    <ClCompile Include="src\input\r2_input_Constant.cpp">
       <Filter>input</Filter>
     </ClCompile>
-    <ClCompile Include="src\input\r2_input_Constant.cpp">
+    <ClCompile Include="src\input\r2_input_KeyboardInputCollector.cpp">
       <Filter>input</Filter>
     </ClCompile>
   </ItemGroup>
@@ -230,10 +230,10 @@
     <ClInclude Include="src\test\window_input_test.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\input\r2_KeyboardInputCollector.h">
+    <ClInclude Include="src\input\r2_input_Constant.h">
       <Filter>input</Filter>
     </ClInclude>
-    <ClInclude Include="src\input\r2_input_Constant.h">
+    <ClInclude Include="src\input\r2_input_KeyboardInputCollector.h">
       <Filter>input</Filter>
     </ClInclude>
   </ItemGroup>

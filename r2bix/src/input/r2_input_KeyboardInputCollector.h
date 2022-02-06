@@ -4,7 +4,7 @@
 
 #include "r2_input_Constant.h"
 
-namespace r2
+namespace r2_input
 {
 	class KeyboardInputCollector
 	{
@@ -14,7 +14,7 @@ namespace r2
 		//
 		// Getter
 		//
-		bool IsPressed( const r2_input::KeyCodeTypeT key_code ) const;
+		bool IsPressed( const KeyCodeTypeT key_code ) const;
 
 		void Collect();
 

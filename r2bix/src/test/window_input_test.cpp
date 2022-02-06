@@ -5,7 +5,7 @@
 
 #include "base/r2_eTestResult.h"
 
-#include "input/r2_KeyboardInputCollector.h"
+#include "input/r2_input_KeyboardInputCollector.h"
 
 namespace window_input_test
 {
@@ -23,7 +23,7 @@ namespace window_input_test
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
 
-			r2::KeyboardInputCollector keyboard_input_collector;
+			r2_input::KeyboardInputCollector keyboard_input_collector;
 
 			std::cout << r2::split;
 
