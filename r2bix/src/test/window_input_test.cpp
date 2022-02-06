@@ -28,14 +28,14 @@ namespace window_input_test
 		std::cout << r2::tab << "Current Console Mode : " << temp_console_mode << r2::linefeed;
 	}
 
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2::iTest::TitleFunc TestKeyboardInputCollector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Window Input : Basic";
+			return "Keyboard Input Collector";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2::iTest::DoFunc TestKeyboardInputCollector::GetDoFunction()
 	{
 		return []()->r2::eTestResult
 		{

@@ -20,7 +20,7 @@ namespace r2
 
 		{
 			ret->AddChild( '1', key_test::Basic::GetInstance() );
-			ret->AddChild( '2', window_input_test::Basic::GetInstance() );
+			ret->AddChild( '2', window_input_test::TestKeyboardInputCollector::GetInstance() );
 
 
 			ret->AddSplit();

@@ -5,7 +5,7 @@
 
 namespace window_input_test
 {
-	class Basic : public r2::iTest, public r2::SingleTon<Basic>
+	class TestKeyboardInputCollector : public r2::iTest, public r2::SingleTon<TestKeyboardInputCollector>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
