@@ -1,33 +1,12 @@
 #include "pch.h"
 #include "window_input_test.h"
 
-#include <assert.h>
-#include <conio.h> // _kbhit(), _getch()
-#include <list>
 #include <windows.h>
 
 #include "base/r2_eTestResult.h"
 
-namespace
-{
-	struct KBDInputInfo
-	{
-		unsigned short key_code = 0u;
-		bool bPressed = false;
-	};
-	using KBDInputInfoContainerT = std::list<KBDInputInfo>;
-}
-
 namespace window_input_test
 {
-	void ShowCurrentConsoleMode()
-	{
-		DWORD temp_console_mode;
-
-		GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &temp_console_mode );
-		std::cout << r2::tab << "Current Console Mode : " << temp_console_mode << r2::linefeed;
-	}
-
 	r2::iTest::TitleFunc TestKeyboardInputCollector::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -40,108 +19,45 @@ namespace window_input_test
 		return []()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "[ESC] Exit" << r2::linefeed;
+			std::cout << "[SPACE] Do" << r2::linefeed;
 
 			std::cout << r2::split;
 
-			HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE );
-			DWORD last_console_mode;
-
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "HANDLE hStdInputHandle = GetStdHandle( STD_INPUT_HANDLE );" << r2::linefeed;
-			std::cout << r2::tab2 << "DWORD last_console_mode;" << r2::linefeed;
+			std::cout << r2::tab << "+ Key Info : VK_SPACE" << r2::linefeed << r2::linefeed3;
 
 			std::cout << r2::split;
 
 			{
-				if( !GetConsoleMode( hStdInputHandle, &last_console_mode ) )
+				int key_value = 0;
+
+				while( 1 )
 				{
-					assert( false && "GetConsoleMode( hStdInputHandle, &last_console_mode )" );
-				}
+					//
+					// Process
+					//
+					key_value = GetAsyncKeyState( VK_SPACE );
 
-				std::cout << r2::tab << "+ Backup Console Mode" << r2::linefeed2;
-				std::cout << r2::tab2 << "GetConsoleMode( hStdInputHandle, &last_console_mode )" << r2::linefeed;
+					//
+					// View
+					//
+					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 9 } );
+					printf_s(
+						"\t\t" "Key State : %c \n"
+						"\t\t" "Key Value : hex : %8x \n"
+						, ( key_value & 0x8000 ? 'O' : 'X' )
+						, key_value
+					);
 
-				std::cout << r2::linefeed;
-				ShowCurrentConsoleMode();
-			}
-
-			std::cout << r2::split;
-
-			{
-				const DWORD new_console_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;
-				if( !SetConsoleMode( hStdInputHandle, new_console_mode ) )
-				{
-					assert( false && "SetConsoleMode( hStdInputHandle, new_console_mode )" );
-				}
-
-				std::cout << r2::tab << "+ Change Console Mode" << r2::linefeed2;
-				std::cout << r2::tab2 << "const DWORD new_console_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;" << r2::linefeed;
-				std::cout << r2::tab2 << "SetConsoleMode( hStdInputHandle, new_console_mode )" << r2::linefeed;
-				std::cout << r2::tab3 << "> " << new_console_mode << r2::linefeed;
-
-				std::cout << r2::linefeed;
-				ShowCurrentConsoleMode();
-			}
-
-			std::cout << r2::split;
-
-			{
-				//
-				// # REF
-				// https://docs.microsoft.com/en-us/windows/console/reading-input-buffer-events?redirectedfrom=MSDN
-				//
-
-				INPUT_RECORD input_records[128];
-				DWORD current_record_count;
-				bool process = true;
-
-				do
-				{
-					if( !ReadConsoleInput(
-						hStdInputHandle				// input buffer handle
-						, input_records				// buffer to read into
-						, 128						// size of read buffer
-						, &current_record_count		// number of records read
-					) )
+					//
+					// ESC
+					//
+					if( GetKeyState( VK_ESCAPE ) & 0x8000 )
 					{
-						assert( false && "ReadConsoleInput" );
+						break;
 					}
-
-					for( DWORD i = 0; current_record_count > i; ++i )
-					{
-						if( KEY_EVENT == input_records[i].EventType )
-						{
-							std::cout << "================== KEY_EVENT ==================" << r2::linefeed;
-							std::cout << "Event.KeyEvent.uChar.AsciiChar : " << input_records[i].Event.KeyEvent.uChar.AsciiChar << r2::linefeed;
-							std::cout << "Event.KeyEvent.bKeyDown : " << input_records[i].Event.KeyEvent.bKeyDown << r2::linefeed;
-							std::cout << "Event.KeyEvent.wVirtualKeyCode : " << input_records[i].Event.KeyEvent.wVirtualKeyCode << r2::linefeed;
-							std::cout << "===============================================" << r2::linefeed;
-
-							if( 27 == input_records[i].Event.KeyEvent.wVirtualKeyCode )
-							{
-								process = false;
-							}
-						}
-					}
-				} while( process );
+				}
 			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "Press Any Key : Rollback" << r2::linefeed;
-				_getch();
-
-				//
-				// Rollback
-				//
-				SetConsoleMode( hStdInputHandle, last_console_mode );
-
-				std::cout << r2::linefeed;
-				ShowCurrentConsoleMode();
-			}
-
-			std::cout << r2::split;
 
 			return r2::eTestResult::RunTest;
 		};
