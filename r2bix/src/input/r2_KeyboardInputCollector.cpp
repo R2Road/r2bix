@@ -14,7 +14,7 @@ namespace r2
 	//
 	// Getter
 	//
-	bool KeyboardInputCollector::IsPressed( const int key_code ) const
+	bool KeyboardInputCollector::IsPressed( const KeyCodeTypeT key_code ) const
 	{
 		return mKeyStatusList[key_code];
 	}

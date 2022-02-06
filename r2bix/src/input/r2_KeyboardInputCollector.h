@@ -7,12 +7,14 @@ namespace r2
 	class KeyboardInputCollector
 	{
 	public:
+		using KeyCodeTypeT = uint8_t;
+
 		KeyboardInputCollector();
 
 		//
 		// Getter
 		//
-		bool IsPressed( const int key_code ) const;
+		bool IsPressed( const KeyCodeTypeT key_code ) const;
 
 		void Collect();
 
