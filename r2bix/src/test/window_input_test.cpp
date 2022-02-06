@@ -6,6 +6,7 @@
 #include "base/r2_eTestResult.h"
 
 #include "input/r2_input_KeyboardInputCollector.h"
+#include "input/r2_input_KeyboardInputListener.h"
 
 namespace window_input_test
 {
@@ -24,6 +25,9 @@ namespace window_input_test
 			std::cout << "[ESC] Exit" << r2::linefeed;
 
 			r2_input::KeyboardInputCollector keyboard_input_collector;
+			r2_input::KeyboardInputListener keyboard_input_listener;
+
+			keyboard_input_collector.AddListener( &keyboard_input_listener );
 
 			std::cout << r2::split;
 
@@ -35,7 +39,7 @@ namespace window_input_test
 					//
 					// ESC
 					//
-					if( keyboard_input_collector.IsPressed( VK_ESCAPE ) )
+					if( keyboard_input_listener.IsPressed( VK_ESCAPE ) )
 					{
 						break;
 					}

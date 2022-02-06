@@ -3,29 +3,26 @@
 
 #include <numeric>
 
+#include "r2_input_KeyboardInputListener.h"
+
 namespace r2_input
 {
-	KeyboardInputCollector::KeyboardInputCollector() :
-		mObservationKeyList( { 27 } )
-		, mKeyStatusList( std::numeric_limits<KeyCodeTypeT>::max(), 0 )
+	KeyboardInputCollector::KeyboardInputCollector() : mKeyboardInputListener( nullptr )
 	{}
-
-	//
-	// Getter
-	//
-	bool KeyboardInputCollector::IsPressed( const KeyCodeTypeT key_code ) const
-	{
-		return mKeyStatusList[key_code];
-	}
 
 	void KeyboardInputCollector::Collect()
 	{
+		if( nullptr == mKeyboardInputListener )
+		{
+			return;
+		}
+
 		int key_value = 0;
 
-		for( const auto k : mObservationKeyList )
+		for( const auto k : mKeyboardInputListener->mObservationKeyList )
 		{
 			key_value = GetKeyState( k );
-			mKeyStatusList[k] = key_value & 0x8000;
+			mKeyboardInputListener->mKeyStatusList[k] = key_value & 0x8000;
 		}
 	}
 }
