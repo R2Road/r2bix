@@ -116,6 +116,9 @@
     <ClCompile Include="src\input\r2_KeyboardInputCollector.cpp">
       <Filter>input</Filter>
     </ClCompile>
+    <ClCompile Include="src\input\r2_input_Constant.cpp">
+      <Filter>input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -228,6 +231,9 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\input\r2_KeyboardInputCollector.h">
+      <Filter>input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\r2_input_Constant.h">
       <Filter>input</Filter>
     </ClInclude>
   </ItemGroup>

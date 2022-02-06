@@ -2,19 +2,19 @@
 
 #include <vector>
 
+#include "r2_input_Constant.h"
+
 namespace r2
 {
 	class KeyboardInputCollector
 	{
 	public:
-		using KeyCodeTypeT = uint8_t;
-
 		KeyboardInputCollector();
 
 		//
 		// Getter
 		//
-		bool IsPressed( const KeyCodeTypeT key_code ) const;
+		bool IsPressed( const r2_input::KeyCodeTypeT key_code ) const;
 
 		void Collect();
 
