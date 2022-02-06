@@ -7,7 +7,7 @@ namespace r2_input
 {
 	KeyboardInputCollector::KeyboardInputCollector() :
 		mObservationKeyList( { 27 } )
-		, mKeyStatusList( 256, 0 )
+		, mKeyStatusList( std::numeric_limits<KeyCodeTypeT>::max(), 0 )
 	{}
 
 	//
