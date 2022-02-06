@@ -19,10 +19,10 @@ namespace r2_input
 
 		int key_value = 0;
 
-		for( const auto k : mKeyboardInputListener->mObservationKeyList )
+		for( int i = 0, end = mKeyboardInputListener->mObservationKeyList.size(); end > i; ++i )
 		{
-			key_value = GetKeyState( k );
-			mKeyboardInputListener->mKeyStatusList[k] = key_value & 0x8000;
+			key_value = GetKeyState( mKeyboardInputListener->mObservationKeyList[i] );
+			mKeyboardInputListener->mKeyStatusList[i] = key_value & 0x8000;
 		}
 	}
 }

@@ -14,9 +14,9 @@ namespace r2_input
 		//
 		// Getter
 		//
-		bool IsPressed( const KeyCodeTypeT key_code ) const
+		bool IsPressed( const std::size_t key_index ) const
 		{
-			return mKeyStatusList[key_code];
+			return mKeyStatusList[key_index];
 		}
 
 		std::vector<KeyCodeTypeT> mObservationKeyList;

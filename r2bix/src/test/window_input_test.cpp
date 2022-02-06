@@ -39,7 +39,7 @@ namespace window_input_test
 					//
 					// ESC
 					//
-					if( keyboard_input_listener.IsPressed( VK_ESCAPE ) )
+					if( keyboard_input_listener.IsPressed( 0 ) )
 					{
 						break;
 					}
