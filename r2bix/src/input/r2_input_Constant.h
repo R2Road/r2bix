@@ -5,4 +5,6 @@
 namespace r2_input
 {
 	using KeyCodeTypeT = uint8_t;
+
+	int GetKeyState( const KeyCodeTypeT key_code );
 }

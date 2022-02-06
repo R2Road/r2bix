@@ -1,13 +1,12 @@
 #include "pch.h"
-
-#include <windows.h>
-
 #include "input/r2_input_KeyboardInputCollector.h"
+
+#include <numeric>
 
 namespace r2_input
 {
 	KeyboardInputCollector::KeyboardInputCollector() :
-		mObservationKeyList( { VK_ESCAPE } )
+		mObservationKeyList( { 27 } )
 		, mKeyStatusList( 256, 0 )
 	{}
 
@@ -25,7 +24,7 @@ namespace r2_input
 
 		for( const auto k : mObservationKeyList )
 		{
-			key_value = GetAsyncKeyState( k );
+			key_value = GetKeyState( k );
 			mKeyStatusList[k] = key_value & 0x8000;
 		}
 	}
