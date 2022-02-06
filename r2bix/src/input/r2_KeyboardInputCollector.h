@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 namespace r2
 {
 	class KeyboardInputCollector
@@ -14,6 +16,8 @@ namespace r2
 
 		void Collect();
 
-		bool mbPressed;
+	private:
+		std::vector<int> mObservationKeyList;
+		std::vector<int> mKeyStatusList;
 	};
 }
