@@ -19,7 +19,7 @@ namespace r2_input
 		void Collect();
 
 	private:
-		std::vector<int> mObservationKeyList;
+		std::vector<KeyCodeTypeT> mObservationKeyList;
 		std::vector<int> mKeyStatusList;
 	};
 }
