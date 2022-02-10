@@ -1,12 +1,15 @@
 #include "pch.h"
 #include "window_input_test.h"
 
+#include <algorithm>
 #include <windows.h>
 
 #include "base/r2_eTestResult.h"
 
 #include "input/r2_input_KeyboardInputCollector.h"
 #include "input/r2_input_KeyboardInputListener.h"
+
+#include "r2/r2_RectInt.h"
 
 namespace window_input_test
 {
@@ -33,7 +36,8 @@ namespace window_input_test
 			std::cout << r2::split;
 
 			{
-				COORD pos = { 10, 11 };
+				r2::RectInt stage_area( 0, 6, 20, 20 );
+				COORD pos = { 10, 10 };
 
 				while( 1 )
 				{
@@ -66,6 +70,11 @@ namespace window_input_test
 					if( keyboard_input_listener.IsPushed( 3 ) )
 					{
 						++pos.Y;
+					}
+					if( !stage_area.ContainsPoint( pos.X, pos.Y ) )
+					{
+						pos.X = std::clamp( pos.X, static_cast<short>( stage_area.GetMinX() ), static_cast<short>( stage_area.GetMaxX() ) );
+						pos.Y = std::clamp( pos.Y, static_cast<short>( stage_area.GetMinY() ), static_cast<short>( stage_area.GetMaxY() ) );
 					}
 
 					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
