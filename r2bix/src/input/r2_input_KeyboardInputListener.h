@@ -16,10 +16,10 @@ namespace r2_input
 		//
 		bool IsPressed( const std::size_t key_index ) const
 		{
-			return mKeyStatusList[key_index];
+			return mKeyFlags[key_index];
 		}
 
 		std::vector<KeyCodeTypeT> mObservationKeyList;
-		std::vector<int> mKeyStatusList;
+		std::vector<bool> mKeyFlags;
 	};
 }

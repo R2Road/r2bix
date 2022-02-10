@@ -22,7 +22,7 @@ namespace r2_input
 		for( int i = 0, end = mKeyboardInputListener->mObservationKeyList.size(); end > i; ++i )
 		{
 			key_value = GetKeyState( mKeyboardInputListener->mObservationKeyList[i] );
-			mKeyboardInputListener->mKeyStatusList[i] = key_value & 0x8000;
+			mKeyboardInputListener->mKeyFlags[i] = key_value & 0x8000;
 		}
 	}
 }

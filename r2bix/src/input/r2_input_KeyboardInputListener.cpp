@@ -11,6 +11,6 @@ namespace r2_input
 			, 0x53		// s
 			, 0x57		// w
 		} )
-		, mKeyStatusList( mObservationKeyList.size(), 0 )
+		, mKeyFlags( mObservationKeyList.size(), 0 )
 	{}
 }
