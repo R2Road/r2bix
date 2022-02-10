@@ -38,8 +38,8 @@ namespace window_input_test
 
 			{
 				r2::FPSTimer fps_timer( 60u );
-				r2::RectInt stage_area( 0, 6, 20, 20 );
-				COORD pos = { 10, 10 };
+				r2::RectInt stage_area( 6, 10, 50, 30 );
+				COORD pos = { 20, 20 };
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
 				std::cout << '@';
