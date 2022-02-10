@@ -65,9 +65,6 @@
     <ClCompile Include="src\renderer\r2_Camera.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\renderer\r2_FrameManager.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
     <ClCompile Include="src\renderer\r2_GridIndexConverter.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
@@ -121,6 +118,9 @@
     </ClCompile>
     <ClCompile Include="src\input\r2_input_KeyboardInputListener.cpp">
       <Filter>input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\r2_FPSTimer.cpp">
+      <Filter>renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,9 +185,6 @@
     <ClInclude Include="src\renderer\r2_Camera.h">
       <Filter>renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\renderer\r2_FrameManager.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
     <ClInclude Include="src\renderer\r2_GridIndexConverter.h">
       <Filter>renderer</Filter>
     </ClInclude>
@@ -241,6 +238,9 @@
     </ClInclude>
     <ClInclude Include="src\input\r2_input_KeyboardInputListener.h">
       <Filter>input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\r2_FPSTimer.h">
+      <Filter>renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

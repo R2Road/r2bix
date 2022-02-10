@@ -4,10 +4,10 @@
 
 namespace r2
 {
-	class FrameManager
+	class FPSTimer
 	{
 	public:
-		FrameManager( const std::size_t frame_count = 30u );
+		FPSTimer( const std::size_t frame_count = 30u );
 
 		void SetFPS( const std::size_t frame_count );
 

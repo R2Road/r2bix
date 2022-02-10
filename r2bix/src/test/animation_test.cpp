@@ -6,7 +6,7 @@
 
 #include "base/r2_eTestResult.h"
 
-#include "renderer/r2_FrameManager.h"
+#include "renderer/r2_FPSTimer.h"
 #include "renderer/r2_iRenderable.h"
 #include "renderer/r2_VisibleResource.h"
 
@@ -91,7 +91,7 @@ namespace animation_test
 
 		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
 		{
-			r2::FrameManager frame_manager( 30u );
+			r2::FPSTimer frame_manager( 30u );
 			frame_manager.Reset();
 
 			int x = 0;
