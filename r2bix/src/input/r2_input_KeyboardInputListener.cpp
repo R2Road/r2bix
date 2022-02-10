@@ -12,5 +12,33 @@ namespace r2_input
 			, 0x57		// w
 		} )
 		, mKeyFlags( mObservationKeyList.size(), 0 )
+		, mKeyStatusContainer( mObservationKeyList.size(), eKeyStatus::Release )
 	{}
+
+	void KeyboardInputListener::Update()
+	{
+		for( std::size_t i = 0u; mKeyFlags.size() > i; ++i )
+		{
+			if( mKeyFlags[i] )
+			{
+				switch( mKeyStatusContainer[i] )
+				{
+				case eKeyStatus::Push:
+					mKeyStatusContainer[i] = eKeyStatus::Pressed;
+					break;
+
+				//case eKeyStatus::Pressed:
+				//	break;
+
+				case eKeyStatus::Release:
+					mKeyStatusContainer[i] = eKeyStatus::Push;
+					break;
+				}
+			}
+			else
+			{
+				mKeyStatusContainer[i] = eKeyStatus::Release;
+			}
+		}
+	}
 }
