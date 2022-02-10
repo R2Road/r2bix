@@ -55,19 +55,19 @@ namespace window_input_test
 					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
 					std::cout << ' ';
 
-					if( keyboard_input_listener.IsPushed( 1 ) )
+					if( keyboard_input_listener.HasInput( 1 ) )
 					{
 						--pos.X;
 					}
-					if( keyboard_input_listener.IsPushed( 2 ) )
+					if( keyboard_input_listener.HasInput( 2 ) )
 					{
 						++pos.X;
 					}
-					if( keyboard_input_listener.IsPushed( 4 ) )
+					if( keyboard_input_listener.HasInput( 4 ) )
 					{
 						--pos.Y;
 					}
-					if( keyboard_input_listener.IsPushed( 3 ) )
+					if( keyboard_input_listener.HasInput( 3 ) )
 					{
 						++pos.Y;
 					}

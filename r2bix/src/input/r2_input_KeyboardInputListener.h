@@ -11,9 +11,9 @@ namespace r2_input
 	public:
 		enum class eKeyStatus
 		{
+			Release,
 			Push,
 			Pressed,
-			Release,
 		};
 
 		KeyboardInputListener();
@@ -24,6 +24,10 @@ namespace r2_input
 		bool IsPushed( const std::size_t key_index ) const
 		{
 			return ( eKeyStatus::Push == mKeyStatusContainer[key_index] );
+		}
+		bool HasInput( const std::size_t key_index ) const
+		{
+			return ( eKeyStatus::Release < mKeyStatusContainer[key_index] );
 		}
 
 		//
