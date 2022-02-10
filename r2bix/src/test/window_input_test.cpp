@@ -10,6 +10,7 @@
 #include "input/r2_input_KeyboardInputListener.h"
 
 #include "r2/r2_RectInt.h"
+#include "renderer/r2_FPSTimer.h"
 
 namespace window_input_test
 {
@@ -36,8 +37,12 @@ namespace window_input_test
 			std::cout << r2::split;
 
 			{
+				r2::FPSTimer fps_timer( 60u );
 				r2::RectInt stage_area( 0, 6, 20, 20 );
 				COORD pos = { 10, 10 };
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
+				std::cout << '@';
 
 				while( 1 )
 				{
@@ -52,33 +57,36 @@ namespace window_input_test
 						break;
 					}
 
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
-					std::cout << ' ';
+					if( fps_timer.Update() )
+					{
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
+						std::cout << ' ';
 
-					if( keyboard_input_listener.HasInput( 1 ) )
-					{
-						--pos.X;
-					}
-					if( keyboard_input_listener.HasInput( 2 ) )
-					{
-						++pos.X;
-					}
-					if( keyboard_input_listener.HasInput( 4 ) )
-					{
-						--pos.Y;
-					}
-					if( keyboard_input_listener.HasInput( 3 ) )
-					{
-						++pos.Y;
-					}
-					if( !stage_area.ContainsPoint( pos.X, pos.Y ) )
-					{
-						pos.X = std::clamp( pos.X, static_cast<short>( stage_area.GetMinX() ), static_cast<short>( stage_area.GetMaxX() ) );
-						pos.Y = std::clamp( pos.Y, static_cast<short>( stage_area.GetMinY() ), static_cast<short>( stage_area.GetMaxY() ) );
-					}
+						if( keyboard_input_listener.HasInput( 1 ) )
+						{
+							--pos.X;
+						}
+						if( keyboard_input_listener.HasInput( 2 ) )
+						{
+							++pos.X;
+						}
+						if( keyboard_input_listener.HasInput( 4 ) )
+						{
+							--pos.Y;
+						}
+						if( keyboard_input_listener.HasInput( 3 ) )
+						{
+							++pos.Y;
+						}
+						if( !stage_area.ContainsPoint( pos.X, pos.Y ) )
+						{
+							pos.X = std::clamp( pos.X, static_cast<short>( stage_area.GetMinX() ), static_cast<short>( stage_area.GetMaxX() ) );
+							pos.Y = std::clamp( pos.Y, static_cast<short>( stage_area.GetMinY() ), static_cast<short>( stage_area.GetMaxY() ) );
+						}
 
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
-					std::cout << '@';
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
+						std::cout << '@';
+					}
 				}
 			}
 
