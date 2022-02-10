@@ -6,7 +6,7 @@
 
 namespace r2_input
 {
-	struct KeyboardInputListener
+	class KeyboardInputListener
 	{
 	public:
 		KeyboardInputListener();
