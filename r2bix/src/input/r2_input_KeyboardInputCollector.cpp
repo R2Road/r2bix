@@ -19,7 +19,7 @@ namespace r2_input
 
 		int key_value = 0;
 
-		for( int i = 0, end = mKeyboardInputListener->mObservationKeyList.size(); end > i; ++i )
+		for( std::size_t i = 0, end = mKeyboardInputListener->mObservationKeyList.size(); end > i; ++i )
 		{
 			key_value = GetKeyState( mKeyboardInputListener->mObservationKeyList[i] );
 			mKeyboardInputListener->mKeyFlags[i] = key_value & 0x8000;
