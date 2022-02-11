@@ -3,7 +3,7 @@
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
-#include "r2_RootMenu.h"
+#include "r2test_RootMenu.h"
 
 #include "test/key_test.h"
 #include "test/window_input_test.h"

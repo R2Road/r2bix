@@ -125,10 +125,10 @@
     <ClCompile Include="src\menu\test\r2_RendererMenu.cpp">
       <Filter>menu\test</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\test\r2_RootMenu.cpp">
+    <ClCompile Include="src\menu\test\r2_VisibleResourceMenu.cpp">
       <Filter>menu\test</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\test\r2_VisibleResourceMenu.cpp">
+    <ClCompile Include="src\menu\test\r2test_RootMenu.cpp">
       <Filter>menu\test</Filter>
     </ClCompile>
   </ItemGroup>
@@ -248,10 +248,10 @@
     <ClInclude Include="src\menu\test\r2_RendererMenu.h">
       <Filter>menu\test</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\test\r2_RootMenu.h">
+    <ClInclude Include="src\menu\test\r2_VisibleResourceMenu.h">
       <Filter>menu\test</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\test\r2_VisibleResourceMenu.h">
+    <ClInclude Include="src\menu\test\r2test_RootMenu.h">
       <Filter>menu\test</Filter>
     </ClInclude>
   </ItemGroup>
