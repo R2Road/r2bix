@@ -16,7 +16,7 @@ namespace r2_input
 			Pressed,
 		};
 
-		KeyboardInputListener();
+		KeyboardInputListener( std::initializer_list<uint8_t> list );
 
 		//
 		// Getter

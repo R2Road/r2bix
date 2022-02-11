@@ -3,14 +3,8 @@
 
 namespace r2_input
 {
-	KeyboardInputListener::KeyboardInputListener() :
-		mObservationKeyList( {
-			0x1B		// esc
-			, 0x41		// a
-			, 0x44		// d
-			, 0x53		// s
-			, 0x57		// w
-		} )
+	KeyboardInputListener::KeyboardInputListener( std::initializer_list<uint8_t> list ) :
+		mObservationKeyList( list )
 		, mKeyFlags( mObservationKeyList.size(), 0 )
 		, mKeyStatusContainer( mObservationKeyList.size(), eKeyStatus::Release )
 	{}
