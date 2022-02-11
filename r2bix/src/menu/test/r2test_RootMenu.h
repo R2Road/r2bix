@@ -17,7 +17,7 @@ namespace r2test
 		RootMenu() = delete;
 
 	public:
-		static const char* GetTitle() { return "Test Root"; }
+		static const char* GetTitle() { return "Test"; }
 		static r2::MenuUp Create( r2::Director& director );
 	};
 }
