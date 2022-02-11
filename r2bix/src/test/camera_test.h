@@ -18,15 +18,8 @@ namespace camera_test
 	class CameraMove1 : public r2::iTest, public r2::SingleTon<CameraMove1>
 	{
 	public:
-		CameraMove1();
-
-	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
-
-	private:
-		r2::Camera mCamera;
-		r2::Renderer mRenderer;
 	};
 
 	class CameraMove2 : public r2::iTest, public r2::SingleTon<CameraMove2>

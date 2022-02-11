@@ -87,8 +87,6 @@ namespace camera_test
 		r2::VisibleResource mVisibleResource;
 	};
 
-	CameraMove1::CameraMove1() : mCamera(), mRenderer()
-	{}
 	r2::iTest::TitleFunc CameraMove1::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -98,50 +96,50 @@ namespace camera_test
 	}
 	r2::iTest::DoFunc CameraMove1::GetDoFunction()
 	{
-		GetInstance().mRenderer.Clear();
-
-
-		GetInstance().mRenderer.SetCamera( &mCamera );
-
+		return []()->r2::eTestResult
 		{
-			std::string str( "# " );
-			str += GetInstance().GetTitleFunction()( );
-			str += " #";
-			static TempRenderable tr( 0, 0, static_cast<uint32_t>( str.length() ), str.c_str() );
-			GetInstance().mRenderer.Add( &tr );
-		}
+			r2::Camera camera;
+			r2::Renderer renderer;
 
-		{
-			std::string_view str( "[ESC] Return to Root" );
-			static TempRenderable tr( 0, 1, static_cast<uint32_t>( str.length() ), str.data() );
-			GetInstance().mRenderer.Add( &tr );
-		}
+			renderer.Clear();
+			renderer.SetCamera( &camera );
 
-		{
-			std::string_view str( "[W,A,S,D] Move Camera" );
-			static TempRenderable tr( 0, 2, static_cast<uint32_t>( str.length() ), str.data() );
-			GetInstance().mRenderer.Add( &tr );
-		}
+			{
+				std::string str( "# " );
+				str += GetInstance().GetTitleFunction()( );
+				str += " #";
+				static TempRenderable tr( 0, 0, static_cast<uint32_t>( str.length() ), str.c_str() );
+				renderer.Add( &tr );
+			}
 
-		{
-			static TempRenderable tr( 2, 4, 3u, "###" "# #" "###" );
-			GetInstance().mRenderer.Add( &tr );
-		}
+			{
+				std::string_view str( "[ESC] Return to Root" );
+				static TempRenderable tr( 0, 1, static_cast<uint32_t>( str.length() ), str.data() );
+				renderer.Add( &tr );
+			}
 
-		{
-			static TempRenderable tr( 11, 7, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
-			GetInstance().mRenderer.Add( &tr );
-		}
+			{
+				std::string_view str( "[W,A,S,D] Move Camera" );
+				static TempRenderable tr( 0, 2, static_cast<uint32_t>( str.length() ), str.data() );
+				renderer.Add( &tr );
+			}
 
+			{
+				static TempRenderable tr( 2, 4, 3u, "###" "# #" "###" );
+				renderer.Add( &tr );
+			}
 
-		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
-		{
+			{
+				static TempRenderable tr( 11, 7, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
+				renderer.Add( &tr );
+			}
+
 			int x = 0;
 			int y = 0;
 			bool process = true;
 			while( process )
 			{
-				rd.Draw();
+				renderer.Draw();
 
 				switch( _getch() )
 				{
@@ -163,7 +161,7 @@ namespace camera_test
 					break;
 				}
 
-				cam.SetPoint( x, y );
+				camera.SetPoint( x, y );
 			}
 
 			return r2::eTestResult::RunTest_Without_Pause;
