@@ -13,8 +13,6 @@
 
 namespace camera_test
 {
-	CameraRect::CameraRect() : mCamera()
-	{}
 	r2::iTest::TitleFunc CameraRect::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -24,20 +22,20 @@ namespace camera_test
 	}
 	r2::iTest::DoFunc CameraRect::GetDoFunction()
 	{
-		GetInstance().mCamera.SetPoint( { 2, 2 } );
-
-		return[rect = GetInstance().mCamera.GetRect()]()->r2::eTestResult
+		return[]()->r2::eTestResult
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
+			r2::Camera mCamera;
+			mCamera.SetPoint( { 2, 2 } );
+
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 
-			for( int y = rect.GetMinY(); rect.GetMaxY() > y; ++y )
+			for( int y = mCamera.GetRect().GetMinY(); mCamera.GetRect().GetMaxY() > y; ++y )
 			{
-				for( int x = rect.GetMinX(); rect.GetMaxX() > x; ++x )
+				for( int x = mCamera.GetRect().GetMinX(); mCamera.GetRect().GetMaxX() > x; ++x )
 				{
 					SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( y ) } );
-
 					std::cout << '#';
 				}
 			}
