@@ -3,7 +3,7 @@
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
-#include "r2_DevelopMenu.h"
+#include "menu/r2_DevelopMenu.h"
 
 #include "research/flickering_research.h"
 #include "research/visible_resource_research.h"
