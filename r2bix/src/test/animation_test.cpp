@@ -89,7 +89,7 @@ namespace animation_test
 			GetInstance().mRenderer.Add( &tr );
 		}
 
-		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
+		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestEndAction
 		{
 			r2::FPSTimer frame_manager( 30u );
 			frame_manager.Reset();
@@ -130,7 +130,7 @@ namespace animation_test
 				cam.SetPoint( x, y );
 			}
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

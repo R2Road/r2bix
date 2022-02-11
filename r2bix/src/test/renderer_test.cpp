@@ -59,14 +59,14 @@ namespace renderer_test
 		static TempRenderable tr( 8, 5, 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" );
 		auto& tr2 = tr;
 
-		return [&tr2]()->r2::eTestResult
+		return [&tr2]()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			r2::Camera camera;
 			tr2.Render( &camera);
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 
@@ -106,11 +106,11 @@ namespace renderer_test
 		static TempRenderable tr3( 11, 5, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
 		rd.Add( &tr3 );
 
-		return [&rd]()->r2::eTestResult
+		return [&rd]()->r2::eTestEndAction
 		{
 			rd.Draw();
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }

@@ -22,7 +22,7 @@ namespace camera_test
 	}
 	r2::iTest::DoFunc CameraRect::GetDoFunction()
 	{
-		return[]()->r2::eTestResult
+		return[]()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -42,7 +42,7 @@ namespace camera_test
 
 			std::cout << r2::linefeed;
 
-			return r2::eTestResult::RunTest;
+			return r2::eTestEndAction::Pause;
 		};
 	}
 }
@@ -96,7 +96,7 @@ namespace camera_test
 	}
 	r2::iTest::DoFunc CameraMove1::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			r2::Camera camera;
 			r2::Renderer renderer;
@@ -164,7 +164,7 @@ namespace camera_test
 				camera.SetPoint( x, y );
 			}
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 }
@@ -267,7 +267,7 @@ namespace camera_test
 		}
 
 
-		return[&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestResult
+		return[&rd = GetInstance().mRenderer, &cam = mCamera]()->r2::eTestEndAction
 		{
 			int x = 0;
 			int y = 0;
@@ -299,7 +299,7 @@ namespace camera_test
 				cam.SetPoint( x, y );
 			}
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 }

@@ -20,7 +20,7 @@ namespace flickering_research
 	}
 	r2::iTest::DoFunc OneByOne::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			r2::VisibleResource visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -62,7 +62,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 	r2::iTest::TitleFunc OneByOne_WithOut_CLS::GetTitleFunction() const
@@ -74,7 +74,7 @@ namespace flickering_research
 	}
 	r2::iTest::DoFunc OneByOne_WithOut_CLS::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[Any Key] End" << r2::linefeed;
@@ -119,7 +119,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 
@@ -134,7 +134,7 @@ namespace flickering_research
 	}
 	r2::iTest::DoFunc LineByLine::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			r2::VisibleResource visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -167,7 +167,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 
@@ -182,7 +182,7 @@ namespace flickering_research
 	}
 	r2::iTest::DoFunc PageByPage::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			r2::FrameBuffer frame_buffer( 5, 5 );
 			frame_buffer.FillAll( 'c' );
@@ -212,7 +212,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 
@@ -227,7 +227,7 @@ namespace flickering_research
 	}
 	r2::iTest::DoFunc PageByPage_WithOut_CLS_1::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			r2::FrameBuffer frame_buffer( 100, 40 );
 			frame_buffer.FillAll( 'c' );
@@ -253,7 +253,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 
@@ -268,7 +268,7 @@ namespace flickering_research
 	}
 	r2::iTest::DoFunc PageByPage_WithOut_CLS_2::GetDoFunction()
 	{
-		return []()->r2::eTestResult
+		return []()->r2::eTestEndAction
 		{
 			r2::FrameBuffer frame_buffer_1( 100, 40 );
 			frame_buffer_1.FillAll( 'c' );
@@ -307,7 +307,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2::eTestResult::RunTest_Without_Pause;
+			return r2::eTestEndAction::None;
 		};
 	}
 }
