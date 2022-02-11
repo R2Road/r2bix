@@ -21,8 +21,7 @@ namespace r2
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
 			, GetTitle(),
-					"> Inprogress : Window Input"
-			"\n"	"> Inprogress : Update Camera Test"
+					"> Inprogress : Update Camera Test"
 			"\n"	"> To do : Command - Double Buffering"
 			"\n"	"> To do : Renderer"
 		) );
