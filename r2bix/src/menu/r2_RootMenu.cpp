@@ -4,6 +4,8 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
 
+#include "menu/r2_DevelopMenu.h"
+
 #include "menu/r2_CameraMenu.h"
 #include "menu/r2_FrameBufferMenu.h"
 #include "menu/r2_InputMenu.h"
@@ -105,8 +107,12 @@ namespace r2
 
 			ret->AddChild(
 				27
-				, []()->const char* { return "Exit"; }
-				, []()->eTestEndAction { return eTestEndAction::Exit; }
+				, []()->const char* { return "Return To Develop Menu"; }
+				, [&director]()->eTestEndAction
+				{
+					director.Setup( r2::DevelopMenu::Create( director ) );
+					return eTestEndAction::ChangeScene;
+				}
 			);
 		}
 

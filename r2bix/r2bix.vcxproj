@@ -25,6 +25,7 @@
     <ClCompile Include="src\input\r2_input_Constant.cpp" />
     <ClCompile Include="src\input\r2_input_KeyboardInputListener.cpp" />
     <ClCompile Include="src\menu\r2_CameraMenu.cpp" />
+    <ClCompile Include="src\menu\r2_DevelopMenu.cpp" />
     <ClCompile Include="src\menu\r2_FrameBufferMenu.cpp" />
     <ClCompile Include="src\menu\r2_InputMenu.cpp" />
     <ClCompile Include="src\menu\r2_RendererMenu.cpp" />
@@ -69,6 +70,7 @@
     <ClInclude Include="src\input\r2_input_Constant.h" />
     <ClInclude Include="src\input\r2_input_KeyboardInputListener.h" />
     <ClInclude Include="src\menu\r2_CameraMenu.h" />
+    <ClInclude Include="src\menu\r2_DevelopMenu.h" />
     <ClInclude Include="src\menu\r2_FrameBufferMenu.h" />
     <ClInclude Include="src\menu\r2_InputMenu.h" />
     <ClInclude Include="src\menu\r2_RendererMenu.h" />

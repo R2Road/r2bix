@@ -22,6 +22,9 @@
     <Filter Include="input">
       <UniqueIdentifier>{59856341-1623-4080-9a5d-44841072825a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="menu\test">
+      <UniqueIdentifier>{febd3ecf-f1ca-401b-8c96-a9bcf8a4d920}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -31,9 +34,6 @@
     </ClCompile>
     <ClCompile Include="src\base\r2_Menu.cpp">
       <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_RootMenu.cpp">
-      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\animation_test.cpp">
       <Filter>test</Filter>
@@ -74,9 +74,6 @@
     <ClCompile Include="src\renderer\r2_VisibleResource.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_ResearchMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\research\flickering_research.cpp">
       <Filter>research</Filter>
     </ClCompile>
@@ -91,21 +88,6 @@
     </ClCompile>
     <ClCompile Include="src\research\visible_resource_research.cpp">
       <Filter>research</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_VisibleResourceMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_CameraMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_RendererMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_FrameBufferMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_InputMenu.cpp">
-      <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\window_input_test.cpp">
       <Filter>test</Filter>
@@ -122,6 +104,30 @@
     <ClCompile Include="src\renderer\r2_FPSTimer.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu\r2_CameraMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_FrameBufferMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_InputMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_RendererMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_ResearchMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_RootMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_VisibleResourceMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_DevelopMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -136,9 +142,6 @@
     </ClInclude>
     <ClInclude Include="src\base\r2_Singleton.h">
       <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_RootMenu.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\animation_test.h">
       <Filter>test</Filter>
@@ -191,9 +194,6 @@
     <ClInclude Include="src\renderer\r2_Renderer.h">
       <Filter>renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\r2_ResearchMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\research\flickering_research.h">
       <Filter>research</Filter>
     </ClInclude>
@@ -208,21 +208,6 @@
     </ClInclude>
     <ClInclude Include="src\research\visible_resource_research.h">
       <Filter>research</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_VisibleResourceMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_CameraMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_RendererMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_FrameBufferMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_InputMenu.h">
-      <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\window_input_test.h">
       <Filter>test</Filter>
@@ -241,6 +226,30 @@
     </ClInclude>
     <ClInclude Include="src\base\r2_eTestEndAction.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_VisibleResourceMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_CameraMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_FrameBufferMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_InputMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_RendererMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_ResearchMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_RootMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_DevelopMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
