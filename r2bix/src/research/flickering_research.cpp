@@ -4,7 +4,7 @@
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 #include "renderer/r2_VisibleResource.h"
 #include "renderer/r2_FrameBuffer.h"

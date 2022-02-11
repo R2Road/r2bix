@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 #include "r2/r2_PointInt.h"
 #include "r2/r2_RectInt.h"

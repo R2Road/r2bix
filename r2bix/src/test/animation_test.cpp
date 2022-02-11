@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 #include "renderer/r2_FPSTimer.h"
 #include "renderer/r2_iRenderable.h"

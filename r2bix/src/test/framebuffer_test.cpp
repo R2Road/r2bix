@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "framebuffer_test.h"
 
-#include "base/r2_eTestResult.h"
+#include "base/r2_eTestEndAction.h"
 
 #include "renderer/r2_FrameBuffer.h"
 
