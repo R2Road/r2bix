@@ -40,6 +40,7 @@ namespace window_input_test
 				r2::FPSTimer fps_timer( 60u );
 				r2::RectInt stage_area( 6, 10, 50, 30 );
 				COORD pos = { 20, 20 };
+				COORD temp_pos;
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
 				std::cout << '@';
@@ -59,33 +60,39 @@ namespace window_input_test
 
 					if( fps_timer.Update() )
 					{
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
-						std::cout << ' ';
+						temp_pos = pos;
 
 						if( keyboard_input_listener.HasInput( 1 ) )
 						{
-							--pos.X;
+							--temp_pos.X;
 						}
 						if( keyboard_input_listener.HasInput( 2 ) )
 						{
-							++pos.X;
+							++temp_pos.X;
 						}
 						if( keyboard_input_listener.HasInput( 4 ) )
 						{
-							--pos.Y;
+							--temp_pos.Y;
 						}
 						if( keyboard_input_listener.HasInput( 3 ) )
 						{
-							++pos.Y;
+							++temp_pos.Y;
 						}
-						if( !stage_area.ContainsPoint( pos.X, pos.Y ) )
+						if( !stage_area.ContainsPoint( temp_pos.X, temp_pos.Y ) )
 						{
-							pos.X = std::clamp( pos.X, static_cast<short>( stage_area.GetMinX() ), static_cast<short>( stage_area.GetMaxX() ) );
-							pos.Y = std::clamp( pos.Y, static_cast<short>( stage_area.GetMinY() ), static_cast<short>( stage_area.GetMaxY() ) );
+							temp_pos.X = std::clamp( temp_pos.X, static_cast<short>( stage_area.GetMinX() ), static_cast<short>( stage_area.GetMaxX() ) );
+							temp_pos.Y = std::clamp( temp_pos.Y, static_cast<short>( stage_area.GetMinY() ), static_cast<short>( stage_area.GetMaxY() ) );
 						}
 
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
-						std::cout << '@';
+						if( temp_pos.X != pos.X || temp_pos.Y != pos.Y )
+						{
+							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
+							std::cout << ' ';
+							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), temp_pos );
+							std::cout << '@';
+
+							pos = temp_pos;
+						}
 					}
 				}
 			}
