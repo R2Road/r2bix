@@ -26,14 +26,14 @@ namespace camera_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			r2::Camera mCamera;
-			mCamera.SetPoint( { 2, 2 } );
+			r2::Camera camera;
+			camera.SetPoint( { 2, 2 } );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 
-			for( int y = mCamera.GetRect().GetMinY(); mCamera.GetRect().GetMaxY() > y; ++y )
+			for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
 			{
-				for( int x = mCamera.GetRect().GetMinX(); mCamera.GetRect().GetMaxX() > x; ++x )
+				for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
 				{
 					SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( y ) } );
 					std::cout << '#';
