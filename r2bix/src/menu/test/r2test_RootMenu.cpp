@@ -6,11 +6,11 @@
 
 #include "menu/r2_DevelopMenu.h"
 
-#include "r2_CameraMenu.h"
-#include "r2_FrameBufferMenu.h"
-#include "r2_InputMenu.h"
-#include "r2_RendererMenu.h"
-#include "r2_VisibleResourceMenu.h"
+#include "r2test_CameraMenu.h"
+#include "r2test_FrameBufferMenu.h"
+#include "r2test_InputMenu.h"
+#include "r2test_RendererMenu.h"
+#include "r2test_VisibleResourceMenu.h"
 
 #include "test/rect_test.h"
 #include "test/animation_test.h"

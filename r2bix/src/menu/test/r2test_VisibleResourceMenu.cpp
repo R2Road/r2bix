@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_VisibleResourceMenu.h"
+#include "r2test_VisibleResourceMenu.h"
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"

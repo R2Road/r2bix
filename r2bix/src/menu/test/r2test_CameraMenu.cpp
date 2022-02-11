@@ -1,15 +1,15 @@
 #include "pch.h"
-#include "r2_RendererMenu.h"
+#include "r2test_CameraMenu.h"
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
 #include "r2test_RootMenu.h"
 
-#include "test/renderer_test.h"
+#include "test/camera_test.h"
 
 namespace r2
 {
-	MenuUp RendererMenu::Create( Director& director )
+	MenuUp CameraMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
@@ -18,8 +18,9 @@ namespace r2
 		) );
 
 		{
-			ret->AddChild( '1', renderer_test::TestRenderable::GetInstance() );
-			ret->AddChild( '2', renderer_test::TestRenderer::GetInstance() );
+			ret->AddChild( '1', camera_test::CameraRect::GetInstance() );
+			ret->AddChild( '2', camera_test::CameraMove1::GetInstance() );
+			ret->AddChild( '3', camera_test::CameraMove2::GetInstance() );
 
 
 			ret->AddSplit();

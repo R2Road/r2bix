@@ -1,16 +1,15 @@
 #include "pch.h"
-#include "r2_InputMenu.h"
+#include "r2test_RendererMenu.h"
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
 #include "r2test_RootMenu.h"
 
-#include "test/key_test.h"
-#include "test/window_input_test.h"
+#include "test/renderer_test.h"
 
 namespace r2
 {
-	MenuUp InputMenu::Create( Director& director )
+	MenuUp RendererMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
@@ -19,8 +18,8 @@ namespace r2
 		) );
 
 		{
-			ret->AddChild( '1', key_test::Basic::GetInstance() );
-			ret->AddChild( '2', window_input_test::TestKeyboardInputCollector::GetInstance() );
+			ret->AddChild( '1', renderer_test::TestRenderable::GetInstance() );
+			ret->AddChild( '2', renderer_test::TestRenderer::GetInstance() );
 
 
 			ret->AddSplit();

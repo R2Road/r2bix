@@ -1,15 +1,16 @@
 #include "pch.h"
-#include "r2_CameraMenu.h"
+#include "r2test_InputMenu.h"
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
 #include "r2test_RootMenu.h"
 
-#include "test/camera_test.h"
+#include "test/key_test.h"
+#include "test/window_input_test.h"
 
 namespace r2
 {
-	MenuUp CameraMenu::Create( Director& director )
+	MenuUp InputMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) Menu(
 			director
@@ -18,9 +19,8 @@ namespace r2
 		) );
 
 		{
-			ret->AddChild( '1', camera_test::CameraRect::GetInstance() );
-			ret->AddChild( '2', camera_test::CameraMove1::GetInstance() );
-			ret->AddChild( '3', camera_test::CameraMove2::GetInstance() );
+			ret->AddChild( '1', key_test::Basic::GetInstance() );
+			ret->AddChild( '2', window_input_test::TestKeyboardInputCollector::GetInstance() );
 
 
 			ret->AddSplit();
