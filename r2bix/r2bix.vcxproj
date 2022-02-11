@@ -24,14 +24,14 @@
     <ClCompile Include="src\input\r2_input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2_input_Constant.cpp" />
     <ClCompile Include="src\input\r2_input_KeyboardInputListener.cpp" />
-    <ClCompile Include="src\menu\r2_CameraMenu.cpp" />
     <ClCompile Include="src\menu\r2_DevelopMenu.cpp" />
-    <ClCompile Include="src\menu\r2_FrameBufferMenu.cpp" />
-    <ClCompile Include="src\menu\r2_InputMenu.cpp" />
-    <ClCompile Include="src\menu\r2_RendererMenu.cpp" />
-    <ClCompile Include="src\menu\r2_RootMenu.cpp" />
-    <ClCompile Include="src\menu\r2_VisibleResourceMenu.cpp" />
     <ClCompile Include="src\menu\research\r2research_RootMenu.cpp" />
+    <ClCompile Include="src\menu\test\r2_CameraMenu.cpp" />
+    <ClCompile Include="src\menu\test\r2_FrameBufferMenu.cpp" />
+    <ClCompile Include="src\menu\test\r2_InputMenu.cpp" />
+    <ClCompile Include="src\menu\test\r2_RendererMenu.cpp" />
+    <ClCompile Include="src\menu\test\r2_RootMenu.cpp" />
+    <ClCompile Include="src\menu\test\r2_VisibleResourceMenu.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -69,14 +69,14 @@
     <ClInclude Include="src\input\r2_input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2_input_Constant.h" />
     <ClInclude Include="src\input\r2_input_KeyboardInputListener.h" />
-    <ClInclude Include="src\menu\r2_CameraMenu.h" />
     <ClInclude Include="src\menu\r2_DevelopMenu.h" />
-    <ClInclude Include="src\menu\r2_FrameBufferMenu.h" />
-    <ClInclude Include="src\menu\r2_InputMenu.h" />
-    <ClInclude Include="src\menu\r2_RendererMenu.h" />
-    <ClInclude Include="src\menu\r2_RootMenu.h" />
-    <ClInclude Include="src\menu\r2_VisibleResourceMenu.h" />
     <ClInclude Include="src\menu\research\r2research_RootMenu.h" />
+    <ClInclude Include="src\menu\test\r2_CameraMenu.h" />
+    <ClInclude Include="src\menu\test\r2_FrameBufferMenu.h" />
+    <ClInclude Include="src\menu\test\r2_InputMenu.h" />
+    <ClInclude Include="src\menu\test\r2_RendererMenu.h" />
+    <ClInclude Include="src\menu\test\r2_RootMenu.h" />
+    <ClInclude Include="src\menu\test\r2_VisibleResourceMenu.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
     <ClInclude Include="src\r2\r2_PointInt.h" />

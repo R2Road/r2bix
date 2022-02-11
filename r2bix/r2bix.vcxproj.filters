@@ -107,29 +107,29 @@
     <ClCompile Include="src\renderer\r2_FPSTimer.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_CameraMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_FrameBufferMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_InputMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_RendererMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_RootMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\r2_VisibleResourceMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\r2_DevelopMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
     <ClCompile Include="src\menu\research\r2research_RootMenu.cpp">
       <Filter>menu\research</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\test\r2_CameraMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\test\r2_FrameBufferMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\test\r2_InputMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\test\r2_RendererMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\test\r2_RootMenu.cpp">
+      <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\test\r2_VisibleResourceMenu.cpp">
+      <Filter>menu\test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -230,29 +230,29 @@
     <ClInclude Include="src\base\r2_eTestEndAction.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\r2_VisibleResourceMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_CameraMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_FrameBufferMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_InputMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_RendererMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\r2_RootMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu\r2_DevelopMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\research\r2research_RootMenu.h">
       <Filter>menu\research</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\test\r2_CameraMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\test\r2_FrameBufferMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\test\r2_InputMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\test\r2_RendererMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\test\r2_RootMenu.h">
+      <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\test\r2_VisibleResourceMenu.h">
+      <Filter>menu\test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
