@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_ResearchMenu.h"
+#include "r2research_RootMenu.h"
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
@@ -8,11 +8,11 @@
 #include "research/flickering_research.h"
 #include "research/visible_resource_research.h"
 
-namespace r2
+namespace r2research
 {
-	MenuUp ResearchMenu::Create( Director& director )
+	r2::MenuUp RootMenu::Create( r2::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) Menu(
+		r2::MenuUp ret( new ( std::nothrow ) r2::Menu(
 			director
 			, GetTitle(),
 			"\n" "> ..."
@@ -39,10 +39,10 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Develop Menu"; }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2::eTestEndAction
 				{
 					director.Setup( r2::DevelopMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::ChangeScene;
 				}
 			);
 		}

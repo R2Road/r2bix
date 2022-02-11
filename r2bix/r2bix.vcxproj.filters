@@ -128,7 +128,7 @@
     <ClCompile Include="src\menu\r2_DevelopMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\research\r2_ResearchMenu.cpp">
+    <ClCompile Include="src\menu\research\r2research_RootMenu.cpp">
       <Filter>menu\research</Filter>
     </ClCompile>
   </ItemGroup>
@@ -251,7 +251,7 @@
     <ClInclude Include="src\menu\r2_DevelopMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\research\r2_ResearchMenu.h">
+    <ClInclude Include="src\menu\research\r2research_RootMenu.h">
       <Filter>menu\research</Filter>
     </ClInclude>
   </ItemGroup>

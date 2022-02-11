@@ -7,14 +7,17 @@ namespace r2
 	using MenuUp = std::unique_ptr<class Menu>;
 
 	class Director;
+}
 
-	class ResearchMenu
+namespace r2research
+{
+	class RootMenu
 	{
 	private:
-		ResearchMenu() = delete;
+		RootMenu() = delete;
 
 	public:
 		static const char* GetTitle() { return "Research"; }
-		static MenuUp Create( Director& director );
+		static r2::MenuUp Create( r2::Director& director );
 	};
 }
