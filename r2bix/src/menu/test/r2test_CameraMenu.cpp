@@ -7,11 +7,11 @@
 
 #include "test/camera_test.h"
 
-namespace r2
+namespace r2test
 {
-	MenuUp CameraMenu::Create( Director& director )
+	r2::MenuUp CameraMenu::Create( r2::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) Menu(
+		r2::MenuUp ret( new ( std::nothrow ) r2::Menu(
 			director
 			, GetTitle(),
 			"> ..."
@@ -29,10 +29,10 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2::eTestEndAction
 				{
-					director.Setup( r2::RootMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					director.Setup( r2test::RootMenu::Create( director ) );
+					return r2::eTestEndAction::ChangeScene;
 				}
 			);
 		}

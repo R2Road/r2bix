@@ -15,11 +15,11 @@
 #include "test/rect_test.h"
 #include "test/animation_test.h"
 
-namespace r2
+namespace r2test
 {
-	MenuUp RootMenu::Create( Director& director )
+	r2::MenuUp RootMenu::Create( r2::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) Menu(
+		r2::MenuUp ret( new ( std::nothrow ) r2::Menu(
 			director
 			, GetTitle(),
 					"> Inprogress : Update Camera Test"
@@ -30,11 +30,11 @@ namespace r2
 		{
 			ret->AddChild(
 				'1'
-				, []()->const char* { return r2::InputMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, []()->const char* { return r2test::InputMenu::GetTitle(); }
+				, [&director]()->r2::eTestEndAction
 				{
-					director.Setup( r2::InputMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					director.Setup( r2test::InputMenu::Create( director ) );
+					return r2::eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild( '2', rect_test::Basic::GetInstance() );
@@ -45,38 +45,38 @@ namespace r2
 
 			ret->AddChild(
 				'q'
-				, []()->const char* { return r2::FrameBufferMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, []()->const char* { return r2test::FrameBufferMenu::GetTitle(); }
+				, [&director]()->r2::eTestEndAction
 				{
-					director.Setup( r2::FrameBufferMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					director.Setup( r2test::FrameBufferMenu::Create( director ) );
+					return r2::eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'w'
-				, []()->const char* { return r2::VisibleResourceMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, []()->const char* { return r2test::VisibleResourceMenu::GetTitle(); }
+				, [&director]()->r2::eTestEndAction
 				{
-					director.Setup( r2::VisibleResourceMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					director.Setup( r2test::VisibleResourceMenu::Create( director ) );
+					return r2::eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'e'
-				, []()->const char* { return r2::CameraMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, []()->const char* { return r2test::CameraMenu::GetTitle(); }
+				, [&director]()->r2::eTestEndAction
 				{
-					director.Setup( r2::CameraMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					director.Setup( r2test::CameraMenu::Create( director ) );
+					return r2::eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'r'
-				, []()->const char* { return r2::RendererMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, []()->const char* { return r2test::RendererMenu::GetTitle(); }
+				, [&director]()->r2::eTestEndAction
 				{
-					director.Setup( r2::RendererMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					director.Setup( r2test::RendererMenu::Create( director ) );
+					return r2::eTestEndAction::ChangeScene;
 				}
 			);
 
@@ -93,10 +93,10 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Develop Menu"; }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2::eTestEndAction
 				{
 					director.Setup( r2::DevelopMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2::eTestEndAction::ChangeScene;
 				}
 			);
 		}
