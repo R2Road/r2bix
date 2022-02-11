@@ -10,7 +10,6 @@
 #include "menu/r2_FrameBufferMenu.h"
 #include "menu/r2_InputMenu.h"
 #include "menu/r2_RendererMenu.h"
-#include "menu/r2_ResearchMenu.h"
 #include "menu/r2_VisibleResourceMenu.h"
 
 #include "test/rect_test.h"
@@ -86,20 +85,6 @@ namespace r2
 
 
 			ret->AddChild( 'z', animation_test::Basic::GetInstance() );
-
-
-			ret->AddSplit();
-
-
-			ret->AddChild(
-				32
-				, []()->const char* { return r2::ResearchMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
-				{
-					director.Setup( r2::ResearchMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
-				}
-			);
 
 
 			ret->AddSplit();

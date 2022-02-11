@@ -4,6 +4,7 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
 
+#include "menu/r2_ResearchMenu.h"
 #include "menu/r2_RootMenu.h"
 
 namespace r2
@@ -30,6 +31,15 @@ namespace r2
 				, [&director]()->eTestEndAction
 				{
 					director.Setup( r2::RootMenu::Create( director ) );
+					return eTestEndAction::ChangeScene;
+				}
+			);
+			ret->AddChild(
+				'2'
+				, []()->const char* { return r2::ResearchMenu::GetTitle(); }
+				, [&director]()->eTestEndAction
+				{
+					director.Setup( r2::ResearchMenu::Create( director ) );
 					return eTestEndAction::ChangeScene;
 				}
 			);

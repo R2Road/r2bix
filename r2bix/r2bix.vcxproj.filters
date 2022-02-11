@@ -25,6 +25,9 @@
     <Filter Include="menu\test">
       <UniqueIdentifier>{febd3ecf-f1ca-401b-8c96-a9bcf8a4d920}</UniqueIdentifier>
     </Filter>
+    <Filter Include="menu\research">
+      <UniqueIdentifier>{00114f7b-f8e1-4cd5-bcc6-abaaf3f056f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -116,9 +119,6 @@
     <ClCompile Include="src\menu\r2_RendererMenu.cpp">
       <Filter>menu\test</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_ResearchMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\r2_RootMenu.cpp">
       <Filter>menu\test</Filter>
     </ClCompile>
@@ -127,6 +127,9 @@
     </ClCompile>
     <ClCompile Include="src\menu\r2_DevelopMenu.cpp">
       <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_ResearchMenu.cpp">
+      <Filter>menu\research</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,14 +245,14 @@
     <ClInclude Include="src\menu\r2_RendererMenu.h">
       <Filter>menu\test</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\r2_ResearchMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu\r2_RootMenu.h">
       <Filter>menu\test</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\r2_DevelopMenu.h">
       <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_ResearchMenu.h">
+      <Filter>menu\research</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

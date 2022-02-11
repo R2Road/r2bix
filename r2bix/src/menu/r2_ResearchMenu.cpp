@@ -3,7 +3,7 @@
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
-#include "r2_RootMenu.h"
+#include "r2_DevelopMenu.h"
 
 #include "research/flickering_research.h"
 #include "research/visible_resource_research.h"
@@ -38,10 +38,10 @@ namespace r2
 
 			ret->AddChild(
 				27
-				, []()->const char* { return "Return To Root"; }
+				, []()->const char* { return "Return To Develop Menu"; }
 				, [&director]()->eTestEndAction
 				{
-					director.Setup( r2::RootMenu::Create( director ) );
+					director.Setup( r2::DevelopMenu::Create( director ) );
 					return eTestEndAction::ChangeScene;
 				}
 			);
