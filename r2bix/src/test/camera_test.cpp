@@ -137,7 +137,7 @@ namespace camera_test
 			int x = 0;
 			int y = 0;
 			bool process = true;
-			while( process )
+			do
 			{
 				renderer.Draw();
 
@@ -162,7 +162,7 @@ namespace camera_test
 				}
 
 				camera.SetPoint( x, y );
-			}
+			} while( process );
 
 			return r2::eTestEndAction::None;
 		};
@@ -270,7 +270,7 @@ namespace camera_test
 			int x = 0;
 			int y = 0;
 			bool process = true;
-			while( process )
+			do
 			{
 				renderer.Draw();
 
@@ -295,7 +295,7 @@ namespace camera_test
 				}
 
 				camera.SetPoint( x, y );
-			}
+			} while( process );
 
 			return r2::eTestEndAction::None;
 		};
