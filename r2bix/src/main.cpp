@@ -7,7 +7,7 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_iNode.h"
-#include "menu/DevelopMenu.h"
+#include "scene/DevelopScene.h"
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
 	// Setup
 	//
 	r2base::Director director;
-	director.Setup( DevelopMenu::Create( director ) );
+	director.Setup( DevelopScene::Create( director ) );
 
 	//
 	// Process

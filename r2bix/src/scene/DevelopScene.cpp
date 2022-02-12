@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "DevelopMenu.h"
+#include "DevelopScene.h"
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
@@ -9,7 +9,7 @@
 #include "menu/research/r2research_RootMenu.h"
 #include "menu/test/r2test_RootMenu.h"
 
-r2base::NodeUp DevelopMenu::Create( r2base::Director& director )
+r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 {
 	r2base::MenuUp ret( new ( std::nothrow ) r2base::TestMenu(
 		director

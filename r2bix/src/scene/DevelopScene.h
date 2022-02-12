@@ -9,10 +9,10 @@ namespace r2base
 	class Director;
 }
 
-class DevelopMenu
+class DevelopScene
 {
 private:
-	DevelopMenu() = delete;
+	DevelopScene() = delete;
 
 public:
 	static const char* GetTitle() { return "Develop"; }

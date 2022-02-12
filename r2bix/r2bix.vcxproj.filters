@@ -31,6 +31,9 @@
     <Filter Include="menu\game">
       <UniqueIdentifier>{3d3bfc5c-5452-4697-8a46-93301d606111}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scene">
+      <UniqueIdentifier>{6f0690c9-6518-4bd3-a42a-3190d7c93d88}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -134,8 +137,8 @@
     <ClCompile Include="src\base\r2base_TestMenu.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\DevelopMenu.cpp">
-      <Filter>menu</Filter>
+    <ClCompile Include="src\scene\DevelopScene.cpp">
+      <Filter>scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -263,8 +266,8 @@
     <ClInclude Include="src\base\r2base_TestMenu.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\DevelopMenu.h">
-      <Filter>menu</Filter>
+    <ClInclude Include="src\scene\DevelopScene.h">
+      <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
