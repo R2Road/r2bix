@@ -22,12 +22,7 @@ namespace r2base
 		int input = 0;
 		while( true )
 		{
-			mNode->ShowInformation();
-			input = _getch();
-
-			system( "cls" );
-
-			switch( mNode->Do( input ) )
+			switch( mNode->Do() )
 			{
 			case r2base::eTestEndAction::None:
 				system( "cls" );

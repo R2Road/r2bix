@@ -17,7 +17,7 @@ namespace r2base
 		virtual ~iNode() {}
 
 		virtual void ShowInformation() const = 0;
-		virtual eTestEndAction Do( const int key_code ) = 0;
+		virtual eTestEndAction Do() = 0;
 
 	protected:
 		Director& mDirector;

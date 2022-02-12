@@ -2,6 +2,7 @@
 #include "TestScene.h"
 
 #include <cctype> // std::toupper
+#include <conio.h>
 
 #include "base/r2base_eTestEndAction.h"
 #include "base/r2base_iTest.h"
@@ -24,9 +25,14 @@ void TestScene::ShowInformation() const
 	showDescription();
 	showMenu();
 }
-r2base::eTestEndAction TestScene::Do( const int key_code )
+r2base::eTestEndAction TestScene::Do()
 {
-	return RunTest( key_code );
+	ShowInformation();
+	auto input = _getch();
+
+	system( "cls" );
+
+	return RunTest( input );
 }
 
 void TestScene::showTitle() const
