@@ -12,8 +12,8 @@ namespace r2
 	class iNode
 	{
 	protected:
-		iNode( Director& director ) : mDirector( director )
-		{}
+		iNode( Director& director ) : mDirector( director ) {}
+		virtual ~iNode() {}
 
 	public:
 		virtual void ShowInformation() const = 0;

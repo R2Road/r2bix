@@ -38,7 +38,6 @@ namespace r2
 
 	public:
 		TestMenu( Director& director, const char* title_string, const char* description_string = "" );
-		virtual ~TestMenu() {}
 
 		void ShowInformation() const override;
 
