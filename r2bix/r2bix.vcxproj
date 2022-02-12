@@ -21,9 +21,9 @@
   <ItemGroup>
     <ClCompile Include="src\base\r2_Director.cpp" />
     <ClCompile Include="src\base\r2_TestMenu.cpp" />
-    <ClCompile Include="src\input\r2_input_KeyboardInputCollector.cpp" />
-    <ClCompile Include="src\input\r2_input_Constant.cpp" />
-    <ClCompile Include="src\input\r2_input_KeyboardInputListener.cpp" />
+    <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
+    <ClCompile Include="src\input\r2input_Constant.cpp" />
+    <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
     <ClCompile Include="src\menu\game\r2game_RootMenu.cpp" />
     <ClCompile Include="src\menu\r2_DevelopMenu.cpp" />
     <ClCompile Include="src\menu\research\r2research_RootMenu.cpp" />
@@ -68,9 +68,9 @@
     <ClInclude Include="src\base\r2_iTest.h" />
     <ClInclude Include="src\base\r2_TestMenu.h" />
     <ClInclude Include="src\base\r2_Singleton.h" />
-    <ClInclude Include="src\input\r2_input_KeyboardInputCollector.h" />
-    <ClInclude Include="src\input\r2_input_Constant.h" />
-    <ClInclude Include="src\input\r2_input_KeyboardInputListener.h" />
+    <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
+    <ClInclude Include="src\input\r2input_Constant.h" />
+    <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />
     <ClInclude Include="src\menu\game\r2game_RootMenu.h" />
     <ClInclude Include="src\menu\r2_DevelopMenu.h" />
     <ClInclude Include="src\menu\research\r2research_RootMenu.h" />
