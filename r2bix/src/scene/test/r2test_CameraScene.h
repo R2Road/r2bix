@@ -11,13 +11,13 @@ namespace r2base
 
 namespace r2test
 {
-	class VisibleResourceMenu
+	class CameraScene
 	{
 	private:
-		VisibleResourceMenu() = delete;
+		CameraScene() = delete;
 
 	public:
-		static const char* GetTitle() { return "Visible Resource"; }
+		static const char* GetTitle() { return "Camera"; }
 		static r2base::NodeUp Create( r2base::Director& director );
 	};
 }

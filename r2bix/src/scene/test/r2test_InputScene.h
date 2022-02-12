@@ -11,10 +11,10 @@ namespace r2base
 
 namespace r2test
 {
-	class InputMenu
+	class InputScene
 	{
 	private:
-		InputMenu() = delete;
+		InputScene() = delete;
 
 	public:
 		static const char* GetTitle() { return "Input"; }

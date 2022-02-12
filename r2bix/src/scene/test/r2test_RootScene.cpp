@@ -1,14 +1,14 @@
 #include "pch.h"
-#include "r2test_RootMenu.h"
+#include "r2test_RootScene.h"
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 
-#include "r2test_CameraMenu.h"
-#include "r2test_FrameBufferMenu.h"
-#include "r2test_InputMenu.h"
-#include "r2test_RendererMenu.h"
-#include "r2test_VisibleResourceMenu.h"
+#include "r2test_CameraScene.h"
+#include "r2test_FrameBufferScene.h"
+#include "r2test_InputScene.h"
+#include "r2test_RendererScene.h"
+#include "r2test_VisibleResourceScene.h"
 
 #include "scene/DevelopScene.h"
 #include "scene/TestScene.h"
@@ -18,7 +18,7 @@
 
 namespace r2test
 {
-	r2base::NodeUp RootMenu::Create( r2base::Director& director )
+	r2base::NodeUp RootScene::Create( r2base::Director& director )
 	{
 		TestSceneUp ret( new ( std::nothrow ) TestScene(
 			director
@@ -31,10 +31,10 @@ namespace r2test
 		{
 			ret->AddChild(
 				'1'
-				, []()->const char* { return r2test::InputMenu::GetTitle(); }
+				, []()->const char* { return r2test::InputScene::GetTitle(); }
 				, [&director]()->r2base::eTestEndAction
 				{
-					director.Setup( r2test::InputMenu::Create( director ) );
+					director.Setup( r2test::InputScene::Create( director ) );
 					return r2base::eTestEndAction::ChangeScene;
 				}
 			);
@@ -46,37 +46,37 @@ namespace r2test
 
 			ret->AddChild(
 				'q'
-				, []()->const char* { return r2test::FrameBufferMenu::GetTitle(); }
+				, []()->const char* { return r2test::FrameBufferScene::GetTitle(); }
 				, [&director]()->r2base::eTestEndAction
 				{
-					director.Setup( r2test::FrameBufferMenu::Create( director ) );
+					director.Setup( r2test::FrameBufferScene::Create( director ) );
 					return r2base::eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'w'
-				, []()->const char* { return r2test::VisibleResourceMenu::GetTitle(); }
+				, []()->const char* { return r2test::VisibleResourceScene::GetTitle(); }
 				, [&director]()->r2base::eTestEndAction
 				{
-					director.Setup( r2test::VisibleResourceMenu::Create( director ) );
+					director.Setup( r2test::VisibleResourceScene::Create( director ) );
 					return r2base::eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'e'
-				, []()->const char* { return r2test::CameraMenu::GetTitle(); }
+				, []()->const char* { return r2test::CameraScene::GetTitle(); }
 				, [&director]()->r2base::eTestEndAction
 				{
-					director.Setup( r2test::CameraMenu::Create( director ) );
+					director.Setup( r2test::CameraScene::Create( director ) );
 					return r2base::eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'r'
-				, []()->const char* { return r2test::RendererMenu::GetTitle(); }
+				, []()->const char* { return r2test::RendererScene::GetTitle(); }
 				, [&director]()->r2base::eTestEndAction
 				{
-					director.Setup( r2test::RendererMenu::Create( director ) );
+					director.Setup( r2test::RendererScene::Create( director ) );
 					return r2base::eTestEndAction::ChangeScene;
 				}
 			);

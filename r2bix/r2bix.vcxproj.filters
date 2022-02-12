@@ -7,9 +7,6 @@
     <Filter Include="renderer">
       <UniqueIdentifier>{be80c73b-e527-4390-b97a-375d1ec30d49}</UniqueIdentifier>
     </Filter>
-    <Filter Include="menu">
-      <UniqueIdentifier>{b9566801-30ec-4d55-bd6d-040901fc06e3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test">
       <UniqueIdentifier>{67d9768a-fea8-45b6-946a-ffcda4f541b1}</UniqueIdentifier>
     </Filter>
@@ -22,9 +19,6 @@
     <Filter Include="input">
       <UniqueIdentifier>{59856341-1623-4080-9a5d-44841072825a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="menu\test">
-      <UniqueIdentifier>{febd3ecf-f1ca-401b-8c96-a9bcf8a4d920}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scene">
       <UniqueIdentifier>{6f0690c9-6518-4bd3-a42a-3190d7c93d88}</UniqueIdentifier>
     </Filter>
@@ -33,6 +27,9 @@
     </Filter>
     <Filter Include="scene\game">
       <UniqueIdentifier>{3d3bfc5c-5452-4697-8a46-93301d606111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\test">
+      <UniqueIdentifier>{febd3ecf-f1ca-401b-8c96-a9bcf8a4d920}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -98,24 +95,6 @@
     <ClCompile Include="src\renderer\r2_FPSTimer.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\test\r2test_RootMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\test\r2test_VisibleResourceMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\test\r2test_RendererMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\test\r2test_InputMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\test\r2test_FrameBufferMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu\test\r2test_CameraMenu.cpp">
-      <Filter>menu\test</Filter>
-    </ClCompile>
     <ClCompile Include="src\input\r2input_Constant.cpp">
       <Filter>input</Filter>
     </ClCompile>
@@ -139,6 +118,24 @@
     </ClCompile>
     <ClCompile Include="src\scene\game\r2game_RootScene.cpp">
       <Filter>scene\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\test\r2test_CameraScene.cpp">
+      <Filter>scene\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\test\r2test_FrameBufferScene.cpp">
+      <Filter>scene\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\test\r2test_InputScene.cpp">
+      <Filter>scene\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\test\r2test_RendererScene.cpp">
+      <Filter>scene\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\test\r2test_RootScene.cpp">
+      <Filter>scene\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\test\r2test_VisibleResourceScene.cpp">
+      <Filter>scene\test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -215,24 +212,6 @@
     <ClInclude Include="src\renderer\r2_FPSTimer.h">
       <Filter>renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\test\r2test_RootMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\test\r2test_VisibleResourceMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\test\r2test_RendererMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\test\r2test_InputMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\test\r2test_FrameBufferMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\menu\test\r2test_CameraMenu.h">
-      <Filter>menu\test</Filter>
-    </ClInclude>
     <ClInclude Include="src\input\r2input_Constant.h">
       <Filter>input</Filter>
     </ClInclude>
@@ -268,6 +247,24 @@
     </ClInclude>
     <ClInclude Include="src\scene\game\r2game_RootScene.h">
       <Filter>scene\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\test\r2test_CameraScene.h">
+      <Filter>scene\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\test\r2test_FrameBufferScene.h">
+      <Filter>scene\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\test\r2test_InputScene.h">
+      <Filter>scene\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\test\r2test_RendererScene.h">
+      <Filter>scene\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\test\r2test_RootScene.h">
+      <Filter>scene\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\test\r2test_VisibleResourceScene.h">
+      <Filter>scene\test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

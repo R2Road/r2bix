@@ -1,18 +1,18 @@
 #include "pch.h"
-#include "r2test_RendererMenu.h"
+#include "r2test_FrameBufferScene.h"
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 
-#include "r2test_RootMenu.h"
+#include "r2test_RootScene.h"
 
 #include "scene/TestScene.h"
 
-#include "test/renderer_test.h"
+#include "test/framebuffer_test.h"
 
 namespace r2test
 {
-	r2base::NodeUp RendererMenu::Create( r2base::Director& director )
+	r2base::NodeUp FrameBufferScene::Create( r2base::Director& director )
 	{
 		TestSceneUp ret( new ( std::nothrow ) TestScene(
 			director
@@ -21,8 +21,8 @@ namespace r2test
 		) );
 
 		{
-			ret->AddChild( '1', renderer_test::TestRenderable::GetInstance() );
-			ret->AddChild( '2', renderer_test::TestRenderer::GetInstance() );
+			ret->AddChild( '1', framebuffer_test::Basic::GetInstance() );
+			ret->AddChild( '2', framebuffer_test::DrawAtOnce::GetInstance() );
 
 
 			ret->AddSplit();
@@ -33,7 +33,7 @@ namespace r2test
 				, []()->const char* { return "Return To Root"; }
 				, [&director]()->r2base::eTestEndAction
 				{
-					director.Setup( r2test::RootMenu::Create( director ) );
+					director.Setup( r2test::RootScene::Create( director ) );
 					return r2base::eTestEndAction::ChangeScene;
 				}
 			);

@@ -11,13 +11,13 @@ namespace r2base
 
 namespace r2test
 {
-	class RendererMenu
+	class FrameBufferScene
 	{
 	private:
-		RendererMenu() = delete;
+		FrameBufferScene() = delete;
 
 	public:
-		static const char* GetTitle() { return "Renderer"; }
+		static const char* GetTitle() { return "Frame Buffer"; }
 		static r2base::NodeUp Create( r2base::Director& director );
 	};
 }
