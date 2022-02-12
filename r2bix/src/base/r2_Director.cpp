@@ -5,6 +5,7 @@
 #include <utility>
 
 #include "r2_eTestEndAction.h"
+#include "r2_iNode.h"
 
 namespace r2
 {

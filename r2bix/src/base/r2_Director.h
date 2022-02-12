@@ -1,9 +1,11 @@
 #pragma once
 
-#include "r2_iNode.h"
+#include <memory>
 
 namespace r2
 {
+	using NodeUp = std::unique_ptr<class iNode>;
+
 	class Director
 	{
 	public:

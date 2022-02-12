@@ -6,6 +6,7 @@
 #endif
 
 #include "base/r2_Director.h"
+#include "base/r2_iNode.h"
 #include "menu/r2_DevelopMenu.h"
 
 int main()
