@@ -35,7 +35,7 @@ int main()
 	// Setup
 	//
 	r2base::Director director;
-	director.Setup( r2::DevelopMenu::Create( director ) );
+	director.Setup( DevelopMenu::Create( director ) );
 
 	//
 	// Process

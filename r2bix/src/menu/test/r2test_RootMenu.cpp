@@ -5,7 +5,7 @@
 #include "base/r2base_eTestEndAction.h"
 #include "base/r2base_TestMenu.h"
 
-#include "menu/r2_DevelopMenu.h"
+#include "menu/DevelopMenu.h"
 
 #include "r2test_CameraMenu.h"
 #include "r2test_FrameBufferMenu.h"
@@ -96,7 +96,7 @@ namespace r2test
 				, []()->const char* { return "Return To Develop Menu"; }
 				, [&director]()->r2base::eTestEndAction
 				{
-					director.Setup( r2::DevelopMenu::Create( director ) );
+					director.Setup( DevelopMenu::Create( director ) );
 					return r2base::eTestEndAction::ChangeScene;
 				}
 			);

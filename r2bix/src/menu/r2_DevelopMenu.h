@@ -9,15 +9,12 @@ namespace r2base
 	class Director;
 }
 
-namespace r2
+class DevelopMenu
 {
-	class DevelopMenu
-	{
-	private:
-		DevelopMenu() = delete;
+private:
+	DevelopMenu() = delete;
 
-	public:
-		static const char* GetTitle() { return "Develop"; }
-		static r2base::NodeUp Create( r2base::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Develop"; }
+	static r2base::NodeUp Create( r2base::Director& director );
+};

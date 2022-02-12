@@ -43,7 +43,7 @@ namespace r2research
 				, []()->const char* { return "Return To Develop Menu"; }
 				, [&director]()->r2base::eTestEndAction
 				{
-					director.Setup( r2::DevelopMenu::Create( director ) );
+					director.Setup( DevelopMenu::Create( director ) );
 					return r2base::eTestEndAction::ChangeScene;
 				}
 			);

@@ -95,9 +95,6 @@
     <ClCompile Include="src\renderer\r2_FPSTimer.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_DevelopMenu.cpp">
-      <Filter>menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\research\r2research_RootMenu.cpp">
       <Filter>menu\research</Filter>
     </ClCompile>
@@ -136,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="src\base\r2base_TestMenu.cpp">
       <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\r2_DevelopMenu.cpp">
+      <Filter>menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -212,9 +212,6 @@
     <ClInclude Include="src\renderer\r2_FPSTimer.h">
       <Filter>renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\r2_DevelopMenu.h">
-      <Filter>menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu\research\r2research_RootMenu.h">
       <Filter>menu\research</Filter>
     </ClInclude>
@@ -265,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="src\base\r2base_TestMenu.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\r2_DevelopMenu.h">
+      <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
