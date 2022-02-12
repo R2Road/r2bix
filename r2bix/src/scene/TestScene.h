@@ -48,6 +48,8 @@ private:
 	void showDescription() const;
 	void showMenu() const;
 
+	r2base::eTestEndAction RunTest( const int key_code );
+
 public:
 	void AddChild( const char key_code, r2base::iTest& test_obj );
 	void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2base::eTestEndAction()> func_test );

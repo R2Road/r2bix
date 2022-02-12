@@ -26,15 +26,7 @@ void TestScene::ShowInformation() const
 }
 r2base::eTestEndAction TestScene::Do( const int key_code )
 {
-	for( const auto t : mTests )
-	{
-		if( key_code == t.KeyCode )
-		{
-			return t.TestFunction();
-		}
-	}
-
-	return r2base::eTestEndAction::Pause;
+	return RunTest( key_code );
 }
 
 void TestScene::showTitle() const
@@ -53,7 +45,6 @@ void TestScene::showDescription() const
 		std::cout << r2::split;
 	}
 }
-
 void TestScene::showMenu() const
 {
 	std::cout << "+ Menu" << r2::linefeed2;
@@ -98,6 +89,19 @@ void TestScene::showMenu() const
 	}
 
 	std::cout << r2::split << "Select Menu";
+}
+
+r2base::eTestEndAction TestScene::RunTest( const int key_code )
+{
+	for( const auto t : mTests )
+	{
+		if( key_code == t.KeyCode )
+		{
+			return t.TestFunction();
+		}
+	}
+
+	return r2base::eTestEndAction::Pause;
 }
 
 void TestScene::AddChild( const char key_code, r2base::iTest& test_obj )
