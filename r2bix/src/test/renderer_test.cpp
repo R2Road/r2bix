@@ -3,7 +3,7 @@
 
 #include <Windows.h>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2base_eTestEndAction.h"
 
 #include "renderer/r2_Camera.h"
 #include "renderer/r2_iRenderable.h"
@@ -47,26 +47,26 @@ namespace renderer_test
 		r2::VisibleResource mVisibleResource;
 	};
 
-	r2::iTest::TitleFunc TestRenderable::GetTitleFunction() const
+	r2base::iTest::TitleFunc TestRenderable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Renderable";
 		};
 	}
-	r2::iTest::DoFunc TestRenderable::GetDoFunction()
+	r2base::iTest::DoFunc TestRenderable::GetDoFunction()
 	{
 		static TempRenderable tr( 8, 5, 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" );
 		auto& tr2 = tr;
 
-		return [&tr2]()->r2::eTestEndAction
+		return [&tr2]()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			r2::Camera camera;
 			tr2.Render( &camera);
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 
@@ -74,14 +74,14 @@ namespace renderer_test
 
 	TestRenderer::TestRenderer() : mRenderer() {}
 
-	r2::iTest::TitleFunc TestRenderer::GetTitleFunction() const
+	r2base::iTest::TitleFunc TestRenderer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Renderer";
 		};
 	}
-	r2::iTest::DoFunc TestRenderer::GetDoFunction()
+	r2base::iTest::DoFunc TestRenderer::GetDoFunction()
 	{
 		auto& rd = GetInstance().mRenderer;
 		rd.Clear();
@@ -106,11 +106,11 @@ namespace renderer_test
 		static TempRenderable tr3( 11, 5, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
 		rd.Add( &tr3 );
 
-		return [&rd]()->r2::eTestEndAction
+		return [&rd]()->r2base::eTestEndAction
 		{
 			rd.Draw();
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 }

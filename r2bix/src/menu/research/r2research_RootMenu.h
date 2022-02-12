@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace r2
+namespace r2base
 {
 	using NodeUp = std::unique_ptr<class iNode>;
 
@@ -18,6 +18,6 @@ namespace r2research
 
 	public:
 		static const char* GetTitle() { return "Research"; }
-		static r2::NodeUp Create( r2::Director& director );
+		static r2base::NodeUp Create( r2base::Director& director );
 	};
 }

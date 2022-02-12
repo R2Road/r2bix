@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace r2
+namespace r2base
 {
 	using NodeUp = std::unique_ptr<class iNode>;
 

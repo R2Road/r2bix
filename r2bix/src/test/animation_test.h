@@ -1,14 +1,14 @@
 #pragma once
 
-#include "base/r2_iTest.h"
-#include "base/r2_Singleton.h"
+#include "base/r2base_iTest.h"
+#include "base/r2base_Singleton.h"
 
 #include "renderer/r2_Camera.h"
 #include "renderer/r2_Renderer.h"
 
 namespace animation_test
 {
-	class Basic : public r2::iTest, public r2::SingleTon<Basic>
+	class Basic : public r2base::iTest, public r2base::SingleTon<Basic>
 	{
 	public:
 		Basic();

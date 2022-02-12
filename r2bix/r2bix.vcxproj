@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\base\r2_Director.cpp" />
-    <ClCompile Include="src\base\r2_TestMenu.cpp" />
+    <ClCompile Include="src\base\r2base_Director.cpp" />
+    <ClCompile Include="src\base\r2base_TestMenu.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
@@ -62,12 +62,12 @@
     <ClCompile Include="src\test\window_input_test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\base\r2_Director.h" />
-    <ClInclude Include="src\base\r2_eTestEndAction.h" />
-    <ClInclude Include="src\base\r2_iNode.h" />
-    <ClInclude Include="src\base\r2_iTest.h" />
-    <ClInclude Include="src\base\r2_TestMenu.h" />
-    <ClInclude Include="src\base\r2_Singleton.h" />
+    <ClInclude Include="src\base\r2base_Director.h" />
+    <ClInclude Include="src\base\r2base_eTestEndAction.h" />
+    <ClInclude Include="src\base\r2base_iNode.h" />
+    <ClInclude Include="src\base\r2base_iTest.h" />
+    <ClInclude Include="src\base\r2base_TestMenu.h" />
+    <ClInclude Include="src\base\r2base_Singleton.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />

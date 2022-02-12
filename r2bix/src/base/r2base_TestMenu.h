@@ -4,9 +4,9 @@
 #include <string_view>
 #include <vector>
 
-#include "r2_iNode.h"
+#include "r2base_iNode.h"
 
-namespace r2
+namespace r2base
 {
 	enum class eTestEndAction; 
 
@@ -22,7 +22,7 @@ namespace r2
 			TestInfo(
 				const char key_code
 				, const std::function<const char*( )> name_function
-				, const std::function<const r2::eTestEndAction()> test_function
+				, const std::function<const r2base::eTestEndAction()> test_function
 			) :
 				KeyCode( key_code )
 				, NameFunction( name_function )
@@ -31,7 +31,7 @@ namespace r2
 
 			char KeyCode;
 			std::function<const char*()> NameFunction;
-			std::function<const r2::eTestEndAction()> TestFunction;
+			std::function<const r2base::eTestEndAction()> TestFunction;
 		};
 
 		using TestContainerT = std::vector<TestInfo>;
@@ -49,7 +49,7 @@ namespace r2
 
 	public:
 		void AddChild( const char key_code, iTest& test_obj );
-		void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestEndAction()> func_test );
+		void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2base::eTestEndAction()> func_test );
 		void AddLineFeed();
 		void AddSplit();
 

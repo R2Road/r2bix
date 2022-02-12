@@ -1,9 +1,9 @@
 #include "pch.h"
 #include "r2research_RootMenu.h"
 
-#include "base/r2_Director.h"
-#include "base/r2_eTestEndAction.h"
-#include "base/r2_TestMenu.h"
+#include "base/r2base_Director.h"
+#include "base/r2base_eTestEndAction.h"
+#include "base/r2base_TestMenu.h"
 
 #include "menu/r2_DevelopMenu.h"
 
@@ -12,9 +12,9 @@
 
 namespace r2research
 {
-	r2::NodeUp RootMenu::Create( r2::Director& director )
+	r2base::NodeUp RootMenu::Create( r2base::Director& director )
 	{
-		r2::MenuUp ret( new ( std::nothrow ) r2::TestMenu(
+		r2base::MenuUp ret( new ( std::nothrow ) r2base::TestMenu(
 			director
 			, GetTitle(),
 			"\n" "> ..."
@@ -41,10 +41,10 @@ namespace r2research
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Develop Menu"; }
-				, [&director]()->r2::eTestEndAction
+				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2::DevelopMenu::Create( director ) );
-					return r2::eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::ChangeScene;
 				}
 			);
 		}

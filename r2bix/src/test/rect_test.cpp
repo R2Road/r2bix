@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2base_eTestEndAction.h"
 #include "r2/r2_RectInt.h"
 
 namespace rect_test
@@ -24,16 +24,16 @@ namespace rect_test
 			}
 		}
 	}
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Rect : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2base::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -60,7 +60,7 @@ namespace rect_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 }

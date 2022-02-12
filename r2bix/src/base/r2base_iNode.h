@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace r2
+namespace r2base
 {
 	enum class eTestEndAction; 
 

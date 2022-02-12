@@ -1,18 +1,18 @@
 #pragma once
 
-#include "base/r2_iTest.h"
-#include "base/r2_Singleton.h"
+#include "base/r2base_iTest.h"
+#include "base/r2base_Singleton.h"
 
 namespace framebuffer_test
 {
-	class Basic : public r2::iTest, public r2::SingleTon<Basic>
+	class Basic : public r2base::iTest, public r2base::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class DrawAtOnce : public r2::iTest, public r2::SingleTon<DrawAtOnce>
+	class DrawAtOnce : public r2base::iTest, public r2base::SingleTon<DrawAtOnce>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

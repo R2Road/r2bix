@@ -1,6 +1,6 @@
 #pragma once
 
-namespace r2
+namespace r2base
 {
 	enum class eTestEndAction
 	{

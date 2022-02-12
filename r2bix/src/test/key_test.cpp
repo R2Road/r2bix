@@ -3,20 +3,20 @@
 
 #include <conio.h>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2base_eTestEndAction.h"
 
 namespace key_test
 {
-	r2::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Key : Basic";
 		};
 	}
-	r2::iTest::DoFunc Basic::GetDoFunction()
+	r2base::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 			std::cout << "[ESC] End" << r2::linefeed;
@@ -36,7 +36,7 @@ namespace key_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 }

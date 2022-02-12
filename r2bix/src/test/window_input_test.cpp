@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <windows.h>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2base_eTestEndAction.h"
 
 #include "input/r2input_KeyboardInputCollector.h"
 #include "input/r2input_KeyboardInputListener.h"
@@ -14,16 +14,16 @@
 
 namespace window_input_test
 {
-	r2::iTest::TitleFunc TestKeyboardInputCollector::GetTitleFunction() const
+	r2base::iTest::TitleFunc TestKeyboardInputCollector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Keyboard Input Collector";
 		};
 	}
-	r2::iTest::DoFunc TestKeyboardInputCollector::GetDoFunction()
+	r2base::iTest::DoFunc TestKeyboardInputCollector::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
@@ -103,7 +103,7 @@ namespace window_input_test
 				}
 			}
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 }

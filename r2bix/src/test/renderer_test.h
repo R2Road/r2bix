@@ -1,14 +1,14 @@
 #pragma once
 
-#include "base/r2_iTest.h"
-#include "base/r2_Singleton.h"
+#include "base/r2base_iTest.h"
+#include "base/r2base_Singleton.h"
 
 #include "renderer/r2_Renderer.h"
 #include "renderer/r2_VisibleResource.h"
 
 namespace renderer_test
 {
-	class TestRenderable : public r2::iTest, public r2::SingleTon<TestRenderable>
+	class TestRenderable : public r2base::iTest, public r2base::SingleTon<TestRenderable>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
@@ -17,7 +17,7 @@ namespace renderer_test
 
 
 
-	class TestRenderer : public r2::iTest, public r2::SingleTon<TestRenderer>
+	class TestRenderer : public r2base::iTest, public r2base::SingleTon<TestRenderer>
 	{
 	public:
 		TestRenderer();

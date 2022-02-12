@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2base_eTestEndAction.h"
 
 #include "r2/r2_PointInt.h"
 #include "r2/r2_RectInt.h"
@@ -13,16 +13,16 @@
 
 namespace camera_test
 {
-	r2::iTest::TitleFunc CameraRect::GetTitleFunction() const
+	r2base::iTest::TitleFunc CameraRect::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Rect";
 		};
 	}
-	r2::iTest::DoFunc CameraRect::GetDoFunction()
+	r2base::iTest::DoFunc CameraRect::GetDoFunction()
 	{
-		return[]()->r2::eTestEndAction
+		return[]()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -42,7 +42,7 @@ namespace camera_test
 
 			std::cout << r2::linefeed;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 }
@@ -87,16 +87,16 @@ namespace camera_test
 		r2::VisibleResource mVisibleResource;
 	};
 
-	r2::iTest::TitleFunc CameraMove1::GetTitleFunction() const
+	r2base::iTest::TitleFunc CameraMove1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move 1";
 		};
 	}
-	r2::iTest::DoFunc CameraMove1::GetDoFunction()
+	r2base::iTest::DoFunc CameraMove1::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			r2::Camera camera;
 			r2::Renderer renderer;
@@ -164,7 +164,7 @@ namespace camera_test
 				camera.SetPoint( x, y );
 			} while( process );
 
-			return r2::eTestEndAction::None;
+			return r2base::eTestEndAction::None;
 		};
 	}
 }
@@ -220,16 +220,16 @@ namespace camera_test
 		r2::RectInt mRect;
 	};
 
-	r2::iTest::TitleFunc CameraMove2::GetTitleFunction() const
+	r2base::iTest::TitleFunc CameraMove2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move 2";
 		};
 	}
-	r2::iTest::DoFunc CameraMove2::GetDoFunction()
+	r2base::iTest::DoFunc CameraMove2::GetDoFunction()
 	{
-		return[]()->r2::eTestEndAction
+		return[]()->r2base::eTestEndAction
 		{
 			r2::Camera camera;
 
@@ -297,7 +297,7 @@ namespace camera_test
 				camera.SetPoint( x, y );
 			} while( process );
 
-			return r2::eTestEndAction::None;
+			return r2base::eTestEndAction::None;
 		};
 	}
 }

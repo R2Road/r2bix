@@ -1,10 +1,10 @@
 #include "pch.h"
-#include "r2_TestMenu.h"
+#include "r2base_TestMenu.h"
 
 #include <cctype> // std::toupper
 
-#include "r2_eTestEndAction.h"
-#include "r2_iTest.h"
+#include "r2base_eTestEndAction.h"
+#include "r2base_iTest.h"
 
 namespace
 {
@@ -12,7 +12,7 @@ namespace
 	const char KeyCode4Split = 42; // *
 }
 
-namespace r2
+namespace r2base
 {
 	TestMenu::TestMenu( Director& director, const char* title_string, const char* description_string ) : iNode( director )
 		, mTitleString( title_string )
@@ -36,7 +36,7 @@ namespace r2
 			}
 		}
 
-		return eTestEndAction::Pause;
+		return r2base::eTestEndAction::Pause;
 	}
 
 	void TestMenu::showTitle() const
@@ -106,21 +106,21 @@ namespace r2
 	{
 		mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 	}
-	void TestMenu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestEndAction()> func_test )
+	void TestMenu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2base::eTestEndAction()> func_test )
 	{
 		mTests.emplace_back( key_code, func_title, func_test );
 	}
 	void TestMenu::AddLineFeed()
 	{
 		static const std::function<const char*()> func_title = []()->const char* { return ""; };
-		static const std::function<const r2::eTestEndAction()> func_test = []()->const r2::eTestEndAction { return r2::eTestEndAction::Pause; };
+		static const std::function<const r2base::eTestEndAction()> func_test = []()->const r2base::eTestEndAction { return r2base::eTestEndAction::Pause; };
 
 		mTests.push_back( { KeyCode4LineFeed, func_title, func_test } );
 	}
 	void TestMenu::AddSplit()
 	{
 		static const std::function<const char*( )> func_title = []()->const char* { return ""; };
-		static const std::function<const r2::eTestEndAction()> func_test = []()->const r2::eTestEndAction { return r2::eTestEndAction::Pause; };
+		static const std::function<const r2base::eTestEndAction()> func_test = []()->const r2base::eTestEndAction { return r2base::eTestEndAction::Pause; };
 
 		mTests.push_back( { KeyCode4Split, func_title, func_test } );
 	}

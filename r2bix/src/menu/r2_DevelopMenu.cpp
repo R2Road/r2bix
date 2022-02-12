@@ -1,9 +1,9 @@
 #include "pch.h"
 #include "r2_DevelopMenu.h"
 
-#include "base/r2_Director.h"
-#include "base/r2_eTestEndAction.h"
-#include "base/r2_TestMenu.h"
+#include "base/r2base_Director.h"
+#include "base/r2base_eTestEndAction.h"
+#include "base/r2base_TestMenu.h"
 
 #include "menu/game/r2game_RootMenu.h"
 #include "menu/research/r2research_RootMenu.h"
@@ -11,9 +11,9 @@
 
 namespace r2
 {
-	NodeUp DevelopMenu::Create( Director& director )
+	r2base::NodeUp DevelopMenu::Create( r2base::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) TestMenu(
+		r2base::MenuUp ret( new ( std::nothrow ) r2base::TestMenu(
 			director
 			, GetTitle()
 		) );
@@ -22,7 +22,7 @@ namespace r2
 			ret->AddChild(
 				27
 				, []()->const char* { return "Exit"; }
-				, []()->eTestEndAction { return eTestEndAction::Exit; }
+				, []()->r2base::eTestEndAction { return r2base::eTestEndAction::Exit; }
 			);
 
 			ret->AddLineFeed();
@@ -30,19 +30,19 @@ namespace r2
 			ret->AddChild(
 				'1'
 				, []()->const char* { return r2test::RootMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2test::RootMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::ChangeScene;
 				}
 			);
 			ret->AddChild(
 				'2'
 				, []()->const char* { return r2research::RootMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2research::RootMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::ChangeScene;
 				}
 			);
 
@@ -51,10 +51,10 @@ namespace r2
 			ret->AddChild(
 				32
 				, []()->const char* { return r2game::RootMenu::GetTitle(); }
-				, [&director]()->eTestEndAction
+				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2game::RootMenu::Create( director ) );
-					return eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::ChangeScene;
 				}
 			);
 		}

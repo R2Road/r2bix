@@ -2,12 +2,15 @@
 
 #include <memory>
 
-namespace r2
+namespace r2base
 {
 	using NodeUp = std::unique_ptr<class iNode>;
 
 	class Director;
+}
 
+namespace r2
+{
 	class DevelopMenu
 	{
 	private:
@@ -15,6 +18,6 @@ namespace r2
 
 	public:
 		static const char* GetTitle() { return "Develop"; }
-		static NodeUp Create( Director& director );
+		static r2base::NodeUp Create( r2base::Director& director );
 	};
 }

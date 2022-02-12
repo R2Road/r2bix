@@ -5,8 +5,8 @@
 	#include <vld.h>
 #endif
 
-#include "base/r2_Director.h"
-#include "base/r2_iNode.h"
+#include "base/r2base_Director.h"
+#include "base/r2base_iNode.h"
 #include "menu/r2_DevelopMenu.h"
 
 int main()
@@ -34,7 +34,7 @@ int main()
 	//
 	// Setup
 	//
-	r2::Director director;
+	r2base::Director director;
 	director.Setup( r2::DevelopMenu::Create( director ) );
 
 	//

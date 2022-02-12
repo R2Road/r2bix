@@ -3,7 +3,7 @@
 
 #include <Windows.h>
 
-#include "base/r2_eTestEndAction.h"
+#include "base/r2base_eTestEndAction.h"
 
 #include "renderer/r2_Camera.h"
 #include "renderer/r2_iRenderable.h"
@@ -11,16 +11,16 @@
 
 namespace visible_resource_test
 {
-	r2::iTest::TitleFunc FillAll::GetTitleFunction() const
+	r2base::iTest::TitleFunc FillAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Fill All";
 		};
 	}
-	r2::iTest::DoFunc FillAll::GetDoFunction()
+	r2base::iTest::DoFunc FillAll::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -52,22 +52,22 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iTest::TitleFunc Fill::GetTitleFunction() const
+	r2base::iTest::TitleFunc Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Fill";
 		};
 	}
-	r2::iTest::DoFunc Fill::GetDoFunction()
+	r2base::iTest::DoFunc Fill::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -107,22 +107,22 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iTest::TitleFunc InitWithChars_1::GetTitleFunction() const
+	r2base::iTest::TitleFunc InitWithChars_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Init With Chars 1";
 		};
 	}
-	r2::iTest::DoFunc InitWithChars_1::GetDoFunction()
+	r2base::iTest::DoFunc InitWithChars_1::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -155,22 +155,22 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iTest::TitleFunc InitWithChars_2::GetTitleFunction() const
+	r2base::iTest::TitleFunc InitWithChars_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Init With Chars 2";
 		};
 	}
-	r2::iTest::DoFunc InitWithChars_2::GetDoFunction()
+	r2base::iTest::DoFunc InitWithChars_2::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -206,22 +206,22 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iTest::TitleFunc InitWithChars_3::GetTitleFunction() const
+	r2base::iTest::TitleFunc InitWithChars_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Init With Chars 3";
 		};
 	}
-	r2::iTest::DoFunc InitWithChars_3::GetDoFunction()
+	r2base::iTest::DoFunc InitWithChars_3::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -283,22 +283,22 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iTest::TitleFunc InitWithChars_4::GetTitleFunction() const
+	r2base::iTest::TitleFunc InitWithChars_4::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Init With Chars 4";
 		};
 	}
-	r2::iTest::DoFunc InitWithChars_4::GetDoFunction()
+	r2base::iTest::DoFunc InitWithChars_4::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -332,22 +332,22 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2::iTest::TitleFunc VisibleRect::GetTitleFunction() const
+	r2base::iTest::TitleFunc VisibleRect::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Visible Resource - Visible Rect";
 		};
 	}
-	r2::iTest::DoFunc VisibleRect::GetDoFunction()
+	r2base::iTest::DoFunc VisibleRect::GetDoFunction()
 	{
-		return []()->r2::eTestEndAction
+		return []()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -409,7 +409,7 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			return r2::eTestEndAction::Pause;
+			return r2base::eTestEndAction::Pause;
 		};
 	}
 }

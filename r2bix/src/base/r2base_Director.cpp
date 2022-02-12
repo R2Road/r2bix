@@ -1,13 +1,13 @@
 #include "pch.h"
-#include "r2_Director.h"
+#include "r2base_Director.h"
 
 #include <conio.h>
 #include <utility>
 
-#include "r2_eTestEndAction.h"
-#include "r2_iNode.h"
+#include "r2base_eTestEndAction.h"
+#include "r2base_iNode.h"
 
-namespace r2
+namespace r2base
 {
 	Director::Director() : mNode()
 	{}
@@ -29,21 +29,21 @@ namespace r2
 
 			switch( mNode->Do( input ) )
 			{
-			case eTestEndAction::None:
+			case r2base::eTestEndAction::None:
 				system( "cls" );
 				break;
 
-			case eTestEndAction::Pause:
+			case r2base::eTestEndAction::Pause:
 				std::cout << r2::linefeed;
 				system( "pause" );
 
 				system( "cls" );
 				break;
 
-			//case eTestEndAction::ChangeScene:
+			//case r2base::eTestEndAction::ChangeScene:
 				//break;
 
-			case eTestEndAction::Exit:
+			case r2base::eTestEndAction::Exit:
 				return;
 			}
 		}

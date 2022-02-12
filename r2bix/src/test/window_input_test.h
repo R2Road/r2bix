@@ -1,11 +1,11 @@
 #pragma once
 
-#include "base/r2_iTest.h"
-#include "base/r2_Singleton.h"
+#include "base/r2base_iTest.h"
+#include "base/r2base_Singleton.h"
 
 namespace window_input_test
 {
-	class TestKeyboardInputCollector : public r2::iTest, public r2::SingleTon<TestKeyboardInputCollector>
+	class TestKeyboardInputCollector : public r2base::iTest, public r2base::SingleTon<TestKeyboardInputCollector>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
