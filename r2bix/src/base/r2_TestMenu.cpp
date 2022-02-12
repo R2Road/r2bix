@@ -26,6 +26,19 @@ namespace r2
 		ShowDescription();
 		ShowMenu();
 	}
+	eTestEndAction TestMenu::Do( const int key_code )
+	{
+		for( const auto t : mTests )
+		{
+			if( key_code == t.KeyCode )
+			{
+				return t.TestFunction();
+			}
+		}
+
+		return eTestEndAction::Pause;
+	}
+
 	void TestMenu::ShowTitle() const
 	{
 		std::cout << "# " << mTitleString << " #" << r2::linefeed;
@@ -87,19 +100,6 @@ namespace r2
 		}
 
 		std::cout << r2::split << "Select Menu";
-	}
-
-	eTestEndAction TestMenu::Do( const int key_code )
-	{
-		for( const auto t : mTests )
-		{
-			if( key_code == t.KeyCode )
-			{
-				return t.TestFunction();
-			}
-		}
-
-		return eTestEndAction::Pause;
 	}
 
 	void TestMenu::AddChild( const char key_code, iTest& test_obj )

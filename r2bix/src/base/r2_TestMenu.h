@@ -40,6 +40,7 @@ namespace r2
 		TestMenu( Director& director, const char* title_string, const char* description_string = "" );
 
 		void ShowInformation() const override;
+		eTestEndAction Do( const int key_code ) override;
 
 	private:
 		void ShowTitle() const;
@@ -47,8 +48,6 @@ namespace r2
 		void ShowMenu() const;
 
 	public:
-		eTestEndAction Do( const int key_code ) override;
-
 		void AddChild( const char key_code, iTest& test_obj );
 		void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestEndAction()> func_test );
 		void AddLineFeed();
