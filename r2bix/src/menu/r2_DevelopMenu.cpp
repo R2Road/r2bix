@@ -4,6 +4,7 @@
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
 
+#include "menu/game/r2game_RootMenu.h"
 #include "menu/research/r2research_RootMenu.h"
 #include "menu/test/r2test_RootMenu.h"
 
@@ -44,8 +45,17 @@ namespace r2
 				}
 			);
 
-
+			ret->AddLineFeed();
 			
+			ret->AddChild(
+				32
+				, []()->const char* { return r2game::RootMenu::GetTitle(); }
+				, [&director]()->eTestEndAction
+				{
+					director.Setup( r2game::RootMenu::Create( director ) );
+					return eTestEndAction::ChangeScene;
+				}
+			);
 		}
 
 		return ret;

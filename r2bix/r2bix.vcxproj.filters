@@ -28,6 +28,9 @@
     <Filter Include="menu\research">
       <UniqueIdentifier>{00114f7b-f8e1-4cd5-bcc6-abaaf3f056f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="menu\game">
+      <UniqueIdentifier>{3d3bfc5c-5452-4697-8a46-93301d606111}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -130,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="src\menu\test\r2test_CameraMenu.cpp">
       <Filter>menu\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\game\r2game_RootMenu.cpp">
+      <Filter>menu\game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +259,9 @@
     </ClInclude>
     <ClInclude Include="src\menu\test\r2test_CameraMenu.h">
       <Filter>menu\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menu\game\r2game_RootMenu.h">
+      <Filter>menu\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
