@@ -14,7 +14,7 @@ namespace r2base
 	class Director;
 }
 
-using MenuUp = std::unique_ptr<class TestScene>;
+using TestSceneUp = std::unique_ptr<class TestScene>;
 class TestScene : public r2base::iNode
 {
 private:

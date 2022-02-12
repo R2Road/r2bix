@@ -20,7 +20,7 @@ namespace r2test
 {
 	r2base::NodeUp RootMenu::Create( r2base::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) TestScene(
+		TestSceneUp ret( new ( std::nothrow ) TestScene(
 			director
 			, GetTitle(),
 					"> Inprogress : Update Camera Test"

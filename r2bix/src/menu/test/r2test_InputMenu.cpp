@@ -15,7 +15,7 @@ namespace r2test
 {
 	r2base::NodeUp InputMenu::Create( r2base::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) TestScene(
+		TestSceneUp ret( new ( std::nothrow ) TestScene(
 			director
 			, GetTitle(),
 			"> ..."
