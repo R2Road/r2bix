@@ -21,6 +21,12 @@ namespace r2
 		, mTests()
 	{}
 
+	void Menu::ShowInformation() const
+	{
+		ShowTitle();
+		ShowDescription();
+		ShowMenu();
+	}
 	void Menu::ShowTitle() const
 	{
 		std::cout << "# " << mTitleString << " #" << r2::linefeed;
