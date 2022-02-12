@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\base\r2base_Director.cpp" />
-    <ClCompile Include="src\base\r2base_TestMenu.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
@@ -52,6 +51,7 @@
     <ClCompile Include="src\research\flickering_research.cpp" />
     <ClCompile Include="src\research\visible_resource_research.cpp" />
     <ClCompile Include="src\scene\DevelopScene.cpp" />
+    <ClCompile Include="src\scene\TestScene.cpp" />
     <ClCompile Include="src\test\animation_test.cpp" />
     <ClCompile Include="src\test\camera_test.cpp" />
     <ClCompile Include="src\test\framebuffer_test.cpp" />
@@ -66,7 +66,6 @@
     <ClInclude Include="src\base\r2base_eTestEndAction.h" />
     <ClInclude Include="src\base\r2base_iNode.h" />
     <ClInclude Include="src\base\r2base_iTest.h" />
-    <ClInclude Include="src\base\r2base_TestMenu.h" />
     <ClInclude Include="src\base\r2base_Singleton.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2input_Constant.h" />
@@ -97,6 +96,7 @@
     <ClInclude Include="src\research\flickering_research.h" />
     <ClInclude Include="src\research\visible_resource_research.h" />
     <ClInclude Include="src\scene\DevelopScene.h" />
+    <ClInclude Include="src\scene\TestScene.h" />
     <ClInclude Include="src\test\animation_test.h" />
     <ClInclude Include="src\test\camera_test.h" />
     <ClInclude Include="src\test\framebuffer_test.h" />

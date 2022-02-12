@@ -1,10 +1,10 @@
 #include "pch.h"
-#include "r2base_TestMenu.h"
+#include "TestScene.h"
 
 #include <cctype> // std::toupper
 
-#include "r2base_eTestEndAction.h"
-#include "r2base_iTest.h"
+#include "base/r2base_eTestEndAction.h"
+#include "base/r2base_iTest.h"
 
 namespace
 {

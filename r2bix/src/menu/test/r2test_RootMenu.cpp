@@ -3,7 +3,6 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
-#include "base/r2base_TestMenu.h"
 
 #include "r2test_CameraMenu.h"
 #include "r2test_FrameBufferMenu.h"
@@ -12,6 +11,7 @@
 #include "r2test_VisibleResourceMenu.h"
 
 #include "scene/DevelopScene.h"
+#include "scene/TestScene.h"
 
 #include "test/rect_test.h"
 #include "test/animation_test.h"

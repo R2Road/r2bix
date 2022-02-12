@@ -3,9 +3,10 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
-#include "base/r2base_TestMenu.h"
 
 #include "r2test_RootMenu.h"
+
+#include "scene/TestScene.h"
 
 #include "test/framebuffer_test.h"
 

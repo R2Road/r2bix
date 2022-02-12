@@ -3,11 +3,12 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
-#include "base/r2base_TestMenu.h"
 
 #include "menu/game/r2game_RootMenu.h"
 #include "menu/research/r2research_RootMenu.h"
 #include "menu/test/r2test_RootMenu.h"
+
+#include "scene/TestScene.h"
 
 r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 {

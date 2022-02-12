@@ -3,12 +3,12 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
-#include "base/r2base_TestMenu.h"
 
 #include "research/flickering_research.h"
 #include "research/visible_resource_research.h"
 
 #include "scene/DevelopScene.h"
+#include "scene/TestScene.h"
 
 namespace r2game
 {
