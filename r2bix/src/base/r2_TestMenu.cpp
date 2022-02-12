@@ -22,9 +22,9 @@ namespace r2
 
 	void TestMenu::ShowInformation() const
 	{
-		ShowTitle();
-		ShowDescription();
-		ShowMenu();
+		showTitle();
+		showDescription();
+		showMenu();
 	}
 	eTestEndAction TestMenu::Do( const int key_code )
 	{
@@ -39,12 +39,12 @@ namespace r2
 		return eTestEndAction::Pause;
 	}
 
-	void TestMenu::ShowTitle() const
+	void TestMenu::showTitle() const
 	{
 		std::cout << "# " << mTitleString << " #" << r2::linefeed;
 		std::cout << r2::split;
 	}
-	void TestMenu::ShowDescription() const
+	void TestMenu::showDescription() const
 	{
 		if( !mDescriptionString.empty() )
 		{
@@ -56,7 +56,7 @@ namespace r2
 		}
 	}
 
-	void TestMenu::ShowMenu() const
+	void TestMenu::showMenu() const
 	{
 		std::cout << "+ Menu" << r2::linefeed2;
 

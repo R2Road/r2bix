@@ -43,9 +43,9 @@ namespace r2
 		eTestEndAction Do( const int key_code ) override;
 
 	private:
-		void ShowTitle() const;
-		void ShowDescription() const;
-		void ShowMenu() const;
+		void showTitle() const;
+		void showDescription() const;
+		void showMenu() const;
 
 	public:
 		void AddChild( const char key_code, iTest& test_obj );
