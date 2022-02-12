@@ -8,12 +8,12 @@
 
 namespace r2
 {
-	Director::Director() : mMenu()
+	Director::Director() : mNode()
 	{}
 
-	void Director::Setup( MenuUp menu )
+	void Director::Setup( NodeUp node )
 	{
-		mMenu = std::move( menu );
+		mNode = std::move( node );
 	}
 
 	void Director::Update()
@@ -21,12 +21,12 @@ namespace r2
 		int input = 0;
 		while( true )
 		{
-			mMenu->ShowInformation();
+			mNode->ShowInformation();
 			input = _getch();
 
 			system( "cls" );
 
-			switch( mMenu->Do( input ) )
+			switch( mNode->Do( input ) )
 			{
 			case eTestEndAction::None:
 				system( "cls" );

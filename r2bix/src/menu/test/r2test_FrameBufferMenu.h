@@ -4,7 +4,7 @@
 
 namespace r2
 {
-	using MenuUp = std::unique_ptr<class TestMenu>;
+	using NodeUp = std::unique_ptr<class iNode>;
 
 	class Director;
 }
@@ -18,6 +18,6 @@ namespace r2test
 
 	public:
 		static const char* GetTitle() { return "Frame Buffer"; }
-		static r2::MenuUp Create( r2::Director& director );
+		static r2::NodeUp Create( r2::Director& director );
 	};
 }

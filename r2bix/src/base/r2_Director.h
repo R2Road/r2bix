@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2_TestMenu.h"
+#include "r2_iNode.h"
 
 namespace r2
 {
@@ -9,11 +9,11 @@ namespace r2
 	public:
 		Director();
 
-		void Setup( MenuUp menu );
+		void Setup( NodeUp node );
 
 		void Update();
 
 	private:
-		MenuUp mMenu;
+		NodeUp mNode;
 	};
 }

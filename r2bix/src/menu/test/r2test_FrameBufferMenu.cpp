@@ -3,13 +3,15 @@
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
+#include "base/r2_TestMenu.h"
+
 #include "r2test_RootMenu.h"
 
 #include "test/framebuffer_test.h"
 
 namespace r2test
 {
-	r2::MenuUp FrameBufferMenu::Create( r2::Director& director )
+	r2::NodeUp FrameBufferMenu::Create( r2::Director& director )
 	{
 		r2::MenuUp ret( new ( std::nothrow ) r2::TestMenu(
 			director

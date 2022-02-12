@@ -4,7 +4,7 @@
 
 namespace r2
 {
-	using MenuUp = std::unique_ptr<class TestMenu>;
+	using NodeUp = std::unique_ptr<class iNode>;
 
 	class Director;
 
@@ -15,6 +15,6 @@ namespace r2
 
 	public:
 		static const char* GetTitle() { return "Develop"; }
-		static MenuUp Create( Director& director );
+		static NodeUp Create( Director& director );
 	};
 }

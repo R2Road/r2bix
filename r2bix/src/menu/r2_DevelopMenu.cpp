@@ -3,6 +3,7 @@
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
+#include "base/r2_TestMenu.h"
 
 #include "menu/game/r2game_RootMenu.h"
 #include "menu/research/r2research_RootMenu.h"
@@ -10,7 +11,7 @@
 
 namespace r2
 {
-	MenuUp DevelopMenu::Create( Director& director )
+	NodeUp DevelopMenu::Create( Director& director )
 	{
 		MenuUp ret( new ( std::nothrow ) TestMenu(
 			director

@@ -3,6 +3,8 @@
 
 #include "base/r2_Director.h"
 #include "base/r2_eTestEndAction.h"
+#include "base/r2_TestMenu.h"
+
 #include "menu/r2_DevelopMenu.h"
 
 #include "research/flickering_research.h"
@@ -10,7 +12,7 @@
 
 namespace r2game
 {
-	r2::MenuUp RootMenu::Create( r2::Director& director )
+	r2::NodeUp RootMenu::Create( r2::Director& director )
 	{
 		r2::MenuUp ret( new ( std::nothrow ) r2::TestMenu(
 			director
