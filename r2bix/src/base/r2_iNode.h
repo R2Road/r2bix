@@ -13,9 +13,9 @@ namespace r2
 	{
 	protected:
 		iNode( Director& director ) : mDirector( director ) {}
+	public:
 		virtual ~iNode() {}
 
-	public:
 		virtual void ShowInformation() const = 0;
 		virtual eTestEndAction Do( const int key_code ) = 0;
 
