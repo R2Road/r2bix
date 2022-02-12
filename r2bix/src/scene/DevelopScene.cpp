@@ -4,8 +4,9 @@
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 
-#include "menu/game/r2game_RootMenu.h"
 #include "menu/test/r2test_RootMenu.h"
+
+#include "scene/game/r2game_RootScene.h"
 #include "scene/research/r2research_RootScene.h"
 
 #include "scene/TestScene.h"
@@ -49,10 +50,10 @@ r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 			
 		ret->AddChild(
 			32
-			, []()->const char* { return r2game::RootMenu::GetTitle(); }
+			, []()->const char* { return r2game::RootScene::GetTitle(); }
 			, [&director]()->r2base::eTestEndAction
 			{
-				director.Setup( r2game::RootMenu::Create( director ) );
+				director.Setup( r2game::RootScene::Create( director ) );
 				return r2base::eTestEndAction::ChangeScene;
 			}
 		);

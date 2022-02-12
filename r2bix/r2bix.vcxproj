@@ -23,7 +23,6 @@
     <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
-    <ClCompile Include="src\menu\game\r2game_RootMenu.cpp" />
     <ClCompile Include="src\menu\test\r2test_CameraMenu.cpp" />
     <ClCompile Include="src\menu\test\r2test_FrameBufferMenu.cpp" />
     <ClCompile Include="src\menu\test\r2test_InputMenu.cpp" />
@@ -50,6 +49,7 @@
     <ClCompile Include="src\research\flickering_research.cpp" />
     <ClCompile Include="src\research\visible_resource_research.cpp" />
     <ClCompile Include="src\scene\DevelopScene.cpp" />
+    <ClCompile Include="src\scene\game\r2game_RootScene.cpp" />
     <ClCompile Include="src\scene\research\r2research_RootScene.cpp" />
     <ClCompile Include="src\scene\TestScene.cpp" />
     <ClCompile Include="src\test\animation_test.cpp" />
@@ -70,7 +70,6 @@
     <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />
-    <ClInclude Include="src\menu\game\r2game_RootMenu.h" />
     <ClInclude Include="src\menu\test\r2test_CameraMenu.h" />
     <ClInclude Include="src\menu\test\r2test_FrameBufferMenu.h" />
     <ClInclude Include="src\menu\test\r2test_InputMenu.h" />
@@ -95,6 +94,7 @@
     <ClInclude Include="src\research\flickering_research.h" />
     <ClInclude Include="src\research\visible_resource_research.h" />
     <ClInclude Include="src\scene\DevelopScene.h" />
+    <ClInclude Include="src\scene\game\r2game_RootScene.h" />
     <ClInclude Include="src\scene\research\r2research_RootScene.h" />
     <ClInclude Include="src\scene\TestScene.h" />
     <ClInclude Include="src\test\animation_test.h" />
