@@ -12,7 +12,7 @@
 
 r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 {
-	r2base::MenuUp ret( new ( std::nothrow ) r2base::TestMenu(
+	MenuUp ret( new ( std::nothrow ) TestMenu(
 		director
 		, GetTitle()
 	) );
