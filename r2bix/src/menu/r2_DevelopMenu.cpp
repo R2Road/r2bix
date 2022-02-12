@@ -12,7 +12,7 @@ namespace r2
 {
 	MenuUp DevelopMenu::Create( Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) Menu(
+		MenuUp ret( new ( std::nothrow ) TestMenu(
 			director
 			, GetTitle()
 		) );

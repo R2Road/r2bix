@@ -14,25 +14,25 @@ namespace
 
 namespace r2
 {
-	Menu::Menu( Director& director, const char* title_string, const char* description_string ) :
+	TestMenu::TestMenu( Director& director, const char* title_string, const char* description_string ) :
 		mDirector( director )
 		, mTitleString( title_string )
 		, mDescriptionString( description_string )
 		, mTests()
 	{}
 
-	void Menu::ShowInformation() const
+	void TestMenu::ShowInformation() const
 	{
 		ShowTitle();
 		ShowDescription();
 		ShowMenu();
 	}
-	void Menu::ShowTitle() const
+	void TestMenu::ShowTitle() const
 	{
 		std::cout << "# " << mTitleString << " #" << r2::linefeed;
 		std::cout << r2::split;
 	}
-	void Menu::ShowDescription() const
+	void TestMenu::ShowDescription() const
 	{
 		if( !mDescriptionString.empty() )
 		{
@@ -44,7 +44,7 @@ namespace r2
 		}
 	}
 
-	void Menu::ShowMenu() const
+	void TestMenu::ShowMenu() const
 	{
 		std::cout << "+ Menu" << r2::linefeed2;
 
@@ -90,7 +90,7 @@ namespace r2
 		std::cout << r2::split << "Select Menu";
 	}
 
-	eTestEndAction Menu::Do( const int key_code )
+	eTestEndAction TestMenu::Do( const int key_code )
 	{
 		for( const auto t : mTests )
 		{
@@ -103,22 +103,22 @@ namespace r2
 		return eTestEndAction::Pause;
 	}
 
-	void Menu::AddChild( const char key_code, iTest& test_obj )
+	void TestMenu::AddChild( const char key_code, iTest& test_obj )
 	{
 		mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 	}
-	void Menu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestEndAction()> func_test )
+	void TestMenu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestEndAction()> func_test )
 	{
 		mTests.emplace_back( key_code, func_title, func_test );
 	}
-	void Menu::AddLineFeed()
+	void TestMenu::AddLineFeed()
 	{
 		static const std::function<const char*()> func_title = []()->const char* { return ""; };
 		static const std::function<const r2::eTestEndAction()> func_test = []()->const r2::eTestEndAction { return r2::eTestEndAction::Pause; };
 
 		mTests.push_back( { KeyCode4LineFeed, func_title, func_test } );
 	}
-	void Menu::AddSplit()
+	void TestMenu::AddSplit()
 	{
 		static const std::function<const char*( )> func_title = []()->const char* { return ""; };
 		static const std::function<const r2::eTestEndAction()> func_test = []()->const r2::eTestEndAction { return r2::eTestEndAction::Pause; };

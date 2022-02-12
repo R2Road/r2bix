@@ -4,7 +4,7 @@
 
 namespace r2
 {
-	using MenuUp = std::unique_ptr<class Menu>;
+	using MenuUp = std::unique_ptr<class TestMenu>;
 
 	class Director;
 }

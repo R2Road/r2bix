@@ -11,7 +11,7 @@ namespace r2test
 {
 	r2::MenuUp RendererMenu::Create( r2::Director& director )
 	{
-		r2::MenuUp ret( new ( std::nothrow ) r2::Menu(
+		r2::MenuUp ret( new ( std::nothrow ) r2::TestMenu(
 			director
 			, GetTitle(),
 			"> ..."
