@@ -7,7 +7,7 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_iNode.h"
-#include "menu/r2_DevelopMenu.h"
+#include "menu/DevelopMenu.h"
 
 int main()
 {

@@ -134,7 +134,7 @@
     <ClCompile Include="src\base\r2base_TestMenu.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\r2_DevelopMenu.cpp">
+    <ClCompile Include="src\menu\DevelopMenu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
   </ItemGroup>
@@ -263,7 +263,7 @@
     <ClInclude Include="src\base\r2base_TestMenu.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\r2_DevelopMenu.h">
+    <ClInclude Include="src\menu\DevelopMenu.h">
       <Filter>menu</Filter>
     </ClInclude>
   </ItemGroup>

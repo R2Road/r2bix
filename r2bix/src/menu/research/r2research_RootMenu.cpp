@@ -5,7 +5,7 @@
 #include "base/r2base_eTestEndAction.h"
 #include "base/r2base_TestMenu.h"
 
-#include "menu/r2_DevelopMenu.h"
+#include "menu/DevelopMenu.h"
 
 #include "research/flickering_research.h"
 #include "research/visible_resource_research.h"
