@@ -19,28 +19,7 @@ namespace r2base
 
 	void Director::Update()
 	{
-		int input = 0;
-		while( true )
-		{
-			switch( mNode->Do() )
-			{
-			case r2base::eTestEndAction::None:
-				system( "cls" );
-				break;
-
-			case r2base::eTestEndAction::Pause:
-				std::cout << r2::linefeed;
-				system( "pause" );
-
-				system( "cls" );
-				break;
-
-			//case r2base::eTestEndAction::ChangeScene:
-				//break;
-
-			case r2base::eTestEndAction::Exit:
-				return;
-			}
-		}
+		while( r2base::eTestEndAction::Exit != mNode->Do() )
+		{}
 	}
 }

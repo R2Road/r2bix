@@ -32,7 +32,27 @@ r2base::eTestEndAction TestScene::Do()
 
 	system( "cls" );
 
-	return RunTest( input );
+	switch( RunTest( input ) )
+	{
+	case r2base::eTestEndAction::None:
+		system( "cls" );
+		break;
+
+	case r2base::eTestEndAction::Pause:
+		std::cout << r2::linefeed;
+		system( "pause" );
+
+		system( "cls" );
+		break;
+
+		//case r2base::eTestEndAction::ChangeScene:
+			//break;
+
+	case r2base::eTestEndAction::Exit:
+		return r2base::eTestEndAction::Exit;
+	}
+
+	return r2base::eTestEndAction::None;
 }
 
 void TestScene::showTitle() const
