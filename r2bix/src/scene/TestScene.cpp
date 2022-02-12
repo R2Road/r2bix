@@ -12,19 +12,19 @@ namespace
 	const char KeyCode4Split = 42; // *
 }
 
-TestMenu::TestMenu( r2base::Director& director, const char* title_string, const char* description_string ) : iNode( director )
+TestScene::TestScene( r2base::Director& director, const char* title_string, const char* description_string ) : iNode( director )
 	, mTitleString( title_string )
 	, mDescriptionString( description_string )
 	, mTests()
 {}
 
-void TestMenu::ShowInformation() const
+void TestScene::ShowInformation() const
 {
 	showTitle();
 	showDescription();
 	showMenu();
 }
-r2base::eTestEndAction TestMenu::Do( const int key_code )
+r2base::eTestEndAction TestScene::Do( const int key_code )
 {
 	for( const auto t : mTests )
 	{
@@ -37,12 +37,12 @@ r2base::eTestEndAction TestMenu::Do( const int key_code )
 	return r2base::eTestEndAction::Pause;
 }
 
-void TestMenu::showTitle() const
+void TestScene::showTitle() const
 {
 	std::cout << "# " << mTitleString << " #" << r2::linefeed;
 	std::cout << r2::split;
 }
-void TestMenu::showDescription() const
+void TestScene::showDescription() const
 {
 	if( !mDescriptionString.empty() )
 	{
@@ -54,7 +54,7 @@ void TestMenu::showDescription() const
 	}
 }
 
-void TestMenu::showMenu() const
+void TestScene::showMenu() const
 {
 	std::cout << "+ Menu" << r2::linefeed2;
 
@@ -100,22 +100,22 @@ void TestMenu::showMenu() const
 	std::cout << r2::split << "Select Menu";
 }
 
-void TestMenu::AddChild( const char key_code, r2base::iTest& test_obj )
+void TestScene::AddChild( const char key_code, r2base::iTest& test_obj )
 {
 	mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 }
-void TestMenu::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2base::eTestEndAction()> func_test )
+void TestScene::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2base::eTestEndAction()> func_test )
 {
 	mTests.emplace_back( key_code, func_title, func_test );
 }
-void TestMenu::AddLineFeed()
+void TestScene::AddLineFeed()
 {
 	static const std::function<const char*()> func_title = []()->const char* { return ""; };
 	static const std::function<const r2base::eTestEndAction()> func_test = []()->const r2base::eTestEndAction { return r2base::eTestEndAction::Pause; };
 
 	mTests.push_back( { KeyCode4LineFeed, func_title, func_test } );
 }
-void TestMenu::AddSplit()
+void TestScene::AddSplit()
 {
 	static const std::function<const char*( )> func_title = []()->const char* { return ""; };
 	static const std::function<const r2base::eTestEndAction()> func_test = []()->const r2base::eTestEndAction { return r2base::eTestEndAction::Pause; };

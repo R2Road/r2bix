@@ -14,7 +14,7 @@ namespace r2test
 {
 	r2base::NodeUp CameraMenu::Create( r2base::Director& director )
 	{
-		MenuUp ret( new ( std::nothrow ) TestMenu(
+		MenuUp ret( new ( std::nothrow ) TestScene(
 			director
 			, GetTitle(),
 			"> ..."

@@ -14,8 +14,8 @@ namespace r2base
 	class Director;
 }
 
-using MenuUp = std::unique_ptr<class TestMenu>;
-class TestMenu : public r2base::iNode
+using MenuUp = std::unique_ptr<class TestScene>;
+class TestScene : public r2base::iNode
 {
 private:
 	struct TestInfo
@@ -38,7 +38,7 @@ private:
 	using TestContainerT = std::vector<TestInfo>;
 
 public:
-	TestMenu( r2base::Director& director, const char* title_string, const char* description_string = "" );
+	TestScene( r2base::Director& director, const char* title_string, const char* description_string = "" );
 
 	void ShowInformation() const override;
 	r2base::eTestEndAction Do( const int key_code ) override;
