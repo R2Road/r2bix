@@ -25,14 +25,14 @@
     <Filter Include="menu\test">
       <UniqueIdentifier>{febd3ecf-f1ca-401b-8c96-a9bcf8a4d920}</UniqueIdentifier>
     </Filter>
-    <Filter Include="menu\research">
-      <UniqueIdentifier>{00114f7b-f8e1-4cd5-bcc6-abaaf3f056f4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="menu\game">
       <UniqueIdentifier>{3d3bfc5c-5452-4697-8a46-93301d606111}</UniqueIdentifier>
     </Filter>
     <Filter Include="scene">
       <UniqueIdentifier>{6f0690c9-6518-4bd3-a42a-3190d7c93d88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\research">
+      <UniqueIdentifier>{00114f7b-f8e1-4cd5-bcc6-abaaf3f056f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -98,9 +98,6 @@
     <ClCompile Include="src\renderer\r2_FPSTimer.cpp">
       <Filter>renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\menu\research\r2research_RootMenu.cpp">
-      <Filter>menu\research</Filter>
-    </ClCompile>
     <ClCompile Include="src\menu\test\r2test_RootMenu.cpp">
       <Filter>menu\test</Filter>
     </ClCompile>
@@ -139,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="src\scene\TestScene.cpp">
       <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\research\r2research_RootScene.cpp">
+      <Filter>scene\research</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -215,9 +215,6 @@
     <ClInclude Include="src\renderer\r2_FPSTimer.h">
       <Filter>renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu\research\r2research_RootMenu.h">
-      <Filter>menu\research</Filter>
-    </ClInclude>
     <ClInclude Include="src\menu\test\r2test_RootMenu.h">
       <Filter>menu\test</Filter>
     </ClInclude>
@@ -268,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="src\scene\TestScene.h">
       <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\research\r2research_RootScene.h">
+      <Filter>scene\research</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

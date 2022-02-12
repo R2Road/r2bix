@@ -11,10 +11,10 @@ namespace r2base
 
 namespace r2research
 {
-	class RootMenu
+	class RootScene
 	{
 	private:
-		RootMenu() = delete;
+		RootScene() = delete;
 
 	public:
 		static const char* GetTitle() { return "Research"; }
