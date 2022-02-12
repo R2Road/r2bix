@@ -38,9 +38,6 @@
     <ClCompile Include="src\base\r2_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\r2_Menu.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\animation_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -137,6 +134,9 @@
     <ClCompile Include="src\menu\game\r2game_RootMenu.cpp">
       <Filter>menu\game</Filter>
     </ClCompile>
+    <ClCompile Include="src\base\r2_TestMenu.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -144,9 +144,6 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2_iTest.h">
-      <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\base\r2_Menu.h">
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2_Singleton.h">
@@ -262,6 +259,9 @@
     </ClInclude>
     <ClInclude Include="src\menu\game\r2game_RootMenu.h">
       <Filter>menu\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2_TestMenu.h">
+      <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
