@@ -263,5 +263,8 @@
     <ClInclude Include="src\base\r2_TestMenu.h">
       <Filter>base</Filter>
     </ClInclude>
+    <ClInclude Include="src\base\r2_iNode.h">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

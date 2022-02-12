@@ -1,9 +1,10 @@
 #pragma once
 
 #include <functional>
-#include <memory>
 #include <string_view>
 #include <vector>
+
+#include "r2_iNode.h"
 
 namespace r2
 {
@@ -13,7 +14,7 @@ namespace r2
 	class Director;
 
 	using MenuUp = std::unique_ptr<class TestMenu>;
-	class TestMenu
+	class TestMenu : public iNode
 	{
 	private:
 		struct TestInfo
@@ -39,7 +40,7 @@ namespace r2
 		TestMenu( Director& director, const char* title_string, const char* description_string = "" );
 		virtual ~TestMenu() {}
 
-		void ShowInformation() const;
+		void ShowInformation() const override;
 
 	private:
 		void ShowTitle() const;
@@ -47,7 +48,7 @@ namespace r2
 		void ShowMenu() const;
 
 	public:
-		eTestEndAction Do( const int key_code );
+		eTestEndAction Do( const int key_code ) override;
 
 		void AddChild( const char key_code, iTest& test_obj );
 		void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2::eTestEndAction()> func_test );
@@ -55,7 +56,6 @@ namespace r2
 		void AddSplit();
 
 	protected:
-		Director& mDirector;
 		std::string_view mTitleString;
 		std::string_view mDescriptionString;
 

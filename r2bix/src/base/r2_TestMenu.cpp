@@ -14,8 +14,7 @@ namespace
 
 namespace r2
 {
-	TestMenu::TestMenu( Director& director, const char* title_string, const char* description_string ) :
-		mDirector( director )
+	TestMenu::TestMenu( Director& director, const char* title_string, const char* description_string ) : iNode( director )
 		, mTitleString( title_string )
 		, mDescriptionString( description_string )
 		, mTests()
