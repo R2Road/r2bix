@@ -1,13 +1,13 @@
 #pragma once
 
-#include "base/r2base_iNode.h"
+#include "game/r2game_Node.h"
 
 namespace r2base
 {
 	class Director;
 }
 
-class GameScene : public r2base::iNode
+class GameScene : public r2game::Node
 {
 public:
 	GameScene( r2base::Director& director );

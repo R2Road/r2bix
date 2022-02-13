@@ -3,7 +3,7 @@
 
 #include "base/r2base_Director.h"
 
-GameScene::GameScene( r2base::Director& director ) : iNode( director )
+GameScene::GameScene( r2base::Director& director ) : r2game::Node( director )
 {}
 
 bool GameScene::Do()

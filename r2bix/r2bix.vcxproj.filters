@@ -31,6 +31,9 @@
     <Filter Include="scene\test">
       <UniqueIdentifier>{febd3ecf-f1ca-401b-8c96-a9bcf8a4d920}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{5d064529-4811-46c8-89c4-69e915c7bef9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -139,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="src\scene\GameScene.cpp">
       <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\r2game_Node.cpp">
+      <Filter>game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +277,9 @@
     </ClInclude>
     <ClInclude Include="src\scene\GameScene.h">
       <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\r2game_Node.h">
+      <Filter>game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
