@@ -35,7 +35,7 @@ namespace r2test
 				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2test::InputScene::Create( director ) );
-					return r2base::eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::None;
 				}
 			);
 			ret->AddChild( '2', rect_test::Basic::GetInstance() );
@@ -50,7 +50,7 @@ namespace r2test
 				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2test::FrameBufferScene::Create( director ) );
-					return r2base::eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -59,7 +59,7 @@ namespace r2test
 				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2test::VisibleResourceScene::Create( director ) );
-					return r2base::eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -68,7 +68,7 @@ namespace r2test
 				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2test::CameraScene::Create( director ) );
-					return r2base::eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
@@ -77,7 +77,7 @@ namespace r2test
 				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2test::RendererScene::Create( director ) );
-					return r2base::eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::None;
 				}
 			);
 
@@ -97,7 +97,7 @@ namespace r2test
 				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( DevelopScene::Create( director ) );
-					return r2base::eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::None;
 				}
 			);
 		}

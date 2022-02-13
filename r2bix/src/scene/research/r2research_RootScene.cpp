@@ -44,7 +44,7 @@ namespace r2research
 				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( DevelopScene::Create( director ) );
-					return r2base::eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::None;
 				}
 			);
 		}

@@ -49,7 +49,7 @@ namespace r2test
 				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2test::RootScene::Create( director ) );
-					return r2base::eTestEndAction::ChangeScene;
+					return r2base::eTestEndAction::None;
 				}
 			);
 		}

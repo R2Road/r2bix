@@ -32,7 +32,7 @@ r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 			, [&director]()->r2base::eTestEndAction
 			{
 				director.Setup( r2test::RootScene::Create( director ) );
-				return r2base::eTestEndAction::ChangeScene;
+				return r2base::eTestEndAction::None;
 			}
 		);
 		ret->AddChild(
@@ -41,7 +41,7 @@ r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 			, [&director]()->r2base::eTestEndAction
 			{
 				director.Setup( r2research::RootScene::Create( director ) );
-				return r2base::eTestEndAction::ChangeScene;
+				return r2base::eTestEndAction::None;
 			}
 		);
 
@@ -53,7 +53,7 @@ r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 			, [&director]()->r2base::eTestEndAction
 			{
 				director.Setup( r2game::RootScene::Create( director ) );
-				return r2base::eTestEndAction::ChangeScene;
+				return r2base::eTestEndAction::None;
 			}
 		);
 	}

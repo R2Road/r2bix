@@ -43,8 +43,6 @@ bool TestScene::Do()
 		system( "pause" );
 		break;
 
-	//case r2base::eTestEndAction::ChangeScene: break;
-
 	case r2base::eTestEndAction::Exit:
 		return false;
 	}

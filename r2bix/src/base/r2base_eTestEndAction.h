@@ -6,7 +6,6 @@ namespace r2base
 	{
 		None,
 		Pause,
-		ChangeScene,
 		Exit,
 	};
 }
