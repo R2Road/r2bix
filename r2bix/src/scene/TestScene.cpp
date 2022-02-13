@@ -25,7 +25,7 @@ void TestScene::ShowInformation() const
 	showDescription();
 	showMenu();
 }
-r2base::eTestEndAction TestScene::Do()
+bool TestScene::Do()
 {
 	ShowInformation();
 	auto input = _getch();
@@ -45,14 +45,14 @@ r2base::eTestEndAction TestScene::Do()
 		system( "cls" );
 		break;
 
-		//case r2base::eTestEndAction::ChangeScene:
-			//break;
+	//case r2base::eTestEndAction::ChangeScene:
+		//break;
 
 	case r2base::eTestEndAction::Exit:
-		return r2base::eTestEndAction::Exit;
+		return false;
 	}
 
-	return r2base::eTestEndAction::None;
+	return true;
 }
 
 void TestScene::showTitle() const

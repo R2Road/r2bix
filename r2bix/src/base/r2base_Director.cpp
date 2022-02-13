@@ -19,7 +19,7 @@ namespace r2base
 
 	void Director::Update()
 	{
-		while( r2base::eTestEndAction::Exit != mNode->Do() )
+		while( true == mNode->Do() )
 		{}
 	}
 }

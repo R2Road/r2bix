@@ -41,7 +41,7 @@ public:
 	TestScene( r2base::Director& director, const char* title_string, const char* description_string = "" );
 
 	void ShowInformation() const override;
-	r2base::eTestEndAction Do() override;
+	bool Do() override;
 
 private:
 	void showTitle() const;

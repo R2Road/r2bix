@@ -4,8 +4,6 @@
 
 namespace r2base
 {
-	enum class eTestEndAction; 
-
 	class Director;
 
 	using NodeUp = std::unique_ptr<class iNode>;
@@ -17,7 +15,7 @@ namespace r2base
 		virtual ~iNode() {}
 
 		virtual void ShowInformation() const = 0;
-		virtual eTestEndAction Do() = 0;
+		virtual bool Do() = 0;
 
 	protected:
 		Director& mDirector;
