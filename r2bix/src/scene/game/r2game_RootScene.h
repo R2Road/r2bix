@@ -2,6 +2,8 @@
 
 #include <memory>
 
+#include "scene/GameScene.h"
+
 namespace r2base
 {
 	using NodeUp = std::unique_ptr<class iNode>;
@@ -11,13 +13,14 @@ namespace r2base
 
 namespace r2game
 {
-	class RootScene
+	class RootScene : public GameScene
 	{
 	private:
-		RootScene() = delete;
+		RootScene( r2base::Director& director );
 
 	public:
-		static const char* GetTitle() { return "Game"; }
 		static r2base::NodeUp Create( r2base::Director& director );
+
+		bool Do() override;
 	};
 }

@@ -49,7 +49,7 @@ r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 			
 		ret->AddChild(
 			32
-			, []()->const char* { return r2game::RootScene::GetTitle(); }
+			, []()->const char* { return "Game"; }
 			, [&director]()->r2base::eTestEndAction
 			{
 				director.Setup( r2game::RootScene::Create( director ) );
