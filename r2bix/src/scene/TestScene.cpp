@@ -27,6 +27,8 @@ void TestScene::ShowInformation() const
 }
 bool TestScene::Do()
 {
+	system( "cls" );
+
 	ShowInformation();
 	auto input = _getch();
 
@@ -34,19 +36,14 @@ bool TestScene::Do()
 
 	switch( RunTest( input ) )
 	{
-	case r2base::eTestEndAction::None:
-		system( "cls" );
-		break;
+	//case r2base::eTestEndAction::None: break;
 
 	case r2base::eTestEndAction::Pause:
 		std::cout << r2::linefeed;
 		system( "pause" );
-
-		system( "cls" );
 		break;
 
-	//case r2base::eTestEndAction::ChangeScene:
-		//break;
+	//case r2base::eTestEndAction::ChangeScene: break;
 
 	case r2base::eTestEndAction::Exit:
 		return false;
