@@ -14,7 +14,6 @@ namespace r2base
 	public:
 		virtual ~iNode() {}
 
-		virtual void ShowInformation() const = 0;
 		virtual bool Do() = 0;
 
 	protected:

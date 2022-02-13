@@ -43,7 +43,7 @@ public:
 	bool Do() override;
 
 private:
-	void ShowInformation() const override;
+	void ShowInformation() const;
 	void showTitle() const;
 	void showDescription() const;
 	void showMenu() const;
