@@ -137,6 +137,9 @@
     <ClCompile Include="src\scene\test\r2test_VisibleResourceScene.cpp">
       <Filter>scene\test</Filter>
     </ClCompile>
+    <ClCompile Include="src\scene\GameScene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -265,6 +268,9 @@
     </ClInclude>
     <ClInclude Include="src\scene\test\r2test_VisibleResourceScene.h">
       <Filter>scene\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\GameScene.h">
+      <Filter>scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

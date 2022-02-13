@@ -2,35 +2,14 @@
 #include "r2game_RootScene.h"
 
 #include "base/r2base_Director.h"
-#include "base/r2base_eTestEndAction.h"
 
-#include "research/flickering_research.h"
-#include "research/visible_resource_research.h"
-
-#include "scene/DevelopScene.h"
-#include "scene/TestScene.h"
+#include "scene/GameScene.h"
 
 namespace r2game
 {
 	r2base::NodeUp RootScene::Create( r2base::Director& director )
 	{
-		TestSceneUp ret( new ( std::nothrow ) TestScene(
-			director
-			, GetTitle()
-		) );
-
-		{
-			ret->AddChild(
-				27
-				, []()->const char* { return "Return To Develop Menu"; }
-				, [&director]()->r2base::eTestEndAction
-				{
-					director.Setup( DevelopScene::Create( director ) );
-					return r2base::eTestEndAction::ChangeScene;
-				}
-			);
-		}
-
+		r2base::NodeUp ret( new ( std::nothrow ) GameScene( director ) );
 		return ret;
 	}
 }

@@ -43,6 +43,7 @@
     <ClCompile Include="src\research\flickering_research.cpp" />
     <ClCompile Include="src\research\visible_resource_research.cpp" />
     <ClCompile Include="src\scene\DevelopScene.cpp" />
+    <ClCompile Include="src\scene\GameScene.cpp" />
     <ClCompile Include="src\scene\game\r2game_RootScene.cpp" />
     <ClCompile Include="src\scene\research\r2research_RootScene.cpp" />
     <ClCompile Include="src\scene\TestScene.cpp" />
@@ -88,6 +89,7 @@
     <ClInclude Include="src\research\flickering_research.h" />
     <ClInclude Include="src\research\visible_resource_research.h" />
     <ClInclude Include="src\scene\DevelopScene.h" />
+    <ClInclude Include="src\scene\GameScene.h" />
     <ClInclude Include="src\scene\game\r2game_RootScene.h" />
     <ClInclude Include="src\scene\research\r2research_RootScene.h" />
     <ClInclude Include="src\scene\TestScene.h" />
