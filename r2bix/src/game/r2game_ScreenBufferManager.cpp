@@ -27,9 +27,9 @@ namespace r2game
 		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
 
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};
+		if( !GetConsoleScreenBufferInfo( mBufferHandle4First, &csbi ) )
 		{
-			const auto result = GetConsoleScreenBufferInfo( mBufferHandle4First, &csbi );
-			assert( result && "Failed : GetConsoleScreenBufferInfo" );
+			assert( false && "Failed : GetConsoleScreenBufferInfo" );
 		}
 
 		mBufferHandle4Second = CreateConsoleScreenBuffer(
@@ -41,10 +41,9 @@ namespace r2game
 		);
 		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
 
-		if( SetConsoleScreenBufferSize( mBufferHandle4Second, csbi.dwSize ) )
+		if( !SetConsoleScreenBufferSize( mBufferHandle4Second, csbi.dwSize ) )
 		{
-			DWORD out_result;
-			FillConsoleOutputCharacter( mBufferHandle4Second, TEXT( '2' ), csbi.dwSize.X * csbi.dwSize.Y, { 0, 0 }, &out_result );
+			assert( false && "Failed : SetConsoleScreenBufferSize" );
 		}
 	}
 
