@@ -56,6 +56,7 @@
     <ClCompile Include="src\scene\test\r2test_VisibleResourceScene.cpp" />
     <ClCompile Include="src\test\animation_test.cpp" />
     <ClCompile Include="src\test\camera_test.cpp" />
+    <ClCompile Include="src\test\console_screen_buffer_manager_test.cpp" />
     <ClCompile Include="src\test\framebuffer_test.cpp" />
     <ClCompile Include="src\test\key_test.cpp" />
     <ClCompile Include="src\test\rect_test.cpp" />
@@ -103,6 +104,7 @@
     <ClInclude Include="src\scene\test\r2test_VisibleResourceScene.h" />
     <ClInclude Include="src\test\animation_test.h" />
     <ClInclude Include="src\test\camera_test.h" />
+    <ClInclude Include="src\test\console_screen_buffer_manager_test.h" />
     <ClInclude Include="src\test\framebuffer_test.h" />
     <ClInclude Include="src\test\key_test.h" />
     <ClInclude Include="src\test\rect_test.h" />

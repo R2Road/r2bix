@@ -13,8 +13,9 @@
 #include "scene/DevelopScene.h"
 #include "scene/TestScene.h"
 
-#include "test/rect_test.h"
 #include "test/animation_test.h"
+#include "test/console_screen_buffer_manager_test.h"
+#include "test/rect_test.h"
 
 namespace r2test
 {
@@ -80,6 +81,12 @@ namespace r2test
 					return r2base::eTestEndAction::None;
 				}
 			);
+
+
+			ret->AddLineFeed();
+
+
+			ret->AddChild( 'a', console_screen_buffer_manager_test::MakeSecondBuffer::GetInstance() );
 
 
 			ret->AddSplit();
