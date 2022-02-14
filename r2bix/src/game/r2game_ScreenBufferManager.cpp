@@ -21,18 +21,21 @@ namespace r2game
 		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
 
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};
-		assert( GetConsoleScreenBufferInfo( mBufferHandle4First, &csbi ) && "Failed : GetConsoleScreenBufferInfo" );
+		{
+			const auto result = GetConsoleScreenBufferInfo( mBufferHandle4First, &csbi );
+			assert( result && "Failed : GetConsoleScreenBufferInfo" );
+		}
 
 		mBufferHandle4Second = CreateConsoleScreenBuffer(
 			GENERIC_READ | GENERIC_WRITE
-			, FILE_SHARE_WRITE | FILE_SHARE_READ
+			, 0//FILE_SHARE_WRITE | FILE_SHARE_READ
 			, nullptr
 			, CONSOLE_TEXTMODE_BUFFER
 			, nullptr
 		);
 		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
 
-		SetConsoleScreenBufferSize( mBufferHandle4Second, csbi.dwSize );
+		if( SetConsoleScreenBufferSize( mBufferHandle4Second, csbi.dwSize ) )
 		{
 			DWORD out_result;
 			FillConsoleOutputCharacter( mBufferHandle4Second, TEXT( '2' ), csbi.dwSize.X * csbi.dwSize.Y, { 0, 0 }, &out_result );

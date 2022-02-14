@@ -20,11 +20,13 @@ namespace console_screen_buffer_manager_test
 	{
 		return []()->r2base::eTestEndAction
 		{
+			r2game::ScreenBufferManager screen_buffer_manager;
+
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
-			r2game::ScreenBufferManager screen_buffer_manager;
+			
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
