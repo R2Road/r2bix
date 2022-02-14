@@ -12,8 +12,8 @@ namespace r2game
 		~ScreenBufferManager();
 
 	private:
-		void Init();
-		void Close();
+		void init();
+		void release();
 
 	public:
 		void Swap();

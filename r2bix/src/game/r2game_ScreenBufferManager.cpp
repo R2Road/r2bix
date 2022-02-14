@@ -8,14 +8,14 @@ namespace r2game
 {
 	ScreenBufferManager::ScreenBufferManager() : mBufferHandle4First( nullptr ), mBufferHandle4Second( nullptr ), mbFirst( true )
 	{
-		Init();
+		init();
 	}
 	ScreenBufferManager::~ScreenBufferManager()
 	{
-		Close();
+		release();
 	}
 
-	void ScreenBufferManager::Init()
+	void ScreenBufferManager::init()
 	{
 		mBufferHandle4First = GetStdHandle( STD_OUTPUT_HANDLE );
 		CONSOLE_SCREEN_BUFFER_INFO first_csbi{};
@@ -37,7 +37,7 @@ namespace r2game
 		}
 	}
 
-	void ScreenBufferManager::Close()
+	void ScreenBufferManager::release()
 	{
 		if( nullptr != mBufferHandle4First )
 		{
