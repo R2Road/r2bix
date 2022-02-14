@@ -17,6 +17,12 @@ namespace r2game
 
 	void ScreenBufferManager::init()
 	{
+		//
+		// # 20220215 - R
+		// Debug, Release 모두 CreateConsoleScreenBuffer에 실패해도 터지지 않는다.
+		// SetConsoleActiveScreenBuffer에 INVALID_HANDLE_VALUE 가 들어가면 아무 작동도 하지 않는다.
+		//
+
 		mBufferHandle4First = GetStdHandle( STD_OUTPUT_HANDLE );
 		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
 
