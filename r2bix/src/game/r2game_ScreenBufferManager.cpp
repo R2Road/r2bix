@@ -6,7 +6,7 @@
 
 namespace r2game
 {
-	ScreenBufferManager::ScreenBufferManager() : mBufferHandle4First( nullptr ), mBufferHandle4Second( nullptr ), mbFirst( true )
+	ScreenBufferManager::ScreenBufferManager() : mBufferHandle4First( INVALID_HANDLE_VALUE ), mBufferHandle4Second( INVALID_HANDLE_VALUE ), mbFirst( true )
 	{
 		init();
 	}
@@ -18,10 +18,10 @@ namespace r2game
 	void ScreenBufferManager::init()
 	{
 		mBufferHandle4First = GetStdHandle( STD_OUTPUT_HANDLE );
+		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
+
 		CONSOLE_SCREEN_BUFFER_INFO first_csbi{};
-		{
-			assert( GetConsoleScreenBufferInfo( mBufferHandle4First, &first_csbi ) && "Failed : GetConsoleScreenBufferInfo" );
-		}
+		assert( GetConsoleScreenBufferInfo( mBufferHandle4First, &first_csbi ) && "Failed : GetConsoleScreenBufferInfo" );
 
 		mBufferHandle4Second = CreateConsoleScreenBuffer(
 			GENERIC_READ | GENERIC_WRITE
@@ -30,6 +30,8 @@ namespace r2game
 			, CONSOLE_TEXTMODE_BUFFER
 			, nullptr
 		);
+		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
+
 		SetConsoleScreenBufferSize( mBufferHandle4Second, first_csbi.dwSize );
 		{
 			DWORD out_result;
@@ -39,12 +41,12 @@ namespace r2game
 
 	void ScreenBufferManager::release()
 	{
-		if( nullptr != mBufferHandle4First )
+		if( INVALID_HANDLE_VALUE != mBufferHandle4First )
 		{
 			SetConsoleActiveScreenBuffer( mBufferHandle4First );
 		}
 
-		if( nullptr != mBufferHandle4Second )
+		if( INVALID_HANDLE_VALUE != mBufferHandle4Second )
 		{
 			CloseHandle( mBufferHandle4Second );
 		}
