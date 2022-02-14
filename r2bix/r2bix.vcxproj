@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\base\r2base_Director.cpp" />
     <ClCompile Include="src\game\r2game_Node.cpp" />
+    <ClCompile Include="src\game\r2game_ScreenBufferManager.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
@@ -71,6 +72,7 @@
     <ClInclude Include="src\base\r2base_iTest.h" />
     <ClInclude Include="src\base\r2base_Singleton.h" />
     <ClInclude Include="src\game\r2game_Node.h" />
+    <ClInclude Include="src\game\r2game_ScreenBufferManager.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />

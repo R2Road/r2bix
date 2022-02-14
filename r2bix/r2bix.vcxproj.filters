@@ -149,6 +149,9 @@
     <ClCompile Include="src\test\console_screen_buffer_manager_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\r2game_ScreenBufferManager.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -286,6 +289,9 @@
     </ClInclude>
     <ClInclude Include="src\test\console_screen_buffer_manager_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\r2game_ScreenBufferManager.h">
+      <Filter>game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
