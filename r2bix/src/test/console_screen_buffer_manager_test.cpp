@@ -35,7 +35,7 @@ namespace console_screen_buffer_manager_test
 
 			{
 				std::cout << r2::tab << "[ESC] End" << r2::linefeed;
-				std::cout << r2::tab << "[Any Key] Buffer Swap" << r2::linefeed;
+				std::cout << r2::tab << "[Any Key] screen_buffer_manager.Swap();" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
