@@ -7,7 +7,13 @@
 namespace r2game
 {
 	ScreenBufferManager::ScreenBufferManager() : mBufferHandle4First( nullptr ), mBufferHandle4Second( nullptr ), mbFirst( true )
-	{}
+	{
+		Init();
+	}
+	ScreenBufferManager::~ScreenBufferManager()
+	{
+		Close();
+	}
 
 	void ScreenBufferManager::Init()
 	{
