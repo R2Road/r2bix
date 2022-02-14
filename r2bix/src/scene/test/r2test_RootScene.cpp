@@ -86,7 +86,7 @@ namespace r2test
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'a', console_screen_buffer_manager_test::MakeSecondBuffer::GetInstance() );
+			ret->AddChild( 'a', console_screen_buffer_manager_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();

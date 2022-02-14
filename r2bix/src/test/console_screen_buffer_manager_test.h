@@ -5,7 +5,7 @@
 
 namespace console_screen_buffer_manager_test
 {
-	class MakeSecondBuffer : public r2base::iTest, public r2base::SingleTon<MakeSecondBuffer>
+	class Basic : public r2base::iTest, public r2base::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

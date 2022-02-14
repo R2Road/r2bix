@@ -9,14 +9,14 @@
 
 namespace console_screen_buffer_manager_test
 {
-	r2base::iTest::TitleFunc MakeSecondBuffer::GetTitleFunction() const
+	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Console Screen Buffer Manager : Make Second Buffer";
+			return "Console Screen Buffer Manager : Basic";
 		};
 	}
-	r2base::iTest::DoFunc MakeSecondBuffer::GetDoFunction()
+	r2base::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2base::eTestEndAction
 		{
