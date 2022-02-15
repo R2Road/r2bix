@@ -54,6 +54,15 @@ namespace r2test
 					return r2base::eTestEndAction::None;
 				}
 			);
+			ret->AddChild(
+				'w'
+				, []()->const char* { return r2test::CameraScene::GetTitle(); }
+				, [&director]()->r2base::eTestEndAction
+				{
+					director.Setup( r2test::CameraScene::Create( director ) );
+					return r2base::eTestEndAction::None;
+				}
+			);
 
 
 			ret->AddLineFeed();
@@ -65,15 +74,6 @@ namespace r2test
 				, [&director]()->r2base::eTestEndAction
 				{
 					director.Setup( r2test::FrameBufferScene::Create( director ) );
-					return r2base::eTestEndAction::None;
-				}
-			);
-			ret->AddChild(
-				's'
-				, []()->const char* { return r2test::CameraScene::GetTitle(); }
-				, [&director]()->r2base::eTestEndAction
-				{
-					director.Setup( r2test::CameraScene::Create( director ) );
 					return r2base::eTestEndAction::None;
 				}
 			);
