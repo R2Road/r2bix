@@ -11,11 +11,4 @@ namespace framebuffer_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-
-	class DrawAtOnce : public r2base::iTest, public r2base::SingleTon<DrawAtOnce>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
 }

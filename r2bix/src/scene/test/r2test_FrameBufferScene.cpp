@@ -22,7 +22,6 @@ namespace r2test
 
 		{
 			ret->AddChild( '1', framebuffer_test::Basic::GetInstance() );
-			ret->AddChild( '2', framebuffer_test::DrawAtOnce::GetInstance() );
 
 
 			ret->AddSplit();
