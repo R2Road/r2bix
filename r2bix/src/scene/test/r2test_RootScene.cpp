@@ -47,6 +47,20 @@ namespace r2test
 
 			ret->AddChild(
 				'q'
+				, []()->const char* { return r2test::VisibleResourceScene::GetTitle(); }
+				, [&director]()->r2base::eTestEndAction
+				{
+					director.Setup( r2test::VisibleResourceScene::Create( director ) );
+					return r2base::eTestEndAction::None;
+				}
+			);
+
+
+			ret->AddLineFeed();
+
+
+			ret->AddChild(
+				'a'
 				, []()->const char* { return r2test::FrameBufferScene::GetTitle(); }
 				, [&director]()->r2base::eTestEndAction
 				{
@@ -55,16 +69,7 @@ namespace r2test
 				}
 			);
 			ret->AddChild(
-				'w'
-				, []()->const char* { return r2test::VisibleResourceScene::GetTitle(); }
-				, [&director]()->r2base::eTestEndAction
-				{
-					director.Setup( r2test::VisibleResourceScene::Create( director ) );
-					return r2base::eTestEndAction::None;
-				}
-			);
-			ret->AddChild(
-				'e'
+				's'
 				, []()->const char* { return r2test::CameraScene::GetTitle(); }
 				, [&director]()->r2base::eTestEndAction
 				{
@@ -73,7 +78,7 @@ namespace r2test
 				}
 			);
 			ret->AddChild(
-				'r'
+				'd'
 				, []()->const char* { return r2test::RendererScene::GetTitle(); }
 				, [&director]()->r2base::eTestEndAction
 				{
@@ -83,10 +88,7 @@ namespace r2test
 			);
 
 
-			ret->AddLineFeed();
-
-
-			ret->AddChild( 'a', console_screen_buffer_manager_test::Basic::GetInstance() );
+			ret->AddChild( 'f', console_screen_buffer_manager_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();
