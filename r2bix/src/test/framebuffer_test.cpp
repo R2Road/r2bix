@@ -22,11 +22,20 @@ namespace framebuffer_test
 
 			std::cout << r2::split;
 
-			{
-				r2::FrameBuffer frame_buffer( 15, 15 );
-				frame_buffer.FillAll( 'c' );
+			r2::FrameBuffer frame_buffer( 3, 3 );
+			frame_buffer.FillAll( 'c' );
 
-				std::cout << &( *frame_buffer.begin() );
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2::FrameBuffer frame_buffer( 3, 3 );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ View" << r2::linefeed2;
+
+				std::cout << &( *frame_buffer.begin() ) << r2::linefeed;
 			}
 
 			std::cout << r2::split;
