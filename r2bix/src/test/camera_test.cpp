@@ -26,21 +26,36 @@ namespace camera_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
+			std::cout << r2::split;
+
 			r2::Camera camera;
-			camera.SetPoint( { 2, 2 } );
+			camera.SetPoint( { 14, 14 } );
 
-			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-
-			for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
 			{
-				for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
-				{
-					SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( y ) } );
-					std::cout << '#';
-				}
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2::Camera camera;" << r2::linefeed;
+				std::cout << r2::tab2 << "camera.SetPoint( { 14, 14 } );" << r2::linefeed;
 			}
 
-			std::cout << r2::linefeed;
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
+
+				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+
+				for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
+				{
+					for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
+					{
+						SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( y ) } );
+						std::cout << '#';
+					}
+				}
+				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
 
 			return r2base::eTestEndAction::Pause;
 		};
