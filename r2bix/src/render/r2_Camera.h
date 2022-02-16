@@ -30,6 +30,9 @@ namespace r2
 		void SetPoint( const int x, const int y );
 
 	private:
+		void BuildRect( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size );
+
+	private:
 		r2::RectInt::MyPointT mPosition;
 		r2::RectInt mRect;
 	};
