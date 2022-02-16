@@ -17,7 +17,9 @@ namespace r2test
 		TestSceneUp ret( new ( std::nothrow ) TestScene(
 			director
 			, GetTitle(),
-			"> ..."
+					"> 카메라는 무언가를 할 필요 없다."
+			"\n"	"> 요구하는 위치에 자리하고, 그 데이터를 잘 가지고만 있으면 된다."
+			"\n"	"> 뭐 하려고 하지마."
 		) );
 
 		{
