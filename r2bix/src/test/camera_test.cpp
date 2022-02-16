@@ -31,7 +31,7 @@ namespace camera_test
 
 			std::cout << r2::split;
 
-			r2::Camera camera;
+			r2::Camera camera( { 0, 0, 60, 30 } );
 			camera.SetPoint( { 14, 14 } );
 
 			{

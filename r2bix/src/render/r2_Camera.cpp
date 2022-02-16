@@ -3,6 +3,6 @@
 
 namespace r2
 {
-	Camera::Camera() : mRect( 0, 0, 60, 30 )
+	Camera::Camera( const r2::RectInt& rect ) : mRect( rect )
 	{}
 }

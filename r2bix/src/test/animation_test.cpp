@@ -60,7 +60,7 @@ namespace animation_test
 		r2::RectInt mRect;
 	};
 
-	Basic::Basic() : mCamera(), mRenderer()
+	Basic::Basic() : mCamera( { 0, 0, 60, 30 } ), mRenderer()
 	{}
 	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
 	{

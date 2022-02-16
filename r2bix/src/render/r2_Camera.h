@@ -7,7 +7,7 @@ namespace r2
 	class Camera
 	{
 	public:
-		Camera();
+		Camera( const r2::RectInt& rect );
 
 		int GetX() const
 		{
