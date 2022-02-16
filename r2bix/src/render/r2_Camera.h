@@ -11,15 +11,15 @@ namespace r2
 
 		int GetX() const
 		{
-			return mRect.GetOrigin().GetX();
+			return mPosition.GetX();
 		}
 		int GetY() const
 		{
-			return mRect.GetOrigin().GetY();
+			return mPosition.GetY();
 		}
 		r2::RectInt::MyPointT GetPoint() const
 		{
-			return mRect.GetOrigin();
+			return mPosition;
 		}
 		r2::RectInt GetRect() const
 		{
@@ -28,14 +28,15 @@ namespace r2
 
 		void SetPoint( const r2::RectInt::MyPointT& point )
 		{
-			mRect.SetOrigin( point );
+			mPosition = point;
 		}
 		void SetPoint( const int x, const int y )
 		{
-			mRect.SetOrigin( x, y );
+			mPosition.Set( x, y );
 		}
 
 	private:
+		r2::RectInt::MyPointT mPosition;
 		r2::RectInt mRect;
 	};
 }

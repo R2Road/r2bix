@@ -5,6 +5,13 @@
 
 namespace camera_test
 {
+	class CameraPosition : public r2base::iTest, public r2base::SingleTon<CameraPosition>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
 	class CameraRect : public r2base::iTest, public r2base::SingleTon<CameraRect>
 	{
 	public:
