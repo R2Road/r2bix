@@ -27,6 +27,13 @@ namespace r2test
 					"> Inprogress : Update Camera Test"
 			"\n"	"> To do : Command - Double Buffering"
 			"\n"	"> To do : Renderer"
+			"\n"
+			"\n"	"> + Work Flow"
+			"\n"	"> Visible Resource"
+			"\n"	"> Camera"
+			"\n"	"> Renderable"
+			"\n"	"> Visible Resource + Camera + Renderable"
+			"\n"	"> ..."
 		) );
 
 		{
