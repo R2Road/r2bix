@@ -29,4 +29,20 @@ namespace renderer_test
 	private:
 		r2::Renderer mRenderer;
 	};
+
+
+
+	class CameraMove1 : public r2base::iTest, public r2base::SingleTon<CameraMove1>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
+
+	class CameraMove2 : public r2base::iTest, public r2base::SingleTon<CameraMove2>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

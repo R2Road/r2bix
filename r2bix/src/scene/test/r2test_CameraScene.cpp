@@ -22,8 +22,6 @@ namespace r2test
 
 		{
 			ret->AddChild( '1', camera_test::CameraRect::GetInstance() );
-			ret->AddChild( '2', camera_test::CameraMove1::GetInstance() );
-			ret->AddChild( '3', camera_test::CameraMove2::GetInstance() );
 
 
 			ret->AddSplit();

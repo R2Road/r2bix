@@ -24,6 +24,9 @@ namespace r2test
 			ret->AddChild( '1', renderer_test::TestRenderable::GetInstance() );
 			ret->AddChild( '2', renderer_test::TestRenderer::GetInstance() );
 
+			ret->AddChild( '3', renderer_test::CameraMove1::GetInstance() );
+			ret->AddChild( '4', renderer_test::CameraMove2::GetInstance() );
+
 
 			ret->AddSplit();
 
