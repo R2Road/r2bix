@@ -11,4 +11,21 @@ namespace r2
 		const int min_y = mPosition.GetY() - ( size.GetHeight() / 2 );
 		mRect.Set( min_x, min_y, size.GetWidth(), size.GetHeight() );
 	}
+
+	void Camera::SetPoint( const r2::RectInt::MyPointT& point )
+	{
+		mPosition = point;
+
+		const int min_x = mPosition.GetX() - ( mRect.GetSize().GetWidth() / 2 );
+		const int min_y = mPosition.GetY() - ( mRect.GetSize().GetHeight() / 2 );
+		mRect.Set( min_x, min_y, mRect.GetSize().GetWidth(), mRect.GetSize().GetHeight() );
+	}
+	void Camera::SetPoint( const int x, const int y )
+	{
+		mPosition.Set( x, y );
+
+		const int min_x = mPosition.GetX() - ( mRect.GetSize().GetWidth() / 2 );
+		const int min_y = mPosition.GetY() - ( mRect.GetSize().GetHeight() / 2 );
+		mRect.Set( min_x, min_y, mRect.GetSize().GetWidth(), mRect.GetSize().GetHeight() );
+	}
 }

@@ -18,4 +18,11 @@ namespace camera_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class CameraMove : public r2base::iTest, public r2base::SingleTon<CameraMove>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

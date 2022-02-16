@@ -102,4 +102,82 @@ namespace camera_test
 			return r2base::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2base::iTest::TitleFunc CameraMove::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera Move";
+		};
+	}
+	r2base::iTest::DoFunc CameraMove::GetDoFunction()
+	{
+		return[]()->r2base::eTestEndAction
+		{
+			r2::Camera camera( { 20, 30 }, { 19, 9 } );
+
+			int step = 0;
+
+			do
+			{
+				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+				std::cout << r2::split;
+
+				{
+					std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+					std::cout << r2::tab2 << "r2::Camera camera( { 20, 30 }, { 19, 9 } );" << r2::linefeed;
+				}
+
+				std::cout << r2::split;
+
+				{
+					std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
+
+					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
+					{
+						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
+						{
+							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
+							std::cout << '#';
+						}
+					}
+
+					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+					std::cout << 'X';
+				}
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 40 } );
+
+				std::cout << "[ESC] Exit" << r2::linefeed;
+				std::cout << "[Any Key] Move Camera" << r2::linefeed2;
+
+				const int input = _getch();
+				if( 27 == input )
+				{
+					break;
+				}
+				else
+				{
+					system( "cls" );
+
+					if( 0 == step )
+					{
+						camera.SetPoint( 30, 20 );
+						step = 1;
+					}
+					else
+					{
+						camera.SetPoint( 20, 30 );
+						step = 0;
+					}
+				}
+
+			} while( true );
+
+			return r2base::eTestEndAction::None;
+		};
+	}
 }

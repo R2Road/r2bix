@@ -26,14 +26,8 @@ namespace r2
 			return mRect;
 		}
 
-		void SetPoint( const r2::RectInt::MyPointT& point )
-		{
-			mPosition = point;
-		}
-		void SetPoint( const int x, const int y )
-		{
-			mPosition.Set( x, y );
-		}
+		void SetPoint( const r2::RectInt::MyPointT& point );
+		void SetPoint( const int x, const int y );
 
 	private:
 		r2::RectInt::MyPointT mPosition;
