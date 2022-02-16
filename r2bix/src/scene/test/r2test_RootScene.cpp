@@ -25,7 +25,6 @@ namespace r2test
 			director
 			, GetTitle(),
 					"> Inprogress : Update Camera Test"
-			"\n"	"> To do : Command - Double Buffering"
 			"\n"	"> To do : Renderer"
 			"\n"
 			"\n"	"> + Work Flow"
