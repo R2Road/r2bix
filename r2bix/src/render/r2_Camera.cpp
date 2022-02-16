@@ -5,6 +5,10 @@ namespace r2
 {
 	Camera::Camera( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size ) :
 		mPosition( position )
-		, mRect( position.GetX(), position.GetY(), size.GetWidth(), size.GetHeight() )
-	{}
+		, mRect()
+	{
+		const int min_x = mPosition.GetX() - ( size.GetWidth() / 2 );
+		const int min_y = mPosition.GetY() - ( size.GetHeight() / 2 );
+		mRect.Set( min_x, min_y, size.GetWidth(), size.GetHeight() );
+	}
 }
