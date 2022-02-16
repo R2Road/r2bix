@@ -6,8 +6,8 @@
 
 #include "base/r2base_eTestEndAction.h"
 
-#include "renderer/r2_VisibleResource.h"
-#include "renderer/r2_FrameBuffer.h"
+#include "render/r2_VisibleResource.h"
+#include "render/r2_FrameBuffer.h"
 
 namespace flickering_research
 {

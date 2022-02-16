@@ -4,9 +4,6 @@
     <Filter Include="base">
       <UniqueIdentifier>{81ab3847-2894-4251-856b-66f39b090229}</UniqueIdentifier>
     </Filter>
-    <Filter Include="renderer">
-      <UniqueIdentifier>{be80c73b-e527-4390-b97a-375d1ec30d49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test">
       <UniqueIdentifier>{67d9768a-fea8-45b6-946a-ffcda4f541b1}</UniqueIdentifier>
     </Filter>
@@ -33,6 +30,9 @@
     </Filter>
     <Filter Include="game">
       <UniqueIdentifier>{5d064529-4811-46c8-89c4-69e915c7bef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="render">
+      <UniqueIdentifier>{be80c73b-e527-4390-b97a-375d1ec30d49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -65,26 +65,11 @@
     <ClCompile Include="src\r2\r2_Timer_Float.cpp">
       <Filter>r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\renderer\r2_Camera.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_GridIndexConverter.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_Renderer.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_VisibleResource.cpp">
-      <Filter>renderer</Filter>
-    </ClCompile>
     <ClCompile Include="src\research\flickering_research.cpp">
       <Filter>research</Filter>
     </ClCompile>
     <ClCompile Include="src\test\framebuffer_test.cpp">
       <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_FrameBuffer.cpp">
-      <Filter>renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\test\visible_resource_test.cpp">
       <Filter>test</Filter>
@@ -94,9 +79,6 @@
     </ClCompile>
     <ClCompile Include="src\test\window_input_test.cpp">
       <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\renderer\r2_FPSTimer.cpp">
-      <Filter>renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\input\r2input_Constant.cpp">
       <Filter>input</Filter>
@@ -152,6 +134,24 @@
     <ClCompile Include="src\game\r2game_ScreenBufferManager.cpp">
       <Filter>game</Filter>
     </ClCompile>
+    <ClCompile Include="src\render\r2_Camera.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\r2_FPSTimer.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\r2_FrameBuffer.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\r2_GridIndexConverter.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\r2_Renderer.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\r2_VisibleResource.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -191,29 +191,11 @@
     <ClInclude Include="src\r2\r2_Timer_Float.h">
       <Filter>r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\renderer\r2_VisibleResource.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_Camera.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_GridIndexConverter.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_iRenderable.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_Renderer.h">
-      <Filter>renderer</Filter>
-    </ClInclude>
     <ClInclude Include="src\research\flickering_research.h">
       <Filter>research</Filter>
     </ClInclude>
     <ClInclude Include="src\test\framebuffer_test.h">
       <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_FrameBuffer.h">
-      <Filter>renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\test\visible_resource_test.h">
       <Filter>test</Filter>
@@ -223,9 +205,6 @@
     </ClInclude>
     <ClInclude Include="src\test\window_input_test.h">
       <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\r2_FPSTimer.h">
-      <Filter>renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\input\r2input_Constant.h">
       <Filter>input</Filter>
@@ -292,6 +271,27 @@
     </ClInclude>
     <ClInclude Include="src\game\r2game_ScreenBufferManager.h">
       <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2_Camera.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2_FPSTimer.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2_FrameBuffer.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2_GridIndexConverter.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2_iRenderable.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2_Renderer.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2_VisibleResource.h">
+      <Filter>render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

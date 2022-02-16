@@ -5,8 +5,8 @@
 
 #include "base/r2base_eTestEndAction.h"
 
-#include "renderer/r2_Camera.h"
-#include "renderer/r2_iRenderable.h"
+#include "render/r2_Camera.h"
+#include "render/r2_iRenderable.h"
 
 namespace renderer_test
 {

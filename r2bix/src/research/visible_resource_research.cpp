@@ -6,7 +6,7 @@
 
 #include "base/r2base_eTestEndAction.h"
 
-#include "renderer/r2_VisibleResource.h"
+#include "render/r2_VisibleResource.h"
 
 namespace visible_resource_research
 {
