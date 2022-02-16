@@ -64,7 +64,7 @@ namespace renderer_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			r2::Camera camera( { 0, 0, 60, 30 } );
+			r2::Camera camera( { 0, 0 }, { 60, 30 } );
 			tr2.Render( &camera);
 
 			return r2base::eTestEndAction::Pause;
@@ -88,7 +88,7 @@ namespace renderer_test
 		rd.Clear();
 
 
-		static r2::Camera dummy_camera( { 0, 0, 60, 30 } );
+		static r2::Camera dummy_camera( { 0, 0 }, { 60, 30 } );
 		rd.SetCamera( &dummy_camera );
 
 
@@ -167,7 +167,7 @@ namespace renderer_test
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2::Camera camera( { 0, 0, 60, 30 } );
+			r2::Camera camera( { 0, 0 }, { 60, 30 } );
 			r2::Renderer renderer;
 
 			renderer.Clear();
@@ -300,7 +300,7 @@ namespace renderer_test
 	{
 		return[]()->r2base::eTestEndAction
 		{
-			r2::Camera camera( { 0, 0, 60, 30 } );
+			r2::Camera camera( { 0, 0 }, { 60, 30 } );
 
 			r2::Renderer renderer;
 			renderer.Clear();

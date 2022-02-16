@@ -7,7 +7,7 @@ namespace r2
 	class Camera
 	{
 	public:
-		Camera( const r2::RectInt& rect );
+		Camera( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size );
 
 		int GetX() const
 		{

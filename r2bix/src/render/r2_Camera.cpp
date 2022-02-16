@@ -3,8 +3,8 @@
 
 namespace r2
 {
-	Camera::Camera( const r2::RectInt& rect ) :
-		mPosition( rect.GetOrigin().GetX(), rect.GetOrigin().GetY() )
-		, mRect( rect )
+	Camera::Camera( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size ) :
+		mPosition( position )
+		, mRect( position.GetX(), position.GetY(), size.GetWidth(), size.GetHeight() )
 	{}
 }

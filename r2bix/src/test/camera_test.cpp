@@ -31,11 +31,11 @@ namespace camera_test
 
 			std::cout << r2::split;
 
-			r2::Camera camera( { 20, 30, 20, 10 } );
+			r2::Camera camera( { 20, 30 }, { 20, 10 } );
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::Camera camera( { 20, 30, 20, 10 } );" << r2::linefeed;
+				std::cout << r2::tab2 << "r2::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -72,11 +72,11 @@ namespace camera_test
 
 			std::cout << r2::split;
 
-			r2::Camera camera( { 20, 30, 20, 10 } );
+			r2::Camera camera( { 20, 30 }, { 20, 10 } );
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2::Camera camera( { 20, 30, 20, 10 } );" << r2::linefeed;
+				std::cout << r2::tab2 << "r2::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
