@@ -152,6 +152,9 @@
     <ClCompile Include="src\render\r2_VisibleResource.cpp">
       <Filter>render</Filter>
     </ClCompile>
+    <ClCompile Include="src\scene\test\r2test_RenderableScene.cpp">
+      <Filter>scene\test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -292,6 +295,9 @@
     </ClInclude>
     <ClInclude Include="src\render\r2_VisibleResource.h">
       <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\test\r2test_RenderableScene.h">
+      <Filter>scene\test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

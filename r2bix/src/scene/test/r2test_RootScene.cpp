@@ -7,6 +7,7 @@
 #include "r2test_CameraScene.h"
 #include "r2test_FrameBufferScene.h"
 #include "r2test_InputScene.h"
+#include "r2test_RenderableScene.h"
 #include "r2test_RendererScene.h"
 #include "r2test_VisibleResourceScene.h"
 
@@ -46,6 +47,15 @@ namespace r2test
 				}
 			);
 			ret->AddChild( '2', rect_test::Basic::GetInstance() );
+			ret->AddChild(
+				'3'
+				, []()->const char* { return r2test::RenderableScene::GetTitle(); }
+				, [&director]()->r2base::eTestEndAction
+				{
+					director.Setup( r2test::RenderableScene::Create( director ) );
+					return r2base::eTestEndAction::None;
+				}
+			);
 
 
 			ret->AddLineFeed();

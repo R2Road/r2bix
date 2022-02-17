@@ -52,6 +52,7 @@
     <ClCompile Include="src\scene\test\r2test_CameraScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_FrameBufferScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_InputScene.cpp" />
+    <ClCompile Include="src\scene\test\r2test_RenderableScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_RendererScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_RootScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_VisibleResourceScene.cpp" />
@@ -101,6 +102,7 @@
     <ClInclude Include="src\scene\test\r2test_CameraScene.h" />
     <ClInclude Include="src\scene\test\r2test_FrameBufferScene.h" />
     <ClInclude Include="src\scene\test\r2test_InputScene.h" />
+    <ClInclude Include="src\scene\test\r2test_RenderableScene.h" />
     <ClInclude Include="src\scene\test\r2test_RendererScene.h" />
     <ClInclude Include="src\scene\test\r2test_RootScene.h" />
     <ClInclude Include="src\scene\test\r2test_VisibleResourceScene.h" />
