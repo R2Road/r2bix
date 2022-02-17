@@ -12,11 +12,14 @@ namespace renderable_test
 	class RenderableObject : r2render::iRenderable
 	{
 	public:
-		RenderableObject() : mVR( 10, 10, 'R' )
+		RenderableObject( const r2::PointInt& position ) :
+			mPosition( position )
+			, mVR( 10, 10, 'R' )
 		{}
 
 		void Render( const r2render::Camera* const camera ) override {}
 
+		r2::PointInt mPosition;
 		r2render::VisibleResource mVR;
 	};
 
@@ -33,14 +36,16 @@ namespace renderable_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			RenderableObject ro;
+			const r2::PointInt pivot_position( 20, 30 );
+			RenderableObject ro( pivot_position );
 			r2render::Camera camera( { 20, 30 }, { 20, 10 } );
 
 			std::cout << r2::split;
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "RenderableObject ro;" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2::PointInt pivot_position( 20, 30 );" << r2::linefeed2;
+				std::cout << r2::tab2 << "RenderableObject ro( pivot_position );" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed;
 			}
 
