@@ -20,7 +20,7 @@ namespace animation_test
 			, mRect( { x, y, mVisibleResource.GetWidth(), mVisibleResource.GetHeight() } )
 		{}
 
-		void Render( const r2render::Camera* const camera ) override
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const /*render_target*/ ) override
 		{
 			if( !camera->GetRect().IntersectsRect( mRect ) )
 			{

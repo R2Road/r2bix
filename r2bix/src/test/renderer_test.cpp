@@ -19,7 +19,7 @@ namespace renderer_test
 			, mVisibleResource( width, chars )
 		{}
 
-		void Render( const r2render::Camera* const camera ) override
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const /*render_target*/ ) override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD pos = {
@@ -65,7 +65,7 @@ namespace renderer_test
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			r2render::Camera camera( { 0, 0 }, { 60, 30 } );
-			tr2.Render( &camera);
+			tr2.Render( &camera, nullptr );
 
 			return r2base::eTestEndAction::Pause;
 		};
@@ -127,7 +127,7 @@ namespace renderer_test
 			, mVisibleResource( width, chars )
 		{}
 
-		void Render( const r2render::Camera* const camera ) override
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const /*render_target*/ ) override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD pos = {
@@ -249,7 +249,7 @@ namespace renderer_test
 			, mRect( { x, y, mVisibleResource.GetWidth(), mVisibleResource.GetHeight() } )
 		{}
 
-		void Render( const r2render::Camera* const camera ) override
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const /*render_target*/ ) override
 		{
 			if( !camera->GetRect().IntersectsRect( mRect ) )
 			{

@@ -26,7 +26,7 @@ namespace r2render
 
 		for( auto r : mContainer )
 		{
-			r->Render( mCamera );
+			r->Render( mCamera, nullptr );
 		}
 	}
 }

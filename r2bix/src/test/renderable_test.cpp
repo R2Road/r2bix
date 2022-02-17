@@ -17,7 +17,7 @@ namespace renderable_test
 			, mVR( 10, 10, 'R' )
 		{}
 
-		void Render( const r2render::Camera* const camera ) override {}
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override {}
 
 		r2::PointInt mPosition;
 		r2render::VisibleResource mVR;
@@ -51,6 +51,12 @@ namespace renderable_test
 				std::cout << r2::tab2 << "RenderableObject ro( pivot_position );" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed2;
 				std::cout << r2::tab2 << "r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+
 			}
 
 			std::cout << r2::split;
