@@ -134,22 +134,10 @@
     <ClCompile Include="src\game\r2game_ScreenBufferManager.cpp">
       <Filter>game</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\r2_Camera.cpp">
-      <Filter>render</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\r2_FPSTimer.cpp">
       <Filter>render</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\r2_FrameBuffer.cpp">
-      <Filter>render</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp">
-      <Filter>render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\render\r2_Renderer.cpp">
-      <Filter>render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\render\r2_VisibleResource.cpp">
       <Filter>render</Filter>
     </ClCompile>
     <ClCompile Include="src\scene\test\r2test_RenderableScene.cpp">
@@ -157,6 +145,18 @@
     </ClCompile>
     <ClCompile Include="src\test\renderable_test.cpp">
       <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\r2render_FrameBuffer.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\r2render_Camera.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\r2render_Renderer.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\r2render_VisibleResource.cpp">
+      <Filter>render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -278,25 +278,10 @@
     <ClInclude Include="src\game\r2game_ScreenBufferManager.h">
       <Filter>game</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\r2_Camera.h">
-      <Filter>render</Filter>
-    </ClInclude>
     <ClInclude Include="src\render\r2_FPSTimer.h">
       <Filter>render</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\r2_FrameBuffer.h">
-      <Filter>render</Filter>
-    </ClInclude>
     <ClInclude Include="src\render\r2_GridIndexConverter.h">
-      <Filter>render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\render\r2_iRenderable.h">
-      <Filter>render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\render\r2_Renderer.h">
-      <Filter>render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\render\r2_VisibleResource.h">
       <Filter>render</Filter>
     </ClInclude>
     <ClInclude Include="src\scene\test\r2test_RenderableScene.h">
@@ -304,6 +289,21 @@
     </ClInclude>
     <ClInclude Include="src\test\renderable_test.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2render_FrameBuffer.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2render_Camera.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2render_iRenderable.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2render_Renderer.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\r2render_VisibleResource.h">
+      <Filter>render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

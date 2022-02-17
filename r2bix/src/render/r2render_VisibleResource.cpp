@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2_VisibleResource.h"
+#include "r2render_VisibleResource.h"
 
 #include <algorithm>
 #include <cassert>

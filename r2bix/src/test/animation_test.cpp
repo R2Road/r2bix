@@ -7,8 +7,8 @@
 #include "base/r2base_eTestEndAction.h"
 
 #include "render/r2_FPSTimer.h"
-#include "render/r2_iRenderable.h"
-#include "render/r2_VisibleResource.h"
+#include "render/r2render_iRenderable.h"
+#include "render/r2render_VisibleResource.h"
 
 namespace animation_test
 {

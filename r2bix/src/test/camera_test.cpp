@@ -8,11 +8,11 @@
 
 #include "r2/r2_PointInt.h"
 #include "r2/r2_RectInt.h"
-#include "render/r2_iRenderable.h"
-#include "render/r2_VisibleResource.h"
+#include "render/r2render_iRenderable.h"
+#include "render/r2render_VisibleResource.h"
 
-#include "render/r2_Camera.h"
-#include "render/r2_Renderer.h"
+#include "render/r2render_Camera.h"
+#include "render/r2render_Renderer.h"
 
 namespace camera_test
 {
