@@ -7,23 +7,23 @@ namespace r2
 		mPosition( position )
 		, mRect()
 	{
-		BuildRect( mPosition, size );
+		buildRect( mPosition, size );
 	}
 
 	void Camera::SetPoint( const r2::RectInt::MyPointT& point )
 	{
 		mPosition = point;
 
-		BuildRect( mPosition, mRect.GetSize() );
+		buildRect( mPosition, mRect.GetSize() );
 	}
 	void Camera::SetPoint( const int x, const int y )
 	{
 		mPosition.Set( x, y );
 
-		BuildRect( mPosition, mRect.GetSize() );
+		buildRect( mPosition, mRect.GetSize() );
 	}
 
-	void Camera::BuildRect( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size )
+	void Camera::buildRect( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size )
 	{
 		const int min_x = position.GetX() - ( size.GetWidth() / 2 );
 		const int min_y = position.GetY() - ( size.GetHeight() / 2 );
