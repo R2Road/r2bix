@@ -40,7 +40,7 @@ namespace renderable_test
 
 			const r2::PointInt pivot_position( 20, 25 );
 
-			RenderableObject ro( pivot_position );
+			RenderableObject renderable_object( pivot_position );
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 
 			r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), ' ' );
@@ -50,7 +50,7 @@ namespace renderable_test
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "const r2::PointInt pivot_position( 20, 25 );" << r2::linefeed2;
-				std::cout << r2::tab2 << "RenderableObject ro( pivot_position );" << r2::linefeed;
+				std::cout << r2::tab2 << "RenderableObject renderable_object( pivot_position );" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed2;
 				std::cout << r2::tab2 << "r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed;
 			}
@@ -60,8 +60,8 @@ namespace renderable_test
 			{
 				std::cout << r2::tab << "+ Show Renderable Object Rect" << r2::linefeed2;
 
-				auto current_rect = ro.mVR.GetVisibleRect();
-				current_rect.SetOrigin( current_rect.GetOrigin() + ro.mPosition );
+				auto current_rect = renderable_object.mVR.GetVisibleRect();
+				current_rect.SetOrigin( current_rect.GetOrigin() + renderable_object.mPosition );
 
 				for( int y = current_rect.GetMinY(); current_rect.GetMaxY() > y; ++y )
 				{
@@ -72,7 +72,7 @@ namespace renderable_test
 					}
 				}
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( ro.mPosition.GetX() ), static_cast<short>( ro.mPosition.GetY() ) } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( renderable_object.mPosition.GetX() ), static_cast<short>( renderable_object.mPosition.GetY() ) } );
 				std::cout << 'O';
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
