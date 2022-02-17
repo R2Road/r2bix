@@ -9,6 +9,9 @@ namespace r2render
 	public:
 		Camera( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size );
 
+		//
+		// Getter
+		//
 		int GetX() const
 		{
 			return mPosition.GetX();
@@ -26,6 +29,9 @@ namespace r2render
 			return mRect;
 		}
 
+		//
+		// Setter
+		//
 		void SetPoint( const r2::RectInt::MyPointT& point );
 		void SetPoint( const int x, const int y );
 
