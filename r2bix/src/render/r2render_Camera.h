@@ -24,6 +24,14 @@ namespace r2render
 		{
 			return mPosition;
 		}
+		r2::RectInt::MySizeT::ValueT GetWidth() const
+		{
+			return mRect.GetWidth();
+		}
+		r2::RectInt::MySizeT::ValueT GetHeight() const
+		{
+			return mRect.GetHeight();
+		}
 		r2::RectInt GetRect() const
 		{
 			return mRect;
