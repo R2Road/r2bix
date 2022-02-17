@@ -38,7 +38,7 @@ namespace renderable_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			const r2::PointInt pivot_position( 20, 30 );
+			const r2::PointInt pivot_position( 20, 25 );
 
 			RenderableObject ro( pivot_position );
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
@@ -49,15 +49,44 @@ namespace renderable_test
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::PointInt pivot_position( 20, 30 );" << r2::linefeed2;
+				std::cout << r2::tab2 << "const r2::PointInt pivot_position( 20, 25 );" << r2::linefeed2;
 				std::cout << r2::tab2 << "RenderableObject ro( pivot_position );" << r2::linefeed;
-				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed2;
 				std::cout << r2::tab2 << "r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Show Renderable Object Rect" << r2::linefeed2;
+
+				auto current_rect = ro.mVR.GetVisibleRect();
+				current_rect.SetOrigin( current_rect.GetOrigin() + ro.mPosition );
+
+				for( int y = current_rect.GetMinY(); current_rect.GetMaxY() > y; ++y )
+				{
+					for( int x = current_rect.GetMinX(); current_rect.GetMaxX() > x; ++x )
+					{
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
+						std::cout << '+';
+					}
+				}
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( ro.mPosition.GetX() ), static_cast<short>( ro.mPosition.GetY() ) } );
+				std::cout << 'O';
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+			}
+
+			std::cout << r2::split;
+
+			system( "pause" );
+			DWORD ret;
+			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 15 }, &ret );
+
+			{
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 15 } );
+
 				std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
 
 				for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
@@ -71,9 +100,9 @@ namespace renderable_test
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
-			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+			}
 
 			std::cout << r2::split;
 
