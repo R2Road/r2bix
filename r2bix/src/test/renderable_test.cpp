@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "renderable_test.h"
 
+#include <Windows.h>
+
 #include "base/r2base_eTestEndAction.h"
 
 #include "render/r2render_Camera.h"
@@ -39,7 +41,7 @@ namespace renderable_test
 			const r2::PointInt pivot_position( 20, 30 );
 
 			RenderableObject ro( pivot_position );
-			r2render::Camera camera( { 20, 30 }, { 20, 10 } );
+			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 
 			r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), ' ' );
 
@@ -56,8 +58,22 @@ namespace renderable_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
 
+				for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
+				{
+					for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
+					{
+						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
+						std::cout << '#';
+					}
+				}
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+				std::cout << 'X';
 			}
+
+			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 
 			std::cout << r2::split;
 
