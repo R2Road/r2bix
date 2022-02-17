@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <cassert>
 
-namespace r2
+namespace r2render
 {
 	VisibleResource::VisibleResource( const std::string_view str ) :
 		mGridIndexConverter( static_cast<int>( str.length() ), 1 )

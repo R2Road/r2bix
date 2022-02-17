@@ -5,7 +5,7 @@
 
 #include "r2render_iRenderable.h"
 
-namespace r2
+namespace r2render
 {
 	Renderer::Renderer() : mCamera( nullptr ), mContainer()
 	{}

@@ -17,7 +17,7 @@ namespace animation_test
 		DoFunc GetDoFunction() override;
 
 	private:
-		r2::Camera mCamera;
-		r2::Renderer mRenderer;
+		r2render::Camera mCamera;
+		r2render::Renderer mRenderer;
 	};
 }

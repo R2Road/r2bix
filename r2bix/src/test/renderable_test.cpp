@@ -8,15 +8,15 @@
 
 namespace renderable_test
 {
-	class RenderableObject : r2::iRenderable
+	class RenderableObject : r2render::iRenderable
 	{
 	public:
 		RenderableObject() : mVR( 10, 10, 'R' )
 		{}
 
-		void Render( const r2::Camera* const camera ) override {}
+		void Render( const r2render::Camera* const camera ) override {}
 
-		r2::VisibleResource mVR;
+		r2render::VisibleResource mVR;
 	};
 
 	r2base::iTest::TitleFunc Basic::GetTitleFunction() const

@@ -26,10 +26,10 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			const r2::VisibleResource visible_resource( 30, 20, '0' );
+			const r2render::VisibleResource visible_resource( 30, 20, '0' );
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 30, 20, '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "const r2render::VisibleResource visible_resource( 30, 20, '0' );" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -73,14 +73,14 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			r2::VisibleResource vr( 30, 20 );
+			r2render::VisibleResource vr( 30, 20 );
 			vr.Fill( 0, 0, '0' );
 			vr.Fill( vr.GetXEnd(), 0, '0' );
 			vr.Fill( vr.GetXEnd(), vr.GetYEnd(), '0' );
 			vr.Fill( 0, vr.GetYEnd(), '0' );
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2::VisibleResource vr( 30, 20 );" << r2::linefeed;
+			std::cout << r2::tab2 << "const r2render::VisibleResource vr( 30, 20 );" << r2::linefeed;
 			std::cout << r2::tab2 << "vr.Fill( 0, 0, '0' );" << r2::linefeed;
 			std::cout << r2::tab2 << "vr.Fill( vr.GetXEnd(), 0, '0' );" << r2::linefeed;
 			std::cout << r2::tab2 << "vr.Fill( vr.GetXEnd(), vr.GetYEnd(), '0' );" << r2::linefeed;
@@ -131,10 +131,10 @@ namespace visible_resource_test
 			std::size_t x = 0;
 
 			{
-				const r2::VisibleResource visible_resource( "Init With Chars" );
+				const r2render::VisibleResource visible_resource( "Init With Chars" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( \"Init With Chars\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2render::VisibleResource visible_resource( \"Init With Chars\" );" << r2::linefeed;
 
 				std::cout << r2::split;
 
@@ -177,10 +177,10 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2::VisibleResource visible_resource( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2render::VisibleResource visible_resource( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 5, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2render::VisibleResource visible_resource( 5, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
 
 				std::cout << r2::split;
 
@@ -228,10 +228,10 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2::VisibleResource visible_resource( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2render::VisibleResource visible_resource( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 8, 8, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
+				std::cout << r2::tab2 << "const r2render::VisibleResource visible_resource( 8, 8, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
@@ -256,10 +256,10 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2::VisibleResource visible_resource( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2render::VisibleResource visible_resource( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 3, 3, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
+				std::cout << r2::tab2 << "const r2render::VisibleResource visible_resource( 3, 3, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
 				std::cout << r2::tab << "+ View : Overflow Test" << r2::linefeed2;
 
@@ -305,10 +305,10 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2::VisibleResource visible_resource( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2render::VisibleResource visible_resource( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::VisibleResource visible_resource( 7, 7, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
+				std::cout << r2::tab2 << "const r2render::VisibleResource visible_resource( 7, 7, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
@@ -353,10 +353,10 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			r2::VisibleResource vr( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" );
+			r2render::VisibleResource vr( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" );
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "r2::VisibleResource vr( 5, \"aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg\" );" << r2::linefeed;
+			std::cout << r2::tab2 << "r2render::VisibleResource vr( 5, \"aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg\" );" << r2::linefeed;
 
 			std::cout << r2::split;
 

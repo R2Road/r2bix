@@ -2,12 +2,12 @@
 
 #include "r2/r2_RectInt.h"
 
-namespace r2
+namespace r2render
 {
 	class Camera
 	{
 	public:
-		Camera( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size );
+		Camera( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size );
 
 		int GetX() const
 		{
@@ -30,7 +30,7 @@ namespace r2
 		void SetPoint( const int x, const int y );
 
 	private:
-		void buildRect( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size );
+		void buildRect( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size );
 
 	private:
 		r2::RectInt::MyPointT mPosition;

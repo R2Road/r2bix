@@ -5,7 +5,7 @@
 #include "r2_GridIndexConverter.h"
 #include "r2/r2_RectInt.h"
 
-namespace r2
+namespace r2render
 {
 	class FrameBuffer
 	{
@@ -35,7 +35,7 @@ namespace r2
 		void FillAll( const char c );
 
 	private:
-		const GridIndexConverter mGridIndexConverter;
+		const r2::GridIndexConverter mGridIndexConverter;
 		ContainerT mChars;
 	};
 }

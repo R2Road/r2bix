@@ -3,7 +3,7 @@
 
 #include <cassert>
 
-namespace r2
+namespace r2render
 {
 	FrameBuffer::FrameBuffer( const uint32_t width, const uint32_t height ) :
 		mGridIndexConverter( static_cast<int>( width ), static_cast<int>( height ) )

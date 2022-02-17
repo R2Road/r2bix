@@ -22,7 +22,7 @@ namespace flickering_research
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2::VisibleResource visible_resource( 19, 19 );
+			r2render::VisibleResource visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
 
 			bool process = true;
@@ -83,7 +83,7 @@ namespace flickering_research
 			std::cout << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed;
 			std::cout << r2::split;
 
-			r2::VisibleResource visible_resource( 19, 19 );
+			r2render::VisibleResource visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -136,7 +136,7 @@ namespace flickering_research
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2::VisibleResource visible_resource( 19, 19 );
+			r2render::VisibleResource visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
 
 			bool process = true;
@@ -184,7 +184,7 @@ namespace flickering_research
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2::FrameBuffer frame_buffer( 5, 5 );
+			r2render::FrameBuffer frame_buffer( 5, 5 );
 			frame_buffer.FillAll( 'c' );
 
 			bool process = true;
@@ -229,7 +229,7 @@ namespace flickering_research
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2::FrameBuffer frame_buffer( 100, 40 );
+			r2render::FrameBuffer frame_buffer( 100, 40 );
 			frame_buffer.FillAll( 'c' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -270,10 +270,10 @@ namespace flickering_research
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2::FrameBuffer frame_buffer_1( 100, 40 );
+			r2render::FrameBuffer frame_buffer_1( 100, 40 );
 			frame_buffer_1.FillAll( 'c' );
 
-			r2::FrameBuffer frame_buffer_2( 100, 40 );
+			r2render::FrameBuffer frame_buffer_2( 100, 40 );
 			frame_buffer_2.FillAll( 'a' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );

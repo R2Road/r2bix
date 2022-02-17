@@ -6,7 +6,7 @@
 #include "r2_GridIndexConverter.h"
 #include "r2/r2_RectInt.h"
 
-namespace r2
+namespace r2render
 {
 	class VisibleResource
 	{
@@ -52,7 +52,7 @@ namespace r2
 		void SetVisibleRect( const r2::RectInt& rect ) { mVisibleRect = rect; }
 
 	private:
-		const GridIndexConverter mGridIndexConverter;
+		const r2::GridIndexConverter mGridIndexConverter;
 		ContainerT mChars;
 		r2::RectInt mVisibleRect;
 	};

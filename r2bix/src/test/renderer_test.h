@@ -27,7 +27,7 @@ namespace renderer_test
 		DoFunc GetDoFunction() override;
 
 	private:
-		r2::Renderer mRenderer;
+		r2render::Renderer mRenderer;
 	};
 
 

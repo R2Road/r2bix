@@ -11,7 +11,7 @@
 
 namespace renderer_test
 {
-	class TempRenderable : public r2::iRenderable
+	class TempRenderable : public r2render::iRenderable
 	{
 	public:
 		TempRenderable( const int x, const int y, const uint32_t width, const char* chars) :
@@ -19,7 +19,7 @@ namespace renderer_test
 			, mVisibleResource( width, chars )
 		{}
 
-		void Render( const r2::Camera* const camera ) override
+		void Render( const r2render::Camera* const camera ) override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD pos = {
@@ -45,7 +45,7 @@ namespace renderer_test
 
 	private:
 		r2::PointInt mPoint;
-		r2::VisibleResource mVisibleResource;
+		r2render::VisibleResource mVisibleResource;
 	};
 
 	r2base::iTest::TitleFunc TestRenderable::GetTitleFunction() const
@@ -64,7 +64,7 @@ namespace renderer_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			r2::Camera camera( { 0, 0 }, { 60, 30 } );
+			r2render::Camera camera( { 0, 0 }, { 60, 30 } );
 			tr2.Render( &camera);
 
 			return r2base::eTestEndAction::Pause;
@@ -88,7 +88,7 @@ namespace renderer_test
 		rd.Clear();
 
 
-		static r2::Camera dummy_camera( { 0, 0 }, { 60, 30 } );
+		static r2render::Camera dummy_camera( { 0, 0 }, { 60, 30 } );
 		rd.SetCamera( &dummy_camera );
 
 
@@ -119,7 +119,7 @@ namespace renderer_test
 
 namespace renderer_test
 {
-	class TempRenderable2 : public r2::iRenderable
+	class TempRenderable2 : public r2render::iRenderable
 	{
 	public:
 		TempRenderable2( const int x, const int y, const uint32_t width, const char* chars ) :
@@ -127,7 +127,7 @@ namespace renderer_test
 			, mVisibleResource( width, chars )
 		{}
 
-		void Render( const r2::Camera* const camera ) override
+		void Render( const r2render::Camera* const camera ) override
 		{
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 			COORD pos = {
@@ -153,7 +153,7 @@ namespace renderer_test
 
 	private:
 		r2::PointInt mPoint;
-		r2::VisibleResource mVisibleResource;
+		r2render::VisibleResource mVisibleResource;
 	};
 
 	r2base::iTest::TitleFunc CameraMove1::GetTitleFunction() const
@@ -167,8 +167,8 @@ namespace renderer_test
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2::Camera camera( { 0, 0 }, { 60, 30 } );
-			r2::Renderer renderer;
+			r2render::Camera camera( { 0, 0 }, { 60, 30 } );
+			r2render::Renderer renderer;
 
 			renderer.Clear();
 			renderer.SetCamera( &camera );
@@ -241,7 +241,7 @@ namespace renderer_test
 
 namespace renderer_test
 {
-	class Renderable4CameraTest : public r2::iRenderable
+	class Renderable4CameraTest : public r2render::iRenderable
 	{
 	public:
 		Renderable4CameraTest( const int x, const int y, const uint32_t width, const char* chars ) :
@@ -249,7 +249,7 @@ namespace renderer_test
 			, mRect( { x, y, mVisibleResource.GetWidth(), mVisibleResource.GetHeight() } )
 		{}
 
-		void Render( const r2::Camera* const camera ) override
+		void Render( const r2render::Camera* const camera ) override
 		{
 			if( !camera->GetRect().IntersectsRect( mRect ) )
 			{
@@ -285,7 +285,7 @@ namespace renderer_test
 		}
 
 	private:
-		r2::VisibleResource mVisibleResource;
+		r2render::VisibleResource mVisibleResource;
 		r2::RectInt mRect;
 	};
 
@@ -300,9 +300,9 @@ namespace renderer_test
 	{
 		return[]()->r2base::eTestEndAction
 		{
-			r2::Camera camera( { 0, 0 }, { 60, 30 } );
+			r2render::Camera camera( { 0, 0 }, { 60, 30 } );
 
-			r2::Renderer renderer;
+			r2render::Renderer renderer;
 			renderer.Clear();
 			renderer.SetCamera( &camera );
 

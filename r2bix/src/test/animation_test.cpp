@@ -12,7 +12,7 @@
 
 namespace animation_test
 {
-	class Renderable4AnimationTest : public r2::iRenderable
+	class Renderable4AnimationTest : public r2render::iRenderable
 	{
 	public:
 		Renderable4AnimationTest( const int x, const int y, const uint32_t width, const char* chars ) :
@@ -20,7 +20,7 @@ namespace animation_test
 			, mRect( { x, y, mVisibleResource.GetWidth(), mVisibleResource.GetHeight() } )
 		{}
 
-		void Render( const r2::Camera* const camera ) override
+		void Render( const r2render::Camera* const camera ) override
 		{
 			if( !camera->GetRect().IntersectsRect( mRect ) )
 			{
@@ -56,7 +56,7 @@ namespace animation_test
 		}
 
 	private:
-		r2::VisibleResource mVisibleResource;
+		r2render::VisibleResource mVisibleResource;
 		r2::RectInt mRect;
 	};
 

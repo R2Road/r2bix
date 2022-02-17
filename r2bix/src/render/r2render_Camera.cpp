@@ -1,9 +1,9 @@
 #include "pch.h"
 #include "r2render_Camera.h"
 
-namespace r2
+namespace r2render
 {
-	Camera::Camera( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size ) :
+	Camera::Camera( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size ) :
 		mPosition( position )
 		, mRect()
 	{
@@ -23,7 +23,7 @@ namespace r2
 		buildRect( mPosition, mRect.GetSize() );
 	}
 
-	void Camera::buildRect( const RectInt::MyPointT& position, const r2::RectInt::MySizeT& size )
+	void Camera::buildRect( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size )
 	{
 		const int min_x = position.GetX() - ( size.GetWidth() / 2 );
 		const int min_y = position.GetY() - ( size.GetHeight() / 2 );

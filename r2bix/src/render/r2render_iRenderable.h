@@ -1,12 +1,12 @@
 #pragma once
 
-namespace r2
+namespace r2render
 {
 	class Camera;
 
 	class iRenderable
 	{
 	public:
-		virtual void Render( const r2::Camera* const camera ) = 0;
+		virtual void Render( const r2render::Camera* const camera ) = 0;
 	};
 }

@@ -2,7 +2,7 @@
 
 #include <list>
 
-namespace r2
+namespace r2render
 {
 	class Camera;
 	class iRenderable;
@@ -14,7 +14,7 @@ namespace r2
 
 		Renderer();
 
-		void SetCamera( r2::Camera* const camera )
+		void SetCamera( Camera* const camera )
 		{
 			mCamera = camera;
 		}
@@ -25,7 +25,7 @@ namespace r2
 		void Draw();
 
 	private:
-		r2::Camera* mCamera;
+		Camera* mCamera;
 		ContainerT mContainer;
 	};
 }
