@@ -47,18 +47,12 @@ namespace r2test
 				}
 			);
 			ret->AddChild( '2', rect_test::Basic::GetInstance() );
-			ret->AddChild(
-				'3'
-				, []()->const char* { return r2test::RenderableScene::GetTitle(); }
-				, [&director]()->r2base::eTestEndAction
-				{
-					director.Setup( r2test::RenderableScene::Create( director ) );
-					return r2base::eTestEndAction::None;
-				}
-			);
+
 
 
 			ret->AddLineFeed();
+			ret->AddLineFeed();
+
 
 
 			ret->AddChild(
@@ -79,9 +73,21 @@ namespace r2test
 					return r2base::eTestEndAction::None;
 				}
 			);
+			ret->AddChild(
+				'e'
+				, []()->const char* { return r2test::RenderableScene::GetTitle(); }
+				, [&director]()->r2base::eTestEndAction
+				{
+					director.Setup( r2test::RenderableScene::Create( director ) );
+					return r2base::eTestEndAction::None;
+				}
+			);
+
 
 
 			ret->AddLineFeed();
+			ret->AddLineFeed();
+
 
 
 			ret->AddChild(
