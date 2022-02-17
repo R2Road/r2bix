@@ -3,12 +3,14 @@
 #include <string_view>
 #include <vector>
 
+#include "r2render_iRenderTarget.h"
+
 #include "r2_GridIndexConverter.h"
 #include "r2/r2_RectInt.h"
 
 namespace r2render
 {
-	class VisibleResource
+	class VisibleResource : public iRenderTarget
 	{
 	public:
 		using ValueT = char;
@@ -47,8 +49,8 @@ namespace r2render
 		//
 		//
 		//
-		void FillAll( const char c );
-		void Fill( const uint32_t x, const uint32_t y, const char c );
+		void FillAll( const char c ) override;
+		void Fill( const uint32_t x, const uint32_t y, const char c ) override;
 		void SetVisibleRect( const r2::RectInt& rect ) { mVisibleRect = rect; }
 
 	private:

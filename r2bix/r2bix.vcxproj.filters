@@ -305,5 +305,8 @@
     <ClInclude Include="src\render\r2render_VisibleResource.h">
       <Filter>render</Filter>
     </ClInclude>
+    <ClInclude Include="src\render\r2render_iRenderTarget.h">
+      <Filter>render</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

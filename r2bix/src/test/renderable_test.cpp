@@ -37,8 +37,11 @@ namespace renderable_test
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			const r2::PointInt pivot_position( 20, 30 );
+
 			RenderableObject ro( pivot_position );
 			r2render::Camera camera( { 20, 30 }, { 20, 10 } );
+
+			r2render::VisibleResource render_target( camera.GetRect().GetWidth(), camera.GetRect().GetHeight(), ' ' );
 
 			std::cout << r2::split;
 
@@ -46,7 +49,8 @@ namespace renderable_test
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "const r2::PointInt pivot_position( 20, 30 );" << r2::linefeed2;
 				std::cout << r2::tab2 << "RenderableObject ro( pivot_position );" << r2::linefeed;
-				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed;
+				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2render::VisibleResource render_target( camera.GetRect().GetWidth(), camera.GetRect().GetHeight(), ' ' );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
