@@ -3,10 +3,10 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
+#include "scene/TestScene.h"
 
 #include "r2test_RootScene.h"
-
-#include "scene/TestScene.h"
+#include "test/renderable_test.h"
 
 namespace r2test
 {
@@ -18,10 +18,10 @@ namespace r2test
 		) );
 
 		{
-			//ret->AddChild( '1', framebuffer_test::Basic::GetInstance() );
+			ret->AddChild( '1', renderable_test::Basic::GetInstance() );
 
 
-			//ret->AddSplit();
+			ret->AddSplit();
 
 
 			ret->AddChild(
