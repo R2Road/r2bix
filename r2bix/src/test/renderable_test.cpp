@@ -3,6 +3,7 @@
 
 #include "base/r2base_eTestEndAction.h"
 
+#include "render/r2render_Camera.h"
 #include "render/r2render_iRenderable.h"
 #include "render/r2render_VisibleResource.h"
 
@@ -33,12 +34,14 @@ namespace renderable_test
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			RenderableObject ro;
+			r2render::Camera camera( { 20, 30 }, { 20, 10 } );
 
 			std::cout << r2::split;
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "RenderableObject ro;" << r2::linefeed;
+				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
