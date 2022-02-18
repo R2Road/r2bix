@@ -14,9 +14,9 @@ namespace renderable_test
 	class RenderableObject : r2render::iRenderable
 	{
 	public:
-		RenderableObject( const r2::PointInt& position ) :
+		RenderableObject( const r2::PointInt& position, const r2::SizeInt& size ) :
 			mPosition( position )
-			, mVR( 10, 10, 'R' )
+			, mVR( size.GetWidth(), size.GetHeight(), 'R' )
 		{}
 
 		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
@@ -78,22 +78,19 @@ namespace renderable_test
 		return[]()->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			const r2::PointInt pivot_position( 20, 25 );
-
-			RenderableObject renderable_object( pivot_position );
+			
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
-
 			r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), '=' );
+
+			RenderableObject renderable_object( { 16, 22 }, { 10, 10 } );
 
 			std::cout << r2::split;
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2::PointInt pivot_position( 20, 25 );" << r2::linefeed2;
-				std::cout << r2::tab2 << "RenderableObject renderable_object( pivot_position );" << r2::linefeed;
-				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed;
+				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
+				std::cout << r2::tab2 << "r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed2;
+				std::cout << r2::tab2 << "RenderableObject renderable_object( { 19, 22 }, { 10, 10 } );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -123,10 +120,10 @@ namespace renderable_test
 
 			system( "pause" );
 			DWORD ret;
-			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 15 }, &ret );
+			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 13 }, &ret );
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 15 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 13 } );
 
 				std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
 
@@ -148,10 +145,10 @@ namespace renderable_test
 			std::cout << r2::split;
 
 			system( "pause" );
-			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 15 }, &ret );
+			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 13 }, &ret );
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 15 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 13 } );
 
 				std::cout << r2::tab << "+ Show Render Target" << r2::linefeed2;
 
