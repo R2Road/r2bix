@@ -1,12 +1,8 @@
 #include "pch.h"
 #include "texture_test.h"
 
-#include <Windows.h>
-
 #include "base/r2base_eTestEndAction.h"
 
-#include "render/r2render_Camera.h"
-#include "render/r2render_iRenderable.h"
 #include "render/r2render_Texture.h"
 
 namespace texture_test
