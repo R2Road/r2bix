@@ -3,7 +3,7 @@
 #include "base/r2base_iTest.h"
 #include "base/r2base_Singleton.h"
 
-namespace visible_resource_test
+namespace texture_test
 {
 	class FillAll : public r2base::iTest, public r2base::SingleTon<FillAll>
 	{

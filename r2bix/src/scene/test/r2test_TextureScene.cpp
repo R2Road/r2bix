@@ -21,23 +21,23 @@ namespace r2test
 		) );
 
 		{
-			ret->AddChild( '1', visible_resource_test::FillAll::GetInstance() );
-			ret->AddChild( '2', visible_resource_test::Fill::GetInstance() );
+			ret->AddChild( '1', texture_test::FillAll::GetInstance() );
+			ret->AddChild( '2', texture_test::Fill::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'q', visible_resource_test::InitWithChars_1::GetInstance() );
-			ret->AddChild( 'w', visible_resource_test::InitWithChars_2::GetInstance() );
-			ret->AddChild( 'e', visible_resource_test::InitWithChars_3::GetInstance() );
-			ret->AddChild( 'r', visible_resource_test::InitWithChars_4::GetInstance() );
+			ret->AddChild( 'q', texture_test::InitWithChars_1::GetInstance() );
+			ret->AddChild( 'w', texture_test::InitWithChars_2::GetInstance() );
+			ret->AddChild( 'e', texture_test::InitWithChars_3::GetInstance() );
+			ret->AddChild( 'r', texture_test::InitWithChars_4::GetInstance() );
 
 
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'a', visible_resource_test::VisibleRect::GetInstance() );
+			ret->AddChild( 'a', texture_test::VisibleRect::GetInstance() );
 
 
 			ret->AddSplit();

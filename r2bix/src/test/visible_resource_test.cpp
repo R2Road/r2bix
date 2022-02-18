@@ -9,7 +9,7 @@
 #include "render/r2render_iRenderable.h"
 #include "render/r2render_Texture.h"
 
-namespace visible_resource_test
+namespace texture_test
 {
 	r2base::iTest::TitleFunc FillAll::GetTitleFunction() const
 	{
