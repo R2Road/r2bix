@@ -35,9 +35,10 @@ namespace r2test
 
 
 			ret->AddLineFeed();
+			ret->AddLineFeed();
 
 
-			ret->AddChild( 'a', texture_test::VisibleRect::GetInstance() );
+			ret->AddChild( 'a', texture_test::TextureFrameTest::GetInstance() );
 
 
 			ret->AddSplit();

@@ -338,14 +338,14 @@ namespace texture_test
 
 
 
-	r2base::iTest::TitleFunc VisibleRect::GetTitleFunction() const
+	r2base::iTest::TitleFunc TextureFrameTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Visible Rect";
+			return "TextureFrame";
 		};
 	}
-	r2base::iTest::DoFunc VisibleRect::GetDoFunction()
+	r2base::iTest::DoFunc TextureFrameTest::GetDoFunction()
 	{
 		return []()->r2base::eTestEndAction
 		{
