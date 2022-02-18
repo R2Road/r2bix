@@ -26,11 +26,11 @@ namespace r2render
 		}
 		r2::RectInt::MySizeT::ValueT GetWidth() const
 		{
-			return mWorldSpaceRect.GetWidth();
+			return mCameraSpaceRect.GetWidth();
 		}
 		r2::RectInt::MySizeT::ValueT GetHeight() const
 		{
-			return mWorldSpaceRect.GetHeight();
+			return mCameraSpaceRect.GetHeight();
 		}
 		r2::RectInt GetCameraSpaceRect() const
 		{
