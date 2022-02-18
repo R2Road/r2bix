@@ -37,6 +37,7 @@
     <ClCompile Include="src\r2\r2_Size.cpp" />
     <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\render\r2render_Camera.cpp" />
+    <ClCompile Include="src\render\r2render_TextureFrame.cpp" />
     <ClCompile Include="src\render\r2_FPSTimer.cpp" />
     <ClCompile Include="src\render\r2render_FrameBuffer.cpp" />
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp" />
@@ -88,6 +89,7 @@
     <ClInclude Include="src\r2\r2_Timer_Float.h" />
     <ClInclude Include="src\render\r2render_Camera.h" />
     <ClInclude Include="src\render\r2render_iRenderTarget.h" />
+    <ClInclude Include="src\render\r2render_TextureFrame.h" />
     <ClInclude Include="src\render\r2_FPSTimer.h" />
     <ClInclude Include="src\render\r2render_FrameBuffer.h" />
     <ClInclude Include="src\render\r2_GridIndexConverter.h" />

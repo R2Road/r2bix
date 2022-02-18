@@ -4,6 +4,7 @@
 #include "base/r2base_eTestEndAction.h"
 
 #include "render/r2render_Texture.h"
+#include "render/r2render_TextureFrame.h"
 
 namespace texture_test
 {
@@ -349,15 +350,25 @@ namespace texture_test
 
 			std::cout << r2::split;
 
-			r2render::Texture texture( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" );
+			r2render::Texture texture( 7,
+				"1111111"
+				"1222222"
+				"1233333"
+				"1234444"
+				"1234555"
+				"1234566"
+				"1234567"
+			);
+			r2render::TextureFrame texture_frame( &texture );
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "r2render::Texture texture( 5, \"aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg\" );" << r2::linefeed;
+			std::cout << r2::tab2 << "const r2render::Texture texture( 5, ... )" << r2::linefeed;
+			std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed;
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ View All" << r2::linefeed2;
+				std::cout << r2::tab << "+ View Texture" << r2::linefeed2;
 
 				std::size_t cur_x = 0;
 				for( const char element : texture )
