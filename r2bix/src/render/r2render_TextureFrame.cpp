@@ -5,5 +5,11 @@ namespace r2render
 {
 	TextureFrame::TextureFrame( const Texture* const texture ) :
 		mTexture( texture )
+		, mVisibleRect( 0, 0, texture->GetWidth(), texture->GetHeight() )
 	{}
+
+	Texture::ValueT TextureFrame::Get( const uint32_t x, const uint32_t y ) const
+	{
+		return mTexture->Get( x, y );
+	}
 }

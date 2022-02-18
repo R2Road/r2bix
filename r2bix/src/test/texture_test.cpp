@@ -391,23 +391,39 @@ namespace texture_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ View With Rect" << r2::linefeed2;
+				std::cout << r2::tab << "+ View Texture Frame" << r2::linefeed2;
 
-				auto rect = texture.GetVisibleRect();
+				for( int y = texture_frame.GetVisibleRect().GetMinY(); y < texture_frame.GetVisibleRect().GetMaxY(); ++y )
+				{
+					for( int x = texture_frame.GetVisibleRect().GetMinX(); x < texture_frame.GetVisibleRect().GetMaxX(); ++x )
+					{
+						std::cout << texture_frame.Get( x, y );
+					}
+
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ View Texture Frame with TextureFrame::SetVisibleRect" << r2::linefeed2;
+
+				auto rect = texture_frame.GetVisibleRect();
 				rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );
 				rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );
-				texture.SetVisibleRect( rect );
+				texture_frame.SetVisibleRect( rect );
 
-				std::cout << r2::tab2 << "auto rect = texture.GetVisibleRect();" << r2::linefeed;
+				std::cout << r2::tab2 << "auto rect = texture_frame.GetVisibleRect();" << r2::linefeed;
 				std::cout << r2::tab2 << "rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );" << r2::linefeed;
 				std::cout << r2::tab2 << "rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );" << r2::linefeed;
-				std::cout << r2::tab2 << "texture.SetVisibleRect( rect );" << r2::linefeed2;
+				std::cout << r2::tab2 << "texture_frame.SetVisibleRect( rect );" << r2::linefeed2;
 
-				for( int y = texture.GetVisibleRect().GetMinY(); y < texture.GetVisibleRect().GetMaxY(); ++y )
+				for( int y = texture_frame.GetVisibleRect().GetMinY(); y < texture_frame.GetVisibleRect().GetMaxY(); ++y )
 				{
-					for( int x = texture.GetVisibleRect().GetMinX(); x < texture.GetVisibleRect().GetMaxX(); ++x )
+					for( int x = texture_frame.GetVisibleRect().GetMinX(); x < texture_frame.GetVisibleRect().GetMaxX(); ++x )
 					{
-						std::cout << texture.Get( x, y );
+						std::cout << texture_frame.Get( x, y );
 					}
 
 					std::cout << r2::linefeed;

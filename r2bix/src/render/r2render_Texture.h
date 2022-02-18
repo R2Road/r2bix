@@ -40,7 +40,6 @@ namespace r2render
 		int GetXEnd() const { return mGridIndexConverter.GetWidth() - 1; }
 		int GetYEnd() const { return mGridIndexConverter.GetHeight() - 1; }
 
-		const r2::RectInt& GetVisibleRect() const { return mVisibleRect; }
 		const ContainerT& GetContainer() const { return mChars; }
 		ValueT Get( const uint32_t x, const uint32_t y ) const;
 		std::string_view GetLine( const uint32_t y ) const;
@@ -51,11 +50,9 @@ namespace r2render
 		//
 		void FillAll( const char c ) override;
 		void Fill( const uint32_t x, const uint32_t y, const char c ) override;
-		void SetVisibleRect( const r2::RectInt& rect ) { mVisibleRect = rect; }
 
 	private:
 		const r2::GridIndexConverter mGridIndexConverter;
 		ContainerT mChars;
-		r2::RectInt mVisibleRect;
 	};
 }
