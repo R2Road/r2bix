@@ -10,19 +10,19 @@
 
 namespace r2render
 {
-	class VisibleResource : public iRenderTarget
+	class Texture : public iRenderTarget
 	{
 	public:
 		using ValueT = char;
 		using ContainerT = std::vector<ValueT>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
 
-		explicit VisibleResource( const std::string_view str );
-		explicit VisibleResource( const uint32_t width, const std::string_view str );
-		explicit VisibleResource( const uint32_t width, const uint32_t height );
-		explicit VisibleResource( const uint32_t width, const uint32_t height, const char fill_char );
-		explicit VisibleResource( const uint32_t width, const uint32_t height, const std::string_view str );
-		explicit VisibleResource( const uint32_t width, const uint32_t height, const char fill_char, const std::string_view str );
+		explicit Texture( const std::string_view str );
+		explicit Texture( const uint32_t width, const std::string_view str );
+		explicit Texture( const uint32_t width, const uint32_t height );
+		explicit Texture( const uint32_t width, const uint32_t height, const char fill_char );
+		explicit Texture( const uint32_t width, const uint32_t height, const std::string_view str );
+		explicit Texture( const uint32_t width, const uint32_t height, const char fill_char, const std::string_view str );
 
 	public:
 		//

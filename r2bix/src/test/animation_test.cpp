@@ -56,7 +56,7 @@ namespace animation_test
 		}
 
 	private:
-		r2render::VisibleResource mVisibleResource;
+		r2render::Texture mVisibleResource;
 		r2::RectInt mRect;
 	};
 

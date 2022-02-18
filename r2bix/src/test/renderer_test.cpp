@@ -45,7 +45,7 @@ namespace renderer_test
 
 	private:
 		r2::PointInt mPoint;
-		r2render::VisibleResource mVisibleResource;
+		r2render::Texture mVisibleResource;
 	};
 
 	r2base::iTest::TitleFunc TestRenderable::GetTitleFunction() const
@@ -153,7 +153,7 @@ namespace renderer_test
 
 	private:
 		r2::PointInt mPoint;
-		r2render::VisibleResource mVisibleResource;
+		r2render::Texture mVisibleResource;
 	};
 
 	r2base::iTest::TitleFunc CameraMove1::GetTitleFunction() const
@@ -285,7 +285,7 @@ namespace renderer_test
 		}
 
 	private:
-		r2render::VisibleResource mVisibleResource;
+		r2render::Texture mVisibleResource;
 		r2::RectInt mRect;
 	};
 

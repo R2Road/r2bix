@@ -25,11 +25,11 @@ namespace visible_resource_research
 
 			std::cout << r2::split;
 
-			const r2render::VisibleResource visible_resource( 10, 10, '0' );
+			const r2render::Texture visible_resource( 10, 10, '0' );
 			COORD pos = { 10, 11 };
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2render::VisibleResource visible_resource( 10, 10, '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "const r2render::Texture visible_resource( 10, 10, '0' );" << r2::linefeed;
 			std::cout << r2::tab2 << "COORD pos = { 10, 11 };" << r2::linefeed;
 
 			std::cout << r2::split;

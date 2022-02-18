@@ -63,7 +63,7 @@ namespace renderable_test
 		}
 
 		r2::PointInt mPosition;
-		r2render::VisibleResource mVR;
+		r2render::Texture mVR;
 	};
 
 	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
@@ -80,7 +80,7 @@ namespace renderable_test
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 			
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
-			r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), '=' );
+			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
 			RenderableObject renderable_object( { 16, 22 }, { 10, 10 } );
 
@@ -89,7 +89,7 @@ namespace renderable_test
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
-				std::cout << r2::tab2 << "r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed2;
 				std::cout << r2::tab2 << "RenderableObject renderable_object( { 19, 22 }, { 10, 10 } );" << r2::linefeed;
 			}
 

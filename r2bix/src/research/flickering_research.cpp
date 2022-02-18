@@ -22,7 +22,7 @@ namespace flickering_research
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2render::VisibleResource visible_resource( 19, 19 );
+			r2render::Texture visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
 
 			bool process = true;
@@ -83,7 +83,7 @@ namespace flickering_research
 			std::cout << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed;
 			std::cout << r2::split;
 
-			r2render::VisibleResource visible_resource( 19, 19 );
+			r2render::Texture visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
 
 			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -136,7 +136,7 @@ namespace flickering_research
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2render::VisibleResource visible_resource( 19, 19 );
+			r2render::Texture visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
 
 			bool process = true;
