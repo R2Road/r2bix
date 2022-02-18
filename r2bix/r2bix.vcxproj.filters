@@ -71,9 +71,6 @@
     <ClCompile Include="src\test\framebuffer_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\visible_resource_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\research\visible_resource_research.cpp">
       <Filter>research</Filter>
     </ClCompile>
@@ -158,6 +155,9 @@
     <ClCompile Include="src\scene\test\r2test_TextureScene.cpp">
       <Filter>scene\test</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\texture_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -201,9 +201,6 @@
       <Filter>research</Filter>
     </ClInclude>
     <ClInclude Include="src\test\framebuffer_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\visible_resource_test.h">
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\research\visible_resource_research.h">
@@ -307,6 +304,9 @@
     </ClInclude>
     <ClInclude Include="src\scene\test\r2test_TextureScene.h">
       <Filter>scene\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\texture_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

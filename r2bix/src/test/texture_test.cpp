@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "visible_resource_test.h"
+#include "texture_test.h"
 
 #include <Windows.h>
 

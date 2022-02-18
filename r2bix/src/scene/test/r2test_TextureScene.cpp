@@ -8,7 +8,7 @@
 
 #include "scene/TestScene.h"
 
-#include "test/visible_resource_test.h"
+#include "test/texture_test.h"
 
 namespace r2test
 {
