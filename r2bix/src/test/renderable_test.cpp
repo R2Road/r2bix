@@ -47,6 +47,28 @@ namespace renderable_test
 				<< camera->GetCameraSpaceRect().GetMaxX() << "   " << camera->GetCameraSpaceRect().GetMaxY() << r2::linefeed2;
 
 			//
+			// Render Target Space : My Rect
+			//
+			{
+				current_rect.SetOrigin( current_rect.GetOrigin() - camera->GetCameraSpaceRect().GetOrigin() );
+
+				std::cout << "render target space : my rect : "
+					<< current_rect.GetMinX() << "   " << current_rect.GetMinY() << r2::linefeed
+					<< current_rect.GetMaxX() << "   " << current_rect.GetMaxY() << r2::linefeed2;
+
+				//
+				// Fill
+				//
+				for( int y = current_rect.GetMinY(); current_rect.GetMaxY() > y; ++y )
+				{
+					for( int x = current_rect.GetMinX(); current_rect.GetMaxX() > x; ++x )
+					{
+						render_target->Fill( x, y, 'A' );
+					}
+				}
+			}
+
+			//
 			// Intersect
 			//
 			const auto intersect_rect = current_rect.IntersectsWithRect( camera->GetCameraSpaceRect() );
