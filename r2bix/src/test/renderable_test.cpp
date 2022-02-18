@@ -16,7 +16,7 @@ namespace renderable_test
 	public:
 		RenderableObject( const r2::PointInt& position, const r2::SizeInt& size ) :
 			mPosition( position )
-			, mVR( size.GetWidth(), size.GetHeight(), 'R' )
+			, mRect( 0, 0, size.GetWidth(), size.GetHeight() )
 		{}
 
 		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
@@ -28,7 +28,7 @@ namespace renderable_test
 			// World Space : My Rect
 			//
 			{
-				const r2::RectInt my_world_space_rect( mVR.GetVisibleRect().GetOrigin() + mPosition, mVR.GetVisibleRect().GetSize() );
+				const r2::RectInt my_world_space_rect( mRect.GetOrigin() + mPosition, mRect.GetSize() );
 				std::cout << "world space : my rect :"
 					<< " " << my_world_space_rect.GetMinX() << " " << my_world_space_rect.GetMinY()
 					<< " " << my_world_space_rect.GetMaxX() << " " << my_world_space_rect.GetMaxY()
@@ -63,7 +63,7 @@ namespace renderable_test
 		}
 
 		r2::PointInt mPosition;
-		r2render::Texture mVR;
+		r2::RectInt mRect;
 	};
 
 	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
@@ -110,7 +110,7 @@ namespace renderable_test
 				}
 
 				{
-					auto current_rect = renderable_object.mVR.GetVisibleRect();
+					auto current_rect = renderable_object.mRect;
 					current_rect.SetOrigin( current_rect.GetOrigin() + renderable_object.mPosition );
 
 					for( int y = current_rect.GetMinY(); current_rect.GetMaxY() > y; ++y )
