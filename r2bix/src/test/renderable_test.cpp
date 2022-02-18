@@ -28,23 +28,31 @@ namespace renderable_test
 			// View Space My Position
 			//
 			const auto current_position = mPosition - camera->GetPoint();
-			std::cout << "view space : my pos : " << current_position.GetX() << "   " << current_position.GetY() << r2::linefeed2;
+			std::cout << "camera space : my pos : " << current_position.GetX() << "   " << current_position.GetY() << r2::linefeed2;
 
 			//
 			// View Space My Rect
 			//
 			auto current_rect = mVR.GetVisibleRect();
 			current_rect.SetOrigin( current_rect.GetOrigin() + current_position );
-			std::cout << "view space : my rect : "
+			std::cout << "camera space : my rect : "
 				<< current_rect.GetMinX() << "   " << current_rect.GetMinY() << r2::linefeed
 				<< current_rect.GetMaxX() << "   " << current_rect.GetMaxY() << r2::linefeed2;
 
 			//
 			// View Space Camera Rect
 			//
-			std::cout << "view space : camera rect : "
-				<< camera->GetRect().GetMinX() << "   " << camera->GetRect().GetMinY() << r2::linefeed
-				<< camera->GetRect().GetMaxX() << "   " << camera->GetRect().GetMaxY() << r2::linefeed2;
+			std::cout << "camera space : camera rect : "
+				<< camera->GetCameraSpaceRect().GetMinX() << "   " << camera->GetCameraSpaceRect().GetMinY() << r2::linefeed
+				<< camera->GetCameraSpaceRect().GetMaxX() << "   " << camera->GetCameraSpaceRect().GetMaxY() << r2::linefeed2;
+
+			//
+			// Intersect
+			//
+			const auto intersect_rect = current_rect.IntersectsWithRect( camera->GetCameraSpaceRect() );
+			std::cout << "intersect : intersect rect : "
+				<< intersect_rect.GetMinX() << "   " << intersect_rect.GetMinY() << r2::linefeed
+				<< intersect_rect.GetMaxX() << "   " << intersect_rect.GetMaxY() << r2::linefeed2;
 		}
 
 		r2::PointInt mPosition;

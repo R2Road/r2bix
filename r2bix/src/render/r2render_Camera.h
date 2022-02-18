@@ -32,6 +32,10 @@ namespace r2render
 		{
 			return mWorldSpaceRect.GetHeight();
 		}
+		r2::RectInt GetCameraSpaceRect() const
+		{
+			return mCameraSpaceRect;
+		}
 		r2::RectInt GetRect() const
 		{
 			return mWorldSpaceRect;
@@ -48,6 +52,7 @@ namespace r2render
 
 	private:
 		r2::RectInt::MyPointT mPosition;
+		r2::RectInt mCameraSpaceRect;
 		r2::RectInt mWorldSpaceRect;
 	};
 }
