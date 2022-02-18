@@ -8,7 +8,7 @@
 
 #include "render/r2_FPSTimer.h"
 #include "render/r2render_iRenderable.h"
-#include "render/r2render_VisibleResource.h"
+#include "render/r2render_Texture.h"
 
 namespace animation_test
 {

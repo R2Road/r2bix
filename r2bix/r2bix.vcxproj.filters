@@ -155,7 +155,7 @@
     <ClCompile Include="src\render\r2render_Renderer.cpp">
       <Filter>render</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\r2render_VisibleResource.cpp">
+    <ClCompile Include="src\render\r2render_Texture.cpp">
       <Filter>render</Filter>
     </ClCompile>
   </ItemGroup>
@@ -302,10 +302,10 @@
     <ClInclude Include="src\render\r2render_Renderer.h">
       <Filter>render</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\r2render_VisibleResource.h">
+    <ClInclude Include="src\render\r2render_iRenderTarget.h">
       <Filter>render</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\r2render_iRenderTarget.h">
+    <ClInclude Include="src\render\r2render_Texture.h">
       <Filter>render</Filter>
     </ClInclude>
   </ItemGroup>

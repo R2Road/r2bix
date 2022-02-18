@@ -41,7 +41,7 @@
     <ClCompile Include="src\render\r2render_FrameBuffer.cpp" />
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\render\r2render_Renderer.cpp" />
-    <ClCompile Include="src\render\r2render_VisibleResource.cpp" />
+    <ClCompile Include="src\render\r2render_Texture.cpp" />
     <ClCompile Include="src\research\flickering_research.cpp" />
     <ClCompile Include="src\research\visible_resource_research.cpp" />
     <ClCompile Include="src\scene\DevelopScene.cpp" />
@@ -93,7 +93,7 @@
     <ClInclude Include="src\render\r2_GridIndexConverter.h" />
     <ClInclude Include="src\render\r2render_iRenderable.h" />
     <ClInclude Include="src\render\r2render_Renderer.h" />
-    <ClInclude Include="src\render\r2render_VisibleResource.h" />
+    <ClInclude Include="src\render\r2render_Texture.h" />
     <ClInclude Include="src\research\flickering_research.h" />
     <ClInclude Include="src\research\visible_resource_research.h" />
     <ClInclude Include="src\scene\DevelopScene.h" />

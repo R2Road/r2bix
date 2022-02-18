@@ -4,7 +4,7 @@
 #include "base/r2base_Singleton.h"
 
 #include "render/r2render_Renderer.h"
-#include "render/r2render_VisibleResource.h"
+#include "render/r2render_Texture.h"
 
 namespace renderer_test
 {

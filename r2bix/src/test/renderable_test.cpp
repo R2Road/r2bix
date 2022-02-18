@@ -7,7 +7,7 @@
 
 #include "render/r2render_Camera.h"
 #include "render/r2render_iRenderable.h"
-#include "render/r2render_VisibleResource.h"
+#include "render/r2render_Texture.h"
 
 namespace renderable_test
 {
