@@ -43,7 +43,7 @@ namespace renderable_test
 			RenderableObject renderable_object( pivot_position );
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 
-			r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), ' ' );
+			r2render::VisibleResource render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
 			std::cout << r2::split;
 
@@ -105,6 +105,33 @@ namespace renderable_test
 			}
 
 			std::cout << r2::split;
+
+			system( "pause" );
+			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 15 }, &ret );
+
+			{
+				renderable_object.Render( &camera, &render_target );
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 15 } );
+
+				std::cout << r2::tab << "+ Show Render Target" << r2::linefeed2;
+
+				int current_x = 0;
+				for( const auto& p : render_target )
+				{
+					std::cout << p;
+
+					++current_x;
+
+					if( render_target.GetWidth() <= current_x )
+					{
+						current_x = 0;
+						std::cout << r2::linefeed;
+					}
+				}
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+			}
 
 			return r2base::eTestEndAction::Pause;
 		};
