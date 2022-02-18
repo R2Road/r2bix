@@ -19,7 +19,33 @@ namespace renderable_test
 			, mVR( 10, 10, 'R' )
 		{}
 
-		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override {}
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
+		{
+			std::cout << "world space : my pos : " << mPosition.GetX() << "   " << mPosition.GetY() << r2::linefeed;
+			std::cout << "world space : camera pos : " << camera->GetPoint().GetX() << "   " << camera->GetPoint().GetY() << r2::linefeed2;
+
+			//
+			// View Space My Position
+			//
+			const auto current_position = mPosition - camera->GetPoint();
+			std::cout << "view space : my pos : " << current_position.GetX() << "   " << current_position.GetY() << r2::linefeed2;
+
+			//
+			// View Space My Rect
+			//
+			auto current_rect = mVR.GetVisibleRect();
+			current_rect.SetOrigin( current_rect.GetOrigin() + current_position );
+			std::cout << "view space : my rect : "
+				<< current_rect.GetMinX() << "   " << current_rect.GetMinY() << r2::linefeed
+				<< current_rect.GetMaxX() << "   " << current_rect.GetMaxY() << r2::linefeed2;
+
+			//
+			// View Space Camera Rect
+			//
+			std::cout << "view space : camera rect : "
+				<< camera->GetRect().GetMinX() << "   " << camera->GetRect().GetMinY() << r2::linefeed
+				<< camera->GetRect().GetMaxX() << "   " << camera->GetRect().GetMaxY() << r2::linefeed2;
+		}
 
 		r2::PointInt mPosition;
 		r2render::VisibleResource mVR;
@@ -110,11 +136,11 @@ namespace renderable_test
 			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 15 }, &ret );
 
 			{
-				renderable_object.Render( &camera, &render_target );
-
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 15 } );
 
 				std::cout << r2::tab << "+ Show Render Target" << r2::linefeed2;
+
+				renderable_object.Render( &camera, &render_target );
 
 				int current_x = 0;
 				for( const auto& p : render_target )
