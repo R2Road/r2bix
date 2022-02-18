@@ -26,15 +26,15 @@ namespace r2render
 		}
 		r2::RectInt::MySizeT::ValueT GetWidth() const
 		{
-			return mRect.GetWidth();
+			return mWorldSpaceRect.GetWidth();
 		}
 		r2::RectInt::MySizeT::ValueT GetHeight() const
 		{
-			return mRect.GetHeight();
+			return mWorldSpaceRect.GetHeight();
 		}
 		r2::RectInt GetRect() const
 		{
-			return mRect;
+			return mWorldSpaceRect;
 		}
 
 		//
@@ -48,6 +48,6 @@ namespace r2render
 
 	private:
 		r2::RectInt::MyPointT mPosition;
-		r2::RectInt mRect;
+		r2::RectInt mWorldSpaceRect;
 	};
 }

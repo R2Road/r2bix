@@ -5,7 +5,7 @@ namespace r2render
 {
 	Camera::Camera( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size ) :
 		mPosition( position )
-		, mRect()
+		, mWorldSpaceRect()
 	{
 		buildRect( mPosition, size );
 	}
@@ -14,19 +14,19 @@ namespace r2render
 	{
 		mPosition = point;
 
-		buildRect( mPosition, mRect.GetSize() );
+		buildRect( mPosition, mWorldSpaceRect.GetSize() );
 	}
 	void Camera::SetPoint( const int x, const int y )
 	{
 		mPosition.Set( x, y );
 
-		buildRect( mPosition, mRect.GetSize() );
+		buildRect( mPosition, mWorldSpaceRect.GetSize() );
 	}
 
 	void Camera::buildRect( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size )
 	{
 		const int min_x = position.GetX() - ( size.GetWidth() / 2 );
 		const int min_y = position.GetY() - ( size.GetHeight() / 2 );
-		mRect.Set( min_x, min_y, size.GetWidth(), size.GetHeight() );
+		mWorldSpaceRect.Set( min_x, min_y, size.GetWidth(), size.GetHeight() );
 	}
 }
