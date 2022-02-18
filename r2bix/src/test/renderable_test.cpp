@@ -96,19 +96,35 @@ namespace renderable_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Show Renderable Object Rect" << r2::linefeed2;
+				std::cout << r2::tab << "+ Show : Renderable Object Rect( +, O ), Camera Rect( #, X )" << r2::linefeed2;
 
-				auto current_rect = renderable_object.mVR.GetVisibleRect();
-				current_rect.SetOrigin( current_rect.GetOrigin() + renderable_object.mPosition );
-
-				for( int y = current_rect.GetMinY(); current_rect.GetMaxY() > y; ++y )
 				{
-					for( int x = current_rect.GetMinX(); current_rect.GetMaxX() > x; ++x )
+					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
 					{
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
-						std::cout << '+';
+						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
+						{
+							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
+							std::cout << '#';
+						}
 					}
 				}
+
+				{
+					auto current_rect = renderable_object.mVR.GetVisibleRect();
+					current_rect.SetOrigin( current_rect.GetOrigin() + renderable_object.mPosition );
+
+					for( int y = current_rect.GetMinY(); current_rect.GetMaxY() > y; ++y )
+					{
+						for( int x = current_rect.GetMinX(); current_rect.GetMaxX() > x; ++x )
+						{
+							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
+							std::cout << '+';
+						}
+					}
+				}
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+				std::cout << 'X';
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( renderable_object.mPosition.GetX() ), static_cast<short>( renderable_object.mPosition.GetY() ) } );
 				std::cout << 'O';
@@ -118,32 +134,7 @@ namespace renderable_test
 
 			std::cout << r2::split;
 
-			system( "pause" );
 			DWORD ret;
-			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 13 }, &ret );
-
-			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 13 } );
-
-				std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
-
-				for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
-				{
-					for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
-					{
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
-						std::cout << '#';
-					}
-				}
-
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
-				std::cout << 'X';
-
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
-			}
-
-			std::cout << r2::split;
-
 			system( "pause" );
 			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 13 }, &ret );
 
