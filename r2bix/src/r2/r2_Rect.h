@@ -36,6 +36,11 @@ namespace r2
 		{
 			Set( x, y, width, height );
 		}
+		Rect( const MyPointT origin, const MySizeT size )
+		{
+			mOrigin = origin;
+			mSize = size;
+		}
 		Rect( const MyT& other )
 		{
 			Set( other.mOrigin.GetX(), other.mOrigin.GetY(), other.mSize.GetWidth(), other.mSize.GetHeight() );

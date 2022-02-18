@@ -25,13 +25,33 @@ namespace renderable_test
 			std::cout << "world space : camera pos : " << camera->GetPoint().GetX() << "   " << camera->GetPoint().GetY() << r2::linefeed2;
 
 			//
-			// View Space My Position
+			// World Space : My Rect
+			//
+			{
+				const r2::RectInt my_world_space_rect( mVR.GetVisibleRect().GetOrigin() + mPosition, mVR.GetVisibleRect().GetSize() );
+				std::cout << "world space : my rect :"
+					<< " " << my_world_space_rect.GetMinX() << " " << my_world_space_rect.GetMinY()
+					<< " " << my_world_space_rect.GetMaxX() << " " << my_world_space_rect.GetMaxY()
+					<< r2::linefeed2;
+
+				if( !my_world_space_rect.IntersectsRect( camera->GetRect() ) )
+				{
+					return;
+				}
+				else
+				{
+					std::cout << "===== My Rect Is Valid =====" << r2::linefeed2;
+				}
+			}
+
+			//
+			// Camera Space : My Position
 			//
 			const auto camera_space_my_position = mPosition - camera->GetPoint();
 			std::cout << "camera space : my pos : " << camera_space_my_position.GetX() << "   " << camera_space_my_position.GetY() << r2::linefeed2;
 
 			//
-			// Render Target Space My Position
+			// Render Target Space : My Position
 			//
 			const auto render_target_space_my_position = camera_space_my_position - camera->GetCameraSpaceRect().GetOrigin();
 			std::cout << "render target space : my pos : " << render_target_space_my_position.GetX() << "   " << render_target_space_my_position.GetY() << r2::linefeed2;
