@@ -12,7 +12,7 @@
 
 namespace r2test
 {
-	r2base::NodeUp VisibleResourceScene::Create( r2base::Director& director )
+	r2base::NodeUp TextureScene::Create( r2base::Director& director )
 	{
 		TestSceneUp ret( new ( std::nothrow ) TestScene(
 			director

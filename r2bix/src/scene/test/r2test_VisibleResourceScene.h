@@ -11,10 +11,10 @@ namespace r2base
 
 namespace r2test
 {
-	class VisibleResourceScene
+	class TextureScene
 	{
 	private:
-		VisibleResourceScene() = delete;
+		TextureScene() = delete;
 
 	public:
 		static const char* GetTitle() { return "Texture"; }

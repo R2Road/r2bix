@@ -57,10 +57,10 @@ namespace r2test
 
 			ret->AddChild(
 				'q'
-				, []()->const char* { return r2test::VisibleResourceScene::GetTitle(); }
+				, []()->const char* { return r2test::TextureScene::GetTitle(); }
 				, [&director]()->r2base::eTestEndAction
 				{
-					director.Setup( r2test::VisibleResourceScene::Create( director ) );
+					director.Setup( r2test::TextureScene::Create( director ) );
 					return r2base::eTestEndAction::None;
 				}
 			);
