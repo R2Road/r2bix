@@ -14,7 +14,7 @@ namespace visible_resource_research
 	{
 		return []()->const char*
 		{
-			return "Visible Resource - Draw With Position";
+			return "Draw With Position";
 		};
 	}
 	r2base::iTest::DoFunc DrawWithPosition::GetDoFunction()

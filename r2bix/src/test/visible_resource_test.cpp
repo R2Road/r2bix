@@ -15,7 +15,7 @@ namespace visible_resource_test
 	{
 		return []()->const char*
 		{
-			return "Visible Resource - Fill All";
+			return "Fill All";
 		};
 	}
 	r2base::iTest::DoFunc FillAll::GetDoFunction()
@@ -26,10 +26,10 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			const r2render::Texture visible_resource( 30, 20, '0' );
+			const r2render::Texture texture( 30, 20, '0' );
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2render::Texture visible_resource( 30, 20, '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "const r2render::Texture texture( 30, 20, '0' );" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -37,12 +37,12 @@ namespace visible_resource_test
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
 				std::size_t x = 0;
-				for( const char element : visible_resource )
+				for( const char element : texture )
 				{
 					std::cout << element;
 
 					++x;
-					if( visible_resource.GetWidth() <= x )
+					if( texture.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -62,7 +62,7 @@ namespace visible_resource_test
 	{
 		return []()->const char*
 		{
-			return "Visible Resource - Fill";
+			return "Fill";
 		};
 	}
 	r2base::iTest::DoFunc Fill::GetDoFunction()
@@ -73,18 +73,18 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			r2render::Texture vr( 30, 20 );
-			vr.Fill( 0, 0, '0' );
-			vr.Fill( vr.GetXEnd(), 0, '0' );
-			vr.Fill( vr.GetXEnd(), vr.GetYEnd(), '0' );
-			vr.Fill( 0, vr.GetYEnd(), '0' );
+			r2render::Texture texture( 30, 20 );
+			texture.Fill( 0, 0, '0' );
+			texture.Fill( texture.GetXEnd(), 0, '0' );
+			texture.Fill( texture.GetXEnd(), texture.GetYEnd(), '0' );
+			texture.Fill( 0, texture.GetYEnd(), '0' );
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2render::Texture vr( 30, 20 );" << r2::linefeed;
-			std::cout << r2::tab2 << "vr.Fill( 0, 0, '0' );" << r2::linefeed;
-			std::cout << r2::tab2 << "vr.Fill( vr.GetXEnd(), 0, '0' );" << r2::linefeed;
-			std::cout << r2::tab2 << "vr.Fill( vr.GetXEnd(), vr.GetYEnd(), '0' );" << r2::linefeed;
-			std::cout << r2::tab2 << "vr.Fill( 0, vr.GetYEnd(), '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "const r2render::Texture texture( 30, 20 );" << r2::linefeed;
+			std::cout << r2::tab2 << "texture.Fill( 0, 0, '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "texture.Fill( texture.GetXEnd(), 0, '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "texture.Fill( texture.GetXEnd(), texture.GetYEnd(), '0' );" << r2::linefeed;
+			std::cout << r2::tab2 << "texture.Fill( 0, texture.GetYEnd(), '0' );" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -92,12 +92,12 @@ namespace visible_resource_test
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
 				std::size_t x = 0;
-				for( const char element : vr )
+				for( const char element : texture )
 				{
 					std::cout << element;
 
 					++x;
-					if( vr.GetWidth() <= x )
+					if( texture.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -117,7 +117,7 @@ namespace visible_resource_test
 	{
 		return []()->const char*
 		{
-			return "Visible Resource - Init With Chars 1";
+			return "Init With Chars 1";
 		};
 	}
 	r2base::iTest::DoFunc InitWithChars_1::GetDoFunction()
@@ -131,21 +131,21 @@ namespace visible_resource_test
 			std::size_t x = 0;
 
 			{
-				const r2render::Texture visible_resource( "Init With Chars" );
+				const r2render::Texture texture( "Init With Chars" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture visible_resource( \"Init With Chars\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2render::Texture texture( \"Init With Chars\" );" << r2::linefeed;
 
 				std::cout << r2::split;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
-				for( const char element : visible_resource )
+				for( const char element : texture )
 				{
 					std::cout << element;
 
 					++x;
-					if( visible_resource.GetWidth() <= x )
+					if( texture.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -165,7 +165,7 @@ namespace visible_resource_test
 	{
 		return []()->const char*
 		{
-			return "Visible Resource - Init With Chars 2";
+			return "Init With Chars 2";
 		};
 	}
 	r2base::iTest::DoFunc InitWithChars_2::GetDoFunction()
@@ -177,22 +177,22 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2render::Texture visible_resource( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture visible_resource( 5, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2render::Texture texture( 5, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
 
 				std::cout << r2::split;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
 				std::size_t x = 0;
-				for( const char element : visible_resource )
+				for( const char element : texture )
 				{
 					std::cout << element;
 
 					++x;
-					if( visible_resource.GetWidth() <= x )
+					if( texture.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -216,7 +216,7 @@ namespace visible_resource_test
 	{
 		return []()->const char*
 		{
-			return "Visible Resource - Init With Chars 3";
+			return "Init With Chars 3";
 		};
 	}
 	r2base::iTest::DoFunc InitWithChars_3::GetDoFunction()
@@ -228,20 +228,20 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2render::Texture visible_resource( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2render::Texture texture( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture visible_resource( 8, 8, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
+				std::cout << r2::tab2 << "const r2render::Texture texture( 8, 8, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
 				std::size_t x = 0;
-				for( const char element : visible_resource )
+				for( const char element : texture )
 				{
 					std::cout << element;
 
 					++x;
-					if( visible_resource.GetWidth() <= x )
+					if( texture.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -256,20 +256,20 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2render::Texture visible_resource( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2render::Texture texture( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture visible_resource( 3, 3, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
+				std::cout << r2::tab2 << "const r2render::Texture texture( 3, 3, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
 				std::cout << r2::tab << "+ View : Overflow Test" << r2::linefeed2;
 
 				std::size_t x = 0;
-				for( const char element : visible_resource )
+				for( const char element : texture )
 				{
 					std::cout << element;
 
 					++x;
-					if( visible_resource.GetWidth() <= x )
+					if( texture.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -293,7 +293,7 @@ namespace visible_resource_test
 	{
 		return []()->const char*
 		{
-			return "Visible Resource - Init With Chars 4";
+			return "Init With Chars 4";
 		};
 	}
 	r2base::iTest::DoFunc InitWithChars_4::GetDoFunction()
@@ -305,20 +305,20 @@ namespace visible_resource_test
 			std::cout << r2::split;
 
 			{
-				const r2render::Texture visible_resource( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2render::Texture texture( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture visible_resource( 7, 7, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
+				std::cout << r2::tab2 << "const r2render::Texture texture( 7, 7, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
 				std::size_t x = 0;
-				for( const char element : visible_resource )
+				for( const char element : texture )
 				{
 					std::cout << element;
 
 					++x;
-					if( visible_resource.GetWidth() <= x )
+					if( texture.GetWidth() <= x )
 					{
 						x = 0u;
 						std::cout << r2::linefeed;
@@ -342,7 +342,7 @@ namespace visible_resource_test
 	{
 		return []()->const char*
 		{
-			return "Visible Resource - Visible Rect";
+			return "Visible Rect";
 		};
 	}
 	r2base::iTest::DoFunc VisibleRect::GetDoFunction()
@@ -353,10 +353,10 @@ namespace visible_resource_test
 
 			std::cout << r2::split;
 
-			r2render::Texture vr( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" );
+			r2render::Texture texture( 5, "aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg" );
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "r2render::Texture vr( 5, \"aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg\" );" << r2::linefeed;
+			std::cout << r2::tab2 << "r2render::Texture texture( 5, \"aaaaaaaaabbbbbbbbbbcccccdddddddeeeeeeeeeeeeeeeefffggg\" );" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -364,12 +364,12 @@ namespace visible_resource_test
 				std::cout << r2::tab << "+ View All" << r2::linefeed2;
 
 				std::size_t cur_x = 0;
-				for( const char element : vr )
+				for( const char element : texture )
 				{
 					std::cout << element;
 
 					++cur_x;
-					if( vr.GetWidth() <= cur_x )
+					if( texture.GetWidth() <= cur_x )
 					{
 						cur_x = 0u;
 						std::cout << r2::linefeed;
@@ -386,21 +386,21 @@ namespace visible_resource_test
 			{
 				std::cout << r2::tab << "+ View With Rect" << r2::linefeed2;
 
-				auto rect = vr.GetVisibleRect();
+				auto rect = texture.GetVisibleRect();
 				rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );
 				rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );
-				vr.SetVisibleRect( rect );
+				texture.SetVisibleRect( rect );
 
-				std::cout << r2::tab2 << "auto rect = vr.GetVisibleRect();" << r2::linefeed;
+				std::cout << r2::tab2 << "auto rect = texture.GetVisibleRect();" << r2::linefeed;
 				std::cout << r2::tab2 << "rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );" << r2::linefeed;
 				std::cout << r2::tab2 << "rect.SetSize( rect.GetSize().GetWidth() - 2, rect.GetSize().GetHeight() - 1 );" << r2::linefeed;
-				std::cout << r2::tab2 << "vr.SetVisibleRect( rect );" << r2::linefeed2;
+				std::cout << r2::tab2 << "texture.SetVisibleRect( rect );" << r2::linefeed2;
 
-				for( int y = vr.GetVisibleRect().GetMinY(); y < vr.GetVisibleRect().GetMaxY(); ++y )
+				for( int y = texture.GetVisibleRect().GetMinY(); y < texture.GetVisibleRect().GetMaxY(); ++y )
 				{
-					for( int x = vr.GetVisibleRect().GetMinX(); x < vr.GetVisibleRect().GetMaxX(); ++x )
+					for( int x = texture.GetVisibleRect().GetMinX(); x < texture.GetVisibleRect().GetMaxX(); ++x )
 					{
-						std::cout << vr.Get( x, y );
+						std::cout << texture.Get( x, y );
 					}
 
 					std::cout << r2::linefeed;

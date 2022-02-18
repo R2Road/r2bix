@@ -29,10 +29,10 @@ namespace r2test
 			"\n"	"> To do : Renderer"
 			"\n"
 			"\n"	"> + Work Flow"
-			"\n"	"> Visible Resource"
+			"\n"	"> Texture"
 			"\n"	"> Camera"
 			"\n"	"> Renderable"
-			"\n"	"> Visible Resource + Camera + Renderable"
+			"\n"	"> Texture + Camera + Renderable"
 			"\n"	"> ..."
 		) );
 

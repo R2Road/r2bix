@@ -17,7 +17,7 @@ namespace r2test
 		VisibleResourceScene() = delete;
 
 	public:
-		static const char* GetTitle() { return "Visible Resource"; }
+		static const char* GetTitle() { return "Texture"; }
 		static r2base::NodeUp Create( r2base::Director& director );
 	};
 }
