@@ -119,9 +119,6 @@
     <ClCompile Include="src\scene\test\r2test_RootScene.cpp">
       <Filter>scene\test</Filter>
     </ClCompile>
-    <ClCompile Include="src\scene\test\r2test_VisibleResourceScene.cpp">
-      <Filter>scene\test</Filter>
-    </ClCompile>
     <ClCompile Include="src\scene\GameScene.cpp">
       <Filter>scene</Filter>
     </ClCompile>
@@ -157,6 +154,9 @@
     </ClCompile>
     <ClCompile Include="src\render\r2render_Texture.cpp">
       <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\test\r2test_TextureScene.cpp">
+      <Filter>scene\test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -263,9 +263,6 @@
     <ClInclude Include="src\scene\test\r2test_RootScene.h">
       <Filter>scene\test</Filter>
     </ClInclude>
-    <ClInclude Include="src\scene\test\r2test_VisibleResourceScene.h">
-      <Filter>scene\test</Filter>
-    </ClInclude>
     <ClInclude Include="src\scene\GameScene.h">
       <Filter>scene</Filter>
     </ClInclude>
@@ -307,6 +304,9 @@
     </ClInclude>
     <ClInclude Include="src\render\r2render_Texture.h">
       <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\test\r2test_TextureScene.h">
+      <Filter>scene\test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

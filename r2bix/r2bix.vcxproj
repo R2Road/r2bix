@@ -55,7 +55,7 @@
     <ClCompile Include="src\scene\test\r2test_RenderableScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_RendererScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_RootScene.cpp" />
-    <ClCompile Include="src\scene\test\r2test_VisibleResourceScene.cpp" />
+    <ClCompile Include="src\scene\test\r2test_TextureScene.cpp" />
     <ClCompile Include="src\test\animation_test.cpp" />
     <ClCompile Include="src\test\camera_test.cpp" />
     <ClCompile Include="src\test\console_screen_buffer_manager_test.cpp" />
@@ -107,7 +107,7 @@
     <ClInclude Include="src\scene\test\r2test_RenderableScene.h" />
     <ClInclude Include="src\scene\test\r2test_RendererScene.h" />
     <ClInclude Include="src\scene\test\r2test_RootScene.h" />
-    <ClInclude Include="src\scene\test\r2test_VisibleResourceScene.h" />
+    <ClInclude Include="src\scene\test\r2test_TextureScene.h" />
     <ClInclude Include="src\test\animation_test.h" />
     <ClInclude Include="src\test\camera_test.h" />
     <ClInclude Include="src\test\console_screen_buffer_manager_test.h" />

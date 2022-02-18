@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2test_VisibleResourceScene.h"
+#include "r2test_TextureScene.h"
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"

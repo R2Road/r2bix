@@ -9,7 +9,7 @@
 #include "r2test_InputScene.h"
 #include "r2test_RenderableScene.h"
 #include "r2test_RendererScene.h"
-#include "r2test_VisibleResourceScene.h"
+#include "r2test_TextureScene.h"
 
 #include "scene/DevelopScene.h"
 #include "scene/TestScene.h"
