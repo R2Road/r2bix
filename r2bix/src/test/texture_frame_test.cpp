@@ -176,11 +176,14 @@ namespace texture_frame_test
 					<< " " << rect.GetMaxY()
 					<< r2::linefeed2;
 
+				EXPECT_EQ( texture.Get( texture_frame.GetVisibleRect().GetMinX(), texture_frame.GetVisibleRect().GetMinY() ), texture_frame.Get( 0, 0 ) );
+				std::cout << r2::linefeed2;
+
 				std::cout << r2::tab << "+ View Texture Frame with TextureFrame::SetVisibleRect" << r2::linefeed2;
 
-				for( int y = texture_frame.GetVisibleRect().GetMinY(); y < texture_frame.GetVisibleRect().GetMaxY(); ++y )
+				for( int y = 0; y < texture_frame.GetHeight(); ++y )
 				{
-					for( int x = texture_frame.GetVisibleRect().GetMinX(); x < texture_frame.GetVisibleRect().GetMaxX(); ++x )
+					for( int x = 0; x < texture_frame.GetWidth(); ++x )
 					{
 						std::cout << texture_frame.Get( x, y );
 					}
