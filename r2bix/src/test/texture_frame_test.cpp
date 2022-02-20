@@ -90,6 +90,69 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
+			return r2base::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2base::iTest::TitleFunc VisibleRect::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Visible Rect";
+		};
+	}
+	r2base::iTest::DoFunc VisibleRect::GetDoFunction()
+	{
+		return []()->r2base::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2render::Texture texture( 7,
+				"1111111"
+				"1222222"
+				"1233333"
+				"1234444"
+				"1234555"
+				"1234566"
+				"1234567"
+			);
+			r2render::TextureFrame texture_frame( &texture );
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "const r2render::Texture texture( 5, ... )" << r2::linefeed;
+				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ View Texture" << r2::linefeed2;
+
+				std::size_t cur_x = 0;
+				for( const char element : texture )
+				{
+					std::cout << element;
+
+					++cur_x;
+					if( texture.GetWidth() <= cur_x )
+					{
+						cur_x = 0u;
+						std::cout << r2::linefeed;
+					}
+				}
+				if( 0u != cur_x )
+				{
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
 			{
 				std::cout << r2::tab << "+ View Texture Frame with TextureFrame::SetVisibleRect" << r2::linefeed2;
 
