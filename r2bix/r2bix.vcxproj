@@ -73,6 +73,7 @@
     <ClInclude Include="src\base\r2base_Director.h" />
     <ClInclude Include="src\base\r2base_eTestEndAction.h" />
     <ClInclude Include="src\base\r2base_iNode.h" />
+    <ClInclude Include="src\base\r2base_Inspector.h" />
     <ClInclude Include="src\base\r2base_iTest.h" />
     <ClInclude Include="src\base\r2base_Singleton.h" />
     <ClInclude Include="src\game\r2game_Node.h" />

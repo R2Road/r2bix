@@ -320,5 +320,8 @@
     <ClInclude Include="src\test\texture_frame_test.h">
       <Filter>test</Filter>
     </ClInclude>
+    <ClInclude Include="src\base\r2base_Inspector.h">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
