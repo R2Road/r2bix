@@ -69,6 +69,7 @@ namespace texture_frame_test
 				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
 
 				EXPECT_EQ( texture.Get( 6, 6 ), texture_frame.Get( 6, 6 ) );
+				EXPECT_EQ( '7', texture_frame.Get( 6, 6 ) );
 
 			}
 
