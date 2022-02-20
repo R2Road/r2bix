@@ -8,14 +8,14 @@
 
 namespace texture_frame_test
 {
-	r2base::iTest::TitleFunc TextureFrameTest::GetTitleFunction() const
+	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame";
 		};
 	}
-	r2base::iTest::DoFunc TextureFrameTest::GetDoFunction()
+	r2base::iTest::DoFunc Basic::GetDoFunction()
 	{
 		return []()->r2base::eTestEndAction
 		{

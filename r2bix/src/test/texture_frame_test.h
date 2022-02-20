@@ -5,7 +5,7 @@
 
 namespace texture_frame_test
 {
-	class TextureFrameTest : public r2base::iTest, public r2base::SingleTon<TextureFrameTest>
+	class Basic : public r2base::iTest, public r2base::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
