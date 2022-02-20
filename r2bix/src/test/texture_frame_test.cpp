@@ -35,7 +35,7 @@ namespace texture_frame_test
 			);
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2render::Texture texture( 5, ... )" << r2::linefeed;
+			std::cout << r2::tab2 << "const r2render::Texture texture( 7, ... )" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -128,7 +128,7 @@ namespace texture_frame_test
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture texture( 5, ... )" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2render::Texture texture( 7, ... )" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
 			}
 
