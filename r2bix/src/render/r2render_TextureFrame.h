@@ -12,6 +12,8 @@ namespace r2render
 		//
 		//
 		//
+		int GetWidth() const { return mVisibleRect.GetWidth(); }
+		int GetHeight() const { return mVisibleRect.GetHeight(); }
 		const r2::RectInt& GetVisibleRect() const { return mVisibleRect; }
 		Texture::ValueT Get( const uint32_t x, const uint32_t y ) const;
 

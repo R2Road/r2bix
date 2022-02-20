@@ -81,9 +81,9 @@ namespace texture_frame_test
 			{
 				std::cout << r2::tab << "+ View Texture Frame" << r2::linefeed2;
 
-				for( int y = texture_frame.GetVisibleRect().GetMinY(); y < texture_frame.GetVisibleRect().GetMaxY(); ++y )
+				for( int y = 0; y < texture_frame.GetHeight(); ++y )
 				{
-					for( int x = texture_frame.GetVisibleRect().GetMinX(); x < texture_frame.GetVisibleRect().GetMaxX(); ++x )
+					for( int x = 0; x < texture_frame.GetWidth(); ++x )
 					{
 						std::cout << texture_frame.Get( x, y );
 					}
