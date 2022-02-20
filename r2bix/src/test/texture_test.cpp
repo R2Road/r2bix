@@ -174,10 +174,10 @@ namespace texture_test
 			std::cout << r2::split;
 
 			{
-				const r2render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				const r2render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggghh" );
 
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture texture( 5, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2render::Texture texture( 5, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggghh\" );" << r2::linefeed;
 
 				std::cout << r2::split;
 
