@@ -197,4 +197,124 @@ namespace texture_frame_test
 			return r2base::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2base::iTest::TitleFunc VisibleRect_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Visible Rect 2";
+		};
+	}
+	r2base::iTest::DoFunc VisibleRect_2::GetDoFunction()
+	{
+		return []()->r2base::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			r2render::Texture texture( 6,
+				"111111"
+				"122222"
+				"123333"
+				"123444"
+				"123455"
+				"123456"
+			);
+			r2render::TextureFrame texture_frame( &texture );
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "const r2render::Texture texture( 6, ... )" << r2::linefeed;
+				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ View Texture" << r2::linefeed2;
+
+				std::size_t cur_x = 0;
+				for( const char element : texture )
+				{
+					std::cout << element;
+
+					++cur_x;
+					if( texture.GetWidth() <= cur_x )
+					{
+						cur_x = 0u;
+						std::cout << r2::linefeed;
+					}
+				}
+				if( 0u != cur_x )
+				{
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				texture_frame.SetVisibleRect( { -3, -3, 5, 5 } );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "texture_frame.SetVisibleRect( { -3, -3, 5, 5 } );" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "rect :"
+					<< " " << texture_frame.GetMinX()
+					<< " " << texture_frame.GetMinY()
+					<< " " << texture_frame.GetMaxX()
+					<< " " << texture_frame.GetMaxY()
+					<< r2::linefeed2;
+
+				EXPECT_EQ( '1', texture_frame.Get( 0, 0 ) );
+				std::cout << r2::linefeed;
+
+				for( int y = 0; y < texture_frame.GetHeight(); ++y )
+				{
+					for( int x = 0; x < texture_frame.GetWidth(); ++x )
+					{
+						std::cout << texture_frame.Get( x, y );
+					}
+
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				texture_frame.SetVisibleRect( { 3, 3, 5, 5 } );
+
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab2 << "texture_frame.SetVisibleRect( { 3, 3, 5, 5 } );" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "rect :"
+					<< " " << texture_frame.GetMinX()
+					<< " " << texture_frame.GetMinY()
+					<< " " << texture_frame.GetMaxX()
+					<< " " << texture_frame.GetMaxY()
+					<< r2::linefeed2;
+
+				EXPECT_EQ( '4', texture_frame.Get( 0, 0 ) );
+				std::cout << r2::linefeed;
+
+				for( int y = 0; y < texture_frame.GetHeight(); ++y )
+				{
+					for( int x = 0; x < texture_frame.GetWidth(); ++x )
+					{
+						std::cout << texture_frame.Get( x, y );
+					}
+
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2base::eTestEndAction::Pause;
+		};
+	}
 }

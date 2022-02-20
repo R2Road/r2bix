@@ -18,4 +18,11 @@ namespace texture_frame_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
+
+	class VisibleRect_2 : public r2base::iTest, public r2base::SingleTon<VisibleRect_2>
+	{
+	public:
+		TitleFunc GetTitleFunction() const override;
+		DoFunc GetDoFunction() override;
+	};
 }

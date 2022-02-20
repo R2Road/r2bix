@@ -17,6 +17,8 @@ namespace r2render
 
 		int GetMinX() const { return mVisibleRect.GetMinX(); }
 		int GetMinY() const { return mVisibleRect.GetMinY(); }
+		int GetMaxX() const { return mVisibleRect.GetMaxX(); }
+		int GetMaxY() const { return mVisibleRect.GetMaxY(); }
 
 		const r2::RectInt& GetVisibleRect() const { return mVisibleRect; }
 		Texture::ValueT Get( const uint32_t x, const uint32_t y ) const;

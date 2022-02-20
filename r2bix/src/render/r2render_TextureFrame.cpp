@@ -10,6 +10,9 @@ namespace r2render
 
 	Texture::ValueT TextureFrame::Get( const uint32_t x, const uint32_t y ) const
 	{
-		return mTexture->Get( x + mVisibleRect.GetOrigin().GetX(), y + mVisibleRect.GetOrigin().GetY() );
+		const auto target_x = x + mVisibleRect.GetOrigin().GetX();
+		const auto target_y = y + mVisibleRect.GetOrigin().GetY();
+
+		return mTexture->Get( target_x, y + target_y );
 	}
 }
