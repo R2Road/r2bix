@@ -167,7 +167,14 @@ namespace texture_frame_test
 				std::cout << r2::tab2 << "auto rect = texture_frame.GetVisibleRect();" << r2::linefeed;
 				std::cout << r2::tab2 << "rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );" << r2::linefeed;
 				std::cout << r2::tab2 << "rect.SetSize( rect.GetSize().GetWidth() - 4, rect.GetSize().GetHeight() - 2 );" << r2::linefeed;
-				std::cout << r2::tab2 << "texture_frame.SetVisibleRect( rect );" << r2::linefeed3;
+				std::cout << r2::tab2 << "texture_frame.SetVisibleRect( rect );" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "rect :"
+					<< " " << rect.GetMinX()
+					<< " " << rect.GetMinY()
+					<< " " << rect.GetMaxX()
+					<< " " << rect.GetMaxY()
+					<< r2::linefeed2;
 
 				std::cout << r2::tab << "+ View Texture Frame with TextureFrame::SetVisibleRect" << r2::linefeed2;
 
