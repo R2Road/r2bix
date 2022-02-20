@@ -130,12 +130,6 @@ namespace texture_frame_test
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "const r2render::Texture texture( 7, ... )" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ View Texture" << r2::linefeed2;
 
 				std::size_t cur_x = 0;
 				for( const char element : texture )
@@ -158,28 +152,20 @@ namespace texture_frame_test
 			std::cout << r2::split;
 
 			{
-				auto rect = texture_frame.GetVisibleRect();
-				rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );
-				rect.SetSize( rect.GetSize().GetWidth() - 4, rect.GetSize().GetHeight() - 2 );
-				texture_frame.SetVisibleRect( rect );
+				texture_frame.SetVisibleRect( { 2, 1, 3, 5 } );
 
 				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "auto rect = texture_frame.GetVisibleRect();" << r2::linefeed;
-				std::cout << r2::tab2 << "rect.SetOrigin( rect.GetOrigin().GetX() + 2, rect.GetOrigin().GetY() + 1 );" << r2::linefeed;
-				std::cout << r2::tab2 << "rect.SetSize( rect.GetSize().GetWidth() - 4, rect.GetSize().GetHeight() - 2 );" << r2::linefeed;
-				std::cout << r2::tab2 << "texture_frame.SetVisibleRect( rect );" << r2::linefeed2;
+				std::cout << r2::tab2 << "texture_frame.SetVisibleRect( { 2, 1, 3, 5 } );" << r2::linefeed2;
 
 				std::cout << r2::tab2 << "rect :"
-					<< " " << rect.GetMinX()
-					<< " " << rect.GetMinY()
-					<< " " << rect.GetMaxX()
-					<< " " << rect.GetMaxY()
-					<< r2::linefeed3;
+					<< " " << texture_frame.GetMinX()
+					<< " " << texture_frame.GetMinY()
+					<< " " << texture_frame.GetMaxX()
+					<< " " << texture_frame.GetMaxY()
+					<< r2::linefeed2;
 
 				EXPECT_EQ( texture.Get( texture_frame.GetMinX(), texture_frame.GetMinY() ), texture_frame.Get( 0, 0 ) );
-				std::cout << r2::linefeed2;
-
-				std::cout << r2::tab << "+ View Texture Frame with TextureFrame::SetVisibleRect" << r2::linefeed2;
+				std::cout << r2::linefeed;
 
 				for( int y = 0; y < texture_frame.GetHeight(); ++y )
 				{
