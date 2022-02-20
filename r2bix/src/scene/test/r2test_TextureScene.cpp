@@ -9,6 +9,7 @@
 #include "scene/TestScene.h"
 
 #include "test/texture_test.h"
+#include "test/texture_frame_test.h"
 
 namespace r2test
 {
@@ -38,7 +39,7 @@ namespace r2test
 			ret->AddLineFeed();
 
 
-			ret->AddChild( 'a', texture_test::TextureFrameTest::GetInstance() );
+			ret->AddChild( 'a', texture_frame_test::TextureFrameTest::GetInstance() );
 
 
 			ret->AddSplit();

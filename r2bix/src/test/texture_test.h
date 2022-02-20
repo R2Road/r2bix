@@ -43,11 +43,4 @@ namespace texture_test
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
-
-	class TextureFrameTest : public r2base::iTest, public r2base::SingleTon<TextureFrameTest>
-	{
-	public:
-		TitleFunc GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
-	};
 }

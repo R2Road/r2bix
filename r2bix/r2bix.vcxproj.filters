@@ -161,6 +161,9 @@
     <ClCompile Include="src\render\r2render_TextureFrame.cpp">
       <Filter>render</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\texture_frame_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -313,6 +316,9 @@
     </ClInclude>
     <ClInclude Include="src\render\r2render_TextureFrame.h">
       <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\texture_frame_test.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

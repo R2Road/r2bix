@@ -65,6 +65,7 @@
     <ClCompile Include="src\test\rect_test.cpp" />
     <ClCompile Include="src\test\renderable_test.cpp" />
     <ClCompile Include="src\test\renderer_test.cpp" />
+    <ClCompile Include="src\test\texture_frame_test.cpp" />
     <ClCompile Include="src\test\texture_test.cpp" />
     <ClCompile Include="src\test\window_input_test.cpp" />
   </ItemGroup>
@@ -118,6 +119,7 @@
     <ClInclude Include="src\test\rect_test.h" />
     <ClInclude Include="src\test\renderable_test.h" />
     <ClInclude Include="src\test\renderer_test.h" />
+    <ClInclude Include="src\test\texture_frame_test.h" />
     <ClInclude Include="src\test\texture_test.h" />
     <ClInclude Include="src\test\window_input_test.h" />
   </ItemGroup>
