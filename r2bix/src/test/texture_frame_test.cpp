@@ -2,6 +2,7 @@
 #include "texture_frame_test.h"
 
 #include "base/r2base_eTestEndAction.h"
+#include "base/r2base_Inspector.h"
 
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"
@@ -64,6 +65,9 @@ namespace texture_frame_test
 			std::cout << r2::split;
 
 			{
+				EXPECT_EQ( texture.Get( 6, 6 ), texture_frame.Get( 6, 6 ) );
+
+				std::cout << r2::linefeed;
 				std::cout << r2::tab << "+ View Texture Frame" << r2::linefeed2;
 
 				for( int y = texture_frame.GetVisibleRect().GetMinY(); y < texture_frame.GetVisibleRect().GetMaxY(); ++y )
