@@ -33,11 +33,9 @@ namespace texture_frame_test
 				"1234566"
 				"1234567"
 			);
-			r2render::TextureFrame texture_frame( &texture );
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 			std::cout << r2::tab2 << "const r2render::Texture texture( 5, ... )" << r2::linefeed;
-			std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -64,10 +62,19 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
+			r2render::TextureFrame texture_frame( &texture );
+
 			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
+
 				EXPECT_EQ( texture.Get( 6, 6 ), texture_frame.Get( 6, 6 ) );
 
-				std::cout << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
 				std::cout << r2::tab << "+ View Texture Frame" << r2::linefeed2;
 
 				for( int y = texture_frame.GetVisibleRect().GetMinY(); y < texture_frame.GetVisibleRect().GetMaxY(); ++y )
