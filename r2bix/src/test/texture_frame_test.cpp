@@ -214,13 +214,7 @@ namespace texture_frame_test
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "const r2render::Texture texture( 6, ... )" << r2::linefeed;
-				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed;
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ View Texture" << r2::linefeed2;
+				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
 
 				std::size_t cur_x = 0;
 				for( const char element : texture )
