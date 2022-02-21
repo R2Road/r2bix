@@ -11,12 +11,12 @@ namespace r2base
 	class Director;
 }
 
-namespace r2game
+namespace pmr
 {
-	class RootScene : public GameScene
+	class CompanyScene : public GameScene
 	{
 	private:
-		RootScene( r2base::Director& director );
+		CompanyScene( r2base::Director& director );
 
 	public:
 		static r2base::NodeUp Create( r2base::Director& director );

@@ -8,18 +8,18 @@
 #include "scene/DevelopScene.h"
 #include "game/r2game_Scene.h"
 
-namespace r2game
+namespace pmr
 {
-	RootScene::RootScene( r2base::Director& director ) : GameScene( director )
+	CompanyScene::CompanyScene( r2base::Director& director ) : GameScene( director )
 	{}
 
-	r2base::NodeUp RootScene::Create( r2base::Director& director )
+	r2base::NodeUp CompanyScene::Create( r2base::Director& director )
 	{
-		r2base::NodeUp ret( new ( std::nothrow ) RootScene( director ) );
+		r2base::NodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
 		return ret;
 	}
 
-	bool RootScene::Do()
+	bool CompanyScene::Do()
 	{
 		std::cout << "# " << "Empty Game Scene" << " #" << r2::linefeed;
 

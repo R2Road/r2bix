@@ -52,7 +52,7 @@ r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 			, []()->const char* { return "Game"; }
 			, [&director]()->r2base::eTestEndAction
 			{
-				director.Setup( r2game::RootScene::Create( director ) );
+				director.Setup( pmr::CompanyScene::Create( director ) );
 				return r2base::eTestEndAction::None;
 			}
 		);
