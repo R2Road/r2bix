@@ -90,7 +90,7 @@ namespace renderable_test
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed2;
-				std::cout << r2::tab2 << "RenderableObject renderable_object( { 19, 22 }, { 10, 10 } );" << r2::linefeed;
+				std::cout << r2::tab2 << "RenderableObject renderable_object( { 12, 24 }, { -4, -2, 9, 9 } );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
