@@ -17,7 +17,16 @@ namespace renderable_test
 		RenderableObject( const r2::PointInt& position, const r2::RectInt& rect ) :
 			mPosition( position )
 			, mRect( rect )
-		{}
+			, mTexture( mRect.GetWidth(), mRect.GetHeight() )
+		{
+			for( int y = 0; mRect.GetHeight() > y; ++y )
+			{
+				for( int x = 0; mRect.GetWidth() > x; ++x )
+				{
+					mTexture.Fill( x, y, static_cast<char>( 49 + y ) );
+				}
+			}
+		}
 
 		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
 		{
@@ -98,7 +107,7 @@ namespace renderable_test
 					{
 						render_target->Fill(
 							x, y
-							, '@'
+							, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 						);
 					}
 				}
@@ -107,6 +116,7 @@ namespace renderable_test
 
 		r2::PointInt mPosition;
 		r2::RectInt mRect;
+		r2render::Texture mTexture;
 	};
 
 	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
