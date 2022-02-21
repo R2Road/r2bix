@@ -46,10 +46,11 @@ namespace r2render
 
 
 		//
-		//
+		// Override
 		//
 		void FillAll( const char c ) override;
 		void Fill( const uint32_t x, const uint32_t y, const char c ) override;
+		r2::RectInt GetRect() const override { return r2::RectInt( 0, 0, GetWidth(), GetHeight() ); };
 
 	private:
 		const r2::GridIndexConverter mGridIndexConverter;

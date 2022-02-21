@@ -69,6 +69,10 @@ namespace r2
 		{
 			mOrigin = ( point );
 		}
+		inline void MoveOrigin( const ElementT move_x, const ElementT move_y )
+		{
+			mOrigin.Add( move_x, move_y );
+		}
 		inline void SetSize( const ElementT width, const ElementT height )
 		{
 			mSize.Set( width, height );

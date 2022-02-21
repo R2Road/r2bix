@@ -60,6 +60,49 @@ namespace renderable_test
 			//
 			//
 			render_target->Fill( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), 'A' );
+
+			//
+			// Render Target Space : My Rect
+			//
+			auto render_target_space_my_rect = mRect;
+			std::cout << "local space : my rect :"
+				<< " " << render_target_space_my_rect.GetMinX() << " " << render_target_space_my_rect.GetMinY()
+				<< " " << render_target_space_my_rect.GetMaxX() << " " << render_target_space_my_rect.GetMaxY()
+				<< r2::linefeed2;
+
+			render_target_space_my_rect.MoveOrigin( render_target_space_my_position.GetX(), render_target_space_my_position.GetY() );
+			std::cout << "render target space : my rect :"
+				<< " " << render_target_space_my_rect.GetMinX() << " " << render_target_space_my_rect.GetMinY()
+				<< " " << render_target_space_my_rect.GetMaxX() << " " << render_target_space_my_rect.GetMaxY()
+				<< r2::linefeed2;
+
+			//
+			// Render Target Space : Intersect Rect
+			//
+			auto render_target_space_intersect_rect = render_target->GetRect().IntersectsWithRect( render_target_space_my_rect );
+			std::cout << "render target space : intersect rect :"
+				<< " " << render_target_space_intersect_rect.GetMinX() << " " << render_target_space_intersect_rect.GetMinY()
+				<< " " << render_target_space_intersect_rect.GetMaxX() << " " << render_target_space_intersect_rect.GetMaxY()
+				<< r2::linefeed2;
+
+			//
+			// Offset
+			//
+			const auto off_set_point = render_target_space_intersect_rect.GetOrigin() - render_target_space_my_rect.GetOrigin();
+			std::cout << "draw offset : " << off_set_point.GetX() << "   " << off_set_point.GetY() << r2::linefeed2;
+
+			{
+				for( int y = render_target_space_intersect_rect.GetMinY(), ty = 0; render_target_space_intersect_rect.GetMaxY() > y; ++y, ++ty )
+				{
+					for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() > x; ++x, ++tx )
+					{
+						render_target->Fill(
+							x, y
+							, '@'
+						);
+					}
+				}
+			}
 		}
 
 		r2::PointInt mPosition;

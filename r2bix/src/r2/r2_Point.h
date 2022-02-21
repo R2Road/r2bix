@@ -90,6 +90,12 @@ namespace r2
 		}
 		inline void SetX( const ValueT x ) { mX = x; }
 		inline void SetY( const ValueT y ) { mY = y; }
+		inline void Add( const ValueT add_x, const ValueT add_y )
+		{
+			mX += add_x;
+			mY += add_y;
+		}
+
 		inline ValueT GetX() const { return mX; }
 		inline ValueT GetY() const { return mY; }
 
