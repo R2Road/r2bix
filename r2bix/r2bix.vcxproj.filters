@@ -31,9 +31,6 @@
     <Filter Include="render">
       <UniqueIdentifier>{be80c73b-e527-4390-b97a-375d1ec30d49}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene\project_mini_rogue">
-      <UniqueIdentifier>{607d8d6a-7abb-41e0-b795-5e25def40993}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project_mini_rogue">
       <UniqueIdentifier>{8ac33765-6b0b-4ce1-98f2-d0be2626b971}</UniqueIdentifier>
     </Filter>
