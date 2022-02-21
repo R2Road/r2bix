@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "scene/GameScene.h"
+#include "game/r2game_Scene.h"
 
 namespace r2base
 {

@@ -116,9 +116,6 @@
     <ClCompile Include="src\scene\test\r2test_RootScene.cpp">
       <Filter>scene\test</Filter>
     </ClCompile>
-    <ClCompile Include="src\scene\GameScene.cpp">
-      <Filter>scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\r2game_Node.cpp">
       <Filter>game</Filter>
     </ClCompile>
@@ -163,6 +160,9 @@
     </ClCompile>
     <ClCompile Include="src\test\texture_frame_test.cpp">
       <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\r2game_Scene.cpp">
+      <Filter>game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -266,9 +266,6 @@
     <ClInclude Include="src\scene\test\r2test_RootScene.h">
       <Filter>scene\test</Filter>
     </ClInclude>
-    <ClInclude Include="src\scene\GameScene.h">
-      <Filter>scene</Filter>
-    </ClInclude>
     <ClInclude Include="src\game\r2game_Node.h">
       <Filter>game</Filter>
     </ClInclude>
@@ -322,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="src\base\r2base_Inspector.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\r2game_Scene.h">
+      <Filter>game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
