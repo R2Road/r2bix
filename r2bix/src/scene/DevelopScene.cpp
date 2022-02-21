@@ -4,7 +4,7 @@
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 
-#include "scene/game/r2game_RootScene.h"
+#include "pmr/pmr_CompanyScene.h"
 #include "scene/research/r2research_RootScene.h"
 #include "scene/test/r2test_RootScene.h"
 

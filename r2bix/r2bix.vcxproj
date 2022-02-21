@@ -33,6 +33,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\pmr\pmr_CompanyScene.cpp" />
     <ClCompile Include="src\r2\r2_PointInt.cpp" />
     <ClCompile Include="src\r2\r2_RectInt.cpp" />
     <ClCompile Include="src\r2\r2_Size.cpp" />
@@ -47,7 +48,6 @@
     <ClCompile Include="src\research\flickering_research.cpp" />
     <ClCompile Include="src\research\visible_resource_research.cpp" />
     <ClCompile Include="src\scene\DevelopScene.cpp" />
-    <ClCompile Include="src\scene\game\r2game_RootScene.cpp" />
     <ClCompile Include="src\scene\research\r2research_RootScene.cpp" />
     <ClCompile Include="src\scene\TestScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_CameraScene.cpp" />
@@ -83,6 +83,7 @@
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
     <ClInclude Include="src\r2\r2_PointInt.h" />
     <ClInclude Include="src\r2\r2_Rect.h" />
@@ -102,7 +103,6 @@
     <ClInclude Include="src\research\flickering_research.h" />
     <ClInclude Include="src\research\visible_resource_research.h" />
     <ClInclude Include="src\scene\DevelopScene.h" />
-    <ClInclude Include="src\scene\game\r2game_RootScene.h" />
     <ClInclude Include="src\scene\research\r2research_RootScene.h" />
     <ClInclude Include="src\scene\TestScene.h" />
     <ClInclude Include="src\scene\test\r2test_CameraScene.h" />

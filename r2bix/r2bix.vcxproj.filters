@@ -22,9 +22,6 @@
     <Filter Include="scene\research">
       <UniqueIdentifier>{00114f7b-f8e1-4cd5-bcc6-abaaf3f056f4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene\game">
-      <UniqueIdentifier>{3d3bfc5c-5452-4697-8a46-93301d606111}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scene\test">
       <UniqueIdentifier>{febd3ecf-f1ca-401b-8c96-a9bcf8a4d920}</UniqueIdentifier>
     </Filter>
@@ -33,6 +30,12 @@
     </Filter>
     <Filter Include="render">
       <UniqueIdentifier>{be80c73b-e527-4390-b97a-375d1ec30d49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\project_mini_rogue">
+      <UniqueIdentifier>{607d8d6a-7abb-41e0-b795-5e25def40993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project_mini_rogue">
+      <UniqueIdentifier>{8ac33765-6b0b-4ce1-98f2-d0be2626b971}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -98,9 +101,6 @@
     <ClCompile Include="src\scene\research\r2research_RootScene.cpp">
       <Filter>scene\research</Filter>
     </ClCompile>
-    <ClCompile Include="src\scene\game\r2game_RootScene.cpp">
-      <Filter>scene\game</Filter>
-    </ClCompile>
     <ClCompile Include="src\scene\test\r2test_CameraScene.cpp">
       <Filter>scene\test</Filter>
     </ClCompile>
@@ -163,6 +163,9 @@
     </ClCompile>
     <ClCompile Include="src\game\r2game_Scene.cpp">
       <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pmr\pmr_CompanyScene.cpp">
+      <Filter>project_mini_rogue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -248,9 +251,6 @@
     <ClInclude Include="src\scene\research\r2research_RootScene.h">
       <Filter>scene\research</Filter>
     </ClInclude>
-    <ClInclude Include="src\scene\game\r2game_RootScene.h">
-      <Filter>scene\game</Filter>
-    </ClInclude>
     <ClInclude Include="src\scene\test\r2test_CameraScene.h">
       <Filter>scene\test</Filter>
     </ClInclude>
@@ -322,6 +322,9 @@
     </ClInclude>
     <ClInclude Include="src\game\r2game_Scene.h">
       <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pmr\pmr_CompanyScene.h">
+      <Filter>project_mini_rogue</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
