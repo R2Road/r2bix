@@ -82,7 +82,7 @@ namespace renderable_test
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
-			RenderableObject renderable_object( { 16, 24 }, { -4, -2, 9, 9 } );
+			RenderableObject renderable_object( { 12, 24 }, { -4, -2, 9, 9 } );
 
 			std::cout << r2::split;
 
