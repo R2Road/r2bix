@@ -13,7 +13,7 @@ namespace r2base
 
 namespace pmr
 {
-	class CompanyScene : public GameScene
+	class CompanyScene : public r2game::Scene
 	{
 	private:
 		CompanyScene( r2base::Director& director );

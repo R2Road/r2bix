@@ -10,7 +10,7 @@
 
 namespace pmr
 {
-	CompanyScene::CompanyScene( r2base::Director& director ) : GameScene( director )
+	CompanyScene::CompanyScene( r2base::Director& director ) : r2game::Scene( director )
 	{}
 
 	r2base::NodeUp CompanyScene::Create( r2base::Director& director )

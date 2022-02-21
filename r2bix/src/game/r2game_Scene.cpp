@@ -3,10 +3,13 @@
 
 #include "base/r2base_Director.h"
 
-GameScene::GameScene( r2base::Director& director ) : r2game::Node( director )
-{}
-
-bool GameScene::Do()
+namespace r2game
 {
-	return true;
+	Scene::Scene( r2base::Director& director ) : r2game::Node( director )
+	{}
+
+	bool Scene::Do()
+	{
+		return true;
+	}
 }

@@ -7,10 +7,13 @@ namespace r2base
 	class Director;
 }
 
-class GameScene : public r2game::Node
+namespace r2game
 {
-public:
-	GameScene( r2base::Director& director );
+	class Scene : public r2game::Node
+	{
+	public:
+		Scene( r2base::Director& director );
 
-	bool Do() override;
-};
+		bool Do() override;
+	};
+}
