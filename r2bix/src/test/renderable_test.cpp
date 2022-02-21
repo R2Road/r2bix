@@ -14,9 +14,9 @@ namespace renderable_test
 	class RenderableObject : r2render::iRenderable
 	{
 	public:
-		RenderableObject( const r2::PointInt& position, const r2::SizeInt& size ) :
+		RenderableObject( const r2::PointInt& position, const r2::RectInt& rect ) :
 			mPosition( position )
-			, mRect( 0, 0, size.GetWidth(), size.GetHeight() )
+			, mRect( rect )
 		{}
 
 		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
@@ -82,7 +82,7 @@ namespace renderable_test
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
-			RenderableObject renderable_object( { 16, 22 }, { 10, 10 } );
+			RenderableObject renderable_object( { 16, 24 }, { -4, -2, 9, 9 } );
 
 			std::cout << r2::split;
 
