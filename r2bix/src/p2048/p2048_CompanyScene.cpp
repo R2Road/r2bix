@@ -34,10 +34,14 @@ namespace p2048
 		return ret;
 	}
 
-	bool CompanyScene::Do()
+	bool CompanyScene::Init()
 	{
 		AddChild( LabelNode::Create( mDirector ) );
 
+		return true;
+	}
+	bool CompanyScene::Do()
+	{
 		std::cout << "# " << "2048 Game Scene" << " #" << r2::linefeed;
 
 		auto input = _getch();
