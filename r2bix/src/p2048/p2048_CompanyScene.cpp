@@ -2,6 +2,7 @@
 #include "p2048_CompanyScene.h"
 
 #include <conio.h>
+#include <utility> // std::move
 
 #include "base/r2base_Director.h"
 #include "render/r2render_iRenderable.h"
@@ -34,6 +35,14 @@ namespace
 		bool Init() override { return true; }
 	public:
 		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override {}
+
+		//
+		//
+		//
+		void SetString( const std::string_view str )
+		{
+
+		}
 	};
 }
 
@@ -50,7 +59,9 @@ namespace p2048
 
 	bool CompanyScene::Init()
 	{
-		AddChild( LabelNode::Create( mDirector ) );
+		auto label_node = LabelNode::Create( mDirector );
+		label_node->SetString( "# " "2048 Game Scene" " #" );
+		AddChild( std::move( label_node ) );
 
 		return true;
 	}
