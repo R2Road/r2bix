@@ -49,7 +49,7 @@ r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 			
 		ret->AddChild(
 			32
-			, []()->const char* { return "Game"; }
+			, []()->const char* { return "Game : Mini Rogue"; }
 			, [&director]()->r2base::eTestEndAction
 			{
 				director.Setup( pmr::CompanyScene::Create( director ) );
