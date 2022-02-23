@@ -4,6 +4,7 @@
 #include <cctype> // std::toupper
 #include <conio.h>
 
+#include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 #include "base/r2base_iTest.h"
 
@@ -50,7 +51,8 @@ bool TestScene::Update()
 		break;
 
 	case r2base::eTestEndAction::Exit:
-		return false;
+		mDirector.RequestAbort();
+		break;
 	}
 
 	return true;

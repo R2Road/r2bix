@@ -15,7 +15,10 @@ namespace r2base
 
 		void Update();
 
+		void RequestAbort() { mbAbort = true; }
+
 	private:
+		bool mbAbort;
 		NodeUp mNode;
 	};
 }

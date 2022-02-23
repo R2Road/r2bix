@@ -7,7 +7,7 @@
 
 namespace r2base
 {
-	Director::Director() : mNode()
+	Director::Director() : mbAbort( false ), mNode()
 	{}
 
 	void Director::Setup( NodeUp node )
@@ -17,7 +17,9 @@ namespace r2base
 
 	void Director::Update()
 	{
-		while( true == mNode->Update() )
-		{}
+		while( !mbAbort )
+		{
+			mNode->Update();
+		}
 	}
 }
