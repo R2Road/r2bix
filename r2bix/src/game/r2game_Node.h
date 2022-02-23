@@ -12,19 +12,17 @@ namespace r2game
 		Renderable = 1,
 	};
 
-	using NodeSp = std::shared_ptr<class Node>;
-
 	class Node : public r2base::iNode
 	{
 	protected:
-		using ChildContainerT = std::list<NodeSp>;
+		using ChildContainerT = std::list<r2base::NodeUp>;
 
 		Node( r2base::Director& director );
 
 	public:
 		void Update() override {}
 
-		void AddChild( NodeSp child_node );
+		void AddChild( r2base::NodeUp child_node );
 
 	private:
 		char mNodeFlags;

@@ -14,9 +14,8 @@ namespace r2base
 	public:
 		virtual ~iNode() {}
 
-	protected:
-		virtual bool Init() = 0;
 	public:
+		virtual bool Init() = 0;
 		virtual void Update() = 0;
 
 	protected:

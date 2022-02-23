@@ -8,8 +8,8 @@ namespace r2game
 		, mChildContainer()
 	{}
 
-	void Node::AddChild( NodeSp child_node )
+	void Node::AddChild( r2base::NodeUp child_node )
 	{
-		mChildContainer.push_back( child_node );
+		mChildContainer.push_back( std::move( child_node ) );
 	}
 }
