@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "pmr_CompanyScene.h"
+#include "p2048_CompanyScene.h"
 
 #include <conio.h>
 
@@ -7,7 +7,7 @@
 
 #include "scene/DevelopScene.h"
 
-namespace pmr
+namespace p2048
 {
 	CompanyScene::CompanyScene( r2base::Director& director ) : r2game::Scene( director )
 	{}
@@ -20,7 +20,7 @@ namespace pmr
 
 	bool CompanyScene::Do()
 	{
-		std::cout << "# " << "Mini Rogue Game Scene" << " #" << r2::linefeed;
+		std::cout << "# " << "2048 Game Scene" << " #" << r2::linefeed;
 
 		auto input = _getch();
 		if( 27 == input )

@@ -5,6 +5,7 @@
 #include "base/r2base_eTestEndAction.h"
 
 #include "pmr/pmr_CompanyScene.h"
+#include "p2048/p2048_CompanyScene.h"
 #include "scene/research/r2research_RootScene.h"
 #include "scene/test/r2test_RootScene.h"
 
@@ -47,6 +48,15 @@ r2base::NodeUp DevelopScene::Create( r2base::Director& director )
 
 		ret->AddLineFeed();
 			
+		ret->AddChild(
+			'z'
+			, []()->const char* { return "Game : 2048"; }
+			, [&director]()->r2base::eTestEndAction
+			{
+				director.Setup( p2048::CompanyScene::Create( director ) );
+				return r2base::eTestEndAction::None;
+			}
+		);
 		ret->AddChild(
 			32
 			, []()->const char* { return "Game : Mini Rogue"; }

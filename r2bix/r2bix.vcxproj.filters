@@ -34,6 +34,9 @@
     <Filter Include="project_mini_rogue">
       <UniqueIdentifier>{8ac33765-6b0b-4ce1-98f2-d0be2626b971}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_2048">
+      <UniqueIdentifier>{83829a05-c572-4c01-9999-4ab853a313d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -163,6 +166,9 @@
     </ClCompile>
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp">
       <Filter>project_mini_rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_CompanyScene.cpp">
+      <Filter>project_2048</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -322,6 +328,9 @@
     </ClInclude>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
       <Filter>project_mini_rogue</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_CompanyScene.h">
+      <Filter>project_2048</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

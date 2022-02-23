@@ -26,6 +26,7 @@
     <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
+    <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -82,6 +83,7 @@
     <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />
+    <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
