@@ -21,6 +21,7 @@ namespace p2048
 	public:
 		static r2base::NodeUp Create( r2base::Director& director );
 
+	public:
 		bool Do() override;
 	};
 }
