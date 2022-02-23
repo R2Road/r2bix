@@ -4,12 +4,13 @@
 #include <conio.h>
 
 #include "base/r2base_Director.h"
+#include "render/r2render_iRenderable.h"
 
 #include "scene/DevelopScene.h"
 
 namespace
 {
-	class LabelNode : public r2game::Node
+	class LabelNode : public r2game::Node, public r2render::iRenderable
 	{
 	public:
 		LabelNode( r2base::Director& director ) : r2game::Node( director )
@@ -20,6 +21,8 @@ namespace
 			r2game::NodeSp ret( new ( std::nothrow ) LabelNode( director ) );
 			return ret;
 		}
+
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override {}
 	};
 }
 

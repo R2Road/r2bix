@@ -7,6 +7,11 @@
 
 namespace r2game
 {
+	enum class eNodeFlag
+	{
+		Renderable = 1,
+	};
+
 	using NodeSp = std::shared_ptr<class Node>;
 
 	class Node : public r2base::iNode
@@ -24,6 +29,7 @@ namespace r2game
 		void AddChild( NodeSp child_node );
 
 	private:
+		char mNodeFlags;
 		ChildContainerT mChildContainer;
 	};
 }
