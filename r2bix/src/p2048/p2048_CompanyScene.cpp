@@ -6,6 +6,7 @@
 
 #include "base/r2base_Director.h"
 #include "render/r2render_iRenderable.h"
+#include "render/r2render_Texture.h"
 
 #include "scene/DevelopScene.h"
 
@@ -14,7 +15,7 @@ namespace
 	class LabelNode : public r2game::Node, public r2render::iRenderable
 	{
 	public:
-		LabelNode( r2base::Director& director ) : r2game::Node( director )
+		LabelNode( r2base::Director& director ) : r2game::Node( director ), mTexture( "" )
 		{}
 
 		static std::unique_ptr<LabelNode> Create( r2base::Director& director )
@@ -43,6 +44,9 @@ namespace
 		{
 
 		}
+
+	private:
+		r2render::Texture mTexture;
 	};
 }
 
