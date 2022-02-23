@@ -22,7 +22,7 @@ namespace r2game
 		Node( r2base::Director& director );
 
 	public:
-		bool Do() override { return true; }
+		bool Update() override { return true; }
 
 		void AddChild( NodeSp child_node );
 

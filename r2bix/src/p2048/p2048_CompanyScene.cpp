@@ -54,7 +54,7 @@ namespace p2048
 
 		return true;
 	}
-	bool CompanyScene::Do()
+	bool CompanyScene::Update()
 	{
 		std::cout << "# " << "2048 Game Scene" << " #" << r2::linefeed;
 

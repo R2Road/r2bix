@@ -27,7 +27,7 @@ namespace pmr
 	{
 		return true;
 	}
-	bool CompanyScene::Do()
+	bool CompanyScene::Update()
 	{
 		std::cout << "# " << "Mini Rogue Game Scene" << " #" << r2::linefeed;
 

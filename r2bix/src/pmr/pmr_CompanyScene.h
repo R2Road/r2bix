@@ -24,6 +24,6 @@ namespace pmr
 	private:
 		bool Init() override;
 	public:
-		bool Do() override;
+		bool Update() override;
 	};
 }

@@ -17,7 +17,7 @@ namespace r2base
 	protected:
 		virtual bool Init() = 0;
 	public:
-		virtual bool Do() = 0;
+		virtual bool Update() = 0;
 
 	protected:
 		Director& mDirector;

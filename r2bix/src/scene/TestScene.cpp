@@ -31,7 +31,7 @@ bool TestScene::Init()
 	return true;
 }
 
-bool TestScene::Do()
+bool TestScene::Update()
 {
 	system( "cls" );
 

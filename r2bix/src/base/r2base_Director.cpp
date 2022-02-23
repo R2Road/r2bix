@@ -17,7 +17,7 @@ namespace r2base
 
 	void Director::Update()
 	{
-		while( true == mNode->Do() )
+		while( true == mNode->Update() )
 		{}
 	}
 }
