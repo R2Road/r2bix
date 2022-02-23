@@ -27,7 +27,7 @@ namespace pmr
 	{
 		return true;
 	}
-	bool CompanyScene::Update()
+	void CompanyScene::Update()
 	{
 		std::cout << "# " << "Mini Rogue Game Scene" << " #" << r2::linefeed;
 
@@ -38,7 +38,5 @@ namespace pmr
 		}
 
 		system( "cls" );
-
-		return true;
 	}
 }

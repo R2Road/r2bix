@@ -8,8 +8,7 @@ namespace r2game
 	Scene::Scene( r2base::Director& director ) : r2game::Node( director )
 	{}
 
-	bool Scene::Update()
+	void Scene::Update()
 	{
-		return true;
 	}
 }

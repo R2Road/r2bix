@@ -14,6 +14,6 @@ namespace r2game
 	public:
 		Scene( r2base::Director& director );
 
-		bool Update() override;
+		void Update() override;
 	};
 }

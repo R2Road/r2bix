@@ -46,7 +46,7 @@ public:
 private:
 	bool Init() override;
 public:
-	bool Update() override;
+	void Update() override;
 
 private:
 	void ShowInformation() const;

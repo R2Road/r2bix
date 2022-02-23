@@ -24,6 +24,6 @@ namespace p2048
 	private:
 		bool Init() override;
 	public:
-		bool Update() override;
+		void Update() override;
 	};
 }

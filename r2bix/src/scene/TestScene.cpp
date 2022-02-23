@@ -32,7 +32,7 @@ bool TestScene::Init()
 	return true;
 }
 
-bool TestScene::Update()
+void TestScene::Update()
 {
 	system( "cls" );
 
@@ -54,8 +54,6 @@ bool TestScene::Update()
 		mDirector.RequestAbort();
 		break;
 	}
-
-	return true;
 }
 
 void TestScene::showTitle() const
