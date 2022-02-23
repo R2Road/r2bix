@@ -18,10 +18,21 @@ namespace
 
 		static r2game::NodeSp Create( r2base::Director& director )
 		{
-			r2game::NodeSp ret( new ( std::nothrow ) LabelNode( director ) );
+			std::shared_ptr<LabelNode> ret( new ( std::nothrow ) LabelNode( director ) );
+			if( !ret || !ret->Init() )
+			{
+				ret.reset();
+			}
+
 			return ret;
 		}
 
+		//
+		// Override
+		//
+	private:
+		bool Init() override { return true; }
+	public:
 		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override {}
 	};
 }

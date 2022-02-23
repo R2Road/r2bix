@@ -21,6 +21,9 @@ namespace pmr
 	public:
 		static r2base::NodeUp Create( r2base::Director& director );
 
+	private:
+		bool Init() override;
+	public:
 		bool Do() override;
 	};
 }

@@ -14,10 +14,19 @@ namespace pmr
 
 	r2base::NodeUp CompanyScene::Create( r2base::Director& director )
 	{
-		r2base::NodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
+		std::unique_ptr<CompanyScene> ret( new ( std::nothrow ) CompanyScene( director ) );
+		if( !ret || !ret->Init() )
+		{
+			ret.reset();
+		}
+
 		return ret;
 	}
 
+	bool CompanyScene::Init()
+	{
+		return true;
+	}
 	bool CompanyScene::Do()
 	{
 		std::cout << "# " << "Mini Rogue Game Scene" << " #" << r2::linefeed;

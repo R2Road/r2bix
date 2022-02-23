@@ -21,8 +21,6 @@ namespace r2game
 
 		Node( r2base::Director& director );
 
-	private:
-		virtual bool Init() { return true; }
 	public:
 		bool Do() override { return true; }
 

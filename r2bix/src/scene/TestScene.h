@@ -40,6 +40,12 @@ private:
 public:
 	TestScene( r2base::Director& director, const char* title_string, const char* description_string = "" );
 
+	//
+	// Override
+	//
+private:
+	bool Init() override;
+public:
 	bool Do() override;
 
 private:

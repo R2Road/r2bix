@@ -25,6 +25,12 @@ void TestScene::ShowInformation() const
 	showDescription();
 	showMenu();
 }
+
+bool TestScene::Init()
+{
+	return true;
+}
+
 bool TestScene::Do()
 {
 	system( "cls" );
