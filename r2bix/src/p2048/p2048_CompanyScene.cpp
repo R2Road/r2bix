@@ -16,9 +16,9 @@ namespace
 		LabelNode( r2base::Director& director ) : r2game::Node( director )
 		{}
 
-		static r2base::NodeUp Create( r2base::Director& director )
+		static std::unique_ptr<LabelNode> Create( r2base::Director& director )
 		{
-			r2base::NodeUp ret( new ( std::nothrow ) LabelNode( director ) );
+			std::unique_ptr<LabelNode> ret( new ( std::nothrow ) LabelNode( director ) );
 			if( !ret || !ret->Init() )
 			{
 				ret.reset();
