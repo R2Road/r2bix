@@ -6,7 +6,6 @@
 
 #include "base/r2base_Director.h"
 #include "render/r2render_iRenderable.h"
-#include "render/r2render_Texture.h"
 
 #include "scene/DevelopScene.h"
 
@@ -52,7 +51,9 @@ namespace
 
 namespace p2048
 {
-	CompanyScene::CompanyScene( r2base::Director& director ) : r2game::Scene( director ), mCamera( { 25, 25 }, { 50, 50 } )
+	CompanyScene::CompanyScene( r2base::Director& director ) : r2game::Scene( director )
+		, mCamera( { 25, 25 }, { 50, 50 } )
+		, mRenderTarget( 50, 50, '@' )
 	{}
 
 	r2base::NodeUp CompanyScene::Create( r2base::Director& director )
@@ -72,6 +73,12 @@ namespace p2048
 	void CompanyScene::Update()
 	{
 		std::cout << "# " << "2048 Game Scene" << " #" << r2::linefeed;
+
+		for( int y = 0; mRenderTarget.GetHeight() > y; ++y )
+		{
+			std::cout << mRenderTarget.GetLine( y );
+			std::cout << r2::linefeed;
+		}
 
 		auto input = _getch();
 		if( 27 == input )
