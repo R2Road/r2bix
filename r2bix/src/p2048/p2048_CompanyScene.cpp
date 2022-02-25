@@ -9,7 +9,7 @@
 
 #include "scene/DevelopScene.h"
 
-namespace
+namespace r2game
 {
 	class LabelNode : public r2game::Node, public r2render::iRenderable
 	{
@@ -79,7 +79,7 @@ namespace p2048
 
 	bool CompanyScene::Init()
 	{
-		auto label_node = LabelNode::Create( mDirector );
+		auto label_node = r2game::LabelNode::Create( mDirector );
 		label_node->SetPosition( 5, 5 );
 		label_node->SetRect( 0, 0, 10, 1 );
 		label_node->SetString( "# " "2048 Game Scene" " #" );
