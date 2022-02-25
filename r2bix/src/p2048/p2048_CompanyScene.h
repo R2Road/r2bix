@@ -3,12 +3,18 @@
 #include <memory>
 
 #include "game/r2game_Scene.h"
+#include "render/r2render_Camera.h"
 
 namespace r2base
 {
 	using NodeUp = std::unique_ptr<class iNode>;
 
 	class Director;
+}
+
+namespace r2render
+{
+	class Camera;
 }
 
 namespace p2048
@@ -25,5 +31,8 @@ namespace p2048
 		bool Init() override;
 	public:
 		void Update() override;
+
+	private:
+		r2render::Camera mCamera;
 	};
 }

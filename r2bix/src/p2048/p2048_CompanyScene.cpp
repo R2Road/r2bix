@@ -52,7 +52,7 @@ namespace
 
 namespace p2048
 {
-	CompanyScene::CompanyScene( r2base::Director& director ) : r2game::Scene( director )
+	CompanyScene::CompanyScene( r2base::Director& director ) : r2game::Scene( director ), mCamera( { 25, 25 }, { 50, 50 } )
 	{}
 
 	r2base::NodeUp CompanyScene::Create( r2base::Director& director )
