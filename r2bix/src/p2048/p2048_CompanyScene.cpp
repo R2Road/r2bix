@@ -14,7 +14,9 @@ namespace
 	class LabelNode : public r2game::Node, public r2render::iRenderable
 	{
 	public:
-		LabelNode( r2base::Director& director ) : r2game::Node( director ), mTexture( "" )
+		LabelNode( r2base::Director& director ) : r2game::Node( director )
+			, mPosition()
+			, mTexture( "" )
 		{}
 
 		static std::unique_ptr<LabelNode> Create( r2base::Director& director )
@@ -34,17 +36,24 @@ namespace
 	private:
 		bool Init() override { return true; }
 	public:
-		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override {}
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
+		{
+		}
 
 		//
 		//
 		//
+		void SetPosition( const int new_x, const int new_y )
+		{
+			mPosition.Set( new_x, new_y );
+		}
 		void SetString( const std::string_view str )
 		{
 			mTexture.Reset( str );
 		}
 
 	private:
+		r2::PointInt mPosition;
 		r2render::Texture mTexture;
 	};
 }
@@ -65,6 +74,7 @@ namespace p2048
 	bool CompanyScene::Init()
 	{
 		auto label_node = LabelNode::Create( mDirector );
+		label_node->SetPosition( 5, 5 );
 		label_node->SetString( "# " "2048 Game Scene" " #" );
 		AddChild( std::move( label_node ) );
 
