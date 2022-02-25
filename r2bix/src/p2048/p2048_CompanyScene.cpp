@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "p2048_CompanyScene.h"
 
+#include <cassert>
 #include <conio.h>
 #include <utility> // std::move
 
@@ -17,7 +18,7 @@ namespace r2game
 		LabelNode( r2base::Director& director ) : r2game::Node( director )
 			, mPosition()
 			, mRect()
-			, mTexture( "" )
+			, mTexture( " " )
 		{}
 
 		static std::unique_ptr<LabelNode> Create( r2base::Director& director )
@@ -39,6 +40,57 @@ namespace r2game
 	public:
 		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
 		{
+			//
+			// World Space : My Rect : Test
+			//
+			{
+				const r2::RectInt my_world_space_rect( mRect.GetOrigin() + mPosition, mRect.GetSize() );
+				if( !my_world_space_rect.IntersectsRect( camera->GetRect() ) )
+				{
+					return;
+				}
+			}
+
+			//
+			// Camera Space : My Position
+			//
+			const auto camera_space_my_position = mPosition - camera->GetPoint();
+
+			//
+			// Render Target Space : My Position
+			//
+			const auto render_target_space_my_position = camera_space_my_position - camera->GetCameraSpaceRect().GetOrigin();
+
+			//
+			//
+			//
+			render_target->Fill( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), 'A' );
+
+			//
+			// Render Target Space : My Rect
+			//
+			auto render_target_space_my_rect = mRect;
+			render_target_space_my_rect.MoveOrigin( render_target_space_my_position.GetX(), render_target_space_my_position.GetY() );
+
+			//
+			// Render Target Space : Intersect Rect
+			//
+			auto render_target_space_intersect_rect = render_target->GetRect().IntersectsWithRect( render_target_space_my_rect );
+
+			//
+			// Offset
+			//
+			const auto off_set_point = render_target_space_intersect_rect.GetOrigin() - render_target_space_my_rect.GetOrigin();
+			for( int y = render_target_space_intersect_rect.GetMinY(), ty = 0; render_target_space_intersect_rect.GetMaxY() > y; ++y, ++ty )
+			{
+				for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() > x; ++x, ++tx )
+				{
+					render_target->Fill(
+						x, y
+						, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+					);
+				}
+			}
 		}
 
 		//
@@ -76,6 +128,11 @@ namespace p2048
 	r2base::NodeUp CompanyScene::Create( r2base::Director& director )
 	{
 		r2base::NodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
+		if( !ret->Init() )
+		{
+			assert( false );
+		}
+
 		return ret;
 	}
 
@@ -83,7 +140,7 @@ namespace p2048
 	{
 		auto label_node = r2game::LabelNode::Create( mDirector );
 		label_node->SetPosition( 5, 5 );
-		label_node->SetRect( 0, 0, 10, 1 );
+		label_node->SetRect( 0, 0, 30, 1 );
 		label_node->SetString( "# " "2048 Game Scene" " #" );
 		mLabelNode = label_node.get();
 		AddChild( std::move( label_node ) );
