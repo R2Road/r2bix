@@ -92,7 +92,7 @@ namespace p2048
 	}
 	void CompanyScene::Update()
 	{
-		std::cout << "# " << "2048 Game Scene" << " #" << r2::linefeed;
+		mLabelNode->Render( &mCamera, &mRenderTarget );
 
 		for( int y = 0; mRenderTarget.GetHeight() > y; ++y )
 		{
