@@ -44,6 +44,11 @@ namespace r2render
 		ValueT Get( const uint32_t x, const uint32_t y ) const;
 		std::string_view GetLine( const uint32_t y ) const;
 
+		//
+		//
+		//
+		void Reset( const std::string_view str );
+
 
 		//
 		// Override

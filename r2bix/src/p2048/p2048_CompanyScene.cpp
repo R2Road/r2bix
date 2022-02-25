@@ -42,7 +42,7 @@ namespace
 		//
 		void SetString( const std::string_view str )
 		{
-
+			mTexture.Reset( str );
 		}
 
 	private:
