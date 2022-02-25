@@ -18,8 +18,8 @@ namespace r2
 		int To_Linear( const int x, const int y ) const;
 
 	private:
-		const int mWidth;
-		const int mHeight;
-		const int mLinearEnd;	
+		int mWidth;
+		int mHeight;
+		int mLinearEnd;	
 	};
 }

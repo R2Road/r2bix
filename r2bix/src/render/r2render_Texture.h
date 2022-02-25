@@ -53,7 +53,7 @@ namespace r2render
 		r2::RectInt GetRect() const override { return r2::RectInt( 0, 0, GetWidth(), GetHeight() ); };
 
 	private:
-		const r2::GridIndexConverter mGridIndexConverter;
+		r2::GridIndexConverter mGridIndexConverter;
 		ContainerT mChars;
 	};
 }
