@@ -4,6 +4,7 @@
 
 #include "game/r2game_Scene.h"
 #include "render/r2render_Camera.h"
+#include "render/r2render_Texture.h"
 
 namespace r2base
 {
@@ -34,5 +35,6 @@ namespace p2048
 
 	private:
 		r2render::Camera mCamera;
+		r2render::Texture mRenderTarget;
 	};
 }
