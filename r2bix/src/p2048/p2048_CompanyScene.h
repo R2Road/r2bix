@@ -13,6 +13,11 @@ namespace r2base
 	class Director;
 }
 
+namespace r2game
+{
+	class LabelNode;
+}
+
 namespace r2render
 {
 	class Camera;
@@ -36,5 +41,7 @@ namespace p2048
 	private:
 		r2render::Camera mCamera;
 		r2render::Texture mRenderTarget;
+
+		r2game::LabelNode* mLabelNode;
 	};
 }

@@ -69,6 +69,8 @@ namespace p2048
 	CompanyScene::CompanyScene( r2base::Director& director ) : r2game::Scene( director )
 		, mCamera( { 25, 25 }, { 50, 50 } )
 		, mRenderTarget( 50, 50, '@' )
+
+		, mLabelNode( nullptr )
 	{}
 
 	r2base::NodeUp CompanyScene::Create( r2base::Director& director )
@@ -83,6 +85,7 @@ namespace p2048
 		label_node->SetPosition( 5, 5 );
 		label_node->SetRect( 0, 0, 10, 1 );
 		label_node->SetString( "# " "2048 Game Scene" " #" );
+		mLabelNode = label_node.get();
 		AddChild( std::move( label_node ) );
 
 		return true;
