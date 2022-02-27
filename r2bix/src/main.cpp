@@ -20,16 +20,12 @@ int main()
 	//
 	// Environment : Size
 	//
-	{
-		r2utility::ResizeWindow( 960, 960 );
-	}
+	r2utility::ResizeWindow( 960, 960 );
 
 	//
 	// Environment : Position
 	//
-	{
-		r2utility::MoveWindow( 0, 0 );
-	}
+	r2utility::MoveWindow( 0, 0 );
 
 	//
 	// Setup
