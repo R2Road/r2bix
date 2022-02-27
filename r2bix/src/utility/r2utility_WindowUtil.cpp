@@ -5,6 +5,14 @@
 
 namespace r2utility
 {
+	void ResizeWindow( const int w, const int h )
+	{
+		HWND hWnd = GetConsoleWindow();
+		RECT window_rect;
+		GetClientRect( hWnd, &window_rect );
+		MoveWindow( hWnd, window_rect.left, window_rect.top, w, h, TRUE );
+	}
+
 	void MoveWindow( const int x, const int y )
 	{
 		//
