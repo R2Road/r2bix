@@ -37,6 +37,9 @@
     <Filter Include="project_2048">
       <UniqueIdentifier>{83829a05-c572-4c01-9999-4ab853a313d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{4430c7e5-e333-4513-b7f9-7d57eae00a27}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -169,6 +172,9 @@
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp">
       <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\r2utility_WindowUtil.cpp">
+      <Filter>utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -331,6 +337,9 @@
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_CompanyScene.h">
       <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\r2utility_WindowUtil.h">
+      <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

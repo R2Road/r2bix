@@ -69,6 +69,7 @@
     <ClCompile Include="src\test\texture_frame_test.cpp" />
     <ClCompile Include="src\test\texture_test.cpp" />
     <ClCompile Include="src\test\window_input_test.cpp" />
+    <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\base\r2base_Director.h" />
@@ -125,6 +126,7 @@
     <ClInclude Include="src\test\texture_frame_test.h" />
     <ClInclude Include="src\test\texture_test.h" />
     <ClInclude Include="src\test\window_input_test.h" />
+    <ClInclude Include="src\utility\r2utility_WindowUtil.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
