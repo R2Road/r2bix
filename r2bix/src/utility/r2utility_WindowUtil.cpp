@@ -5,6 +5,11 @@
 
 namespace r2utility
 {
+	void ChangeWindowTitle( const wchar_t* title_string )
+	{
+		SetConsoleTitle( title_string );
+	}
+
 	void ResizeWindow( const int w, const int h )
 	{
 		HWND hWnd = GetConsoleWindow();

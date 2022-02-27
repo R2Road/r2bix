@@ -15,7 +15,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	SetConsoleTitle( TEXT( "r2bix" ) );
+	r2utility::ChangeWindowTitle( TEXT( "r2bix" ) );
 
 	//
 	// Environment : Size
