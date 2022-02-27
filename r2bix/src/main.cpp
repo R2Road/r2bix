@@ -1,5 +1,4 @@
 ﻿#include "pch.h"
-#include <Windows.h>
 
 #if defined( DEBUG ) || defined( _DEBUG )
 	#include <vld.h>
@@ -15,7 +14,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2utility::ChangeWindowTitle( TEXT( "r2bix" ) );
+	r2utility::ChangeWindowTitle( L"r2bix" );
 
 	//
 	// Environment : Size
