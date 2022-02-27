@@ -20,7 +20,12 @@ int main()
 	//
 	// Environment : Size
 	//
-	system( "mode con lines=60 cols=120" );
+	{
+		HWND hWnd = GetConsoleWindow();
+		RECT window_rect;
+		GetClientRect( hWnd, &window_rect );
+		MoveWindow( hWnd, window_rect.left, window_rect.top, 960, 960, TRUE );
+	}
 
 	//
 	// Environment : Position
