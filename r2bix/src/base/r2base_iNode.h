@@ -1,5 +1,6 @@
 #pragma once
 
+#include <list>
 #include <memory>
 
 namespace r2base
@@ -10,7 +11,9 @@ namespace r2base
 	class iNode
 	{
 	protected:
-		iNode( Director& director ) : mDirector( director ) {}
+		using ChildContainerT = std::list<r2base::NodeUp>;
+
+		iNode( Director& director ) : mDirector( director ), mChildContainer() {}
 	public:
 		virtual ~iNode() {}
 
@@ -18,7 +21,13 @@ namespace r2base
 		virtual bool Init() = 0;
 		virtual void Update() = 0;
 
+		void AddChild( r2base::NodeUp child_node )
+		{
+			mChildContainer.push_back( std::move( child_node ) );
+		}
+
 	protected:
 		Director& mDirector;
+		ChildContainerT mChildContainer;
 	};
 }
