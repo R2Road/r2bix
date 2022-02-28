@@ -22,8 +22,7 @@ namespace r2base
 	class iNode
 	{
 	protected:
-		using ComponentT = iComponent;
-		using ComponentContainerT = std::list<ComponentT*>;
+		using ComponentContainerT = std::list<ComponentUp>;
 
 		using ChildContainerT = std::list<r2base::NodeUp>;
 
@@ -34,6 +33,11 @@ namespace r2base
 	public:
 		virtual bool Init() = 0;
 		virtual void Update() = 0;
+
+		void AddComponent( r2base::ComponentUp component )
+		{
+			mComponentContainer.push_back( std::move( component ) );
+		}
 
 		void AddChild( r2base::NodeUp child_node )
 		{

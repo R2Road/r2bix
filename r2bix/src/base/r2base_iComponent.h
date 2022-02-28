@@ -4,6 +4,7 @@ namespace r2base
 {
 	class iNode;
 
+	using ComponentUp = std::unique_ptr<class iComponent>;
 	class iComponent
 	{
 	protected:

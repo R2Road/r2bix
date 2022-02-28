@@ -10,6 +10,33 @@
 
 #include "scene/DevelopScene.h"
 
+namespace
+{
+	class RenderableComponent : public r2base::iComponent
+	{
+	private:
+		RenderableComponent( r2base::iNode& owner_node ) : r2base::iComponent( owner_node )
+		{
+
+		}
+
+	public:
+		static r2base::ComponentUp Create( r2base::iNode& owner_node )
+		{
+			std::unique_ptr<RenderableComponent> ret( new ( std::nothrow ) RenderableComponent( owner_node ) );
+			if( !ret || !ret->Init() )
+			{
+				ret.reset();
+			}
+
+			return ret;
+		}
+
+		bool Init() override { return true; }
+		void Update() override {}
+	};
+}
+
 namespace r2game
 {
 	class LabelNode : public r2game::Node, public r2render::iRenderable
@@ -36,7 +63,11 @@ namespace r2game
 		// Override
 		//
 	private:
-		bool Init() override { return true; }
+		bool Init() override
+		{
+			AddComponent( RenderableComponent::Create( *this ) );
+			return true;
+		}
 	public:
 		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
 		{
