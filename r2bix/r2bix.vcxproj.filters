@@ -40,6 +40,9 @@
     <Filter Include="utility">
       <UniqueIdentifier>{4430c7e5-e333-4513-b7f9-7d57eae00a27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="component">
+      <UniqueIdentifier>{6a09edd5-e8d0-43fb-96fe-0494bd0fec79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -175,6 +178,12 @@
     </ClCompile>
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp">
       <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\r2base_Node.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\r2component_TransformComponent.cpp">
+      <Filter>component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -343,6 +352,9 @@
     </ClInclude>
     <ClInclude Include="src\base\r2base_Node.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\r2component_TransformComponent.h">
+      <Filter>component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

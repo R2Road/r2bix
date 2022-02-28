@@ -6,6 +6,7 @@
 #include <utility> // std::move
 
 #include "base/r2base_Director.h"
+#include "component/r2component_TransformComponent.h"
 #include "render/r2render_iRenderable.h"
 
 #include "scene/DevelopScene.h"
@@ -65,6 +66,7 @@ namespace r2game
 	private:
 		bool Init() override
 		{
+			AddComponent( r2component::TransformComponent::Create( *this ) );
 			AddComponent( RenderableComponent::Create( *this ) );
 			return true;
 		}
