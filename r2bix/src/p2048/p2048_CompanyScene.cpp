@@ -32,9 +32,6 @@ namespace
 
 			return ret;
 		}
-
-		bool Init() override { return true; }
-		void Update() override {}
 	};
 }
 

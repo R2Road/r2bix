@@ -13,9 +13,6 @@ namespace r2component
 	public:
 		static std::unique_ptr<TransformComponent> Create( r2base::Node& owner_node );
 
-		bool Init() override { return true; }
-		void Update() override {}
-
 		//
 		//
 		//

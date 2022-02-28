@@ -15,8 +15,8 @@ namespace r2base
 		virtual ~iComponent() {}
 
 	public:
-		virtual bool Init() = 0;
-		virtual void Update() = 0;
+		virtual bool Init() { return true; }
+		virtual void Update() {}
 
 	protected:
 		Node& mOwnerNode;
