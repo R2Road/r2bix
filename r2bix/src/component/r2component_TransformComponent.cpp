@@ -3,7 +3,11 @@
 
 namespace r2component
 {
-	r2base::ComponentUp TransformComponent::Create( r2base::Node& owner_node )
+	TransformComponent::TransformComponent( r2base::Node& owner_node ) : r2base::iComponent( owner_node )
+		, mPosition()
+	{}
+
+	std::unique_ptr<TransformComponent> TransformComponent::Create( r2base::Node& owner_node )
 	{
 		std::unique_ptr<TransformComponent> ret( new ( std::nothrow ) TransformComponent( owner_node ) );
 		if( !ret || !ret->Init() )

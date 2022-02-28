@@ -44,7 +44,7 @@ namespace r2game
 	{
 	public:
 		LabelNode( r2base::Director& director ) : r2game::Node( director )
-			, mPosition()
+			, mTransformComponent( nullptr )
 			, mRect()
 			, mTexture( " " )
 		{}
@@ -66,6 +66,8 @@ namespace r2game
 	private:
 		bool Init() override
 		{
+			auto transform_component = r2component::TransformComponent::Create( *this );
+			mTransformComponent = transform_component.get();
 			AddComponent( r2component::TransformComponent::Create( *this ) );
 			AddComponent( RenderableComponent::Create( *this ) );
 			return true;
@@ -77,7 +79,7 @@ namespace r2game
 			// World Space : My Rect : Test
 			//
 			{
-				const r2::RectInt my_world_space_rect( mRect.GetOrigin() + mPosition, mRect.GetSize() );
+				const r2::RectInt my_world_space_rect( mRect.GetOrigin() + mTransformComponent->GetPosition(), mRect.GetSize() );
 				if( !my_world_space_rect.IntersectsRect( camera->GetRect() ) )
 				{
 					return;
@@ -87,7 +89,7 @@ namespace r2game
 			//
 			// Camera Space : My Position
 			//
-			const auto camera_space_my_position = mPosition - camera->GetPoint();
+			const auto camera_space_my_position = mTransformComponent->GetPosition() - camera->GetPoint();
 
 			//
 			// Render Target Space : My Position
@@ -129,10 +131,6 @@ namespace r2game
 		//
 		//
 		//
-		void SetPosition( const int new_x, const int new_y )
-		{
-			mPosition.Set( new_x, new_y );
-		}
 		void SetRect( const int x, const int y, const int width, const int height )
 		{
 			mRect.Set( x, y, width, height );
@@ -142,8 +140,9 @@ namespace r2game
 			mTexture.Reset( str );
 		}
 
+	public:
+		r2component::TransformComponent* mTransformComponent;
 	private:
-		r2::PointInt mPosition;
 		r2::RectInt mRect;
 		r2render::Texture mTexture;
 	};
@@ -172,7 +171,7 @@ namespace p2048
 	bool CompanyScene::Init()
 	{
 		auto label_node = r2game::LabelNode::Create( mDirector );
-		label_node->SetPosition( 5, 5 );
+		label_node->mTransformComponent->SetPosition( 5, 5 );
 		label_node->SetRect( 0, 0, 30, 1 );
 		label_node->SetString( "# " "2048 Game Scene" " #" );
 		mLabelNode = label_node.get();
