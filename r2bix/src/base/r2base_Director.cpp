@@ -3,7 +3,7 @@
 
 #include <utility> // std::move
 
-#include "r2base_iNode.h"
+#include "r2base_Node.h"
 
 namespace r2base
 {

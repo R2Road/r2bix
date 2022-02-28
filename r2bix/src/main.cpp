@@ -5,7 +5,7 @@
 #endif
 
 #include "base/r2base_Director.h"
-#include "base/r2base_iNode.h"
+#include "base/r2base_Node.h"
 #include "scene/DevelopScene.h"
 #include "utility/r2utility_WindowUtil.h"
 
