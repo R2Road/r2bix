@@ -4,7 +4,7 @@
 
 namespace r2base
 {
-	using NodeUp = std::unique_ptr<class iNode>;
+	using NodeUp = std::unique_ptr<class Node>;
 
 	class Director
 	{

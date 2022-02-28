@@ -9,7 +9,7 @@ namespace r2game
 		Renderable = 1,
 	};
 
-	class Node : public r2base::iNode
+	class Node : public r2base::Node
 	{
 	protected:
 		Node( r2base::Director& director );

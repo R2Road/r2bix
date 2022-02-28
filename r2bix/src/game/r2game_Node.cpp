@@ -3,7 +3,7 @@
 
 namespace r2game
 {
-	Node::Node( r2base::Director& director ) : r2base::iNode( director )
+	Node::Node( r2base::Director& director ) : r2base::Node( director )
 		, mNodeFlags( 0 )
 	{}
 }

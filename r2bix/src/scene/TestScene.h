@@ -15,7 +15,7 @@ namespace r2base
 }
 
 using TestSceneUp = std::unique_ptr<class TestScene>;
-class TestScene : public r2base::iNode
+class TestScene : public r2base::Node
 {
 private:
 	struct TestInfo

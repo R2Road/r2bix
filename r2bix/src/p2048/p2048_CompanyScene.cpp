@@ -15,13 +15,13 @@ namespace
 	class RenderableComponent : public r2base::iComponent
 	{
 	private:
-		RenderableComponent( r2base::iNode& owner_node ) : r2base::iComponent( owner_node )
+		RenderableComponent( r2base::Node& owner_node ) : r2base::iComponent( owner_node )
 		{
 
 		}
 
 	public:
-		static r2base::ComponentUp Create( r2base::iNode& owner_node )
+		static r2base::ComponentUp Create( r2base::Node& owner_node )
 		{
 			std::unique_ptr<RenderableComponent> ret( new ( std::nothrow ) RenderableComponent( owner_node ) );
 			if( !ret || !ret->Init() )

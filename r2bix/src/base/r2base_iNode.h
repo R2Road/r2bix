@@ -18,17 +18,17 @@ namespace r2base
 {
 	class Director;
 
-	using NodeUp = std::unique_ptr<class iNode>;
-	class iNode
+	using NodeUp = std::unique_ptr<class Node>;
+	class Node
 	{
 	protected:
 		using ComponentContainerT = std::list<ComponentUp>;
 
 		using ChildContainerT = std::list<r2base::NodeUp>;
 
-		iNode( Director& director ) : mDirector( director ), mComponentContainer(), mChildContainer() {}
+		Node( Director& director ) : mDirector( director ), mComponentContainer(), mChildContainer() {}
 	public:
-		virtual ~iNode() {}
+		virtual ~Node() {}
 
 	public:
 		virtual bool Init() = 0;
