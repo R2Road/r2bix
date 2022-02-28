@@ -26,7 +26,7 @@ namespace r2base
 
 		using ChildContainerT = std::list<r2base::NodeUp>;
 
-		Node( Director& director ) : mDirector( director ), mComponentContainer(), mChildContainer() {}
+		Node( Director& director );
 	public:
 		virtual ~Node() {}
 
@@ -34,15 +34,8 @@ namespace r2base
 		virtual bool Init() { return true; };
 		virtual void Update() {}
 
-		void AddComponent( r2base::ComponentUp component )
-		{
-			mComponentContainer.push_back( std::move( component ) );
-		}
-
-		void AddChild( r2base::NodeUp child_node )
-		{
-			mChildContainer.push_back( std::move( child_node ) );
-		}
+		void AddComponent( r2base::ComponentUp component );
+		void AddChild( r2base::NodeUp child_node );
 
 	protected:
 		Director& mDirector;
