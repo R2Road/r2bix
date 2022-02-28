@@ -43,8 +43,6 @@ public:
 	//
 	// Override
 	//
-private:
-	bool Init() override;
 public:
 	void Update() override;
 

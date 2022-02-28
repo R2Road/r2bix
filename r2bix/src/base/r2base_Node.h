@@ -31,8 +31,8 @@ namespace r2base
 		virtual ~Node() {}
 
 	public:
-		virtual bool Init() = 0;
-		virtual void Update() = 0;
+		virtual bool Init() { return true; };
+		virtual void Update() {}
 
 		void AddComponent( r2base::ComponentUp component )
 		{

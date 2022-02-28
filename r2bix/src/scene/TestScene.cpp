@@ -27,11 +27,6 @@ void TestScene::ShowInformation() const
 	showMenu();
 }
 
-bool TestScene::Init()
-{
-	return true;
-}
-
 void TestScene::Update()
 {
 	system( "cls" );
