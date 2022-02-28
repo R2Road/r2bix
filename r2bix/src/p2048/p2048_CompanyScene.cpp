@@ -13,10 +13,10 @@
 
 namespace
 {
-	class RenderableComponent : public r2base::iComponent
+	class RenderableComponent : public r2base::Component
 	{
 	private:
-		RenderableComponent( r2base::Node& owner_node ) : r2base::iComponent( owner_node )
+		RenderableComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		{
 
 		}

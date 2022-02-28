@@ -6,13 +6,13 @@ namespace r2base
 {
 	class Node;
 
-	using ComponentUp = std::unique_ptr<class iComponent>;
-	class iComponent
+	using ComponentUp = std::unique_ptr<class Component>;
+	class Component
 	{
 	protected:
-		iComponent( Node& owner_node ) : mOwnerNode( owner_node ) {}
+		Component( Node& owner_node ) : mOwnerNode( owner_node ) {}
 	public:
-		virtual ~iComponent() {}
+		virtual ~Component() {}
 
 	public:
 		virtual bool Init() { return true; }

@@ -3,7 +3,7 @@
 
 namespace r2component
 {
-	TransformComponent::TransformComponent( r2base::Node& owner_node ) : r2base::iComponent( owner_node )
+	TransformComponent::TransformComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mPosition()
 	{}
 

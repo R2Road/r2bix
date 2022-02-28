@@ -5,7 +5,7 @@
 
 namespace r2component
 {
-	class TransformComponent : public r2base::iComponent
+	class TransformComponent : public r2base::Component
 	{
 	private:
 		TransformComponent( r2base::Node& owner_node );
