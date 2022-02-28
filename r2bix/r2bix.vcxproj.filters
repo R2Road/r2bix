@@ -341,5 +341,8 @@
     <ClInclude Include="src\utility\r2utility_WindowUtil.h">
       <Filter>utility</Filter>
     </ClInclude>
+    <ClInclude Include="src\base\r2base_iComponent.h">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

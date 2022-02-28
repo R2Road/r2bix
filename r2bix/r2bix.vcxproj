@@ -74,6 +74,7 @@
   <ItemGroup>
     <ClInclude Include="src\base\r2base_Director.h" />
     <ClInclude Include="src\base\r2base_eTestEndAction.h" />
+    <ClInclude Include="src\base\r2base_iComponent.h" />
     <ClInclude Include="src\base\r2base_iNode.h" />
     <ClInclude Include="src\base\r2base_Inspector.h" />
     <ClInclude Include="src\base\r2base_iTest.h" />
