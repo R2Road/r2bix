@@ -347,14 +347,14 @@
     <ClInclude Include="src\utility\r2utility_WindowUtil.h">
       <Filter>utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2base_iComponent.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\r2base_Node.h">
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\component\r2component_TransformComponent.h">
       <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2base_Component.h">
+      <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

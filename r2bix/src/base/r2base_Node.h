@@ -3,7 +3,7 @@
 #include <list>
 #include <memory>
 
-#include "r2base_iComponent.h"
+#include "r2base_Component.h"
 
 //
 // # 2022.02.28 by R2Road
