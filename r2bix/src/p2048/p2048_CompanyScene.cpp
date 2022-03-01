@@ -22,7 +22,7 @@ namespace r2component
 		}
 
 	public:
-		static r2base::ComponentUp Create( r2base::Node& owner_node )
+		static std::unique_ptr<TextRenderComponent> Create( r2base::Node& owner_node )
 		{
 			std::unique_ptr<TextRenderComponent> ret( new ( std::nothrow ) TextRenderComponent( owner_node ) );
 			if( !ret || !ret->Init() )
@@ -42,6 +42,7 @@ namespace r2game
 	public:
 		LabelNode( r2base::Director& director ) : r2game::Node( director )
 			, mTransformComponent( nullptr )
+			, mTextRenderComponent( nullptr )
 			, mRect()
 			, mTexture( " " )
 		{}
@@ -66,7 +67,11 @@ namespace r2game
 			auto transform_component = r2component::TransformComponent::Create( *this );
 			mTransformComponent = transform_component.get();
 			AddComponent( std::move( transform_component ) );
-			AddComponent( r2component::TextRenderComponent::Create( *this ) );
+
+			auto text_render_component = r2component::TextRenderComponent::Create( *this );
+			mTextRenderComponent = text_render_component.get();
+			AddComponent( std::move( text_render_component ) );
+
 			return true;
 		}
 	public:
@@ -139,6 +144,7 @@ namespace r2game
 
 	public:
 		r2component::TransformComponent* mTransformComponent;
+		r2component::TextRenderComponent* mTextRenderComponent;
 	private:
 		r2::RectInt mRect;
 		r2render::Texture mTexture;
