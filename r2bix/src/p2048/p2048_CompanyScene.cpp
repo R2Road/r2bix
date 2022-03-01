@@ -13,10 +13,10 @@
 
 namespace
 {
-	class RenderableComponent : public r2base::Component
+	class TextRenderComponent : public r2base::Component
 	{
 	private:
-		RenderableComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+		TextRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		{
 
 		}
@@ -24,7 +24,7 @@ namespace
 	public:
 		static r2base::ComponentUp Create( r2base::Node& owner_node )
 		{
-			std::unique_ptr<RenderableComponent> ret( new ( std::nothrow ) RenderableComponent( owner_node ) );
+			std::unique_ptr<TextRenderComponent> ret( new ( std::nothrow ) TextRenderComponent( owner_node ) );
 			if( !ret || !ret->Init() )
 			{
 				ret.reset();
@@ -66,7 +66,7 @@ namespace r2game
 			auto transform_component = r2component::TransformComponent::Create( *this );
 			mTransformComponent = transform_component.get();
 			AddComponent( r2component::TransformComponent::Create( *this ) );
-			AddComponent( RenderableComponent::Create( *this ) );
+			AddComponent( TextRenderComponent::Create( *this ) );
 			return true;
 		}
 	public:
