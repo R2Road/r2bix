@@ -14,6 +14,12 @@
 // 사용자 정의 노드의 제작은 가급적 없도록 노력하자.
 //
 
+namespace r2render
+{
+	class Camera;
+	class iRenderTarget;
+}
+
 namespace r2base
 {
 	class Director;
@@ -33,6 +39,7 @@ namespace r2base
 	public:
 		virtual bool Init() { return true; };
 		virtual void Update() {}
+		virtual void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target );
 
 		void AddComponent( r2base::ComponentUp component );
 		void AddChild( r2base::NodeUp child_node );

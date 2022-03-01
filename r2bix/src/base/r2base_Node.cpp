@@ -9,6 +9,14 @@ namespace r2base
 		, mChildContainer()
 	{}
 
+	void Node::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target )
+	{
+		for( auto& c : mComponentContainer )
+		{
+			c->Render( camera, render_target );
+		}
+	}
+
 	void Node::AddComponent( r2base::ComponentUp component )
 	{
 		mComponentContainer.push_back( std::move( component ) );
