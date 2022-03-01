@@ -188,6 +188,9 @@
     <ClCompile Include="src\component\r2component_TextRenderComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\r2game_LabelNode.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -361,6 +364,9 @@
     </ClInclude>
     <ClInclude Include="src\component\r2component_TextRenderComponent.h">
       <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\r2game_LabelNode.h">
+      <Filter>game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

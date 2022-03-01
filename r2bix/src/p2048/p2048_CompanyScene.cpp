@@ -8,66 +8,10 @@
 #include "base/r2base_Director.h"
 #include "component/r2component_TextRenderComponent.h"
 #include "component/r2component_TransformComponent.h"
+#include "game/r2game_LabelNode.h"
 #include "render/r2render_iRenderable.h"
 
 #include "scene/DevelopScene.h"
-
-namespace r2game
-{
-	class LabelNode : public r2base::Node
-	{
-	public:
-		LabelNode( r2base::Director& director ) : r2base::Node( director )
-			, mTransformComponent( nullptr )
-			, mTextRenderComponent( nullptr )
-		{}
-
-		static std::unique_ptr<LabelNode> Create( r2base::Director& director )
-		{
-			std::unique_ptr<LabelNode> ret( new ( std::nothrow ) LabelNode( director ) );
-			if( !ret || !ret->Init() )
-			{
-				ret.reset();
-			}
-
-			return ret;
-		}
-
-		//
-		// Override
-		//
-	private:
-		bool Init() override
-		{
-			auto transform_component = r2component::TransformComponent::Create( *this );
-			mTransformComponent = transform_component.get();
-			AddComponent( std::move( transform_component ) );
-
-			auto text_render_component = r2component::TextRenderComponent::Create( *this );
-			text_render_component->mTransformComponent = mTransformComponent;
-			mTextRenderComponent = text_render_component.get();
-			AddComponent( std::move( text_render_component ) );
-
-			return true;
-		}
-	public:
-		//
-		//
-		//
-		void SetRect( const int x, const int y, const int width, const int height )
-		{
-			mTextRenderComponent->SetRect( x, y, width, height );
-		}
-		void SetString( const std::string_view str )
-		{
-			mTextRenderComponent->SetString( str );
-		}
-
-	public:
-		r2component::TransformComponent* mTransformComponent;
-		r2component::TextRenderComponent* mTextRenderComponent;
-	};
-}
 
 namespace p2048
 {
