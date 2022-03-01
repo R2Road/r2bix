@@ -17,9 +17,9 @@ namespace r2component
 	{
 	private:
 		TextRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
-		{
-
-		}
+			, mRect()
+			, mTexture( " " )
+		{}
 
 	public:
 		static std::unique_ptr<TextRenderComponent> Create( r2base::Node& owner_node )
@@ -32,6 +32,28 @@ namespace r2component
 
 			return ret;
 		}
+
+		//
+		//
+		//
+		r2::RectInt GetRect() const { return mRect; }
+		const r2render::Texture& GetTexture() const { return mTexture; }
+
+		//
+		//
+		//
+		void SetRect( const int x, const int y, const int width, const int height )
+		{
+			mRect.Set( x, y, width, height );
+		}
+		void SetString( const std::string_view str )
+		{
+			mTexture.Reset( str );
+		}
+
+	private:
+		r2::RectInt mRect;
+		r2render::Texture mTexture;
 	};
 }
 
@@ -43,8 +65,6 @@ namespace r2game
 		LabelNode( r2base::Director& director ) : r2game::Node( director )
 			, mTransformComponent( nullptr )
 			, mTextRenderComponent( nullptr )
-			, mRect()
-			, mTexture( " " )
 		{}
 
 		static std::unique_ptr<LabelNode> Create( r2base::Director& director )
@@ -81,7 +101,7 @@ namespace r2game
 			// World Space : My Rect : Test
 			//
 			{
-				const r2::RectInt my_world_space_rect( mRect.GetOrigin() + mTransformComponent->GetPosition(), mRect.GetSize() );
+				const r2::RectInt my_world_space_rect( mTextRenderComponent->GetRect().GetOrigin() + mTransformComponent->GetPosition(), mTextRenderComponent->GetRect().GetSize() );
 				if( !my_world_space_rect.IntersectsRect( camera->GetRect() ) )
 				{
 					return;
@@ -106,7 +126,7 @@ namespace r2game
 			//
 			// Render Target Space : My Rect
 			//
-			auto render_target_space_my_rect = mRect;
+			auto render_target_space_my_rect = mTextRenderComponent->GetRect();
 			render_target_space_my_rect.MoveOrigin( render_target_space_my_position.GetX(), render_target_space_my_position.GetY() );
 
 			//
@@ -124,7 +144,7 @@ namespace r2game
 				{
 					render_target->Fill(
 						x, y
-						, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+						, mTextRenderComponent->GetTexture().Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 					);
 				}
 			}
@@ -135,19 +155,16 @@ namespace r2game
 		//
 		void SetRect( const int x, const int y, const int width, const int height )
 		{
-			mRect.Set( x, y, width, height );
+			mTextRenderComponent->SetRect( x, y, width, height );
 		}
 		void SetString( const std::string_view str )
 		{
-			mTexture.Reset( str );
+			mTextRenderComponent->SetString( str );
 		}
 
 	public:
 		r2component::TransformComponent* mTransformComponent;
 		r2component::TextRenderComponent* mTextRenderComponent;
-	private:
-		r2::RectInt mRect;
-		r2render::Texture mTexture;
 	};
 }
 
