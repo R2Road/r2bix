@@ -65,7 +65,7 @@ namespace r2game
 		{
 			auto transform_component = r2component::TransformComponent::Create( *this );
 			mTransformComponent = transform_component.get();
-			AddComponent( r2component::TransformComponent::Create( *this ) );
+			AddComponent( std::move( transform_component ) );
 			AddComponent( r2component::TextRenderComponent::Create( *this ) );
 			return true;
 		}
