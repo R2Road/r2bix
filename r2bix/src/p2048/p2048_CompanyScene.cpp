@@ -5,6 +5,7 @@
 #include <conio.h>
 #include <utility> // std::move
 
+#include "base/r2base_DebugConfig.h"
 #include "base/r2base_Director.h"
 #include "component/r2component_TransformComponent.h"
 #include "render/r2render_iRenderable.h"
@@ -79,11 +80,6 @@ namespace r2component
 			const auto render_target_space_my_position = camera_space_my_position - camera->GetCameraSpaceRect().GetOrigin();
 
 			//
-			//
-			//
-			render_target->Fill( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), 'A' );
-
-			//
 			// Render Target Space : My Rect
 			//
 			auto render_target_space_my_rect = mRect;
@@ -107,6 +103,14 @@ namespace r2component
 						, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 					);
 				}
+			}
+
+			//
+			// Debug
+			//
+			if( r2base::DebugConfig::GetLabelConfig().bShowPositionPivot )
+			{
+				render_target->Fill( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), '+' );
 			}
 		}
 

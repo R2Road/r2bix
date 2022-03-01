@@ -185,6 +185,9 @@
     <ClCompile Include="src\component\r2component_TransformComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
+    <ClCompile Include="src\base\r2base_DebugConfig.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -354,6 +357,9 @@
       <Filter>component</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2base_Component.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2base_DebugConfig.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>

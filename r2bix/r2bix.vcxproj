@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\base\r2base_DebugConfig.cpp" />
     <ClCompile Include="src\base\r2base_Director.cpp" />
     <ClCompile Include="src\base\r2base_Node.cpp" />
     <ClCompile Include="src\component\r2component_TransformComponent.cpp" />
@@ -74,6 +75,7 @@
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\base\r2base_DebugConfig.h" />
     <ClInclude Include="src\base\r2base_Director.h" />
     <ClInclude Include="src\base\r2base_eTestEndAction.h" />
     <ClInclude Include="src\base\r2base_Component.h" />
