@@ -23,7 +23,7 @@ namespace r2base
 	public:
 		virtual bool Init() { return true; }
 		virtual void Update() {}
-		virtual void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) {}
+		virtual void Render( const r2render::Camera* const /*camera*/, r2render::iRenderTarget* const /*render_target*/ ) {}
 
 	protected:
 		Node& mOwnerNode;
