@@ -17,6 +17,7 @@ namespace r2component
 	{
 	private:
 		TextRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+			, mTransformComponent( nullptr )
 			, mRect()
 			, mTexture( " " )
 		{}
@@ -51,6 +52,8 @@ namespace r2component
 			mTexture.Reset( str );
 		}
 
+	public:
+		r2component::TransformComponent* mTransformComponent;
 	private:
 		r2::RectInt mRect;
 		r2render::Texture mTexture;
@@ -89,6 +92,7 @@ namespace r2game
 			AddComponent( std::move( transform_component ) );
 
 			auto text_render_component = r2component::TextRenderComponent::Create( *this );
+			text_render_component->mTransformComponent = mTransformComponent;
 			mTextRenderComponent = text_render_component.get();
 			AddComponent( std::move( text_render_component ) );
 
