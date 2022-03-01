@@ -52,6 +52,64 @@ namespace r2component
 			mTexture.Reset( str );
 		}
 
+		//
+		//
+		//
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
+		{
+			//
+			// World Space : My Rect : Test
+			//
+			{
+				const r2::RectInt my_world_space_rect( mRect.GetOrigin() + mTransformComponent->GetPosition(), mRect.GetSize() );
+				if( !my_world_space_rect.IntersectsRect( camera->GetRect() ) )
+				{
+					return;
+				}
+			}
+
+			//
+			// Camera Space : My Position
+			//
+			const auto camera_space_my_position = mTransformComponent->GetPosition() - camera->GetPoint();
+
+			//
+			// Render Target Space : My Position
+			//
+			const auto render_target_space_my_position = camera_space_my_position - camera->GetCameraSpaceRect().GetOrigin();
+
+			//
+			//
+			//
+			render_target->Fill( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), 'A' );
+
+			//
+			// Render Target Space : My Rect
+			//
+			auto render_target_space_my_rect = mRect;
+			render_target_space_my_rect.MoveOrigin( render_target_space_my_position.GetX(), render_target_space_my_position.GetY() );
+
+			//
+			// Render Target Space : Intersect Rect
+			//
+			auto render_target_space_intersect_rect = render_target->GetRect().IntersectsWithRect( render_target_space_my_rect );
+
+			//
+			// Offset
+			//
+			const auto off_set_point = render_target_space_intersect_rect.GetOrigin() - render_target_space_my_rect.GetOrigin();
+			for( int y = render_target_space_intersect_rect.GetMinY(), ty = 0; render_target_space_intersect_rect.GetMaxY() > y; ++y, ++ty )
+			{
+				for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() > x; ++x, ++tx )
+				{
+					render_target->Fill(
+						x, y
+						, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+					);
+				}
+			}
+		}
+
 	public:
 		r2component::TransformComponent* mTransformComponent;
 	private:
@@ -62,7 +120,7 @@ namespace r2component
 
 namespace r2game
 {
-	class LabelNode : public r2game::Node, public r2render::iRenderable
+	class LabelNode : public r2game::Node
 	{
 	public:
 		LabelNode( r2base::Director& director ) : r2game::Node( director )
@@ -99,61 +157,6 @@ namespace r2game
 			return true;
 		}
 	public:
-		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
-		{
-			//
-			// World Space : My Rect : Test
-			//
-			{
-				const r2::RectInt my_world_space_rect( mTextRenderComponent->GetRect().GetOrigin() + mTransformComponent->GetPosition(), mTextRenderComponent->GetRect().GetSize() );
-				if( !my_world_space_rect.IntersectsRect( camera->GetRect() ) )
-				{
-					return;
-				}
-			}
-
-			//
-			// Camera Space : My Position
-			//
-			const auto camera_space_my_position = mTransformComponent->GetPosition() - camera->GetPoint();
-
-			//
-			// Render Target Space : My Position
-			//
-			const auto render_target_space_my_position = camera_space_my_position - camera->GetCameraSpaceRect().GetOrigin();
-
-			//
-			//
-			//
-			render_target->Fill( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), 'A' );
-
-			//
-			// Render Target Space : My Rect
-			//
-			auto render_target_space_my_rect = mTextRenderComponent->GetRect();
-			render_target_space_my_rect.MoveOrigin( render_target_space_my_position.GetX(), render_target_space_my_position.GetY() );
-
-			//
-			// Render Target Space : Intersect Rect
-			//
-			auto render_target_space_intersect_rect = render_target->GetRect().IntersectsWithRect( render_target_space_my_rect );
-
-			//
-			// Offset
-			//
-			const auto off_set_point = render_target_space_intersect_rect.GetOrigin() - render_target_space_my_rect.GetOrigin();
-			for( int y = render_target_space_intersect_rect.GetMinY(), ty = 0; render_target_space_intersect_rect.GetMaxY() > y; ++y, ++ty )
-			{
-				for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() > x; ++x, ++tx )
-				{
-					render_target->Fill(
-						x, y
-						, mTextRenderComponent->GetTexture().Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
-					);
-				}
-			}
-		}
-
 		//
 		//
 		//
