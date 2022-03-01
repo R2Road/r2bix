@@ -124,10 +124,10 @@ namespace r2component
 
 namespace r2game
 {
-	class LabelNode : public r2game::Node
+	class LabelNode : public r2base::Node
 	{
 	public:
-		LabelNode( r2base::Director& director ) : r2game::Node( director )
+		LabelNode( r2base::Director& director ) : r2base::Node( director )
 			, mTransformComponent( nullptr )
 			, mTextRenderComponent( nullptr )
 		{}

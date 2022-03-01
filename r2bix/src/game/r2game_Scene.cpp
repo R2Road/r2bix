@@ -5,7 +5,7 @@
 
 namespace r2game
 {
-	Scene::Scene( r2base::Director& director ) : r2game::Node( director )
+	Scene::Scene( r2base::Director& director ) : r2base::Node( director )
 	{}
 
 	void Scene::Update()

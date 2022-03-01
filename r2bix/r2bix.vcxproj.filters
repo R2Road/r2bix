@@ -122,9 +122,6 @@
     <ClCompile Include="src\scene\test\r2test_RootScene.cpp">
       <Filter>scene\test</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\r2game_Node.cpp">
-      <Filter>game</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\console_screen_buffer_manager_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -283,9 +280,6 @@
     </ClInclude>
     <ClInclude Include="src\scene\test\r2test_RootScene.h">
       <Filter>scene\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\r2game_Node.h">
-      <Filter>game</Filter>
     </ClInclude>
     <ClInclude Include="src\test\console_screen_buffer_manager_test.h">
       <Filter>test</Filter>

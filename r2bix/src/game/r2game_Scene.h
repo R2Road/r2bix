@@ -1,6 +1,6 @@
 #pragma once
 
-#include "game/r2game_Node.h"
+#include "base/r2base_Node.h"
 
 namespace r2base
 {
@@ -9,7 +9,7 @@ namespace r2base
 
 namespace r2game
 {
-	class Scene : public r2game::Node
+	class Scene : public r2base::Node
 	{
 	public:
 		Scene( r2base::Director& director );
