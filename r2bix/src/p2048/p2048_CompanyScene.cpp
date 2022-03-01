@@ -11,7 +11,7 @@
 
 #include "scene/DevelopScene.h"
 
-namespace
+namespace r2component
 {
 	class TextRenderComponent : public r2base::Component
 	{
@@ -66,7 +66,7 @@ namespace r2game
 			auto transform_component = r2component::TransformComponent::Create( *this );
 			mTransformComponent = transform_component.get();
 			AddComponent( r2component::TransformComponent::Create( *this ) );
-			AddComponent( TextRenderComponent::Create( *this ) );
+			AddComponent( r2component::TextRenderComponent::Create( *this ) );
 			return true;
 		}
 	public:
