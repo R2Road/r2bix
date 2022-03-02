@@ -10,7 +10,7 @@
 #include "input/r2input_KeyboardInputListener.h"
 
 #include "r2/r2_RectInt.h"
-#include "render/r2_FPSTimer.h"
+#include "base/r2base_FPSTimer.h"
 
 namespace window_input_test
 {

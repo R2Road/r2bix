@@ -125,9 +125,6 @@
     <ClCompile Include="src\test\console_screen_buffer_manager_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\r2_FPSTimer.cpp">
-      <Filter>render</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp">
       <Filter>render</Filter>
     </ClCompile>
@@ -192,6 +189,9 @@
       <Filter>node</Filter>
     </ClCompile>
     <ClCompile Include="src\base\r2base_ScreenBufferManager.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\r2base_FPSTimer.cpp">
       <Filter>base</Filter>
     </ClCompile>
   </ItemGroup>
@@ -293,9 +293,6 @@
     <ClInclude Include="src\test\console_screen_buffer_manager_test.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\r2_FPSTimer.h">
-      <Filter>render</Filter>
-    </ClInclude>
     <ClInclude Include="src\render\r2_GridIndexConverter.h">
       <Filter>render</Filter>
     </ClInclude>
@@ -372,6 +369,9 @@
       <Filter>node</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2base_ScreenBufferManager.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2base_FPSTimer.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>

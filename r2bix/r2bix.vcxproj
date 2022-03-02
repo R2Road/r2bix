@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\base\r2base_DebugConfig.cpp" />
     <ClCompile Include="src\base\r2base_Director.cpp" />
+    <ClCompile Include="src\base\r2base_FPSTimer.cpp" />
     <ClCompile Include="src\base\r2base_Node.cpp" />
     <ClCompile Include="src\base\r2base_ScreenBufferManager.cpp" />
     <ClCompile Include="src\component\r2component_TextRenderComponent.cpp" />
@@ -46,7 +47,6 @@
     <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\render\r2render_Camera.cpp" />
     <ClCompile Include="src\render\r2render_TextureFrame.cpp" />
-    <ClCompile Include="src\render\r2_FPSTimer.cpp" />
     <ClCompile Include="src\render\r2render_FrameBuffer.cpp" />
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\render\r2render_Renderer.cpp" />
@@ -81,6 +81,7 @@
     <ClInclude Include="src\base\r2base_Director.h" />
     <ClInclude Include="src\base\r2base_eTestEndAction.h" />
     <ClInclude Include="src\base\r2base_Component.h" />
+    <ClInclude Include="src\base\r2base_FPSTimer.h" />
     <ClInclude Include="src\base\r2base_Node.h" />
     <ClInclude Include="src\base\r2base_Inspector.h" />
     <ClInclude Include="src\base\r2base_iTest.h" />
@@ -107,7 +108,6 @@
     <ClInclude Include="src\render\r2render_Camera.h" />
     <ClInclude Include="src\render\r2render_iRenderTarget.h" />
     <ClInclude Include="src\render\r2render_TextureFrame.h" />
-    <ClInclude Include="src\render\r2_FPSTimer.h" />
     <ClInclude Include="src\render\r2render_FrameBuffer.h" />
     <ClInclude Include="src\render\r2_GridIndexConverter.h" />
     <ClInclude Include="src\render\r2render_iRenderable.h" />
