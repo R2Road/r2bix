@@ -9,10 +9,10 @@ namespace r2base
 
 namespace r2node
 {
-	class Scene : public r2base::Node
+	class SceneNode : public r2base::Node
 	{
 	public:
-		Scene( r2base::Director& director );
+		SceneNode( r2base::Director& director );
 
 		void Update() override;
 	};

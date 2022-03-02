@@ -26,7 +26,7 @@ namespace r2render
 
 namespace p2048
 {
-	class CompanyScene : public r2node::Scene
+	class CompanyScene : public r2node::SceneNode
 	{
 	private:
 		CompanyScene( r2base::Director& director );

@@ -5,10 +5,10 @@
 
 namespace r2node
 {
-	Scene::Scene( r2base::Director& director ) : r2base::Node( director )
+	SceneNode::SceneNode( r2base::Director& director ) : r2base::Node( director )
 	{}
 
-	void Scene::Update()
+	void SceneNode::Update()
 	{
 	}
 }
