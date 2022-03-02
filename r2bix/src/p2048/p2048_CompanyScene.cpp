@@ -9,6 +9,7 @@
 #include "component/r2component_TextRenderComponent.h"
 #include "component/r2component_TransformComponent.h"
 #include "game/r2game_LabelNode.h"
+#include "game/r2game_SpriteNode.h"
 #include "render/r2render_iRenderable.h"
 
 #include "scene/DevelopScene.h"
@@ -20,6 +21,7 @@ namespace p2048
 		, mRenderTarget( 50, 50, '@' )
 
 		, mLabelNode( nullptr )
+		, mSpriteNode( nullptr )
 	{}
 
 	r2base::NodeUp CompanyScene::Create( r2base::Director& director )
@@ -35,18 +37,27 @@ namespace p2048
 
 	bool CompanyScene::Init()
 	{
-		auto label_node = r2game::LabelNode::Create( mDirector );
-		label_node->mTransformComponent->SetPosition( 5, 5 );
-		label_node->SetRect( 0, 0, 30, 1 );
-		label_node->SetString( "# " "2048 Game Scene" " #" );
-		mLabelNode = label_node.get();
-		AddChild( std::move( label_node ) );
+		{
+			auto label_node = r2game::LabelNode::Create( mDirector );
+			label_node->mTransformComponent->SetPosition( 5, 5 );
+			label_node->SetRect( 0, 0, 30, 1 );
+			label_node->SetString( "# " "2048 Game Scene" " #" );
+			mLabelNode = label_node.get();
+			AddChild( std::move( label_node ) );
+		}
+
+		{
+			auto sprite_node = r2game::SpriteNode::Create( mDirector );
+			mSpriteNode = sprite_node.get();
+			AddChild( std::move( sprite_node ) );
+		}
 
 		return true;
 	}
 	void CompanyScene::Update()
 	{
 		mLabelNode->Render( &mCamera, &mRenderTarget );
+		mSpriteNode->Render( &mCamera, &mRenderTarget );
 
 		for( int y = 0; mRenderTarget.GetHeight() > y; ++y )
 		{

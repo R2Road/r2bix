@@ -27,6 +27,7 @@
     <ClCompile Include="src\game\r2game_LabelNode.cpp" />
     <ClCompile Include="src\game\r2game_Scene.cpp" />
     <ClCompile Include="src\game\r2game_ScreenBufferManager.cpp" />
+    <ClCompile Include="src\game\r2game_SpriteNode.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
@@ -89,6 +90,7 @@
     <ClInclude Include="src\game\r2game_LabelNode.h" />
     <ClInclude Include="src\game\r2game_Scene.h" />
     <ClInclude Include="src\game\r2game_ScreenBufferManager.h" />
+    <ClInclude Include="src\game\r2game_SpriteNode.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />

@@ -191,6 +191,9 @@
     <ClCompile Include="src\game\r2game_LabelNode.cpp">
       <Filter>game</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\r2game_SpriteNode.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -366,6 +369,9 @@
       <Filter>component</Filter>
     </ClInclude>
     <ClInclude Include="src\game\r2game_LabelNode.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\r2game_SpriteNode.h">
       <Filter>game</Filter>
     </ClInclude>
   </ItemGroup>

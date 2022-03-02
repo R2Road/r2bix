@@ -16,6 +16,7 @@ namespace r2base
 namespace r2game
 {
 	class LabelNode;
+	class SpriteNode;
 }
 
 namespace r2render
@@ -43,5 +44,6 @@ namespace p2048
 		r2render::Texture mRenderTarget;
 
 		r2game::LabelNode* mLabelNode;
+		r2game::SpriteNode* mSpriteNode;
 	};
 }
