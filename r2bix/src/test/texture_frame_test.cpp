@@ -13,7 +13,7 @@ namespace texture_frame_test
 	{
 		return []()->const char*
 		{
-			return "TextureFrame";
+			return "TextureFrame : Basic";
 		};
 	}
 	r2base::iTest::DoFunc Basic::GetDoFunction()
@@ -104,7 +104,7 @@ namespace texture_frame_test
 	{
 		return []()->const char*
 		{
-			return "Visible Rect 1";
+			return "TextureFrame : Visible Rect 1";
 		};
 	}
 	r2base::iTest::DoFunc VisibleRect_1::GetDoFunction()
@@ -190,7 +190,7 @@ namespace texture_frame_test
 	{
 		return []()->const char*
 		{
-			return "Visible Rect 2";
+			return "TextureFrame : Visible Rect 2";
 		};
 	}
 	r2base::iTest::DoFunc VisibleRect_2::GetDoFunction()
