@@ -12,9 +12,9 @@ namespace pmr
 	CompanyScene::CompanyScene( r2base::Director& director ) : r2node::SceneNode( director )
 	{}
 
-	r2base::NodeUp CompanyScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp CompanyScene::Create( r2base::Director& director )
 	{
-		std::unique_ptr<CompanyScene> ret( new ( std::nothrow ) CompanyScene( director ) );
+		r2node::SceneNodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
 		if( !ret || !ret->Init() )
 		{
 			ret.reset();

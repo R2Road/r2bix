@@ -24,9 +24,9 @@ namespace p2048
 		, mSpriteNode( nullptr )
 	{}
 
-	r2base::NodeUp CompanyScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp CompanyScene::Create( r2base::Director& director )
 	{
-		r2base::NodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
+		r2node::SceneNodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
 		if( !ret->Init() )
 		{
 			assert( false );

@@ -12,7 +12,7 @@
 
 namespace r2test
 {
-	r2base::NodeUp CameraScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp CameraScene::Create( r2base::Director& director )
 	{
 		TestSceneUp ret( new ( std::nothrow ) TestScene(
 			director

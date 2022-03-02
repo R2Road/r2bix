@@ -6,6 +6,7 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
+#include "node/r2node_SceneNode.h"
 #include "scene/DevelopScene.h"
 #include "utility/r2utility_WindowUtil.h"
 

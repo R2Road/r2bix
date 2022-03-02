@@ -11,7 +11,7 @@
 
 #include "scene/TestScene.h"
 
-r2base::NodeUp DevelopScene::Create( r2base::Director& director )
+r2node::SceneNodeUp DevelopScene::Create( r2base::Director& director )
 {
 	TestSceneUp ret( new ( std::nothrow ) TestScene(
 		director

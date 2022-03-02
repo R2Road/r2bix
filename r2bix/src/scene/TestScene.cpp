@@ -14,7 +14,7 @@ namespace
 	const char KeyCode4Split = 42; // *
 }
 
-TestScene::TestScene( r2base::Director& director, const char* title_string, const char* description_string ) : Node( director )
+TestScene::TestScene( r2base::Director& director, const char* title_string, const char* description_string ) : r2node::SceneNode( director )
 	, mTitleString( title_string )
 	, mDescriptionString( description_string )
 	, mTests()

@@ -4,9 +4,12 @@
 
 namespace r2base
 {
-	using NodeUp = std::unique_ptr<class Node>;
-
 	class Director;
+}
+
+namespace r2node
+{
+	using SceneNodeUp = std::unique_ptr<class SceneNode>;
 }
 
 namespace r2test
@@ -18,6 +21,6 @@ namespace r2test
 
 	public:
 		static const char* GetTitle() { return "Test"; }
-		static r2base::NodeUp Create( r2base::Director& director );
+		static r2node::SceneNodeUp Create( r2base::Director& director );
 	};
 }

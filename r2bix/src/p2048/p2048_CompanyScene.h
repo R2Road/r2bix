@@ -17,6 +17,8 @@ namespace r2node
 {
 	class LabelNode;
 	class SpriteNode;
+
+	using SceneNodeUp = std::unique_ptr<class SceneNode>;
 }
 
 namespace r2render
@@ -32,7 +34,7 @@ namespace p2048
 		CompanyScene( r2base::Director& director );
 
 	public:
-		static r2base::NodeUp Create( r2base::Director& director );
+		static r2node::SceneNodeUp Create( r2base::Director& director );
 
 	private:
 		bool Init() override;

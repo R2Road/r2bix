@@ -3,23 +3,23 @@
 
 #include <utility> // std::move
 
-#include "r2base_Node.h"
+#include "node/r2node_SceneNode.h"
 
 namespace r2base
 {
-	Director::Director() : mbAbort( false ), mNode()
+	Director::Director() : mbAbort( false ), mSceneNode()
 	{}
 
-	void Director::Setup( NodeUp node )
+	void Director::Setup( r2node::SceneNodeUp node )
 	{
-		mNode = std::move( node );
+		mSceneNode = std::move( node );
 	}
 
 	void Director::Update()
 	{
 		while( !mbAbort )
 		{
-			mNode->Update();
+			mSceneNode->Update();
 		}
 	}
 }

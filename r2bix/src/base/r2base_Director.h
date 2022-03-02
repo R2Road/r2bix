@@ -2,16 +2,19 @@
 
 #include <memory>
 
+namespace r2node
+{
+	using SceneNodeUp = std::unique_ptr<class SceneNode>;
+}
+
 namespace r2base
 {
-	using NodeUp = std::unique_ptr<class Node>;
-
 	class Director
 	{
 	public:
 		Director();
 
-		void Setup( NodeUp node );
+		void Setup( r2node::SceneNodeUp node );
 
 		void Update();
 
@@ -19,6 +22,6 @@ namespace r2base
 
 	private:
 		bool mbAbort;
-		NodeUp mNode;
+		r2node::SceneNodeUp mSceneNode;
 	};
 }

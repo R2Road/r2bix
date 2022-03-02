@@ -6,9 +6,12 @@
 
 namespace r2base
 {
-	using NodeUp = std::unique_ptr<class Node>;
-
 	class Director;
+}
+
+namespace r2node
+{
+	using SceneNodeUp = std::unique_ptr<class SceneNode>;
 }
 
 namespace pmr
@@ -19,7 +22,7 @@ namespace pmr
 		CompanyScene( r2base::Director& director );
 
 	public:
-		static r2base::NodeUp Create( r2base::Director& director );
+		static r2node::SceneNodeUp Create( r2base::Director& director );
 
 	public:
 		void Update() override;

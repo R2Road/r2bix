@@ -12,7 +12,7 @@
 
 namespace r2research
 {
-	r2base::NodeUp RootScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp RootScene::Create( r2base::Director& director )
 	{
 		TestSceneUp ret( new ( std::nothrow ) TestScene(
 			director

@@ -9,6 +9,8 @@ namespace r2base
 
 namespace r2node
 {
+	using SceneNodeUp = std::unique_ptr<class SceneNode>;
+
 	class SceneNode : public r2base::Node
 	{
 	public:

@@ -4,7 +4,7 @@
 #include <string_view>
 #include <vector>
 
-#include "base/r2base_Node.h"
+#include "node/r2node_SceneNode.h"
 
 namespace r2base
 {
@@ -15,7 +15,7 @@ namespace r2base
 }
 
 using TestSceneUp = std::unique_ptr<class TestScene>;
-class TestScene : public r2base::Node
+class TestScene : public r2node::SceneNode
 {
 private:
 	struct TestInfo
