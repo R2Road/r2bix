@@ -24,13 +24,13 @@
     <ClCompile Include="src\base\r2base_Node.cpp" />
     <ClCompile Include="src\component\r2component_TextRenderComponent.cpp" />
     <ClCompile Include="src\component\r2component_TransformComponent.cpp" />
-    <ClCompile Include="src\game\r2game_LabelNode.cpp" />
-    <ClCompile Include="src\game\r2game_Scene.cpp" />
     <ClCompile Include="src\game\r2game_ScreenBufferManager.cpp" />
-    <ClCompile Include="src\game\r2game_SpriteNode.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
+    <ClCompile Include="src\node\r2node_LabelNode.cpp" />
+    <ClCompile Include="src\node\r2node_SceneNode.cpp" />
+    <ClCompile Include="src\node\r2node_SpriteNode.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -87,13 +87,13 @@
     <ClInclude Include="src\base\r2base_Singleton.h" />
     <ClInclude Include="src\component\r2component_TextRenderComponent.h" />
     <ClInclude Include="src\component\r2component_TransformComponent.h" />
-    <ClInclude Include="src\game\r2game_LabelNode.h" />
-    <ClInclude Include="src\game\r2game_Scene.h" />
     <ClInclude Include="src\game\r2game_ScreenBufferManager.h" />
-    <ClInclude Include="src\game\r2game_SpriteNode.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />
+    <ClInclude Include="src\node\r2node_LabelNode.h" />
+    <ClInclude Include="src\node\r2node_SceneNode.h" />
+    <ClInclude Include="src\node\r2node_SpriteNode.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />

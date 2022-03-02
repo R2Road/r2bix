@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "game/r2game_Scene.h"
+#include "node/r2node_SceneNode.h"
 #include "render/r2render_Camera.h"
 #include "render/r2render_Texture.h"
 

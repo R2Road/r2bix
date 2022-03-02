@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2game_Scene.h"
+#include "r2node_SceneNode.h"
 
 #include "base/r2base_Director.h"
 

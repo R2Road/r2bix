@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2game_SpriteNode.h"
+#include "r2node_SpriteNode.h"
 
 #include "base/r2base_Director.h"
 #include "component/r2component_TextRenderComponent.h"

@@ -43,6 +43,9 @@
     <Filter Include="component">
       <UniqueIdentifier>{6a09edd5-e8d0-43fb-96fe-0494bd0fec79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="node">
+      <UniqueIdentifier>{21b9e532-178c-45e7-b937-a1385b5865b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -164,9 +167,6 @@
     <ClCompile Include="src\test\texture_frame_test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\r2game_Scene.cpp">
-      <Filter>game</Filter>
-    </ClCompile>
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp">
       <Filter>project_mini_rogue</Filter>
     </ClCompile>
@@ -188,11 +188,14 @@
     <ClCompile Include="src\component\r2component_TextRenderComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\r2game_LabelNode.cpp">
-      <Filter>game</Filter>
+    <ClCompile Include="src\node\r2node_LabelNode.cpp">
+      <Filter>node</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\r2game_SpriteNode.cpp">
-      <Filter>game</Filter>
+    <ClCompile Include="src\node\r2node_SceneNode.cpp">
+      <Filter>node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\node\r2node_SpriteNode.cpp">
+      <Filter>node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -341,9 +344,6 @@
     <ClInclude Include="src\base\r2base_Inspector.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\r2game_Scene.h">
-      <Filter>game</Filter>
-    </ClInclude>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
       <Filter>project_mini_rogue</Filter>
     </ClInclude>
@@ -368,11 +368,14 @@
     <ClInclude Include="src\component\r2component_TextRenderComponent.h">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\r2game_LabelNode.h">
-      <Filter>game</Filter>
+    <ClInclude Include="src\node\r2node_LabelNode.h">
+      <Filter>node</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\r2game_SpriteNode.h">
-      <Filter>game</Filter>
+    <ClInclude Include="src\node\r2node_SceneNode.h">
+      <Filter>node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\node\r2node_SpriteNode.h">
+      <Filter>node</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
