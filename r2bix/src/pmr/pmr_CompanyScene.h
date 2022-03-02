@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "game/r2game_Scene.h"
+#include "node/r2node_SceneNode.h"
 
 namespace r2base
 {
@@ -13,7 +13,7 @@ namespace r2base
 
 namespace pmr
 {
-	class CompanyScene : public r2game::Scene
+	class CompanyScene : public r2node::Scene
 	{
 	private:
 		CompanyScene( r2base::Director& director );

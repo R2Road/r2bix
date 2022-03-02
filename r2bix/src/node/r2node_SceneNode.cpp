@@ -3,7 +3,7 @@
 
 #include "base/r2base_Director.h"
 
-namespace r2game
+namespace r2node
 {
 	Scene::Scene( r2base::Director& director ) : r2base::Node( director )
 	{}

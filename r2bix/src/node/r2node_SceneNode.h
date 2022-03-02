@@ -7,7 +7,7 @@ namespace r2base
 	class Director;
 }
 
-namespace r2game
+namespace r2node
 {
 	class Scene : public r2base::Node
 	{

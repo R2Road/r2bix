@@ -13,7 +13,7 @@ namespace r2component
 	class TransformComponent;
 }
 
-namespace r2game
+namespace r2node
 {
 	class SpriteNode : public r2base::Node
 	{

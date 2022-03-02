@@ -30,7 +30,7 @@ namespace console_screen_buffer_manager_test
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2game::ScreenBufferManager screen_buffer_manager;" << r2::linefeed;
+				std::cout << r2::tab2 << "r2node::ScreenBufferManager screen_buffer_manager;" << r2::linefeed;
 			}
 
 			std::cout << r2::split;

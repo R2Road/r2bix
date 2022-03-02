@@ -13,7 +13,7 @@ namespace r2base
 	class Director;
 }
 
-namespace r2game
+namespace r2node
 {
 	class LabelNode;
 	class SpriteNode;
@@ -26,7 +26,7 @@ namespace r2render
 
 namespace p2048
 {
-	class CompanyScene : public r2game::Scene
+	class CompanyScene : public r2node::Scene
 	{
 	private:
 		CompanyScene( r2base::Director& director );
@@ -43,7 +43,7 @@ namespace p2048
 		r2render::Camera mCamera;
 		r2render::Texture mRenderTarget;
 
-		r2game::LabelNode* mLabelNode;
-		r2game::SpriteNode* mSpriteNode;
+		r2node::LabelNode* mLabelNode;
+		r2node::SpriteNode* mSpriteNode;
 	};
 }

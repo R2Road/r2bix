@@ -16,7 +16,7 @@
 
 namespace p2048
 {
-	CompanyScene::CompanyScene( r2base::Director& director ) : r2game::Scene( director )
+	CompanyScene::CompanyScene( r2base::Director& director ) : r2node::Scene( director )
 		, mCamera( { 25, 25 }, { 50, 50 } )
 		, mRenderTarget( 50, 50, '@' )
 
@@ -38,7 +38,7 @@ namespace p2048
 	bool CompanyScene::Init()
 	{
 		{
-			auto label_node = r2game::LabelNode::Create( mDirector );
+			auto label_node = r2node::LabelNode::Create( mDirector );
 			label_node->mTransformComponent->SetPosition( 5, 5 );
 			label_node->SetRect( 0, 0, 30, 1 );
 			label_node->SetString( "# " "2048 Game Scene" " #" );
@@ -47,7 +47,7 @@ namespace p2048
 		}
 
 		{
-			auto sprite_node = r2game::SpriteNode::Create( mDirector );
+			auto sprite_node = r2node::SpriteNode::Create( mDirector );
 			mSpriteNode = sprite_node.get();
 			AddChild( std::move( sprite_node ) );
 		}

@@ -5,7 +5,7 @@
 #include "component/r2component_TextRenderComponent.h"
 #include "component/r2component_TransformComponent.h"
 
-namespace r2game
+namespace r2node
 {
 	SpriteNode::SpriteNode( r2base::Director& director ) : r2base::Node( director )
 		, mTransformComponent( nullptr )
