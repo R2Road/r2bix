@@ -21,6 +21,7 @@ namespace r2base
 		void Update();
 
 		void RequestAbort() { mbAbort = true; }
+		void ClearScreen();
 
 	private:
 		FPSTimer mFPSTimer;

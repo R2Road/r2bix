@@ -29,12 +29,12 @@ void TestScene::ShowInformation() const
 
 void TestScene::Update()
 {
-	system( "cls" );
+	mDirector.ClearScreen();
 
 	ShowInformation();
 	auto input = _getch();
 
-	system( "cls" );
+	mDirector.ClearScreen();
 
 	switch( RunTest( input ) )
 	{

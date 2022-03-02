@@ -33,6 +33,6 @@ namespace pmr
 			mDirector.Setup( DevelopScene::Create( mDirector ) );
 		}
 
-		system( "cls" );
+		mDirector.ClearScreen();
 	}
 }

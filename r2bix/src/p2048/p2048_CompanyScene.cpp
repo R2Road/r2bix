@@ -68,6 +68,6 @@ namespace p2048
 			mDirector.Setup( DevelopScene::Create( mDirector ) );
 		}
 
-		system( "cls" );
+		mDirector.ClearScreen();
 	}
 }

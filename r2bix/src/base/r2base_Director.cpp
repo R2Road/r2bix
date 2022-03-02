@@ -29,4 +29,9 @@ namespace r2base
 			}
 		}
 	}
+
+	void Director::ClearScreen()
+	{
+		system( "cls" );
+	}
 }
