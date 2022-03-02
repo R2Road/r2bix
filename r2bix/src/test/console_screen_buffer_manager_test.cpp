@@ -5,7 +5,7 @@
 
 #include "base/r2base_eTestEndAction.h"
 
-#include "game/r2game_ScreenBufferManager.h"
+#include "base/r2base_ScreenBufferManager.h"
 
 namespace console_screen_buffer_manager_test
 {
@@ -20,7 +20,7 @@ namespace console_screen_buffer_manager_test
 	{
 		return []()->r2base::eTestEndAction
 		{
-			r2game::ScreenBufferManager screen_buffer_manager;
+			r2base::ScreenBufferManager screen_buffer_manager;
 
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 

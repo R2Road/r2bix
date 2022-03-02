@@ -191,7 +191,7 @@
     <ClCompile Include="src\node\r2node_SpriteNode.cpp">
       <Filter>node</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\r2base_ScreenBufferManager.cpp">
+    <ClCompile Include="src\base\r2base_ScreenBufferManager.cpp">
       <Filter>base</Filter>
     </ClCompile>
   </ItemGroup>
@@ -371,7 +371,7 @@
     <ClInclude Include="src\node\r2node_SpriteNode.h">
       <Filter>node</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\r2base_ScreenBufferManager.h">
+    <ClInclude Include="src\base\r2base_ScreenBufferManager.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>

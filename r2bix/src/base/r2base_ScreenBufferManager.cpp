@@ -4,7 +4,7 @@
 #include <cassert>
 #include <Windows.h>
 
-namespace r2game
+namespace r2base
 {
 	ScreenBufferManager::ScreenBufferManager() : mBufferHandle4First( INVALID_HANDLE_VALUE ), mBufferHandle4Second( INVALID_HANDLE_VALUE ), mbFirst( true )
 	{

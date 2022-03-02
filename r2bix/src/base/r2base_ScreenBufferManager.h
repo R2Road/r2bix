@@ -1,6 +1,6 @@
 #pragma once
 
-namespace r2game
+namespace r2base
 {
 	class ScreenBufferManager
 	{
