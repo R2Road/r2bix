@@ -2,6 +2,8 @@
 
 #include <memory>
 
+#include "base/r2base_FPSTimer.h"
+
 namespace r2node
 {
 	using SceneNodeUp = std::unique_ptr<class SceneNode>;
@@ -21,6 +23,7 @@ namespace r2base
 		void RequestAbort() { mbAbort = true; }
 
 	private:
+		FPSTimer mFPSTimer;
 		bool mbAbort;
 		r2node::SceneNodeUp mSceneNode;
 	};

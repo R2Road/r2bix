@@ -7,7 +7,10 @@
 
 namespace r2base
 {
-	Director::Director() : mbAbort( false ), mSceneNode()
+	Director::Director() :
+		mFPSTimer()
+		, mbAbort( false )
+		, mSceneNode()
 	{}
 
 	void Director::Setup( r2node::SceneNodeUp node )
@@ -19,8 +22,11 @@ namespace r2base
 	{
 		while( !mbAbort )
 		{
-			mSceneNode->Update();
-			mSceneNode->Render();
+			if( mFPSTimer.Update() )
+			{
+				mSceneNode->Update();
+				mSceneNode->Render();
+			}
 		}
 	}
 }
