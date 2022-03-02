@@ -34,7 +34,7 @@ namespace r2test
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Root"; }
-				, [&director]()->r2base::eTestEndAction
+				, [&director]( r2base::Director& )->r2base::eTestEndAction
 				{
 					director.Setup( r2test::RootScene::Create( director ) );
 					return r2base::eTestEndAction::None;

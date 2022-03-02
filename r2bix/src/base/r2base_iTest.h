@@ -4,13 +4,15 @@
 
 namespace r2base
 {
+	class Director;
+
 	enum class eTestEndAction;
 
 	class iTest
 	{
 	public:
 		using TitleFunc = std::function<const char*()>;
-		using DoFunc = std::function<eTestEndAction()>;
+		using DoFunc = std::function<eTestEndAction( Director& director )>;
 
 		virtual ~iTest() {}
 

@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <Windows.h>
 
+#include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 
 #include "base/r2base_FPSTimer.h"
@@ -89,7 +90,7 @@ namespace animation_test
 			GetInstance().mRenderer.Add( &tr );
 		}
 
-		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2base::eTestEndAction
+		return [&rd = GetInstance().mRenderer, &cam = mCamera]( r2base::Director& )->r2base::eTestEndAction
 		{
 			r2base::FPSTimer frame_manager( 30u );
 			frame_manager.Reset();

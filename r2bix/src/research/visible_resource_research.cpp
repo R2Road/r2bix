@@ -19,7 +19,7 @@ namespace visible_resource_research
 	}
 	r2base::iTest::DoFunc DrawWithPosition::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 

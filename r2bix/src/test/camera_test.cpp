@@ -25,7 +25,7 @@ namespace camera_test
 	}
 	r2base::iTest::DoFunc CameraPosition::GetDoFunction()
 	{
-		return[]()->r2base::eTestEndAction
+		return[]( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -66,7 +66,7 @@ namespace camera_test
 	}
 	r2base::iTest::DoFunc CameraRect::GetDoFunction()
 	{
-		return[]()->r2base::eTestEndAction
+		return[]( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -114,7 +114,7 @@ namespace camera_test
 	}
 	r2base::iTest::DoFunc CameraMove::GetDoFunction()
 	{
-		return[]()->r2base::eTestEndAction
+		return[]( r2base::Director& )->r2base::eTestEndAction
 		{
 			r2render::Camera camera( { 20, 30 }, { 19, 9 } );
 

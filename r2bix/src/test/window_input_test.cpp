@@ -23,7 +23,7 @@ namespace window_input_test
 	}
 	r2base::iTest::DoFunc TestKeyboardInputCollector::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;

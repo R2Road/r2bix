@@ -18,7 +18,7 @@ namespace console_screen_buffer_manager_test
 	}
 	r2base::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			r2base::ScreenBufferManager screen_buffer_manager;
 

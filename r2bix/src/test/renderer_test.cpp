@@ -60,7 +60,7 @@ namespace renderer_test
 		static TempRenderable tr( 8, 5, 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" );
 		auto& tr2 = tr;
 
-		return [&tr2]()->r2base::eTestEndAction
+		return [&tr2]( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -107,7 +107,7 @@ namespace renderer_test
 		static TempRenderable tr3( 11, 5, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
 		rd.Add( &tr3 );
 
-		return [&rd]()->r2base::eTestEndAction
+		return [&rd]( r2base::Director& )->r2base::eTestEndAction
 		{
 			rd.Draw();
 
@@ -165,7 +165,7 @@ namespace renderer_test
 	}
 	r2base::iTest::DoFunc CameraMove1::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			r2render::Camera camera( { 0, 0 }, { 60, 30 } );
 			r2render::Renderer renderer;
@@ -298,7 +298,7 @@ namespace renderer_test
 	}
 	r2base::iTest::DoFunc CameraMove2::GetDoFunction()
 	{
-		return[]()->r2base::eTestEndAction
+		return[]( r2base::Director& )->r2base::eTestEndAction
 		{
 			r2render::Camera camera( { 0, 0 }, { 60, 30 } );
 

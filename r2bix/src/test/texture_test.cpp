@@ -17,7 +17,7 @@ namespace texture_test
 	}
 	r2base::iTest::DoFunc FillAll::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -64,7 +64,7 @@ namespace texture_test
 	}
 	r2base::iTest::DoFunc Fill::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -119,7 +119,7 @@ namespace texture_test
 	}
 	r2base::iTest::DoFunc InitWithChars_1::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -167,7 +167,7 @@ namespace texture_test
 	}
 	r2base::iTest::DoFunc InitWithChars_2::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -218,7 +218,7 @@ namespace texture_test
 	}
 	r2base::iTest::DoFunc InitWithChars_3::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -295,7 +295,7 @@ namespace texture_test
 	}
 	r2base::iTest::DoFunc InitWithChars_4::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 

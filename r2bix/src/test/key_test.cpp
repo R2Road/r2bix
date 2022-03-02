@@ -16,7 +16,7 @@ namespace key_test
 	}
 	r2base::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2base::eTestEndAction
+		return []( r2base::Director& )->r2base::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 			std::cout << "[ESC] End" << r2::linefeed;

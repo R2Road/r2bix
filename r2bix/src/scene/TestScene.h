@@ -22,8 +22,8 @@ private:
 	{
 		TestInfo(
 			const char key_code
-			, const std::function<const char*( )> name_function
-			, const std::function<const r2base::eTestEndAction()> test_function
+			, const std::function<const char*()> name_function
+			, const std::function<const r2base::eTestEndAction( r2base::Director& )> test_function
 		) :
 			KeyCode( key_code )
 			, NameFunction( name_function )
@@ -32,7 +32,7 @@ private:
 
 		char KeyCode;
 		std::function<const char*()> NameFunction;
-		std::function<const r2base::eTestEndAction()> TestFunction;
+		std::function<const r2base::eTestEndAction( r2base::Director& )> TestFunction;
 	};
 
 	using TestContainerT = std::vector<TestInfo>;
@@ -56,7 +56,7 @@ private:
 
 public:
 	void AddChild( const char key_code, r2base::iTest& test_obj );
-	void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2base::eTestEndAction()> func_test );
+	void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2base::eTestEndAction( r2base::Director& )> func_test );
 	void AddLineFeed();
 	void AddSplit();
 
