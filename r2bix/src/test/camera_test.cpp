@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <Windows.h>
 
+#include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 
 #include "r2/r2_PointInt.h"
@@ -114,7 +115,7 @@ namespace camera_test
 	}
 	r2base::iTest::DoFunc CameraMove::GetDoFunction()
 	{
-		return[]( r2base::Director& )->r2base::eTestEndAction
+		return[]( r2base::Director& director )->r2base::eTestEndAction
 		{
 			r2render::Camera camera( { 20, 30 }, { 19, 9 } );
 
@@ -161,7 +162,7 @@ namespace camera_test
 				}
 				else
 				{
-					system( "cls" );
+					director.ClearScreen();
 
 					if( 0 == step )
 					{

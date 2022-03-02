@@ -4,6 +4,7 @@
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
 
+#include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 
 #include "render/r2render_Texture.h"
@@ -20,7 +21,7 @@ namespace flickering_research
 	}
 	r2base::iTest::DoFunc OneByOne::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& director )->r2base::eTestEndAction
 		{
 			r2render::Texture visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -28,7 +29,7 @@ namespace flickering_research
 			bool process = true;
 			do
 			{
-				system( "cls" );
+				director.ClearScreen();
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 				std::cout << "[Any Key] End" << r2::linefeed;
@@ -134,7 +135,7 @@ namespace flickering_research
 	}
 	r2base::iTest::DoFunc LineByLine::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& director )->r2base::eTestEndAction
 		{
 			r2render::Texture visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -142,7 +143,7 @@ namespace flickering_research
 			bool process = true;
 			do
 			{
-				system( "cls" );
+				director.ClearScreen();
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 				std::cout << "[Any Key] End" << r2::linefeed;
@@ -182,7 +183,7 @@ namespace flickering_research
 	}
 	r2base::iTest::DoFunc PageByPage::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& director )->r2base::eTestEndAction
 		{
 			r2render::FrameBuffer frame_buffer( 5, 5 );
 			frame_buffer.FillAll( 'c' );
@@ -190,7 +191,7 @@ namespace flickering_research
 			bool process = true;
 			do
 			{
-				system( "cls" );
+				director.ClearScreen();
 
 				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 				std::cout << "[Any Key] End" << r2::linefeed;
