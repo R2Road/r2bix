@@ -3,8 +3,6 @@
 #include <memory>
 
 #include "node/r2node_SceneNode.h"
-#include "render/r2render_Camera.h"
-#include "render/r2render_Texture.h"
 
 namespace r2base
 {
@@ -42,9 +40,6 @@ namespace p2048
 		void Update() override;
 
 	private:
-		r2render::Camera mCamera;
-		r2render::Texture mRenderTarget;
-
 		r2node::LabelNode* mLabelNode;
 		r2node::SpriteNode* mSpriteNode;
 	};

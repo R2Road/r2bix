@@ -20,6 +20,7 @@ namespace r2base
 		while( !mbAbort )
 		{
 			mSceneNode->Update();
+			mSceneNode->Render();
 		}
 	}
 }

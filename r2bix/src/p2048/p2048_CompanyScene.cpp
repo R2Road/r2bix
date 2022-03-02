@@ -17,9 +17,6 @@
 namespace p2048
 {
 	CompanyScene::CompanyScene( r2base::Director& director ) : r2node::SceneNode( director )
-		, mCamera( { 25, 25 }, { 50, 50 } )
-		, mRenderTarget( 50, 50, '@' )
-
 		, mLabelNode( nullptr )
 		, mSpriteNode( nullptr )
 	{}
