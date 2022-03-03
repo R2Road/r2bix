@@ -25,6 +25,8 @@ namespace pmr
 
 	void CompanyScene::Update()
 	{
+		mDirector.ClearScreen();
+
 		std::cout << "# " << "Mini Rogue Game Scene" << " #" << r2::linefeed;
 
 		auto input = _getch();
@@ -32,7 +34,5 @@ namespace pmr
 		{
 			mDirector.Setup( DevelopScene::Create( mDirector ) );
 		}
-
-		mDirector.ClearScreen();
 	}
 }

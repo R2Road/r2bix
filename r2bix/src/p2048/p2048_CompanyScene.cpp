@@ -53,6 +53,8 @@ namespace p2048
 	}
 	void CompanyScene::Update()
 	{
+		mDirector.ClearScreen();
+
 		mLabelNode->Render( &mCamera, &mRenderTarget );
 		mSpriteNode->Render( &mCamera, &mRenderTarget );
 
@@ -67,7 +69,5 @@ namespace p2048
 		{
 			mDirector.Setup( DevelopScene::Create( mDirector ) );
 		}
-
-		mDirector.ClearScreen();
 	}
 }
