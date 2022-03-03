@@ -21,7 +21,7 @@ namespace r2base
 	std::streamsize CoutBufferRedirector::xsputn( std::streambuf::char_type const *s, std::streamsize count )
 	{
 		DWORD written;
-		WriteConsole( mHandle, s, count, &written, nullptr );
+		WriteConsoleA( mHandle, s, count, &written, nullptr );
 		return written;
 	}
 }
