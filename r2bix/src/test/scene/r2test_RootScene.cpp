@@ -11,8 +11,8 @@
 #include "r2test_RendererScene.h"
 #include "r2test_TextureScene.h"
 
-#include "scene/DevelopScene.h"
-#include "scene/TestScene.h"
+#include "test/scene/DevelopScene.h"
+#include "test/scene/TestScene.h"
 
 #include "test/item/animation_test.h"
 #include "test/item/console_screen_buffer_manager_test.h"

@@ -3,7 +3,7 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
-#include "scene/TestScene.h"
+#include "test/scene/TestScene.h"
 
 #include "r2test_RootScene.h"
 #include "test/item/renderable_test.h"

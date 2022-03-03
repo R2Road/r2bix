@@ -6,7 +6,7 @@
 
 #include "r2test_RootScene.h"
 
-#include "scene/TestScene.h"
+#include "test/scene/TestScene.h"
 
 #include "test/item/renderer_test.h"
 
