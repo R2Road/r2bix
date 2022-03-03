@@ -188,9 +188,6 @@
     <ClCompile Include="src\test\item\visible_resource_research.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\item\flickering_research.cpp">
-      <Filter>test\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp">
       <Filter>project_2048</Filter>
     </ClCompile>
@@ -372,9 +369,6 @@
       <Filter>test\scene</Filter>
     </ClInclude>
     <ClInclude Include="src\test\item\visible_resource_research.h">
-      <Filter>test\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\item\flickering_research.h">
       <Filter>test\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\r2test_iTest.h">
