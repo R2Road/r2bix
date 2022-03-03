@@ -10,7 +10,6 @@
 #include "component/r2component_TransformComponent.h"
 #include "node/r2node_LabelNode.h"
 #include "node/r2node_SpriteNode.h"
-#include "render/r2render_iRenderable.h"
 
 #include "test/scene/DevelopScene.h"
 
