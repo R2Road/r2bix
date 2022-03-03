@@ -33,6 +33,7 @@
     <ClCompile Include="src\node\r2node_LabelNode.cpp" />
     <ClCompile Include="src\node\r2node_SceneNode.cpp" />
     <ClCompile Include="src\node\r2node_SpriteNode.cpp" />
+    <ClCompile Include="src\p2048\p2048table_TextureTable.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -95,6 +96,7 @@
     <ClInclude Include="src\node\r2node_LabelNode.h" />
     <ClInclude Include="src\node\r2node_SceneNode.h" />
     <ClInclude Include="src\node\r2node_SpriteNode.h" />
+    <ClInclude Include="src\p2048\p2048table_TextureTable.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
