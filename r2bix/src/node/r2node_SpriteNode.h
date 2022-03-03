@@ -13,6 +13,11 @@ namespace r2component
 	class TransformComponent;
 }
 
+namespace r2render
+{
+	class TextureFrame;
+}
+
 namespace r2node
 {
 	class SpriteNode : public r2base::Node
@@ -21,7 +26,7 @@ namespace r2node
 		SpriteNode( r2base::Director& director );
 
 	public:
-		static std::unique_ptr<SpriteNode> Create( r2base::Director& director );
+		static std::unique_ptr<SpriteNode> Create( r2base::Director& director, r2render::TextureFrame* const texture_frame );
 
 		//
 		// Override

@@ -12,12 +12,16 @@ namespace r2node
 		, mTextRenderComponent( nullptr )
 	{}
 
-	std::unique_ptr<SpriteNode> SpriteNode::Create( r2base::Director& director )
+	std::unique_ptr<SpriteNode> SpriteNode::Create( r2base::Director& director, r2render::TextureFrame* const texture_frame )
 	{
 		std::unique_ptr<SpriteNode> ret( new ( std::nothrow ) SpriteNode( director ) );
 		if( !ret || !ret->Init() )
 		{
 			ret.reset();
+		}
+		else
+		{
+			// do something
 		}
 
 		return ret;

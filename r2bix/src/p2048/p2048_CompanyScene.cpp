@@ -10,7 +10,7 @@
 #include "component/r2component_TransformComponent.h"
 #include "node/r2node_LabelNode.h"
 #include "node/r2node_SpriteNode.h"
-
+#include "p2048table_TextureTable.h"
 #include "test/scene/DevelopScene.h"
 
 namespace p2048
@@ -43,7 +43,7 @@ namespace p2048
 		}
 
 		{
-			auto sprite_node = r2node::SpriteNode::Create( mDirector );
+			auto sprite_node = r2node::SpriteNode::Create( mDirector, p2048table::TextureTable::GetInstance().GetTitleTexture() );
 			mSpriteNode = sprite_node.get();
 			AddChild( std::move( sprite_node ) );
 		}
