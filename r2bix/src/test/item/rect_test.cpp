@@ -10,15 +10,15 @@
 
 namespace rect_test
 {
-	void DrawRect( const r2::RectInt& rect, const char c )
+	void DrawRect( const int offset_y, const r2::RectInt& rect, const char c )
 	{
 		HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
 
-		for( int y = rect.GetMinY(); rect.GetMaxY() > y; ++y )
+		for( int y = rect.GetMinY(); rect.GetMaxY() >= y; ++y )
 		{
-			for( int x = rect.GetMinX(); rect.GetMaxX() > x; ++x )
+			for( int x = rect.GetMinX(); rect.GetMaxX() >= x; ++x )
 			{
-				SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( y ) } );
+				SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( offset_y + y ) } );
 
 				std::cout << c;
 			}
@@ -39,22 +39,33 @@ namespace rect_test
 
 			std::cout << r2::split;
 
-			HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
+			const r2::RectInt rect_0( 0, 0, 1, 1 );
+			const r2::RectInt rect_1( 4, 4, 6, 6 );
+			const r2::RectInt rect_2( 6, 6, 6, 6 );
 
 			{
-				const r2::RectInt rect_1( 4, 4, 6, 6 );
-				const r2::RectInt rect_2( 6, 6, 6, 6 );
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "const r2::RectInt rect_0( 0, 0, 1, 1 );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2::RectInt rect_1( 4, 4, 6, 6 );" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2::RectInt rect_2( 6, 6, 6, 6 );" << r2::linefeed;
+			}
 
-				DrawRect( rect_1, '1' );
-				DrawRect( rect_2, '2' );
+			std::cout << r2::split;
+
+			{
+				const int offset_y = 12;
+
+				DrawRect( offset_y, rect_0, '0' );
+				DrawRect( offset_y, rect_1, '1' );
+				DrawRect( offset_y, rect_2, '2' );
 
 				const auto rect_3 = rect_1.IntersectsWithRect( rect_2 );
 
-				DrawRect( rect_3, '3' );
+				DrawRect( offset_y, rect_3, '3' );
 
 				SetConsoleCursorPosition(
-					stdHandle
-					, { 0, static_cast<short>( std::max( { rect_1.GetMaxY(), rect_2.GetMaxY(), rect_3.GetMaxY() } ) ) }
+					GetStdHandle( STD_OUTPUT_HANDLE )
+					, { 0, static_cast<short>( offset_y + std::max( { rect_1.GetMaxY(), rect_2.GetMaxY(), rect_3.GetMaxY() } ) + 1) }
 				);
 			}
 
