@@ -10,9 +10,6 @@
     <Filter Include="r2">
       <UniqueIdentifier>{fcf9b28f-6f2a-4644-b365-01d919e85a1c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="research">
-      <UniqueIdentifier>{0816d7e8-1eea-40da-b028-99c353a97dcb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="input">
       <UniqueIdentifier>{59856341-1623-4080-9a5d-44841072825a}</UniqueIdentifier>
     </Filter>
@@ -55,12 +52,6 @@
     </ClCompile>
     <ClCompile Include="src\r2\r2_Timer_Float.cpp">
       <Filter>r2</Filter>
-    </ClCompile>
-    <ClCompile Include="src\research\flickering_research.cpp">
-      <Filter>research</Filter>
-    </ClCompile>
-    <ClCompile Include="src\research\visible_resource_research.cpp">
-      <Filter>research</Filter>
     </ClCompile>
     <ClCompile Include="src\input\r2input_Constant.cpp">
       <Filter>input</Filter>
@@ -194,6 +185,12 @@
     <ClCompile Include="src\test\scene\TestScene.cpp">
       <Filter>test\scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\item\visible_resource_research.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\flickering_research.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -217,12 +214,6 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Timer_Float.h">
       <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\research\flickering_research.h">
-      <Filter>research</Filter>
-    </ClInclude>
-    <ClInclude Include="src\research\visible_resource_research.h">
-      <Filter>research</Filter>
     </ClInclude>
     <ClInclude Include="src\input\r2input_Constant.h">
       <Filter>input</Filter>
@@ -376,6 +367,12 @@
     </ClInclude>
     <ClInclude Include="src\test\scene\TestScene.h">
       <Filter>test\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\visible_resource_research.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\flickering_research.h">
+      <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

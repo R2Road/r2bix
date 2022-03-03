@@ -52,11 +52,10 @@
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\render\r2render_Renderer.cpp" />
     <ClCompile Include="src\render\r2render_Texture.cpp" />
-    <ClCompile Include="src\research\flickering_research.cpp" />
-    <ClCompile Include="src\research\visible_resource_research.cpp" />
     <ClCompile Include="src\test\item\animation_test.cpp" />
     <ClCompile Include="src\test\item\camera_test.cpp" />
     <ClCompile Include="src\test\item\console_screen_buffer_manager_test.cpp" />
+    <ClCompile Include="src\test\item\flickering_research.cpp" />
     <ClCompile Include="src\test\item\framebuffer_test.cpp" />
     <ClCompile Include="src\test\item\key_test.cpp" />
     <ClCompile Include="src\test\item\rect_test.cpp" />
@@ -64,6 +63,7 @@
     <ClCompile Include="src\test\item\renderer_test.cpp" />
     <ClCompile Include="src\test\item\texture_frame_test.cpp" />
     <ClCompile Include="src\test\item\texture_test.cpp" />
+    <ClCompile Include="src\test\item\visible_resource_research.cpp" />
     <ClCompile Include="src\test\item\window_input_test.cpp" />
     <ClCompile Include="src\test\scene\DevelopScene.cpp" />
     <ClCompile Include="src\test\scene\r2research_RootScene.cpp" />
@@ -115,11 +115,10 @@
     <ClInclude Include="src\render\r2render_iRenderable.h" />
     <ClInclude Include="src\render\r2render_Renderer.h" />
     <ClInclude Include="src\render\r2render_Texture.h" />
-    <ClInclude Include="src\research\flickering_research.h" />
-    <ClInclude Include="src\research\visible_resource_research.h" />
     <ClInclude Include="src\test\item\animation_test.h" />
     <ClInclude Include="src\test\item\camera_test.h" />
     <ClInclude Include="src\test\item\console_screen_buffer_manager_test.h" />
+    <ClInclude Include="src\test\item\flickering_research.h" />
     <ClInclude Include="src\test\item\framebuffer_test.h" />
     <ClInclude Include="src\test\item\key_test.h" />
     <ClInclude Include="src\test\item\rect_test.h" />
@@ -127,6 +126,7 @@
     <ClInclude Include="src\test\item\renderer_test.h" />
     <ClInclude Include="src\test\item\texture_frame_test.h" />
     <ClInclude Include="src\test\item\texture_test.h" />
+    <ClInclude Include="src\test\item\visible_resource_research.h" />
     <ClInclude Include="src\test\item\window_input_test.h" />
     <ClInclude Include="src\test\scene\DevelopScene.h" />
     <ClInclude Include="src\test\scene\r2research_RootScene.h" />

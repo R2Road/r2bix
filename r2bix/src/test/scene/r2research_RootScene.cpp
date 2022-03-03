@@ -4,8 +4,8 @@
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 
-#include "research/flickering_research.h"
-#include "research/visible_resource_research.h"
+#include "test/item/flickering_research.h"
+#include "test/item/visible_resource_research.h"
 
 #include "test/scene/DevelopScene.h"
 #include "test/scene/TestScene.h"
