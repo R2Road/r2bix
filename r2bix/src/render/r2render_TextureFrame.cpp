@@ -13,6 +13,6 @@ namespace r2render
 		const auto target_x = x + mVisibleRect.GetOrigin().GetX();
 		const auto target_y = y + mVisibleRect.GetOrigin().GetY();
 
-		return mTexture->Get( target_x, y + target_y );
+		return mTexture->Get( target_x, target_y );
 	}
 }
