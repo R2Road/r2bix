@@ -80,6 +80,13 @@ namespace texture_frame_test
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
 
+				std::cout << r2::tab2 << "rect :"
+					<< " " << texture_frame.GetMinX()
+					<< " " << texture_frame.GetMinY()
+					<< " " << texture_frame.GetMaxX()
+					<< " " << texture_frame.GetMaxY()
+					<< r2::linefeed2;
+
 				EXPECT_EQ( texture.Get( 0, 0 ), texture_frame.Get( 0, 0 ) );
 				EXPECT_EQ( '1', texture_frame.Get( 0, 0 ) );
 

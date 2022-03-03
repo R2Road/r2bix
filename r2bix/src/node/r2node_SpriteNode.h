@@ -9,7 +9,7 @@ namespace r2base
 
 namespace r2component
 {
-	class TextRenderComponent;
+	class TextureFrameRenderComponent;
 	class TransformComponent;
 }
 
@@ -36,6 +36,6 @@ namespace r2node
 
 	public:
 		r2component::TransformComponent* mTransformComponent;
-		r2component::TextRenderComponent* mTextRenderComponent;
+		r2component::TextureFrameRenderComponent* mTextureFrameRenderComponent;
 	};
 }

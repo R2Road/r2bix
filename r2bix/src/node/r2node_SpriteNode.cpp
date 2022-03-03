@@ -2,14 +2,14 @@
 #include "r2node_SpriteNode.h"
 
 #include "base/r2base_Director.h"
-#include "component/r2component_TextRenderComponent.h"
+#include "component/r2component_TextureFrameRenderComponent.h"
 #include "component/r2component_TransformComponent.h"
 
 namespace r2node
 {
 	SpriteNode::SpriteNode( r2base::Director& director ) : r2base::Node( director )
 		, mTransformComponent( nullptr )
-		, mTextRenderComponent( nullptr )
+		, mTextureFrameRenderComponent( nullptr )
 	{}
 
 	std::unique_ptr<SpriteNode> SpriteNode::Create( r2base::Director& director, r2render::TextureFrame* const texture_frame )
@@ -21,7 +21,7 @@ namespace r2node
 		}
 		else
 		{
-			// do something
+			ret->mTextureFrameRenderComponent->SetTextureFrame( texture_frame );
 		}
 
 		return ret;
@@ -33,10 +33,10 @@ namespace r2node
 		mTransformComponent = transform_component.get();
 		AddComponent( std::move( transform_component ) );
 
-		auto text_render_component = r2component::TextRenderComponent::Create( *this );
-		text_render_component->mTransformComponent = mTransformComponent;
-		mTextRenderComponent = text_render_component.get();
-		AddComponent( std::move( text_render_component ) );
+		auto texture_frame_render_component = r2component::TextureFrameRenderComponent::Create( *this );
+		texture_frame_render_component->mTransformComponent = mTransformComponent;
+		mTextureFrameRenderComponent = texture_frame_render_component.get();
+		AddComponent( std::move( texture_frame_render_component ) );
 
 		return true;
 	}
