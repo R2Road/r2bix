@@ -5,25 +5,12 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "test/r2test_eTestEndAction.h"
 #include "r2/r2_RectInt.h"
+#include "test/r2test_eTestEndAction.h"
+#include "test/r2test_Utility.h"
 
 namespace rect_test
 {
-	void DrawRect( const int offset_y, const r2::RectInt& rect, const char c )
-	{
-		HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-
-		for( int y = rect.GetMinY(); rect.GetMaxY() >= y; ++y )
-		{
-			for( int x = rect.GetMinX(); rect.GetMaxX() >= x; ++x )
-			{
-				SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( offset_y + y ) } );
-
-				std::cout << c;
-			}
-		}
-	}
 	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -57,10 +44,10 @@ namespace rect_test
 			{
 				const int offset_y = 13;
 
-				DrawRect( offset_y, rect_0, '0' );
-				DrawRect( offset_y, rect_1, '1' );
-				DrawRect( offset_y, rect_2, '2' );
-				DrawRect( offset_y, rect_3, '3' );
+				r2test::Utility::DrawRect( offset_y, rect_0, '0' );
+				r2test::Utility::DrawRect( offset_y, rect_1, '1' );
+				r2test::Utility::DrawRect( offset_y, rect_2, '2' );
+				r2test::Utility::DrawRect( offset_y, rect_3, '3' );
 
 				SetConsoleCursorPosition(
 					GetStdHandle( STD_OUTPUT_HANDLE )

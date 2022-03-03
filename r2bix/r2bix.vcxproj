@@ -66,6 +66,7 @@
     <ClCompile Include="src\test\item\texture_test.cpp" />
     <ClCompile Include="src\test\item\visible_resource_research.cpp" />
     <ClCompile Include="src\test\item\window_input_test.cpp" />
+    <ClCompile Include="src\test\r2test_Utility.cpp" />
     <ClCompile Include="src\test\scene\DevelopScene.cpp" />
     <ClCompile Include="src\test\scene\r2research_RootScene.cpp" />
     <ClCompile Include="src\test\scene\r2test_CameraScene.cpp" />
@@ -130,6 +131,7 @@
     <ClInclude Include="src\test\item\window_input_test.h" />
     <ClInclude Include="src\test\r2test_eTestEndAction.h" />
     <ClInclude Include="src\test\r2test_iTest.h" />
+    <ClInclude Include="src\test\r2test_Utility.h" />
     <ClInclude Include="src\test\scene\DevelopScene.h" />
     <ClInclude Include="src\test\scene\r2research_RootScene.h" />
     <ClInclude Include="src\test\scene\r2test_CameraScene.h" />

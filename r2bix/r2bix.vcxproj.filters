@@ -194,6 +194,9 @@
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp">
       <Filter>project_2048</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\r2test_Utility.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -379,6 +382,9 @@
     </ClInclude>
     <ClInclude Include="src\p2048\p2048table_TextureTable.h">
       <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\r2test_Utility.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
