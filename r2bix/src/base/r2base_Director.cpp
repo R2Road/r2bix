@@ -8,7 +8,8 @@
 namespace r2base
 {
 	Director::Director() :
-		mFPSTimer()
+		mScreenBufferManager()
+		, mFPSTimer()
 		, mbAbort( false )
 		, mSceneNode()
 	{}
@@ -26,12 +27,14 @@ namespace r2base
 			{
 				mSceneNode->Update();
 				mSceneNode->Render();
+
+				mScreenBufferManager.Swap();
 			}
 		}
 	}
 
 	void Director::ClearScreen()
 	{
-		system( "cls" );
+		mScreenBufferManager.ClearCurrentBuffer();
 	}
 }

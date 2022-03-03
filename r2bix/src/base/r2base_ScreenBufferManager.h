@@ -16,6 +16,7 @@ namespace r2base
 		void release();
 
 	public:
+		void ClearCurrentBuffer();
 		void Swap();
 
 	private:
