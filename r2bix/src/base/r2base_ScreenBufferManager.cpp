@@ -6,7 +6,16 @@
 
 namespace r2base
 {
-	ScreenBufferManager::ScreenBufferManager() : mBufferHandle4First( INVALID_HANDLE_VALUE ), mBufferHandle4Second( INVALID_HANDLE_VALUE ), mbFirst( true )
+	ScreenBufferManager::ScreenBufferManager() :
+		mCoutOriginalStreamBuffer( nullptr )
+
+		, mBufferHandle4First( INVALID_HANDLE_VALUE )
+		, mCoutBufferRedirector4First( nullptr )
+
+		, mBufferHandle4Second( INVALID_HANDLE_VALUE )
+		, mCoutBufferRedirector4Second( nullptr )
+
+		, mbFirst( true )
 	{
 		init();
 	}
@@ -23,14 +32,19 @@ namespace r2base
 		// SetConsoleActiveScreenBuffer에 INVALID_HANDLE_VALUE 가 들어가면 아무 작동도 하지 않는다.
 		//
 
+		mCoutOriginalStreamBuffer = std::cout.rdbuf();
+
+
 		mBufferHandle4First = GetStdHandle( STD_OUTPUT_HANDLE );
 		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
+		mCoutBufferRedirector4First = CoutBufferRedirector( mBufferHandle4First );
 
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};
 		if( !GetConsoleScreenBufferInfo( mBufferHandle4First, &csbi ) )
 		{
 			assert( false && "Failed : GetConsoleScreenBufferInfo" );
 		}
+
 
 		mBufferHandle4Second = CreateConsoleScreenBuffer(
 			GENERIC_READ | GENERIC_WRITE
@@ -40,6 +54,7 @@ namespace r2base
 			, nullptr
 		);
 		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
+		mCoutBufferRedirector4Second = CoutBufferRedirector( mBufferHandle4Second );
 
 		if( !SetConsoleScreenBufferSize( mBufferHandle4Second, csbi.dwSize ) )
 		{
@@ -52,6 +67,7 @@ namespace r2base
 		if( INVALID_HANDLE_VALUE != mBufferHandle4First )
 		{
 			SetConsoleActiveScreenBuffer( mBufferHandle4First );
+			std::cout.rdbuf( mCoutOriginalStreamBuffer );
 		}
 
 		if( INVALID_HANDLE_VALUE != mBufferHandle4Second )
@@ -89,10 +105,12 @@ namespace r2base
 		if( mbFirst )
 		{
 			SetConsoleActiveScreenBuffer( mBufferHandle4First );
+			std::cout.rdbuf( &mCoutBufferRedirector4First );
 		}
 		else
 		{
 			SetConsoleActiveScreenBuffer( mBufferHandle4Second );
+			std::cout.rdbuf( &mCoutBufferRedirector4Second );
 		}
 	}
 }

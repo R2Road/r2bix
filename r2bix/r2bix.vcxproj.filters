@@ -194,6 +194,9 @@
     <ClCompile Include="src\base\r2base_FPSTimer.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="src\base\r2base_CoutBufferRedirector.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -372,6 +375,9 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2base_FPSTimer.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2base_CoutBufferRedirector.h">
       <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
