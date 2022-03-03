@@ -96,7 +96,7 @@ namespace r2base
 
 		FillConsoleOutputCharacter( CurrentBufferHandle, TEXT( ' ' ), length, top_left, &out_result );
 
-		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), top_left );
+		SetConsoleCursorPosition( CurrentBufferHandle, top_left );
 	}
 	void ScreenBufferManager::Swap()
 	{
