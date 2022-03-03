@@ -101,9 +101,9 @@ namespace renderable_test
 			std::cout << "draw offset : " << off_set_point.GetX() << "   " << off_set_point.GetY() << r2::linefeed2;
 
 			{
-				for( int y = render_target_space_intersect_rect.GetMinY(), ty = 0; render_target_space_intersect_rect.GetMaxY() > y; ++y, ++ty )
+				for( int y = render_target_space_intersect_rect.GetMinY(), ty = 0; render_target_space_intersect_rect.GetMaxY() >= y; ++y, ++ty )
 				{
-					for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() > x; ++x, ++tx )
+					for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() >= x; ++x, ++tx )
 					{
 						render_target->Fill(
 							x, y
@@ -152,9 +152,9 @@ namespace renderable_test
 				std::cout << r2::tab << "+ Show : Renderable Object Rect( +, O ), Camera Rect( #, X )" << r2::linefeed2;
 
 				{
-					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
+					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() >= y; ++y )
 					{
-						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
+						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
 						{
 							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
 							std::cout << '#';

@@ -85,9 +85,9 @@ namespace camera_test
 			{
 				std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
 
-				for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
+				for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() >= y; ++y )
 				{
-					for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
+					for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
 					{
 						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
 						std::cout << '#';
@@ -137,9 +137,9 @@ namespace camera_test
 				{
 					std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
 
-					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() > y; ++y )
+					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() >= y; ++y )
 					{
-						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() > x; ++x )
+						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
 						{
 							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
 							std::cout << '#';

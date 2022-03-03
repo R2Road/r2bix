@@ -8,7 +8,7 @@ namespace r2render
 		, mCameraSpaceRect()
 		, mWorldSpaceRect()
 	{
-		buildRect( mPosition, size );
+		buildRect( mPosition, { size.GetWidth() - 1, size.GetHeight() - 1 } );
 	}
 
 	void Camera::SetPoint( const r2::RectInt::MyPointT& point )
