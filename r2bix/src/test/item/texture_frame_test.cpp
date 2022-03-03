@@ -9,6 +9,24 @@
 
 #include "p2048/p2048table_TextureTable.h"
 
+namespace
+{
+	const r2render::Texture& GetDummyTexture()
+	{
+		static const r2render::Texture texture( 7,
+			"1111111"
+			"1222222"
+			"1233333"
+			"1234444"
+			"1234555"
+			"1234566"
+			"1234567"
+		);
+
+		return texture;
+	}
+}
+
 namespace texture_frame_test
 {
 	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
@@ -26,18 +44,10 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			r2render::Texture texture( 7,
-				"1111111"
-				"1222222"
-				"1233333"
-				"1234444"
-				"1234555"
-				"1234566"
-				"1234567"
-			);
+			const r2render::Texture& texture = GetDummyTexture();
 
 			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2render::Texture texture( 7, ... )" << r2::linefeed;
+			std::cout << r2::tab2 << "const r2render::Texture& texture = GetDummyTexture();" << r2::linefeed;
 
 			std::cout << r2::split;
 
@@ -117,20 +127,12 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			r2render::Texture texture( 7,
-				"1111111"
-				"1222222"
-				"1233333"
-				"1234444"
-				"1234555"
-				"1234566"
-				"1234567"
-			);
+			const r2render::Texture& texture = GetDummyTexture();
 			r2render::TextureFrame texture_frame( &texture );
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture texture( 7, ... )" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2render::Texture& texture = GetDummyTexture();" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
 
 				std::size_t cur_x = 0;
@@ -203,19 +205,12 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			r2render::Texture texture( 6,
-				"111111"
-				"122222"
-				"123333"
-				"123444"
-				"123455"
-				"123456"
-			);
+			const r2render::Texture& texture = GetDummyTexture();
 			r2render::TextureFrame texture_frame( &texture );
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture texture( 6, ... )" << r2::linefeed;
+				std::cout << r2::tab2 << "const r2render::Texture& texture = GetDummyTexture();" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
 
 				std::size_t cur_x = 0;
