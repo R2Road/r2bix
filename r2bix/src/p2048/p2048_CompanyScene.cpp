@@ -12,7 +12,7 @@
 #include "node/r2node_SpriteNode.h"
 #include "render/r2render_iRenderable.h"
 
-#include "scene/DevelopScene.h"
+#include "test/scene/DevelopScene.h"
 
 namespace p2048
 {

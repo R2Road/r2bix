@@ -1,31 +1,26 @@
 #include "pch.h"
-#include "r2test_CameraScene.h"
+#include "r2test_FrameBufferScene.h"
 
 #include "base/r2base_Director.h"
 #include "base/r2base_eTestEndAction.h"
 
 #include "r2test_RootScene.h"
+#include "TestScene.h"
 
-#include "scene/TestScene.h"
-
-#include "test/item/camera_test.h"
+#include "test/item/framebuffer_test.h"
 
 namespace r2test
 {
-	r2node::SceneNodeUp CameraScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp FrameBufferScene::Create( r2base::Director& director )
 	{
 		TestSceneUp ret( new ( std::nothrow ) TestScene(
 			director
 			, GetTitle(),
-					"> 카메라는 무언가를 할 필요 없다."
-			"\n"	"> 요구하는 위치에 자리하고, 그 데이터를 잘 가지고만 있으면 된다."
-			"\n"	"> 뭐 하려고 하지마."
+			"> ..."
 		) );
 
 		{
-			ret->AddChild( '1', camera_test::CameraPosition::GetInstance() );
-			ret->AddChild( '2', camera_test::CameraRect::GetInstance() );
-			ret->AddChild( '3', camera_test::CameraMove::GetInstance() );
+			ret->AddChild( '1', framebuffer_test::Basic::GetInstance() );
 
 
 			ret->AddSplit();

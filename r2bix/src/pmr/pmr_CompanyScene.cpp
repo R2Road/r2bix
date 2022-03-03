@@ -5,7 +5,7 @@
 
 #include "base/r2base_Director.h"
 
-#include "scene/DevelopScene.h"
+#include "test/scene/DevelopScene.h"
 
 namespace pmr
 {

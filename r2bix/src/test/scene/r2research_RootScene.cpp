@@ -7,8 +7,8 @@
 #include "research/flickering_research.h"
 #include "research/visible_resource_research.h"
 
-#include "scene/DevelopScene.h"
-#include "scene/TestScene.h"
+#include "test/scene/DevelopScene.h"
+#include "test/scene/TestScene.h"
 
 namespace r2research
 {

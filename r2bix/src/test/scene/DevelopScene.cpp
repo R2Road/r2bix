@@ -6,10 +6,10 @@
 
 #include "pmr/pmr_CompanyScene.h"
 #include "p2048/p2048_CompanyScene.h"
-#include "scene/research/r2research_RootScene.h"
-#include "scene/test/r2test_RootScene.h"
+#include "r2research_RootScene.h"
+#include "r2test_RootScene.h"
 
-#include "scene/TestScene.h"
+#include "TestScene.h"
 
 r2node::SceneNodeUp DevelopScene::Create( r2base::Director& director )
 {
