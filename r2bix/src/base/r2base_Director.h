@@ -3,12 +3,8 @@
 #include <memory>
 
 #include "base/r2base_FPSTimer.h"
+#include "node/r2node_SceneNode.h"
 #include "base/r2base_ScreenBufferManager.h"
-
-namespace r2node
-{
-	using SceneNodeUp = std::unique_ptr<class SceneNode>;
-}
 
 namespace r2base
 {
