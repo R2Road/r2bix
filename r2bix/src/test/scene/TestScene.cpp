@@ -5,8 +5,8 @@
 #include <conio.h>
 
 #include "base/r2base_Director.h"
-#include "base/r2base_eTestEndAction.h"
-#include "base/r2base_iTest.h"
+#include "test/r2test_eTestEndAction.h"
+#include "test/r2test_iTest.h"
 
 namespace
 {

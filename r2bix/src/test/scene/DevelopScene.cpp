@@ -2,7 +2,7 @@
 #include "DevelopScene.h"
 
 #include "base/r2base_Director.h"
-#include "base/r2base_eTestEndAction.h"
+#include "test/r2test_eTestEndAction.h"
 
 #include "pmr/pmr_CompanyScene.h"
 #include "p2048/p2048_CompanyScene.h"

@@ -2,7 +2,7 @@
 #include "r2test_InputScene.h"
 
 #include "base/r2base_Director.h"
-#include "base/r2base_eTestEndAction.h"
+#include "test/r2test_eTestEndAction.h"
 
 #include "r2test_RootScene.h"
 

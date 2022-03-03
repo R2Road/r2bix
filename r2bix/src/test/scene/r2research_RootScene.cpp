@@ -2,7 +2,7 @@
 #include "r2research_RootScene.h"
 
 #include "base/r2base_Director.h"
-#include "base/r2base_eTestEndAction.h"
+#include "test/r2test_eTestEndAction.h"
 
 #include "test/item/flickering_research.h"
 #include "test/item/visible_resource_research.h"

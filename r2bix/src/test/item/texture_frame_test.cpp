@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "texture_frame_test.h"
 
-#include "base/r2base_eTestEndAction.h"
+#include "test/r2test_eTestEndAction.h"
 #include "base/r2base_Inspector.h"
 
 #include "render/r2render_Texture.h"

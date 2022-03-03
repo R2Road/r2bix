@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/r2base_iTest.h"
+#include "test/r2test_iTest.h"
 #include "base/r2base_Singleton.h"
 
 namespace console_screen_buffer_manager_test

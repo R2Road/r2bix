@@ -5,7 +5,7 @@
 #include <Windows.h>
 
 #include "base/r2base_Director.h"
-#include "base/r2base_eTestEndAction.h"
+#include "test/r2test_eTestEndAction.h"
 
 #include "base/r2base_FPSTimer.h"
 #include "render/r2render_iRenderable.h"
