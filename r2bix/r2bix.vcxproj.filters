@@ -43,25 +43,13 @@
     <Filter Include="node">
       <UniqueIdentifier>{21b9e532-178c-45e7-b937-a1385b5865b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\item">
+      <UniqueIdentifier>{04b1f1de-fe5f-4d90-8230-5cb420bae473}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\test\animation_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\camera_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\key_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\rect_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\renderer_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2\r2_PointInt.cpp">
       <Filter>r2</Filter>
     </ClCompile>
@@ -77,14 +65,8 @@
     <ClCompile Include="src\research\flickering_research.cpp">
       <Filter>research</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\framebuffer_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\research\visible_resource_research.cpp">
       <Filter>research</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\window_input_test.cpp">
-      <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\input\r2input_Constant.cpp">
       <Filter>input</Filter>
@@ -122,17 +104,11 @@
     <ClCompile Include="src\scene\test\r2test_RootScene.cpp">
       <Filter>scene\test</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\console_screen_buffer_manager_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp">
       <Filter>render</Filter>
     </ClCompile>
     <ClCompile Include="src\scene\test\r2test_RenderableScene.cpp">
       <Filter>scene\test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\renderable_test.cpp">
-      <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\render\r2render_FrameBuffer.cpp">
       <Filter>render</Filter>
@@ -149,14 +125,8 @@
     <ClCompile Include="src\scene\test\r2test_TextureScene.cpp">
       <Filter>scene\test</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\texture_test.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\r2render_TextureFrame.cpp">
       <Filter>render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\texture_frame_test.cpp">
-      <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp">
       <Filter>project_mini_rogue</Filter>
@@ -197,24 +167,42 @@
     <ClCompile Include="src\base\r2base_CoutBufferRedirector.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\item\animation_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\camera_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\console_screen_buffer_manager_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\framebuffer_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\key_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\rect_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\renderable_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\renderer_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\texture_frame_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\texture_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\item\window_input_test.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\test\animation_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\camera_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\key_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\rect_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\renderer_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2\r2_Point.h">
       <Filter>r2</Filter>
     </ClInclude>
@@ -239,14 +227,8 @@
     <ClInclude Include="src\research\flickering_research.h">
       <Filter>research</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\framebuffer_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\research\visible_resource_research.h">
       <Filter>research</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\window_input_test.h">
-      <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\input\r2input_Constant.h">
       <Filter>input</Filter>
@@ -293,17 +275,11 @@
     <ClInclude Include="src\scene\test\r2test_RootScene.h">
       <Filter>scene\test</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\console_screen_buffer_manager_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\render\r2_GridIndexConverter.h">
       <Filter>render</Filter>
     </ClInclude>
     <ClInclude Include="src\scene\test\r2test_RenderableScene.h">
       <Filter>scene\test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\renderable_test.h">
-      <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\render\r2render_FrameBuffer.h">
       <Filter>render</Filter>
@@ -326,14 +302,8 @@
     <ClInclude Include="src\scene\test\r2test_TextureScene.h">
       <Filter>scene\test</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\texture_test.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\render\r2render_TextureFrame.h">
       <Filter>render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\texture_frame_test.h">
-      <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2base_Inspector.h">
       <Filter>base</Filter>
@@ -379,6 +349,39 @@
     </ClInclude>
     <ClInclude Include="src\base\r2base_CoutBufferRedirector.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\animation_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\camera_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\console_screen_buffer_manager_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\framebuffer_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\key_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\rect_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\renderable_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\renderer_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\texture_frame_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\texture_test.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\window_input_test.h">
+      <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

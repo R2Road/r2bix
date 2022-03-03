@@ -8,8 +8,8 @@
 
 #include "scene/TestScene.h"
 
-#include "test/texture_test.h"
-#include "test/texture_frame_test.h"
+#include "test/item/texture_test.h"
+#include "test/item/texture_frame_test.h"
 
 namespace r2test
 {

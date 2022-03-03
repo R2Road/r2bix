@@ -8,8 +8,8 @@
 
 #include "scene/TestScene.h"
 
-#include "test/key_test.h"
-#include "test/window_input_test.h"
+#include "test/item/key_test.h"
+#include "test/item/window_input_test.h"
 
 namespace r2test
 {

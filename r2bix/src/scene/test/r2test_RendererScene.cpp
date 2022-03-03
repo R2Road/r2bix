@@ -8,7 +8,7 @@
 
 #include "scene/TestScene.h"
 
-#include "test/renderer_test.h"
+#include "test/item/renderer_test.h"
 
 namespace r2test
 {

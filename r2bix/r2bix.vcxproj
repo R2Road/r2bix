@@ -64,17 +64,17 @@
     <ClCompile Include="src\scene\test\r2test_RendererScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_RootScene.cpp" />
     <ClCompile Include="src\scene\test\r2test_TextureScene.cpp" />
-    <ClCompile Include="src\test\animation_test.cpp" />
-    <ClCompile Include="src\test\camera_test.cpp" />
-    <ClCompile Include="src\test\console_screen_buffer_manager_test.cpp" />
-    <ClCompile Include="src\test\framebuffer_test.cpp" />
-    <ClCompile Include="src\test\key_test.cpp" />
-    <ClCompile Include="src\test\rect_test.cpp" />
-    <ClCompile Include="src\test\renderable_test.cpp" />
-    <ClCompile Include="src\test\renderer_test.cpp" />
-    <ClCompile Include="src\test\texture_frame_test.cpp" />
-    <ClCompile Include="src\test\texture_test.cpp" />
-    <ClCompile Include="src\test\window_input_test.cpp" />
+    <ClCompile Include="src\test\item\animation_test.cpp" />
+    <ClCompile Include="src\test\item\camera_test.cpp" />
+    <ClCompile Include="src\test\item\console_screen_buffer_manager_test.cpp" />
+    <ClCompile Include="src\test\item\framebuffer_test.cpp" />
+    <ClCompile Include="src\test\item\key_test.cpp" />
+    <ClCompile Include="src\test\item\rect_test.cpp" />
+    <ClCompile Include="src\test\item\renderable_test.cpp" />
+    <ClCompile Include="src\test\item\renderer_test.cpp" />
+    <ClCompile Include="src\test\item\texture_frame_test.cpp" />
+    <ClCompile Include="src\test\item\texture_test.cpp" />
+    <ClCompile Include="src\test\item\window_input_test.cpp" />
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -127,17 +127,17 @@
     <ClInclude Include="src\scene\test\r2test_RendererScene.h" />
     <ClInclude Include="src\scene\test\r2test_RootScene.h" />
     <ClInclude Include="src\scene\test\r2test_TextureScene.h" />
-    <ClInclude Include="src\test\animation_test.h" />
-    <ClInclude Include="src\test\camera_test.h" />
-    <ClInclude Include="src\test\console_screen_buffer_manager_test.h" />
-    <ClInclude Include="src\test\framebuffer_test.h" />
-    <ClInclude Include="src\test\key_test.h" />
-    <ClInclude Include="src\test\rect_test.h" />
-    <ClInclude Include="src\test\renderable_test.h" />
-    <ClInclude Include="src\test\renderer_test.h" />
-    <ClInclude Include="src\test\texture_frame_test.h" />
-    <ClInclude Include="src\test\texture_test.h" />
-    <ClInclude Include="src\test\window_input_test.h" />
+    <ClInclude Include="src\test\item\animation_test.h" />
+    <ClInclude Include="src\test\item\camera_test.h" />
+    <ClInclude Include="src\test\item\console_screen_buffer_manager_test.h" />
+    <ClInclude Include="src\test\item\framebuffer_test.h" />
+    <ClInclude Include="src\test\item\key_test.h" />
+    <ClInclude Include="src\test\item\rect_test.h" />
+    <ClInclude Include="src\test\item\renderable_test.h" />
+    <ClInclude Include="src\test\item\renderer_test.h" />
+    <ClInclude Include="src\test\item\texture_frame_test.h" />
+    <ClInclude Include="src\test\item\texture_test.h" />
+    <ClInclude Include="src\test\item\window_input_test.h" />
     <ClInclude Include="src\utility\r2utility_WindowUtil.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

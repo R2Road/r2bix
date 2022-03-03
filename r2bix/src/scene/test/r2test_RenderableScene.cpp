@@ -6,7 +6,7 @@
 #include "scene/TestScene.h"
 
 #include "r2test_RootScene.h"
-#include "test/renderable_test.h"
+#include "test/item/renderable_test.h"
 
 namespace r2test
 {

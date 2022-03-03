@@ -8,7 +8,7 @@
 
 #include "scene/TestScene.h"
 
-#include "test/framebuffer_test.h"
+#include "test/item/framebuffer_test.h"
 
 namespace r2test
 {
