@@ -7,6 +7,8 @@
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"
 
+#include "p2048/p2048table_TextureTable.h"
+
 namespace texture_frame_test
 {
 	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
@@ -286,6 +288,62 @@ namespace texture_frame_test
 					for( int x = 0; x < texture_frame.GetWidth(); ++x )
 					{
 						std::cout << texture_frame.Get( x, y );
+					}
+
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2test::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2test::iTest::TitleFunc VisibleRect_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TextureFrame : Visible Rect 3";
+		};
+	}
+	r2test::iTest::DoFunc VisibleRect_3::GetDoFunction()
+	{
+		return []( r2base::Director& )->r2test::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			const r2render::TextureFrame* const texture_frame = p2048table::TextureTable::GetInstance().GetTitleTexture();
+
+			{
+				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab2 << "const r2render::TextureFrame* const texture_frame = p2048table::TextureTable::GetInstance().GetTitleTexture();" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Process" << r2::linefeed2;
+
+				std::cout << r2::tab2 << "rect :"
+					<< " " << texture_frame->GetMinX()
+					<< " " << texture_frame->GetMinY()
+					<< " " << texture_frame->GetMaxX()
+					<< " " << texture_frame->GetMaxY()
+					<< r2::linefeed2;
+
+				EXPECT_EQ( '8', texture_frame->Get( 62, 6 ) );
+				std::cout << r2::linefeed;
+
+				for( int y = 0; y < texture_frame->GetHeight(); ++y )
+				{
+					for( int x = 0; x < texture_frame->GetWidth(); ++x )
+					{
+						std::cout << texture_frame->Get( x, y );
 					}
 
 					std::cout << r2::linefeed;

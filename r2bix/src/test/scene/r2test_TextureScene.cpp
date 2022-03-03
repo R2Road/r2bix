@@ -42,6 +42,7 @@ namespace r2test
 			ret->AddChild( 'a', texture_frame_test::Basic::GetInstance() );
 			ret->AddChild( 's', texture_frame_test::VisibleRect_1::GetInstance() );
 			ret->AddChild( 'd', texture_frame_test::VisibleRect_2::GetInstance() );
+			ret->AddChild( 'f', texture_frame_test::VisibleRect_3::GetInstance() );
 
 
 			ret->AddSplit();
