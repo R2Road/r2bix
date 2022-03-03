@@ -22,7 +22,7 @@ r2node::SceneNodeUp DevelopScene::Create( r2base::Director& director )
 		ret->AddChild(
 			27
 			, []()->const char* { return "Exit"; }
-			, []( r2base::Director& )->r2base::eTestEndAction { return r2base::eTestEndAction::Exit; }
+			, []( r2base::Director& )->r2test::eTestEndAction { return r2test::eTestEndAction::Exit; }
 		);
 
 		ret->AddLineFeed();
@@ -30,19 +30,19 @@ r2node::SceneNodeUp DevelopScene::Create( r2base::Director& director )
 		ret->AddChild(
 			'1'
 			, []()->const char* { return r2test::RootScene::GetTitle(); }
-			, [&director]( r2base::Director& )->r2base::eTestEndAction
+			, [&director]( r2base::Director& )->r2test::eTestEndAction
 			{
 				director.Setup( r2test::RootScene::Create( director ) );
-				return r2base::eTestEndAction::None;
+				return r2test::eTestEndAction::None;
 			}
 		);
 		ret->AddChild(
 			'2'
 			, []()->const char* { return r2research::RootScene::GetTitle(); }
-			, [&director]( r2base::Director& )->r2base::eTestEndAction
+			, [&director]( r2base::Director& )->r2test::eTestEndAction
 			{
 				director.Setup( r2research::RootScene::Create( director ) );
-				return r2base::eTestEndAction::None;
+				return r2test::eTestEndAction::None;
 			}
 		);
 
@@ -51,19 +51,19 @@ r2node::SceneNodeUp DevelopScene::Create( r2base::Director& director )
 		ret->AddChild(
 			'z'
 			, []()->const char* { return "Game : 2048"; }
-			, [&director]( r2base::Director& )->r2base::eTestEndAction
+			, [&director]( r2base::Director& )->r2test::eTestEndAction
 			{
 				director.Setup( p2048::CompanyScene::Create( director ) );
-				return r2base::eTestEndAction::None;
+				return r2test::eTestEndAction::None;
 			}
 		);
 		ret->AddChild(
 			32
 			, []()->const char* { return "Game : Mini Rogue"; }
-			, [&director]( r2base::Director& )->r2base::eTestEndAction
+			, [&director]( r2base::Director& )->r2test::eTestEndAction
 			{
 				director.Setup( pmr::CompanyScene::Create( director ) );
-				return r2base::eTestEndAction::None;
+				return r2test::eTestEndAction::None;
 			}
 		);
 	}

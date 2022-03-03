@@ -9,16 +9,16 @@
 
 namespace texture_frame_test
 {
-	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Basic";
 		};
 	}
-	r2base::iTest::DoFunc Basic::GetDoFunction()
+	r2test::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& )->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -94,22 +94,22 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2base::iTest::TitleFunc VisibleRect_1::GetTitleFunction() const
+	r2test::iTest::TitleFunc VisibleRect_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 1";
 		};
 	}
-	r2base::iTest::DoFunc VisibleRect_1::GetDoFunction()
+	r2test::iTest::DoFunc VisibleRect_1::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& )->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -180,22 +180,22 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2base::iTest::TitleFunc VisibleRect_2::GetTitleFunction() const
+	r2test::iTest::TitleFunc VisibleRect_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 2";
 		};
 	}
-	r2base::iTest::DoFunc VisibleRect_2::GetDoFunction()
+	r2test::iTest::DoFunc VisibleRect_2::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& )->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -294,7 +294,7 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 }

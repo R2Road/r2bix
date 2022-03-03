@@ -5,7 +5,7 @@
 
 namespace framebuffer_test
 {
-	class Basic : public r2base::iTest, public r2base::SingleTon<Basic>
+	class Basic : public r2test::iTest, public r2base::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

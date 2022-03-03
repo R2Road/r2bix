@@ -41,10 +41,10 @@ namespace r2research
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Develop Menu"; }
-				, [&director]( r2base::Director& )->r2base::eTestEndAction
+				, [&director]( r2base::Director& )->r2test::eTestEndAction
 				{
 					director.Setup( DevelopScene::Create( director ) );
-					return r2base::eTestEndAction::None;
+					return r2test::eTestEndAction::None;
 				}
 			);
 		}

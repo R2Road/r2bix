@@ -10,16 +10,16 @@
 
 namespace visible_resource_research
 {
-	r2base::iTest::TitleFunc DrawWithPosition::GetTitleFunction() const
+	r2test::iTest::TitleFunc DrawWithPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Draw With Position";
 		};
 	}
-	r2base::iTest::DoFunc DrawWithPosition::GetDoFunction()
+	r2test::iTest::DoFunc DrawWithPosition::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& )->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -55,7 +55,7 @@ namespace visible_resource_research
 
 			std::cout << r2::split;
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 }

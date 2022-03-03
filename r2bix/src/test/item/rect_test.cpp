@@ -24,16 +24,16 @@ namespace rect_test
 			}
 		}
 	}
-	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Rect : Basic";
 		};
 	}
-	r2base::iTest::DoFunc Basic::GetDoFunction()
+	r2test::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& )->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -60,7 +60,7 @@ namespace rect_test
 
 			std::cout << r2::split;
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 }

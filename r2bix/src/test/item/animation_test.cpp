@@ -63,14 +63,14 @@ namespace animation_test
 
 	Basic::Basic() : mCamera( { 0, 0 }, { 60, 30 } ), mRenderer()
 	{}
-	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Animation - Basic";
 		};
 	}
-	r2base::iTest::DoFunc Basic::GetDoFunction()
+	r2test::iTest::DoFunc Basic::GetDoFunction()
 	{
 		GetInstance().mRenderer.Clear();
 		GetInstance().mRenderer.SetCamera( &mCamera );
@@ -90,7 +90,7 @@ namespace animation_test
 			GetInstance().mRenderer.Add( &tr );
 		}
 
-		return [&rd = GetInstance().mRenderer, &cam = mCamera]( r2base::Director& )->r2base::eTestEndAction
+		return [&rd = GetInstance().mRenderer, &cam = mCamera]( r2base::Director& )->r2test::eTestEndAction
 		{
 			r2base::FPSTimer frame_manager( 30u );
 			frame_manager.Reset();
@@ -131,7 +131,7 @@ namespace animation_test
 				cam.SetPoint( x, y );
 			}
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 }

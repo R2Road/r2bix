@@ -12,16 +12,16 @@
 
 namespace flickering_research
 {
-	r2base::iTest::TitleFunc OneByOne::GetTitleFunction() const
+	r2test::iTest::TitleFunc OneByOne::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print One By One";
 		};
 	}
-	r2base::iTest::DoFunc OneByOne::GetDoFunction()
+	r2test::iTest::DoFunc OneByOne::GetDoFunction()
 	{
-		return []( r2base::Director& director )->r2base::eTestEndAction
+		return []( r2base::Director& director )->r2test::eTestEndAction
 		{
 			r2render::Texture visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -63,19 +63,19 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2base::eTestEndAction::None;
+			return r2test::eTestEndAction::None;
 		};
 	}
-	r2base::iTest::TitleFunc OneByOne_WithOut_CLS::GetTitleFunction() const
+	r2test::iTest::TitleFunc OneByOne_WithOut_CLS::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print One By One WithOut CLS";
 		};
 	}
-	r2base::iTest::DoFunc OneByOne_WithOut_CLS::GetDoFunction()
+	r2test::iTest::DoFunc OneByOne_WithOut_CLS::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& )->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[Any Key] End" << r2::linefeed;
@@ -120,22 +120,22 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2base::eTestEndAction::None;
+			return r2test::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2base::iTest::TitleFunc LineByLine::GetTitleFunction() const
+	r2test::iTest::TitleFunc LineByLine::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Line By Line";
 		};
 	}
-	r2base::iTest::DoFunc LineByLine::GetDoFunction()
+	r2test::iTest::DoFunc LineByLine::GetDoFunction()
 	{
-		return []( r2base::Director& director )->r2base::eTestEndAction
+		return []( r2base::Director& director )->r2test::eTestEndAction
 		{
 			r2render::Texture visible_resource( 19, 19 );
 			visible_resource.FillAll( 'a' );
@@ -168,22 +168,22 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2base::eTestEndAction::None;
+			return r2test::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2base::iTest::TitleFunc PageByPage::GetTitleFunction() const
+	r2test::iTest::TitleFunc PageByPage::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page";
 		};
 	}
-	r2base::iTest::DoFunc PageByPage::GetDoFunction()
+	r2test::iTest::DoFunc PageByPage::GetDoFunction()
 	{
-		return []( r2base::Director& director )->r2base::eTestEndAction
+		return []( r2base::Director& director )->r2test::eTestEndAction
 		{
 			r2render::FrameBuffer frame_buffer( 5, 5 );
 			frame_buffer.FillAll( 'c' );
@@ -213,22 +213,22 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2base::eTestEndAction::None;
+			return r2test::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2base::iTest::TitleFunc PageByPage_WithOut_CLS_1::GetTitleFunction() const
+	r2test::iTest::TitleFunc PageByPage_WithOut_CLS_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page Without CLS 1";
 		};
 	}
-	r2base::iTest::DoFunc PageByPage_WithOut_CLS_1::GetDoFunction()
+	r2test::iTest::DoFunc PageByPage_WithOut_CLS_1::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& )->r2test::eTestEndAction
 		{
 			r2render::FrameBuffer frame_buffer( 100, 40 );
 			frame_buffer.FillAll( 'c' );
@@ -254,22 +254,22 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2base::eTestEndAction::None;
+			return r2test::eTestEndAction::None;
 		};
 	}
 
 
 
-	r2base::iTest::TitleFunc PageByPage_WithOut_CLS_2::GetTitleFunction() const
+	r2test::iTest::TitleFunc PageByPage_WithOut_CLS_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Flickering : Print Page By Page Without CLS 2";
 		};
 	}
-	r2base::iTest::DoFunc PageByPage_WithOut_CLS_2::GetDoFunction()
+	r2test::iTest::DoFunc PageByPage_WithOut_CLS_2::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& )->r2test::eTestEndAction
 		{
 			r2render::FrameBuffer frame_buffer_1( 100, 40 );
 			frame_buffer_1.FillAll( 'c' );
@@ -308,7 +308,7 @@ namespace flickering_research
 
 			} while( process );
 
-			return r2base::eTestEndAction::None;
+			return r2test::eTestEndAction::None;
 		};
 	}
 }

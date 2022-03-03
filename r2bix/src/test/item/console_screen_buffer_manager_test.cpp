@@ -9,16 +9,16 @@
 
 namespace console_screen_buffer_manager_test
 {
-	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Console Screen Buffer Manager : Basic";
 		};
 	}
-	r2base::iTest::DoFunc Basic::GetDoFunction()
+	r2test::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2base::eTestEndAction
+		return []( r2base::Director& )->r2test::eTestEndAction
 		{
 			r2base::ScreenBufferManager screen_buffer_manager;
 
@@ -57,7 +57,7 @@ namespace console_screen_buffer_manager_test
 				} while( true );
 			}
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 }

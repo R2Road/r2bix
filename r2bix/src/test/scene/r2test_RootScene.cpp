@@ -40,10 +40,10 @@ namespace r2test
 			ret->AddChild(
 				'1'
 				, []()->const char* { return r2test::InputScene::GetTitle(); }
-				, [&director]( r2base::Director& )->r2base::eTestEndAction
+				, [&director]( r2base::Director& )->r2test::eTestEndAction
 				{
 					director.Setup( r2test::InputScene::Create( director ) );
-					return r2base::eTestEndAction::None;
+					return r2test::eTestEndAction::None;
 				}
 			);
 			ret->AddChild( '2', rect_test::Basic::GetInstance() );
@@ -58,28 +58,28 @@ namespace r2test
 			ret->AddChild(
 				'q'
 				, []()->const char* { return r2test::TextureScene::GetTitle(); }
-				, [&director]( r2base::Director& )->r2base::eTestEndAction
+				, [&director]( r2base::Director& )->r2test::eTestEndAction
 				{
 					director.Setup( r2test::TextureScene::Create( director ) );
-					return r2base::eTestEndAction::None;
+					return r2test::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
 				'w'
 				, []()->const char* { return r2test::CameraScene::GetTitle(); }
-				, [&director]( r2base::Director& )->r2base::eTestEndAction
+				, [&director]( r2base::Director& )->r2test::eTestEndAction
 				{
 					director.Setup( r2test::CameraScene::Create( director ) );
-					return r2base::eTestEndAction::None;
+					return r2test::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
 				'e'
 				, []()->const char* { return r2test::RenderableScene::GetTitle(); }
-				, [&director]( r2base::Director& )->r2base::eTestEndAction
+				, [&director]( r2base::Director& )->r2test::eTestEndAction
 				{
 					director.Setup( r2test::RenderableScene::Create( director ) );
-					return r2base::eTestEndAction::None;
+					return r2test::eTestEndAction::None;
 				}
 			);
 
@@ -93,19 +93,19 @@ namespace r2test
 			ret->AddChild(
 				'a'
 				, []()->const char* { return r2test::FrameBufferScene::GetTitle(); }
-				, [&director]( r2base::Director& )->r2base::eTestEndAction
+				, [&director]( r2base::Director& )->r2test::eTestEndAction
 				{
 					director.Setup( r2test::FrameBufferScene::Create( director ) );
-					return r2base::eTestEndAction::None;
+					return r2test::eTestEndAction::None;
 				}
 			);
 			ret->AddChild(
 				'd'
 				, []()->const char* { return r2test::RendererScene::GetTitle(); }
-				, [&director]( r2base::Director& )->r2base::eTestEndAction
+				, [&director]( r2base::Director& )->r2test::eTestEndAction
 				{
 					director.Setup( r2test::RendererScene::Create( director ) );
-					return r2base::eTestEndAction::None;
+					return r2test::eTestEndAction::None;
 				}
 			);
 
@@ -125,10 +125,10 @@ namespace r2test
 			ret->AddChild(
 				27
 				, []()->const char* { return "Return To Develop Menu"; }
-				, [&director]( r2base::Director& )->r2base::eTestEndAction
+				, [&director]( r2base::Director& )->r2test::eTestEndAction
 				{
 					director.Setup( DevelopScene::Create( director ) );
-					return r2base::eTestEndAction::None;
+					return r2test::eTestEndAction::None;
 				}
 			);
 		}

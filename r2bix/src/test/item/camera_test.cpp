@@ -17,16 +17,16 @@
 
 namespace camera_test
 {
-	r2base::iTest::TitleFunc CameraPosition::GetTitleFunction() const
+	r2test::iTest::TitleFunc CameraPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Position";
 		};
 	}
-	r2base::iTest::DoFunc CameraPosition::GetDoFunction()
+	r2test::iTest::DoFunc CameraPosition::GetDoFunction()
 	{
-		return[]( r2base::Director& )->r2base::eTestEndAction
+		return[]( r2base::Director& )->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -52,22 +52,22 @@ namespace camera_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2base::iTest::TitleFunc CameraRect::GetTitleFunction() const
+	r2test::iTest::TitleFunc CameraRect::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Rect";
 		};
 	}
-	r2base::iTest::DoFunc CameraRect::GetDoFunction()
+	r2test::iTest::DoFunc CameraRect::GetDoFunction()
 	{
-		return[]( r2base::Director& )->r2base::eTestEndAction
+		return[]( r2base::Director& )->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -100,22 +100,22 @@ namespace camera_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2base::iTest::TitleFunc CameraMove::GetTitleFunction() const
+	r2test::iTest::TitleFunc CameraMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move";
 		};
 	}
-	r2base::iTest::DoFunc CameraMove::GetDoFunction()
+	r2test::iTest::DoFunc CameraMove::GetDoFunction()
 	{
-		return[]( r2base::Director& director )->r2base::eTestEndAction
+		return[]( r2base::Director& director )->r2test::eTestEndAction
 		{
 			r2render::Camera camera( { 20, 30 }, { 19, 9 } );
 
@@ -178,7 +178,7 @@ namespace camera_test
 
 			} while( true );
 
-			return r2base::eTestEndAction::None;
+			return r2test::eTestEndAction::None;
 		};
 	}
 }

@@ -38,14 +38,14 @@ void TestScene::Update()
 
 	switch( RunTest( input ) )
 	{
-	//case r2base::eTestEndAction::None: break;
+	//case r2test::eTestEndAction::None: break;
 
-	case r2base::eTestEndAction::Pause:
+	case r2test::eTestEndAction::Pause:
 		std::cout << r2::linefeed;
 		system( "pause" );
 		break;
 
-	case r2base::eTestEndAction::Exit:
+	case r2test::eTestEndAction::Exit:
 		mDirector.RequestAbort();
 		break;
 	}
@@ -113,7 +113,7 @@ void TestScene::showMenu() const
 	std::cout << r2::split << "Select Menu";
 }
 
-r2base::eTestEndAction TestScene::RunTest( const int key_code )
+r2test::eTestEndAction TestScene::RunTest( const int key_code )
 {
 	for( const auto t : mTests )
 	{
@@ -123,28 +123,28 @@ r2base::eTestEndAction TestScene::RunTest( const int key_code )
 		}
 	}
 
-	return r2base::eTestEndAction::Pause;
+	return r2test::eTestEndAction::Pause;
 }
 
-void TestScene::AddChild( const char key_code, r2base::iTest& test_obj )
+void TestScene::AddChild( const char key_code, r2test::iTest& test_obj )
 {
 	mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 }
-void TestScene::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2base::eTestEndAction( r2base::Director& )> func_test )
+void TestScene::AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2test::eTestEndAction( r2base::Director& )> func_test )
 {
 	mTests.emplace_back( key_code, func_title, func_test );
 }
 void TestScene::AddLineFeed()
 {
 	static const std::function<const char*()> func_title = []()->const char* { return ""; };
-	static const std::function<const r2base::eTestEndAction( r2base::Director& )> func_test = []( r2base::Director& )->const r2base::eTestEndAction { return r2base::eTestEndAction::Pause; };
+	static const std::function<const r2test::eTestEndAction( r2base::Director& )> func_test = []( r2base::Director& )->const r2test::eTestEndAction { return r2test::eTestEndAction::Pause; };
 
 	mTests.push_back( { KeyCode4LineFeed, func_title, func_test } );
 }
 void TestScene::AddSplit()
 {
 	static const std::function<const char*( )> func_title = []()->const char* { return ""; };
-	static const std::function<const r2base::eTestEndAction( r2base::Director& )> func_test = []( r2base::Director& )->const r2base::eTestEndAction { return r2base::eTestEndAction::Pause; };
+	static const std::function<const r2test::eTestEndAction( r2base::Director& )> func_test = []( r2base::Director& )->const r2test::eTestEndAction { return r2test::eTestEndAction::Pause; };
 
 	mTests.push_back( { KeyCode4Split, func_title, func_test } );
 }

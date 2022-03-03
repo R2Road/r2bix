@@ -8,10 +8,13 @@
 
 namespace r2base
 {
-	enum class eTestEndAction;
-
-	class iTest;
 	class Director;
+}
+
+namespace r2test
+{
+	enum class eTestEndAction;
+	class iTest;
 }
 
 using TestSceneUp = std::unique_ptr<class TestScene>;
@@ -23,7 +26,7 @@ private:
 		TestInfo(
 			const char key_code
 			, const std::function<const char*()> name_function
-			, const std::function<const r2base::eTestEndAction( r2base::Director& )> test_function
+			, const std::function<const r2test::eTestEndAction( r2base::Director& )> test_function
 		) :
 			KeyCode( key_code )
 			, NameFunction( name_function )
@@ -32,7 +35,7 @@ private:
 
 		char KeyCode;
 		std::function<const char*()> NameFunction;
-		std::function<const r2base::eTestEndAction( r2base::Director& )> TestFunction;
+		std::function<const r2test::eTestEndAction( r2base::Director& )> TestFunction;
 	};
 
 	using TestContainerT = std::vector<TestInfo>;
@@ -52,11 +55,11 @@ private:
 	void showDescription() const;
 	void showMenu() const;
 
-	r2base::eTestEndAction RunTest( const int key_code );
+	r2test::eTestEndAction RunTest( const int key_code );
 
 public:
-	void AddChild( const char key_code, r2base::iTest& test_obj );
-	void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2base::eTestEndAction( r2base::Director& )> func_test );
+	void AddChild( const char key_code, r2test::iTest& test_obj );
+	void AddChild( const char key_code, const std::function<const char*( )> func_title, const std::function<const r2test::eTestEndAction( r2base::Director& )> func_test );
 	void AddLineFeed();
 	void AddSplit();
 

@@ -119,16 +119,16 @@ namespace renderable_test
 		r2render::Texture mTexture;
 	};
 
-	r2base::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2base::iTest::DoFunc Basic::GetDoFunction()
+	r2test::iTest::DoFunc Basic::GetDoFunction()
 	{
-		return[]( r2base::Director& )->r2base::eTestEndAction
+		return[]( r2base::Director& )->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 			
@@ -215,7 +215,7 @@ namespace renderable_test
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 			}
 
-			return r2base::eTestEndAction::Pause;
+			return r2test::eTestEndAction::Pause;
 		};
 	}
 }
