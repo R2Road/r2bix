@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/r2base_Singleton.h"
+#include "r2/r2_Singleton.h"
 
 namespace r2render
 {
