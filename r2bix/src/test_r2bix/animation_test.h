@@ -8,7 +8,7 @@
 
 namespace animation_test
 {
-	class Basic : public r2cm::iItem, public r2base::SingleTon<Basic>
+	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
 	{
 	public:
 		Basic();

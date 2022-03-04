@@ -9,7 +9,7 @@ namespace r2render
 
 namespace p2048table
 {
-	class TextureTable : public r2base::SingleTon<TextureTable>
+	class TextureTable : public r2::SingleTon<TextureTable>
 	{
 	public:
 		r2render::TextureFrame* const GetTitleTexture() const;
