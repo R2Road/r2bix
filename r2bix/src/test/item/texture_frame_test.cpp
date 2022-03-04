@@ -2,7 +2,7 @@
 #include "texture_frame_test.h"
 
 #include "test/r2test_eTestEndAction.h"
-#include "base/r2base_Inspector.h"
+#include "test/r2test_Inspector.h"
 
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"

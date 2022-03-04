@@ -86,7 +86,6 @@
     <ClInclude Include="src\base\r2base_Component.h" />
     <ClInclude Include="src\base\r2base_FPSTimer.h" />
     <ClInclude Include="src\base\r2base_Node.h" />
-    <ClInclude Include="src\base\r2base_Inspector.h" />
     <ClInclude Include="src\base\r2base_ScreenBufferManager.h" />
     <ClInclude Include="src\base\r2base_Singleton.h" />
     <ClInclude Include="src\component\r2component_TextRenderComponent.h" />
@@ -130,6 +129,7 @@
     <ClInclude Include="src\test\item\visible_resource_research.h" />
     <ClInclude Include="src\test\item\window_input_test.h" />
     <ClInclude Include="src\test\r2test_eTestEndAction.h" />
+    <ClInclude Include="src\test\r2test_Inspector.h" />
     <ClInclude Include="src\test\r2test_iTest.h" />
     <ClInclude Include="src\test\r2test_Utility.h" />
     <ClInclude Include="src\test\scene\DevelopScene.h" />
