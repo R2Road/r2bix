@@ -1,6 +1,6 @@
 #pragma once
 
-#include "test/r2test_iTest.h"
+#include "test/r2test_iTest_Deprecated.h"
 #include "base/r2base_Singleton.h"
 
 namespace visible_resource_research

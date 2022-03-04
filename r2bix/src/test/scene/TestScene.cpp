@@ -6,7 +6,7 @@
 
 #include "base/r2base_Director.h"
 #include "test/r2test_eTestEndAction.h"
-#include "test/r2test_iTest.h"
+#include "test/r2test_iTest_Deprecated.h"
 
 namespace
 {
