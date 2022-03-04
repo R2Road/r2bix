@@ -35,7 +35,7 @@ namespace p2048
 		{
 			auto node = r2node::LabelNode::Create( mDirector );
 			node->mTransformComponent->SetPosition( 5, 5 );
-			node->SetRect( 0, 0, 30, 1 );
+			node->SetRect( 0, 0, 30, 0 );
 			node->SetString( "# " "2048 Game Scene" " #" );
 			mLabelNode = node.get();
 			AddChild( std::move( node ) );
