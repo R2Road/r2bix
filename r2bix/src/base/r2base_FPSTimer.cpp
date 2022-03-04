@@ -3,7 +3,7 @@
 
 #include <cassert>
 
-namespace r2base
+namespace r2
 {
 	FPSTimer::FPSTimer( const std::size_t frame_count ) :
 		mFPS( 0ll )

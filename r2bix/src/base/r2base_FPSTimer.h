@@ -2,7 +2,7 @@
 
 #include <chrono>
 
-namespace r2base
+namespace r2
 {
 	class FPSTimer
 	{

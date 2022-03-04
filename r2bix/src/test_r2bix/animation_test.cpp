@@ -91,7 +91,7 @@ namespace animation_test
 
 		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2cm::eTestEndAction
 		{
-			r2base::FPSTimer frame_manager( 30u );
+			r2::FPSTimer frame_manager( 30u );
 			frame_manager.Reset();
 
 			int x = 0;

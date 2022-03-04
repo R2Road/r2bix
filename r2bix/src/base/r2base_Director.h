@@ -22,7 +22,7 @@ namespace r2base
 
 	private:
 		ScreenBufferManager mScreenBufferManager;
-		FPSTimer mFPSTimer;
+		r2::FPSTimer mFPSTimer;
 		bool mbAbort;
 		r2node::SceneNodeUp mSceneNode;
 	};

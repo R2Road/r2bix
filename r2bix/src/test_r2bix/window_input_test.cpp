@@ -43,7 +43,7 @@ namespace window_input_test
 			std::cout << r2::split;
 
 			{
-				r2base::FPSTimer fps_timer( 60u );
+				r2::FPSTimer fps_timer( 60u );
 				r2::RectInt stage_area( 6, 10, 50, 30 );
 				COORD pos = { 20, 20 };
 				COORD temp_pos;
