@@ -46,7 +46,7 @@ int main()
 
 		std::cout << "[1] " "Test" << r2::linefeed;
 		std::cout << "[2] " << p2048::CompanyScene::GetTitle() << r2::linefeed;
-		std::cout << "[3] " "Game : Mini Rogue" << r2::linefeed;
+		std::cout << "[3] " << pmr::CompanyScene::GetTitle() << r2::linefeed;
 
 		std::cout << r2::split;
 

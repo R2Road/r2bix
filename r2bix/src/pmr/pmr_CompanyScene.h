@@ -22,6 +22,7 @@ namespace pmr
 		CompanyScene( r2base::Director& director );
 
 	public:
+		static const char* const GetTitle() { return "Game : Mini Rogue( To do )"; }
 		static r2node::SceneNodeUp Create( r2base::Director& director );
 
 	public:
