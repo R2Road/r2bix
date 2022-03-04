@@ -15,6 +15,8 @@ namespace pmr
 		static const char* const GetTitle() { return "Game : Mini Rogue( To do )"; }
 		static r2node::SceneNodeUp Create( r2base::Director& director );
 
+	private:
+		bool Init() override;
 	public:
 		void Update() override;
 	};

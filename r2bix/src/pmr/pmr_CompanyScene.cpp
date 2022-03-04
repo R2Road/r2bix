@@ -4,6 +4,7 @@
 #include <conio.h>
 
 #include "base/r2base_Director.h"
+#include "node/r2node_LabelNode.h"
 
 namespace pmr
 {
@@ -21,16 +22,26 @@ namespace pmr
 		return ret;
 	}
 
+	bool CompanyScene::Init()
+	{
+		{
+			auto node = r2node::LabelNode::Create( mDirector );
+			node->SetRect( 0, 0, 30, 1 );
+			node->SetString( CompanyScene::GetTitle() );
+			AddChild( std::move( node ) );
+		}
+
+		return true;
+	}
 	void CompanyScene::Update()
 	{
-		mDirector.ClearScreen();
-
-		std::cout << "# " << "Mini Rogue Game Scene" << " #" << r2::linefeed;
-
-		auto input = _getch();
-		if( 27 == input )
+		if( _kbhit() )
 		{
-			mDirector.RequestAbort();
+			auto input = _getch();
+			if( 27 == input )
+			{
+				mDirector.RequestAbort();
+			}
 		}
 	}
 }
