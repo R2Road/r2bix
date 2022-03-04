@@ -37,6 +37,9 @@
     <Filter Include="test\scene">
       <UniqueIdentifier>{4ea5899a-a13a-4ccf-90f1-38a64396c180}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test_r2bix">
+      <UniqueIdentifier>{ce01231e-9d83-4225-aab5-74e589fae17f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -196,6 +199,15 @@
     </ClCompile>
     <ClCompile Include="src\test\r2test_Utility.cpp">
       <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\r2test_Menu.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\r2test_Director.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_r2bix\TestRootMenu.cpp">
+      <Filter>test_r2bix</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -385,6 +397,18 @@
     </ClInclude>
     <ClInclude Include="src\test\r2test_iTest_Deprecated.h">
       <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\r2test_Menu.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\r2test_Director.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\r2test_iTest.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\TestRootMenu.h">
+      <Filter>test_r2bix</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

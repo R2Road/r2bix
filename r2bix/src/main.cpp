@@ -8,6 +8,9 @@
 #include "test/scene/DevelopScene.h"
 #include "utility/r2utility_WindowUtil.h"
 
+#include "test/r2test_Director.h"
+#include "test_r2bix/TestRootMenu.h"
+
 int main()
 {
 	//
@@ -28,8 +31,8 @@ int main()
 	//
 	// Setup
 	//
-	r2base::Director director;
-	director.Setup( DevelopScene::Create( director ) );
+	r2test::Director director;
+	director.Setup( TestRootMenu::Create( director ) );
 
 	//
 	// Process
