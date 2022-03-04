@@ -72,10 +72,7 @@ namespace r2render
 
 	void Texture::FillAll( const char c )
 	{
-		for( char& element : mChars )
-		{
-			element = c;
-		}
+		memset( &mChars[0], c, mChars.size() );
 	}
 
 	void Texture::Fill( const uint32_t x, const uint32_t y, const char c )
