@@ -33,18 +33,18 @@ namespace p2048
 	bool CompanyScene::Init()
 	{
 		{
-			auto label_node = r2node::LabelNode::Create( mDirector );
-			label_node->mTransformComponent->SetPosition( 5, 5 );
-			label_node->SetRect( 0, 0, 30, 1 );
-			label_node->SetString( "# " "2048 Game Scene" " #" );
-			mLabelNode = label_node.get();
-			AddChild( std::move( label_node ) );
+			auto node = r2node::LabelNode::Create( mDirector );
+			node->mTransformComponent->SetPosition( 5, 5 );
+			node->SetRect( 0, 0, 30, 1 );
+			node->SetString( "# " "2048 Game Scene" " #" );
+			mLabelNode = node.get();
+			AddChild( std::move( node ) );
 		}
 
 		{
-			auto sprite_node = r2node::SpriteNode::Create( mDirector, p2048table::TextureTable::GetInstance().GetTitleTexture() );
-			mSpriteNode = sprite_node.get();
-			AddChild( std::move( sprite_node ) );
+			auto node = r2node::SpriteNode::Create( mDirector, p2048table::TextureTable::GetInstance().GetTitleTexture() );
+			mSpriteNode = node.get();
+			AddChild( std::move( node ) );
 		}
 
 		return true;
