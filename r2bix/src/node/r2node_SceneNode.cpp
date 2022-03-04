@@ -16,6 +16,8 @@ namespace r2node
 
 	void SceneNode::Render()
 	{
+		mRenderTarget.FillAll( '@' );
+
 		r2base::Node::Render( &mCamera, &mRenderTarget );
 
 		mDirector.ClearScreen();
