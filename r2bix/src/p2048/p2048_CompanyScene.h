@@ -32,6 +32,7 @@ namespace p2048
 		CompanyScene( r2base::Director& director );
 
 	public:
+		static const char* const GetTitle() { return "Game : 2048( In Progress )"; }
 		static r2node::SceneNodeUp Create( r2base::Director& director );
 
 	private:

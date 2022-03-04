@@ -45,7 +45,7 @@ int main()
 		std::cout << "[ESC] " "Exit" << r2::linefeed2;
 
 		std::cout << "[1] " "Test" << r2::linefeed;
-		std::cout << "[2] " "Game : 2048" << r2::linefeed;
+		std::cout << "[2] " << p2048::CompanyScene::GetTitle() << r2::linefeed;
 		std::cout << "[3] " "Game : Mini Rogue" << r2::linefeed;
 
 		std::cout << r2::split;
