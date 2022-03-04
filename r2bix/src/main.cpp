@@ -67,7 +67,7 @@ int main()
 			//
 			// Process
 			//
-			director.Update();
+			director.Run();
 		}
 		break;
 
