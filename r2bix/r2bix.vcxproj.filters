@@ -131,9 +131,6 @@
     <ClCompile Include="src\component\r2component_TextureFrameRenderComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\r2test_Utility.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\r2test_Menu.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -196,6 +193,9 @@
     </ClCompile>
     <ClCompile Include="src\test_r2bix\framebuffer_test.cpp">
       <Filter>test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\r2utility_Utility.cpp">
+      <Filter>utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -311,9 +311,6 @@
     <ClInclude Include="src\component\r2component_TextureFrameRenderComponent.h">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\r2test_Utility.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\r2test_Menu.h">
       <Filter>test</Filter>
     </ClInclude>
@@ -382,6 +379,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Inspector.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\r2utility_Utility.h">
+      <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
