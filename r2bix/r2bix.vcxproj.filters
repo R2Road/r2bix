@@ -176,9 +176,6 @@
     <ClCompile Include="src\test\scene\r2test_RendererScene.cpp">
       <Filter>test\scene</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\scene\r2test_RootScene.cpp">
-      <Filter>test\scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\scene\r2test_TextureScene.cpp">
       <Filter>test\scene</Filter>
     </ClCompile>
@@ -357,9 +354,6 @@
       <Filter>test\scene</Filter>
     </ClInclude>
     <ClInclude Include="src\test\scene\r2test_RendererScene.h">
-      <Filter>test\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\scene\r2test_RootScene.h">
       <Filter>test\scene</Filter>
     </ClInclude>
     <ClInclude Include="src\test\scene\r2test_TextureScene.h">

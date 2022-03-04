@@ -5,7 +5,6 @@
 #include "test/r2test_eTestEndAction.h"
 
 #include "test/scene/r2research_RootScene.h"
-#include "test/scene/r2test_RootScene.h"
 
 #include "test/scene/r2test_CameraScene.h"
 #include "test/scene/r2test_FrameBufferScene.h"
