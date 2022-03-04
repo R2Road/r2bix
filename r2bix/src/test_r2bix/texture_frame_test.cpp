@@ -1,11 +1,10 @@
 #include "pch.h"
 #include "texture_frame_test.h"
 
-#include "test/r2test_eTestEndAction.h"
-#include "test/r2test_Inspector.h"
-
+#include "r2/r2_Inspector.h"
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"
+#include "test/r2test_eTestEndAction.h"
 
 #include "p2048/p2048table_TextureTable.h"
 

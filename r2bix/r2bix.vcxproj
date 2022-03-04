@@ -100,6 +100,7 @@
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
+    <ClInclude Include="src\r2\r2_Inspector.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
     <ClInclude Include="src\r2\r2_PointInt.h" />
     <ClInclude Include="src\r2\r2_Rect.h" />
@@ -117,7 +118,6 @@
     <ClInclude Include="src\render\r2render_Texture.h" />
     <ClInclude Include="src\test\r2test_Director.h" />
     <ClInclude Include="src\test\r2test_eTestEndAction.h" />
-    <ClInclude Include="src\test\r2test_Inspector.h" />
     <ClInclude Include="src\test\r2test_iItem.h" />
     <ClInclude Include="src\test\r2test_Menu.h" />
     <ClInclude Include="src\test\r2test_Utility.h" />
