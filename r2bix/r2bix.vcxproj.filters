@@ -158,9 +158,6 @@
     <ClCompile Include="src\test\item\window_input_test.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\scene\DevelopScene.cpp">
-      <Filter>test\scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\scene\r2research_RootScene.cpp">
       <Filter>test\scene</Filter>
     </ClCompile>
@@ -343,9 +340,6 @@
     </ClInclude>
     <ClInclude Include="src\test\item\window_input_test.h">
       <Filter>test\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\scene\DevelopScene.h">
-      <Filter>test\scene</Filter>
     </ClInclude>
     <ClInclude Include="src\test\scene\r2research_RootScene.h">
       <Filter>test\scene</Filter>

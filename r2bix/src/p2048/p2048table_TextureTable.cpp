@@ -4,8 +4,6 @@
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"
 
-#include "test/scene/DevelopScene.h"
-
 namespace p2048table
 {
 	r2render::TextureFrame* const TextureTable::GetTitleTexture() const
