@@ -6,8 +6,8 @@
 namespace r2node
 {
 	SceneNode::SceneNode( r2base::Director& director ) : r2base::Node( director )
-		, mCamera( { 44, 24 }, { 90, 50 } )
-		, mRenderTarget( 90, 50, '@' )
+		, mCamera( { 55, 26 }, { 111, 54 } )
+		, mRenderTarget( 111, 54, '@' )
 	{}
 
 	void SceneNode::Update()
