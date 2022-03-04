@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "TestRootMenu.h"
 
-#include "test/r2test_Director.h"
-#include "test/r2test_eTestEndAction.h"
+#include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 #include "CameraMenu.h"
 #include "FrameBufferMenu.h"

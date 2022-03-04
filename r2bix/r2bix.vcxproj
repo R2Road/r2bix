@@ -44,6 +44,8 @@
     </ClCompile>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp" />
+    <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
+    <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
     <ClCompile Include="src\r2\r2_PointInt.cpp" />
     <ClCompile Include="src\r2\r2_RectInt.cpp" />
     <ClCompile Include="src\r2\r2_Size.cpp" />
@@ -54,8 +56,6 @@
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\render\r2render_Renderer.cpp" />
     <ClCompile Include="src\render\r2render_Texture.cpp" />
-    <ClCompile Include="src\test\r2test_Director.cpp" />
-    <ClCompile Include="src\test\r2test_Menu.cpp" />
     <ClCompile Include="src\test_r2bix\animation_test.cpp" />
     <ClCompile Include="src\test_r2bix\CameraMenu.cpp" />
     <ClCompile Include="src\test_r2bix\camera_test.cpp" />
@@ -100,6 +100,10 @@
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
+    <ClInclude Include="src\r2cm\r2cm_Director.h" />
+    <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h" />
+    <ClInclude Include="src\r2cm\r2cm_iItem.h" />
+    <ClInclude Include="src\r2cm\r2cm_Menu.h" />
     <ClInclude Include="src\r2\r2_Inspector.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
     <ClInclude Include="src\r2\r2_PointInt.h" />
@@ -116,10 +120,6 @@
     <ClInclude Include="src\render\r2render_iRenderable.h" />
     <ClInclude Include="src\render\r2render_Renderer.h" />
     <ClInclude Include="src\render\r2render_Texture.h" />
-    <ClInclude Include="src\test\r2test_Director.h" />
-    <ClInclude Include="src\test\r2test_eTestEndAction.h" />
-    <ClInclude Include="src\test\r2test_iItem.h" />
-    <ClInclude Include="src\test\r2test_Menu.h" />
     <ClInclude Include="src\test_r2bix\animation_test.h" />
     <ClInclude Include="src\test_r2bix\CameraMenu.h" />
     <ClInclude Include="src\test_r2bix\camera_test.h" />
