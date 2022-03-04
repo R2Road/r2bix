@@ -3,7 +3,7 @@
 
 #include <Windows.h>
 
-namespace r2test
+namespace r2utility
 {
 	void Utility::DrawRect( const int offset_y, const r2::RectInt& rect, const char c )
 	{

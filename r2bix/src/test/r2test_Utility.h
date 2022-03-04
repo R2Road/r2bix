@@ -2,7 +2,7 @@
 
 #include "r2/r2_RectInt.h"
 
-namespace r2test
+namespace r2utility
 {
 	class Utility
 	{

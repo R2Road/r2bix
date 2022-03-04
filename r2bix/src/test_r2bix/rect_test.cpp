@@ -44,10 +44,10 @@ namespace rect_test
 			{
 				const int offset_y = 13;
 
-				r2test::Utility::DrawRect( offset_y, rect_0, '0' );
-				r2test::Utility::DrawRect( offset_y, rect_1, '1' );
-				r2test::Utility::DrawRect( offset_y, rect_2, '2' );
-				r2test::Utility::DrawRect( offset_y, rect_3, '3' );
+				r2utility::Utility::DrawRect( offset_y, rect_0, '0' );
+				r2utility::Utility::DrawRect( offset_y, rect_1, '1' );
+				r2utility::Utility::DrawRect( offset_y, rect_2, '2' );
+				r2utility::Utility::DrawRect( offset_y, rect_3, '3' );
 
 				SetConsoleCursorPosition(
 					GetStdHandle( STD_OUTPUT_HANDLE )
