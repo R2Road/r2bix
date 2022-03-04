@@ -59,5 +59,7 @@ namespace p2048
 				mDirector.RequestAbort();
 			}
 		}
+
+		r2node::SceneNode::Update();
 	}
 }

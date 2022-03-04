@@ -38,7 +38,7 @@ namespace r2base
 
 	public:
 		virtual bool Init() { return true; };
-		virtual void Update() {}
+		virtual void Update();
 		virtual void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target );
 
 		void AddComponent( r2base::ComponentUp component );
