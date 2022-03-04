@@ -1,13 +1,13 @@
 #include "pch.h"
-#include "r2test_InputScene.h"
+#include "InputMenu.h"
 
 #include "test/r2test_Director.h"
 #include "test/r2test_eTestEndAction.h"
 
 #include "test_r2bix/TestRootMenu.h"
 
-#include "test/item/key_test.h"
-#include "test/item/window_input_test.h"
+#include "key_test.h"
+#include "window_input_test.h"
 
 r2test::MenuUp InputMenu::Create( r2test::Director& director )
 {

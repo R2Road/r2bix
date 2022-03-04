@@ -4,18 +4,18 @@
 #include "test/r2test_Director.h"
 #include "test/r2test_eTestEndAction.h"
 
-#include "test/scene/r2test_CameraScene.h"
-#include "test/scene/r2test_FrameBufferScene.h"
-#include "test/scene/r2test_InputScene.h"
-#include "test/scene/r2test_RenderableScene.h"
-#include "test/scene/r2test_RendererScene.h"
-#include "test/scene/r2test_TextureScene.h"
+#include "CameraMenu.h"
+#include "FrameBufferMenu.h"
+#include "InputMenu.h"
+#include "RenderableMenu.h"
+#include "RendererMenu.h"
+#include "TextureMenu.h"
 
-#include "test/item/animation_test.h"
-#include "test/item/console_screen_buffer_manager_test.h"
-#include "test/item/rect_test.h"
+#include "animation_test.h"
+#include "console_screen_buffer_manager_test.h"
+#include "rect_test.h"
 
-#include "test/item/visible_resource_research.h"
+#include "visible_resource_research.h"
 
 r2test::MenuUp TestRootMenu::Create( r2test::Director& director )
 {

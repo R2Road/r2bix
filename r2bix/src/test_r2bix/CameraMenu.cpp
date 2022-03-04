@@ -1,12 +1,12 @@
 #include "pch.h"
-#include "r2test_CameraScene.h"
+#include "CameraMenu.h"
 
 #include "test/r2test_Director.h"
 #include "test/r2test_eTestEndAction.h"
 
 #include "test_r2bix/TestRootMenu.h"
 
-#include "test/item/camera_test.h"
+#include "camera_test.h"
 
 r2test::MenuUp CameraMenu::Create( r2test::Director& director )
 {

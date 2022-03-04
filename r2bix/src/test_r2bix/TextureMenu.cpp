@@ -1,13 +1,13 @@
 #include "pch.h"
-#include "r2test_TextureScene.h"
+#include "TextureMenu.h"
 
 #include "test/r2test_Director.h"
 #include "test/r2test_eTestEndAction.h"
 
 #include "test_r2bix/TestRootMenu.h"
 
-#include "test/item/texture_test.h"
-#include "test/item/texture_frame_test.h"
+#include "texture_test.h"
+#include "texture_frame_test.h"
 
 r2test::MenuUp TextureMenu::Create( r2test::Director& director )
 {

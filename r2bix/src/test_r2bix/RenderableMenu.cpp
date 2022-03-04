@@ -1,14 +1,14 @@
 #include "pch.h"
-#include "r2test_RendererScene.h"
+#include "RenderableMenu.h"
 
 #include "test/r2test_Director.h"
 #include "test/r2test_eTestEndAction.h"
 
 #include "test_r2bix/TestRootMenu.h"
 
-#include "test/item/renderer_test.h"
+#include "renderable_test.h"
 
-r2test::MenuUp RendererMenu::Create( r2test::Director& director )
+r2test::MenuUp RenderableMenu::Create( r2test::Director& director )
 {
 	r2test::MenuUp ret( new ( std::nothrow ) r2test::Menu(
 		director
@@ -16,11 +16,7 @@ r2test::MenuUp RendererMenu::Create( r2test::Director& director )
 	) );
 
 	{
-		ret->AddChild( '1', renderer_test::TestRenderable::GetInstance() );
-		ret->AddChild( '2', renderer_test::TestRenderer::GetInstance() );
-
-		ret->AddChild( '3', renderer_test::CameraMove1::GetInstance() );
-		ret->AddChild( '4', renderer_test::CameraMove2::GetInstance() );
+		ret->AddChild( '1', renderable_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
@@ -32,7 +28,7 @@ r2test::MenuUp RendererMenu::Create( r2test::Director& director )
 			, [&director]()->r2test::eTestEndAction
 			{
 			director.Setup( TestRootMenu::Create( director ) );
-				return r2test::eTestEndAction::None;
+			return r2test::eTestEndAction::None;
 			}
 		);
 	}
