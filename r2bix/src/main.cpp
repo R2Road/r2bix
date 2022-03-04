@@ -44,6 +44,10 @@ int main()
 		std::cout << "[1] " "Test" << r2::linefeed;
 		std::cout << "[2] " "Game" << r2::linefeed;
 
+		std::cout << r2::split;
+
+		std::cout << "Select Menu";
+
 		const auto input = _getch();
 		switch( input )
 		{
