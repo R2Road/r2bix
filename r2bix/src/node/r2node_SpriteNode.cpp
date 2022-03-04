@@ -29,14 +29,18 @@ namespace r2node
 
 	bool SpriteNode::Init()
 	{
-		auto transform_component = r2component::TransformComponent::Create( *this );
-		mTransformComponent = transform_component.get();
-		AddComponent( std::move( transform_component ) );
+		{
+			auto component = r2component::TransformComponent::Create( *this );
+			mTransformComponent = component.get();
+			AddComponent( std::move( component ) );
+		}
 
-		auto texture_frame_render_component = r2component::TextureFrameRenderComponent::Create( *this );
-		texture_frame_render_component->mTransformComponent = mTransformComponent;
-		mTextureFrameRenderComponent = texture_frame_render_component.get();
-		AddComponent( std::move( texture_frame_render_component ) );
+		{
+			auto component = r2component::TextureFrameRenderComponent::Create( *this );
+			component->mTransformComponent = mTransformComponent;
+			mTextureFrameRenderComponent = component.get();
+			AddComponent( std::move( component ) );
+		}
 
 		return true;
 	}
