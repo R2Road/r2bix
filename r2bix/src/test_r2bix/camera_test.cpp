@@ -23,7 +23,7 @@ namespace camera_test
 			return "Camera Position";
 		};
 	}
-	r2cm::iItem::DoFunc CameraPosition::GetDoFunction()
+	r2cm::iItem::DoFuncT CameraPosition::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
@@ -64,7 +64,7 @@ namespace camera_test
 			return "Camera Rect";
 		};
 	}
-	r2cm::iItem::DoFunc CameraRect::GetDoFunction()
+	r2cm::iItem::DoFuncT CameraRect::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
@@ -112,7 +112,7 @@ namespace camera_test
 			return "Camera Move";
 		};
 	}
-	r2cm::iItem::DoFunc CameraMove::GetDoFunction()
+	r2cm::iItem::DoFuncT CameraMove::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{

@@ -55,7 +55,7 @@ namespace renderer_test
 			return "Renderable";
 		};
 	}
-	r2cm::iItem::DoFunc TestRenderable::GetDoFunction()
+	r2cm::iItem::DoFuncT TestRenderable::GetDoFunction()
 	{
 		static TempRenderable tr( 8, 5, 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" );
 		auto& tr2 = tr;
@@ -82,7 +82,7 @@ namespace renderer_test
 			return "Renderer";
 		};
 	}
-	r2cm::iItem::DoFunc TestRenderer::GetDoFunction()
+	r2cm::iItem::DoFuncT TestRenderer::GetDoFunction()
 	{
 		auto& rd = GetInstance().mRenderer;
 		rd.Clear();
@@ -163,7 +163,7 @@ namespace renderer_test
 			return "Camera Move 1";
 		};
 	}
-	r2cm::iItem::DoFunc CameraMove1::GetDoFunction()
+	r2cm::iItem::DoFuncT CameraMove1::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
@@ -296,7 +296,7 @@ namespace renderer_test
 			return "Camera Move 2";
 		};
 	}
-	r2cm::iItem::DoFunc CameraMove2::GetDoFunction()
+	r2cm::iItem::DoFuncT CameraMove2::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{

@@ -10,11 +10,11 @@ namespace r2cm
 	{
 	public:
 		using TitleFuncT = std::function<const char*()>;
-		using DoFunc = std::function<eTestEndAction()>;
+		using DoFuncT = std::function<eTestEndAction()>;
 
 		virtual ~iItem() {}
 
 		virtual TitleFuncT GetTitleFunction() const = 0;
-		virtual DoFunc GetDoFunction() = 0;
+		virtual DoFuncT GetDoFunction() = 0;
 	};
 }

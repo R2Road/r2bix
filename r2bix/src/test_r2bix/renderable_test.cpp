@@ -126,7 +126,7 @@ namespace renderable_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{

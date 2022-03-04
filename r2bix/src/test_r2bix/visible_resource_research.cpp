@@ -17,7 +17,7 @@ namespace visible_resource_research
 			return "Draw With Position";
 		};
 	}
-	r2cm::iItem::DoFunc DrawWithPosition::GetDoFunction()
+	r2cm::iItem::DoFuncT DrawWithPosition::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

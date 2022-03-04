@@ -9,6 +9,6 @@ namespace renderable_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

@@ -14,7 +14,7 @@ namespace animation_test
 		Basic();
 
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 
 	private:
 		r2render::Camera mCamera;

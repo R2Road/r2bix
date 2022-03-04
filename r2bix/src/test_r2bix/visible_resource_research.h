@@ -9,6 +9,6 @@ namespace visible_resource_research
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

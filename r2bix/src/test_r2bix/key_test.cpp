@@ -14,7 +14,7 @@ namespace key_test
 			return "Key : Basic";
 		};
 	}
-	r2cm::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

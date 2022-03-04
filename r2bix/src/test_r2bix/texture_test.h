@@ -9,38 +9,38 @@ namespace texture_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class Fill : public r2cm::iItem, public r2::SingleTon<Fill>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class InitWithChars_1 : public r2cm::iItem, public r2::SingleTon<InitWithChars_1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 	class InitWithChars_2 : public r2cm::iItem, public r2::SingleTon<InitWithChars_2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 	class InitWithChars_3 : public r2cm::iItem, public r2::SingleTon<InitWithChars_3>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 	class InitWithChars_4 : public r2cm::iItem, public r2::SingleTon<InitWithChars_4>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

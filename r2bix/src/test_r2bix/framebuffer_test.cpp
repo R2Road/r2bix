@@ -14,7 +14,7 @@ namespace framebuffer_test
 			return "Frame Buffer : Basic";
 		};
 	}
-	r2cm::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

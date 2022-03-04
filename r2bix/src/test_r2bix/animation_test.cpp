@@ -68,7 +68,7 @@ namespace animation_test
 			return "Animation - Basic";
 		};
 	}
-	r2cm::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		GetInstance().mRenderer.Clear();
 		GetInstance().mRenderer.SetCamera( &mCamera );

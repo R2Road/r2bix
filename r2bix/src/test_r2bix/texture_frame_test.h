@@ -9,27 +9,27 @@ namespace texture_frame_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class VisibleRect_1 : public r2cm::iItem, public r2::SingleTon<VisibleRect_1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class VisibleRect_2 : public r2cm::iItem, public r2::SingleTon<VisibleRect_2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class VisibleRect_3 : public r2cm::iItem, public r2::SingleTon<VisibleRect_3>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

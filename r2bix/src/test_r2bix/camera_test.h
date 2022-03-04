@@ -9,20 +9,20 @@ namespace camera_test
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class CameraRect : public r2cm::iItem, public r2::SingleTon<CameraRect>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 
 	class CameraMove : public r2cm::iItem, public r2::SingleTon<CameraMove>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
-		DoFunc GetDoFunction() override;
+		DoFuncT GetDoFunction() override;
 	};
 }

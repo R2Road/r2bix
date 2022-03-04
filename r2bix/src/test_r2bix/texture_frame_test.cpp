@@ -35,7 +35,7 @@ namespace texture_frame_test
 			return "TextureFrame : Basic";
 		};
 	}
-	r2cm::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
@@ -125,7 +125,7 @@ namespace texture_frame_test
 			return "TextureFrame : Visible Rect 1";
 		};
 	}
-	r2cm::iItem::DoFunc VisibleRect_1::GetDoFunction()
+	r2cm::iItem::DoFuncT VisibleRect_1::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
@@ -203,7 +203,7 @@ namespace texture_frame_test
 			return "TextureFrame : Visible Rect 2";
 		};
 	}
-	r2cm::iItem::DoFunc VisibleRect_2::GetDoFunction()
+	r2cm::iItem::DoFuncT VisibleRect_2::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
@@ -310,7 +310,7 @@ namespace texture_frame_test
 			return "TextureFrame : Visible Rect 3";
 		};
 	}
-	r2cm::iItem::DoFunc VisibleRect_3::GetDoFunction()
+	r2cm::iItem::DoFuncT VisibleRect_3::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

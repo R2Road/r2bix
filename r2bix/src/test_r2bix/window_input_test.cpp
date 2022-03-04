@@ -20,7 +20,7 @@ namespace window_input_test
 			return "Keyboard Input Collector";
 		};
 	}
-	r2cm::iItem::DoFunc TestKeyboardInputCollector::GetDoFunction()
+	r2cm::iItem::DoFuncT TestKeyboardInputCollector::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
