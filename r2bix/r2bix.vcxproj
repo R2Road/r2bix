@@ -69,7 +69,6 @@
     <ClCompile Include="src\test\r2test_Director.cpp" />
     <ClCompile Include="src\test\r2test_Menu.cpp" />
     <ClCompile Include="src\test\r2test_Utility.cpp" />
-    <ClCompile Include="src\test\scene\r2research_RootScene.cpp" />
     <ClCompile Include="src\test\scene\r2test_CameraScene.cpp" />
     <ClCompile Include="src\test\scene\r2test_FrameBufferScene.cpp" />
     <ClCompile Include="src\test\scene\r2test_InputScene.cpp" />
@@ -134,7 +133,6 @@
     <ClInclude Include="src\test\r2test_iItem.h" />
     <ClInclude Include="src\test\r2test_Menu.h" />
     <ClInclude Include="src\test\r2test_Utility.h" />
-    <ClInclude Include="src\test\scene\r2research_RootScene.h" />
     <ClInclude Include="src\test\scene\r2test_CameraScene.h" />
     <ClInclude Include="src\test\scene\r2test_FrameBufferScene.h" />
     <ClInclude Include="src\test\scene\r2test_InputScene.h" />

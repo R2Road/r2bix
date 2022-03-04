@@ -4,8 +4,6 @@
 #include "test/r2test_Director.h"
 #include "test/r2test_eTestEndAction.h"
 
-#include "test/scene/r2research_RootScene.h"
-
 #include "test/scene/r2test_CameraScene.h"
 #include "test/scene/r2test_FrameBufferScene.h"
 #include "test/scene/r2test_InputScene.h"
@@ -16,6 +14,8 @@
 #include "test/item/animation_test.h"
 #include "test/item/console_screen_buffer_manager_test.h"
 #include "test/item/rect_test.h"
+
+#include "test/item/visible_resource_research.h"
 
 r2test::MenuUp TestRootMenu::Create( r2test::Director& director )
 {
@@ -114,6 +114,7 @@ r2test::MenuUp TestRootMenu::Create( r2test::Director& director )
 
 
 		ret->AddChild( 'z', animation_test::Basic::GetInstance() );
+		ret->AddChild( 'x', visible_resource_research::DrawWithPosition::GetInstance() );
 
 
 		ret->AddSplit();
