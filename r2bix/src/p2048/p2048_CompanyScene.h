@@ -4,24 +4,10 @@
 
 #include "node/r2node_SceneNode.h"
 
-namespace r2base
-{
-	using NodeUp = std::unique_ptr<class Node>;
-
-	class Director;
-}
-
 namespace r2node
 {
 	class LabelNode;
 	class SpriteNode;
-
-	using SceneNodeUp = std::unique_ptr<class SceneNode>;
-}
-
-namespace r2render
-{
-	class Camera;
 }
 
 namespace p2048
