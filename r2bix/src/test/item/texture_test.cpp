@@ -8,14 +8,14 @@
 
 namespace texture_test
 {
-	r2test::iTest::TitleFunc FillAll::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc FillAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Fill All";
 		};
 	}
-	r2test::iTest::DoFunc FillAll::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc FillAll::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -55,14 +55,14 @@ namespace texture_test
 
 
 
-	r2test::iTest::TitleFunc Fill::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Fill";
 		};
 	}
-	r2test::iTest::DoFunc Fill::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc Fill::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -110,14 +110,14 @@ namespace texture_test
 
 
 
-	r2test::iTest::TitleFunc InitWithChars_1::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc InitWithChars_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Init With Chars 1";
 		};
 	}
-	r2test::iTest::DoFunc InitWithChars_1::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc InitWithChars_1::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -158,14 +158,14 @@ namespace texture_test
 
 
 
-	r2test::iTest::TitleFunc InitWithChars_2::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc InitWithChars_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Init With Chars 2";
 		};
 	}
-	r2test::iTest::DoFunc InitWithChars_2::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc InitWithChars_2::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -209,14 +209,14 @@ namespace texture_test
 
 
 
-	r2test::iTest::TitleFunc InitWithChars_3::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc InitWithChars_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Init With Chars 3";
 		};
 	}
-	r2test::iTest::DoFunc InitWithChars_3::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc InitWithChars_3::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -286,14 +286,14 @@ namespace texture_test
 
 
 
-	r2test::iTest::TitleFunc InitWithChars_4::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc InitWithChars_4::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Init With Chars 4";
 		};
 	}
-	r2test::iTest::DoFunc InitWithChars_4::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc InitWithChars_4::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{

@@ -5,21 +5,21 @@
 
 namespace camera_test
 {
-	class CameraPosition : public r2test::iTest, public r2base::SingleTon<CameraPosition>
+	class CameraPosition : public r2test::iTest_Deprecated, public r2base::SingleTon<CameraPosition>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class CameraRect : public r2test::iTest, public r2base::SingleTon<CameraRect>
+	class CameraRect : public r2test::iTest_Deprecated, public r2base::SingleTon<CameraRect>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class CameraMove : public r2test::iTest, public r2base::SingleTon<CameraMove>
+	class CameraMove : public r2test::iTest_Deprecated, public r2base::SingleTon<CameraMove>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

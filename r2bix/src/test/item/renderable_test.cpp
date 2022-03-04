@@ -119,14 +119,14 @@ namespace renderable_test
 		r2render::Texture mTexture;
 	};
 
-	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2test::iTest::DoFunc Basic::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc Basic::GetDoFunction()
 	{
 		return[]( r2base::Director& )->r2test::eTestEndAction
 		{

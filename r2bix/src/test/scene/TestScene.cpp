@@ -126,7 +126,7 @@ r2test::eTestEndAction TestScene::RunTest( const int key_code )
 	return r2test::eTestEndAction::Pause;
 }
 
-void TestScene::AddChild( const char key_code, r2test::iTest& test_obj )
+void TestScene::AddChild( const char key_code, r2test::iTest_Deprecated& test_obj )
 {
 	mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
 }

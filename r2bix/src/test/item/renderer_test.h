@@ -8,7 +8,7 @@
 
 namespace renderer_test
 {
-	class TestRenderable : public r2test::iTest, public r2base::SingleTon<TestRenderable>
+	class TestRenderable : public r2test::iTest_Deprecated, public r2base::SingleTon<TestRenderable>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
@@ -17,7 +17,7 @@ namespace renderer_test
 
 
 
-	class TestRenderer : public r2test::iTest, public r2base::SingleTon<TestRenderer>
+	class TestRenderer : public r2test::iTest_Deprecated, public r2base::SingleTon<TestRenderer>
 	{
 	public:
 		TestRenderer();
@@ -32,14 +32,14 @@ namespace renderer_test
 
 
 
-	class CameraMove1 : public r2test::iTest, public r2base::SingleTon<CameraMove1>
+	class CameraMove1 : public r2test::iTest_Deprecated, public r2base::SingleTon<CameraMove1>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
-	class CameraMove2 : public r2test::iTest, public r2base::SingleTon<CameraMove2>
+	class CameraMove2 : public r2test::iTest_Deprecated, public r2base::SingleTon<CameraMove2>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

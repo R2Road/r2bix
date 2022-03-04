@@ -9,14 +9,14 @@
 
 namespace console_screen_buffer_manager_test
 {
-	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Console Screen Buffer Manager : Basic";
 		};
 	}
-	r2test::iTest::DoFunc Basic::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc Basic::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{

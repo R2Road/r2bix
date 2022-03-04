@@ -48,14 +48,14 @@ namespace renderer_test
 		r2render::Texture mVisibleResource;
 	};
 
-	r2test::iTest::TitleFunc TestRenderable::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc TestRenderable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Renderable";
 		};
 	}
-	r2test::iTest::DoFunc TestRenderable::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc TestRenderable::GetDoFunction()
 	{
 		static TempRenderable tr( 8, 5, 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" );
 		auto& tr2 = tr;
@@ -75,14 +75,14 @@ namespace renderer_test
 
 	TestRenderer::TestRenderer() : mRenderer() {}
 
-	r2test::iTest::TitleFunc TestRenderer::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc TestRenderer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Renderer";
 		};
 	}
-	r2test::iTest::DoFunc TestRenderer::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc TestRenderer::GetDoFunction()
 	{
 		auto& rd = GetInstance().mRenderer;
 		rd.Clear();
@@ -156,14 +156,14 @@ namespace renderer_test
 		r2render::Texture mVisibleResource;
 	};
 
-	r2test::iTest::TitleFunc CameraMove1::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc CameraMove1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move 1";
 		};
 	}
-	r2test::iTest::DoFunc CameraMove1::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc CameraMove1::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -289,14 +289,14 @@ namespace renderer_test
 		r2::RectInt mRect;
 	};
 
-	r2test::iTest::TitleFunc CameraMove2::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc CameraMove2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move 2";
 		};
 	}
-	r2test::iTest::DoFunc CameraMove2::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc CameraMove2::GetDoFunction()
 	{
 		return[]( r2base::Director& )->r2test::eTestEndAction
 		{

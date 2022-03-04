@@ -29,14 +29,14 @@ namespace
 
 namespace texture_frame_test
 {
-	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Basic";
 		};
 	}
-	r2test::iTest::DoFunc Basic::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc Basic::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -119,14 +119,14 @@ namespace texture_frame_test
 
 
 
-	r2test::iTest::TitleFunc VisibleRect_1::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc VisibleRect_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 1";
 		};
 	}
-	r2test::iTest::DoFunc VisibleRect_1::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc VisibleRect_1::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -197,14 +197,14 @@ namespace texture_frame_test
 
 
 
-	r2test::iTest::TitleFunc VisibleRect_2::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc VisibleRect_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 2";
 		};
 	}
-	r2test::iTest::DoFunc VisibleRect_2::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc VisibleRect_2::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -304,14 +304,14 @@ namespace texture_frame_test
 
 
 
-	r2test::iTest::TitleFunc VisibleRect_3::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc VisibleRect_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 3";
 		};
 	}
-	r2test::iTest::DoFunc VisibleRect_3::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc VisibleRect_3::GetDoFunction()
 	{
 		return []( r2base::Director& )->r2test::eTestEndAction
 		{

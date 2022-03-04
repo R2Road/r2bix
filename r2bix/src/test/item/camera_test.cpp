@@ -17,14 +17,14 @@
 
 namespace camera_test
 {
-	r2test::iTest::TitleFunc CameraPosition::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc CameraPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Position";
 		};
 	}
-	r2test::iTest::DoFunc CameraPosition::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc CameraPosition::GetDoFunction()
 	{
 		return[]( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -58,14 +58,14 @@ namespace camera_test
 
 
 
-	r2test::iTest::TitleFunc CameraRect::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc CameraRect::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Rect";
 		};
 	}
-	r2test::iTest::DoFunc CameraRect::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc CameraRect::GetDoFunction()
 	{
 		return[]( r2base::Director& )->r2test::eTestEndAction
 		{
@@ -106,14 +106,14 @@ namespace camera_test
 
 
 
-	r2test::iTest::TitleFunc CameraMove::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc CameraMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move";
 		};
 	}
-	r2test::iTest::DoFunc CameraMove::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc CameraMove::GetDoFunction()
 	{
 		return[]( r2base::Director& director )->r2test::eTestEndAction
 		{

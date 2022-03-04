@@ -5,7 +5,7 @@
 
 namespace console_screen_buffer_manager_test
 {
-	class Basic : public r2test::iTest, public r2base::SingleTon<Basic>
+	class Basic : public r2test::iTest_Deprecated, public r2base::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

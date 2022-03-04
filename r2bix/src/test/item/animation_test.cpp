@@ -63,14 +63,14 @@ namespace animation_test
 
 	Basic::Basic() : mCamera( { 0, 0 }, { 60, 30 } ), mRenderer()
 	{}
-	r2test::iTest::TitleFunc Basic::GetTitleFunction() const
+	r2test::iTest_Deprecated::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Animation - Basic";
 		};
 	}
-	r2test::iTest::DoFunc Basic::GetDoFunction()
+	r2test::iTest_Deprecated::DoFunc Basic::GetDoFunction()
 	{
 		GetInstance().mRenderer.Clear();
 		GetInstance().mRenderer.SetCamera( &mCamera );
