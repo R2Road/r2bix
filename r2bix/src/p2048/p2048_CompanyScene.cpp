@@ -51,11 +51,6 @@ namespace p2048
 	}
 	void CompanyScene::Update()
 	{
-		mDirector.ClearScreen();
-
-		mLabelNode->Render( &mCamera, &mRenderTarget );
-		mSpriteNode->Render( &mCamera, &mRenderTarget );
-
 		if( _kbhit() )
 		{
 			auto input = _getch();

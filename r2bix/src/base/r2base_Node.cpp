@@ -15,6 +15,11 @@ namespace r2base
 		{
 			c->Render( camera, render_target );
 		}
+
+		for( auto& c : mChildContainer )
+		{
+			c->Render( camera, render_target );
+		}
 	}
 
 	void Node::AddComponent( r2base::ComponentUp component )
