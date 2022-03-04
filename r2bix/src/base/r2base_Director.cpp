@@ -19,7 +19,7 @@ namespace r2base
 		mSceneNode = std::move( node );
 	}
 
-	void Director::Update()
+	void Director::Run()
 	{
 		while( !mbAbort )
 		{

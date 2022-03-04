@@ -82,7 +82,7 @@ int main()
 			//
 			// Process
 			//
-			director.Update();
+			director.Run();
 		}
 		break;
 
@@ -97,7 +97,7 @@ int main()
 			//
 			// Process
 			//
-			director.Update();
+			director.Run();
 		}
 		break;
 

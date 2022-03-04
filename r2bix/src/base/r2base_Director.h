@@ -15,7 +15,7 @@ namespace r2base
 
 		void Setup( r2node::SceneNodeUp node );
 
-		void Update();
+		void Run();
 
 		void RequestAbort() { mbAbort = true; }
 		void ClearScreen();
