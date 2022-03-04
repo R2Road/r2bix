@@ -25,14 +25,18 @@ namespace r2node
 
 	bool LabelNode::Init()
 	{
-		auto transform_component = r2component::TransformComponent::Create( *this );
-		mTransformComponent = transform_component.get();
-		AddComponent( std::move( transform_component ) );
+		{
+			auto component = r2component::TransformComponent::Create( *this );
+			mTransformComponent = component.get();
+			AddComponent( std::move( component ) );
+		}
 
-		auto text_render_component = r2component::TextRenderComponent::Create( *this );
-		text_render_component->mTransformComponent = mTransformComponent;
-		mTextRenderComponent = text_render_component.get();
-		AddComponent( std::move( text_render_component ) );
+		{
+			auto component = r2component::TextRenderComponent::Create( *this );
+			component->mTransformComponent = mTransformComponent;
+			mTextRenderComponent = component.get();
+			AddComponent( std::move( component ) );
+		}
 
 		return true;
 	}
