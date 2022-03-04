@@ -40,6 +40,8 @@ int main()
 
 		std::cout << r2::split;
 
+		std::cout << "+ Menu" << r2::linefeed2;
+
 		std::cout << "[ESC] " "Exit" << r2::linefeed2;
 
 		std::cout << "[1] " "Test" << r2::linefeed;
