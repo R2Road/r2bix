@@ -4,16 +4,6 @@
 
 #include "node/r2node_SceneNode.h"
 
-namespace r2base
-{
-	class Director;
-}
-
-namespace r2node
-{
-	using SceneNodeUp = std::unique_ptr<class SceneNode>;
-}
-
 namespace pmr
 {
 	class CompanyScene : public r2node::SceneNode
