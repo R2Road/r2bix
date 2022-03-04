@@ -17,5 +17,11 @@ namespace r2node
 	void SceneNode::Render()
 	{
 		r2base::Node::Render( &mCamera, &mRenderTarget );
+
+		for( int y = 0; mRenderTarget.GetHeight() > y; ++y )
+		{
+			std::cout << mRenderTarget.GetLine( y );
+			std::cout << r2::linefeed;
+		}
 	}
 }

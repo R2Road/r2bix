@@ -56,16 +56,13 @@ namespace p2048
 		mLabelNode->Render( &mCamera, &mRenderTarget );
 		mSpriteNode->Render( &mCamera, &mRenderTarget );
 
-		for( int y = 0; mRenderTarget.GetHeight() > y; ++y )
+		if( _kbhit() )
 		{
-			std::cout << mRenderTarget.GetLine( y );
-			std::cout << r2::linefeed;
-		}
-
-		auto input = _getch();
-		if( 27 == input )
-		{
-			mDirector.RequestAbort();
+			auto input = _getch();
+			if( 27 == input )
+			{
+				mDirector.RequestAbort();
+			}
 		}
 	}
 }
