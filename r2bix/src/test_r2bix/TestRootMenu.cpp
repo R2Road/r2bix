@@ -34,7 +34,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddChild(
+		ret->AddItem(
 			'1'
 			, []()->const char* { return InputMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
@@ -43,7 +43,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddChild( '2', rect_test::Basic::GetInstance() );
+		ret->AddItem( '2', rect_test::Basic::GetInstance() );
 
 
 
@@ -52,7 +52,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddChild(
+		ret->AddItem(
 			'q'
 			, []()->const char* { return TextureMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
@@ -61,7 +61,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddChild(
+		ret->AddItem(
 			'w'
 			, []()->const char* { return CameraMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
@@ -70,7 +70,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddChild(
+		ret->AddItem(
 			'e'
 			, []()->const char* { return RenderableMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
@@ -87,7 +87,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddChild(
+		ret->AddItem(
 			'a'
 			, []()->const char* { return FrameBufferMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
@@ -96,7 +96,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddChild(
+		ret->AddItem(
 			'd'
 			, []()->const char* { return RendererMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
@@ -107,20 +107,20 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 		);
 
 
-		ret->AddChild( 'f', console_screen_buffer_manager_test::Basic::GetInstance() );
+		ret->AddItem( 'f', console_screen_buffer_manager_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddChild( 'z', animation_test::Basic::GetInstance() );
-		ret->AddChild( 'x', visible_resource_research::DrawWithPosition::GetInstance() );
+		ret->AddItem( 'z', animation_test::Basic::GetInstance() );
+		ret->AddItem( 'x', visible_resource_research::DrawWithPosition::GetInstance() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddChild(
+		ret->AddItem(
 			27
 			, []()->const char* { return "Return To Develop Menu"; }
 			, []()->r2cm::eTestEndAction

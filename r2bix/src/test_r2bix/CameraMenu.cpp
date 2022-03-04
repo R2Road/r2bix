@@ -19,15 +19,15 @@ r2cm::MenuUp CameraMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddChild( '1', camera_test::CameraPosition::GetInstance() );
-		ret->AddChild( '2', camera_test::CameraRect::GetInstance() );
-		ret->AddChild( '3', camera_test::CameraMove::GetInstance() );
+		ret->AddItem( '1', camera_test::CameraPosition::GetInstance() );
+		ret->AddItem( '2', camera_test::CameraRect::GetInstance() );
+		ret->AddItem( '3', camera_test::CameraMove::GetInstance() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddChild(
+		ret->AddItem(
 			27
 			, []()->const char* { return "Return To Root"; }
 			, [&director]()->r2cm::eTestEndAction

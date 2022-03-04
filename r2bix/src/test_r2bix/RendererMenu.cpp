@@ -16,17 +16,17 @@ r2cm::MenuUp RendererMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddChild( '1', renderer_test::TestRenderable::GetInstance() );
-		ret->AddChild( '2', renderer_test::TestRenderer::GetInstance() );
+		ret->AddItem( '1', renderer_test::TestRenderable::GetInstance() );
+		ret->AddItem( '2', renderer_test::TestRenderer::GetInstance() );
 
-		ret->AddChild( '3', renderer_test::CameraMove1::GetInstance() );
-		ret->AddChild( '4', renderer_test::CameraMove2::GetInstance() );
+		ret->AddItem( '3', renderer_test::CameraMove1::GetInstance() );
+		ret->AddItem( '4', renderer_test::CameraMove2::GetInstance() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddChild(
+		ret->AddItem(
 			27
 			, []()->const char* { return "Return To Root"; }
 			, [&director]()->r2cm::eTestEndAction

@@ -18,7 +18,7 @@ namespace r2cm
 		mDirector( director )
 		, mTitleString( title_string )
 		, mDescriptionString( description_string )
-		, mTests()
+		, mItemContainer()
 	{}
 
 	void Menu::ShowTitle() const
@@ -42,7 +42,7 @@ namespace r2cm
 	{
 		std::cout << "+ Menu" << r2::linefeed2;
 
-		for( const auto t : mTests )
+		for( const auto t : mItemContainer )
 		{
 			//
 			// Key
@@ -86,37 +86,37 @@ namespace r2cm
 
 	eTestEndAction Menu::Do( const int key_code )
 	{
-		for( const auto t : mTests )
+		for( const auto& i : mItemContainer )
 		{
-			if( key_code == t.KeyCode )
+			if( key_code == i.KeyCode )
 			{
-				return t.TestFunction();
+				return i.DoFunction();
 			}
 		}
 
 		return eTestEndAction::Pause;
 	}
 
-	void Menu::AddChild( const char key_code, iItem& test_obj )
+	void Menu::AddItem( const char key_code, iItem& item_obj )
 	{
-		mTests.emplace_back( key_code, test_obj.GetTitleFunction(), test_obj.GetDoFunction() );
+		mItemContainer.emplace_back( key_code, item_obj.GetTitleFunction(), item_obj.GetDoFunction() );
 	}
-	void Menu::AddChild( const char key_code, const std::function<const char*()> func_title, const std::function<const eTestEndAction()> func_test )
+	void Menu::AddItem( const char key_code, const std::function<const char*()> func_title, const std::function<const r2cm::eTestEndAction()> func_do )
 	{
-		mTests.emplace_back( key_code, func_title, func_test );
+		mItemContainer.emplace_back( key_code, func_title, func_do );
 	}
 	void Menu::AddLineFeed()
 	{
 		static const std::function<const char*()> func_title = []()->const char* { return ""; };
-		static const std::function<const eTestEndAction()> func_test = []()->const eTestEndAction { return eTestEndAction::Pause; };
+		static const std::function<const r2cm::eTestEndAction()> func_do = []()->const r2cm::eTestEndAction { return r2cm::eTestEndAction::Pause; };
 
-		mTests.push_back( { KeyCode4LineFeed, func_title, func_test } );
+		mItemContainer.push_back( { KeyCode4LineFeed, func_title, func_do } );
 	}
 	void Menu::AddSplit()
 	{
 		static const std::function<const char*( )> func_title = []()->const char* { return ""; };
-		static const std::function<const eTestEndAction()> func_test = []()->const eTestEndAction { return eTestEndAction::Pause; };
+		static const std::function<const r2cm::eTestEndAction()> func_do = []()->const r2cm::eTestEndAction { return r2cm::eTestEndAction::Pause; };
 
-		mTests.push_back( { KeyCode4Split, func_title, func_test } );
+		mItemContainer.push_back( { KeyCode4Split, func_title, func_do } );
 	}
 }

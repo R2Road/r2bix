@@ -17,14 +17,14 @@ r2cm::MenuUp InputMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddChild( '1', key_test::Basic::GetInstance() );
-		ret->AddChild( '2', window_input_test::TestKeyboardInputCollector::GetInstance() );
+		ret->AddItem( '1', key_test::Basic::GetInstance() );
+		ret->AddItem( '2', window_input_test::TestKeyboardInputCollector::GetInstance() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddChild(
+		ret->AddItem(
 			27
 			, []()->const char* { return "Return To Root"; }
 			, [&director]()->r2cm::eTestEndAction

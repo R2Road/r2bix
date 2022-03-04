@@ -16,13 +16,13 @@ r2cm::MenuUp RenderableMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddChild( '1', renderable_test::Basic::GetInstance() );
+		ret->AddItem( '1', renderable_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
 
 
-		ret->AddChild(
+		ret->AddItem(
 			27
 			, []()->const char* { return "Return To Root"; }
 			, [&director]()->r2cm::eTestEndAction
