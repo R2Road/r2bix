@@ -6,7 +6,7 @@
 
 #include "r2test_eTestEndAction.h"
 
-namespace r2test
+namespace r2cm
 {
 	Director::Director() : mMenu()
 	{}

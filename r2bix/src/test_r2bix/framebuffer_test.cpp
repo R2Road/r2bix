@@ -7,16 +7,16 @@
 
 namespace framebuffer_test
 {
-	r2test::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Frame Buffer : Basic";
 		};
 	}
-	r2test::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2test::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -40,7 +40,7 @@ namespace framebuffer_test
 
 			std::cout << r2::split;
 
-			return r2test::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

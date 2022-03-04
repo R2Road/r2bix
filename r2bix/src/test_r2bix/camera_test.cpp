@@ -16,16 +16,16 @@
 
 namespace camera_test
 {
-	r2test::iItem::TitleFunc CameraPosition::GetTitleFunction() const
+	r2cm::iItem::TitleFunc CameraPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Position";
 		};
 	}
-	r2test::iItem::DoFunc CameraPosition::GetDoFunction()
+	r2cm::iItem::DoFunc CameraPosition::GetDoFunction()
 	{
-		return[]()->r2test::eTestEndAction
+		return[]()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -51,22 +51,22 @@ namespace camera_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 
-			return r2test::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2test::iItem::TitleFunc CameraRect::GetTitleFunction() const
+	r2cm::iItem::TitleFunc CameraRect::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Rect";
 		};
 	}
-	r2test::iItem::DoFunc CameraRect::GetDoFunction()
+	r2cm::iItem::DoFunc CameraRect::GetDoFunction()
 	{
-		return[]()->r2test::eTestEndAction
+		return[]()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -99,22 +99,22 @@ namespace camera_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 
-			return r2test::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2test::iItem::TitleFunc CameraMove::GetTitleFunction() const
+	r2cm::iItem::TitleFunc CameraMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move";
 		};
 	}
-	r2test::iItem::DoFunc CameraMove::GetDoFunction()
+	r2cm::iItem::DoFunc CameraMove::GetDoFunction()
 	{
-		return[]()->r2test::eTestEndAction
+		return[]()->r2cm::eTestEndAction
 		{
 			r2render::Camera camera( { 20, 30 }, { 19, 9 } );
 
@@ -177,7 +177,7 @@ namespace camera_test
 
 			} while( true );
 
-			return r2test::eTestEndAction::None;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }

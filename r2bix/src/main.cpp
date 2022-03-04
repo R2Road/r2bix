@@ -60,7 +60,7 @@ int main()
 			//
 			// Setup
 			//
-			r2test::Director director;
+			r2cm::Director director;
 			director.Setup( TestRootMenu::Create( director ) );
 
 			//

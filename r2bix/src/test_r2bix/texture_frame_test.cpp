@@ -28,16 +28,16 @@ namespace
 
 namespace texture_frame_test
 {
-	r2test::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Basic";
 		};
 	}
-	r2test::iItem::DoFunc Basic::GetDoFunction()
+	r2cm::iItem::DoFunc Basic::GetDoFunction()
 	{
-		return []()->r2test::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -112,22 +112,22 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			return r2test::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2test::iItem::TitleFunc VisibleRect_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunc VisibleRect_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 1";
 		};
 	}
-	r2test::iItem::DoFunc VisibleRect_1::GetDoFunction()
+	r2cm::iItem::DoFunc VisibleRect_1::GetDoFunction()
 	{
-		return []()->r2test::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -190,22 +190,22 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			return r2test::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2test::iItem::TitleFunc VisibleRect_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunc VisibleRect_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 2";
 		};
 	}
-	r2test::iItem::DoFunc VisibleRect_2::GetDoFunction()
+	r2cm::iItem::DoFunc VisibleRect_2::GetDoFunction()
 	{
-		return []()->r2test::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -297,22 +297,22 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			return r2test::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 
 
 
-	r2test::iItem::TitleFunc VisibleRect_3::GetTitleFunction() const
+	r2cm::iItem::TitleFunc VisibleRect_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 3";
 		};
 	}
-	r2test::iItem::DoFunc VisibleRect_3::GetDoFunction()
+	r2cm::iItem::DoFunc VisibleRect_3::GetDoFunction()
 	{
-		return []()->r2test::eTestEndAction
+		return []()->r2cm::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -353,7 +353,7 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			return r2test::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::Pause;
 		};
 	}
 }

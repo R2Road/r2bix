@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace r2test
+namespace r2cm
 {
 	using MenuUp = std::unique_ptr<class Menu>;
 
@@ -16,5 +16,5 @@ private:
 
 public:
 	static const char* GetTitle() { return "Texture"; }
-	static r2test::MenuUp Create( r2test::Director& director );
+	static r2cm::MenuUp Create( r2cm::Director& director );
 };

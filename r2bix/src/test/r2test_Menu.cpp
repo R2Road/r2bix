@@ -12,7 +12,7 @@ namespace
 	const char KeyCode4Split = 42; // *
 }
 
-namespace r2test
+namespace r2cm
 {
 	Menu::Menu( Director& director, const char* title_string, const char* description_string ) :
 		mDirector( director )

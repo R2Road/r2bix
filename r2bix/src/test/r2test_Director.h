@@ -2,7 +2,7 @@
 
 #include "r2test_Menu.h"
 
-namespace r2test
+namespace r2cm
 {
 	class Director
 	{

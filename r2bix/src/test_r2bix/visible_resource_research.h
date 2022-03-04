@@ -5,7 +5,7 @@
 
 namespace visible_resource_research
 {
-	class DrawWithPosition : public r2test::iItem, public r2base::SingleTon<DrawWithPosition>
+	class DrawWithPosition : public r2cm::iItem, public r2base::SingleTon<DrawWithPosition>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

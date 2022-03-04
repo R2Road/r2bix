@@ -8,9 +8,9 @@
 
 #include "renderer_test.h"
 
-r2test::MenuUp RendererMenu::Create( r2test::Director& director )
+r2cm::MenuUp RendererMenu::Create( r2cm::Director& director )
 {
-	r2test::MenuUp ret( new ( std::nothrow ) r2test::Menu(
+	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle()
 	) );
@@ -29,10 +29,10 @@ r2test::MenuUp RendererMenu::Create( r2test::Director& director )
 		ret->AddChild(
 			27
 			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2test::eTestEndAction
+			, [&director]()->r2cm::eTestEndAction
 			{
 			director.Setup( TestRootMenu::Create( director ) );
-				return r2test::eTestEndAction::None;
+				return r2cm::eTestEndAction::None;
 			}
 		);
 	}

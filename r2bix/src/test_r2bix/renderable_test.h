@@ -5,7 +5,7 @@
 
 namespace renderable_test
 {
-	class Basic : public r2test::iItem, public r2base::SingleTon<Basic>
+	class Basic : public r2cm::iItem, public r2base::SingleTon<Basic>
 	{
 	public:
 		TitleFunc GetTitleFunction() const override;

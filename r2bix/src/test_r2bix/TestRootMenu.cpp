@@ -17,9 +17,9 @@
 
 #include "visible_resource_research.h"
 
-r2test::MenuUp TestRootMenu::Create( r2test::Director& director )
+r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 {
-	r2test::MenuUp ret( new ( std::nothrow ) r2test::Menu(
+	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle(),
 				"> Inprogress : Update Camera Test"
@@ -37,10 +37,10 @@ r2test::MenuUp TestRootMenu::Create( r2test::Director& director )
 		ret->AddChild(
 			'1'
 			, []()->const char* { return InputMenu::GetTitle(); }
-			, [&director]()->r2test::eTestEndAction
+			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( InputMenu::Create( director ) );
-				return r2test::eTestEndAction::None;
+				return r2cm::eTestEndAction::None;
 			}
 		);
 		ret->AddChild( '2', rect_test::Basic::GetInstance() );
@@ -55,28 +55,28 @@ r2test::MenuUp TestRootMenu::Create( r2test::Director& director )
 		ret->AddChild(
 			'q'
 			, []()->const char* { return TextureMenu::GetTitle(); }
-			, [&director]()->r2test::eTestEndAction
+			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( TextureMenu::Create( director ) );
-				return r2test::eTestEndAction::None;
+				return r2cm::eTestEndAction::None;
 			}
 		);
 		ret->AddChild(
 			'w'
 			, []()->const char* { return CameraMenu::GetTitle(); }
-			, [&director]()->r2test::eTestEndAction
+			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( CameraMenu::Create( director ) );
-				return r2test::eTestEndAction::None;
+				return r2cm::eTestEndAction::None;
 			}
 		);
 		ret->AddChild(
 			'e'
 			, []()->const char* { return RenderableMenu::GetTitle(); }
-			, [&director]()->r2test::eTestEndAction
+			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( RenderableMenu::Create( director ) );
-				return r2test::eTestEndAction::None;
+				return r2cm::eTestEndAction::None;
 			}
 		);
 
@@ -90,19 +90,19 @@ r2test::MenuUp TestRootMenu::Create( r2test::Director& director )
 		ret->AddChild(
 			'a'
 			, []()->const char* { return FrameBufferMenu::GetTitle(); }
-			, [&director]()->r2test::eTestEndAction
+			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( FrameBufferMenu::Create( director ) );
-				return r2test::eTestEndAction::None;
+				return r2cm::eTestEndAction::None;
 			}
 		);
 		ret->AddChild(
 			'd'
 			, []()->const char* { return RendererMenu::GetTitle(); }
-			, [&director]()->r2test::eTestEndAction
+			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( RendererMenu::Create( director ) );
-				return r2test::eTestEndAction::None;
+				return r2cm::eTestEndAction::None;
 			}
 		);
 
@@ -123,9 +123,9 @@ r2test::MenuUp TestRootMenu::Create( r2test::Director& director )
 		ret->AddChild(
 			27
 			, []()->const char* { return "Return To Develop Menu"; }
-			, []()->r2test::eTestEndAction
+			, []()->r2cm::eTestEndAction
 			{
-				return r2test::eTestEndAction::Exit;
+				return r2cm::eTestEndAction::Exit;
 			}
 		);
 	}

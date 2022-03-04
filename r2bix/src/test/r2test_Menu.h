@@ -5,7 +5,7 @@
 #include <string_view>
 #include <vector>
 
-namespace r2test
+namespace r2cm
 {
 	enum class eTestEndAction; 
 
