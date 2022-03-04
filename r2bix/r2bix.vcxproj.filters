@@ -119,9 +119,6 @@
     <ClCompile Include="src\base\r2base_ScreenBufferManager.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\base\r2base_FPSTimer.cpp">
-      <Filter>base</Filter>
-    </ClCompile>
     <ClCompile Include="src\base\r2base_CoutBufferRedirector.cpp">
       <Filter>base</Filter>
     </ClCompile>
@@ -196,6 +193,9 @@
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
       <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2\r2_FPSTimer.cpp">
+      <Filter>r2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -293,9 +293,6 @@
     <ClInclude Include="src\base\r2base_ScreenBufferManager.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\base\r2base_FPSTimer.h">
-      <Filter>base</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\r2base_CoutBufferRedirector.h">
       <Filter>base</Filter>
     </ClInclude>
@@ -381,6 +378,9 @@
       <Filter>r2cm</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Singleton.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_FPSTimer.h">
       <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>

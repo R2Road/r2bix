@@ -2,9 +2,9 @@
 
 #include <memory>
 
-#include "base/r2base_FPSTimer.h"
 #include "node/r2node_SceneNode.h"
 #include "base/r2base_ScreenBufferManager.h"
+#include "r2/r2_FPSTimer.h"
 
 namespace r2base
 {

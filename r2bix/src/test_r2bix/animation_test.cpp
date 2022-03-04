@@ -4,9 +4,8 @@
 #include <conio.h>
 #include <Windows.h>
 
+#include "r2/r2_FPSTimer.h"
 #include "r2cm/r2cm_eTestEndAction.h"
-
-#include "base/r2base_FPSTimer.h"
 #include "render/r2render_iRenderable.h"
 #include "render/r2render_Texture.h"
 
