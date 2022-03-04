@@ -404,11 +404,11 @@
     <ClInclude Include="src\test\r2test_Director.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\r2test_iTest.h">
-      <Filter>test</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_r2bix\TestRootMenu.h">
       <Filter>test_r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\r2test_iItem.h">
+      <Filter>test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

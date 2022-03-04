@@ -134,7 +134,7 @@
     <ClInclude Include="src\test\r2test_Director.h" />
     <ClInclude Include="src\test\r2test_eTestEndAction.h" />
     <ClInclude Include="src\test\r2test_Inspector.h" />
-    <ClInclude Include="src\test\r2test_iTest.h" />
+    <ClInclude Include="src\test\r2test_iItem.h" />
     <ClInclude Include="src\test\r2test_iTest_Deprecated.h" />
     <ClInclude Include="src\test\r2test_Menu.h" />
     <ClInclude Include="src\test\r2test_Utility.h" />
