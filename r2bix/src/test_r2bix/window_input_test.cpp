@@ -13,7 +13,7 @@
 
 namespace window_input_test
 {
-	r2cm::iItem::TitleFunc TestKeyboardInputCollector::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TestKeyboardInputCollector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

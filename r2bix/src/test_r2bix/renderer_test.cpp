@@ -48,7 +48,7 @@ namespace renderer_test
 		r2render::Texture mVisibleResource;
 	};
 
-	r2cm::iItem::TitleFunc TestRenderable::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TestRenderable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -75,7 +75,7 @@ namespace renderer_test
 
 	TestRenderer::TestRenderer() : mRenderer() {}
 
-	r2cm::iItem::TitleFunc TestRenderer::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TestRenderer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -156,7 +156,7 @@ namespace renderer_test
 		r2render::Texture mVisibleResource;
 	};
 
-	r2cm::iItem::TitleFunc CameraMove1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CameraMove1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -289,7 +289,7 @@ namespace renderer_test
 		r2::RectInt mRect;
 	};
 
-	r2cm::iItem::TitleFunc CameraMove2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CameraMove2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

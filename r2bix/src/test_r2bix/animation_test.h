@@ -13,7 +13,7 @@ namespace animation_test
 	public:
 		Basic();
 
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 
 	private:

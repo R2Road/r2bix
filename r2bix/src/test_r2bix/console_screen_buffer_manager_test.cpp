@@ -9,7 +9,7 @@
 
 namespace console_screen_buffer_manager_test
 {
-	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

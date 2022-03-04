@@ -7,7 +7,7 @@
 
 namespace key_test
 {
-	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

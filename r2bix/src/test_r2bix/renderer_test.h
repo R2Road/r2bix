@@ -11,7 +11,7 @@ namespace renderer_test
 	class TestRenderable : public r2cm::iItem, public r2::SingleTon<TestRenderable>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
@@ -23,7 +23,7 @@ namespace renderer_test
 		TestRenderer();
 
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 
 	private:
@@ -35,14 +35,14 @@ namespace renderer_test
 	class CameraMove1 : public r2cm::iItem, public r2::SingleTon<CameraMove1>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 
 	class CameraMove2 : public r2cm::iItem, public r2::SingleTon<CameraMove2>
 	{
 	public:
-		TitleFunc GetTitleFunction() const override;
+		TitleFuncT GetTitleFunction() const override;
 		DoFunc GetDoFunction() override;
 	};
 }

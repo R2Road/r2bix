@@ -119,7 +119,7 @@ namespace renderable_test
 		r2render::Texture mTexture;
 	};
 
-	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

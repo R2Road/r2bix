@@ -10,7 +10,7 @@
 
 namespace visible_resource_research
 {
-	r2cm::iItem::TitleFunc DrawWithPosition::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT DrawWithPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

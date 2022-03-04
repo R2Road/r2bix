@@ -16,7 +16,7 @@
 
 namespace camera_test
 {
-	r2cm::iItem::TitleFunc CameraPosition::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CameraPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -57,7 +57,7 @@ namespace camera_test
 
 
 
-	r2cm::iItem::TitleFunc CameraRect::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CameraRect::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -105,7 +105,7 @@ namespace camera_test
 
 
 
-	r2cm::iItem::TitleFunc CameraMove::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CameraMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

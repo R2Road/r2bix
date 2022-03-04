@@ -8,7 +8,7 @@
 
 namespace texture_test
 {
-	r2cm::iItem::TitleFunc FillAll::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT FillAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -55,7 +55,7 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFunc Fill::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Fill::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -110,7 +110,7 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFunc InitWithChars_1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT InitWithChars_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -158,7 +158,7 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFunc InitWithChars_2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT InitWithChars_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -209,7 +209,7 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFunc InitWithChars_3::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT InitWithChars_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -286,7 +286,7 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFunc InitWithChars_4::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT InitWithChars_4::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

@@ -61,7 +61,7 @@ namespace animation_test
 
 	Basic::Basic() : mCamera( { 0, 0 }, { 60, 30 } ), mRenderer()
 	{}
-	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{

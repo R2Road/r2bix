@@ -9,12 +9,12 @@ namespace r2cm
 	class iItem
 	{
 	public:
-		using TitleFunc = std::function<const char*()>;
+		using TitleFuncT = std::function<const char*()>;
 		using DoFunc = std::function<eTestEndAction()>;
 
 		virtual ~iItem() {}
 
-		virtual TitleFunc GetTitleFunction() const = 0;
+		virtual TitleFuncT GetTitleFunction() const = 0;
 		virtual DoFunc GetDoFunction() = 0;
 	};
 }

@@ -28,7 +28,7 @@ namespace
 
 namespace texture_frame_test
 {
-	r2cm::iItem::TitleFunc Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -118,7 +118,7 @@ namespace texture_frame_test
 
 
 
-	r2cm::iItem::TitleFunc VisibleRect_1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT VisibleRect_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -196,7 +196,7 @@ namespace texture_frame_test
 
 
 
-	r2cm::iItem::TitleFunc VisibleRect_2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT VisibleRect_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
@@ -303,7 +303,7 @@ namespace texture_frame_test
 
 
 
-	r2cm::iItem::TitleFunc VisibleRect_3::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT VisibleRect_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
