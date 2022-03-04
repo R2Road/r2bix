@@ -7,8 +7,9 @@
 #endif
 
 #include "base/r2base_Director.h"
-#include "test/scene/DevelopScene.h"
 #include "utility/r2utility_WindowUtil.h"
+#include "pmr/pmr_CompanyScene.h"
+#include "p2048/p2048_CompanyScene.h"
 
 #include "test/r2test_Director.h"
 #include "test_r2bix/TestRootMenu.h"
@@ -42,7 +43,8 @@ int main()
 		std::cout << "[ESC] " "Exit" << r2::linefeed2;
 
 		std::cout << "[1] " "Test" << r2::linefeed;
-		std::cout << "[2] " "Game" << r2::linefeed;
+		std::cout << "[2] " "Game : 2048" << r2::linefeed;
+		std::cout << "[3] " "Game : Mini Rogue" << r2::linefeed;
 
 		std::cout << r2::split;
 
@@ -72,7 +74,22 @@ int main()
 			// Setup
 			//
 			r2base::Director director;
-			director.Setup( DevelopScene::Create( director ) );
+			director.Setup( p2048::CompanyScene::Create( director ) );
+
+			//
+			// Process
+			//
+			director.Update();
+		}
+		break;
+
+		case '3':
+		{
+			//
+			// Setup
+			//
+			r2base::Director director;
+			director.Setup( pmr::CompanyScene::Create( director ) );
 
 			//
 			// Process

@@ -5,8 +5,6 @@
 
 #include "base/r2base_Director.h"
 
-#include "test/scene/DevelopScene.h"
-
 namespace pmr
 {
 	CompanyScene::CompanyScene( r2base::Director& director ) : r2node::SceneNode( director )
@@ -32,7 +30,7 @@ namespace pmr
 		auto input = _getch();
 		if( 27 == input )
 		{
-			mDirector.Setup( DevelopScene::Create( mDirector ) );
+			mDirector.RequestAbort();
 		}
 	}
 }

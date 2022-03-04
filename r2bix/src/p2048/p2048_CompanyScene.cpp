@@ -11,7 +11,6 @@
 #include "node/r2node_LabelNode.h"
 #include "node/r2node_SpriteNode.h"
 #include "p2048table_TextureTable.h"
-#include "test/scene/DevelopScene.h"
 
 namespace p2048
 {
@@ -66,7 +65,7 @@ namespace p2048
 		auto input = _getch();
 		if( 27 == input )
 		{
-			mDirector.Setup( DevelopScene::Create( mDirector ) );
+			mDirector.RequestAbort();
 		}
 	}
 }
