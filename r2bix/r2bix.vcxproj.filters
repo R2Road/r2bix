@@ -197,6 +197,9 @@
     <ClCompile Include="src\r2\r2_FPSTimer.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_r2bix\console_screen_buffer_test.cpp">
+      <Filter>test_r2bix\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -382,6 +385,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_FPSTimer.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\console_screen_buffer_test.h">
+      <Filter>test_r2bix\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

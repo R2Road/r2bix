@@ -12,6 +12,7 @@
 #include "TextureMenu.h"
 
 #include "animation_test.h"
+#include "console_screen_buffer_test.h"
 #include "console_screen_buffer_manager_test.h"
 #include "rect_test.h"
 
@@ -34,8 +35,9 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 	) );
 
 	{
+		ret->AddItem( '1', console_screen_buffer_test::Basic::GetInstance() );
 		ret->AddItem(
-			'1'
+			'2'
 			, []()->const char* { return InputMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
@@ -43,7 +45,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddItem( '2', rect_test::Basic::GetInstance() );
+		ret->AddItem( '3', rect_test::Basic::GetInstance() );
 
 
 

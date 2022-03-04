@@ -59,6 +59,7 @@
     <ClCompile Include="src\test_r2bix\animation_test.cpp" />
     <ClCompile Include="src\test_r2bix\CameraMenu.cpp" />
     <ClCompile Include="src\test_r2bix\camera_test.cpp" />
+    <ClCompile Include="src\test_r2bix\console_screen_buffer_test.cpp" />
     <ClCompile Include="src\test_r2bix\console_screen_buffer_manager_test.cpp" />
     <ClCompile Include="src\test_r2bix\FrameBufferMenu.cpp" />
     <ClCompile Include="src\test_r2bix\framebuffer_test.cpp" />
@@ -123,6 +124,7 @@
     <ClInclude Include="src\test_r2bix\animation_test.h" />
     <ClInclude Include="src\test_r2bix\CameraMenu.h" />
     <ClInclude Include="src\test_r2bix\camera_test.h" />
+    <ClInclude Include="src\test_r2bix\console_screen_buffer_test.h" />
     <ClInclude Include="src\test_r2bix\console_screen_buffer_manager_test.h" />
     <ClInclude Include="src\test_r2bix\FrameBufferMenu.h" />
     <ClInclude Include="src\test_r2bix\framebuffer_test.h" />
