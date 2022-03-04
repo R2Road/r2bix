@@ -78,7 +78,6 @@
     <ClCompile Include="src\test\scene\r2test_RendererScene.cpp" />
     <ClCompile Include="src\test\scene\r2test_RootScene.cpp" />
     <ClCompile Include="src\test\scene\r2test_TextureScene.cpp" />
-    <ClCompile Include="src\test\scene\TestScene.cpp" />
     <ClCompile Include="src\test_r2bix\TestRootMenu.cpp" />
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
@@ -135,7 +134,6 @@
     <ClInclude Include="src\test\r2test_eTestEndAction.h" />
     <ClInclude Include="src\test\r2test_Inspector.h" />
     <ClInclude Include="src\test\r2test_iItem.h" />
-    <ClInclude Include="src\test\r2test_iTest_Deprecated.h" />
     <ClInclude Include="src\test\r2test_Menu.h" />
     <ClInclude Include="src\test\r2test_Utility.h" />
     <ClInclude Include="src\test\scene\DevelopScene.h" />
@@ -147,7 +145,6 @@
     <ClInclude Include="src\test\scene\r2test_RendererScene.h" />
     <ClInclude Include="src\test\scene\r2test_RootScene.h" />
     <ClInclude Include="src\test\scene\r2test_TextureScene.h" />
-    <ClInclude Include="src\test\scene\TestScene.h" />
     <ClInclude Include="src\test_r2bix\TestRootMenu.h" />
     <ClInclude Include="src\utility\r2utility_WindowUtil.h" />
   </ItemGroup>

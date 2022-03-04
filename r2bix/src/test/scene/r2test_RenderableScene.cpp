@@ -1,40 +1,37 @@
 #include "pch.h"
 #include "r2test_RenderableScene.h"
 
-#include "base/r2base_Director.h"
+#include "test/r2test_Director.h"
 #include "test/r2test_eTestEndAction.h"
-#include "test/scene/TestScene.h"
 
-#include "r2test_RootScene.h"
+#include "test_r2bix/TestRootMenu.h"
+
 #include "test/item/renderable_test.h"
 
-namespace r2test
+r2test::MenuUp RenderableMenu::Create( r2test::Director& director )
 {
-	r2node::SceneNodeUp RenderableScene::Create( r2base::Director& director )
+	r2test::MenuUp ret( new ( std::nothrow ) r2test::Menu(
+		director
+		, GetTitle()
+	) );
+
 	{
-		TestSceneUp ret( new ( std::nothrow ) TestScene(
-			director
-			, GetTitle()
-		) );
-
-		{
-			ret->AddChild( '1', renderable_test::Basic::GetInstance() );
+		ret->AddChild( '1', renderable_test::Basic::GetInstance() );
 
 
-			ret->AddSplit();
+		ret->AddSplit();
 
 
-			ret->AddChild(
-				27
-				, []()->const char* { return "Return To Root"; }
-				, [&director]( r2base::Director& )->r2test::eTestEndAction
-				{
-					director.Setup( r2test::RootScene::Create( director ) );
-					return r2test::eTestEndAction::None;
-				}
-			);
-		}
-
-		return ret;
+		ret->AddChild(
+			27
+			, []()->const char* { return "Return To Root"; }
+			, [&director]()->r2test::eTestEndAction
+			{
+			director.Setup( TestRootMenu::Create( director ) );
+			return r2test::eTestEndAction::None;
+			}
+		);
 	}
+
+	return ret;
 }

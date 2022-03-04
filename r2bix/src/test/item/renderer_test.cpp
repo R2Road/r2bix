@@ -48,19 +48,19 @@ namespace renderer_test
 		r2render::Texture mVisibleResource;
 	};
 
-	r2test::iTest_Deprecated::TitleFunc TestRenderable::GetTitleFunction() const
+	r2test::iItem::TitleFunc TestRenderable::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Renderable";
 		};
 	}
-	r2test::iTest_Deprecated::DoFunc TestRenderable::GetDoFunction()
+	r2test::iItem::DoFunc TestRenderable::GetDoFunction()
 	{
 		static TempRenderable tr( 8, 5, 6u, "######" "#    #" "#    #" "#    #" "#    #" "######" );
 		auto& tr2 = tr;
 
-		return [&tr2]( r2base::Director& )->r2test::eTestEndAction
+		return [&tr2]()->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -75,14 +75,14 @@ namespace renderer_test
 
 	TestRenderer::TestRenderer() : mRenderer() {}
 
-	r2test::iTest_Deprecated::TitleFunc TestRenderer::GetTitleFunction() const
+	r2test::iItem::TitleFunc TestRenderer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Renderer";
 		};
 	}
-	r2test::iTest_Deprecated::DoFunc TestRenderer::GetDoFunction()
+	r2test::iItem::DoFunc TestRenderer::GetDoFunction()
 	{
 		auto& rd = GetInstance().mRenderer;
 		rd.Clear();
@@ -107,7 +107,7 @@ namespace renderer_test
 		static TempRenderable tr3( 11, 5, 7u, "#######" "#     #" "#     #" "#     #" "#     #" "#######" );
 		rd.Add( &tr3 );
 
-		return [&rd]( r2base::Director& )->r2test::eTestEndAction
+		return [&rd]()->r2test::eTestEndAction
 		{
 			rd.Draw();
 
@@ -156,16 +156,16 @@ namespace renderer_test
 		r2render::Texture mVisibleResource;
 	};
 
-	r2test::iTest_Deprecated::TitleFunc CameraMove1::GetTitleFunction() const
+	r2test::iItem::TitleFunc CameraMove1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move 1";
 		};
 	}
-	r2test::iTest_Deprecated::DoFunc CameraMove1::GetDoFunction()
+	r2test::iItem::DoFunc CameraMove1::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2test::eTestEndAction
+		return []()->r2test::eTestEndAction
 		{
 			r2render::Camera camera( { 0, 0 }, { 60, 30 } );
 			r2render::Renderer renderer;
@@ -289,16 +289,16 @@ namespace renderer_test
 		r2::RectInt mRect;
 	};
 
-	r2test::iTest_Deprecated::TitleFunc CameraMove2::GetTitleFunction() const
+	r2test::iItem::TitleFunc CameraMove2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move 2";
 		};
 	}
-	r2test::iTest_Deprecated::DoFunc CameraMove2::GetDoFunction()
+	r2test::iItem::DoFunc CameraMove2::GetDoFunction()
 	{
-		return[]( r2base::Director& )->r2test::eTestEndAction
+		return[]()->r2test::eTestEndAction
 		{
 			r2render::Camera camera( { 0, 0 }, { 60, 30 } );
 

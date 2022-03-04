@@ -10,16 +10,16 @@
 
 namespace visible_resource_research
 {
-	r2test::iTest_Deprecated::TitleFunc DrawWithPosition::GetTitleFunction() const
+	r2test::iItem::TitleFunc DrawWithPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Draw With Position";
 		};
 	}
-	r2test::iTest_Deprecated::DoFunc DrawWithPosition::GetDoFunction()
+	r2test::iItem::DoFunc DrawWithPosition::GetDoFunction()
 	{
-		return []( r2base::Director& )->r2test::eTestEndAction
+		return []()->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 

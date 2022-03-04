@@ -4,7 +4,6 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "base/r2base_Director.h"
 #include "test/r2test_eTestEndAction.h"
 
 #include "r2/r2_PointInt.h"
@@ -17,16 +16,16 @@
 
 namespace camera_test
 {
-	r2test::iTest_Deprecated::TitleFunc CameraPosition::GetTitleFunction() const
+	r2test::iItem::TitleFunc CameraPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Position";
 		};
 	}
-	r2test::iTest_Deprecated::DoFunc CameraPosition::GetDoFunction()
+	r2test::iItem::DoFunc CameraPosition::GetDoFunction()
 	{
-		return[]( r2base::Director& )->r2test::eTestEndAction
+		return[]()->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -58,16 +57,16 @@ namespace camera_test
 
 
 
-	r2test::iTest_Deprecated::TitleFunc CameraRect::GetTitleFunction() const
+	r2test::iItem::TitleFunc CameraRect::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Rect";
 		};
 	}
-	r2test::iTest_Deprecated::DoFunc CameraRect::GetDoFunction()
+	r2test::iItem::DoFunc CameraRect::GetDoFunction()
 	{
-		return[]( r2base::Director& )->r2test::eTestEndAction
+		return[]()->r2test::eTestEndAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -106,16 +105,16 @@ namespace camera_test
 
 
 
-	r2test::iTest_Deprecated::TitleFunc CameraMove::GetTitleFunction() const
+	r2test::iItem::TitleFunc CameraMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move";
 		};
 	}
-	r2test::iTest_Deprecated::DoFunc CameraMove::GetDoFunction()
+	r2test::iItem::DoFunc CameraMove::GetDoFunction()
 	{
-		return[]( r2base::Director& director )->r2test::eTestEndAction
+		return[]()->r2test::eTestEndAction
 		{
 			r2render::Camera camera( { 20, 30 }, { 19, 9 } );
 
@@ -162,7 +161,7 @@ namespace camera_test
 				}
 				else
 				{
-					director.ClearScreen();
+					system( "cls" );
 
 					if( 0 == step )
 					{

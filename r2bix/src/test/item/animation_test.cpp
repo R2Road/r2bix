@@ -4,7 +4,6 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "base/r2base_Director.h"
 #include "test/r2test_eTestEndAction.h"
 
 #include "base/r2base_FPSTimer.h"
@@ -63,14 +62,14 @@ namespace animation_test
 
 	Basic::Basic() : mCamera( { 0, 0 }, { 60, 30 } ), mRenderer()
 	{}
-	r2test::iTest_Deprecated::TitleFunc Basic::GetTitleFunction() const
+	r2test::iItem::TitleFunc Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Animation - Basic";
 		};
 	}
-	r2test::iTest_Deprecated::DoFunc Basic::GetDoFunction()
+	r2test::iItem::DoFunc Basic::GetDoFunction()
 	{
 		GetInstance().mRenderer.Clear();
 		GetInstance().mRenderer.SetCamera( &mCamera );
@@ -90,7 +89,7 @@ namespace animation_test
 			GetInstance().mRenderer.Add( &tr );
 		}
 
-		return [&rd = GetInstance().mRenderer, &cam = mCamera]( r2base::Director& )->r2test::eTestEndAction
+		return [&rd = GetInstance().mRenderer, &cam = mCamera]()->r2test::eTestEndAction
 		{
 			r2base::FPSTimer frame_manager( 30u );
 			frame_manager.Reset();

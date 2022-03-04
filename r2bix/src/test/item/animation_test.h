@@ -1,6 +1,6 @@
 #pragma once
 
-#include "test/r2test_iTest_Deprecated.h"
+#include "test/r2test_iItem.h"
 #include "base/r2base_Singleton.h"
 
 #include "render/r2render_Camera.h"
@@ -8,7 +8,7 @@
 
 namespace animation_test
 {
-	class Basic : public r2test::iTest_Deprecated, public r2base::SingleTon<Basic>
+	class Basic : public r2test::iItem, public r2base::SingleTon<Basic>
 	{
 	public:
 		Basic();

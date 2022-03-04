@@ -2,25 +2,19 @@
 
 #include <memory>
 
-namespace r2base
+namespace r2test
 {
+	using MenuUp = std::unique_ptr<class Menu>;
+
 	class Director;
 }
 
-namespace r2node
+class CameraMenu
 {
-	using SceneNodeUp = std::unique_ptr<class SceneNode>;
-}
+private:
+	CameraMenu() = delete;
 
-namespace r2test
-{
-	class CameraScene
-	{
-	private:
-		CameraScene() = delete;
-
-	public:
-		static const char* GetTitle() { return "Camera"; }
-		static r2node::SceneNodeUp Create( r2base::Director& director );
-	};
-}
+public:
+	static const char* GetTitle() { return "Camera"; }
+	static r2test::MenuUp Create( r2test::Director& director );
+};
