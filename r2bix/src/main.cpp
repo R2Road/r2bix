@@ -52,8 +52,8 @@ int main()
 			//
 			// Setup
 			//
-			r2base::Director director;
-			director.Setup( DevelopScene::Create( director ) );
+			r2test::Director director;
+			director.Setup( TestRootMenu::Create( director ) );
 
 			//
 			// Process
@@ -67,8 +67,8 @@ int main()
 			//
 			// Setup
 			//
-			r2test::Director director;
-			director.Setup( TestRootMenu::Create( director ) );
+			r2base::Director director;
+			director.Setup( DevelopScene::Create( director ) );
 
 			//
 			// Process
