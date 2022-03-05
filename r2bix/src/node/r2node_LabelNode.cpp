@@ -3,12 +3,10 @@
 
 #include "base/r2base_Director.h"
 #include "component/r2component_TextRenderComponent.h"
-#include "component/r2component_TransformComponent.h"
 
 namespace r2node
 {
 	LabelNode::LabelNode( r2base::Director& director ) : r2base::Node( director )
-		, mTransformComponent( nullptr )
 		, mTextRenderComponent( nullptr )
 	{}
 
@@ -25,18 +23,15 @@ namespace r2node
 
 	bool LabelNode::Init()
 	{
+		if( !r2base::Node::Init() )
 		{
-			auto component = r2component::TransformComponent::Create( *this );
-			mTransformComponent = component.get();
-			AddComponent( std::move( component ) );
+			return false;
 		}
 
-		{
-			auto component = r2component::TextRenderComponent::Create( *this );
-			component->mTransformComponent = mTransformComponent;
-			mTextRenderComponent = component.get();
-			AddComponent( std::move( component ) );
-		}
+		auto component = r2component::TextRenderComponent::Create( *this );
+		component->mTransformComponent = mTransformComponent;
+		mTextRenderComponent = component.get();
+		AddComponent( std::move( component ) );
 
 		return true;
 	}

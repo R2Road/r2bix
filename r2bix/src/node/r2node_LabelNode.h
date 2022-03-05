@@ -10,7 +10,6 @@ namespace r2base
 namespace r2component
 {
 	class TextRenderComponent;
-	class TransformComponent;
 }
 
 namespace r2node
@@ -37,7 +36,6 @@ namespace r2node
 		void SetString( const std::string_view str );
 
 	public:
-		r2component::TransformComponent* mTransformComponent;
 		r2component::TextRenderComponent* mTextRenderComponent;
 	};
 }

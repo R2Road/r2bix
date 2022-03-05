@@ -3,12 +3,10 @@
 
 #include "base/r2base_Director.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
-#include "component/r2component_TransformComponent.h"
 
 namespace r2node
 {
 	SpriteNode::SpriteNode( r2base::Director& director ) : r2base::Node( director )
-		, mTransformComponent( nullptr )
 		, mTextureFrameRenderComponent( nullptr )
 	{}
 
@@ -29,18 +27,15 @@ namespace r2node
 
 	bool SpriteNode::Init()
 	{
+		if( !r2base::Node::Init() )
 		{
-			auto component = r2component::TransformComponent::Create( *this );
-			mTransformComponent = component.get();
-			AddComponent( std::move( component ) );
+			return false;
 		}
 
-		{
-			auto component = r2component::TextureFrameRenderComponent::Create( *this );
-			component->mTransformComponent = mTransformComponent;
-			mTextureFrameRenderComponent = component.get();
-			AddComponent( std::move( component ) );
-		}
+		auto component = r2component::TextureFrameRenderComponent::Create( *this );
+		component->mTransformComponent = mTransformComponent;
+		mTextureFrameRenderComponent = component.get();
+		AddComponent( std::move( component ) );
 
 		return true;
 	}

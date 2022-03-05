@@ -10,7 +10,6 @@ namespace r2base
 namespace r2component
 {
 	class TextureFrameRenderComponent;
-	class TransformComponent;
 }
 
 namespace r2render
@@ -35,7 +34,6 @@ namespace r2node
 		bool Init() override;
 
 	public:
-		r2component::TransformComponent* mTransformComponent;
 		r2component::TextureFrameRenderComponent* mTextureFrameRenderComponent;
 	};
 }

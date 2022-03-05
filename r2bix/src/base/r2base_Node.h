@@ -14,6 +14,11 @@
 // 사용자 정의 노드의 제작은 가급적 없도록 노력하자.
 //
 
+namespace r2component
+{
+	class TransformComponent;
+}
+
 namespace r2render
 {
 	class Camera;
@@ -37,7 +42,7 @@ namespace r2base
 		virtual ~Node() {}
 
 	public:
-		virtual bool Init() { return true; };
+		virtual bool Init();
 		virtual void Update();
 		virtual void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target );
 
@@ -48,5 +53,7 @@ namespace r2base
 		Director& mDirector;
 		ComponentContainerT mComponentContainer;
 		ChildContainerT mChildContainer;
+	public:
+		r2component::TransformComponent* mTransformComponent;
 	};
 }
