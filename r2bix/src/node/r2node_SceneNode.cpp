@@ -20,12 +20,6 @@ namespace r2node
 
 		r2base::Node::Render( &mCamera, &mRenderTarget );
 
-		mDirector.ClearScreen();
-
-		for( int y = 0; mRenderTarget.GetHeight() > y; ++y )
-		{
-			std::cout << mRenderTarget.GetLine( y );
-			std::cout << r2::linefeed;
-		}
+		mDirector.Write2BackBuffer( &mRenderTarget );
 	}
 }

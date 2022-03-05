@@ -6,6 +6,11 @@
 #include "base/r2base_ScreenBufferManager.h"
 #include "r2/r2_FPSTimer.h"
 
+namespace r2render
+{
+	class Texture;
+}
+
 namespace r2base
 {
 	class Director
@@ -19,6 +24,7 @@ namespace r2base
 
 		void RequestAbort() { mbAbort = true; }
 		void ClearScreen();
+		void Write2BackBuffer( const r2render::Texture* const texture );
 
 	private:
 		ScreenBufferManager mScreenBufferManager;

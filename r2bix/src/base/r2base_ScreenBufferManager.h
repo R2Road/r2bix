@@ -2,6 +2,11 @@
 
 #include "r2base_CoutBufferRedirector.h"
 
+namespace r2render
+{
+	class Texture;
+}
+
 namespace r2base
 {
 	class ScreenBufferManager
@@ -19,6 +24,7 @@ namespace r2base
 
 	public:
 		void ClearCurrentBuffer();
+		void Write2BackBuffer( const r2render::Texture* const texture );
 		void Swap();
 
 	private:

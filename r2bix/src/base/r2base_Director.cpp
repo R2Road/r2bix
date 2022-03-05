@@ -39,4 +39,9 @@ namespace r2base
 	{
 		mScreenBufferManager.ClearCurrentBuffer();
 	}
+
+	void Director::Write2BackBuffer( const r2render::Texture* const texture )
+	{
+		mScreenBufferManager.Write2BackBuffer( texture );
+	}
 }

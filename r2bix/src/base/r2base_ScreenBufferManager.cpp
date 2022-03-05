@@ -4,6 +4,8 @@
 #include <cassert>
 #include <Windows.h>
 
+#include "render/r2render_Texture.h"
+
 namespace r2base
 {
 	ScreenBufferManager::ScreenBufferManager() :
@@ -98,6 +100,24 @@ namespace r2base
 
 		SetConsoleCursorPosition( CurrentBufferHandle, top_left );
 	}
+
+	void ScreenBufferManager::Write2BackBuffer( const r2render::Texture* const texture )
+	{
+		void* back_buffer_handle = nullptr;
+		if( !mbFirst )
+		{
+			back_buffer_handle = mBufferHandle4First;
+		}
+		else
+		{
+			back_buffer_handle = mBufferHandle4Second;
+		}
+
+		const COORD top_left = { 0, 0 };
+		DWORD out_result;
+		WriteConsoleOutputCharacterA( back_buffer_handle, &( *texture->begin() ), static_cast<DWORD>( texture->GetLength() ), top_left, &out_result );
+	}
+
 	void ScreenBufferManager::Swap()
 	{
 		mbFirst = !mbFirst;
