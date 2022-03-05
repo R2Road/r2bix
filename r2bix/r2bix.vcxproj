@@ -52,7 +52,6 @@
     <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\render\r2render_Camera.cpp" />
     <ClCompile Include="src\render\r2render_TextureFrame.cpp" />
-    <ClCompile Include="src\render\r2render_FrameBuffer.cpp" />
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\render\r2render_Renderer.cpp" />
     <ClCompile Include="src\render\r2render_Texture.cpp" />
@@ -61,8 +60,6 @@
     <ClCompile Include="src\test_r2bix\camera_test.cpp" />
     <ClCompile Include="src\test_r2bix\console_screen_buffer_test.cpp" />
     <ClCompile Include="src\test_r2bix\console_screen_buffer_manager_test.cpp" />
-    <ClCompile Include="src\test_r2bix\FrameBufferMenu.cpp" />
-    <ClCompile Include="src\test_r2bix\framebuffer_test.cpp" />
     <ClCompile Include="src\test_r2bix\InputMenu.cpp" />
     <ClCompile Include="src\test_r2bix\key_test.cpp" />
     <ClCompile Include="src\test_r2bix\rect_test.cpp" />
@@ -117,7 +114,6 @@
     <ClInclude Include="src\render\r2render_Camera.h" />
     <ClInclude Include="src\render\r2render_iRenderTarget.h" />
     <ClInclude Include="src\render\r2render_TextureFrame.h" />
-    <ClInclude Include="src\render\r2render_FrameBuffer.h" />
     <ClInclude Include="src\render\r2_GridIndexConverter.h" />
     <ClInclude Include="src\render\r2render_iRenderable.h" />
     <ClInclude Include="src\render\r2render_Renderer.h" />
@@ -127,8 +123,6 @@
     <ClInclude Include="src\test_r2bix\camera_test.h" />
     <ClInclude Include="src\test_r2bix\console_screen_buffer_test.h" />
     <ClInclude Include="src\test_r2bix\console_screen_buffer_manager_test.h" />
-    <ClInclude Include="src\test_r2bix\FrameBufferMenu.h" />
-    <ClInclude Include="src\test_r2bix\framebuffer_test.h" />
     <ClInclude Include="src\test_r2bix\InputMenu.h" />
     <ClInclude Include="src\test_r2bix\key_test.h" />
     <ClInclude Include="src\test_r2bix\rect_test.h" />

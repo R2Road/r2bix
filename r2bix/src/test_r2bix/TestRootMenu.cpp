@@ -5,7 +5,6 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "CameraMenu.h"
-#include "FrameBufferMenu.h"
 #include "InputMenu.h"
 #include "RenderableMenu.h"
 #include "RendererMenu.h"
@@ -91,15 +90,6 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			'a'
-			, []()->const char* { return FrameBufferMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( FrameBufferMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
-		ret->AddItem(
-			'd'
 			, []()->const char* { return RendererMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
@@ -107,9 +97,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-
-
-		ret->AddItem( 'f', console_screen_buffer_manager_test::Basic::GetInstance() );
+		ret->AddItem( 's', console_screen_buffer_manager_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
