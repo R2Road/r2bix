@@ -6,11 +6,6 @@
 #include "base/r2base_ScreenBufferManager.h"
 #include "r2/r2_FPSTimer.h"
 
-namespace r2render
-{
-	class Texture;
-}
-
 namespace r2base
 {
 	class Director
