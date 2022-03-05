@@ -17,8 +17,8 @@ namespace p2048table
 	class TextureTable : public r2::SingleTon<TextureTable>
 	{
 	private:
-		using ValueT = std::unique_ptr<r2render::Texture>;
-		using TextureContainerT = std::unordered_map<std::string, ValueT>;
+		using TextureValueT = std::unique_ptr<r2render::Texture>;
+		using TextureContainerT = std::unordered_map<std::string, TextureValueT>;
 
 	public:
 		TextureTable();
