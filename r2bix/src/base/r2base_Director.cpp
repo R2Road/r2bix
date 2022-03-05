@@ -21,6 +21,8 @@ namespace r2base
 
 	void Director::Run()
 	{
+		ClearScreen();
+
 		while( !mbAbort )
 		{
 			if( mFPSTimer.Update() )
