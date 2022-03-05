@@ -3,6 +3,7 @@
 #include <list>
 #include <memory>
 
+#include "r2/r2_PointInt.h"
 #include "r2base_Component.h"
 
 //
@@ -44,7 +45,7 @@ namespace r2base
 	public:
 		virtual bool Init();
 		virtual void Update();
-		virtual void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target );
+		virtual void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset );
 
 		void AddComponent( r2base::ComponentUp component );
 		void AddChild( r2base::NodeUp child_node );

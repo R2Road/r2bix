@@ -33,16 +33,17 @@ namespace r2base
 		}
 	}
 
-	void Node::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target )
+	void Node::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
 		for( auto& c : mComponentContainer )
 		{
 			c->Render( camera, render_target );
 		}
 
+		offset += mTransformComponent->GetPosition();
 		for( auto& c : mChildContainer )
 		{
-			c->Render( camera, render_target );
+			c->Render( camera, render_target, offset );
 		}
 	}
 

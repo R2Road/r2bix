@@ -2,6 +2,7 @@
 #include "r2node_SceneNode.h"
 
 #include "base/r2base_Director.h"
+#include "component/r2component_TransformComponent.h"
 
 namespace r2node
 {
@@ -19,7 +20,7 @@ namespace r2node
 	{
 		mRenderTarget.FillAll( '@' );
 
-		r2base::Node::Render( &mCamera, &mRenderTarget );
+		r2base::Node::Render( &mCamera, &mRenderTarget, mTransformComponent->GetPosition() );
 
 		mDirector.Write2BackBuffer( &mRenderTarget );
 	}
