@@ -113,9 +113,16 @@ namespace r2base
 			back_buffer_handle = mBufferHandle4Second;
 		}
 
-		const COORD top_left = { 0, 0 };
+		COORD write_pivot = { 0, 0 };
 		DWORD out_result;
-		WriteConsoleOutputCharacterA( back_buffer_handle, &( *texture->begin() ), static_cast<DWORD>( texture->GetLength() ), top_left, &out_result );
+
+		std::string_view output_line;
+		for( SHORT y = 0, end_y = static_cast<SHORT>( texture->GetHeight() ); end_y > y; ++y )
+		{
+			write_pivot.Y = y;
+			output_line = texture->GetLine( static_cast<uint32_t>( y ) );
+			WriteConsoleOutputCharacterA( back_buffer_handle, output_line.data(), static_cast<DWORD>( output_line.length() ), write_pivot, &out_result );
+		}
 	}
 
 	void ScreenBufferManager::Swap()
