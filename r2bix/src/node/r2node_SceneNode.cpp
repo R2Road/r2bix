@@ -12,6 +12,7 @@ namespace r2node
 
 	void SceneNode::Update()
 	{
+		r2base::Node::Update();
 	}
 
 	void SceneNode::Render()
