@@ -80,25 +80,25 @@ namespace r2base
 
 	void ScreenBufferManager::ClearCurrentBuffer()
 	{
-		void* CurrentBufferHandle = nullptr;
+		void* current_buffer_handle = nullptr;
 		if( mbFirst )
 		{
-			CurrentBufferHandle = mBufferHandle4First;
+			current_buffer_handle = mBufferHandle4First;
 		}
 		else
 		{
-			CurrentBufferHandle = mBufferHandle4Second;
+			current_buffer_handle = mBufferHandle4Second;
 		}
 
 		COORD top_left = { 0, 0 };
 		CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info{};
 		DWORD out_result;
-		GetConsoleScreenBufferInfo( CurrentBufferHandle, &cs_buffer_info );
+		GetConsoleScreenBufferInfo( current_buffer_handle, &cs_buffer_info );
 		const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;
 
-		FillConsoleOutputCharacter( CurrentBufferHandle, TEXT( ' ' ), length, top_left, &out_result );
+		FillConsoleOutputCharacter( current_buffer_handle, TEXT( ' ' ), length, top_left, &out_result );
 
-		SetConsoleCursorPosition( CurrentBufferHandle, top_left );
+		SetConsoleCursorPosition( current_buffer_handle, top_left );
 	}
 
 	void ScreenBufferManager::Write2BackBuffer( const r2render::Texture* const texture )
