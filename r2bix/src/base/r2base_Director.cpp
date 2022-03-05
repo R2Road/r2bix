@@ -30,6 +30,7 @@ namespace r2base
 				mSceneNode->Update();
 				mSceneNode->Render();
 
+				mScreenBufferManager.InitCursor();
 				mScreenBufferManager.Swap();
 			}
 		}

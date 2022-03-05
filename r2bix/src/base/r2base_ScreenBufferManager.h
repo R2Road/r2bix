@@ -23,6 +23,7 @@ namespace r2base
 		void release();
 
 	public:
+		void InitCursor();
 		void ClearCurrentBuffer();
 		void Write2BackBuffer( const r2render::Texture* const texture );
 		void Swap();

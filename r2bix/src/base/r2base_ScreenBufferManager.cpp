@@ -78,6 +78,22 @@ namespace r2base
 		}
 	}
 
+	void ScreenBufferManager::InitCursor()
+	{
+		void* current_buffer_handle = nullptr;
+		if( mbFirst )
+		{
+			current_buffer_handle = mBufferHandle4First;
+		}
+		else
+		{
+			current_buffer_handle = mBufferHandle4Second;
+		}
+
+		const COORD top_left = { 0, 0 };
+		SetConsoleCursorPosition( current_buffer_handle, top_left );
+	}
+
 	void ScreenBufferManager::ClearCurrentBuffer()
 	{
 		void* current_buffer_handle = nullptr;
