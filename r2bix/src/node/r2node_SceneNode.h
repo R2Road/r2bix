@@ -19,7 +19,17 @@ namespace r2node
 	public:
 		SceneNode( r2base::Director& director );
 
+		//
+		// Override
+		//
 		void Update() override;
+	private:
+		void Render( const r2render::Camera* const /*camera*/, r2render::iRenderTarget* const /*render_target*/ ) override {}
+
+		//
+		//
+		//
+	public:
 		void Render();
 
 	protected:
