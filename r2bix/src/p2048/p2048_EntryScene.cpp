@@ -7,6 +7,7 @@
 
 #include "base/r2base_Director.h"
 #include "p2048_CompanyScene.h"
+#include "p2048table_TextureTable.h"
 
 namespace p2048
 {
@@ -28,6 +29,9 @@ namespace p2048
 		//
 		// Load Resources
 		//
+		{
+			p2048table::TextureTable::GetInstance().Load();
+		}
 
 		//
 		// Move 2 Company Scene
