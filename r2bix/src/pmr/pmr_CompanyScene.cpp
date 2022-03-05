@@ -24,6 +24,11 @@ namespace pmr
 
 	bool CompanyScene::Init()
 	{
+		if( !r2base::Node::Init() )
+		{
+			return false;
+		}
+
 		{
 			auto node = r2node::LabelNode::Create( mDirector );
 			node->SetRect( 0, 0, 30, 0 );

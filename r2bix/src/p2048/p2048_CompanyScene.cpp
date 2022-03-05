@@ -32,6 +32,11 @@ namespace p2048
 
 	bool CompanyScene::Init()
 	{
+		if( !r2base::Node::Init() )
+		{
+			return false;
+		}
+
 		{
 			auto node = r2node::LabelNode::Create( mDirector );
 			node->mTransformComponent->SetPosition( 5, 5 );
