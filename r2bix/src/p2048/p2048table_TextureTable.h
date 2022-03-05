@@ -18,16 +18,17 @@ namespace p2048table
 	{
 	private:
 		using ValueT = std::unique_ptr<r2render::Texture>;
-		using ContainerT = std::unordered_map<std::string, ValueT>;
+		using TextureContainerT = std::unordered_map<std::string, ValueT>;
 
 	public:
 		TextureTable();
 
 		void Load();
 
+
 		r2render::TextureFrame* const GetTitleTexture() const;
 
 	private:
-		ContainerT mContainer;
+		TextureContainerT mTextureContainer;
 	};
 }
