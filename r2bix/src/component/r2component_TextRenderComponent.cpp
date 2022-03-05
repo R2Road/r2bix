@@ -24,13 +24,13 @@ namespace r2component
 		return ret;
 	}
 
-	void TextRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target )
+	void TextRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
 		//
 		// World Space : My Rect : Test
 		//
 		{
-			const r2::RectInt my_world_space_rect( mRect.GetOrigin() + mTransformComponent->GetPosition(), mRect.GetSize() );
+			const r2::RectInt my_world_space_rect( offset + mRect.GetOrigin() + mTransformComponent->GetPosition(), mRect.GetSize() );
 			if( !my_world_space_rect.IntersectsRect( camera->GetRect() ) )
 			{
 				return;
@@ -40,7 +40,7 @@ namespace r2component
 		//
 		// Camera Space : My Position
 		//
-		const auto camera_space_my_position = mTransformComponent->GetPosition() - camera->GetPoint();
+		const auto camera_space_my_position = offset + mTransformComponent->GetPosition() - camera->GetPoint();
 
 		//
 		// Render Target Space : My Position

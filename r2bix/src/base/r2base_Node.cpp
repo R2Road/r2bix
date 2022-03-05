@@ -37,7 +37,7 @@ namespace r2base
 	{
 		for( auto& c : mComponentContainer )
 		{
-			c->Render( camera, render_target );
+			c->Render( camera, render_target, offset );
 		}
 
 		offset += mTransformComponent->GetPosition();

@@ -24,7 +24,7 @@ namespace r2component
 		//
 		// Override
 		//
-		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override;
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset ) override;
 
 		//
 		// Setter
