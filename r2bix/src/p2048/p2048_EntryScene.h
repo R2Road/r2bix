@@ -12,21 +12,16 @@ namespace r2node
 
 namespace p2048
 {
-	class CompanyScene : public r2node::SceneNode
+	class EntryScene : public r2node::SceneNode
 	{
 	private:
-		CompanyScene( r2base::Director& director );
+		EntryScene( r2base::Director& director );
 
 	public:
+		static const char* const GetTitle() { return "Game : 2048( In Progress )"; }
 		static r2node::SceneNodeUp Create( r2base::Director& director );
 
-	private:
-		bool Init() override;
 	public:
 		void Update() override;
-
-	private:
-		r2node::LabelNode* mLabelNode;
-		r2node::SpriteNode* mSpriteNode;
 	};
 }

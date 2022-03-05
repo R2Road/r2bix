@@ -194,6 +194,9 @@
     <ClCompile Include="src\utility\r2utility_StringBuilder.cpp">
       <Filter>utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\p2048\p2048_EntryScene.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -376,6 +379,9 @@
     </ClInclude>
     <ClInclude Include="src\utility\r2utility_StringBuilder.h">
       <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_EntryScene.h">
+      <Filter>project_2048</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
