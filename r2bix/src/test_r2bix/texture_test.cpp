@@ -12,7 +12,7 @@ namespace texture_test
 	{
 		return []()->const char*
 		{
-			return "Fill All";
+			return "Texture : Fill All";
 		};
 	}
 	r2cm::iItem::DoFuncT FillAll::GetDoFunction()
@@ -59,7 +59,7 @@ namespace texture_test
 	{
 		return []()->const char*
 		{
-			return "Fill";
+			return "Texture : Fill";
 		};
 	}
 	r2cm::iItem::DoFuncT Fill::GetDoFunction()
@@ -114,7 +114,7 @@ namespace texture_test
 	{
 		return []()->const char*
 		{
-			return "Init With Chars 1";
+			return "Texture : Init With Chars 1";
 		};
 	}
 	r2cm::iItem::DoFuncT InitWithChars_1::GetDoFunction()
@@ -162,7 +162,7 @@ namespace texture_test
 	{
 		return []()->const char*
 		{
-			return "Init With Chars 2";
+			return "Texture : Init With Chars 2";
 		};
 	}
 	r2cm::iItem::DoFuncT InitWithChars_2::GetDoFunction()
@@ -213,7 +213,7 @@ namespace texture_test
 	{
 		return []()->const char*
 		{
-			return "Init With Chars 3";
+			return "Texture : Init With Chars 3";
 		};
 	}
 	r2cm::iItem::DoFuncT InitWithChars_3::GetDoFunction()
@@ -290,7 +290,7 @@ namespace texture_test
 	{
 		return []()->const char*
 		{
-			return "Init With Chars 4";
+			return "Texture : Init With Chars 4";
 		};
 	}
 	r2cm::iItem::DoFuncT InitWithChars_4::GetDoFunction()

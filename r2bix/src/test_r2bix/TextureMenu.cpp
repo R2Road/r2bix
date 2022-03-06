@@ -33,6 +33,7 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
+		ret->AddLineFeed();
 
 
 		ret->AddItem( 'a', texture_frame_test::Basic::GetInstance() );
@@ -40,6 +41,7 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'd', texture_frame_test::VisibleRect_2::GetInstance() );
 
 
+		ret->AddLineFeed();
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
