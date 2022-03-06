@@ -15,6 +15,6 @@ private:
 	TextureMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Texture"; }
+	static const char* GetTitle() { return "Texture, Texture Frame, Texture Table"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
