@@ -12,7 +12,7 @@ namespace texture_table_test
 	{
 		return []()->const char*
 		{
-			return "Texture Table 1";
+			return "Texture Table : GetTexture";
 		};
 	}
 	r2cm::iItem::DoFuncT TextureTable_1::GetDoFunction()
@@ -60,7 +60,7 @@ namespace texture_table_test
 	{
 		return []()->const char*
 		{
-			return "Texture Table 2";
+			return "Texture Table : GetTextureFrame";
 		};
 	}
 	r2cm::iItem::DoFuncT TextureTable_2::GetDoFunction()
@@ -129,7 +129,7 @@ namespace texture_table_test
 	{
 		return []()->const char*
 		{
-			return "Texture Table 3";
+			return "Texture Table : Add Texture, Remove Texture";
 		};
 	}
 	r2cm::iItem::DoFuncT TextureTable_3::GetDoFunction()
