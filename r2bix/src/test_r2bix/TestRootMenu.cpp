@@ -22,15 +22,8 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle(),
-				"> Inprogress : Update Camera Test"
-		"\n"	"> To do : Renderer"
-		"\n"
-		"\n"	"> + Work Flow"
-		"\n"	"> Texture"
-		"\n"	"> Camera"
-		"\n"	"> Renderable"
-		"\n"	"> Texture + Camera + Renderable"
-		"\n"	"> ..."
+				"> Inprogress : Sprite Animation"
+		"\n"	"> To do : ..."
 	) );
 
 	{
