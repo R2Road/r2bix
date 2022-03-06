@@ -90,6 +90,18 @@ namespace p2048table
 
 		return true;
 	}
+	bool TextureTable::RemoveTexture( const char* const key_name )
+	{
+		auto itr = mTextureContainer.find( key_name );
+		if( mTextureContainer.end() == itr )
+		{
+			return false;
+		}
+
+		mTextureContainer.erase( itr );
+
+		return true;
+	}
 
 	r2render::Texture* const TextureTable::GetTexture( const char* const key_name ) const
 	{

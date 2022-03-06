@@ -497,9 +497,11 @@ namespace texture_frame_test
 				std::cout << "+ Add Texture" << r2::linefeed2;
 
 				EXPECT_TRUE( p2048table::TextureTable::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
+			}
 
-				std::cout << r2::linefeed2;
-
+			std::cout << r2::split;
+				
+			{
 				std::cout << "+ Show" << r2::linefeed2;
 				std::cout << "const auto texture = p2048table::TextureTable::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
 
@@ -521,6 +523,32 @@ namespace texture_frame_test
 				std::cout << "+ Add Texture" << r2::linefeed2;
 
 				EXPECT_FALSE( p2048table::TextureTable::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Remove Texture" << r2::linefeed2;
+
+				EXPECT_TRUE( p2048table::TextureTable::GetInstance().RemoveTexture( "TextureTable_3" ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Show" << r2::linefeed2;
+				std::cout << "const auto texture = p2048table::TextureTable::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
+
+				auto texture = p2048table::TextureTable::GetInstance().GetTexture( "TextureTable_3" );
+				for( int y = 0; y < texture->GetHeight(); ++y )
+				{
+					for( int x = 0; x < texture->GetWidth(); ++x )
+					{
+						std::cout << texture->Get( x, y );
+					}
+
+					std::cout << r2::linefeed;
+				}
 			}
 
 			std::cout << r2::split;

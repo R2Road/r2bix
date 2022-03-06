@@ -29,6 +29,7 @@ namespace p2048table
 		void Load();
 
 		bool AddTexture( const char* const key_name, const uint32_t width, const uint32_t height, const char fill_char );
+		bool RemoveTexture( const char* const key_name );
 
 		r2render::Texture* const GetTexture( const char* const key_name ) const;
 		r2render::TextureFrame* const GetTextureFrame( const char* const key_name ) const;
