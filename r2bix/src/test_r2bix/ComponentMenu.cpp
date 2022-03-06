@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "RenderableMenu.h"
+#include "ComponentMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"

@@ -6,7 +6,7 @@
 
 #include "CameraMenu.h"
 #include "InputMenu.h"
-#include "RenderableMenu.h"
+#include "ComponentMenu.h"
 #include "TextureMenu.h"
 
 #include "console_screen_buffer_test.h"
