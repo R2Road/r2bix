@@ -47,7 +47,7 @@ namespace p2048
 		}
 
 		{
-			auto node = r2node::SpriteNode::Create( mDirector, p2048table::TextureTable::GetInstance().GetTitleTexture() );
+			auto node = r2node::SpriteNode::Create( mDirector, p2048table::TextureTable::GetInstance().GetTextureFrame( "title_image" ) );
 			mSpriteNode = node.get();
 			AddChild( std::move( node ) );
 		}

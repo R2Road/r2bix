@@ -29,21 +29,16 @@ namespace p2048table
 		);
 	}
 
-	r2render::TextureFrame* const TextureTable::GetTitleTexture() const
+	r2render::TextureFrame* const TextureTable::GetTextureFrame( const char* const key_name ) const
 	{
-		static r2render::Texture texture( 71, 9,
-			"#######################################################################"
-			"#                                                                     #"
-			"#      22222            00000            4  4             88888       #"
-			"#     2     2          0     0          4   4            8     8      #"
-			"#       2222           0     0          4   4             88888       #"
-			"#     22               0     0          4444444          8     8      #"
-			"#     2222222           00000               4             88888       #"
-			"#                                                                     #"
-			"#######################################################################"
-		);
-		static r2render::TextureFrame texture_frame( &texture );
+		auto itr = mTextureFrameContainer.find( key_name );
+		if( mTextureFrameContainer.end() != itr )
+		{
+			return itr->second.get();
+		}
 
-		return &texture_frame;
+		static r2render::Texture temp_texture( "Invalid Texture" );
+		static r2render::TextureFrame temp_texture_frame( &temp_texture );
+		return &temp_texture_frame;
 	}
 }

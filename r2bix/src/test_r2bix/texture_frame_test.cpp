@@ -318,7 +318,9 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			const r2render::TextureFrame* const texture_frame = p2048table::TextureTable::GetInstance().GetTitleTexture();
+			p2048table::TextureTable::GetInstance().Load();
+
+			const r2render::TextureFrame* const texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "title_image" );
 
 			{
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
