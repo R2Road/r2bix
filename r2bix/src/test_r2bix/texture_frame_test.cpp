@@ -358,4 +358,52 @@ namespace texture_frame_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT TextureTable_1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture Table 1";
+		};
+	}
+	r2cm::iItem::DoFuncT TextureTable_1::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			p2048table::TextureTable::GetInstance().Load();
+
+			const auto texture = p2048table::TextureTable::GetInstance().GetTexture( "blablabla" );
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "const auto texture_frame = p2048table::TextureTable::GetInstance().GetTexture( \"blablabla\" );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Show" << r2::linefeed2;
+
+				for( int y = 0; y < texture->GetHeight(); ++y )
+				{
+					for( int x = 0; x < texture->GetWidth(); ++x )
+					{
+						std::cout << texture->Get( x, y );
+					}
+
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

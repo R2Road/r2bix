@@ -28,6 +28,7 @@ namespace p2048table
 
 		void Load();
 
+		r2render::Texture* const GetTexture( const char* const key_name ) const;
 		r2render::TextureFrame* const GetTextureFrame( const char* const key_name ) const;
 
 	private:

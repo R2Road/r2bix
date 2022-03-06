@@ -34,6 +34,17 @@ namespace p2048table
 		);
 	}
 
+	r2render::Texture* const TextureTable::GetTexture( const char* const key_name ) const
+	{
+		auto itr = mTextureContainer.find( key_name );
+		if( mTextureContainer.end() != itr )
+		{
+			return itr->second.get();
+		}
+
+		static r2render::Texture temp_texture( "Invalid Texture" );
+		return &temp_texture;
+	}
 	r2render::TextureFrame* const TextureTable::GetTextureFrame( const char* const key_name ) const
 	{
 		auto itr = mTextureFrameContainer.find( key_name );

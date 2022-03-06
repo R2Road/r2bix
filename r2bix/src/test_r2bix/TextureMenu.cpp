@@ -40,6 +40,13 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'f', texture_frame_test::VisibleRect_3::GetInstance() );
 
 
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'z', texture_frame_test::TextureTable_1::GetInstance() );
+
+
 		ret->AddSplit();
 
 
