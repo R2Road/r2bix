@@ -10,7 +10,6 @@
 #include "RendererMenu.h"
 #include "TextureMenu.h"
 
-#include "animation_test.h"
 #include "console_screen_buffer_test.h"
 #include "console_screen_buffer_manager_test.h"
 #include "rect_test.h"
@@ -96,8 +95,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem( 'z', animation_test::Basic::GetInstance() );
-		ret->AddItem( 'x', visible_resource_research::DrawWithPosition::GetInstance() );
+		ret->AddItem( 'z', visible_resource_research::DrawWithPosition::GetInstance() );
 
 
 		ret->AddSplit();

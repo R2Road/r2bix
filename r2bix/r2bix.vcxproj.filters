@@ -74,9 +74,6 @@
     <ClCompile Include="src\render\r2render_Camera.cpp">
       <Filter>render</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\r2render_Renderer.cpp">
-      <Filter>render</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\r2render_Texture.cpp">
       <Filter>render</Filter>
     </ClCompile>
@@ -152,9 +149,6 @@
     <ClCompile Include="src\test_r2bix\renderable_test.cpp">
       <Filter>test_r2bix\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2bix\renderer_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_r2bix\texture_frame_test.cpp">
       <Filter>test_r2bix\item</Filter>
     </ClCompile>
@@ -165,9 +159,6 @@
       <Filter>test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_r2bix\window_input_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\animation_test.cpp">
       <Filter>test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test_r2bix\camera_test.cpp">
@@ -243,9 +234,6 @@
       <Filter>render</Filter>
     </ClInclude>
     <ClInclude Include="src\render\r2render_iRenderable.h">
-      <Filter>render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\render\r2render_Renderer.h">
       <Filter>render</Filter>
     </ClInclude>
     <ClInclude Include="src\render\r2render_iRenderTarget.h">
@@ -329,9 +317,6 @@
     <ClInclude Include="src\test_r2bix\renderable_test.h">
       <Filter>test_r2bix\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_r2bix\renderer_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_r2bix\texture_frame_test.h">
       <Filter>test_r2bix\item</Filter>
     </ClInclude>
@@ -342,9 +327,6 @@
       <Filter>test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_r2bix\window_input_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\animation_test.h">
       <Filter>test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test_r2bix\camera_test.h">
