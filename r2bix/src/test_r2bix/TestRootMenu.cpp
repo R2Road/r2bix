@@ -7,7 +7,6 @@
 #include "CameraMenu.h"
 #include "InputMenu.h"
 #include "RenderableMenu.h"
-#include "RendererMenu.h"
 #include "TextureMenu.h"
 
 #include "console_screen_buffer_test.h"
@@ -80,16 +79,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem(
-			'a'
-			, []()->const char* { return RendererMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
-			{
-				director.Setup( RendererMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
-			}
-		);
-		ret->AddItem( 's', console_screen_buffer_manager_test::Basic::GetInstance() );
+		ret->AddItem( 'a', console_screen_buffer_manager_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();

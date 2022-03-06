@@ -134,9 +134,6 @@
     <ClCompile Include="src\test_r2bix\RenderableMenu.cpp">
       <Filter>test_r2bix\menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2bix\RendererMenu.cpp">
-      <Filter>test_r2bix\menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_r2bix\TextureMenu.cpp">
       <Filter>test_r2bix\menu</Filter>
     </ClCompile>
@@ -300,9 +297,6 @@
       <Filter>test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test_r2bix\RenderableMenu.h">
-      <Filter>test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\RendererMenu.h">
       <Filter>test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test_r2bix\TextureMenu.h">
