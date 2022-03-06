@@ -29,7 +29,6 @@ namespace r2node
 		}
 
 		auto component = r2component::TextRenderComponent::Create( *this );
-		component->mTransformComponent = mTransformComponent;
 		mTextRenderComponent = component.get();
 		AddComponent( std::move( component ) );
 

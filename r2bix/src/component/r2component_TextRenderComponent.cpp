@@ -2,13 +2,13 @@
 #include "r2component_TextRenderComponent.h"
 
 #include "base/r2base_DebugConfig.h"
+#include "base/r2base_Node.h"
 #include "r2component_TransformComponent.h"
 #include "render/r2render_Camera.h"
 
 namespace r2component
 {
 	TextRenderComponent::TextRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
-		, mTransformComponent( nullptr )
 		, mRect()
 		, mTexture( " " )
 	{}
@@ -30,7 +30,7 @@ namespace r2component
 		// World Space : My Rect : Test
 		//
 		{
-			const r2::RectInt my_world_space_rect( offset + mRect.GetOrigin() + mTransformComponent->GetPosition(), mRect.GetSize() );
+			const r2::RectInt my_world_space_rect( offset + mRect.GetOrigin() + mOwnerNode.mTransformComponent->GetPosition(), mRect.GetSize() );
 			if( !my_world_space_rect.IntersectsRect( camera->GetRect() ) )
 			{
 				return;
@@ -40,7 +40,7 @@ namespace r2component
 		//
 		// Camera Space : My Position
 		//
-		const auto camera_space_my_position = offset + mTransformComponent->GetPosition() - camera->GetPoint();
+		const auto camera_space_my_position = offset + mOwnerNode.mTransformComponent->GetPosition() - camera->GetPoint();
 
 		//
 		// Render Target Space : My Position

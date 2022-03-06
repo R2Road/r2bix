@@ -40,8 +40,6 @@ namespace r2component
 			mTexture.Reset( str );
 		}
 
-	public:
-		r2component::TransformComponent* mTransformComponent;
 	private:
 		r2::RectInt mRect;
 		r2render::Texture mTexture;
