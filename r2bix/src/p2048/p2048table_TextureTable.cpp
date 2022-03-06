@@ -40,16 +40,16 @@ namespace p2048table
 				50, 10,
 			//		"         1         2         3         4         5"
 			//		"12345678901234567890123456789012345678901234567890"
-			/* 1 */	"ttttttttt                                        |"
-			/* 2 */	"t   d   t                                        |"
-			/* 3 */	"t ddddd t                                        |"
-			/* 4 */	"td  d  dt                                        |"
-			/* 5 */	"td  d  dt                                        |"
-			/* 6 */	"t  ddd  t                                        |"
-			/* 7 */	"t d   d t                                        |"
-			/* 8 */	"t d   d t                                        |"
-			/* 9 */	"t d   d t                                        |"
-			/* 0 */	"ttttttttt                                        |"
+			/* 1 */	"ttttttttttttttttttttttttttt                      |"
+			/* 2 */	"t   d   tt   d   tt   d   t                      |"
+			/* 3 */	"t ddddd tt ddddd tt  ddd  t                      |"
+			/* 4 */	"t d d d tt d d  dtt  ddd  t                      |"
+			/* 5 */	"t d d d tt d d  dtt   dd  t                      |"
+			/* 6 */	"t ddddd ttd ddd dtt dddd  t                      |"
+			/* 7 */	"t  d d  tt  dd   tt d   d t                      |"
+			/* 8 */	"t  d d  tt  dd   ttd    d t                      |"
+			/* 9 */	"t  d d  tt  d d  ttd     dt                      |"
+			/* 0 */	"ttttttttttttttttttttttttttt                      |"
 			) ) );
 			mTextureFrameContainer.emplace(
 				"texture_001"
@@ -58,10 +58,22 @@ namespace p2048table
 
 			{
 				auto frame_result = mTextureFrameContainer.emplace(
-					"dguy"
+					"dguy_walk_1"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 1, 7, 8 ) );
+
+				frame_result = mTextureFrameContainer.emplace(
+					"dguy_walk_2"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 10, 1, 7, 8 ) );
+
+				frame_result = mTextureFrameContainer.emplace(
+					"dguy_walk_3"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 20, 1, 7, 8 ) );
 			}
 		}
 	}

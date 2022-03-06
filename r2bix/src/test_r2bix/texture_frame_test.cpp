@@ -451,13 +451,13 @@ namespace texture_frame_test
 			{
 				{
 					std::cout << "+ Declaration" << r2::linefeed2;
-					std::cout << r2::tab << "const auto texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( \"dguy\" );" << r2::linefeed2;
+					std::cout << r2::tab << "const auto texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( \"dguy_walk_1\" );" << r2::linefeed2;
 				}
 
 				{
 					std::cout << "+ Show" << r2::linefeed2;
 
-					auto texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy" );
+					auto texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_1" );
 					for( int y = 0; y < texture_frame->GetHeight(); ++y )
 					{
 						for( int x = 0; x < texture_frame->GetWidth(); ++x )
