@@ -11,6 +11,11 @@ namespace p2048table
 
 	void TextureTable::Load()
 	{
+		if( !mTextureContainer.empty() )
+		{
+			return;
+		}
+
 		auto result = mTextureContainer.emplace( "title_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
 			71, 9,
 			"#######################################################################"
