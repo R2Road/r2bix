@@ -378,7 +378,7 @@ namespace texture_frame_test
 
 			p2048table::TextureTable::GetInstance().Load();
 
-			const auto texture = p2048table::TextureTable::GetInstance().GetTexture( "blablabla" );
+			auto texture = p2048table::TextureTable::GetInstance().GetTexture( "blablabla" );
 
 			{
 				std::cout << "+ Declaration" << r2::linefeed2;
@@ -398,6 +398,75 @@ namespace texture_frame_test
 					}
 
 					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT TextureTable_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture Table 2";
+		};
+	}
+	r2cm::iItem::DoFuncT TextureTable_2::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			p2048table::TextureTable::GetInstance().Load();
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "const auto texture = p2048table::TextureTable::GetInstance().GetTexture( \"test_texture_001\" );" << r2::linefeed2;
+			}
+
+			{
+				std::cout << "+ Show" << r2::linefeed2;
+
+				auto texture = p2048table::TextureTable::GetInstance().GetTexture( "test_texture_001" );
+				for( int y = 0; y < texture->GetHeight(); ++y )
+				{
+					for( int x = 0; x < texture->GetWidth(); ++x )
+					{
+						std::cout << texture->Get( x, y );
+					}
+
+					std::cout << r2::linefeed;
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				{
+					std::cout << "+ Declaration" << r2::linefeed2;
+					std::cout << r2::tab << "const auto texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( \"dguy\" );" << r2::linefeed2;
+				}
+
+				{
+					std::cout << "+ Show" << r2::linefeed2;
+
+					auto texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy" );
+					for( int y = 0; y < texture_frame->GetHeight(); ++y )
+					{
+						for( int x = 0; x < texture_frame->GetWidth(); ++x )
+						{
+							std::cout << texture_frame->Get( x, y );
+						}
+
+						std::cout << r2::linefeed;
+					}
 				}
 			}
 

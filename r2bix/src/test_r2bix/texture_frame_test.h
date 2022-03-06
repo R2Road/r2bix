@@ -39,4 +39,11 @@ namespace texture_frame_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class TextureTable_2 : public r2cm::iItem, public r2::SingleTon<TextureTable_2>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }
