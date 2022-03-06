@@ -197,6 +197,9 @@
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp">
       <Filter>project_2048</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_r2bix\texture_table_test.cpp">
+      <Filter>test_r2bix\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -382,6 +385,9 @@
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_EntryScene.h">
       <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\texture_table_test.h">
+      <Filter>test_r2bix\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
