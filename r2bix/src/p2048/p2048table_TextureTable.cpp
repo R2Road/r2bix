@@ -78,6 +78,19 @@ namespace p2048table
 		}
 	}
 
+	bool TextureTable::AddTexture( const char* const key_name, const uint32_t width, const uint32_t height, const char fill_char )
+	{
+		auto itr = mTextureContainer.find( key_name );
+		if( mTextureContainer.end() != itr )
+		{
+			return false;
+		}
+
+		mTextureContainer.emplace( key_name, TextureValueT( new ( std::nothrow ) r2render::Texture( width, height, fill_char ) ) );
+
+		return true;
+	}
+
 	r2render::Texture* const TextureTable::GetTexture( const char* const key_name ) const
 	{
 		auto itr = mTextureContainer.find( key_name );

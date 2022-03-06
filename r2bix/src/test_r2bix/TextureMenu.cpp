@@ -46,6 +46,7 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'z', texture_frame_test::TextureTable_1::GetInstance() );
 		ret->AddItem( 'x', texture_frame_test::TextureTable_2::GetInstance() );
+		ret->AddItem( 'c', texture_frame_test::TextureTable_3::GetInstance() );
 
 
 		ret->AddSplit();
