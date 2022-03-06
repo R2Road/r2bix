@@ -19,7 +19,7 @@ namespace r2node
 		}
 		else
 		{
-			ret->mTextureFrameRenderComponent->SetTextureFrame( texture_frame );
+			ret->SetTextureFrame( texture_frame );
 		}
 
 		return ret;
@@ -38,5 +38,10 @@ namespace r2node
 		AddComponent( std::move( component ) );
 
 		return true;
+	}
+
+	void SpriteNode::SetTextureFrame( r2render::TextureFrame* const texture_frame )
+	{
+		mTextureFrameRenderComponent->SetTextureFrame( texture_frame );
 	}
 }

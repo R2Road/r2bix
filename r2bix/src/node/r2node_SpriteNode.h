@@ -34,6 +34,9 @@ namespace r2node
 		bool Init() override;
 
 	public:
+		void SetTextureFrame( r2render::TextureFrame* const texture_frame );
+
+	public:
 		r2component::TextureFrameRenderComponent* mTextureFrameRenderComponent;
 	};
 }
