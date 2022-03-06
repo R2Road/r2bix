@@ -9,12 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-class RenderableMenu
+class ComponentMenu
 {
 private:
-	RenderableMenu() = delete;
+	ComponentMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Renderable"; }
+	static const char* GetTitle() { return "Component"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };

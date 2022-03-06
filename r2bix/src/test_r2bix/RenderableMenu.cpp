@@ -8,7 +8,7 @@
 
 #include "renderable_test.h"
 
-r2cm::MenuUp RenderableMenu::Create( r2cm::Director& director )
+r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director

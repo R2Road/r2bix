@@ -64,10 +64,10 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'e'
-			, []()->const char* { return RenderableMenu::GetTitle(); }
+			, []()->const char* { return ComponentMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( RenderableMenu::Create( director ) );
+				director.Setup( ComponentMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
