@@ -35,8 +35,6 @@ namespace r2component
 		}
 		void SetTextureFrame( r2render::TextureFrame* const texture_frame );
 
-	public:
-		r2component::TransformComponent* mTransformComponent;
 	private:
 		r2::RectInt mRect;
 		r2render::TextureFrame* mTextureFrame;

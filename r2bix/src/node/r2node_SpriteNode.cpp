@@ -33,7 +33,6 @@ namespace r2node
 		}
 
 		auto component = r2component::TextureFrameRenderComponent::Create( *this );
-		component->mTransformComponent = mTransformComponent;
 		mTextureFrameRenderComponent = component.get();
 		AddComponent( std::move( component ) );
 
