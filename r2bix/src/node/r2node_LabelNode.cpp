@@ -3,11 +3,13 @@
 
 #include "base/r2base_Director.h"
 #include "component/r2component_TextRenderComponent.h"
+#include "component/r2component_LabelComponent.h"
 
 namespace r2node
 {
 	LabelNode::LabelNode( r2base::Director& director ) : r2base::Node( director )
 		, mTextRenderComponent( nullptr )
+		, mLabelComponent( nullptr )
 	{}
 
 	std::unique_ptr<LabelNode> LabelNode::Create( r2base::Director& director )
@@ -28,9 +30,18 @@ namespace r2node
 			return false;
 		}
 
-		auto component = r2component::TextRenderComponent::Create( *this );
-		mTextRenderComponent = component.get();
-		AddComponent( std::move( component ) );
+		{
+			auto component = r2component::TextRenderComponent::Create( *this );
+			mTextRenderComponent = component.get();
+			AddComponent( std::move( component ) );
+		}
+
+		{
+			auto component = r2component::LabelComponent::Create( *this );
+			component->mTextRenderComponent = mTextRenderComponent;
+			mLabelComponent = component.get();
+			AddComponent( std::move( component ) );
+		}
 
 		return true;
 	}
@@ -41,6 +52,6 @@ namespace r2node
 	}
 	void LabelNode::SetString( const std::string_view str )
 	{
-		mTextRenderComponent->SetString( str );
+		mLabelComponent->SetString( str );
 	}
 }

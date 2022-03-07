@@ -9,6 +9,7 @@ namespace r2base
 
 namespace r2component
 {
+	class LabelComponent;
 	class TextRenderComponent;
 }
 
@@ -36,6 +37,7 @@ namespace r2node
 		void SetString( const std::string_view str );
 
 	public:
-		r2component::TextRenderComponent* mTextRenderComponent;
+		r2component::TextRenderComponent * mTextRenderComponent;
+		r2component::LabelComponent* mLabelComponent;
 	};
 }

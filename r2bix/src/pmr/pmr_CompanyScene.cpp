@@ -31,7 +31,7 @@ namespace pmr
 
 		{
 			auto node = r2node::LabelNode::Create( mDirector );
-			node->SetRect( 0, 0, 30, 0 );
+			node->SetRect( 0, 0, 40, 0 );
 			node->SetString( CompanyScene::GetTitle() );
 			AddChild( std::move( node ) );
 		}
