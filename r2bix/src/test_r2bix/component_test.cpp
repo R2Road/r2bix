@@ -15,16 +15,16 @@ namespace component_test
 	class RenderTestNode : r2base::Node
 	{
 	public:
-		RenderTestNode( r2base::Director& director, const r2::PointInt& position, const r2::RectInt& rect ) : r2base::Node( director )
+		RenderTestNode( r2base::Director& director, const r2::PointInt& position, const r2::SizeInt size, const r2::PointInt rect_offset ) : r2base::Node( director )
 			, mPosition( position )
-			, mRect( rect )
-			, mTexture( mRect.GetWidth(), mRect.GetHeight() )
+			, mTexture( size.GetWidth(), size.GetHeight() )
+			, mRect( rect_offset.GetX(), rect_offset.GetY(), mTexture.GetWidth() - 1, mTexture.GetHeight() - 1 )
 		{
-			for( int y = 0; mRect.GetHeight() > y; ++y )
+			for( int y = 0; mTexture.GetHeight() > y; ++y )
 			{
-				for( int x = 0; mRect.GetWidth() > x; ++x )
+				for( int x = 0; mTexture.GetWidth() > x; ++x )
 				{
-					mTexture.Fill( x, y, static_cast<char>( 49 + y ) );
+					mTexture.Fill( x, y, static_cast<char>( 48 + x ) );
 				}
 			}
 		}
@@ -106,6 +106,11 @@ namespace component_test
 				{
 					for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() >= x; ++x, ++tx )
 					{
+						if( 5 == ty )
+						{
+							int i = 0;
+						}
+
 						render_target->Fill(
 							x, y
 							, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
@@ -116,8 +121,8 @@ namespace component_test
 		}
 
 		r2::PointInt mPosition;
-		r2::RectInt mRect;
 		r2render::Texture mTexture;
+		r2::RectInt mRect;
 	};
 
 	r2cm::iItem::TitleFuncT TextureRender::GetTitleFunction() const
@@ -137,7 +142,7 @@ namespace component_test
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
 			r2base::Director dummy_director;
-			RenderTestNode render_test_node( dummy_director, { 12, 24 }, { -4, -2, 9, 9 } );
+			RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );
 
 			std::cout << r2::split;
 
@@ -146,7 +151,7 @@ namespace component_test
 				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed2;
 				std::cout << r2::tab2 << "r2base::Director dummy_director;" << r2::linefeed;
-				std::cout << r2::tab2 << "RenderTestNode render_test_node( dummy_director, { 12, 24 }, { -4, -2, 9, 9 } );" << r2::linefeed;
+				std::cout << r2::tab2 << "RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -169,9 +174,9 @@ namespace component_test
 					auto current_rect = render_test_node.mRect;
 					current_rect.SetOrigin( current_rect.GetOrigin() + render_test_node.mPosition );
 
-					for( int y = 0; current_rect.GetWidth() > y; ++y )
+					for( int y = 0; current_rect.GetHeight() >= y; ++y )
 					{
-						for( int x = 0; current_rect.GetHeight() > x; ++x )
+						for( int x = 0; current_rect.GetWidth() >= x; ++x )
 						{
 							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
 							std::cout << render_test_node.mTexture.Get( x, y );
