@@ -27,6 +27,7 @@ namespace r2component
 		//
 		r2::RectInt GetRect() const { return mRect; }
 		const r2render::Texture& GetTexture() const { return mTexture; }
+		r2render::Texture& GetTexture()  { return mTexture; }
 
 		//
 		// Setter
@@ -34,10 +35,6 @@ namespace r2component
 		void SetRect( const int x, const int y, const int width, const int height )
 		{
 			mRect.Set( x, y, width, height );
-		}
-		void SetString( const std::string_view str )
-		{
-			mTexture.Reset( str );
 		}
 
 	private:

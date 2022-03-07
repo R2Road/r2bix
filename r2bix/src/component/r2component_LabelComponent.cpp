@@ -29,6 +29,6 @@ namespace r2component
 		}
 
 		mText = str;
-		mTextRenderComponent->SetString( str );
+		mTextRenderComponent->GetTexture().Reset( str );
 	}
 }
