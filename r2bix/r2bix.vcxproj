@@ -64,7 +64,7 @@
     <ClCompile Include="src\test_r2bix\key_test.cpp" />
     <ClCompile Include="src\test_r2bix\rect_test.cpp" />
     <ClCompile Include="src\test_r2bix\ComponentMenu.cpp" />
-    <ClCompile Include="src\test_r2bix\renderable_test.cpp" />
+    <ClCompile Include="src\test_r2bix\component_test.cpp" />
     <ClCompile Include="src\test_r2bix\TestRootMenu.cpp" />
     <ClCompile Include="src\test_r2bix\TextureMenu.cpp" />
     <ClCompile Include="src\test_r2bix\texture_frame_test.cpp" />
@@ -126,7 +126,7 @@
     <ClInclude Include="src\test_r2bix\key_test.h" />
     <ClInclude Include="src\test_r2bix\rect_test.h" />
     <ClInclude Include="src\test_r2bix\ComponentMenu.h" />
-    <ClInclude Include="src\test_r2bix\renderable_test.h" />
+    <ClInclude Include="src\test_r2bix\component_test.h" />
     <ClInclude Include="src\test_r2bix\TestRootMenu.h" />
     <ClInclude Include="src\test_r2bix\TextureMenu.h" />
     <ClInclude Include="src\test_r2bix\texture_frame_test.h" />

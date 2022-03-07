@@ -6,7 +6,7 @@
 
 #include "test_r2bix/TestRootMenu.h"
 
-#include "renderable_test.h"
+#include "component_test.h"
 
 r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 {

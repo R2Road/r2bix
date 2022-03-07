@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "renderable_test.h"
+#include "component_test.h"
 
 #include <Windows.h>
 

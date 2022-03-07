@@ -140,9 +140,6 @@
     <ClCompile Include="src\test_r2bix\rect_test.cpp">
       <Filter>test_r2bix\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2bix\renderable_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test_r2bix\texture_frame_test.cpp">
       <Filter>test_r2bix\item</Filter>
     </ClCompile>
@@ -190,6 +187,9 @@
     </ClCompile>
     <ClCompile Include="src\component\r2component_LabelComponent.cpp">
       <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_r2bix\component_test.cpp">
+      <Filter>test_r2bix\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -308,9 +308,6 @@
     <ClInclude Include="src\test_r2bix\rect_test.h">
       <Filter>test_r2bix\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_r2bix\renderable_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_r2bix\texture_frame_test.h">
       <Filter>test_r2bix\item</Filter>
     </ClInclude>
@@ -370,6 +367,9 @@
     </ClInclude>
     <ClInclude Include="src\component\r2component_LabelComponent.h">
       <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\component_test.h">
+      <Filter>test_r2bix\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
