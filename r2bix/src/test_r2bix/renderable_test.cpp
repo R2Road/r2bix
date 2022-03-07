@@ -9,7 +9,7 @@
 #include "render/r2render_iRenderable.h"
 #include "render/r2render_Texture.h"
 
-namespace renderable_test
+namespace component_test
 {
 	class RenderableObject : r2render::iRenderable
 	{

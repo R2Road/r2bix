@@ -16,7 +16,7 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', renderable_test::Basic::GetInstance() );
+		ret->AddItem( '1', component_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
