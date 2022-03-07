@@ -8,14 +8,14 @@
 
 namespace r2component
 {
-	TextRenderComponent::TextRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+	TextureRenderComponent::TextureRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mRect()
 		, mTexture( " " )
 	{}
 
-	std::unique_ptr<TextRenderComponent> TextRenderComponent::Create( r2base::Node& owner_node )
+	std::unique_ptr<TextureRenderComponent> TextureRenderComponent::Create( r2base::Node& owner_node )
 	{
-		std::unique_ptr<TextRenderComponent> ret( new ( std::nothrow ) TextRenderComponent( owner_node ) );
+		std::unique_ptr<TextureRenderComponent> ret( new ( std::nothrow ) TextureRenderComponent( owner_node ) );
 		if( !ret || !ret->Init() )
 		{
 			ret.reset();
@@ -24,7 +24,7 @@ namespace r2component
 		return ret;
 	}
 
-	void TextRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
+	void TextureRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
 		//
 		// World Space : My Rect : Test

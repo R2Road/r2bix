@@ -7,7 +7,7 @@
 namespace r2component
 {
 	LabelComponent::LabelComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
-		, mTextRenderComponent( nullptr )
+		, mTextureRenderComponent( nullptr )
 	{}
 
 	std::unique_ptr<LabelComponent> LabelComponent::Create( r2base::Node& owner_node )
@@ -29,6 +29,6 @@ namespace r2component
 		}
 
 		mText = str;
-		mTextRenderComponent->GetTexture().Reset( str );
+		mTextureRenderComponent->GetTexture().Reset( str );
 	}
 }

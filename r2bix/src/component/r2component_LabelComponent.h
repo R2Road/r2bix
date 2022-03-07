@@ -7,7 +7,7 @@
 
 namespace r2component
 {
-	class TextRenderComponent;
+	class TextureRenderComponent;
 
 	class LabelComponent : public r2base::Component
 	{
@@ -25,6 +25,6 @@ namespace r2component
 	private:
 		std::string mText;
 	public:
-		TextRenderComponent* mTextRenderComponent;
+		TextureRenderComponent* mTextureRenderComponent;
 	};
 }

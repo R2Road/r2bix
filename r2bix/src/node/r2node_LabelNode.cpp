@@ -8,7 +8,7 @@
 namespace r2node
 {
 	LabelNode::LabelNode( r2base::Director& director ) : r2base::Node( director )
-		, mTextRenderComponent( nullptr )
+		, mTextureRenderComponent( nullptr )
 		, mLabelComponent( nullptr )
 	{}
 
@@ -31,14 +31,14 @@ namespace r2node
 		}
 
 		{
-			auto component = r2component::TextRenderComponent::Create( *this );
-			mTextRenderComponent = component.get();
+			auto component = r2component::TextureRenderComponent::Create( *this );
+			mTextureRenderComponent = component.get();
 			AddComponent( std::move( component ) );
 		}
 
 		{
 			auto component = r2component::LabelComponent::Create( *this );
-			component->mTextRenderComponent = mTextRenderComponent;
+			component->mTextureRenderComponent = mTextureRenderComponent;
 			mLabelComponent = component.get();
 			AddComponent( std::move( component ) );
 		}
@@ -48,7 +48,7 @@ namespace r2node
 	
 	void LabelNode::SetRect( const int x, const int y, const int width, const int height )
 	{
-		mTextRenderComponent->SetRect( x, y, width, height );
+		mTextureRenderComponent->SetRect( x, y, width, height );
 	}
 	void LabelNode::SetString( const std::string_view str )
 	{

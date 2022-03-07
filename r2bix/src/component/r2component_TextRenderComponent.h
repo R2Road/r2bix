@@ -7,13 +7,13 @@
 
 namespace r2component
 {
-	class TextRenderComponent : public r2base::Component
+	class TextureRenderComponent : public r2base::Component
 	{
 	private:
-		TextRenderComponent( r2base::Node& owner_node );
+		TextureRenderComponent( r2base::Node& owner_node );
 
 	public:
-		static std::unique_ptr<TextRenderComponent> Create( r2base::Node& owner_node );
+		static std::unique_ptr<TextureRenderComponent> Create( r2base::Node& owner_node );
 
 		//
 		// Override
