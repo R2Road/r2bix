@@ -11,8 +11,6 @@ namespace r2render
 
 namespace r2component
 {
-	class TransformComponent;
-
 	class TextureFrameRenderComponent : public r2base::Component
 	{
 	private:

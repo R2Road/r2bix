@@ -7,8 +7,6 @@
 
 namespace r2component
 {
-	class TransformComponent;
-
 	class TextRenderComponent : public r2base::Component
 	{
 	private:
