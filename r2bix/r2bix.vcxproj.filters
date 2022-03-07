@@ -233,9 +233,6 @@
     <ClInclude Include="src\render\r2render_Camera.h">
       <Filter>render</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\r2render_iRenderable.h">
-      <Filter>render</Filter>
-    </ClInclude>
     <ClInclude Include="src\render\r2render_iRenderTarget.h">
       <Filter>render</Filter>
     </ClInclude>

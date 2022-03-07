@@ -116,7 +116,6 @@
     <ClInclude Include="src\render\r2render_iRenderTarget.h" />
     <ClInclude Include="src\render\r2render_TextureFrame.h" />
     <ClInclude Include="src\render\r2_GridIndexConverter.h" />
-    <ClInclude Include="src\render\r2render_iRenderable.h" />
     <ClInclude Include="src\render\r2render_Texture.h" />
     <ClInclude Include="src\test_r2bix\CameraMenu.h" />
     <ClInclude Include="src\test_r2bix\camera_test.h" />

@@ -5,17 +5,18 @@
 
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "base/r2base_Director.h"
+#include "base/r2base_Node.h"
 #include "render/r2render_Camera.h"
-#include "render/r2render_iRenderable.h"
 #include "render/r2render_Texture.h"
 
 namespace component_test
 {
-	class RenderableObject : r2render::iRenderable
+	class RenderTestNode : r2base::Node
 	{
 	public:
-		RenderableObject( const r2::PointInt& position, const r2::RectInt& rect ) :
-			mPosition( position )
+		RenderTestNode( r2base::Director& director, const r2::PointInt& position, const r2::RectInt& rect ) : r2base::Node( director )
+			, mPosition( position )
 			, mRect( rect )
 			, mTexture( mRect.GetWidth(), mRect.GetHeight() )
 		{
@@ -28,7 +29,7 @@ namespace component_test
 			}
 		}
 
-		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target ) override
+		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt /*offset*/ ) override
 		{
 			std::cout << "world space : my pos : " << mPosition.GetX() << "   " << mPosition.GetY() << r2::linefeed;
 			std::cout << "world space : camera pos : " << camera->GetPoint().GetX() << "   " << camera->GetPoint().GetY() << r2::linefeed2;
@@ -135,7 +136,8 @@ namespace component_test
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
-			RenderableObject renderable_object( { 12, 24 }, { -4, -2, 9, 9 } );
+			r2base::Director dummy_director;
+			RenderTestNode render_test_node( dummy_director, { 12, 24 }, { -4, -2, 9, 9 } );
 
 			std::cout << r2::split;
 
@@ -143,13 +145,14 @@ namespace component_test
 				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
 				std::cout << r2::tab2 << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2::linefeed2;
-				std::cout << r2::tab2 << "RenderableObject renderable_object( { 12, 24 }, { -4, -2, 9, 9 } );" << r2::linefeed;
+				std::cout << r2::tab2 << "r2base::Director dummy_director;" << r2::linefeed;
+				std::cout << r2::tab2 << "RenderTestNode render_test_node( dummy_director, { 12, 24 }, { -4, -2, 9, 9 } );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "+ Show : Renderable Object Rect( +, O ), Camera Rect( #, X )" << r2::linefeed2;
+				std::cout << r2::tab << "+ Show : RenderTestNode, Camera Rect( #, X )" << r2::linefeed2;
 
 				{
 					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() >= y; ++y )
@@ -163,15 +166,15 @@ namespace component_test
 				}
 
 				{
-					auto current_rect = renderable_object.mRect;
-					current_rect.SetOrigin( current_rect.GetOrigin() + renderable_object.mPosition );
+					auto current_rect = render_test_node.mRect;
+					current_rect.SetOrigin( current_rect.GetOrigin() + render_test_node.mPosition );
 
-					for( int y = current_rect.GetMinY(); current_rect.GetMaxY() > y; ++y )
+					for( int y = 0; current_rect.GetWidth() > y; ++y )
 					{
-						for( int x = current_rect.GetMinX(); current_rect.GetMaxX() > x; ++x )
+						for( int x = 0; current_rect.GetHeight() > x; ++x )
 						{
-							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
-							std::cout << '+';
+							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
+							std::cout << render_test_node.mTexture.Get( x, y );
 						}
 					}
 				}
@@ -179,8 +182,8 @@ namespace component_test
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( renderable_object.mPosition.GetX() ), static_cast<short>( renderable_object.mPosition.GetY() ) } );
-				std::cout << 'O';
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( render_test_node.mPosition.GetX() ), static_cast<short>( render_test_node.mPosition.GetY() ) } );
+				std::cout << '+';
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 			}
@@ -196,7 +199,7 @@ namespace component_test
 
 				std::cout << r2::tab << "+ Show Render Target" << r2::linefeed2;
 
-				renderable_object.Render( &camera, &render_target );
+				render_test_node.Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				int current_x = 0;
 				for( const auto& p : render_target )
