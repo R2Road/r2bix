@@ -125,14 +125,14 @@ namespace component_test
 		r2::RectInt mRect;
 	};
 
-	r2cm::iItem::TitleFuncT TextureRender::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT RenderTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Texture Render";
+			return "Render Test";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureRender::GetDoFunction()
+	r2cm::iItem::DoFuncT RenderTest::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{

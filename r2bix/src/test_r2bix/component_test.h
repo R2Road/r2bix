@@ -5,7 +5,7 @@
 
 namespace component_test
 {
-	class TextureRender : public r2cm::iItem, public r2::SingleTon<TextureRender>
+	class RenderTest : public r2cm::iItem, public r2::SingleTon<RenderTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
