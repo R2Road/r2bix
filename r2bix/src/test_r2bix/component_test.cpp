@@ -109,11 +109,6 @@ namespace component_test
 				{
 					for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() >= x; ++x, ++tx )
 					{
-						if( 5 == ty )
-						{
-							int i = 0;
-						}
-
 						render_target->Fill(
 							x, y
 							, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
