@@ -3,7 +3,11 @@
 #include "base/r2base_Component.h"
 
 #include "r2/r2_RectInt.h"
-#include "render/r2render_Texture.h"
+
+namespace r2render
+{
+	class Texture;
+}
 
 namespace r2component
 {
@@ -23,9 +27,10 @@ namespace r2component
 		//
 		// Getter
 		//
-		r2::RectInt GetRect() const { return mRect; }
-		const r2render::Texture& GetTexture() const { return mTexture; }
-		r2render::Texture& GetTexture()  { return mTexture; }
+		r2::RectInt GetRect() const
+		{
+			return mRect;
+		}
 
 		//
 		// Setter
@@ -34,9 +39,13 @@ namespace r2component
 		{
 			mRect.Set( x, y, width, height );
 		}
+		void SetTexture( const r2render::Texture* const texture )
+		{
+			mTexture = texture;
+		}
 
 	private:
 		r2::RectInt mRect;
-		r2render::Texture mTexture;
+		const r2render::Texture* mTexture;
 	};
 }

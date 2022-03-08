@@ -4,6 +4,7 @@
 #include <string_view>
 
 #include "base/r2base_Component.h"
+#include "render/r2render_Texture.h"
 
 namespace r2component
 {
@@ -18,6 +19,11 @@ namespace r2component
 		static std::unique_ptr<LabelComponent> Create( r2base::Node& owner_node );
 
 		//
+		//
+		//
+		const r2render::Texture* const GetTexture() const { return &mTexture; }
+
+		//
 		// Setter
 		//
 		void SetString( const std::string_view str );
@@ -25,6 +31,7 @@ namespace r2component
 	private:
 		std::string mText;
 	public:
+		r2render::Texture mTexture;
 		TextureRenderComponent* mTextureRenderComponent;
 	};
 }

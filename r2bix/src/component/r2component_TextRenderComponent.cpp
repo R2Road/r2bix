@@ -5,12 +5,13 @@
 #include "base/r2base_Node.h"
 #include "r2component_TransformComponent.h"
 #include "render/r2render_Camera.h"
+#include "render/r2render_Texture.h"
 
 namespace r2component
 {
 	TextureRenderComponent::TextureRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mRect()
-		, mTexture( " " )
+		, mTexture( nullptr )
 	{}
 
 	std::unique_ptr<TextureRenderComponent> TextureRenderComponent::Create( r2base::Node& owner_node )
@@ -68,7 +69,7 @@ namespace r2component
 			{
 				render_target->Fill(
 					x, y
-					, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+					, mTexture->Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 				);
 			}
 		}

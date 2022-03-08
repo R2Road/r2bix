@@ -7,6 +7,7 @@
 namespace r2component
 {
 	LabelComponent::LabelComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+		, mTexture( " " )
 		, mTextureRenderComponent( nullptr )
 	{}
 
@@ -29,6 +30,6 @@ namespace r2component
 		}
 
 		mText = str;
-		mTextureRenderComponent->GetTexture().Reset( str );
+		mTexture.Reset( str );
 	}
 }

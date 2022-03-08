@@ -43,6 +43,8 @@ namespace r2node
 			AddComponent( std::move( component ) );
 		}
 
+		mTextureRenderComponent->SetTexture( mLabelComponent->GetTexture() );
+
 		return true;
 	}
 	
