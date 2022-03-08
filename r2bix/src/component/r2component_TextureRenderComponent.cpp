@@ -27,6 +27,11 @@ namespace r2component
 
 	void TextureRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
+		if( !mTexture )
+		{
+			return;
+		}
+
 		//
 		// World Space : My Rect : Test
 		//

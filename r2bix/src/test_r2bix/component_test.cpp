@@ -3,6 +3,7 @@
 
 #include <Windows.h>
 
+#include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "base/r2base_Director.h"
@@ -231,14 +232,95 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureRenderComponentTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TextureRenderComponentTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Texture Render Component";
+			return "Texture Render Component 1";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureRenderComponentTest::GetDoFunction()
+	r2cm::iItem::DoFuncT TextureRenderComponentTest_1::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			r2render::Camera camera( { 5, 5 }, { 11, 11 } );
+			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
+
+			r2base::Director dummy_director;
+			auto dummy_node = r2base::Node::Create( dummy_director );
+			{
+				auto component = r2component::TextureRenderComponent::Create( *dummy_node );
+				component->SetRect( 0, 0, 4, 4 );
+				dummy_node->AddComponent( std::move( component ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2render::Camera camera( { 5, 5 }, { 11, 11 } );" << r2::linefeed;
+				std::cout << r2::tab << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );" << r2::linefeed2;
+
+				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
+
+				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed2;
+
+				std::cout << r2::tab << "auto component = r2component::TextureRenderComponent::Create( *dummy_node );" << r2::linefeed;
+				std::cout << r2::tab << "component->SetRect( 0, 0, 4, 4 );" << r2::linefeed;
+				std::cout << r2::tab << "dummy_node->AddComponent( std::move( component ) );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				dummy_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+
+				std::cout << "+ Process" << r2::linefeed2;
+				std::cout << r2::tab << "dummy_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+
+				std::cout << "+ Show Render Target" << r2::linefeed2;
+
+				int current_x = 0;
+				for( const auto& p : render_target )
+				{
+					std::cout << p;
+
+					++current_x;
+
+					if( render_target.GetWidth() <= current_x )
+					{
+						current_x = 0;
+						std::cout << r2::linefeed;
+					}
+				}
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 44 } );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT TextureRenderComponentTest_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture Render Component 2";
+		};
+	}
+	r2cm::iItem::DoFuncT TextureRenderComponentTest_2::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
