@@ -17,6 +17,7 @@ namespace r2component
 		TextureFrameRenderComponent( r2base::Node& owner_node );
 
 	public:
+		static int GetStaticID() { return r2base::ComponentStaticID<TextureFrameRenderComponent>::Get(); }
 		static std::unique_ptr<TextureFrameRenderComponent> Create( r2base::Node& owner_node );
 
 		//

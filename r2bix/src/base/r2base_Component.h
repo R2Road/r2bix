@@ -2,6 +2,7 @@
 
 #include <memory>
 
+#include "r2base_ComponentStaticID.h"
 #include "r2/r2_PointInt.h"
 
 namespace r2render
@@ -23,6 +24,11 @@ namespace r2base
 		virtual ~Component() {}
 
 	public:
+		static int GetStaticID()
+		{
+			return ComponentStaticID<Component>::Get();
+		}
+
 		virtual bool Init() { return true; }
 		virtual void Update() {}
 		virtual void Render( const r2render::Camera* const /*camera*/, r2render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ ) {}

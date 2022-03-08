@@ -368,5 +368,8 @@
     <ClInclude Include="src\component\r2component_TextureRenderComponent.h">
       <Filter>component</Filter>
     </ClInclude>
+    <ClInclude Include="src\base\r2base_ComponentStaticID.h">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

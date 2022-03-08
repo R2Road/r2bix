@@ -77,6 +77,7 @@
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\base\r2base_ComponentStaticID.h" />
     <ClInclude Include="src\base\r2base_CoutBufferRedirector.h" />
     <ClInclude Include="src\base\r2base_DebugConfig.h" />
     <ClInclude Include="src\base\r2base_Director.h" />

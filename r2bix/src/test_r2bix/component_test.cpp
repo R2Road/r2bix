@@ -232,6 +232,58 @@ namespace component_test
 
 
 
+	r2cm::iItem::TitleFuncT ComponentID::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Component ID";
+		};
+	}
+	r2cm::iItem::DoFuncT ComponentID::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			r2base::Director dummy_director;
+			auto dummy_node = r2base::Node::Create( dummy_director );
+			auto transform_1 = r2component::TransformComponent::Create( *dummy_node );
+			auto transform_2 = r2component::TransformComponent::Create( *dummy_node );
+			auto texture_render_1 = r2component::TextureRenderComponent::Create( *dummy_node );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "auto transform_1 = r2component::TransformComponent::Create( *dummy_node );" << r2::linefeed;
+				std::cout << r2::tab << "auto transform_2 = r2component::TransformComponent::Create( *dummy_node );" << r2::linefeed;
+				std::cout << r2::tab << "auto texture_render_1 = r2component::TextureRenderComponent::Create( *dummy_node );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "transform_1->GetStaticID();" << " > " << transform_1->GetStaticID() << r2::linefeed;
+				EXPECT_EQ( transform_1->GetStaticID(), r2component::TransformComponent::GetStaticID() );
+				EXPECT_EQ( transform_1->GetStaticID(), r2base::ComponentStaticID<r2component::TransformComponent>::Get() );
+				EXPECT_EQ( transform_1->GetStaticID(), transform_2->GetStaticID() );
+
+				std::cout << r2::linefeed2;
+
+				std::cout << "texture_render_1->GetStaticID();" << " > " << texture_render_1->GetStaticID() << r2::linefeed;
+				EXPECT_EQ( texture_render_1->GetStaticID(), r2component::TextureRenderComponent::GetStaticID() );
+				EXPECT_EQ( texture_render_1->GetStaticID(), r2base::ComponentStaticID<r2component::TextureRenderComponent>::Get() );
+				EXPECT_NE( texture_render_1->GetStaticID(), transform_1->GetStaticID() );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT TextureRenderComponentTest_1::GetTitleFunction() const
 	{
 		return []()->const char*

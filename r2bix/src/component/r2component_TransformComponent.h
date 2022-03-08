@@ -11,6 +11,7 @@ namespace r2component
 		TransformComponent( r2base::Node& owner_node );
 
 	public:
+		static int GetStaticID() { return r2base::ComponentStaticID<TransformComponent>::Get(); }
 		static std::unique_ptr<TransformComponent> Create( r2base::Node& owner_node );
 
 		//

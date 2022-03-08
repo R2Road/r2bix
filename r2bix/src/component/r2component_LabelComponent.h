@@ -16,6 +16,7 @@ namespace r2component
 		LabelComponent( r2base::Node& owner_node );
 
 	public:
+		static int GetStaticID() { return r2base::ComponentStaticID<LabelComponent>::Get(); }
 		static std::unique_ptr<LabelComponent> Create( r2base::Node& owner_node );
 
 		//
