@@ -2,7 +2,7 @@
 #include "r2node_LabelNode.h"
 
 #include "base/r2base_Director.h"
-#include "component/r2component_TextRenderComponent.h"
+#include "component/r2component_TextureRenderComponent.h"
 #include "component/r2component_LabelComponent.h"
 
 namespace r2node

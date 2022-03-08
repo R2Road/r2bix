@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "r2component_TextRenderComponent.h"
+#include "r2component_TextureRenderComponent.h"
 
 #include "base/r2base_DebugConfig.h"
 #include "base/r2base_Node.h"
