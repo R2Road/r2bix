@@ -6,7 +6,6 @@
 #include <utility> // std::move
 
 #include "base/r2base_Director.h"
-#include "component/r2component_TextRenderComponent.h"
 #include "component/r2component_TransformComponent.h"
 #include "node/r2node_LabelNode.h"
 #include "node/r2node_SpriteNode.h"

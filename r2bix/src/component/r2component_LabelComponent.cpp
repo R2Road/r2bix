@@ -2,7 +2,6 @@
 #include "r2component_LabelComponent.h"
 
 #include "base/r2base_Node.h"
-#include "component/r2component_TextRenderComponent.h"
 
 namespace r2component
 {
