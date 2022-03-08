@@ -259,14 +259,12 @@ namespace component_test
 
 			{
 				std::cout << "transform_1->GetStaticID();" << " > " << transform_1->GetStaticID() << r2::linefeed;
-				EXPECT_EQ( transform_1->GetStaticID(), r2component::TransformComponent::GetStaticID() );
 				EXPECT_EQ( transform_1->GetStaticID(), r2base::ComponentStaticID<r2component::TransformComponent>::Get() );
 				EXPECT_EQ( transform_1->GetStaticID(), transform_2->GetStaticID() );
 
 				std::cout << r2::linefeed2;
 
 				std::cout << "texture_render_1->GetStaticID();" << " > " << texture_render_1->GetStaticID() << r2::linefeed;
-				EXPECT_EQ( texture_render_1->GetStaticID(), r2component::TextureRenderComponent::GetStaticID() );
 				EXPECT_EQ( texture_render_1->GetStaticID(), r2base::ComponentStaticID<r2component::TextureRenderComponent>::Get() );
 				EXPECT_NE( texture_render_1->GetStaticID(), transform_1->GetStaticID() );
 			}

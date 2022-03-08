@@ -4,6 +4,8 @@
 #include <string_view>
 
 #include "base/r2base_Component.h"
+#include "base/r2base_ComponentStaticID.h"
+
 #include "render/r2render_Texture.h"
 
 namespace r2component
@@ -16,7 +18,7 @@ namespace r2component
 		LabelComponent( r2base::Node& owner_node );
 
 	public:
-		static int GetStaticID() { return r2base::ComponentStaticID<LabelComponent>::Get(); }
+		int GetStaticID() const override { return r2base::ComponentStaticID<LabelComponent>::Get(); }
 		static std::unique_ptr<LabelComponent> Create( r2base::Node& owner_node );
 
 		//

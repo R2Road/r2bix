@@ -1,6 +1,8 @@
 #pragma once
 
 #include "base/r2base_Component.h"
+#include "base/r2base_ComponentStaticID.h"
+
 #include "r2/r2_PointInt.h"
 
 namespace r2component
@@ -11,7 +13,7 @@ namespace r2component
 		TransformComponent( r2base::Node& owner_node );
 
 	public:
-		static int GetStaticID() { return r2base::ComponentStaticID<TransformComponent>::Get(); }
+		int GetStaticID() const override { return r2base::ComponentStaticID<TransformComponent>::Get(); }
 		static std::unique_ptr<TransformComponent> Create( r2base::Node& owner_node );
 
 		//

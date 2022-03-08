@@ -1,6 +1,7 @@
 #pragma once
 
 #include "base/r2base_Component.h"
+#include "base/r2base_ComponentStaticID.h"
 
 #include "r2/r2_RectInt.h"
 
@@ -17,7 +18,7 @@ namespace r2component
 		TextureFrameRenderComponent( r2base::Node& owner_node );
 
 	public:
-		static int GetStaticID() { return r2base::ComponentStaticID<TextureFrameRenderComponent>::Get(); }
+		int GetStaticID() const override { return r2base::ComponentStaticID<TextureFrameRenderComponent>::Get(); }
 		static std::unique_ptr<TextureFrameRenderComponent> Create( r2base::Node& owner_node );
 
 		//
