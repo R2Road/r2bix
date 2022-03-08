@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "r2component_LabelComponent.h"
 
-#include "base/r2base_Node.h"
-
 namespace r2component
 {
 	LabelComponent::LabelComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
