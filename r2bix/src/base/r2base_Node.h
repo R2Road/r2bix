@@ -49,7 +49,27 @@ namespace r2base
 		virtual void Update();
 		virtual void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset );
 
+		//
+		//
+		//
+		template<typename ComponentT>
+		ComponentT* const GetComponent() const
+		{
+			for( auto& c : mComponentContainer )
+			{
+				if( r2base::ComponentStaticID<ComponentT>::Get() == c->GetStaticID() )
+				{
+					return static_cast<ComponentT*>( c.get() );
+				}
+			}
+
+			return nullptr;
+		}
 		void AddComponent( r2base::ComponentUp component );
+
+		//
+		//
+		//
 		void AddChild( r2base::NodeUp child_node );
 
 	protected:
