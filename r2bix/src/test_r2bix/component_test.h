@@ -11,4 +11,11 @@ namespace component_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class TextureRenderComponentTest : public r2cm::iItem, public r2::SingleTon<TextureRenderComponentTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

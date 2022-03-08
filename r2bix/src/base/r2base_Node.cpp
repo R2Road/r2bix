@@ -13,6 +13,17 @@ namespace r2base
 		, mTransformComponent( nullptr )
 	{}
 
+	std::unique_ptr<Node> Node::Create( r2base::Director& director )
+	{
+		std::unique_ptr<Node> ret( new ( std::nothrow ) Node( director ) );
+		if( !ret || !ret->Init() )
+		{
+			ret.reset();
+		}
+
+		return ret;
+	}
+
 	bool Node::Init()
 	{
 		//

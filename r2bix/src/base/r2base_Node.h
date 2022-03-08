@@ -42,6 +42,8 @@ namespace r2base
 	public:
 		virtual ~Node() {}
 
+	static std::unique_ptr<Node> Create( r2base::Director& director );
+
 	public:
 		virtual bool Init();
 		virtual void Update();

@@ -18,6 +18,10 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', component_test::RenderTest::GetInstance() );
 
+		ret->AddLineFeed();
+
+		ret->AddItem( '2', component_test::TextureRenderComponentTest::GetInstance() );
+
 
 		ret->AddSplit();
 
