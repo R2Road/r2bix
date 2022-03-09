@@ -442,12 +442,20 @@ namespace component_test
 
 				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
 
-				std::cout << r2::tab << "r2render::Texture dummy_texture( 5, 5, '+' );" << r2::linefeed;
-				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed2;
+				std::cout << r2::tab << "r2render::Texture dummy_texture( 5, 5, '+' );" << r2::linefeed2;
 
+				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed;
 				std::cout << r2::tab << "dummy_node->mTransformComponent->SetPosition( 20, 25 );" << r2::linefeed2;
 
 				std::cout << r2::tab << "auto component = r2component::TextureRenderComponent::Create( *dummy_node ); ..." << r2::linefeed;
+				std::cout << r2::tab << "component->SetTexture( &dummy_texture );; ..." << r2::linefeed;
+				std::cout << r2::tab << "..." << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_NE( nullptr, dummy_node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
 			}
 
 			std::cout << r2::split;
@@ -462,7 +470,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
@@ -482,7 +490,7 @@ namespace component_test
 					}
 				}
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 40 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
 
 			std::cout << r2::split;
