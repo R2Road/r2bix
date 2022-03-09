@@ -107,6 +107,47 @@ namespace component_test
 
 
 
+	r2cm::iItem::TitleFuncT AddComponentTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "AddComponent";
+		};
+	}
+	r2cm::iItem::DoFuncT AddComponentTest::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			r2base::Director dummy_director;
+			auto dummy_node = r2base::Node::Create( dummy_director );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed;
+				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed2;
+			}
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_EQ( nullptr, dummy_node->GetComponent<r2component::TextureRenderComponent>() );
+
+				EXPECT_TRUE( dummy_node->AddComponent( r2component::TextureRenderComponent::Create( *dummy_node ) ) );
+				EXPECT_FALSE( dummy_node->AddComponent( r2component::TextureRenderComponent::Create( *dummy_node ) ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT TextureRenderComponentTest_1::GetTitleFunction() const
 	{
 		return []()->const char*

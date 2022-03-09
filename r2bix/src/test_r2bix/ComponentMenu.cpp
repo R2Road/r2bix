@@ -21,15 +21,16 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 		ret->AddItem( '2', component_test::GetComponentTest::GetInstance() );
+		ret->AddItem( '3', component_test::AddComponentTest::GetInstance() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( '3', component_test::TextureRenderComponentTest_1::GetInstance() );
-		ret->AddItem( '4', component_test::TextureRenderComponentTest_2::GetInstance() );
+		ret->AddItem( 'q', component_test::TextureRenderComponentTest_1::GetInstance() );
+		ret->AddItem( 'w', component_test::TextureRenderComponentTest_2::GetInstance() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( '5', component_test::LabelComponentTest::GetInstance() );
+		ret->AddItem( 'e', component_test::LabelComponentTest::GetInstance() );
 
 
 		ret->AddSplit();

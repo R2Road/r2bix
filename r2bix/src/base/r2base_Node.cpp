@@ -58,9 +58,20 @@ namespace r2base
 		}
 	}
 
-	void Node::AddComponent( r2base::ComponentUp component )
+	bool Node::AddComponent( r2base::ComponentUp component )
 	{
+		for( const auto& c : mComponentContainer )
+		{
+			if( c->GetStaticID() == component->GetStaticID() )
+			{
+				__debugbreak();
+				return false;
+			}
+		}
+
 		mComponentContainer.push_back( std::move( component ) );
+
+		return true;
 	}
 
 	void Node::AddChild( r2base::NodeUp child_node )

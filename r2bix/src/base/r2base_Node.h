@@ -64,7 +64,7 @@ namespace r2base
 
 			return nullptr;
 		}
-		void AddComponent( r2base::ComponentUp component );
+		bool AddComponent( r2base::ComponentUp component );
 
 		//
 		//
