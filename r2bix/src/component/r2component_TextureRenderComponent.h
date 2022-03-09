@@ -33,6 +33,10 @@ namespace r2component
 		{
 			return mRect;
 		}
+		const r2render::Texture* const GetTexture() const
+		{
+			return mTexture;
+		}
 
 		//
 		// Setter

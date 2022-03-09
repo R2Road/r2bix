@@ -361,7 +361,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				auto texture_render_component = dummy_node->GetComponent<r2component::TextureRenderComponent>();
+				EXPECT_EQ( nullptr, dummy_node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
 			}
 
 			std::cout << r2::split;
@@ -376,7 +376,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 26 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 29 } );
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
