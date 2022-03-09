@@ -64,7 +64,6 @@ namespace r2base
 		{
 			if( c->GetStaticID() == component->GetStaticID() )
 			{
-				__debugbreak();
 				return false;
 			}
 		}
