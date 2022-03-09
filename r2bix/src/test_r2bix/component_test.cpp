@@ -87,7 +87,7 @@ namespace component_test
 			{
 				std::cout << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed;
-				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed2;
+				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -128,7 +128,7 @@ namespace component_test
 			{
 				std::cout << "+ Declaration" << r2::linefeed2;
 				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed;
-				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed2;
+				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
