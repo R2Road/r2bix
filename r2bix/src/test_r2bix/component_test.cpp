@@ -120,14 +120,14 @@ namespace component_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			r2render::Camera camera( { 5, 5 }, { 11, 11 } );
+			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
 			r2base::Director dummy_director;
 			auto dummy_node = r2base::Node::Create( dummy_director );
 			{
 				auto component = r2component::TextureRenderComponent::Create( *dummy_node );
-				component->SetRect( 0, 0, 4, 4 );
+				component->SetRect( -1, -1, 4, 4 );
 				dummy_node->AddComponent( std::move( component ) );
 			}
 
@@ -135,7 +135,7 @@ namespace component_test
 
 			{
 				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2render::Camera camera( { 5, 5 }, { 11, 11 } );" << r2::linefeed;
+				std::cout << r2::tab << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
 				std::cout << r2::tab << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );" << r2::linefeed2;
 
 				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
@@ -143,7 +143,7 @@ namespace component_test
 				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed2;
 
 				std::cout << r2::tab << "auto component = r2component::TextureRenderComponent::Create( *dummy_node );" << r2::linefeed;
-				std::cout << r2::tab << "component->SetRect( 0, 0, 4, 4 );" << r2::linefeed;
+				std::cout << r2::tab << "component->SetRect( -1, -1, 4, 4 );" << r2::linefeed;
 				std::cout << r2::tab << "dummy_node->AddComponent( std::move( component ) );" << r2::linefeed;
 			}
 
@@ -165,7 +165,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 29 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
@@ -183,7 +183,7 @@ namespace component_test
 					}
 				}
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 44 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
 
 			std::cout << r2::split;
@@ -211,14 +211,14 @@ namespace component_test
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
 			r2base::Director dummy_director;
-			r2render::Texture dummy_texture( 5, 5, '+' );
+			r2render::Texture dummy_texture( 5, 5, 'A' );
 			auto dummy_node = r2base::Node::Create( dummy_director );
 			{
 				dummy_node->mTransformComponent->SetPosition( 20, 25 );
 
 				auto component = r2component::TextureRenderComponent::Create( *dummy_node );
 				component->SetTexture( &dummy_texture );
-				component->SetRect( 0, 0, 4, 4 );
+				component->SetRect( -1, -1, 4, 4 );
 				dummy_node->AddComponent( std::move( component ) );
 			}
 
@@ -236,9 +236,9 @@ namespace component_test
 				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed;
 				std::cout << r2::tab << "dummy_node->mTransformComponent->SetPosition( 20, 25 );" << r2::linefeed2;
 
-				std::cout << r2::tab << "auto component = r2component::TextureRenderComponent::Create( *dummy_node ); ..." << r2::linefeed;
-				std::cout << r2::tab << "component->SetTexture( &dummy_texture );; ..." << r2::linefeed;
-				std::cout << r2::tab << "..." << r2::linefeed;
+				std::cout << r2::tab << "auto component = r2component::TextureRenderComponent::Create( *dummy_node );" << r2::linefeed;
+				std::cout << r2::tab << "component->SetTexture( &dummy_texture );" << r2::linefeed;
+				std::cout << r2::tab << "component->SetRect( -1, -1, 4, 4 );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -359,8 +359,6 @@ namespace component_test
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
-
-
 
 				int current_x = 0;
 				for( const auto& p : render_target )
