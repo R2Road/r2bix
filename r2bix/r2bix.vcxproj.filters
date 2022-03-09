@@ -191,6 +191,9 @@
     <ClCompile Include="src\component\r2component_TextureRenderComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_r2bix\render_test.cpp">
+      <Filter>test_r2bix\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -370,6 +373,9 @@
     </ClInclude>
     <ClInclude Include="src\base\r2base_ComponentStaticID.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\render_test.h">
+      <Filter>test_r2bix\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

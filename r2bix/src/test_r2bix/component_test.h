@@ -5,13 +5,6 @@
 
 namespace component_test
 {
-	class RenderTest : public r2cm::iItem, public r2::SingleTon<RenderTest>
-	{
-	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
-	};
-
 	class ComponentID : public r2cm::iItem, public r2::SingleTon<ComponentID>
 	{
 	public:

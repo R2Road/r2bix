@@ -7,6 +7,7 @@
 #include "test_r2bix/TestRootMenu.h"
 
 #include "component_test.h"
+#include "render_test.h"
 
 r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 {
@@ -16,7 +17,7 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', component_test::RenderTest::GetInstance() );
+		ret->AddItem( '1', render_test::Basic::GetInstance() );
 
 		ret->AddLineFeed();
 
