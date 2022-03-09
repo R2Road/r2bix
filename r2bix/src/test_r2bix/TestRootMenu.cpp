@@ -12,6 +12,7 @@
 #include "console_screen_buffer_test.h"
 #include "console_screen_buffer_manager_test.h"
 #include "rect_test.h"
+#include "render_test.h"
 
 #include "visible_resource_research.h"
 
@@ -64,8 +65,9 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
+		ret->AddItem( 'e', render_test::Basic::GetInstance() );
 		ret->AddItem(
-			'e'
+			'r'
 			, []()->const char* { return ComponentMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{

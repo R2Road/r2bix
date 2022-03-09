@@ -7,7 +7,6 @@
 #include "test_r2bix/TestRootMenu.h"
 
 #include "component_test.h"
-#include "render_test.h"
 
 r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 {
@@ -17,14 +16,10 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', render_test::Basic::GetInstance() );
-
-		ret->AddLineFeed();
-
-		ret->AddItem( '2', component_test::ComponentID::GetInstance() );
-		ret->AddItem( '3', component_test::GetComponentTest::GetInstance() );
-		ret->AddItem( '4', component_test::TextureRenderComponentTest_1::GetInstance() );
-		ret->AddItem( '5', component_test::TextureRenderComponentTest_2::GetInstance() );
+		ret->AddItem( '1', component_test::ComponentID::GetInstance() );
+		ret->AddItem( '2', component_test::GetComponentTest::GetInstance() );
+		ret->AddItem( '3', component_test::TextureRenderComponentTest_1::GetInstance() );
+		ret->AddItem( '4', component_test::TextureRenderComponentTest_2::GetInstance() );
 
 
 		ret->AddSplit();
