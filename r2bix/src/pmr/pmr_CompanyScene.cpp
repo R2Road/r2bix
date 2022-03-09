@@ -4,6 +4,8 @@
 #include <conio.h>
 
 #include "base/r2base_Director.h"
+#include "component/r2component_LabelComponent.h"
+#include "component/r2component_TextureRenderComponent.h"
 #include "node/r2node_LabelNode.h"
 
 namespace pmr
@@ -31,8 +33,8 @@ namespace pmr
 
 		{
 			auto node = r2node::LabelNode::Create( mDirector );
-			node->SetRect( 0, 0, 40, 0 );
-			node->SetString( CompanyScene::GetTitle() );
+			node->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 40, 0 );
+			node->GetComponent<r2component::LabelComponent>()->SetString( CompanyScene::GetTitle() );
 			AddChild( std::move( node ) );
 		}
 

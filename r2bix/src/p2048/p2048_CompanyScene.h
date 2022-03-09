@@ -26,7 +26,7 @@ namespace p2048
 		void Update() override;
 
 	private:
-		r2node::LabelNode* mLabelNode;
+		r2base::Node* mLabelNode;
 		r2node::SpriteNode* mSpriteNode;
 	};
 }

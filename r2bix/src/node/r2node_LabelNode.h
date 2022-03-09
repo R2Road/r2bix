@@ -7,37 +7,14 @@ namespace r2base
 	class Director;
 }
 
-namespace r2component
-{
-	class LabelComponent;
-	class TextureRenderComponent;
-}
-
 namespace r2node
 {
-	class LabelNode : public r2base::Node
+	class LabelNode
 	{
 	private:
-		LabelNode( r2base::Director& director );
+		LabelNode() = delete;
 
 	public:
-		static std::unique_ptr<LabelNode> Create( r2base::Director& director );
-
-		//
-		// Override
-		//
-	private:
-		bool Init() override;
-
-	public:
-		//
-		//
-		//
-		void SetRect( const int x, const int y, const int width, const int height );
-		void SetString( const std::string_view str );
-
-	public:
-		r2component::TextureRenderComponent * mTextureRenderComponent;
-		r2component::LabelComponent* mLabelComponent;
+		static std::unique_ptr<r2base::Node> Create( r2base::Director& director );
 	};
 }

@@ -35,11 +35,10 @@ namespace r2base
 	{
 	protected:
 		using ComponentContainerT = std::list<ComponentUp>;
-
 		using ChildContainerT = std::list<r2base::NodeUp>;
 
-		Node( Director& director );
 	public:
+		Node( Director& director );
 		virtual ~Node() {}
 
 	static std::unique_ptr<Node> Create( r2base::Director& director );

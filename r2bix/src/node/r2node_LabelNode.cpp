@@ -7,53 +7,33 @@
 
 namespace r2node
 {
-	LabelNode::LabelNode( r2base::Director& director ) : r2base::Node( director )
-		, mTextureRenderComponent( nullptr )
-		, mLabelComponent( nullptr )
-	{}
-
-	std::unique_ptr<LabelNode> LabelNode::Create( r2base::Director& director )
+	std::unique_ptr<r2base::Node> LabelNode::Create( r2base::Director& director )
 	{
-		std::unique_ptr<LabelNode> ret( new ( std::nothrow ) LabelNode( director ) );
+		std::unique_ptr<r2base::Node> ret( new ( std::nothrow ) r2base::Node( director ) );
 		if( !ret || !ret->Init() )
 		{
 			ret.reset();
 		}
+		else
+		{
+			r2component::TextureRenderComponent* texture_render_component = nullptr;
+			{
+				auto component = r2component::TextureRenderComponent::Create( *ret );
+				texture_render_component = component.get();
+				ret->AddComponent( std::move( component ) );
+			}
+
+			r2component::LabelComponent* label_component = nullptr;
+			{
+				auto component = r2component::LabelComponent::Create( *ret );
+				label_component = component.get();
+				component->mTextureRenderComponent = texture_render_component;
+				ret->AddComponent( std::move( component ) );
+			}
+
+			texture_render_component->SetTexture( label_component->GetTexture() );
+		}
 
 		return ret;
-	}
-
-	bool LabelNode::Init()
-	{
-		if( !r2base::Node::Init() )
-		{
-			return false;
-		}
-
-		{
-			auto component = r2component::TextureRenderComponent::Create( *this );
-			mTextureRenderComponent = component.get();
-			AddComponent( std::move( component ) );
-		}
-
-		{
-			auto component = r2component::LabelComponent::Create( *this );
-			component->mTextureRenderComponent = mTextureRenderComponent;
-			mLabelComponent = component.get();
-			AddComponent( std::move( component ) );
-		}
-
-		mTextureRenderComponent->SetTexture( mLabelComponent->GetTexture() );
-
-		return true;
-	}
-	
-	void LabelNode::SetRect( const int x, const int y, const int width, const int height )
-	{
-		mTextureRenderComponent->SetRect( x, y, width, height );
-	}
-	void LabelNode::SetString( const std::string_view str )
-	{
-		mLabelComponent->SetString( str );
 	}
 }
