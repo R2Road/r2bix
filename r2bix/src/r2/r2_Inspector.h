@@ -106,6 +106,6 @@ do {																											\
 
 #define	DO_CODE( condition )																\
 do {																						\
-	condition;																				\
-	printf( "\x1B[90m" "[SHOW]" "\033[0m" " %s\n", #condition );							\
+	( condition );																			\
+	printf( "\x1B[90m" "[DO]" "\033[0m" " %s\n", #condition );								\
 } while( false )
