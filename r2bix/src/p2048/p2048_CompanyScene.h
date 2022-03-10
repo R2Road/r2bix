@@ -4,12 +4,6 @@
 
 #include "node/r2node_SceneNode.h"
 
-namespace r2node
-{
-	class LabelNode;
-	class SpriteNode;
-}
-
 namespace p2048
 {
 	class CompanyScene : public r2node::SceneNode
@@ -27,6 +21,6 @@ namespace p2048
 
 	private:
 		r2base::Node* mLabelNode;
-		r2node::SpriteNode* mSpriteNode;
+		r2base::Node* mSpriteNode;
 	};
 }

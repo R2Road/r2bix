@@ -6,42 +6,15 @@
 
 namespace r2node
 {
-	SpriteNode::SpriteNode( r2base::Director& director ) : r2base::Node( director )
-		, mTextureFrameRenderComponent( nullptr )
-	{}
-
-	std::unique_ptr<SpriteNode> SpriteNode::Create( r2base::Director& director, r2render::TextureFrame* const texture_frame )
+	r2base::NodeUp SpriteNode::Create( r2base::Director& director, r2render::TextureFrame* const texture_frame )
 	{
-		std::unique_ptr<SpriteNode> ret( new ( std::nothrow ) SpriteNode( director ) );
-		if( !ret || !ret->Init() )
+		auto ret( r2base::Node::Create( director ) );
+		if( ret )
 		{
-			ret.reset();
-		}
-		else
-		{
-			ret->SetTextureFrame( texture_frame );
+			ret->AddComponent<r2component::TextureFrameRenderComponent>();
+			ret->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( texture_frame );
 		}
 
 		return ret;
-	}
-
-	bool SpriteNode::Init()
-	{
-		if( !r2base::Node::Init() )
-		{
-			return false;
-		}
-
-		//
-		//
-		//
-		mTextureFrameRenderComponent = AddComponent<r2component::TextureFrameRenderComponent>();
-
-		return true;
-	}
-
-	void SpriteNode::SetTextureFrame( r2render::TextureFrame* const texture_frame )
-	{
-		mTextureFrameRenderComponent->SetTextureFrame( texture_frame );
 	}
 }

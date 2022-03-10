@@ -7,11 +7,6 @@ namespace r2base
 	class Director;
 }
 
-namespace r2component
-{
-	class TextureFrameRenderComponent;
-}
-
 namespace r2render
 {
 	class TextureFrame;
@@ -22,21 +17,9 @@ namespace r2node
 	class SpriteNode : public r2base::Node
 	{
 	private:
-		SpriteNode( r2base::Director& director );
+		SpriteNode() = delete;
 
 	public:
-		static std::unique_ptr<SpriteNode> Create( r2base::Director& director, r2render::TextureFrame* const texture_frame );
-
-		//
-		// Override
-		//
-	private:
-		bool Init() override;
-
-	public:
-		void SetTextureFrame( r2render::TextureFrame* const texture_frame );
-
-	public:
-		r2component::TextureFrameRenderComponent* mTextureFrameRenderComponent;
+		static r2base::NodeUp Create( r2base::Director& director, r2render::TextureFrame* const texture_frame );
 	};
 }
