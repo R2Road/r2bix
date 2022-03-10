@@ -251,13 +251,13 @@ namespace component_test
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
 			r2base::Director dummy_director;
-			r2render::Texture dummy_texture( 5, 5, 'A' );
-			auto dummy_node = r2base::Node::Create( dummy_director );
+			r2render::Texture texture( 5, 5, 'A' );
+			auto node = r2base::Node::Create( dummy_director );
 			{
-				dummy_node->mTransformComponent->SetPosition( 20, 25 );
+				node->mTransformComponent->SetPosition( 20, 25 );
 
-				auto component = dummy_node->AddComponent<r2component::TextureRenderComponent>();
-				component->SetTexture( &dummy_texture );
+				auto component = node->AddComponent<r2component::TextureRenderComponent>();
+				component->SetTexture( &texture );
 				component->SetRect( -1, -1, 4, 4 );
 			}
 
@@ -270,30 +270,30 @@ namespace component_test
 
 				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
 
-				std::cout << r2::tab << "r2render::Texture dummy_texture( 5, 5, '+' );" << r2::linefeed2;
+				std::cout << r2::tab << "r2render::Texture texture( 5, 5, '+' );" << r2::linefeed2;
 
-				std::cout << r2::tab << "auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed;
-				std::cout << r2::tab << "dummy_node->mTransformComponent->SetPosition( 20, 25 );" << r2::linefeed2;
+				std::cout << r2::tab << "auto node = r2base::Node::Create( dummy_director );" << r2::linefeed;
+				std::cout << r2::tab << "node->mTransformComponent->SetPosition( 20, 25 );" << r2::linefeed2;
 
-				std::cout << r2::tab << "auto component = r2component::TextureRenderComponent::Create( *dummy_node );" << r2::linefeed;
-				std::cout << r2::tab << "component->SetTexture( &dummy_texture );" << r2::linefeed;
+				std::cout << r2::tab << "auto component = r2component::TextureRenderComponent::Create( *node );" << r2::linefeed;
+				std::cout << r2::tab << "component->SetTexture( &texture );" << r2::linefeed;
 				std::cout << r2::tab << "component->SetRect( -1, -1, 4, 4 );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
 
 			{
-				EXPECT_NE( nullptr, dummy_node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
-				EXPECT_EQ( &dummy_texture, dummy_node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
+				EXPECT_NE( nullptr, node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
+				EXPECT_EQ( &texture, node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
 			}
 
 			std::cout << r2::split;
 
 			{
-				dummy_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				std::cout << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab << "dummy_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );" << r2::linefeed;
+				std::cout << r2::tab << "node->Render( &camera, &render_target, r2::PointInt::GetZERO() );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
