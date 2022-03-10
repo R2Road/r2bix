@@ -7,6 +7,7 @@
 #include "CameraMenu.h"
 #include "InputMenu.h"
 #include "ComponentMenu.h"
+#include "NodeMenu.h"
 #include "TextureMenu.h"
 
 #include "console_screen_buffer_test.h"
@@ -72,6 +73,15 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( ComponentMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+		ret->AddItem(
+			't'
+			, []()->const char* { return NodeMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( NodeMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);

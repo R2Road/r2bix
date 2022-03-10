@@ -62,6 +62,7 @@
     <ClCompile Include="src\test_r2bix\console_screen_buffer_manager_test.cpp" />
     <ClCompile Include="src\test_r2bix\InputMenu.cpp" />
     <ClCompile Include="src\test_r2bix\key_test.cpp" />
+    <ClCompile Include="src\test_r2bix\NodeMenu.cpp" />
     <ClCompile Include="src\test_r2bix\rect_test.cpp" />
     <ClCompile Include="src\test_r2bix\ComponentMenu.cpp" />
     <ClCompile Include="src\test_r2bix\component_test.cpp" />
@@ -125,6 +126,7 @@
     <ClInclude Include="src\test_r2bix\console_screen_buffer_manager_test.h" />
     <ClInclude Include="src\test_r2bix\InputMenu.h" />
     <ClInclude Include="src\test_r2bix\key_test.h" />
+    <ClInclude Include="src\test_r2bix\NodeMenu.h" />
     <ClInclude Include="src\test_r2bix\rect_test.h" />
     <ClInclude Include="src\test_r2bix\ComponentMenu.h" />
     <ClInclude Include="src\test_r2bix\component_test.h" />
