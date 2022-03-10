@@ -6,7 +6,7 @@
 
 #include "test_r2bix/TestRootMenu.h"
 
-#include "camera_test.h"
+#include "node_test.h"
 
 r2cm::MenuUp NodeMenu::Create( r2cm::Director& director )
 {
@@ -16,7 +16,7 @@ r2cm::MenuUp NodeMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		//ret->AddItem( '1', camera_test::CameraPosition::GetInstance() );
+		ret->AddItem( '1', node_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
