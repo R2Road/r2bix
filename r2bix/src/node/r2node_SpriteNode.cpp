@@ -32,9 +32,10 @@ namespace r2node
 			return false;
 		}
 
-		auto component = r2component::TextureFrameRenderComponent::Create( *this );
-		mTextureFrameRenderComponent = component.get();
-		AddComponent( std::move( component ) );
+		//
+		//
+		//
+		mTextureFrameRenderComponent = AddComponent<r2component::TextureFrameRenderComponent>();
 
 		return true;
 	}

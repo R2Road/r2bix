@@ -16,21 +16,10 @@ namespace r2node
 		}
 		else
 		{
-			r2component::TextureRenderComponent* texture_render_component = nullptr;
-			{
-				auto component = r2component::TextureRenderComponent::Create( *ret );
-				texture_render_component = component.get();
-				ret->AddComponent( std::move( component ) );
-			}
+			r2component::TextureRenderComponent* texture_render_component = ret->AddComponent<r2component::TextureRenderComponent>();
+			r2component::LabelComponent* label_component = ret->AddComponent<r2component::LabelComponent>();
 
-			r2component::LabelComponent* label_component = nullptr;
-			{
-				auto component = r2component::LabelComponent::Create( *ret );
-				label_component = component.get();
-				component->mTextureRenderComponent = texture_render_component;
-				ret->AddComponent( std::move( component ) );
-			}
-
+			label_component->mTextureRenderComponent = texture_render_component;
 			texture_render_component->SetTexture( label_component->GetTexture() );
 		}
 

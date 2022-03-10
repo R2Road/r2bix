@@ -29,9 +29,7 @@ namespace r2base
 		//
 		// Transform
 		//
-		auto component = r2component::TransformComponent::Create( *this );
-		mTransformComponent = component.get();
-		AddComponent( std::move( component ) );
+		mTransformComponent = AddComponent<r2component::TransformComponent>();
 
 		return true;
 	}
@@ -56,21 +54,6 @@ namespace r2base
 		{
 			c->Render( camera, render_target, offset );
 		}
-	}
-
-	bool Node::AddComponent( r2base::ComponentUp component )
-	{
-		for( const auto& c : mComponentContainer )
-		{
-			if( c->GetStaticID() == component->GetStaticID() )
-			{
-				return false;
-			}
-		}
-
-		mComponentContainer.push_back( std::move( component ) );
-
-		return true;
 	}
 
 	void Node::AddChild( r2base::NodeUp child_node )

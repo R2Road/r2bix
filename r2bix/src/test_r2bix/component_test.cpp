@@ -136,8 +136,8 @@ namespace component_test
 			{
 				EXPECT_EQ( nullptr, dummy_node->GetComponent<r2component::TextureRenderComponent>() );
 
-				EXPECT_TRUE( dummy_node->AddComponent( r2component::TextureRenderComponent::Create( *dummy_node ) ) );
-				EXPECT_FALSE( dummy_node->AddComponent( r2component::TextureRenderComponent::Create( *dummy_node ) ) );
+				EXPECT_TRUE( dummy_node->AddComponent<r2component::TextureRenderComponent>() );
+				EXPECT_FALSE( dummy_node->AddComponent<r2component::TextureRenderComponent>() );
 			}
 
 			std::cout << r2::split;
@@ -167,9 +167,8 @@ namespace component_test
 			r2base::Director dummy_director;
 			auto dummy_node = r2base::Node::Create( dummy_director );
 			{
-				auto component = r2component::TextureRenderComponent::Create( *dummy_node );
+				auto component = dummy_node->AddComponent<r2component::TextureRenderComponent>();
 				component->SetRect( -1, -1, 4, 4 );
-				dummy_node->AddComponent( std::move( component ) );
 			}
 
 			std::cout << r2::split;
@@ -257,10 +256,9 @@ namespace component_test
 			{
 				dummy_node->mTransformComponent->SetPosition( 20, 25 );
 
-				auto component = r2component::TextureRenderComponent::Create( *dummy_node );
+				auto component = dummy_node->AddComponent<r2component::TextureRenderComponent>();
 				component->SetTexture( &dummy_texture );
 				component->SetRect( -1, -1, 4, 4 );
-				dummy_node->AddComponent( std::move( component ) );
 			}
 
 			std::cout << r2::split;
@@ -353,12 +351,11 @@ namespace component_test
 			{
 				dummy_node->mTransformComponent->SetPosition( 20, 25 );
 
-				dummy_node->AddComponent( r2component::LabelComponent::Create( *dummy_node ) );
+				dummy_node->AddComponent<r2component::LabelComponent>();
 
-				auto component = r2component::TextureRenderComponent::Create( *dummy_node );
+				auto component = dummy_node->AddComponent<r2component::TextureRenderComponent>();
 				component->SetTexture( dummy_node->GetComponent<r2component::LabelComponent>()->GetTexture() );
 				component->SetRect( -1, -1, 5, 0 );
-				dummy_node->AddComponent( std::move( component ) );
 			
 			}
 

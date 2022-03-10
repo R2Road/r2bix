@@ -64,7 +64,20 @@ namespace r2base
 
 			return nullptr;
 		}
-		bool AddComponent( r2base::ComponentUp component );
+		template<typename ComponentT>
+		ComponentT* AddComponent()
+		{
+			if( GetComponent<ComponentT>() )
+			{
+				return nullptr;
+			}
+
+			auto component = ComponentT::Create( *this );
+			auto ret = component.get();
+			mComponentContainer.push_back( std::move( component ) );
+
+			return ret;
+		}
 
 		//
 		//
