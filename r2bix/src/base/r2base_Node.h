@@ -37,8 +37,9 @@ namespace r2base
 		using ComponentContainerT = std::list<ComponentUp>;
 		using ChildContainerT = std::list<r2base::NodeUp>;
 
-	public:
 		Node( Director& director );
+
+	public:
 		virtual ~Node() {}
 
 	static std::unique_ptr<Node> Create( r2base::Director& director );

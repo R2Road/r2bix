@@ -9,12 +9,8 @@ namespace r2node
 {
 	std::unique_ptr<r2base::Node> LabelNode::Create( r2base::Director& director )
 	{
-		std::unique_ptr<r2base::Node> ret( new ( std::nothrow ) r2base::Node( director ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-		else
+		auto ret( r2base::Node::Create( director ) );
+		if( !ret )
 		{
 			r2component::TextureRenderComponent* texture_render_component = ret->AddComponent<r2component::TextureRenderComponent>();
 			r2component::LabelComponent* label_component = ret->AddComponent<r2component::LabelComponent>();
