@@ -7,14 +7,19 @@ namespace r2base
 	class Director;
 }
 
+namespace r2render
+{
+	class TextureFrame;
+}
+
 namespace r2node
 {
-	class LabelNode
+	class LabelNode : public r2base::Node
 	{
 	private:
 		LabelNode() = delete;
 
 	public:
-		static std::unique_ptr<r2base::Node> Create( r2base::Director& director );
+		static r2base::NodeUp Create( r2base::Director& director );
 	};
 }

@@ -7,7 +7,7 @@
 
 namespace r2node
 {
-	std::unique_ptr<r2base::Node> LabelNode::Create( r2base::Director& director )
+	r2base::NodeUp LabelNode::Create( r2base::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
