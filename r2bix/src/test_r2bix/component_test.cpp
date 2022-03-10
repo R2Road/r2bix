@@ -284,6 +284,7 @@ namespace component_test
 
 			{
 				EXPECT_NE( nullptr, dummy_node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
+				EXPECT_EQ( &dummy_texture, dummy_node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
 			}
 
 			std::cout << r2::split;
