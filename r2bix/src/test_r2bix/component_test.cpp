@@ -447,45 +447,27 @@ namespace component_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
-			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
+			std::cout << r2::split;
 
-			r2base::Director dummy_director;
-			r2render::Texture texture( 3, 3,
+			DECLARATION_CODE( r2render::Camera camera( { 20, 25 }, { 20, 10 } ) );
+			DECLARATION_CODE( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_CODE( r2base::Director dummy_director );
+			DECLARATION_CODE( r2render::Texture texture( 3, 3,
 				"123"
 				"456"
 				"abc"
-			);
-			r2render::TextureFrame texture_frame( &texture );
-			texture_frame.SetVisibleRect( r2::RectInt( texture_frame.GetMinX() + 1, texture_frame.GetMinY() + 1, texture_frame.GetWidth(), texture_frame.GetHeight() ) );
+			) );
+			DECLARATION_CODE( r2render::TextureFrame texture_frame( &texture ) );
+			DECLARATION_CODE( texture_frame.SetVisibleRect( r2::RectInt( texture_frame.GetMinX() + 1, texture_frame.GetMinY() + 1, texture_frame.GetWidth(), texture_frame.GetHeight() ) ); );
 
-			auto node = r2base::Node::Create( dummy_director );
-			{
-				node->mTransformComponent->SetPosition( 20, 25 );
-				node->AddComponent<r2component::TextureFrameRenderComponent>();
-			}
+			std::cout << r2::linefeed;
 
-			std::cout << r2::split;
-
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
-				std::cout << r2::tab << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );" << r2::linefeed2;
-
-				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed;
-				std::cout << r2::tab << "r2render::Texture texture( 3, 3," << r2::linefeed;
-				std::cout << r2::tab2 << "123" << r2::linefeed;
-				std::cout << r2::tab2 << "456" << r2::linefeed;
-				std::cout << r2::tab2 << "abc" << r2::linefeed;
-				std::cout << r2::tab << ");" << r2::linefeed;
-				std::cout << r2::tab << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed;
-				std::cout << r2::tab << "texture_frame.SetVisibleRect( r2::RectInt( .. + 1, .. + 1, .., .. ) );" << r2::linefeed2;
-
-				std::cout << r2::tab << "auto node = r2base::Node::Create( dummy_director );" << r2::linefeed;
-				std::cout << r2::tab << "node->mTransformComponent->SetPosition( 20, 25 );" << r2::linefeed2;
-
-				std::cout << r2::tab << "node->AddComponent<r2component::TextureFrameRenderComponent>();" << r2::linefeed;
-			}
+			DECLARATION_CODE( auto node = r2base::Node::Create( dummy_director ) );
+			DECLARATION_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
+			DECLARATION_CODE( node->AddComponent<r2component::TextureFrameRenderComponent>() );
 
 			std::cout << r2::split;
 
