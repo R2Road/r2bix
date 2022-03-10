@@ -360,7 +360,8 @@ namespace component_test
 			
 			}
 
-			node->GetComponent<r2component::LabelComponent>()->SetString( "Bla Bla Bla" );
+			const char* const dummy_text = "Bla Bla Bla";
+			node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text );
 
 			std::cout << r2::split;
 
@@ -380,7 +381,14 @@ namespace component_test
 				std::cout << r2::tab << "component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() );" << r2::linefeed;
 				std::cout << r2::tab << "component->SetRect( -1, -1, 5, 0 );" << r2::linefeed2;
 
-				std::cout << r2::tab << "node->GetComponent<r2component::LabelComponent>()->SetString( '\"Bla Bla Bla\" );" << r2::linefeed;
+				std::cout << r2::tab << "const char* const dummy_text = \"Bla Bla Bla\";" << r2::linefeed;
+				std::cout << r2::tab << "node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text );" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_EQ( dummy_text, node->GetComponent<r2component::LabelComponent>()->GetString() );
 			}
 
 			std::cout << r2::split;
