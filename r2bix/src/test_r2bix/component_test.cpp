@@ -9,10 +9,12 @@
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
 #include "component/r2component_LabelComponent.h"
+#include "component/r2component_TextureFrameRenderComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
 #include "component/r2component_TransformComponent.h"
 #include "render/r2render_Camera.h"
 #include "render/r2render_Texture.h"
+#include "render/r2render_TextureFrame.h"
 
 namespace component_test
 {
@@ -422,6 +424,107 @@ namespace component_test
 				}
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT TextureFrameRenderComponentTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TextureFrameRender Component";
+		};
+	}
+	r2cm::iItem::DoFuncT TextureFrameRenderComponentTest::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
+			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
+
+			r2base::Director dummy_director;
+			r2render::Texture texture( 3, 3,
+				"123"
+				"456"
+				"abc"
+			);
+			r2render::TextureFrame texture_frame( &texture );
+			texture_frame.SetVisibleRect( r2::RectInt( texture_frame.GetMinX() + 1, texture_frame.GetMinY() + 1, texture_frame.GetWidth(), texture_frame.GetHeight() ) );
+
+			auto node = r2base::Node::Create( dummy_director );
+			{
+				node->mTransformComponent->SetPosition( 20, 25 );
+				node->AddComponent<r2component::TextureFrameRenderComponent>();
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "+ Declaration" << r2::linefeed2;
+				std::cout << r2::tab << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
+				std::cout << r2::tab << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );" << r2::linefeed2;
+
+				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed;
+				std::cout << r2::tab << "r2render::Texture texture( 3, 3," << r2::linefeed;
+				std::cout << r2::tab2 << "123" << r2::linefeed;
+				std::cout << r2::tab2 << "456" << r2::linefeed;
+				std::cout << r2::tab2 << "abc" << r2::linefeed;
+				std::cout << r2::tab << ");" << r2::linefeed;
+				std::cout << r2::tab << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed;
+				std::cout << r2::tab << "texture_frame.SetVisibleRect( r2::RectInt( .. + 1, .. + 1, .., .. ) );" << r2::linefeed2;
+
+				std::cout << r2::tab << "auto node = r2base::Node::Create( dummy_director );" << r2::linefeed;
+				std::cout << r2::tab << "node->mTransformComponent->SetPosition( 20, 25 );" << r2::linefeed2;
+
+				std::cout << r2::tab << "node->AddComponent<r2component::TextureFrameRenderComponent>();" << r2::linefeed;
+			}
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
+				EXPECT_FALSE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
+
+				std::cout << r2::linefeed;
+
+				DO_CODE( node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( &texture_frame ) );
+				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
+
+				std::cout << r2::linefeed;
+
+				DO_CODE( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 35 } );
+
+				std::cout << "+ Show Render Target" << r2::linefeed2;
+
+				int current_x = 0;
+				for( const auto& p : render_target )
+				{
+					std::cout << p;
+
+					++current_x;
+
+					if( render_target.GetWidth() <= current_x )
+					{
+						current_x = 0;
+						std::cout << r2::linefeed;
+					}
+				}
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 48 } );
 			}
 
 			std::cout << r2::split;

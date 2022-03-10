@@ -27,6 +27,14 @@ namespace r2component
 		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset ) override;
 
 		//
+		// Getter
+		//
+		const r2render::TextureFrame* const GetTextureFrame() const
+		{
+			return mTextureFrame;
+		}
+
+		//
 		// Setter
 		//
 		void SetRect( const int x, const int y, const int width, const int height )
