@@ -2,6 +2,7 @@
 
 #include <list>
 #include <memory>
+#include <type_traits>
 
 #include "r2/r2_PointInt.h"
 #include "r2base_Component.h"
@@ -68,6 +69,8 @@ namespace r2base
 		template<typename ComponentT>
 		ComponentT* AddComponent()
 		{
+			static_assert( std::is_base_of<r2base::Component, ComponentT>() );
+
 			if( GetComponent<ComponentT>() )
 			{
 				return nullptr;
