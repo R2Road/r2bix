@@ -6,13 +6,12 @@
 
 namespace r2node
 {
-	r2base::NodeUp SpriteNode::Create( r2base::Director& director, r2render::TextureFrame* const texture_frame )
+	r2base::NodeUp SpriteNode::Create( r2base::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
 		{
 			ret->AddComponent<r2component::TextureFrameRenderComponent>();
-			ret->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( texture_frame );
 		}
 
 		return ret;

@@ -55,9 +55,4 @@ namespace r2base
 			c->Render( camera, render_target, offset );
 		}
 	}
-
-	void Node::AddChild( r2base::NodeUp child_node )
-	{
-		mChildContainer.push_back( std::move( child_node ) );
-	}
 }

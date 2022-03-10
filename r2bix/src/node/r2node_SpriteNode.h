@@ -7,11 +7,6 @@ namespace r2base
 	class Director;
 }
 
-namespace r2render
-{
-	class TextureFrame;
-}
-
 namespace r2node
 {
 	class SpriteNode : public r2base::Node
@@ -20,6 +15,6 @@ namespace r2node
 		SpriteNode() = delete;
 
 	public:
-		static r2base::NodeUp Create( r2base::Director& director, r2render::TextureFrame* const texture_frame );
+		static r2base::NodeUp Create( r2base::Director& director );
 	};
 }

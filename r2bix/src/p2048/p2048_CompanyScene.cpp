@@ -8,6 +8,7 @@
 #include "base/r2base_Director.h"
 #include "component/r2component_LabelComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
+#include "component/r2component_TextureFrameRenderComponent.h"
 #include "component/r2component_TransformComponent.h"
 #include "node/r2node_LabelNode.h"
 #include "node/r2node_SpriteNode.h"
@@ -39,18 +40,17 @@ namespace p2048
 		}
 
 		{
-			auto node = r2node::LabelNode::Create( mDirector );
-			node->mTransformComponent->SetPosition( 5, 5 );
-			node->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
-			node->GetComponent<r2component::LabelComponent>()->SetString( "# " "2048 Game Scene" " #" );
-			mLabelNode = node.get();
-			AddChild( std::move( node ) );
+			mLabelNode = AddChild<r2node::LabelNode>();
+			mLabelNode->mTransformComponent->SetPosition( 5, 5 );
+			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
+			mLabelNode->GetComponent<r2component::LabelComponent>()->SetString( "# " "2048 Game Scene" " #" );
 		}
 
 		{
-			auto node = r2node::SpriteNode::Create( mDirector, p2048table::TextureTable::GetInstance().GetTextureFrame( "title_image" ) );
-			mSpriteNode = node.get();
-			AddChild( std::move( node ) );
+			mSpriteNode = AddChild<r2node::SpriteNode>();
+			mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame(
+				p2048table::TextureTable::GetInstance().GetTextureFrame( "title_image" )
+			);
 		}
 
 		return true;

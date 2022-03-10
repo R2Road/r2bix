@@ -86,7 +86,17 @@ namespace r2base
 		//
 		//
 		//
-		void AddChild( r2base::NodeUp child_node );
+		template<typename NodeT>
+		Node* AddChild()
+		{
+			static_assert( std::is_base_of<r2base::Node, NodeT>() );
+
+			auto child_node = NodeT::Create( mDirector );
+			auto ret = child_node.get();
+			mChildContainer.push_back( std::move( child_node ) );
+
+			return ret;
+		}
 
 	protected:
 		Director& mDirector;
