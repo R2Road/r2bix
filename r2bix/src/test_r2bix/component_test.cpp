@@ -403,7 +403,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 35 } );
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
@@ -421,7 +421,7 @@ namespace component_test
 					}
 				}
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 			}
 
 			std::cout << r2::split;
