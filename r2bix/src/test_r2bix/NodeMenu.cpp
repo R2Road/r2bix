@@ -17,8 +17,9 @@ r2cm::MenuUp NodeMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', node_test::Basic::GetInstance() );
-		ret->AddItem( '2', node_test::Label::GetInstance() );
-		ret->AddItem( '3', node_test::Sprite::GetInstance() );
+		ret->AddItem( '2', node_test::Scene::GetInstance() );
+		ret->AddItem( '3', node_test::Label::GetInstance() );
+		ret->AddItem( '4', node_test::Sprite::GetInstance() );
 
 
 		ret->AddSplit();
