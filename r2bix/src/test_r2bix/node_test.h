@@ -18,4 +18,12 @@ namespace node_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class Sprite : public r2cm::iItem, public r2::SingleTon<Sprite>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 }
