@@ -25,7 +25,7 @@ namespace r2base
 	public:
 		virtual int GetStaticID() const = 0;
 		virtual bool Init() { return true; }
-		virtual void Update() {}
+		virtual void Update( const float /*delta_time*/ ) {}
 		virtual void Render( const r2render::Camera* const /*camera*/, r2render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ ) {}
 
 	protected:
