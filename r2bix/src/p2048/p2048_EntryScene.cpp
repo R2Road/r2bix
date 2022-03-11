@@ -24,7 +24,7 @@ namespace p2048
 
 		return ret;
 	}
-	void EntryScene::Update( const float delta_time )
+	void EntryScene::Update( const float /*delta_time*/ )
 	{
 		//
 		// Load Resources
