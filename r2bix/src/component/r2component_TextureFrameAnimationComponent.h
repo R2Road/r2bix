@@ -26,7 +26,7 @@ namespace r2component
 		//
 		//
 		//
-		void AddTextureFrame( r2render::TextureFrame* const texture_frame );
+		void AddTextureFrame( const r2render::TextureFrame* const texture_frame );
 
 	private:
 		TextureFrameContainerT mTextureFrameContainer;
