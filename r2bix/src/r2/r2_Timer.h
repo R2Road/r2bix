@@ -3,6 +3,7 @@
 #include <type_traits>
 #include <limits>
 #include <algorithm>
+#include <cassert>
 
 namespace r2
 {
@@ -45,7 +46,7 @@ namespace r2
 				return false;
 			}
 
-			R2ASSERT( dt <= ( ValueMAX - mElapsedTime ) );
+			assert( dt <= ( ValueMAX - mElapsedTime ) );
 
 			mElapsedTime += dt;
 
