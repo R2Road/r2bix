@@ -187,9 +187,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			{
-				EXPECT_EQ( nullptr, node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
-			}
+			EXPECT_EQ( nullptr, component->GetTexture() );
 
 			std::cout << r2::split;
 
