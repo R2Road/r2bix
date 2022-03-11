@@ -454,20 +454,23 @@ namespace component_test
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_CODE( r2base::Director dummy_director );
 			DECLARATION_CODE( r2render::Texture texture( 3, 3,
 				"123"
 				"456"
 				"abc"
 			) );
-			DECLARATION_CODE( r2render::TextureFrame texture_frame( &texture ) );
-			DECLARATION_CODE( texture_frame.SetVisibleRect( r2::RectInt( texture_frame.GetMinX() + 1, texture_frame.GetMinY() + 1, texture_frame.GetWidth(), texture_frame.GetHeight() ) ); );
+			DECLARATION_CODE( r2render::TextureFrame frame( &texture ) );
+			DO_CODE( frame.SetVisibleRect( r2::RectInt( frame.GetMinX() + 1, frame.GetMinY() + 1, frame.GetWidth(), frame.GetHeight() ) ) );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_CODE( r2base::Director dummy_director );
 
 			std::cout << r2::linefeed;
 
 			DECLARATION_CODE( auto node = r2base::Node::Create( dummy_director ) );
-			DECLARATION_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
-			DECLARATION_CODE( node->AddComponent<r2component::TextureFrameRenderComponent>() );
+			DO_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
+			DO_CODE( node->AddComponent<r2component::TextureFrameRenderComponent>() );
 
 			std::cout << r2::split;
 
@@ -477,7 +480,7 @@ namespace component_test
 
 				std::cout << r2::linefeed;
 
-				DO_CODE( node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( &texture_frame ) );
+				DO_CODE( node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( &frame ) );
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 
 				std::cout << r2::linefeed;
@@ -488,7 +491,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 35 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
@@ -506,7 +509,7 @@ namespace component_test
 					}
 				}
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 48 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
 
 			std::cout << r2::split;
