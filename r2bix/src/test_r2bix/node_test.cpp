@@ -32,14 +32,8 @@ namespace node_test
 			std::cout << r2::split;
 
 
-			r2base::Director dummy_director;
-			const auto dummy_node = r2base::Node::Create( dummy_director );
-
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
-				std::cout << r2::tab << "const auto dummy_node = r2base::Node::Create( dummy_director );" << r2::linefeed;
-			}
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_MAIN( const auto dummy_node = r2base::Node::Create( dummy_director ) );
 
 			std::cout << r2::split;
 
@@ -71,14 +65,8 @@ namespace node_test
 			std::cout << r2::split;
 
 
-			r2base::Director dummy_director;
-			const auto dummy_node = r2node::SceneNode::Create( dummy_director );
-
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
-				std::cout << r2::tab << "const auto dummy_node = r2node::SceneNode::Create( dummy_director );" << r2::linefeed;
-			}
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_MAIN( const auto dummy_node = r2node::SceneNode::Create( dummy_director ) );
 
 			std::cout << r2::split;
 
@@ -110,14 +98,8 @@ namespace node_test
 			std::cout << r2::split;
 
 
-			r2base::Director dummy_director;
-			const auto dummy_node = r2node::LabelNode::Create( dummy_director );
-
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
-				std::cout << r2::tab << "const auto dummy_node = r2node::LabelNode::Create( dummy_director );" << r2::linefeed;
-			}
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_MAIN( const auto dummy_node = r2node::LabelNode::Create( dummy_director ) );
 
 			std::cout << r2::split;
 
@@ -151,14 +133,8 @@ namespace node_test
 			std::cout << r2::split;
 
 
-			r2base::Director dummy_director;
-			const auto dummy_node = r2node::SpriteNode::Create( dummy_director );
-
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
-				std::cout << r2::tab << "const auto dummy_node = r2node::SpriteNode::Create( dummy_director );" << r2::linefeed;
-			}
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_MAIN( const auto dummy_node = r2node::SpriteNode::Create( dummy_director ) );
 
 			std::cout << r2::split;
 
