@@ -249,38 +249,26 @@ namespace component_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
-			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
+			std::cout << r2::split;
 
-			r2base::Director dummy_director;
-			r2render::Texture texture( 5, 5, 'A' );
-			auto node = r2base::Node::Create( dummy_director );
-			{
-				node->mTransformComponent->SetPosition( 20, 25 );
+			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
-				auto component = node->AddComponent<r2component::TextureRenderComponent>();
-				component->SetTexture( &texture );
-				component->SetRect( -1, -1, 4, 4 );
-			}
+			std::cout << r2::linefeed;
+
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			std::cout << r2::split;
 
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
-				std::cout << r2::tab << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );" << r2::linefeed2;
-
-				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
-
-				std::cout << r2::tab << "r2render::Texture texture( 5, 5, '+' );" << r2::linefeed2;
-
-				std::cout << r2::tab << "auto node = r2base::Node::Create( dummy_director );" << r2::linefeed;
-				std::cout << r2::tab << "node->mTransformComponent->SetPosition( 20, 25 );" << r2::linefeed2;
-
-				std::cout << r2::tab << "auto component = r2component::TextureRenderComponent::Create( *node );" << r2::linefeed;
-				std::cout << r2::tab << "component->SetTexture( &texture );" << r2::linefeed;
-				std::cout << r2::tab << "component->SetRect( -1, -1, 4, 4 );" << r2::linefeed;
-			}
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::TextureRenderComponent>() );
+			DECLARATION_MAIN( r2render::Texture texture( 3, 3, 'A' ) );
+			PROCESS_MAIN( component->SetTexture( &texture ) );
+			PROCESS_MAIN( component->SetRect( -1, -1, 2, 2 ) );
 
 			std::cout << r2::split;
 
@@ -292,10 +280,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-
-				std::cout << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab << "node->Render( &camera, &render_target, r2::PointInt::GetZERO() );" << r2::linefeed;
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 			}
 
 			std::cout << r2::split;
