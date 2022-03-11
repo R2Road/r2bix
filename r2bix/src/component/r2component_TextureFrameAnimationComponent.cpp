@@ -20,6 +20,11 @@ namespace r2component
 
 	void TextureFrameAnimationComponent::AddTextureFrame( r2render::TextureFrame* const texture_frame )
 	{
+		if( nullptr == texture_frame )
+		{
+			return;
+		}
+
 		mTextureFrameContainer.push_back( texture_frame );
 	}
 }
