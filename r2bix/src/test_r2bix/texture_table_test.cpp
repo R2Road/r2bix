@@ -37,9 +37,9 @@ namespace texture_table_test
 			{
 				std::cout << "+ Show" << r2::linefeed2;
 
-				for( int y = 0; y < texture->GetHeight(); ++y )
+				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
-					for( int x = 0; x < texture->GetWidth(); ++x )
+					for( int x = 0; texture->GetWidth() > x; ++x )
 					{
 						std::cout << texture->Get( x, y );
 					}
@@ -82,9 +82,9 @@ namespace texture_table_test
 				std::cout << "+ Show" << r2::linefeed2;
 
 				auto texture = p2048table::TextureTable::GetInstance().GetTexture( "test_texture_001" );
-				for( int y = 0; y < texture->GetHeight(); ++y )
+				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
-					for( int x = 0; x < texture->GetWidth(); ++x )
+					for( int x = 0; texture->GetWidth() > x; ++x )
 					{
 						std::cout << texture->Get( x, y );
 					}
@@ -105,9 +105,9 @@ namespace texture_table_test
 					std::cout << "+ Show" << r2::linefeed2;
 
 					auto texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_1" );
-					for( int y = 0; y < texture_frame->GetHeight(); ++y )
+					for( int y = 0; texture_frame->GetHeight() >= y; ++y )
 					{
-						for( int x = 0; x < texture_frame->GetWidth(); ++x )
+						for( int x = 0; texture_frame->GetWidth() >= x; ++x )
 						{
 							std::cout << texture_frame->Get( x, y );
 						}
@@ -153,9 +153,9 @@ namespace texture_table_test
 				std::cout << "const auto texture = p2048table::TextureTable::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
 
 				auto texture = p2048table::TextureTable::GetInstance().GetTexture( "TextureTable_3" );
-				for( int y = 0; y < texture->GetHeight(); ++y )
+				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
-					for( int x = 0; x < texture->GetWidth(); ++x )
+					for( int x = 0; texture->GetWidth() > x; ++x )
 					{
 						std::cout << texture->Get( x, y );
 					}
@@ -187,9 +187,9 @@ namespace texture_table_test
 				std::cout << "const auto texture = p2048table::TextureTable::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
 
 				auto texture = p2048table::TextureTable::GetInstance().GetTexture( "TextureTable_3" );
-				for( int y = 0; y < texture->GetHeight(); ++y )
+				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
-					for( int x = 0; x < texture->GetWidth(); ++x )
+					for( int x = 0; texture->GetWidth() > x; ++x )
 					{
 						std::cout << texture->Get( x, y );
 					}
