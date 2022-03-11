@@ -22,7 +22,7 @@ namespace r2node
 		//
 		// Override
 		//
-		void Update() override;
+		void Update( const float delta_time ) override;
 	private:
 		void Render( const r2render::Camera* const /*camera*/, r2render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ ) override {}
 

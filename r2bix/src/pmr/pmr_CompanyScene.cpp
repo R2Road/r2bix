@@ -39,7 +39,7 @@ namespace pmr
 
 		return true;
 	}
-	void CompanyScene::Update()
+	void CompanyScene::Update( const float delta_time )
 	{
 		if( _kbhit() )
 		{
@@ -49,5 +49,7 @@ namespace pmr
 				mDirector.RequestAbort();
 			}
 		}
+
+		r2node::SceneNode::Update( delta_time );
 	}
 }

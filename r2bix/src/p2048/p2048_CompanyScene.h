@@ -17,7 +17,7 @@ namespace p2048
 	private:
 		bool Init() override;
 	public:
-		void Update() override;
+		void Update( const float delta_time ) override;
 
 	private:
 		r2base::Node* mLabelNode;

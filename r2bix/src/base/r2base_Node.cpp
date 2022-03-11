@@ -34,11 +34,11 @@ namespace r2base
 		return true;
 	}
 
-	void Node::Update()
+	void Node::Update( const float delta_time )
 	{
 		for( auto& c : mChildContainer )
 		{
-			c->Update();
+			c->Update( delta_time );
 		}
 	}
 

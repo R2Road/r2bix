@@ -27,7 +27,7 @@ namespace r2base
 		{
 			if( mFPSTimer.Update() )
 			{
-				mSceneNode->Update();
+				mSceneNode->Update( 0.f );
 				mSceneNode->Render();
 
 				mScreenBufferManager.InitCursor();

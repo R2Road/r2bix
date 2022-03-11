@@ -18,6 +18,6 @@ namespace pmr
 	private:
 		bool Init() override;
 	public:
-		void Update() override;
+		void Update( const float delta_time ) override;
 	};
 }

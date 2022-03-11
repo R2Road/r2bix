@@ -22,6 +22,6 @@ namespace p2048
 		static r2node::SceneNodeUp Create( r2base::Director& director );
 
 	public:
-		void Update() override;
+		void Update( const float delta_time ) override;
 	};
 }

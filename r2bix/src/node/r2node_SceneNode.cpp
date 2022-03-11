@@ -11,9 +11,9 @@ namespace r2node
 		, mRenderTarget( 107, 53, '@' )
 	{}
 
-	void SceneNode::Update()
+	void SceneNode::Update( const float delta_time )
 	{
-		r2base::Node::Update();
+		r2base::Node::Update( delta_time );
 	}
 
 	void SceneNode::Render()

@@ -47,7 +47,7 @@ namespace r2base
 
 	public:
 		virtual bool Init();
-		virtual void Update();
+		virtual void Update( const float delta_time );
 		virtual void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset );
 
 		//

@@ -55,7 +55,7 @@ namespace p2048
 
 		return true;
 	}
-	void CompanyScene::Update()
+	void CompanyScene::Update( const float delta_time )
 	{
 		if( _kbhit() )
 		{
@@ -66,6 +66,6 @@ namespace p2048
 			}
 		}
 
-		r2node::SceneNode::Update();
+		r2node::SceneNode::Update( delta_time );
 	}
 }
