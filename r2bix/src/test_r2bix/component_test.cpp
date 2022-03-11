@@ -345,47 +345,34 @@ namespace component_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
-			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
-
-			r2base::Director dummy_director;
-
-			auto node = r2base::Node::Create( dummy_director );
-			{
-				node->mTransformComponent->SetPosition( 20, 25 );
-
-				node->AddComponent<r2component::LabelComponent>();
-
-				auto component = node->AddComponent<r2component::TextureRenderComponent>();
-				component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() );
-				component->SetRect( -1, -1, 5, 0 );
-			
-			}
-
-			const char* const dummy_text = "Bla Bla Bla";
-			node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text );
-
 			std::cout << r2::split;
 
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2::linefeed;
-				std::cout << r2::tab << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );" << r2::linefeed2;
+			DECLARATION_CODE( r2render::Camera camera( { 20, 25 }, { 20, 10 } ) );
+			DECLARATION_CODE( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
-				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed2;
+			std::cout << r2::linefeed;
 
-				std::cout << r2::tab << "auto node = r2base::Node::Create( dummy_director );" << r2::linefeed;
-				std::cout << r2::tab << "node->mTransformComponent->SetPosition( 20, 25 );" << r2::linefeed2;
+			DECLARATION_CODE( r2base::Director dummy_director );
 
-				std::cout << r2::tab << "node->AddComponent( r2component::LabelComponent::Create( *node ) );" << r2::linefeed2;
+			std::cout << r2::linefeed;
 
-				std::cout << r2::tab << "auto component = r2component::TextureRenderComponent::Create( *node );" << r2::linefeed;
-				std::cout << r2::tab << "component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() );" << r2::linefeed;
-				std::cout << r2::tab << "component->SetRect( -1, -1, 5, 0 );" << r2::linefeed2;
+			DECLARATION_CODE( auto node = r2base::Node::Create( dummy_director ) );
+			DO_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
 
-				std::cout << r2::tab << "const char* const dummy_text = \"Bla Bla Bla\";" << r2::linefeed;
-				std::cout << r2::tab << "node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text );" << r2::linefeed;
-			}
+			std::cout << r2::linefeed;
+
+			DO_CODE( node->AddComponent<r2component::LabelComponent>() );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_CODE( auto component = node->AddComponent<r2component::TextureRenderComponent>() );
+			DO_CODE( component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() ) );
+			DO_CODE( component->SetRect( -1, -1, 5, 0 ) );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_CODE( const char* const dummy_text = "Bla Bla Bla" );
+			DO_CODE( node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text ) );
 
 			std::cout << r2::split;
 
@@ -396,16 +383,13 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-
-				std::cout << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab << "node->Render( &camera, &render_target, r2::PointInt::GetZERO() );" << r2::linefeed;
+				DO_CODE( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 35 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
@@ -423,7 +407,7 @@ namespace component_test
 					}
 				}
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
 
 			std::cout << r2::split;
