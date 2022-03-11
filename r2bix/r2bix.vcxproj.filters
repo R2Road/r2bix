@@ -200,6 +200,9 @@
     <ClCompile Include="src\test_r2bix\node_test.cpp">
       <Filter>test_r2bix\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\component\r2component_TextureFrameAnimationComponent.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -388,6 +391,9 @@
     </ClInclude>
     <ClInclude Include="src\test_r2bix\node_test.h">
       <Filter>test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\r2component_TextureFrameAnimationComponent.h">
+      <Filter>component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

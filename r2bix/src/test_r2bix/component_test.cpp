@@ -9,6 +9,7 @@
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
 #include "component/r2component_LabelComponent.h"
+#include "component/r2component_TextureFrameAnimationComponent.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
 #include "component/r2component_TransformComponent.h"
@@ -445,6 +446,79 @@ namespace component_test
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 				EXPECT_EQ( &frame, node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 34 } );
+
+				std::cout << "+ Show Render Target" << r2::linefeed2;
+
+				int current_x = 0;
+				for( const auto& p : render_target )
+				{
+					std::cout << p;
+
+					++current_x;
+
+					if( render_target.GetWidth() <= current_x )
+					{
+						current_x = 0;
+						std::cout << r2::linefeed;
+					}
+				}
+
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT TextureFrameAnimationComponentTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TextureFrameAnimation Component";
+		};
+	}
+	r2cm::iItem::DoFuncT TextureFrameAnimationComponentTest::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
+
+			std::cout << r2::split;
+
+			EXPECT_TRUE( node->AddComponent<r2component::TextureFrameRenderComponent>() );
+			EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
+
+			EXPECT_TRUE( node->AddComponent<r2component::TextureFrameAnimationComponent>() );
+			EXPECT_TRUE( node->GetComponent<r2component::TextureFrameAnimationComponent>() );
 
 			std::cout << r2::split;
 
