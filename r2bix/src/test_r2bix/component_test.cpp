@@ -258,17 +258,19 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::TextureRenderComponent>() );
-			DECLARATION_MAIN( r2render::Texture texture( 3, 3, 'A' ) );
-			PROCESS_MAIN( component->SetTexture( &texture ) );
+			EXPECT_TRUE( node->AddComponent<r2component::TextureRenderComponent>() );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_MAIN( auto component = node->GetComponent<r2component::TextureRenderComponent>() );
 			PROCESS_MAIN( component->SetRect( -1, -1, 2, 2 ) );
 
 			std::cout << r2::split;
 
-			{
-				EXPECT_NE( nullptr, node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
-				EXPECT_EQ( &texture, node->GetComponent<r2component::TextureRenderComponent>()->GetTexture() );
-			}
+			DECLARATION_MAIN( r2render::Texture texture( 3, 3, 'A' ) );
+			PROCESS_MAIN( component->SetTexture( &texture ) );
+			EXPECT_NE( nullptr, component->GetTexture() );
+			EXPECT_EQ( &texture, component->GetTexture() );
 
 			std::cout << r2::split;
 
