@@ -36,6 +36,11 @@ namespace r2base
 
 	void Node::Update( const float delta_time )
 	{
+		for( auto& c : mComponentContainer )
+		{
+			c->Update( delta_time );
+		}
+
 		for( auto& c : mChildContainer )
 		{
 			c->Update( delta_time );
