@@ -433,8 +433,25 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			DECLARATION_CODE( r2render::Camera camera( { 20, 25 }, { 20, 10 } ) );
+			DECLARATION_CODE( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
 			DECLARATION_CODE( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_CODE( r2base::Director dummy_director );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_CODE( auto node = r2base::Node::Create( dummy_director ) );
+			DO_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_FALSE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
+				DO_CODE( node->AddComponent<r2component::TextureFrameRenderComponent>() );
+				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
+			}
 
 			std::cout << r2::linefeed;
 
@@ -448,21 +465,7 @@ namespace component_test
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_CODE( r2base::Director dummy_director );
-
-			std::cout << r2::linefeed;
-
-			DECLARATION_CODE( auto node = r2base::Node::Create( dummy_director ) );
-			DO_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
-			DO_CODE( node->AddComponent<r2component::TextureFrameRenderComponent>() );
-
-			std::cout << r2::split;
-
 			{
-				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
-
-				std::cout << r2::linefeed;
-
 				EXPECT_FALSE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 				DO_CODE( node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( &frame ) );
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
@@ -478,7 +481,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 34 } );
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
