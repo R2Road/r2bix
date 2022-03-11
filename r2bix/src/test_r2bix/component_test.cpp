@@ -347,16 +347,16 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			DECLARATION_CODE( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
-			DECLARATION_CODE( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_MAIN( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_MAIN( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_CODE( r2base::Director dummy_director );
+			DECLARATION_MAIN( r2base::Director dummy_director );
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_CODE( auto node = r2base::Node::Create( dummy_director ) );
+			DECLARATION_MAIN( auto node = r2base::Node::Create( dummy_director ) );
 			DO_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			std::cout << r2::split;
@@ -366,13 +366,13 @@ namespace component_test
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_CODE( auto component = node->GetComponent<r2component::TextureRenderComponent>() );
+			DECLARATION_MAIN( auto component = node->GetComponent<r2component::TextureRenderComponent>() );
 			DO_CODE( component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() ) );
 			DO_CODE( component->SetRect( -1, -1, 5, 0 ) );
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_CODE( const char* const dummy_text = "Bla Bla Bla" );
+			DECLARATION_MAIN( const char* const dummy_text = "Bla Bla Bla" );
 			DO_CODE( node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text ) );
 			EXPECT_EQ( dummy_text, node->GetComponent<r2component::LabelComponent>()->GetString() );
 
@@ -429,16 +429,16 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			DECLARATION_CODE( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
-			DECLARATION_CODE( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_MAIN( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_MAIN( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_CODE( r2base::Director dummy_director );
+			DECLARATION_MAIN( r2base::Director dummy_director );
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_CODE( auto node = r2base::Node::Create( dummy_director ) );
+			DECLARATION_MAIN( auto node = r2base::Node::Create( dummy_director ) );
 			DO_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			std::cout << r2::split;
@@ -451,12 +451,12 @@ namespace component_test
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_CODE( r2render::Texture texture( 3, 3,
+			DECLARATION_MAIN( r2render::Texture texture( 3, 3,
 				"123"
 				"456"
 				"abc"
 			) );
-			DECLARATION_CODE( r2render::TextureFrame frame( &texture ) );
+			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
 			DO_CODE( frame.SetVisibleRect( r2::RectInt( frame.GetMinX() + 1, frame.GetMinY() + 1, frame.GetWidth(), frame.GetHeight() ) ) );
 
 			std::cout << r2::linefeed;

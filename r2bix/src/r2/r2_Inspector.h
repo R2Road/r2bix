@@ -110,6 +110,9 @@ do {																						\
 	printf( "\x1B[96m" "[DO]" "\033[0m" " %s\n", #condition );								\
 } while( false )
 
-#define	DECLARATION_CODE( condition )														\
+//
+// Important Code
+//
+#define	DECLARATION_MAIN( condition )														\
 condition;																					\
 printf( "\x1B[93m" "[DECLARATION]" "\033[0m" " %s\n", #condition );
