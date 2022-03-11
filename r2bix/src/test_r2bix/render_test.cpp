@@ -170,9 +170,9 @@ namespace render_test
 					auto current_rect = render_test_node.mRect;
 					current_rect.SetOrigin( current_rect.GetOrigin() + render_test_node.mPosition );
 
-					for( int y = 0; current_rect.GetHeight() >= y; ++y )
+					for( int y = 0; current_rect.GetHeight() > y; ++y )
 					{
-						for( int x = 0; current_rect.GetWidth() >= x; ++x )
+						for( int x = 0; current_rect.GetWidth() > x; ++x )
 						{
 							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
 							std::cout << render_test_node.mTexture.Get( x, y );
