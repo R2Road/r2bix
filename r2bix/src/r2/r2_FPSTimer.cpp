@@ -30,7 +30,7 @@ namespace r2
 	bool FPSTimer::Update()
 	{
 		mCurrentTime = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::system_clock::now() - mPivotTimePoint );
-		if( mFPS > mCurrentTime.count() - mLastTime.count() )
+		if( mFPS > ( mCurrentTime.count() - mLastTime.count() ) )
 		{
 			return false;
 		}
