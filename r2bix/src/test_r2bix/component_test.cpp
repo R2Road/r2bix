@@ -466,6 +466,7 @@ namespace component_test
 
 				DO_CODE( node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( &frame ) );
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
+				EXPECT_EQ( &frame, node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 
 				std::cout << r2::linefeed;
 
