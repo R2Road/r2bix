@@ -357,7 +357,7 @@ namespace component_test
 			std::cout << r2::linefeed;
 
 			DECLARATION_MAIN( auto node = r2base::Node::Create( dummy_director ) );
-			DO_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
+			PROCESS_MAIN( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			std::cout << r2::split;
 
@@ -367,19 +367,19 @@ namespace component_test
 			std::cout << r2::linefeed;
 
 			DECLARATION_MAIN( auto component = node->GetComponent<r2component::TextureRenderComponent>() );
-			DO_CODE( component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() ) );
-			DO_CODE( component->SetRect( -1, -1, 5, 0 ) );
+			PROCESS_MAIN( component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() ) );
+			PROCESS_MAIN( component->SetRect( -1, -1, 5, 0 ) );
 
 			std::cout << r2::linefeed;
 
 			DECLARATION_MAIN( const char* const dummy_text = "Bla Bla Bla" );
-			DO_CODE( node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text ) );
+			PROCESS_MAIN( node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text ) );
 			EXPECT_EQ( dummy_text, node->GetComponent<r2component::LabelComponent>()->GetString() );
 
 			std::cout << r2::split;
 
 			{
-				DO_CODE( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 			}
 
 			std::cout << r2::split;
@@ -439,13 +439,13 @@ namespace component_test
 			std::cout << r2::linefeed;
 
 			DECLARATION_MAIN( auto node = r2base::Node::Create( dummy_director ) );
-			DO_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
+			PROCESS_MAIN( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			std::cout << r2::split;
 
 			{
 				EXPECT_FALSE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
-				DO_CODE( node->AddComponent<r2component::TextureFrameRenderComponent>() );
+				PROCESS_MAIN( node->AddComponent<r2component::TextureFrameRenderComponent>() );
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
 			}
 
@@ -457,13 +457,13 @@ namespace component_test
 				"abc"
 			) );
 			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
-			DO_CODE( frame.SetVisibleRect( r2::RectInt( frame.GetMinX() + 1, frame.GetMinY() + 1, frame.GetWidth(), frame.GetHeight() ) ) );
+			PROCESS_MAIN( frame.SetVisibleRect( r2::RectInt( frame.GetMinX() + 1, frame.GetMinY() + 1, frame.GetWidth(), frame.GetHeight() ) ) );
 
 			std::cout << r2::linefeed;
 
 			{
 				EXPECT_FALSE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
-				DO_CODE( node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( &frame ) );
+				PROCESS_MAIN( node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( &frame ) );
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 				EXPECT_EQ( &frame, node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 			}
@@ -471,7 +471,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				DO_CODE( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 			}
 
 			std::cout << r2::split;
