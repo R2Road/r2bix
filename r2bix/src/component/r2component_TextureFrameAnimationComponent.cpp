@@ -4,6 +4,7 @@
 namespace r2component
 {
 	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+		, mTextureFrameContainer()
 	{}
 
 	std::unique_ptr<TextureFrameAnimationComponent> TextureFrameAnimationComponent::Create( r2base::Node& owner_node )
@@ -15,5 +16,10 @@ namespace r2component
 		}
 
 		return ret;
+	}
+
+	void TextureFrameAnimationComponent::AddTextureFrame( r2render::TextureFrame* const texture_frame )
+	{
+		mTextureFrameContainer.push_back( texture_frame );
 	}
 }

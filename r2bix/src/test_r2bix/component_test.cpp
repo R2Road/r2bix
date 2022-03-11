@@ -17,6 +17,8 @@
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"
 
+#include "p2048/p2048table_TextureTable.h"
+
 namespace component_test
 {
 	r2cm::iItem::TitleFuncT ComponentID::GetTitleFunction() const
@@ -498,6 +500,8 @@ namespace component_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
+			p2048table::TextureTable::GetInstance().Load();
+
 			std::cout << r2::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
@@ -518,7 +522,15 @@ namespace component_test
 			EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
 
 			EXPECT_TRUE( node->AddComponent<r2component::TextureFrameAnimationComponent>() );
-			EXPECT_TRUE( node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( auto tfac = node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+				PROCESS_MAIN( tfac->AddTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_1" ) ) );
+				PROCESS_MAIN( tfac->AddTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_2" ) ) );
+				PROCESS_MAIN( tfac->AddTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_3" ) ) );
+			}
 
 			std::cout << r2::split;
 
