@@ -15,7 +15,7 @@ namespace r2component
 	class TextureFrameAnimationComponent : public r2base::Component
 	{
 	private:
-		using TextureFrameContainerT = std::vector<r2render::TextureFrame*>;
+		using TextureFrameContainerT = std::vector<const r2render::TextureFrame*>;
 
 		TextureFrameAnimationComponent( r2base::Node& owner_node );
 
