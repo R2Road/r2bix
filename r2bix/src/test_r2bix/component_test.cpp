@@ -460,16 +460,18 @@ namespace component_test
 
 			{
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
-				EXPECT_FALSE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 
 				std::cout << r2::linefeed;
 
+				EXPECT_FALSE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 				DO_CODE( node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( &frame ) );
 				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
 				EXPECT_EQ( &frame, node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
+			}
 
-				std::cout << r2::linefeed;
+			std::cout << r2::split;
 
+			{
 				DO_CODE( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 			}
 
