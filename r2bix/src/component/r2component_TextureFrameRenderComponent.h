@@ -41,10 +41,10 @@ namespace r2component
 		{
 			mRect.Set( x, y, width, height );
 		}
-		void SetTextureFrame( r2render::TextureFrame* const texture_frame );
+		void SetTextureFrame( const r2render::TextureFrame* const texture_frame );
 
 	private:
 		r2::RectInt mRect;
-		r2render::TextureFrame* mTextureFrame;
+		const r2render::TextureFrame* mTextureFrame;
 	};
 }

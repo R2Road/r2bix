@@ -88,7 +88,7 @@ namespace r2component
 		}
 	}
 
-	void TextureFrameRenderComponent::SetTextureFrame( r2render::TextureFrame* const texture_frame )
+	void TextureFrameRenderComponent::SetTextureFrame( const r2render::TextureFrame* const texture_frame )
 	{
 		mTextureFrame = texture_frame;
 		mRect.SetSize( mTextureFrame->GetWidth(), mTextureFrame->GetHeight() );
