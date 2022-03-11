@@ -10,6 +10,8 @@ namespace r2
 		, mPivotTimePoint()
 		, mCurrentTime()
 		, mLastTime()
+
+		, mElapsedTime( 0.f )
 	{
 		SetFPS( frame_count );
 	}
@@ -19,6 +21,7 @@ namespace r2
 		assert( 0 < frame_count );
 
 		mFPS = 1000 / frame_count;
+		mElapsedTime = 1.f / frame_count;
 	}
 
 	void FPSTimer::Reset()
