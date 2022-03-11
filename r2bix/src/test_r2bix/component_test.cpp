@@ -347,7 +347,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			DECLARATION_CODE( r2render::Camera camera( { 20, 25 }, { 20, 10 } ) );
+			DECLARATION_CODE( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
 			DECLARATION_CODE( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
 			std::cout << r2::linefeed;
@@ -359,13 +359,14 @@ namespace component_test
 			DECLARATION_CODE( auto node = r2base::Node::Create( dummy_director ) );
 			DO_CODE( node->mTransformComponent->SetPosition( 20, 25 ) );
 
+			std::cout << r2::split;
+
+			EXPECT_TRUE( node->AddComponent<r2component::LabelComponent>() );
+			EXPECT_TRUE( node->AddComponent<r2component::TextureRenderComponent>() );
+
 			std::cout << r2::linefeed;
 
-			DO_CODE( node->AddComponent<r2component::LabelComponent>() );
-
-			std::cout << r2::linefeed;
-
-			DECLARATION_CODE( auto component = node->AddComponent<r2component::TextureRenderComponent>() );
+			DECLARATION_CODE( auto component = node->GetComponent<r2component::TextureRenderComponent>() );
 			DO_CODE( component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() ) );
 			DO_CODE( component->SetRect( -1, -1, 5, 0 ) );
 
@@ -373,12 +374,7 @@ namespace component_test
 
 			DECLARATION_CODE( const char* const dummy_text = "Bla Bla Bla" );
 			DO_CODE( node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text ) );
-
-			std::cout << r2::split;
-
-			{
-				EXPECT_EQ( dummy_text, node->GetComponent<r2component::LabelComponent>()->GetString() );
-			}
+			EXPECT_EQ( dummy_text, node->GetComponent<r2component::LabelComponent>()->GetString() );
 
 			std::cout << r2::split;
 
@@ -389,7 +385,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
+				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 34 } );
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
