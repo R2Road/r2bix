@@ -4,6 +4,7 @@
 
 #include "base/r2base_Component.h"
 #include "base/r2base_ComponentStaticID.h"
+#include "r2/r2_Timer_Float.h"
 
 namespace r2component
 {
@@ -31,6 +32,11 @@ namespace r2component
 		//
 		//
 		//
+		void Update( const float delta_time ) override;
+
+		//
+		//
+		//
 		void SetTextureFrameRenderComponent( r2component::TextureFrameRenderComponent* const texture_frame_render_component )
 		{
 			mTextureFrameRenderComponent = texture_frame_render_component;
@@ -44,5 +50,7 @@ namespace r2component
 	private:
 		r2component::TextureFrameRenderComponent* mTextureFrameRenderComponent;
 		TextureFrameContainerT mTextureFrameContainer;
+		r2::Timer_Float mAnimationTimer;
+		uint32_t mAnimationIndex;
 	};
 }

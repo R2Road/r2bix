@@ -504,7 +504,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
 			std::cout << r2::linefeed;
@@ -514,7 +514,7 @@ namespace component_test
 			std::cout << r2::linefeed;
 
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 17, 22 ) );
 
 			std::cout << r2::split;
 
@@ -541,6 +541,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
+				PROCESS_MAIN( node->Update( 1.f ) );
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 			}
 
