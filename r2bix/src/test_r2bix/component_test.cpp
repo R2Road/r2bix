@@ -519,14 +519,20 @@ namespace component_test
 			std::cout << r2::split;
 
 			EXPECT_TRUE( node->AddComponent<r2component::TextureFrameRenderComponent>() );
-			EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
-
 			EXPECT_TRUE( node->AddComponent<r2component::TextureFrameAnimationComponent>() );
 
 			std::cout << r2::split;
 
 			{
+				DECLARATION_MAIN( auto tfrc = node->GetComponent<r2component::TextureFrameRenderComponent>() );
 				DECLARATION_MAIN( auto tfac = node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
+
+				std::cout << r2::linefeed;
+
 				PROCESS_MAIN( tfac->AddTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_1" ) ) );
 				PROCESS_MAIN( tfac->AddTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_2" ) ) );
 				PROCESS_MAIN( tfac->AddTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_3" ) ) );

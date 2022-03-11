@@ -4,6 +4,7 @@
 namespace r2component
 {
 	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+		, mTextureFrameRenderComponent( nullptr )
 		, mTextureFrameContainer()
 	{}
 
