@@ -429,17 +429,17 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
-			DECLARATION_MAIN( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_MAIN( r2base::Director dummy_director );
+			DECLARATION_SUB( r2base::Director dummy_director );
 
 			std::cout << r2::linefeed;
 
-			DECLARATION_MAIN( auto node = r2base::Node::Create( dummy_director ) );
-			PROCESS_MAIN( node->mTransformComponent->SetPosition( 20, 25 ) );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			std::cout << r2::split;
 

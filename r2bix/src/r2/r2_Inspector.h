@@ -112,6 +112,12 @@ do {																						\
 	( condition );																			\
 	printf( "\x1B[96m" "[PROCESS]" "\033[0m" " %s\n", #condition );							\
 } while( false )
+//
+// Sub Process Code
+//
+#define	PROCESS_SUB( condition )														\
+condition;																					\
+printf( "\x1B[90m" "[PROCESS]" " %s" "\033[0m" "\n", #condition );
 
 //
 // Important Declaration Code
