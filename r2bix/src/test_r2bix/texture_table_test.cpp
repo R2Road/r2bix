@@ -5,6 +5,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "test_r2bix/TextureTable4Test.h"
+#include "test_r2bix/Utility4Test.h"
 
 namespace texture_table_test
 {
@@ -89,31 +90,11 @@ namespace texture_table_test
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( auto texture_frame = TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) );
+				DECLARATION_MAIN( auto frame = TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) );
 
 				std::cout << r2::linefeed;
 
-				for( int y = 0; texture_frame->GetHeight() > y; ++y )
-				{
-					for( int x = 0; texture_frame->GetWidth() > x; ++x )
-					{
-						std::cout << texture_frame->Get( x, y );
-					}
-
-					std::cout << r2::linefeed;
-				}
-
-				std::cout << r2::linefeed;
-
-				for( int ty = texture_frame->GetMinY(), y = 0; texture_frame->GetMaxY() >= ty; ++ty, ++y )
-				{
-					for( int tx = texture_frame->GetMinX(), x = 0; texture_frame->GetMaxX() >= tx; ++tx, ++x )
-					{
-						std::cout << texture_frame->Get( x, y );
-					}
-
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTextureFrame( *frame );
 			}
 
 			std::cout << r2::split;

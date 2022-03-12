@@ -3,6 +3,8 @@
 
 #include <Windows.h>
 
+#include "render/r2render_TextureFrame.h"
+
 void Utility4Test::DrawRect( const int offset_y, const r2::RectInt& rect, const char c )
 {
 	HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -21,4 +23,17 @@ void Utility4Test::DrawRect( const int offset_y, const r2::RectInt& rect, const 
 void Utility4Test::DrawRectInfo_Min_Max( const r2::RectInt& rect )
 {
 	std::cout << r2::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2::linefeed;
+}
+
+void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
+{
+	for( int y = 0; y < frame.GetHeight(); ++y )
+	{
+		for( int x = 0; x < frame.GetWidth(); ++x )
+		{
+			std::cout << frame.Get( x, y );
+		}
+
+		std::cout << r2::linefeed;
+	}
 }

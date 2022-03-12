@@ -164,15 +164,7 @@ namespace texture_frame_test
 
 				std::cout << r2::linefeed;
 
-				for( int y = 0; y < frame.GetHeight(); ++y )
-				{
-					for( int x = 0; x < frame.GetWidth(); ++x )
-					{
-						std::cout << frame.Get( x, y );
-					}
-
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTextureFrame( frame );
 			}
 
 			std::cout << r2::split;
@@ -242,15 +234,7 @@ namespace texture_frame_test
 
 				std::cout << r2::linefeed;
 
-				for( int y = 0; y < texture_frame.GetHeight(); ++y )
-				{
-					for( int x = 0; x < texture_frame.GetWidth(); ++x )
-					{
-						std::cout << texture_frame.Get( x, y );
-					}
-
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTextureFrame( texture_frame );
 			}
 
 			std::cout << r2::split;
@@ -268,15 +252,7 @@ namespace texture_frame_test
 
 				std::cout << r2::linefeed;
 
-				for( int y = 0; y < texture_frame.GetHeight(); ++y )
-				{
-					for( int x = 0; x < texture_frame.GetWidth(); ++x )
-					{
-						std::cout << texture_frame.Get( x, y );
-					}
-
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTextureFrame( texture_frame );
 			}
 
 			std::cout << r2::split;
