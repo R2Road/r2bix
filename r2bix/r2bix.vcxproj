@@ -76,10 +76,10 @@
     <ClCompile Include="src\test_r2bix\texture_frame_test.cpp" />
     <ClCompile Include="src\test_r2bix\texture_table_test.cpp" />
     <ClCompile Include="src\test_r2bix\texture_test.cpp" />
+    <ClCompile Include="src\test_r2bix\Utility4Test.cpp" />
     <ClCompile Include="src\test_r2bix\visible_resource_research.cpp" />
     <ClCompile Include="src\test_r2bix\window_input_test.cpp" />
     <ClCompile Include="src\utility\r2utility_StringBuilder.cpp" />
-    <ClCompile Include="src\utility\r2utility_Utility.cpp" />
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,10 +144,10 @@
     <ClInclude Include="src\test_r2bix\texture_frame_test.h" />
     <ClInclude Include="src\test_r2bix\texture_table_test.h" />
     <ClInclude Include="src\test_r2bix\texture_test.h" />
+    <ClInclude Include="src\test_r2bix\Utility4Test.h" />
     <ClInclude Include="src\test_r2bix\visible_resource_research.h" />
     <ClInclude Include="src\test_r2bix\window_input_test.h" />
     <ClInclude Include="src\utility\r2utility_StringBuilder.h" />
-    <ClInclude Include="src\utility\r2utility_Utility.h" />
     <ClInclude Include="src\utility\r2utility_WindowUtil.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

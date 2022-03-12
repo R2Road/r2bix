@@ -155,9 +155,6 @@
     <ClCompile Include="src\test_r2bix\console_screen_buffer_manager_test.cpp">
       <Filter>test_r2bix\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\utility\r2utility_Utility.cpp">
-      <Filter>utility</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Director.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
@@ -207,6 +204,9 @@
       <Filter>base</Filter>
     </ClCompile>
     <ClCompile Include="src\test_r2bix\TextureTable4Test.cpp">
+      <Filter>test_r2bix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_r2bix\Utility4Test.cpp">
       <Filter>test_r2bix</Filter>
     </ClCompile>
   </ItemGroup>
@@ -341,9 +341,6 @@
     <ClInclude Include="src\r2\r2_Inspector.h">
       <Filter>r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\utility\r2utility_Utility.h">
-      <Filter>utility</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_Director.h">
       <Filter>r2cm</Filter>
     </ClInclude>
@@ -405,6 +402,9 @@
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\test_r2bix\TextureTable4Test.h">
+      <Filter>test_r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\Utility4Test.h">
       <Filter>test_r2bix</Filter>
     </ClInclude>
   </ItemGroup>
