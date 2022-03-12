@@ -2,14 +2,11 @@
 
 #include "r2/r2_RectInt.h"
 
-namespace r2utility
+class Utility4Test
 {
-	class Utility
-	{
-	private:
-		Utility() = delete;
+private:
+	Utility4Test() = delete;
 
-	public:
-		static void DrawRect( const int offset_y, const r2::RectInt& rect, const char c );
-	};
-}
+public:
+	static void DrawRect( const int offset_y, const r2::RectInt& rect, const char c );
+};
