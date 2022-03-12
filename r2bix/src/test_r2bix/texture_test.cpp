@@ -6,6 +6,8 @@
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"
 
+#include "test_r2bix/Utility4Test.h"
+
 namespace texture_test
 {
 	r2cm::iItem::TitleFuncT FillAll::GetTitleFunction() const
@@ -30,22 +32,7 @@ namespace texture_test
 
 			std::cout << r2::split;
 
-			{
-				std::cout << r2::tab << "+ View" << r2::linefeed2;
-
-				std::size_t x = 0;
-				for( const char element : texture )
-				{
-					std::cout << element;
-
-					++x;
-					if( texture.GetWidth() <= x )
-					{
-						x = 0u;
-						std::cout << r2::linefeed;
-					}
-				}
-			}
+			Utility4Test::DrawTexture( texture );
 
 			std::cout << r2::split;
 
@@ -85,22 +72,7 @@ namespace texture_test
 
 			std::cout << r2::split;
 
-			{
-				std::cout << r2::tab << "+ View" << r2::linefeed2;
-
-				std::size_t x = 0;
-				for( const char element : texture )
-				{
-					std::cout << element;
-
-					++x;
-					if( texture.GetWidth() <= x )
-					{
-						x = 0u;
-						std::cout << r2::linefeed;
-					}
-				}
-			}
+			Utility4Test::DrawTexture( texture );
 
 			std::cout << r2::split;
 
@@ -124,8 +96,6 @@ namespace texture_test
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
-			
-			std::size_t x = 0;
 
 			{
 				const r2render::Texture texture( "Init With Chars" );
@@ -137,17 +107,7 @@ namespace texture_test
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
-				for( const char element : texture )
-				{
-					std::cout << element;
-
-					++x;
-					if( texture.GetWidth() <= x )
-					{
-						x = 0u;
-						std::cout << r2::linefeed;
-					}
-				}
+				Utility4Test::DrawTexture( texture );
 			}
 
 			std::cout << r2::split;
@@ -183,22 +143,7 @@ namespace texture_test
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
-				std::size_t x = 0;
-				for( const char element : texture )
-				{
-					std::cout << element;
-
-					++x;
-					if( texture.GetWidth() <= x )
-					{
-						x = 0u;
-						std::cout << r2::linefeed;
-					}
-				}
-				if( 0u != x )
-				{
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTexture( texture );
 			}
 
 			std::cout << r2::split;
@@ -232,22 +177,7 @@ namespace texture_test
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
-				std::size_t x = 0;
-				for( const char element : texture )
-				{
-					std::cout << element;
-
-					++x;
-					if( texture.GetWidth() <= x )
-					{
-						x = 0u;
-						std::cout << r2::linefeed;
-					}
-				}
-				if( 0u != x )
-				{
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTexture( texture );
 			}
 
 			std::cout << r2::split;
@@ -260,22 +190,7 @@ namespace texture_test
 
 				std::cout << r2::tab << "+ View : Overflow Test" << r2::linefeed2;
 
-				std::size_t x = 0;
-				for( const char element : texture )
-				{
-					std::cout << element;
-
-					++x;
-					if( texture.GetWidth() <= x )
-					{
-						x = 0u;
-						std::cout << r2::linefeed;
-					}
-				}
-				if( 0u != x )
-				{
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTexture( texture );
 			}
 
 			std::cout << r2::split;
@@ -309,22 +224,7 @@ namespace texture_test
 
 				std::cout << r2::tab << "+ View" << r2::linefeed2;
 
-				std::size_t x = 0;
-				for( const char element : texture )
-				{
-					std::cout << element;
-
-					++x;
-					if( texture.GetWidth() <= x )
-					{
-						x = 0u;
-						std::cout << r2::linefeed;
-					}
-				}
-				if( 0u != x )
-				{
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTexture( texture );
 			}
 
 			std::cout << r2::split;
