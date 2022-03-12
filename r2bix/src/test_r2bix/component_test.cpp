@@ -435,6 +435,7 @@ namespace component_test
 
 				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) ) );
 				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_2" ) ) );
+				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) ) );
 				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_3" ) ) );
 			}
 

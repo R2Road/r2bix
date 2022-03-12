@@ -49,7 +49,7 @@ void TextureTable4Test::Load()
 				"dguy_walk_3"
 				, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 			);
-			frame_result.first->second->SetVisibleRect( r2::RectInt( 20, 1, 6, 7 ) );
+			frame_result.first->second->SetVisibleRect( r2::RectInt( 19, 1, 6, 7 ) );
 		}
 	}
 }
