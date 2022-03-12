@@ -29,6 +29,7 @@ namespace r2render
 		void SetVisibleRect( const r2::RectInt& rect ) { mVisibleRect = rect; }
 		void MoveVisibleOrigin( const int mx, const int my ) { mVisibleRect.MoveOrigin( mx, my ); }
 		void MoveVisibleOrigin( const r2::PointInt& point ) { mVisibleRect.MoveOrigin( point.GetX(), point.GetY() ); }
+		void ChangeVisibleSize( const int change_width, const int change_height ) { mVisibleRect.ChangeSize( change_width, change_height ); }
 
 	private:
 		const Texture* const mTexture;

@@ -73,6 +73,7 @@ namespace r2
 		{
 			mOrigin.Add( move_x, move_y );
 		}
+
 		inline void SetSize( const ElementT width, const ElementT height )
 		{
 			mSize.Set( width, height );
@@ -80,6 +81,10 @@ namespace r2
 		inline void SetSize( const MySizeT size )
 		{
 			mSize = ( size );
+		}
+		inline void ChangeSize( const ElementT change_w, const ElementT change_h )
+		{
+			mSize.Add( change_w, change_h );
 		}
 
 		inline void Set( const ElementT x, const ElementT y, const ElementT width, const ElementT height )

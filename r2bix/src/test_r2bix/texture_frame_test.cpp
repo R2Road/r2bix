@@ -149,16 +149,14 @@ namespace texture_frame_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( frame.SetVisibleRect( { 2, 1, 3, 5 } ) );
+				std::cout << r2::tab << "rect min, max :" << " " << frame.GetMinX() << " " << frame.GetMinY() << " " << frame.GetMaxX() << " " << frame.GetMaxY() << r2::linefeed2;
+
+				PROCESS_MAIN( frame.MoveVisibleOrigin( 2, 1 ) );
+				PROCESS_MAIN( frame.ChangeVisibleSize( -3, -1 ) );
 
 				std::cout << r2::linefeed;
 
-				std::cout << r2::tab << "rect :"
-					<< " " << frame.GetMinX()
-					<< " " << frame.GetMinY()
-					<< " " << frame.GetMaxX()
-					<< " " << frame.GetMaxY()
-					<< r2::linefeed2;
+				std::cout << r2::tab << "rect min, max :" << " " << frame.GetMinX() << " " << frame.GetMinY() << " " << frame.GetMaxX() << " " << frame.GetMaxY() << r2::linefeed2;
 
 				EXPECT_EQ( texture.Get( frame.GetMinX(), frame.GetMinY() ), frame.Get( 0, 0 ) );
 

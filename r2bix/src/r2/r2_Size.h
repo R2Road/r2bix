@@ -86,6 +86,11 @@ namespace r2
 		{
 			mHeight = height;
 		}
+		inline void Add( const ValueT change_w, const ValueT change_h )
+		{
+			mWidth += change_w;
+			mHeight += change_h;
+		}
 
 		inline ValueT GetWidth() const
 		{
