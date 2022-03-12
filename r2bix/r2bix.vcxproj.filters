@@ -203,6 +203,9 @@
     <ClCompile Include="src\component\r2component_TextureFrameAnimationComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
+    <ClCompile Include="src\base\r2base_TextureTableBase.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -394,6 +397,9 @@
     </ClInclude>
     <ClInclude Include="src\component\r2component_TextureFrameAnimationComponent.h">
       <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\base\r2base_TextureTableBase.h">
+      <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
