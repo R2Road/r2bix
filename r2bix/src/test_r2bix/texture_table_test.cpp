@@ -105,9 +105,9 @@ namespace texture_table_test
 					std::cout << "+ Show" << r2::linefeed2;
 
 					auto texture_frame = TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" );
-					for( int y = 0; texture_frame->GetHeight() >= y; ++y )
+					for( int y = 0; texture_frame->GetHeight() > y; ++y )
 					{
-						for( int x = 0; texture_frame->GetWidth() >= x; ++x )
+						for( int x = 0; texture_frame->GetWidth() > x; ++x )
 						{
 							std::cout << texture_frame->Get( x, y );
 						}
