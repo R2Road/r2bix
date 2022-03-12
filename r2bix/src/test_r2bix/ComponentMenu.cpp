@@ -17,7 +17,7 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', component_test::ComponentID::GetInstance() );
-		ret->AddItem( '2', component_test::AddComponentTest::GetInstance() );
+		ret->AddItem( '2', component_test::Component_Add_Get::GetInstance() );
 
 		ret->AddLineFeed();
 

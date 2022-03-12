@@ -75,14 +75,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT AddComponentTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Component_Add_Get::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "AddComponent";
+			return "Component : Add, Get";
 		};
 	}
-	r2cm::iItem::DoFuncT AddComponentTest::GetDoFunction()
+	r2cm::iItem::DoFuncT Component_Add_Get::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
