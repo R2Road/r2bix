@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "component_test.h"
 
-#include <Windows.h>
-
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
@@ -202,13 +200,9 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
-
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
 				Utility4Test::DrawTexture( render_target );
-
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
 
 			std::cout << r2::split;
@@ -271,13 +265,9 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 32 } );
-
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
 				Utility4Test::DrawTexture( render_target );
-
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
 
 			std::cout << r2::split;
@@ -341,13 +331,9 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 34 } );
-
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
 				Utility4Test::DrawTexture( render_target );
-
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
 
 			std::cout << r2::split;
@@ -421,13 +407,9 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 34 } );
-
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
 				Utility4Test::DrawTexture( render_target );
-
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
 
 			std::cout << r2::split;
@@ -499,13 +481,9 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 34 } );
-
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
 				Utility4Test::DrawTexture( render_target );
-
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
 
 			std::cout << r2::split;
