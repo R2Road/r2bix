@@ -32,17 +32,7 @@ namespace texture_table_test
 
 			std::cout << r2::split;
 
-			{
-				for( int y = 0; texture->GetHeight() > y; ++y )
-				{
-					for( int x = 0; texture->GetWidth() > x; ++x )
-					{
-						std::cout << texture->Get( x, y );
-					}
-
-					std::cout << r2::linefeed;
-				}
-			}
+			Utility4Test::DrawTexture( *texture );
 
 			std::cout << r2::split;
 
@@ -76,15 +66,7 @@ namespace texture_table_test
 
 				std::cout << r2::linefeed;
 
-				for( int y = 0; texture->GetHeight() > y; ++y )
-				{
-					for( int x = 0; texture->GetWidth() > x; ++x )
-					{
-						std::cout << texture->Get( x, y );
-					}
-
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTexture( *texture );
 			}
 
 			std::cout << r2::split;
@@ -121,8 +103,6 @@ namespace texture_table_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Add Texture" << r2::linefeed2;
-
 				EXPECT_TRUE( TextureTable4Test::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
 			}
 
@@ -133,30 +113,18 @@ namespace texture_table_test
 
 				std::cout << r2::linefeed;
 
-				for( int y = 0; texture->GetHeight() > y; ++y )
-				{
-					for( int x = 0; texture->GetWidth() > x; ++x )
-					{
-						std::cout << texture->Get( x, y );
-					}
-
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTexture( *texture );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Add Texture" << r2::linefeed2;
-
 				EXPECT_FALSE( TextureTable4Test::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Remove Texture" << r2::linefeed2;
-
 				EXPECT_TRUE( TextureTable4Test::GetInstance().RemoveTexture( "TextureTable_3" ) );
 			}
 
@@ -167,15 +135,7 @@ namespace texture_table_test
 
 				std::cout << r2::linefeed;
 
-				for( int y = 0; texture->GetHeight() > y; ++y )
-				{
-					for( int x = 0; texture->GetWidth() > x; ++x )
-					{
-						std::cout << texture->Get( x, y );
-					}
-
-					std::cout << r2::linefeed;
-				}
+				Utility4Test::DrawTexture( *texture );
 			}
 
 			std::cout << r2::split;
