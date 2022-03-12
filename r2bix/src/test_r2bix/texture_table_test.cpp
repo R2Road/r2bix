@@ -23,20 +23,15 @@ namespace texture_table_test
 
 			std::cout << r2::split;
 
-			TextureTable4Test::GetInstance().Load();
+			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
 
-			auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" );
+			std::cout << r2::linefeed;
 
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "const auto texture_frame = TextureTable4Test::GetInstance().GetTexture( \"blablabla\" );" << r2::linefeed;
-			}
+			DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" ) );
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Show" << r2::linefeed2;
-
 				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
 					for( int x = 0; texture->GetWidth() > x; ++x )
