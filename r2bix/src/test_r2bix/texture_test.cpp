@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "texture_test.h"
 
+#include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "render/r2render_Texture.h"
@@ -25,10 +26,7 @@ namespace texture_test
 
 			std::cout << r2::split;
 
-			const r2render::Texture texture( 30, 20, '0' );
-
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2render::Texture texture( 30, 20, '0' );" << r2::linefeed;
+			DECLARATION_MAIN( const r2render::Texture texture( 30, 20, '0' ) );
 
 			std::cout << r2::split;
 
@@ -57,18 +55,11 @@ namespace texture_test
 
 			std::cout << r2::split;
 
-			r2render::Texture texture( 30, 20 );
-			texture.Fill( 0, 0, '0' );
-			texture.Fill( texture.GetXEnd(), 0, '0' );
-			texture.Fill( texture.GetXEnd(), texture.GetYEnd(), '0' );
-			texture.Fill( 0, texture.GetYEnd(), '0' );
-
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2render::Texture texture( 30, 20 );" << r2::linefeed;
-			std::cout << r2::tab2 << "texture.Fill( 0, 0, '0' );" << r2::linefeed;
-			std::cout << r2::tab2 << "texture.Fill( texture.GetXEnd(), 0, '0' );" << r2::linefeed;
-			std::cout << r2::tab2 << "texture.Fill( texture.GetXEnd(), texture.GetYEnd(), '0' );" << r2::linefeed;
-			std::cout << r2::tab2 << "texture.Fill( 0, texture.GetYEnd(), '0' );" << r2::linefeed;
+			DECLARATION_MAIN( r2render::Texture texture( 30, 20 ) );
+			PROCESS_MAIN( texture.Fill( 0, 0, '0' ) );
+			PROCESS_MAIN( texture.Fill( texture.GetXEnd(), 0, '0' ) );
+			PROCESS_MAIN( texture.Fill( texture.GetXEnd(), texture.GetYEnd(), '0' ) );
+			PROCESS_MAIN( texture.Fill( 0, texture.GetYEnd(), '0' ) );
 
 			std::cout << r2::split;
 
@@ -97,18 +88,11 @@ namespace texture_test
 
 			std::cout << r2::split;
 
-			{
-				const r2render::Texture texture( "Init With Chars" );
+			DECLARATION_MAIN( const r2render::Texture texture( "Init With Chars" ) );
 
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture texture( \"Init With Chars\" );" << r2::linefeed;
+			std::cout << r2::split;
 
-				std::cout << r2::split;
-
-				std::cout << r2::tab << "+ View" << r2::linefeed2;
-
-				Utility4Test::DrawTexture( texture );
-			}
+			Utility4Test::DrawTexture( texture );
 
 			std::cout << r2::split;
 
@@ -133,18 +117,11 @@ namespace texture_test
 
 			std::cout << r2::split;
 
-			{
-				const r2render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggghh" );
+			DECLARATION_MAIN( const r2render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggghh" ) );
 
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture texture( 5, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggghh\" );" << r2::linefeed;
+			std::cout << r2::split;
 
-				std::cout << r2::split;
-
-				std::cout << r2::tab << "+ View" << r2::linefeed2;
-
-				Utility4Test::DrawTexture( texture );
-			}
+			Utility4Test::DrawTexture( texture );
 
 			std::cout << r2::split;
 
@@ -170,12 +147,9 @@ namespace texture_test
 			std::cout << r2::split;
 
 			{
-				const r2render::Texture texture( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				DECLARATION_MAIN( const r2render::Texture texture( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture texture( 8, 8, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
-
-				std::cout << r2::tab << "+ View" << r2::linefeed2;
+				std::cout << r2::linefeed;
 
 				Utility4Test::DrawTexture( texture );
 			}
@@ -183,12 +157,9 @@ namespace texture_test
 			std::cout << r2::split;
 
 			{
-				const r2render::Texture texture( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+				DECLARATION_MAIN( const r2render::Texture texture( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture texture( 3, 3, '#', \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
-
-				std::cout << r2::tab << "+ View : Overflow Test" << r2::linefeed2;
+				std::cout << r2::linefeed;
 
 				Utility4Test::DrawTexture( texture );
 			}
@@ -216,16 +187,11 @@ namespace texture_test
 
 			std::cout << r2::split;
 
-			{
-				const r2render::Texture texture( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" );
+			DECLARATION_MAIN( const r2render::Texture texture( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture texture( 7, 7, \"aaaaaaabbbbbbbcccddddeeeeeeeefffggg\" );" << r2::linefeed3;
+			std::cout << r2::linefeed;
 
-				std::cout << r2::tab << "+ View" << r2::linefeed2;
-
-				Utility4Test::DrawTexture( texture );
-			}
+			Utility4Test::DrawTexture( texture );
 
 			std::cout << r2::split;
 
