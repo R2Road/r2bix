@@ -27,6 +27,8 @@ namespace r2render
 		//
 		//
 		void SetVisibleRect( const r2::RectInt& rect ) { mVisibleRect = rect; }
+		void MoveVisibleRect( const int mx, const int my ) { mVisibleRect.MoveOrigin( mx, my ); }
+		void MoveVisibleRect( const r2::PointInt& point ) { mVisibleRect.MoveOrigin( point.GetX(), point.GetY() ); }
 
 	private:
 		const Texture* const mTexture;
