@@ -43,16 +43,11 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			const r2render::Texture& texture = GetDummyTexture();
+			DECLARATION_MAIN( const r2render::Texture& texture = GetDummyTexture() );
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2render::Texture& texture = GetDummyTexture();" << r2::linefeed;
-
-			std::cout << r2::split;
+			std::cout << r2::linefeed;
 
 			{
-				std::cout << r2::tab << "+ View Texture" << r2::linefeed2;
-
 				std::size_t cur_x = 0;
 				for( const char element : texture )
 				{
@@ -73,32 +68,11 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			r2render::TextureFrame texture_frame( &texture );
+			DECLARATION_MAIN( r2render::TextureFrame texture_frame( &texture ) );
+
+			std::cout << r2::linefeed;
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
-
-				std::cout << r2::tab2 << "rect :"
-					<< " " << texture_frame.GetMinX()
-					<< " " << texture_frame.GetMinY()
-					<< " " << texture_frame.GetMaxX()
-					<< " " << texture_frame.GetMaxY()
-					<< r2::linefeed2;
-
-				EXPECT_EQ( texture.Get( 0, 0 ), texture_frame.Get( 0, 0 ) );
-				EXPECT_EQ( '1', texture_frame.Get( 0, 0 ) );
-
-				EXPECT_EQ( texture.Get( 6, 6 ), texture_frame.Get( 6, 6 ) );
-				EXPECT_EQ( '7', texture_frame.Get( 6, 6 ) );
-
-			}
-
-			std::cout << r2::split;
-
-			{
-				std::cout << r2::tab << "+ View Texture Frame" << r2::linefeed2;
-
 				for( int y = 0; y < texture_frame.GetHeight(); ++y )
 				{
 					for( int x = 0; x < texture_frame.GetWidth(); ++x )
@@ -109,6 +83,21 @@ namespace texture_frame_test
 					std::cout << r2::linefeed;
 				}
 			}
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "rect :"
+				<< " " << texture_frame.GetMinX()
+				<< " " << texture_frame.GetMinY()
+				<< " " << texture_frame.GetMaxX()
+				<< " " << texture_frame.GetMaxY()
+				<< r2::linefeed2;
+
+				EXPECT_EQ( texture.Get( 0, 0 ), texture_frame.Get( 0, 0 ) );
+				EXPECT_EQ( '1', texture_frame.Get( 0, 0 ) );
+
+				EXPECT_EQ( texture.Get( 6, 6 ), texture_frame.Get( 6, 6 ) );
+				EXPECT_EQ( '7', texture_frame.Get( 6, 6 ) );
 
 			std::cout << r2::split;
 
