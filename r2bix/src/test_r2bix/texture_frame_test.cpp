@@ -69,16 +69,16 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( r2render::TextureFrame texture_frame( &texture ) );
+			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
 
 			std::cout << r2::linefeed;
 
 			{
-				for( int y = 0; y < texture_frame.GetHeight(); ++y )
+				for( int y = 0; y < frame.GetHeight(); ++y )
 				{
-					for( int x = 0; x < texture_frame.GetWidth(); ++x )
+					for( int x = 0; x < frame.GetWidth(); ++x )
 					{
-						std::cout << texture_frame.Get( x, y );
+						std::cout << frame.Get( x, y );
 					}
 
 					std::cout << r2::linefeed;
@@ -87,15 +87,15 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			Utility4Test::DrawRectInfo_Min_Max( texture_frame.GetVisibleRect() );
+			Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
 			std::cout << r2::linefeed;
 
-				EXPECT_EQ( texture.Get( 0, 0 ), texture_frame.Get( 0, 0 ) );
-				EXPECT_EQ( '1', texture_frame.Get( 0, 0 ) );
+			EXPECT_EQ( texture.Get( 0, 0 ), frame.Get( 0, 0 ) );
+			EXPECT_EQ( '1', frame.Get( 0, 0 ) );
 
-				EXPECT_EQ( texture.Get( 6, 6 ), texture_frame.Get( 6, 6 ) );
-				EXPECT_EQ( '7', texture_frame.Get( 6, 6 ) );
+			EXPECT_EQ( texture.Get( 6, 6 ), frame.Get( 6, 6 ) );
+			EXPECT_EQ( '7', frame.Get( 6, 6 ) );
 
 			std::cout << r2::split;
 
@@ -191,7 +191,6 @@ namespace texture_frame_test
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( const r2render::Texture& texture = GetDummyTexture() );
-			DECLARATION_MAIN( r2render::TextureFrame texture_frame( &texture ) );
 
 			std::cout << r2::linefeed;
 
@@ -216,43 +215,47 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
+			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
+
+			std::cout << r2::linefeed;
+
 			{
-				Utility4Test::DrawRectInfo_Min_Max( texture_frame.GetVisibleRect() );
+				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( texture_frame.MoveVisibleOrigin( -3, -3 ) );
-				PROCESS_MAIN( texture_frame.ChangeVisibleSize( -1, -1 ) );
+				PROCESS_MAIN( frame.MoveVisibleOrigin( -3, -3 ) );
+				PROCESS_MAIN( frame.ChangeVisibleSize( -1, -1 ) );
 
 				std::cout << r2::linefeed;
 
-				Utility4Test::DrawRectInfo_Min_Max( texture_frame.GetVisibleRect() );
+				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( '1', texture_frame.Get( 0, 0 ) );
+				EXPECT_EQ( '1', frame.Get( 0, 0 ) );
 
 				std::cout << r2::linefeed;
 
-				Utility4Test::DrawTextureFrame( texture_frame );
+				Utility4Test::DrawTextureFrame( frame );
 			}
 
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( texture_frame.MoveVisibleOrigin( 6, 6 ) );
+				PROCESS_MAIN( frame.MoveVisibleOrigin( 6, 6 ) );
 
 				std::cout << r2::linefeed;
 
-				Utility4Test::DrawRectInfo_Min_Max( texture_frame.GetVisibleRect() );
+				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( '4', texture_frame.Get( 0, 0 ) );
+				EXPECT_EQ( '4', frame.Get( 0, 0 ) );
 
 				std::cout << r2::linefeed;
 
-				Utility4Test::DrawTextureFrame( texture_frame );
+				Utility4Test::DrawTextureFrame( frame );
 			}
 
 			std::cout << r2::split;
