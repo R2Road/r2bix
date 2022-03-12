@@ -18,6 +18,7 @@
   - vld
 
 
+## ( '_')y-~
 <p float:left;">
 <img src="https://github.com/R2Road/r2bix_console_framework/blob/main/wiki/20220313_texture_frame_animation_01.gif" width=50% height=50%></img>
 </p>
