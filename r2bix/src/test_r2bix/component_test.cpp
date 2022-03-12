@@ -17,7 +17,7 @@
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"
 
-#include "p2048/p2048table_TextureTable.h"
+#include "test_r2bix/TextureTable4Test.h"
 
 namespace component_test
 {
@@ -500,7 +500,7 @@ namespace component_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			p2048table::TextureTable::GetInstance().Load();
+			TextureTable4Test::GetInstance().Load();
 
 			std::cout << r2::split;
 
@@ -533,9 +533,9 @@ namespace component_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( tfac->AddTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_1" ) ) );
-				PROCESS_MAIN( tfac->AddTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_2" ) ) );
-				PROCESS_MAIN( tfac->AddTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_3" ) ) );
+				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) ) );
+				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_2" ) ) );
+				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_3" ) ) );
 			}
 
 			std::cout << r2::split;

@@ -6,7 +6,7 @@
 #include "render/r2render_TextureFrame.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "p2048/p2048table_TextureTable.h"
+#include "test_r2bix/TextureTable4Test.h"
 
 namespace
 {

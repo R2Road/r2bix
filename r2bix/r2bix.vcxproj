@@ -72,6 +72,7 @@
     <ClCompile Include="src\test_r2bix\render_test.cpp" />
     <ClCompile Include="src\test_r2bix\TestRootMenu.cpp" />
     <ClCompile Include="src\test_r2bix\TextureMenu.cpp" />
+    <ClCompile Include="src\test_r2bix\TextureTable4Test.cpp" />
     <ClCompile Include="src\test_r2bix\texture_frame_test.cpp" />
     <ClCompile Include="src\test_r2bix\texture_table_test.cpp" />
     <ClCompile Include="src\test_r2bix\texture_test.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="src\test_r2bix\render_test.h" />
     <ClInclude Include="src\test_r2bix\TestRootMenu.h" />
     <ClInclude Include="src\test_r2bix\TextureMenu.h" />
+    <ClInclude Include="src\test_r2bix\TextureTable4Test.h" />
     <ClInclude Include="src\test_r2bix\texture_frame_test.h" />
     <ClInclude Include="src\test_r2bix\texture_table_test.h" />
     <ClInclude Include="src\test_r2bix\texture_test.h" />

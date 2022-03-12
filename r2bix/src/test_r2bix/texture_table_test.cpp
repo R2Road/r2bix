@@ -4,7 +4,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "p2048/p2048table_TextureTable.h"
+#include "test_r2bix/TextureTable4Test.h"
 
 namespace texture_table_test
 {
@@ -23,13 +23,13 @@ namespace texture_table_test
 
 			std::cout << r2::split;
 
-			p2048table::TextureTable::GetInstance().Load();
+			TextureTable4Test::GetInstance().Load();
 
-			auto texture = p2048table::TextureTable::GetInstance().GetTexture( "blablabla" );
+			auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" );
 
 			{
 				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "const auto texture_frame = p2048table::TextureTable::GetInstance().GetTexture( \"blablabla\" );" << r2::linefeed;
+				std::cout << r2::tab << "const auto texture_frame = TextureTable4Test::GetInstance().GetTexture( \"blablabla\" );" << r2::linefeed;
 			}
 
 			std::cout << r2::split;
@@ -71,17 +71,17 @@ namespace texture_table_test
 
 			std::cout << r2::split;
 
-			p2048table::TextureTable::GetInstance().Load();
+			TextureTable4Test::GetInstance().Load();
 
 			{
 				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "const auto texture = p2048table::TextureTable::GetInstance().GetTexture( \"test_texture_001\" );" << r2::linefeed2;
+				std::cout << r2::tab << "const auto texture = TextureTable4Test::GetInstance().GetTexture( \"test_texture_001\" );" << r2::linefeed2;
 			}
 
 			{
 				std::cout << "+ Show" << r2::linefeed2;
 
-				auto texture = p2048table::TextureTable::GetInstance().GetTexture( "test_texture_001" );
+				auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" );
 				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
 					for( int x = 0; texture->GetWidth() > x; ++x )
@@ -98,13 +98,13 @@ namespace texture_table_test
 			{
 				{
 					std::cout << "+ Declaration" << r2::linefeed2;
-					std::cout << r2::tab << "const auto texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( \"dguy_walk_1\" );" << r2::linefeed2;
+					std::cout << r2::tab << "const auto texture_frame = TextureTable4Test::GetInstance().GetTextureFrame( \"dguy_walk_1\" );" << r2::linefeed2;
 				}
 
 				{
 					std::cout << "+ Show" << r2::linefeed2;
 
-					auto texture_frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "dguy_walk_1" );
+					auto texture_frame = TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" );
 					for( int y = 0; texture_frame->GetHeight() >= y; ++y )
 					{
 						for( int x = 0; texture_frame->GetWidth() >= x; ++x )
@@ -143,16 +143,16 @@ namespace texture_table_test
 			{
 				std::cout << "+ Add Texture" << r2::linefeed2;
 
-				EXPECT_TRUE( p2048table::TextureTable::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
+				EXPECT_TRUE( TextureTable4Test::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
 			}
 
 			std::cout << r2::split;
 				
 			{
 				std::cout << "+ Show" << r2::linefeed2;
-				std::cout << "const auto texture = p2048table::TextureTable::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
+				std::cout << "const auto texture = TextureTable4Test::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
 
-				auto texture = p2048table::TextureTable::GetInstance().GetTexture( "TextureTable_3" );
+				auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" );
 				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
 					for( int x = 0; texture->GetWidth() > x; ++x )
@@ -169,7 +169,7 @@ namespace texture_table_test
 			{
 				std::cout << "+ Add Texture" << r2::linefeed2;
 
-				EXPECT_FALSE( p2048table::TextureTable::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
+				EXPECT_FALSE( TextureTable4Test::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
 			}
 
 			std::cout << r2::split;
@@ -177,16 +177,16 @@ namespace texture_table_test
 			{
 				std::cout << "+ Remove Texture" << r2::linefeed2;
 
-				EXPECT_TRUE( p2048table::TextureTable::GetInstance().RemoveTexture( "TextureTable_3" ) );
+				EXPECT_TRUE( TextureTable4Test::GetInstance().RemoveTexture( "TextureTable_3" ) );
 			}
 
 			std::cout << r2::split;
 
 			{
 				std::cout << "+ Show" << r2::linefeed2;
-				std::cout << "const auto texture = p2048table::TextureTable::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
+				std::cout << "const auto texture = TextureTable4Test::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
 
-				auto texture = p2048table::TextureTable::GetInstance().GetTexture( "TextureTable_3" );
+				auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" );
 				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
 					for( int x = 0; texture->GetWidth() > x; ++x )

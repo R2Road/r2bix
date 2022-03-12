@@ -206,6 +206,9 @@
     <ClCompile Include="src\base\r2base_TextureTableBase.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_r2bix\TextureTable4Test.cpp">
+      <Filter>test_r2bix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -400,6 +403,9 @@
     </ClInclude>
     <ClInclude Include="src\base\r2base_TextureTableBase.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\TextureTable4Test.h">
+      <Filter>test_r2bix</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
