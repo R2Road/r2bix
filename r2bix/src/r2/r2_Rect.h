@@ -151,11 +151,11 @@ namespace r2
 			//  ****	- "*" is size
 			//  ****
 			//
-			return std::abs( mSize.GetWidth() + 1 );
+			return std::abs( mSize.GetWidth() ) + 1;
 		}
 		inline ElementT GetHeight() const
 		{
-			return std::abs( mSize.GetHeight() + 1 );
+			return std::abs( mSize.GetHeight() ) + 1;
 		}
 		inline ElementT GetWide() const
 		{
