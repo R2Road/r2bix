@@ -15,5 +15,8 @@ namespace r2render
 namespace p2048table
 {
 	class TextureTable : public r2base::TextureTableBase, public r2::SingleTon<TextureTable>
-	{};
+	{
+	public:
+		void Load() override;
+	};
 }

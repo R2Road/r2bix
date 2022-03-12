@@ -15,7 +15,7 @@ namespace r2base
 {
 	class TextureTableBase
 	{
-	private:
+	protected:
 		using TextureValueT = std::unique_ptr<r2render::Texture>;
 		using TextureContainerT = std::unordered_map<std::string, TextureValueT>;
 
@@ -25,7 +25,7 @@ namespace r2base
 	public:
 		TextureTableBase();
 
-		virtual void Load();
+		virtual void Load() = 0;
 
 		bool AddTexture( const char* const key_name, const uint32_t width, const uint32_t height, const char fill_char );
 		bool RemoveTexture( const char* const key_name );
@@ -33,7 +33,7 @@ namespace r2base
 		r2render::Texture* const GetTexture( const char* const key_name ) const;
 		r2render::TextureFrame* const GetTextureFrame( const char* const key_name ) const;
 
-	private:
+	protected:
 		TextureContainerT mTextureContainer;
 		TextureFrameContainerT mTextureFrameContainer;
 	};
