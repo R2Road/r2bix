@@ -438,7 +438,7 @@ namespace component_test
 				"abc"
 			) );
 			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
-			PROCESS_MAIN( frame.MoveVisibleRect( 1, 1 ) );
+			PROCESS_MAIN( frame.MoveVisibleOrigin( 1, 1 ) );
 
 			std::cout << r2::linefeed;
 
