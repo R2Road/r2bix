@@ -153,10 +153,10 @@ namespace texture_table_test
 			std::cout << r2::split;
 				
 			{
-				std::cout << "+ Show" << r2::linefeed2;
-				std::cout << "const auto texture = TextureTable4Test::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
+				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
 
-				auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" );
+				std::cout << r2::linefeed;
+
 				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
 					for( int x = 0; texture->GetWidth() > x; ++x )
@@ -187,10 +187,10 @@ namespace texture_table_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Show" << r2::linefeed2;
-				std::cout << "const auto texture = TextureTable4Test::GetInstance().GetTexture( \"TextureTable_3\" );" << r2::linefeed2;
+				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
 
-				auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" );
+				std::cout << r2::linefeed;
+
 				for( int y = 0; texture->GetHeight() > y; ++y )
 				{
 					for( int x = 0; texture->GetWidth() > x; ++x )
