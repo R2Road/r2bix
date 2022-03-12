@@ -6,10 +6,10 @@
 
 namespace p2048table
 {
-	TextureTable::TextureTable() : mTextureContainer()
+	TextureTableBase::TextureTableBase() : mTextureContainer()
 	{}
 
-	void TextureTable::Load()
+	void TextureTableBase::Load()
 	{
 		if( !mTextureContainer.empty() )
 		{
@@ -78,7 +78,7 @@ namespace p2048table
 		}
 	}
 
-	bool TextureTable::AddTexture( const char* const key_name, const uint32_t width, const uint32_t height, const char fill_char )
+	bool TextureTableBase::AddTexture( const char* const key_name, const uint32_t width, const uint32_t height, const char fill_char )
 	{
 		auto itr = mTextureContainer.find( key_name );
 		if( mTextureContainer.end() != itr )
@@ -90,7 +90,7 @@ namespace p2048table
 
 		return true;
 	}
-	bool TextureTable::RemoveTexture( const char* const key_name )
+	bool TextureTableBase::RemoveTexture( const char* const key_name )
 	{
 		auto itr = mTextureContainer.find( key_name );
 		if( mTextureContainer.end() == itr )
@@ -103,7 +103,7 @@ namespace p2048table
 		return true;
 	}
 
-	r2render::Texture* const TextureTable::GetTexture( const char* const key_name ) const
+	r2render::Texture* const TextureTableBase::GetTexture( const char* const key_name ) const
 	{
 		auto itr = mTextureContainer.find( key_name );
 		if( mTextureContainer.end() != itr )
@@ -114,7 +114,7 @@ namespace p2048table
 		static r2render::Texture temp_texture( "Invalid Texture" );
 		return &temp_texture;
 	}
-	r2render::TextureFrame* const TextureTable::GetTextureFrame( const char* const key_name ) const
+	r2render::TextureFrame* const TextureTableBase::GetTextureFrame( const char* const key_name ) const
 	{
 		auto itr = mTextureFrameContainer.find( key_name );
 		if( mTextureFrameContainer.end() != itr )

@@ -14,7 +14,7 @@ namespace r2render
 
 namespace p2048table
 {
-	class TextureTable : public r2::SingleTon<TextureTable>
+	class TextureTableBase
 	{
 	private:
 		using TextureValueT = std::unique_ptr<r2render::Texture>;
@@ -24,9 +24,9 @@ namespace p2048table
 		using TextureFrameContainerT = std::unordered_map<std::string, TextureFrameValueT>;
 
 	public:
-		TextureTable();
+		TextureTableBase();
 
-		void Load();
+		virtual void Load();
 
 		bool AddTexture( const char* const key_name, const uint32_t width, const uint32_t height, const char fill_char );
 		bool RemoveTexture( const char* const key_name );
@@ -38,4 +38,7 @@ namespace p2048table
 		TextureContainerT mTextureContainer;
 		TextureFrameContainerT mTextureFrameContainer;
 	};
+
+	class TextureTable : public TextureTableBase, public r2::SingleTon<TextureTableBase>
+	{};
 }
