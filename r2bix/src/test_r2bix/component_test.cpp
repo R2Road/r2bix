@@ -75,46 +75,6 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT GetComponentTest::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "GetComponent";
-		};
-	}
-	r2cm::iItem::DoFuncT GetComponentTest::GetDoFunction()
-	{
-		return[]()->r2cm::eTestEndAction
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			DECLARATION_MAIN( r2base::Director dummy_director );
-			DECLARATION_MAIN( auto node = r2base::Node::Create( dummy_director ) );
-
-			std::cout << r2::split;
-
-			{
-				EXPECT_TRUE( node->GetComponent<r2component::TransformComponent>() );
-
-				std::cout << r2::linefeed;
-
-				EXPECT_EQ( node->mTransformComponent, node->GetComponent<r2component::TransformComponent>() );
-
-				std::cout << r2::linefeed;
-
-				EXPECT_EQ( nullptr, node->GetComponent<r2component::TextureRenderComponent>() );
-			}
-
-			std::cout << r2::split;
-
-			return r2cm::eTestEndAction::Pause;
-		};
-	}
-
-
-
 	r2cm::iItem::TitleFuncT AddComponentTest::GetTitleFunction() const
 	{
 		return []()->const char*
