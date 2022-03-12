@@ -17,3 +17,8 @@ void Utility4Test::DrawRect( const int offset_y, const r2::RectInt& rect, const 
 		}
 	}
 }
+
+void Utility4Test::DrawRectInfo_Min_Max( const r2::RectInt& rect )
+{
+	std::cout << r2::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2::linefeed;
+}

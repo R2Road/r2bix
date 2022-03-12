@@ -9,4 +9,5 @@ private:
 
 public:
 	static void DrawRect( const int offset_y, const r2::RectInt& rect, const char c );
+	static void DrawRectInfo_Min_Max( const r2::RectInt& rect );
 };

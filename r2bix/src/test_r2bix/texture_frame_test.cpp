@@ -7,6 +7,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "test_r2bix/TextureTable4Test.h"
+#include "test_r2bix/Utility4Test.h"
 
 namespace
 {
@@ -86,12 +87,9 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			std::cout << r2::tab << "rect :"
-				<< " " << texture_frame.GetMinX()
-				<< " " << texture_frame.GetMinY()
-				<< " " << texture_frame.GetMaxX()
-				<< " " << texture_frame.GetMaxY()
-				<< r2::linefeed2;
+			Utility4Test::DrawRectInfo_Min_Max( texture_frame.GetVisibleRect() );
+
+			std::cout << r2::linefeed;
 
 				EXPECT_EQ( texture.Get( 0, 0 ), texture_frame.Get( 0, 0 ) );
 				EXPECT_EQ( '1', texture_frame.Get( 0, 0 ) );
@@ -149,14 +147,18 @@ namespace texture_frame_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "rect min, max :" << " " << frame.GetMinX() << " " << frame.GetMinY() << " " << frame.GetMaxX() << " " << frame.GetMaxY() << r2::linefeed2;
+				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
+
+				std::cout << r2::linefeed;
 
 				PROCESS_MAIN( frame.MoveVisibleOrigin( 2, 1 ) );
 				PROCESS_MAIN( frame.ChangeVisibleSize( -3, -1 ) );
 
 				std::cout << r2::linefeed;
 
-				std::cout << r2::tab << "rect min, max :" << " " << frame.GetMinX() << " " << frame.GetMinY() << " " << frame.GetMaxX() << " " << frame.GetMaxY() << r2::linefeed2;
+				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
+
+				std::cout << r2::linefeed;
 
 				EXPECT_EQ( texture.Get( frame.GetMinX(), frame.GetMinY() ), frame.Get( 0, 0 ) );
 
@@ -223,14 +225,18 @@ namespace texture_frame_test
 			std::cout << r2::split;
 
 			{
-				std::cout << r2::tab << "rect min, max :" << " " << texture_frame.GetMinX() << " " << texture_frame.GetMinY() << " " << texture_frame.GetMaxX() << " " << texture_frame.GetMaxY() << r2::linefeed2;
+				Utility4Test::DrawRectInfo_Min_Max( texture_frame.GetVisibleRect() );
+
+				std::cout << r2::linefeed;
 
 				PROCESS_MAIN( texture_frame.MoveVisibleOrigin( -3, -3 ) );
 				PROCESS_MAIN( texture_frame.ChangeVisibleSize( -1, -1 ) );
 
 				std::cout << r2::linefeed;
 
-				std::cout << r2::tab << "rect min, max :" << " " << texture_frame.GetMinX() << " " << texture_frame.GetMinY() << " " << texture_frame.GetMaxX() << " " << texture_frame.GetMaxY() << r2::linefeed2;
+				Utility4Test::DrawRectInfo_Min_Max( texture_frame.GetVisibleRect() );
+
+				std::cout << r2::linefeed;
 
 				EXPECT_EQ( '1', texture_frame.Get( 0, 0 ) );
 
@@ -254,7 +260,9 @@ namespace texture_frame_test
 
 				std::cout << r2::linefeed;
 
-				std::cout << r2::tab << "rect min, max :" << " " << texture_frame.GetMinX() << " " << texture_frame.GetMinY() << " " << texture_frame.GetMaxX() << " " << texture_frame.GetMaxY() << r2::linefeed2;
+				Utility4Test::DrawRectInfo_Min_Max( texture_frame.GetVisibleRect() );
+
+				std::cout << r2::linefeed;
 
 				EXPECT_EQ( '4', texture_frame.Get( 0, 0 ) );
 
