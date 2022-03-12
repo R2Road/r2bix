@@ -438,7 +438,7 @@ namespace component_test
 				"abc"
 			) );
 			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
-			PROCESS_MAIN( frame.SetVisibleRect( r2::RectInt( frame.GetMinX() + 1, frame.GetMinY() + 1, frame.GetWidth(), frame.GetHeight() ) ) );
+			PROCESS_MAIN( frame.SetVisibleRect( r2::RectInt( frame.GetMinX() + 1, frame.GetMinY() + 1, frame.GetVisibleRect().GetSize().GetWidth(), frame.GetVisibleRect().GetSize().GetHeight() ) ) );
 
 			std::cout << r2::linefeed;
 
