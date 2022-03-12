@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "component_test.h"
 
+#include <conio.h>
+#include <Windows.h>
+
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
@@ -438,16 +441,27 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( node->Update( 1.f ) );
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
-			}
-
-			std::cout << r2::split;
-
-			{
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
-				Utility4Test::DrawTexture( render_target );
+
+				CONSOLE_SCREEN_BUFFER_INFO csbi{};
+				GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );
+				while( true )
+				{
+					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), csbi.dwCursorPosition );
+
+					PROCESS_MAIN( node->Update( 0.01f ) );
+					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+					std::cout << r2::linefeed;
+
+					Utility4Test::DrawTexture( render_target );
+
+					if( _kbhit() )
+					{
+						break;
+					}
+				}
 			}
 
 			std::cout << r2::split;
