@@ -23,8 +23,8 @@ void TextureTable4Test::Load()
 			/* 4 */	"t*d*d*d*tt*d*d**dtt***dd**t                      |"
 			/* 5 */	"t*ddddd*ttd*ddd*dtt*dddd**t                      |"
 			/* 6 */	"t**d*d**tt**dd***tt*d***d*t                      |"
-			/* 7 */	"t**d*d**tt**dd***ttd****d*t                      |"
-			/* 8 */	"t**d*d**tt**d*d**ttd*****dt                      |"
+			/* 7 */	"t**d*d**tt*d**d**ttd****d*t                      |"
+			/* 8 */	"t**d*d**tt*d***d*ttd*****dt                      |"
 			/* 9 */	"ttttttttttttttttttttttttttt                      |"
 		) ) );
 		mTextureFrameContainer.emplace(
