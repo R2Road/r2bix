@@ -88,22 +88,21 @@ namespace component_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			r2base::Director dummy_director;
-			auto node = r2base::Node::Create( dummy_director );
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( r2base::Director dummy_director );
+			DECLARATION_MAIN( auto node = r2base::Node::Create( dummy_director ) );
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed;
-				std::cout << r2::tab << "auto node = r2base::Node::Create( dummy_director );" << r2::linefeed;
-			}
+				EXPECT_TRUE( node->GetComponent<r2component::TransformComponent>() );
 
-			std::cout << r2::split;
+				std::cout << r2::linefeed;
 
-			{
-				EXPECT_NE( nullptr, node->GetComponent<r2component::TransformComponent>() );
 				EXPECT_EQ( node->mTransformComponent, node->GetComponent<r2component::TransformComponent>() );
+
+				std::cout << r2::linefeed;
 
 				EXPECT_EQ( nullptr, node->GetComponent<r2component::TextureRenderComponent>() );
 			}
@@ -129,24 +128,24 @@ namespace component_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
-			r2base::Director dummy_director;
-			auto node = r2base::Node::Create( dummy_director );
-
 			std::cout << r2::split;
 
-			{
-				std::cout << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab << "r2base::Director dummy_director;" << r2::linefeed;
-				std::cout << r2::tab << "auto node = r2base::Node::Create( dummy_director );" << r2::linefeed;
-			}
+			DECLARATION_MAIN( r2base::Director dummy_director );
+			DECLARATION_MAIN( auto node = r2base::Node::Create( dummy_director ) );
 
 			std::cout << r2::split;
 
 			{
 				EXPECT_EQ( nullptr, node->GetComponent<r2component::TextureRenderComponent>() );
 
+				std::cout << r2::linefeed;
+
 				EXPECT_TRUE( node->AddComponent<r2component::TextureRenderComponent>() );
 				EXPECT_FALSE( node->AddComponent<r2component::TextureRenderComponent>() );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_TRUE( node->GetComponent<r2component::TextureRenderComponent>() );
 			}
 
 			std::cout << r2::split;
