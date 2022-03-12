@@ -18,6 +18,7 @@
 #include "render/r2render_TextureFrame.h"
 
 #include "test_r2bix/TextureTable4Test.h"
+#include "test_r2bix/Utility4Test.h"
 
 namespace component_test
 {
@@ -205,19 +206,7 @@ namespace component_test
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
-				int current_x = 0;
-				for( const auto& p : render_target )
-				{
-					std::cout << p;
-
-					++current_x;
-
-					if( render_target.GetWidth() <= current_x )
-					{
-						current_x = 0;
-						std::cout << r2::linefeed;
-					}
-				}
+				Utility4Test::DrawTexture( render_target );
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
@@ -286,21 +275,7 @@ namespace component_test
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
-				
-
-				int current_x = 0;
-				for( const auto& p : render_target )
-				{
-					std::cout << p;
-
-					++current_x;
-
-					if( render_target.GetWidth() <= current_x )
-					{
-						current_x = 0;
-						std::cout << r2::linefeed;
-					}
-				}
+				Utility4Test::DrawTexture( render_target );
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
@@ -370,19 +345,7 @@ namespace component_test
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
-				int current_x = 0;
-				for( const auto& p : render_target )
-				{
-					std::cout << p;
-
-					++current_x;
-
-					if( render_target.GetWidth() <= current_x )
-					{
-						current_x = 0;
-						std::cout << r2::linefeed;
-					}
-				}
+				Utility4Test::DrawTexture( render_target );
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
@@ -462,19 +425,7 @@ namespace component_test
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
-				int current_x = 0;
-				for( const auto& p : render_target )
-				{
-					std::cout << p;
-
-					++current_x;
-
-					if( render_target.GetWidth() <= current_x )
-					{
-						current_x = 0;
-						std::cout << r2::linefeed;
-					}
-				}
+				Utility4Test::DrawTexture( render_target );
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
@@ -552,19 +503,7 @@ namespace component_test
 
 				std::cout << "+ Show Render Target" << r2::linefeed2;
 
-				int current_x = 0;
-				for( const auto& p : render_target )
-				{
-					std::cout << p;
-
-					++current_x;
-
-					if( render_target.GetWidth() <= current_x )
-					{
-						current_x = 0;
-						std::cout << r2::linefeed;
-					}
-				}
+				Utility4Test::DrawTexture( render_target );
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 45 } );
 			}
