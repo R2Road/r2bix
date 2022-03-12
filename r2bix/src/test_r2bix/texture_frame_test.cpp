@@ -196,14 +196,12 @@ namespace texture_frame_test
 
 			std::cout << r2::split;
 
-			const r2render::Texture& texture = GetDummyTexture();
-			r2render::TextureFrame texture_frame( &texture );
+			DECLARATION_MAIN( const r2render::Texture& texture = GetDummyTexture() );
+			DECLARATION_MAIN( r2render::TextureFrame texture_frame( &texture ) );
+
+			std::cout << r2::linefeed;
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "const r2render::Texture& texture = GetDummyTexture();" << r2::linefeed;
-				std::cout << r2::tab2 << "r2render::TextureFrame texture_frame( &texture );" << r2::linefeed2;
-
 				std::size_t cur_x = 0;
 				for( const char element : texture )
 				{
@@ -225,19 +223,17 @@ namespace texture_frame_test
 			std::cout << r2::split;
 
 			{
-				texture_frame.SetVisibleRect( { -3, -3, 5, 5 } );
+				std::cout << r2::tab << "rect min, max :" << " " << texture_frame.GetMinX() << " " << texture_frame.GetMinY() << " " << texture_frame.GetMaxX() << " " << texture_frame.GetMaxY() << r2::linefeed2;
 
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "texture_frame.SetVisibleRect( { -3, -3, 5, 5 } );" << r2::linefeed2;
+				PROCESS_MAIN( texture_frame.MoveVisibleOrigin( -3, -3 ) );
+				PROCESS_MAIN( texture_frame.ChangeVisibleSize( -1, -1 ) );
 
-				std::cout << r2::tab2 << "rect :"
-					<< " " << texture_frame.GetMinX()
-					<< " " << texture_frame.GetMinY()
-					<< " " << texture_frame.GetMaxX()
-					<< " " << texture_frame.GetMaxY()
-					<< r2::linefeed2;
+				std::cout << r2::linefeed;
+
+				std::cout << r2::tab << "rect min, max :" << " " << texture_frame.GetMinX() << " " << texture_frame.GetMinY() << " " << texture_frame.GetMaxX() << " " << texture_frame.GetMaxY() << r2::linefeed2;
 
 				EXPECT_EQ( '1', texture_frame.Get( 0, 0 ) );
+
 				std::cout << r2::linefeed;
 
 				for( int y = 0; y < texture_frame.GetHeight(); ++y )
@@ -254,19 +250,14 @@ namespace texture_frame_test
 			std::cout << r2::split;
 
 			{
-				texture_frame.SetVisibleRect( { 3, 3, 5, 5 } );
+				PROCESS_MAIN( texture_frame.MoveVisibleOrigin( 6, 6 ) );
 
-				std::cout << r2::tab << "+ Process" << r2::linefeed2;
-				std::cout << r2::tab2 << "texture_frame.SetVisibleRect( { 3, 3, 5, 5 } );" << r2::linefeed2;
+				std::cout << r2::linefeed;
 
-				std::cout << r2::tab2 << "rect :"
-					<< " " << texture_frame.GetMinX()
-					<< " " << texture_frame.GetMinY()
-					<< " " << texture_frame.GetMaxX()
-					<< " " << texture_frame.GetMaxY()
-					<< r2::linefeed2;
+				std::cout << r2::tab << "rect min, max :" << " " << texture_frame.GetMinX() << " " << texture_frame.GetMinY() << " " << texture_frame.GetMaxX() << " " << texture_frame.GetMaxY() << r2::linefeed2;
 
 				EXPECT_EQ( '4', texture_frame.Get( 0, 0 ) );
+
 				std::cout << r2::linefeed;
 
 				for( int y = 0; y < texture_frame.GetHeight(); ++y )
