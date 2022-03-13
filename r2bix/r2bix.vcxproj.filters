@@ -40,6 +40,9 @@
     <Filter Include="r2cm">
       <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
+    <Filter Include="animation">
+      <UniqueIdentifier>{389aa71b-e398-4880-a05b-49418b94b111}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -208,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="src\test_r2bix\Utility4Test.cpp">
       <Filter>test_r2bix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\animation\r2animation_constant.cpp">
+      <Filter>animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -406,6 +412,9 @@
     </ClInclude>
     <ClInclude Include="src\test_r2bix\Utility4Test.h">
       <Filter>test_r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\animation\r2animation_constant.h">
+      <Filter>animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
