@@ -18,6 +18,7 @@
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"
 
+#include "test_r2bix/TextureFrameAnimationTable4Test.h"
 #include "test_r2bix/TextureTable4Test.h"
 #include "test_r2bix/Utility4Test.h"
 
@@ -401,6 +402,7 @@ namespace component_test
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
+			TextureFrameAnimationTable4Test::GetInstance().Load();
 
 			std::cout << r2::split;
 

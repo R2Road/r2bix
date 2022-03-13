@@ -215,6 +215,12 @@
     <ClCompile Include="src\animation\r2animation_constant.cpp">
       <Filter>animation</Filter>
     </ClCompile>
+    <ClCompile Include="src\base\r2base_TextureFrameAnimationTableBase.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_r2bix\TextureFrameAnimationTable4Test.cpp">
+      <Filter>test_r2bix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -413,8 +419,14 @@
     <ClInclude Include="src\test_r2bix\Utility4Test.h">
       <Filter>test_r2bix</Filter>
     </ClInclude>
+    <ClInclude Include="src\base\r2base_TextureFrameAnimationTableBase.h">
+      <Filter>base</Filter>
+    </ClInclude>
     <ClInclude Include="src\animation\r2animation_constant.h">
       <Filter>animation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\TextureFrameAnimationTable4Test.h">
+      <Filter>test_r2bix</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
