@@ -6,6 +6,7 @@ namespace r2animation
 	{
 		Idle_1,
 		Run_1,
+		Walk_1,
 
 		None,
 	};

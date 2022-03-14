@@ -438,6 +438,7 @@ namespace component_test
 				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_1 ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Run_1 ) );
+				EXPECT_FALSE( tfac->HasAnimation( r2animation::eIndex::Walk_1 ) );
 
 				std::cout << r2::linefeed;
 
