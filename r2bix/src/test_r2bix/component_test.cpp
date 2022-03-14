@@ -452,7 +452,7 @@ namespace component_test
 				{
 					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), csbi.dwCursorPosition );
 
-					PROCESS_MAIN( node->Update( 0.01f ) );
+					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 					std::cout << r2::linefeed;
