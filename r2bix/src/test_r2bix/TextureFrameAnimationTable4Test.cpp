@@ -19,13 +19,24 @@ void TextureFrameAnimationTable4Test::Load()
 	// 1
 	//
 	{
-		animation.Index = r2animation::eIndex::Run_1;
-		animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
-		animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_2" ) } );
-		animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
-		animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_3" ) } );
+		// Idle_1
+		{
+			animation.Index = r2animation::eIndex::Idle_1;
+			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
 
-		animation_package.push_back( std::move( animation ) );
+			animation_package.push_back( std::move( animation ) );
+		}
+
+		// Run_1
+		{
+			animation.Index = r2animation::eIndex::Run_1;
+			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
+			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_2" ) } );
+			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
+			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_3" ) } );
+
+			animation_package.push_back( std::move( animation ) );
+		}
 
 		mContainer.emplace( 1, std::move( animation_package ) );
 	}
