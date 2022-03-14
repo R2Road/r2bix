@@ -25,6 +25,16 @@ namespace r2component
 
 	void TextureFrameAnimationComponent::Update( const float delta_time )
 	{
+		if( mAnimationPackage.end() != mCurrentAnimation )
+		{
+			if( !mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.update( delta_time ) )
+			{
+				mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.reset();
+				mCurrentAnimationFrameIndex = ( mCurrentAnimation->Container.size() > mCurrentAnimationFrameIndex + 1u ? mCurrentAnimationFrameIndex + 1u : 0u );
+
+				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
+			}
+		}
 	}
 
 	void TextureFrameAnimationComponent::LoadAnimation( const r2base::TextureFrameAnimationInfo& info )
@@ -64,6 +74,7 @@ namespace r2component
 			if( animation_index == cur->Index )
 			{
 				mCurrentAnimation = cur;
+				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
 			}
 		}
 	}
