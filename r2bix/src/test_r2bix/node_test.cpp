@@ -33,8 +33,10 @@ namespace node_test
 
 			std::cout << r2::split;
 
-
 			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::split;
+
 			DECLARATION_MAIN( const auto dummy_node = r2base::Node::Create( dummy_director ) );
 
 			std::cout << r2::split;
@@ -66,8 +68,10 @@ namespace node_test
 
 			std::cout << r2::split;
 
-
 			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::split;
+
 			DECLARATION_MAIN( const auto dummy_node = r2node::SceneNode::Create( dummy_director ) );
 
 			std::cout << r2::split;
@@ -99,8 +103,10 @@ namespace node_test
 
 			std::cout << r2::split;
 
-
 			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::split;
+
 			DECLARATION_MAIN( const auto dummy_node = r2node::LabelNode::Create( dummy_director ) );
 
 			std::cout << r2::split;
@@ -134,8 +140,10 @@ namespace node_test
 
 			std::cout << r2::split;
 
-
 			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::split;
+
 			DECLARATION_MAIN( const auto dummy_node = r2node::SpriteNode::Create( dummy_director ) );
 
 			std::cout << r2::split;
@@ -177,6 +185,7 @@ namespace node_test
 			std::cout << r2::split;
 
 			{
+				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureFrameRenderComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
 
