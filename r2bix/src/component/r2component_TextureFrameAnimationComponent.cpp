@@ -78,6 +78,7 @@ namespace r2component
 			{
 				mCurrentAnimation = cur;
 				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
+				break;
 			}
 		}
 	}
