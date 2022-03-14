@@ -48,7 +48,7 @@ namespace r2component
 
 			for( const auto& f : a.Container )
 			{
-				animation.Container.push_back( AnimationFrame{ f.TimeLimit, f.Frame } );
+				animation.Container.push_back( AnimationFrame{ { f.TimeLimit, true }, f.Frame } );
 			}
 
 			mAnimationPackage.emplace_back( std::move( animation ) );
