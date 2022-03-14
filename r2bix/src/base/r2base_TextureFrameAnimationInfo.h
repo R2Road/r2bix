@@ -29,6 +29,6 @@ namespace r2base
 		TextureFrameAnimationInfo( AnimationPackageT&& animation_package );
 
 	private:
-		std::vector<Animation> mAnimationPackage;
+		const AnimationPackageT mAnimationPackage;
 	};
 }
