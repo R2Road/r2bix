@@ -450,9 +450,6 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Show Render Target" << r2::linefeed2;
-
-
 				CONSOLE_SCREEN_BUFFER_INFO csbi{};
 				GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );
 				while( true )
