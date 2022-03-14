@@ -7,7 +7,9 @@ namespace r2component
 {
 	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mTextureFrameRenderComponent( nullptr )
-		, mAnimationPackage( 0 )
+		, mAnimationPackage()
+		, mCurrentAnimation( mAnimationPackage.end() )
+		, mCurrentAnimationFrameIndex( 0u )
 	{}
 
 	std::unique_ptr<TextureFrameAnimationComponent> TextureFrameAnimationComponent::Create( r2base::Node& owner_node )
@@ -51,5 +53,27 @@ namespace r2component
 		}
 
 		return false;
+	}
+	void TextureFrameAnimationComponent::RunAnimation( const r2animation::eIndex animation_index )
+	{
+		mCurrentAnimation = mAnimationPackage.end();
+		mCurrentAnimationFrameIndex = 0u;
+
+		for( auto cur = mAnimationPackage.begin(), end = mAnimationPackage.end(); end != cur; ++cur )
+		{
+			if( animation_index == cur->Index )
+			{
+				mCurrentAnimation = cur;
+			}
+		}
+	}
+	const r2animation::eIndex TextureFrameAnimationComponent::GetCurrentAnimationIndex() const
+	{
+		if( mAnimationPackage.end() == mCurrentAnimation )
+		{
+			return r2animation::eIndex::None;
+		}
+
+		return mCurrentAnimation->Index;
 	}
 }

@@ -58,9 +58,13 @@ namespace r2component
 		//
 		void LoadAnimation( const r2base::TextureFrameAnimationInfo& info );
 		bool HasAnimation( const r2animation::eIndex animation_index ) const;
+		void RunAnimation( const r2animation::eIndex animation_index );
+		const r2animation::eIndex GetCurrentAnimationIndex() const;
 
 	private:
 		r2component::TextureFrameRenderComponent* mTextureFrameRenderComponent;
 		AnimationPackageT mAnimationPackage;
+		AnimationPackageT::iterator mCurrentAnimation;
+		uint32_t mCurrentAnimationFrameIndex;
 	};
 }
