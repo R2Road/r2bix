@@ -39,6 +39,8 @@ namespace r2component
 
 	void TextureFrameAnimationComponent::LoadAnimation( const r2base::TextureFrameAnimationInfo& info )
 	{
+		StopAnimation();
+
 		Animation animation;
 		for( const auto& a : info.Get() )
 		{
@@ -66,8 +68,7 @@ namespace r2component
 	}
 	void TextureFrameAnimationComponent::RunAnimation( const r2animation::eIndex animation_index )
 	{
-		mCurrentAnimation = mAnimationPackage.end();
-		mCurrentAnimationFrameIndex = 0u;
+		StopAnimation();
 
 		for( auto cur = mAnimationPackage.begin(), end = mAnimationPackage.end(); end != cur; ++cur )
 		{
@@ -78,6 +79,12 @@ namespace r2component
 			}
 		}
 	}
+	void TextureFrameAnimationComponent::StopAnimation()
+	{
+		mCurrentAnimation = mAnimationPackage.end();
+		mCurrentAnimationFrameIndex = 0u;
+	}
+
 	const r2animation::eIndex TextureFrameAnimationComponent::GetCurrentAnimationIndex() const
 	{
 		if( mAnimationPackage.end() == mCurrentAnimation )

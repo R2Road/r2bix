@@ -425,14 +425,10 @@ namespace component_test
 
 			std::cout << r2::split;
 
+			DECLARATION_MAIN( auto tfrc = node->GetComponent<r2component::TextureFrameRenderComponent>() );
+			DECLARATION_MAIN( auto tfac = node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+			PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
 			{
-				DECLARATION_MAIN( auto tfrc = node->GetComponent<r2component::TextureFrameRenderComponent>() );
-				DECLARATION_MAIN( auto tfac = node->GetComponent<r2component::TextureFrameAnimationComponent>() );
-
-				std::cout << r2::linefeed;
-
-				PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
-
 				std::cout << r2::linefeed;
 
 				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
@@ -468,6 +464,11 @@ namespace component_test
 						break;
 					}
 				}
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( tfac->StopAnimation() );
+				EXPECT_EQ( r2animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
 			}
 
 			std::cout << r2::split;
