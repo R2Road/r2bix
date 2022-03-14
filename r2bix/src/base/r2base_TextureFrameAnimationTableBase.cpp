@@ -6,7 +6,7 @@ namespace r2base
 	TextureFrameAnimationTableBase::TextureFrameAnimationTableBase() : mContainer()
 	{}
 
-	const TextureFrameAnimationTableBase::AnimationPackage& TextureFrameAnimationTableBase::Get( const int index ) const
+	const r2base::TextureFrameAnimationInfo& TextureFrameAnimationTableBase::Get( const int index ) const
 	{
 		auto itr = mContainer.find( index );
 		if( mContainer.end() != itr )
@@ -14,7 +14,7 @@ namespace r2base
 			return itr->second;
 		}
 
-		static TextureFrameAnimationTableBase::AnimationPackage dummy_package;
+		static r2base::TextureFrameAnimationInfo dummy_package( std::move( r2base::TextureFrameAnimationInfo::AnimationPackageT() ) );
 		return dummy_package;
 	}
 }

@@ -1,42 +1,22 @@
 #pragma once
 
 #include <unordered_map>
-#include <vector>
 
-#include "animation/r2animation_constant.h"
-
-namespace r2render
-{
-	class TextureFrame;
-}
+#include "r2base_TextureFrameAnimationInfo.h"
 
 namespace r2base
 {
 	class TextureFrameAnimationTableBase
 	{
 	protected:
-		struct AnimationFrame
-		{
-			float TimeLimit;
-			const r2render::TextureFrame* Frame = nullptr;
-		};
-		struct Animation
-		{
-			r2animation::eIndex Index;
-			std::vector<AnimationFrame> Container;
-		};
-		struct AnimationPackage
-		{
-			std::vector<Animation> Container;
-		};
-		using ContainerT = std::unordered_map<uint32_t, AnimationPackage>;
+		using ContainerT = std::unordered_map<uint32_t, r2base::TextureFrameAnimationInfo>;
 
 	public:
 		TextureFrameAnimationTableBase();
 
 		virtual void Load() = 0;
 
-		const AnimationPackage& Get( const int index ) const;
+		const r2base::TextureFrameAnimationInfo& Get( const int index ) const;
 
 	protected:
 		ContainerT mContainer;

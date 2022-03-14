@@ -25,6 +25,7 @@
     <ClCompile Include="src\base\r2base_Director.cpp" />
     <ClCompile Include="src\base\r2base_Node.cpp" />
     <ClCompile Include="src\base\r2base_ScreenBufferManager.cpp" />
+    <ClCompile Include="src\base\r2base_TextureFrameAnimationInfo.cpp" />
     <ClCompile Include="src\base\r2base_TextureFrameAnimationTableBase.cpp" />
     <ClCompile Include="src\base\r2base_TextureTableBase.cpp" />
     <ClCompile Include="src\component\r2component_LabelComponent.cpp" />
@@ -94,6 +95,7 @@
     <ClInclude Include="src\base\r2base_Component.h" />
     <ClInclude Include="src\base\r2base_Node.h" />
     <ClInclude Include="src\base\r2base_ScreenBufferManager.h" />
+    <ClInclude Include="src\base\r2base_TextureFrameAnimationInfo.h" />
     <ClInclude Include="src\base\r2base_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\base\r2base_TextureTableBase.h" />
     <ClInclude Include="src\component\r2component_LabelComponent.h" />
