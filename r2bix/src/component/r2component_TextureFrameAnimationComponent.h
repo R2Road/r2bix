@@ -48,6 +48,10 @@ namespace r2component
 		//
 		//
 		//
+		r2component::TextureFrameRenderComponent* const GetTextureFrameRenderComponent()
+		{
+			return mTextureFrameRenderComponent;
+		}
 		void SetTextureFrameRenderComponent( r2component::TextureFrameRenderComponent* const texture_frame_render_component )
 		{
 			mTextureFrameRenderComponent = texture_frame_render_component;

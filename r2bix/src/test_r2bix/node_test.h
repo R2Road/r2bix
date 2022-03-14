@@ -33,4 +33,10 @@ namespace node_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class SpriteAnimation : public r2cm::iItem, public r2::SingleTon<SpriteAnimation>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

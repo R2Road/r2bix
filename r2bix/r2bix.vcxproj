@@ -38,6 +38,7 @@
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
     <ClCompile Include="src\node\r2node_LabelNode.cpp" />
     <ClCompile Include="src\node\r2node_SceneNode.cpp" />
+    <ClCompile Include="src\node\r2node_SpriteAnimationNode.cpp" />
     <ClCompile Include="src\node\r2node_SpriteNode.cpp" />
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
@@ -108,6 +109,7 @@
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />
     <ClInclude Include="src\node\r2node_LabelNode.h" />
     <ClInclude Include="src\node\r2node_SceneNode.h" />
+    <ClInclude Include="src\node\r2node_SpriteAnimationNode.h" />
     <ClInclude Include="src\node\r2node_SpriteNode.h" />
     <ClInclude Include="src\p2048\p2048table_TextureTable.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
