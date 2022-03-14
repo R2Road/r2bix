@@ -435,10 +435,9 @@ namespace component_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) ) );
-				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_2" ) ) );
-				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) ) );
-				PROCESS_MAIN( tfac->AddTextureFrame( TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_3" ) ) );
+				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
+				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_1 ) );
+				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Run_1 ) );
 			}
 
 			std::cout << r2::split;

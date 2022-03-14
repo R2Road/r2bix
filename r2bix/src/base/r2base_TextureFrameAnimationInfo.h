@@ -28,6 +28,8 @@ namespace r2base
 
 		TextureFrameAnimationInfo( AnimationPackageT&& animation_package );
 
+		const AnimationPackageT& Get() const { return mAnimationPackage; }
+
 	private:
 		const AnimationPackageT mAnimationPackage;
 	};
