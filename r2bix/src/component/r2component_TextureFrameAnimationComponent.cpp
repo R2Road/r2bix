@@ -53,6 +53,8 @@ namespace r2component
 
 			mAnimationPackage.emplace_back( std::move( animation ) );
 		}
+
+		mCurrentAnimation = mAnimationPackage.end();
 	}
 	bool TextureFrameAnimationComponent::HasAnimation( const r2animation::eIndex animation_index ) const
 	{
