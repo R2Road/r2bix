@@ -7,6 +7,7 @@
 
 #include "base/r2base_Director.h"
 #include "p2048_CompanyScene.h"
+#include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
 
 namespace p2048
@@ -31,6 +32,7 @@ namespace p2048
 		//
 		{
 			p2048table::TextureTable::GetInstance().Load();
+			p2048table::TextureFrameAnimationTable::GetInstance().Load();
 		}
 
 		//
