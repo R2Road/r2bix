@@ -18,7 +18,7 @@ namespace r2node
 
 	void SceneNode::Render()
 	{
-		mRenderTarget.FillAll( '@' );
+		mRenderTarget.FillAll( ' ' );
 
 		r2base::Node::Render( &mCamera, &mRenderTarget, mTransformComponent->GetPosition() );
 
