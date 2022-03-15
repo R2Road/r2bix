@@ -78,19 +78,23 @@ namespace p2048
 	}
 	void CompanyScene::Update( const float delta_time )
 	{
-		if( _kbhit() )
+		if( !mChangeSceneTimer.update( delta_time ) )
 		{
-			auto input = _getch();
-			if( 27 == input )
-			{
-				mDirector.RequestAbort();
-			}
+			mDirector.Setup( p2048::TitleScene::Create( mDirector ) );
 		}
 		else
 		{
-			if( !mChangeSceneTimer.update( delta_time ) )
+			if( _kbhit() )
 			{
-				mDirector.Setup( p2048::TitleScene::Create( mDirector ) );
+				auto input = _getch();
+				if( 27 == input ) // ESC
+				{
+					mDirector.RequestAbort();
+				}
+				else if( 32 == input ) // Space
+				{
+					mDirector.Setup( p2048::TitleScene::Create( mDirector ) );
+				}
 			}
 		}
 
