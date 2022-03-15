@@ -27,6 +27,10 @@ namespace r2component
 		{
 			mPosition.Set( new_x, new_y );
 		}
+		void SetPosition( const float new_x, const float new_y )
+		{
+			mPosition.Set( static_cast<int>( new_x ), static_cast<int>( new_y ) );
+		}
 
 	private:
 		r2::PointInt mPosition;
