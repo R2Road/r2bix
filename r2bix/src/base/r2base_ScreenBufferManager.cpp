@@ -62,6 +62,21 @@ namespace r2base
 		{
 			assert( false && "Failed : SetConsoleScreenBufferSize" );
 		}
+
+		//
+		// Cursor
+		//
+		{
+			CONSOLE_CURSOR_INFO     cursorInfo;
+
+			GetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
+			cursorInfo.bVisible = false;
+			SetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
+
+			GetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
+			cursorInfo.bVisible = false;
+			SetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
+		}
 	}
 
 	void ScreenBufferManager::release()
@@ -70,11 +85,27 @@ namespace r2base
 		{
 			SetConsoleActiveScreenBuffer( mBufferHandle4First );
 			std::cout.rdbuf( mCoutOriginalStreamBuffer );
+
+			//
+			// Cursor
+			//
+			CONSOLE_CURSOR_INFO     cursorInfo;
+			GetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
+			cursorInfo.bVisible = false;
+			SetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
 		}
 
 		if( INVALID_HANDLE_VALUE != mBufferHandle4Second )
 		{
 			CloseHandle( mBufferHandle4Second );
+
+			//
+			// Cursor
+			//
+			CONSOLE_CURSOR_INFO     cursorInfo;
+			GetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
+			cursorInfo.bVisible = false;
+			SetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
 		}
 	}
 
