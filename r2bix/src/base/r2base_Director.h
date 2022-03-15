@@ -37,5 +37,6 @@ namespace r2base
 		r2::SizeInt mScreenBufferSIze;
 
 		r2node::SceneNodeUp mCurrentSceneNode;
+		r2node::SceneNodeUp mNextSceneNode;
 	};
 }

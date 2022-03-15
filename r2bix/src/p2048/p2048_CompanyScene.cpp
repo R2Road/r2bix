@@ -92,10 +92,8 @@ namespace p2048
 			{
 				mDirector.Setup( p2048::TitleScene::Create( mDirector ) );
 			}
-			else
-			{
-				r2node::SceneNode::Update( delta_time );
-			}
 		}
+
+		r2node::SceneNode::Update( delta_time );
 	}
 }
