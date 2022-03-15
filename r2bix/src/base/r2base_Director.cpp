@@ -11,6 +11,8 @@ namespace r2base
 		mScreenBufferManager()
 		, mFPSTimer()
 		, mbAbort( false )
+		, mScreenBufferSIze( 107, 53 )
+
 		, mSceneNode()
 	{}
 
