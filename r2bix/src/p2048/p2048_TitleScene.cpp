@@ -48,11 +48,11 @@ namespace p2048
 			mLabelNode = AddChild<r2node::LabelNode>();
 
 			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
-			mLabelNode->GetComponent<r2component::LabelComponent>()->SetStringWithResize( "# " "R2Road Studio" " #" );
+			mLabelNode->GetComponent<r2component::LabelComponent>()->SetStringWithResize( "Press Any Key" );
 
 			mLabelNode->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.6f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.65f
 			);
 		}
 
@@ -61,8 +61,17 @@ namespace p2048
 		//
 		{
 			mSpriteNode = AddChild<r2node::SpriteNode>();
-			mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame(
-				p2048table::TextureTable::GetInstance().GetTextureFrame( "title_image" )
+
+			auto frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "title_image" );
+
+			mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( frame );
+			mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->MoveRectOrigin(
+				-frame->GetWidth() / 2, -frame->GetHeight() / 2
+			);
+
+			mSpriteNode->mTransformComponent->SetPosition(
+				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.32f
 			);
 		}
 

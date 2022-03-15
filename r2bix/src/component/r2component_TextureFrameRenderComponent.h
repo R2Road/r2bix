@@ -41,6 +41,10 @@ namespace r2component
 		{
 			mRect.Set( x, y, width, height );
 		}
+		void MoveRectOrigin( const int move_x, const int move_y )
+		{
+			mRect.MoveOrigin( move_x, move_y );
+		}
 		void SetTextureFrame( const r2render::TextureFrame* const texture_frame );
 
 	private:
