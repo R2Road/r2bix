@@ -25,7 +25,7 @@ namespace p2048
 
 		return ret;
 	}
-	void EntryScene::Update( const float /*delta_time*/ )
+	void EntryScene::Update( const float delta_time )
 	{
 		//
 		// Load Resources
@@ -39,5 +39,7 @@ namespace p2048
 		// Move 2 Company Scene
 		//
 		mDirector.Setup( p2048::CompanyScene::Create( mDirector ) );
+
+		r2node::SceneNode::Update( delta_time );
 	}
 }
