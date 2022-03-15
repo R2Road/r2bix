@@ -36,6 +36,6 @@ namespace r2base
 		bool mbAbort;
 		r2::SizeInt mScreenBufferSIze;
 
-		r2node::SceneNodeUp mSceneNode;
+		r2node::SceneNodeUp mCurrentSceneNode;
 	};
 }

@@ -13,12 +13,12 @@ namespace r2base
 		, mbAbort( false )
 		, mScreenBufferSIze( 107, 53 )
 
-		, mSceneNode()
+		, mCurrentSceneNode()
 	{}
 
 	void Director::Setup( r2node::SceneNodeUp node )
 	{
-		mSceneNode = std::move( node );
+		mCurrentSceneNode = std::move( node );
 	}
 
 	void Director::Run()
@@ -29,8 +29,8 @@ namespace r2base
 		{
 			if( mFPSTimer.Update() )
 			{
-				mSceneNode->Update( mFPSTimer.GetElapsedTime() );
-				mSceneNode->Render();
+				mCurrentSceneNode->Update( mFPSTimer.GetElapsedTime() );
+				mCurrentSceneNode->Render();
 
 				mScreenBufferManager.InitCursor();
 				mScreenBufferManager.Swap();
