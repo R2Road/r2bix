@@ -49,7 +49,7 @@ namespace p2048
 			mLabelNode = AddChild<r2node::LabelNode>();
 
 			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
-			mLabelNode->GetComponent<r2component::LabelComponent>()->SetString( "# " "R2Road Studio" " #" );
+			mLabelNode->GetComponent<r2component::LabelComponent>()->SetStringWithResize( "# " "R2Road Studio" " #" );
 
 			mLabelNode->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f

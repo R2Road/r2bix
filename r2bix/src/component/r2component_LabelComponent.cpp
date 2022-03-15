@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "r2component_LabelComponent.h"
 
+#include "component/r2component_TextureRenderComponent.h"
+
 namespace r2component
 {
 	LabelComponent::LabelComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
@@ -28,5 +30,16 @@ namespace r2component
 
 		mText = str;
 		mTexture.Reset( str );
+	}
+	void LabelComponent::SetStringWithResize( const std::string_view str )
+	{
+		SetString( str );
+
+		mTextureRenderComponent->SetRect(
+			mTextureRenderComponent->GetRect().GetMinX()
+			, mTextureRenderComponent->GetRect().GetMinY()
+			, mTexture.GetWidth() - 1
+			, mTexture.GetHeight() - 1
+		);
 	}
 }
