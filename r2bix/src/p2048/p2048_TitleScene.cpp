@@ -66,8 +66,11 @@ namespace p2048
 		{
 			mLabelNode = AddChild<r2node::LabelNode>();
 
-			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
 			mLabelNode->GetComponent<r2component::LabelComponent>()->SetStringWithResize( "Press Any Key" );
+
+			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->MoveRectOrigin(
+				-mLabelNode->GetComponent<r2component::LabelComponent>()->GetWidth() / 2, 0
+			);
 
 			mLabelNode->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f

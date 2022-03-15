@@ -25,10 +25,8 @@ namespace r2component
 		//
 		//
 		const r2render::Texture* const GetTexture() const { return &mTexture; }
-		std::string_view GetString() const
-		{
-			return mText;
-		}
+		std::string_view GetString() const { return mText; }
+		int32_t GetWidth() const { return static_cast<int32_t>( mText.length() ); }
 
 		//
 		// Setter

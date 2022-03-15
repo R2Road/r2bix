@@ -45,6 +45,10 @@ namespace r2component
 		{
 			mRect.Set( x, y, width, height );
 		}
+		void MoveRectOrigin( const int move_x, const int move_y )
+		{
+			mRect.MoveOrigin( move_x, move_y );
+		}
 		void SetTexture( const r2render::Texture* const texture )
 		{
 			mTexture = texture;
