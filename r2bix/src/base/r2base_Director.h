@@ -21,7 +21,7 @@ namespace r2base
 		//
 		//
 		//
-		r2::SizeInt GetBufferWidth() const { return mScreenBufferSIze; }
+		r2::SizeInt GetScreenBufferSize() const { return mScreenBufferSIze; }
 
 		//
 		//

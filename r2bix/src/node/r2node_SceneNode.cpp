@@ -7,8 +7,8 @@
 namespace r2node
 {
 	SceneNode::SceneNode( r2base::Director& director ) : r2base::Node( director )
-		, mCamera( { 53, 26 }, director.GetBufferWidth() )
-		, mRenderTarget( director.GetBufferWidth().GetWidth(), director.GetBufferWidth().GetHeight(), '@' )
+		, mCamera( { 53, 26 }, director.GetScreenBufferSize() )
+		, mRenderTarget( director.GetScreenBufferSize().GetWidth(), director.GetScreenBufferSize().GetHeight(), '@' )
 	{}
 
 	void SceneNode::Update( const float delta_time )
