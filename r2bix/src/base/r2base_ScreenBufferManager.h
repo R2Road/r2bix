@@ -21,6 +21,7 @@ namespace r2base
 	private:
 		void init();
 		void release();
+		void setCursorVisibility( const bool visible );
 
 	public:
 		void InitCursor();

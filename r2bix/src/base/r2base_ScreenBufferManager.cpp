@@ -67,44 +67,40 @@ namespace r2base
 		// Cursor
 		//
 		{
-			CONSOLE_CURSOR_INFO     cursorInfo;
-
-			GetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
-			cursorInfo.bVisible = false;
-			SetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
-
-			GetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
-			cursorInfo.bVisible = false;
-			SetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
+			setCursorVisibility( false );
 		}
 	}
 
 	void ScreenBufferManager::release()
 	{
+		setCursorVisibility( true );
+
 		if( INVALID_HANDLE_VALUE != mBufferHandle4First )
 		{
 			SetConsoleActiveScreenBuffer( mBufferHandle4First );
 			std::cout.rdbuf( mCoutOriginalStreamBuffer );
-
-			//
-			// Cursor
-			//
-			CONSOLE_CURSOR_INFO     cursorInfo;
-			GetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
-			cursorInfo.bVisible = false;
-			SetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
 		}
 
 		if( INVALID_HANDLE_VALUE != mBufferHandle4Second )
 		{
 			CloseHandle( mBufferHandle4Second );
+		}
+	}
+	void ScreenBufferManager::setCursorVisibility( const bool visible )
+	{
+		CONSOLE_CURSOR_INFO     cursorInfo;
 
-			//
-			// Cursor
-			//
-			CONSOLE_CURSOR_INFO     cursorInfo;
+		if( INVALID_HANDLE_VALUE != mBufferHandle4First )
+		{
+			GetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
+			cursorInfo.bVisible = visible;
+			SetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
+		}
+
+		if( INVALID_HANDLE_VALUE != mBufferHandle4Second )
+		{
 			GetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
-			cursorInfo.bVisible = false;
+			cursorInfo.bVisible = visible;
 			SetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
 		}
 	}
