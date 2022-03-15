@@ -42,21 +42,6 @@ namespace p2048
 		}
 
 		//
-		// Company Name
-		//
-		{
-			mLabelNode = AddChild<r2node::LabelNode>();
-
-			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
-			mLabelNode->GetComponent<r2component::LabelComponent>()->SetStringWithResize( "Press Any Key" );
-
-			mLabelNode->mTransformComponent->SetPosition(
-				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.65f
-			);
-		}
-
-		//
 		// Logo
 		//
 		{
@@ -72,6 +57,21 @@ namespace p2048
 			mSpriteNode->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.32f
+			);
+		}
+
+		//
+		// Company Name
+		//
+		{
+			mLabelNode = AddChild<r2node::LabelNode>();
+
+			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
+			mLabelNode->GetComponent<r2component::LabelComponent>()->SetStringWithResize( "Press Any Key" );
+
+			mLabelNode->mTransformComponent->SetPosition(
+				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.65f
 			);
 		}
 
