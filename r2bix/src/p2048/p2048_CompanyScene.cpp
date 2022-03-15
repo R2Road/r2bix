@@ -21,9 +21,6 @@
 namespace p2048
 {
 	CompanyScene::CompanyScene( r2base::Director& director ) : r2node::SceneNode( director )
-		, mLabelNode( nullptr )
-		, mSpriteAnimationNode( nullptr )
-
 		, mChangeSceneTimer( 2.f, true )
 	{}
 
@@ -49,12 +46,12 @@ namespace p2048
 		// Company Name
 		//
 		{
-			mLabelNode = AddChild<r2node::LabelNode>();
+			auto label_node = AddChild<r2node::LabelNode>();
 
-			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
-			mLabelNode->GetComponent<r2component::LabelComponent>()->SetStringWithResize( "# " "R2Road Studio" " #" );
+			label_node->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
+			label_node->GetComponent<r2component::LabelComponent>()->SetStringWithResize( "# " "R2Road Studio" " #" );
 
-			mLabelNode->mTransformComponent->SetPosition(
+			label_node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.6f
 			);
@@ -64,14 +61,14 @@ namespace p2048
 		// Logo
 		//
 		{
-			mSpriteAnimationNode = AddChild<r2node::SpriteAnimationNode>();
+			auto sprite_animation_node = AddChild<r2node::SpriteAnimationNode>();
 
-			mSpriteAnimationNode->GetComponent<r2component::TextureFrameAnimationComponent>()->LoadAnimation(
+			sprite_animation_node->GetComponent<r2component::TextureFrameAnimationComponent>()->LoadAnimation(
 				p2048table::TextureFrameAnimationTable::GetInstance().Get( 1 )
 			);
-			mSpriteAnimationNode->GetComponent<r2component::TextureFrameAnimationComponent>()->RunAnimation( r2animation::eIndex::Run_1 );
+			sprite_animation_node->GetComponent<r2component::TextureFrameAnimationComponent>()->RunAnimation( r2animation::eIndex::Run_1 );
 
-			mSpriteAnimationNode->mTransformComponent->SetPosition(
+			sprite_animation_node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.35f
 			);

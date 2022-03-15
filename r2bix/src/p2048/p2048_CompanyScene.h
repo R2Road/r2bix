@@ -22,9 +22,6 @@ namespace p2048
 		void Update( const float delta_time ) override;
 
 	private:
-		r2base::Node* mLabelNode;
-		r2base::Node* mSpriteAnimationNode;
-
 		r2::Timer_Float mChangeSceneTimer;
 	};
 }
