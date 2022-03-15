@@ -7,18 +7,21 @@
 
 #include "base/r2base_Director.h"
 #include "component/r2component_LabelComponent.h"
-#include "component/r2component_TextureRenderComponent.h"
+#include "component/r2component_TextureFrameAnimationComponent.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
+#include "component/r2component_TextureRenderComponent.h"
 #include "component/r2component_TransformComponent.h"
 #include "node/r2node_LabelNode.h"
-#include "node/r2node_SpriteNode.h"
+#include "node/r2node_SpriteAnimationNode.h"
+
+#include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
 
 namespace p2048
 {
 	CompanyScene::CompanyScene( r2base::Director& director ) : r2node::SceneNode( director )
 		, mLabelNode( nullptr )
-		, mSpriteNode( nullptr )
+		, mSpriteAnimationNode( nullptr )
 	{}
 
 	r2node::SceneNodeUp CompanyScene::Create( r2base::Director& director )
@@ -39,17 +42,35 @@ namespace p2048
 			return false;
 		}
 
+		//
+		// Company Name
+		//
 		{
 			mLabelNode = AddChild<r2node::LabelNode>();
-			mLabelNode->mTransformComponent->SetPosition( 5, 5 );
+
 			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 30, 0 );
-			mLabelNode->GetComponent<r2component::LabelComponent>()->SetString( "# " "2048 Game Scene" " #" );
+			mLabelNode->GetComponent<r2component::LabelComponent>()->SetString( "# " "R2Road Studio" " #" );
+
+			mLabelNode->mTransformComponent->SetPosition(
+				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.6f
+			);
 		}
 
+		//
+		// Logo
+		//
 		{
-			mSpriteNode = AddChild<r2node::SpriteNode>();
-			mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame(
-				p2048table::TextureTable::GetInstance().GetTextureFrame( "title_image" )
+			mSpriteAnimationNode = AddChild<r2node::SpriteAnimationNode>();
+
+			mSpriteAnimationNode->GetComponent<r2component::TextureFrameAnimationComponent>()->LoadAnimation(
+				p2048table::TextureFrameAnimationTable::GetInstance().Get( 1 )
+			);
+			mSpriteAnimationNode->GetComponent<r2component::TextureFrameAnimationComponent>()->RunAnimation( r2animation::eIndex::Run_1 );
+
+			mSpriteAnimationNode->mTransformComponent->SetPosition(
+				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.4f
 			);
 		}
 

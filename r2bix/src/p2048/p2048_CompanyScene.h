@@ -21,6 +21,6 @@ namespace p2048
 
 	private:
 		r2base::Node* mLabelNode;
-		r2base::Node* mSpriteNode;
+		r2base::Node* mSpriteAnimationNode;
 	};
 }
