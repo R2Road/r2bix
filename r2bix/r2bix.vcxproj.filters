@@ -230,6 +230,9 @@
     <ClCompile Include="src\p2048\p2048table_TextureFrameAnimationTable.cpp">
       <Filter>project_2048</Filter>
     </ClCompile>
+    <ClCompile Include="src\p2048\p2048_TitleScene.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -444,6 +447,9 @@
       <Filter>node</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_TitleScene.h">
       <Filter>project_2048</Filter>
     </ClInclude>
   </ItemGroup>

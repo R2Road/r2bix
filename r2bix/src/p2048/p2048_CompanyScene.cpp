@@ -14,6 +14,7 @@
 #include "node/r2node_LabelNode.h"
 #include "node/r2node_SpriteAnimationNode.h"
 
+#include "p2048_TitleScene.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
 
@@ -22,6 +23,8 @@ namespace p2048
 	CompanyScene::CompanyScene( r2base::Director& director ) : r2node::SceneNode( director )
 		, mLabelNode( nullptr )
 		, mSpriteAnimationNode( nullptr )
+
+		, mChangeSceneTimer( 2.f, true )
 	{}
 
 	r2node::SceneNodeUp CompanyScene::Create( r2base::Director& director )
@@ -86,7 +89,16 @@ namespace p2048
 				mDirector.RequestAbort();
 			}
 		}
-
-		r2node::SceneNode::Update( delta_time );
+		else
+		{
+			if( !mChangeSceneTimer.update( delta_time ) )
+			{
+				mDirector.Setup( p2048::TitleScene::Create( mDirector ) );
+			}
+			else
+			{
+				r2node::SceneNode::Update( delta_time );
+			}
+		}
 	}
 }
