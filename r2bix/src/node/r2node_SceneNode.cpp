@@ -7,7 +7,7 @@
 namespace r2node
 {
 	SceneNode::SceneNode( r2base::Director& director ) : r2base::Node( director )
-		, mCamera( { 53, 26 }, director.GetScreenBufferSize() )
+		, mCamera( { director.GetScreenBufferSize().GetWidth() / 2, director.GetScreenBufferSize().GetHeight() / 2 }, director.GetScreenBufferSize() )
 		, mRenderTarget( director.GetScreenBufferSize().GetWidth(), director.GetScreenBufferSize().GetHeight(), '@' )
 	{}
 
