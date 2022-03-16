@@ -137,6 +137,7 @@
     <ClInclude Include="src\r2\r2_Size_Int.h" />
     <ClInclude Include="src\r2\r2_Timer.h" />
     <ClInclude Include="src\r2\r2_Timer_Float.h" />
+    <ClInclude Include="src\r2\r2_UniqueIndex.h" />
     <ClInclude Include="src\render\r2render_Camera.h" />
     <ClInclude Include="src\render\r2render_iRenderTarget.h" />
     <ClInclude Include="src\render\r2render_TextureFrame.h" />
