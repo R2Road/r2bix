@@ -346,12 +346,8 @@ namespace component_test
 
 			{
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
-			}
 
-			std::cout << r2::split;
-
-			{
-				std::cout << "+ Show Render Target" << r2::linefeed2;
+				std::cout << r2::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
