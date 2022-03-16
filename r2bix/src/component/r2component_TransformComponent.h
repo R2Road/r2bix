@@ -23,7 +23,7 @@ namespace r2component
 		{
 			return mPosition;
 		}
-		void SetPosition( const int new_x, const int new_y )
+		void SetPosition( const int32_t new_x, const int32_t new_y )
 		{
 			mPosition.Set( new_x, new_y );
 		}
