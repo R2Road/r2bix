@@ -360,6 +360,64 @@ namespace component_test
 
 
 
+	r2cm::iItem::TitleFuncT TextureFrameRenderComponentTest_1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TextureFrameRender Component 1";
+		};
+	}
+	r2cm::iItem::DoFuncT TextureFrameRenderComponentTest_1::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
+
+			std::cout << r2::split;
+
+			EXPECT_EQ( nullptr, node->GetComponent<r2component::TextureFrameRenderComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::TextureFrameRenderComponent>() );
+			EXPECT_NE( nullptr, component );
+			EXPECT_EQ( component, node->GetComponent<r2component::TextureFrameRenderComponent>() );
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_EQ( nullptr, component->GetTextureFrame() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT TextureFrameRenderComponentTest::GetTitleFunction() const
 	{
 		return []()->const char*
