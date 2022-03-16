@@ -196,14 +196,14 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 6 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
 			std::cout << r2::linefeed;
 
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 1 ) );
 
 			std::cout << r2::split;
 
@@ -214,12 +214,7 @@ namespace component_test
 
 			DECLARATION_MAIN( r2render::Texture texture( 3, 3, 'A' ) );
 			{
-				std::cout << r2::linefeed;
-
 				EXPECT_EQ( nullptr, component->GetTexture() );
-
-				std::cout << r2::linefeed;
-
 				PROCESS_MAIN( component->SetTexture( &texture ) );
 				EXPECT_EQ( &texture, component->GetTexture() );
 			}
@@ -227,13 +222,34 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROCESS_MAIN( component->SetPivotPoint( 0.f, 0.f ) );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Show Render Target" << r2::linefeed2;
+				render_target.FillAll( '=' );
+				PROCESS_MAIN( component->SetPivotPoint( 0.5f, 0.5f ) );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			{
+				render_target.FillAll( '=' );
+				PROCESS_MAIN( component->SetPivotPoint( 1.f, 1.f ) );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+
+				std::cout << r2::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
