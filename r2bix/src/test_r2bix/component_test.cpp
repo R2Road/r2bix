@@ -150,6 +150,10 @@ namespace component_test
 
 			{
 				EXPECT_EQ( nullptr, component->GetTexture() );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->SetPivotPoint( 0.5f, 0.5f ) );
 			}
 
 			std::cout << r2::split;

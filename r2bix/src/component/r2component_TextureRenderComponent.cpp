@@ -103,6 +103,11 @@ namespace r2component
 	}
 	void TextureRenderComponent::resetVisibleRect()
 	{
+		if( !mTexture )
+		{
+			return;
+		}
+
 		mVisibleRect.Set(
 			-static_cast<int>( mTexture->GetWidth() * mPivotPoint.GetX() )
 			, -static_cast<int>( mTexture->GetHeight() * mPivotPoint.GetY() )
