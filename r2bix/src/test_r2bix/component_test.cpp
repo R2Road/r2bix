@@ -248,6 +248,52 @@ namespace component_test
 
 
 
+	r2cm::iItem::TitleFuncT TextureRenderComponentTest_3::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture Render Component 3";
+		};
+	}
+	r2cm::iItem::DoFuncT TextureRenderComponentTest_3::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::TextureRenderComponent>() );
+			DECLARATION_MAIN( r2render::Texture texture( 3, 3, "123" "abc" "zxc" ) );
+			PROCESS_MAIN( component->SetTexture( &texture ) );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( component->SetRect( -4, -2, 1, 1 ) );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT LabelComponentTest::GetTitleFunction() const
 	{
 		return []()->const char*
