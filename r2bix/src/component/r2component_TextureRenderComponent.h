@@ -30,19 +30,20 @@ namespace r2component
 		//
 		// Getter
 		//
-		r2::RectInt GetRect() const
-		{
-			return mVisibleRect;
-		}
 		const r2render::Texture* const GetTexture() const
 		{
 			return mTexture;
+		}
+		r2::RectInt GetRect() const
+		{
+			return mVisibleRect;
 		}
 
 		//
 		// Setter
 		//
 		void SetPivotPoint( const float x, const float y );
+		void SetTexture( const r2render::Texture* const texture );
 		void SetVisibleRectForced( const int x, const int y, const int width, const int height )
 		{
 			mVisibleRect.Set( x, y, width, height );
@@ -51,7 +52,6 @@ namespace r2component
 		{
 			mVisibleRect.MoveOrigin( move_x, move_y );
 		}
-		void SetTexture( const r2render::Texture* const texture );
 
 	private:
 		void resetVisibleRect();
