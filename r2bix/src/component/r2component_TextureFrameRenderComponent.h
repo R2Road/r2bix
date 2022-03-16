@@ -48,6 +48,8 @@ namespace r2component
 			mVisibleRect.MoveOrigin( move_x, move_y );
 		}
 		void SetTextureFrame( const r2render::TextureFrame* const texture_frame );
+	private:
+		void resetVisibleRect();
 
 	private:
 		r2::PointFloat mPivotPoint;

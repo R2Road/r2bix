@@ -93,22 +93,16 @@ namespace r2component
 	{
 		mPivotPoint.Set( x, y );
 
-		if( !mTextureFrame )
-		{
-			return;
-		}
-
-		mVisibleRect.Set(
-			-static_cast<int>( mTextureFrame->GetWidth() * mPivotPoint.GetX() )
-			, -static_cast<int>( mTextureFrame->GetHeight() * mPivotPoint.GetY() )
-			, mTextureFrame->GetVisibleRect().GetSize().GetWidth()
-			, mTextureFrame->GetVisibleRect().GetSize().GetHeight()
-		);
+		resetVisibleRect();
 	}
 	void TextureFrameRenderComponent::SetTextureFrame( const r2render::TextureFrame* const texture_frame )
 	{
 		mTextureFrame = texture_frame;
 
+		resetVisibleRect();
+	}
+	void TextureFrameRenderComponent::resetVisibleRect()
+	{
 		if( !mTextureFrame )
 		{
 			return;
