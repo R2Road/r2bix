@@ -295,10 +295,6 @@ namespace component_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( texture_render->SetRect( -1, -1, 5, 0 ) );
-
-				std::cout << r2::linefeed;
-
 				DECLARATION_MAIN( const char* const dummy_text = "Bla Bla Bla" );
 				PROCESS_MAIN( label->SetString( dummy_text ) );
 				EXPECT_EQ( dummy_text, label->GetString() );
