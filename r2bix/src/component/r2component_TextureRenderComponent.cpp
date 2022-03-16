@@ -93,15 +93,15 @@ namespace r2component
 	{
 		mPivotPoint.Set( x, y );
 
-		resetVisibleRect();
+		ResetVisibleRect();
 	}
 	void TextureRenderComponent::SetTexture( const r2render::Texture* const texture )
 	{
 		mTexture = texture;
 
-		resetVisibleRect();
+		ResetVisibleRect();
 	}
-	void TextureRenderComponent::resetVisibleRect()
+	void TextureRenderComponent::ResetVisibleRect()
 	{
 		if( !mTexture )
 		{

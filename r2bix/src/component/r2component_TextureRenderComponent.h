@@ -44,6 +44,7 @@ namespace r2component
 		//
 		void SetPivotPoint( const float x, const float y );
 		void SetTexture( const r2render::Texture* const texture );
+		void ResetVisibleRect();
 		void SetVisibleRectForced( const int x, const int y, const int width, const int height )
 		{
 			mVisibleRect.Set( x, y, width, height );
@@ -52,9 +53,6 @@ namespace r2component
 		{
 			mVisibleRect.MoveOrigin( move_x, move_y );
 		}
-
-	private:
-		void resetVisibleRect();
 
 	private:
 		r2::PointFloat mPivotPoint;
