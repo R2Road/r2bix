@@ -441,7 +441,7 @@ namespace component_test
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
 			std::cout << r2::split;
 
@@ -466,7 +466,6 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				EXPECT_EQ( nullptr, component->GetTextureFrame() );
 				PROCESS_MAIN( component->SetTextureFrame( &frame ) );
 				EXPECT_NE( nullptr, component->GetTextureFrame() );
 				EXPECT_EQ( &frame, component->GetTextureFrame() );
@@ -475,7 +474,21 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROCESS_MAIN( component->SetPivotPoint( 0.f, 0.f ) );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( component->SetPivotPoint( 1.f, 1.f ) );
+
+				render_target.FillAll( '=' );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				std::cout << r2::linefeed;
 

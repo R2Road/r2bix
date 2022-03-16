@@ -38,6 +38,7 @@ namespace r2component
 		//
 		// Setter
 		//
+		void SetPivotPoint( const float x, const float y );
 		void SetRect( const int x, const int y, const int width, const int height )
 		{
 			mVisibleRect.Set( x, y, width, height );
