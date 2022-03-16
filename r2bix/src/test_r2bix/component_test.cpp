@@ -278,7 +278,7 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( component->SetRect( -4, -2, 1, 1 ) );
+				PROCESS_MAIN( component->SetVisibleRectForced( -4, -2, 1, 1 ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				std::cout << r2::linefeed;

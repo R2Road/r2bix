@@ -31,7 +31,7 @@ namespace r2component
 		mText = str;
 		mTexture.Reset( str );
 
-		mTextureRenderComponent->SetRect(
+		mTextureRenderComponent->SetVisibleRectForced(
 			mTextureRenderComponent->GetRect().GetMinX()
 			, mTextureRenderComponent->GetRect().GetMinY()
 			, mTexture.GetWidth() - 1
