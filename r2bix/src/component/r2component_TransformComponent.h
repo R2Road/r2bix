@@ -34,5 +34,6 @@ namespace r2component
 
 	private:
 		r2::PointInt mPosition;
+		int32_t mZOrder;
 	};
 }

@@ -5,6 +5,7 @@ namespace r2component
 {
 	TransformComponent::TransformComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mPosition()
+		, mZOrder( 0 )
 	{}
 
 	std::unique_ptr<TransformComponent> TransformComponent::Create( r2base::Node& owner_node )
