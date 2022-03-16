@@ -31,6 +31,9 @@ namespace r2component
 		mText = str;
 		mTexture.Reset( str );
 
-		mTextureRenderComponent->ResetVisibleRect();
+		if( mTextureRenderComponent )
+		{
+			mTextureRenderComponent->ResetVisibleRect();
+		}
 	}
 }
