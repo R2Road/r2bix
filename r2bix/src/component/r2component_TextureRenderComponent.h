@@ -31,7 +31,7 @@ namespace r2component
 		//
 		r2::RectInt GetRect() const
 		{
-			return mRect;
+			return mVisibleRect;
 		}
 		const r2render::Texture* const GetTexture() const
 		{
@@ -43,11 +43,11 @@ namespace r2component
 		//
 		void SetRect( const int x, const int y, const int width, const int height )
 		{
-			mRect.Set( x, y, width, height );
+			mVisibleRect.Set( x, y, width, height );
 		}
 		void MoveRectOrigin( const int move_x, const int move_y )
 		{
-			mRect.MoveOrigin( move_x, move_y );
+			mVisibleRect.MoveOrigin( move_x, move_y );
 		}
 		void SetTexture( const r2render::Texture* const texture )
 		{
@@ -55,7 +55,7 @@ namespace r2component
 		}
 
 	private:
-		r2::RectInt mRect;
+		r2::RectInt mVisibleRect;
 		const r2render::Texture* mTexture;
 	};
 }

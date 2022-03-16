@@ -10,7 +10,7 @@
 namespace r2component
 {
 	TextureRenderComponent::TextureRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
-		, mRect()
+		, mVisibleRect()
 		, mTexture( nullptr )
 	{}
 
@@ -36,7 +36,7 @@ namespace r2component
 		// World Space : My Rect : Test
 		//
 		{
-			const r2::RectInt my_world_space_rect( offset + mRect.GetOrigin() + mOwnerNode.mTransformComponent->GetPosition(), mRect.GetSize() );
+			const r2::RectInt my_world_space_rect( offset + mVisibleRect.GetOrigin() + mOwnerNode.mTransformComponent->GetPosition(), mVisibleRect.GetSize() );
 			if( !my_world_space_rect.IntersectsRect( camera->GetRect() ) )
 			{
 				return;
@@ -56,7 +56,7 @@ namespace r2component
 		//
 		// Render Target Space : My Rect
 		//
-		auto render_target_space_my_rect = mRect;
+		auto render_target_space_my_rect = mVisibleRect;
 		render_target_space_my_rect.MoveOrigin( render_target_space_my_position.GetX(), render_target_space_my_position.GetY() );
 
 		//
