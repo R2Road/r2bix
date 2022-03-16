@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "r2base_Node.h"
 
-#include "component/r2component_TransformComponent.h"
-
 namespace r2base
 {
 	Node::Node( Director& director ) :

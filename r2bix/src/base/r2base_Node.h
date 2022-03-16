@@ -5,7 +5,7 @@
 #include <type_traits>
 
 #include "r2/r2_Point_Int.h"
-#include "r2base_Component.h"
+#include "component/r2component_TransformComponent.h"
 
 //
 // # 2022.02.28 by R2Road
@@ -89,11 +89,41 @@ namespace r2base
 		template<typename NodeT>
 		Node* AddChild()
 		{
+			return AddChild<NodeT>( 0 );
+		}
+		template<typename NodeT>
+		Node* AddChild( const int32_t z_order )
+		{
 			static_assert( std::is_base_of<r2base::Node, NodeT>() );
 
 			auto child_node = NodeT::Create( mDirector );
+			child_node->mTransformComponent->SetZ( z_order );
+
 			auto ret = child_node.get();
-			mChildContainer.push_back( std::move( child_node ) );
+
+			//
+			// Find Insert Pivot
+			//
+			auto cur = mChildContainer.begin();
+			for( auto end = mChildContainer.end(); end != cur; ++cur )
+			{
+				if( z_order <= ( *cur )->mTransformComponent->GetZ() )
+				{
+					break;
+				}
+			}
+
+			//
+			// Insert
+			//
+			if( cur == mChildContainer.end() )
+			{
+				mChildContainer.push_back( std::move( child_node ) );
+			}
+			else
+			{
+				mChildContainer.insert( cur, std::move( child_node ) );
+			}
 
 			return ret;
 		}

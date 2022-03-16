@@ -23,6 +23,14 @@ namespace r2component
 		{
 			return mPosition;
 		}
+		int32_t GetZ() const
+		{
+			return mZOrder;
+		}
+
+		//
+		//
+		//
 		void SetPosition( const int32_t new_x, const int32_t new_y )
 		{
 			mPosition.Set( new_x, new_y );
@@ -30,6 +38,10 @@ namespace r2component
 		void SetPosition( const float new_x, const float new_y )
 		{
 			mPosition.Set( static_cast<int>( new_x ), static_cast<int>( new_y ) );
+		}
+		void SetZ( const int32_t new_z_order )
+		{
+			mZOrder = new_z_order;
 		}
 
 	private:

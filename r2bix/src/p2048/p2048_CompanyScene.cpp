@@ -60,7 +60,7 @@ namespace p2048
 		// Logo
 		//
 		{
-			auto sprite_animation_node = AddChild<r2node::SpriteAnimationNode>();
+			auto sprite_animation_node = AddChild<r2node::SpriteAnimationNode>( 1 );
 
 			sprite_animation_node->GetComponent<r2component::TextureFrameAnimationComponent>()->LoadAnimation(
 				p2048table::TextureFrameAnimationTable::GetInstance().Get( 1 )
