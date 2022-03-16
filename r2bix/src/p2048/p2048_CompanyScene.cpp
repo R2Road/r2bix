@@ -52,7 +52,7 @@ namespace p2048
 
 			label_node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.6f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.62f
 			);
 		}
 
@@ -69,7 +69,7 @@ namespace p2048
 
 			sprite_animation_node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.35f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.42f
 			);
 		}
 
