@@ -53,7 +53,7 @@ namespace p2048
 
 			mSpriteNode->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.32f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
 			);
 		}
 
