@@ -435,25 +435,21 @@ namespace component_test
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-
-			std::cout << r2::linefeed;
-
 			DECLARATION_SUB( r2base::Director dummy_director );
-
-			std::cout << r2::linefeed;
-
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			std::cout << r2::split;
 
-			{
-				EXPECT_FALSE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
-				PROCESS_MAIN( node->AddComponent<r2component::TextureFrameRenderComponent>() );
-				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>() );
-			}
-
+			EXPECT_EQ( nullptr, node->GetComponent<r2component::TextureFrameRenderComponent>() );
+			
 			std::cout << r2::linefeed;
+
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::TextureFrameRenderComponent>() );
+			EXPECT_NE( nullptr, component );
+			EXPECT_EQ( component, node->GetComponent<r2component::TextureFrameRenderComponent>() );
+
+			std::cout << r2::split;
 
 			DECLARATION_MAIN( r2render::Texture texture( 3, 3,
 				"123"
@@ -463,25 +459,21 @@ namespace component_test
 			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
 			PROCESS_MAIN( frame.MoveVisibleOrigin( 1, 1 ) );
 
-			std::cout << r2::linefeed;
+			std::cout << r2::split;
 
 			{
-				EXPECT_FALSE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
-				PROCESS_MAIN( node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( &frame ) );
-				EXPECT_TRUE( node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
-				EXPECT_EQ( &frame, node->GetComponent<r2component::TextureFrameRenderComponent>()->GetTextureFrame() );
+				EXPECT_EQ( nullptr, component->GetTextureFrame() );
+				PROCESS_MAIN( component->SetTextureFrame( &frame ) );
+				EXPECT_NE( nullptr, component->GetTextureFrame() );
+				EXPECT_EQ( &frame, component->GetTextureFrame() );
 			}
 
 			std::cout << r2::split;
 
 			{
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
-			}
 
-			std::cout << r2::split;
-
-			{
-				std::cout << "+ Show Render Target" << r2::linefeed2;
+				std::cout << r2::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
