@@ -137,38 +137,26 @@ namespace component_test
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-
-			std::cout << r2::linefeed;
-
 			DECLARATION_SUB( r2base::Director dummy_director );
-
-			std::cout << r2::linefeed;
-
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 
 			std::cout << r2::split;
 
-			EXPECT_TRUE( node->AddComponent<r2component::TextureRenderComponent>() );
-
-			std::cout << r2::linefeed;
-
-			DECLARATION_MAIN( auto component = node->GetComponent<r2component::TextureRenderComponent>() );
-			PROCESS_MAIN( component->SetRect( -1, -1, 2, 2 ) );
-
-			std::cout << r2::split;
-
-			EXPECT_EQ( nullptr, component->GetTexture() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, component );
 
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				EXPECT_EQ( nullptr, component->GetTexture() );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "+ Show Render Target" << r2::linefeed2;
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				std::cout << r2::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
