@@ -266,25 +266,19 @@ namespace component_test
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
-
-			std::cout << r2::linefeed;
-
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( auto label = node->AddComponent<r2component::LabelComponent>() );
+			EXPECT_NE( nullptr, label );
 			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, texture_render );
 
 			std::cout << r2::split;
 
 			{
-				EXPECT_NE( nullptr, label );
-				EXPECT_NE( nullptr, texture_render );
-
-				std::cout << r2::linefeed;
-
 				EXPECT_EQ( nullptr, label->GetTextureRenderComponent() );
 				PROCESS_MAIN( label->SetTextureRenderComponent( texture_render ) );
 				EXPECT_EQ( texture_render, label->GetTextureRenderComponent() );
