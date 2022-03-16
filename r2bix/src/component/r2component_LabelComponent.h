@@ -37,7 +37,6 @@ namespace r2component
 			mTextureRenderComponent = texture_render_component;
 		}
 		void SetString( const std::string_view str );
-		void SetStringWithResize( const std::string_view str );
 
 	private:
 		std::string mText;

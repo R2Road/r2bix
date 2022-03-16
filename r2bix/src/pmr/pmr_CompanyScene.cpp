@@ -33,7 +33,6 @@ namespace pmr
 
 		{
 			auto node = AddChild<r2node::LabelNode>();
-			node->GetComponent<r2component::TextureRenderComponent>()->SetRect( 0, 0, 40, 0 );
 			node->GetComponent<r2component::LabelComponent>()->SetString( CompanyScene::GetTitle() );
 		}
 

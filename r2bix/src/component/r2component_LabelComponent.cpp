@@ -30,10 +30,6 @@ namespace r2component
 
 		mText = str;
 		mTexture.Reset( str );
-	}
-	void LabelComponent::SetStringWithResize( const std::string_view str )
-	{
-		SetString( str );
 
 		mTextureRenderComponent->SetRect(
 			mTextureRenderComponent->GetRect().GetMinX()
