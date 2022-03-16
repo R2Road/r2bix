@@ -32,10 +32,10 @@ namespace p2048table
 			// Run_1
 			{
 				animation.Index = r2animation::eIndex::Run_1;
-				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
 				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable::GetInstance().GetTextureFrame( "dguy_walk_2" ) } );
 				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
 				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable::GetInstance().GetTextureFrame( "dguy_walk_3" ) } );
+				animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
 
 				animation_package.push_back( std::move( animation ) );
 			}
