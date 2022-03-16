@@ -3,6 +3,7 @@
 #include "base/r2base_Component.h"
 #include "base/r2base_ComponentStaticID.h"
 
+#include "r2/r2_Point_Float.h"
 #include "r2/r2_RectInt.h"
 
 namespace r2render
@@ -48,6 +49,7 @@ namespace r2component
 		void SetTextureFrame( const r2render::TextureFrame* const texture_frame );
 
 	private:
+		r2::PointFloat mPivotPoint;
 		r2::RectInt mVisibleRect;
 		const r2render::TextureFrame* mTextureFrame;
 	};

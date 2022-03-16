@@ -10,6 +10,7 @@
 namespace r2component
 {
 	TextureFrameRenderComponent::TextureFrameRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTextureFrame( nullptr )
 	{}
@@ -91,6 +92,12 @@ namespace r2component
 	void TextureFrameRenderComponent::SetTextureFrame( const r2render::TextureFrame* const texture_frame )
 	{
 		mTextureFrame = texture_frame;
-		mVisibleRect.SetSize( mTextureFrame->GetVisibleRect().GetSize().GetWidth(), mTextureFrame->GetVisibleRect().GetSize().GetHeight() );
+
+		mVisibleRect.Set(
+			-static_cast<int>( mTextureFrame->GetWidth() * mPivotPoint.GetX() )
+			, -static_cast<int>( mTextureFrame->GetHeight() * mPivotPoint.GetY() )
+			, mTextureFrame->GetVisibleRect().GetSize().GetWidth()
+			, mTextureFrame->GetVisibleRect().GetSize().GetHeight()
+		);
 	}
 }
