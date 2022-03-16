@@ -27,6 +27,7 @@ namespace r2
 		{
 			static_assert(
 				std::is_same<int, ValueT>::value
+				|| std::is_same<float, ValueT>::value
 				, "r2r::Point - Not Allowed Type"
 			);
 		}
@@ -34,6 +35,7 @@ namespace r2
 		{
 			static_assert(
 				std::is_same<int, ValueT>::value
+				|| std::is_same<float, ValueT>::value
 				, "r2r::Point - Not Allowed Type"
 			);
 		}

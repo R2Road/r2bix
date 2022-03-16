@@ -4,6 +4,7 @@
 #include "base/r2base_ComponentStaticID.h"
 
 #include "r2/r2_RectInt.h"
+#include "r2/r2_Point_Float.h"
 
 namespace r2render
 {
@@ -49,12 +50,10 @@ namespace r2component
 		{
 			mVisibleRect.MoveOrigin( move_x, move_y );
 		}
-		void SetTexture( const r2render::Texture* const texture )
-		{
-			mTexture = texture;
-		}
+		void SetTexture( const r2render::Texture* const texture );
 
 	private:
+		r2::PointFloat mPivotPoint;
 		r2::RectInt mVisibleRect;
 		const r2render::Texture* mTexture;
 	};

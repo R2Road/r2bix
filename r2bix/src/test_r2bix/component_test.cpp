@@ -210,10 +210,6 @@ namespace component_test
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, component );
 
-			std::cout << r2::linefeed;
-
-			PROCESS_MAIN( component->SetRect( -1, -1, 2, 2 ) );
-
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( r2render::Texture texture( 3, 3, 'A' ) );

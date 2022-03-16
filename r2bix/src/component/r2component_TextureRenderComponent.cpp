@@ -10,6 +10,7 @@
 namespace r2component
 {
 	TextureRenderComponent::TextureRenderComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTexture( nullptr )
 	{}
@@ -86,5 +87,17 @@ namespace r2component
 		{
 			render_target->Fill( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), '+' );
 		}
+	}
+
+	void TextureRenderComponent::SetTexture( const r2render::Texture* const texture )
+	{
+		mTexture = texture;
+
+		mVisibleRect.Set(
+			-static_cast<int>( texture->GetWidth() * mPivotPoint.GetX() )
+			, -static_cast<int>( texture->GetHeight() * mPivotPoint.GetY() )
+			, texture->GetWidth() - 1
+			, texture->GetHeight() - 1
+		);
 	}
 }
