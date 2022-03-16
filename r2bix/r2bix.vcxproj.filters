@@ -47,9 +47,6 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\r2\r2_PointInt.cpp">
-      <Filter>r2</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2\r2_RectInt.cpp">
       <Filter>r2</Filter>
     </ClCompile>
@@ -233,13 +230,13 @@
     <ClCompile Include="src\r2\r2_Size_Int.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_Point_Int.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\r2\r2_Point.h">
-      <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_PointInt.h">
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Rect.h">
@@ -453,6 +450,9 @@
       <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Size_Int.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Point_Int.h">
       <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,7 +3,7 @@
 #include "base/r2base_Component.h"
 #include "base/r2base_ComponentStaticID.h"
 
-#include "r2/r2_PointInt.h"
+#include "r2/r2_Point_Int.h"
 
 namespace r2component
 {
