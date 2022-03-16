@@ -39,6 +39,7 @@ namespace r2component
 		// Setter
 		//
 		void SetPivotPoint( const float x, const float y );
+		void SetTextureFrame( const r2render::TextureFrame* const texture_frame );
 		void SetRect( const int x, const int y, const int width, const int height )
 		{
 			mVisibleRect.Set( x, y, width, height );
@@ -47,7 +48,6 @@ namespace r2component
 		{
 			mVisibleRect.MoveOrigin( move_x, move_y );
 		}
-		void SetTextureFrame( const r2render::TextureFrame* const texture_frame );
 	private:
 		void resetVisibleRect();
 
