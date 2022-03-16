@@ -4,7 +4,7 @@
 #include <cmath>
 
 #include "r2_Point.h"
-#include "r2_Size_Int.h"
+#include "r2_Size.h"
 
 //
 // for Windows.h
