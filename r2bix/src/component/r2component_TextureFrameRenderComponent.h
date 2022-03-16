@@ -44,7 +44,7 @@ namespace r2component
 		{
 			mVisibleRect.Set( x, y, width, height );
 		}
-		void MoveRectOrigin( const int move_x, const int move_y )
+		void MoveRectOriginForced( const int move_x, const int move_y )
 		{
 			mVisibleRect.MoveOrigin( move_x, move_y );
 		}
