@@ -233,6 +233,9 @@
     <ClCompile Include="src\r2\r2_Point_Int.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_Point_Float.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -453,6 +456,9 @@
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Point_Int.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Point_Float.h">
       <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>

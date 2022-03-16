@@ -56,6 +56,7 @@
     <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
     <ClCompile Include="src\r2\r2_FPSTimer.cpp" />
+    <ClCompile Include="src\r2\r2_Point_Float.cpp" />
     <ClCompile Include="src\r2\r2_Point_Int.cpp" />
     <ClCompile Include="src\r2\r2_RectInt.cpp" />
     <ClCompile Include="src\r2\r2_Size_Int.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="src\r2\r2_FPSTimer.h" />
     <ClInclude Include="src\r2\r2_Inspector.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
+    <ClInclude Include="src\r2\r2_Point_Float.h" />
     <ClInclude Include="src\r2\r2_Point_Int.h" />
     <ClInclude Include="src\r2\r2_Rect.h" />
     <ClInclude Include="src\r2\r2_RectInt.h" />
