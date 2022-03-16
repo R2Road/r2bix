@@ -263,9 +263,6 @@ namespace component_test
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-
-			std::cout << r2::linefeed;
-
 			DECLARATION_SUB( r2base::Director dummy_director );
 
 			std::cout << r2::linefeed;
@@ -275,26 +272,37 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			EXPECT_TRUE( node->AddComponent<r2component::LabelComponent>() );
-			EXPECT_TRUE( node->AddComponent<r2component::TextureRenderComponent>() );
+			DECLARATION_MAIN( auto label = node->AddComponent<r2component::LabelComponent>() );
+			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2component::TextureRenderComponent>() );
 
-			std::cout << r2::linefeed;
+			std::cout << r2::split;
 
-			EXPECT_EQ( nullptr, node->GetComponent<r2component::LabelComponent>()->GetTextureRenderComponent() );
+			{
+				EXPECT_NE( nullptr, label );
+				EXPECT_NE( nullptr, texture_render );
 
-			std::cout << r2::linefeed;
+				std::cout << r2::linefeed;
 
-			DECLARATION_MAIN( auto component = node->GetComponent<r2component::TextureRenderComponent>() );
+				EXPECT_EQ( nullptr, label->GetTextureRenderComponent() );
+				PROCESS_MAIN( label->SetTextureRenderComponent( texture_render ) );
+				EXPECT_EQ( texture_render, label->GetTextureRenderComponent() );
 
-			PROCESS_MAIN( node->GetComponent<r2component::LabelComponent>()->SetTextureRenderComponent( component ) );
-			PROCESS_MAIN( component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() ) );
-			PROCESS_MAIN( component->SetRect( -1, -1, 5, 0 ) );
+				std::cout << r2::linefeed;
 
-			std::cout << r2::linefeed;
+				EXPECT_EQ( nullptr, texture_render->GetTexture() );
+				PROCESS_MAIN( texture_render->SetTexture( label->GetTexture() ) );
+				EXPECT_EQ( label->GetTexture(), texture_render->GetTexture() );
 
-			DECLARATION_MAIN( const char* const dummy_text = "Bla Bla Bla" );
-			PROCESS_MAIN( node->GetComponent<r2component::LabelComponent>()->SetString( dummy_text ) );
-			EXPECT_EQ( dummy_text, node->GetComponent<r2component::LabelComponent>()->GetString() );
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( texture_render->SetRect( -1, -1, 5, 0 ) );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( const char* const dummy_text = "Bla Bla Bla" );
+				PROCESS_MAIN( label->SetString( dummy_text ) );
+				EXPECT_EQ( dummy_text, label->GetString() );
+			}
 
 			std::cout << r2::split;
 
