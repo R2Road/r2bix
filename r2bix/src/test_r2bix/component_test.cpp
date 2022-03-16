@@ -280,7 +280,13 @@ namespace component_test
 
 			std::cout << r2::linefeed;
 
+			EXPECT_EQ( nullptr, node->GetComponent<r2component::LabelComponent>()->GetTextureRenderComponent() );
+
+			std::cout << r2::linefeed;
+
 			DECLARATION_MAIN( auto component = node->GetComponent<r2component::TextureRenderComponent>() );
+
+			PROCESS_MAIN( node->GetComponent<r2component::LabelComponent>()->SetTextureRenderComponent( component ) );
 			PROCESS_MAIN( component->SetTexture( node->GetComponent<r2component::LabelComponent>()->GetTexture() ) );
 			PROCESS_MAIN( component->SetRect( -1, -1, 5, 0 ) );
 

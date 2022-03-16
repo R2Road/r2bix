@@ -15,7 +15,7 @@ namespace r2node
 			r2component::TextureRenderComponent* texture_render_component = ret->AddComponent<r2component::TextureRenderComponent>();
 			r2component::LabelComponent* label_component = ret->AddComponent<r2component::LabelComponent>();
 
-			label_component->mTextureRenderComponent = texture_render_component;
+			label_component->SetTextureRenderComponent( texture_render_component );
 			texture_render_component->SetTexture( label_component->GetTexture() );
 		}
 

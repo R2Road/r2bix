@@ -25,18 +25,22 @@ namespace r2component
 		//
 		//
 		const r2render::Texture* const GetTexture() const { return &mTexture; }
+		TextureRenderComponent* const GetTextureRenderComponent() const { return mTextureRenderComponent; }
 		std::string_view GetString() const { return mText; }
 		int32_t GetWidth() const { return static_cast<int32_t>( mText.length() ); }
 
 		//
 		// Setter
 		//
+		void SetTextureRenderComponent(	TextureRenderComponent* const texture_render_component )
+		{
+			mTextureRenderComponent = texture_render_component;
+		}
 		void SetString( const std::string_view str );
 		void SetStringWithResize( const std::string_view str );
 
 	private:
 		std::string mText;
-	public:
 		r2render::Texture mTexture;
 		TextureRenderComponent* mTextureRenderComponent;
 	};
