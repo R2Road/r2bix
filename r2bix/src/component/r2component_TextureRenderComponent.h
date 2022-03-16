@@ -3,8 +3,8 @@
 #include "base/r2base_Component.h"
 #include "base/r2base_ComponentStaticID.h"
 
-#include "r2/r2_RectInt.h"
 #include "r2/r2_Point_Float.h"
+#include "r2/r2_RectInt.h"
 
 namespace r2render
 {
