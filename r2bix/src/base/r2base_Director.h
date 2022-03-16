@@ -5,7 +5,7 @@
 #include "node/r2node_SceneNode.h"
 #include "base/r2base_ScreenBufferManager.h"
 #include "r2/r2_FPSTimer.h"
-#include "r2/r2_Size.h"
+#include "r2/r2_Size_Int.h"
 
 namespace r2base
 {

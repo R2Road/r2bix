@@ -58,7 +58,7 @@
     <ClCompile Include="src\r2\r2_FPSTimer.cpp" />
     <ClCompile Include="src\r2\r2_PointInt.cpp" />
     <ClCompile Include="src\r2\r2_RectInt.cpp" />
-    <ClCompile Include="src\r2\r2_Size.cpp" />
+    <ClCompile Include="src\r2\r2_Size_Int.cpp" />
     <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\render\r2render_Camera.cpp" />
     <ClCompile Include="src\render\r2render_TextureFrame.cpp" />
@@ -132,6 +132,7 @@
     <ClInclude Include="src\r2\r2_RectInt.h" />
     <ClInclude Include="src\r2\r2_Singleton.h" />
     <ClInclude Include="src\r2\r2_Size.h" />
+    <ClInclude Include="src\r2\r2_Size_Int.h" />
     <ClInclude Include="src\r2\r2_Timer.h" />
     <ClInclude Include="src\r2\r2_Timer_Float.h" />
     <ClInclude Include="src\render\r2render_Camera.h" />

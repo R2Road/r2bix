@@ -105,6 +105,4 @@ namespace r2
 		ValueT mWidth;
 		ValueT mHeight;
 	};
-
-	using SizeInt = Size<int>;
 }
