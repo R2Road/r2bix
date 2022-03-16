@@ -50,9 +50,6 @@ namespace p2048
 			auto frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "title_image" );
 
 			mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( frame );
-			mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->MoveRectOrigin(
-				-frame->GetWidth() / 2, -frame->GetHeight() / 2
-			);
 
 			mSpriteNode->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
@@ -67,10 +64,6 @@ namespace p2048
 			mLabelNode = AddChild<r2node::LabelNode>();
 
 			mLabelNode->GetComponent<r2component::LabelComponent>()->SetString( "Press Any Key" );
-
-			mLabelNode->GetComponent<r2component::TextureRenderComponent>()->MoveRectOrigin(
-				-mLabelNode->GetComponent<r2component::LabelComponent>()->GetWidth() / 2, 0
-			);
 
 			mLabelNode->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
