@@ -32,7 +32,7 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 		ret->AddItem( 'a', component_test::TextureFrameRenderComponentTest_1::GetInstance() );
-		ret->AddItem( 's', component_test::TextureFrameRenderComponentTest::GetInstance() );
+		ret->AddItem( 's', component_test::TextureFrameRenderComponentTest_2::GetInstance() );
 		ret->AddItem( 'd', component_test::TextureFrameAnimationComponentTest::GetInstance() );
 
 

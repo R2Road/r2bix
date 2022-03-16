@@ -418,14 +418,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureFrameRenderComponentTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TextureFrameRenderComponentTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "TextureFrameRender Component";
+			return "TextureFrameRender Component 2";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureFrameRenderComponentTest::GetDoFunction()
+	r2cm::iItem::DoFuncT TextureFrameRenderComponentTest_2::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
