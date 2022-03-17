@@ -10,7 +10,7 @@ namespace r2base
 	class Action
 	{
 	public:
-		Action() {}
+		virtual ~Action() {}
 
 		virtual void Enter( r2base::Node& owner_node ) = 0;
 		virtual bool Update() = 0;
