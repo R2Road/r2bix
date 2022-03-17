@@ -4,6 +4,7 @@
 namespace r2component
 {
 	ActionProcessComponent::ActionProcessComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+		, mActionContainer()
 	{}
 
 	std::unique_ptr<ActionProcessComponent> ActionProcessComponent::Create( r2base::Node& owner_node )

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\action\r2action_MoveByAction.cpp" />
     <ClCompile Include="src\animation\r2animation_constant.cpp" />
     <ClCompile Include="src\base\r2base_CoutBufferRedirector.cpp" />
     <ClCompile Include="src\base\r2base_DebugConfig.cpp" />
@@ -92,6 +93,7 @@
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\action\r2action_MoveByAction.h" />
     <ClInclude Include="src\animation\r2animation_constant.h" />
     <ClInclude Include="src\base\r2base_Action.h" />
     <ClInclude Include="src\base\r2base_ComponentStaticID.h" />

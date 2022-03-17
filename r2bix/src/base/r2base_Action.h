@@ -1,11 +1,14 @@
 #pragma once
 
+#include <memory>
+
 namespace r2base
 {
+	using ActionUp = std::unique_ptr<class Action>;
 	class Action
 	{
 	public:
-		Action() = default;
+		Action() {}
 
 		virtual void Update() = 0;
 	};

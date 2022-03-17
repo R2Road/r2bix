@@ -43,6 +43,9 @@
     <Filter Include="animation">
       <UniqueIdentifier>{389aa71b-e398-4880-a05b-49418b94b111}</UniqueIdentifier>
     </Filter>
+    <Filter Include="action">
+      <UniqueIdentifier>{ee60f5df-9b2d-4277-8584-b3e8bd176866}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -238,6 +241,9 @@
     </ClCompile>
     <ClCompile Include="src\component\r2component_ActionProcessComponent.cpp">
       <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\action\r2action_MoveByAction.cpp">
+      <Filter>action</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -472,6 +478,9 @@
     </ClInclude>
     <ClInclude Include="src\base\r2base_Action.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\action\r2action_MoveByAction.h">
+      <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,6 +7,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "action/r2action_MoveByAction.h"
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
 #include "component/r2component_LabelComponent.h"
@@ -623,6 +624,12 @@ namespace component_test
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
+
+			std::cout << r2::split;
+
+			{
+				component->AddAction<r2action::MoveByAction>();
+			}
 
 			std::cout << r2::split;
 
