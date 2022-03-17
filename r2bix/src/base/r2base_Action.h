@@ -13,6 +13,6 @@ namespace r2base
 		Action() {}
 
 		virtual void Enter( r2base::Node& owner_node ) = 0;
-		virtual void Update() = 0;
+		virtual bool Update() = 0;
 	};
 }

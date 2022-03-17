@@ -14,7 +14,7 @@ namespace r2action
 		//
 		//
 		void Enter( r2base::Node& owner_node ) override;
-		void Update() {}
+		bool Update() override;
 
 		//
 		//

@@ -12,4 +12,8 @@ namespace r2action
 	{
 		mStartPoint = owner_node.mTransformComponent->GetPosition();
 	}
+	bool MoveByAction::Update()
+	{
+		return false;
+	}
 }

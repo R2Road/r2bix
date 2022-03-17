@@ -35,6 +35,12 @@ namespace r2component
 		//
 		//
 		void StartAction();
+		bool IsRunning() const { return mbStart; }
+
+		//
+		// Override
+		//
+		void Update( const float delta_time ) override;
 
 	private:
 		ActionContainerT mActionContainer;

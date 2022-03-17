@@ -32,4 +32,25 @@ namespace r2component
 		mCurrentActionIndicator = mActionContainer.begin();
 		( *mCurrentActionIndicator )->Enter( mOwnerNode );
 	}
+
+	void ActionProcessComponent::Update( const float /*delta_time*/ )
+	{
+		if( !mbStart )
+		{
+			return;
+		}
+
+		if( !( *mCurrentActionIndicator )->Update() )
+		{
+			++mCurrentActionIndicator;
+			if( mActionContainer.end() != mCurrentActionIndicator )
+			{
+				( *mCurrentActionIndicator )->Enter( mOwnerNode );
+			}
+			else
+			{
+				mbStart = false;
+			}
+		}
+	}
 }
