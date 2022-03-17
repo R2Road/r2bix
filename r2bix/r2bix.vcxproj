@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\animation\r2animation_constant.h" />
+    <ClInclude Include="src\base\r2base_Action.h" />
     <ClInclude Include="src\base\r2base_ComponentStaticID.h" />
     <ClInclude Include="src\base\r2base_CoutBufferRedirector.h" />
     <ClInclude Include="src\base\r2base_DebugConfig.h" />

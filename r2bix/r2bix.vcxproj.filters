@@ -470,5 +470,8 @@
     <ClInclude Include="src\component\r2component_ActionProcessComponent.h">
       <Filter>component</Filter>
     </ClInclude>
+    <ClInclude Include="src\base\r2base_Action.h">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
