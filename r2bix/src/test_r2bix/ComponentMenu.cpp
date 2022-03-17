@@ -37,7 +37,7 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'f', component_test::ActionProcessComponentTest::GetInstance() );
+		ret->AddItem( 'z', component_test::ActionProcessComponentTest::GetInstance() );
 
 
 		ret->AddSplit();
