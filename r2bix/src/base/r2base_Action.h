@@ -10,9 +10,21 @@ namespace r2base
 	class Action
 	{
 	public:
+		Action() : mOwnerNode( nullptr ) {}
 		virtual ~Action() {}
 
-		virtual void Enter( r2base::Node& owner_node ) = 0;
+		void SetOwnerNode( r2base::Node* const owner_node )
+		{
+			mOwnerNode = owner_node;
+		}
+
+		//
+		// Interface
+		//
+		virtual void Enter() = 0;
 		virtual bool Update() = 0;
+
+	protected:
+		r2base::Node* mOwnerNode;
 	};
 }

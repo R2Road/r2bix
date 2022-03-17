@@ -30,7 +30,8 @@ namespace r2component
 		}
 
 		mCurrentActionIndicator = mActionContainer.begin();
-		( *mCurrentActionIndicator )->Enter( mOwnerNode );
+		( *mCurrentActionIndicator )->SetOwnerNode( &mOwnerNode );
+		( *mCurrentActionIndicator )->Enter();
 	}
 
 	void ActionProcessComponent::Update( const float /*delta_time*/ )
@@ -45,7 +46,8 @@ namespace r2component
 			++mCurrentActionIndicator;
 			if( mActionContainer.end() != mCurrentActionIndicator )
 			{
-				( *mCurrentActionIndicator )->Enter( mOwnerNode );
+				( *mCurrentActionIndicator )->SetOwnerNode( &mOwnerNode );
+				( *mCurrentActionIndicator )->Enter();
 			}
 			else
 			{

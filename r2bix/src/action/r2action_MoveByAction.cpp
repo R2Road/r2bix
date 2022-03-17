@@ -8,9 +8,9 @@ namespace r2action
 	MoveByAction::MoveByAction() : mTargetPoint(), mStartPoint()
 	{}
 
-	void MoveByAction::Enter( r2base::Node& owner_node )
+	void MoveByAction::Enter()
 	{
-		mStartPoint = owner_node.mTransformComponent->GetPosition();
+		mStartPoint = mOwnerNode->mTransformComponent->GetPosition();
 	}
 	bool MoveByAction::Update()
 	{
