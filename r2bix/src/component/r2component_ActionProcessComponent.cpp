@@ -5,6 +5,7 @@ namespace r2component
 {
 	ActionProcessComponent::ActionProcessComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mActionContainer()
+		, mbStart( false )
 	{}
 
 	std::unique_ptr<ActionProcessComponent> ActionProcessComponent::Create( r2base::Node& owner_node )
@@ -16,5 +17,19 @@ namespace r2component
 		}
 
 		return ret;
+	}
+
+	void ActionProcessComponent::StartAction()
+	{
+		mbStart = !mActionContainer.empty();
+
+		if( !mbStart )
+		{
+			return;
+		}
+
+		//
+		// Do Something
+		//
 	}
 }

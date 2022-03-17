@@ -31,7 +31,13 @@ namespace r2component
 			return ret;
 		}
 
+		//
+		//
+		//
+		void StartAction();
+
 	private:
 		ActionContainerT mActionContainer;
+		bool mbStart;
 	};
 }
