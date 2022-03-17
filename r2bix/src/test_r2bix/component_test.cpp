@@ -628,7 +628,8 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				component->AddAction<r2action::MoveByAction>();
+				auto move_by_action = component->AddAction<r2action::MoveByAction>();
+				move_by_action->SetTargetPoint( { 5, 5 } );
 			}
 
 			std::cout << r2::split;

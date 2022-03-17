@@ -3,4 +3,6 @@
 
 namespace r2action
 {
+	MoveByAction::MoveByAction() : mTargetPoint()
+	{}
 }
