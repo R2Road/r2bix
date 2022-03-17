@@ -38,6 +38,7 @@ namespace r2component
 
 	private:
 		ActionContainerT mActionContainer;
+		ActionContainerT::iterator mCurrentActionIndicator;
 		bool mbStart;
 	};
 }

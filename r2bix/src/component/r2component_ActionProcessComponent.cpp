@@ -5,6 +5,7 @@ namespace r2component
 {
 	ActionProcessComponent::ActionProcessComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mActionContainer()
+		, mCurrentActionIndicator( mActionContainer.end() )
 		, mbStart( false )
 	{}
 
@@ -28,8 +29,7 @@ namespace r2component
 			return;
 		}
 
-		//
-		// Do Something
-		//
+		mCurrentActionIndicator = mActionContainer.begin();
+		( *mCurrentActionIndicator )->Enter( mOwnerNode );
 	}
 }
