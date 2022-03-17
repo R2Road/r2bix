@@ -13,6 +13,7 @@ namespace r2action
 		//
 		//
 		//
+		void Enter( r2base::Node& owner_node ) override;
 		void Update() {}
 
 		//
@@ -25,5 +26,7 @@ namespace r2action
 
 	private:
 		r2::PointInt mTargetPoint;
+
+		r2::PointInt mStartPoint;
 	};
 }
