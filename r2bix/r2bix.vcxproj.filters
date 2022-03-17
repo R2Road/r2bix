@@ -236,6 +236,9 @@
     <ClCompile Include="src\r2\r2_Point_Float.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\component\r2component_ActionProcessComponent.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -463,6 +466,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_UniqueIndex.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\r2component_ActionProcessComponent.h">
+      <Filter>component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,6 +10,7 @@
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
 #include "component/r2component_LabelComponent.h"
+#include "component/r2component_ActionProcessComponent.h"
 #include "component/r2component_TextureFrameAnimationComponent.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
@@ -585,6 +586,43 @@ namespace component_test
 				PROCESS_MAIN( tfac->StopAnimation() );
 				EXPECT_EQ( r2animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
 			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT ActionProcessComponentTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ActionProcess Component";
+		};
+	}
+	r2cm::iItem::DoFuncT ActionProcessComponentTest::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			TextureTable4Test::GetInstance().Load();
+			TextureFrameAnimationTable4Test::GetInstance().Load();
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			EXPECT_NE( nullptr, component );
 
 			std::cout << r2::split;
 

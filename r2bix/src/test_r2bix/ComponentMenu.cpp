@@ -35,6 +35,10 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 		ret->AddItem( 's', component_test::TextureFrameRenderComponentTest_2::GetInstance() );
 		ret->AddItem( 'd', component_test::TextureFrameAnimationComponentTest::GetInstance() );
 
+		ret->AddLineFeed();
+
+		ret->AddItem( 'f', component_test::ActionProcessComponentTest::GetInstance() );
+
 
 		ret->AddSplit();
 
