@@ -65,7 +65,7 @@ namespace component_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class ActionProcessComponentTest_With_TickAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_TickAction>
+	class ActionProcessComponentTest_With_SequenceAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_SequenceAction>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

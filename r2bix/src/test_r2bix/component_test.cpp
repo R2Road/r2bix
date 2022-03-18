@@ -598,14 +598,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_TickAction::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_SequenceAction::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ActionProcess Component : With TickAction";
+			return "ActionProcess Component : With SequenceAction";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_TickAction::GetDoFunction()
+	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_SequenceAction::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
