@@ -21,13 +21,13 @@ namespace r2action
 		//
 		//
 		//
-		void SetTargetPoint( const r2::PointInt target_point )
+		void SetMoveAmount( const r2::PointInt move_amount )
 		{
-			mTargetPoint = target_point;
+			mMoveAmount = move_amount;
 		}
 
 	private:
-		r2::PointInt mTargetPoint;
+		r2::PointInt mMoveAmount;
 
 		r2::PointInt mStartPoint;
 		r2::PointInt mEndPoint;

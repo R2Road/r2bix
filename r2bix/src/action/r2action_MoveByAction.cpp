@@ -6,7 +6,7 @@
 namespace r2action
 {
 	MoveByAction::MoveByAction() :
-		mTargetPoint()
+		mMoveAmount()
 		, mStartPoint()
 		, mEndPoint()
 		, mTimer( 1.f )
@@ -15,7 +15,7 @@ namespace r2action
 	void MoveByAction::Enter()
 	{
 		mStartPoint = mOwnerNode->mTransformComponent->GetPosition();
-		mEndPoint = mStartPoint + mTargetPoint;
+		mEndPoint = mStartPoint + mMoveAmount;
 
 		mTimer.reset();
 	}
@@ -24,13 +24,13 @@ namespace r2action
 		if( mTimer.update( delta_time ) )
 		{
 			mOwnerNode->mTransformComponent->SetPosition(
-				mStartPoint.GetX() + ( mTargetPoint.GetX() * mTimer.getElapsedTimeRate() )
-				, mStartPoint.GetY() + ( mTargetPoint.GetY() * mTimer.getElapsedTimeRate() )
+				mStartPoint.GetX() + ( mMoveAmount.GetX() * mTimer.getElapsedTimeRate() )
+				, mStartPoint.GetY() + ( mMoveAmount.GetY() * mTimer.getElapsedTimeRate() )
 			);
 		}
 		else
 		{
-			mOwnerNode->mTransformComponent->SetPosition( mStartPoint + mTargetPoint );
+			mOwnerNode->mTransformComponent->SetPosition( mStartPoint + mMoveAmount );
 		}
 
 		return mTimer.isAlive();

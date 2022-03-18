@@ -704,7 +704,7 @@ namespace component_test
 			{
 				{
 					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::MoveByAction>() );
-					PROCESS_MAIN( tick_action->SetTargetPoint( { 5, 5 } ) );
+					PROCESS_MAIN( tick_action->SetMoveAmount( { 5, 5 } ) );
 					EXPECT_TRUE( component->HasAction() );
 				}
 			}
