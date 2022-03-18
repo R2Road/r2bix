@@ -628,14 +628,28 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				DECLARATION_MAIN( auto move_by_action = component->AddAction<r2action::MoveByAction>() );
-				PROCESS_MAIN( move_by_action->SetTargetPoint( { 5, 5 } ) );
+				{
+					DECLARATION_MAIN( auto move_by_action = component->AddAction<r2action::MoveByAction>() );
+					PROCESS_MAIN( move_by_action->SetTargetPoint( { 5, 5 } ) );
+				}
+
+				std::cout << r2::linefeed;
+
+				{
+					DECLARATION_MAIN( auto move_by_action = component->AddAction<r2action::MoveByAction>() );
+					PROCESS_MAIN( move_by_action->SetTargetPoint( { -5, -5 } ) );
+				}
 			}
 
 			std::cout << r2::split;
 
 			{
 				PROCESS_MAIN( component->StartAction() );
+				EXPECT_TRUE( component->IsRunning() );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->Update( 0.f ) );
 				EXPECT_TRUE( component->IsRunning() );
 
 				std::cout << r2::linefeed;
