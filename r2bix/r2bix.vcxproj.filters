@@ -257,6 +257,9 @@
     <ClCompile Include="src\action\r2action_DelayAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="src\p2048\p2048_GameScene.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -505,6 +508,9 @@
     </ClInclude>
     <ClInclude Include="src\action\r2action_DelayAction.h">
       <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_GameScene.h">
+      <Filter>project_2048</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

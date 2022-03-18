@@ -13,6 +13,7 @@
 #include "node/r2node_LabelNode.h"
 #include "node/r2node_SpriteNode.h"
 
+#include "p2048_GameScene.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
 
@@ -81,6 +82,10 @@ namespace p2048
 			if( 27 == input )
 			{
 				mDirector.RequestAbort();
+			}
+			else if( 32 == input ) // Space
+			{
+				mDirector.Setup( p2048::GameScene::Create( mDirector ) );
 			}
 		}
 
