@@ -7,6 +7,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "action/r2action_MoveByAction.h"
 #include "action/r2action_TickAction.h"
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
@@ -640,6 +641,78 @@ namespace component_test
 				{
 					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::TickAction>() );
 					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
+				}
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( component->StartAction() );
+				EXPECT_TRUE( component->IsRunning() );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->Update( 0.f ) );
+				EXPECT_TRUE( component->IsRunning() );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->Update( 0.f ) );
+				EXPECT_FALSE( component->IsRunning() );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_MoveByAction::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ActionProcess Component : With MoveByAction";
+		};
+	}
+	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_MoveByAction::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			TextureTable4Test::GetInstance().Load();
+			TextureFrameAnimationTable4Test::GetInstance().Load();
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			EXPECT_NE( nullptr, component );
+			EXPECT_FALSE( component->HasAction() );
+
+			std::cout << r2::split;
+
+			{
+				{
+					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::MoveByAction>() );
+					PROCESS_MAIN( tick_action->SetTargetPoint( { 5, 5 } ) );
+					EXPECT_TRUE( component->HasAction() );
+				}
+
+				std::cout << r2::linefeed;
+
+				{
+					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::MoveByAction>() );
+					PROCESS_MAIN( tick_action->SetTargetPoint( { -5, -5 } ) );
 				}
 			}
 
