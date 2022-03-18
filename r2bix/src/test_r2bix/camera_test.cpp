@@ -7,7 +7,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "r2/r2_Point_Int.h"
-#include "r2/r2_RectInt.h"
+#include "r2/r2_Rect_Int.h"
 #include "render/r2render_Texture.h"
 
 #include "render/r2render_Camera.h"

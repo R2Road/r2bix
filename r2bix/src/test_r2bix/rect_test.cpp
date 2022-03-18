@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "r2/r2_RectInt.h"
+#include "r2/r2_Rect_Int.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 #include "test_r2bix/Utility4Test.h"
 

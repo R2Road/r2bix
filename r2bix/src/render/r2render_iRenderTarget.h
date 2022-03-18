@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-#include "r2/r2_RectInt.h"
+#include "r2/r2_Rect_Int.h"
 
 namespace r2render
 {

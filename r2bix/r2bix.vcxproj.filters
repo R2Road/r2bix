@@ -50,9 +50,6 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\r2\r2_RectInt.cpp">
-      <Filter>r2</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2\r2_Timer_Float.cpp">
       <Filter>r2</Filter>
     </ClCompile>
@@ -245,6 +242,9 @@
     <ClCompile Include="src\action\r2action_MoveByAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_Rect_Int.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -252,9 +252,6 @@
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Rect.h">
-      <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_RectInt.h">
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_Size.h">
@@ -481,6 +478,9 @@
     </ClInclude>
     <ClInclude Include="src\action\r2action_MoveByAction.h">
       <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Rect_Int.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
