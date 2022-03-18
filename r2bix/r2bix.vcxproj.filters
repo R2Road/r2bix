@@ -254,6 +254,9 @@
     <ClCompile Include="src\action\r2action_RepeatAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="src\action\r2action_DelayAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -498,6 +501,9 @@
       <Filter>action</Filter>
     </ClInclude>
     <ClInclude Include="src\action\r2action_RepeatAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\action\r2action_DelayAction.h">
       <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>

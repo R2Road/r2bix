@@ -6,6 +6,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "action/r2action_DelayAction.h"
 #include "action/r2action_MoveByAction.h"
 #include "action/r2action_RepeatAction.h"
 #include "action/r2action_SequenceAction.h"
@@ -888,9 +889,19 @@ namespace component_test
 
 					std::cout << r2::linefeed;
 
+					DECLARATION_MAIN( auto delay_action_1 = sequence_action->AddAction<r2action::DelayAction>() );
+					PROCESS_MAIN( delay_action_1->SetTimeLimit( 1.5f ) );
+
+					std::cout << r2::linefeed;
+
 					DECLARATION_MAIN( auto move_by_action_2 = sequence_action->AddAction<r2action::MoveByAction>() );
 					PROCESS_MAIN( move_by_action_2->SetMoveAmount( { -5, -5 } ) );
 					PROCESS_MAIN( move_by_action_2->SetTimeLimit( 1.5f ) );
+
+					std::cout << r2::linefeed;
+
+					DECLARATION_MAIN( auto delay_action_2 = sequence_action->AddAction<r2action::DelayAction>() );
+					PROCESS_MAIN( delay_action_2->SetTimeLimit( 1.5f ) );
 				}
 
 				std::cout << r2::linefeed;
