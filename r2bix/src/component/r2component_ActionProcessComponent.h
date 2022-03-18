@@ -11,30 +11,20 @@ namespace r2component
 	class ActionProcessComponent : public r2base::Component
 	{
 	private:
-		using ActionContainerT = std::vector<r2base::ActionUp>;
-
 		ActionProcessComponent( r2base::Node& owner_node );
 
 	public:
 		int GetStaticID() const override { return r2base::ComponentStaticID<ActionProcessComponent>::Get(); }
 		static std::unique_ptr<ActionProcessComponent> Create( r2base::Node& owner_node );
 
-		template<typename ActionT>
-		ActionT* AddAction()
+		//
+		//
+		//
+		void SetAction( r2base::ActionUp action )
 		{
-			static_assert( std::is_base_of<r2base::Action, ActionT>() );
-
-			auto action = ActionT::Create();
-			auto ret = action.get();
-			mActionContainer.push_back( std::move( action ) );
-
-			return ret;
+			mAction = std::move( action );
 		}
-
-		//
-		//
-		//
-		bool HasAction() const { return !mActionContainer.empty(); }
+		bool HasAction() const { return ( nullptr != mAction ); }
 		void StartAction();
 		bool IsRunning() const { return mbStart; }
 
@@ -44,8 +34,7 @@ namespace r2component
 		void Update( const float delta_time ) override;
 
 	private:
-		ActionContainerT mActionContainer;
-		ActionContainerT::iterator mCurrentActionIndicator;
+		r2base::ActionUp mAction;
 		bool mbStart;
 	};
 }

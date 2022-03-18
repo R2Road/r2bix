@@ -4,8 +4,7 @@
 namespace r2component
 {
 	ActionProcessComponent::ActionProcessComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
-		, mActionContainer()
-		, mCurrentActionIndicator( mActionContainer.end() )
+		, mAction()
 		, mbStart( false )
 	{}
 
@@ -22,16 +21,12 @@ namespace r2component
 
 	void ActionProcessComponent::StartAction()
 	{
-		mbStart = !mActionContainer.empty();
-
-		if( !mbStart )
+		mbStart = ( nullptr != mAction );
+		if( mbStart )
 		{
-			return;
+			mAction->SetOwnerNode( &mOwnerNode );
+			mAction->Enter();
 		}
-
-		mCurrentActionIndicator = mActionContainer.begin();
-		( *mCurrentActionIndicator )->SetOwnerNode( &mOwnerNode );
-		( *mCurrentActionIndicator )->Enter();
 	}
 
 	void ActionProcessComponent::Update( const float delta_time )
@@ -41,18 +36,6 @@ namespace r2component
 			return;
 		}
 
-		if( !( *mCurrentActionIndicator )->Update( delta_time ) )
-		{
-			++mCurrentActionIndicator;
-			if( mActionContainer.end() != mCurrentActionIndicator )
-			{
-				( *mCurrentActionIndicator )->SetOwnerNode( &mOwnerNode );
-				( *mCurrentActionIndicator )->Enter();
-			}
-			else
-			{
-				mbStart = false;
-			}
-		}
+		mbStart = mAction->Update( delta_time );
 	}
 }

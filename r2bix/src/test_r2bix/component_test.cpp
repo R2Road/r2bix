@@ -7,6 +7,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "action/r2action_MoveByAction.h"
+#include "action/r2action_SequenceAction.h"
 #include "action/r2action_TickAction.h"
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
@@ -630,18 +631,31 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
+				EXPECT_FALSE( component->HasAction() );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
 				{
-					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::TickAction>() );
-					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
-					EXPECT_TRUE( component->HasAction() );
+					std::cout << r2::linefeed;
+
+					{
+						DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
+						PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
+					}
+
+					std::cout << r2::linefeed;
+
+					{
+						DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
+						PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
+					}
 				}
 
 				std::cout << r2::linefeed;
 
-				{
-					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::TickAction>() );
-					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
-				}
+				PROCESS_MAIN( component->SetAction( std::move( sequence_action ) ) );
+				EXPECT_TRUE( component->HasAction() );
 			}
 
 			std::cout << r2::split;
@@ -702,12 +716,18 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				{
-					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::MoveByAction>() );
-					PROCESS_MAIN( tick_action->SetMoveAmount( { 5, 5 } ) );
-					PROCESS_MAIN( tick_action->SetTimeLimit( 1.5f ) );
-					EXPECT_TRUE( component->HasAction() );
-				}
+				EXPECT_FALSE( component->HasAction() );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( auto move_by_action = r2action::MoveByAction::Create() );
+				PROCESS_MAIN( move_by_action->SetMoveAmount( { 5, 5 } ) );
+				PROCESS_MAIN( move_by_action->SetTimeLimit( 1.5f ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->SetAction( std::move( move_by_action ) ) );
+				EXPECT_TRUE( component->HasAction() );
 			}
 
 			std::cout << r2::split;
