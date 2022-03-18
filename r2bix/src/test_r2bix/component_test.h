@@ -83,4 +83,11 @@ namespace component_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class ActionProcessComponentTest_With_RepeatAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_RepeatAction>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

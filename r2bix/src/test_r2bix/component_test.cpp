@@ -7,6 +7,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "action/r2action_MoveByAction.h"
+#include "action/r2action_RepeatAction.h"
 #include "action/r2action_SequenceAction.h"
 #include "action/r2action_TickAction.h"
 #include "base/r2base_Director.h"
@@ -830,6 +831,97 @@ namespace component_test
 				std::cout << r2::linefeed;
 
 				EXPECT_EQ( r2::PointInt( 5, 5 ), node->mTransformComponent->GetPosition() );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_RepeatAction::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ActionProcess Component : With RepeatAction";
+		};
+	}
+	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_RepeatAction::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			TextureTable4Test::GetInstance().Load();
+			TextureFrameAnimationTable4Test::GetInstance().Load();
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			EXPECT_NE( nullptr, component );
+			EXPECT_FALSE( component->HasAction() );
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( auto repeat_action = r2action::RepeatAction::Create() );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
+				{
+					std::cout << r2::linefeed;
+
+					DECLARATION_MAIN( auto move_by_action_1 = sequence_action->AddAction<r2action::MoveByAction>() );
+					PROCESS_MAIN( move_by_action_1->SetMoveAmount( { 5, 5 } ) );
+					PROCESS_MAIN( move_by_action_1->SetTimeLimit( 1.5f ) );
+
+					std::cout << r2::linefeed;
+
+					DECLARATION_MAIN( auto move_by_action_2 = sequence_action->AddAction<r2action::MoveByAction>() );
+					PROCESS_MAIN( move_by_action_2->SetMoveAmount( { -5, -5 } ) );
+					PROCESS_MAIN( move_by_action_2->SetTimeLimit( 1.5f ) );
+				}
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( repeat_action->SetAction( std::move( sequence_action ) ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->SetAction( std::move( repeat_action ) ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( component->StartAction() );
+
+				std::cout << r2::linefeed;
+
+				const auto cursor_point = r2utility::GetCursorPoint();
+				while( true )
+				{
+					r2utility::SetCursorPoint( cursor_point );
+
+					PROCESS_MAIN( component->Update( 0.0005f ) );
+					std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+
+					if( _kbhit() )
+					{
+						break;
+					}
+				}
 			}
 
 			std::cout << r2::split;
