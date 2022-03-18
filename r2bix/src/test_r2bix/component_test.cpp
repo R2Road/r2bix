@@ -2,7 +2,6 @@
 #include "component_test.h"
 
 #include <conio.h>
-#include <Windows.h>
 
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
@@ -24,6 +23,8 @@
 #include "test_r2bix/TextureFrameAnimationTable4Test.h"
 #include "test_r2bix/TextureTable4Test.h"
 #include "test_r2bix/Utility4Test.h"
+
+#include "utility/r2utility_WindowUtil.h"
 
 namespace component_test
 {
@@ -564,11 +565,10 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
-				CONSOLE_SCREEN_BUFFER_INFO csbi{};
-				GetConsoleScreenBufferInfo( GetStdHandle( STD_OUTPUT_HANDLE ), &csbi );
+				const auto current_cursor_point = r2utility::GetCursorPoint();
 				while( true )
 				{
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), csbi.dwCursorPosition );
+					r2utility::SetCursorPoint( current_cursor_point );
 
 					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );

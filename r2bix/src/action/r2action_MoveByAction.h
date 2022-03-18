@@ -25,6 +25,10 @@ namespace r2action
 		{
 			mMoveAmount = move_amount;
 		}
+		void SetTimeLimit( const float time_limit )
+		{
+			mTimer.reset( time_limit );
+		}
 
 	private:
 		r2::PointInt mMoveAmount;
