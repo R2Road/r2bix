@@ -535,7 +535,7 @@ namespace component_test
 			std::cout << r2::linefeed;
 
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 17, 22 ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
 			std::cout << r2::split;
 
