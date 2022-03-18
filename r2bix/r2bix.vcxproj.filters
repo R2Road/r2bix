@@ -260,6 +260,9 @@
     <ClCompile Include="src\p2048\p2048_GameScene.cpp">
       <Filter>project_2048</Filter>
     </ClCompile>
+    <ClCompile Include="src\action\r2action_BlinkAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -511,6 +514,9 @@
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_GameScene.h">
       <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\action\r2action_BlinkAction.h">
+      <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "action/r2action_BlinkAction.h"
 #include "action/r2action_DelayAction.h"
 #include "action/r2action_MoveByAction.h"
 #include "action/r2action_RepeatAction.h"
@@ -1003,6 +1004,87 @@ namespace component_test
 
 					PROCESS_MAIN( component->Update( 0.0005f ) );
 					std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+
+					if( _kbhit() )
+					{
+						break;
+					}
+				}
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_BlinkAction::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ActionProcess Component : With BlinkAction";
+		};
+	}
+	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_BlinkAction::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			TextureTable4Test::GetInstance().Load();
+			TextureFrameAnimationTable4Test::GetInstance().Load();
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			EXPECT_NE( nullptr, component );
+			EXPECT_FALSE( component->HasAction() );
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( auto repeat_action = r2action::RepeatAction::Create() );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( auto blink_action = r2action::BlinkAction::Create() );
+				PROCESS_MAIN( blink_action->SetStartStep( r2action::BlinkAction::eStep::Show ) );
+				PROCESS_MAIN( blink_action->SetTimeLimit4Show( 1.5f ) );
+				PROCESS_MAIN( blink_action->SetTimeLimit4Hide( 0.5f ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( repeat_action->SetAction( std::move( blink_action ) ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->SetAction( std::move( repeat_action ) ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( component->StartAction() );
+
+				std::cout << r2::linefeed;
+
+				const auto cursor_point = r2utility::GetCursorPoint();
+				while( true )
+				{
+					r2utility::SetCursorPoint( cursor_point );
+
+					PROCESS_MAIN( component->Update( 0.0005f ) );
+					std::cout << "Visible : " << node->IsVisible() << r2::linefeed;
 
 					if( _kbhit() )
 					{

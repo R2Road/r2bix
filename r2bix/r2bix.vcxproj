@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\action\r2action_BlinkAction.cpp" />
     <ClCompile Include="src\action\r2action_DelayAction.cpp" />
     <ClCompile Include="src\action\r2action_MoveByAction.cpp" />
     <ClCompile Include="src\action\r2action_RepeatAction.cpp" />
@@ -98,6 +99,7 @@
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\action\r2action_BlinkAction.h" />
     <ClInclude Include="src\action\r2action_DelayAction.h" />
     <ClInclude Include="src\action\r2action_MoveByAction.h" />
     <ClInclude Include="src\action\r2action_RepeatAction.h" />
