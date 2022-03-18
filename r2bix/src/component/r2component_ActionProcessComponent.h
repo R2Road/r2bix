@@ -34,6 +34,7 @@ namespace r2component
 		//
 		//
 		//
+		bool HasAction() const { return !mActionContainer.empty(); }
 		void StartAction();
 		bool IsRunning() const { return mbStart; }
 

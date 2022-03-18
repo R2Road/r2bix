@@ -624,6 +624,7 @@ namespace component_test
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
+			EXPECT_FALSE( component->HasAction() );
 
 			std::cout << r2::split;
 
@@ -631,6 +632,7 @@ namespace component_test
 				{
 					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::TickAction>() );
 					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
+					EXPECT_TRUE( component->HasAction() );
 				}
 
 				std::cout << r2::linefeed;
