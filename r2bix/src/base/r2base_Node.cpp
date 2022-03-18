@@ -5,6 +5,7 @@ namespace r2base
 {
 	Node::Node( Director& director ) :
 		mDirector( director )
+		, mbVisible( true )
 		, mComponentContainer()
 		, mChildContainer()
 
@@ -47,6 +48,11 @@ namespace r2base
 
 	void Node::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
+		if( mbVisible )
+		{
+			return;
+		}
+
 		for( auto& c : mComponentContainer )
 		{
 			c->Render( camera, render_target, offset );

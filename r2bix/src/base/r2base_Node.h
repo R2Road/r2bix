@@ -53,6 +53,15 @@ namespace r2base
 		//
 		//
 		//
+		bool IsVisible() const { return mbVisible; }
+		void SetVisible( const bool visible )
+		{
+			mbVisible = visible;
+		}
+
+		//
+		//
+		//
 		template<typename ComponentT>
 		ComponentT* const GetComponent() const
 		{
@@ -130,6 +139,7 @@ namespace r2base
 
 	protected:
 		Director& mDirector;
+		bool mbVisible;
 		ComponentContainerT mComponentContainer;
 		ChildContainerT mChildContainer;
 	public:
