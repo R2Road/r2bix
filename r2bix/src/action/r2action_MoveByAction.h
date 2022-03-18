@@ -30,8 +30,6 @@ namespace r2action
 		r2::PointInt mMoveAmount;
 
 		r2::PointInt mStartPoint;
-		r2::PointInt mEndPoint;
-
 		r2::Timer_Float mTimer;
 	};
 }

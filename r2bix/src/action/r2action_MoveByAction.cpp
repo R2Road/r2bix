@@ -8,15 +8,12 @@ namespace r2action
 	MoveByAction::MoveByAction() :
 		mMoveAmount()
 		, mStartPoint()
-		, mEndPoint()
 		, mTimer( 1.f )
 	{}
 
 	void MoveByAction::Enter()
 	{
 		mStartPoint = mOwnerNode->mTransformComponent->GetPosition();
-		mEndPoint = mStartPoint + mMoveAmount;
-
 		mTimer.reset();
 	}
 	bool MoveByAction::Update( const float delta_time )
