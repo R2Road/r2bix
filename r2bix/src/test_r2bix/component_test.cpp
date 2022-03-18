@@ -704,25 +704,27 @@ namespace component_test
 				std::cout << r2::linefeed;
 
 				DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
+
+				std::cout << r2::linefeed;
+
 				{
-					std::cout << r2::linefeed;
+					DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
+					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
+				}
 
-					{
-						DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
-						PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
-					}
+				std::cout << r2::linefeed;
 
-					std::cout << r2::linefeed;
-
-					{
-						DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
-						PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
-					}
+				{
+					DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
+					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 				}
 
 				std::cout << r2::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( sequence_action ) ) );
+
+				std::cout << r2::linefeed;
+
 				EXPECT_TRUE( component->HasAction() );
 			}
 
