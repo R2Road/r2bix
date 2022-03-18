@@ -48,7 +48,7 @@ namespace r2base
 
 	void Node::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
-		if( mbVisible )
+		if( !mbVisible )
 		{
 			return;
 		}
