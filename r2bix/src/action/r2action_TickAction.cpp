@@ -12,7 +12,7 @@ namespace r2action
 	{
 		mCurrentTick = 0u;
 	}
-	bool TickAction::Update()
+	bool TickAction::Update( const float /*delta_time*/ )
 	{
 		++mCurrentTick;
 		return mCurrentTick > mCurrentTick;

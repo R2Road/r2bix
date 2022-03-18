@@ -2,6 +2,8 @@
 
 #include "base/r2base_Action.h"
 #include "r2/r2_Point_Int.h"
+#include "r2/r2_Point_Float.h"
+#include "r2/r2_Timer_Float.h"
 
 namespace r2action
 {
@@ -14,7 +16,7 @@ namespace r2action
 		//
 		//
 		void Enter() override;
-		bool Update() override;
+		bool Update( const float delta_time ) override;
 
 		//
 		//
@@ -28,5 +30,8 @@ namespace r2action
 		r2::PointInt mTargetPoint;
 
 		r2::PointInt mStartPoint;
+		r2::PointInt mEndPoint;
+
+		r2::Timer_Float mTimer;
 	};
 }

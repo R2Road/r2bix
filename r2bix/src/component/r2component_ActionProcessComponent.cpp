@@ -34,14 +34,14 @@ namespace r2component
 		( *mCurrentActionIndicator )->Enter();
 	}
 
-	void ActionProcessComponent::Update( const float /*delta_time*/ )
+	void ActionProcessComponent::Update( const float delta_time )
 	{
 		if( !mbStart )
 		{
 			return;
 		}
 
-		if( !( *mCurrentActionIndicator )->Update() )
+		if( !( *mCurrentActionIndicator )->Update( delta_time ) )
 		{
 			++mCurrentActionIndicator;
 			if( mActionContainer.end() != mCurrentActionIndicator )

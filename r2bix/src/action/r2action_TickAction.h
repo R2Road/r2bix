@@ -13,7 +13,7 @@ namespace r2action
 		// override
 		//
 		void Enter() override;
-		bool Update() override;
+		bool Update( const float delta_time ) override;
 
 		//
 		//

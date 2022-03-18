@@ -707,30 +707,38 @@ namespace component_test
 					PROCESS_MAIN( tick_action->SetTargetPoint( { 5, 5 } ) );
 					EXPECT_TRUE( component->HasAction() );
 				}
-
-				std::cout << r2::linefeed;
-
-				{
-					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::MoveByAction>() );
-					PROCESS_MAIN( tick_action->SetTargetPoint( { -5, -5 } ) );
-				}
 			}
 
 			std::cout << r2::split;
 
 			{
+				EXPECT_EQ( r2::PointInt( 0, 0 ), node->mTransformComponent->GetPosition() );
+
+				std::cout << r2::linefeed;
+
 				PROCESS_MAIN( component->StartAction() );
 				EXPECT_TRUE( component->IsRunning() );
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( component->Update( 0.f ) );
+				PROCESS_MAIN( component->Update( 0.4f ) );
 				EXPECT_TRUE( component->IsRunning() );
+				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( component->Update( 0.f ) );
+				PROCESS_MAIN( component->Update( 0.4f ) );
+				EXPECT_TRUE( component->IsRunning() );
+				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->Update( 0.4f ) );
 				EXPECT_FALSE( component->IsRunning() );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( r2::PointInt( 5, 5 ), node->mTransformComponent->GetPosition() );
 			}
 
 			std::cout << r2::split;

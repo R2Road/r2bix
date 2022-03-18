@@ -22,7 +22,7 @@ namespace r2base
 		// Interface
 		//
 		virtual void Enter() = 0;
-		virtual bool Update() = 0;
+		virtual bool Update( const float delta_time ) = 0;
 
 	protected:
 		r2base::Node* mOwnerNode;

@@ -5,15 +5,34 @@
 
 namespace r2action
 {
-	MoveByAction::MoveByAction() : mTargetPoint(), mStartPoint()
+	MoveByAction::MoveByAction() :
+		mTargetPoint()
+		, mStartPoint()
+		, mEndPoint()
+		, mTimer( 1.f )
 	{}
 
 	void MoveByAction::Enter()
 	{
 		mStartPoint = mOwnerNode->mTransformComponent->GetPosition();
+		mEndPoint = mStartPoint + mTargetPoint;
+
+		mTimer.reset();
 	}
-	bool MoveByAction::Update()
+	bool MoveByAction::Update( const float delta_time )
 	{
-		return false;
+		if( mTimer.update( delta_time ) )
+		{
+			mOwnerNode->mTransformComponent->SetPosition(
+				mStartPoint.GetX() + ( mTargetPoint.GetX() * mTimer.getElapsedTimeRate() )
+				, mStartPoint.GetY() + ( mTargetPoint.GetY() * mTimer.getElapsedTimeRate() )
+			);
+		}
+		else
+		{
+			mOwnerNode->mTransformComponent->SetPosition( mStartPoint + mTargetPoint );
+		}
+
+		return mTimer.isAlive();
 	}
 }
