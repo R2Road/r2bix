@@ -22,10 +22,8 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle(),
-				"> Inprogress : Add Test - Texture Render Component"
-		"\n"	"> To do : Add Test - Texture Frame Render Component"
-		"\n"	"> To do : Add Test - Label Component"
-		"\n"	"> To do : Add Component - Sprite Animation"
+				"> Inprogress : Action"
+		"\n"	"> ..."
 	) );
 
 	{
