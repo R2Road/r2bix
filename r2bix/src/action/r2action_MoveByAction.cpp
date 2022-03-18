@@ -11,6 +11,12 @@ namespace r2action
 		, mTimer( 1.f )
 	{}
 
+	std::unique_ptr<MoveByAction> MoveByAction::Create()
+	{
+		std::unique_ptr<MoveByAction> ret( new ( std::nothrow ) MoveByAction() );
+		return ret;
+	}
+
 	void MoveByAction::Enter()
 	{
 		mStartPoint = mOwnerNode->mTransformComponent->GetPosition();

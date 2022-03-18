@@ -9,8 +9,11 @@ namespace r2action
 {
 	class MoveByAction : public r2base::Action
 	{
-	public:
+	private:
 		MoveByAction();
+
+	public:
+		static std::unique_ptr<MoveByAction> Create();
 
 		//
 		//

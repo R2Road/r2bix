@@ -24,7 +24,7 @@ namespace r2component
 		{
 			static_assert( std::is_base_of<r2base::Action, ActionT>() );
 
-			std::unique_ptr<ActionT> action( new ( std::nothrow ) ActionT() );
+			auto action = ActionT::Create();
 			auto ret = action.get();
 			mActionContainer.push_back( std::move( action ) );
 

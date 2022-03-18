@@ -6,8 +6,11 @@ namespace r2action
 {
 	class TickAction : public r2base::Action
 	{
-	public:
+	private:
 		TickAction();
+
+	public:
+		static std::unique_ptr<TickAction> Create();
 
 		//
 		// override
