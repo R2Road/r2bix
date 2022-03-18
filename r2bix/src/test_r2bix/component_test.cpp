@@ -7,7 +7,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "action/r2action_MoveByAction.h"
+#include "action/r2action_TickAction.h"
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
 #include "component/r2component_LabelComponent.h"
@@ -629,15 +629,15 @@ namespace component_test
 
 			{
 				{
-					DECLARATION_MAIN( auto move_by_action = component->AddAction<r2action::MoveByAction>() );
-					PROCESS_MAIN( move_by_action->SetTargetPoint( { 5, 5 } ) );
+					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::TickAction>() );
+					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 				}
 
 				std::cout << r2::linefeed;
 
 				{
-					DECLARATION_MAIN( auto move_by_action = component->AddAction<r2action::MoveByAction>() );
-					PROCESS_MAIN( move_by_action->SetTargetPoint( { -5, -5 } ) );
+					DECLARATION_MAIN( auto tick_action = component->AddAction<r2action::TickAction>() );
+					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 				}
 			}
 

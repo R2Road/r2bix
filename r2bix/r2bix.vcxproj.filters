@@ -245,6 +245,9 @@
     <ClCompile Include="src\r2\r2_Rect_Int.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\action\r2action_TickAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -481,6 +484,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Rect_Int.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\action\r2action_TickAction.h">
+      <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
