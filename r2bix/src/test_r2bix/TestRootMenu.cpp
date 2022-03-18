@@ -30,8 +30,9 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', console_screen_buffer_test::Basic::GetInstance() );
+		ret->AddItem( '2', console_screen_buffer_manager_test::Basic::GetInstance() );
 		ret->AddItem(
-			'2'
+			'3'
 			, []()->const char* { return InputMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
@@ -39,7 +40,7 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-		ret->AddItem( '3', rect_test::Basic::GetInstance() );
+		ret->AddItem( '4', rect_test::Basic::GetInstance() );
 
 
 
@@ -85,15 +86,6 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
-
-
-
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-
-
-
-		ret->AddItem( 'a', console_screen_buffer_manager_test::Basic::GetInstance() );
 
 
 		ret->AddSplit();
