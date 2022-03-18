@@ -598,6 +598,74 @@ namespace component_test
 
 
 
+	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_TickAction::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ActionProcess Component : With TickAction";
+		};
+	}
+	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_TickAction::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			TextureTable4Test::GetInstance().Load();
+			TextureFrameAnimationTable4Test::GetInstance().Load();
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			EXPECT_NE( nullptr, component );
+			EXPECT_FALSE( component->HasAction() );
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_FALSE( component->HasAction() );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( auto tick_action = r2action::TickAction::Create() );
+				PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->SetAction( std::move( tick_action ) ) );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_TRUE( component->HasAction() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( component->StartAction() );
+				EXPECT_TRUE( component->IsRunning() );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->Update( 0.f ) );
+				EXPECT_FALSE( component->IsRunning() );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
 	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_SequenceAction::GetTitleFunction() const
 	{
 		return []()->const char*
