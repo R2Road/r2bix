@@ -5,7 +5,10 @@
 #include <conio.h>
 #include <utility> // std::move
 
+#include "action/r2action_BlinkAction.h"
+#include "action/r2action_RepeatAction.h"
 #include "base/r2base_Director.h"
+#include "component/r2component_ActionProcessComponent.h"
 #include "component/r2component_LabelComponent.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
@@ -70,6 +73,19 @@ namespace p2048
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.65f
 			);
+
+			auto action_process_component = mLabelNode->AddComponent<r2component::ActionProcessComponent>();
+
+			auto repeat_action = r2action::RepeatAction::Create();
+
+			auto blink_action = r2action::BlinkAction::Create();
+			blink_action->SetTimeLimit4Show( 1.1f );
+			blink_action->SetTimeLimit4Hide( 0.5f );
+
+			repeat_action->SetAction( std::move( blink_action ) );
+
+			action_process_component->SetAction( std::move( repeat_action ) );
+			action_process_component->StartAction();
 		}
 
 		return true;
