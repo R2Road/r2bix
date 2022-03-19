@@ -65,7 +65,7 @@ namespace p2048
 			sprite_animation_node->GetComponent<r2component::TextureFrameAnimationComponent>()->LoadAnimation(
 				p2048table::TextureFrameAnimationTable::GetInstance().Get( 1 )
 			);
-			sprite_animation_node->GetComponent<r2component::TextureFrameAnimationComponent>()->RunAnimation( r2animation::eIndex::Run_1 );
+			sprite_animation_node->GetComponent<r2component::TextureFrameAnimationComponent>()->RunAnimation_Repeat( r2animation::eIndex::Run_1 );
 
 			sprite_animation_node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f

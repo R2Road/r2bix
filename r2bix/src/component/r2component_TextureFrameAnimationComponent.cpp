@@ -85,7 +85,7 @@ namespace r2component
 
 		return false;
 	}
-	void TextureFrameAnimationComponent::RunAnimation( const r2animation::eIndex animation_index )
+	void TextureFrameAnimationComponent::RunAnimation_Repeat( const r2animation::eIndex animation_index )
 	{
 		StopAnimation();
 

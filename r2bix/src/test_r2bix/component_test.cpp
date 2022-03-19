@@ -561,7 +561,7 @@ namespace component_test
 
 				std::cout << r2::linefeed;
 
-				PROCESS_MAIN( tfac->RunAnimation( r2animation::eIndex::Run_1 ) );
+				PROCESS_MAIN( tfac->RunAnimation_Repeat( r2animation::eIndex::Run_1 ) );
 				EXPECT_FALSE( r2animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
 				EXPECT_TRUE( r2animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
 			}
