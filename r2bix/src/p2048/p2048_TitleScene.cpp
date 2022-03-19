@@ -82,6 +82,56 @@ namespace p2048
 				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
 				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_4" ) );
 				number_node->mTransformComponent->SetPosition( 9, 0 );
+
+				{
+					auto component = number_node->AddComponent<r2component::ActionProcessComponent>();
+
+					auto repeat_action = r2action::RepeatAction::Create();
+					{
+						auto sequence_action = r2action::SequenceAction::Create();
+						{
+							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							action->SetTimeLimit( 0.2f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							action->SetTimeLimit( 0.4f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							action->SetTimeLimit( 0.8f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							action->SetTimeLimit( 0.2f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							action->SetTimeLimit( 0.2f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							action->SetTimeLimit( 0.2f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							action->SetTimeLimit( 0.2f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							action->SetTimeLimit( 0.4f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							action->SetTimeLimit( 0.4f );
+						}
+
+						repeat_action->SetAction( std::move( sequence_action ) );
+					}
+
+					component->SetAction( std::move( repeat_action ) );
+					component->StartAction();
+				}
 			}
 			// Number 8
 			{
