@@ -6,7 +6,9 @@
 #include <utility> // std::move
 
 #include "action/r2action_BlinkAction.h"
+#include "action/r2action_DelayAction.h"
 #include "action/r2action_RepeatAction.h"
+#include "action/r2action_SequenceAction.h"
 #include "base/r2base_Director.h"
 #include "component/r2component_ActionProcessComponent.h"
 #include "component/r2component_LabelComponent.h"
@@ -106,11 +108,17 @@ namespace p2048
 
 			auto repeat_action = r2action::RepeatAction::Create();
 			{
-				auto blink_action = r2action::BlinkAction::Create();
-				blink_action->SetTimeLimit4Hide( 0.5f );
-				blink_action->SetTimeLimit4Show( 1.1f );
+				auto sequence_action = r2action::SequenceAction::Create();
+				{
+					auto action = sequence_action->AddAction<r2action::BlinkAction>();
+					action->SetTimeLimit( 0.5f );
+				}
+				{
+					auto action = sequence_action->AddAction<r2action::DelayAction>();
+					action->SetTimeLimit( 1.1f );
+				}
 
-				repeat_action->SetAction( std::move( blink_action ) );
+				repeat_action->SetAction( std::move( sequence_action ) );
 			}
 
 			action_process_component->SetAction( std::move( repeat_action ) );

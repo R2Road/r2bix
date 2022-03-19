@@ -1056,15 +1056,27 @@ namespace component_test
 				DECLARATION_MAIN( auto repeat_action = r2action::RepeatAction::Create() );
 
 				std::cout << r2::linefeed;
+				{
+					DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
 
-				DECLARATION_MAIN( auto blink_action = r2action::BlinkAction::Create() );
-				PROCESS_MAIN( blink_action->SetStartStep( r2action::BlinkAction::eStep::Show ) );
-				PROCESS_MAIN( blink_action->SetTimeLimit4Show( 1.5f ) );
-				PROCESS_MAIN( blink_action->SetTimeLimit4Hide( 0.5f ) );
+					std::cout << r2::linefeed;
 
-				std::cout << r2::linefeed;
+					{
+						DECLARATION_MAIN( auto action = sequence_action->AddAction<r2action::BlinkAction>() );
+						PROCESS_MAIN( action->SetTimeLimit( 0.5f ) );
+					}
 
-				PROCESS_MAIN( repeat_action->SetAction( std::move( blink_action ) ) );
+					std::cout << r2::linefeed;
+
+					{
+						DECLARATION_MAIN( auto action = sequence_action->AddAction<r2action::DelayAction>() );
+						PROCESS_MAIN( action->SetTimeLimit( 0.5f ) );
+					}
+
+					std::cout << r2::linefeed;
+
+					PROCESS_MAIN( repeat_action->SetAction( std::move( sequence_action ) ) );
+				}
 
 				std::cout << r2::linefeed;
 
@@ -1083,7 +1095,7 @@ namespace component_test
 				{
 					r2utility::SetCursorPoint( cursor_point );
 
-					PROCESS_MAIN( component->Update( 0.0005f ) );
+					PROCESS_MAIN( component->Update( 0.0001f ) );
 					std::cout << "Visible : " << node->IsVisible() << r2::linefeed;
 
 					if( _kbhit() )

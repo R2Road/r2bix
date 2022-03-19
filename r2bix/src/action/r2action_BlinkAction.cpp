@@ -6,10 +6,8 @@
 namespace r2action
 {
 	BlinkAction::BlinkAction() :
-		mStartStep( eStep::Hide )
-		, mCurrentStep( eStep::Sleep )
-		, mTimer4Show( 1.f )
-		, mTimer4Hide( 1.f )
+		mbLastVisible( false )
+		, mTimer( 1.f )
 	{}
 
 	std::unique_ptr<BlinkAction> BlinkAction::Create()
@@ -20,33 +18,18 @@ namespace r2action
 
 	void BlinkAction::Enter()
 	{
-		mCurrentStep = mStartStep;
+		mbLastVisible = mOwnerNode->IsVisible();
+		mOwnerNode->SetVisible( !mbLastVisible );
 
-		mOwnerNode->SetVisible( eStep::Show == mCurrentStep );
-
-		mTimer4Show.reset();
-		mTimer4Hide.reset();
+		mTimer.reset();
 	}
 	bool BlinkAction::Update( const float delta_time )
 	{
-		switch( mCurrentStep )
+		if( !mTimer.update( delta_time ) )
 		{
-		case eStep::Hide:
-			if( !mTimer4Hide.update( delta_time ) )
-			{
-				mCurrentStep = eStep::Show;
-				mOwnerNode->SetVisible( true );
-			}
-			break;
-		case eStep::Show:
-			if( !mTimer4Show.update( delta_time ) )
-			{
-				mCurrentStep = eStep::Sleep;
-				mOwnerNode->SetVisible( false );
-			}
-			break;
+			mOwnerNode->SetVisible( mbLastVisible );
 		}
 
-		return eStep::Sleep != mCurrentStep;
+		return mTimer.isAlive();
 	}
 }
