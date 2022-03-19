@@ -596,14 +596,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureFrameAnimationComponentTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TextureFrameAnimationComponentTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "TextureFrameAnimation Component";
+			return "TextureFrameAnimation Component 2";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureFrameAnimationComponentTest::GetDoFunction()
+	r2cm::iItem::DoFuncT TextureFrameAnimationComponentTest_2::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{

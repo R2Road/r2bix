@@ -64,7 +64,7 @@ namespace component_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class TextureFrameAnimationComponentTest : public r2cm::iItem, public r2::SingleTon<TextureFrameAnimationComponentTest>
+	class TextureFrameAnimationComponentTest_2 : public r2cm::iItem, public r2::SingleTon<TextureFrameAnimationComponentTest_2>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
