@@ -2,6 +2,7 @@
 
 ## 개괄 | Overview
 - 콘솔 환경에서 작동하는 게임을 만들기 위한 도구 | Framework for Terminal Base Game
+- 2021년 6월 2일 시작 | Sinse 20210602
 
 
 ## 작업환경 | Environment
