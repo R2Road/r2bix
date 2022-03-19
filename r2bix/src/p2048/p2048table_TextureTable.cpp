@@ -84,6 +84,30 @@ namespace p2048table
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 70, 8 ) );
+
+				frame_result = mTextureFrameContainer.emplace(
+					"title_2"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 10, 6, 4 ) );
+
+				frame_result = mTextureFrameContainer.emplace(
+					"title_0"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 9, 10, 6, 4 ) );
+
+				frame_result = mTextureFrameContainer.emplace(
+					"title_4"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 17, 10, 6, 4 ) );
+
+				frame_result = mTextureFrameContainer.emplace(
+					"title_8"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 25, 10, 6, 4 ) );
 			}
 		}
 	}

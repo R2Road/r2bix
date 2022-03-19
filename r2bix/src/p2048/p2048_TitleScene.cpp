@@ -49,16 +49,44 @@ namespace p2048
 		// Logo
 		//
 		{
-			mSpriteNode = AddChild<r2node::SpriteNode>();
+			// Frame
+			{
+				mSpriteNode = AddChild<r2node::SpriteNode>();
 
-			auto frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "title_frame" );
+				auto frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "title_frame" );
 
-			mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( frame );
+				mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( frame );
 
-			mSpriteNode->mTransformComponent->SetPosition(
-				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
-			);
+				mSpriteNode->mTransformComponent->SetPosition(
+					mDirector.GetScreenBufferSize().GetWidth() * 0.5f
+					, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
+				);
+			}
+
+			// Number 2
+			{
+				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
+				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_2" ) );
+				number_node->mTransformComponent->SetPosition( -26, 0 );
+			}
+			// Number 0
+			{
+				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
+				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
+				number_node->mTransformComponent->SetPosition( -9, 0 );
+			}
+			// Number 4
+			{
+				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
+				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_4" ) );
+				number_node->mTransformComponent->SetPosition( 9, 0 );
+			}
+			// Number 8
+			{
+				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
+				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_8" ) );
+				number_node->mTransformComponent->SetPosition( 26, 0 );
+			}
 		}
 
 		//
