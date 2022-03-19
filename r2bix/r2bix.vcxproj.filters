@@ -266,6 +266,9 @@
     <ClCompile Include="src\action\r2action_CallbackAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_Random.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -523,6 +526,9 @@
     </ClInclude>
     <ClInclude Include="src\action\r2action_CallbackAction.h">
       <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Random.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

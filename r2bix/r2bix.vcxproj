@@ -67,6 +67,7 @@
     <ClCompile Include="src\r2\r2_FPSTimer.cpp" />
     <ClCompile Include="src\r2\r2_Point_Float.cpp" />
     <ClCompile Include="src\r2\r2_Point_Int.cpp" />
+    <ClCompile Include="src\r2\r2_Random.cpp" />
     <ClCompile Include="src\r2\r2_Rect_Int.cpp" />
     <ClCompile Include="src\r2\r2_Size_Int.cpp" />
     <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="src\r2\r2_Point.h" />
     <ClInclude Include="src\r2\r2_Point_Float.h" />
     <ClInclude Include="src\r2\r2_Point_Int.h" />
+    <ClInclude Include="src\r2\r2_Random.h" />
     <ClInclude Include="src\r2\r2_Rect.h" />
     <ClInclude Include="src\r2\r2_Rect_Int.h" />
     <ClInclude Include="src\r2\r2_Singleton.h" />

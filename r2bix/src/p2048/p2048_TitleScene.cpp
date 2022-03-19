@@ -6,6 +6,7 @@
 #include <utility> // std::move
 
 #include "action/r2action_BlinkAction.h"
+#include "action/r2action_CallbackAction.h"
 #include "action/r2action_DelayAction.h"
 #include "action/r2action_RepeatAction.h"
 #include "action/r2action_SequenceAction.h"
@@ -21,6 +22,8 @@
 #include "p2048_GameScene.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
+
+#include "r2/r2_Random.h"
 
 namespace p2048
 {
@@ -181,6 +184,34 @@ namespace p2048
 				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
 				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_8" ) );
 				number_node->mTransformComponent->SetPosition( 26, 0 );
+
+				{
+					auto component = number_node->AddComponent<r2component::ActionProcessComponent>();
+
+					auto repeat_action = r2action::RepeatAction::Create();
+					{
+						auto sequence_action = r2action::SequenceAction::Create();
+						{
+							auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
+							delay_action->SetTimeLimit( 3.f );
+
+							auto blink_action = sequence_action->AddAction<r2action::BlinkAction>();
+							blink_action->SetTimeLimit( 0.1f );
+
+							auto callback_action = sequence_action->AddAction<r2action::CallbackAction>();
+							callback_action->SetCallback( [delay_action, blink_action]()
+							{
+								delay_action->SetTimeLimit( r2::Random::GetFloat( 1.f, 3.f ) );
+								blink_action->SetTimeLimit( r2::Random::GetFloat( 0.1f, 0.5f ) );
+							} );
+						}
+
+						repeat_action->SetAction( std::move( sequence_action ) );
+					}
+
+					component->SetAction( std::move( repeat_action ) );
+					component->StartAction();
+				}
 			}
 		}
 
