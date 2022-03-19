@@ -51,7 +51,7 @@ namespace p2048
 		{
 			mSpriteNode = AddChild<r2node::SpriteNode>();
 
-			auto frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "title_image" );
+			auto frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "title_frame" );
 
 			mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( frame );
 

@@ -16,7 +16,7 @@ namespace p2048table
 		{
 			auto result = mTextureContainer.emplace( "companyscene_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
 				50, 10,
-				//		"1         2         3         4         5"
+				//		"          1         2         3         4         "
 				//		"01234567890123456789012345678901234567890123456789"
 				/* 0 */	"ttttttttttttttttttttttttttt                      |"
 				/* 1 */	"t   d   tt   d   tt   d   t                      |"
@@ -57,23 +57,34 @@ namespace p2048table
 
 		{
 			auto result = mTextureContainer.emplace( "title_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
-				71, 9,
-				//		"1         2         3         4         5         6         7         "
-				//		"0123456789012345678901234567890123456789012345678901234567890123456789"
+				71, 16,
+				//		"          1         2         3         4         5         6         7"
+				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
 				/* 0 */ "#######################################################################"
 				/* 1 */ "#                                                                     #"
-				/* 2 */ "#      22222            00000            4  4             88888       #"
-				/* 3 */ "#     2     2          0     0          4   4            8     8      #"
-				/* 4 */ "#       2222           0     0          4   4             88888       #"
-				/* 5 */ "#     22               0     0          4444444          8     8      #"
-				/* 6 */ "#     2222222           00000               4             88888       #"
+				/* 2 */ "#                                                                     #"
+				/* 3 */ "#                                                                     #"
+				/* 4 */ "#                                                                     #"
+				/* 5 */ "#                                                                     #"
+				/* 6 */ "#                                                                     #"
 				/* 7 */ "#                                                                     #"
 				/* 8 */ "#######################################################################"
+				/* 9 */ "                                                                       "
+				/* 0 */ "  22222   00000   4  4    88888                                        "
+				/* 1 */ " 2     2 0     0 4   4   8     8                                       "
+				/* 2 */ "   2222  0     0 4   4    88888                                        "
+				/* 3 */ " 22      0     0 4444444 8     8                                       "
+				/* 4 */ " 2222222  00000      4    88888                                        "
+				/* 5 */ "                                                                       "
 			) ) );
-			mTextureFrameContainer.emplace(
-				"title_image"
-				, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
-			);
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"title_frame"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 70, 8 ) );
+			}
 		}
 	}
 }
