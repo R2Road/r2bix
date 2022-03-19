@@ -7,6 +7,8 @@ namespace r2component
 {
 	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mTextureFrameRenderComponent( nullptr )
+
+		, mbRepeat( false )
 		, mAnimationPackage()
 		, mCurrentAnimation( mAnimationPackage.end() )
 		, mCurrentAnimationFrameIndex( 0u )
@@ -30,9 +32,24 @@ namespace r2component
 			if( !mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.update( delta_time ) )
 			{
 				mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.reset();
-				mCurrentAnimationFrameIndex = ( mCurrentAnimation->Container.size() > mCurrentAnimationFrameIndex + 1u ? mCurrentAnimationFrameIndex + 1u : 0u );
 
-				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
+				if( mCurrentAnimation->Container.size() > mCurrentAnimationFrameIndex + 1u )
+				{
+					mCurrentAnimationFrameIndex = mCurrentAnimationFrameIndex + 1u;
+					mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
+				}
+				else
+				{
+					if( mbRepeat )
+					{
+						mCurrentAnimationFrameIndex = 0u;
+						mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
+					}
+					else
+					{
+						mCurrentAnimation = mAnimationPackage.end();
+					}
+				}
 			}
 		}
 	}
@@ -76,6 +93,7 @@ namespace r2component
 		{
 			if( animation_index == cur->Index )
 			{
+				mbRepeat = true;
 				mCurrentAnimation = cur;
 				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
 				break;
@@ -84,6 +102,7 @@ namespace r2component
 	}
 	void TextureFrameAnimationComponent::StopAnimation()
 	{
+		mbRepeat = false;
 		mCurrentAnimation = mAnimationPackage.end();
 		mCurrentAnimationFrameIndex = 0u;
 	}

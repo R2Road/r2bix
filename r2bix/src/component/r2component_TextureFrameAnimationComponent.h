@@ -68,6 +68,8 @@ namespace r2component
 
 	private:
 		r2component::TextureFrameRenderComponent* mTextureFrameRenderComponent;
+
+		bool mbRepeat;
 		AnimationPackageT mAnimationPackage;
 		AnimationPackageT::iterator mCurrentAnimation;
 		uint32_t mCurrentAnimationFrameIndex;
