@@ -6,7 +6,7 @@
 namespace r2action
 {
 	BlinkAction::BlinkAction() :
-		mStartStep( eStep::Show )
+		mStartStep( eStep::Hide )
 		, mCurrentStep( eStep::Sleep )
 		, mTimer4Show( 1.f )
 		, mTimer4Hide( 1.f )
@@ -31,18 +31,18 @@ namespace r2action
 	{
 		switch( mCurrentStep )
 		{
-		case eStep::Show:
-			if( !mTimer4Show.update( delta_time ) )
-			{
-				mCurrentStep = eStep::Hide;
-				mOwnerNode->SetVisible( false );
-			}
-			break;
 		case eStep::Hide:
 			if( !mTimer4Hide.update( delta_time ) )
 			{
-				mCurrentStep = eStep::Sleep;
+				mCurrentStep = eStep::Show;
 				mOwnerNode->SetVisible( true );
+			}
+			break;
+		case eStep::Show:
+			if( !mTimer4Show.update( delta_time ) )
+			{
+				mCurrentStep = eStep::Sleep;
+				mOwnerNode->SetVisible( false );
 			}
 			break;
 		}
