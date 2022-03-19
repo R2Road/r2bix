@@ -616,13 +616,7 @@ namespace component_test
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-
-			std::cout << r2::linefeed;
-
 			DECLARATION_SUB( r2base::Director dummy_director );
-
-			std::cout << r2::linefeed;
-
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
@@ -661,6 +655,7 @@ namespace component_test
 
 					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2::linefeed;
 
 					std::cout << r2::linefeed;
 
