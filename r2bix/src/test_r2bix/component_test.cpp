@@ -511,6 +511,91 @@ namespace component_test
 
 
 
+	r2cm::iItem::TitleFuncT TextureFrameAnimationComponentTest_1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "TextureFrameAnimation Component 1";
+		};
+	}
+	r2cm::iItem::DoFuncT TextureFrameAnimationComponentTest_1::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			TextureTable4Test::GetInstance().Load();
+			TextureFrameAnimationTable4Test::GetInstance().Load();
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
+
+			std::cout << r2::split;
+
+			EXPECT_TRUE( node->AddComponent<r2component::TextureFrameRenderComponent>() );
+			EXPECT_TRUE( node->AddComponent<r2component::TextureFrameAnimationComponent>() );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto tfrc = node->GetComponent<r2component::TextureFrameRenderComponent>() );
+			DECLARATION_MAIN( auto tfac = node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+			PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
+			{
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
+				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_1 ) );
+				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Run_1 ) );
+				EXPECT_FALSE( tfac->HasAnimation( r2animation::eIndex::Walk_1 ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( tfac->RunAnimation_Once( r2animation::eIndex::Run_1 ) );
+				EXPECT_FALSE( r2animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
+				EXPECT_TRUE( r2animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				const auto current_cursor_point = r2utility::GetCursorPoint();
+				while( true )
+				{
+					r2utility::SetCursorPoint( current_cursor_point );
+
+					PROCESS_MAIN( node->Update( 0.003f ) );
+					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2::linefeed;
+
+					std::cout << r2::linefeed;
+
+					Utility4Test::DrawTexture( render_target );
+
+					if( _kbhit() )
+					{
+						break;
+					}
+				}
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( tfac->StopAnimation() );
+				EXPECT_EQ( r2animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT TextureFrameAnimationComponentTest::GetTitleFunction() const
 	{
 		return []()->const char*

@@ -85,6 +85,21 @@ namespace r2component
 
 		return false;
 	}
+	void TextureFrameAnimationComponent::RunAnimation_Once( const r2animation::eIndex animation_index )
+	{
+		StopAnimation();
+
+		for( auto cur = mAnimationPackage.begin(), end = mAnimationPackage.end(); end != cur; ++cur )
+		{
+			if( animation_index == cur->Index )
+			{
+				mbRepeat = false;
+				mCurrentAnimation = cur;
+				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
+				break;
+			}
+		}
+	}
 	void TextureFrameAnimationComponent::RunAnimation_Repeat( const r2animation::eIndex animation_index )
 	{
 		StopAnimation();
