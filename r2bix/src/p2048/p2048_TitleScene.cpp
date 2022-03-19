@@ -70,6 +70,53 @@ namespace p2048
 				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
 				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_2" ) );
 				number_node->mTransformComponent->SetPosition( -26, 0 );
+
+				{
+					auto component = number_node->AddComponent<r2component::ActionProcessComponent>();
+
+					auto repeat_action = r2action::RepeatAction::Create();
+					{
+						auto sequence_action = r2action::SequenceAction::Create();
+						
+						{
+							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							action->SetTimeLimit( 3.f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							action->SetTimeLimit( 0.1f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							action->SetTimeLimit( 4.f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							action->SetTimeLimit( 0.1f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							action->SetTimeLimit( 1.f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							action->SetTimeLimit( 0.2f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							action->SetTimeLimit( 0.2f );
+						}
+						{
+							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							action->SetTimeLimit( 0.1f );
+						}
+
+						repeat_action->SetAction( std::move( sequence_action ) );
+					}
+
+					component->SetAction( std::move( repeat_action ) );
+					component->StartAction();
+				}
 			}
 			// Number 0
 			{
@@ -95,11 +142,7 @@ namespace p2048
 						}
 						{
 							auto action = sequence_action->AddAction<r2action::DelayAction>();
-							action->SetTimeLimit( 0.4f );
-						}
-						{
-							auto action = sequence_action->AddAction<r2action::DelayAction>();
-							action->SetTimeLimit( 0.8f );
+							action->SetTimeLimit( 1.2f );
 						}
 						{
 							auto action = sequence_action->AddAction<r2action::BlinkAction>();
@@ -111,11 +154,11 @@ namespace p2048
 						}
 						{
 							auto action = sequence_action->AddAction<r2action::BlinkAction>();
-							action->SetTimeLimit( 0.2f );
+							action->SetTimeLimit( 0.1f );
 						}
 						{
 							auto action = sequence_action->AddAction<r2action::DelayAction>();
-							action->SetTimeLimit( 0.2f );
+							action->SetTimeLimit( 0.3f );
 						}
 						{
 							auto action = sequence_action->AddAction<r2action::BlinkAction>();
