@@ -263,6 +263,9 @@
     <ClCompile Include="src\action\r2action_BlinkAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="src\action\r2action_CallbackAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -516,6 +519,9 @@
       <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\action\r2action_BlinkAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\action\r2action_CallbackAction.h">
       <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\action\r2action_BlinkAction.cpp" />
     <ClCompile Include="src\action\r2action_DelayAction.cpp" />
+    <ClCompile Include="src\action\r2action_CallbackAction.cpp" />
     <ClCompile Include="src\action\r2action_MoveByAction.cpp" />
     <ClCompile Include="src\action\r2action_RepeatAction.cpp" />
     <ClCompile Include="src\action\r2action_SequenceAction.cpp" />
@@ -101,6 +102,7 @@
   <ItemGroup>
     <ClInclude Include="src\action\r2action_BlinkAction.h" />
     <ClInclude Include="src\action\r2action_DelayAction.h" />
+    <ClInclude Include="src\action\r2action_CallbackAction.h" />
     <ClInclude Include="src\action\r2action_MoveByAction.h" />
     <ClInclude Include="src\action\r2action_RepeatAction.h" />
     <ClInclude Include="src\action\r2action_SequenceAction.h" />

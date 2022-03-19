@@ -50,6 +50,7 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'v', component_test::ActionProcessComponentTest_With_MoveByAction::GetInstance() );
 		ret->AddItem( 'b', component_test::ActionProcessComponentTest_With_RepeatAction::GetInstance() );
 		ret->AddItem( 'n', component_test::ActionProcessComponentTest_With_BlinkAction::GetInstance() );
+		ret->AddItem( 'm', component_test::ActionProcessComponentTest_With_CallbackAction::GetInstance() );
 
 
 		ret->AddSplit();
