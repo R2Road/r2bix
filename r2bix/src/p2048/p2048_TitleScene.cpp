@@ -107,8 +107,8 @@ namespace p2048
 			auto repeat_action = r2action::RepeatAction::Create();
 			{
 				auto blink_action = r2action::BlinkAction::Create();
-				blink_action->SetTimeLimit4Show( 1.1f );
 				blink_action->SetTimeLimit4Hide( 0.5f );
+				blink_action->SetTimeLimit4Show( 1.1f );
 
 				repeat_action->SetAction( std::move( blink_action ) );
 			}
