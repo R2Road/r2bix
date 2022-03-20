@@ -192,13 +192,10 @@ namespace p2048
 					{
 						auto sequence_action = r2action::SequenceAction::Create();
 						{
-							auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
-							delay_action->SetTimeLimit( 3.f );
-
-							auto blink_action = sequence_action->AddAction<r2action::BlinkAction>();
-							blink_action->SetTimeLimit( 0.1f );
-
 							auto callback_action = sequence_action->AddAction<r2action::CallbackAction>();
+							auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
+							auto blink_action = sequence_action->AddAction<r2action::BlinkAction>();
+							
 							callback_action->SetCallback( [delay_action, blink_action]()
 							{
 								delay_action->SetTimeLimit( r2::Random::GetFloat( 1.f, 3.f ) );
