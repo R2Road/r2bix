@@ -6,6 +6,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "action/r2action_AnimationRequestAction.h"
 #include "action/r2action_BlinkAction.h"
 #include "action/r2action_CallbackAction.h"
 #include "action/r2action_DelayAction.h"
@@ -1246,6 +1247,92 @@ namespace component_test
 				std::cout << r2::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.f ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_AnimationRequestAction::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ActionProcess Component : With AnimationRequestAction";
+		};
+	}
+	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_AnimationRequestAction::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			TextureTable4Test::GetInstance().Load();
+			TextureFrameAnimationTable4Test::GetInstance().Load();
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( auto tfrc = node->AddComponent<r2component::TextureFrameRenderComponent>() );
+				DECLARATION_MAIN( auto tfac = node->AddComponent<r2component::TextureFrameAnimationComponent>() );
+				PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
+				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
+			}
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			EXPECT_NE( nullptr, component );
+			EXPECT_FALSE( component->HasAction() );
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( auto action = r2action::AnimationRequestAction::Create() );
+				PROCESS_MAIN( action->SetAnimationIndex( r2animation::eIndex::Run_1 ) );
+				PROCESS_MAIN( action->SetOrder( r2action::AnimationRequestAction::eOrder::PlayOnce ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->SetAction( std::move( action ) ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( component->StartAction() );
+
+				std::cout << r2::linefeed;
+
+				const auto cursor_point = r2utility::GetCursorPoint();
+				while( true )
+				{
+					r2utility::SetCursorPoint( cursor_point );
+
+					PROCESS_MAIN( node->Update( 0.001f ) );
+					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+					std::cout << "Action Process Running : " << node->GetComponent<r2component::ActionProcessComponent>()->IsRunning() << r2::linefeed;
+					std::cout << "Animation Running : " << node->GetComponent<r2component::TextureFrameAnimationComponent>()->IsRunning() << r2::linefeed2;
+
+					Utility4Test::DrawTexture( render_target );
+
+					if( _kbhit() )
+					{
+						break;
+					}
+				}
 			}
 
 			std::cout << r2::split;

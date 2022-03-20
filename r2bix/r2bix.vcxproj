@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\action\r2action_AnimationRequestAction.cpp" />
     <ClCompile Include="src\action\r2action_BlinkAction.cpp" />
     <ClCompile Include="src\action\r2action_DelayAction.cpp" />
     <ClCompile Include="src\action\r2action_CallbackAction.cpp" />
@@ -101,6 +102,7 @@
     <ClCompile Include="src\utility\r2utility_WindowUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\action\r2action_AnimationRequestAction.h" />
     <ClInclude Include="src\action\r2action_BlinkAction.h" />
     <ClInclude Include="src\action\r2action_DelayAction.h" />
     <ClInclude Include="src\action\r2action_CallbackAction.h" />
