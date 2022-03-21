@@ -272,6 +272,9 @@
     <ClCompile Include="src\action\r2action_AnimationRequestAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_r2bix\ActionMenu.cpp">
+      <Filter>test_r2bix\menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -535,6 +538,9 @@
     </ClInclude>
     <ClInclude Include="src\action\r2action_AnimationRequestAction.h">
       <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\ActionMenu.h">
+      <Filter>test_r2bix\menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -46,18 +46,6 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'g', component_test::ActionProcessComponentTest::GetInstance() );
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-
-		ret->AddItem( 'z', component_test::ActionProcessComponentTest_With_TickAction::GetInstance() );
-		ret->AddItem( 'x', component_test::ActionProcessComponentTest_With_DelayAction::GetInstance() );
-		ret->AddItem( 'c', component_test::ActionProcessComponentTest_With_SequenceAction::GetInstance() );
-		ret->AddItem( 'v', component_test::ActionProcessComponentTest_With_MoveByAction::GetInstance() );
-		ret->AddItem( 'b', component_test::ActionProcessComponentTest_With_RepeatAction::GetInstance() );
-		ret->AddItem( 'n', component_test::ActionProcessComponentTest_With_BlinkAction::GetInstance() );
-		ret->AddItem( 'm', component_test::ActionProcessComponentTest_With_CallbackAction::GetInstance() );
-		ret->AddItem( ',', component_test::ActionProcessComponentTest_With_AnimationRequestAction::GetInstance() );
-
 
 		ret->AddSplit();
 

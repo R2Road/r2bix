@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "ActionMenu.h"
 #include "CameraMenu.h"
 #include "InputMenu.h"
 #include "ComponentMenu.h"
@@ -77,6 +78,15 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			't'
+			, []()->const char* { return ActionMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( ActionMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+		ret->AddItem(
+			'y'
 			, []()->const char* { return NodeMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
