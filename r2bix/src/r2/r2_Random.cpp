@@ -27,7 +27,7 @@ namespace r2
 	float Random::GetFloat( const float min, const float max )
 	{
 		std::uniform_real_distribution<> dist( std::min( min, max ), std::max( min, max ) );
-		return dist( getRandomEngine() );
+		return static_cast<float>( dist( getRandomEngine() ) );
 	}
 
 	bool Random::GetBool()
