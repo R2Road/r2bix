@@ -44,6 +44,11 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
+		ret->AddItem( 'g', component_test::ActionProcessComponentTest::GetInstance() );
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
 		ret->AddItem( 'z', component_test::ActionProcessComponentTest_With_TickAction::GetInstance() );
 		ret->AddItem( 'x', component_test::ActionProcessComponentTest_With_DelayAction::GetInstance() );
 		ret->AddItem( 'c', component_test::ActionProcessComponentTest_With_SequenceAction::GetInstance() );
