@@ -6,7 +6,7 @@
 
 #include "test_r2bix/TestRootMenu.h"
 
-#include "component_test.h"
+#include "action_test.h"
 
 r2cm::MenuUp ActionMenu::Create( r2cm::Director& director )
 {
@@ -16,14 +16,14 @@ r2cm::MenuUp ActionMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( 'a', component_test::ActionProcessComponentTest_With_TickAction::GetInstance() );
-		ret->AddItem( 's', component_test::ActionProcessComponentTest_With_DelayAction::GetInstance() );
-		ret->AddItem( 'd', component_test::ActionProcessComponentTest_With_SequenceAction::GetInstance() );
-		ret->AddItem( 'f', component_test::ActionProcessComponentTest_With_MoveByAction::GetInstance() );
-		ret->AddItem( 'g', component_test::ActionProcessComponentTest_With_RepeatAction::GetInstance() );
-		ret->AddItem( 'h', component_test::ActionProcessComponentTest_With_BlinkAction::GetInstance() );
-		ret->AddItem( 'j', component_test::ActionProcessComponentTest_With_CallbackAction::GetInstance() );
-		ret->AddItem( 'k', component_test::ActionProcessComponentTest_With_AnimationRequestAction::GetInstance() );
+		ret->AddItem( 'a', action_test::ActionProcessComponentTest_With_TickAction::GetInstance() );
+		ret->AddItem( 's', action_test::ActionProcessComponentTest_With_DelayAction::GetInstance() );
+		ret->AddItem( 'd', action_test::ActionProcessComponentTest_With_SequenceAction::GetInstance() );
+		ret->AddItem( 'f', action_test::ActionProcessComponentTest_With_MoveByAction::GetInstance() );
+		ret->AddItem( 'g', action_test::ActionProcessComponentTest_With_RepeatAction::GetInstance() );
+		ret->AddItem( 'h', action_test::ActionProcessComponentTest_With_BlinkAction::GetInstance() );
+		ret->AddItem( 'j', action_test::ActionProcessComponentTest_With_CallbackAction::GetInstance() );
+		ret->AddItem( 'k', action_test::ActionProcessComponentTest_With_AnimationRequestAction::GetInstance() );
 
 
 		ret->AddSplit();

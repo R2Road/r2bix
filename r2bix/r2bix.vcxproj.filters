@@ -275,6 +275,9 @@
     <ClCompile Include="src\test_r2bix\ActionMenu.cpp">
       <Filter>test_r2bix\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test_r2bix\action_test.cpp">
+      <Filter>test_r2bix\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -541,6 +544,9 @@
     </ClInclude>
     <ClInclude Include="src\test_r2bix\ActionMenu.h">
       <Filter>test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_r2bix\action_test.h">
+      <Filter>test_r2bix\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
