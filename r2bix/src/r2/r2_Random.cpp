@@ -6,7 +6,7 @@
 
 namespace r2
 {
-	std::mt19937& getRandomEngine()
+	std::mt19937& GetRandomEngine()
 	{
 		static std::random_device rd;
 		static std::mt19937 randomEngine( rd() );
@@ -17,7 +17,7 @@ namespace r2
 	int Random::GetInt( const int min, const int max )
 	{
 		std::uniform_int_distribution<> dist( std::min( min, max ), std::max( min, max ) );
-		return dist( getRandomEngine() );
+		return dist( GetRandomEngine() );
 	}
 	int Random::GetInt_0To1()
 	{
@@ -27,7 +27,7 @@ namespace r2
 	float Random::GetFloat( const float min, const float max )
 	{
 		std::uniform_real_distribution<> dist( std::min( min, max ), std::max( min, max ) );
-		return static_cast<float>( dist( getRandomEngine() ) );
+		return static_cast<float>( dist( GetRandomEngine() ) );
 	}
 
 	bool Random::GetBool()
