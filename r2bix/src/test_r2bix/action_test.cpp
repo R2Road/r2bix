@@ -16,7 +16,6 @@
 #include "action/r2action_TickAction.h"
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
-#include "component/r2component_LabelComponent.h"
 #include "component/r2component_ActionProcessComponent.h"
 #include "component/r2component_TextureFrameAnimationComponent.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
