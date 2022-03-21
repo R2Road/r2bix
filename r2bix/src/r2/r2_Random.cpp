@@ -8,10 +8,10 @@ namespace r2
 {
 	std::mt19937& GetRandomEngine()
 	{
-		static std::random_device rd;
-		static std::mt19937 randomEngine( rd() );
+		static std::random_device random_device;
+		static std::mt19937 random_engine( random_device() );
 
-		return randomEngine;
+		return random_engine;
 	}
 
 	int Random::GetInt( const int min, const int max )
