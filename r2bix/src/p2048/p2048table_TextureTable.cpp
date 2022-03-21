@@ -110,5 +110,25 @@ namespace p2048table
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 25, 10, 6, 4 ) );
 			}
 		}
+
+		{
+			auto result = mTextureContainer.emplace( "p2048_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
+				71,
+				//		"          1         2         3         4         5         6         7"
+				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
+				/* 0 */ "###########                                                            "
+				/* 1 */ "#        ##                                                            "
+				/* 2 */ "#  2048  ##                                                            "
+				/* 3 */ "#        ##                                                            "
+				/* 4 */ "###########                                                            "
+				/* 5 */ "#######################################################################"
+			) ) );
+
+			auto frame_result = mTextureFrameContainer.emplace(
+				"number_frame_0"
+				, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+			);
+			frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 9, 4 ) );
+		}
 	}
 }

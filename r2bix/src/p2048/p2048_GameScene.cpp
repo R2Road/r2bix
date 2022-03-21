@@ -5,6 +5,11 @@
 #include <conio.h>
 
 #include "base/r2base_Director.h"
+#include "component/r2component_TextureFrameRenderComponent.h"
+#include "node/r2node_SpriteNode.h"
+
+#include "p2048table_TextureFrameAnimationTable.h"
+#include "p2048table_TextureTable.h"
 
 namespace p2048
 {
@@ -27,6 +32,18 @@ namespace p2048
 		if( !r2base::Node::Init() )
 		{
 			return false;
+		}
+
+		// Frame
+		{
+			auto sprite_node = AddChild<r2node::SpriteNode>();
+			sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame(
+				p2048table::TextureTable::GetInstance().GetTextureFrame( "number_frame_0" )
+			);
+			sprite_node->mTransformComponent->SetPosition(
+				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
+			);
 		}
 
 		return true;
