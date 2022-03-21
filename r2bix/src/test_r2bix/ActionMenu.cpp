@@ -16,14 +16,14 @@ r2cm::MenuUp ActionMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( 'a', action_test::ActionProcessComponentTest_With_TickAction::GetInstance() );
-		ret->AddItem( 's', action_test::ActionProcessComponentTest_With_DelayAction::GetInstance() );
-		ret->AddItem( 'd', action_test::ActionProcessComponentTest_With_SequenceAction::GetInstance() );
-		ret->AddItem( 'f', action_test::ActionProcessComponentTest_With_MoveByAction::GetInstance() );
-		ret->AddItem( 'g', action_test::ActionProcessComponentTest_With_RepeatAction::GetInstance() );
-		ret->AddItem( 'h', action_test::ActionProcessComponentTest_With_BlinkAction::GetInstance() );
-		ret->AddItem( 'j', action_test::ActionProcessComponentTest_With_CallbackAction::GetInstance() );
-		ret->AddItem( 'k', action_test::ActionProcessComponentTest_With_AnimationRequestAction::GetInstance() );
+		ret->AddItem( 'a', action_test::TickActionTest::GetInstance() );
+		ret->AddItem( 's', action_test::DelayActionTest::GetInstance() );
+		ret->AddItem( 'd', action_test::SequenceActionTest::GetInstance() );
+		ret->AddItem( 'f', action_test::MoveByActionTest::GetInstance() );
+		ret->AddItem( 'g', action_test::RepeatActionTest::GetInstance() );
+		ret->AddItem( 'h', action_test::BlinkActionTest::GetInstance() );
+		ret->AddItem( 'j', action_test::CallbackActionTest::GetInstance() );
+		ret->AddItem( 'k', action_test::AnimationRequestActionTest::GetInstance() );
 
 
 		ret->AddSplit();

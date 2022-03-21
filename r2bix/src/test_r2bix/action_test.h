@@ -5,49 +5,49 @@
 
 namespace action_test
 {
-	class ActionProcessComponentTest_With_TickAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_TickAction>
+	class TickActionTest : public r2cm::iItem, public r2::SingleTon<TickActionTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class ActionProcessComponentTest_With_DelayAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_DelayAction>
+	class DelayActionTest : public r2cm::iItem, public r2::SingleTon<DelayActionTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class ActionProcessComponentTest_With_SequenceAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_SequenceAction>
+	class SequenceActionTest : public r2cm::iItem, public r2::SingleTon<SequenceActionTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class ActionProcessComponentTest_With_MoveByAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_MoveByAction>
+	class MoveByActionTest : public r2cm::iItem, public r2::SingleTon<MoveByActionTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class ActionProcessComponentTest_With_RepeatAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_RepeatAction>
+	class RepeatActionTest : public r2cm::iItem, public r2::SingleTon<RepeatActionTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class ActionProcessComponentTest_With_BlinkAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_BlinkAction>
+	class BlinkActionTest : public r2cm::iItem, public r2::SingleTon<BlinkActionTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class ActionProcessComponentTest_With_CallbackAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_CallbackAction>
+	class CallbackActionTest : public r2cm::iItem, public r2::SingleTon<CallbackActionTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class ActionProcessComponentTest_With_AnimationRequestAction : public r2cm::iItem, public r2::SingleTon<ActionProcessComponentTest_With_AnimationRequestAction>
+	class AnimationRequestActionTest : public r2cm::iItem, public r2::SingleTon<AnimationRequestActionTest>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

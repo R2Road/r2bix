@@ -32,14 +32,14 @@
 
 namespace action_test
 {
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_TickAction::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT TickActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ActionProcess Component : With TickAction";
+			return "TickAction";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_TickAction::GetDoFunction()
+	r2cm::iItem::DoFuncT TickActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
@@ -101,14 +101,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_DelayAction::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT DelayActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ActionProcess Component : With DelayAction";
+			return "DelayAction";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_DelayAction::GetDoFunction()
+	r2cm::iItem::DoFuncT DelayActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
@@ -176,14 +176,14 @@ namespace action_test
 	}
 
 
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_SequenceAction::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT SequenceActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ActionProcess Component : With SequenceAction";
+			return "SequenceAction";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_SequenceAction::GetDoFunction()
+	r2cm::iItem::DoFuncT SequenceActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
@@ -263,14 +263,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_MoveByAction::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT MoveByActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ActionProcess Component : With MoveByAction";
+			return "MoveByAction";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_MoveByAction::GetDoFunction()
+	r2cm::iItem::DoFuncT MoveByActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
@@ -350,14 +350,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_RepeatAction::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT RepeatActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ActionProcess Component : With RepeatAction";
+			return "RepeatAction";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_RepeatAction::GetDoFunction()
+	r2cm::iItem::DoFuncT RepeatActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
@@ -451,14 +451,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_BlinkAction::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT BlinkActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ActionProcess Component : With BlinkAction";
+			return "BlinkAction";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_BlinkAction::GetDoFunction()
+	r2cm::iItem::DoFuncT BlinkActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
@@ -544,14 +544,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_CallbackAction::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT CallbackActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ActionProcess Component : With CallbackAction";
+			return "CallbackAction";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_CallbackAction::GetDoFunction()
+	r2cm::iItem::DoFuncT CallbackActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
@@ -606,14 +606,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest_With_AnimationRequestAction::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT AnimationRequestActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "ActionProcess Component : With AnimationRequestAction";
+			return "AnimationRequestAction";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest_With_AnimationRequestAction::GetDoFunction()
+	r2cm::iItem::DoFuncT AnimationRequestActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eTestEndAction
 		{
