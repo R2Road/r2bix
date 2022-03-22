@@ -38,6 +38,7 @@
     <ClCompile Include="src\base\r2base_TextureTableBase.cpp" />
     <ClCompile Include="src\component\r2component_ActionProcessComponent.cpp" />
     <ClCompile Include="src\component\r2component_LabelComponent.cpp" />
+    <ClCompile Include="src\component\r2component_PivotComponent.cpp" />
     <ClCompile Include="src\component\r2component_TextureFrameAnimationComponent.cpp" />
     <ClCompile Include="src\component\r2component_TextureRenderComponent.cpp" />
     <ClCompile Include="src\component\r2component_TextureFrameRenderComponent.cpp" />
@@ -46,6 +47,7 @@
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
     <ClCompile Include="src\node\r2node_LabelNode.cpp" />
+    <ClCompile Include="src\node\r2node_PivotNode.cpp" />
     <ClCompile Include="src\node\r2node_SceneNode.cpp" />
     <ClCompile Include="src\node\r2node_SpriteAnimationNode.cpp" />
     <ClCompile Include="src\node\r2node_SpriteNode.cpp" />
@@ -126,6 +128,7 @@
     <ClInclude Include="src\base\r2base_TextureTableBase.h" />
     <ClInclude Include="src\component\r2component_ActionProcessComponent.h" />
     <ClInclude Include="src\component\r2component_LabelComponent.h" />
+    <ClInclude Include="src\component\r2component_PivotComponent.h" />
     <ClInclude Include="src\component\r2component_TextureFrameAnimationComponent.h" />
     <ClInclude Include="src\component\r2component_TextureRenderComponent.h" />
     <ClInclude Include="src\component\r2component_TextureFrameRenderComponent.h" />
@@ -134,6 +137,7 @@
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />
     <ClInclude Include="src\node\r2node_LabelNode.h" />
+    <ClInclude Include="src\node\r2node_PivotNode.h" />
     <ClInclude Include="src\node\r2node_SceneNode.h" />
     <ClInclude Include="src\node\r2node_SpriteAnimationNode.h" />
     <ClInclude Include="src\node\r2node_SpriteNode.h" />

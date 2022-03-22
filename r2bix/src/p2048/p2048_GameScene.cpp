@@ -3,9 +3,11 @@
 
 #include <cassert>
 #include <conio.h>
+#include <numeric>
 
 #include "base/r2base_Director.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
+#include "node/r2node_PivotNode.h"
 #include "node/r2node_SpriteNode.h"
 
 #include "p2048table_TextureFrameAnimationTable.h"
@@ -44,6 +46,11 @@ namespace p2048
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
 			);
+
+			//
+			// Debug
+			//
+			sprite_node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 		}
 
 		return true;

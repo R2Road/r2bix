@@ -278,6 +278,12 @@
     <ClCompile Include="src\test_r2bix\action_test.cpp">
       <Filter>test_r2bix\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\node\r2node_PivotNode.cpp">
+      <Filter>node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\r2component_PivotComponent.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -547,6 +553,12 @@
     </ClInclude>
     <ClInclude Include="src\test_r2bix\action_test.h">
       <Filter>test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\node\r2node_PivotNode.h">
+      <Filter>node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\r2component_PivotComponent.h">
+      <Filter>component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
