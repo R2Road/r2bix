@@ -4,9 +4,9 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "test_r2bix/TestRootMenu.h"
+#include "test/test_r2bix/TestRootMenu.h"
 
-#include "component_test.h"
+#include "test/test_r2bix/item/component_test.h"
 
 r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 {

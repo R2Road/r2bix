@@ -4,11 +4,11 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "test_r2bix/TestRootMenu.h"
+#include "test/test_r2bix/TestRootMenu.h"
 
-#include "texture_test.h"
-#include "texture_frame_test.h"
-#include "texture_table_test.h"
+#include "test/test_r2bix/item/texture_test.h"
+#include "test/test_r2bix/item/texture_frame_test.h"
+#include "test/test_r2bix/item/texture_table_test.h"
 
 r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 {

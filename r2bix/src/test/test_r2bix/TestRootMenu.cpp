@@ -4,19 +4,19 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "ActionMenu.h"
-#include "CameraMenu.h"
-#include "InputMenu.h"
-#include "ComponentMenu.h"
-#include "NodeMenu.h"
-#include "TextureMenu.h"
+#include "test/test_r2bix/menu/ActionMenu.h"
+#include "test/test_r2bix/menu/CameraMenu.h"
+#include "test/test_r2bix/menu/InputMenu.h"
+#include "test/test_r2bix/menu/ComponentMenu.h"
+#include "test/test_r2bix/menu/NodeMenu.h"
+#include "test/test_r2bix/menu/TextureMenu.h"
 
-#include "console_screen_buffer_test.h"
-#include "console_screen_buffer_manager_test.h"
-#include "rect_test.h"
-#include "render_test.h"
+#include "test/test_r2bix/item/console_screen_buffer_test.h"
+#include "test/test_r2bix/item/console_screen_buffer_manager_test.h"
+#include "test/test_r2bix/item/rect_test.h"
+#include "test/test_r2bix/item/render_test.h"
 
-#include "visible_resource_research.h"
+#include "test/test_r2bix/item/visible_resource_research.h"
 
 r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 {

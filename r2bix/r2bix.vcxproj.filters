@@ -28,15 +28,6 @@
     <Filter Include="node">
       <UniqueIdentifier>{21b9e532-178c-45e7-b937-a1385b5865b8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test_r2bix">
-      <UniqueIdentifier>{ce01231e-9d83-4225-aab5-74e589fae17f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_r2bix\menu">
-      <UniqueIdentifier>{fdb3fed2-ae28-4b60-9c74-0a33c59c9506}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test_r2bix\item">
-      <UniqueIdentifier>{ad1df904-b64d-41ca-a907-6962189f53d8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="r2cm">
       <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
@@ -45,6 +36,18 @@
     </Filter>
     <Filter Include="action">
       <UniqueIdentifier>{ee60f5df-9b2d-4277-8584-b3e8bd176866}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test">
+      <UniqueIdentifier>{1cd71849-42fd-4beb-8c36-ee216acfc014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\test_r2bix">
+      <UniqueIdentifier>{ce01231e-9d83-4225-aab5-74e589fae17f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\test_r2bix\menu">
+      <UniqueIdentifier>{fdb3fed2-ae28-4b60-9c74-0a33c59c9506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\test_r2bix\item">
+      <UniqueIdentifier>{ad1df904-b64d-41ca-a907-6962189f53d8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -116,42 +119,6 @@
     <ClCompile Include="src\component\r2component_TextureFrameRenderComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2bix\TestRootMenu.cpp">
-      <Filter>test_r2bix</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\CameraMenu.cpp">
-      <Filter>test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\InputMenu.cpp">
-      <Filter>test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\TextureMenu.cpp">
-      <Filter>test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\key_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\rect_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\texture_frame_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\texture_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\visible_resource_research.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\window_input_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\camera_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\console_screen_buffer_manager_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Director.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
@@ -161,38 +128,17 @@
     <ClCompile Include="src\r2\r2_FPSTimer.cpp">
       <Filter>r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2bix\console_screen_buffer_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\utility\r2utility_StringBuilder.cpp">
       <Filter>utility</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp">
       <Filter>project_2048</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2bix\texture_table_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\ComponentMenu.cpp">
-      <Filter>test_r2bix\menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\component\r2component_LabelComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2bix\component_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\component\r2component_TextureRenderComponent.cpp">
       <Filter>component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\render_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\NodeMenu.cpp">
-      <Filter>test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\node_test.cpp">
-      <Filter>test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\component\r2component_TextureFrameAnimationComponent.cpp">
       <Filter>component</Filter>
@@ -200,20 +146,11 @@
     <ClCompile Include="src\base\r2base_TextureTableBase.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2bix\TextureTable4Test.cpp">
-      <Filter>test_r2bix</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\Utility4Test.cpp">
-      <Filter>test_r2bix</Filter>
-    </ClCompile>
     <ClCompile Include="src\animation\r2animation_constant.cpp">
       <Filter>animation</Filter>
     </ClCompile>
     <ClCompile Include="src\base\r2base_TextureFrameAnimationTableBase.cpp">
       <Filter>base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\TextureFrameAnimationTable4Test.cpp">
-      <Filter>test_r2bix</Filter>
     </ClCompile>
     <ClCompile Include="src\base\r2base_TextureFrameAnimationInfo.cpp">
       <Filter>base</Filter>
@@ -272,17 +209,83 @@
     <ClCompile Include="src\action\r2action_AnimationRequestAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_r2bix\ActionMenu.cpp">
-      <Filter>test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test_r2bix\action_test.cpp">
-      <Filter>test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\node\r2node_PivotNode.cpp">
       <Filter>node</Filter>
     </ClCompile>
     <ClCompile Include="src\component\r2component_PivotComponent.cpp">
       <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\action_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\camera_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\component_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_manager_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\key_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\node_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\rect_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\render_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\texture_frame_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\texture_table_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\texture_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\visible_resource_research.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\window_input_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\menu\ActionMenu.cpp">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\menu\CameraMenu.cpp">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\menu\ComponentMenu.cpp">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\menu\InputMenu.cpp">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\menu\NodeMenu.cpp">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\menu\TextureMenu.cpp">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\TestRootMenu.cpp">
+      <Filter>test\test_r2bix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.cpp">
+      <Filter>test\test_r2bix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\TextureTable4Test.cpp">
+      <Filter>test\test_r2bix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\Utility4Test.cpp">
+      <Filter>test\test_r2bix</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -371,42 +374,6 @@
     <ClInclude Include="src\component\r2component_TextureFrameRenderComponent.h">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_r2bix\TestRootMenu.h">
-      <Filter>test_r2bix</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\CameraMenu.h">
-      <Filter>test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\InputMenu.h">
-      <Filter>test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\TextureMenu.h">
-      <Filter>test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\key_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\rect_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\texture_frame_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\texture_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\visible_resource_research.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\window_input_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\camera_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\console_screen_buffer_manager_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2\r2_Inspector.h">
       <Filter>r2</Filter>
     </ClInclude>
@@ -428,26 +395,14 @@
     <ClInclude Include="src\r2\r2_FPSTimer.h">
       <Filter>r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_r2bix\console_screen_buffer_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\utility\r2utility_StringBuilder.h">
       <Filter>utility</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_EntryScene.h">
       <Filter>project_2048</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_r2bix\texture_table_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\ComponentMenu.h">
-      <Filter>test_r2bix\menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\component\r2component_LabelComponent.h">
       <Filter>component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\component_test.h">
-      <Filter>test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\component\r2component_TextureRenderComponent.h">
       <Filter>component</Filter>
@@ -455,35 +410,17 @@
     <ClInclude Include="src\base\r2base_ComponentStaticID.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_r2bix\render_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\NodeMenu.h">
-      <Filter>test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\node_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\component\r2component_TextureFrameAnimationComponent.h">
       <Filter>component</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2base_TextureTableBase.h">
       <Filter>base</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_r2bix\TextureTable4Test.h">
-      <Filter>test_r2bix</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\Utility4Test.h">
-      <Filter>test_r2bix</Filter>
-    </ClInclude>
     <ClInclude Include="src\base\r2base_TextureFrameAnimationTableBase.h">
       <Filter>base</Filter>
     </ClInclude>
     <ClInclude Include="src\animation\r2animation_constant.h">
       <Filter>animation</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\TextureFrameAnimationTable4Test.h">
-      <Filter>test_r2bix</Filter>
     </ClInclude>
     <ClInclude Include="src\base\r2base_TextureFrameAnimationInfo.h">
       <Filter>base</Filter>
@@ -548,17 +485,83 @@
     <ClInclude Include="src\action\r2action_AnimationRequestAction.h">
       <Filter>action</Filter>
     </ClInclude>
-    <ClInclude Include="src\test_r2bix\ActionMenu.h">
-      <Filter>test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test_r2bix\action_test.h">
-      <Filter>test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\node\r2node_PivotNode.h">
       <Filter>node</Filter>
     </ClInclude>
     <ClInclude Include="src\component\r2component_PivotComponent.h">
       <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\action_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\camera_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\component_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_manager_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\key_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\node_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\rect_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\render_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\texture_frame_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\texture_table_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\texture_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\visible_resource_research.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\window_input_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\menu\ActionMenu.h">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\menu\CameraMenu.h">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\menu\ComponentMenu.h">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\menu\InputMenu.h">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\menu\NodeMenu.h">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\menu\TextureMenu.h">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\TestRootMenu.h">
+      <Filter>test\test_r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.h">
+      <Filter>test\test_r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\TextureTable4Test.h">
+      <Filter>test\test_r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\Utility4Test.h">
+      <Filter>test\test_r2bix</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

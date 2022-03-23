@@ -1,14 +1,15 @@
 #include "pch.h"
-#include "NodeMenu.h"
+#include "InputMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "test_r2bix/TestRootMenu.h"
+#include "test/test_r2bix/TestRootMenu.h"
 
-#include "node_test.h"
+#include "test/test_r2bix/item/key_test.h"
+#include "test/test_r2bix/item/window_input_test.h"
 
-r2cm::MenuUp NodeMenu::Create( r2cm::Director& director )
+r2cm::MenuUp InputMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
@@ -16,11 +17,8 @@ r2cm::MenuUp NodeMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', node_test::Basic::GetInstance() );
-		ret->AddItem( '2', node_test::Scene::GetInstance() );
-		ret->AddItem( '3', node_test::Label::GetInstance() );
-		ret->AddItem( '4', node_test::Sprite::GetInstance() );
-		ret->AddItem( '5', node_test::SpriteAnimation::GetInstance() );
+		ret->AddItem( '1', key_test::Basic::GetInstance() );
+		ret->AddItem( '2', window_input_test::TestKeyboardInputCollector::GetInstance() );
 
 
 		ret->AddSplit();

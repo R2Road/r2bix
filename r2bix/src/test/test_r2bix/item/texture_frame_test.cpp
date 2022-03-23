@@ -6,8 +6,8 @@
 #include "render/r2render_TextureFrame.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "test_r2bix/TextureTable4Test.h"
-#include "test_r2bix/Utility4Test.h"
+#include "test/test_r2bix/TextureTable4Test.h"
+#include "test/test_r2bix/Utility4Test.h"
 
 namespace
 {

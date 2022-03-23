@@ -11,7 +11,7 @@
 #include "pmr/pmr_CompanyScene.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "test_r2bix/TestRootMenu.h"
+#include "test/test_r2bix/TestRootMenu.h"
 
 #include "utility/r2utility_WindowUtil.h"
 
