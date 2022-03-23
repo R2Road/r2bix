@@ -37,7 +37,7 @@ namespace p2048
 			// Label
 			//
 			{
-				auto node = ret->AddChild<r2node::LabelNode>( std::numeric_limits<int>::min() );
+				auto node = ret->AddChild<r2node::LabelNode>( std::numeric_limits<int>::max() );
 				node->GetComponent<r2component::LabelComponent>()->SetString( "2048" );
 
 				number_component->SetLabelComponent( node->GetComponent<r2component::LabelComponent>() );
