@@ -231,12 +231,12 @@ namespace p2048
 			{
 				auto sequence_action = r2action::SequenceAction::Create();
 				{
-					auto action = sequence_action->AddAction<r2action::BlinkAction>();
-					action->SetTimeLimit( 0.5f );
-				}
-				{
 					auto action = sequence_action->AddAction<r2action::DelayAction>();
 					action->SetTimeLimit( 1.1f );
+				}
+				{
+					auto action = sequence_action->AddAction<r2action::BlinkAction>();
+					action->SetTimeLimit( 0.5f );
 				}
 
 				repeat_action->SetAction( std::move( sequence_action ) );
