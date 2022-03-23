@@ -128,7 +128,7 @@ namespace p2048table
 				"number_frame_0"
 				, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 			);
-			frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 9, 4 ) );
+			frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 1, 7, 2 ) );
 		}
 	}
 }
