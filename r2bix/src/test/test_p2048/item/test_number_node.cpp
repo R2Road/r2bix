@@ -36,7 +36,7 @@ namespace test_number_node
 
 			std::cout << r2::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 15, 11 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 15, 7 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
