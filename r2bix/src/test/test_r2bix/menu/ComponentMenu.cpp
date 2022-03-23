@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "test/test_r2bix/TestRootMenu.h"
+#include "test/test_r2bix/TestR2bixRootMenu.h"
 
 #include "test/test_r2bix/item/component_test.h"
 
