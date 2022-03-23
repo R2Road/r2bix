@@ -6,10 +6,8 @@
 #include <numeric>
 
 #include "base/r2base_Director.h"
-#include "component/r2component_TextureFrameRenderComponent.h"
-#include "node/r2node_PivotNode.h"
-#include "node/r2node_SpriteNode.h"
 
+#include "p2048/p2048_NumberNode.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
 
@@ -36,21 +34,13 @@ namespace p2048
 			return false;
 		}
 
-		// Frame
+		// Number
 		{
-			auto sprite_node = AddChild<r2node::SpriteNode>();
-			sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame(
-				p2048table::TextureTable::GetInstance().GetTextureFrame( "number_frame_0" )
-			);
-			sprite_node->mTransformComponent->SetPosition(
+			auto node = AddChild<p2048::NumberNode>();
+			node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
 			);
-
-			//
-			// Debug
-			//
-			sprite_node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 		}
 
 		return true;

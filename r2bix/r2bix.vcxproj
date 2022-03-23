@@ -56,6 +56,7 @@
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp" />
     <ClCompile Include="src\p2048\p2048_GameScene.cpp" />
+    <ClCompile Include="src\p2048\p2048_NumberNode.cpp" />
     <ClCompile Include="src\p2048\p2048_TitleScene.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -148,6 +149,7 @@
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\p2048\p2048_EntryScene.h" />
     <ClInclude Include="src\p2048\p2048_GameScene.h" />
+    <ClInclude Include="src\p2048\p2048_NumberNode.h" />
     <ClInclude Include="src\p2048\p2048_TitleScene.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
