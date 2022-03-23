@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "test/test_p2048/TestP2048RootMenu.h"
 #include "test/test_r2bix/TestRootMenu.h"
 
 r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
@@ -22,6 +23,15 @@ r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
 			, [&director]()->r2cm::eTestEndAction
 			{
 				director.Setup( TestRootMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+		ret->AddItem(
+			'2'
+			, []()->const char* { return TestP2048RootMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( TestP2048RootMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
