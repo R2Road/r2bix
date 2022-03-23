@@ -19,10 +19,10 @@ r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem(
 			'1'
-			, []()->const char* { return TestRootMenu::GetTitle(); }
+			, []()->const char* { return TestR2bixRootMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( TestRootMenu::Create( director ) );
+				director.Setup( TestR2bixRootMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);

@@ -31,7 +31,7 @@ r2cm::MenuUp NodeMenu::Create( r2cm::Director& director )
 			, []()->const char* { return "Return To Root"; }
 			, [&director]()->r2cm::eTestEndAction
 			{
-				director.Setup( TestRootMenu::Create( director ) );
+				director.Setup( TestR2bixRootMenu::Create( director ) );
 				return r2cm::eTestEndAction::None;
 			}
 		);
