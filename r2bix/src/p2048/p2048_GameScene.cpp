@@ -7,6 +7,8 @@
 
 #include "base/r2base_Director.h"
 
+#include "node/r2node_PivotNode.h"
+
 #include "p2048/p2048_NumberNode.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
@@ -41,6 +43,17 @@ namespace p2048
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
 			);
+		}
+
+		//
+		// Debug
+		//
+		{
+			AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
+			AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( mDirector.GetScreenBufferSize().GetWidth() - 1, 0 );
+			AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( mDirector.GetScreenBufferSize().GetWidth() - 1, mDirector.GetScreenBufferSize().GetHeight() - 1 );
+			AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( 0, mDirector.GetScreenBufferSize().GetHeight() - 1 );
+		
 		}
 
 		return true;
