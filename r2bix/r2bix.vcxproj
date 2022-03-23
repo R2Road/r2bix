@@ -56,6 +56,7 @@
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp" />
     <ClCompile Include="src\p2048\p2048_GameScene.cpp" />
+    <ClCompile Include="src\p2048\p2048_NumberComponent.cpp" />
     <ClCompile Include="src\p2048\p2048_NumberNode.cpp" />
     <ClCompile Include="src\p2048\p2048_TitleScene.cpp" />
     <ClCompile Include="src\pch.cpp">
@@ -80,6 +81,7 @@
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\render\r2render_Texture.cpp" />
     <ClCompile Include="src\test\TestMainMenu.cpp" />
+    <ClCompile Include="src\test\test_p2048\item\test_number_node.cpp" />
     <ClCompile Include="src\test\test_p2048\TestP2048RootMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\action_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\camera_test.cpp" />
@@ -149,6 +151,7 @@
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\p2048\p2048_EntryScene.h" />
     <ClInclude Include="src\p2048\p2048_GameScene.h" />
+    <ClInclude Include="src\p2048\p2048_NumberComponent.h" />
     <ClInclude Include="src\p2048\p2048_NumberNode.h" />
     <ClInclude Include="src\p2048\p2048_TitleScene.h" />
     <ClInclude Include="src\pch.h" />
@@ -177,6 +180,7 @@
     <ClInclude Include="src\render\r2_GridIndexConverter.h" />
     <ClInclude Include="src\render\r2render_Texture.h" />
     <ClInclude Include="src\test\TestMainMenu.h" />
+    <ClInclude Include="src\test\test_p2048\item\test_number_node.h" />
     <ClInclude Include="src\test\test_p2048\TestP2048RootMenu.h" />
     <ClInclude Include="src\test\test_r2bix\item\action_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\camera_test.h" />

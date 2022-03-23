@@ -305,6 +305,12 @@
     <ClCompile Include="src\p2048\p2048_NumberNode.cpp">
       <Filter>project_2048</Filter>
     </ClCompile>
+    <ClCompile Include="src\p2048\p2048_NumberComponent.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_p2048\item\test_number_node.cpp">
+      <Filter>test\test_p2048\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -589,6 +595,12 @@
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_NumberNode.h">
       <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_NumberComponent.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_p2048\item\test_number_node.h">
+      <Filter>test\test_p2048\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
