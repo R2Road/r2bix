@@ -23,6 +23,7 @@ namespace p2048
 		{
 			mLabelComponent = label_component;
 		}
+		void SetNumber( const int new_number );
 
 	private:
 		r2component::LabelComponent* mLabelComponent;

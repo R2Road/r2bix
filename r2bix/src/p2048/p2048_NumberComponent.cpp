@@ -1,9 +1,12 @@
 #include "pch.h"
 #include "p2048_NumberComponent.h"
 
+#include "component/r2component_LabelComponent.h"
+
 namespace p2048
 {
 	NumberComponent::NumberComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+		, mLabelComponent( nullptr )
 	{}
 
 	std::unique_ptr<NumberComponent> NumberComponent::Create( r2base::Node& owner_node )
@@ -15,5 +18,10 @@ namespace p2048
 		}
 
 		return ret;
+	}
+
+	void NumberComponent::SetNumber( const int new_number )
+	{
+		mLabelComponent->SetString( std::to_string( new_number ) );
 	}
 }

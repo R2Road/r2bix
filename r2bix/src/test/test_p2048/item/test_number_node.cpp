@@ -57,6 +57,17 @@ namespace test_number_node
 
 			std::cout << r2::split;
 
+			{
+				PROCESS_MAIN( number_node->GetComponent<p2048::NumberComponent>()->SetNumber( 8 ) );
+				PROCESS_MAIN( number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
