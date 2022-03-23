@@ -7,7 +7,7 @@
 #include "render/r2render_Texture.h"
 #include "render/r2render_TextureFrame.h"
 
-#include "test/test_r2bix/Utility4Test.h"
+#include "test/Utility4Test.h"
 
 namespace texture_test
 {

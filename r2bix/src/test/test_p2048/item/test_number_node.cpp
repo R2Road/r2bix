@@ -11,7 +11,7 @@
 #include "render/r2render_Camera.h"
 #include "render/r2render_Texture.h"
 
-#include "test/test_r2bix/Utility4Test.h"
+#include "test/Utility4Test.h"
 
 #include "p2048/p2048_NumberComponent.h"
 #include "p2048/p2048_NumberNode.h"

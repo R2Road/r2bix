@@ -5,7 +5,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "test/test_r2bix/TextureTable4Test.h"
-#include "test/test_r2bix/Utility4Test.h"
+#include "test/Utility4Test.h"
 
 namespace texture_table_test
 {

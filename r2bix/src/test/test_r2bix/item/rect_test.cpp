@@ -7,7 +7,7 @@
 
 #include "r2/r2_Rect_Int.h"
 #include "r2cm/r2cm_eTestEndAction.h"
-#include "test/test_r2bix/Utility4Test.h"
+#include "test/Utility4Test.h"
 
 namespace rect_test
 {

@@ -26,7 +26,7 @@
 
 #include "test/test_r2bix/TextureFrameAnimationTable4Test.h"
 #include "test/test_r2bix/TextureTable4Test.h"
-#include "test/test_r2bix/Utility4Test.h"
+#include "test/Utility4Test.h"
 
 #include "utility/r2utility_WindowUtil.h"
 
