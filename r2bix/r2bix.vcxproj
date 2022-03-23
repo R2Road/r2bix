@@ -78,6 +78,7 @@
     <ClCompile Include="src\render\r2render_TextureFrame.cpp" />
     <ClCompile Include="src\render\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\render\r2render_Texture.cpp" />
+    <ClCompile Include="src\test\TestMainMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\action_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\camera_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\component_test.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="src\render\r2render_TextureFrame.h" />
     <ClInclude Include="src\render\r2_GridIndexConverter.h" />
     <ClInclude Include="src\render\r2render_Texture.h" />
+    <ClInclude Include="src\test\TestMainMenu.h" />
     <ClInclude Include="src\test\test_r2bix\item\action_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\camera_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\component_test.h" />

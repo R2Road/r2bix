@@ -18,6 +18,8 @@
 
 #include "test/test_r2bix/item/visible_resource_research.h"
 
+#include "test/TestMainMenu.h"
+
 r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
@@ -107,10 +109,11 @@ r2cm::MenuUp TestRootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			27
-			, []()->const char* { return "Return To Develop Menu"; }
-			, []()->r2cm::eTestEndAction
+			, []()->const char* { return TestMainMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
 			{
-				return r2cm::eTestEndAction::Exit;
+				director.Setup( TestMainMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
 			}
 		);
 	}
