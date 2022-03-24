@@ -3,6 +3,8 @@
 
 namespace p2048
 {
-	Stage::Stage( const uint32_t width, const uint32_t height ) : mContainer( width * height, -1 )
+	Stage::Stage( const uint32_t width, const uint32_t height ) :
+		mGridIndexConverter( width, height )
+		, mContainer( width * height, -1 )
 	{}
 }

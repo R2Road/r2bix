@@ -27,7 +27,9 @@ namespace test_stage
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( p2048::Stage stage( 10, 10 ) );
+			DECLARATION_MAIN( p2048::Stage stage( 7, 5 ) );
+			EXPECT_EQ( 7, stage.GetWidth() );
+			EXPECT_EQ( 5, stage.GetHeight() );
 
 			std::cout << r2::split;
 
