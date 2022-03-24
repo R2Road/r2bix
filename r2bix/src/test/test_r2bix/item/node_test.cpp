@@ -5,6 +5,7 @@
 
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
+#include "component/r2component_CustomTextureComponent.h"
 #include "component/r2component_LabelComponent.h"
 #include "component/r2component_TextureFrameAnimationComponent.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
@@ -113,6 +114,7 @@ namespace node_test
 
 			{
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2component::CustomTextureComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureRenderComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::LabelComponent>() );
 			}

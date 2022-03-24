@@ -8,8 +8,14 @@
 
 #include "render/r2render_Texture.h"
 
+namespace r2render
+{
+	class Texture;
+}
+
 namespace r2component
 {
+	class CustomTextureComponent;
 	class TextureRenderComponent;
 
 	class LabelComponent : public r2base::Component
@@ -24,7 +30,7 @@ namespace r2component
 		//
 		//
 		//
-		const r2render::Texture* const GetTexture() const { return &mTexture; }
+		CustomTextureComponent* const GetCustomTextureComponent() const { return mCustomTextureComponent; }
 		TextureRenderComponent* const GetTextureRenderComponent() const { return mTextureRenderComponent; }
 		std::string_view GetString() const { return mText; }
 		int32_t GetWidth() const { return static_cast<int32_t>( mText.length() ); }
@@ -32,6 +38,10 @@ namespace r2component
 		//
 		// Setter
 		//
+		void SetCustomTextureComponent( CustomTextureComponent* const custom_texture_component )
+		{
+			mCustomTextureComponent = custom_texture_component;
+		}
 		void SetTextureRenderComponent(	TextureRenderComponent* const texture_render_component )
 		{
 			mTextureRenderComponent = texture_render_component;
@@ -40,7 +50,7 @@ namespace r2component
 
 	private:
 		std::string mText;
-		r2render::Texture mTexture;
+		CustomTextureComponent* mCustomTextureComponent;
 		TextureRenderComponent* mTextureRenderComponent;
 	};
 }

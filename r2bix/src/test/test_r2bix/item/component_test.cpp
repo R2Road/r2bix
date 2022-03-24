@@ -420,12 +420,20 @@ namespace component_test
 
 			DECLARATION_MAIN( auto label = node->AddComponent<r2component::LabelComponent>() );
 			EXPECT_NE( nullptr, label );
+			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, custom_texture );
 			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, texture_render );
 
 			std::cout << r2::split;
 
 			{
+				EXPECT_EQ( nullptr, label->GetCustomTextureComponent() );
+				PROCESS_MAIN( label->SetCustomTextureComponent( custom_texture ) );
+				EXPECT_EQ( custom_texture, label->GetCustomTextureComponent() );
+
+				std::cout << r2::linefeed;
+
 				EXPECT_EQ( nullptr, label->GetTextureRenderComponent() );
 				PROCESS_MAIN( label->SetTextureRenderComponent( texture_render ) );
 				EXPECT_EQ( texture_render, label->GetTextureRenderComponent() );
@@ -433,8 +441,8 @@ namespace component_test
 				std::cout << r2::linefeed;
 
 				EXPECT_EQ( nullptr, texture_render->GetTexture() );
-				PROCESS_MAIN( texture_render->SetTexture( label->GetTexture() ) );
-				EXPECT_EQ( label->GetTexture(), texture_render->GetTexture() );
+				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
+				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
 
 				std::cout << r2::linefeed;
 
