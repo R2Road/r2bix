@@ -47,6 +47,7 @@
     <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
+    <ClCompile Include="src\node\r2node_CustomTextureNode.cpp" />
     <ClCompile Include="src\node\r2node_LabelNode.cpp" />
     <ClCompile Include="src\node\r2node_PivotNode.cpp" />
     <ClCompile Include="src\node\r2node_SceneNode.cpp" />
@@ -54,7 +55,6 @@
     <ClCompile Include="src\node\r2node_SpriteNode.cpp" />
     <ClCompile Include="src\p2048\p2048table_TextureFrameAnimationTable.cpp" />
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp" />
-    <ClCompile Include="src\p2048\p2048_BackgroundNode.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp" />
     <ClCompile Include="src\p2048\p2048_GameScene.cpp" />
@@ -145,6 +145,7 @@
     <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />
+    <ClInclude Include="src\node\r2node_CustomTextureNode.h" />
     <ClInclude Include="src\node\r2node_LabelNode.h" />
     <ClInclude Include="src\node\r2node_PivotNode.h" />
     <ClInclude Include="src\node\r2node_SceneNode.h" />
@@ -152,7 +153,6 @@
     <ClInclude Include="src\node\r2node_SpriteNode.h" />
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h" />
     <ClInclude Include="src\p2048\p2048table_TextureTable.h" />
-    <ClInclude Include="src\p2048\p2048_BackgroundNode.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\p2048\p2048_EntryScene.h" />
     <ClInclude Include="src\p2048\p2048_GameScene.h" />

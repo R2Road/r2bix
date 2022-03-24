@@ -8,9 +8,9 @@
 #include "base/r2base_Director.h"
 #include "component/r2component_CustomTextureComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
+#include "node/r2node_CustomTextureNode.h"
 #include "node/r2node_PivotNode.h"
 
-#include "p2048/p2048_BackgroundNode.h"
 #include "p2048/p2048_NumberNode.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"

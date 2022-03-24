@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "p2048_BackgroundNode.h"
+#include "r2node_CustomTextureNode.h"
 
 #include <numeric>
 
@@ -7,8 +7,6 @@
 #include "component/r2component_CustomTextureComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
 #include "node/r2node_PivotNode.h"
-
-#include "p2048table_TextureTable.h"
 
 namespace r2node
 {

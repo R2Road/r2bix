@@ -314,11 +314,11 @@
     <ClCompile Include="src\component\r2component_CustomTextureComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
-    <ClCompile Include="src\p2048\p2048_BackgroundNode.cpp">
-      <Filter>project_2048</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_p2048\item\test_background_node.cpp">
       <Filter>test\test_p2048\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\node\r2node_CustomTextureNode.cpp">
+      <Filter>node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -614,11 +614,11 @@
     <ClInclude Include="src\component\r2component_CustomTextureComponent.h">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="src\p2048\p2048_BackgroundNode.h">
-      <Filter>project_2048</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_p2048\item\test_background_node.h">
       <Filter>test\test_p2048\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\node\r2node_CustomTextureNode.h">
+      <Filter>node</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

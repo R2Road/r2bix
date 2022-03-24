@@ -15,7 +15,7 @@
 
 #include "test/Utility4Test.h"
 
-#include "p2048/p2048_BackgroundNode.h"
+#include "node/r2node_CustomTextureNode.h"
 #include "p2048/p2048table_TextureTable.h"
 
 namespace test_background_node
