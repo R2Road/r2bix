@@ -271,7 +271,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 13, 7 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
@@ -286,7 +286,30 @@ namespace component_test
 			std::cout << r2::split;
 
 			{
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			{
 				PROCESS_MAIN( component->SetVisibleRectForced( -4, -2, 1, 1 ) );
+				render_target.FillAll( '=' );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( component->ResetVisibleRect() );
+				render_target.FillAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				std::cout << r2::linefeed;
