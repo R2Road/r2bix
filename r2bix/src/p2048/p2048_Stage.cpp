@@ -7,4 +7,10 @@ namespace p2048
 		mGridIndexConverter( width, height )
 		, mContainer( width * height, -1 )
 	{}
+
+	uint32_t Stage::Get( const uint32_t x, const uint32_t y ) const
+	{
+		const int linear_index = mGridIndexConverter.To_Linear( x, y );
+		return mContainer[linear_index];
+	}
 }

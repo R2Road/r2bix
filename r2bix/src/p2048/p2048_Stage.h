@@ -18,6 +18,7 @@ namespace p2048
 		//
 		uint32_t GetWidth() const { return mGridIndexConverter.GetWidth(); }
 		uint32_t GetHeight() const { return mGridIndexConverter.GetHeight(); }
+		uint32_t Get( const uint32_t x, const uint32_t y ) const;
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;
