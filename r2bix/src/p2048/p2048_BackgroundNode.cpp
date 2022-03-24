@@ -10,9 +10,9 @@
 
 #include "p2048table_TextureTable.h"
 
-namespace p2048
+namespace r2node
 {
-	r2base::NodeUp BackgroundNode::Create( r2base::Director& director )
+	r2base::NodeUp CustomTextureNode::Create( r2base::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )

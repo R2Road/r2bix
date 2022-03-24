@@ -42,7 +42,7 @@ namespace p2048
 		// Background
 		//
 		{
-			auto node = AddChild<p2048::BackgroundNode>();
+			auto node = AddChild<r2node::CustomTextureNode>();
 			node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 31, 21, 'S' );
 			node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
 

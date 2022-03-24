@@ -7,12 +7,12 @@ namespace r2base
 	class Director;
 }
 
-namespace p2048
+namespace r2node
 {
-	class BackgroundNode : public r2base::Node
+	class CustomTextureNode : public r2base::Node
 	{
 	private:
-		BackgroundNode() = delete;
+		CustomTextureNode() = delete;
 
 	public:
 		static r2base::NodeUp Create( r2base::Director& director );

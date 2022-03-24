@@ -43,7 +43,7 @@ namespace test_background_node
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( auto node = p2048::BackgroundNode::Create( dummy_director ) );
+			DECLARATION_MAIN( auto node = r2node::CustomTextureNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2component::TextureRenderComponent>() );
