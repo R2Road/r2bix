@@ -73,6 +73,7 @@
     <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
     <ClCompile Include="src\r2\r2_FPSTimer.cpp" />
+    <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\r2\r2_Point_Float.cpp" />
     <ClCompile Include="src\r2\r2_Point_Int.cpp" />
     <ClCompile Include="src\r2\r2_Random.cpp" />
@@ -81,7 +82,6 @@
     <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\render\r2render_Camera.cpp" />
     <ClCompile Include="src\render\r2render_TextureFrame.cpp" />
-    <ClCompile Include="src\render\r2_GridIndexConverter.cpp" />
     <ClCompile Include="src\render\r2render_Texture.cpp" />
     <ClCompile Include="src\test\TestMainMenu.cpp" />
     <ClCompile Include="src\test\test_p2048\item\test_number_node.cpp" />
@@ -168,6 +168,7 @@
     <ClInclude Include="src\r2cm\r2cm_iItem.h" />
     <ClInclude Include="src\r2cm\r2cm_Menu.h" />
     <ClInclude Include="src\r2\r2_FPSTimer.h" />
+    <ClInclude Include="src\r2\r2_GridIndexConverter.h" />
     <ClInclude Include="src\r2\r2_Inspector.h" />
     <ClInclude Include="src\r2\r2_Point.h" />
     <ClInclude Include="src\r2\r2_Point_Float.h" />
@@ -184,7 +185,6 @@
     <ClInclude Include="src\render\r2render_Camera.h" />
     <ClInclude Include="src\render\r2render_iRenderTarget.h" />
     <ClInclude Include="src\render\r2render_TextureFrame.h" />
-    <ClInclude Include="src\render\r2_GridIndexConverter.h" />
     <ClInclude Include="src\render\r2render_Texture.h" />
     <ClInclude Include="src\test\TestMainMenu.h" />
     <ClInclude Include="src\test\test_p2048\item\test_number_node.h" />

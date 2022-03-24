@@ -92,9 +92,6 @@
     <ClCompile Include="src\base\r2base_Director.cpp">
       <Filter>base</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\r2_GridIndexConverter.cpp">
-      <Filter>render</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\r2render_Camera.cpp">
       <Filter>render</Filter>
     </ClCompile>
@@ -338,6 +335,9 @@
     <ClCompile Include="src\test\test_p2048\item\test_stage.cpp">
       <Filter>test\test_p2048\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_GridIndexConverter.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -367,9 +367,6 @@
     </ClInclude>
     <ClInclude Include="src\base\r2base_Director.h">
       <Filter>base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\render\r2_GridIndexConverter.h">
-      <Filter>render</Filter>
     </ClInclude>
     <ClInclude Include="src\render\r2render_Camera.h">
       <Filter>render</Filter>
@@ -640,6 +637,9 @@
     </ClInclude>
     <ClInclude Include="src\test\test_p2048\item\test_stage.h">
       <Filter>test\test_p2048\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_GridIndexConverter.h">
+      <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
