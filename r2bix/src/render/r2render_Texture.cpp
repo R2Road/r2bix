@@ -26,10 +26,10 @@ namespace r2render
 		assert( 0u < width && 0u < height );
 	}
 	Texture::Texture( const uint32_t width, const uint32_t height, const char fill_char ) :
-		mGridIndexConverter( width, height )
-		, mChars( width * height, fill_char )
+		mGridIndexConverter( 1, 1 )
+		, mChars()
 	{
-		assert( 0u < width && 0u < height );
+		Reset( width, height, fill_char );
 	}
 	Texture::Texture( const uint32_t width, const uint32_t height, const std::string_view str ) :
 		mGridIndexConverter( width, height )
@@ -68,6 +68,14 @@ namespace r2render
 
 		//std::copy( str.begin(), str.end(), mChars.begin() );
 		memcpy_s( &mChars[0], mChars.size(), str.data(), str.size() );
+	}
+	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char )
+	{
+		assert( 0u < width && 0u < height );
+
+		mGridIndexConverter = r2::GridIndexConverter( width, height );
+		mChars.clear();
+		mChars.resize( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), fill_char );
 	}
 
 	void Texture::FillAll( const char c )

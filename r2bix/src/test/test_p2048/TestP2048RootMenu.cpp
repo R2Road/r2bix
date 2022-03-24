@@ -4,6 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
+#include "test/test_p2048/item/test_background_node.h"
 #include "test/test_p2048/item/test_number_node.h"
 
 #include "test/TestMainMenu.h"
@@ -19,6 +20,7 @@ r2cm::MenuUp TestP2048RootMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', test_number_node::Basic::GetInstance() );
+		ret->AddItem( '2', test_background_node::Basic::GetInstance() );
 
 
 		ret->AddSplit();

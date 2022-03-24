@@ -6,9 +6,11 @@
 #include <numeric>
 
 #include "base/r2base_Director.h"
-
+#include "component/r2component_CustomTextureComponent.h"
+#include "component/r2component_TextureRenderComponent.h"
 #include "node/r2node_PivotNode.h"
 
+#include "p2048/p2048_BackgroundNode.h"
 #include "p2048/p2048_NumberNode.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
@@ -36,9 +38,23 @@ namespace p2048
 			return false;
 		}
 
+		//
+		// Background
+		//
+		{
+			auto node = AddChild<p2048::BackgroundNode>();
+			node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 31, 21, 'S' );
+			node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
+
+			node->mTransformComponent->SetPosition(
+				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.5f
+			);
+		}
+
 		// Number
 		{
-			auto node = AddChild<p2048::NumberNode>();
+			auto node = AddChild<p2048::NumberNode>( 1 );
 			node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
