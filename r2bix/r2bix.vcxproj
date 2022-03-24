@@ -37,6 +37,7 @@
     <ClCompile Include="src\base\r2base_TextureFrameAnimationTableBase.cpp" />
     <ClCompile Include="src\base\r2base_TextureTableBase.cpp" />
     <ClCompile Include="src\component\r2component_ActionProcessComponent.cpp" />
+    <ClCompile Include="src\component\r2component_CustomTextureComponent.cpp" />
     <ClCompile Include="src\component\r2component_LabelComponent.cpp" />
     <ClCompile Include="src\component\r2component_PivotComponent.cpp" />
     <ClCompile Include="src\component\r2component_TextureFrameAnimationComponent.cpp" />
@@ -132,6 +133,7 @@
     <ClInclude Include="src\base\r2base_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\base\r2base_TextureTableBase.h" />
     <ClInclude Include="src\component\r2component_ActionProcessComponent.h" />
+    <ClInclude Include="src\component\r2component_CustomTextureComponent.h" />
     <ClInclude Include="src\component\r2component_LabelComponent.h" />
     <ClInclude Include="src\component\r2component_PivotComponent.h" />
     <ClInclude Include="src\component\r2component_TextureFrameAnimationComponent.h" />

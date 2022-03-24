@@ -38,6 +38,13 @@ namespace component_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class CustomTextureComponentTest : public r2cm::iItem, public r2::SingleTon<CustomTextureComponentTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class LabelComponentTest : public r2cm::iItem, public r2::SingleTon<LabelComponentTest>
 	{
 	public:

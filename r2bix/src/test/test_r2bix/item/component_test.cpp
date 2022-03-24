@@ -9,6 +9,7 @@
 #include "action/r2action_TickAction.h"
 #include "base/r2base_Director.h"
 #include "base/r2base_Node.h"
+#include "component/r2component_CustomTextureComponent.h"
 #include "component/r2component_LabelComponent.h"
 #include "component/r2component_ActionProcessComponent.h"
 #include "component/r2component_TextureFrameAnimationComponent.h"
@@ -287,6 +288,76 @@ namespace component_test
 			{
 				PROCESS_MAIN( component->SetVisibleRectForced( -4, -2, 1, 1 ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT CustomTextureComponentTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Custom Texture Component";
+		};
+	}
+	r2cm::iItem::DoFuncT CustomTextureComponentTest::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 13, 7 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, custom_texture );
+			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, texture_render );
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_NE( nullptr, custom_texture->GetTexture() );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( nullptr, texture_render->GetTexture() );
+				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
+				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( custom_texture->GetTexture()->FillAll( '?' ) );
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( custom_texture->GetTexture()->Reset( "Bla Bla Bla" ) );
+				PROCESS_MAIN( texture_render->ResetVisibleRect() );
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				std::cout << r2::linefeed;
 

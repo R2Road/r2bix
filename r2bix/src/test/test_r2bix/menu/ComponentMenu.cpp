@@ -28,7 +28,11 @@ r2cm::MenuUp ComponentMenu::Create( r2cm::Director& director )
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'r', component_test::LabelComponentTest::GetInstance() );
+		ret->AddItem( 'r', component_test::CustomTextureComponentTest::GetInstance() );
+
+		ret->AddLineFeed();
+
+		ret->AddItem( 't', component_test::LabelComponentTest::GetInstance() );
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
