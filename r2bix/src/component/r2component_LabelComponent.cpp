@@ -30,7 +30,11 @@ namespace r2component
 		}
 
 		mText = str;
-		mCustomTextureComponent->GetTexture()->Reset( str );
+
+		if( mCustomTextureComponent )
+		{
+			mCustomTextureComponent->GetTexture()->Reset( str );
+		}
 
 		if( mTextureRenderComponent )
 		{
