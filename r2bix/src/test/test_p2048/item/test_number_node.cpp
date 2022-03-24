@@ -36,13 +36,14 @@ namespace test_number_node
 
 			std::cout << r2::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 15, 7 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 13, 5 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( auto number_node = p2048::NumberNode::Create( dummy_director ) );
+			EXPECT_NE( nullptr, number_node->GetComponent<r2component::TransformComponent>() );
 			EXPECT_NE( nullptr, number_node->GetComponent<p2048::NumberComponent>() );
 
 			std::cout << r2::split;
