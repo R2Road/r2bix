@@ -23,6 +23,10 @@ void PrintStage( const p2048::Stage& stage )
 			{
 				std::cout << "X";
 			}
+			else
+			{
+				std::cout << val;
+			}
 
 			std::cout << r2::tab;
 		}
@@ -55,6 +59,14 @@ namespace test_stage
 			std::cout << r2::split;
 
 			{
+				PROCESS_MAIN( PrintStage( stage ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( stage.Add( 2, 2, 64 ) );
+				EXPECT_EQ( 64, stage.Get( 2, 2 ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
