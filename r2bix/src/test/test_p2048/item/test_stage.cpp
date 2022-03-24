@@ -84,4 +84,39 @@ namespace test_stage
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT MoveTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : Move";
+		};
+	}
+	r2cm::iItem::DoFuncT MoveTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( stage.Add( 0, 0, 2 ) );
+				PROCESS_MAIN( stage.Add( 3, 0, 4 ) );
+				PROCESS_MAIN( stage.Add( 0, 3, 8 ) );
+				PROCESS_MAIN( stage.Add( 3, 3, 16 ) );
+				PROCESS_MAIN( PrintStage( stage ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

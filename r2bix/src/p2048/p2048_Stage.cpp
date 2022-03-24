@@ -25,4 +25,9 @@ namespace p2048
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
 		mContainer[linear_index] = -1;
 	}
+
+	void Stage::Move( int move_x, int move_y )
+	{
+
+	}
 }

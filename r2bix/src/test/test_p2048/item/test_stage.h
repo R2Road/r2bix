@@ -11,4 +11,11 @@ namespace test_stage
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class MoveTest : public r2cm::iItem, public r2::SingleTon<MoveTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

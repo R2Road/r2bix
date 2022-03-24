@@ -24,6 +24,7 @@ r2cm::MenuUp TestP2048RootMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 		ret->AddItem( 'q', test_stage::Basic::GetInstance() );
+		ret->AddItem( 'w', test_stage::MoveTest::GetInstance() );
 
 
 		ret->AddSplit();
