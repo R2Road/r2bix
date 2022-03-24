@@ -338,6 +338,9 @@
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp">
       <Filter>r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2\r2_Direction4.cpp">
+      <Filter>r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -639,6 +642,9 @@
       <Filter>test\test_p2048\item</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_GridIndexConverter.h">
+      <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2\r2_Direction4.h">
       <Filter>r2</Filter>
     </ClInclude>
   </ItemGroup>
