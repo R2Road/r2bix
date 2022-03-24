@@ -52,8 +52,8 @@ namespace test_stage
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( p2048::Stage stage( 7, 5 ) );
-			EXPECT_EQ( 7, stage.GetWidth() );
+			DECLARATION_MAIN( p2048::Stage stage( 6, 5 ) );
+			EXPECT_EQ( 6, stage.GetWidth() );
 			EXPECT_EQ( 5, stage.GetHeight() );
 
 			std::cout << r2::split;
@@ -67,6 +67,15 @@ namespace test_stage
 			{
 				PROCESS_MAIN( stage.Add( 2, 2, 64 ) );
 				EXPECT_EQ( 64, stage.Get( 2, 2 ) );
+				PROCESS_MAIN( PrintStage( stage ) );
+			}
+
+			std::cout << r2::split;
+
+
+			{
+				PROCESS_MAIN( stage.Remove( 2, 2 ) );
+				EXPECT_EQ( -1, stage.Get( 2, 2 ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
