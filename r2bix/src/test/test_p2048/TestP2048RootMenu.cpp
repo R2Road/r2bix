@@ -5,6 +5,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "test/test_p2048/item/test_number_node.h"
+#include "test/test_p2048/item/test_stage.h"
 
 #include "test/TestMainMenu.h"
 
@@ -19,6 +20,10 @@ r2cm::MenuUp TestP2048RootMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', test_number_node::Basic::GetInstance() );
+
+		ret->AddLineFeed();
+
+		ret->AddItem( 'q', test_stage::Basic::GetInstance() );
 
 
 		ret->AddSplit();

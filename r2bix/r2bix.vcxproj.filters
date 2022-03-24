@@ -70,6 +70,9 @@
     <Filter Include="project_2048\table">
       <UniqueIdentifier>{b234f4a7-38c0-48dd-89da-a3ff59c54318}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_2048\game">
+      <UniqueIdentifier>{863a5968-5486-471d-a731-dde6ecabe6b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -328,6 +331,12 @@
     </ClCompile>
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp">
       <Filter>project_2048\table</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_Stage.cpp">
+      <Filter>project_2048\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_p2048\item\test_stage.cpp">
+      <Filter>test\test_p2048\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -625,6 +634,12 @@
     </ClInclude>
     <ClInclude Include="src\p2048\p2048table_TextureTable.h">
       <Filter>project_2048\table</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_Stage.h">
+      <Filter>project_2048\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_p2048\item\test_stage.h">
+      <Filter>test\test_p2048\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
