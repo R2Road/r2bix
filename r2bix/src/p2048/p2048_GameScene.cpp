@@ -44,11 +44,12 @@ namespace p2048
 		{
 			auto node = AddChild<r2node::CustomTextureNode>();
 			node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 31, 21, 'S' );
+			node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 			node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
 
 			node->mTransformComponent->SetPosition(
-				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.5f
+				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetWidth() * 0.5f )
+				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetHeight() * 0.5f )
 			);
 		}
 
