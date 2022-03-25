@@ -2,6 +2,7 @@
 
 #include <vector>
 
+#include "r2/r2_Direction4.h"
 #include "r2/r2_GridIndexConverter.h"
 
 namespace p2048
@@ -29,7 +30,7 @@ namespace p2048
 		//
 		//
 		//
-		void Move( int move_x, int move_y );
+		void Move( const r2::Direction4::eState direction_state );
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;

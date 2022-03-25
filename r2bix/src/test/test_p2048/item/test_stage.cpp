@@ -116,6 +116,14 @@ namespace test_stage
 
 			std::cout << r2::split;
 
+
+			{
+				PROCESS_MAIN( stage.Move( r2::Direction4::eState::Right ) );
+				PROCESS_MAIN( PrintStage( stage ) );
+			}
+
+			std::cout << r2::split;
+
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
