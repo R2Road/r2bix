@@ -1,13 +1,12 @@
 #include "pch.h"
 #include "rect_test.h"
 
-#include <algorithm>	
-#include <conio.h>
-#include <Windows.h>
+#include <algorithm>
 
 #include "r2/r2_Inspector.h"
 #include "r2/r2_Rect_Int.h"
 #include "r2cm/r2cm_eTestEndAction.h"
+#include "utility/r2utility_WindowUtil.h"
 #include "test/Utility4Test.h"
 
 namespace rect_test
@@ -42,10 +41,10 @@ namespace rect_test
 				Utility4Test::DrawRect( offset_y, rect_2, '2' );
 				Utility4Test::DrawRect( offset_y, rect_3, '3' );
 
-				SetConsoleCursorPosition(
-					GetStdHandle( STD_OUTPUT_HANDLE )
-					, { 0, static_cast<short>( offset_y + std::max( { rect_1.GetMaxY(), rect_2.GetMaxY(), rect_3.GetMaxY() } ) + 1) }
-				);
+				r2utility::SetCursorPoint( {
+					0
+					, static_cast<short>( offset_y + std::max( { rect_1.GetMaxY(), rect_2.GetMaxY(), rect_3.GetMaxY() } ) + 1 )
+				} );
 			}
 
 			std::cout << r2::split;
