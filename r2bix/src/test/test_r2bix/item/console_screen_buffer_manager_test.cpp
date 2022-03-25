@@ -3,9 +3,9 @@
 
 #include <conio.h>
 
-#include "r2cm/r2cm_eTestEndAction.h"
-
 #include "base/r2base_ScreenBufferManager.h"
+#include "r2/r2_Inspector.h"
+#include "r2cm/r2cm_eTestEndAction.h"
 
 namespace console_screen_buffer_manager_test
 {
@@ -20,18 +20,11 @@ namespace console_screen_buffer_manager_test
 	{
 		return []()->r2cm::eTestEndAction
 		{
-			r2base::ScreenBufferManager screen_buffer_manager;
-
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
-			
-
-			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2node::ScreenBufferManager screen_buffer_manager;" << r2::linefeed;
-			}
+			DECLARATION_MAIN( r2base::ScreenBufferManager screen_buffer_manager );
 
 			std::cout << r2::split;
 
