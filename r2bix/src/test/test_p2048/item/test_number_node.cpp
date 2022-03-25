@@ -2,8 +2,6 @@
 #include "test_number_node.h"
 
 #include <algorithm>	
-#include <conio.h>
-#include <Windows.h>
 
 #include "base/r2base_Director.h"
 #include "r2/r2_Inspector.h"
