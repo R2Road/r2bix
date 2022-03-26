@@ -87,6 +87,36 @@ namespace test_stage
 
 
 
+	r2cm::iItem::TitleFuncT MoveReadyTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : Move Ready";
+		};
+	}
+	r2cm::iItem::DoFuncT MoveReadyTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( p2048::Stage stage( 5, 5 ) );
+			PROCESS_MAIN( PrintStage( stage ) );
+
+			std::cout << r2::split;
+
+			{}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT MoveTest::GetTitleFunction() const
 	{
 		return []()->const char*
