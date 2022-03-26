@@ -28,6 +28,11 @@ namespace p2048
 		mContainer[linear_index] = -1;
 	}
 
+	//
+	// # 이동 규칙
+	// 1. 도착점에 가장 가까운 녀석부터 이동
+	// 2. 아무도 움직이지 못했다면 이동 한 것이 아니다.
+	//
 	void Stage::Move( const r2::Direction4::eState direction_state )
 	{
 		//
