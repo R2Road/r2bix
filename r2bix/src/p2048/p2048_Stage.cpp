@@ -16,6 +16,14 @@ namespace p2048
 		return mContainer[linear_index];
 	}
 
+	void Stage::ClearAll()
+	{
+		for( auto& v : mContainer )
+		{
+			v = -1;
+		}
+	}
+
 	void Stage::Add( const uint32_t x, const uint32_t y, const uint32_t val )
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );

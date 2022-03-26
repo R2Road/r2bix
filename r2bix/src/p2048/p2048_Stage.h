@@ -24,6 +24,7 @@ namespace p2048
 		//
 		//
 		//
+		void ClearAll();
 		void Add( const uint32_t x, const uint32_t y, const uint32_t val );
 		void Remove( const uint32_t x, const uint32_t y );
 

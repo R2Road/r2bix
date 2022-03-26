@@ -146,6 +146,7 @@ namespace test_stage
 					{
 						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 0 ) );
 						PROCESS_MAIN( PrintStage( stage ) );
+						stage.ClearAll();
 					}
 				} while( bRun );
 			}
