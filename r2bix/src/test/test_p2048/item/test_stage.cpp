@@ -111,6 +111,7 @@ namespace test_stage
 			{
 				DECLARATION_MAIN( r2::Direction4 move_dir );
 				DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
+				DECLARATION_MAIN( r2::PointInt pivot_point );
 
 				std::cout << r2::linefeed;
 
@@ -142,8 +143,15 @@ namespace test_stage
 						break;
 					}
 
+					std::cout << r2::linefeed;
+
+					PROCESS_MAIN( pivot_point.Set( center_point.GetX() * std::abs( move_dir.GetPoint().GetX() ), center_point.GetY() * std::abs( move_dir.GetPoint().GetY() ) ) );
+
+					std::cout << r2::linefeed;
+
 					if( bRun )
 					{
+						PROCESS_MAIN( stage.Add( pivot_point.GetX(), pivot_point.GetY(), 7 ) );
 						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 0 ) );
 						PROCESS_MAIN( PrintStage( stage ) );
 						stage.ClearAll();
