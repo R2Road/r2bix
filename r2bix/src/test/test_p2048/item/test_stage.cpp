@@ -103,7 +103,7 @@ namespace test_stage
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( p2048::Stage stage( 5, 5 ) );
+			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
 			PROCESS_MAIN( PrintStage( stage ) );
 
 			std::cout << r2::split;
@@ -111,7 +111,8 @@ namespace test_stage
 			{
 				DECLARATION_MAIN( r2::Direction4 move_dir );
 				DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-				DECLARATION_MAIN( r2::PointInt pivot_point );
+				DECLARATION_MAIN( r2::PointInt pivot_point_1 );
+				DECLARATION_MAIN( r2::PointInt pivot_point_2 );
 
 				std::cout << r2::linefeed;
 
@@ -145,13 +146,24 @@ namespace test_stage
 
 					std::cout << r2::linefeed;
 
-					PROCESS_MAIN( pivot_point.Set( center_point.GetX() * std::abs( move_dir.GetPoint().GetX() ), center_point.GetY() * std::abs( move_dir.GetPoint().GetY() ) ) );
+					{
+						PROCESS_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetPoint().GetX(), center_point.GetY() * move_dir.GetPoint().GetY() ) );
+						PROCESS_MAIN( pivot_point_1.SetX( std::clamp( pivot_point_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
+						PROCESS_MAIN( pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
+					}
+
+					std::cout << r2::linefeed;
+
+					{
+						PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetPoint().GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetPoint().GetY() ) ) );
+					}
 
 					std::cout << r2::linefeed;
 
 					if( bRun )
 					{
-						PROCESS_MAIN( stage.Add( pivot_point.GetX(), pivot_point.GetY(), 7 ) );
+						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 8 ) );
+						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 7 ) );
 						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 0 ) );
 						PROCESS_MAIN( PrintStage( stage ) );
 						stage.ClearAll();
