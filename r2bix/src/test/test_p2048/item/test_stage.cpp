@@ -7,6 +7,7 @@
 #include "base/r2base_Director.h"
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
+#include "utility/r2utility_WindowUtil.h"
 
 #include "p2048/p2048_Stage.h"
 
@@ -107,7 +108,40 @@ namespace test_stage
 
 			std::cout << r2::split;
 
-			{}
+			{
+				DECLARATION_MAIN( r2::Direction4 move_dir );
+
+				std::cout << r2::linefeed;
+
+				const auto pivot_coord = r2utility::GetCursorPoint();
+				bool bRun = true;
+				do
+				{
+					r2utility::SetCursorPoint( pivot_coord );
+
+					std::cout << "Press [W, A, S, D]" << r2::linefeed2;
+
+					switch( _getch() )
+					{
+					case 97: // L
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Left ) );
+						break;
+					case 100: // R
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Right ) );
+						break;
+					case 119: // U
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
+						break;
+					case 115: // D
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) );
+						break;
+
+					case 27: // ESC
+						bRun = false;
+						break;
+					}
+				} while( bRun );
+			}
 
 			std::cout << r2::split;
 
