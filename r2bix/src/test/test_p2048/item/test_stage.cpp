@@ -110,6 +110,7 @@ namespace test_stage
 
 			{
 				DECLARATION_MAIN( r2::Direction4 move_dir );
+				DECLARATION_MAIN( r2::PointInt center_point );
 
 				std::cout << r2::linefeed;
 
@@ -139,6 +140,13 @@ namespace test_stage
 					case 27: // ESC
 						bRun = false;
 						break;
+					}
+
+					if( bRun )
+					{
+						center_point.Set( stage.GetWidth() / 2, stage.GetHeight() / 2 );
+						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 0 ) );
+						PROCESS_MAIN( PrintStage( stage ) );
 					}
 				} while( bRun );
 			}
