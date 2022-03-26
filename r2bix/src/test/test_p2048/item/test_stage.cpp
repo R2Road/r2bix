@@ -133,10 +133,10 @@ namespace test_stage
 						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Right ) );
 						break;
 					case 119: // U
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) ); // swap D 4 ez look
 						break;
 					case 115: // D
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) );
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) ); // swap U 4 ez look
 						break;
 
 					case 27: // ESC
