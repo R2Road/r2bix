@@ -165,11 +165,28 @@ namespace test_stage
 
 						std::cout << r2::linefeed;
 
+						stage.ClearAll();
 						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
 						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 2 ) );
 						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 0 ) );
 						PROCESS_MAIN( PrintStage( stage ) );
+
+						std::cout << r2::linefeed;
+
 						stage.ClearAll();
+						for( int y = 0; stage.GetHeight() > y; ++y )
+						{
+							for( int x = 0; stage.GetWidth() > x; ++x )
+							{
+								r2::PointInt temp_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
+
+								if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
+								{
+									PROCESS_MAIN( stage.Add( x, y, 7 ) );
+								}
+							}
+						}
+						PROCESS_MAIN( PrintStage( stage ) );
 					}
 				} while( bRun );
 			}
