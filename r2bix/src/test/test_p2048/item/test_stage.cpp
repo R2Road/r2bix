@@ -142,6 +142,9 @@ namespace test_stage
 					case 27: // ESC
 						bRun = false;
 						break;
+
+					default:
+						continue;
 					}
 
 					std::cout << r2::linefeed;
@@ -162,8 +165,8 @@ namespace test_stage
 
 					if( bRun )
 					{
-						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 8 ) );
-						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 7 ) );
+						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
+						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 2 ) );
 						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 0 ) );
 						PROCESS_MAIN( PrintStage( stage ) );
 						stage.ClearAll();
