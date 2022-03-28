@@ -173,7 +173,7 @@ namespace test_stage
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 
