@@ -10,6 +10,11 @@ namespace p2048
 		, mContainer( width * height, -1 )
 	{}
 
+	bool Stage::IsIn( const const int32_t x, const int32_t y ) const
+	{
+		return ( 0 <= x && 0 <= y && GetWidth() > x && GetHeight() > y );
+	}
+
 	uint32_t Stage::Get( const uint32_t x, const uint32_t y ) const
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );

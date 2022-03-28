@@ -104,7 +104,6 @@ namespace test_stage
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
-			PROCESS_MAIN( PrintStage( stage ) );
 
 			std::cout << r2::split;
 
@@ -174,17 +173,26 @@ namespace test_stage
 						std::cout << r2::linefeed;
 
 						stage.ClearAll();
-						for( int y = 0; stage.GetHeight() > y; ++y )
+						
+						auto reverse_dir = move_dir;
+						reverse_dir.Rotate( true );
+						reverse_dir.Rotate( true );
+						for( int loop_count = 0; stage.IsIn( pivot_point_2.GetX(), pivot_point_2.GetY() ); ++loop_count )
 						{
-							for( int x = 0; stage.GetWidth() > x; ++x )
+							for( int y = 0; stage.GetHeight() > y; ++y )
 							{
-								r2::PointInt temp_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
-
-								if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
+								for( int x = 0; stage.GetWidth() > x; ++x )
 								{
-									PROCESS_MAIN( stage.Add( x, y, 7 ) );
+									r2::PointInt temp_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
+
+									if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
+									{
+										PROCESS_MAIN( stage.Add( x, y, loop_count ) );
+									}
 								}
 							}
+
+							pivot_point_2 += reverse_dir.GetPoint();
 						}
 						PROCESS_MAIN( PrintStage( stage ) );
 					}
