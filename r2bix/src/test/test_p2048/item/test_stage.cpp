@@ -178,9 +178,9 @@ namespace test_stage
 						reverse_dir.Rotate( true );
 						for( int loop_count = 0; stage.IsIn( pivot_point_2.GetX(), pivot_point_2.GetY() ); ++loop_count )
 						{
-							for( int y = 0; stage.GetHeight() > y; ++y )
+							for( uint32_t y = 0; stage.GetHeight() > y; ++y )
 							{
-								for( int x = 0; stage.GetWidth() > x; ++x )
+								for( uint32_t x = 0; stage.GetWidth() > x; ++x )
 								{
 									r2::PointInt temp_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
 
