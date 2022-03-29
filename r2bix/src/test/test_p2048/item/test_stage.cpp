@@ -22,7 +22,7 @@ void PrintStage( const p2048::Stage& stage )
 
 			if( -1 == val )
 			{
-				std::cout << "X";
+				std::cout << "=";
 			}
 			else
 			{
