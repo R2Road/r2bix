@@ -12,7 +12,7 @@ namespace p2048
 
 	bool Stage::IsIn( const int32_t x, const int32_t y ) const
 	{
-		return ( 0 <= x && 0 <= y && GetWidth() > x && GetHeight() > y );
+		return ( 0 <= x && 0 <= y && static_cast<int>( GetWidth() ) > x && static_cast<int>( GetHeight() ) > y );
 	}
 
 	uint32_t Stage::Get( const uint32_t x, const uint32_t y ) const
