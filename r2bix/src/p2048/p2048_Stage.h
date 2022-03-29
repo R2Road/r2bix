@@ -21,7 +21,7 @@ namespace p2048
 		uint32_t GetHeight() const { return mGridIndexConverter.GetHeight(); }
 		uint32_t GetMaxX() const { return mGridIndexConverter.GetWidth() - 1; }
 		uint32_t GetMaxY() const { return mGridIndexConverter.GetHeight() - 1; }
-		bool IsIn( const const int32_t x, const int32_t y ) const;
+		bool IsIn( const int32_t x, const int32_t y ) const;
 
 		uint32_t Get( const uint32_t x, const uint32_t y ) const;
 

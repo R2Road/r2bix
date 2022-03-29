@@ -10,7 +10,7 @@ namespace p2048
 		, mContainer( width * height, -1 )
 	{}
 
-	bool Stage::IsIn( const const int32_t x, const int32_t y ) const
+	bool Stage::IsIn( const int32_t x, const int32_t y ) const
 	{
 		return ( 0 <= x && 0 <= y && GetWidth() > x && GetHeight() > y );
 	}
