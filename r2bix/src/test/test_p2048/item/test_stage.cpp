@@ -2,7 +2,6 @@
 #include "test_stage.h"
 
 #include <conio.h>
-#include <Windows.h>
 
 #include "base/r2base_Director.h"
 #include "r2/r2_Inspector.h"
