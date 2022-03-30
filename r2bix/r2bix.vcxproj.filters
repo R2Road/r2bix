@@ -82,6 +82,9 @@
     <Filter Include="project_2048mini\game">
       <UniqueIdentifier>{39dd1f0c-5a44-45bf-b4b2-5d00cdb33791}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_2048mini\node">
+      <UniqueIdentifier>{95fc04a3-41cd-4de5-9153-17bddf4fe157}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -352,6 +355,9 @@
     </ClCompile>
     <ClCompile Include="src\p2048mini\p2048mini_Stage.cpp">
       <Filter>project_2048mini\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048mini\p2048mini_StageViewNode.cpp">
+      <Filter>project_2048mini\node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -661,6 +667,9 @@
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_Stage.h">
       <Filter>project_2048mini\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_StageViewNode.h">
+      <Filter>project_2048mini\node</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

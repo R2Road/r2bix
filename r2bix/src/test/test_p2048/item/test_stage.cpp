@@ -7,9 +7,12 @@
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 #include "render/r2render_Camera.h"
-#include "utility/r2utility_WindowUtil.h"
 
 #include "p2048mini/p2048mini_Stage.h"
+#include "p2048mini/p2048mini_StageViewNode.h"
+
+#include "test/Utility4Test.h"
+#include "utility/r2utility_WindowUtil.h"
 
 void PrintStage( const p2048mini::Stage& stage )
 {
@@ -110,10 +113,16 @@ namespace test_stage
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
+			DECLARATION_MAIN( auto stage_view_node = p2048mini::StageViewNode::Create( dummy_director ) );
 
 			std::cout << r2::split;
 
 			{
+				PROCESS_MAIN( stage_view_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
 			}
 
 			std::cout << r2::split;
