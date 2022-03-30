@@ -10,7 +10,7 @@
 
 #include "p2048mini/p2048mini_Stage.h"
 
-void PrintStage( const p2048::Stage& stage )
+void PrintStage( const p2048mini::Stage& stage )
 {
 	int val = -1;
 	for( uint32_t y = 0; stage.GetHeight() > y; ++y )
@@ -52,7 +52,7 @@ namespace test_stage
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( p2048::Stage stage( 6, 5 ) );
+			DECLARATION_MAIN( p2048mini::Stage stage( 6, 5 ) );
 			EXPECT_EQ( 6, stage.GetWidth() );
 			EXPECT_EQ( 5, stage.GetHeight() );
 
@@ -102,7 +102,7 @@ namespace test_stage
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
+			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 
 			std::cout << r2::split;
 
@@ -221,7 +221,7 @@ namespace test_stage
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
+			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 
 			std::cout << r2::split;
 

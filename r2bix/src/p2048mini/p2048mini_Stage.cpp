@@ -3,7 +3,7 @@
 
 #include "r2/r2_Point_Int.h"
 
-namespace p2048
+namespace p2048mini
 {
 	Stage::Stage( const uint32_t width, const uint32_t height ) :
 		mGridIndexConverter( width, height )

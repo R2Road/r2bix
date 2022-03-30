@@ -5,7 +5,7 @@
 #include "r2/r2_Direction4.h"
 #include "r2/r2_GridIndexConverter.h"
 
-namespace p2048
+namespace p2048mini
 {
 	class Stage
 	{
