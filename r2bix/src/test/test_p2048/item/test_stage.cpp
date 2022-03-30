@@ -6,6 +6,7 @@
 #include "base/r2base_Director.h"
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
+#include "render/r2render_Camera.h"
 #include "utility/r2utility_WindowUtil.h"
 
 #include "p2048mini/p2048mini_Stage.h"
@@ -77,6 +78,42 @@ namespace test_stage
 				PROCESS_MAIN( stage.Remove( 2, 2 ) );
 				EXPECT_EQ( -1, stage.Get( 2, 2 ) );
 				PROCESS_MAIN( PrintStage( stage ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT ViewTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : View";
+		};
+	}
+	r2cm::iItem::DoFuncT ViewTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 13, 5 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
+
+			std::cout << r2::split;
+
+			{
 			}
 
 			std::cout << r2::split;
