@@ -112,7 +112,6 @@ namespace test_stage
 
 			std::cout << r2::split;
 
-			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 			DECLARATION_MAIN( auto stage_view_node = p2048mini::StageViewNode::Create( dummy_director ) );
 
 			std::cout << r2::split;

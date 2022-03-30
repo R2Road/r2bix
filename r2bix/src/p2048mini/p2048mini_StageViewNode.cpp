@@ -22,9 +22,6 @@ namespace p2048mini
 			//
 			{
 				auto node = ret->AddChild<r2node::CustomTextureNode>();
-				node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 6, 6, 'O' );
-				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.5f, 0.5f );
-				node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
 			}
 
 			//
