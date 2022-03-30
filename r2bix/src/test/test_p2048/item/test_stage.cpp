@@ -9,6 +9,7 @@
 #include "render/r2render_Camera.h"
 
 #include "p2048mini/p2048mini_Stage.h"
+#include "p2048mini/p2048mini_StageViewComponent.h"
 #include "p2048mini/p2048mini_StageViewNode.h"
 
 #include "test/Utility4Test.h"
@@ -113,6 +114,7 @@ namespace test_stage
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( auto stage_view_node = p2048mini::StageViewNode::Create( dummy_director ) );
+			EXPECT_NE( nullptr, stage_view_node->GetComponent<p2048mini::StageViewComponent>() );
 
 			std::cout << r2::split;
 

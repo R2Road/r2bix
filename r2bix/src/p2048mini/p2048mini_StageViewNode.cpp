@@ -5,10 +5,9 @@
 
 #include "base/r2base_Director.h"
 
-#include "component/r2component_CustomTextureComponent.h"
-#include "component/r2component_TextureRenderComponent.h"
 #include "node/r2node_CustomTextureNode.h"
 #include "node/r2node_PivotNode.h"
+#include "p2048mini/p2048mini_StageViewComponent.h"
 
 namespace p2048mini
 {
@@ -17,6 +16,8 @@ namespace p2048mini
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
 		{
+			ret->AddComponent<p2048mini::StageViewComponent>();
+
 			//
 			// Background
 			//
