@@ -8,7 +8,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 #include "utility/r2utility_WindowUtil.h"
 
-#include "p2048/p2048_Stage.h"
+#include "p2048mini/p2048mini_Stage.h"
 
 void PrintStage( const p2048::Stage& stage )
 {

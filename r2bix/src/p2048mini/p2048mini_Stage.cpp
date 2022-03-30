@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "p2048_Stage.h"
+#include "p2048mini_Stage.h"
 
 #include "r2/r2_Point_Int.h"
 

@@ -54,6 +54,7 @@
     <ClCompile Include="src\node\r2node_SpriteAnimationNode.cpp" />
     <ClCompile Include="src\node\r2node_SpriteNode.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_GameScene.cpp" />
+    <ClCompile Include="src\p2048mini\p2048mini_Stage.cpp" />
     <ClCompile Include="src\p2048\p2048table_TextureFrameAnimationTable.cpp" />
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
@@ -61,7 +62,6 @@
     <ClCompile Include="src\p2048\p2048_GameScene.cpp" />
     <ClCompile Include="src\p2048\p2048_NumberComponent.cpp" />
     <ClCompile Include="src\p2048\p2048_NumberNode.cpp" />
-    <ClCompile Include="src\p2048\p2048_Stage.cpp" />
     <ClCompile Include="src\p2048\p2048_TitleScene.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -155,6 +155,7 @@
     <ClInclude Include="src\node\r2node_SpriteAnimationNode.h" />
     <ClInclude Include="src\node\r2node_SpriteNode.h" />
     <ClInclude Include="src\p2048mini\p2048mini_GameScene.h" />
+    <ClInclude Include="src\p2048mini\p2048mini_Stage.h" />
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h" />
     <ClInclude Include="src\p2048\p2048table_TextureTable.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
@@ -162,7 +163,6 @@
     <ClInclude Include="src\p2048\p2048_GameScene.h" />
     <ClInclude Include="src\p2048\p2048_NumberComponent.h" />
     <ClInclude Include="src\p2048\p2048_NumberNode.h" />
-    <ClInclude Include="src\p2048\p2048_Stage.h" />
     <ClInclude Include="src\p2048\p2048_TitleScene.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
