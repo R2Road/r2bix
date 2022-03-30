@@ -53,6 +53,7 @@
     <ClCompile Include="src\node\r2node_SceneNode.cpp" />
     <ClCompile Include="src\node\r2node_SpriteAnimationNode.cpp" />
     <ClCompile Include="src\node\r2node_SpriteNode.cpp" />
+    <ClCompile Include="src\p2048mini\p2048mini_GameScene.cpp" />
     <ClCompile Include="src\p2048\p2048table_TextureFrameAnimationTable.cpp" />
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="src\node\r2node_SceneNode.h" />
     <ClInclude Include="src\node\r2node_SpriteAnimationNode.h" />
     <ClInclude Include="src\node\r2node_SpriteNode.h" />
+    <ClInclude Include="src\p2048mini\p2048mini_GameScene.h" />
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h" />
     <ClInclude Include="src\p2048\p2048table_TextureTable.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />

@@ -8,6 +8,7 @@
 
 #include "base/r2base_Director.h"
 #include "p2048/p2048_EntryScene.h"
+#include "p2048mini/p2048mini_GameScene.h"
 #include "pmr/pmr_CompanyScene.h"
 
 #include "r2cm/r2cm_Director.h"
@@ -46,6 +47,7 @@ int main()
 		std::cout << "[ESC] " "Exit" << r2::linefeed2;
 
 		std::cout << "[1] " "Test" << r2::linefeed;
+		std::cout << "[2] " << p2048mini::GameScene::GetTitle() << r2::linefeed;
 		std::cout << "[2] " << p2048::EntryScene::GetTitle() << r2::linefeed;
 		std::cout << "[3] " << pmr::CompanyScene::GetTitle() << r2::linefeed;
 
@@ -77,6 +79,20 @@ int main()
 			// Setup
 			//
 			r2base::Director director;
+			director.Setup( p2048mini::GameScene::Create( director ) );
+
+			//
+			// Process
+			//
+			director.Run();
+		}
+		break;
+		case '3':
+		{
+			//
+			// Setup
+			//
+			r2base::Director director;
 			director.Setup( p2048::EntryScene::Create( director ) );
 
 			//
@@ -86,7 +102,7 @@ int main()
 		}
 		break;
 
-		case '3':
+		case '4':
 		{
 			//
 			// Setup

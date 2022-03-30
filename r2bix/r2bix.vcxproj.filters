@@ -73,6 +73,12 @@
     <Filter Include="project_2048\game">
       <UniqueIdentifier>{863a5968-5486-471d-a731-dde6ecabe6b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_2048mini">
+      <UniqueIdentifier>{612fabcb-2d0b-441a-af05-d37b95425bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="project_2048mini\scene">
+      <UniqueIdentifier>{10396213-553f-47a2-a249-5ba107a7e67d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -340,6 +346,9 @@
     </ClCompile>
     <ClCompile Include="src\r2\r2_Direction4.cpp">
       <Filter>r2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048mini\p2048mini_GameScene.cpp">
+      <Filter>project_2048mini\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -646,6 +655,9 @@
     </ClInclude>
     <ClInclude Include="src\r2\r2_Direction4.h">
       <Filter>r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_GameScene.h">
+      <Filter>project_2048mini\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
