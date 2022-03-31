@@ -156,15 +156,15 @@ namespace test_stage
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
-			DECLARATION_MAIN( auto stage_view_node = p2048mini::StageViewNode::Create( dummy_director ) );
-			DECLARATION_MAIN( auto svc = stage_view_node->GetComponent<p2048mini::StageViewComponent>() );
+			DECLARATION_MAIN( auto svn = p2048mini::StageViewNode::Create( dummy_director ) );
+			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048mini::StageViewComponent>() );
 			PROCESS_MAIN( svc->Setup( &stage ) );
-			PROCESS_MAIN( stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
+			PROCESS_MAIN( svn->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( stage_view_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROCESS_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				std::cout << r2::linefeed;
 
