@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "p2048mini_Stage.h"
 
+#include <algorithm>
+
 #include "r2/r2_Point_Int.h"
 
 namespace p2048mini
@@ -60,7 +62,64 @@ namespace p2048mini
 		// 이동, 합성 처리를 한다.
 		//
 
-		r2::Direction4 dir( direction_state );
-		r2::PointInt center_point( mGridIndexConverter.GetWidth() / 2, mGridIndexConverter.GetHeight() );
+		const r2::PointInt center_point( GetWidth() / 2, GetHeight() );
+
+		const r2::Direction4 move_dir( direction_state );
+		r2::Direction4 reverse_dir = move_dir;
+		reverse_dir.Rotate( true );
+		reverse_dir.Rotate( true );
+
+		//
+		// # Step 1
+		//
+		// =====
+		// ==P==
+		// =====
+		//
+		r2::PointInt pivot_point_1 = center_point;
+
+		//
+		// # Step 2
+		// > condition : dir == left
+		//
+		// =====
+		// P====
+		// =====
+		//
+		pivot_point_1 += r2::PointInt( center_point.GetX() * move_dir.GetPoint().GetX(), center_point.GetY() * move_dir.GetPoint().GetY() );
+		pivot_point_1.SetX( std::clamp( pivot_point_1.GetX(), 0, static_cast<int32_t>( GetMaxX() ) ) );
+		pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( GetMaxY() ) ) );
+
+		//
+		// # Step 3
+		// > condition : dir == left
+		//
+		// P====
+		// =====
+		// =====
+		//
+		r2::PointInt pivot_point_2( pivot_point_1.GetX() * std::abs( move_dir.GetPoint().GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetPoint().GetY() ) );
+
+		//
+		// # Step 4
+		//
+		//
+		for( int loop_count = 0; IsIn( pivot_point_2.GetX(), pivot_point_2.GetY() ); ++loop_count )
+		{
+			for( uint32_t y = 0; GetHeight() > y; ++y )
+			{
+				for( uint32_t x = 0; GetWidth() > x; ++x )
+				{
+					r2::PointInt temp_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
+
+					if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
+					{
+						Add( x, y, loop_count );
+					}
+				}
+			}
+
+			pivot_point_2 += reverse_dir.GetPoint();
+		}
 	}
 }

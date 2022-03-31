@@ -329,13 +329,54 @@ namespace test_stage
 
 
 			{
-				PROCESS_MAIN( stage.Move( r2::Direction4::eState::Right ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				DECLARATION_MAIN( r2::Direction4 move_dir );
+				DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
+				DECLARATION_MAIN( r2::PointInt pivot_point_1 );
+				DECLARATION_MAIN( r2::PointInt pivot_point_2 );
+
+				std::cout << r2::linefeed;
+
+				const auto pivot_coord = r2utility::GetCursorPoint();
+				bool bRun = true;
+				do
+				{
+					r2utility::SetCursorPoint( pivot_coord );
+
+					std::cout << "Press [W, A, S, D]" << r2::linefeed2;
+
+					switch( _getch() )
+					{
+					case 97: // L
+						PROCESS_MAIN( stage.Move( r2::Direction4::eState::Left ) );
+						break;
+					case 100: // R
+						PROCESS_MAIN( stage.Move( r2::Direction4::eState::Right ) );
+						break;
+					case 119: // U
+						PROCESS_MAIN( stage.Move( r2::Direction4::eState::Down ) ); // swap D 4 ez look
+						break;
+					case 115: // D
+						PROCESS_MAIN( stage.Move( r2::Direction4::eState::Up ) ); // swap U 4 ez look
+						break;
+
+					case 27: // ESC
+						bRun = false;
+						break;
+
+					default:
+						continue;
+					}
+
+					std::cout << r2::linefeed;
+
+					PROCESS_MAIN( PrintStage( stage ) );
+
+				} while( bRun );
 			}
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eTestEndAction::None;
 		};
 	}
 }
