@@ -50,18 +50,6 @@ namespace p2048mini
 	//
 	void Stage::Move( const r2::Direction4::eState direction_state )
 	{
-		//
-		// 중점을 만든다.
-		// Dierction 을 사용해서 중점을 이동 한계점 까지 이동시킨다.
-		// 이동 완료된 지점을 기준점으로 삼는다.
-		//
-		// 기준점에서 가까운 녀석부터 이동을 시켜야 한다.
-		// ( 먼 녀석을 먼저 움직이면 이후 처리로 움직여질 가까운 녀석들 때문에 움직이지 못할 수 있다. )
-		// 편한 작업을 위해 기준점을 가지고 전체 목록을 정렬한다.
-		//
-		// 이동, 합성 처리를 한다.
-		//
-
 		const r2::PointInt center_point( GetWidth() / 2, GetHeight() );
 
 		const r2::Direction4 move_dir( direction_state );
@@ -71,6 +59,7 @@ namespace p2048mini
 
 		//
 		// # Step 1
+		// > 중점을 만든다.
 		//
 		// =====
 		// ==P==
@@ -80,6 +69,9 @@ namespace p2048mini
 
 		//
 		// # Step 2
+		//
+		// Dierction 을 사용해서 중점을 이동 한계점 까지 이동시킨다.
+		//
 		// > condition : dir == left
 		//
 		// =====
@@ -92,6 +84,9 @@ namespace p2048mini
 
 		//
 		// # Step 3
+		//
+		// 이동 완료된 점과 move_dir 을 곱해서 열을 지정해줄 기준점을 완성한다.
+		//
 		// > condition : dir == left
 		//
 		// P====
@@ -103,6 +98,23 @@ namespace p2048mini
 		//
 		// # Step 4
 		//
+		// move_dir == -1, 0
+		// reverse_dir == 1, 0
+		// pivot_point_2 == 0, 0
+		//
+		// 각 루프마다 기준점에 "reverse_dir" 더해서 현재 처리할 열을 지정한다.
+		// pivot_point_2 += reverse_dir : ( 0, 0 ) > ( 1, 0 ) > ( 2, 0 ) > ( 3, 0 ) > ( 4,  0 )
+		//
+		// 01234
+		// =====
+		// =====		
+		//
+		// temp_point = x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() )
+		// 이 코드를 통해 현재 처리할 라인이 맞는지 확인한다.
+		//
+		// 01234
+		// 01234
+		// 01234
 		//
 		for( int loop_count = 0; IsIn( pivot_point_2.GetX(), pivot_point_2.GetY() ); ++loop_count )
 		{
@@ -114,6 +126,12 @@ namespace p2048mini
 
 					if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
 					{
+						//
+						// # Step 5
+						//
+						// 이 곳에서 이동, 합성 처리를 한다.
+						//
+
 						Add( x, y, loop_count );
 					}
 				}
