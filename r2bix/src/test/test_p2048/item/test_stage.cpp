@@ -134,6 +134,49 @@ namespace test_stage
 
 
 
+	r2cm::iItem::TitleFuncT StageViewNodeTest_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : ViewNode 2";
+		};
+	}
+	r2cm::iItem::DoFuncT StageViewNodeTest_2::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 40, 20 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
+			DECLARATION_MAIN( auto stage_view_node = p2048mini::StageViewNode::Create( dummy_director ) );
+			PROCESS_MAIN( stage_view_node->GetComponent<p2048mini::StageViewComponent>()->Setup( &stage ) );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( stage_view_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT MoveReadyTest::GetTitleFunction() const
 	{
 		return []()->const char*
