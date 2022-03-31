@@ -48,8 +48,8 @@ int main()
 
 		std::cout << "[1] " "Test" << r2::linefeed;
 		std::cout << "[2] " << p2048mini::GameScene::GetTitle() << r2::linefeed;
-		std::cout << "[2] " << p2048::EntryScene::GetTitle() << r2::linefeed;
-		std::cout << "[3] " << pmr::CompanyScene::GetTitle() << r2::linefeed;
+		std::cout << "[3] " << p2048::EntryScene::GetTitle() << r2::linefeed;
+		std::cout << "[4] " << pmr::CompanyScene::GetTitle() << r2::linefeed;
 
 		std::cout << r2::split;
 
