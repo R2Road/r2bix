@@ -33,7 +33,7 @@ namespace p2048mini
 		const uint32_t NUMBER_WIDTH = 4;
 		const uint32_t NUMBER_HEIGHT = 1;
 		const uint32_t SPACING_WIDTH = 3;
-		const uint32_t SPACING_HEIGHT = 1;
+		const uint32_t SPACING_HEIGHT = 2;
 
 		mWidth = ( mStage->GetWidth() * NUMBER_WIDTH ) + ( ( mStage->GetWidth() - 1 ) * SPACING_WIDTH );
 		mHeight = ( mStage->GetHeight() * NUMBER_HEIGHT ) + ( ( mStage->GetHeight() - 1 ) * SPACING_HEIGHT );
