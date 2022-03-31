@@ -18,7 +18,15 @@ namespace p2048mini
 
 		void Setup( p2048mini::Stage* const stage );
 
+		//
+		//
+		//
+		int32_t GetWidth() const { return mWidth; }
+		int32_t GetHeight() const { return mHeight; }
+
 	private:
 		p2048mini::Stage* mStage;
+		int32_t mWidth;
+		int32_t mHeight;
 	};
 }

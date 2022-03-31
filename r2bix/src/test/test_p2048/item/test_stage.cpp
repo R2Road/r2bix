@@ -157,7 +157,9 @@ namespace test_stage
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 			DECLARATION_MAIN( auto stage_view_node = p2048mini::StageViewNode::Create( dummy_director ) );
-			PROCESS_MAIN( stage_view_node->GetComponent<p2048mini::StageViewComponent>()->Setup( &stage ) );
+			DECLARATION_MAIN( auto svc = stage_view_node->GetComponent<p2048mini::StageViewComponent>() );
+			PROCESS_MAIN( svc->Setup( &stage ) );
+			PROCESS_MAIN( stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
 			std::cout << r2::split;
 

@@ -11,6 +11,8 @@ namespace p2048mini
 {
 	StageViewComponent::StageViewComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mStage( nullptr )
+		, mWidth( 0u )
+		, mHeight( 0u )
 	{}
 
 	std::unique_ptr<StageViewComponent> StageViewComponent::Create( r2base::Node& owner_node )
@@ -32,6 +34,9 @@ namespace p2048mini
 		const uint32_t NUMBER_HEIGHT = 1;
 		const uint32_t SPACING_WIDTH = 3;
 		const uint32_t SPACING_HEIGHT = 1;
+
+		mWidth = ( mStage->GetWidth() * NUMBER_WIDTH ) + ( ( mStage->GetWidth() - 1 ) * SPACING_WIDTH );
+		mHeight = ( mStage->GetHeight() * NUMBER_HEIGHT ) + ( ( mStage->GetHeight() - 1 ) * SPACING_HEIGHT );
 
 		for( uint32_t y = 0; mStage->GetHeight() > y; ++y )
 		{
