@@ -92,14 +92,14 @@ namespace test_stage
 
 
 
-	r2cm::iItem::TitleFuncT ViewTest::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT StageViewNodeTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stage : View";
+			return "Stage : ViewNode 1";
 		};
 	}
-	r2cm::iItem::DoFuncT ViewTest::GetDoFunction()
+	r2cm::iItem::DoFuncT StageViewNodeTest_1::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

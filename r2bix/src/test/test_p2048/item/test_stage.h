@@ -11,7 +11,7 @@ namespace test_stage
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class ViewTest : public r2cm::iItem, public r2::SingleTon<ViewTest>
+	class StageViewNodeTest_1 : public r2cm::iItem, public r2::SingleTon<StageViewNodeTest_1>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
