@@ -44,6 +44,7 @@
     <ClCompile Include="src\component\r2component_TextureRenderComponent.cpp" />
     <ClCompile Include="src\component\r2component_TextureFrameRenderComponent.cpp" />
     <ClCompile Include="src\component\r2component_TransformComponent.cpp" />
+    <ClCompile Include="src\DevelopmentMenu.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputCollector.cpp" />
     <ClCompile Include="src\input\r2input_Constant.cpp" />
     <ClCompile Include="src\input\r2input_KeyboardInputListener.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="src\component\r2component_TextureRenderComponent.h" />
     <ClInclude Include="src\component\r2component_TextureFrameRenderComponent.h" />
     <ClInclude Include="src\component\r2component_TransformComponent.h" />
+    <ClInclude Include="src\DevelopmentMenu.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputCollector.h" />
     <ClInclude Include="src\input\r2input_Constant.h" />
     <ClInclude Include="src\input\r2input_KeyboardInputListener.h" />

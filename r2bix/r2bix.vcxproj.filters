@@ -365,6 +365,7 @@
     <ClCompile Include="src\p2048mini\p2048mini_StageViewComponent.cpp">
       <Filter>project_2048mini\component</Filter>
     </ClCompile>
+    <ClCompile Include="src\DevelopmentMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -680,5 +681,6 @@
     <ClInclude Include="src\p2048mini\p2048mini_StageViewComponent.h">
       <Filter>project_2048mini\component</Filter>
     </ClInclude>
+    <ClInclude Include="src\DevelopmentMenu.h" />
   </ItemGroup>
 </Project>
