@@ -26,8 +26,11 @@ r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
 				return r2cm::eTestEndAction::None;
 			}
 		);
+
+		ret->AddLineFeed();
+
 		ret->AddItem(
-			'2'
+			'q'
 			, []()->const char* { return TestP2048RootMenu::GetTitle(); }
 			, [&director]()->r2cm::eTestEndAction
 			{
