@@ -13,7 +13,7 @@ r2cm::MenuUp TestP2048MiniRootMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle(),
-				"> Inprogress : ..."
+				"> Inprogress : Stage : Move"
 		"\n"	"> To do : ..."
 	) );
 
