@@ -88,6 +88,12 @@
     <Filter Include="project_2048mini\component">
       <UniqueIdentifier>{3bd39e4b-8d20-4468-b075-c0d15c9b7840}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\test_p2048mini">
+      <UniqueIdentifier>{881f9dfd-f1f0-4aa0-9571-76f84aea0942}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\test_p2048mini\item">
+      <UniqueIdentifier>{08a1c283-5428-49d7-b562-ff2f789daf7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -366,6 +372,9 @@
       <Filter>project_2048mini\component</Filter>
     </ClCompile>
     <ClCompile Include="src\DevelopmentMenu.cpp" />
+    <ClCompile Include="src\test\test_p2048mini\TestP2048MiniRootMenu.cpp">
+      <Filter>test\test_p2048mini</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -682,5 +691,8 @@
       <Filter>project_2048mini\component</Filter>
     </ClInclude>
     <ClInclude Include="src\DevelopmentMenu.h" />
+    <ClInclude Include="src\test\test_p2048mini\TestP2048MiniRootMenu.h">
+      <Filter>test\test_p2048mini</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
