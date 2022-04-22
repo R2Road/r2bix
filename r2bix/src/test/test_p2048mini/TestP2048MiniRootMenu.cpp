@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "test/test_p2048/item/test_stage.h"
+#include "test/test_p2048mini/item/test_stage.h"
 
 #include "test/TestMainMenu.h"
 
