@@ -116,7 +116,7 @@ namespace p2048mini
 		// 01234
 		// 01234
 		//
-		for( int loop_count = 0; IsIn( pivot_point_2.GetX(), pivot_point_2.GetY() ); ++loop_count )
+		for( ; IsIn( pivot_point_2.GetX(), pivot_point_2.GetY() ); pivot_point_2 += reverse_dir.GetPoint() )
 		{
 			for( uint32_t y = 0; GetHeight() > y; ++y )
 			{
@@ -132,12 +132,33 @@ namespace p2048mini
 						// 이 곳에서 이동, 합성 처리를 한다.
 						//
 
-						Add( x, y, loop_count );
+						// Has Value?
+						const auto target_number = Get( x, y );
+						if( 0 >= target_number )
+						{
+							continue;
+						}
+
+						// Is In?
+						r2::PointInt temp_point( x, y );
+						temp_point += move_dir.GetPoint();
+						if( !IsIn( temp_point.GetX(), temp_point.GetY() ) )
+						{
+							continue;
+						}
+
+						// Is Empty?
+						if( 0 < Get( temp_point.GetX(), temp_point.GetY() ) )
+						{
+							continue;
+						}
+						
+						// Move
+						Remove( x, y );
+						Add( temp_point.GetX(), temp_point.GetY(), target_number );
 					}
 				}
 			}
-
-			pivot_point_2 += reverse_dir.GetPoint();
 		}
 	}
 }
