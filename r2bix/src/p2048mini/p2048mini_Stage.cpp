@@ -167,6 +167,7 @@ namespace p2048mini
 
 								Remove( currept_point.GetX(), currept_point.GetY() );
 								Add( next_point.GetX(), next_point.GetY(), new_number );
+								break;
 							}
 						}
 						else // Move
