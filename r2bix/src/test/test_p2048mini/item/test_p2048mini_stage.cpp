@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "test_stage.h"
+#include "test_p2048mini_stage.h"
 
 #include <conio.h>
 
@@ -40,7 +40,7 @@ void PrintStage( const p2048mini::Stage& stage )
 	}
 }
 
-namespace test_stage
+namespace test_p2048mini_stage
 {
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
