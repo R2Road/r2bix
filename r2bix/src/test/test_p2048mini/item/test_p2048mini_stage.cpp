@@ -18,22 +18,15 @@
 
 void PrintStage( const p2048mini::Stage& stage )
 {
-	int val = -1;
+	int val = 0;
 	for( uint32_t y = 0; stage.GetHeight() > y; ++y )
 	{
 		for( uint32_t x = 0; stage.GetWidth() > x; ++x )
 		{
 			val = stage.Get( x, y );
 
-			if( -1 == val )
-			{
-				std::cout << "=";
-			}
-			else
-			{
-				std::cout << std::setw( 2 ) << std::right << val;
-				std::cout << std::setw( 1 ) << std::left; // roll back
-			}
+			std::cout << std::setw( 2 ) << std::right << val;
+			std::cout << std::setw( 1 ) << std::left; // roll back
 
 			std::cout << r2::tab;
 		}
@@ -260,7 +253,7 @@ namespace test_p2048mini_stage
 						stage.ClearAll();
 						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
 						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 2 ) );
-						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 0 ) );
+						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 7 ) );
 						PROCESS_MAIN( PrintStage( stage ) );
 
 						std::cout << r2::linefeed;

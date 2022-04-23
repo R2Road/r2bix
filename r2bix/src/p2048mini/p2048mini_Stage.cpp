@@ -27,7 +27,7 @@ namespace p2048mini
 	{
 		for( auto& v : mContainer )
 		{
-			v = -1;
+			v = 0;
 		}
 	}
 
