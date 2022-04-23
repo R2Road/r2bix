@@ -148,7 +148,8 @@ namespace p2048mini
 						}
 
 						// Is Empty?
-						if( 0 < Get( temp_point.GetX(), temp_point.GetY() ) )
+						const auto other_number = Get( temp_point.GetX(), temp_point.GetY() );
+						if( 0 < other_number )
 						{
 							continue;
 						}
