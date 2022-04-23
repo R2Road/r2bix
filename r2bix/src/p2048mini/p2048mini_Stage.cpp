@@ -146,15 +146,15 @@ namespace p2048mini
 						}
 
 						// Is In?
-						r2::PointInt temp_point( currept_point.GetX(), currept_point.GetY() );
-						temp_point += move_dir.GetPoint();
-						if( !IsIn( temp_point.GetX(), temp_point.GetY() ) )
+						r2::PointInt next_point( currept_point.GetX(), currept_point.GetY() );
+						next_point += move_dir.GetPoint();
+						if( !IsIn( next_point.GetX(), next_point.GetY() ) )
 						{
 							break;
 						}
 
 						// Is Empty?
-						const auto other_number = Get( temp_point.GetX(), temp_point.GetY() );
+						const auto other_number = Get( next_point.GetX(), next_point.GetY() );
 						if( 0 < other_number )
 						{
 							if( other_number != my_number ) // Can't Move
@@ -166,16 +166,16 @@ namespace p2048mini
 								const auto new_number = my_number + other_number;
 
 								Remove( currept_point.GetX(), currept_point.GetY() );
-								Add( temp_point.GetX(), temp_point.GetY(), new_number );
+								Add( next_point.GetX(), next_point.GetY(), new_number );
 							}
 						}
 						else // Move
 						{
 							Remove( currept_point.GetX(), currept_point.GetY() );
-							Add( temp_point.GetX(), temp_point.GetY(), my_number );
+							Add( next_point.GetX(), next_point.GetY(), my_number );
 						}
 
-						currept_point = temp_point;
+						currept_point = next_point;
 
 					} while( true );
 				}
