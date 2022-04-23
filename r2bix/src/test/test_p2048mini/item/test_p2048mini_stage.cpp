@@ -2,6 +2,7 @@
 #include "test_p2048mini_stage.h"
 
 #include <conio.h>
+#include <iomanip>
 
 #include "base/r2base_Director.h"
 #include "r2/r2_Inspector.h"
@@ -30,7 +31,8 @@ void PrintStage( const p2048mini::Stage& stage )
 			}
 			else
 			{
-				std::cout << val;
+				std::cout << std::setw( 2 ) << std::right << val;
+				std::cout << std::setw( 1 ) << std::left; // roll back
 			}
 
 			std::cout << r2::tab;
