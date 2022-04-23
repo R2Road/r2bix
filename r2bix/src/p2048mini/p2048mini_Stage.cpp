@@ -122,9 +122,9 @@ namespace p2048mini
 			{
 				for( uint32_t x = 0; GetWidth() > x; ++x )
 				{
-					r2::PointInt temp_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
+					r2::PointInt check_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
 
-					if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
+					if( pivot_point_2.GetX() == check_point.GetX() && pivot_point_2.GetY() == check_point.GetY() )
 					{
 						//
 						// # Step 5
