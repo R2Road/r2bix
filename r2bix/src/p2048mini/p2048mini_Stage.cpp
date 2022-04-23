@@ -155,14 +155,21 @@ namespace p2048mini
 
 						// Is Empty?
 						const auto other_number = Get( next_point.GetX(), next_point.GetY() );
-						if( 0 < other_number )
+						if( 0 < other_number ) // Not Empty
 						{
-							if( other_number != my_number ) // Can't Move
+							// Is Same Number?
+							if( other_number != my_number ) // Different Number
 							{
+								//
+								// Can't Move
+								//
 								break;
 							}
-							else // Merge and Move
+							else // Same Number
 							{
+								//
+								// Merge and Stop
+								//
 								const auto new_number = my_number + other_number;
 
 								Remove( currept_point.GetX(), currept_point.GetY() );
@@ -170,8 +177,11 @@ namespace p2048mini
 								break;
 							}
 						}
-						else // Move
+						else // Empty
 						{
+							//
+							// Move
+							//
 							Remove( currept_point.GetX(), currept_point.GetY() );
 							Add( next_point.GetX(), next_point.GetY(), my_number );
 						}
