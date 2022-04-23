@@ -136,43 +136,48 @@ namespace p2048mini
 					//
 
 					r2::PointInt currept_point( x, y );
-
-					// Has Value?
-					const auto my_number = Get( currept_point.GetX(), currept_point.GetY() );
-					if( 0 >= my_number )
+					do
 					{
-						continue;
-					}
-
-					// Is In?
-					r2::PointInt temp_point( currept_point.GetX(), currept_point.GetY() );
-					temp_point += move_dir.GetPoint();
-					if( !IsIn( temp_point.GetX(), temp_point.GetY() ) )
-					{
-						continue;
-					}
-
-					// Is Empty?
-					const auto other_number = Get( temp_point.GetX(), temp_point.GetY() );
-					if( 0 < other_number )
-					{
-						if( other_number != my_number ) // Can't Move
+						// Has Value?
+						const auto my_number = Get( currept_point.GetX(), currept_point.GetY() );
+						if( 0 >= my_number )
 						{
-							continue;
+							break;
 						}
-						else // Merge and Move
-						{
-							const auto new_number = my_number + other_number;
 
+						// Is In?
+						r2::PointInt temp_point( currept_point.GetX(), currept_point.GetY() );
+						temp_point += move_dir.GetPoint();
+						if( !IsIn( temp_point.GetX(), temp_point.GetY() ) )
+						{
+							break;
+						}
+
+						// Is Empty?
+						const auto other_number = Get( temp_point.GetX(), temp_point.GetY() );
+						if( 0 < other_number )
+						{
+							if( other_number != my_number ) // Can't Move
+							{
+								break;
+							}
+							else // Merge and Move
+							{
+								const auto new_number = my_number + other_number;
+
+								Remove( currept_point.GetX(), currept_point.GetY() );
+								Add( temp_point.GetX(), temp_point.GetY(), new_number );
+							}
+						}
+						else // Move
+						{
 							Remove( currept_point.GetX(), currept_point.GetY() );
-							Add( temp_point.GetX(), temp_point.GetY(), new_number );
+							Add( temp_point.GetX(), temp_point.GetY(), my_number );
 						}
-					}
-					else // Move
-					{
-						Remove( currept_point.GetX(), currept_point.GetY() );
-						Add( temp_point.GetX(), temp_point.GetY(), my_number );
-					}
+
+						currept_point = temp_point;
+
+					} while( true );
 				}
 			}
 		}
