@@ -135,15 +135,17 @@ namespace p2048mini
 					// 이 곳에서 이동, 합성 처리를 한다.
 					//
 
+					r2::PointInt currept_point( x, y );
+
 					// Has Value?
-					const auto my_number = Get( x, y );
+					const auto my_number = Get( currept_point.GetX(), currept_point.GetY() );
 					if( 0 >= my_number )
 					{
 						continue;
 					}
 
 					// Is In?
-					r2::PointInt temp_point( x, y );
+					r2::PointInt temp_point( currept_point.GetX(), currept_point.GetY() );
 					temp_point += move_dir.GetPoint();
 					if( !IsIn( temp_point.GetX(), temp_point.GetY() ) )
 					{
@@ -162,13 +164,13 @@ namespace p2048mini
 						{
 							const auto new_number = my_number + other_number;
 
-							Remove( x, y );
+							Remove( currept_point.GetX(), currept_point.GetY() );
 							Add( temp_point.GetX(), temp_point.GetY(), new_number );
 						}
 					}
 					else // Move
 					{
-						Remove( x, y );
+						Remove( currept_point.GetX(), currept_point.GetY() );
 						Add( temp_point.GetX(), temp_point.GetY(), my_number );
 					}
 				}
