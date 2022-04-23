@@ -11,13 +11,13 @@ namespace test_p2048mini_stage
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class StageViewNodeTest_1 : public r2cm::iItem, public r2::SingleTon<StageViewNodeTest_1>
+	class StageViewNode_Generate : public r2cm::iItem, public r2::SingleTon<StageViewNode_Generate>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
-	class StageViewNodeTest_2 : public r2cm::iItem, public r2::SingleTon<StageViewNodeTest_2>
+	class StageViewNode_Setup_Render : public r2cm::iItem, public r2::SingleTon<StageViewNode_Setup_Render>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

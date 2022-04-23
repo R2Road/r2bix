@@ -92,14 +92,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT StageViewNodeTest_1::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT StageViewNode_Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stage : ViewNode 1";
+			return "StageViewNode : Generate";
 		};
 	}
-	r2cm::iItem::DoFuncT StageViewNodeTest_1::GetDoFunction()
+	r2cm::iItem::DoFuncT StageViewNode_Generate::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
@@ -134,14 +134,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT StageViewNodeTest_2::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT StageViewNode_Setup_Render::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stage : ViewNode 2";
+			return "StageViewNode : Setup And Render";
 		};
 	}
-	r2cm::iItem::DoFuncT StageViewNodeTest_2::GetDoFunction()
+	r2cm::iItem::DoFuncT StageViewNode_Setup_Render::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
