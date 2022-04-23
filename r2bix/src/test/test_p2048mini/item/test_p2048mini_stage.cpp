@@ -319,9 +319,9 @@ namespace test_p2048mini_stage
 
 			{
 				PROCESS_MAIN( stage.Add( 0, 0, 2 ) );
-				PROCESS_MAIN( stage.Add( 3, 0, 4 ) );
-				PROCESS_MAIN( stage.Add( 0, 3, 8 ) );
-				PROCESS_MAIN( stage.Add( 3, 3, 16 ) );
+				PROCESS_MAIN( stage.Add( 3, 0, 2 ) );
+				PROCESS_MAIN( stage.Add( 0, 3, 4 ) );
+				PROCESS_MAIN( stage.Add( 3, 3, 8 ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 

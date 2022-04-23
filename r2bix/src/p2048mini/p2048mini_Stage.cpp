@@ -151,12 +151,23 @@ namespace p2048mini
 						const auto other_number = Get( temp_point.GetX(), temp_point.GetY() );
 						if( 0 < other_number )
 						{
-							continue;
+							if( other_number != my_number ) // Can't Move
+							{
+								continue;
+							}
+							else // Merge and Move
+							{
+								const auto new_number = my_number + other_number;
+
+								Remove( x, y );
+								Add( temp_point.GetX(), temp_point.GetY(), new_number );
+							}
 						}
-						
-						// Move
-						Remove( x, y );
-						Add( temp_point.GetX(), temp_point.GetY(), my_number );
+						else // Move
+						{
+							Remove( x, y );
+							Add( temp_point.GetX(), temp_point.GetY(), my_number );
+						}
 					}
 				}
 			}
