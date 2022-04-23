@@ -133,8 +133,8 @@ namespace p2048mini
 						//
 
 						// Has Value?
-						const auto target_number = Get( x, y );
-						if( 0 >= target_number )
+						const auto my_number = Get( x, y );
+						if( 0 >= my_number )
 						{
 							continue;
 						}
@@ -155,7 +155,7 @@ namespace p2048mini
 						
 						// Move
 						Remove( x, y );
-						Add( temp_point.GetX(), temp_point.GetY(), target_number );
+						Add( temp_point.GetX(), temp_point.GetY(), my_number );
 					}
 				}
 			}
