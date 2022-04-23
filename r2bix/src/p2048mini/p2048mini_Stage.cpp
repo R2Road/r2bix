@@ -9,7 +9,7 @@ namespace p2048mini
 {
 	Stage::Stage( const uint32_t width, const uint32_t height ) :
 		mGridIndexConverter( width, height )
-		, mContainer( width * height, -1 )
+		, mContainer( width * height, 0 )
 	{}
 
 	bool Stage::IsIn( const int32_t x, const int32_t y ) const
@@ -40,7 +40,7 @@ namespace p2048mini
 	void Stage::Remove( const uint32_t x, const uint32_t y )
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		mContainer[linear_index] = -1;
+		mContainer[linear_index] = 0;
 	}
 
 	//

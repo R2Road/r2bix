@@ -80,7 +80,7 @@ namespace test_p2048mini_stage
 
 			{
 				PROCESS_MAIN( stage.Remove( 2, 2 ) );
-				EXPECT_EQ( -1, stage.Get( 2, 2 ) );
+				EXPECT_EQ( 0, stage.Get( 2, 2 ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
