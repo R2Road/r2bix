@@ -13,6 +13,7 @@ namespace p2048mini
 		, mStage( nullptr )
 		, mWidth( 0u )
 		, mHeight( 0u )
+		, mLabelContainer()
 	{}
 
 	std::unique_ptr<StageViewComponent> StageViewComponent::Create( r2base::Node& owner_node )
@@ -38,13 +39,18 @@ namespace p2048mini
 		mWidth = ( mStage->GetWidth() * NUMBER_WIDTH ) + ( ( mStage->GetWidth() - 1 ) * SPACING_WIDTH );
 		mHeight = ( mStage->GetHeight() * NUMBER_HEIGHT ) + ( ( mStage->GetHeight() - 1 ) * SPACING_HEIGHT );
 
+		mLabelContainer.clear();
+		mLabelContainer.reserve( mStage->GetWidth() * mStage->GetHeight() );
 		for( uint32_t y = 0; mStage->GetHeight() > y; ++y )
 		{
 			for( uint32_t x = 0; mStage->GetWidth() > x; ++x )
 			{
 				auto node = mOwnerNode.AddChild<r2node::LabelNode>();
-				node->GetComponent<r2component::LabelComponent>()->SetString( "2048" );
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+
+				auto label_component = node->GetComponent<r2component::LabelComponent>();
+				label_component->SetString( "2048" );
+				mLabelContainer.push_back( label_component );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					static_cast<int>( x * ( NUMBER_WIDTH + SPACING_WIDTH ) )

@@ -79,6 +79,11 @@ namespace test_p2048mini_stageviewnode
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
+			PROCESS_MAIN( stage.Add( 0, 0, 2 ) );
+			PROCESS_MAIN( stage.Add( 0, 1, 2 ) );
+			PROCESS_MAIN( stage.Add( 3, 0, 2 ) );
+			PROCESS_MAIN( stage.Add( 0, 3, 4 ) );
+			PROCESS_MAIN( stage.Add( 3, 3, 8 ) );
 			DECLARATION_MAIN( auto svn = p2048mini::StageViewNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048mini::StageViewComponent>() );
 			PROCESS_MAIN( svc->Setup( &stage ) );

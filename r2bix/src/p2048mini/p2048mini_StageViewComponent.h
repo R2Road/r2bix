@@ -1,7 +1,14 @@
 #pragma once
 
+#include <vector>
+
 #include "base/r2base_Component.h"
 #include "base/r2base_ComponentStaticID.h"
+
+namespace r2component
+{
+	class LabelComponent;
+}
 
 namespace p2048mini
 {
@@ -28,5 +35,6 @@ namespace p2048mini
 		p2048mini::Stage* mStage;
 		int32_t mWidth;
 		int32_t mHeight;
+		std::vector<r2component::LabelComponent*> mLabelContainer;
 	};
 }
