@@ -11,8 +11,15 @@ namespace p2048mini
 	{
 	public:
 		using ContainerT = std::vector<int>;
+		using ConstIteratorT = typename ContainerT::const_iterator;
 
 		Stage( const uint32_t width, const uint32_t height );
+
+		//
+		// Iteration
+		//
+		ConstIteratorT begin() const { return mContainer.begin(); }
+		ConstIteratorT end() const { return mContainer.end(); }
 
 		//
 		// Getter

@@ -24,6 +24,7 @@ namespace p2048mini
 		static std::unique_ptr<StageViewComponent> Create( r2base::Node& owner_node );
 
 		void Setup( p2048mini::Stage* const stage );
+		void UpdateView();
 
 		//
 		//

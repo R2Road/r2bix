@@ -59,4 +59,14 @@ namespace p2048mini
 			}
 		}
 	}
+
+	void StageViewComponent::UpdateView()
+	{
+		uint32_t label_index = 0;
+		for( const auto n : *mStage )
+		{
+			mLabelContainer[label_index]->SetString( std::to_string( n ) );
+			++label_index;
+		}
+	}
 }
