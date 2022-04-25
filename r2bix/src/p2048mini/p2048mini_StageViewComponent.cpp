@@ -33,9 +33,9 @@ namespace p2048mini
 		mStage = stage;
 
 		const uint32_t NUMBER_WIDTH = 8;
-		const uint32_t NUMBER_HEIGHT = 1;
-		const uint32_t SPACING_WIDTH = 3;
-		const uint32_t SPACING_HEIGHT = 2;
+		const uint32_t NUMBER_HEIGHT = 3;
+		const uint32_t SPACING_WIDTH = 1;
+		const uint32_t SPACING_HEIGHT = 1;
 
 		mWidth = ( mStage->GetWidth() * NUMBER_WIDTH ) + ( ( mStage->GetWidth() - 1 ) * SPACING_WIDTH );
 		mHeight = ( mStage->GetHeight() * NUMBER_HEIGHT ) + ( ( mStage->GetHeight() - 1 ) * SPACING_HEIGHT );
@@ -53,8 +53,8 @@ namespace p2048mini
 				mLabelContainer.push_back( number_component );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
-					static_cast<int>( x * ( NUMBER_WIDTH + SPACING_WIDTH ) )
-					, static_cast<int>( y * ( NUMBER_HEIGHT + SPACING_HEIGHT ) )
+					4 + static_cast<int>( x * ( NUMBER_WIDTH + SPACING_WIDTH ) )
+					, 1 + static_cast<int>( y * ( NUMBER_HEIGHT + SPACING_HEIGHT ) )
 				);
 			}
 		}
