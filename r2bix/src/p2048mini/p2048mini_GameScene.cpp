@@ -19,7 +19,7 @@
 namespace p2048mini
 {
 	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director )
-		, mStep( eStep::Make2Number )
+		, mStep( eStep::GameReady )
 		, mStage( 4u, 4u )
 		, mStageViewComponent( nullptr )
 	{}
