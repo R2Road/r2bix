@@ -7,13 +7,9 @@
 #include "base/r2base_Director.h"
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
-#include "render/r2render_Camera.h"
 
 #include "p2048mini/p2048mini_Stage.h"
-#include "p2048mini/p2048mini_StageViewComponent.h"
-#include "p2048mini/p2048mini_StageViewNode.h"
 
-#include "test/Utility4Test.h"
 #include "utility/r2utility_WindowUtil.h"
 
 void PrintStage( const p2048mini::Stage& stage )
