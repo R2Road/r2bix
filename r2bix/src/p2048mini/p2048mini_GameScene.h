@@ -6,6 +6,8 @@
 
 namespace p2048mini
 {
+	class StageViewComponent;
+
 	class GameScene : public r2node::SceneNode
 	{
 	private:
@@ -22,5 +24,6 @@ namespace p2048mini
 
 	private:
 		Stage mStage;
+		p2048mini::StageViewComponent* mStageViewComponent;
 	};
 }

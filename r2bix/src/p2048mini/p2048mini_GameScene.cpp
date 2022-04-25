@@ -18,7 +18,9 @@
 
 namespace p2048mini
 {
-	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director ) , mStage( 4u, 4u )
+	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director )
+		, mStage( 4u, 4u )
+		, mStageViewComponent( nullptr )
 	{}
 
 	r2node::SceneNodeUp GameScene::Create( r2base::Director& director )
@@ -65,12 +67,12 @@ namespace p2048mini
 		{
 			auto stage_view_node = AddChild<p2048mini::StageViewNode>( 1 );
 
-			auto stage_view_component = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
-			stage_view_component->Setup( &mStage );
+			mStageViewComponent = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
+			mStageViewComponent->Setup( &mStage );
 
 			stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
-				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component->GetWidth() * 0.5f )
-				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component->GetHeight() * 0.5f )
+				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( mStageViewComponent->GetWidth() * 0.5f )
+				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( mStageViewComponent->GetHeight() * 0.5f )
 			);
 		}
 
