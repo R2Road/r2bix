@@ -2,6 +2,8 @@
 
 #include "node/r2node_SceneNode.h"
 
+#include "p2048mini/p2048mini_Stage.h"
+
 namespace p2048mini
 {
 	class GameScene : public r2node::SceneNode
@@ -17,5 +19,8 @@ namespace p2048mini
 		bool Init() override;
 	public:
 		void Update( const float delta_time ) override;
+
+	private:
+		Stage mStage;
 	};
 }

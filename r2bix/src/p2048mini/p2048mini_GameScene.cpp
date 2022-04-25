@@ -15,7 +15,7 @@
 
 namespace p2048mini
 {
-	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director )
+	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director ) , mStage( 4u, 4u )
 	{}
 
 	r2node::SceneNodeUp GameScene::Create( r2base::Director& director )
