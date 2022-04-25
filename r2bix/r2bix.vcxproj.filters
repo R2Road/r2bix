@@ -375,6 +375,9 @@
     <ClCompile Include="src\test\test_p2048mini\item\test_p2048mini_stage.cpp">
       <Filter>test\test_p2048mini\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.cpp">
+      <Filter>test\test_p2048mini\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -692,6 +695,9 @@
       <Filter>test\test_p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_p2048mini\item\test_p2048mini_stage.h">
+      <Filter>test\test_p2048mini\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.h">
       <Filter>test\test_p2048mini\item</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,7 @@
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #include "test/test_p2048mini/item/test_p2048mini_stage.h"
+#include "test/test_p2048mini/item/test_p2048mini_stageviewnode.h"
 
 #include "test/TestMainMenu.h"
 
@@ -24,8 +25,8 @@ r2cm::MenuUp TestP2048MiniRootMenu::Create( r2cm::Director& director )
 
 		ret->AddLineFeed();
 
-		ret->AddItem( '4', test_p2048mini_stage::StageViewNode_Generate::GetInstance() );
-		ret->AddItem( '5', test_p2048mini_stage::StageViewNode_Setup_Render::GetInstance() );
+		ret->AddItem( '4', test_p2048mini_stageviewnode::Generate::GetInstance() );
+		ret->AddItem( '5', test_p2048mini_stageviewnode::Setup_Render::GetInstance() );
 
 
 		ret->AddSplit();
