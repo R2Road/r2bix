@@ -18,4 +18,11 @@ namespace test_p2048mini_stageviewnode
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class UpdateView : public r2cm::iItem, public r2::SingleTon<UpdateView>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

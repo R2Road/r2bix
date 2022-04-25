@@ -27,6 +27,7 @@ r2cm::MenuUp TestP2048MiniRootMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( '4', test_p2048mini_stageviewnode::Generate::GetInstance() );
 		ret->AddItem( '5', test_p2048mini_stageviewnode::Setup_Render::GetInstance() );
+		ret->AddItem( '6', test_p2048mini_stageviewnode::UpdateView::GetInstance() );
 
 
 		ret->AddSplit();

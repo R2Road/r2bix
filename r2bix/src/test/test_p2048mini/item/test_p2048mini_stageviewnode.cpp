@@ -84,6 +84,62 @@ namespace test_p2048mini_stageviewnode
 			PROCESS_MAIN( stage.Add( 3, 0, 2 ) );
 			PROCESS_MAIN( stage.Add( 0, 3, 4 ) );
 			PROCESS_MAIN( stage.Add( 3, 3, 8 ) );
+
+			std::cout << r2::linefeed;
+
+			DECLARATION_MAIN( auto svn = p2048mini::StageViewNode::Create( dummy_director ) );
+			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048mini::StageViewComponent>() );
+			PROCESS_MAIN( svc->Setup( &stage ) );
+			PROCESS_MAIN( svn->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				std::cout << r2::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT UpdateView::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "StageViewNode : UpdateView";
+		};
+	}
+	r2cm::iItem::DoFuncT UpdateView::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 41, 21 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
+			PROCESS_MAIN( stage.Add( 0, 0, 2 ) );
+			PROCESS_MAIN( stage.Add( 0, 1, 2 ) );
+			PROCESS_MAIN( stage.Add( 3, 0, 2 ) );
+			PROCESS_MAIN( stage.Add( 0, 3, 4 ) );
+			PROCESS_MAIN( stage.Add( 3, 3, 8 ) );
+
+			std::cout << r2::linefeed;
+
 			DECLARATION_MAIN( auto svn = p2048mini::StageViewNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048mini::StageViewComponent>() );
 			PROCESS_MAIN( svc->Setup( &stage ) );
