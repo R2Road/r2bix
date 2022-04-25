@@ -94,6 +94,9 @@
     <Filter Include="test\test_p2048mini\item">
       <UniqueIdentifier>{08a1c283-5428-49d7-b562-ff2f789daf7d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_2048mini\table">
+      <UniqueIdentifier>{e87138e8-aef9-4ac8-970b-3c97a253908b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -377,6 +380,9 @@
     </ClCompile>
     <ClCompile Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.cpp">
       <Filter>test\test_p2048mini\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048mini\p2048minitable_TextureTable.cpp">
+      <Filter>project_2048mini\table</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -699,6 +705,9 @@
     </ClInclude>
     <ClInclude Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.h">
       <Filter>test\test_p2048mini\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048minitable_TextureTable.h">
+      <Filter>project_2048mini\table</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
