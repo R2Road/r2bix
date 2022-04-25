@@ -56,6 +56,8 @@
     <ClCompile Include="src\node\r2node_SpriteNode.cpp" />
     <ClCompile Include="src\p2048mini\p2048minitable_TextureTable.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_GameScene.cpp" />
+    <ClCompile Include="src\p2048mini\p2048mini_NumberComponent.cpp" />
+    <ClCompile Include="src\p2048mini\p2048mini_NumberNode.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_Stage.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_StageViewNode.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_StageViewComponent.cpp" />
@@ -163,6 +165,8 @@
     <ClInclude Include="src\node\r2node_SpriteNode.h" />
     <ClInclude Include="src\p2048mini\p2048minitable_TextureTable.h" />
     <ClInclude Include="src\p2048mini\p2048mini_GameScene.h" />
+    <ClInclude Include="src\p2048mini\p2048mini_NumberComponent.h" />
+    <ClInclude Include="src\p2048mini\p2048mini_NumberNode.h" />
     <ClInclude Include="src\p2048mini\p2048mini_Stage.h" />
     <ClInclude Include="src\p2048mini\p2048mini_StageViewNode.h" />
     <ClInclude Include="src\p2048mini\p2048mini_StageViewComponent.h" />

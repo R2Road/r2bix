@@ -3,8 +3,9 @@
 
 #include "component/r2component_LabelComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
-#include "node/r2node_LabelNode.h"
 
+#include "p2048mini/p2048mini_NumberComponent.h"
+#include "p2048mini/p2048mini_NumberNode.h"
 #include "p2048mini/p2048mini_Stage.h"
 
 namespace p2048mini
@@ -31,7 +32,7 @@ namespace p2048mini
 	{
 		mStage = stage;
 
-		const uint32_t NUMBER_WIDTH = 4;
+		const uint32_t NUMBER_WIDTH = 8;
 		const uint32_t NUMBER_HEIGHT = 1;
 		const uint32_t SPACING_WIDTH = 3;
 		const uint32_t SPACING_HEIGHT = 2;
@@ -45,12 +46,11 @@ namespace p2048mini
 		{
 			for( uint32_t x = 0; mStage->GetWidth() > x; ++x )
 			{
-				auto node = mOwnerNode.AddChild<r2node::LabelNode>();
-				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+				auto node = mOwnerNode.AddChild<p2048mini::NumberNode>();
 
-				auto label_component = node->GetComponent<r2component::LabelComponent>();
-				label_component->SetString( "2048" );
-				mLabelContainer.push_back( label_component );
+				auto number_component = node->GetComponent<p2048mini::NumberComponent>();
+				number_component->SetNumber( 2048 );
+				mLabelContainer.push_back( number_component );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					static_cast<int>( x * ( NUMBER_WIDTH + SPACING_WIDTH ) )
@@ -65,7 +65,7 @@ namespace p2048mini
 		uint32_t label_index = 0;
 		for( const auto n : *mStage )
 		{
-			mLabelContainer[label_index]->SetString( std::to_string( n ) );
+			mLabelContainer[label_index]->SetNumber( n );
 			++label_index;
 		}
 	}

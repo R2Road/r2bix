@@ -5,13 +5,9 @@
 #include "base/r2base_Component.h"
 #include "base/r2base_ComponentStaticID.h"
 
-namespace r2component
-{
-	class LabelComponent;
-}
-
 namespace p2048mini
 {
+	class NumberComponent;
 	class Stage;
 
 	class StageViewComponent : public r2base::Component
@@ -36,6 +32,6 @@ namespace p2048mini
 		p2048mini::Stage* mStage;
 		int32_t mWidth;
 		int32_t mHeight;
-		std::vector<r2component::LabelComponent*> mLabelContainer;
+		std::vector<p2048mini::NumberComponent*> mLabelContainer;
 	};
 }
