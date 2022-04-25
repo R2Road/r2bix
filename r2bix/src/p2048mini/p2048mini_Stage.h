@@ -32,6 +32,7 @@ namespace p2048mini
 
 		uint32_t Get( const uint32_t x, const uint32_t y ) const;
 		int GetCurrentNumberCount() const { return mCurrentNumberCount; }
+		int IsFull() const { return mContainer.size() == mCurrentNumberCount; }
 
 		//
 		//
