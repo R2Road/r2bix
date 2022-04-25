@@ -31,7 +31,7 @@ namespace p2048mini
 		bool IsIn( const int32_t x, const int32_t y ) const;
 
 		uint32_t Get( const uint32_t x, const uint32_t y ) const;
-		int GetCurrentNumberCount() const { return mCurrentNumberCount; }
+		int32_t GetCurrentNumberCount() const { return mCurrentNumberCount; }
 		bool IsFull() const { return mContainer.size() == mCurrentNumberCount; }
 
 		//
@@ -49,6 +49,6 @@ namespace p2048mini
 	private:
 		r2::GridIndexConverter mGridIndexConverter;
 		ContainerT mContainer;
-		int mCurrentNumberCount;
+		int32_t mCurrentNumberCount;
 	};
 }
