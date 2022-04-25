@@ -284,4 +284,76 @@ namespace test_p2048mini_stage
 			return r2cm::eTestEndAction::None;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT EmptyCheck::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : Empty Check";
+		};
+	}
+	r2cm::iItem::DoFuncT EmptyCheck::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
+			EXPECT_EQ( 0, stage.GetCurrentNumberCount() );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Add New" << r2::linefeed2;
+
+				PROCESS_MAIN( stage.Add( 0, 0, 7 ) );
+				EXPECT_EQ( 1, stage.GetCurrentNumberCount() );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
+				PROCESS_MAIN( stage.Add( 1, 0, 7 ) );
+				EXPECT_EQ( 3, stage.GetCurrentNumberCount() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Over Write" << r2::linefeed2;
+
+				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
+				PROCESS_MAIN( stage.Add( 1, 0, 7 ) );
+				EXPECT_EQ( 3, stage.GetCurrentNumberCount() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Remove" << r2::linefeed2;
+
+				PROCESS_MAIN( stage.Remove( 0, 1 ) );
+				PROCESS_MAIN( stage.Remove( 1, 0 ) );
+				EXPECT_EQ( 1, stage.GetCurrentNumberCount() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ Full" << r2::linefeed2;
+
+				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
+				PROCESS_MAIN( stage.Add( 1, 0, 7 ) );
+				PROCESS_MAIN( stage.Add( 1, 1, 7 ) );
+				EXPECT_EQ( 4, stage.GetCurrentNumberCount() );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }

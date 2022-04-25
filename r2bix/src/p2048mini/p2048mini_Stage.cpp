@@ -10,6 +10,7 @@ namespace p2048mini
 	Stage::Stage( const uint32_t width, const uint32_t height ) :
 		mGridIndexConverter( width, height )
 		, mContainer( width * height, 0 )
+		, mCurrentNumberCount( 0 )
 	{}
 
 	bool Stage::IsIn( const int32_t x, const int32_t y ) const
@@ -25,6 +26,7 @@ namespace p2048mini
 
 	void Stage::ClearAll()
 	{
+		mCurrentNumberCount = 0;
 		for( auto& v : mContainer )
 		{
 			v = 0;
@@ -34,12 +36,23 @@ namespace p2048mini
 	void Stage::Add( const uint32_t x, const uint32_t y, const uint32_t val )
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
+		if( 0 == mContainer[linear_index] )
+		{
+			++mCurrentNumberCount;
+		}
+
 		mContainer[linear_index] = val;
 	}
 
 	void Stage::Remove( const uint32_t x, const uint32_t y )
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
+		if( 0 == mContainer[linear_index] )
+		{
+			return;
+		}
+
+		--mCurrentNumberCount;
 		mContainer[linear_index] = 0;
 	}
 

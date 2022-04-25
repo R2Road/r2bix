@@ -22,12 +22,13 @@ r2cm::MenuUp TestP2048MiniRootMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', test_p2048mini_stage::Basic::GetInstance() );
 		ret->AddItem( '2', test_p2048mini_stage::MoveReadyTest::GetInstance() );
 		ret->AddItem( '3', test_p2048mini_stage::MoveTest::GetInstance() );
+		ret->AddItem( '4', test_p2048mini_stage::EmptyCheck::GetInstance() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( '4', test_p2048mini_stageviewnode::Generate::GetInstance() );
-		ret->AddItem( '5', test_p2048mini_stageviewnode::Setup_Render::GetInstance() );
-		ret->AddItem( '6', test_p2048mini_stageviewnode::UpdateView::GetInstance() );
+		ret->AddItem( 'q', test_p2048mini_stageviewnode::Generate::GetInstance() );
+		ret->AddItem( 'w', test_p2048mini_stageviewnode::Setup_Render::GetInstance() );
+		ret->AddItem( 'e', test_p2048mini_stageviewnode::UpdateView::GetInstance() );
 
 
 		ret->AddSplit();
