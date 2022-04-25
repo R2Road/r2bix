@@ -14,6 +14,7 @@
 #include "p2048mini/p2048mini_Stage.h"
 #include "p2048mini/p2048mini_StageViewComponent.h"
 #include "p2048mini/p2048mini_StageViewNode.h"
+#include "p2048mini/p2048minitable_TextureTable.h"
 
 namespace p2048mini
 {
@@ -39,11 +40,16 @@ namespace p2048mini
 		}
 
 		//
+		// Table Load
+		//
+		p2048minitable::TextureTable::GetInstance().Load();
+
+		//
 		// Background
 		//
 		{
 			auto node = AddChild<r2node::CustomTextureNode>();
-			node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 35, 17, '=' );
+			node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 37, 17, '=' );
 			node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 			node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
 
