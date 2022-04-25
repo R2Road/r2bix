@@ -19,6 +19,7 @@
 namespace p2048mini
 {
 	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director )
+		, mStep( eStep::Make2Number )
 		, mStage( 4u, 4u )
 		, mStageViewComponent( nullptr )
 	{}
@@ -93,6 +94,22 @@ namespace p2048mini
 	}
 	void GameScene::Update( const float delta_time )
 	{
+		switch( mStep )
+		{
+		case eStep::GameReady:
+			// Make Number
+			break;
+		case eStep::GameStart:
+			// Show Stage, On Input
+			break;
+		case eStep::GameUpdate:
+			// Input Process, Game End Check
+			break;
+		case eStep::GameEnd:
+			// Do Something
+			break;
+		}
+
 		if( _kbhit() )
 		{
 			auto input = _getch();

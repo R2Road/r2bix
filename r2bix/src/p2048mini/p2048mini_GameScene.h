@@ -11,6 +11,14 @@ namespace p2048mini
 	class GameScene : public r2node::SceneNode
 	{
 	private:
+		enum class eStep
+		{
+			GameReady,
+			GameStart,
+			GameUpdate,
+			GameEnd,
+		};
+
 		GameScene( r2base::Director& director );
 
 	public:
@@ -23,6 +31,7 @@ namespace p2048mini
 		void Update( const float delta_time ) override;
 
 	private:
+		eStep mStep;
 		Stage mStage;
 		p2048mini::StageViewComponent* mStageViewComponent;
 	};
