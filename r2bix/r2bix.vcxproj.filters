@@ -727,5 +727,8 @@
     <ClInclude Include="src\utility\r2utility_InputUtil.h">
       <Filter>utility</Filter>
     </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_Config.h">
+      <Filter>project_2048mini</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

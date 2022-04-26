@@ -7,6 +7,8 @@
 
 #include "node/r2node_CustomTextureNode.h"
 #include "node/r2node_PivotNode.h"
+
+#include "p2048mini_Config.h"
 #include "p2048mini/p2048mini_StageViewComponent.h"
 
 namespace p2048mini
@@ -28,6 +30,7 @@ namespace p2048mini
 			//
 			// Debug
 			//
+			if( p2048mini::Config::GetNodeConfig().pivot )
 			{
 				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 			}

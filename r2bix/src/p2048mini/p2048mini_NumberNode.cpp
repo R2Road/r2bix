@@ -11,6 +11,7 @@
 #include "node/r2node_PivotNode.h"
 #include "node/r2node_SpriteNode.h"
 
+#include "p2048mini_Config.h"
 #include "p2048mini_NumberComponent.h"
 #include "p2048minitable_TextureTable.h"
 
@@ -45,6 +46,7 @@ namespace p2048mini
 			//
 			// Debug
 			//
+			if( p2048mini::Config::GetNodeConfig().pivot )
 			{
 				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 			}
