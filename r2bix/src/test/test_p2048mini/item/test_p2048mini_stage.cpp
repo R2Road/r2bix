@@ -234,13 +234,6 @@ namespace test_p2048mini_stage
 
 
 			{
-				DECLARATION_MAIN( r2::Direction4 move_dir );
-				DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-				DECLARATION_MAIN( r2::PointInt pivot_point_1 );
-				DECLARATION_MAIN( r2::PointInt pivot_point_2 );
-
-				std::cout << r2::linefeed;
-
 				const auto pivot_coord = r2utility::GetCursorPoint();
 				bool bRun = true;
 				do
@@ -318,7 +311,7 @@ namespace test_p2048mini_stage
 			std::cout << r2::split;
 
 			{
-				stage.Move( r2::Direction4::eState::Right );
+				PROCESS_MAIN( stage.Move( r2::Direction4::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
 				std::cout << r2::linefeed;
