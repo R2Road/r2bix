@@ -23,6 +23,8 @@ namespace r2base
 		virtual ~Component() {}
 
 	public:
+		Node& GetOwnerNode() const { return mOwnerNode; }
+
 		virtual int GetStaticID() const = 0;
 		virtual bool Init() { return true; }
 		virtual void Update( const float /*delta_time*/ ) {}

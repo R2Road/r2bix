@@ -67,6 +67,7 @@ namespace p2048mini
 		//
 		{
 			auto stage_view_node = AddChild<p2048mini::StageViewNode>( 1 );
+			stage_view_node->SetVisible( false );
 
 			mStageViewComponent = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
 			mStageViewComponent->Setup( &mStage );
@@ -98,9 +99,15 @@ namespace p2048mini
 		{
 		case eStep::GameReady:
 			// Make Number
+			mStage.Add( 0, 0, 32 );
+			mStage.Add( 0, 1, 32 );
+			mStep = eStep::GameStart;
 			break;
 		case eStep::GameStart:
 			// Show Stage, On Input
+			mStageViewComponent->UpdateView();
+			mStageViewComponent->GetOwnerNode().SetVisible( true );
+			mStep = eStep::GameUpdate;
 			break;
 		case eStep::GameUpdate:
 			// Input Process, Game End Check
