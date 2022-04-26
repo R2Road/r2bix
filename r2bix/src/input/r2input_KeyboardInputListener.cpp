@@ -17,6 +17,10 @@ namespace r2input
 			{
 				switch( mKeyStatusContainer[i] )
 				{
+				case eKeyStatus::None:
+					mKeyStatusContainer[i] = eKeyStatus::Push;
+					break;
+
 				case eKeyStatus::Push:
 					mKeyStatusContainer[i] = eKeyStatus::Pressed;
 					break;
@@ -24,9 +28,6 @@ namespace r2input
 				//case eKeyStatus::Pressed:
 				//	break;
 
-				case eKeyStatus::None:
-					mKeyStatusContainer[i] = eKeyStatus::Push;
-					break;
 				}
 			}
 			else
