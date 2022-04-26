@@ -10,11 +10,11 @@ namespace p2048mini
 	class Stage
 	{
 	public:
-		struct Number
+		struct Cell
 		{
 			uint32_t number = 0;
 		};
-		using ContainerT = std::vector<Number>;
+		using ContainerT = std::vector<Cell>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
 
 		Stage( const uint32_t width, const uint32_t height );
