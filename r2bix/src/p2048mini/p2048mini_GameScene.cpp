@@ -5,7 +5,11 @@
 #include <conio.h>
 #include <numeric>
 
+#include "action/r2action_SequenceAction.h"
+#include "action/r2action_DelayAction.h"
+#include "action/r2action_MoveByAction.h"
 #include "base/r2base_Director.h"
+#include "component/r2component_ActionProcessComponent.h"
 #include "component/r2component_CustomTextureComponent.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
@@ -106,8 +110,20 @@ namespace p2048mini
 				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f )
 				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f )
 			);
-
 			mGameOverNode->SetVisible( false );
+
+			auto action_process_component = mGameOverNode->AddComponent<r2component::ActionProcessComponent>();
+			{
+				auto sequence_action = r2action::SequenceAction::Create();
+
+				auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
+				delay_action->SetTimeLimit( 1.f );
+
+				auto moveby_action = sequence_action->AddAction<r2action::MoveByAction>();
+				moveby_action->SetMoveAmount( r2::PointInt( 0.f, 14.f ) );
+
+				action_process_component->SetAction( std::move( sequence_action ) );
+			}
 		}
 
 		//
@@ -184,6 +200,8 @@ namespace p2048mini
 
 		case eStep::GameEnd:
 			mGameOverNode->SetVisible( true );
+			mGameOverNode->GetComponent<r2component::ActionProcessComponent>()->StartAction();
+			mStep = eStep::GameStop;
 			break;
 		}
 

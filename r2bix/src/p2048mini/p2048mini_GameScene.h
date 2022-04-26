@@ -22,6 +22,7 @@ namespace p2048mini
 			GameStart,
 			GameUpdate,
 			GameEnd,
+			GameStop,
 		};
 
 		GameScene( r2base::Director& director );
