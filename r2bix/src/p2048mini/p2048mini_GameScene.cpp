@@ -24,7 +24,18 @@ namespace p2048mini
 		, mStep( eStep::GameReady )
 		, mStage( 4u, 4u )
 		, mStageViewComponent( nullptr )
-	{}
+
+		, mKeyboardInputCollector()
+		, mKeyboardInputListener( {
+			0x1B		// esc
+			, 0x41		// a
+			, 0x44		// d
+			, 0x53		// s
+			, 0x57		// w
+		} )
+	{
+		mKeyboardInputCollector.AddListener( &mKeyboardInputListener );
+	}
 
 	r2node::SceneNodeUp GameScene::Create( r2base::Director& director )
 	{
@@ -97,6 +108,9 @@ namespace p2048mini
 	}
 	void GameScene::Update( const float delta_time )
 	{
+		mKeyboardInputCollector.Collect();
+		mKeyboardInputListener.Update();
+
 		switch( mStep )
 		{
 		case eStep::GameReady:

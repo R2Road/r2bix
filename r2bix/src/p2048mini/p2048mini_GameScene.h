@@ -2,6 +2,8 @@
 
 #include "node/r2node_SceneNode.h"
 
+#include "input/r2input_KeyboardInputCollector.h"
+#include "input/r2input_KeyboardInputListener.h"
 #include "p2048mini/p2048mini_Stage.h"
 
 namespace p2048mini
@@ -34,5 +36,8 @@ namespace p2048mini
 		eStep mStep;
 		Stage mStage;
 		p2048mini::StageViewComponent* mStageViewComponent;
+
+		r2input::KeyboardInputCollector mKeyboardInputCollector;
+		r2input::KeyboardInputListener mKeyboardInputListener;
 	};
 }
