@@ -30,6 +30,10 @@ namespace r2input
 		{
 			return ( eKeyStatus::Push == mKeyStatusContainer[key_index] );
 		}
+		bool IsRelease( const std::size_t key_index ) const
+		{
+			return ( eKeyStatus::Release == mKeyStatusContainer[key_index] );
+		}
 		bool HasInput( const std::size_t key_index ) const
 		{
 			return ( eKeyStatus::None < mKeyStatusContainer[key_index] );

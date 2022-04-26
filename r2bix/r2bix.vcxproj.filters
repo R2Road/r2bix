@@ -390,6 +390,9 @@
     <ClCompile Include="src\p2048mini\p2048mini_NumberComponent.cpp">
       <Filter>project_2048mini\component</Filter>
     </ClCompile>
+    <ClCompile Include="src\utility\r2utility_InputUtil.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -720,6 +723,9 @@
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_NumberComponent.h">
       <Filter>project_2048mini\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\r2utility_InputUtil.h">
+      <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

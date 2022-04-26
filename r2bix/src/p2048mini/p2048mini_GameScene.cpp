@@ -17,6 +17,7 @@
 #include "p2048mini/p2048minitable_TextureTable.h"
 
 #include "r2/r2_Random.h"
+#include "utility/r2utility_InputUtil.h"
 
 namespace p2048mini
 {
@@ -152,13 +153,10 @@ namespace p2048mini
 			break;
 		}
 
-		if( _kbhit() )
+		if( mKeyboardInputListener.IsRelease( 0 ) )
 		{
-			auto input = _getch();
-			if( 27 == input ) // ESC
-			{
-				mDirector.RequestAbort();
-			}
+			r2utility::ClearCInputBuffer();
+			mDirector.RequestAbort();
 		}
 
 		r2node::SceneNode::Update( delta_time );
