@@ -125,12 +125,14 @@ namespace p2048mini
 			mStep = eStep::GameStart;
 		}
 		break;
+
 		case eStep::GameStart:
 			// Show Stage, On Input
 			mStageViewComponent->UpdateView();
 			mStageViewComponent->GetOwnerNode().SetVisible( true );
 			mStep = eStep::GameUpdate;
 			break;
+
 		case eStep::GameUpdate:
 		{
 			// Input Process, Game End Check
@@ -158,6 +160,7 @@ namespace p2048mini
 			}
 		}
 		break;
+
 		case eStep::GameEnd:
 			// Do Something
 			break;
