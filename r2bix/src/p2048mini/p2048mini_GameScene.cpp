@@ -217,21 +217,23 @@ namespace p2048mini
 
 	void GameScene::AddNumber()
 	{
-		const auto target_space = r2::Random::GetInt( 0, mStage.GetEmptySpaceCount() - 1 );
-		int current_space = 0;
-		do
+		const auto required_jump_count = r2::Random::GetInt( 0, mStage.GetEmptySpaceCount() - 1 );
+		int current_jump_count = 0;
+
+		// Find
+		for( uint32_t i = 0; mStage.Size() > i; ++i )
 		{
-			if( target_space <= current_space )
+			if( 0 == mStage.GetNumber( i ) )
 			{
-				if( 0 == mStage.GetNumber( current_space ) )
+				if( required_jump_count <= current_jump_count )
 				{
-					mStage.Add( current_space, 32 );
+					mStage.Add( i, 32 );
 					break;
 				}
-			}
 
-			++current_space;
-		} while( true );
+				++current_jump_count;
+			}
+		}
 	}
 	bool GameScene::MoveNumber( const r2::Direction4::eState move_direction )
 	{
