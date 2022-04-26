@@ -13,6 +13,7 @@ namespace p2048mini
 		struct Cell
 		{
 			uint32_t number = 0;
+			bool merge_lock = false;
 		};
 		using ContainerT = std::vector<Cell>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
@@ -48,6 +49,9 @@ namespace p2048mini
 		void Add( const uint32_t linear_index, const uint32_t val );
 		void Add( const uint32_t x, const uint32_t y, const uint32_t val );
 		void Remove( const uint32_t x, const uint32_t y );
+
+		void ClearAllLocks();
+		void Lock( const uint32_t x, const uint32_t y );
 
 		//
 		//

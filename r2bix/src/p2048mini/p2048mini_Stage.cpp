@@ -78,6 +78,7 @@ namespace p2048mini
 		for( auto& cell : mContainer )
 		{
 			cell.number = 0;
+			cell.merge_lock = false;
 		}
 	}
 
@@ -108,6 +109,19 @@ namespace p2048mini
 		mContainer[linear_index].number = 0;
 	}
 
+	void Stage::ClearAllLocks()
+	{
+		for( auto& cell : mContainer )
+		{
+			cell.merge_lock = false;
+		}
+	}
+	void Stage::Lock( const uint32_t x, const uint32_t y )
+	{
+		const int linear_index = mGridIndexConverter.To_Linear( x, y );
+		mContainer[linear_index].merge_lock = true;
+	}
+
 	//
 	// # 이동 규칙
 	// 1. 도착점에 가장 가까운 녀석부터 이동
@@ -115,6 +129,9 @@ namespace p2048mini
 	//
 	bool Stage::Move( const r2::Direction4::eState direction_state )
 	{
+		ClearAllLocks();
+
+
 		bool has_moved = false;
 
 
@@ -242,6 +259,7 @@ namespace p2048mini
 
 								Remove( currept_point.GetX(), currept_point.GetY() );
 								Add( next_point.GetX(), next_point.GetY(), new_number );
+								Lock( next_point.GetX(), next_point.GetY() );
 
 								has_moved = true;
 
