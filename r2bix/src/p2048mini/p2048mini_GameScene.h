@@ -44,6 +44,8 @@ namespace p2048mini
 		Stage mStage;
 		p2048mini::StageViewComponent* mStageViewComponent;
 
+		r2base::Node* mGameOverNode;
+
 		r2input::KeyboardInputCollector mKeyboardInputCollector;
 		r2input::KeyboardInputListener mKeyboardInputListener;
 	};

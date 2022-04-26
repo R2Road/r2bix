@@ -7,9 +7,11 @@
 
 #include "base/r2base_Director.h"
 #include "component/r2component_CustomTextureComponent.h"
+#include "component/r2component_TextureFrameRenderComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
 #include "node/r2node_CustomTextureNode.h"
 #include "node/r2node_PivotNode.h"
+#include "node/r2node_SpriteNode.h"
 
 #include "p2048mini_Stage.h"
 #include "p2048mini_StageViewComponent.h"
@@ -25,6 +27,8 @@ namespace p2048mini
 		, mStep( eStep::GameReady )
 		, mStage( 4u, 4u )
 		, mStageViewComponent( nullptr )
+
+		, mGameOverNode( nullptr )
 
 		, mKeyboardInputCollector()
 		, mKeyboardInputListener( {
@@ -90,6 +94,20 @@ namespace p2048mini
 				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( mStageViewComponent->GetWidth() * 0.5f )
 				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( mStageViewComponent->GetHeight() * 0.5f )
 			);
+		}
+
+		//
+		// Game Over
+		//
+		{
+			mGameOverNode = AddChild<r2node::SpriteNode>( 2 );
+			mGameOverNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "game_over_0" ) );
+			mGameOverNode->GetComponent<r2component::TransformComponent>()->SetPosition(
+				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f )
+				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f )
+			);
+
+			mGameOverNode->SetVisible( false );
 		}
 
 		//
@@ -165,7 +183,7 @@ namespace p2048mini
 		break;
 
 		case eStep::GameEnd:
-			// Do Something
+			mGameOverNode->SetVisible( true );
 			break;
 		}
 
