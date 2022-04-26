@@ -4,9 +4,9 @@
 #include "component/r2component_LabelComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
 
-#include "p2048mini/p2048mini_NumberComponent.h"
-#include "p2048mini/p2048mini_NumberNode.h"
-#include "p2048mini/p2048mini_Stage.h"
+#include "p2048mini_NumberComponent.h"
+#include "p2048mini_NumberNode.h"
+#include "p2048mini_Stage.h"
 
 namespace p2048mini
 {

@@ -4,7 +4,8 @@
 
 #include "input/r2input_KeyboardInputCollector.h"
 #include "input/r2input_KeyboardInputListener.h"
-#include "p2048mini/p2048mini_Stage.h"
+
+#include "p2048mini_Stage.h"
 
 #include "r2/r2_Direction4.h"
 

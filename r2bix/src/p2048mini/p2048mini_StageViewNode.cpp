@@ -9,7 +9,7 @@
 #include "node/r2node_PivotNode.h"
 
 #include "p2048mini_Config.h"
-#include "p2048mini/p2048mini_StageViewComponent.h"
+#include "p2048mini_StageViewComponent.h"
 
 namespace p2048mini
 {

@@ -11,10 +11,10 @@
 #include "node/r2node_CustomTextureNode.h"
 #include "node/r2node_PivotNode.h"
 
-#include "p2048mini/p2048mini_Stage.h"
-#include "p2048mini/p2048mini_StageViewComponent.h"
-#include "p2048mini/p2048mini_StageViewNode.h"
-#include "p2048mini/p2048minitable_TextureTable.h"
+#include "p2048mini_Stage.h"
+#include "p2048mini_StageViewComponent.h"
+#include "p2048mini_StageViewNode.h"
+#include "p2048minitable_TextureTable.h"
 
 #include "r2/r2_Random.h"
 #include "utility/r2utility_InputUtil.h"
