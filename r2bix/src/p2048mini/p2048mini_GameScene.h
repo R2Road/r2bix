@@ -36,7 +36,7 @@ namespace p2048mini
 
 	private:
 		void AddNumber();
-		void MoveNumber( const r2::Direction4::eState move_direction );
+		bool MoveNumber( const r2::Direction4::eState move_direction );
 
 	private:
 		eStep mStep;

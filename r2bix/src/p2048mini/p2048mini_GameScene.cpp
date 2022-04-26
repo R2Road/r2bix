@@ -135,19 +135,31 @@ namespace p2048mini
 			// Input Process, Game End Check
 			if( mKeyboardInputListener.IsPushed( 1 ) ) // A
 			{
-				MoveNumber( r2::Direction4::eState::Left );
+				if( !MoveNumber( r2::Direction4::eState::Left ) )
+				{
+					mStep = eStep::GameEnd;
+				}
 			}
 			else if( mKeyboardInputListener.IsPushed( 2 ) ) // D
 			{
-				MoveNumber( r2::Direction4::eState::Right );
+				if( !MoveNumber( r2::Direction4::eState::Right ) )
+				{
+					mStep = eStep::GameEnd;
+				}
 			}
 			else if( mKeyboardInputListener.IsPushed( 3 ) ) // S
 			{
-				MoveNumber( r2::Direction4::eState::Up );
+				if( !MoveNumber( r2::Direction4::eState::Up ) )
+				{
+					mStep = eStep::GameEnd;
+				}
 			}
 			else if( mKeyboardInputListener.IsPushed( 4 ) ) // W
 			{
-				MoveNumber( r2::Direction4::eState::Down );
+				if( !MoveNumber( r2::Direction4::eState::Down ) )
+				{
+					mStep = eStep::GameEnd;
+				}
 			}
 			break;
 		case eStep::GameEnd:
@@ -182,10 +194,20 @@ namespace p2048mini
 			++current_space;
 		} while( true );
 	}
-	void GameScene::MoveNumber( const r2::Direction4::eState move_direction )
+	bool GameScene::MoveNumber( const r2::Direction4::eState move_direction )
 	{
 		mStage.Move( move_direction );
-		AddNumber();
-		mStageViewComponent->UpdateView();
+		if( 0 == mStage.GetEmptySpaceCount() && false == mStage.IsMovable() )
+		{
+			// Game End
+			return false;
+		}
+		else
+		{
+			AddNumber();
+			mStageViewComponent->UpdateView();
+
+			return true;
+		}
 	}
 }
