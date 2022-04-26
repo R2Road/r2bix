@@ -222,9 +222,9 @@ namespace test_p2048mini_stage
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( stage.Add( 0, 0, 2 ) );
+				PROCESS_MAIN( stage.Add( 0, 0, 1 ) );
 				PROCESS_MAIN( stage.Add( 0, 1, 2 ) );
-				PROCESS_MAIN( stage.Add( 3, 0, 2 ) );
+				PROCESS_MAIN( stage.Add( 3, 0, 3 ) );
 				PROCESS_MAIN( stage.Add( 0, 3, 4 ) );
 				PROCESS_MAIN( stage.Add( 3, 3, 8 ) );
 				PROCESS_MAIN( PrintStage( stage ) );
