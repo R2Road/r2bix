@@ -18,6 +18,7 @@ namespace r2
 			FIRST = Up,
 			LAST = Left,
 			ALL = Up | Right | Down | Left,
+			SIZE = 4,
 		};
 
 		Direction4();

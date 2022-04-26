@@ -4,6 +4,7 @@
 #include <algorithm>
 
 #include "r2/r2_Point_Int.h"
+#include "r2/r2_Direction4.h"
 
 namespace p2048mini
 {
@@ -22,6 +23,49 @@ namespace p2048mini
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
 		return mContainer[linear_index];
+	}
+
+	bool Stage::IsMovable() const
+	{
+		r2::Direction4 dir4;
+		r2::PointInt currept_point;
+		r2::PointInt next_point;
+		for( uint32_t y = 0; GetHeight() > y; ++y )
+		{
+			for( uint32_t x = 0; GetWidth() > x; ++x )
+			{
+				currept_point.Set( x, y );
+
+				// Has Empty Space
+				const auto my_number = Get( currept_point.GetX(), currept_point.GetY() );
+				if( 0 == my_number )
+				{
+					return true;
+				}
+
+				dir4.SetState( r2::Direction4::eState::Up );
+				for( int d = 0, e = static_cast<int>( r2::Direction4::eState::SIZE ); e > d; ++d )
+				{
+					next_point = currept_point + dir4.GetPoint();
+					if( !IsIn( next_point.GetX(), next_point.GetY() ) )
+					{
+						break;
+					}
+
+					const auto next_number = Get( next_point.GetX(), next_point.GetY() );
+					if( 0 == next_number )
+					{
+						return true;
+					}
+					if( my_number == next_number )
+					{
+						return true;
+					}
+				}
+			}
+		}
+
+		return false;
 	}
 
 	void Stage::ClearAll()

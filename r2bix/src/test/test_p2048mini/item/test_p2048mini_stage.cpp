@@ -364,4 +364,88 @@ namespace test_p2048mini_stage
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT MovableCheck::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : Movable Check";
+		};
+	}
+	r2cm::iItem::DoFuncT MovableCheck::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			std::cout << r2::tab << "+ Node : 주변의 숫자가 0 이거나 같다면 이동 한다." << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
+
+			std::cout << r2::split;
+
+			{
+				stage.Add( 0, 0, 7 );
+				stage.Add( 0, 1, 7 );
+				stage.Add( 1, 0, 7 );
+				stage.Add( 1, 1, 7 );
+				PrintStage( stage );
+				EXPECT_TRUE( stage.IsMovable() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				stage.Add( 0, 0, 1 );
+				stage.Add( 0, 1, 7 );
+				stage.Add( 1, 0, 7 );
+				stage.Add( 1, 1, 7 );
+				PrintStage( stage );
+				EXPECT_TRUE( stage.IsMovable() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				stage.Add( 0, 0, 1 );
+				stage.Add( 0, 1, 2 );
+				stage.Add( 1, 0, 7 );
+				stage.Add( 1, 1, 7 );
+				PrintStage( stage );
+				EXPECT_TRUE( stage.IsMovable() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				stage.Add( 0, 0, 1 );
+				stage.Add( 0, 1, 2 );
+				stage.Add( 1, 0, 3 );
+				stage.Add( 1, 1, 7 );
+				PrintStage( stage );
+				EXPECT_FALSE( stage.IsMovable() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				stage.Add( 0, 0, 1 );
+				stage.Add( 0, 1, 2 );
+				stage.Add( 1, 0, 3 );
+				stage.Add( 1, 1, 0 );
+				PrintStage( stage );
+				EXPECT_TRUE( stage.IsMovable() );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }
