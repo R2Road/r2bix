@@ -16,6 +16,8 @@
 #include "p2048mini/p2048mini_StageViewNode.h"
 #include "p2048mini/p2048minitable_TextureTable.h"
 
+#include "r2/r2_Random.h"
+
 namespace p2048mini
 {
 	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director )
@@ -98,11 +100,30 @@ namespace p2048mini
 		switch( mStep )
 		{
 		case eStep::GameReady:
-			// Make Number
-			mStage.Add( 0, 0, 32 );
-			mStage.Add( 0, 1, 32 );
+		{
+			// Make 2 Number
+			for( int i = 0; 2 > i; ++i )
+			{
+				const auto target_space = r2::Random::GetInt( 0, mStage.GetMaxNumberCount() - mStage.GetCurrentNumberCount() - 1 );
+				int current_space = 0;
+				do
+				{
+					if( target_space <= current_space )
+					{
+						if( 0 == mStage.Get( current_space ) )
+						{
+							mStage.Add( current_space, 32 );
+							break;
+						}
+					}
+
+					++current_space;
+				} while( true );
+			}
+
 			mStep = eStep::GameStart;
-			break;
+		}
+		break;
 		case eStep::GameStart:
 			// Show Stage, On Input
 			mStageViewComponent->UpdateView();

@@ -19,10 +19,14 @@ namespace p2048mini
 		return ( 0 <= x && 0 <= y && static_cast<int>( GetWidth() ) > x && static_cast<int>( GetHeight() ) > y );
 	}
 
+	uint32_t Stage::Get( const uint32_t linear_index ) const
+	{
+		return mContainer[linear_index];
+	}
 	uint32_t Stage::Get( const uint32_t x, const uint32_t y ) const
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		return mContainer[linear_index];
+		return Get( linear_index );
 	}
 
 	bool Stage::IsMovable() const
@@ -77,15 +81,19 @@ namespace p2048mini
 		}
 	}
 
-	void Stage::Add( const uint32_t x, const uint32_t y, const uint32_t val )
+	void Stage::Add( const uint32_t linear_index, const uint32_t val )
 	{
-		const int linear_index = mGridIndexConverter.To_Linear( x, y );
 		if( 0 == mContainer[linear_index] )
 		{
 			++mCurrentNumberCount;
 		}
 
 		mContainer[linear_index] = val;
+	}
+	void Stage::Add( const uint32_t x, const uint32_t y, const uint32_t val )
+	{
+		const int linear_index = mGridIndexConverter.To_Linear( x, y );
+		Add( linear_index, val );
 	}
 
 	void Stage::Remove( const uint32_t x, const uint32_t y )
