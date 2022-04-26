@@ -113,8 +113,11 @@ namespace p2048mini
 	// 1. 도착점에 가장 가까운 녀석부터 이동
 	// 2. 아무도 움직이지 못했다면 이동 한 것이 아니다.
 	//
-	void Stage::Move( const r2::Direction4::eState direction_state )
+	bool Stage::Move( const r2::Direction4::eState direction_state )
 	{
+		bool has_moved = false;
+
+
 		const r2::PointInt center_point( GetWidth() / 2, GetHeight() );
 
 		const r2::Direction4 move_dir( direction_state );
@@ -239,6 +242,9 @@ namespace p2048mini
 
 								Remove( currept_point.GetX(), currept_point.GetY() );
 								Add( next_point.GetX(), next_point.GetY(), new_number );
+
+								has_moved = true;
+
 								break;
 							}
 						}
@@ -249,6 +255,8 @@ namespace p2048mini
 							//
 							Remove( currept_point.GetX(), currept_point.GetY() );
 							Add( next_point.GetX(), next_point.GetY(), my_number );
+
+							has_moved = true;
 						}
 
 						currept_point = next_point;
@@ -257,5 +265,8 @@ namespace p2048mini
 				}
 			}
 		}
+
+
+		return has_moved;
 	}
 }

@@ -48,7 +48,7 @@ namespace p2048mini
 		//
 		//
 		//
-		void Move( const r2::Direction4::eState direction_state );
+		bool Move( const r2::Direction4::eState direction_state );
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;

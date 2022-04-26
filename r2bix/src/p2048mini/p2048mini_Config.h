@@ -18,7 +18,7 @@ namespace p2048mini
 		{
 			const static NodeConfig ret
 			{
-				true
+				false
 			};
 			return ret;
 		}

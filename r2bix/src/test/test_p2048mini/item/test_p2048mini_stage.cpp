@@ -249,19 +249,20 @@ namespace test_p2048mini_stage
 
 					std::cout << "Press [W, A, S, D]" << r2::linefeed2;
 
+					bool has_moved = false;
 					switch( _getch() )
 					{
 					case 97: // L
-						PROCESS_MAIN( stage.Move( r2::Direction4::eState::Left ) );
+						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Left ) );
 						break;
 					case 100: // R
-						PROCESS_MAIN( stage.Move( r2::Direction4::eState::Right ) );
+						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Right ) );
 						break;
 					case 119: // U
-						PROCESS_MAIN( stage.Move( r2::Direction4::eState::Down ) ); // swap D 4 ez look
+						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Down ) ); // swap D 4 ez look
 						break;
 					case 115: // D
-						PROCESS_MAIN( stage.Move( r2::Direction4::eState::Up ) ); // swap U 4 ez look
+						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Up ) ); // swap U 4 ez look
 						break;
 
 					case 27: // ESC
@@ -275,6 +276,7 @@ namespace test_p2048mini_stage
 					std::cout << r2::linefeed;
 
 					PROCESS_MAIN( PrintStage( stage ) );
+					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2::linefeed;
 
 				} while( bRun );
 			}
