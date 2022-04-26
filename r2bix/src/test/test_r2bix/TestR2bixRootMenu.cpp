@@ -25,7 +25,7 @@ r2cm::MenuUp TestR2bixRootMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle(),
-				"> Inprogress : Action"
+				"> Inprogress : Need Update r2Input - add - eKeyStatus::Click"
 		"\n"	"> ..."
 	) );
 
