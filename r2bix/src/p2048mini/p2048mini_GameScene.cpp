@@ -119,21 +119,7 @@ namespace p2048mini
 			// Make 2 Number
 			for( int i = 0; 2 > i; ++i )
 			{
-				const auto target_space = r2::Random::GetInt( 0, mStage.GetEmptySpaceCount() - 1 );
-				int current_space = 0;
-				do
-				{
-					if( target_space <= current_space )
-					{
-						if( 0 == mStage.Get( current_space ) )
-						{
-							mStage.Add( current_space, 32 );
-							break;
-						}
-					}
-
-					++current_space;
-				} while( true );
+				AddNumber();
 			}
 
 			mStep = eStep::GameStart;
@@ -150,21 +136,25 @@ namespace p2048mini
 			if( mKeyboardInputListener.IsPushed( 1 ) ) // A
 			{
 				mStage.Move( r2::Direction4::eState::Left );
+				AddNumber();
 				mStageViewComponent->UpdateView();
 			}
 			else if( mKeyboardInputListener.IsPushed( 2 ) ) // D
 			{
 				mStage.Move( r2::Direction4::eState::Right );
+				AddNumber();
 				mStageViewComponent->UpdateView();
 			}
 			else if( mKeyboardInputListener.IsPushed( 3 ) ) // S
 			{
 				mStage.Move( r2::Direction4::eState::Up );
+				AddNumber();
 				mStageViewComponent->UpdateView();
 			}
 			else if( mKeyboardInputListener.IsPushed( 4 ) ) // W
 			{
 				mStage.Move( r2::Direction4::eState::Down );
+				AddNumber();
 				mStageViewComponent->UpdateView();
 			}
 			break;
@@ -180,5 +170,24 @@ namespace p2048mini
 		}
 
 		r2node::SceneNode::Update( delta_time );
+	}
+
+	void GameScene::AddNumber()
+	{
+		const auto target_space = r2::Random::GetInt( 0, mStage.GetEmptySpaceCount() - 1 );
+		int current_space = 0;
+		do
+		{
+			if( target_space <= current_space )
+			{
+				if( 0 == mStage.Get( current_space ) )
+				{
+					mStage.Add( current_space, 32 );
+					break;
+				}
+			}
+
+			++current_space;
+		} while( true );
 	}
 }

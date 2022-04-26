@@ -33,6 +33,9 @@ namespace p2048mini
 		void Update( const float delta_time ) override;
 
 	private:
+		void AddNumber();
+
+	private:
 		eStep mStep;
 		Stage mStage;
 		p2048mini::StageViewComponent* mStageViewComponent;
