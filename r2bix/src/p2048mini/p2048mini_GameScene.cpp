@@ -132,36 +132,32 @@ namespace p2048mini
 			mStep = eStep::GameUpdate;
 			break;
 		case eStep::GameUpdate:
+		{
 			// Input Process, Game End Check
+			r2::Direction4::eState input_direction = r2::Direction4::eState::None;
 			if( mKeyboardInputListener.IsPushed( 1 ) ) // A
 			{
-				if( !MoveNumber( r2::Direction4::eState::Left ) )
-				{
-					mStep = eStep::GameEnd;
-				}
+				input_direction = r2::Direction4::eState::Left;
 			}
 			else if( mKeyboardInputListener.IsPushed( 2 ) ) // D
 			{
-				if( !MoveNumber( r2::Direction4::eState::Right ) )
-				{
-					mStep = eStep::GameEnd;
-				}
+				input_direction = r2::Direction4::eState::Right;
 			}
 			else if( mKeyboardInputListener.IsPushed( 3 ) ) // S
 			{
-				if( !MoveNumber( r2::Direction4::eState::Up ) )
-				{
-					mStep = eStep::GameEnd;
-				}
+				input_direction = r2::Direction4::eState::Up;
 			}
 			else if( mKeyboardInputListener.IsPushed( 4 ) ) // W
 			{
-				if( !MoveNumber( r2::Direction4::eState::Down ) )
-				{
-					mStep = eStep::GameEnd;
-				}
+				input_direction = r2::Direction4::eState::Down;
 			}
-			break;
+
+			if( r2::Direction4::eState::None != input_direction && !MoveNumber( r2::Direction4::eState::Down ) )
+			{
+				mStep = eStep::GameEnd;
+			}
+		}
+		break;
 		case eStep::GameEnd:
 			// Do Something
 			break;
