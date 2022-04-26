@@ -26,6 +26,13 @@ namespace test_p2048mini_stage
 		DoFuncT GetDoFunction() override;
 	};
 
+	class MergeTest : public r2cm::iItem, public r2::SingleTon<MergeTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class EmptyCheck : public r2cm::iItem, public r2::SingleTon<EmptyCheck>
 	{
 	public:

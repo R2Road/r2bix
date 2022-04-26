@@ -289,6 +289,52 @@ namespace test_p2048mini_stage
 
 
 
+	r2cm::iItem::TitleFuncT MergeTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : Merge";
+		};
+	}
+	r2cm::iItem::DoFuncT MergeTest::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 4, 1 ) );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( stage.Add( 0, 0, 2 ) );
+				PROCESS_MAIN( stage.Add( 1, 0, 1 ) );
+				PROCESS_MAIN( stage.Add( 2, 0, 1 ) );
+				PROCESS_MAIN( PrintStage( stage ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				stage.Move( r2::Direction4::eState::Right );
+				PROCESS_MAIN( PrintStage( stage ) );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( 2, stage.Get( 2, 0 ) );
+				EXPECT_EQ( 2, stage.Get( 3, 0 ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT EmptyCheck::GetTitleFunction() const
 	{
 		return []()->const char*
