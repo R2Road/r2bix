@@ -154,9 +154,12 @@ namespace p2048mini
 				input_direction = r2::Direction4::eState::Down;
 			}
 
-			if( r2::Direction4::eState::None != input_direction && !MoveNumber( r2::Direction4::eState::Down ) )
+			if( r2::Direction4::eState::None != input_direction )
 			{
-				mStep = eStep::GameEnd;
+				if( !MoveNumber( input_direction ) )
+				{
+					mStep = eStep::GameEnd;
+				}
 			}
 		}
 		break;
