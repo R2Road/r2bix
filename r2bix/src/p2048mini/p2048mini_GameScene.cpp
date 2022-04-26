@@ -104,7 +104,7 @@ namespace p2048mini
 			// Make 2 Number
 			for( int i = 0; 2 > i; ++i )
 			{
-				const auto target_space = r2::Random::GetInt( 0, mStage.GetMaxNumberCount() - mStage.GetCurrentNumberCount() - 1 );
+				const auto target_space = r2::Random::GetInt( 0, mStage.GetEmptySpaceCount() - 1 );
 				int current_space = 0;
 				do
 				{
