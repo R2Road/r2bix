@@ -405,7 +405,7 @@ namespace test_p2048mini_stage
 
 			{
 				stage.Add( 0, 0, 1 );
-				stage.Add( 0, 1, 7 );
+				stage.Add( 0, 1, 2 );
 				stage.Add( 1, 0, 7 );
 				stage.Add( 1, 1, 7 );
 				PrintStage( stage );
@@ -416,8 +416,8 @@ namespace test_p2048mini_stage
 
 			{
 				stage.Add( 0, 0, 1 );
-				stage.Add( 0, 1, 2 );
-				stage.Add( 1, 0, 7 );
+				stage.Add( 0, 1, 7 );
+				stage.Add( 1, 0, 2 );
 				stage.Add( 1, 1, 7 );
 				PrintStage( stage );
 				EXPECT_TRUE( stage.IsMovable() );

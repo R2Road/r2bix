@@ -48,12 +48,12 @@ namespace p2048mini
 				}
 
 				dir4.SetState( r2::Direction4::eState::Up );
-				for( int d = 0, e = static_cast<int>( r2::Direction4::eState::SIZE ); e > d; ++d )
+				for( int d = 0, e = static_cast<int>( r2::Direction4::eState::SIZE ); e > d; ++d, dir4.Rotate( true ) )
 				{
 					next_point = currept_point + dir4.GetPoint();
 					if( !IsIn( next_point.GetX(), next_point.GetY() ) )
 					{
-						break;
+						continue;
 					}
 
 					const auto next_number = Get( next_point.GetX(), next_point.GetY() );
