@@ -147,6 +147,26 @@ namespace p2048mini
 			break;
 		case eStep::GameUpdate:
 			// Input Process, Game End Check
+			if( mKeyboardInputListener.IsPushed( 1 ) ) // A
+			{
+				mStage.Move( r2::Direction4::eState::Left );
+				mStageViewComponent->UpdateView();
+			}
+			else if( mKeyboardInputListener.IsPushed( 2 ) ) // D
+			{
+				mStage.Move( r2::Direction4::eState::Right );
+				mStageViewComponent->UpdateView();
+			}
+			else if( mKeyboardInputListener.IsPushed( 3 ) ) // S
+			{
+				mStage.Move( r2::Direction4::eState::Up );
+				mStageViewComponent->UpdateView();
+			}
+			else if( mKeyboardInputListener.IsPushed( 4 ) ) // W
+			{
+				mStage.Move( r2::Direction4::eState::Down );
+				mStageViewComponent->UpdateView();
+			}
 			break;
 		case eStep::GameEnd:
 			// Do Something
