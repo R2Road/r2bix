@@ -65,6 +65,7 @@ namespace p2048mini
 		uint32_t label_index = 0;
 		for( const auto n : *mStage )
 		{
+			mLabelContainer[label_index]->GetOwnerNode().SetVisible( ( 0 < n ) );
 			mLabelContainer[label_index]->SetNumber( n );
 			++label_index;
 		}
