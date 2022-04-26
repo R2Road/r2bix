@@ -71,6 +71,11 @@ namespace p2048mini
 
 		return false;
 	}
+	bool Stage::IsLock( const uint32_t x, const uint32_t y ) const
+	{
+		const int linear_index = mGridIndexConverter.To_Linear( x, y );
+		return mContainer[linear_index].merge_lock;
+	}
 
 	void Stage::ClearAll()
 	{
@@ -255,13 +260,16 @@ namespace p2048mini
 								//
 								// Merge and Stop
 								//
-								const auto new_number = my_number + other_number;
+								if( !IsLock( next_point.GetX(), next_point.GetY() ) )
+								{
+									const auto new_number = my_number + other_number;
 
-								Remove( currept_point.GetX(), currept_point.GetY() );
-								Add( next_point.GetX(), next_point.GetY(), new_number );
-								Lock( next_point.GetX(), next_point.GetY() );
+									Remove( currept_point.GetX(), currept_point.GetY() );
+									Add( next_point.GetX(), next_point.GetY(), new_number );
+									Lock( next_point.GetX(), next_point.GetY() );
 
-								has_moved = true;
+									has_moved = true;
+								}
 
 								break;
 							}
