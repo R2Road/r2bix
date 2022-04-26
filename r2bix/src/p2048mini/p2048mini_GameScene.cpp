@@ -198,7 +198,12 @@ namespace p2048mini
 	}
 	bool GameScene::MoveNumber( const r2::Direction4::eState move_direction )
 	{
-		mStage.Move( move_direction );
+		if( mStage.Move( move_direction ) )
+		{
+			AddNumber();
+			mStageViewComponent->UpdateView();
+		}
+		
 		if( 0 == mStage.GetEmptySpaceCount() && false == mStage.IsMovable() )
 		{
 			// Game End
@@ -206,9 +211,6 @@ namespace p2048mini
 		}
 		else
 		{
-			AddNumber();
-			mStageViewComponent->UpdateView();
-
 			return true;
 		}
 	}
