@@ -63,10 +63,10 @@ namespace p2048mini
 	void StageViewComponent::UpdateView()
 	{
 		uint32_t label_index = 0;
-		for( const auto n : *mStage )
+		for( const auto cell : *mStage )
 		{
-			mLabelContainer[label_index]->GetOwnerNode().SetVisible( ( 0 < n ) );
-			mLabelContainer[label_index]->SetNumber( n );
+			mLabelContainer[label_index]->GetOwnerNode().SetVisible( ( 0 < cell.number ) );
+			mLabelContainer[label_index]->SetNumber( cell.number );
 			++label_index;
 		}
 	}
