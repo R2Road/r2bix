@@ -32,7 +32,20 @@ namespace r2input
 			}
 			else
 			{
-				mKeyStatusContainer[i] = eKeyStatus::None;
+				switch( mKeyStatusContainer[i] )
+				{
+				//case eKeyStatus::None:
+				//	break;
+
+				case eKeyStatus::Push:
+				case eKeyStatus::Pressed:
+					mKeyStatusContainer[i] = eKeyStatus::Release;
+					break;
+
+				case eKeyStatus::Release:
+					mKeyStatusContainer[i] = eKeyStatus::None;
+					break;
+				}
 			}
 		}
 	}

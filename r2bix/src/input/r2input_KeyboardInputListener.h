@@ -14,6 +14,7 @@ namespace r2input
 			None,
 			Push,
 			Pressed,
+			Release,
 		};
 
 		KeyboardInputListener( std::initializer_list<uint8_t> list );
