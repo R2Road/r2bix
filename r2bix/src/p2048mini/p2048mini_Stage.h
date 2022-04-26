@@ -34,8 +34,8 @@ namespace p2048mini
 		uint32_t GetMaxY() const { return mGridIndexConverter.GetHeight() - 1; }
 		bool IsIn( const int32_t x, const int32_t y ) const;
 
-		uint32_t Get( const uint32_t linear_index ) const;
-		uint32_t Get( const uint32_t x, const uint32_t y ) const;
+		uint32_t GetNumber( const uint32_t linear_index ) const;
+		uint32_t GetNumber( const uint32_t x, const uint32_t y ) const;
 		int32_t GetCurrentNumberCount() const { return mCurrentNumberCount; }
 		int32_t GetEmptySpaceCount() const { return static_cast<int32_t>( mContainer.size() ) - GetCurrentNumberCount(); }
 		bool IsFull() const { return mContainer.size() == mCurrentNumberCount; }

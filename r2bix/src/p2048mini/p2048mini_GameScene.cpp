@@ -222,7 +222,7 @@ namespace p2048mini
 		{
 			if( target_space <= current_space )
 			{
-				if( 0 == mStage.Get( current_space ) )
+				if( 0 == mStage.GetNumber( current_space ) )
 				{
 					mStage.Add( current_space, 32 );
 					break;

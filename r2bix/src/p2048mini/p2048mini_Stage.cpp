@@ -19,14 +19,14 @@ namespace p2048mini
 		return ( 0 <= x && 0 <= y && static_cast<int>( GetWidth() ) > x && static_cast<int>( GetHeight() ) > y );
 	}
 
-	uint32_t Stage::Get( const uint32_t linear_index ) const
+	uint32_t Stage::GetNumber( const uint32_t linear_index ) const
 	{
 		return mContainer[linear_index].number;
 	}
-	uint32_t Stage::Get( const uint32_t x, const uint32_t y ) const
+	uint32_t Stage::GetNumber( const uint32_t x, const uint32_t y ) const
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		return Get( linear_index );
+		return GetNumber( linear_index );
 	}
 
 	bool Stage::IsMovable() const
@@ -41,7 +41,7 @@ namespace p2048mini
 				currept_point.Set( x, y );
 
 				// Has Empty Space
-				const auto my_number = Get( currept_point.GetX(), currept_point.GetY() );
+				const auto my_number = GetNumber( currept_point.GetX(), currept_point.GetY() );
 				if( 0 == my_number )
 				{
 					return true;
@@ -56,7 +56,7 @@ namespace p2048mini
 						continue;
 					}
 
-					const auto next_number = Get( next_point.GetX(), next_point.GetY() );
+					const auto next_number = GetNumber( next_point.GetX(), next_point.GetY() );
 					if( 0 == next_number )
 					{
 						return true;
@@ -207,7 +207,7 @@ namespace p2048mini
 					do
 					{
 						// Has Value?
-						const auto my_number = Get( currept_point.GetX(), currept_point.GetY() );
+						const auto my_number = GetNumber( currept_point.GetX(), currept_point.GetY() );
 						if( 0 >= my_number )
 						{
 							break;
@@ -222,7 +222,7 @@ namespace p2048mini
 						}
 
 						// Is Empty?
-						const auto other_number = Get( next_point.GetX(), next_point.GetY() );
+						const auto other_number = GetNumber( next_point.GetX(), next_point.GetY() );
 						if( 0 < other_number ) // Not Empty
 						{
 							// Is Same Number?
