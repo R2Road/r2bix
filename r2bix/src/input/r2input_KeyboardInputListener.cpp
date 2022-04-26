@@ -6,7 +6,7 @@ namespace r2input
 	KeyboardInputListener::KeyboardInputListener( std::initializer_list<uint8_t> list ) :
 		mObservationKeyList( list )
 		, mKeyFlags( mObservationKeyList.size(), 0 )
-		, mKeyStatusContainer( mObservationKeyList.size(), eKeyStatus::Release )
+		, mKeyStatusContainer( mObservationKeyList.size(), eKeyStatus::None )
 	{}
 
 	void KeyboardInputListener::Update()
@@ -24,14 +24,14 @@ namespace r2input
 				//case eKeyStatus::Pressed:
 				//	break;
 
-				case eKeyStatus::Release:
+				case eKeyStatus::None:
 					mKeyStatusContainer[i] = eKeyStatus::Push;
 					break;
 				}
 			}
 			else
 			{
-				mKeyStatusContainer[i] = eKeyStatus::Release;
+				mKeyStatusContainer[i] = eKeyStatus::None;
 			}
 		}
 	}

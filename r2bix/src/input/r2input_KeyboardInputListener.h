@@ -11,7 +11,7 @@ namespace r2input
 	public:
 		enum class eKeyStatus
 		{
-			Release,
+			None,
 			Push,
 			Pressed,
 		};
@@ -31,7 +31,7 @@ namespace r2input
 		}
 		bool HasInput( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::Release < mKeyStatusContainer[key_index] );
+			return ( eKeyStatus::None < mKeyStatusContainer[key_index] );
 		}
 
 		//
