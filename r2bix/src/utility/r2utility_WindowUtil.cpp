@@ -52,4 +52,9 @@ namespace r2utility
 	{
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ static_cast<SHORT>( new_cursor_point.x ), static_cast<SHORT>( new_cursor_point.y ) } );
 	}
+
+	void RequestSleep( const uint32_t m )
+	{
+		Sleep( m );
+	}
 }
