@@ -135,27 +135,19 @@ namespace p2048mini
 			// Input Process, Game End Check
 			if( mKeyboardInputListener.IsPushed( 1 ) ) // A
 			{
-				mStage.Move( r2::Direction4::eState::Left );
-				AddNumber();
-				mStageViewComponent->UpdateView();
+				MoveNumber( r2::Direction4::eState::Left );
 			}
 			else if( mKeyboardInputListener.IsPushed( 2 ) ) // D
 			{
-				mStage.Move( r2::Direction4::eState::Right );
-				AddNumber();
-				mStageViewComponent->UpdateView();
+				MoveNumber( r2::Direction4::eState::Right );
 			}
 			else if( mKeyboardInputListener.IsPushed( 3 ) ) // S
 			{
-				mStage.Move( r2::Direction4::eState::Up );
-				AddNumber();
-				mStageViewComponent->UpdateView();
+				MoveNumber( r2::Direction4::eState::Up );
 			}
 			else if( mKeyboardInputListener.IsPushed( 4 ) ) // W
 			{
-				mStage.Move( r2::Direction4::eState::Down );
-				AddNumber();
-				mStageViewComponent->UpdateView();
+				MoveNumber( r2::Direction4::eState::Down );
 			}
 			break;
 		case eStep::GameEnd:
@@ -189,5 +181,11 @@ namespace p2048mini
 
 			++current_space;
 		} while( true );
+	}
+	void GameScene::MoveNumber( const r2::Direction4::eState move_direction )
+	{
+		mStage.Move( move_direction );
+		AddNumber();
+		mStageViewComponent->UpdateView();
 	}
 }
