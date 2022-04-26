@@ -21,6 +21,10 @@ namespace r2input
 		//
 		// Getter
 		//
+		eKeyStatus Get( const std::size_t key_index ) const
+		{
+			return mKeyStatusContainer[key_index];
+		}
 		bool IsPushed( const std::size_t key_index ) const
 		{
 			return ( eKeyStatus::Push == mKeyStatusContainer[key_index] );

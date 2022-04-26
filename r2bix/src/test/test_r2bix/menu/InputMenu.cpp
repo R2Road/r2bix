@@ -18,7 +18,11 @@ r2cm::MenuUp InputMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', key_test::Basic::GetInstance() );
-		ret->AddItem( '2', window_input_test::TestKeyboardInputCollector::GetInstance() );
+
+		ret->AddLineFeed();
+
+		ret->AddItem( 'q', window_input_test::KeyStatus::GetInstance() );
+		ret->AddItem( 'w', window_input_test::TestKeyboardInputCollector::GetInstance() );
 
 
 		ret->AddSplit();

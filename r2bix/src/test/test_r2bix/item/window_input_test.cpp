@@ -10,9 +10,67 @@
 #include "r2/r2_Rect_Int.h"
 #include "r2/r2_FPSTimer.h"
 #include "r2cm/r2cm_eTestEndAction.h"
+#include "utility/r2utility_WindowUtil.h"
 
 namespace window_input_test
 {
+	r2cm::iItem::TitleFuncT KeyStatus::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Window Input : KeyStatus";
+		};
+	}
+	r2cm::iItem::DoFuncT KeyStatus::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
+			std::cout << "[ESC] Exit" << r2::linefeed;
+			std::cout << "[WASD] Move" << r2::linefeed;
+
+			r2input::KeyboardInputCollector keyboard_input_collector;
+			r2input::KeyboardInputListener keyboard_input_listener( {
+				0x1B		// esc
+				, 0x41		// a
+			} );
+
+			keyboard_input_collector.AddListener( &keyboard_input_listener );
+
+			std::cout << r2::split;
+
+			{
+				auto last_input_status = keyboard_input_listener.Get( 1 );
+				while( 1 )
+				{
+					keyboard_input_collector.Collect();
+					keyboard_input_listener.Update();
+
+					//
+					// ESC
+					//
+					if( keyboard_input_listener.IsPushed( 0 ) )
+					{
+						break;
+					}
+
+					//
+					// A
+					//
+					if( last_input_status != keyboard_input_listener.Get( 1 ) )
+					{
+						last_input_status = keyboard_input_listener.Get( 1 );
+						std::cout << static_cast<int>( last_input_status ) << r2::linefeed;
+					}
+				}
+			}
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT TestKeyboardInputCollector::GetTitleFunction() const
 	{
 		return []()->const char*
