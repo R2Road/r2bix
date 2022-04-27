@@ -278,6 +278,7 @@ namespace p2048mini
 									Lock( next_point.GetX(), next_point.GetY() );
 
 									move_result.has_moved = true;
+									move_result.sum4merged = new_number;
 								}
 
 								break;

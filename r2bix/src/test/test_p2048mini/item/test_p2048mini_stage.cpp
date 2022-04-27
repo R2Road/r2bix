@@ -311,24 +311,32 @@ namespace test_p2048mini_stage
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( stage.Move( r2::Direction4::eState::Right ) );
+				DECLARATION_MAIN( const auto move_result = stage.Move( r2::Direction4::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
 				std::cout << r2::linefeed;
 
 				EXPECT_EQ( 2, stage.GetNumber( 2, 0 ) );
 				EXPECT_EQ( 2, stage.GetNumber( 3, 0 ) );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( 2, move_result.sum4merged );
 			}
 
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( stage.Move( r2::Direction4::eState::Right ) );
+				DECLARATION_MAIN( const auto move_result = stage.Move( r2::Direction4::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
 				std::cout << r2::linefeed;
 
 				EXPECT_EQ( 4, stage.GetNumber( 3, 0 ) );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( 4, move_result.sum4merged );
 			}
 
 			std::cout << r2::split;

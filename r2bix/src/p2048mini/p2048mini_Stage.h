@@ -21,6 +21,7 @@ namespace p2048mini
 		struct MoveResult
 		{
 			bool has_moved = false;
+			uint32_t sum4merged = 0;
 		};
 
 		Stage( const uint32_t width, const uint32_t height );
