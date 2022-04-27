@@ -285,7 +285,7 @@ namespace action_test
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 1, 2 ) );
 
 			std::cout << r2::split;
 
@@ -313,7 +313,7 @@ namespace action_test
 			std::cout << r2::split;
 
 			{
-				EXPECT_EQ( r2::PointInt( 0, 0 ), node->mTransformComponent->GetPosition() );
+				EXPECT_EQ( r2::PointInt( 1, 2 ), node->mTransformComponent->GetPosition() );
 
 				std::cout << r2::linefeed;
 
@@ -339,7 +339,7 @@ namespace action_test
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( r2::PointInt( 5, 5 ), node->mTransformComponent->GetPosition() );
+				EXPECT_EQ( r2::PointInt( 6, 7 ), node->mTransformComponent->GetPosition() );
 			}
 
 			std::cout << r2::split;
