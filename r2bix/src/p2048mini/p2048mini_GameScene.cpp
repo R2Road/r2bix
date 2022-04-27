@@ -82,7 +82,7 @@ namespace p2048mini
 		// Background
 		//
 		{
-			auto node = AddChild<r2node::CustomTextureNode>();
+			auto node = AddChild<r2node::CustomTextureNode>( std::numeric_limits<int>::min() );
 			node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 37, 17, '=' );
 			node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 			node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
@@ -97,7 +97,7 @@ namespace p2048mini
 		// Title
 		//
 		{
-			mGameOverNode = AddChild<r2node::SpriteNode>( 2 );
+			mGameOverNode = AddChild<r2node::SpriteNode>();
 			mGameOverNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
 			mGameOverNode->GetComponent<r2component::TransformComponent>()->SetPosition(
 				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f )
@@ -125,11 +125,11 @@ namespace p2048mini
 		// Score
 		//
 		{
-			auto label_node = AddChild<r2node::LabelNode>( 2 );
+			auto label_node = AddChild<r2node::LabelNode>();
 			label_node->GetComponent<r2component::LabelComponent>()->SetString( "Score : " );
 			label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 54, 16 );
 
-			mScoreLabel = AddChild<r2node::LabelNode>( 3 );
+			mScoreLabel = AddChild<r2node::LabelNode>( 1 );
 			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 			mScoreLabel->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 			mScoreLabel->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 16 );
@@ -139,7 +139,7 @@ namespace p2048mini
 		// Key Info
 		//
 		{
-			auto sprite_node = AddChild<r2node::SpriteNode>( 2 );
+			auto sprite_node = AddChild<r2node::SpriteNode>();
 			sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
 			sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 45, 37 );
 		}
