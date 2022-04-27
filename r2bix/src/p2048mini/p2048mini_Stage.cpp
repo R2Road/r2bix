@@ -4,7 +4,6 @@
 #include <algorithm>
 
 #include "r2/r2_Point_Int.h"
-#include "r2/r2_Direction4.h"
 
 namespace p2048mini
 {
