@@ -11,6 +11,7 @@
 #include "action/r2action_CallbackAction.h"
 #include "action/r2action_DelayAction.h"
 #include "action/r2action_MoveByAction.h"
+#include "action/r2action_MoveToAction.h"
 #include "action/r2action_RepeatAction.h"
 #include "action/r2action_SequenceAction.h"
 #include "action/r2action_TickAction.h"
@@ -340,6 +341,93 @@ namespace action_test
 				std::cout << r2::linefeed;
 
 				EXPECT_EQ( r2::PointInt( 6, 7 ), node->mTransformComponent->GetPosition() );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT MoveToActionTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "MoveToAction";
+		};
+	}
+	r2cm::iItem::DoFuncT MoveToActionTest::GetDoFunction()
+	{
+		return[]()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			TextureTable4Test::GetInstance().Load();
+			TextureFrameAnimationTable4Test::GetInstance().Load();
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 1, 2 ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			EXPECT_NE( nullptr, component );
+			EXPECT_FALSE( component->HasAction() );
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_FALSE( component->HasAction() );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( auto move_to_action = r2action::MoveToAction::Create() );
+				PROCESS_MAIN( move_to_action->SetEndPoint( { 5, 5 } ) );
+				PROCESS_MAIN( move_to_action->SetTimeLimit( 1.5f ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->SetAction( std::move( move_to_action ) ) );
+				EXPECT_TRUE( component->HasAction() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_EQ( r2::PointInt( 1, 2 ), node->mTransformComponent->GetPosition() );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->StartAction() );
+				EXPECT_TRUE( component->IsRunning() );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->Update( 0.7f ) );
+				EXPECT_TRUE( component->IsRunning() );
+				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->Update( 0.7f ) );
+				EXPECT_TRUE( component->IsRunning() );
+				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( component->Update( 0.7f ) );
+				EXPECT_FALSE( component->IsRunning() );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( r2::PointInt( 5, 5 ), node->mTransformComponent->GetPosition() );
 			}
 
 			std::cout << r2::split;

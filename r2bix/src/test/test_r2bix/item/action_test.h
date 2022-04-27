@@ -33,6 +33,13 @@ namespace action_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class MoveToActionTest : public r2cm::iItem, public r2::SingleTon<MoveToActionTest>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class RepeatActionTest : public r2cm::iItem, public r2::SingleTon<RepeatActionTest>
 	{
 	public:

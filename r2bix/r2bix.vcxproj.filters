@@ -393,6 +393,9 @@
     <ClCompile Include="src\utility\r2utility_InputUtil.cpp">
       <Filter>utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\action\r2action_MoveToAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -729,6 +732,9 @@
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_Config.h">
       <Filter>project_2048mini</Filter>
+    </ClInclude>
+    <ClInclude Include="src\action\r2action_MoveToAction.h">
+      <Filter>action</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -20,6 +20,7 @@ r2cm::MenuUp ActionMenu::Create( r2cm::Director& director )
 		ret->AddItem( '2', action_test::DelayActionTest::GetInstance() );
 		ret->AddItem( '3', action_test::SequenceActionTest::GetInstance() );
 		ret->AddItem( '4', action_test::MoveByActionTest::GetInstance() );
+		ret->AddItem( '5', action_test::MoveToActionTest::GetInstance() );
 
 		ret->AddLineFeed();
 
