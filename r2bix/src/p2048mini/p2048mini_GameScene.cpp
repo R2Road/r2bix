@@ -153,7 +153,6 @@ namespace p2048mini
 			AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( 0, mDirector.GetScreenBufferSize().GetHeight() - 1 );
 
 			AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( mDirector.GetScreenBufferSize().GetWidth() * 0.5f, mDirector.GetScreenBufferSize().GetHeight() * 0.5f );
-		
 		}
 
 		return true;
@@ -255,7 +254,8 @@ namespace p2048mini
 	}
 	bool GameScene::MoveNumber( const r2::Direction4::eState move_direction )
 	{
-		if( mStage.Move( move_direction ) )
+		const auto move_result = mStage.Move( move_direction );
+		if( move_result.has_moved )
 		{
 			AddNumber();
 			mStageViewComponent->UpdateView();

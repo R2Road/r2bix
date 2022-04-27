@@ -246,16 +246,16 @@ namespace test_p2048mini_stage
 					switch( _getch() )
 					{
 					case 97: // L
-						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Left ) );
+						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Left ).has_moved );
 						break;
 					case 100: // R
-						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Right ) );
+						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Right ).has_moved );
 						break;
 					case 119: // U
-						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Down ) ); // swap D 4 ez look
+						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Down ).has_moved ); // swap D 4 ez look
 						break;
 					case 115: // D
-						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Up ) ); // swap U 4 ez look
+						PROCESS_MAIN( has_moved = stage.Move( r2::Direction4::eState::Up ).has_moved ); // swap U 4 ez look
 						break;
 
 					case 27: // ESC

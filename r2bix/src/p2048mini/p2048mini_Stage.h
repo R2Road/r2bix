@@ -18,6 +18,11 @@ namespace p2048mini
 		using ContainerT = std::vector<Cell>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
 
+		struct MoveResult
+		{
+			bool has_moved = false;
+		};
+
 		Stage( const uint32_t width, const uint32_t height );
 
 		//
@@ -62,7 +67,7 @@ namespace p2048mini
 		//
 		//
 		//
-		bool Move( const r2::Direction4::eState direction_state );
+		MoveResult Move( const r2::Direction4::eState direction_state );
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;
