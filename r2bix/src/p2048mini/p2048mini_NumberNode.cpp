@@ -7,6 +7,7 @@
 #include "component/r2component_LabelComponent.h"
 #include "component/r2component_PivotComponent.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
+#include "component/r2component_TextureRenderComponent.h"
 #include "node/r2node_LabelNode.h"
 #include "node/r2node_PivotNode.h"
 #include "node/r2node_SpriteNode.h"
@@ -39,6 +40,8 @@ namespace p2048mini
 			//
 			{
 				auto node = ret->AddChild<r2node::LabelNode>();
+				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				node->GetComponent<r2component::TransformComponent>()->SetPosition( 2, 0 );
 
 				number_component->SetLabelComponent( node->GetComponent<r2component::LabelComponent>() );
 			}
