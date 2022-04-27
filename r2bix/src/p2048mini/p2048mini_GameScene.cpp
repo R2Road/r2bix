@@ -8,6 +8,7 @@
 #include "action/r2action_SequenceAction.h"
 #include "action/r2action_DelayAction.h"
 #include "action/r2action_MoveByAction.h"
+#include "action/r2action_MoveToAction.h"
 #include "base/r2base_Director.h"
 #include "component/r2component_ActionProcessComponent.h"
 #include "component/r2component_CustomTextureComponent.h"
@@ -158,6 +159,10 @@ namespace p2048mini
 			auto action_process_component = mGameOverNode->AddComponent<r2component::ActionProcessComponent>();
 			{
 				auto sequence_action = r2action::SequenceAction::Create();
+
+				auto moveto_action = sequence_action->AddAction<r2action::MoveToAction>();
+				moveto_action->SetEndPoint( mGameOverNode->GetComponent<r2component::TransformComponent>()->GetPosition() );
+				moveto_action->SetTimeLimit( 0.f );
 
 				auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
 				delay_action->SetTimeLimit( 1.f );
