@@ -91,6 +91,18 @@ namespace p2048mini
 		}
 
 		//
+		// Title
+		//
+		{
+			mGameOverNode = AddChild<r2node::SpriteNode>( 2 );
+			mGameOverNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
+			mGameOverNode->GetComponent<r2component::TransformComponent>()->SetPosition(
+				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f )
+				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.20f )
+			);
+		}
+
+		//
 		// Stage
 		//
 		{
@@ -111,6 +123,7 @@ namespace p2048mini
 		//
 		{
 			auto stage_view_node = AddChild<p2048mini::StageViewNode>( 1 );
+			stage_view_node->SetVisible( false );
 
 			mStageViewComponent4Debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
 			mStageViewComponent4Debug->Setup( &mStage );

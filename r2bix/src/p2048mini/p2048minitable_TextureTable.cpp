@@ -23,8 +23,14 @@ namespace p2048minitable
 				/* 2 */ "#        ##  #      #   #  # # #  #        #   #  #   #  #      #   #  "
 				/* 3 */ "#        ##  # ###  ### #  # # #  #####    #   #  #   #  #####  ####   "
 				/* 4 */ "###########  #   #  #   #  # # #  #        #   #   # #   #      #   #  "
-				/* 5 */ "###########   ###   #   #  # # #  # ###     ###     #    # ###  #   #  "
-				/* 6 */ "###########                                                            "
+				/* 5 */ "              ###   #   #  # # #  # ###     ###     #    # ###  #   #  "
+				/* 6 */ "                                                                       "
+				/* 7 */ "  22222    00000    4  4     88888                                     "
+				/* 8 */ " 2     2  0     0  4   4    8     8                                    "
+				/* 9 */ "   2222   0     0  4   4     88888                                     "
+				/* 0 */ " 22       0     0  4444444  8     8                                    "
+				/* 1 */ " 2222222   00000       4     88888                                     "
+				/* 2 */ "                                                                       "
 			) ) );
 
 			{
@@ -33,6 +39,14 @@ namespace p2048minitable
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 1, 7, 2 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"title_0"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 7, 33, 4 ) );
 			}
 
 			{
