@@ -19,6 +19,7 @@
 #include "node/r2node_PivotNode.h"
 #include "node/r2node_SpriteNode.h"
 
+#include "p2048mini_Config.h"
 #include "p2048mini_Stage.h"
 #include "p2048mini_StageViewComponent.h"
 #include "p2048mini_StageViewNode.h"
@@ -119,22 +120,6 @@ namespace p2048mini
 		}
 
 		//
-		// Debug Stage
-		//
-		{
-			auto stage_view_node = AddChild<p2048mini::StageViewNode>( 1 );
-			stage_view_node->SetVisible( false );
-
-			mStageViewComponent4Debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
-			mStageViewComponent4Debug->Setup( &mStage );
-
-			stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
-				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( mStageViewComponent4Debug->GetWidth() * 0.5f )
-				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.15f ) - ( mStageViewComponent4Debug->GetHeight() * 0.5f )
-			);
-		}
-
-		//
 		// Score
 		//
 		{
@@ -178,7 +163,27 @@ namespace p2048mini
 		//
 		// Debug
 		//
+		if( p2048mini::Config::GetNodeConfig().pivot )
 		{
+			//
+			// Debug Stage
+			//
+			{
+				auto stage_view_node = AddChild<p2048mini::StageViewNode>( 1 );
+				stage_view_node->SetVisible( false );
+
+				mStageViewComponent4Debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
+				mStageViewComponent4Debug->Setup( &mStage );
+
+				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( mStageViewComponent4Debug->GetWidth() * 0.5f )
+					, ( mDirector.GetScreenBufferSize().GetHeight() * 0.15f ) - ( mStageViewComponent4Debug->GetHeight() * 0.5f )
+				);
+			}
+
+			//
+			//
+			//
 			AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 			AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( mDirector.GetScreenBufferSize().GetWidth() - 1, 0 );
 			AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( mDirector.GetScreenBufferSize().GetWidth() - 1, mDirector.GetScreenBufferSize().GetHeight() - 1 );
