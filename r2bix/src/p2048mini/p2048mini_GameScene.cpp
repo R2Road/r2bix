@@ -135,6 +135,15 @@ namespace p2048mini
 		}
 
 		//
+		// Key Info
+		//
+		{
+			auto sprite_node = AddChild<r2node::SpriteNode>( 2 );
+			sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
+			sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 45, 37 );
+		}
+
+		//
 		// Game Over
 		//
 		{
