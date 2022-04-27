@@ -39,7 +39,7 @@ namespace p2048mini
 		uint32_t GetHeight() const { return mGridIndexConverter.GetHeight(); }
 		uint32_t GetMaxX() const { return mGridIndexConverter.GetWidth() - 1; }
 		uint32_t GetMaxY() const { return mGridIndexConverter.GetHeight() - 1; }
-		uint32_t Size() const { return mContainer.size(); }
+		uint32_t Size() const { return static_cast<uint32_t>( mContainer.size() ); }
 		bool IsIn( const int32_t x, const int32_t y ) const;
 
 	private:
