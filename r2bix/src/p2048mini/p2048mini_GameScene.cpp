@@ -26,6 +26,7 @@
 
 #include "r2/r2_Random.h"
 #include "utility/r2utility_InputUtil.h"
+#include "utility/r2utility_StringBuilder.h"
 
 namespace p2048mini
 {
@@ -35,6 +36,7 @@ namespace p2048mini
 		, mStageViewComponent( nullptr )
 		, mStageViewComponent4Debug( nullptr )
 
+		, mScore( 0 )
 		, mScoreLabel( nullptr )
 		, mGameOverNode( nullptr )
 
@@ -128,7 +130,7 @@ namespace p2048mini
 			label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 60, 16 );
 
 			mScoreLabel = AddChild<r2node::LabelNode>( 3 );
-			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( "0000000" );
+			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 			mScoreLabel->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 			mScoreLabel->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 16 );
 		}
@@ -276,6 +278,9 @@ namespace p2048mini
 		{
 			AddNumber();
 			mStageViewComponent->UpdateView();
+
+			mScore += move_result.sum4merged;
+			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d", mScore ) );
 		}
 		
 		if( 0 == mStage.GetEmptySpaceCount() && false == mStage.IsMovable() )
