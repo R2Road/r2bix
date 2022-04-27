@@ -61,13 +61,14 @@ namespace p2048mini
 		void Add( const uint32_t linear_index, const uint32_t val );
 		void Add( const uint32_t x, const uint32_t y, const uint32_t val );
 		void Remove( const uint32_t x, const uint32_t y );
-
+	private:
 		void ClearAllLocks();
 		void Lock( const uint32_t x, const uint32_t y );
 
 		//
 		//
 		//
+	public:
 		MoveResult Move( const r2::Direction4::eState direction_state );
 
 	private:
