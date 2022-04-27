@@ -34,8 +34,7 @@ namespace p2048mini
 	}
 	uint32_t Stage::GetNumber( const uint32_t x, const uint32_t y ) const
 	{
-		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		return GetNumber( linear_index );
+		return GetNumber( mGridIndexConverter.To_Linear( x, y ) );
 	}
 
 	bool Stage::IsMovable() const
@@ -82,8 +81,7 @@ namespace p2048mini
 	}
 	bool Stage::IsLock( const uint32_t x, const uint32_t y ) const
 	{
-		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		return Get( linear_index ).merge_lock;
+		return Get( mGridIndexConverter.To_Linear( x, y ) ).merge_lock;
 	}
 
 	void Stage::ClearAll()
@@ -107,8 +105,7 @@ namespace p2048mini
 	}
 	void Stage::Add( const uint32_t x, const uint32_t y, const uint32_t val )
 	{
-		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		Add( linear_index, val );
+		Add( mGridIndexConverter.To_Linear( x, y ), val );
 	}
 
 	void Stage::Remove( const uint32_t x, const uint32_t y )
@@ -132,8 +129,7 @@ namespace p2048mini
 	}
 	void Stage::Lock( const uint32_t x, const uint32_t y )
 	{
-		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		Get( linear_index ).merge_lock = true;
+		Get( mGridIndexConverter.To_Linear( x, y ) ).merge_lock = true;
 	}
 
 	//
