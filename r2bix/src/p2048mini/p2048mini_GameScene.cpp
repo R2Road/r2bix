@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "p2048mini_GameScene.h"
 
-#include <cassert>
-#include <conio.h>
 #include <numeric>
 
 #include "action/r2action_SequenceAction.h"
