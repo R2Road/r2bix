@@ -243,7 +243,10 @@ namespace p2048mini
 
 			if( r2::Direction4::eState::None != input_direction )
 			{
-				mStageViewComponent4Debug->UpdateView();
+				if( p2048mini::Config::GetNodeConfig().pivot )
+				{
+					mStageViewComponent4Debug->UpdateView();
+				}
 
 				if( !MoveNumber( input_direction ) )
 				{
