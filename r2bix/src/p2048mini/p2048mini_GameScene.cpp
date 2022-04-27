@@ -11,9 +11,11 @@
 #include "base/r2base_Director.h"
 #include "component/r2component_ActionProcessComponent.h"
 #include "component/r2component_CustomTextureComponent.h"
+#include "component/r2component_LabelComponent.h"
 #include "component/r2component_TextureFrameRenderComponent.h"
 #include "component/r2component_TextureRenderComponent.h"
 #include "node/r2node_CustomTextureNode.h"
+#include "node/r2node_LabelNode.h"
 #include "node/r2node_PivotNode.h"
 #include "node/r2node_SpriteNode.h"
 
@@ -33,6 +35,7 @@ namespace p2048mini
 		, mStageViewComponent( nullptr )
 		, mStageViewComponent4Debug( nullptr )
 
+		, mScoreLabel( nullptr )
 		, mGameOverNode( nullptr )
 
 		, mKeyboardInputCollector()
@@ -114,6 +117,20 @@ namespace p2048mini
 				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( mStageViewComponent4Debug->GetWidth() * 0.5f )
 				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.15f ) - ( mStageViewComponent4Debug->GetHeight() * 0.5f )
 			);
+		}
+
+		//
+		// Score
+		//
+		{
+			auto label_node = AddChild<r2node::LabelNode>( 2 );
+			label_node->GetComponent<r2component::LabelComponent>()->SetString( "Score : " );
+			label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 60, 16 );
+
+			mScoreLabel = AddChild<r2node::LabelNode>( 3 );
+			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( "0000000" );
+			mScoreLabel->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+			mScoreLabel->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 16 );
 		}
 
 		//
