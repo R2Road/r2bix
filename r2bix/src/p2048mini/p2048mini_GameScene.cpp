@@ -127,7 +127,7 @@ namespace p2048mini
 		{
 			auto label_node = AddChild<r2node::LabelNode>( 2 );
 			label_node->GetComponent<r2component::LabelComponent>()->SetString( "Score : " );
-			label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 60, 16 );
+			label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 54, 16 );
 
 			mScoreLabel = AddChild<r2node::LabelNode>( 3 );
 			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( "0" );
@@ -279,8 +279,14 @@ namespace p2048mini
 			AddNumber( 2u, 4u );
 			mStageViewComponent->UpdateView();
 
-			mScore += move_result.sum4merged;
-			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d", mScore ) );
+			//
+			// Score View Update
+			//
+			if( 0 < move_result.sum4merged )
+			{
+				mScore += move_result.sum4merged;
+				mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d ( + %d )", mScore, move_result.sum4merged ) );
+			}
 		}
 		
 		if( 0 == mStage.GetEmptySpaceCount() && false == mStage.IsMovable() )
