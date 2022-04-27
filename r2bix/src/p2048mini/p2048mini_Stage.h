@@ -36,6 +36,10 @@ namespace p2048mini
 		uint32_t Size() const { return mContainer.size(); }
 		bool IsIn( const int32_t x, const int32_t y ) const;
 
+	private:
+		const Cell Get( const uint32_t linear_index ) const;
+		Cell& Get( const uint32_t linear_index );
+	public:
 		uint32_t GetNumber( const uint32_t linear_index ) const;
 		uint32_t GetNumber( const uint32_t x, const uint32_t y ) const;
 		int32_t GetCurrentNumberCount() const { return mCurrentNumberCount; }

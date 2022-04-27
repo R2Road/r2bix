@@ -19,9 +19,18 @@ namespace p2048mini
 		return ( 0 <= x && 0 <= y && static_cast<int>( GetWidth() ) > x && static_cast<int>( GetHeight() ) > y );
 	}
 
+	const Stage::Cell Stage::Get( const uint32_t linear_index ) const
+	{
+		return mContainer[linear_index];
+	}
+	Stage::Cell& Stage::Get( const uint32_t linear_index )
+	{
+		return mContainer[linear_index];
+	}
+
 	uint32_t Stage::GetNumber( const uint32_t linear_index ) const
 	{
-		return mContainer[linear_index].number;
+		return Get( linear_index ).number;
 	}
 	uint32_t Stage::GetNumber( const uint32_t x, const uint32_t y ) const
 	{
@@ -74,7 +83,7 @@ namespace p2048mini
 	bool Stage::IsLock( const uint32_t x, const uint32_t y ) const
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		return mContainer[linear_index].merge_lock;
+		return Get( linear_index ).merge_lock;
 	}
 
 	void Stage::ClearAll()
@@ -89,12 +98,12 @@ namespace p2048mini
 
 	void Stage::Add( const uint32_t linear_index, const uint32_t val )
 	{
-		if( 0 == mContainer[linear_index].number )
+		if( 0 == Get( linear_index ).number )
 		{
 			++mCurrentNumberCount;
 		}
 
-		mContainer[linear_index].number = val;
+		Get( linear_index ).number = val;
 	}
 	void Stage::Add( const uint32_t x, const uint32_t y, const uint32_t val )
 	{
@@ -105,13 +114,13 @@ namespace p2048mini
 	void Stage::Remove( const uint32_t x, const uint32_t y )
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		if( 0 == mContainer[linear_index].number )
+		if( 0 == Get( linear_index ).number )
 		{
 			return;
 		}
 
 		--mCurrentNumberCount;
-		mContainer[linear_index].number = 0;
+		Get( linear_index ).number = 0;
 	}
 
 	void Stage::ClearAllLocks()
@@ -124,7 +133,7 @@ namespace p2048mini
 	void Stage::Lock( const uint32_t x, const uint32_t y )
 	{
 		const int linear_index = mGridIndexConverter.To_Linear( x, y );
-		mContainer[linear_index].merge_lock = true;
+		Get( linear_index ).merge_lock = true;
 	}
 
 	//
