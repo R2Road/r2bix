@@ -18,6 +18,7 @@ namespace p2048mini
 	private:
 		enum class eStep
 		{
+			GameReset,
 			GameReady,
 			GameStart,
 			GameUpdate,

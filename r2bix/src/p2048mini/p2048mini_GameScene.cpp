@@ -44,10 +44,11 @@ namespace p2048mini
 		, mKeyboardInputCollector()
 		, mKeyboardInputListener( {
 			0x1B		// esc
-			, 0x41		// a
-			, 0x44		// d
-			, 0x53		// s
-			, 0x57		// w
+			, 0x41		// a - left
+			, 0x44		// d - right
+			, 0x53		// s - down
+			, 0x57		// w - up
+			, 0x52		// r - reset
 		} )
 	{
 		mKeyboardInputCollector.AddListener( &mKeyboardInputListener );
@@ -201,6 +202,15 @@ namespace p2048mini
 
 		switch( mStep )
 		{
+		case eStep::GameReset:
+			mStageViewComponent->GetOwnerNode().SetVisible( false );
+			mStage.ClearAll();
+			mStep = eStep::GameReady;
+			mScore = 0;
+			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mGameOverNode->SetVisible( false );
+			break;
+
 		case eStep::GameReady:
 		{
 			// Make 2 Number
@@ -263,7 +273,11 @@ namespace p2048mini
 			break;
 		}
 
-		if( mKeyboardInputListener.IsRelease( 0 ) )
+		if( mKeyboardInputListener.IsPushed( 5 ) )
+		{
+			mStep = eStep::GameReset;
+		}
+		else if( mKeyboardInputListener.IsRelease( 0 ) )
 		{
 			r2utility::ClearCInputBuffer();
 			mDirector.RequestAbort();
