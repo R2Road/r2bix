@@ -44,6 +44,7 @@ namespace p2048mini
 		eStep mStep;
 		Stage mStage;
 		p2048mini::StageViewComponent* mStageViewComponent;
+		p2048mini::StageViewComponent* mStageViewComponent4Debug;
 
 		r2base::Node* mGameOverNode;
 

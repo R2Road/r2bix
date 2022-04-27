@@ -31,6 +31,7 @@ namespace p2048mini
 		, mStep( eStep::GameReady )
 		, mStage( 4u, 4u )
 		, mStageViewComponent( nullptr )
+		, mStageViewComponent4Debug( nullptr )
 
 		, mGameOverNode( nullptr )
 
@@ -97,6 +98,21 @@ namespace p2048mini
 			stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
 				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( mStageViewComponent->GetWidth() * 0.5f )
 				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( mStageViewComponent->GetHeight() * 0.5f )
+			);
+		}
+
+		//
+		// Debug Stage
+		//
+		{
+			auto stage_view_node = AddChild<p2048mini::StageViewNode>( 1 );
+
+			mStageViewComponent4Debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
+			mStageViewComponent4Debug->Setup( &mStage );
+
+			stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( mStageViewComponent4Debug->GetWidth() * 0.5f )
+				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.15f ) - ( mStageViewComponent4Debug->GetHeight() * 0.5f )
 			);
 		}
 
@@ -191,6 +207,8 @@ namespace p2048mini
 
 			if( r2::Direction4::eState::None != input_direction )
 			{
+				mStageViewComponent4Debug->UpdateView();
+
 				if( !MoveNumber( input_direction ) )
 				{
 					mStep = eStep::GameEnd;
