@@ -23,6 +23,10 @@ namespace r2
 	{
 		return GetInt( 0, 1 );
 	}
+	int Random::GetInt_0To100()
+	{
+		return GetInt( 0, 100 );
+	}
 
 	float Random::GetFloat( const float min, const float max )
 	{

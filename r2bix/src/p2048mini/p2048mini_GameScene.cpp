@@ -188,7 +188,7 @@ namespace p2048mini
 			// Make 2 Number
 			for( int i = 0; 2 > i; ++i )
 			{
-				AddNumber();
+				AddNumber( 2u, 2u );
 			}
 
 			mStep = eStep::GameStart;
@@ -251,7 +251,7 @@ namespace p2048mini
 		r2node::SceneNode::Update( delta_time );
 	}
 
-	void GameScene::AddNumber()
+	void GameScene::AddNumber( const uint32_t min, const uint32_t max )
 	{
 		const auto required_jump_count = r2::Random::GetInt( 0, mStage.GetEmptySpaceCount() - 1 );
 		int current_jump_count = 0;
@@ -263,7 +263,7 @@ namespace p2048mini
 			{
 				if( required_jump_count <= current_jump_count )
 				{
-					mStage.Add( i, 32 );
+					mStage.Add( i, ( r2::Random::GetInt_0To100() <= 90 ? min : max ) );
 					break;
 				}
 
@@ -276,7 +276,7 @@ namespace p2048mini
 		const auto move_result = mStage.Move( move_direction );
 		if( move_result.has_moved )
 		{
-			AddNumber();
+			AddNumber( 2u, 4u );
 			mStageViewComponent->UpdateView();
 
 			mScore += move_result.sum4merged;
