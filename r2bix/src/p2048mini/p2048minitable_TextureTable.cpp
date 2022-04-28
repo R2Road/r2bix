@@ -31,9 +31,9 @@ namespace p2048minitable
 				/* 0 */ "22       0     0  4444444  8     8  N                                  "
 				/* 1 */ "2222222   00000       4     88888   I                                  "
 				/* 2 */ "                                                                       "
-				/* 3 */ "[ESC] Exit                                                             "
-				/* 4 */ "[W,A,S,D] Move Number                                                  "
-				/* 5 */ "[R] Restart                                                            "
+				/* 3 */ "[   ESC   ] Exit                                                       "
+				/* 4 */ "[ W,A,S,D ] Move Number                                                "
+				/* 5 */ "[    R    ] Restart                                                    "
 			) ) );
 
 			{
@@ -57,7 +57,7 @@ namespace p2048minitable
 					"keyinfo_0"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 13, 20, 2 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 13, 22, 2 ) );
 			}
 
 			{
