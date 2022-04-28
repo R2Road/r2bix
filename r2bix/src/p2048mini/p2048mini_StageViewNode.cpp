@@ -24,7 +24,7 @@ namespace p2048mini
 			// Background
 			//
 			{
-				auto node = ret->AddChild<r2node::CustomTextureNode>();
+				ret->AddChild<r2node::CustomTextureNode>();
 			}
 
 			//
