@@ -5,6 +5,7 @@
 #include "input/r2input_KeyboardInputCollector.h"
 #include "input/r2input_KeyboardInputListener.h"
 
+#include "p2048mini_GameProcessor.h"
 #include "p2048mini_Stage.h"
 
 #include "r2/r2_Direction4.h"
@@ -44,6 +45,7 @@ namespace p2048mini
 	private:
 		eStep mStep;
 		Stage mStage;
+		GameProcessor mGameProcessor;
 		p2048mini::StageViewComponent* mStageViewComponent;
 		p2048mini::StageViewComponent* mStageViewComponent4Debug;
 

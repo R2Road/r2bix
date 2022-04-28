@@ -33,6 +33,7 @@ namespace p2048mini
 	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director )
 		, mStep( eStep::GameReady )
 		, mStage( 4u, 4u )
+		, mGameProcessor( &mStage )
 		, mStageViewComponent( nullptr )
 		, mStageViewComponent4Debug( nullptr )
 
