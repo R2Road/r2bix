@@ -337,7 +337,7 @@ namespace p2048mini
 			}
 		}
 		
-		if( 0 == mStage.GetEmptySpaceCount() && false == mStage.IsMovable() )
+		if( 0 == mStage.GetEmptySpaceCount() && false == mGameProcessor.IsMovable() )
 		{
 			// Game End
 			return false;

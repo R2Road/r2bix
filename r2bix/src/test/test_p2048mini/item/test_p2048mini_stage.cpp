@@ -450,6 +450,7 @@ namespace test_p2048mini_stage
 			std::cout << r2::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
+			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
 
 			std::cout << r2::split;
 
@@ -459,7 +460,7 @@ namespace test_p2048mini_stage
 				stage.Add( 1, 0, 7 );
 				stage.Add( 1, 1, 7 );
 				PrintStage( stage );
-				EXPECT_TRUE( stage.IsMovable() );
+				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
 			std::cout << r2::split;
@@ -470,7 +471,7 @@ namespace test_p2048mini_stage
 				stage.Add( 1, 0, 7 );
 				stage.Add( 1, 1, 7 );
 				PrintStage( stage );
-				EXPECT_TRUE( stage.IsMovable() );
+				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
 			std::cout << r2::split;
@@ -481,7 +482,7 @@ namespace test_p2048mini_stage
 				stage.Add( 1, 0, 2 );
 				stage.Add( 1, 1, 7 );
 				PrintStage( stage );
-				EXPECT_TRUE( stage.IsMovable() );
+				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
 			std::cout << r2::split;
@@ -492,7 +493,7 @@ namespace test_p2048mini_stage
 				stage.Add( 1, 0, 3 );
 				stage.Add( 1, 1, 7 );
 				PrintStage( stage );
-				EXPECT_FALSE( stage.IsMovable() );
+				EXPECT_FALSE( game_processor.IsMovable() );
 			}
 
 			std::cout << r2::split;
@@ -503,7 +504,7 @@ namespace test_p2048mini_stage
 				stage.Add( 1, 0, 3 );
 				stage.Add( 1, 1, 0 );
 				PrintStage( stage );
-				EXPECT_TRUE( stage.IsMovable() );
+				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
 			std::cout << r2::split;

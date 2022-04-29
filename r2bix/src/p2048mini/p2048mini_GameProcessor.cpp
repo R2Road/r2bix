@@ -177,4 +177,47 @@ namespace p2048mini
 
 		return move_result;
 	}
+
+	bool GameProcessor::IsMovable() const
+	{
+		r2::Direction4 dir4;
+		r2::PointInt currept_point;
+		r2::PointInt next_point;
+		for( uint32_t y = 0; mStage->GetHeight() > y; ++y )
+		{
+			for( uint32_t x = 0; mStage->GetWidth() > x; ++x )
+			{
+				currept_point.Set( x, y );
+
+				// Has Empty Space
+				const auto my_number = mStage->GetNumber( currept_point.GetX(), currept_point.GetY() );
+				if( 0 == my_number )
+				{
+					return true;
+				}
+
+				dir4.SetState( r2::Direction4::eState::Up );
+				for( int d = 0, e = static_cast<int>( r2::Direction4::eState::SIZE ); e > d; ++d, dir4.Rotate( true ) )
+				{
+					next_point = currept_point + dir4.GetPoint();
+					if( !mStage->IsIn( next_point.GetX(), next_point.GetY() ) )
+					{
+						continue;
+					}
+
+					const auto next_number = mStage->GetNumber( next_point.GetX(), next_point.GetY() );
+					if( 0 == next_number )
+					{
+						return true;
+					}
+					if( my_number == next_number )
+					{
+						return true;
+					}
+				}
+			}
+		}
+
+		return false;
+	}
 }

@@ -22,6 +22,7 @@ namespace p2048mini
 		//
 	public:
 		MoveResult Move( const r2::Direction4::eState direction_state );
+		bool IsMovable() const;
 
 	private:
 		Stage* const mStage;

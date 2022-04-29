@@ -45,7 +45,6 @@ namespace p2048mini
 		int32_t GetCurrentNumberCount() const { return mCurrentNumberCount; }
 		int32_t GetEmptySpaceCount() const { return static_cast<int32_t>( mContainer.size() ) - GetCurrentNumberCount(); }
 		bool IsFull() const { return mContainer.size() == mCurrentNumberCount; }
-		bool IsMovable() const;
 		bool IsLock( const uint32_t x, const uint32_t y ) const;
 
 		//
