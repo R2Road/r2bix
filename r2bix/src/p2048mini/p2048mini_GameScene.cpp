@@ -321,7 +321,7 @@ namespace p2048mini
 	}
 	bool GameScene::MoveNumber( const r2::Direction4::eState move_direction )
 	{
-		const auto move_result = mStage.Move( move_direction );
+		const auto move_result = mGameProcessor.Move( move_direction );
 		if( move_result.has_moved )
 		{
 			AddNumber( 2u, 4u );

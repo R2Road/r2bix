@@ -18,12 +18,6 @@ namespace p2048mini
 		using ContainerT = std::vector<Cell>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
 
-		struct MoveResult
-		{
-			bool has_moved = false;
-			uint32_t sum4merged = 0;
-		};
-
 		Stage( const uint32_t width, const uint32_t height );
 
 		//
@@ -61,15 +55,8 @@ namespace p2048mini
 		void Add( const uint32_t linear_index, const uint32_t val );
 		void Add( const uint32_t x, const uint32_t y, const uint32_t val );
 		void Remove( const uint32_t x, const uint32_t y );
-	private:
 		void ClearAllLocks();
 		void Lock( const uint32_t x, const uint32_t y );
-
-		//
-		//
-		//
-	public:
-		MoveResult Move( const r2::Direction4::eState direction_state );
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;
