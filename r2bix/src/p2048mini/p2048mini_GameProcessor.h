@@ -21,6 +21,8 @@ namespace p2048mini
 		//
 		//
 	public:
+		void AddNumber( const uint32_t min, const uint32_t max );
+
 		MoveResult Move( const r2::Direction4::eState direction_state );
 		bool IsMovable() const;
 

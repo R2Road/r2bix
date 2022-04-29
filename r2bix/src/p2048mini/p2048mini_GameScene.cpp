@@ -229,7 +229,7 @@ namespace p2048mini
 			// Make 2 Number
 			for( int i = 0; 2 > i; ++i )
 			{
-				AddNumber( 2u, 2u );
+				mGameProcessor.AddNumber( 2u, 2u );
 			}
 
 			mStep = eStep::GameStart;
@@ -299,32 +299,12 @@ namespace p2048mini
 		r2node::SceneNode::Update( delta_time );
 	}
 
-	void GameScene::AddNumber( const uint32_t min, const uint32_t max )
-	{
-		const auto required_jump_count = r2::Random::GetInt( 0, mStage.GetEmptySpaceCount() - 1 );
-		int current_jump_count = 0;
-
-		// Find
-		for( uint32_t i = 0; mStage.Size() > i; ++i )
-		{
-			if( 0 == mStage.GetNumber( i ) )
-			{
-				if( required_jump_count <= current_jump_count )
-				{
-					mStage.Add( i, ( r2::Random::GetInt_0To100() <= 90 ? min : max ) );
-					break;
-				}
-
-				++current_jump_count;
-			}
-		}
-	}
 	bool GameScene::MoveNumber( const r2::Direction4::eState move_direction )
 	{
 		const auto move_result = mGameProcessor.Move( move_direction );
 		if( move_result.has_moved )
 		{
-			AddNumber( 2u, 4u );
+			mGameProcessor.AddNumber( 2u, 4u );
 			mStageViewComponent->UpdateView();
 
 			//

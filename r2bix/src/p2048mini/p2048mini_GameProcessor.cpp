@@ -3,10 +3,33 @@
 
 #include "p2048mini_Stage.h"
 
+#include "r2/r2_Random.h"
+
 namespace p2048mini
 {
 	GameProcessor::GameProcessor( Stage* const stage ) : mStage( stage )
 	{}
+
+	void GameProcessor::AddNumber( const uint32_t min, const uint32_t max )
+	{
+		const auto required_jump_count = r2::Random::GetInt( 0, mStage->GetEmptySpaceCount() - 1 );
+		int current_jump_count = 0;
+
+		// Find
+		for( uint32_t i = 0; mStage->Size() > i; ++i )
+		{
+			if( 0 == mStage->GetNumber( i ) )
+			{
+				if( required_jump_count <= current_jump_count )
+				{
+					mStage->Add( i, ( r2::Random::GetInt_0To100() <= 90 ? min : max ) );
+					break;
+				}
+
+				++current_jump_count;
+			}
+		}
+	}
 
 	//
 	// # 이동 규칙

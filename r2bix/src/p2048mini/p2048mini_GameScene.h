@@ -39,7 +39,6 @@ namespace p2048mini
 		void Update( const float delta_time ) override;
 
 	private:
-		void AddNumber( const uint32_t min, const uint32_t max );
 		bool MoveNumber( const r2::Direction4::eState move_direction );
 
 	private:
