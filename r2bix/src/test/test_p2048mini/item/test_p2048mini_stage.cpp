@@ -324,7 +324,7 @@ namespace test_p2048mini_stage
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( 2, move_result.sum4merged );
+				EXPECT_EQ( 2, game_processor.GetSum4Merged() );
 			}
 
 			std::cout << r2::split;
@@ -339,7 +339,7 @@ namespace test_p2048mini_stage
 
 				std::cout << r2::linefeed;
 
-				EXPECT_EQ( 4, move_result.sum4merged );
+				EXPECT_EQ( 4, game_processor.GetSum4Merged() );
 			}
 
 			std::cout << r2::split;

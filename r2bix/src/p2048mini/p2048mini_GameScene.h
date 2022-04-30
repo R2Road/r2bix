@@ -48,7 +48,6 @@ namespace p2048mini
 		p2048mini::StageViewComponent* mStageViewComponent;
 		p2048mini::StageViewComponent* mStageViewComponent4Debug;
 
-		int mScore;
 		r2base::Node* mScoreLabel;
 		r2base::Node* mGameOverNode;
 

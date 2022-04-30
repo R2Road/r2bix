@@ -37,7 +37,6 @@ namespace p2048mini
 		, mStageViewComponent( nullptr )
 		, mStageViewComponent4Debug( nullptr )
 
-		, mScore( 0 )
 		, mScoreLabel( nullptr )
 		, mGameOverNode( nullptr )
 
@@ -219,7 +218,6 @@ namespace p2048mini
 			mStageViewComponent->GetOwnerNode().SetVisible( false );
 			mGameProcessor.Reset();
 			mStep = eStep::GameReady;
-			mScore = 0;
 			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mGameOverNode->SetVisible( false );
 			break;
@@ -310,10 +308,12 @@ namespace p2048mini
 			//
 			// Score View Update
 			//
-			if( 0 < move_result.sum4merged )
+			if( 0 < mGameProcessor.GetSum4Merged() )
 			{
-				mScore += move_result.sum4merged;
-				mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d ( + %d )", mScore, move_result.sum4merged ) );
+				mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d ( + %d )"
+					, mGameProcessor.GetScore()
+					, mGameProcessor.GetSum4Merged()
+				) );
 			}
 		}
 		

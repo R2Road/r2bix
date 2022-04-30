@@ -7,12 +7,14 @@
 
 namespace p2048mini
 {
-	GameProcessor::GameProcessor( Stage* const stage ) : mStage( stage )
+	GameProcessor::GameProcessor( Stage* const stage ) : mStage( stage ), mScore( 0 ), mSum4Merged( 0 )
 	{}
 
 	void GameProcessor::Reset()
 	{
 		mStage->ClearAll();
+		mScore = 0;
+		mSum4Merged = 0;
 	}
 
 	void GameProcessor::AddNumber( const uint32_t min, const uint32_t max )
@@ -44,6 +46,7 @@ namespace p2048mini
 	GameProcessor::MoveResult GameProcessor::Move( const r2::Direction4::eState direction_state )
 	{
 		mStage->ClearAllLocks();
+		mSum4Merged = 0;
 
 
 		MoveResult move_result;
@@ -178,7 +181,7 @@ namespace p2048mini
 									mStage->Lock( next_point.GetX(), next_point.GetY() );
 
 									move_result.has_moved = true;
-									move_result.sum4merged = new_number;
+									mSum4Merged = new_number;
 								}
 
 								break;
@@ -202,6 +205,7 @@ namespace p2048mini
 			}
 		}
 
+		mScore += mSum4Merged;
 
 		return move_result;
 	}

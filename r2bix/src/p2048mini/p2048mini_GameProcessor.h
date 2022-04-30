@@ -12,10 +12,16 @@ namespace p2048mini
 		struct MoveResult
 		{
 			bool has_moved = false;
-			uint32_t sum4merged = 0;
 		};
 
 		GameProcessor( Stage* const stage );
+
+		//
+		//
+		//
+	public:
+		int GetScore() const { return mScore; }
+		int GetSum4Merged() const { return mSum4Merged; }
 
 		//
 		//
@@ -31,5 +37,7 @@ namespace p2048mini
 
 	private:
 		Stage* const mStage;
+		int mScore;
+		int mSum4Merged;
 	};
 }
