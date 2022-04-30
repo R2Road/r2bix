@@ -243,4 +243,17 @@ namespace p2048mini
 
 		return false;
 	}
+
+	bool GameProcessor::IsGameEnd() const
+	{
+		if( 0 == mStage->GetEmptySpaceCount() && false == IsMovable() )
+		{
+			// Game End
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
 }
