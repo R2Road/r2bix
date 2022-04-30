@@ -305,9 +305,9 @@ namespace test_p2048mini_stage
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( stage.Add( 0, 0, 2 ) );
-				PROCESS_MAIN( stage.Add( 1, 0, 1 ) );
-				PROCESS_MAIN( stage.Add( 2, 0, 1 ) );
+				stage.Add( 0, 0, 2 );
+				stage.Add( 1, 0, 1 );
+				stage.Add( 2, 0, 1 );
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
@@ -340,6 +340,29 @@ namespace test_p2048mini_stage
 				std::cout << r2::linefeed;
 
 				EXPECT_EQ( 4, game_processor.GetSum4Merged() );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( stage.Add( 0, 0, 4 ) );
+				PROCESS_MAIN( stage.Add( 1, 0, 4 ) );
+				PROCESS_MAIN( stage.Add( 2, 0, 4 ) );
+				PROCESS_MAIN( PrintStage( stage ) );
+
+				std::cout << r2::linefeed;
+
+				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
+				PROCESS_MAIN( PrintStage( stage ) );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( 8, stage.GetNumber( 2, 0 ) );
+				EXPECT_EQ( 8, stage.GetNumber( 3, 0 ) );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( 16, game_processor.GetSum4Merged() );
 			}
 
 			std::cout << r2::split;
