@@ -217,7 +217,7 @@ namespace p2048mini
 		{
 		case eStep::GameReset:
 			mStageViewComponent->GetOwnerNode().SetVisible( false );
-			mStage.ClearAll();
+			mGameProcessor.Reset();
 			mStep = eStep::GameReady;
 			mScore = 0;
 			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );

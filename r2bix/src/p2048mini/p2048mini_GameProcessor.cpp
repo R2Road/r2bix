@@ -10,6 +10,11 @@ namespace p2048mini
 	GameProcessor::GameProcessor( Stage* const stage ) : mStage( stage )
 	{}
 
+	void GameProcessor::Reset()
+	{
+		mStage->ClearAll();
+	}
+
 	void GameProcessor::AddNumber( const uint32_t min, const uint32_t max )
 	{
 		const auto required_jump_count = r2::Random::GetInt( 0, mStage->GetEmptySpaceCount() - 1 );
