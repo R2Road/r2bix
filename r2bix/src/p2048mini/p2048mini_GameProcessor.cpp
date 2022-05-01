@@ -262,6 +262,11 @@ namespace p2048mini
 
 	bool GameProcessor::IsGameEnd() const
 	{
+		if( 2048u == mMaxNumber )
+		{
+			return true;
+		}
+
 		if( 0 == mStage->GetEmptySpaceCount() && false == IsMovable() )
 		{
 			// Game End
