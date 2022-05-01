@@ -236,6 +236,7 @@ namespace p2048mini
 			mGameProcessor.Reset();
 			mStep = eStep::GameReady;
 			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mGameOverNode->SetVisible( false );
 			break;
 
