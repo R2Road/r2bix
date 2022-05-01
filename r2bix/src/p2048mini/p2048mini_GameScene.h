@@ -49,6 +49,7 @@ namespace p2048mini
 		p2048mini::StageViewComponent* mStageViewComponent4Debug;
 
 		r2base::Node* mScoreLabel;
+		r2base::Node* mMaxNumberLabel;
 		r2base::Node* mGameOverNode;
 
 		r2input::KeyboardInputCollector mKeyboardInputCollector;

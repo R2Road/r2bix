@@ -38,6 +38,7 @@ namespace p2048mini
 		, mStageViewComponent4Debug( nullptr )
 
 		, mScoreLabel( nullptr )
+		, mMaxNumberLabel( nullptr )
 		, mGameOverNode( nullptr )
 
 		, mKeyboardInputCollector()
@@ -131,6 +132,20 @@ namespace p2048mini
 			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 			mScoreLabel->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 			mScoreLabel->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 16 );
+		}
+
+		//
+		// Max Number
+		//
+		{
+			auto label_node = AddChild<r2node::LabelNode>();
+			label_node->GetComponent<r2component::LabelComponent>()->SetString( "Max : " );
+			label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 54, 15 );
+
+			mMaxNumberLabel = AddChild<r2node::LabelNode>( 1 );
+			mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( "0" );
+			mMaxNumberLabel->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+			mMaxNumberLabel->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 15 );
 		}
 
 		//
@@ -313,6 +328,10 @@ namespace p2048mini
 				mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d ( + %d )"
 					, mGameProcessor.GetScore()
 					, mGameProcessor.GetSum4Merged()
+				) );
+
+				mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
+					, mGameProcessor.GetMaxNumber()
 				) );
 			}
 		}

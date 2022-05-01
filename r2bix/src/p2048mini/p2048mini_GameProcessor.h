@@ -22,6 +22,7 @@ namespace p2048mini
 	public:
 		int GetScore() const { return mScore; }
 		int GetSum4Merged() const { return mSum4Merged; }
+		uint32_t GetMaxNumber() const { return mMaxNumber; }
 
 		//
 		//
