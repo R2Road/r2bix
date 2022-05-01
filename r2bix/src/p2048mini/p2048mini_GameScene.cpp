@@ -230,18 +230,15 @@ namespace p2048mini
 			//
 			// Debug Stage
 			//
-			{
-				auto stage_view_node = AddChild<p2048mini::StageViewNode>( 1 );
-				//stage_view_node->SetVisible( false );
+			auto stage_view_node = AddChild<p2048mini::StageViewNode>( 1 );
 
-				mStageViewComponent4Debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
-				mStageViewComponent4Debug->Setup( &mStage );
+			mStageViewComponent4Debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
+			mStageViewComponent4Debug->Setup( &mStage );
 
-				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
-					0.f
-					, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( mStageViewComponent4Debug->GetHeight() * 0.5f )
-				);
-			}
+			stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				0.f
+				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( mStageViewComponent4Debug->GetHeight() * 0.5f )
+			);
 		}
 		if( p2048mini::Config::GetNodeConfig().pivot )
 		{
