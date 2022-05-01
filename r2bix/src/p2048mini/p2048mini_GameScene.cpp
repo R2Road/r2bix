@@ -339,6 +339,6 @@ namespace p2048mini
 			}
 		}
 		
-		return mGameProcessor.IsGameEnd();
+		return !mGameProcessor.IsGameEnd();
 	}
 }

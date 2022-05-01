@@ -265,11 +265,11 @@ namespace p2048mini
 		if( 0 == mStage->GetEmptySpaceCount() && false == IsMovable() )
 		{
 			// Game End
-			return false;
+			return true;
 		}
 		else
 		{
-			return true;
+			return false;
 		}
 	}
 }
