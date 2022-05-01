@@ -289,7 +289,14 @@ namespace p2048mini
 
 				if( !MoveNumber( input_direction ) )
 				{
-					mStep = eStep::GameEnd;
+					if( mGameProcessor.IsGameClear() )
+					{
+						mStep = eStep::GameClear;
+					}
+					else
+					{
+						mStep = eStep::GameEnd;
+					}
 				}
 			}
 		}

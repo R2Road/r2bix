@@ -24,6 +24,7 @@ namespace p2048mini
 			GameStart,
 			GameUpdate,
 			GameEnd,
+			GameClear,
 			GameStop,
 		};
 
