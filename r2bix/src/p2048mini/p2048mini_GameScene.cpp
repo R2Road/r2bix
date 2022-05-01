@@ -225,7 +225,7 @@ namespace p2048mini
 		//
 		// Debug
 		//
-		if( p2048mini::Config::GetNodeConfig().pivot )
+		if( p2048mini::Config::GetDebugConfig().bLastStage )
 		{
 			//
 			// Debug Stage
@@ -242,7 +242,9 @@ namespace p2048mini
 					, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( mStageViewComponent4Debug->GetHeight() * 0.5f )
 				);
 			}
-
+		}
+		if( p2048mini::Config::GetNodeConfig().pivot )
+		{
 			//
 			//
 			//
@@ -315,7 +317,7 @@ namespace p2048mini
 
 			if( r2::Direction4::eState::None != input_direction )
 			{
-				if( p2048mini::Config::GetNodeConfig().pivot )
+				if( p2048mini::Config::GetDebugConfig().bLastStage )
 				{
 					mStageViewComponent4Debug->UpdateView();
 				}
