@@ -179,7 +179,7 @@ namespace p2048mini
 								//
 								if( !mStage->IsLock( next_point.GetX(), next_point.GetY() ) )
 								{
-									const auto new_number = 2048u;// my_number + other_number;
+									const auto new_number = my_number + other_number;
 
 									mStage->Remove( currept_point.GetX(), currept_point.GetY() );
 									mStage->Add( next_point.GetX(), next_point.GetY(), new_number );
