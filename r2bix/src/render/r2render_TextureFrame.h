@@ -27,6 +27,7 @@ namespace r2render
 		//
 		//
 		void SetVisibleRect( const r2::RectInt& rect ) { mVisibleRect = rect; }
+		void SetVisibleRect( const int min_x, const int min_y, const int max_x, const int max_y ) { mVisibleRect.Set( min_x, min_y, max_x - min_x, max_y - min_y ); }
 		void MoveVisibleOrigin( const int mx, const int my ) { mVisibleRect.MoveOrigin( mx, my ); }
 		void MoveVisibleOrigin( const r2::PointInt& point ) { mVisibleRect.MoveOrigin( point.GetX(), point.GetY() ); }
 		void ChangeVisibleSize( const int change_width, const int change_height ) { mVisibleRect.ChangeSize( change_width, change_height ); }

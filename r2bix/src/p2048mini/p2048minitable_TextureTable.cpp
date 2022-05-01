@@ -80,7 +80,7 @@ namespace p2048minitable
 					"you_win_0"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 16, 47, 6 ) );
+				frame_result.first->second->SetVisibleRect( 0, 16, 47, 22 );
 			}
 		}
 	}
