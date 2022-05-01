@@ -276,9 +276,7 @@ namespace p2048mini
 			// Game End
 			return true;
 		}
-		else
-		{
-			return false;
-		}
+
+		return false;
 	}
 }
