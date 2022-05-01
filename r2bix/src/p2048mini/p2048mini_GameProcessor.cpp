@@ -9,16 +9,16 @@ namespace p2048mini
 {
 	GameProcessor::GameProcessor( Stage* const stage ) :
 		mStage( stage )
-		, mScore( 0 )
-		, mSum4Merged( 0 )
-		, mMaxNumber( 0 )
+		, mScore( 0u )
+		, mSum4Merged( 0u )
+		, mMaxNumber( 0u )
 	{}
 
 	void GameProcessor::Reset()
 	{
 		mStage->ClearAll();
-		mScore = 0;
-		mSum4Merged = 0;
+		mScore = 0u;
+		mSum4Merged = 0u;
 		mMaxNumber = 0u;
 	}
 

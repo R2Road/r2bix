@@ -20,8 +20,8 @@ namespace p2048mini
 		//
 		//
 	public:
-		int GetScore() const { return mScore; }
-		int GetSum4Merged() const { return mSum4Merged; }
+		uint32_t GetScore() const { return mScore; }
+		uint32_t GetSum4Merged() const { return mSum4Merged; }
 		uint32_t GetMaxNumber() const { return mMaxNumber; }
 
 		//
@@ -38,8 +38,8 @@ namespace p2048mini
 
 	private:
 		Stage* const mStage;
-		int mScore;
-		int mSum4Merged;
+		uint32_t mScore;
+		uint32_t mSum4Merged;
 		uint32_t mMaxNumber;
 	};
 }
