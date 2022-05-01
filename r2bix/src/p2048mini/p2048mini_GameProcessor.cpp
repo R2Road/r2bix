@@ -19,6 +19,7 @@ namespace p2048mini
 		mStage->ClearAll();
 		mScore = 0;
 		mSum4Merged = 0;
+		mMaxNumber = 0u;
 	}
 
 	void GameProcessor::AddNumber( const uint32_t min, const uint32_t max )
