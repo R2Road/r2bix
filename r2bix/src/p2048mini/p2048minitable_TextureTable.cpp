@@ -18,11 +18,11 @@ namespace p2048minitable
 				71,
 				//		"          1         2         3         4         5         6         7"
 				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
-				/* 0 */ "###########                                                            "
-				/* 1 */ "#        ##   ###    ###    # #   #####     ###   #   #  #####   ###   "
-				/* 2 */ "#        ##  #      #   #  # # #  #        #   #  #   #  #      #   #  "
-				/* 3 */ "#        ##  # ###  ### #  # # #  #####    #   #  #   #  #####  ####   "
-				/* 4 */ "###########  #   #  #   #  # # #  #        #   #   # #   #      #   #  "
+				/* 0 */ "##########B                                                            "
+				/* 1 */ "#        #B   ###    ###    # #   #####     ###   #   #  #####   ###   "
+				/* 2 */ "#        #B  #      #   #  # # #  #        #   #  #   #  #      #   #  "
+				/* 3 */ "#        #B  # ###  ### #  # # #  #####    #   #  #   #  #####  ####   "
+				/* 4 */ "##########B  #   #  #   #  # # #  #        #   #   # #   #      #   #  "
 				/* 5 */ "              ###   #   #  # # #  # ###     ###     #    # ###  #   #  "
 				/* 6 */ "                                                                       "
 				/* 7 */ " 22222    00000    4  4     88888                                      "
@@ -34,6 +34,13 @@ namespace p2048minitable
 				/* 3 */ "[   ESC   ] Exit                                                       "
 				/* 4 */ "[ W,A,S,D ] Move Number                                                "
 				/* 5 */ "[    R    ] Restart                                                    "
+				/* 6 */ "                                                                       "
+				/* 7 */ "  #   #   ###   #   #    #   #   #####  #   #   B                      "
+				/* 8 */ "  #   #  #   #  #   #    # # #     #    ##  #   B                      "
+				/* 9 */ "   # #   #   #  #   #    # # #     #    # # #   B                      "
+				/* 0 */ "    #    #   #  #   #    # # #     #    #  ##   B                      "
+				/* 1 */ "    #     ###    ###      # #    #####  #   #   B                      "
+				/* 2 */ "                                                                       "
 			) ) );
 
 			{
@@ -66,6 +73,14 @@ namespace p2048minitable
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 11, 0, 59, 6 ) );
+			}
+
+			{
+				auto frame_result = mTextureFrameContainer.emplace(
+					"you_win_0"
+					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				);
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 16, 47, 6 ) );
 			}
 		}
 	}

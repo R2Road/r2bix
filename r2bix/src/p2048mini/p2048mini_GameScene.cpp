@@ -39,6 +39,7 @@ namespace p2048mini
 
 		, mScoreLabel( nullptr )
 		, mMaxNumberLabel( nullptr )
+		, mYouWinNode( nullptr )
 		, mGameOverNode( nullptr )
 
 		, mKeyboardInputCollector()
@@ -160,6 +161,37 @@ namespace p2048mini
 		}
 
 		//
+		// You Win
+		//
+		{
+			mYouWinNode = AddChild<r2node::SpriteNode>( 2 );
+			mYouWinNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "you_win_0" ) );
+			mYouWinNode->GetComponent<r2component::TransformComponent>()->SetPosition(
+				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f )
+				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f )
+			);
+			mYouWinNode->SetVisible( false );
+
+			auto action_process_component = mYouWinNode->AddComponent<r2component::ActionProcessComponent>();
+			{
+				auto sequence_action = r2action::SequenceAction::Create();
+
+				auto moveto_action = sequence_action->AddAction<r2action::MoveToAction>();
+				moveto_action->SetEndPoint( mYouWinNode->GetComponent<r2component::TransformComponent>()->GetPosition() );
+				moveto_action->SetTimeLimit( 0.f );
+
+				auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
+				delay_action->SetTimeLimit( 1.f );
+
+				auto moveby_action = sequence_action->AddAction<r2action::MoveByAction>();
+				moveby_action->SetMoveAmount( r2::PointInt( 0, 16 ) );
+				moveby_action->SetTimeLimit( 1.2f );
+
+				action_process_component->SetAction( std::move( sequence_action ) );
+			}
+		}
+
+		//
 		// Game Over
 		//
 		{
@@ -238,6 +270,7 @@ namespace p2048mini
 			mScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mGameOverNode->SetVisible( false );
+			mYouWinNode->SetVisible( false );
 			break;
 
 		case eStep::GameReady:
@@ -305,6 +338,12 @@ namespace p2048mini
 		case eStep::GameEnd:
 			mGameOverNode->SetVisible( true );
 			mGameOverNode->GetComponent<r2component::ActionProcessComponent>()->StartAction();
+			mStep = eStep::GameStop;
+			break;
+
+		case eStep::GameClear:
+			mYouWinNode->SetVisible( true );
+			mYouWinNode->GetComponent<r2component::ActionProcessComponent>()->StartAction();
 			mStep = eStep::GameStop;
 			break;
 		}

@@ -51,6 +51,7 @@ namespace p2048mini
 
 		r2base::Node* mScoreLabel;
 		r2base::Node* mMaxNumberLabel;
+		r2base::Node* mYouWinNode;
 		r2base::Node* mGameOverNode;
 
 		r2input::KeyboardInputCollector mKeyboardInputCollector;
