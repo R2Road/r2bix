@@ -39,5 +39,6 @@ namespace p2048mini
 		Stage* const mStage;
 		int mScore;
 		int mSum4Merged;
+		uint32_t mMaxNumber;
 	};
 }

@@ -7,7 +7,11 @@
 
 namespace p2048mini
 {
-	GameProcessor::GameProcessor( Stage* const stage ) : mStage( stage ), mScore( 0 ), mSum4Merged( 0 )
+	GameProcessor::GameProcessor( Stage* const stage ) :
+		mStage( stage )
+		, mScore( 0 )
+		, mSum4Merged( 0 )
+		, mMaxNumber( 0 )
 	{}
 
 	void GameProcessor::Reset()
@@ -182,6 +186,8 @@ namespace p2048mini
 
 									move_result.has_moved = true;
 									mSum4Merged += new_number;
+
+									mMaxNumber = ( new_number > mMaxNumber ? new_number : mMaxNumber );
 								}
 
 								break;
