@@ -262,12 +262,7 @@ namespace p2048mini
 
 	bool GameProcessor::IsGameClear() const
 	{
-		if( 2048u == mMaxNumber )
-		{
-			return true;
-		}
-
-		return false;
+		return ( 2048u == mMaxNumber );
 	}
 	bool GameProcessor::IsGameEnd() const
 	{
