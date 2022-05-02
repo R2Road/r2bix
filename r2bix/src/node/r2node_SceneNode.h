@@ -2,6 +2,7 @@
 
 #include "base/r2base_Node.h"
 
+#include "input/r2input_KeyboardInputCollector.h"
 #include "render/r2render_Camera.h"
 #include "render/r2render_Texture.h"
 
@@ -33,6 +34,7 @@ namespace r2node
 		void Render();
 
 	protected:
+		r2input::KeyboardInputCollector mKeyboardInputCollector;
 		r2render::Camera mCamera;
 		r2render::Texture mRenderTarget;
 	};

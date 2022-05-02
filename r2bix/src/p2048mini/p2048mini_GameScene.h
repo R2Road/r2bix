@@ -2,7 +2,6 @@
 
 #include "node/r2node_SceneNode.h"
 
-#include "input/r2input_KeyboardInputCollector.h"
 #include "input/r2input_KeyboardInputListener.h"
 
 #include "p2048mini_GameProcessor.h"
@@ -54,7 +53,6 @@ namespace p2048mini
 		r2base::Node* mYouWinNode;
 		r2base::Node* mGameOverNode;
 
-		r2input::KeyboardInputCollector mKeyboardInputCollector;
 		r2input::KeyboardInputListener mKeyboardInputListener;
 	};
 }

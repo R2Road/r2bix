@@ -42,7 +42,6 @@ namespace p2048mini
 		, mYouWinNode( nullptr )
 		, mGameOverNode( nullptr )
 
-		, mKeyboardInputCollector()
 		, mKeyboardInputListener( {
 			0x1B		// esc
 			, 0x41		// a - left
@@ -257,7 +256,6 @@ namespace p2048mini
 	}
 	void GameScene::Update( const float delta_time )
 	{
-		mKeyboardInputCollector.Collect();
 		mKeyboardInputListener.Update();
 
 		switch( mStep )
