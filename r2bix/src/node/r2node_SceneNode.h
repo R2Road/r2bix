@@ -32,6 +32,7 @@ namespace r2node
 		//
 	public:
 		void Render();
+		void AddInputListener( r2input::KeyboardInputListener* const keyboard_input_listener );
 
 	protected:
 		r2input::KeyboardInputCollector mKeyboardInputCollector;

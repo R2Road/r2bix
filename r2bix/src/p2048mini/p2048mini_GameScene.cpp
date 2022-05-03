@@ -52,7 +52,7 @@ namespace p2048mini
 			, 0x52		// r - reset
 		} )
 	{
-		mKeyboardInputCollector.AddListener( &mKeyboardInputListener );
+		AddInputListener( &mKeyboardInputListener );
 	}
 
 	r2node::SceneNodeUp GameScene::Create( r2base::Director& director )

@@ -27,4 +27,9 @@ namespace r2node
 
 		mDirector.Write2BackBuffer( &mRenderTarget );
 	}
+
+	void SceneNode::AddInputListener( r2input::KeyboardInputListener* const keyboard_input_listener )
+	{
+		mKeyboardInputCollector.AddListener( keyboard_input_listener );
+	}
 }
