@@ -36,6 +36,10 @@ namespace p2048mini
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
+	GameComponent::~GameComponent()
+	{
+		GetOwnerNode().GetDirector().RemoveInputListener( &mKeyboardInputListener );
+	}
 
 	std::unique_ptr<GameComponent> GameComponent::Create( r2base::Node& owner_node )
 	{

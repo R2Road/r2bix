@@ -29,8 +29,9 @@ namespace p2048mini
 		};
 
 		GameComponent( r2base::Node& owner_node );
-
 	public:
+		~GameComponent();
+
 		int GetStaticID() const override { return r2base::ComponentStaticID<GameComponent>::Get(); }
 		static std::unique_ptr<GameComponent> Create( r2base::Node& owner_node );
 

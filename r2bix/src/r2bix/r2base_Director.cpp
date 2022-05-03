@@ -69,4 +69,8 @@ namespace r2base
 	{
 		mKeyboardInputCollector.AddListener( keyboard_input_listener );
 	}
+	void Director::RemoveInputListener( r2input::KeyboardInputListener* const keyboard_input_listener )
+	{
+		mKeyboardInputCollector.RemoveListener( keyboard_input_listener );
+	}
 }

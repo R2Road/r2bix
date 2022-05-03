@@ -29,6 +29,13 @@ namespace r2input
 		{
 			mKeyboardInputListener = listener;
 		}
+		void RemoveListener( KeyboardInputListener* listener )
+		{
+			if( listener == mKeyboardInputListener )
+			{
+				mKeyboardInputListener = nullptr;
+			}
+		}
 
 	private:
 		KeyboardInputListener* mKeyboardInputListener;

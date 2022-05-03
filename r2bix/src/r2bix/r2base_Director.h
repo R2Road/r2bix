@@ -35,6 +35,7 @@ namespace r2base
 		// Input
 		//
 		void AddInputListener( r2input::KeyboardInputListener* const keyboard_input_listener );
+		void RemoveInputListener( r2input::KeyboardInputListener* const keyboard_input_listener );
 
 	private:
 		ScreenBufferManager mScreenBufferManager;
