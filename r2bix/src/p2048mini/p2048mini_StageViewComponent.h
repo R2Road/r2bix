@@ -19,7 +19,7 @@ namespace p2048mini
 		int GetStaticID() const override { return r2base::ComponentStaticID<StageViewComponent>::Get(); }
 		static std::unique_ptr<StageViewComponent> Create( r2base::Node& owner_node );
 
-		void Setup( const p2048mini::Stage* const stage );
+		void Setup( const p2048mini::Stage& stage );
 		void UpdateView();
 
 		//

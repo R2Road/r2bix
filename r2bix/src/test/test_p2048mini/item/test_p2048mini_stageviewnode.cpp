@@ -92,7 +92,7 @@ namespace test_p2048mini_stageviewnode
 
 			DECLARATION_MAIN( auto svn = p2048mini::StageViewNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048mini::StageViewComponent>() );
-			PROCESS_MAIN( svc->Setup( &stage ) );
+			PROCESS_MAIN( svc->Setup( stage ) );
 			PROCESS_MAIN( svn->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
 			std::cout << r2::split;
@@ -147,7 +147,7 @@ namespace test_p2048mini_stageviewnode
 
 			DECLARATION_MAIN( auto svn = p2048mini::StageViewNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048mini::StageViewComponent>() );
-			PROCESS_MAIN( svc->Setup( &stage ) );
+			PROCESS_MAIN( svc->Setup( stage ) );
 			PROCESS_MAIN( svc->UpdateView() );
 			PROCESS_MAIN( svn->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 

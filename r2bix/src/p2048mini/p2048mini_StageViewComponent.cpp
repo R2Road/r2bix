@@ -28,9 +28,9 @@ namespace p2048mini
 		return ret;
 	}
 
-	void StageViewComponent::Setup( const p2048mini::Stage* const stage )
+	void StageViewComponent::Setup( const p2048mini::Stage& stage )
 	{
-		mStage = stage;
+		mStage = &stage;
 
 		const uint32_t NUMBER_WIDTH = 8;
 		const uint32_t NUMBER_HEIGHT = 3;

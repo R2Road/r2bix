@@ -96,7 +96,7 @@ namespace p2048mini
 			stage_view_node->SetVisible( false );
 
 			auto stage_view_component = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
-			stage_view_component->Setup( &game_component->GetStage() );
+			stage_view_component->Setup( game_component->GetStage() );
 
 			stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
 				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component->GetWidth() * 0.5f )
@@ -238,7 +238,7 @@ namespace p2048mini
 			auto stage_view_node = AddChild<p2048mini::StageViewNode>( 1 );
 
 			auto stage_view_component_4debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
-			stage_view_component_4debug->Setup( &game_component->GetStage() );
+			stage_view_component_4debug->Setup( game_component->GetStage() );
 
 			stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
 				0.f
