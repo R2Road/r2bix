@@ -384,6 +384,9 @@
     <ClCompile Include="src\p2048mini\p2048mini_GameProcessor.cpp">
       <Filter>project_2048mini</Filter>
     </ClCompile>
+    <ClCompile Include="src\p2048mini\p2048mini_GameComponent.cpp">
+      <Filter>project_2048mini</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -725,6 +728,9 @@
       <Filter>project_2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_GameProcessor.h">
+      <Filter>project_2048mini</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_GameComponent.h">
       <Filter>project_2048mini</Filter>
     </ClInclude>
   </ItemGroup>

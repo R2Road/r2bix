@@ -19,6 +19,7 @@
 #include "node/r2node_SpriteNode.h"
 
 #include "p2048mini_Config.h"
+#include "p2048mini_GameComponent.h"
 #include "p2048mini_Stage.h"
 #include "p2048mini_StageViewComponent.h"
 #include "p2048mini_StageViewNode.h"
@@ -91,6 +92,12 @@ namespace p2048mini
 				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetHeight() * 0.5f )
 			);
 		}
+
+		//
+		// Game Component
+		//
+		auto game_component = AddComponent<p2048mini::GameComponent>();
+
 
 		//
 		// Title
