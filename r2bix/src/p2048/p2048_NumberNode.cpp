@@ -3,13 +3,13 @@
 
 #include <numeric>
 
-#include "base/r2base_Director.h"
-#include "component/r2component_LabelComponent.h"
-#include "component/r2component_PivotComponent.h"
-#include "component/r2component_TextureFrameRenderComponent.h"
-#include "node/r2node_LabelNode.h"
-#include "node/r2node_PivotNode.h"
-#include "node/r2node_SpriteNode.h"
+#include "r2bix/r2base_Director.h"
+#include "r2bix/r2component_LabelComponent.h"
+#include "r2bix/r2component_PivotComponent.h"
+#include "r2bix/r2component_TextureFrameRenderComponent.h"
+#include "r2bix/r2node_LabelNode.h"
+#include "r2bix/r2node_PivotNode.h"
+#include "r2bix/r2node_SpriteNode.h"
 
 #include "p2048_NumberComponent.h"
 #include "p2048table_TextureTable.h"

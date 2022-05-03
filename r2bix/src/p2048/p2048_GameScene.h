@@ -1,6 +1,6 @@
 #pragma once
 
-#include "node/r2node_SceneNode.h"
+#include "r2bix/r2node_SceneNode.h"
 
 namespace p2048
 {

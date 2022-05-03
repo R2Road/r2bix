@@ -3,11 +3,11 @@
 
 #include <algorithm>	
 
-#include "base/r2base_Director.h"
+#include "r2bix/r2base_Director.h"
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
-#include "render/r2render_Camera.h"
-#include "render/r2render_Texture.h"
+#include "r2bix/r2render_Camera.h"
+#include "r2bix/r2render_Texture.h"
 
 #include "test/Utility4Test.h"
 

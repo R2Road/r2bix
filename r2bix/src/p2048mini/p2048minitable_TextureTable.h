@@ -5,7 +5,7 @@
 #include <unordered_map>
 
 #include "r2/r2_Singleton.h"
-#include "base/r2base_TextureTableBase.h"
+#include "r2bix/r2base_TextureTableBase.h"
 
 namespace r2render
 {

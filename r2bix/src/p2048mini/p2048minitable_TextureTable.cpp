@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "p2048minitable_TextureTable.h"
 
-#include "render/r2render_Texture.h"
-#include "render/r2render_TextureFrame.h"
+#include "r2bix/r2render_Texture.h"
+#include "r2bix/r2render_TextureFrame.h"
 
 namespace p2048minitable
 {

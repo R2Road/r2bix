@@ -6,7 +6,7 @@
 #include "r2/r2_Inspector.h"
 #include "r2/r2_Rect_Int.h"
 #include "r2cm/r2cm_eTestEndAction.h"
-#include "utility/r2utility_WindowUtil.h"
+#include "r2bix/r2utility_WindowUtil.h"
 #include "test/Utility4Test.h"
 
 namespace rect_test

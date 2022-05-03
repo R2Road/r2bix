@@ -3,10 +3,10 @@
 
 #include <numeric>
 
-#include "base/r2base_Director.h"
+#include "r2bix/r2base_Director.h"
 
-#include "node/r2node_CustomTextureNode.h"
-#include "node/r2node_PivotNode.h"
+#include "r2bix/r2node_CustomTextureNode.h"
+#include "r2bix/r2node_PivotNode.h"
 
 #include "p2048mini_Config.h"
 #include "p2048mini_StageViewComponent.h"

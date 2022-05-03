@@ -3,10 +3,10 @@
 
 #include <conio.h>
 
-#include "base/r2base_Director.h"
-#include "component/r2component_LabelComponent.h"
-#include "component/r2component_TextureRenderComponent.h"
-#include "node/r2node_LabelNode.h"
+#include "r2bix/r2base_Director.h"
+#include "r2bix/r2component_LabelComponent.h"
+#include "r2bix/r2component_TextureRenderComponent.h"
+#include "r2bix/r2node_LabelNode.h"
 
 namespace pmr
 {

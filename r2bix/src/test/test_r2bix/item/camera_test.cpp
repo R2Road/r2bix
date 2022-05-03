@@ -8,9 +8,8 @@
 
 #include "r2/r2_Point_Int.h"
 #include "r2/r2_Rect_Int.h"
-#include "render/r2render_Texture.h"
-
-#include "render/r2render_Camera.h"
+#include "r2bix/r2render_Camera.h"
+#include "r2bix/r2render_Texture.h"
 
 namespace camera_test
 {

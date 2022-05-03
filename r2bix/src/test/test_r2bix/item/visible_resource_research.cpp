@@ -6,7 +6,7 @@
 
 #include "r2cm/r2cm_eTestEndAction.h"
 
-#include "render/r2render_Texture.h"
+#include "r2bix/r2render_Texture.h"
 
 namespace visible_resource_research
 {

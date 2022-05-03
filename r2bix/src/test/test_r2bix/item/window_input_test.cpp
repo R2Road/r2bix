@@ -4,13 +4,13 @@
 #include <algorithm>
 #include <windows.h>
 
-#include "input/r2input_KeyboardInputCollector.h"
-#include "input/r2input_KeyboardInputListener.h"
+#include "r2bix/r2input_KeyboardInputCollector.h"
+#include "r2bix/r2input_KeyboardInputListener.h"
 
 #include "r2/r2_Rect_Int.h"
 #include "r2/r2_FPSTimer.h"
 #include "r2cm/r2cm_eTestEndAction.h"
-#include "utility/r2utility_WindowUtil.h"
+#include "r2bix/r2utility_WindowUtil.h"
 
 namespace window_input_test
 {

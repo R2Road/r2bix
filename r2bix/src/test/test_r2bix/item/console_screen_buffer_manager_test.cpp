@@ -3,7 +3,7 @@
 
 #include <conio.h>
 
-#include "base/r2base_ScreenBufferManager.h"
+#include "r2bix/r2base_ScreenBufferManager.h"
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 

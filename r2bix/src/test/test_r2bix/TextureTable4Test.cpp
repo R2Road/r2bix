@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "TextureTable4Test.h"
 
-#include "render/r2render_Texture.h"
-#include "render/r2render_TextureFrame.h"
+#include "r2bix/r2render_Texture.h"
+#include "r2bix/r2render_TextureFrame.h"
 
 void TextureTable4Test::Load()
 {

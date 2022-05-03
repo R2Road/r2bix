@@ -2,8 +2,8 @@
 
 #include <vector>
 
-#include "base/r2base_Component.h"
-#include "base/r2base_ComponentStaticID.h"
+#include "r2bix/r2base_Component.h"
+#include "r2bix/r2base_ComponentStaticID.h"
 
 namespace p2048mini
 {

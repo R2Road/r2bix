@@ -5,7 +5,7 @@
 #endif
 
 #include "r2cm/r2cm_Director.h"
-#include "utility/r2utility_WindowUtil.h"
+#include "r2bix/r2utility_WindowUtil.h"
 
 #include "DevelopmentMenu.h"
 

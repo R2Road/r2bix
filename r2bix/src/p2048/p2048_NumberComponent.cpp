@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "p2048_NumberComponent.h"
 
-#include "component/r2component_LabelComponent.h"
+#include "r2bix/r2component_LabelComponent.h"
 
 namespace p2048
 {
