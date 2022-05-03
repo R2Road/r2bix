@@ -7,7 +7,7 @@ namespace p2048mini
 	class GameScene : public r2node::SceneNode
 	{
 	private:
-		GameScene( r2base::Director& director );
+		GameScene() = delete;
 
 	public:
 		static r2node::SceneNodeUp Create( r2base::Director& director );

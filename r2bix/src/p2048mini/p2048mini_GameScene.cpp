@@ -27,11 +27,6 @@
 
 namespace p2048mini
 {
-	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director )
-	{
-		
-	}
-
 	r2node::SceneNodeUp GameScene::Create( r2base::Director& director )
 	{
 		auto ret( r2node::SceneNode::Create( director ) );
