@@ -11,6 +11,17 @@ namespace r2node
 		, mRenderTarget( director.GetScreenBufferSize().GetWidth(), director.GetScreenBufferSize().GetHeight(), '@' )
 	{}
 
+	SceneNodeUp SceneNode::Create( r2base::Director& director )
+	{
+		SceneNodeUp ret( new ( std::nothrow ) SceneNode( director ) );
+		if( !ret || !ret->Init() )
+		{
+			ret.reset();
+		}
+
+		return ret;
+	}
+
 	void SceneNode::Render()
 	{
 		mRenderTarget.FillAll( ' ' );

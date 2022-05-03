@@ -19,6 +19,8 @@ namespace r2node
 	public:
 		SceneNode( r2base::Director& director );
 
+		static SceneNodeUp Create( r2base::Director& director );
+
 		//
 		// Override
 		//

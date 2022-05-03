@@ -11,8 +11,5 @@ namespace p2048mini
 
 	public:
 		static r2node::SceneNodeUp Create( r2base::Director& director );
-
-	private:
-		bool Init() override;
 	};
 }
