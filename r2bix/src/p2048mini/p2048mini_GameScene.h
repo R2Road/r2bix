@@ -30,7 +30,6 @@ namespace p2048mini
 		GameScene( r2base::Director& director );
 
 	public:
-		static const char* const GetTitle() { return "Game : 2048mini( In Progress )"; }
 		static r2node::SceneNodeUp Create( r2base::Director& director );
 
 	private:

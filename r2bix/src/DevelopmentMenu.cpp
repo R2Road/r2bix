@@ -44,7 +44,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'2'
-			, []()->const char* { return p2048mini::GameScene::GetTitle(); }
+			, []()->const char* { return "Game : 2048mini( In Progress )"; }
 			, []()->r2cm::eTestEndAction
 			{
 				//
