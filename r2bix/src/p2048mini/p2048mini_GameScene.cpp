@@ -66,7 +66,7 @@ namespace p2048mini
 				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
 				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.20f )
+					, ( director.GetScreenBufferSize().GetHeight() * 0.18f )
 				);
 			}
 
@@ -98,12 +98,12 @@ namespace p2048mini
 				auto label_node = ret->AddChild<r2node::LabelNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Score : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 57, 16 );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 57, 15 );
 
 				auto score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
 				score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 16 );
+				score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 15 );
 
 				//
 				//
@@ -118,12 +118,12 @@ namespace p2048mini
 				auto label_node = ret->AddChild<r2node::LabelNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Max : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 57, 15 );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 57, 14 );
 
 				auto max_number_label_node = ret->AddChild<r2node::LabelNode>( 1 );
 				max_number_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				max_number_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				max_number_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 15 );
+				max_number_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 14 );
 
 				//
 				//
