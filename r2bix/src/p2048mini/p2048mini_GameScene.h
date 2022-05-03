@@ -2,31 +2,11 @@
 
 #include "node/r2node_SceneNode.h"
 
-#include "input/r2input_KeyboardInputListener.h"
-
-#include "p2048mini_GameProcessor.h"
-#include "p2048mini_Stage.h"
-
-#include "r2/r2_Direction4.h"
-
 namespace p2048mini
 {
-	class StageViewComponent;
-
 	class GameScene : public r2node::SceneNode
 	{
 	private:
-		enum class eStep
-		{
-			GameReset,
-			GameReady,
-			GameStart,
-			GameUpdate,
-			GameEnd,
-			GameClear,
-			GameStop,
-		};
-
 		GameScene( r2base::Director& director );
 
 	public:
@@ -34,24 +14,5 @@ namespace p2048mini
 
 	private:
 		bool Init() override;
-	public:
-		void Update( const float delta_time ) override;
-
-	private:
-		bool MoveNumber( const r2::Direction4::eState move_direction );
-
-	private:
-		eStep mStep;
-		Stage mStage;
-		GameProcessor mGameProcessor;
-		p2048mini::StageViewComponent* mStageViewComponent;
-		p2048mini::StageViewComponent* mStageViewComponent4Debug;
-
-		r2base::Node* mScoreLabel;
-		r2base::Node* mMaxNumberLabel;
-		r2base::Node* mYouWinNode;
-		r2base::Node* mGameOverNode;
-
-		r2input::KeyboardInputListener mKeyboardInputListener;
 	};
 }

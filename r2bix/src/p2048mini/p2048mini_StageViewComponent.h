@@ -19,7 +19,7 @@ namespace p2048mini
 		int GetStaticID() const override { return r2base::ComponentStaticID<StageViewComponent>::Get(); }
 		static std::unique_ptr<StageViewComponent> Create( r2base::Node& owner_node );
 
-		void Setup( p2048mini::Stage* const stage );
+		void Setup( const p2048mini::Stage* const stage );
 		void UpdateView();
 
 		//
@@ -29,7 +29,7 @@ namespace p2048mini
 		int32_t GetHeight() const { return mHeight; }
 
 	private:
-		p2048mini::Stage* mStage;
+		const p2048mini::Stage* mStage;
 		int32_t mWidth;
 		int32_t mHeight;
 		std::vector<p2048mini::NumberComponent*> mLabelContainer;

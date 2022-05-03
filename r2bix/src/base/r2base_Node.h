@@ -53,6 +53,7 @@ namespace r2base
 		//
 		//
 		//
+		Director& GetDirector() const { return mDirector; }
 		bool IsVisible() const { return mbVisible; }
 		void SetVisible( const bool visible )
 		{
