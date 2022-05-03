@@ -2,7 +2,6 @@
 
 #include "base/r2base_Node.h"
 
-#include "input/r2input_KeyboardInputCollector.h"
 #include "render/r2render_Camera.h"
 #include "render/r2render_Texture.h"
 
@@ -23,7 +22,6 @@ namespace r2node
 		//
 		// Override
 		//
-		void Update( const float delta_time ) override;
 	private:
 		void Render( const r2render::Camera* const /*camera*/, r2render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ ) override {}
 
@@ -32,10 +30,8 @@ namespace r2node
 		//
 	public:
 		void Render();
-		void AddInputListener( r2input::KeyboardInputListener* const keyboard_input_listener );
 
 	protected:
-		r2input::KeyboardInputCollector mKeyboardInputCollector;
 		r2render::Camera mCamera;
 		r2render::Texture mRenderTarget;
 	};
