@@ -92,26 +92,6 @@ namespace p2048mini
 			}
 
 			//
-			// Score
-			//
-			{
-				auto label_node = ret->AddChild<r2node::LabelNode>();
-				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Score : " );
-				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 57, 15 );
-
-				auto score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
-				score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
-				score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 15 );
-
-				//
-				//
-				//
-				game_component->SetScoreLabel( score_label_node );
-			}
-
-			//
 			// Max Number
 			//
 			{
@@ -129,6 +109,26 @@ namespace p2048mini
 				//
 				//
 				game_component->SetMaxNumberLabel( max_number_label_node );
+			}
+
+			//
+			// Score
+			//
+			{
+				auto label_node = ret->AddChild<r2node::LabelNode>();
+				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Score : " );
+				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 57, 15 );
+
+				auto score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
+				score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
+				score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 15 );
+
+				//
+				//
+				//
+				game_component->SetScoreLabel( score_label_node );
 			}
 
 			//
