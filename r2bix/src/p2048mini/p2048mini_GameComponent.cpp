@@ -20,8 +20,8 @@ namespace p2048mini
 		, mStageViewComponent( nullptr )
 		, mStageViewComponent4Debug( nullptr )
 
-		, mTotalScoreLabel( nullptr )
 		, mMaxNumberLabel( nullptr )
+		, mTotalScoreLabel( nullptr )
 		, mYouWinNode( nullptr )
 		, mGameOverNode( nullptr )
 
@@ -169,13 +169,13 @@ namespace p2048mini
 			//
 			if( 0 < mGameProcessor.GetSum4Merged() )
 			{
+				mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
+					, mGameProcessor.GetMaxNumber()
+				) );
+
 				mTotalScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d ( + %d )"
 					, mGameProcessor.GetScore()
 					, mGameProcessor.GetSum4Merged()
-				) );
-
-				mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
-					, mGameProcessor.GetMaxNumber()
 				) );
 			}
 		}
