@@ -120,15 +120,15 @@ namespace p2048mini
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 57, 15 );
 
-				auto score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
-				score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
-				score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 15 );
+				auto total_score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
+				total_score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
+				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 15 );
 
 				//
 				//
 				//
-				game_component->SetScoreLabel( score_label_node );
+				game_component->SetTotalScoreLabel( total_score_label_node );
 			}
 
 			//

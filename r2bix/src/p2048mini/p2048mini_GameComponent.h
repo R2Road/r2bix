@@ -42,7 +42,7 @@ namespace p2048mini
 
 		void SetStageViewComponent( p2048mini::StageViewComponent* const stage_view_component ) { mStageViewComponent = stage_view_component; }
 		void SetStageViewComponent4Debug( p2048mini::StageViewComponent* const stage_view_component ) { mStageViewComponent4Debug = stage_view_component; }
-		void SetScoreLabel( r2base::Node* const node ) { mScoreLabel = node; }
+		void SetTotalScoreLabel( r2base::Node* const node ) { mTotalScoreLabel = node; }
 		void SetMaxNumberLabel( r2base::Node* const node ) { mMaxNumberLabel = node; }
 		void SetYouWinNode( r2base::Node* const node ) { mYouWinNode = node; }
 		void SetGameOverNode( r2base::Node* const node ) { mGameOverNode = node; }
@@ -57,7 +57,7 @@ namespace p2048mini
 
 		p2048mini::StageViewComponent* mStageViewComponent;
 		p2048mini::StageViewComponent* mStageViewComponent4Debug;
-		r2base::Node* mScoreLabel;
+		r2base::Node* mTotalScoreLabel;
 		r2base::Node* mMaxNumberLabel;
 		r2base::Node* mYouWinNode;
 		r2base::Node* mGameOverNode;
