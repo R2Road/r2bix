@@ -132,6 +132,26 @@ namespace p2048mini
 			}
 
 			//
+			// Recent Score
+			//
+			{
+				auto label_node = ret->AddChild<r2node::LabelNode>();
+				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Recent : " );
+				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 57, 16 );
+
+				auto total_score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
+				total_score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
+				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 16 );
+
+				//
+				//
+				//
+				game_component->SetRecentScoreLabel( total_score_label_node );
+			}
+
+			//
 			// Key Info
 			//
 			{

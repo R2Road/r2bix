@@ -22,6 +22,8 @@ namespace p2048mini
 
 		, mMaxNumberLabel( nullptr )
 		, mTotalScoreLabel( nullptr )
+		, mRecentScoreLabel( nullptr )
+
 		, mYouWinNode( nullptr )
 		, mGameOverNode( nullptr )
 
@@ -62,8 +64,9 @@ namespace p2048mini
 			mStageViewComponent->GetOwnerNode().SetVisible( false );
 			mGameProcessor.Reset();
 			mStep = eStep::GameReady;
-			mTotalScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mTotalScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mRecentScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mGameOverNode->SetVisible( false );
 			mYouWinNode->SetVisible( false );
 			break;
@@ -173,8 +176,11 @@ namespace p2048mini
 					, mGameProcessor.GetMaxNumber()
 				) );
 
-				mTotalScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d ( + %d )"
+				mTotalScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
 					, mGameProcessor.GetScore()
+				) );
+				
+				mRecentScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "+ %d"
 					, mGameProcessor.GetSum4Merged()
 				) );
 			}
