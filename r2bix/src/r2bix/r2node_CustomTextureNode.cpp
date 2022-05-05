@@ -6,7 +6,6 @@
 #include "r2base_Director.h"
 #include "r2component_CustomTextureComponent.h"
 #include "r2component_TextureRenderComponent.h"
-#include "r2node_PivotNode.h"
 
 namespace r2node
 {
@@ -23,13 +22,6 @@ namespace r2node
 				auto texture_render_component = ret->AddComponent<r2component::TextureRenderComponent>();
 
 				texture_render_component->SetTexture( custome_texture_component->GetTexture() );
-			}
-
-			//
-			// Debug
-			//
-			{
-				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 			}
 		}
 

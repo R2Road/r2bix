@@ -50,6 +50,14 @@ namespace p2048mini
 					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetHeight() * 0.5f )
 				);
+
+				//
+				// Debug
+				//
+				if( p2048mini::Config::GetNodeConfig().pivot )
+				{
+					node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
+				}
 			}
 
 			//

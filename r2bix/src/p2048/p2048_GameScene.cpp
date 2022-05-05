@@ -51,6 +51,13 @@ namespace p2048
 				( mDirector.GetScreenBufferSize().GetWidth() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetWidth() * 0.5f )
 				, ( mDirector.GetScreenBufferSize().GetHeight() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetHeight() * 0.5f )
 			);
+
+			//
+			// Debug
+			//
+			{
+				node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
+			}
 		}
 
 		// Number
