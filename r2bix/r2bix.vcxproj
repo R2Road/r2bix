@@ -199,6 +199,7 @@
     <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h" />
     <ClInclude Include="src\r2cm\r2cm_iItem.h" />
     <ClInclude Include="src\r2cm\r2cm_Menu.h" />
+    <ClInclude Include="src\r2\r2_Assert.h" />
     <ClInclude Include="src\r2\r2_Direction4.h" />
     <ClInclude Include="src\r2\r2_FPSTimer.h" />
     <ClInclude Include="src\r2\r2_GridIndexConverter.h" />

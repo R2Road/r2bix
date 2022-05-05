@@ -3,6 +3,12 @@
 
 #include <iostream>
 
+
+
+#include "r2/r2_Assert.h" // R2ASSERT Macro
+
+
+
 namespace r2
 {
 	template<class _Elem, class _Traits>
