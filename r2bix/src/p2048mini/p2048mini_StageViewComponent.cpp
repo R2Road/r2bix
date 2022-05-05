@@ -30,6 +30,19 @@ namespace p2048mini
 
 	void StageViewComponent::Setup( const p2048mini::Stage& stage )
 	{
+		if( !mLabelContainer.empty() )
+		{
+			//
+			// # 2022.05.06 by R
+			//
+			// 여러번 불려도 괜찮도록 코드를 갱신 하는 것이 맞지만 귀찮고 구현 목표에 맞지도 않는다.
+			// 이후 r2base - Node 에 RemoveChild method가 추가된다면 구현 가능하다.
+			// 다음 버전에서 추가될 예정이다.
+			//
+			R2ASSERT( false, "p2048mini - StageViewComponent::Setup : Must be call once" );
+			return;
+		}
+
 		mStage = &stage;
 
 		const uint32_t NUMBER_WIDTH = 8;
@@ -40,7 +53,6 @@ namespace p2048mini
 		mWidth = ( mStage->GetWidth() * NUMBER_WIDTH ) + ( ( mStage->GetWidth() - 1 ) * SPACING_WIDTH );
 		mHeight = ( mStage->GetHeight() * NUMBER_HEIGHT ) + ( ( mStage->GetHeight() - 1 ) * SPACING_HEIGHT );
 
-		mLabelContainer.clear();
 		mLabelContainer.reserve( mStage->GetWidth() * mStage->GetHeight() );
 		for( uint32_t y = 0; mStage->GetHeight() > y; ++y )
 		{
