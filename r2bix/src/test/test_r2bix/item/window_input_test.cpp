@@ -27,7 +27,7 @@ namespace window_input_test
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
-			std::cout << "[WASD] Move" << r2::linefeed;
+			std::cout << "[A] ..." << r2::linefeed;
 
 			r2input::KeyboardInputCollector keyboard_input_collector;
 			r2input::KeyboardInputListener keyboard_input_listener( {
@@ -60,7 +60,7 @@ namespace window_input_test
 					if( last_input_status != keyboard_input_listener.Get( 1 ) )
 					{
 						last_input_status = keyboard_input_listener.Get( 1 );
-						std::cout << static_cast<int>( last_input_status ) << r2::linefeed;
+						std::cout << "status : " << static_cast<int>( last_input_status ) << r2::linefeed;
 					}
 				}
 			}
