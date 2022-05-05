@@ -67,6 +67,13 @@ namespace p2048
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
 			);
+
+			//
+			// Debug
+			//
+			{
+				node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
+			}
 		}
 
 		//

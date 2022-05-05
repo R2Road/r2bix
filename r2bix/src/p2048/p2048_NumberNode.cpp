@@ -8,7 +8,6 @@
 #include "r2bix/r2component_PivotComponent.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 #include "r2bix/r2node_LabelNode.h"
-#include "r2bix/r2node_PivotNode.h"
 #include "r2bix/r2node_SpriteNode.h"
 
 #include "p2048_NumberComponent.h"
@@ -40,13 +39,6 @@ namespace p2048
 				auto node = ret->AddChild<r2node::LabelNode>();
 
 				number_component->SetLabelComponent( node->GetComponent<r2component::LabelComponent>() );
-			}
-
-			//
-			// Debug
-			//
-			{
-				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 			}
 		}
 
