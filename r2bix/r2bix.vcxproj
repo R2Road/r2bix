@@ -83,6 +83,7 @@
     <ClCompile Include="src\r2bix\r2render_Camera.cpp" />
     <ClCompile Include="src\r2bix\r2render_Texture.cpp" />
     <ClCompile Include="src\r2bix\r2render_TextureFrame.cpp" />
+    <ClCompile Include="src\r2bix\r2utility_FileUtil.cpp" />
     <ClCompile Include="src\r2bix\r2utility_InputUtil.cpp" />
     <ClCompile Include="src\r2bix\r2utility_StringBuilder.cpp" />
     <ClCompile Include="src\r2bix\r2utility_WindowUtil.cpp" />
@@ -196,6 +197,7 @@
     <ClInclude Include="src\r2bix\r2render_iRenderTarget.h" />
     <ClInclude Include="src\r2bix\r2render_Texture.h" />
     <ClInclude Include="src\r2bix\r2render_TextureFrame.h" />
+    <ClInclude Include="src\r2bix\r2utility_FileUtil.h" />
     <ClInclude Include="src\r2bix\r2utility_InputUtil.h" />
     <ClInclude Include="src\r2bix\r2utility_StringBuilder.h" />
     <ClInclude Include="src\r2bix\r2utility_WindowUtil.h" />
