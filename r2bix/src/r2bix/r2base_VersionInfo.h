@@ -8,7 +8,7 @@ namespace r2base
 		const char VersionNumber_2 = 0;
 		const char VersionNumber_3 = 1;
 
-		const char* const String =
+		const char* const String4Version_0_0_1 =
 			"### Version 0.0.1 ###"				"\n\n"
 			"[o] " "Double Buffering"			"\n"
 			"[o] " "Input"						"\n"
