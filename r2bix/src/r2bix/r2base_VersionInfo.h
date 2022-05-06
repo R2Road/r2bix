@@ -16,7 +16,7 @@ namespace r2base
 		const char VersionNumber_3 = 1;
 
 		const char* const String4Version_0_0_1 =
-					"### Road 4 Version 0.0.1 ###"
+					"### Road 2 Version 0.0.1 ###"
 			"\n\n"	"[o] " "Double Buffering"
 			"\n"	"[o] " "Input"
 			"\n"	"[o] " "Render Pipe Line"
@@ -26,7 +26,7 @@ namespace r2base
 		;
 
 		const char* const String4Version_0_0_2 =
-					"### Road 4 Version 0.0.2 ###"
+					"### Road 2 Version 0.0.2 ###"
 			"\n\n"	"[ ] " "Split The Render And Update Process"
 			"\n"	"[ ] " "Audio"
 			"\n"	"[ ] " "Node Delete And Caching Pipe Line"
