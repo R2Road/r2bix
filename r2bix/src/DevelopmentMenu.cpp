@@ -2,6 +2,7 @@
 #include "DevelopmentMenu.h"
 
 #include "r2bix/r2base_Director.h"
+#include "r2bix/r2base_VersionInfo.h"
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
@@ -14,9 +15,8 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
-		, GetTitle(),
-				"> Inprogress : p2048"
-		"\n"	"> To do : Texture Editor 가 필요하다."
+		, GetTitle()
+		, r2base::VersionInfo.String
 	) );
 
 	{

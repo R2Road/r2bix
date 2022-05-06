@@ -739,5 +739,8 @@
     <ClInclude Include="src\r2\r2_Assert.h">
       <Filter>r2</Filter>
     </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_VersionInfo.h">
+      <Filter>r2bix\base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
