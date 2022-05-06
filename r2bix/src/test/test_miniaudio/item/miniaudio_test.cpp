@@ -1,12 +1,16 @@
 #include "pch.h"
 #include "miniaudio_test.h"
 
+#include <conio.h>
+
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
 
 #define MINIAUDIO_IMPLEMENTATION
 #include "miniaudio/miniaudio.h"
 // # Miniaudio REF : https://miniaud.io/docs/manual/index.html
+
+#include "r2bix/r2utility_FileUtil.h"
 
 namespace miniaudio_test
 {
@@ -95,6 +99,66 @@ namespace miniaudio_test
 
 			{
 				PROCESS_MAIN( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT LoadSound::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Load Sound";
+		};
+	}
+	r2cm::iItem::DoFuncT LoadSound::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_result result );
+			DECLARATION_SUB( ma_engine engine );
+			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
+			EXPECT_EQ( MA_SUCCESS, result );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( ma_sound sound );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeSFXPath( "test_sfx_01.wav" ).c_str() , 0, NULL, NULL, &sound ) );
+				EXPECT_EQ( MA_SUCCESS, result );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( ma_sound_start( &sound ) );
+			}
+
+			std::cout << r2::split;
+
+			std::cout << "Any Key : End" << r2::linefeed;
+			_getch();
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( ma_sound_uninit( &sound ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
 			std::cout << r2::split;
