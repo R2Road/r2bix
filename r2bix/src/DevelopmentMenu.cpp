@@ -16,7 +16,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle()
-		, r2base::VersionInfo.String4Version_0_0_1
+		, r2base::VersionInfo.String4Version_0_0_2
 	) );
 
 	{
