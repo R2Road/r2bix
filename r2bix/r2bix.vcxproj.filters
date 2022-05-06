@@ -85,6 +85,15 @@
     <Filter Include="r2bix\utility">
       <UniqueIdentifier>{4430c7e5-e333-4513-b7f9-7d57eae00a27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\test_miniaudio">
+      <UniqueIdentifier>{f436b0c4-739e-4f19-8ae0-852b48bc6b74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="miniaudio">
+      <UniqueIdentifier>{c7fe1776-2e09-4551-95e7-532b2099dbd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\test_miniaudio\item">
+      <UniqueIdentifier>{080b8e6b-bca9-49f6-bb21-1f13152f9fd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -389,6 +398,12 @@
     </ClCompile>
     <ClCompile Include="src\r2bix\r2utility_WindowUtil.cpp">
       <Filter>r2bix\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_miniaudio\TestMiniAudioMenu.cpp">
+      <Filter>test\test_miniaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_miniaudio\item\miniaudio_test.cpp">
+      <Filter>test\test_miniaudio\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -741,6 +756,15 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2base_VersionInfo.h">
       <Filter>r2bix\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\miniaudio\miniaudio.h">
+      <Filter>miniaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_miniaudio\TestMiniAudioMenu.h">
+      <Filter>test\test_miniaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_miniaudio\item\miniaudio_test.h">
+      <Filter>test\test_miniaudio\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

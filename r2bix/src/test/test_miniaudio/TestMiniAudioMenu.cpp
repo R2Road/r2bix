@@ -1,0 +1,39 @@
+#include "pch.h"
+#include "TestMiniAudioMenu.h"
+
+#include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_eTestEndAction.h"
+
+#include "item/miniaudio_test.h"
+
+#include "test/TestMainMenu.h"
+
+r2cm::MenuUp TestMiniAudioMenu::Create( r2cm::Director& director )
+{
+	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
+		director
+		, GetTitle(),
+				"> Inprogress : ..."
+		"\n"	"> ..."
+	) );
+
+	{
+		ret->AddItem( '1', miniaudio_test::Basic::GetInstance() );
+
+
+		ret->AddSplit();
+
+
+		ret->AddItem(
+			27
+			, []()->const char* { return TestMainMenu::GetTitle(); }
+			, [&director]()->r2cm::eTestEndAction
+			{
+				director.Setup( TestMainMenu::Create( director ) );
+				return r2cm::eTestEndAction::None;
+			}
+		);
+	}
+
+	return ret;
+}

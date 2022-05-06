@@ -98,6 +98,8 @@
     <ClCompile Include="src\r2\r2_Size_Int.cpp" />
     <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\test\TestMainMenu.cpp" />
+    <ClCompile Include="src\test\test_miniaudio\item\miniaudio_test.cpp" />
+    <ClCompile Include="src\test\test_miniaudio\TestMiniAudioMenu.cpp" />
     <ClCompile Include="src\test\test_p2048mini\item\test_p2048mini_stage.cpp" />
     <ClCompile Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.cpp" />
     <ClCompile Include="src\test\test_p2048mini\TestP2048MiniRootMenu.cpp" />
@@ -130,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DevelopmentMenu.h" />
+    <ClInclude Include="src\miniaudio\miniaudio.h" />
     <ClInclude Include="src\p2048mini\p2048minitable_TextureTable.h" />
     <ClInclude Include="src\p2048mini\p2048mini_Config.h" />
     <ClInclude Include="src\p2048mini\p2048mini_GameComponent.h" />
@@ -218,6 +221,8 @@
     <ClInclude Include="src\r2\r2_Timer_Float.h" />
     <ClInclude Include="src\r2\r2_UniqueIndex.h" />
     <ClInclude Include="src\test\TestMainMenu.h" />
+    <ClInclude Include="src\test\test_miniaudio\item\miniaudio_test.h" />
+    <ClInclude Include="src\test\test_miniaudio\TestMiniAudioMenu.h" />
     <ClInclude Include="src\test\test_p2048mini\item\test_p2048mini_stage.h" />
     <ClInclude Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.h" />
     <ClInclude Include="src\test\test_p2048mini\TestP2048MiniRootMenu.h" />
