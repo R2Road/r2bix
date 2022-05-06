@@ -31,7 +31,7 @@ namespace miniaudio_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( result = ma_engine_init( NULL, &engine ) );
+				PROCESS_MAIN( result = ma_engine_init( nullptr, &engine ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
