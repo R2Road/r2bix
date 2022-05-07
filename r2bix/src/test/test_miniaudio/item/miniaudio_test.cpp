@@ -340,102 +340,6 @@ namespace miniaudio_test
 
 
 
-	r2cm::iItem::TitleFuncT Engine_Volume::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Engine : Volume";
-		};
-	}
-	r2cm::iItem::DoFuncT Engine_Volume::GetDoFunction()
-	{
-		return []()->r2cm::eTestEndAction
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
-
-			std::cout << r2::split;
-
-			DECLARATION_SUB( ma_result result );
-			DECLARATION_SUB( ma_engine engine );
-			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
-			EXPECT_EQ( MA_SUCCESS, result );
-
-			std::cout << r2::split;
-
-			DECLARATION_MAIN( ma_sound sound );
-
-			std::cout << r2::split;
-
-			{
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
-				EXPECT_EQ( MA_SUCCESS, result );
-
-				std::cout << r2::linefeed;
-
-				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
-
-				std::cout << r2::linefeed;
-
-				PROCESS_MAIN( ma_sound_start( &sound ) );
-			}
-
-			std::cout << r2::split;
-
-			{
-				const auto pivot_coord = r2utility::GetCursorPoint();
-				float current_volume = 1.f;
-
-				bool bRun = true;
-				do
-				{
-					r2utility::SetCursorPoint( pivot_coord );
-
-					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
-					std::cout << "[1, 2] Volume Change " << r2::linefeed;
-					std::cout << "[ESC] End " << r2::linefeed2;
-
-					switch( _getch() )
-					{
-					case '1':
-						PROCESS_MAIN( current_volume -= 0.5f );
-						PROCESS_MAIN( ma_engine_set_volume( &engine, current_volume ) );
-						break;
-					case '2':
-						PROCESS_MAIN( current_volume += 0.5f );
-						PROCESS_MAIN( ma_engine_set_volume( &engine, current_volume ) );
-						break;
-
-					case 27: // ESC
-						bRun = false;
-						r2utility::SetCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
-						break;
-
-					default:
-						continue;
-					}
-				} while( bRun );
-			}
-
-			std::cout << r2::split;
-
-			{
-				PROCESS_MAIN( ma_sound_uninit( &sound ) );
-			}
-
-			std::cout << r2::split;
-
-			{
-				PROCESS_SUB( ma_engine_uninit( &engine ) );
-			}
-
-			std::cout << r2::split;
-
-			return r2cm::eTestEndAction::Pause;
-		};
-	}
-
-
-
 	r2cm::iItem::TitleFuncT Group_Init::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -571,6 +475,102 @@ namespace miniaudio_test
 				PROCESS_MAIN( ma_sound_uninit( &sound_1 ) );
 				PROCESS_MAIN( ma_sound_uninit( &sound_2 ) );
 				PROCESS_MAIN( ma_sound_group_uninit( &sound_group ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT Engine_Volume::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Engine : Volume";
+		};
+	}
+	r2cm::iItem::DoFuncT Engine_Volume::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_result result );
+			DECLARATION_SUB( ma_engine engine );
+			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
+			EXPECT_EQ( MA_SUCCESS, result );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( ma_sound sound );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				EXPECT_EQ( MA_SUCCESS, result );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( ma_sound_start( &sound ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				const auto pivot_coord = r2utility::GetCursorPoint();
+				float current_volume = 1.f;
+
+				bool bRun = true;
+				do
+				{
+					r2utility::SetCursorPoint( pivot_coord );
+
+					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
+					std::cout << "[1, 2] Volume Change " << r2::linefeed;
+					std::cout << "[ESC] End " << r2::linefeed2;
+
+					switch( _getch() )
+					{
+					case '1':
+						PROCESS_MAIN( current_volume -= 0.5f );
+						PROCESS_MAIN( ma_engine_set_volume( &engine, current_volume ) );
+						break;
+					case '2':
+						PROCESS_MAIN( current_volume += 0.5f );
+						PROCESS_MAIN( ma_engine_set_volume( &engine, current_volume ) );
+						break;
+
+					case 27: // ESC
+						bRun = false;
+						r2utility::SetCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
+						break;
+
+					default:
+						continue;
+					}
+				} while( bRun );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
 			std::cout << r2::split;
