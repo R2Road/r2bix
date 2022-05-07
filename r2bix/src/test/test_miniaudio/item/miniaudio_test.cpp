@@ -295,18 +295,18 @@ namespace miniaudio_test
 					r2utility::SetCursorPoint( pivot_coord );
 
 					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
-					std::cout << "[1, 2] Volume Change " << r2::linefeed2;
+					std::cout << "[1, 2] Volume Change " << r2::linefeed;
 					std::cout << "[ESC] End " << r2::linefeed2;
 
 					switch( _getch() )
 					{
 					case '1':
-						current_volume -= 0.5f;
-						ma_sound_set_volume( &sound, current_volume );
+						PROCESS_MAIN( current_volume -= 0.5f );
+						PROCESS_MAIN( ma_sound_set_volume( &sound, current_volume ) );
 						break;
 					case '2':
-						current_volume += 0.5f;
-						ma_sound_set_volume( &sound, current_volume );
+						PROCESS_MAIN( current_volume += 0.5f );
+						PROCESS_MAIN( ma_sound_set_volume( &sound, current_volume ) );
 						break;
 
 					case 27: // ESC
@@ -385,18 +385,18 @@ namespace miniaudio_test
 					r2utility::SetCursorPoint( pivot_coord );
 
 					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
-					std::cout << "[1, 2] Volume Change " << r2::linefeed2;
+					std::cout << "[1, 2] Volume Change " << r2::linefeed;
 					std::cout << "[ESC] End " << r2::linefeed2;
 
 					switch( _getch() )
 					{
 					case '1':
-						current_volume -= 0.5f;
-						ma_engine_set_volume( &engine, current_volume );
+						PROCESS_MAIN( current_volume -= 0.5f );
+						PROCESS_MAIN( ma_engine_set_volume( &engine, current_volume ) );
 						break;
 					case '2':
-						current_volume += 0.5f;
-						ma_engine_set_volume( &engine, current_volume );
+						PROCESS_MAIN( current_volume += 0.5f );
+						PROCESS_MAIN( ma_engine_set_volume( &engine, current_volume ) );
 						break;
 
 					case 27: // ESC
