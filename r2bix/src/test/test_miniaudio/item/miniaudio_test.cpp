@@ -311,6 +311,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
+						r2utility::SetCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
 						break;
 
 					default:
@@ -406,6 +407,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
+						r2utility::SetCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
 						break;
 
 					default:
@@ -508,6 +510,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
+						r2utility::SetCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
 						break;
 
 					default:
