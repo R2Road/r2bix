@@ -322,6 +322,7 @@ namespace miniaudio_test
 			std::cout << r2::split;
 
 			{
+				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
@@ -411,6 +412,7 @@ namespace miniaudio_test
 			std::cout << r2::split;
 
 			{
+				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
