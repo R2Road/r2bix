@@ -2,6 +2,7 @@
 #include "miniaudio_test.h"
 
 #include <conio.h>
+#include <iomanip>
 
 #include "r2/r2_Inspector.h"
 #include "r2cm/r2cm_eTestEndAction.h"
@@ -11,6 +12,7 @@
 // # Miniaudio REF : https://miniaud.io/docs/manual/index.html
 
 #include "r2bix/r2utility_FileUtil.h"
+#include "r2bix/r2utility_WindowUtil.h"
 
 namespace miniaudio_test
 {
@@ -226,6 +228,95 @@ namespace miniaudio_test
 				_getch();
 
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT Sound_Volume::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Sound : Volume";
+		};
+	}
+	r2cm::iItem::DoFuncT Sound_Volume::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_result result );
+			DECLARATION_SUB( ma_engine engine );
+			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
+			EXPECT_EQ( MA_SUCCESS, result );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( ma_sound sound );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				EXPECT_EQ( MA_SUCCESS, result );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( ma_sound_start( &sound ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				const auto pivot_coord = r2utility::GetCursorPoint();
+				float current_volume = ma_sound_get_volume( &sound );
+
+				bool bRun = true;
+				do
+				{
+					r2utility::SetCursorPoint( pivot_coord );
+
+					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
+					std::cout << "[1, 2] Volume Change " << r2::linefeed2;
+					std::cout << "[ESC] End " << r2::linefeed2;
+
+					switch( _getch() )
+					{
+					case '1':
+						current_volume -= 0.5f;
+						ma_sound_set_volume( &sound, current_volume );
+						break;
+					case '2':
+						current_volume += 0.5f;
+						ma_sound_set_volume( &sound, current_volume );
+						break;
+
+					case 27: // ESC
+						bRun = false;
+						break;
+
+					default:
+						continue;
+					}
+				} while( bRun );
 			}
 
 			std::cout << r2::split;
