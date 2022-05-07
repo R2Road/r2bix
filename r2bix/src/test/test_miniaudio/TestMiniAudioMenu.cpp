@@ -26,6 +26,7 @@ r2cm::MenuUp TestMiniAudioMenu::Create( r2cm::Director& director )
 		ret->AddItem( '6', miniaudio_test::Group_Init::GetInstance() );
 		ret->AddItem( '7', miniaudio_test::Group_Volume::GetInstance() );
 		ret->AddItem( '8', miniaudio_test::Engine_Volume::GetInstance() );
+		ret->AddItem( '9', miniaudio_test::Engine_PlaySound::GetInstance() );
 
 
 		ret->AddSplit();

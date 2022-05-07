@@ -584,4 +584,53 @@ namespace miniaudio_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT Engine_PlaySound::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Engine : Play Sound";
+		};
+	}
+	r2cm::iItem::DoFuncT Engine_PlaySound::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_result result );
+			DECLARATION_SUB( ma_engine engine )
+			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ fire and forget" << r2::linefeed2;
+
+				PROCESS_MAIN( result = ma_engine_play_sound( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), nullptr ) );
+				EXPECT_EQ( MA_SUCCESS, result );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << "[Any Key] End " << r2::linefeed2;
+				_getch();
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }
