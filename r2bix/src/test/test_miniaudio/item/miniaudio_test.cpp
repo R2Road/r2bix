@@ -203,6 +203,10 @@ namespace miniaudio_test
 
 				std::cout << r2::linefeed;
 
+				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
+
+				std::cout << r2::linefeed;
+
 				PROCESS_MAIN( ma_sound_start( &sound ) );
 			}
 
