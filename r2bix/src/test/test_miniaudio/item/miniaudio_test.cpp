@@ -136,6 +136,17 @@ namespace miniaudio_test
 			std::cout << r2::split;
 
 			{
+				std::cout << r2::tab << "+ 파일 없다." << r2::linefeed2;
+
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, "", 0, NULL, NULL, &sound ) );
+				EXPECT_EQ( MA_DOES_NOT_EXIST, result );
+			}
+
+			std::cout << r2::split;
+
+			{
+				std::cout << r2::tab << "+ 파일 있다." << r2::linefeed2;
+
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeSFXPath( "test_sfx_01.wav" ).c_str() , 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
