@@ -182,7 +182,7 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eTestEndAction
 		{
-			std::cout << "# " << Sound_Play().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
 			std::cout << r2::split;
 
