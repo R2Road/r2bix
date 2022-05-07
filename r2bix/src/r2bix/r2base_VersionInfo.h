@@ -34,6 +34,11 @@ namespace r2base
 			"\n"	"[ ] " "Texture Editor"
 			"\n"	"[ ] " "Color"
 			"\n"	"[ ] " "Korean"
+
+			"\n\n"	"------------------------------------------"
+
+			"\n\n"	"[ ] " "Json"
+			"\n"	"[ ] " "Script"
 		;
 	} VersionInfo;
 }
