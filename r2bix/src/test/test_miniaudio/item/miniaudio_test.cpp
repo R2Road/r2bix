@@ -436,6 +436,52 @@ namespace miniaudio_test
 
 
 
+	r2cm::iItem::TitleFuncT Group_Init::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Group : Init";
+		};
+	}
+	r2cm::iItem::DoFuncT Group_Init::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_engine engine );
+			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( ma_sound_group sound_group );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( MA_SUCCESS, ma_sound_group_init( &engine, 0, nullptr, &sound_group ) );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( ma_sound_group_uninit( &sound_group ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Group_Volume::GetTitleFunction() const
 	{
 		return []()->const char*

@@ -47,6 +47,13 @@ namespace miniaudio_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class Group_Init : public r2cm::iItem, public r2::SingleTon<Group_Init>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class Group_Volume : public r2cm::iItem, public r2::SingleTon<Group_Volume>
 	{
 	public:
