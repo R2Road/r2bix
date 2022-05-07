@@ -25,4 +25,11 @@ namespace miniaudio_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class Sound_Play : public r2cm::iItem, public r2::SingleTon<Sound_Play>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

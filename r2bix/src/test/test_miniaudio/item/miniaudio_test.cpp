@@ -113,7 +113,7 @@ namespace miniaudio_test
 	{
 		return []()->const char*
 		{
-			return "Load Sound";
+			return "Sound : Load";
 		};
 	}
 	r2cm::iItem::DoFuncT LoadSound::GetDoFunction()
@@ -137,6 +137,57 @@ namespace miniaudio_test
 
 			{
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeSFXPath( "test_sfx_01.wav" ).c_str() , 0, NULL, NULL, &sound ) );
+				EXPECT_EQ( MA_SUCCESS, result );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( ma_sound_uninit( &sound ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT Sound_Play::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Sound : Play";
+		};
+	}
+	r2cm::iItem::DoFuncT Sound_Play::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << Sound_Play().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_result result );
+			DECLARATION_SUB( ma_engine engine );
+			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
+			EXPECT_EQ( MA_SUCCESS, result );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( ma_sound sound );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeSFXPath( "test_sfx_01.wav" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
 				std::cout << r2::linefeed;
