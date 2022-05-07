@@ -198,7 +198,7 @@ namespace miniaudio_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeSFXPath( "test_sfx_01.wav" ).c_str(), 0, NULL, NULL, &sound ) );
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
 				std::cout << r2::linefeed;

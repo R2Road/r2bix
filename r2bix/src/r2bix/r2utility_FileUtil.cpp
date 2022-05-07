@@ -29,4 +29,9 @@ namespace r2utility
 		std::string ret = ( std::filesystem::current_path() / "resources" / "sound" / "sfx" / file_name ).string();
 		return ret;
 	}
+	std::string MakeBGMPath( const char* file_name )
+	{
+		std::string ret = ( std::filesystem::current_path() / "resources" / "sound" / "bgm" / file_name ).string();
+		return ret;
+	}
 }
