@@ -421,4 +421,108 @@ namespace miniaudio_test
 			return r2cm::eTestEndAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT Group_Volume::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Group : Volume";
+		};
+	}
+	r2cm::iItem::DoFuncT Group_Volume::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_result result );
+			DECLARATION_SUB( ma_engine engine );
+			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
+			EXPECT_EQ( MA_SUCCESS, result );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( ma_sound sound_1 );
+			DECLARATION_MAIN( ma_sound sound_2 );
+			DECLARATION_MAIN( ma_sound_group sound_group );
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_EQ( MA_SUCCESS, ma_sound_group_init( &engine, 0, nullptr, &sound_group ) );
+
+				std::cout << r2::linefeed;
+
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, &sound_group, NULL, &sound_1 ) );
+				PROCESS_SUB( ma_sound_set_volume( &sound_1, 0.1f ) );
+				PROCESS_SUB( ma_sound_set_looping( &sound_1, true ) );
+				PROCESS_SUB( ma_sound_start( &sound_1 ) );
+				
+				std::cout << r2::linefeed;
+				
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
+				PROCESS_SUB( ma_sound_set_volume( &sound_1, 1.0f ) );
+				PROCESS_SUB( ma_sound_set_looping( &sound_2, true ) );
+				PROCESS_SUB( ma_sound_start( &sound_2 ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				const auto pivot_coord = r2utility::GetCursorPoint();
+				float current_volume = 1.f;
+
+				bool bRun = true;
+				do
+				{
+					r2utility::SetCursorPoint( pivot_coord );
+
+					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
+					std::cout << "[1, 2] Volume Change " << r2::linefeed;
+					std::cout << "[ESC] End " << r2::linefeed2;
+
+					switch( _getch() )
+					{
+					case '1':
+						PROCESS_MAIN( current_volume -= 0.5f );
+						PROCESS_MAIN( ma_sound_group_set_volume( &sound_group, current_volume ) );
+						break;
+					case '2':
+						PROCESS_MAIN( current_volume += 0.5f );
+						PROCESS_MAIN( ma_sound_group_set_volume( &sound_group, current_volume ) );
+						break;
+
+					case 27: // ESC
+						bRun = false;
+						break;
+
+					default:
+						continue;
+					}
+				} while( bRun );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( ma_sound_uninit( &sound_1 ) );
+				PROCESS_MAIN( ma_sound_uninit( &sound_2 ) );
+				PROCESS_MAIN( ma_sound_group_uninit( &sound_group ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
 }
