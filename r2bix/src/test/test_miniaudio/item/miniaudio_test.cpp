@@ -208,12 +208,19 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			std::cout << "Any Key : End" << r2::linefeed;
-			_getch();
+			{
+				std::cout << "Any Key : Sound Stop" << r2::linefeed;
+				_getch();
+
+				PROCESS_MAIN( ma_sound_stop( &sound ) );
+			}
 
 			std::cout << r2::split;
 
 			{
+				std::cout << "Any Key : UnInit" << r2::linefeed;
+				_getch();
+
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
