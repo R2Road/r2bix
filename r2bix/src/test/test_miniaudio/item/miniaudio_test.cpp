@@ -523,7 +523,7 @@ namespace miniaudio_test
 				std::cout << r2::linefeed;
 				
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
-				PROCESS_SUB( ma_sound_set_volume( &sound_1, 1.0f ) );
+				PROCESS_SUB( ma_sound_set_volume( &sound_2, 1.0f ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound_2, true ) );
 				PROCESS_SUB( ma_sound_start( &sound_2 ) );
 			}
