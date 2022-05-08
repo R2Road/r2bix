@@ -317,10 +317,7 @@ namespace miniaudio_test
 
 					if( _kbhit() )
 					{
-						if( _getch() )
-						{
-							break;
-						}
+						break;
 					}
 				} while( true );
 			}
