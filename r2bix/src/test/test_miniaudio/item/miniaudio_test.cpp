@@ -16,14 +16,14 @@
 
 namespace miniaudio_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Engine_Init::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Basic";
+			return "Engine : Init";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Engine_Init::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

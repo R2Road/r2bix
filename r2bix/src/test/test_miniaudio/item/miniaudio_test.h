@@ -5,7 +5,7 @@
 
 namespace miniaudio_test
 {
-	class Basic : public r2cm::iItem, public r2::SingleTon<Basic>
+	class Engine_Init : public r2cm::iItem, public r2::SingleTon<Engine_Init>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
