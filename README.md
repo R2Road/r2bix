@@ -21,7 +21,10 @@
   - Visual Studio Community 2017 15.9.27
 
 - external library
-  - vld
+  - [miniaudio]( https://miniaud.io/index.html )
+  - [r2_console_menu]( https://github.com/R2Road/r2_console_menu )
+  - [r2bix_console_framework]( https://github.com/R2Road/r2bix_console_framework )
+  - [vld]( https://kinddragon.github.io/vld/ )
 
 
 ## ( '_')y-~
