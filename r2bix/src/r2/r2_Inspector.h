@@ -140,10 +140,10 @@ printf( "\x1B[90m" "[DECLARATION]" " %s" "\033[0m" "\n", #condition );
 #define	OUTPUT_MAIN( condition )																\
 do {																						\
 	printf( "[OUTPUT]" " %s" "\n", #condition );						\
-	std::cout << condition << "\n";															\
+	std::cout << "\t> " << condition << "\n";															\
 } while( false )
 #define	OUTPUT_SUB( condition )																\
 do {																						\
 	printf( "\x1B[90m" "[OUTPUT]" " %s" "\033[0m" "\n", #condition );						\
-	std::cout << condition << "\n";															\
+	std::cout << "\t> " << condition << "\n";															\
 } while( false )
