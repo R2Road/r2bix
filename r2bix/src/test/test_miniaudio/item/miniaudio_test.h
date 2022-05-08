@@ -19,6 +19,22 @@ namespace miniaudio_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class Engine_Volume : public r2cm::iItem, public r2::SingleTon<Engine_Volume>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
+	class Engine_PlaySound : public r2cm::iItem, public r2::SingleTon<Engine_PlaySound>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
+
+
 	class Sound_Load : public r2cm::iItem, public r2::SingleTon<Sound_Load>
 	{
 	public:
@@ -48,20 +64,6 @@ namespace miniaudio_test
 	};
 
 	class Group_Volume : public r2cm::iItem, public r2::SingleTon<Group_Volume>
-	{
-	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
-	};
-
-	class Engine_Volume : public r2cm::iItem, public r2::SingleTon<Engine_Volume>
-	{
-	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
-	};
-
-	class Engine_PlaySound : public r2cm::iItem, public r2::SingleTon<Engine_PlaySound>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
