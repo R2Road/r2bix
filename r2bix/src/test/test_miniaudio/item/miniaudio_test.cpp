@@ -429,33 +429,50 @@ namespace miniaudio_test
 			std::cout << r2::split;
 
 			{
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
 				std::cout << r2::linefeed;
 
 				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
-
-				std::cout << r2::linefeed;
-
-				PROCESS_MAIN( ma_sound_start( &sound ) );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "Any Key : Sound Stop" << r2::linefeed;
-				_getch();
+				const auto pivot_coord = r2utility::GetCursorPoint();
+				bool bRun = true;
+				do
+				{
+					r2utility::SetCursorPoint( pivot_coord );
 
-				PROCESS_MAIN( ma_sound_stop( &sound ) );
+					std::cout << "[1] Play" << r2::linefeed;
+					std::cout << "[2] Stop" << r2::linefeed;
+					std::cout << "[ESC] End " << r2::linefeed2;
+
+					switch( _getch() )
+					{
+					case '1':
+						PROCESS_MAIN( ma_sound_start( &sound ) );
+						break;
+					case '2':
+						PROCESS_MAIN( ma_sound_stop( &sound ) );
+						break;
+
+					case 27: // ESC
+						bRun = false;
+						r2utility::SetCursorPoint( { pivot_coord.x, pivot_coord.y + 5 } );
+						break;
+
+					default:
+						continue;
+					}
+				} while( bRun );
 			}
 
 			std::cout << r2::split;
 
 			{
-				std::cout << "Any Key : UnInit" << r2::linefeed;
-				_getch();
-
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
