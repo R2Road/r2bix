@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "miniaudio_test.h"
 
+#include <chrono>
 #include <conio.h>
 #include <iomanip>
 
@@ -296,15 +297,23 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
+			OUTPUT_MAIN( ma_engine_get_sample_rate( &engine ) );
+
+			std::cout << r2::split;
+
 			{
 				const auto pivot_coord = r2utility::GetCursorPoint();
 				int64_t engine_time = 0ll;
+				const auto system_start_time_point = std::chrono::system_clock::now();
 				do
 				{
 					r2utility::SetCursorPoint( pivot_coord );
 
 					PROCESS_MAIN( engine_time = ma_engine_get_time( &engine ) );
 					printf( "Engine Time : %20lld \n", engine_time );
+
+					std::chrono::duration<double> default_time = std::chrono::system_clock::now() - system_start_time_point;
+					printf( "System Time : %20.3f \n", default_time.count() );
 
 					if( _kbhit() )
 					{
