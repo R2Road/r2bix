@@ -583,6 +583,79 @@ namespace miniaudio_test
 
 
 
+	r2cm::iItem::TitleFuncT Sound_Time::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Sound : Time";
+		};
+	}
+	r2cm::iItem::DoFuncT Sound_Time::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_engine engine );
+			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_sound sound );
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				PROCESS_SUB( ma_sound_set_looping( &sound, true ) );
+				PROCESS_SUB( ma_sound_start( &sound ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				DECLARATION_MAIN( ma_int64 sound_time = 0ll );
+				const auto system_start_time_point = std::chrono::system_clock::now();
+
+				std::cout << r2::linefeed;
+
+				const auto pivot_coord = r2utility::GetCursorPoint();
+				do
+				{
+					r2utility::SetCursorPoint( pivot_coord );
+
+					std::cout << "[AnyKey] End " << r2::linefeed2;
+
+					PROCESS_MAIN( sound_time = ma_sound_get_time_in_pcm_frames( &sound ) );
+					printf( "Engine Time : %20lld \n", sound_time );
+
+					std::chrono::duration<double> default_time = std::chrono::system_clock::now() - system_start_time_point;
+					printf( "System Time : %20.3f \n", default_time.count() );
+
+					if( _kbhit() )
+					{
+						break;
+					}
+				} while( true );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_sound_uninit( &sound ) );
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Sound_FadeIn::GetTitleFunction() const
 	{
 		return []()->const char*
