@@ -569,6 +569,99 @@ namespace miniaudio_test
 
 
 
+	r2cm::iItem::TitleFuncT Sound_FadeIn::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Sound : FadeIn";
+		};
+	}
+	r2cm::iItem::DoFuncT Sound_FadeIn::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_result result );
+			DECLARATION_SUB( ma_engine engine );
+			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
+			EXPECT_EQ( MA_SUCCESS, result );
+
+			std::cout << r2::split;
+
+			DECLARATION_MAIN( ma_sound sound );
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				EXPECT_EQ( MA_SUCCESS, result );
+
+				std::cout << r2::linefeed;
+
+				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				const auto pivot_coord = r2utility::GetCursorPoint();
+				float current_volume = ma_sound_get_volume( &sound );
+
+				bool bRun = true;
+				do
+				{
+					r2utility::SetCursorPoint( pivot_coord );
+
+					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
+					std::cout << "[1] Play" << r2::linefeed;
+					std::cout << "[2] Stop" << r2::linefeed;
+					std::cout << "[ESC] End " << r2::linefeed2;
+
+					switch( _getch() )
+					{
+					case '1':
+						PROCESS_MAIN( ma_sound_set_fade_in_milliseconds( &sound, 0, -1, 2000 ) );
+						PROCESS_MAIN( ma_sound_start( &sound ) );
+						break;
+					case '2':
+						PROCESS_MAIN( ma_sound_stop( &sound ) );
+						PROCESS_MAIN( ma_sound_seek_to_pcm_frame( &sound, 0 ) );
+						break;
+
+					case 27: // ESC
+						bRun = false;
+						r2utility::SetCursorPoint( { pivot_coord.x, pivot_coord.y + 7 } );
+						break;
+
+					default:
+						continue;
+					}
+				} while( bRun );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_MAIN( ma_sound_uninit( &sound ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Group_Init::GetTitleFunction() const
 	{
 		return []()->const char*
