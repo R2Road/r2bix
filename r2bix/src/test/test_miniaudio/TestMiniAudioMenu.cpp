@@ -22,6 +22,7 @@ r2cm::MenuUp TestMiniAudioMenu::Create( r2cm::Director& director )
 		ret->AddItem( '2', miniaudio_test::Engine_Config::GetInstance() );
 		ret->AddItem( '3', miniaudio_test::Engine_Volume::GetInstance() );
 		ret->AddItem( '4', miniaudio_test::Engine_PlaySound::GetInstance() );
+		ret->AddItem( '5', miniaudio_test::Engine_Time::GetInstance() );
 
 
 

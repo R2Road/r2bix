@@ -256,6 +256,73 @@ namespace miniaudio_test
 
 
 
+	r2cm::iItem::TitleFuncT Engine_Time::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Engine : Time";
+		};
+	}
+	r2cm::iItem::DoFuncT Engine_Time::GetDoFunction()
+	{
+		return []()->r2cm::eTestEndAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_engine engine );
+			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
+
+			std::cout << r2::split;
+
+			DECLARATION_SUB( ma_sound sound );
+
+			std::cout << r2::split;
+
+			{
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				PROCESS_SUB( ma_sound_set_looping( &sound, true ) );
+				PROCESS_SUB( ma_sound_start( &sound ) );
+			}
+
+			std::cout << r2::split;
+
+			{
+				const auto pivot_coord = r2utility::GetCursorPoint();
+				int64_t engine_time = 0ll;
+				do
+				{
+					r2utility::SetCursorPoint( pivot_coord );
+
+					PROCESS_MAIN( engine_time = ma_engine_get_time( &engine ) );
+					printf( "Engine Time : %20lld \n", engine_time );
+
+					if( _kbhit() )
+					{
+						if( _getch() )
+						{
+							break;
+						}
+					}
+				} while( true );
+			}
+
+			std::cout << r2::split;
+
+			{
+				PROCESS_SUB( ma_sound_uninit( &sound ) );
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2::split;
+
+			return r2cm::eTestEndAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT Sound_Init_Load::GetTitleFunction() const
 	{
 		return []()->const char*
