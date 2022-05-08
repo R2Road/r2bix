@@ -35,7 +35,7 @@ namespace miniaudio_test
 
 
 
-	class Sound_Load : public r2cm::iItem, public r2::SingleTon<Sound_Load>
+	class Sound_Init_Load : public r2cm::iItem, public r2::SingleTon<Sound_Init_Load>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

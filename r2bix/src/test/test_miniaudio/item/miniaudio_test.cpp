@@ -256,14 +256,14 @@ namespace miniaudio_test
 
 
 
-	r2cm::iItem::TitleFuncT Sound_Load::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Sound_Init_Load::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Sound : Load";
+			return "Sound : Init, Load";
 		};
 	}
-	r2cm::iItem::DoFuncT Sound_Load::GetDoFunction()
+	r2cm::iItem::DoFuncT Sound_Init_Load::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{

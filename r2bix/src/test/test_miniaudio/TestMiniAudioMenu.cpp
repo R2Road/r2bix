@@ -29,7 +29,7 @@ r2cm::MenuUp TestMiniAudioMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'q', miniaudio_test::Sound_Load::GetInstance() );
+		ret->AddItem( 'q', miniaudio_test::Sound_Init_Load::GetInstance() );
 		ret->AddItem( 'w', miniaudio_test::Sound_Play::GetInstance() );
 		ret->AddItem( 'e', miniaudio_test::Sound_Volume::GetInstance() );
 
