@@ -12,7 +12,7 @@ namespace miniaudio_test
 		DoFuncT GetDoFunction() override;
 	};
 
-	class EngineConfig : public r2cm::iItem, public r2::SingleTon<EngineConfig>
+	class Engine_Config : public r2cm::iItem, public r2::SingleTon<Engine_Config>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

@@ -55,14 +55,14 @@ namespace miniaudio_test
 
 
 
-	r2cm::iItem::TitleFuncT EngineConfig::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Engine_Config::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Engine Config";
+			return "Engine : Config";
 		};
 	}
-	r2cm::iItem::DoFuncT EngineConfig::GetDoFunction()
+	r2cm::iItem::DoFuncT Engine_Config::GetDoFunction()
 	{
 		return []()->r2cm::eTestEndAction
 		{
