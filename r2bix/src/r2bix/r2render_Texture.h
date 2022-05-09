@@ -3,6 +3,7 @@
 #include <string_view>
 #include <vector>
 
+#include "r2base_ColorValue.h"
 #include "r2render_iRenderTarget.h"
 
 #include "r2/r2_GridIndexConverter.h"
@@ -16,6 +17,8 @@ namespace r2render
 		using ValueT = char;
 		using ContainerT = std::vector<ValueT>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
+
+		using ColorContainerT = std::vector<r2base::ColorValue>;
 
 		explicit Texture( const std::string_view str );
 		explicit Texture( const uint32_t width, const std::string_view str );
@@ -63,5 +66,6 @@ namespace r2render
 	private:
 		r2::GridIndexConverter mGridIndexConverter;
 		ContainerT mChars;
+		ColorContainerT mColors;
 	};
 }
