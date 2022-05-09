@@ -45,6 +45,11 @@ namespace miniaudio_test
 			std::cout << r2::split;
 
 			{
+				EXPECT_TRUE( engine.ownsResourceManager );
+				EXPECT_TRUE( engine.ownsDevice );
+
+				std::cout << r2::linefeed;
+
 				OUTPUT_MAIN( ma_engine_get_channels( &engine ) );
 				OUTPUT_MAIN( ma_engine_get_sample_rate( &engine ) );
 				OUTPUT_MAIN( ma_engine_get_listener_count( &engine ) );
