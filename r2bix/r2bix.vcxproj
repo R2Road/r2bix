@@ -168,6 +168,7 @@
     <ClInclude Include="src\r2bix\r2base_Action.h" />
     <ClInclude Include="src\r2bix\r2base_Component.h" />
     <ClInclude Include="src\r2bix\r2base_ComponentStaticID.h" />
+    <ClInclude Include="src\r2bix\r2base_ColorValue.h" />
     <ClInclude Include="src\r2bix\r2base_CoutBufferRedirector.h" />
     <ClInclude Include="src\r2bix\r2base_DebugConfig.h" />
     <ClInclude Include="src\r2bix\r2base_Director.h" />
