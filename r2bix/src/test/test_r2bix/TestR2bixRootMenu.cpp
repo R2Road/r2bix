@@ -2,7 +2,7 @@
 #include "TestR2bixRootMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "test/test_r2bix/menu/ActionMenu.h"
 #include "test/test_r2bix/menu/CameraMenu.h"
@@ -35,10 +35,10 @@ r2cm::MenuUp TestR2bixRootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'3'
 			, []()->const char* { return InputMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( InputMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem( '4', rect_test::Basic::GetInstance() );
@@ -53,47 +53,47 @@ r2cm::MenuUp TestR2bixRootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			'q'
 			, []()->const char* { return TextureMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( TextureMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'w'
 			, []()->const char* { return CameraMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( CameraMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem( 'e', render_test::Basic::GetInstance() );
 		ret->AddItem(
 			'r'
 			, []()->const char* { return ComponentMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( ComponentMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			't'
 			, []()->const char* { return ActionMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( ActionMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'y'
 			, []()->const char* { return NodeMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( NodeMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 
@@ -110,10 +110,10 @@ r2cm::MenuUp TestR2bixRootMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return TestMainMenu::GetTitle(); }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( TestMainMenu::Create( director ) );
-				return r2cm::eTestEndAction::None;
+				return r2cm::eItemLeaveAction::None;
 			}
 		);
 	}

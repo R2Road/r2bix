@@ -3,8 +3,8 @@
 
 #include <conio.h>
 
-#include "r2/r2_Inspector.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "r2bix/r2action_AnimationRequestAction.h"
 #include "r2bix/r2action_BlinkAction.h"
@@ -42,7 +42,7 @@ namespace action_test
 	}
 	r2cm::iItem::DoFuncT TickActionTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -96,7 +96,7 @@ namespace action_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -111,7 +111,7 @@ namespace action_test
 	}
 	r2cm::iItem::DoFuncT DelayActionTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -172,7 +172,7 @@ namespace action_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -186,7 +186,7 @@ namespace action_test
 	}
 	r2cm::iItem::DoFuncT SequenceActionTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -258,7 +258,7 @@ namespace action_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -273,7 +273,7 @@ namespace action_test
 	}
 	r2cm::iItem::DoFuncT MoveByActionTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -345,7 +345,7 @@ namespace action_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -360,7 +360,7 @@ namespace action_test
 	}
 	r2cm::iItem::DoFuncT MoveToActionTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -432,7 +432,7 @@ namespace action_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -447,7 +447,7 @@ namespace action_test
 	}
 	r2cm::iItem::DoFuncT RepeatActionTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -533,7 +533,7 @@ namespace action_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -548,7 +548,7 @@ namespace action_test
 	}
 	r2cm::iItem::DoFuncT BlinkActionTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -626,7 +626,7 @@ namespace action_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -641,7 +641,7 @@ namespace action_test
 	}
 	r2cm::iItem::DoFuncT CallbackActionTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -688,7 +688,7 @@ namespace action_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -703,7 +703,7 @@ namespace action_test
 	}
 	r2cm::iItem::DoFuncT AnimationRequestActionTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -774,7 +774,7 @@ namespace action_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

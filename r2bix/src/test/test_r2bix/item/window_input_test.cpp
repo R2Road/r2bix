@@ -9,7 +9,7 @@
 
 #include "r2/r2_Rect_Int.h"
 #include "r2/r2_FPSTimer.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 #include "r2bix/r2utility_WindowUtil.h"
 
 namespace window_input_test
@@ -23,7 +23,7 @@ namespace window_input_test
 	}
 	r2cm::iItem::DoFuncT KeyStatus::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
@@ -65,7 +65,7 @@ namespace window_input_test
 				}
 			}
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -80,7 +80,7 @@ namespace window_input_test
 	}
 	r2cm::iItem::DoFuncT TestKeyboardInputCollector::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
 			std::cout << "[ESC] Exit" << r2::linefeed;
@@ -160,7 +160,7 @@ namespace window_input_test
 				}
 			}
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

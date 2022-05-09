@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "r2/r2_Point_Int.h"
 #include "r2/r2_Rect_Int.h"
@@ -22,7 +22,7 @@ namespace camera_test
 	}
 	r2cm::iItem::DoFuncT CameraPosition::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -48,7 +48,7 @@ namespace camera_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -63,7 +63,7 @@ namespace camera_test
 	}
 	r2cm::iItem::DoFuncT CameraRect::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -96,7 +96,7 @@ namespace camera_test
 
 			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -111,7 +111,7 @@ namespace camera_test
 	}
 	r2cm::iItem::DoFuncT CameraMove::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			r2render::Camera camera( { 20, 30 }, { 19, 9 } );
 
@@ -174,7 +174,7 @@ namespace camera_test
 
 			} while( true );
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 }

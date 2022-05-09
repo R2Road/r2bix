@@ -3,7 +3,7 @@
 
 #include <conio.h>
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace key_test
 {
@@ -16,7 +16,7 @@ namespace key_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 			std::cout << "[ESC] End" << r2::linefeed;
@@ -36,7 +36,7 @@ namespace key_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

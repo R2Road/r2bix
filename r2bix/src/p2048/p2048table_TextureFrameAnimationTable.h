@@ -1,11 +1,11 @@
 #pragma once
 
-#include "r2/r2_Singleton.h"
+#include "r2cm/r2cm_Singleton.h"
 #include "r2bix/r2base_TextureFrameAnimationTableBase.h"
 
 namespace p2048table
 {
-	class TextureFrameAnimationTable : public r2base::TextureFrameAnimationTableBase, public r2::SingleTon<TextureFrameAnimationTable>
+	class TextureFrameAnimationTable : public r2base::TextureFrameAnimationTableBase, public r2cm::SingleTon<TextureFrameAnimationTable>
 	{
 	public:
 		void Load() override;

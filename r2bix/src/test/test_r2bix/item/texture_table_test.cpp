@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "texture_table_test.h"
 
-#include "r2/r2_Inspector.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "test/test_r2bix/TextureTable4Test.h"
 #include "test/Utility4Test.h"
@@ -18,7 +18,7 @@ namespace texture_table_test
 	}
 	r2cm::iItem::DoFuncT TextureTable_1::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -36,7 +36,7 @@ namespace texture_table_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -51,7 +51,7 @@ namespace texture_table_test
 	}
 	r2cm::iItem::DoFuncT TextureTable_2::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -81,7 +81,7 @@ namespace texture_table_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -96,7 +96,7 @@ namespace texture_table_test
 	}
 	r2cm::iItem::DoFuncT TextureTable_3::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -140,7 +140,7 @@ namespace texture_table_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

@@ -4,7 +4,7 @@
 #include <conio.h> // _kbhit(), _getch()
 #include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
 
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "r2bix/r2render_Texture.h"
 
@@ -19,7 +19,7 @@ namespace visible_resource_research
 	}
 	r2cm::iItem::DoFuncT DrawWithPosition::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -55,7 +55,7 @@ namespace visible_resource_research
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

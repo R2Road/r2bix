@@ -3,8 +3,8 @@
 
 #include <conio.h>
 
-#include "r2/r2_Inspector.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "r2bix/r2action_TickAction.h"
 #include "r2bix/r2base_Director.h"
@@ -37,7 +37,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT ComponentID::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -77,7 +77,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -92,7 +92,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT Component_Add_Get::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -118,7 +118,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -133,7 +133,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT TextureRenderComponentTest_1::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -172,7 +172,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -187,7 +187,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT TextureRenderComponentTest_2::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -250,7 +250,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -265,7 +265,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT TextureRenderComponentTest_3::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -319,7 +319,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -334,7 +334,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT CustomTextureComponentTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -389,7 +389,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -404,7 +404,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT LabelComponentTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -463,7 +463,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -478,7 +478,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT TextureFrameRenderComponentTest_1::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -521,7 +521,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -536,7 +536,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT TextureFrameRenderComponentTest_2::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -602,7 +602,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -617,7 +617,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT TextureFrameAnimationComponentTest_1::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -687,7 +687,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -702,7 +702,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT TextureFrameAnimationComponentTest_2::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -772,7 +772,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -787,7 +787,7 @@ namespace component_test
 	}
 	r2cm::iItem::DoFuncT ActionProcessComponentTest::GetDoFunction()
 	{
-		return[]()->r2cm::eTestEndAction
+		return[]()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -844,7 +844,7 @@ namespace component_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

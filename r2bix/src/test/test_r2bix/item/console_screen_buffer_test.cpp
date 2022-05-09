@@ -3,8 +3,8 @@
 
 #include <Windows.h>
 
-#include "r2/r2_Inspector.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace console_screen_buffer_test
 {
@@ -17,7 +17,7 @@ namespace console_screen_buffer_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed2;
 
@@ -63,7 +63,7 @@ namespace console_screen_buffer_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

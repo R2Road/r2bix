@@ -3,9 +3,9 @@
 
 #include <algorithm>
 
-#include "r2/r2_Inspector.h"
+#include "r2cm/r2cm_Inspector.h"
 #include "r2/r2_Rect_Int.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 #include "r2bix/r2utility_WindowUtil.h"
 #include "test/Utility4Test.h"
 
@@ -20,7 +20,7 @@ namespace rect_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -49,7 +49,7 @@ namespace rect_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

@@ -5,8 +5,8 @@
 #include <conio.h>
 #include <iomanip>
 
-#include "r2/r2_Inspector.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_constant.h"
 
 #define MINIAUDIO_IMPLEMENTATION
 #include "miniaudio/miniaudio.h"
@@ -26,7 +26,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Engine_Init::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -50,9 +50,9 @@ namespace miniaudio_test
 
 				std::cout << r2::linefeed;
 
-				OUTPUT_MAIN( ma_engine_get_channels( &engine ) );
-				OUTPUT_MAIN( ma_engine_get_sample_rate( &engine ) );
-				OUTPUT_MAIN( ma_engine_get_listener_count( &engine ) );
+				OUTPUT_VALUE( ma_engine_get_channels( &engine ) );
+				OUTPUT_VALUE( ma_engine_get_sample_rate( &engine ) );
+				OUTPUT_VALUE( ma_engine_get_listener_count( &engine ) );
 			}
 
 			std::cout << r2::split;
@@ -63,7 +63,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -78,7 +78,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Engine_Config::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -93,15 +93,15 @@ namespace miniaudio_test
 			{
 				PROCESS_MAIN( engine_config = ma_engine_config_init() );
 				
-				OUTPUT_MAIN( engine_config.listenerCount );                    /* Must be between 1 and MA_ENGINE_MAX_LISTENERS. */
-				OUTPUT_MAIN( engine_config.channels );                         /* The number of channels to use when mixing and spatializing. When set to 0, will use the native channel count of the device. */
-				OUTPUT_MAIN( engine_config.sampleRate );                       /* The sample rate. When set to 0 will use the native channel count of the device. */
-				OUTPUT_MAIN( engine_config.periodSizeInFrames );               /* If set to something other than 0, updates will always be exactly this size. The underlying device may be a different size, but from the perspective of the mixer that won't matter.*/
-				OUTPUT_MAIN( engine_config.periodSizeInMilliseconds );         /* Used if periodSizeInFrames is unset. */
-				OUTPUT_MAIN( engine_config.gainSmoothTimeInFrames );           /* The number of frames to interpolate the gain of spatialized sounds across. If set to 0, will use gainSmoothTimeInMilliseconds. */
-				OUTPUT_MAIN( engine_config.gainSmoothTimeInMilliseconds );     /* When set to 0, gainSmoothTimeInFrames will be used. If both are set to 0, a default value will be used. */
-				OUTPUT_MAIN( engine_config.noAutoStart );                      /* When set to true, requires an explicit call to ma_engine_start(). This is false by default, meaning the engine will be started automatically in ma_engine_init(). */
-				OUTPUT_MAIN( engine_config.noDevice );
+				OUTPUT_VALUE( engine_config.listenerCount );                    /* Must be between 1 and MA_ENGINE_MAX_LISTENERS. */
+				OUTPUT_VALUE( engine_config.channels );                         /* The number of channels to use when mixing and spatializing. When set to 0, will use the native channel count of the device. */
+				OUTPUT_VALUE( engine_config.sampleRate );                       /* The sample rate. When set to 0 will use the native channel count of the device. */
+				OUTPUT_VALUE( engine_config.periodSizeInFrames );               /* If set to something other than 0, updates will always be exactly this size. The underlying device may be a different size, but from the perspective of the mixer that won't matter.*/
+				OUTPUT_VALUE( engine_config.periodSizeInMilliseconds );         /* Used if periodSizeInFrames is unset. */
+				OUTPUT_VALUE( engine_config.gainSmoothTimeInFrames );           /* The number of frames to interpolate the gain of spatialized sounds across. If set to 0, will use gainSmoothTimeInMilliseconds. */
+				OUTPUT_VALUE( engine_config.gainSmoothTimeInMilliseconds );     /* When set to 0, gainSmoothTimeInFrames will be used. If both are set to 0, a default value will be used. */
+				OUTPUT_VALUE( engine_config.noAutoStart );                      /* When set to true, requires an explicit call to ma_engine_start(). This is false by default, meaning the engine will be started automatically in ma_engine_init(). */
+				OUTPUT_VALUE( engine_config.noDevice );
 			}
 
 			std::cout << r2::split;
@@ -119,7 +119,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -134,7 +134,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Engine_Volume::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -215,7 +215,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -230,7 +230,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Engine_PlaySound::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -264,7 +264,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -279,7 +279,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Engine_Time::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -302,7 +302,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			OUTPUT_MAIN( ma_engine_get_sample_rate( &engine ) );
+			OUTPUT_VALUE( ma_engine_get_sample_rate( &engine ) );
 
 			std::cout << r2::split;
 
@@ -336,7 +336,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -351,7 +351,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Sound_Init_Load::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -398,7 +398,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -413,7 +413,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Sound_Play::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -486,7 +486,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -501,7 +501,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Sound_Volume::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -582,7 +582,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -597,7 +597,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Sound_Time::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -655,7 +655,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -670,7 +670,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Sound_FadeIn::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -748,7 +748,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -763,7 +763,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Group_Init::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -794,7 +794,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -809,7 +809,7 @@ namespace miniaudio_test
 	}
 	r2cm::iItem::DoFuncT Group_Volume::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -899,7 +899,7 @@ namespace miniaudio_test
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

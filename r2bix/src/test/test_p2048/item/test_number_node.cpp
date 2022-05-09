@@ -4,8 +4,8 @@
 #include <algorithm>	
 
 #include "r2bix/r2base_Director.h"
-#include "r2/r2_Inspector.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_constant.h"
 #include "r2bix/r2render_Camera.h"
 #include "r2bix/r2render_Texture.h"
 
@@ -26,7 +26,7 @@ namespace test_number_node
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -78,7 +78,7 @@ namespace test_number_node
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

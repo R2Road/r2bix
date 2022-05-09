@@ -104,12 +104,6 @@
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp">
       <Filter>project_mini_rogue</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2\r2_FPSTimer.cpp">
       <Filter>r2</Filter>
     </ClCompile>
@@ -408,6 +402,15 @@
     <ClCompile Include="src\r2bix\r2utility_FileUtil.cpp">
       <Filter>r2bix\utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
@@ -428,24 +431,6 @@
     </ClInclude>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
       <Filter>project_mini_rogue</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_Inspector.h">
-      <Filter>r2</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Director.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_eTestEndAction.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_iItem.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Menu.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2\r2_Singleton.h">
-      <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\r2\r2_FPSTimer.h">
       <Filter>r2</Filter>
@@ -771,6 +756,24 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2utility_FileUtil.h">
       <Filter>r2bix\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_constant.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Director.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_iItem.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Inspector.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Menu.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Singleton.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

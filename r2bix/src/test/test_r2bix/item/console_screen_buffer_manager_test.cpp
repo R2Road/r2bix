@@ -4,8 +4,8 @@
 #include <conio.h>
 
 #include "r2bix/r2base_ScreenBufferManager.h"
-#include "r2/r2_Inspector.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_constant.h"
 
 namespace console_screen_buffer_manager_test
 {
@@ -18,7 +18,7 @@ namespace console_screen_buffer_manager_test
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -50,7 +50,7 @@ namespace console_screen_buffer_manager_test
 				} while( true );
 			}
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }
