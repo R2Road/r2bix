@@ -64,6 +64,16 @@ namespace r2render
 		return temp.substr( mGridIndexConverter.To_Linear( 0, y ), mGridIndexConverter.GetWidth() );
 	}
 
+	r2base::ColorValue Texture::GetColor( const uint32_t x, const uint32_t y ) const
+	{
+		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
+		return mColors[target_linear_index];
+	}
+	const r2base::ColorValue* Texture::GetColorLine( const uint32_t y ) const
+	{
+		return &mColors[mGridIndexConverter.To_Linear( 0, y )];
+	}
+
 	void Texture::Reset( const std::string_view str )
 	{
 		assert( 0u < str.length() );

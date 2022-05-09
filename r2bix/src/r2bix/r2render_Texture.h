@@ -49,6 +49,9 @@ namespace r2render
 		ValueT Get( const uint32_t x, const uint32_t y ) const;
 		std::string_view GetLine( const uint32_t y ) const;
 
+		r2base::ColorValue GetColor( const uint32_t x, const uint32_t y ) const;
+		const r2base::ColorValue* GetColorLine( const uint32_t y ) const;
+
 		//
 		//
 		//
