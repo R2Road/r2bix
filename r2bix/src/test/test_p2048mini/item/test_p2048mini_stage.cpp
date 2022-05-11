@@ -111,11 +111,11 @@ namespace test_p2048mini_stage
 
 				std::cout << r2cm::linefeed;
 
-				const auto pivot_coord = r2utility::GetCursorPoint();
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
-					r2utility::MoveCursorPoint( pivot_coord );
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
 
@@ -236,11 +236,11 @@ namespace test_p2048mini_stage
 
 
 			{
-				const auto pivot_coord = r2utility::GetCursorPoint();
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
-					r2utility::MoveCursorPoint( pivot_coord );
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
 

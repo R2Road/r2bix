@@ -660,10 +660,10 @@ namespace component_test
 			std::cout << r2cm::split;
 
 			{
-				const auto current_cursor_point = r2utility::GetCursorPoint();
+				const auto current_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				while( true )
 				{
-					r2utility::MoveCursorPoint( current_cursor_point );
+					r2cm::WindowUtility::MoveCursorPoint( current_cursor_point );
 
 					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
@@ -745,10 +745,10 @@ namespace component_test
 			std::cout << r2cm::split;
 
 			{
-				const auto current_cursor_point = r2utility::GetCursorPoint();
+				const auto current_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				while( true )
 				{
-					r2utility::MoveCursorPoint( current_cursor_point );
+					r2cm::WindowUtility::MoveCursorPoint( current_cursor_point );
 
 					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );

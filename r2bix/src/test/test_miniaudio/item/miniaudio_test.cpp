@@ -167,13 +167,13 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				const auto pivot_coord = r2utility::GetCursorPoint();
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				float current_volume = 1.f;
 
 				bool bRun = true;
 				do
 				{
-					r2utility::MoveCursorPoint( pivot_coord );
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2cm::linefeed;
 					std::cout << "[1, 2] Volume Change " << r2cm::linefeed;
@@ -192,7 +192,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2utility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
+						r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
 						break;
 
 					default:
@@ -307,12 +307,12 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				const auto pivot_coord = r2utility::GetCursorPoint();
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				int64_t engine_time = 0ll;
 				const auto system_start_time_point = std::chrono::system_clock::now();
 				do
 				{
-					r2utility::MoveCursorPoint( pivot_coord );
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
 					PROCESS_MAIN( engine_time = ma_engine_get_time( &engine ) );
 					printf( "Engine Time : %20lld \n", engine_time );
@@ -442,11 +442,11 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				const auto pivot_coord = r2utility::GetCursorPoint();
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
-					r2utility::MoveCursorPoint( pivot_coord );
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "[1] Play" << r2cm::linefeed;
 					std::cout << "[2] Stop" << r2cm::linefeed;
@@ -463,7 +463,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2utility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 5 } );
+						r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 5 } );
 						break;
 
 					default:
@@ -534,13 +534,13 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				const auto pivot_coord = r2utility::GetCursorPoint();
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				float current_volume = ma_sound_get_volume( &sound );
 
 				bool bRun = true;
 				do
 				{
-					r2utility::MoveCursorPoint( pivot_coord );
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2cm::linefeed;
 					std::cout << "[1, 2] Volume Change " << r2cm::linefeed;
@@ -559,7 +559,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2utility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
+						r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
 						break;
 
 					default:
@@ -626,10 +626,10 @@ namespace miniaudio_test
 
 				std::cout << r2cm::linefeed;
 
-				const auto pivot_coord = r2utility::GetCursorPoint();
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				do
 				{
-					r2utility::MoveCursorPoint( pivot_coord );
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "[AnyKey] End " << r2cm::linefeed2;
 
@@ -699,13 +699,13 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				const auto pivot_coord = r2utility::GetCursorPoint();
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				float current_volume = ma_sound_get_volume( &sound );
 
 				bool bRun = true;
 				do
 				{
-					r2utility::MoveCursorPoint( pivot_coord );
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2cm::linefeed;
 					std::cout << "[1] Play" << r2cm::linefeed;
@@ -725,7 +725,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2utility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 7 } );
+						r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 7 } );
 						break;
 
 					default:
@@ -849,13 +849,13 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				const auto pivot_coord = r2utility::GetCursorPoint();
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				float current_volume = 1.f;
 
 				bool bRun = true;
 				do
 				{
-					r2utility::MoveCursorPoint( pivot_coord );
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2cm::linefeed;
 					std::cout << "[1, 2] Volume Change " << r2cm::linefeed;
@@ -874,7 +874,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2utility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
+						r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
 						break;
 
 					default:

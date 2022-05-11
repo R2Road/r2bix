@@ -14,17 +14,17 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2utility::ChangeWindowTitle( L"r2bix" );
+	r2cm::WindowUtility::ChangeTitle( L"r2bix" );
 
 	//
 	// Environment : Size
 	//
-	r2utility::ResizeWindow( 960, 960 );
+	r2cm::WindowUtility::Resize( 960, 960 );
 
 	//
 	// Environment : Position
 	//
-	r2utility::MoveWindow( 0, 0 );
+	r2cm::WindowUtility::Move( 0, 0 );
 
 	//
 	// Setup
