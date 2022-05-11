@@ -41,7 +41,7 @@ namespace rect_test
 				Utility4Test::DrawRect( offset_y, rect_2, '2' );
 				Utility4Test::DrawRect( offset_y, rect_3, '3' );
 
-				r2utility::SetCursorPoint( {
+				r2utility::MoveCursorPoint( {
 					0
 					, static_cast<short>( offset_y + std::max( { rect_1.GetMaxY(), rect_2.GetMaxY(), rect_3.GetMaxY() } ) + 1 )
 				} );

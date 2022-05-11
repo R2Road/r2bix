@@ -519,7 +519,7 @@ namespace action_test
 				const auto cursor_point = r2utility::GetCursorPoint();
 				while( true )
 				{
-					r2utility::SetCursorPoint( cursor_point );
+					r2utility::MoveCursorPoint( cursor_point );
 
 					PROCESS_MAIN( component->Update( 0.0005f ) );
 					std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
@@ -612,7 +612,7 @@ namespace action_test
 				const auto cursor_point = r2utility::GetCursorPoint();
 				while( true )
 				{
-					r2utility::SetCursorPoint( cursor_point );
+					r2utility::MoveCursorPoint( cursor_point );
 
 					PROCESS_MAIN( component->Update( 0.0001f ) );
 					std::cout << "Visible : " << node->IsVisible() << r2cm::linefeed;
@@ -755,7 +755,7 @@ namespace action_test
 				const auto cursor_point = r2utility::GetCursorPoint();
 				while( true )
 				{
-					r2utility::SetCursorPoint( cursor_point );
+					r2utility::MoveCursorPoint( cursor_point );
 
 					PROCESS_MAIN( node->Update( 0.001f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );

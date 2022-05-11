@@ -115,7 +115,7 @@ namespace test_p2048mini_stage
 				bool bRun = true;
 				do
 				{
-					r2utility::SetCursorPoint( pivot_coord );
+					r2utility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
 
@@ -240,7 +240,7 @@ namespace test_p2048mini_stage
 				bool bRun = true;
 				do
 				{
-					r2utility::SetCursorPoint( pivot_coord );
+					r2utility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
 

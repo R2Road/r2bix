@@ -663,7 +663,7 @@ namespace component_test
 				const auto current_cursor_point = r2utility::GetCursorPoint();
 				while( true )
 				{
-					r2utility::SetCursorPoint( current_cursor_point );
+					r2utility::MoveCursorPoint( current_cursor_point );
 
 					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
@@ -748,7 +748,7 @@ namespace component_test
 				const auto current_cursor_point = r2utility::GetCursorPoint();
 				while( true )
 				{
-					r2utility::SetCursorPoint( current_cursor_point );
+					r2utility::MoveCursorPoint( current_cursor_point );
 
 					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
