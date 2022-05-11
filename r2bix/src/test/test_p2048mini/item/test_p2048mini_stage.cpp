@@ -11,7 +11,7 @@
 #include "p2048mini/p2048mini_GameProcessor.h"
 #include "p2048mini/p2048mini_Stage.h"
 
-#include "r2bix/r2utility_WindowUtil.h"
+#include "r2cm/r2utility_WindowUtil.h"
 
 void PrintStage( const p2048mini::Stage& stage )
 {

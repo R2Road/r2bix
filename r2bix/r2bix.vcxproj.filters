@@ -390,9 +390,6 @@
     <ClCompile Include="src\r2bix\r2utility_StringBuilder.cpp">
       <Filter>r2bix\utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2utility_WindowUtil.cpp">
-      <Filter>r2bix\utility</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_miniaudio\TestMiniAudioMenu.cpp">
       <Filter>test\test_miniaudio</Filter>
     </ClCompile>
@@ -409,6 +406,12 @@
       <Filter>r2cm</Filter>
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\color_value_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2utility_WindowUtil.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
   </ItemGroup>
@@ -736,9 +739,6 @@
     <ClInclude Include="src\r2bix\r2utility_StringBuilder.h">
       <Filter>r2bix\utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2utility_WindowUtil.h">
-      <Filter>r2bix\utility</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2\r2_Assert.h">
       <Filter>r2</Filter>
     </ClInclude>
@@ -777,6 +777,12 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2base_ColorValue.h">
       <Filter>r2bix\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\color_value_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2utility_WindowUtil.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

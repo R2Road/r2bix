@@ -29,7 +29,7 @@
 #include "test/test_r2bix/TextureTable4Test.h"
 #include "test/Utility4Test.h"
 
-#include "r2bix/r2utility_WindowUtil.h"
+#include "r2cm/r2utility_WindowUtil.h"
 
 namespace action_test
 {
