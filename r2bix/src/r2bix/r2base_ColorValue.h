@@ -44,9 +44,9 @@ namespace r2base
 
 	union ColorValue
 	{
-		unsigned short total_color = eForegroundColor::FG_Aqua | eBackgroundColor::BG_Gray;
-
 		unsigned char foreground_color;
 		unsigned char background_color;
+
+		unsigned short total_color = eForegroundColor::FG_Aqua | eBackgroundColor::BG_Gray;
 	};
 }
