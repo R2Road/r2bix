@@ -19,7 +19,7 @@
 #include "r2bix/r2render_Camera.h"
 #include "r2bix/r2render_Texture.h"
 #include "r2bix/r2render_TextureFrame.h"
-#include "r2cm/r2utility_WindowUtil.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "test/test_r2bix/TextureFrameAnimationTable4Test.h"
 #include "test/test_r2bix/TextureTable4Test.h"

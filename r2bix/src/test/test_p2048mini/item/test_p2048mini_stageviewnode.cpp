@@ -12,7 +12,7 @@
 #include "p2048mini/p2048minitable_TextureTable.h"
 
 #include "test/Utility4Test.h"
-#include "r2cm/r2utility_WindowUtil.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 namespace test_p2048mini_stageviewnode
 {
