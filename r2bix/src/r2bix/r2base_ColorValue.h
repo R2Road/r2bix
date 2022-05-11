@@ -2,7 +2,7 @@
 
 namespace r2base
 {
-	enum eForegroundColor
+	enum eForegroundColor : unsigned char
 	{
 		FG_Black = 0,
 		FG_Blue,
@@ -22,7 +22,7 @@ namespace r2base
 		FG_BrightWhite,
 	};
 
-	enum eBackgroundColor
+	enum eBackgroundColor : unsigned char
 	{
 		BG_Black = 16,
 		BG_Blue,
