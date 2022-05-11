@@ -40,29 +40,29 @@ namespace texture_frame_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2render::Texture& texture = GetDummyTexture() );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			Utility4Test::DrawTexture( texture );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			Utility4Test::DrawTextureFrame( frame );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			EXPECT_EQ( texture.Get( 0, 0 ), frame.Get( 0, 0 ) );
 			EXPECT_EQ( '1', frame.Get( 0, 0 ) );
@@ -70,7 +70,7 @@ namespace texture_frame_test
 			EXPECT_EQ( texture.Get( 6, 6 ), frame.Get( 6, 6 ) );
 			EXPECT_EQ( '7', frame.Get( 6, 6 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -89,14 +89,14 @@ namespace texture_frame_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2render::Texture& texture = GetDummyTexture() );
 			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			{
 				std::size_t cur_x = 0;
@@ -108,39 +108,39 @@ namespace texture_frame_test
 					if( texture.GetWidth() <= cur_x )
 					{
 						cur_x = 0u;
-						std::cout << r2::linefeed;
+						std::cout << r2cm::linefeed;
 					}
 				}
 				if( 0u != cur_x )
 				{
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( frame.MoveVisibleOrigin( 2, 1 ) );
 				PROCESS_MAIN( frame.ChangeVisibleSize( -3, -1 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( texture.Get( frame.GetMinX(), frame.GetMinY() ), frame.Get( 0, 0 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTextureFrame( frame );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -159,13 +159,13 @@ namespace texture_frame_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2render::Texture& texture = GetDummyTexture() );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			{
 				std::size_t cur_x = 0;
@@ -177,61 +177,61 @@ namespace texture_frame_test
 					if( texture.GetWidth() <= cur_x )
 					{
 						cur_x = 0u;
-						std::cout << r2::linefeed;
+						std::cout << r2cm::linefeed;
 					}
 				}
 				if( 0u != cur_x )
 				{
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			{
 				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( frame.MoveVisibleOrigin( -3, -3 ) );
 				PROCESS_MAIN( frame.ChangeVisibleSize( -1, -1 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( '1', frame.Get( 0, 0 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTextureFrame( frame );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( frame.MoveVisibleOrigin( 6, 6 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( '4', frame.Get( 0, 0 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTextureFrame( frame );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

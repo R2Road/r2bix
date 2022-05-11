@@ -28,40 +28,40 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ma_result result );
 			DECLARATION_MAIN( ma_engine engine );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( result = ma_engine_init( nullptr, &engine ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_TRUE( engine.ownsResourceManager );
 				EXPECT_TRUE( engine.ownsDevice );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				OUTPUT_VALUE( ma_engine_get_channels( &engine ) );
 				OUTPUT_VALUE( ma_engine_get_sample_rate( &engine ) );
 				OUTPUT_VALUE( ma_engine_get_listener_count( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -80,15 +80,15 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ma_result result );
 			DECLARATION_MAIN( ma_engine engine );
 			DECLARATION_MAIN( ma_engine_config engine_config );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( engine_config = ma_engine_config_init() );
@@ -104,20 +104,20 @@ namespace miniaudio_test
 				OUTPUT_VALUE( engine_config.noDevice );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( result = ma_engine_init( &engine_config, &engine ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -136,35 +136,35 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( ma_sound_start( &sound ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const auto pivot_coord = r2utility::GetCursorPoint();
@@ -175,9 +175,9 @@ namespace miniaudio_test
 				{
 					r2utility::SetCursorPoint( pivot_coord );
 
-					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
-					std::cout << "[1, 2] Volume Change " << r2::linefeed;
-					std::cout << "[ESC] End " << r2::linefeed2;
+					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2cm::linefeed;
+					std::cout << "[1, 2] Volume Change " << r2cm::linefeed;
+					std::cout << "[ESC] End " << r2cm::linefeed2;
 
 					switch( _getch() )
 					{
@@ -201,19 +201,19 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -232,37 +232,37 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine )
 				EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ fire and forget" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ fire and forget" << r2cm::linefeed2;
 
 				PROCESS_MAIN( result = ma_engine_play_sound( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), nullptr ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << "[Any Key] End " << r2::linefeed2;
+				std::cout << "[Any Key] End " << r2cm::linefeed2;
 				_getch();
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -281,18 +281,18 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_engine engine );
 			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_sound sound );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
@@ -300,11 +300,11 @@ namespace miniaudio_test
 				PROCESS_SUB( ma_sound_start( &sound ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			OUTPUT_VALUE( ma_engine_get_sample_rate( &engine ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const auto pivot_coord = r2utility::GetCursorPoint();
@@ -327,14 +327,14 @@ namespace miniaudio_test
 				} while( true );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_sound_uninit( &sound ) );
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -353,50 +353,50 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ 파일 없다." << r2::linefeed2;
+				std::cout << r2cm::tab << "+ 파일 없다." << r2cm::linefeed2;
 
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, "", 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_DOES_NOT_EXIST, result );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ 파일 있다." << r2::linefeed2;
+				std::cout << r2cm::tab << "+ 파일 있다." << r2cm::linefeed2;
 
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeSFXPath( "test_sfx_01.wav" ).c_str() , 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -415,31 +415,31 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const auto pivot_coord = r2utility::GetCursorPoint();
@@ -448,9 +448,9 @@ namespace miniaudio_test
 				{
 					r2utility::SetCursorPoint( pivot_coord );
 
-					std::cout << "[1] Play" << r2::linefeed;
-					std::cout << "[2] Stop" << r2::linefeed;
-					std::cout << "[ESC] End " << r2::linefeed2;
+					std::cout << "[1] Play" << r2cm::linefeed;
+					std::cout << "[2] Stop" << r2cm::linefeed;
+					std::cout << "[ESC] End " << r2cm::linefeed2;
 
 					switch( _getch() )
 					{
@@ -472,19 +472,19 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -503,35 +503,35 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( ma_sound_start( &sound ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const auto pivot_coord = r2utility::GetCursorPoint();
@@ -542,9 +542,9 @@ namespace miniaudio_test
 				{
 					r2utility::SetCursorPoint( pivot_coord );
 
-					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
-					std::cout << "[1, 2] Volume Change " << r2::linefeed;
-					std::cout << "[ESC] End " << r2::linefeed2;
+					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2cm::linefeed;
+					std::cout << "[1, 2] Volume Change " << r2cm::linefeed;
+					std::cout << "[ESC] End " << r2cm::linefeed2;
 
 					switch( _getch() )
 					{
@@ -568,19 +568,19 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -599,18 +599,18 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_engine engine );
 			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_sound sound );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
@@ -618,20 +618,20 @@ namespace miniaudio_test
 				PROCESS_SUB( ma_sound_start( &sound ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( ma_int64 sound_time = 0ll );
 				const auto system_start_time_point = std::chrono::system_clock::now();
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				const auto pivot_coord = r2utility::GetCursorPoint();
 				do
 				{
 					r2utility::SetCursorPoint( pivot_coord );
 
-					std::cout << "[AnyKey] End " << r2::linefeed2;
+					std::cout << "[AnyKey] End " << r2cm::linefeed2;
 
 					PROCESS_MAIN( sound_time = ma_sound_get_time_in_pcm_frames( &sound ) );
 					printf( "Engine Time : %20lld \n", sound_time );
@@ -646,14 +646,14 @@ namespace miniaudio_test
 				} while( true );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_sound_uninit( &sound ) );
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -672,31 +672,31 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const auto pivot_coord = r2utility::GetCursorPoint();
@@ -707,10 +707,10 @@ namespace miniaudio_test
 				{
 					r2utility::SetCursorPoint( pivot_coord );
 
-					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
-					std::cout << "[1] Play" << r2::linefeed;
-					std::cout << "[2] Stop" << r2::linefeed;
-					std::cout << "[ESC] End " << r2::linefeed2;
+					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2cm::linefeed;
+					std::cout << "[1] Play" << r2cm::linefeed;
+					std::cout << "[2] Stop" << r2cm::linefeed;
+					std::cout << "[ESC] End " << r2cm::linefeed2;
 
 					switch( _getch() )
 					{
@@ -734,19 +734,19 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -765,34 +765,34 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_engine engine );
 			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( ma_sound_group sound_group );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( MA_SUCCESS, ma_sound_group_init( &engine, 0, nullptr, &sound_group ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( ma_sound_group_uninit( &sound_group ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -811,34 +811,34 @@ namespace miniaudio_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( ma_sound sound_1 );
 			DECLARATION_MAIN( ma_sound sound_2 );
 			DECLARATION_MAIN( ma_sound_group sound_group );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_EQ( MA_SUCCESS, ma_sound_group_init( &engine, 0, nullptr, &sound_group ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, &sound_group, NULL, &sound_1 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_1, 0.1f ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound_1, true ) );
 				PROCESS_SUB( ma_sound_start( &sound_1 ) );
 				
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 				
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_2, 1.0f ) );
@@ -846,7 +846,7 @@ namespace miniaudio_test
 				PROCESS_SUB( ma_sound_start( &sound_2 ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const auto pivot_coord = r2utility::GetCursorPoint();
@@ -857,9 +857,9 @@ namespace miniaudio_test
 				{
 					r2utility::SetCursorPoint( pivot_coord );
 
-					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2::linefeed;
-					std::cout << "[1, 2] Volume Change " << r2::linefeed;
-					std::cout << "[ESC] End " << r2::linefeed2;
+					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2cm::linefeed;
+					std::cout << "[1, 2] Volume Change " << r2cm::linefeed;
+					std::cout << "[ESC] End " << r2cm::linefeed2;
 
 					switch( _getch() )
 					{
@@ -883,7 +883,7 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound_1 ) );
@@ -891,13 +891,13 @@ namespace miniaudio_test
 				PROCESS_MAIN( ma_sound_group_uninit( &sound_group ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

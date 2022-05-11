@@ -44,12 +44,12 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -57,44 +57,44 @@ namespace action_test
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_FALSE( component->HasAction() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( auto tick_action = r2action::TickAction::Create() );
 				PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( tick_action ) ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_TRUE( component->HasAction() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( component->StartAction() );
 				EXPECT_TRUE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.f ) );
 				EXPECT_FALSE( component->IsRunning() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -113,12 +113,12 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -126,51 +126,51 @@ namespace action_test
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_FALSE( component->HasAction() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( auto move_by_action = r2action::DelayAction::Create() );
 				PROCESS_MAIN( move_by_action->SetTimeLimit( 1.5f ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( move_by_action ) ) );
 				EXPECT_TRUE( component->HasAction() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( component->StartAction() );
 				EXPECT_TRUE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.1f ) );
 				EXPECT_FALSE( component->IsRunning() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -188,12 +188,12 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -201,62 +201,62 @@ namespace action_test
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_FALSE( component->HasAction() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				{
 					DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
 					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 				}
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				{
 					DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
 					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 				}
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( sequence_action ) ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_TRUE( component->HasAction() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( component->StartAction() );
 				EXPECT_TRUE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.f ) );
 				EXPECT_TRUE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.f ) );
 				EXPECT_FALSE( component->IsRunning() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -275,12 +275,12 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -288,62 +288,62 @@ namespace action_test
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 1, 2 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_FALSE( component->HasAction() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( auto move_by_action = r2action::MoveByAction::Create() );
 				PROCESS_MAIN( move_by_action->SetMoveAmount( { 5, 5 } ) );
 				PROCESS_MAIN( move_by_action->SetTimeLimit( 1.5f ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( move_by_action ) ) );
 				EXPECT_TRUE( component->HasAction() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_EQ( r2::PointInt( 1, 2 ), node->mTransformComponent->GetPosition() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->StartAction() );
 				EXPECT_TRUE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
-				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
-				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_FALSE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( r2::PointInt( 6, 7 ), node->mTransformComponent->GetPosition() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -362,12 +362,12 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -375,62 +375,62 @@ namespace action_test
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 1, 2 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_FALSE( component->HasAction() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( auto move_to_action = r2action::MoveToAction::Create() );
 				PROCESS_MAIN( move_to_action->SetEndPoint( { 5, 5 } ) );
 				PROCESS_MAIN( move_to_action->SetTimeLimit( 1.5f ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( move_to_action ) ) );
 				EXPECT_TRUE( component->HasAction() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_EQ( r2::PointInt( 1, 2 ), node->mTransformComponent->GetPosition() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->StartAction() );
 				EXPECT_TRUE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
-				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
-				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_FALSE( component->IsRunning() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( r2::PointInt( 5, 5 ), node->mTransformComponent->GetPosition() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -449,12 +449,12 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -462,59 +462,59 @@ namespace action_test
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( auto repeat_action = r2action::RepeatAction::Create() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
 				{
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 
 					DECLARATION_MAIN( auto move_by_action_1 = sequence_action->AddAction<r2action::MoveByAction>() );
 					PROCESS_MAIN( move_by_action_1->SetMoveAmount( { 5, 5 } ) );
 					PROCESS_MAIN( move_by_action_1->SetTimeLimit( 1.5f ) );
 
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 
 					DECLARATION_MAIN( auto delay_action_1 = sequence_action->AddAction<r2action::DelayAction>() );
 					PROCESS_MAIN( delay_action_1->SetTimeLimit( 1.5f ) );
 
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 
 					DECLARATION_MAIN( auto move_by_action_2 = sequence_action->AddAction<r2action::MoveByAction>() );
 					PROCESS_MAIN( move_by_action_2->SetMoveAmount( { -5, -5 } ) );
 					PROCESS_MAIN( move_by_action_2->SetTimeLimit( 1.5f ) );
 
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 
 					DECLARATION_MAIN( auto delay_action_2 = sequence_action->AddAction<r2action::DelayAction>() );
 					PROCESS_MAIN( delay_action_2->SetTimeLimit( 1.5f ) );
 				}
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( repeat_action->SetAction( std::move( sequence_action ) ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( repeat_action ) ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( component->StartAction() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				const auto cursor_point = r2utility::GetCursorPoint();
 				while( true )
@@ -522,7 +522,7 @@ namespace action_test
 					r2utility::SetCursorPoint( cursor_point );
 
 					PROCESS_MAIN( component->Update( 0.0005f ) );
-					std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2::linefeed;
+					std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
 
 					if( _kbhit() )
 					{
@@ -531,7 +531,7 @@ namespace action_test
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -550,12 +550,12 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -563,51 +563,51 @@ namespace action_test
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( auto repeat_action = r2action::RepeatAction::Create() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 				{
 					DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
 
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 
 					{
 						DECLARATION_MAIN( auto action = sequence_action->AddAction<r2action::BlinkAction>() );
 						PROCESS_MAIN( action->SetTimeLimit( 0.5f ) );
 					}
 
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 
 					{
 						DECLARATION_MAIN( auto action = sequence_action->AddAction<r2action::DelayAction>() );
 						PROCESS_MAIN( action->SetTimeLimit( 0.5f ) );
 					}
 
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 
 					PROCESS_MAIN( repeat_action->SetAction( std::move( sequence_action ) ) );
 				}
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( repeat_action ) ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( component->StartAction() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				const auto cursor_point = r2utility::GetCursorPoint();
 				while( true )
@@ -615,7 +615,7 @@ namespace action_test
 					r2utility::SetCursorPoint( cursor_point );
 
 					PROCESS_MAIN( component->Update( 0.0001f ) );
-					std::cout << "Visible : " << node->IsVisible() << r2::linefeed;
+					std::cout << "Visible : " << node->IsVisible() << r2cm::linefeed;
 
 					if( _kbhit() )
 					{
@@ -624,7 +624,7 @@ namespace action_test
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -643,12 +643,12 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -656,37 +656,37 @@ namespace action_test
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( auto repeat_action = r2action::CallbackAction::Create() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( repeat_action->SetCallback( []() { std::cout << "Call Test Callback" << r2::linefeed; } ) );
+				PROCESS_MAIN( repeat_action->SetCallback( []() { std::cout << "Call Test Callback" << r2cm::linefeed; } ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( repeat_action ) ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( component->StartAction() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.f ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -705,12 +705,12 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -718,7 +718,7 @@ namespace action_test
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 1 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( auto tfrc = node->AddComponent<r2component::TextureFrameRenderComponent>() );
@@ -727,30 +727,30 @@ namespace action_test
 				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( auto action = r2action::AnimationRequestAction::Create() );
 				PROCESS_MAIN( action->SetAnimationIndex( r2animation::eIndex::Run_1 ) );
 				PROCESS_MAIN( action->SetOrder( r2action::AnimationRequestAction::eOrder::PlayOnce ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->SetAction( std::move( action ) ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( component->StartAction() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				const auto cursor_point = r2utility::GetCursorPoint();
 				while( true )
@@ -760,8 +760,8 @@ namespace action_test
 					PROCESS_MAIN( node->Update( 0.001f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-					std::cout << "Action Process Running : " << node->GetComponent<r2component::ActionProcessComponent>()->IsRunning() << r2::linefeed;
-					std::cout << "Animation Running : " << node->GetComponent<r2component::TextureFrameAnimationComponent>()->IsRunning() << r2::linefeed2;
+					std::cout << "Action Process Running : " << node->GetComponent<r2component::ActionProcessComponent>()->IsRunning() << r2cm::linefeed;
+					std::cout << "Animation Running : " << node->GetComponent<r2component::TextureFrameAnimationComponent>()->IsRunning() << r2cm::linefeed2;
 
 					Utility4Test::DrawTexture( render_target );
 
@@ -772,7 +772,7 @@ namespace action_test
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

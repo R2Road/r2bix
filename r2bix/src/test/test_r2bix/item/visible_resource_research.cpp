@@ -21,18 +21,18 @@ namespace visible_resource_research
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			const r2render::Texture visible_resource( 10, 10, '0' );
 			COORD pos = { 10, 11 };
 
-			std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-			std::cout << r2::tab2 << "const r2render::Texture visible_resource( 10, 10, '0' );" << r2::linefeed;
-			std::cout << r2::tab2 << "COORD pos = { 10, 11 };" << r2::linefeed;
+			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+			std::cout << r2cm::tab2 << "const r2render::Texture visible_resource( 10, 10, '0' );" << r2cm::linefeed;
+			std::cout << r2cm::tab2 << "COORD pos = { 10, 11 };" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
@@ -53,7 +53,7 @@ namespace visible_resource_research
 				}
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

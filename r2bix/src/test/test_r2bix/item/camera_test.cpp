@@ -24,23 +24,23 @@ namespace camera_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			r2render::Camera camera( { 20, 30 }, { 20, 10 } );
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Show Camera Position" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Show Camera Position" << r2cm::linefeed2;
 
-				std::cout << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3 << r2::linefeed3;
+				std::cout << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3;
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
@@ -65,21 +65,21 @@ namespace camera_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			r2render::Camera camera( { 20, 30 }, { 20, 10 } );
 
 			{
-				std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-				std::cout << r2::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2::linefeed;
+				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Show Camera Rect" << r2cm::linefeed2;
 
 				for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() >= y; ++y )
 				{
@@ -119,19 +119,19 @@ namespace camera_test
 
 			do
 			{
-				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
 				{
-					std::cout << r2::tab << "+ Declaration" << r2::linefeed2;
-					std::cout << r2::tab2 << "r2render::Camera camera( { 20, 30 }, { 19, 9 } );" << r2::linefeed;
+					std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
+					std::cout << r2cm::tab2 << "r2render::Camera camera( { 20, 30 }, { 19, 9 } );" << r2cm::linefeed;
 				}
 
-				std::cout << r2::split;
+				std::cout << r2cm::split;
 
 				{
-					std::cout << r2::tab << "+ Show Camera Rect" << r2::linefeed2;
+					std::cout << r2cm::tab << "+ Show Camera Rect" << r2cm::linefeed2;
 
 					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() >= y; ++y )
 					{
@@ -148,8 +148,8 @@ namespace camera_test
 
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 40 } );
 
-				std::cout << "[ESC] Exit" << r2::linefeed;
-				std::cout << "[Any Key] Move Camera" << r2::linefeed2;
+				std::cout << "[ESC] Exit" << r2cm::linefeed;
+				std::cout << "[Any Key] Move Camera" << r2cm::linefeed2;
 
 				const int input = _getch();
 				if( 27 == input )

@@ -22,16 +22,16 @@ namespace rect_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2::RectInt rect_0( 0, 0, 1, 1 ) );
 			DECLARATION_MAIN( const r2::RectInt rect_1( 4, 4, 6, 6 ) );
 			DECLARATION_MAIN( const r2::RectInt rect_2( 6, 6, 6, 6 ) );
 			DECLARATION_MAIN( const auto rect_3 = rect_1.IntersectsWithRect( rect_2 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				const int offset_y = 11;
@@ -47,7 +47,7 @@ namespace rect_test
 				} );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

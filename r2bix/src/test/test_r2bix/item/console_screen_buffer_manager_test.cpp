@@ -20,20 +20,20 @@ namespace console_screen_buffer_manager_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2base::ScreenBufferManager screen_buffer_manager );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "[ESC] End" << r2::linefeed;
-				std::cout << r2::tab << "[Any Key] screen_buffer_manager.Swap();" << r2::linefeed;
+				std::cout << r2cm::tab << "[ESC] End" << r2cm::linefeed;
+				std::cout << r2cm::tab << "[Any Key] screen_buffer_manager.Swap();" << r2cm::linefeed;
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				int key_code = -1;

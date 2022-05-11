@@ -25,10 +25,10 @@ void PrintStage( const p2048mini::Stage& stage )
 			std::cout << std::setw( 2 ) << std::right << val;
 			std::cout << std::setw( 1 ) << std::left; // roll back
 
-			std::cout << r2::tab;
+			std::cout << r2cm::tab;
 		}
 
-		std::cout << r2::linefeed;
+		std::cout << r2cm::linefeed;
 	}
 }
 
@@ -45,21 +45,21 @@ namespace test_p2048mini_stage
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 6, 5 ) );
 			EXPECT_EQ( 6, stage.GetWidth() );
 			EXPECT_EQ( 5, stage.GetHeight() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( stage.Add( 2, 2, 64 ) );
@@ -67,7 +67,7 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 
 			{
@@ -76,7 +76,7 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -95,13 +95,13 @@ namespace test_p2048mini_stage
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( r2::Direction4 move_dir );
@@ -109,7 +109,7 @@ namespace test_p2048mini_stage
 				DECLARATION_MAIN( r2::PointInt pivot_point_1 );
 				DECLARATION_MAIN( r2::PointInt pivot_point_2 );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				const auto pivot_coord = r2utility::GetCursorPoint();
 				bool bRun = true;
@@ -117,7 +117,7 @@ namespace test_p2048mini_stage
 				{
 					r2utility::SetCursorPoint( pivot_coord );
 
-					std::cout << "Press [W, A, S, D]" << r2::linefeed2;
+					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
 
 					switch( _getch() )
 					{
@@ -142,7 +142,7 @@ namespace test_p2048mini_stage
 						continue;
 					}
 
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 
 					if( bRun )
 					{
@@ -152,13 +152,13 @@ namespace test_p2048mini_stage
 							PROCESS_MAIN( pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
 						}
 
-						std::cout << r2::linefeed;
+						std::cout << r2cm::linefeed;
 
 						{
 							PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetPoint().GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetPoint().GetY() ) ) );
 						}
 
-						std::cout << r2::linefeed;
+						std::cout << r2cm::linefeed;
 
 						stage.ClearAll();
 						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
@@ -166,7 +166,7 @@ namespace test_p2048mini_stage
 						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 7 ) );
 						PROCESS_MAIN( PrintStage( stage ) );
 
-						std::cout << r2::linefeed;
+						std::cout << r2cm::linefeed;
 
 						stage.ClearAll();
 
@@ -195,7 +195,7 @@ namespace test_p2048mini_stage
 				} while( bRun );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::None;
 		};
@@ -214,14 +214,14 @@ namespace test_p2048mini_stage
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( stage.Add( 0, 0, 1 ) );
@@ -232,7 +232,7 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 
 			{
@@ -242,7 +242,7 @@ namespace test_p2048mini_stage
 				{
 					r2utility::SetCursorPoint( pivot_coord );
 
-					std::cout << "Press [W, A, S, D]" << r2::linefeed2;
+					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
 
 					bool has_moved = false;
 					switch( _getch() )
@@ -268,15 +268,15 @@ namespace test_p2048mini_stage
 						continue;
 					}
 
-					std::cout << r2::linefeed;
+					std::cout << r2cm::linefeed;
 
 					PROCESS_MAIN( PrintStage( stage ) );
-					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2::linefeed;
+					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2cm::linefeed;
 
 				} while( bRun );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::None;
 		};
@@ -295,14 +295,14 @@ namespace test_p2048mini_stage
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 1 ) );
 			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				stage.Add( 0, 0, 2 );
@@ -311,38 +311,38 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 2, stage.GetNumber( 2, 0 ) );
 				EXPECT_EQ( 2, stage.GetNumber( 3, 0 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 2, game_processor.GetSum4Merged() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 4, stage.GetNumber( 3, 0 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 4, game_processor.GetSum4Merged() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( stage.Add( 0, 0, 4 ) );
@@ -350,22 +350,22 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( stage.Add( 2, 0, 4 ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 8, stage.GetNumber( 2, 0 ) );
 				EXPECT_EQ( 8, stage.GetNumber( 3, 0 ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( 16, game_processor.GetSum4Merged() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -384,68 +384,68 @@ namespace test_p2048mini_stage
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
 			EXPECT_EQ( 0, stage.GetCurrentNumberCount() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Add New" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Add New" << r2cm::linefeed2;
 
 				PROCESS_MAIN( stage.Add( 0, 0, 7 ) );
 				EXPECT_EQ( 1, stage.GetCurrentNumberCount() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
 				PROCESS_MAIN( stage.Add( 1, 0, 7 ) );
 				EXPECT_EQ( 3, stage.GetCurrentNumberCount() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Over Write" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Over Write" << r2cm::linefeed2;
 
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
 				EXPECT_EQ( 3, stage.GetCurrentNumberCount() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Remove" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Remove" << r2cm::linefeed2;
 
 				PROCESS_MAIN( stage.Remove( 0, 1 ) );
 				EXPECT_EQ( 2, stage.GetCurrentNumberCount() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
-				std::cout << r2::tab << "+ Full" << r2::linefeed2;
+				std::cout << r2cm::tab << "+ Full" << r2cm::linefeed2;
 
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
 				PROCESS_MAIN( stage.Add( 1, 1, 7 ) );
 				EXPECT_EQ( 4, stage.GetCurrentNumberCount() );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				EXPECT_TRUE( stage.IsFull() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( stage.Remove( 0, 1 ) );
 				EXPECT_FALSE( stage.IsFull() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -464,18 +464,18 @@ namespace test_p2048mini_stage
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
-			std::cout << r2::tab << "+ Node : 주변의 숫자가 0 이거나 같다면 이동 한다." << r2::linefeed;
+			std::cout << r2cm::tab << "+ Node : 주변의 숫자가 0 이거나 같다면 이동 한다." << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
 			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				stage.Add( 0, 0, 7 );
@@ -486,7 +486,7 @@ namespace test_p2048mini_stage
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -497,7 +497,7 @@ namespace test_p2048mini_stage
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -508,7 +508,7 @@ namespace test_p2048mini_stage
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -519,7 +519,7 @@ namespace test_p2048mini_stage
 				EXPECT_FALSE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -530,7 +530,7 @@ namespace test_p2048mini_stage
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

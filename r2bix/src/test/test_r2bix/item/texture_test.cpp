@@ -22,17 +22,17 @@ namespace texture_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2render::Texture texture( 30, 20, '0' ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			Utility4Test::DrawTexture( texture );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -51,9 +51,9 @@ namespace texture_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2render::Texture texture( 30, 20 ) );
 			PROCESS_MAIN( texture.Fill( 0, 0, '0' ) );
@@ -61,11 +61,11 @@ namespace texture_test
 			PROCESS_MAIN( texture.Fill( texture.GetXEnd(), texture.GetYEnd(), '0' ) );
 			PROCESS_MAIN( texture.Fill( 0, texture.GetYEnd(), '0' ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			Utility4Test::DrawTexture( texture );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -84,17 +84,17 @@ namespace texture_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2render::Texture texture( "Init With Chars" ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			Utility4Test::DrawTexture( texture );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -113,17 +113,17 @@ namespace texture_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggghh" ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			Utility4Test::DrawTexture( texture );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -142,29 +142,29 @@ namespace texture_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( const r2render::Texture texture( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( texture );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( const r2render::Texture texture( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( texture );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -183,17 +183,17 @@ namespace texture_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2render::Texture texture( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			Utility4Test::DrawTexture( texture );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

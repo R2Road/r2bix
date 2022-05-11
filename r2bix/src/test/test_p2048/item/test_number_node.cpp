@@ -28,55 +28,55 @@ namespace test_number_node
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2cm::linefeed;
 
 			p2048table::TextureTable::GetInstance().Load();
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 13, 5 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto number_node = p2048::NumberNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, number_node->GetComponent<r2component::TransformComponent>() );
 			EXPECT_NE( nullptr, number_node->GetComponent<p2048::NumberComponent>() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( number_node->GetComponent<p2048::NumberComponent>()->SetNumber( 8 ) );
 				PROCESS_MAIN( number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( number_node->GetComponent<p2048::NumberComponent>()->SetNumber( 2048 ) );
 				PROCESS_MAIN( number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

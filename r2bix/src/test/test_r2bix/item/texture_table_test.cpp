@@ -20,21 +20,21 @@ namespace texture_table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			Utility4Test::DrawTexture( *texture );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -53,33 +53,33 @@ namespace texture_table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( *texture );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( auto frame = TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTextureFrame( *frame );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -98,47 +98,47 @@ namespace texture_table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_TRUE( TextureTable4Test::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 				
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( *texture );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_FALSE( TextureTable4Test::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				EXPECT_TRUE( TextureTable4Test::GetInstance().RemoveTexture( "TextureTable_3" ) );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( *texture );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

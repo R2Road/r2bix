@@ -25,9 +25,9 @@ namespace window_input_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-			std::cout << "[ESC] Exit" << r2::linefeed;
-			std::cout << "[A] ..." << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << "[ESC] Exit" << r2cm::linefeed;
+			std::cout << "[A] ..." << r2cm::linefeed;
 
 			r2input::KeyboardInputCollector keyboard_input_collector;
 			r2input::KeyboardInputListener keyboard_input_listener( {
@@ -37,7 +37,7 @@ namespace window_input_test
 
 			keyboard_input_collector.AddListener( &keyboard_input_listener );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				auto last_input_status = keyboard_input_listener.Get( 1 );
@@ -60,7 +60,7 @@ namespace window_input_test
 					if( last_input_status != keyboard_input_listener.Get( 1 ) )
 					{
 						last_input_status = keyboard_input_listener.Get( 1 );
-						std::cout << "status : " << static_cast<int>( last_input_status ) << r2::linefeed;
+						std::cout << "status : " << static_cast<int>( last_input_status ) << r2cm::linefeed;
 					}
 				}
 			}
@@ -82,9 +82,9 @@ namespace window_input_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed2;
-			std::cout << "[ESC] Exit" << r2::linefeed;
-			std::cout << "[WASD] Move" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << "[ESC] Exit" << r2cm::linefeed;
+			std::cout << "[WASD] Move" << r2cm::linefeed;
 
 			r2input::KeyboardInputCollector keyboard_input_collector;
 			r2input::KeyboardInputListener keyboard_input_listener( {
@@ -97,7 +97,7 @@ namespace window_input_test
 
 			keyboard_input_collector.AddListener( &keyboard_input_listener );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				r2::FPSTimer fps_timer( 60u );
