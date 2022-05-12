@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "texture_test.h"
 
 #include "r2cm/r2cm_Inspector.h"

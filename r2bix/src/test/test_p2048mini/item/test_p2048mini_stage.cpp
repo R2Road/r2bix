@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "test_p2048mini_stage.h"
 
 #include <conio.h>

@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "TextureFrameAnimationTable4Test.h"
 
 #include <utility>

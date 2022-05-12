@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "console_screen_buffer_manager_test.h"
 
 #include <conio.h>

@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "pmr_CompanyScene.h"
 
 #include <conio.h>

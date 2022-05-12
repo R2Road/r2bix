@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "window_input_test.h"
 
 #include <algorithm>

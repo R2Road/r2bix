@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 
 #include <utility>

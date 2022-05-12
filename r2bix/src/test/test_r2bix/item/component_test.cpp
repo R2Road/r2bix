@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "component_test.h"
 
 #include <conio.h>

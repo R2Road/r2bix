@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "visible_resource_research.h"
 
 #include <conio.h> // _kbhit(), _getch()

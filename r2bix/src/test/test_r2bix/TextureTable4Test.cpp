@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "TextureTable4Test.h"
 
 #include "r2bix/r2render_Texture.h"

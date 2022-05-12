@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "console_screen_buffer_test.h"
 
 #include <Windows.h>

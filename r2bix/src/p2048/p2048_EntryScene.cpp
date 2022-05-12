@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "p2048_EntryScene.h"
 
 #include <cassert>

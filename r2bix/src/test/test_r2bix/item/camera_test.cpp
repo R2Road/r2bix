@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "camera_test.h"
 
 #include <conio.h>

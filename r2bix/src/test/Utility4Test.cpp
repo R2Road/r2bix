@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "Utility4Test.h"
 
 #include <Windows.h>

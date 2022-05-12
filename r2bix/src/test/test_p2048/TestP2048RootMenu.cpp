@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "TestP2048RootMenu.h"
 
 #include "r2cm/r2cm_Director.h"

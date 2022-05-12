@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "miniaudio_test.h"
 
 #include <chrono>

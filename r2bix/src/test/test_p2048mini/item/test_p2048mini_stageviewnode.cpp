@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "test_p2048mini_stageviewnode.h"
 
 #include "r2bix/r2base_Director.h"

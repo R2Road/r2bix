@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "rect_test.h"
 
 #include <algorithm>
