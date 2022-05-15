@@ -444,15 +444,15 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
+				std::cout << "[1] Play" << r2cm::linefeed;
+				std::cout << "[2] Stop" << r2cm::linefeed;
+				std::cout << "[ESC] End " << r2cm::linefeed2;
+
 				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
 					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
-
-					std::cout << "[1] Play" << r2cm::linefeed;
-					std::cout << "[2] Stop" << r2cm::linefeed;
-					std::cout << "[ESC] End " << r2cm::linefeed2;
 
 					switch( _getch() )
 					{
