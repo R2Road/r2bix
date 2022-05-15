@@ -46,7 +46,7 @@ namespace r2base
 
 	union ColorValue
 	{
-		unsigned short total_color = eForegroundColor::FG_Aqua | eBackgroundColor::BG_Black;
+		unsigned short total_color = eForegroundColor::FG_White | eBackgroundColor::BG_Black;
 	};
 	unsigned char GetForegroundColor( const ColorValue color_value );
 	unsigned char GetBackgroundColor( const ColorValue color_value );
