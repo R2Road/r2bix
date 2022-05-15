@@ -306,6 +306,8 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
+				std::cout << "[Any Key] End" << r2cm::linefeed2;
+
 				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
 				int64_t engine_time = 0ll;
 				const auto system_start_time_point = std::chrono::system_clock::now();
