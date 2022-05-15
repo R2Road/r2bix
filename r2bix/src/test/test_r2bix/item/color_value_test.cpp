@@ -31,7 +31,7 @@ namespace color_value_test
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_EQ( fore | back, color_value.total_color );
+				EXPECT_EQ( fore | back, color_value );
 				EXPECT_EQ( fore, r2base::GetForegroundColor( color_value ) );
 				EXPECT_EQ( back, r2base::GetBackgroundColor( color_value ) );
 			}

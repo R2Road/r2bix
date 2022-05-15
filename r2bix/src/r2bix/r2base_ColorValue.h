@@ -44,10 +44,9 @@ namespace r2base
 		BG_BrightWhite	= 15 << 4,
 	};
 
-	union ColorValue
-	{
-		unsigned short total_color = eForegroundColor::FG_White | eBackgroundColor::BG_Black;
-	};
+	using ColorValue = unsigned short;
 	unsigned char GetForegroundColor( const ColorValue color_value );
 	unsigned char GetBackgroundColor( const ColorValue color_value );
+
+	const ColorValue DefaultColorValue = r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black;
 }
