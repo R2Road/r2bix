@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 namespace r2base
 {
 	enum eForegroundColor : unsigned char
@@ -24,29 +26,28 @@ namespace r2base
 
 	enum eBackgroundColor : unsigned char
 	{
-		BG_Black = 16,
-		BG_Blue,
-		BG_Green,
-		BG_Aqua,
-		BG_Red,
-		BG_Purple,
-		BG_Yellow,
-		BG_White,
-		BG_Gray,
-		BG_LightBlue,
-		BG_LightGreen,
-		BG_LightAqua,
-		BG_LightLed,
-		BG_LightPurple,
-		BG_LightYellow,
-		BG_BrightWhite,
+		BG_Black		= 0,
+		BG_Blue			= 1 << 4,
+		BG_Green		= 2 << 4,
+		BG_Aqua			= 3 << 4,
+		BG_Red			= 4 << 4,
+		BG_Purple		= 5 << 4,
+		BG_Yellow		= 6 << 4,
+		BG_White		= 7 << 4,
+		BG_Gray			= 8 << 4,
+		BG_LightBlue	= 9 << 4,
+		BG_LightGreen	= 10 << 4,
+		BG_LightAqua	= 11 << 4,
+		BG_LightLed		= 12 << 4,
+		BG_LightPurple	= 13 << 4,
+		BG_LightYellow	= 14 << 4,
+		BG_BrightWhite	= 15 << 4,
 	};
 
 	union ColorValue
 	{
-		unsigned char foreground_color;
-		unsigned char background_color;
-
-		unsigned short total_color = eForegroundColor::FG_Aqua | eBackgroundColor::BG_Gray;
+		unsigned short total_color = eForegroundColor::FG_Aqua | eBackgroundColor::BG_Black;
 	};
+	unsigned char GetForegroundColor( const ColorValue color_value );
+	unsigned char GetBackgroundColor( const ColorValue color_value );
 }

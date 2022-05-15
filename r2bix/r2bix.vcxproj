@@ -49,6 +49,7 @@
     <ClCompile Include="src\r2bix\r2action_SequenceAction.cpp" />
     <ClCompile Include="src\r2bix\r2action_TickAction.cpp" />
     <ClCompile Include="src\r2bix\r2animation_constant.cpp" />
+    <ClCompile Include="src\r2bix\r2base_ColorValue.cpp" />
     <ClCompile Include="src\r2bix\r2base_CoutBufferRedirector.cpp" />
     <ClCompile Include="src\r2bix\r2base_DebugConfig.cpp" />
     <ClCompile Include="src\r2bix\r2base_Director.cpp" />
@@ -103,6 +104,7 @@
     <ClCompile Include="src\test\test_p2048\TestP2048RootMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\action_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\camera_test.cpp" />
+    <ClCompile Include="src\test\test_r2bix\item\color_value_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\component_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_manager_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_test.cpp" />
@@ -227,6 +229,7 @@
     <ClInclude Include="src\test\test_p2048\TestP2048RootMenu.h" />
     <ClInclude Include="src\test\test_r2bix\item\action_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\camera_test.h" />
+    <ClInclude Include="src\test\test_r2bix\item\color_value_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\component_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_manager_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_test.h" />

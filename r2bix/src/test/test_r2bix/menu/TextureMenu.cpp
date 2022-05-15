@@ -5,6 +5,7 @@
 
 #include "test/test_r2bix/TestR2bixRootMenu.h"
 
+#include "test/test_r2bix/item/color_value_test.h"
 #include "test/test_r2bix/item/texture_test.h"
 #include "test/test_r2bix/item/texture_frame_test.h"
 #include "test/test_r2bix/item/texture_table_test.h"
@@ -17,7 +18,7 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		
+		ret->AddItem( '1', color_value_test::Basic::GetInstance() );
 
 
 		ret->AddLineFeed();

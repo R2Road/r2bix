@@ -410,6 +410,12 @@
     <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\color_value_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2base_ColorValue.cpp">
+      <Filter>r2bix\base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -775,6 +781,9 @@
     </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
       <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\color_value_test.h">
+      <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
