@@ -623,29 +623,49 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
+				std::cout << "[1] Play" << r2cm::linefeed;
+				std::cout << "[2] Stop" << r2cm::linefeed;
+				std::cout << "[ESC] End " << r2cm::linefeed2;
+
+				DECLARATION_MAIN( ma_int64 engine_time = 0ll );
 				DECLARATION_MAIN( ma_int64 sound_time = 0ll );
 				const auto system_start_time_point = std::chrono::system_clock::now();
 
 				std::cout << r2cm::linefeed;
 
 				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
+				bool bRun = true;
 				do
 				{
 					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
-					std::cout << "[AnyKey] End " << r2cm::linefeed2;
+					PROCESS_MAIN( engine_time = ma_engine_get_time( &engine ) );
+					printf( "Engine Time : %20lld \n", engine_time );
 
 					PROCESS_MAIN( sound_time = ma_sound_get_time_in_pcm_frames( &sound ) );
-					printf( "Engine Time : %20lld \n", sound_time );
+					printf( "Sound Time : %20lld \n", sound_time );
 
 					std::chrono::duration<double> default_time = std::chrono::system_clock::now() - system_start_time_point;
 					printf( "System Time : %20.3f \n", default_time.count() );
 
 					if( _kbhit() )
 					{
-						break;
+						switch( _getch() )
+						{
+						case '1':
+							ma_sound_start( &sound );
+							break;
+						case '2':
+							ma_sound_stop( &sound );
+							break;
+
+						case 27: // ESC
+							bRun = false;
+							r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 5 } );
+							break;
+						}
 					}
-				} while( true );
+				} while( bRun );
 			}
 
 			std::cout << r2cm::split;
