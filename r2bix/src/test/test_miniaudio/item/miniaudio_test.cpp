@@ -924,4 +924,110 @@ namespace miniaudio_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT Group_Time::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Group : Time";
+		};
+	}
+	r2cm::iItem::DoFuncT Group_Time::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( ma_result result );
+			DECLARATION_SUB( ma_engine engine );
+			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
+			EXPECT_EQ( MA_SUCCESS, result );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( ma_sound sound_1 );
+			DECLARATION_MAIN( ma_sound sound_2 );
+			DECLARATION_MAIN( ma_sound_group sound_group );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( MA_SUCCESS, ma_sound_group_init( &engine, 0, nullptr, &sound_group ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, &sound_group, NULL, &sound_1 ) );
+				PROCESS_SUB( ma_sound_set_volume( &sound_1, 0.1f ) );
+				PROCESS_SUB( ma_sound_set_looping( &sound_1, true ) );
+				PROCESS_SUB( ma_sound_start( &sound_1 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
+				PROCESS_SUB( ma_sound_set_volume( &sound_2, 1.0f ) );
+				PROCESS_SUB( ma_sound_set_looping( &sound_2, true ) );
+				PROCESS_SUB( ma_sound_start( &sound_2 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << "[Any Key] End " << r2cm::linefeed2;
+
+				DECLARATION_MAIN( ma_int64 group_time = 0ll );
+				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
+				bool bRun = true;
+				do
+				{
+					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
+
+					PROCESS_MAIN( group_time = ma_sound_get_time_in_pcm_frames( &sound_group ) );
+					printf( "Groupd Time : %20lld \n", group_time );
+
+					if( _kbhit() )
+					{
+						switch( _getch() )
+						{
+						case '1':
+							ma_sound_start( &sound_group );
+							break;
+						case '2':
+							ma_sound_stop( &sound_group );
+							break;
+
+						case 27: // ESC
+							bRun = false;
+							r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 2 } );
+							break;
+
+						default:
+							continue;
+						}
+					}
+				} while( bRun );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( ma_sound_uninit( &sound_1 ) );
+				PROCESS_MAIN( ma_sound_uninit( &sound_2 ) );
+				PROCESS_MAIN( ma_sound_group_uninit( &sound_group ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

@@ -43,6 +43,7 @@ r2cm::MenuUp TestMiniAudioMenu::Create( r2cm::Director& director )
 
 		ret->AddItem( 'a', miniaudio_test::Group_Init::GetInstance() );
 		ret->AddItem( 's', miniaudio_test::Group_Volume::GetInstance() );
+		ret->AddItem( 'd', miniaudio_test::Group_Time::GetInstance() );
 
 
 
