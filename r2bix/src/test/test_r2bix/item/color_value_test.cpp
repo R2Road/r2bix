@@ -24,13 +24,24 @@ namespace color_value_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
-			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Gray );
-			DECLARATION_MAIN( r2base::ColorValue color_value{ fore | back } );
+			{
+				OUTPUT_VALUE( r2base::DefaultColorValue );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( r2base::eForegroundColor::FG_White, r2base::GetForegroundColor( r2base::DefaultColorValue ) );
+				EXPECT_EQ( r2base::eBackgroundColor::BG_Black, r2base::GetBackgroundColor( r2base::DefaultColorValue ) );
+			}
 
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+				DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Gray );
+				DECLARATION_MAIN( r2base::ColorValue color_value{ fore | back } );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_EQ( fore | back, color_value );
 				EXPECT_EQ( fore, r2base::GetForegroundColor( color_value ) );
 				EXPECT_EQ( back, r2base::GetBackgroundColor( color_value ) );
