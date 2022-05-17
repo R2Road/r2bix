@@ -25,7 +25,8 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const r2render::Texture texture( 30, 20, '0' ) );
+			DECLARATION_MAIN( r2render::Texture texture( 30, 20 ) );
+			PROCESS_MAIN( texture.FillAll( '1' ) );
 
 			std::cout << r2cm::split;
 
