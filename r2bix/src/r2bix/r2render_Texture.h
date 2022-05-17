@@ -49,6 +49,7 @@ namespace r2render
 		ValueT Get( const uint32_t x, const uint32_t y ) const;
 		std::string_view GetLine( const uint32_t y ) const;
 
+		const ColorContainerT& GetColorContainer() const { return mColors; }
 		r2base::ColorValue GetColor( const uint32_t x, const uint32_t y ) const;
 		const r2base::ColorValue* GetColorLine( const uint32_t y ) const;
 
@@ -64,6 +65,7 @@ namespace r2render
 		//
 		void FillCharacterAll( const char c ) override;
 		void FillCharacter( const uint32_t x, const uint32_t y, const char c ) override;
+		void FillColorAll( const r2base::ColorValue color_value ) override;
 		void FillColor( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value ) override;
 		r2::RectInt GetRect() const override { return r2::RectInt( 0, 0, GetWidth(), GetHeight() ); };
 

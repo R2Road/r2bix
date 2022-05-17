@@ -19,4 +19,5 @@ public:
 
 	static void DrawTexture( const r2render::Texture& texture );
 	static void DrawTextureFrame( const r2render::TextureFrame& frame );
+	static void DrawTextureColor( const r2render::Texture& texture );
 };

@@ -1,5 +1,6 @@
 #include "Utility4Test.h"
 
+#include <iomanip>
 #include <Windows.h>
 
 #include "r2bix/r2render_TextureFrame.h"
@@ -53,6 +54,25 @@ void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
 			std::cout << frame.Get( x, y );
 		}
 
+		std::cout << r2cm::linefeed;
+	}
+}
+void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
+{
+	std::size_t x = 0;
+	for( const auto color : texture.GetColorContainer() )
+	{
+		std::cout << std::setw( 3 ) << color << " ";
+
+		++x;
+		if( texture.GetWidth() <= x )
+		{
+			x = 0u;
+			std::cout << r2cm::linefeed;
+		}
+	}
+	if( 0u != x )
+	{
 		std::cout << r2cm::linefeed;
 	}
 }

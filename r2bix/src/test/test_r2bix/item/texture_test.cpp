@@ -73,6 +73,43 @@ namespace texture_test
 
 
 
+	r2cm::iItem::TitleFuncT FillColorAll::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture : Fill Color All";
+		};
+	}
+	r2cm::iItem::DoFuncT FillColorAll::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+			OUTPUT_VALUE( fore );
+			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_BrightWhite );
+			OUTPUT_VALUE( back );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( r2render::Texture texture( 5, 5 ) );
+			PROCESS_MAIN( texture.FillColorAll( fore | back ) );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTextureColor( texture );
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT InitWithChars_1::GetTitleFunction() const
 	{
 		return []()->const char*

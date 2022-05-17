@@ -117,6 +117,11 @@ namespace r2render
 		mChars[target_linear_index] = c;
 	}
 
+	void Texture::FillColorAll( const r2base::ColorValue color_value )
+	{
+		std::fill( mColors.begin(), mColors.end(), color_value );
+	}
+
 	void Texture::FillColor( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
