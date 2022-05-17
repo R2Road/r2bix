@@ -25,7 +25,7 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'q', texture_test::FillAll::GetInstance() );
-		ret->AddItem( 'w', texture_test::Fill::GetInstance() );
+		ret->AddItem( 'w', texture_test::FillCharacter::GetInstance() );
 		ret->AddItem( 'e', texture_test::InitWithChars_1::GetInstance() );
 		ret->AddItem( 'r', texture_test::InitWithChars_2::GetInstance() );
 		ret->AddItem( 't', texture_test::InitWithChars_3::GetInstance() );

@@ -24,7 +24,7 @@ namespace render_test
 			{
 				for( int x = 0; mTexture.GetWidth() > x; ++x )
 				{
-					mTexture.Fill( x, y, static_cast<char>( 48 + x ) );
+					mTexture.FillCharacter( x, y, static_cast<char>( 48 + x ) );
 				}
 			}
 		}
@@ -69,7 +69,7 @@ namespace render_test
 			//
 			//
 			//
-			render_target->Fill( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), 'A' );
+			render_target->FillCharacter( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), 'A' );
 
 			//
 			// Render Target Space : My Rect
@@ -106,7 +106,7 @@ namespace render_test
 				{
 					for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() >= x; ++x, ++tx )
 					{
-						render_target->Fill(
+						render_target->FillCharacter(
 							x, y
 							, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 						);

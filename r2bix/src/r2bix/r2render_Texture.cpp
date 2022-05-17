@@ -110,7 +110,7 @@ namespace r2render
 		memset( &mChars[0], c, mChars.size() );
 	}
 
-	void Texture::Fill( const uint32_t x, const uint32_t y, const char c )
+	void Texture::FillCharacter( const uint32_t x, const uint32_t y, const char c )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 

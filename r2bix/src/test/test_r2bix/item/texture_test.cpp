@@ -40,14 +40,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT Fill::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT FillCharacter::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Texture : Fill";
+			return "Texture : FillCharacter";
 		};
 	}
-	r2cm::iItem::DoFuncT Fill::GetDoFunction()
+	r2cm::iItem::DoFuncT FillCharacter::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -56,10 +56,10 @@ namespace texture_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2render::Texture texture( 30, 20 ) );
-			PROCESS_MAIN( texture.Fill( 0, 0, '0' ) );
-			PROCESS_MAIN( texture.Fill( texture.GetXEnd(), 0, '0' ) );
-			PROCESS_MAIN( texture.Fill( texture.GetXEnd(), texture.GetYEnd(), '0' ) );
-			PROCESS_MAIN( texture.Fill( 0, texture.GetYEnd(), '0' ) );
+			PROCESS_MAIN( texture.FillCharacter( 0, 0, '0' ) );
+			PROCESS_MAIN( texture.FillCharacter( texture.GetXEnd(), 0, '0' ) );
+			PROCESS_MAIN( texture.FillCharacter( texture.GetXEnd(), texture.GetYEnd(), '0' ) );
+			PROCESS_MAIN( texture.FillCharacter( 0, texture.GetYEnd(), '0' ) );
 
 			std::cout << r2cm::split;
 
