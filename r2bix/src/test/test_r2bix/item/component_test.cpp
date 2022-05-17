@@ -226,7 +226,7 @@ namespace component_test
 			std::cout << r2cm::split;
 
 			{
-				render_target.FillAll( '=' );
+				render_target.FillCharacterAll( '=' );
 				PROCESS_MAIN( component->SetPivotPoint( 0.5f, 0.5f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
@@ -238,7 +238,7 @@ namespace component_test
 			std::cout << r2cm::split;
 
 			{
-				render_target.FillAll( '=' );
+				render_target.FillCharacterAll( '=' );
 				PROCESS_MAIN( component->SetPivotPoint( 1.f, 1.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
@@ -296,7 +296,7 @@ namespace component_test
 
 			{
 				PROCESS_MAIN( component->SetVisibleRectForced( -4, -2, 1, 1 ) );
-				render_target.FillAll( '=' );
+				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				std::cout << r2cm::linefeed;
@@ -308,7 +308,7 @@ namespace component_test
 
 			{
 				PROCESS_MAIN( component->ResetVisibleRect() );
-				render_target.FillAll( '=' );
+				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				std::cout << r2cm::linefeed;
@@ -366,7 +366,7 @@ namespace component_test
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( custom_texture->GetTexture()->FillAll( '?' ) );
+				PROCESS_MAIN( custom_texture->GetTexture()->FillCharacterAll( '?' ) );
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				std::cout << r2cm::linefeed;
@@ -591,7 +591,7 @@ namespace component_test
 			{
 				PROCESS_MAIN( component->SetPivotPoint( 1.f, 1.f ) );
 
-				render_target.FillAll( '=' );
+				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				std::cout << r2cm::linefeed;

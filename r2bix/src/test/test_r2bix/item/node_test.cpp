@@ -249,7 +249,7 @@ namespace node_test
 
 				std::cout << r2cm::linefeed;
 
-				render_target.FillAll( '=' );
+				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				Utility4Test::DrawTexture( render_target );
 			}
@@ -262,7 +262,7 @@ namespace node_test
 
 				std::cout << r2cm::linefeed;
 
-				render_target.FillAll( '=' );
+				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				Utility4Test::DrawTexture( render_target );
 			}

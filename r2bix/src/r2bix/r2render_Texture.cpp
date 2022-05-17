@@ -105,7 +105,7 @@ namespace r2render
 		mColors.resize( mChars.size(), r2base::DefaultColorValue );
 	}
 
-	void Texture::FillAll( const char c )
+	void Texture::FillCharacterAll( const char c )
 	{
 		memset( &mChars[0], c, mChars.size() );
 	}

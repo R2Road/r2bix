@@ -5,7 +5,7 @@
 
 namespace texture_test
 {
-	class FillAll : public r2cm::iItem, public r2cm::SingleTon<FillAll>
+	class FillCharacterAll : public r2cm::iItem, public r2cm::SingleTon<FillCharacterAll>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
