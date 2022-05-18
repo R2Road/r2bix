@@ -41,6 +41,7 @@ namespace p2048mini
 				auto node = ret->AddChild<r2node::LabelNode>();
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				node->GetComponent<r2component::TransformComponent>()->SetPosition( 2, 0 );
+				node->GetComponent<r2component::LabelComponent>()->SetColor( r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black );
 
 				number_component->SetLabelComponent( node->GetComponent<r2component::LabelComponent>() );
 			}
