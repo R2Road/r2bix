@@ -19,8 +19,13 @@ namespace p2048mini
 		return ret;
 	}
 
-	void NumberComponent::SetNumber( const int new_number )
+	void NumberComponent::SetNumber( const int new_number, const bool merged )
 	{
+		if( merged )
+		{
+			// Do Something
+		}
+
 		mLabelComponent->SetString( std::to_string( new_number ) );
 	}
 }

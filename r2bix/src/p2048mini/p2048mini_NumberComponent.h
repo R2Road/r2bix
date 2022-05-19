@@ -23,7 +23,7 @@ namespace p2048mini
 		{
 			mLabelComponent = label_component;
 		}
-		void SetNumber( const int new_number );
+		void SetNumber( const int new_number, const bool merged );
 
 	private:
 		r2component::LabelComponent* mLabelComponent;
