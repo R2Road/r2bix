@@ -3,10 +3,11 @@
 #include <numeric>
 
 #include "r2bix/r2base_Director.h"
+#include "r2bix/r2component_CustomTextureComponent.h"
 #include "r2bix/r2component_LabelComponent.h"
 #include "r2bix/r2component_PivotComponent.h"
-#include "r2bix/r2component_TextureFrameRenderComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
+#include "r2bix/r2node_CustomTextureNode.h"
 #include "r2bix/r2node_LabelNode.h"
 #include "r2bix/r2node_PivotNode.h"
 #include "r2bix/r2node_SpriteNode.h"
@@ -28,9 +29,10 @@ namespace p2048mini
 			// Frame
 			//
 			{
-				auto node = ret->AddChild<r2node::SpriteNode>( std::numeric_limits<int>::min() );
-				node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame(
-					p2048minitable::TextureTable::GetInstance().GetTextureFrame( "number_frame_0" )
+				auto node = ret->AddChild<r2node::CustomTextureNode>( std::numeric_limits<int>::min() );
+				node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 8u, 3u, ' ' );
+				node->GetComponent<r2component::TextureRenderComponent>()->SetTexture(
+					node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()
 				);
 			}
 
