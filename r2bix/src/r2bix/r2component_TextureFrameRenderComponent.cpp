@@ -76,6 +76,11 @@ namespace r2component
 					x, y
 					, mTextureFrame->Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 				);
+
+				render_target->FillColor(
+					x, y
+					, mTextureFrame->GetColor( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+				);
 			}
 		}
 
