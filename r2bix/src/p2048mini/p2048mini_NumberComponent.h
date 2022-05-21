@@ -28,7 +28,7 @@ namespace p2048mini
 		{
 			mCustomTextureComponent = custom_texture_component;
 		}
-		void SetNumber( const int new_number, const bool merged );
+		void SetNumber( const int new_number, const bool merged, const bool newcomer );
 
 	private:
 		r2component::LabelComponent* mLabelComponent;

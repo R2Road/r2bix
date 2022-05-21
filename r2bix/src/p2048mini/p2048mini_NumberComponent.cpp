@@ -21,7 +21,7 @@ namespace p2048mini
 		return ret;
 	}
 
-	void NumberComponent::SetNumber( const int new_number, const bool merged )
+	void NumberComponent::SetNumber( const int new_number, const bool merged, const bool newcomer )
 	{
 		mCustomTextureComponent->GetTexture()->FillColorAll(
 			merged
@@ -32,8 +32,13 @@ namespace p2048mini
 		mLabelComponent->SetString( std::to_string( new_number ) );
 		mLabelComponent->GetCustomTextureComponent()->GetTexture()->FillColorAll(
 			merged
+
 			? r2base::BG_Aqua | r2base::FG_Black
-			: r2base::BG_Black | r2base::FG_Aqua
+
+			: ( newcomer
+				? r2base::BG_Black | r2base::FG_LightYellow
+				: r2base::BG_Black | r2base::FG_Aqua
+			)
 		);
 	}
 }
