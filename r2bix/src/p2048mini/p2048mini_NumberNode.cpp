@@ -34,6 +34,8 @@ namespace p2048mini
 				node->GetComponent<r2component::TextureRenderComponent>()->SetTexture(
 					node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()
 				);
+
+				number_component->SetCustomTextureComponent( node->GetComponent<r2component::CustomTextureComponent>() );
 			}
 
 			//
