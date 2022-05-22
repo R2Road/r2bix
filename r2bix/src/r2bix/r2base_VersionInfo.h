@@ -27,7 +27,8 @@ namespace r2base
 
 		const char* const String4Version_0_0_2 =
 					"### Road 2 Version 0.0.2 ###"
-			"\n\n"	"[ ] " "Color : 각 문자에 전경, 원경 색상 지정"
+			"\n\n"	"[o] " "Color : 각 문자에 전경, 원경 색상 지정"
+			"\n"	"[ ] " "Color : 전경과 원경의 색상 유효성 처리. 버퍼에 글자와 글자 색만 기록하고 싶다거나..."
 			"\n"	"[ ] " "Audio"
 			"\n"	"[ ] " "Split The Render And Update Process"
 			"\n"	"[ ] " "Node Delete And Caching Pipe Line"
@@ -39,7 +40,6 @@ namespace r2base
 
 			"\n\n"	"[ ] " "Json"
 			"\n"	"[ ] " "Color Blend"
-			"\n"	"[ ] " "전경과 원경의 색상 유효성 처리. 버퍼에 글자와 글자 색만 기록하고 싶다거나..."
 			"\n"	"[ ] " "Script"
 		;
 	} VersionInfo;
