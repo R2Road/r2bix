@@ -43,25 +43,6 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'2'
-			, []()->const char* { return "Game : 2048mini( In Progress )"; }
-			, []()->r2cm::eItemLeaveAction
-			{
-				//
-				// Setup
-				//
-				r2base::Director director;
-				director.Setup( p2048mini::GameScene::Create( director ) );
-
-				//
-				// Process
-				//
-				director.Run();
-
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'3'
 			, []()->const char* { return p2048::EntryScene::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{
@@ -80,7 +61,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'4'
+			'3'
 			, []()->const char* { return pmr::CompanyScene::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{

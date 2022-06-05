@@ -18,7 +18,7 @@
 #include "r2bix/r2node_LabelNode.h"
 #include "r2bix/r2node_SpriteNode.h"
 
-#include "p2048_GameScene.h"
+#include "p2048mini/p2048mini_GameScene.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
 
@@ -258,7 +258,7 @@ namespace p2048
 			}
 			else if( 32 == input ) // Space
 			{
-				mDirector.Setup( p2048::GameScene::Create( mDirector ) );
+				mDirector.Setup( p2048mini::GameScene::Create( mDirector ) );
 			}
 		}
 

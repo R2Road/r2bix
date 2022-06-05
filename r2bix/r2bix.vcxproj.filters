@@ -25,29 +25,11 @@
     <Filter Include="test\test_r2bix\item">
       <UniqueIdentifier>{ad1df904-b64d-41ca-a907-6962189f53d8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test\test_p2048">
-      <UniqueIdentifier>{7de582aa-318a-47da-a465-6de9e7fa58fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test\test_p2048\item">
-      <UniqueIdentifier>{029abc21-134e-479c-b376-003fd3d4e96c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test\test_p2048\menu">
-      <UniqueIdentifier>{f48b1811-7d1d-480d-b008-6caf3b358e27}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project_2048\scene">
       <UniqueIdentifier>{16fea9ed-259f-4b16-bb7a-4ffd2d22fc0e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_2048\component">
-      <UniqueIdentifier>{026ed0fd-048f-486f-93f4-01cdcd93c348}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project_2048\node">
-      <UniqueIdentifier>{908ad5ce-d092-41d7-a8cf-ee5061f0e144}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project_2048\table">
       <UniqueIdentifier>{b234f4a7-38c0-48dd-89da-a3ff59c54318}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project_2048\game">
-      <UniqueIdentifier>{863a5968-5486-471d-a731-dde6ecabe6b9}</UniqueIdentifier>
     </Filter>
     <Filter Include="project_2048mini">
       <UniqueIdentifier>{612fabcb-2d0b-441a-af05-d37b95425bec}</UniqueIdentifier>
@@ -190,14 +172,8 @@
     <ClCompile Include="src\test\TestMainMenu.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_p2048\TestP2048RootMenu.cpp">
-      <Filter>test\test_p2048</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\TestR2bixRootMenu.cpp">
       <Filter>test\test_r2bix</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_p2048\item\test_number_node.cpp">
-      <Filter>test\test_p2048\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test\Utility4Test.cpp">
       <Filter>test</Filter>
@@ -208,17 +184,8 @@
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp">
       <Filter>project_2048\scene</Filter>
     </ClCompile>
-    <ClCompile Include="src\p2048\p2048_GameScene.cpp">
-      <Filter>project_2048\scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\p2048\p2048_TitleScene.cpp">
       <Filter>project_2048\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048\p2048_NumberComponent.cpp">
-      <Filter>project_2048\component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048\p2048_NumberNode.cpp">
-      <Filter>project_2048\node</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048table_TextureFrameAnimationTable.cpp">
       <Filter>project_2048\table</Filter>
@@ -523,14 +490,8 @@
     <ClInclude Include="src\test\TestMainMenu.h">
       <Filter>test</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\test_p2048\TestP2048RootMenu.h">
-      <Filter>test\test_p2048</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_r2bix\TestR2bixRootMenu.h">
       <Filter>test\test_r2bix</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_p2048\item\test_number_node.h">
-      <Filter>test\test_p2048\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\Utility4Test.h">
       <Filter>test</Filter>
@@ -541,17 +502,8 @@
     <ClInclude Include="src\p2048\p2048_EntryScene.h">
       <Filter>project_2048\scene</Filter>
     </ClInclude>
-    <ClInclude Include="src\p2048\p2048_GameScene.h">
-      <Filter>project_2048\scene</Filter>
-    </ClInclude>
     <ClInclude Include="src\p2048\p2048_TitleScene.h">
       <Filter>project_2048\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048\p2048_NumberComponent.h">
-      <Filter>project_2048\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048\p2048_NumberNode.h">
-      <Filter>project_2048\node</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h">
       <Filter>project_2048\table</Filter>

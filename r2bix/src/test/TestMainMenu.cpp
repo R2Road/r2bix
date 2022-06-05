@@ -5,7 +5,6 @@
 
 #include "test/test_miniaudio/TestMiniAudioMenu.h"
 #include "test/test_p2048mini/TestP2048MiniRootMenu.h"
-#include "test/test_p2048/TestP2048RootMenu.h"
 #include "test/test_r2bix/TestR2bixRootMenu.h"
 
 r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
@@ -45,15 +44,6 @@ r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
 			, [&director]()->r2cm::eItemLeaveAction
 			{
 				director.Setup( TestP2048MiniRootMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'w'
-			, []()->const char* { return TestP2048RootMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TestP2048RootMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
