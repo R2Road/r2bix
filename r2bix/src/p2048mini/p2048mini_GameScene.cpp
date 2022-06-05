@@ -20,7 +20,7 @@
 #include "p2048mini_GameComponent.h"
 #include "p2048mini_StageViewComponent.h"
 #include "p2048mini_StageViewNode.h"
-#include "p2048minitable_TextureTable.h"
+#include "p2048/p2048table_TextureTable.h"
 
 #include "p2048mini_Config.h"
 
@@ -34,7 +34,7 @@ namespace p2048mini
 			//
 			// Table Load
 			//
-			p2048minitable::TextureTable::GetInstance().Load();
+			p2048table::TextureTable::GetInstance().Load();
 
 			//
 			// Background
@@ -63,19 +63,6 @@ namespace p2048mini
 			// Game Component
 			//
 			auto game_component = ret->AddComponent<p2048mini::GameComponent>();
-
-
-			//
-			// Title
-			//
-			{
-				auto sprite_node = ret->AddChild<r2node::SpriteNode>();
-				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
-				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition(
-					( director.GetScreenBufferSize().GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.18f )
-				);
-			}
 
 			//
 			// Stage
@@ -163,7 +150,7 @@ namespace p2048mini
 			//
 			{
 				auto sprite_node = ret->AddChild<r2node::SpriteNode>();
-				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
+				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
 				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 46, 37 );
 			}
 
@@ -172,7 +159,7 @@ namespace p2048mini
 			//
 			{
 				auto you_win_node = ret->AddChild<r2node::SpriteNode>( 2 );
-				you_win_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "you_win_0" ) );
+				you_win_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "you_win_0" ) );
 				you_win_node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
@@ -208,7 +195,7 @@ namespace p2048mini
 			//
 			{
 				auto game_over_node = ret->AddChild<r2node::SpriteNode>( 2 );
-				game_over_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "game_over_0" ) );
+				game_over_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "game_over_0" ) );
 				game_over_node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )

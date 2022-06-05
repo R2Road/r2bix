@@ -8,7 +8,7 @@
 #include "p2048mini/p2048mini_Stage.h"
 #include "p2048mini/p2048mini_StageViewComponent.h"
 #include "p2048mini/p2048mini_StageViewNode.h"
-#include "p2048mini/p2048minitable_TextureTable.h"
+#include "p2048/p2048table_TextureTable.h"
 
 #include "test/Utility4Test.h"
 #include "r2cm/r2cm_WindowUtility.h"
@@ -68,7 +68,7 @@ namespace test_p2048mini_stageviewnode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			p2048minitable::TextureTable::GetInstance().Load();
+			p2048table::TextureTable::GetInstance().Load();
 
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
@@ -123,7 +123,7 @@ namespace test_p2048mini_stageviewnode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			p2048minitable::TextureTable::GetInstance().Load();
+			p2048table::TextureTable::GetInstance().Load();
 
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 

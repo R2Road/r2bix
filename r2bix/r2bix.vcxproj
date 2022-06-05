@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\DevelopmentMenu.cpp" />
-    <ClCompile Include="src\p2048mini\p2048minitable_TextureTable.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_CompanyScene.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_EntryScene.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_GameComponent.cpp" />
@@ -125,7 +124,6 @@
   <ItemGroup>
     <ClInclude Include="src\DevelopmentMenu.h" />
     <ClInclude Include="src\miniaudio\miniaudio.h" />
-    <ClInclude Include="src\p2048mini\p2048minitable_TextureTable.h" />
     <ClInclude Include="src\p2048mini\p2048mini_CompanyScene.h" />
     <ClInclude Include="src\p2048mini\p2048mini_Config.h" />
     <ClInclude Include="src\p2048mini\p2048mini_EntryScene.h" />
