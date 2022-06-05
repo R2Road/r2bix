@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClCompile Include="src\DevelopmentMenu.cpp" />
     <ClCompile Include="src\p2048mini\p2048minitable_TextureTable.cpp" />
+    <ClCompile Include="src\p2048mini\p2048mini_CompanyScene.cpp" />
+    <ClCompile Include="src\p2048mini\p2048mini_EntryScene.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_GameComponent.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_GameProcessor.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_GameScene.cpp" />
@@ -29,11 +31,9 @@
     <ClCompile Include="src\p2048mini\p2048mini_Stage.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_StageViewNode.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_StageViewComponent.cpp" />
+    <ClCompile Include="src\p2048mini\p2048mini_TitleScene.cpp" />
     <ClCompile Include="src\p2048\p2048table_TextureFrameAnimationTable.cpp" />
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp" />
-    <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
-    <ClCompile Include="src\p2048\p2048_EntryScene.cpp" />
-    <ClCompile Include="src\p2048\p2048_TitleScene.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp" />
     <ClCompile Include="src\r2bix\r2action_AnimationRequestAction.cpp" />
@@ -126,7 +126,9 @@
     <ClInclude Include="src\DevelopmentMenu.h" />
     <ClInclude Include="src\miniaudio\miniaudio.h" />
     <ClInclude Include="src\p2048mini\p2048minitable_TextureTable.h" />
+    <ClInclude Include="src\p2048mini\p2048mini_CompanyScene.h" />
     <ClInclude Include="src\p2048mini\p2048mini_Config.h" />
+    <ClInclude Include="src\p2048mini\p2048mini_EntryScene.h" />
     <ClInclude Include="src\p2048mini\p2048mini_GameComponent.h" />
     <ClInclude Include="src\p2048mini\p2048mini_GameProcessor.h" />
     <ClInclude Include="src\p2048mini\p2048mini_GameScene.h" />
@@ -135,11 +137,9 @@
     <ClInclude Include="src\p2048mini\p2048mini_Stage.h" />
     <ClInclude Include="src\p2048mini\p2048mini_StageViewNode.h" />
     <ClInclude Include="src\p2048mini\p2048mini_StageViewComponent.h" />
+    <ClInclude Include="src\p2048mini\p2048mini_TitleScene.h" />
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h" />
     <ClInclude Include="src\p2048\p2048table_TextureTable.h" />
-    <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
-    <ClInclude Include="src\p2048\p2048_EntryScene.h" />
-    <ClInclude Include="src\p2048\p2048_TitleScene.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
     <ClInclude Include="src\r2bix\r2action_AnimationRequestAction.h" />
     <ClInclude Include="src\r2bix\r2action_BlinkAction.h" />

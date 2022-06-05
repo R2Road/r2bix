@@ -25,9 +25,6 @@
     <Filter Include="test\test_r2bix\item">
       <UniqueIdentifier>{ad1df904-b64d-41ca-a907-6962189f53d8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_2048\scene">
-      <UniqueIdentifier>{16fea9ed-259f-4b16-bb7a-4ffd2d22fc0e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="project_2048\table">
       <UniqueIdentifier>{b234f4a7-38c0-48dd-89da-a3ff59c54318}</UniqueIdentifier>
     </Filter>
@@ -177,15 +174,6 @@
     </ClCompile>
     <ClCompile Include="src\test\Utility4Test.cpp">
       <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048\p2048_CompanyScene.cpp">
-      <Filter>project_2048\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048\p2048_EntryScene.cpp">
-      <Filter>project_2048\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048\p2048_TitleScene.cpp">
-      <Filter>project_2048\scene</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048table_TextureFrameAnimationTable.cpp">
       <Filter>project_2048\table</Filter>
@@ -380,6 +368,15 @@
     <ClCompile Include="src\r2bix\r2base_ColorValue.cpp">
       <Filter>r2bix\base</Filter>
     </ClCompile>
+    <ClCompile Include="src\p2048mini\p2048mini_TitleScene.cpp">
+      <Filter>project_2048mini</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048mini\p2048mini_CompanyScene.cpp">
+      <Filter>project_2048mini</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048mini\p2048mini_EntryScene.cpp">
+      <Filter>project_2048mini</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -495,15 +492,6 @@
     </ClInclude>
     <ClInclude Include="src\test\Utility4Test.h">
       <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048\p2048_CompanyScene.h">
-      <Filter>project_2048\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048\p2048_EntryScene.h">
-      <Filter>project_2048\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048\p2048_TitleScene.h">
-      <Filter>project_2048\scene</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h">
       <Filter>project_2048\table</Filter>
@@ -730,6 +718,15 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\color_value_test.h">
       <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_TitleScene.h">
+      <Filter>project_2048mini</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_CompanyScene.h">
+      <Filter>project_2048mini</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_EntryScene.h">
+      <Filter>project_2048mini</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
