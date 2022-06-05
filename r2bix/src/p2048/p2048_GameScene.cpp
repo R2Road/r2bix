@@ -20,7 +20,7 @@
 #include "p2048_GameComponent.h"
 #include "p2048_StageViewComponent.h"
 #include "p2048_StageViewNode.h"
-#include "p2048/p2048table_TextureTable.h"
+#include "p2048table_TextureTable.h"
 
 #include "p2048_Config.h"
 
