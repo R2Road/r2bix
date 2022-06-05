@@ -1,4 +1,4 @@
-#include "p2048mini_GameComponent.h"
+#include "p2048_GameComponent.h"
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_Node.h"
@@ -7,8 +7,8 @@
 #include "r2bix/r2utility_InputUtil.h"
 #include "r2bix/r2utility_StringBuilder.h"
 
-#include "p2048mini_Config.h"
-#include "p2048mini_StageViewComponent.h"
+#include "p2048_Config.h"
+#include "p2048_StageViewComponent.h"
 
 namespace p2048mini
 {

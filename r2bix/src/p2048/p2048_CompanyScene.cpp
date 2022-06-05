@@ -1,4 +1,4 @@
-#include "p2048mini_CompanyScene.h"
+#include "p2048_CompanyScene.h"
 
 #include <cassert>
 #include <conio.h>
@@ -13,9 +13,9 @@
 #include "r2bix/r2node_LabelNode.h"
 #include "r2bix/r2node_SpriteAnimationNode.h"
 
-#include "p2048mini_TitleScene.h"
-#include "p2048/p2048table_TextureFrameAnimationTable.h"
-#include "p2048/p2048table_TextureTable.h"
+#include "p2048_TitleScene.h"
+#include "p2048table_TextureFrameAnimationTable.h"
+#include "p2048table_TextureTable.h"
 
 namespace p2048
 {

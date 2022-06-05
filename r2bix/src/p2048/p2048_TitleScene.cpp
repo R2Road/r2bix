@@ -1,4 +1,4 @@
-#include "p2048mini_TitleScene.h"
+#include "p2048_TitleScene.h"
 
 #include <cassert>
 #include <conio.h>
@@ -18,9 +18,9 @@
 #include "r2bix/r2node_LabelNode.h"
 #include "r2bix/r2node_SpriteNode.h"
 
-#include "p2048mini/p2048mini_GameScene.h"
-#include "p2048/p2048table_TextureFrameAnimationTable.h"
-#include "p2048/p2048table_TextureTable.h"
+#include "p2048_GameScene.h"
+#include "p2048table_TextureFrameAnimationTable.h"
+#include "p2048table_TextureTable.h"
 
 #include "r2/r2_Random.h"
 

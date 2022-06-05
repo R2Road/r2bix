@@ -1,6 +1,6 @@
-#include "p2048mini_GameProcessor.h"
+#include "p2048_GameProcessor.h"
 
-#include "p2048mini_Stage.h"
+#include "p2048_Stage.h"
 
 #include "r2/r2_Random.h"
 

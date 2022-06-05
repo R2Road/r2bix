@@ -1,4 +1,4 @@
-#include "p2048mini_NumberNode.h"
+#include "p2048_NumberNode.h"
 
 #include <numeric>
 
@@ -11,9 +11,9 @@
 #include "r2bix/r2node_PivotNode.h"
 #include "r2bix/r2node_SpriteNode.h"
 
-#include "p2048mini_Config.h"
-#include "p2048mini_NumberComponent.h"
-#include "p2048minitable_TextureTable.h"
+#include "p2048_Config.h"
+#include "p2048_NumberComponent.h"
+#include "p2048table_TextureTable.h"
 
 namespace p2048mini
 {

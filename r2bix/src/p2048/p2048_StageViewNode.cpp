@@ -1,4 +1,4 @@
-#include "p2048mini_StageViewNode.h"
+#include "p2048_StageViewNode.h"
 
 #include <numeric>
 
@@ -7,8 +7,8 @@
 #include "r2bix/r2node_CustomTextureNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
-#include "p2048mini_Config.h"
-#include "p2048mini_StageViewComponent.h"
+#include "p2048_Config.h"
+#include "p2048_StageViewComponent.h"
 
 namespace p2048mini
 {

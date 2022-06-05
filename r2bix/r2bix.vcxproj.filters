@@ -28,9 +28,6 @@
     <Filter Include="project_2048\table">
       <UniqueIdentifier>{b234f4a7-38c0-48dd-89da-a3ff59c54318}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_2048mini">
-      <UniqueIdentifier>{612fabcb-2d0b-441a-af05-d37b95425bec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test\test_p2048mini">
       <UniqueIdentifier>{881f9dfd-f1f0-4aa0-9571-76f84aea0942}</UniqueIdentifier>
     </Filter>
@@ -197,30 +194,6 @@
     <ClCompile Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.cpp">
       <Filter>test\test_p2048mini\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_NumberComponent.cpp">
-      <Filter>project_2048mini</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_StageViewComponent.cpp">
-      <Filter>project_2048mini</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_Stage.cpp">
-      <Filter>project_2048mini</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_NumberNode.cpp">
-      <Filter>project_2048mini</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_StageViewNode.cpp">
-      <Filter>project_2048mini</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_GameScene.cpp">
-      <Filter>project_2048mini</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_GameProcessor.cpp">
-      <Filter>project_2048mini</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_GameComponent.cpp">
-      <Filter>project_2048mini</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2action_AnimationRequestAction.cpp">
       <Filter>r2bix\action</Filter>
     </ClCompile>
@@ -365,14 +338,38 @@
     <ClCompile Include="src\r2bix\r2base_ColorValue.cpp">
       <Filter>r2bix\base</Filter>
     </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_TitleScene.cpp">
-      <Filter>project_2048mini</Filter>
+    <ClCompile Include="src\p2048\p2048_CompanyScene.cpp">
+      <Filter>project_2048</Filter>
     </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_CompanyScene.cpp">
-      <Filter>project_2048mini</Filter>
+    <ClCompile Include="src\p2048\p2048_EntryScene.cpp">
+      <Filter>project_2048</Filter>
     </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_EntryScene.cpp">
-      <Filter>project_2048mini</Filter>
+    <ClCompile Include="src\p2048\p2048_GameComponent.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_GameProcessor.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_GameScene.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_NumberComponent.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_NumberNode.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_Stage.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_StageViewComponent.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_StageViewNode.cpp">
+      <Filter>project_2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\p2048\p2048_TitleScene.cpp">
+      <Filter>project_2048</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -511,33 +508,6 @@
     </ClInclude>
     <ClInclude Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.h">
       <Filter>test\test_p2048mini\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_Config.h">
-      <Filter>project_2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_NumberComponent.h">
-      <Filter>project_2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_StageViewComponent.h">
-      <Filter>project_2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_Stage.h">
-      <Filter>project_2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_NumberNode.h">
-      <Filter>project_2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_StageViewNode.h">
-      <Filter>project_2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_GameScene.h">
-      <Filter>project_2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_GameProcessor.h">
-      <Filter>project_2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_GameComponent.h">
-      <Filter>project_2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2action_AnimationRequestAction.h">
       <Filter>r2bix\action</Filter>
@@ -713,14 +683,41 @@
     <ClInclude Include="src\test\test_r2bix\item\color_value_test.h">
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_TitleScene.h">
-      <Filter>project_2048mini</Filter>
+    <ClInclude Include="src\p2048\p2048_CompanyScene.h">
+      <Filter>project_2048</Filter>
     </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_CompanyScene.h">
-      <Filter>project_2048mini</Filter>
+    <ClInclude Include="src\p2048\p2048_Config.h">
+      <Filter>project_2048</Filter>
     </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_EntryScene.h">
-      <Filter>project_2048mini</Filter>
+    <ClInclude Include="src\p2048\p2048_EntryScene.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_GameComponent.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_GameProcessor.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_GameScene.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_NumberComponent.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_NumberNode.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_Stage.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_StageViewComponent.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_StageViewNode.h">
+      <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048\p2048_TitleScene.h">
+      <Filter>project_2048</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

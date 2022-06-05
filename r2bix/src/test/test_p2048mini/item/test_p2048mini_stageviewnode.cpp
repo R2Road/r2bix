@@ -5,9 +5,9 @@
 #include "r2cm/r2cm_constant.h"
 #include "r2bix/r2render_Camera.h"
 
-#include "p2048mini/p2048mini_Stage.h"
-#include "p2048mini/p2048mini_StageViewComponent.h"
-#include "p2048mini/p2048mini_StageViewNode.h"
+#include "p2048/p2048_Stage.h"
+#include "p2048/p2048_StageViewComponent.h"
+#include "p2048/p2048_StageViewNode.h"
 #include "p2048/p2048table_TextureTable.h"
 
 #include "test/Utility4Test.h"

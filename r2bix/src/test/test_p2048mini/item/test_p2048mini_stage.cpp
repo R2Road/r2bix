@@ -7,8 +7,8 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_constant.h"
 
-#include "p2048mini/p2048mini_GameProcessor.h"
-#include "p2048mini/p2048mini_Stage.h"
+#include "p2048/p2048_GameProcessor.h"
+#include "p2048/p2048_Stage.h"
 
 #include "r2cm/r2cm_WindowUtility.h"
 

@@ -1,11 +1,11 @@
-#include "p2048mini_EntryScene.h"
+#include "p2048_EntryScene.h"
 
 #include <cassert>
 #include <conio.h>
 #include <utility> // std::move
 
 #include "r2bix/r2base_Director.h"
-#include "p2048mini_CompanyScene.h"
+#include "p2048_CompanyScene.h"
 #include "p2048/p2048table_TextureFrameAnimationTable.h"
 #include "p2048/p2048table_TextureTable.h"
 

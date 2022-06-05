@@ -6,8 +6,7 @@
 #include "r2cm/r2cm_constant.h"
 
 #include "test/TestMainMenu.h"
-#include "p2048mini/p2048mini_EntryScene.h"
-#include "p2048mini/p2048mini_GameScene.h"
+#include "p2048/p2048_EntryScene.h"
 #include "pmr/pmr_CompanyScene.h"
 
 r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )

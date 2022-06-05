@@ -1,4 +1,4 @@
-#include "p2048mini_NumberComponent.h"
+#include "p2048_NumberComponent.h"
 
 #include "r2bix/r2component_CustomTextureComponent.h"
 #include "r2bix/r2component_LabelComponent.h"

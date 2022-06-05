@@ -1,4 +1,4 @@
-#include "p2048mini_Stage.h"
+#include "p2048_Stage.h"
 
 #include <algorithm>
 

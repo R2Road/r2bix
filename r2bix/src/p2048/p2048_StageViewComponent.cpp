@@ -1,12 +1,12 @@
-#include "p2048mini_StageViewComponent.h"
+#include "p2048_StageViewComponent.h"
 
 #include "r2/r2_Assert.h"
 #include "r2bix/r2component_LabelComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 
-#include "p2048mini_NumberComponent.h"
-#include "p2048mini_NumberNode.h"
-#include "p2048mini_Stage.h"
+#include "p2048_NumberComponent.h"
+#include "p2048_NumberNode.h"
+#include "p2048_Stage.h"
 
 namespace p2048mini
 {
