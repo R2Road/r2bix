@@ -5,42 +5,42 @@
 
 namespace test_p2048_stage
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Generate : public r2cm::iItem, public r2cm::SingleTon<Generate>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class MoveReadyTest : public r2cm::iItem, public r2cm::SingleTon<MoveReadyTest>
+	class Add_Remove_ClearAll : public r2cm::iItem, public r2cm::SingleTon<Add_Remove_ClearAll>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class MoveTest : public r2cm::iItem, public r2cm::SingleTon<MoveTest>
+	class IsIn : public r2cm::iItem, public r2cm::SingleTon<IsIn>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class MergeTest : public r2cm::iItem, public r2cm::SingleTon<MergeTest>
+	class NumberCount_EmptyCount_IsFull : public r2cm::iItem, public r2cm::SingleTon<NumberCount_EmptyCount_IsFull>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class EmptyCheck : public r2cm::iItem, public r2cm::SingleTon<EmptyCheck>
+	class Lock : public r2cm::iItem, public r2cm::SingleTon<Lock>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
 
-	class MovableCheck : public r2cm::iItem, public r2cm::SingleTon<MovableCheck>
+	class Newcomer : public r2cm::iItem, public r2cm::SingleTon<Newcomer>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

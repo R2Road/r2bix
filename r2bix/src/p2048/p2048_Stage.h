@@ -43,10 +43,9 @@ namespace p2048
 	public:
 		uint32_t GetNumber( const uint32_t linear_index ) const;
 		uint32_t GetNumber( const uint32_t x, const uint32_t y ) const;
-		int32_t GetCurrentNumberCount() const { return mCurrentNumberCount; }
-		int32_t GetEmptySpaceCount() const { return static_cast<int32_t>( mContainer.size() ) - GetCurrentNumberCount(); }
+		int32_t GetNumberSpaceCount() const { return mCurrentNumberCount; }
+		int32_t GetEmptySpaceCount() const { return static_cast<int32_t>( mContainer.size() ) - GetNumberSpaceCount(); }
 		bool IsFull() const { return mContainer.size() == mCurrentNumberCount; }
-		bool IsLock( const uint32_t x, const uint32_t y ) const;
 
 		//
 		//
@@ -55,10 +54,16 @@ namespace p2048
 		void Add( const uint32_t linear_index, const uint32_t val );
 		void Add( const uint32_t x, const uint32_t y, const uint32_t val );
 		void Remove( const uint32_t x, const uint32_t y );
-		void ClearAllLocks();
+
+		//
+		//
+		//
+		void ClearAllFlags();
 		void Lock( const uint32_t x, const uint32_t y );
+		bool IsLock( const uint32_t x, const uint32_t y ) const;
 		void SetNewcomer( const uint32_t linear_index );
 		void SetNewcomer( const uint32_t x, const uint32_t y );
+		bool IsNewcomer( const uint32_t x, const uint32_t y ) const;
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;

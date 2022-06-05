@@ -93,6 +93,8 @@
     <ClCompile Include="src\test\test_miniaudio\item\miniaudio_test.cpp" />
     <ClCompile Include="src\test\test_miniaudio\TestMiniAudioMenu.cpp" />
     <ClCompile Include="src\test\test_p2048\TestP2048RootMenu.cpp" />
+    <ClCompile Include="src\test\test_p2048\test_p2048_gameprocessor.cpp" />
+    <ClCompile Include="src\test\test_p2048\test_p2048_numbernode.cpp" />
     <ClCompile Include="src\test\test_p2048\test_p2048_stage.cpp" />
     <ClCompile Include="src\test\test_p2048\test_p2048_stageviewnode.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\action_test.cpp" />
@@ -211,6 +213,8 @@
     <ClInclude Include="src\test\test_miniaudio\item\miniaudio_test.h" />
     <ClInclude Include="src\test\test_miniaudio\TestMiniAudioMenu.h" />
     <ClInclude Include="src\test\test_p2048\TestP2048RootMenu.h" />
+    <ClInclude Include="src\test\test_p2048\test_p2048_gameprocessor.h" />
+    <ClInclude Include="src\test\test_p2048\test_p2048_numbernode.h" />
     <ClInclude Include="src\test\test_p2048\test_p2048_stage.h" />
     <ClInclude Include="src\test\test_p2048\test_p2048_stageviewnode.h" />
     <ClInclude Include="src\test\test_r2bix\item\action_test.h" />

@@ -17,7 +17,7 @@ namespace p2048
 		, mStage( 4u, 4u )
 		, mGameProcessor( &mStage )
 		, mStageViewComponent( nullptr )
-		, mStageViewComponent4Debug( nullptr )
+		, mStageViewComponent4History( nullptr )
 
 		, mMaxNumberLabel( nullptr )
 		, mTotalScoreLabel( nullptr )
@@ -33,6 +33,7 @@ namespace p2048
 			, 0x53		// s - down
 			, 0x57		// w - up
 			, 0x52		// r - reset
+			, 0x09		// tab - history
 		} )
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
@@ -60,18 +61,22 @@ namespace p2048
 		switch( mStep )
 		{
 		case eStep::GameReset:
-			mStageViewComponent->GetOwnerNode().SetVisible( false );
-			mGameProcessor.Reset();
 			mStep = eStep::GameReady;
+			mGameProcessor.Reset();
+
+			mStageViewComponent->GetOwnerNode().SetVisible( false );
 			mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mTotalScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mRecentScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
-			mGameOverNode->SetVisible( false );
+
 			mYouWinNode->SetVisible( false );
+			mGameOverNode->SetVisible( false );
 			break;
 
 		case eStep::GameReady:
 		{
+			mStageViewComponent4History->UpdateView();
+
 			// Make 2 Number
 			for( int i = 0; 2 > i; ++i )
 			{
@@ -112,10 +117,7 @@ namespace p2048
 
 			if( r2::Direction4::eState::None != input_direction )
 			{
-				if( p2048::Config::GetDebugConfig().bLastStage )
-				{
-					mStageViewComponent4Debug->UpdateView();
-				}
+				mStageViewComponent4History->UpdateView();
 
 				if( !MoveNumber( input_direction ) )
 				{
@@ -143,6 +145,15 @@ namespace p2048
 			mYouWinNode->GetComponent<r2component::ActionProcessComponent>()->StartAction();
 			mStep = eStep::GameStop;
 			break;
+		}
+
+		if( mKeyboardInputListener.IsPushed( 6 ) )
+		{
+			mStageViewComponent4History->GetOwnerNode().SetVisible( true );
+		}
+		else if( mKeyboardInputListener.IsRelease( 6 ) )
+		{
+			mStageViewComponent4History->GetOwnerNode().SetVisible( false );
 		}
 
 		if( mKeyboardInputListener.IsPushed( 5 ) )

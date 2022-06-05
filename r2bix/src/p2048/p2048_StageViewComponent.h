@@ -20,6 +20,10 @@ namespace p2048
 		static std::unique_ptr<StageViewComponent> Create( r2base::Node& owner_node );
 
 		void Setup( const p2048::Stage& stage );
+		void SetBackgroundNode( r2base::Node* const background_node )
+		{
+			mBackgroundNode = background_node;
+		}
 		void UpdateView();
 
 		//
@@ -32,6 +36,8 @@ namespace p2048
 		const p2048::Stage* mStage;
 		int32_t mWidth;
 		int32_t mHeight;
-		std::vector<p2048::NumberComponent*> mLabelContainer;
+		std::vector<p2048::NumberComponent*> mNumberComponentContainer;
+
+		r2base::Node* mBackgroundNode;
 	};
 }

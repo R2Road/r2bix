@@ -34,10 +34,6 @@ namespace p2048
 	{
 		return GetNumber( mGridIndexConverter.To_Linear( x, y ) );
 	}
-	bool Stage::IsLock( const uint32_t x, const uint32_t y ) const
-	{
-		return Get( mGridIndexConverter.To_Linear( x, y ) ).merge_lock;
-	}
 
 	void Stage::ClearAll()
 	{
@@ -75,7 +71,7 @@ namespace p2048
 		Get( linear_index ).number = 0;
 	}
 
-	void Stage::ClearAllLocks()
+	void Stage::ClearAllFlags()
 	{
 		for( auto& cell : mContainer )
 		{
@@ -87,6 +83,10 @@ namespace p2048
 	{
 		Get( mGridIndexConverter.To_Linear( x, y ) ).merge_lock = true;
 	}
+	bool Stage::IsLock( const uint32_t x, const uint32_t y ) const
+	{
+		return Get( mGridIndexConverter.To_Linear( x, y ) ).merge_lock;
+	}
 	void Stage::SetNewcomer( const uint32_t linear_index )
 	{
 		Get( linear_index ).newcomer = true;
@@ -94,5 +94,9 @@ namespace p2048
 	void Stage::SetNewcomer( const uint32_t x, const uint32_t y )
 	{
 		SetNewcomer( mGridIndexConverter.To_Linear( x, y ) );
+	}
+	bool Stage::IsNewcomer( const uint32_t x, const uint32_t y ) const
+	{
+		return Get( mGridIndexConverter.To_Linear( x, y ) ).newcomer;
 	}
 }

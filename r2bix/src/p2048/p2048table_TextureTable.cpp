@@ -112,35 +112,15 @@ namespace p2048table
 
 		{
 			auto result = mTextureContainer.emplace( "p2048_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
-				71,
-				//		"          1         2         3         4         5         6         7"
-				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
-				/* 0 */ "###########                                                            "
-				/* 1 */ "#        ##                                                            "
-				/* 2 */ "#        ##                                                            "
-				/* 3 */ "#        ##                                                            "
-				/* 4 */ "###########                                                            "
-				/* 5 */ "#######################################################################"
-			) ) );
-
-			auto frame_result = mTextureFrameContainer.emplace(
-				"number_frame_0"
-				, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
-			);
-			frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 1, 7, 2 ) );
-		}
-
-		{
-			auto result = mTextureContainer.emplace( "p2048_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
 				60,
 				//		"          1         2         3         4         5         6         7"
 				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
 				/* 0 */ "                                                            "
-				/* 1 */ "  ###    ###    # #   #####     ###   #   #  #####   ###    "
-				/* 2 */ " #      #   #  # # #  #        #   #  #   #  #      #   #   "
-				/* 3 */ " # ###  ### #  # # #  #####    #   #  #   #  #####  ####    "
-				/* 4 */ " #   #  #   #  # # #  #        #   #   # #   #      #   #   "
-				/* 5 */ "  ###   #   #  # # #  # ###     ###     #    # ###  #   #   "
+				/* 1 */ "   ###    ###    # #   #####    ###   #   #  #####   ###    "
+				/* 2 */ "  #      #   #  # # #  #       #   #  #   #  #      #   #   "
+				/* 3 */ "  # ###  ### #  # # #  #####   #   #  #   #  #####  ####    "
+				/* 4 */ "  #   #  #   #  # # #  #       #   #   # #   #      #   #   "
+				/* 5 */ "   ###   #   #  # # #  # ###    ###     #    # ###  #   #   "
 				/* 6 */ "                                                            "
 				/* 7 */ " 22222    00000    4  4     88888                           "
 				/* 8 */ "2     2  0     0  4   4    8     8  M                       "
@@ -151,13 +131,14 @@ namespace p2048table
 				/* 3 */ "[   ESC   ] Exit                                            "
 				/* 4 */ "[ W,A,S,D ] Move Number                                     "
 				/* 5 */ "[    R    ] Restart                                         "
-				/* 6 */ "                                                            "
-				/* 7 */ "  #   #   ###   #   #    #   #   #####  #   #   B           "
-				/* 8 */ "  #   #  #   #  #   #    # # #     #    ##  #   B           "
-				/* 9 */ "   # #   #   #  #   #    # # #     #    # # #   B           "
-				/* 0 */ "    #    #   #  #   #    # # #     #    #  ##   B           "
-				/* 1 */ "    #     ###    ###      # #    #####  #   #   B           "
-				/* 2 */ "                                                            "
+				/* 6 */ "[   TAB   ] History                                         "
+				/* 7 */ "                                                            "
+				/* 8 */ "  #   #   ###   #   #    #   #   #####  #   #   B           "
+				/* 9 */ "  #   #  #   #  #   #    # # #     #    ##  #   B           "
+				/* 0 */ "   # #   #   #  #   #    # # #     #    # # #   B           "
+				/* 1 */ "    #    #   #  #   #    # # #     #    #  ##   B           "
+				/* 2 */ "    #     ###    ###      # #    #####  #   #   B           "
+				/* 3 */ "                                                            "
 			) ) );
 
 			{
@@ -165,7 +146,7 @@ namespace p2048table
 					"keyinfo_0"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 13, 22, 2 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 13, 22, 3 ) );
 			}
 
 			{
@@ -173,7 +154,7 @@ namespace p2048table
 					"game_over_0"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 59, 6 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 58, 6 ) );
 			}
 
 			{
@@ -181,7 +162,7 @@ namespace p2048table
 					"you_win_0"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( 0, 16, 47, 22 );
+				frame_result.first->second->SetVisibleRect( 0, 17, 47, 22 );
 			}
 		}
 	}

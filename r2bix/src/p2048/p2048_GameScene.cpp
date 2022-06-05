@@ -37,35 +37,12 @@ namespace p2048
 			p2048table::TextureTable::GetInstance().Load();
 
 			//
-			// Background
-			//
-			{
-				auto node = ret->AddChild<r2node::CustomTextureNode>( std::numeric_limits<int>::min() );
-				node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 37, 17, '=' );
-				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-				node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
-
-				node->mTransformComponent->SetPosition(
-					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetHeight() * 0.5f )
-				);
-
-				//
-				// Debug
-				//
-				if( p2048::Config::GetNodeConfig().pivot )
-				{
-					node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
-				}
-			}
-
-			//
 			// Game Component
 			//
 			auto game_component = ret->AddComponent<p2048::GameComponent>();
 
 			//
-			// Stage
+			// Stage View
 			//
 			{
 				auto stage_view_node = ret->AddChild<p2048::StageViewNode>( 1 );
@@ -84,6 +61,29 @@ namespace p2048
 				//
 				game_component->SetStageViewComponent( stage_view_component );
 			}
+			//
+			// History View
+			//
+			{
+				auto stage_view_node = ret->AddChild<p2048::StageViewNode>( 2 );
+				stage_view_node->SetVisible( false );
+
+				auto stage_view_component_4debug = stage_view_node->GetComponent<p2048::StageViewComponent>();
+				stage_view_component_4debug->Setup( game_component->GetStage() );
+
+				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component_4debug->GetWidth() * 0.5f )
+					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component_4debug->GetHeight() * 0.5f )
+				);
+
+				//
+				//
+				//
+				game_component->SetStageViewComponent4History( stage_view_component_4debug );
+			}
+
+			const int score_label_x = 39;
+			const int score_number_x = score_label_x + 10;
 
 			//
 			// Max Number
@@ -92,12 +92,12 @@ namespace p2048
 				auto label_node = ret->AddChild<r2node::LabelNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Max : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 62, 14 );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 9 );
 
 				auto max_number_label_node = ret->AddChild<r2node::LabelNode>( 1 );
 				max_number_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				max_number_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				max_number_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 14 );
+				max_number_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 9 );
 
 				//
 				//
@@ -112,12 +112,12 @@ namespace p2048
 				auto label_node = ret->AddChild<r2node::LabelNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Score : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 62, 15 );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 10 );
 
 				auto total_score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
 				total_score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 15 );
+				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 10 );
 
 				//
 				//
@@ -132,12 +132,12 @@ namespace p2048
 				auto label_node = ret->AddChild<r2node::LabelNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Recent : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 62, 16 );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 11 );
 
 				auto total_score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
 				total_score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( 72, 16 );
+				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 11 );
 
 				//
 				//
@@ -151,7 +151,7 @@ namespace p2048
 			{
 				auto sprite_node = ret->AddChild<r2node::SpriteNode>();
 				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
-				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 46, 37 );
+				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 23, 33 );
 			}
 
 			//
@@ -229,23 +229,6 @@ namespace p2048
 			//
 			// Debug
 			//
-			if( p2048::Config::GetDebugConfig().bLastStage )
-			{
-				auto stage_view_node = ret->AddChild<p2048::StageViewNode>( 1 );
-
-				auto stage_view_component_4debug = stage_view_node->GetComponent<p2048::StageViewComponent>();
-				stage_view_component_4debug->Setup( game_component->GetStage() );
-
-				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
-					0.f
-					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component_4debug->GetHeight() * 0.5f )
-				);
-
-				//
-				//
-				//
-				game_component->SetStageViewComponent4Debug( stage_view_component_4debug );
-			}
 			if( p2048::Config::GetNodeConfig().pivot )
 			{
 				//

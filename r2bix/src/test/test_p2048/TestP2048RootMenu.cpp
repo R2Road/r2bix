@@ -3,6 +3,8 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
+#include "test_p2048_gameprocessor.h"
+#include "test_p2048_numbernode.h"
 #include "test_p2048_stage.h"
 #include "test_p2048_stageviewnode.h"
 
@@ -18,18 +20,30 @@ r2cm::MenuUp TestP2048MiniRootMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', test_p2048_stage::Basic::GetInstance() );
-		ret->AddItem( '2', test_p2048_stage::MoveReadyTest::GetInstance() );
-		ret->AddItem( '3', test_p2048_stage::MoveTest::GetInstance() );
-		ret->AddItem( '4', test_p2048_stage::MergeTest::GetInstance() );
-		ret->AddItem( '5', test_p2048_stage::EmptyCheck::GetInstance() );
-		ret->AddItem( '6', test_p2048_stage::MovableCheck::GetInstance() );
+		ret->AddItem( '1', test_p2048_stage::Generate::GetInstance() );
+		ret->AddItem( '2', test_p2048_stage::Add_Remove_ClearAll::GetInstance() );
+		ret->AddItem( '3', test_p2048_stage::IsIn::GetInstance() );
+		ret->AddItem( '4', test_p2048_stage::NumberCount_EmptyCount_IsFull::GetInstance() );
+		ret->AddItem( '5', test_p2048_stage::Lock::GetInstance() );
+		ret->AddItem( '6', test_p2048_stage::Newcomer::GetInstance() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'q', test_p2048_stageviewnode::Generate::GetInstance() );
-		ret->AddItem( 'w', test_p2048_stageviewnode::Setup_Render::GetInstance() );
-		ret->AddItem( 'e', test_p2048_stageviewnode::UpdateView::GetInstance() );
+		ret->AddItem( 'q', test_p2048_gameprocessor::MoveReadyTest::GetInstance() );
+		ret->AddItem( 'w', test_p2048_gameprocessor::MoveTest::GetInstance() );
+		ret->AddItem( 'e', test_p2048_gameprocessor::MergeTest::GetInstance() );
+		ret->AddItem( 'r', test_p2048_gameprocessor::MovableCheck::GetInstance() );
+
+		ret->AddLineFeed();
+
+		ret->AddItem( 'a', test_p2048_numbernode::Generate::GetInstance() );
+		ret->AddItem( 's', test_p2048_numbernode::SetNumber::GetInstance() );
+
+		ret->AddLineFeed();
+
+		ret->AddItem( 'z', test_p2048_stageviewnode::Generate::GetInstance() );
+		ret->AddItem( 'x', test_p2048_stageviewnode::Setup_Render::GetInstance() );
+		ret->AddItem( 'c', test_p2048_stageviewnode::UpdateView::GetInstance() );
 
 
 		ret->AddSplit();

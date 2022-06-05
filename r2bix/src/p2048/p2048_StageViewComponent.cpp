@@ -1,6 +1,7 @@
 #include "p2048_StageViewComponent.h"
 
 #include "r2/r2_Assert.h"
+#include "r2bix/r2component_CustomTextureComponent.h"
 #include "r2bix/r2component_LabelComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 
@@ -14,7 +15,8 @@ namespace p2048
 		, mStage( nullptr )
 		, mWidth( 0u )
 		, mHeight( 0u )
-		, mLabelContainer()
+		, mNumberComponentContainer()
+		, mBackgroundNode( nullptr )
 	{}
 
 	std::unique_ptr<StageViewComponent> StageViewComponent::Create( r2base::Node& owner_node )
@@ -30,7 +32,7 @@ namespace p2048
 
 	void StageViewComponent::Setup( const p2048::Stage& stage )
 	{
-		if( !mLabelContainer.empty() )
+		if( !mNumberComponentContainer.empty() )
 		{
 			//
 			// # 2022.05.06 by R
@@ -53,7 +55,7 @@ namespace p2048
 		mWidth = ( mStage->GetWidth() * NUMBER_WIDTH ) + ( ( mStage->GetWidth() - 1 ) * SPACING_WIDTH );
 		mHeight = ( mStage->GetHeight() * NUMBER_HEIGHT ) + ( ( mStage->GetHeight() - 1 ) * SPACING_HEIGHT );
 
-		mLabelContainer.reserve( mStage->GetWidth() * mStage->GetHeight() );
+		mNumberComponentContainer.reserve( mStage->GetWidth() * mStage->GetHeight() );
 		for( uint32_t y = 0; mStage->GetHeight() > y; ++y )
 		{
 			for( uint32_t x = 0; mStage->GetWidth() > x; ++x )
@@ -62,7 +64,7 @@ namespace p2048
 
 				auto number_component = node->GetComponent<p2048::NumberComponent>();
 				number_component->SetNumber( 2048, false, false );
-				mLabelContainer.push_back( number_component );
+				mNumberComponentContainer.push_back( number_component );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					4 + static_cast<int>( x * ( NUMBER_WIDTH + SPACING_WIDTH ) )
@@ -70,6 +72,13 @@ namespace p2048
 				);
 			}
 		}
+
+		//
+		// Background
+		//
+		R2ASSERT( nullptr != mBackgroundNode, "WTF" );
+		mBackgroundNode->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( mWidth + 2u, mHeight + 2u, '=' );
+		mBackgroundNode->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
 	}
 
 	void StageViewComponent::UpdateView()
@@ -77,8 +86,8 @@ namespace p2048
 		uint32_t label_index = 0;
 		for( const auto cell : *mStage )
 		{
-			mLabelContainer[label_index]->GetOwnerNode().SetVisible( ( 0 < cell.number ) );
-			mLabelContainer[label_index]->SetNumber( cell.number, cell.merge_lock, cell.newcomer );
+			mNumberComponentContainer[label_index]->GetOwnerNode().SetVisible( ( 0 < cell.number ) );
+			mNumberComponentContainer[label_index]->SetNumber( cell.number, cell.merge_lock, cell.newcomer );
 			++label_index;
 		}
 	}
