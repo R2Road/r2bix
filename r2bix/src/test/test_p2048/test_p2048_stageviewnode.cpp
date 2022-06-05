@@ -1,4 +1,4 @@
-#include "test_p2048mini_stageviewnode.h"
+#include "test_p2048_stageviewnode.h"
 
 #include "r2bix/r2base_Director.h"
 #include "r2cm/r2cm_Inspector.h"

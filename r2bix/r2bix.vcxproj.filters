@@ -25,12 +25,6 @@
     <Filter Include="test\test_r2bix\item">
       <UniqueIdentifier>{ad1df904-b64d-41ca-a907-6962189f53d8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test\test_p2048mini">
-      <UniqueIdentifier>{881f9dfd-f1f0-4aa0-9571-76f84aea0942}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test\test_p2048mini\item">
-      <UniqueIdentifier>{08a1c283-5428-49d7-b562-ff2f789daf7d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="r2bix">
       <UniqueIdentifier>{56c407ac-3cd0-4e36-9350-1d558861105b}</UniqueIdentifier>
     </Filter>
@@ -66,6 +60,9 @@
     </Filter>
     <Filter Include="test\test_miniaudio\item">
       <UniqueIdentifier>{080b8e6b-bca9-49f6-bb21-1f13152f9fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\test_p2048">
+      <UniqueIdentifier>{881f9dfd-f1f0-4aa0-9571-76f84aea0942}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -176,15 +173,6 @@
       <Filter>r2</Filter>
     </ClCompile>
     <ClCompile Include="src\DevelopmentMenu.cpp" />
-    <ClCompile Include="src\test\test_p2048mini\TestP2048MiniRootMenu.cpp">
-      <Filter>test\test_p2048mini</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_p2048mini\item\test_p2048mini_stage.cpp">
-      <Filter>test\test_p2048mini\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.cpp">
-      <Filter>test\test_p2048mini\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2action_AnimationRequestAction.cpp">
       <Filter>r2bix\action</Filter>
     </ClCompile>
@@ -368,6 +356,15 @@
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp">
       <Filter>project_2048</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_p2048\test_p2048_stage.cpp">
+      <Filter>test\test_p2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_p2048\test_p2048_stageviewnode.cpp">
+      <Filter>test\test_p2048</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_p2048\TestP2048RootMenu.cpp">
+      <Filter>test\test_p2048</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -491,15 +488,6 @@
       <Filter>r2</Filter>
     </ClInclude>
     <ClInclude Include="src\DevelopmentMenu.h" />
-    <ClInclude Include="src\test\test_p2048mini\TestP2048MiniRootMenu.h">
-      <Filter>test\test_p2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_p2048mini\item\test_p2048mini_stage.h">
-      <Filter>test\test_p2048mini\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_p2048mini\item\test_p2048mini_stageviewnode.h">
-      <Filter>test\test_p2048mini\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2action_AnimationRequestAction.h">
       <Filter>r2bix\action</Filter>
     </ClInclude>
@@ -715,6 +703,15 @@
     </ClInclude>
     <ClInclude Include="src\p2048\p2048table_TextureTable.h">
       <Filter>project_2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_p2048\test_p2048_stage.h">
+      <Filter>test\test_p2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_p2048\test_p2048_stageviewnode.h">
+      <Filter>test\test_p2048</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_p2048\TestP2048RootMenu.h">
+      <Filter>test\test_p2048</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

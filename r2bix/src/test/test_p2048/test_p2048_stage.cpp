@@ -1,4 +1,4 @@
-#include "test_p2048mini_stage.h"
+#include "test_p2048_stage.h"
 
 #include <conio.h>
 #include <iomanip>

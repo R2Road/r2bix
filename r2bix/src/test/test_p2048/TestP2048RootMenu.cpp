@@ -1,10 +1,10 @@
-#include "TestP2048MiniRootMenu.h"
+#include "TestP2048RootMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
-#include "test/test_p2048mini/item/test_p2048mini_stage.h"
-#include "test/test_p2048mini/item/test_p2048mini_stageviewnode.h"
+#include "test_p2048_stage.h"
+#include "test_p2048_stageviewnode.h"
 
 #include "test/TestMainMenu.h"
 
