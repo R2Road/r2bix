@@ -4,7 +4,7 @@
 
 #include "r2/r2_Random.h"
 
-namespace p2048mini
+namespace p2048
 {
 	GameProcessor::GameProcessor( Stage* const stage ) :
 		mStage( stage )

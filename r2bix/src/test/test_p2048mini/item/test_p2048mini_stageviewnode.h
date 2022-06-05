@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_iItem.h"
 #include "r2cm/r2cm_Singleton.h"
 
-namespace test_p2048mini_stageviewnode
+namespace test_p2048_stageviewnode
 {
 	class Generate : public r2cm::iItem, public r2cm::SingleTon<Generate>
 	{

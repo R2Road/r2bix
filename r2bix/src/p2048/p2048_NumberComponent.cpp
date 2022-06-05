@@ -3,7 +3,7 @@
 #include "r2bix/r2component_CustomTextureComponent.h"
 #include "r2bix/r2component_LabelComponent.h"
 
-namespace p2048mini
+namespace p2048
 {
 	NumberComponent::NumberComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mLabelComponent( nullptr )

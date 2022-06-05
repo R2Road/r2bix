@@ -258,7 +258,7 @@ namespace p2048
 			}
 			else if( 32 == input ) // Space
 			{
-				mDirector.Setup( p2048mini::GameScene::Create( mDirector ) );
+				mDirector.Setup( p2048::GameScene::Create( mDirector ) );
 			}
 		}
 

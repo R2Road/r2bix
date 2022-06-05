@@ -12,7 +12,7 @@
 
 #include "r2cm/r2cm_WindowUtility.h"
 
-void PrintStage( const p2048mini::Stage& stage )
+void PrintStage( const p2048::Stage& stage )
 {
 	int val = 0;
 	for( uint32_t y = 0; stage.GetHeight() > y; ++y )
@@ -31,7 +31,7 @@ void PrintStage( const p2048mini::Stage& stage )
 	}
 }
 
-namespace test_p2048mini_stage
+namespace test_p2048_stage
 {
 	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
 	{
@@ -48,7 +48,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( p2048mini::Stage stage( 6, 5 ) );
+			DECLARATION_MAIN( p2048::Stage stage( 6, 5 ) );
 			EXPECT_EQ( 6, stage.GetWidth() );
 			EXPECT_EQ( 5, stage.GetHeight() );
 
@@ -98,7 +98,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
+			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
 
 			std::cout << r2cm::split;
 
@@ -217,8 +217,8 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
-			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
+			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
+			DECLARATION_MAIN( p2048::GameProcessor game_processor( &stage ) );
 
 			std::cout << r2cm::split;
 
@@ -298,8 +298,8 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( p2048mini::Stage stage( 4, 1 ) );
-			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
+			DECLARATION_MAIN( p2048::Stage stage( 4, 1 ) );
+			DECLARATION_MAIN( p2048::GameProcessor game_processor( &stage ) );
 
 			std::cout << r2cm::split;
 
@@ -387,7 +387,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
+			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
 			EXPECT_EQ( 0, stage.GetCurrentNumberCount() );
 
 			std::cout << r2cm::split;
@@ -471,8 +471,8 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
-			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
+			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
+			DECLARATION_MAIN( p2048::GameProcessor game_processor( &stage ) );
 
 			std::cout << r2cm::split;
 

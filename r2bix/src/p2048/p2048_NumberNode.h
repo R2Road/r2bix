@@ -7,7 +7,7 @@ namespace r2base
 	class Director;
 }
 
-namespace p2048mini
+namespace p2048
 {
 	class NumberNode : public r2base::Node
 	{

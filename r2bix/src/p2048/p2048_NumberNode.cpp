@@ -15,14 +15,14 @@
 #include "p2048_NumberComponent.h"
 #include "p2048table_TextureTable.h"
 
-namespace p2048mini
+namespace p2048
 {
 	r2base::NodeUp NumberNode::Create( r2base::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
 		{
-			auto number_component = ret->AddComponent<p2048mini::NumberComponent>();
+			auto number_component = ret->AddComponent<p2048::NumberComponent>();
 
 			//
 			// Frame
@@ -52,7 +52,7 @@ namespace p2048mini
 			//
 			// Debug
 			//
-			if( p2048mini::Config::GetNodeConfig().pivot )
+			if( p2048::Config::GetNodeConfig().pivot )
 			{
 				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 			}

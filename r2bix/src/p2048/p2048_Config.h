@@ -1,6 +1,6 @@
 #pragma once
 
-namespace p2048mini
+namespace p2048
 {
 	class Config
 	{

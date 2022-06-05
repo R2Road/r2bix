@@ -8,7 +8,7 @@
 #include "p2048_NumberNode.h"
 #include "p2048_Stage.h"
 
-namespace p2048mini
+namespace p2048
 {
 	StageViewComponent::StageViewComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mStage( nullptr )
@@ -28,7 +28,7 @@ namespace p2048mini
 		return ret;
 	}
 
-	void StageViewComponent::Setup( const p2048mini::Stage& stage )
+	void StageViewComponent::Setup( const p2048::Stage& stage )
 	{
 		if( !mLabelContainer.empty() )
 		{
@@ -39,7 +39,7 @@ namespace p2048mini
 			// 이후 r2base - Node 에 RemoveChild method가 추가된다면 구현 가능하다.
 			// 다음 버전에서 추가될 예정이다.
 			//
-			R2ASSERT( false, "p2048mini - StageViewComponent::Setup : Must be call once" );
+			R2ASSERT( false, "p2048 - StageViewComponent::Setup : Must be call once" );
 			return;
 		}
 
@@ -58,9 +58,9 @@ namespace p2048mini
 		{
 			for( uint32_t x = 0; mStage->GetWidth() > x; ++x )
 			{
-				auto node = mOwnerNode.AddChild<p2048mini::NumberNode>();
+				auto node = mOwnerNode.AddChild<p2048::NumberNode>();
 
-				auto number_component = node->GetComponent<p2048mini::NumberComponent>();
+				auto number_component = node->GetComponent<p2048::NumberComponent>();
 				number_component->SetNumber( 2048, false, false );
 				mLabelContainer.push_back( number_component );
 

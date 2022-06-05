@@ -9,7 +9,7 @@ namespace r2component
 	class LabelComponent;
 }
 
-namespace p2048mini
+namespace p2048
 {
 	class NumberComponent : public r2base::Component
 	{

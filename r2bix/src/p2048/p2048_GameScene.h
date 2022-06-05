@@ -2,7 +2,7 @@
 
 #include "r2bix/r2node_SceneNode.h"
 
-namespace p2048mini
+namespace p2048
 {
 	class GameScene : public r2node::SceneNode
 	{

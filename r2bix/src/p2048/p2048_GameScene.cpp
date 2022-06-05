@@ -24,7 +24,7 @@
 
 #include "p2048_Config.h"
 
-namespace p2048mini
+namespace p2048
 {
 	r2node::SceneNodeUp GameScene::Create( r2base::Director& director )
 	{
@@ -53,7 +53,7 @@ namespace p2048mini
 				//
 				// Debug
 				//
-				if( p2048mini::Config::GetNodeConfig().pivot )
+				if( p2048::Config::GetNodeConfig().pivot )
 				{
 					node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 				}
@@ -62,16 +62,16 @@ namespace p2048mini
 			//
 			// Game Component
 			//
-			auto game_component = ret->AddComponent<p2048mini::GameComponent>();
+			auto game_component = ret->AddComponent<p2048::GameComponent>();
 
 			//
 			// Stage
 			//
 			{
-				auto stage_view_node = ret->AddChild<p2048mini::StageViewNode>( 1 );
+				auto stage_view_node = ret->AddChild<p2048::StageViewNode>( 1 );
 				stage_view_node->SetVisible( false );
 
-				auto stage_view_component = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
+				auto stage_view_component = stage_view_node->GetComponent<p2048::StageViewComponent>();
 				stage_view_component->Setup( game_component->GetStage() );
 
 				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
@@ -229,11 +229,11 @@ namespace p2048mini
 			//
 			// Debug
 			//
-			if( p2048mini::Config::GetDebugConfig().bLastStage )
+			if( p2048::Config::GetDebugConfig().bLastStage )
 			{
-				auto stage_view_node = ret->AddChild<p2048mini::StageViewNode>( 1 );
+				auto stage_view_node = ret->AddChild<p2048::StageViewNode>( 1 );
 
-				auto stage_view_component_4debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
+				auto stage_view_component_4debug = stage_view_node->GetComponent<p2048::StageViewComponent>();
 				stage_view_component_4debug->Setup( game_component->GetStage() );
 
 				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
@@ -246,7 +246,7 @@ namespace p2048mini
 				//
 				game_component->SetStageViewComponent4Debug( stage_view_component_4debug );
 			}
-			if( p2048mini::Config::GetNodeConfig().pivot )
+			if( p2048::Config::GetNodeConfig().pivot )
 			{
 				//
 				//

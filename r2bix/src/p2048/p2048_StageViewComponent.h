@@ -5,7 +5,7 @@
 #include "r2bix/r2base_Component.h"
 #include "r2bix/r2base_ComponentStaticID.h"
 
-namespace p2048mini
+namespace p2048
 {
 	class NumberComponent;
 	class Stage;
@@ -19,7 +19,7 @@ namespace p2048mini
 		int GetStaticID() const override { return r2base::ComponentStaticID<StageViewComponent>::Get(); }
 		static std::unique_ptr<StageViewComponent> Create( r2base::Node& owner_node );
 
-		void Setup( const p2048mini::Stage& stage );
+		void Setup( const p2048::Stage& stage );
 		void UpdateView();
 
 		//
@@ -29,9 +29,9 @@ namespace p2048mini
 		int32_t GetHeight() const { return mHeight; }
 
 	private:
-		const p2048mini::Stage* mStage;
+		const p2048::Stage* mStage;
 		int32_t mWidth;
 		int32_t mHeight;
-		std::vector<p2048mini::NumberComponent*> mLabelContainer;
+		std::vector<p2048::NumberComponent*> mLabelContainer;
 	};
 }

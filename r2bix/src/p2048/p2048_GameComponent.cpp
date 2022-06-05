@@ -10,7 +10,7 @@
 #include "p2048_Config.h"
 #include "p2048_StageViewComponent.h"
 
-namespace p2048mini
+namespace p2048
 {
 	GameComponent::GameComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mStep( eStep::GameReady )
@@ -112,7 +112,7 @@ namespace p2048mini
 
 			if( r2::Direction4::eState::None != input_direction )
 			{
-				if( p2048mini::Config::GetDebugConfig().bLastStage )
+				if( p2048::Config::GetDebugConfig().bLastStage )
 				{
 					mStageViewComponent4Debug->UpdateView();
 				}
