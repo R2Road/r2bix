@@ -88,7 +88,7 @@ namespace r2render
 		// Color
 		//
 		mColors.clear();
-		mColors.resize( mChars.size(), r2base::ColorValue{} );
+		mColors.resize( mChars.size(), r2base::DefaultColorValue );
 	}
 	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char )
 	{
