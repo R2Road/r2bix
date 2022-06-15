@@ -27,10 +27,11 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 		ret->AddItem( 'q', texture_test::FillCharacterAll::GetInstance() );
 		ret->AddItem( 'w', texture_test::FillCharacter::GetInstance() );
 		ret->AddItem( 'e', texture_test::FillColorAll::GetInstance() );
-		ret->AddItem( 'r', texture_test::InitWithChars_1::GetInstance() );
-		ret->AddItem( 't', texture_test::InitWithChars_2::GetInstance() );
-		ret->AddItem( 'y', texture_test::InitWithChars_3::GetInstance() );
-		ret->AddItem( 'u', texture_test::InitWithChars_4::GetInstance() );
+		ret->AddItem( 'r', texture_test::FillColor::GetInstance() );
+		ret->AddItem( 't', texture_test::InitWithChars_1::GetInstance() );
+		ret->AddItem( 'y', texture_test::InitWithChars_2::GetInstance() );
+		ret->AddItem( 'u', texture_test::InitWithChars_3::GetInstance() );
+		ret->AddItem( 'i', texture_test::InitWithChars_4::GetInstance() );
 
 
 		ret->AddLineFeed();

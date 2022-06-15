@@ -117,6 +117,49 @@ namespace texture_test
 
 
 
+	r2cm::iItem::TitleFuncT FillColor ::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture : FillColor";
+		};
+	}
+	r2cm::iItem::DoFuncT FillColor::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_BrightWhite );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( r2render::Texture texture( 10, 10 ) );
+			PROCESS_MAIN( texture.FillColor( 0, 0, fore | back ) );
+			PROCESS_MAIN( texture.FillColor( texture.GetXEnd(), 0, r2base::DefaultColorValue ) );
+			PROCESS_MAIN( texture.FillColor( texture.GetXEnd(), texture.GetYEnd(), back ) );
+			PROCESS_MAIN( texture.FillColor( 0, texture.GetYEnd(), fore ) );
+			PROCESS_SUB( texture.FillCharacterAll( 'A' ) );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTextureColor( texture );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTexture( texture );
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT InitWithChars_1::GetTitleFunction() const
 	{
 		return []()->const char*
