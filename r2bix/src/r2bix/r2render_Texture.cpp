@@ -51,7 +51,7 @@ namespace r2render
 		memcpy_s( &mChars[0], mChars.size(), str.data(), std::min( str.size(), mChars.size() ) );
 	}
 
-	Texture::ValueT Texture::Get( const uint32_t x, const uint32_t y ) const
+	Texture::ValueT Texture::GetCharacter( const uint32_t x, const uint32_t y ) const
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 

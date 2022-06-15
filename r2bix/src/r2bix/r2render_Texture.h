@@ -46,7 +46,7 @@ namespace r2render
 		int GetLength() const { return static_cast<int>( mChars.size() ); }
 
 		const ContainerT& GetCharacterContainer() const { return mChars; }
-		ValueT Get( const uint32_t x, const uint32_t y ) const;
+		ValueT GetCharacter( const uint32_t x, const uint32_t y ) const;
 		std::string_view GetCharacterLine( const uint32_t y ) const;
 
 		const ColorContainerT& GetColorContainer() const { return mColors; }

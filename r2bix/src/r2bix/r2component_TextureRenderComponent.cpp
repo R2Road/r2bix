@@ -74,7 +74,7 @@ namespace r2component
 			{
 				render_target->FillCharacter(
 					x, y
-					, mTexture->Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+					, mTexture->GetCharacter( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 				);
 
 				render_target->FillColor(

@@ -63,10 +63,10 @@ namespace texture_frame_test
 
 			std::cout << r2cm::linefeed;
 
-			EXPECT_EQ( texture.Get( 0, 0 ), frame.Get( 0, 0 ) );
+			EXPECT_EQ( texture.GetCharacter( 0, 0 ), frame.Get( 0, 0 ) );
 			EXPECT_EQ( '1', frame.Get( 0, 0 ) );
 
-			EXPECT_EQ( texture.Get( 6, 6 ), frame.Get( 6, 6 ) );
+			EXPECT_EQ( texture.GetCharacter( 6, 6 ), frame.Get( 6, 6 ) );
 			EXPECT_EQ( '7', frame.Get( 6, 6 ) );
 
 			std::cout << r2cm::split;
@@ -132,7 +132,7 @@ namespace texture_frame_test
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( texture.Get( frame.GetMinX(), frame.GetMinY() ), frame.Get( 0, 0 ) );
+				EXPECT_EQ( texture.GetCharacter( frame.GetMinX(), frame.GetMinY() ), frame.Get( 0, 0 ) );
 
 				std::cout << r2cm::linefeed;
 

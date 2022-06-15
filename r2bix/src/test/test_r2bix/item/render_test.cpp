@@ -108,7 +108,7 @@ namespace render_test
 					{
 						render_target->FillCharacter(
 							x, y
-							, mTexture.Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+							, mTexture.GetCharacter( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 						);
 					}
 				}
@@ -174,7 +174,7 @@ namespace render_test
 						for( int x = 0; current_rect.GetWidth() > x; ++x )
 						{
 							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
-							std::cout << render_test_node.mTexture.Get( x, y );
+							std::cout << render_test_node.mTexture.GetCharacter( x, y );
 						}
 					}
 				}

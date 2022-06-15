@@ -89,7 +89,7 @@ void Utility4Test::DrawTexture( const r2render::Texture& texture )
 			std::cout 
 				<< r2cm::clm( Convert_R2bixForegroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
 				<< r2cm::clm( Convert_R2bixBackgroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
-				<< texture.Get( x, y )
+				<< texture.GetCharacter( x, y )
 				<< r2cm::clm();
 		}
 
