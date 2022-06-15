@@ -96,6 +96,25 @@ void Utility4Test::DrawTexture( const r2render::Texture& texture )
 		std::cout << r2cm::linefeed;
 	}
 }
+void Utility4Test::DrawTextureCharacter( const r2render::Texture& texture )
+{
+	std::size_t x = 0;
+	for( const auto c : texture.GetContainer() )
+	{
+		std::cout << c;
+
+		++x;
+		if( texture.GetWidth() <= x )
+		{
+			x = 0u;
+			std::cout << r2cm::linefeed;
+		}
+	}
+	if( 0u != x )
+	{
+		std::cout << r2cm::linefeed;
+	}
+}
 void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
 {
 	std::size_t x = 0;

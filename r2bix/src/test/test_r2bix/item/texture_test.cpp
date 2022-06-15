@@ -32,7 +32,7 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( texture );
+			Utility4Test::DrawTextureCharacter( texture );
 
 			std::cout << r2cm::split;
 
@@ -65,7 +65,7 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( texture );
+			Utility4Test::DrawTextureCharacter( texture );
 
 			std::cout << r2cm::split;
 
