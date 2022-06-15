@@ -99,7 +99,7 @@ void Utility4Test::DrawTexture( const r2render::Texture& texture )
 void Utility4Test::DrawTextureCharacter( const r2render::Texture& texture )
 {
 	std::size_t x = 0;
-	for( const auto c : texture.GetContainer() )
+	for( const auto c : texture.GetCharacterContainer() )
 	{
 		std::cout << c;
 
