@@ -96,18 +96,6 @@ void Utility4Test::DrawTexture( const r2render::Texture& texture )
 		std::cout << r2cm::linefeed;
 	}
 }
-void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
-{
-	for( int y = 0; y < frame.GetHeight(); ++y )
-	{
-		for( int x = 0; x < frame.GetWidth(); ++x )
-		{
-			std::cout << frame.Get( x, y );
-		}
-
-		std::cout << r2cm::linefeed;
-	}
-}
 void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
 {
 	std::size_t x = 0;
@@ -124,6 +112,19 @@ void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
 	}
 	if( 0u != x )
 	{
+		std::cout << r2cm::linefeed;
+	}
+}
+
+void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
+{
+	for( int y = 0; y < frame.GetHeight(); ++y )
+	{
+		for( int x = 0; x < frame.GetWidth(); ++x )
+		{
+			std::cout << frame.Get( x, y );
+		}
+
 		std::cout << r2cm::linefeed;
 	}
 }
