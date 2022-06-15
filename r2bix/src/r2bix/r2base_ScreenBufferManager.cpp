@@ -170,7 +170,7 @@ namespace r2base
 			//
 			// Character
 			//
-			output_line = texture->GetLine( static_cast<uint32_t>( y ) );
+			output_line = texture->GetCharacterLine( static_cast<uint32_t>( y ) );
 			WriteConsoleOutputCharacterA( back_buffer_handle, output_line.data(), static_cast<DWORD>( output_line.length() ), current_write_coord, &out_result );
 
 			//

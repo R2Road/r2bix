@@ -47,7 +47,7 @@ namespace r2render
 
 		const ContainerT& GetCharacterContainer() const { return mChars; }
 		ValueT Get( const uint32_t x, const uint32_t y ) const;
-		std::string_view GetLine( const uint32_t y ) const;
+		std::string_view GetCharacterLine( const uint32_t y ) const;
 
 		const ColorContainerT& GetColorContainer() const { return mColors; }
 		r2base::ColorValue GetColor( const uint32_t x, const uint32_t y ) const;

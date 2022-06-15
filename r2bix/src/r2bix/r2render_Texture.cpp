@@ -57,7 +57,7 @@ namespace r2render
 
 		return mChars[target_linear_index];
 	}
-	std::string_view Texture::GetLine( const uint32_t y ) const
+	std::string_view Texture::GetCharacterLine( const uint32_t y ) const
 	{
 		std::string_view temp( &mChars[0] );
 		return temp.substr( mGridIndexConverter.To_Linear( 0, y ), mGridIndexConverter.GetWidth() );
