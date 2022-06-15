@@ -1,5 +1,7 @@
 #include "texture_test.h"
 
+#include <string>
+
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_constant.h"
 
@@ -97,10 +99,15 @@ namespace texture_test
 
 			DECLARATION_MAIN( r2render::Texture texture( 5, 5 ) );
 			PROCESS_MAIN( texture.FillColorAll( fore | back ) );
+			PROCESS_SUB( texture.FillCharacterAll( 'A' ) );
 
 			std::cout << r2cm::split;
 
 			Utility4Test::DrawTextureColor( texture );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTexture( texture );
 
 			std::cout << r2cm::split;
 
