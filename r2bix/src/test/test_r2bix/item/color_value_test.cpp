@@ -98,6 +98,133 @@ namespace color_value_test
 
 			std::cout << r2cm::split;
 
+
+
+			{
+				DECLARATION_MAIN( r2base::ColorOption op( 0 ) );
+				EXPECT_EQ( 0, op.GetMask() );
+
+				std::cout << r2cm::linefeed2;
+
+				{
+					std::cout << r2cm::tab << "+ Foreground" << r2cm::linefeed2;
+
+					PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Foreground ) );
+					EXPECT_EQ( uint8_t( -1 ) >> 4, op.GetMask() );
+					PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Foreground ) );
+					EXPECT_EQ( 0, op.GetMask() );
+				}
+
+				std::cout << r2cm::linefeed2;
+
+				{
+					std::cout << r2cm::tab << "+ Background" << r2cm::linefeed2;
+
+					PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Background ) );
+					EXPECT_EQ( uint8_t( -1 ) >> 4 << 4, op.GetMask() );
+					PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Background ) );
+					EXPECT_EQ( 0, op.GetMask() );
+				}
+
+				std::cout << r2cm::linefeed2;
+
+				{
+					std::cout << r2cm::tab << "+ Both" << r2cm::linefeed2;
+
+					PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Foreground ) );
+					PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Background ) );
+					EXPECT_EQ( uint8_t( -1 ), op.GetMask() );
+					PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Foreground ) );
+					PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Background ) );
+					EXPECT_EQ( 0, op.GetMask() );
+				}
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( r2base::ColorOption op( 0 ) );
+				DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+				DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Gray );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Foreground ) );
+				EXPECT_EQ( fore, ( fore | back ) & op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT ColorOption_On_Off::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Color Option : On / Off";
+		};
+	}
+	r2cm::iItem::DoFuncT ColorOption_On_Off::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( r2base::ColorOption op( 0 ) );
+			EXPECT_EQ( 0, op.GetMask() );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Foreground" << r2cm::linefeed2;
+
+				PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Foreground ) );
+				EXPECT_EQ( uint8_t( -1 ) >> 4, op.GetMask() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Foreground ) );
+				EXPECT_EQ( 0, op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Background" << r2cm::linefeed2;
+
+				PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Background ) );
+				EXPECT_EQ( uint8_t( -1 ) >> 4 << 4, op.GetMask() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Background ) );
+				EXPECT_EQ( 0, op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Both" << r2cm::linefeed2;
+
+				PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Foreground ) );
+				PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Background ) );
+				EXPECT_EQ( uint8_t( -1 ), op.GetMask() );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Foreground ) );
+				PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Background ) );
+				EXPECT_EQ( 0, op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
