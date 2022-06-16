@@ -63,6 +63,8 @@ namespace texture_frame_test
 
 			std::cout << r2cm::linefeed;
 
+			EXPECT_EQ( &texture, frame.GetTexture() );
+
 			EXPECT_EQ( texture.GetCharacter( 0, 0 ), frame.Get( 0, 0 ) );
 			EXPECT_EQ( '1', frame.Get( 0, 0 ) );
 

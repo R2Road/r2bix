@@ -12,6 +12,8 @@ namespace r2render
 		//
 		//
 		//
+		const Texture* const GetTexture() const { return mTexture; }
+
 		int GetWidth() const { return mVisibleRect.GetWidth(); }
 		int GetHeight() const { return mVisibleRect.GetHeight(); }
 
