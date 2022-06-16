@@ -52,4 +52,53 @@ namespace color_value_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT ColorOption_Generate::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Color Option : Generate";
+		};
+	}
+	r2cm::iItem::DoFuncT ColorOption_Generate::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( r2base::ColorOption op );
+				EXPECT_EQ( uint8_t( -1 ), op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( r2base::ColorOption op( r2base::eColorFlag::CF_Foreground | r2base::eColorFlag::CF_Background ) );
+				EXPECT_EQ( uint8_t( -1 ), op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( r2base::ColorOption op( r2base::eColorFlag::CF_Foreground ) );
+				EXPECT_EQ( uint8_t( -1 ) >> 4, op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( r2base::ColorOption op( r2base::eColorFlag::CF_Background ) );
+				EXPECT_EQ( ( uint8_t( -1 ) >> 4 ) << 4, op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

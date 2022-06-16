@@ -19,6 +19,7 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', color_value_test::Basic::GetInstance() );
+		ret->AddItem( '2', color_value_test::ColorOption_Generate::GetInstance() );
 
 
 		ret->AddLineFeed();
