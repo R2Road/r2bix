@@ -25,13 +25,19 @@ namespace texture_table_test
 
 			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" ) );
+			{
+				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" ) );
+				Utility4Test::DrawTexture( *texture );
+			}
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( *texture );
+			{
+				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" ) );
+				Utility4Test::DrawTexture( *texture );
+			}
 
 			std::cout << r2cm::split;
 
