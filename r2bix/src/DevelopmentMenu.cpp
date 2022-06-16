@@ -40,8 +40,13 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+
+
+		ret->AddLineFeed();
+
+
 		ret->AddItem(
-			'2'
+			'a'
 			, []()->const char* { return p2048::EntryScene::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{
@@ -60,7 +65,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'3'
+			's'
 			, []()->const char* { return pmr::CompanyScene::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{
