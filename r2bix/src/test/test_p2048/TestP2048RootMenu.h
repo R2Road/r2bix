@@ -15,6 +15,6 @@ private:
 	TestP2048MiniRootMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Test P2048 Mini"; }
+	static const char* GetTitle() { return "Test P2048( To do )"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };

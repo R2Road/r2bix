@@ -15,7 +15,8 @@ r2cm::MenuUp TestP2048MiniRootMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle(),
-				"> Inprogress : Stage : Move"
+				"> 이 게임이 p2048mini 와 다른 것은 이동 과정을 보여준 다는 것에 있다."
+		"\n"	"> Inprogress : ..."
 		"\n"	"> To do : ..."
 	) );
 
