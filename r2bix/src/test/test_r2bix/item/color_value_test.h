@@ -25,4 +25,11 @@ namespace color_value_test
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class ColorOption_Mask : public r2cm::iItem, public r2cm::SingleTon<ColorOption_Mask>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

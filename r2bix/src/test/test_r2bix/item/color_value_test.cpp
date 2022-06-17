@@ -228,4 +228,51 @@ namespace color_value_test
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT ColorOption_Mask::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Color Option : Mask";
+		};
+	}
+	r2cm::iItem::DoFuncT ColorOption_Mask::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Gray );
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const r2base::ColorOption op( r2base::eColorFlag::CF_Foreground ) );
+				EXPECT_EQ( fore, ( fore | back ) & op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const r2base::ColorOption op( r2base::eColorFlag::CF_Background ) );
+				EXPECT_EQ( back, ( fore | back ) & op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const r2base::ColorOption op( r2base::eColorFlag::CF_Foreground | r2base::eColorFlag::CF_Background ) );
+				EXPECT_EQ( ( fore | back ), ( fore | back ) & op.GetMask() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }
