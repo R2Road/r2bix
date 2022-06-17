@@ -74,6 +74,26 @@ namespace r2cm
 		}
 	}
 
+	void WindowUtility::FillCharacter( const CursorPoint point, const char c )
+	{
+		DWORD out_result;
+		FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), c, 1, { point.x, point.y }, &out_result );
+	}
+	void WindowUtility::FillCharacter( const int x, const int y, const char c )
+	{
+		FillCharacter( { short( x ), short( y ) }, c );
+	}
+
+	void WindowUtility::FillColor( const CursorPoint point, const short c )
+	{
+		DWORD out_result;
+		FillConsoleOutputAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), c, 1, { point.x, point.y }, &out_result );
+	}
+	void WindowUtility::FillColor( const int x, const int y, const short c )
+	{
+		FillColor( { short( x ), short( y ) }, c );
+	}
+
 	void WindowUtility::RequestSleep( const uint32_t m )
 	{
 		Sleep( m );
