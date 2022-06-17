@@ -186,11 +186,13 @@ namespace color_value_test
 
 				PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Foreground ) );
 				EXPECT_EQ( uint8_t( -1 ) >> 4, op.GetMask() );
+				OUTPUT_BINARY( op.GetMask() );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Foreground ) );
 				EXPECT_EQ( 0, op.GetMask() );
+				OUTPUT_BINARY( op.GetMask() );
 			}
 
 			std::cout << r2cm::split;
@@ -200,11 +202,13 @@ namespace color_value_test
 
 				PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Background ) );
 				EXPECT_EQ( uint8_t( -1 ) >> 4 << 4, op.GetMask() );
+				OUTPUT_BINARY( op.GetMask() );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Background ) );
 				EXPECT_EQ( 0, op.GetMask() );
+				OUTPUT_BINARY( op.GetMask() );
 			}
 
 			std::cout << r2cm::split;
@@ -215,12 +219,14 @@ namespace color_value_test
 				PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Foreground ) );
 				PROCESS_MAIN( op.On( r2base::eColorFlag::CF_Background ) );
 				EXPECT_EQ( uint8_t( -1 ), op.GetMask() );
+				OUTPUT_BINARY( op.GetMask() );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Foreground ) );
 				PROCESS_MAIN( op.Off( r2base::eColorFlag::CF_Background ) );
 				EXPECT_EQ( 0, op.GetMask() );
+				OUTPUT_BINARY( op.GetMask() );
 			}
 
 			std::cout << r2cm::split;
@@ -247,12 +253,18 @@ namespace color_value_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+			OUTPUT_BINARY( uint8_t( fore ) );
 			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Gray );
+			OUTPUT_BINARY( uint8_t( back ) );
 
 			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( const r2base::ColorOption op( r2base::eColorFlag::CF_Foreground ) );
+				OUTPUT_BINARY( op.GetMask() );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_EQ( fore, ( fore | back ) & op.GetMask() );
 			}
 
@@ -260,6 +272,10 @@ namespace color_value_test
 
 			{
 				DECLARATION_MAIN( const r2base::ColorOption op( r2base::eColorFlag::CF_Background ) );
+				OUTPUT_BINARY( op.GetMask() );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_EQ( back, ( fore | back ) & op.GetMask() );
 			}
 
@@ -267,6 +283,10 @@ namespace color_value_test
 
 			{
 				DECLARATION_MAIN( const r2base::ColorOption op( r2base::eColorFlag::CF_Foreground | r2base::eColorFlag::CF_Background ) );
+				OUTPUT_BINARY( op.GetMask() );
+
+				std::cout << r2cm::linefeed;
+
 				EXPECT_EQ( ( fore | back ), ( fore | back ) & op.GetMask() );
 			}
 
