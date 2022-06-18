@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
 
+#include "r2bix/r2base_ColorOption.h"
 #include "r2bix/r2base_ColorValue.h"
 
 #include "test/Utility4Test.h"
