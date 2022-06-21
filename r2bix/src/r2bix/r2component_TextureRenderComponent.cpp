@@ -12,6 +12,7 @@ namespace r2component
 		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTexture( nullptr )
+		, mColorOption( r2base::eColorFlag::CF_Foreground | r2base::eColorFlag::CF_Foreground )
 	{}
 
 	std::unique_ptr<TextureRenderComponent> TextureRenderComponent::Create( r2base::Node& owner_node )
