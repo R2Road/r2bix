@@ -2,7 +2,7 @@
 
 #include "r2base_Component.h"
 #include "r2base_ComponentStaticID.h"
-#include "r2base_ColorOption.h"
+#include "r2base_ColorMaskOption.h"
 
 #include "r2/r2_Point_Float.h"
 #include "r2/r2_Rect_Int.h"
