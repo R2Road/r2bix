@@ -12,7 +12,7 @@ namespace r2component
 		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTexture( nullptr )
-		, mColorOption( r2base::eColorMaskFlag::CMF_Foreground | r2base::eColorMaskFlag::CMF_Background )
+		, mColorMaskOption( r2base::eColorMaskFlag::CMF_Foreground | r2base::eColorMaskFlag::CMF_Background )
 	{}
 
 	std::unique_ptr<TextureRenderComponent> TextureRenderComponent::Create( r2base::Node& owner_node )
@@ -68,7 +68,7 @@ namespace r2component
 		//
 		// Offset
 		//
-		const auto color_mask = mColorOption.GetMask();
+		const auto color_mask = mColorMaskOption.GetMask();
 		const auto off_set_point = render_target_space_intersect_rect.GetOrigin() - render_target_space_my_rect.GetOrigin();
 		for( int y = render_target_space_intersect_rect.GetMinY(), ty = 0; render_target_space_intersect_rect.GetMaxY() >= y; ++y, ++ty )
 		{

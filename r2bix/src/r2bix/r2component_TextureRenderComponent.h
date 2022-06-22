@@ -59,6 +59,6 @@ namespace r2component
 		r2::PointFloat mPivotPoint;
 		r2::RectInt mVisibleRect;
 		const r2render::Texture* mTexture;
-		r2base::ColorOption mColorOption;
+		r2base::ColorMaskOption mColorMaskOption;
 	};
 }
