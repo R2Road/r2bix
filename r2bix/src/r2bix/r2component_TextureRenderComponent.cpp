@@ -68,6 +68,7 @@ namespace r2component
 		//
 		// Offset
 		//
+		const auto color_mask = mColorOption.GetMask();
 		const auto off_set_point = render_target_space_intersect_rect.GetOrigin() - render_target_space_my_rect.GetOrigin();
 		for( int y = render_target_space_intersect_rect.GetMinY(), ty = 0; render_target_space_intersect_rect.GetMaxY() >= y; ++y, ++ty )
 		{
@@ -80,7 +81,7 @@ namespace r2component
 
 				render_target->FillColor(
 					x, y
-					, mTexture->GetColor( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+					, color_mask & mTexture->GetColor( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 				);
 			}
 		}
