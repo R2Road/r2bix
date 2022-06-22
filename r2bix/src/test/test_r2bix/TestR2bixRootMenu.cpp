@@ -5,6 +5,7 @@
 
 #include "test/test_r2bix/menu/ActionMenu.h"
 #include "test/test_r2bix/menu/CameraMenu.h"
+#include "test/test_r2bix/menu/ColorMenu.h"
 #include "test/test_r2bix/menu/InputMenu.h"
 #include "test/test_r2bix/menu/ComponentMenu.h"
 #include "test/test_r2bix/menu/NodeMenu.h"
@@ -41,6 +42,15 @@ r2cm::MenuUp TestR2bixRootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem( '4', rect_test::Basic::GetInstance() );
+		ret->AddItem(
+			'5'
+			, []()->const char* { return ColorMenu::GetTitle(); }
+			, [&director]()->r2cm::eItemLeaveAction
+			{
+				director.Setup( ColorMenu::Create( director ) );
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
 
 
 

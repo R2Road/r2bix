@@ -5,7 +5,6 @@
 
 #include "test/test_r2bix/TestR2bixRootMenu.h"
 
-#include "test/test_r2bix/item/color_value_test.h"
 #include "test/test_r2bix/item/texture_test.h"
 #include "test/test_r2bix/item/texture_frame_test.h"
 #include "test/test_r2bix/item/texture_table_test.h"
@@ -18,24 +17,20 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', color_value_test::Basic::GetInstance() );
-		ret->AddItem( '2', color_value_test::ColorMaskOption_Generate::GetInstance() );
-		ret->AddItem( '3', color_value_test::ColorMaskOption_On_Off::GetInstance() );
-		ret->AddItem( '4', color_value_test::ColorMaskOption_Mask::GetInstance() );
+		ret->AddItem( '1', texture_test::FillCharacterAll::GetInstance() );
+		ret->AddItem( '2', texture_test::FillCharacter::GetInstance() );
+		ret->AddItem( '3', texture_test::FillColorAll::GetInstance() );
+		ret->AddItem( '4', texture_test::FillColor::GetInstance() );
+		ret->AddItem( '5', texture_test::BlendColor::GetInstance() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', texture_test::FillCharacterAll::GetInstance() );
-		ret->AddItem( 'w', texture_test::FillCharacter::GetInstance() );
-		ret->AddItem( 'e', texture_test::FillColorAll::GetInstance() );
-		ret->AddItem( 'r', texture_test::FillColor::GetInstance() );
-		ret->AddItem( 't', texture_test::BlendColor::GetInstance() );
-		ret->AddItem( 'y', texture_test::InitWithChars_1::GetInstance() );
-		ret->AddItem( 'u', texture_test::InitWithChars_2::GetInstance() );
-		ret->AddItem( 'i', texture_test::InitWithChars_3::GetInstance() );
-		ret->AddItem( 'o', texture_test::InitWithChars_4::GetInstance() );
+		ret->AddItem( 'q', texture_test::InitWithChars_1::GetInstance() );
+		ret->AddItem( 'w', texture_test::InitWithChars_2::GetInstance() );
+		ret->AddItem( 'e', texture_test::InitWithChars_3::GetInstance() );
+		ret->AddItem( 'r', texture_test::InitWithChars_4::GetInstance() );
 
 
 		ret->AddLineFeed();
