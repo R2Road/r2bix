@@ -160,6 +160,49 @@ namespace texture_test
 
 
 
+	r2cm::iItem::TitleFuncT BlendColor::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture : BlendColor";
+		};
+	}
+	r2cm::iItem::DoFuncT BlendColor::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Aqua );
+			DECLARATION_MAIN( const auto new_fore = r2base::eForegroundColor::FG_Red );
+			OUTPUT_VALUE( new_fore );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( r2render::Texture texture( 10, 10 ) );
+			PROCESS_SUB( texture.FillCharacterAll( 'A' ) );
+			PROCESS_SUB( texture.FillColorAll( fore | back ) );
+			PROCESS_MAIN( texture.BlendColor( 0, 0, new_fore ) );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTextureColor( texture );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTexture( texture );
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT InitWithChars_1::GetTitleFunction() const
 	{
 		return []()->const char*
