@@ -160,6 +160,58 @@ namespace texture_test
 
 
 
+	r2cm::iItem::TitleFuncT FillColorWithMask::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture : FillColorWithMask";
+		};
+	}
+	r2cm::iItem::DoFuncT FillColorWithMask::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( const auto base_color = r2base::eForegroundColor::FG_Aqua | r2base::eBackgroundColor::BG_Aqua );
+			DECLARATION_MAIN( const auto new_fore_color = r2base::eForegroundColor::FG_Red );
+			OUTPUT_VALUE( new_fore_color );
+			DECLARATION_MAIN( const auto new_back_color = r2base::eBackgroundColor::BG_Red );
+			OUTPUT_VALUE( new_back_color );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( const r2base::ColorMaskOption only_foregound_cmo( r2base::eColorMaskFlag::CMF_Foreground ) );
+			OUTPUT_BINARY( only_foregound_cmo.GetMask() );
+			DECLARATION_MAIN( const r2base::ColorMaskOption only_background_cmo( r2base::eColorMaskFlag::CMF_Background ) );
+			OUTPUT_BINARY( only_background_cmo.GetMask() );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A' ) );
+			PROCESS_SUB( texture.FillColorAll( base_color ) );
+			PROCESS_MAIN( texture.FillColorWithMask( 0, 0, new_fore_color, only_foregound_cmo ) );
+			PROCESS_MAIN( texture.FillColorWithMask( 1, 0, new_fore_color, only_background_cmo ) );
+			PROCESS_MAIN( texture.FillColorWithMask( 0, 1, new_back_color, only_background_cmo ) );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTextureColor( texture );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTexture( texture );
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT BlendColor::GetTitleFunction() const
 	{
 		return []()->const char*

@@ -33,6 +33,13 @@ namespace texture_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class FillColorWithMask : public r2cm::iItem, public r2cm::SingleTon<FillColorWithMask>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class BlendColor : public r2cm::iItem, public r2cm::SingleTon<BlendColor>
 	{
 	public:

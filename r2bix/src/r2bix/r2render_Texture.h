@@ -67,6 +67,7 @@ namespace r2render
 		void FillCharacter( const uint32_t x, const uint32_t y, const char c ) override;
 		void FillColorAll( const r2base::ColorValue color_value ) override;
 		void FillColor( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value ) override;
+		void FillColorWithMask( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value, const r2base::ColorMaskOption color_mask_option ) override;
 		void BlendColor( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value ) override;
 		r2::RectInt GetRect() const override { return r2::RectInt( 0, 0, GetWidth(), GetHeight() ); };
 

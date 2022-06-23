@@ -129,6 +129,16 @@ namespace r2render
 		mColors[target_linear_index] = color_value;
 	}
 
+	void Texture::FillColorWithMask( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value, const r2base::ColorMaskOption color_mask_option )
+	{
+		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
+
+		mColors[target_linear_index] = ( 
+				( static_cast<uint8_t>( mColors[target_linear_index] ) & static_cast<uint8_t>( ~color_mask_option.GetMask() ) )
+			|	( color_value & color_mask_option.GetMask() )
+		);
+	}
+
 	void Texture::BlendColor( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
