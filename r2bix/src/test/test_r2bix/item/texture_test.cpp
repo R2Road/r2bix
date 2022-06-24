@@ -190,8 +190,7 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A' ) );
-			PROCESS_SUB( texture.FillColorAll( base_color ) );
+			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A', base_color ) );
 			PROCESS_MAIN( texture.FillColorWithMask( 0, 0, new_fore_color, only_foregound_cmo ) );
 			PROCESS_MAIN( texture.FillColorWithMask( 1, 0, new_fore_color, only_background_cmo ) );
 			PROCESS_MAIN( texture.FillColorWithMask( 0, 1, new_back_color, only_background_cmo ) );
@@ -234,9 +233,7 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( r2render::Texture texture( 10, 10 ) );
-			PROCESS_SUB( texture.FillCharacterAll( 'A' ) );
-			PROCESS_SUB( texture.FillColorAll( fore | back ) );
+			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A', fore | back ) )
 			PROCESS_MAIN( texture.BlendColor( 0, 0, new_fore ) );
 
 			std::cout << r2cm::split;
@@ -275,8 +272,7 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A' ) );
-			PROCESS_SUB( texture.FillColorAll( fore | back ) );
+			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A', fore | back ) );
 			PROCESS_MAIN( texture.FillDisuse( 0, 0, true ) );
 			PROCESS_MAIN( texture.FillDisuse( texture.GetXEnd(), 0, true ) );
 			PROCESS_MAIN( texture.FillDisuse( texture.GetXEnd(), texture.GetYEnd(), true ) );

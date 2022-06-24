@@ -38,6 +38,14 @@ namespace r2render
 	{
 		Reset( width, height, fill_char );
 	}
+	Texture::Texture( const uint32_t width, const uint32_t height, const char fill_char, const r2base::ColorValue color_value ) :
+		mGridIndexConverter( 1, 1 )
+		, mChars()
+		, mColors()
+		, mDisuses()
+	{
+		Reset( width, height, fill_char, color_value );
+	}
 	Texture::Texture( const uint32_t width, const uint32_t height, const std::string_view str ) :
 		mGridIndexConverter( width, height )
 		, mChars( width * height, 32 )
@@ -110,6 +118,10 @@ namespace r2render
 	}
 	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char )
 	{
+		Reset( width, height, fill_char, r2base::DefaultColorValue );
+	}
+	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char, const r2base::ColorValue color_value )
+	{
 		assert( 0u < width && 0u < height );
 
 		mGridIndexConverter = r2::GridIndexConverter( width, height );
@@ -120,7 +132,7 @@ namespace r2render
 		// Color
 		//
 		mColors.clear();
-		mColors.resize( mChars.size(), r2base::DefaultColorValue );
+		mColors.resize( mChars.size(), color_value );
 
 		//
 		// Disuse

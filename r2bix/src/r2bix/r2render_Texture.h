@@ -26,6 +26,7 @@ namespace r2render
 		explicit Texture( const uint32_t width, const std::string_view str );
 		explicit Texture( const uint32_t width, const uint32_t height );
 		explicit Texture( const uint32_t width, const uint32_t height, const char fill_char );
+		explicit Texture( const uint32_t width, const uint32_t height, const char fill_char, const r2base::ColorValue color_value );
 		explicit Texture( const uint32_t width, const uint32_t height, const std::string_view str );
 		explicit Texture( const uint32_t width, const uint32_t height, const char fill_char, const std::string_view str );
 
@@ -63,6 +64,7 @@ namespace r2render
 		//
 		void Reset( const std::string_view str );
 		void Reset( const uint32_t width, const uint32_t height, const char fill_char );
+		void Reset( const uint32_t width, const uint32_t height, const char fill_char, const r2base::ColorValue color_value );
 
 
 		//
