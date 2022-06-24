@@ -97,9 +97,8 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( r2render::Texture texture( 5, 5 ) );
+			DECLARATION_MAIN( r2render::Texture texture( 5, 5, 'A' ) );
 			PROCESS_MAIN( texture.FillColorAll( fore | back ) );
-			PROCESS_SUB( texture.FillCharacterAll( 'A' ) );
 
 			std::cout << r2cm::split;
 
