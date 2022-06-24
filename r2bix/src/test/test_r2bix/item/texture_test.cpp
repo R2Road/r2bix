@@ -255,6 +255,49 @@ namespace texture_test
 
 
 
+	r2cm::iItem::TitleFuncT FillDisuse::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture : FillDisuse";
+		};
+	}
+	r2cm::iItem::DoFuncT FillDisuse::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Blue );
+
+			std::cout << r2cm::linefeed;
+
+			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A' ) );
+			PROCESS_SUB( texture.FillColorAll( fore | back ) );
+			PROCESS_MAIN( texture.FillDisuse( 0, 0, true ) );
+			PROCESS_MAIN( texture.FillDisuse( texture.GetXEnd(), 0, true ) );
+			PROCESS_MAIN( texture.FillDisuse( texture.GetXEnd(), texture.GetYEnd(), true ) );
+			PROCESS_MAIN( texture.FillDisuse( 0, texture.GetYEnd(), true ) );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTextureDisuse( texture );
+
+			std::cout << r2cm::split;
+
+			Utility4Test::DrawTexture( texture );
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT InitWithChars_1::GetTitleFunction() const
 	{
 		return []()->const char*

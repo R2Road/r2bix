@@ -47,6 +47,13 @@ namespace texture_test
 		DoFuncT GetDoFunction() override;
 	};
 
+	class FillDisuse : public r2cm::iItem, public r2cm::SingleTon<FillDisuse>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class InitWithChars_1 : public r2cm::iItem, public r2cm::SingleTon<InitWithChars_1>
 	{
 	public:

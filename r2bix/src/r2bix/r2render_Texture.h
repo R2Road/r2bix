@@ -20,6 +20,8 @@ namespace r2render
 
 		using ColorContainerT = std::vector<r2base::ColorValue>;
 
+		using DisuseContainerT = std::vector<bool>;
+
 		explicit Texture( const std::string_view str );
 		explicit Texture( const uint32_t width, const std::string_view str );
 		explicit Texture( const uint32_t width, const uint32_t height );
@@ -53,6 +55,9 @@ namespace r2render
 		r2base::ColorValue GetColor( const uint32_t x, const uint32_t y ) const;
 		const r2base::ColorValue* GetColorLine( const uint32_t y ) const;
 
+		const DisuseContainerT& GetDisuseContainer() const { return mDisuses; }
+		bool GetDisuse( const uint32_t x, const uint32_t y ) const;
+
 		//
 		//
 		//
@@ -71,9 +76,15 @@ namespace r2render
 		void BlendColor( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value ) override;
 		r2::RectInt GetRect() const override { return r2::RectInt( 0, 0, GetWidth(), GetHeight() ); };
 
+		//
+		//
+		//
+		void FillDisuse( const uint32_t x, const uint32_t y, const bool disuse );
+
 	private:
 		r2::GridIndexConverter mGridIndexConverter;
 		ContainerT mChars;
 		ColorContainerT mColors;
+		DisuseContainerT mDisuses;
 	};
 }

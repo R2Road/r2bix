@@ -86,11 +86,15 @@ void Utility4Test::DrawTexture( const r2render::Texture& texture )
 	{
 		for( int x = 0; x < texture.GetWidth(); ++x )
 		{
-			std::cout 
-				<< r2cm::clm( Convert_R2bixForegroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
-				<< r2cm::clm( Convert_R2bixBackgroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
-				<< texture.GetCharacter( x, y )
-				<< r2cm::clm();
+			texture.GetDisuse( x, y )
+				? ( std::cout << ' ' )
+				: (
+					std::cout
+					<< r2cm::clm( Convert_R2bixForegroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
+					<< r2cm::clm( Convert_R2bixBackgroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
+					<< texture.GetCharacter( x, y )
+					<< r2cm::clm()
+				);
 		}
 
 		std::cout << r2cm::linefeed;
@@ -121,6 +125,25 @@ void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
 	for( const auto color : texture.GetColorContainer() )
 	{
 		std::cout << std::setw( 3 ) << color << " ";
+
+		++x;
+		if( texture.GetWidth() <= x )
+		{
+			x = 0u;
+			std::cout << r2cm::linefeed;
+		}
+	}
+	if( 0u != x )
+	{
+		std::cout << r2cm::linefeed;
+	}
+}
+void Utility4Test::DrawTextureDisuse( const r2render::Texture& texture )
+{
+	std::size_t x = 0;
+	for( const auto disuse : texture.GetDisuseContainer() )
+	{
+		std::cout << std::setw( 3 ) << disuse << " ";
 
 		++x;
 		if( texture.GetWidth() <= x )
