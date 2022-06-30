@@ -56,8 +56,8 @@ namespace r2render
 		r2base::ColorValue GetColor( const uint32_t x, const uint32_t y ) const;
 		const r2base::ColorValue* GetColorLine( const uint32_t y ) const;
 
-		const DisuseContainerT& GetDisuseContainer() const { return mDisuses; }
-		bool GetDisuse( const uint32_t x, const uint32_t y ) const;
+		const DisuseContainerT& GetCharacterDisuseContainer() const { return mCharDisuses; }
+		bool GetCharacterDisuse( const uint32_t x, const uint32_t y ) const;
 
 		//
 		//
@@ -81,12 +81,12 @@ namespace r2render
 		//
 		//
 		//
-		void FillDisuse( const uint32_t x, const uint32_t y, const bool disuse );
+		void FillCharacterDisuse( const uint32_t x, const uint32_t y, const bool disuse );
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;
 		ContainerT mChars;
 		ColorContainerT mColors;
-		DisuseContainerT mDisuses;
+		DisuseContainerT mCharDisuses;
 	};
 }

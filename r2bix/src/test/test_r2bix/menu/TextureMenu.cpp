@@ -23,7 +23,7 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 		ret->AddItem( '4', texture_test::FillColor::GetInstance() );
 		ret->AddItem( '5', texture_test::FillColorWithMask::GetInstance() );
 		ret->AddItem( '6', texture_test::BlendColor::GetInstance() );
-		ret->AddItem( '7', texture_test::FillDisuse::GetInstance() );
+		ret->AddItem( '7', texture_test::FillCharacterDisuse::GetInstance() );
 
 
 		ret->AddLineFeed();

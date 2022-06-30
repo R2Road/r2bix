@@ -251,14 +251,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT FillDisuse::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT FillCharacterDisuse::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Texture : FillDisuse";
+			return "Texture : FillCharacterDisuse";
 		};
 	}
-	r2cm::iItem::DoFuncT FillDisuse::GetDoFunction()
+	r2cm::iItem::DoFuncT FillCharacterDisuse::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -272,10 +272,10 @@ namespace texture_test
 			std::cout << r2cm::linefeed;
 
 			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A', fore | back ) );
-			PROCESS_MAIN( texture.FillDisuse( 0, 0, true ) );
-			PROCESS_MAIN( texture.FillDisuse( texture.GetXEnd(), 0, true ) );
-			PROCESS_MAIN( texture.FillDisuse( texture.GetXEnd(), texture.GetYEnd(), true ) );
-			PROCESS_MAIN( texture.FillDisuse( 0, texture.GetYEnd(), true ) );
+			PROCESS_MAIN( texture.FillCharacterDisuse( 0, 0, true ) );
+			PROCESS_MAIN( texture.FillCharacterDisuse( texture.GetXEnd(), 0, true ) );
+			PROCESS_MAIN( texture.FillCharacterDisuse( texture.GetXEnd(), texture.GetYEnd(), true ) );
+			PROCESS_MAIN( texture.FillCharacterDisuse( 0, texture.GetYEnd(), true ) );
 
 			std::cout << r2cm::split;
 

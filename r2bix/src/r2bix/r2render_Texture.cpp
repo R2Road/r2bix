@@ -9,7 +9,7 @@ namespace r2render
 		mGridIndexConverter( 1, 1 )
 		, mChars()
 		, mColors()
-		, mDisuses()
+		, mCharDisuses()
 	{
 		Reset( str );
 	}
@@ -17,7 +17,7 @@ namespace r2render
 		mGridIndexConverter( width, static_cast<int>( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) )
 		, mChars( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), 32 )
 		, mColors( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), r2base::DefaultColorValue )
-		, mDisuses( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), false )
+		, mCharDisuses( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), false )
 	{
 		assert( 0u < mGridIndexConverter.GetWidth() && 0u < mGridIndexConverter.GetHeight() );
 		memcpy_s( &mChars[0], mChars.size(), str.data(), str.size() );
@@ -26,7 +26,7 @@ namespace r2render
 		mGridIndexConverter( width, height )
 		, mChars( width * height, 32 )
 		, mColors( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), r2base::DefaultColorValue )
-		, mDisuses( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), false )
+		, mCharDisuses( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), false )
 	{
 		assert( 0u < width && 0u < height );
 	}
@@ -34,7 +34,7 @@ namespace r2render
 		mGridIndexConverter( 1, 1 )
 		, mChars()
 		, mColors()
-		, mDisuses()
+		, mCharDisuses()
 	{
 		Reset( width, height, fill_char );
 	}
@@ -42,7 +42,7 @@ namespace r2render
 		mGridIndexConverter( 1, 1 )
 		, mChars()
 		, mColors()
-		, mDisuses()
+		, mCharDisuses()
 	{
 		Reset( width, height, fill_char, color_value );
 	}
@@ -50,7 +50,7 @@ namespace r2render
 		mGridIndexConverter( width, height )
 		, mChars( width * height, 32 )
 		, mColors( width * height, r2base::DefaultColorValue )
-		, mDisuses( width * height, false )
+		, mCharDisuses( width * height, false )
 	{
 		assert( 0u < width && 0u < height );
 		memcpy_s( &mChars[0], mChars.size(), str.data(), std::min( str.size(), mChars.size() ) );
@@ -59,7 +59,7 @@ namespace r2render
 		mGridIndexConverter( width, height )
 		, mChars( width * height, fill_char )
 		, mColors( width * height, r2base::DefaultColorValue )
-		, mDisuses( width * height, false )
+		, mCharDisuses( width * height, false )
 	{
 		assert( 0u < width && 0u < height );
 		memcpy_s( &mChars[0], mChars.size(), str.data(), std::min( str.size(), mChars.size() ) );
@@ -87,10 +87,10 @@ namespace r2render
 		return &mColors[mGridIndexConverter.To_Linear( 0, y )];
 	}
 
-	bool Texture::GetDisuse( const uint32_t x, const uint32_t y ) const
+	bool Texture::GetCharacterDisuse( const uint32_t x, const uint32_t y ) const
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
-		return mDisuses[target_linear_index];
+		return mCharDisuses[target_linear_index];
 	}
 
 	void Texture::Reset( const std::string_view str )
@@ -113,8 +113,8 @@ namespace r2render
 		//
 		// Disuse
 		//
-		mDisuses.clear();
-		mDisuses.resize( mChars.size(), false );
+		mCharDisuses.clear();
+		mCharDisuses.resize( mChars.size(), false );
 	}
 	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char )
 	{
@@ -137,8 +137,8 @@ namespace r2render
 		//
 		// Disuse
 		//
-		mDisuses.clear();
-		mDisuses.resize( mChars.size(), false );
+		mCharDisuses.clear();
+		mCharDisuses.resize( mChars.size(), false );
 	}
 
 	void Texture::FillCharacterAll( const char c )
@@ -182,10 +182,10 @@ namespace r2render
 		mColors[target_linear_index] |= color_value;
 	}
 
-	void Texture::FillDisuse( const uint32_t x, const uint32_t y, const bool disuse )
+	void Texture::FillCharacterDisuse( const uint32_t x, const uint32_t y, const bool disuse )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 
-		mDisuses[target_linear_index] = disuse;
+		mCharDisuses[target_linear_index] = disuse;
 	}
 }

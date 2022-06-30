@@ -86,7 +86,7 @@ void Utility4Test::DrawTexture( const r2render::Texture& texture )
 	{
 		for( int x = 0; x < texture.GetWidth(); ++x )
 		{
-			texture.GetDisuse( x, y )
+			texture.GetCharacterDisuse( x, y )
 				? ( std::cout << ' ' )
 				: (
 					std::cout
@@ -141,7 +141,7 @@ void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
 void Utility4Test::DrawTextureDisuse( const r2render::Texture& texture )
 {
 	std::size_t x = 0;
-	for( const auto disuse : texture.GetDisuseContainer() )
+	for( const auto disuse : texture.GetCharacterDisuseContainer() )
 	{
 		std::cout << std::setw( 3 ) << disuse << " ";
 
