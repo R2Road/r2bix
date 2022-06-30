@@ -73,10 +73,13 @@ namespace r2component
 		{
 			for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() >= x; ++x, ++tx )
 			{
-				render_target->FillCharacter(
-					x, y
-					, mTexture->GetCharacter( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
-				);
+				if( mTexture->GetCharacterDisuse( off_set_point.GetX() + tx, off_set_point.GetY() + ty ) )
+				{
+					render_target->FillCharacter(
+						x, y
+						, mTexture->GetCharacter( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+					);
+				}
 
 				render_target->FillColorWithMask(
 					x, y
