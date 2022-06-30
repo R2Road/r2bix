@@ -15,7 +15,7 @@ namespace r2base
 		const char VersionNumber_2 = 0;
 		const char VersionNumber_3 = 1;
 
-		const char* const String4Version_0_0_1 =
+		const char* const String4Road2Version_0_0_1 =
 					"### Road 2 Version 0.0.1 ###"
 			"\n\n"	"[o] " "Double Buffering"
 			"\n"	"[o] " "Input"
@@ -25,7 +25,7 @@ namespace r2base
 			"\n"	"[o] " "Make Simple Puzzle Game"
 		;
 
-		const char* const String4Version_0_0_2 =
+		const char* const String4Road2Version_0_0_2 =
 					"### Road 2 Version 0.0.2 ###"
 			"\n\n"	"[o] " "Texture : Color : 각 문자에 전경, 원경 색상 지정"
 			"\n"	"[o] " "Texture : Character : 글자 유효성. 버퍼에 글자를 기록하고 싶지 않다."
