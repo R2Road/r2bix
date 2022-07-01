@@ -9,11 +9,13 @@ namespace r2base
 	// 무리하지 않고 즐겁게 작업을 이어나갈 수 있도록 모든 방안을 강구할 것.
 	//
 
-	struct
+	static struct
 	{
-		const char VersionNumber_1 = 0;
-		const char VersionNumber_2 = 0;
-		const char VersionNumber_3 = 1;
+		const char VersionNumber_1 = '0';
+		const char VersionNumber_2 = '0';
+		const char VersionNumber_3 = '1';
+
+		const char String4Version[15] = { 'r', '2','b','i','x', ' ', ':', ' ', 'v', VersionNumber_1, '.',VersionNumber_2, '.',VersionNumber_3, '\0' };
 
 		const char* const String4Road2Version_0_0_1 =
 					"### Road 2 Version 0.0.1 ###"
