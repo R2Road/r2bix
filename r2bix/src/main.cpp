@@ -12,7 +12,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2cm::WindowUtility::ChangeTitle( L"r2bix" );
+	r2cm::WindowUtility::ChangeTitle( "r2bix" );
 
 	//
 	// Environment : Size
