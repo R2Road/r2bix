@@ -160,7 +160,7 @@ void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
 	{
 		for( int x = 0; x < frame.GetWidth(); ++x )
 		{
-			std::cout << frame.Get( x, y );
+			std::cout << frame.GetCharacter( x, y );
 		}
 
 		std::cout << r2cm::linefeed;

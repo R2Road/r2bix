@@ -23,7 +23,7 @@ namespace r2render
 		int GetMaxY() const { return mVisibleRect.GetMaxY(); }
 
 		const r2::RectInt& GetVisibleRect() const { return mVisibleRect; }
-		Texture::ValueT Get( const uint32_t x, const uint32_t y ) const;
+		Texture::ValueT GetCharacter( const uint32_t x, const uint32_t y ) const;
 		r2base::ColorValue GetColor( const uint32_t x, const uint32_t y ) const;
 		bool GetCharacterDisuse( const uint32_t x, const uint32_t y ) const;
 

@@ -7,7 +7,7 @@ namespace r2render
 		, mVisibleRect( 0, 0, texture->GetWidth() - 1, texture->GetHeight() - 1 )
 	{}
 
-	Texture::ValueT TextureFrame::Get( const uint32_t x, const uint32_t y ) const
+	Texture::ValueT TextureFrame::GetCharacter( const uint32_t x, const uint32_t y ) const
 	{
 		const auto target_x = x + mVisibleRect.GetOrigin().GetX();
 		const auto target_y = y + mVisibleRect.GetOrigin().GetY();

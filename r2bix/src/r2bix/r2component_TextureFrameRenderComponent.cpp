@@ -77,7 +77,7 @@ namespace r2component
 				{
 					render_target->FillCharacter(
 						x, y
-						, mTextureFrame->Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+						, mTextureFrame->GetCharacter( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 					);
 				}
 
