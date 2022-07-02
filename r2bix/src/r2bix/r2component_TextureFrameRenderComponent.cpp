@@ -12,6 +12,7 @@ namespace r2component
 		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTextureFrame( nullptr )
+		, mColorMaskOption( r2base::eColorMaskFlag::CMF_Foreground | r2base::eColorMaskFlag::CMF_Background )
 	{}
 
 	std::unique_ptr<TextureFrameRenderComponent> TextureFrameRenderComponent::Create( r2base::Node& owner_node )
@@ -72,14 +73,18 @@ namespace r2component
 		{
 			for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() >= x; ++x, ++tx )
 			{
-				render_target->FillCharacter(
-					x, y
-					, mTextureFrame->Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
-				);
+				if( !mTextureFrame->GetCharacterDisuse( off_set_point.GetX() + tx, off_set_point.GetY() + ty ) )
+				{
+					render_target->FillCharacter(
+						x, y
+						, mTextureFrame->Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+					);
+				}
 
-				render_target->FillColor(
+				render_target->FillColorWithMask(
 					x, y
 					, mTextureFrame->GetColor( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+					, mColorMaskOption
 				);
 			}
 		}

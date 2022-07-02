@@ -21,4 +21,11 @@ namespace r2render
 
 		return mTexture->GetColor( target_x, target_y );
 	}
+	bool TextureFrame::GetCharacterDisuse( const uint32_t x, const uint32_t y ) const
+	{
+		const auto target_x = x + mVisibleRect.GetOrigin().GetX();
+		const auto target_y = y + mVisibleRect.GetOrigin().GetY();
+
+		return mTexture->GetCharacterDisuse( target_x, target_y );
+	}
 }
