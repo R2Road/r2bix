@@ -28,14 +28,14 @@ namespace
 
 namespace texture_frame_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -79,14 +79,14 @@ namespace texture_frame_test
 
 
 
-	r2cm::iItem::TitleFuncT VisibleRect_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT VisibleRect_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 1";
 		};
 	}
-	r2cm::iItem::DoFuncT VisibleRect_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT VisibleRect_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -149,14 +149,14 @@ namespace texture_frame_test
 
 
 
-	r2cm::iItem::TitleFuncT VisibleRect_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT VisibleRect_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 2";
 		};
 	}
-	r2cm::iItem::DoFuncT VisibleRect_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT VisibleRect_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -8,21 +8,21 @@ namespace texture_table_test
 	class TextureTable_1 : public r2cm::iItem, public r2cm::SingleTon<TextureTable_1>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class TextureTable_2 : public r2cm::iItem, public r2cm::SingleTon<TextureTable_2>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class TextureTable_3 : public r2cm::iItem, public r2cm::SingleTon<TextureTable_3>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

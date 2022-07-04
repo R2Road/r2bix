@@ -21,14 +21,14 @@
 
 namespace node_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -56,14 +56,14 @@ namespace node_test
 
 
 
-	r2cm::iItem::TitleFuncT Scene::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Scene::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Scene";
 		};
 	}
-	r2cm::iItem::DoFuncT Scene::GetDoFunction()
+	r2cm::iItem::DoFunctionT Scene::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -91,14 +91,14 @@ namespace node_test
 
 
 
-	r2cm::iItem::TitleFuncT Label::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Label::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Label";
 		};
 	}
-	r2cm::iItem::DoFuncT Label::GetDoFunction()
+	r2cm::iItem::DoFunctionT Label::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -129,14 +129,14 @@ namespace node_test
 
 
 
-	r2cm::iItem::TitleFuncT Sprite::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Sprite::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Sprite";
 		};
 	}
-	r2cm::iItem::DoFuncT Sprite::GetDoFunction()
+	r2cm::iItem::DoFunctionT Sprite::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -165,14 +165,14 @@ namespace node_test
 
 
 
-	r2cm::iItem::TitleFuncT SpriteAnimation::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SpriteAnimation::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Sprite Animation";
 		};
 	}
-	r2cm::iItem::DoFuncT SpriteAnimation::GetDoFunction()
+	r2cm::iItem::DoFunctionT SpriteAnimation::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -208,14 +208,14 @@ namespace node_test
 
 
 
-	r2cm::iItem::TitleFuncT CustomeTexture::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CustomeTexture::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Custome Texture Node";
 		};
 	}
-	r2cm::iItem::DoFuncT CustomeTexture::GetDoFunction()
+	r2cm::iItem::DoFunctionT CustomeTexture::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

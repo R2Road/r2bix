@@ -10,14 +10,14 @@
 
 namespace color_value_test
 {
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color : Basic";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -56,14 +56,14 @@ namespace color_value_test
 
 
 
-	r2cm::iItem::TitleFuncT ColorMaskOption_Generate::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ColorMaskOption_Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Mask Option : Generate";
 		};
 	}
-	r2cm::iItem::DoFuncT ColorMaskOption_Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorMaskOption_Generate::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -117,14 +117,14 @@ namespace color_value_test
 
 
 
-	r2cm::iItem::TitleFuncT ColorMaskOption_On_Off::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ColorMaskOption_On_Off::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Mask Option : On / Off";
 		};
 	}
-	r2cm::iItem::DoFuncT ColorMaskOption_On_Off::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorMaskOption_On_Off::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -193,14 +193,14 @@ namespace color_value_test
 
 
 
-	r2cm::iItem::TitleFuncT ColorMaskOption_Mask::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ColorMaskOption_Mask::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Color Mask Option : Mask";
 		};
 	}
-	r2cm::iItem::DoFuncT ColorMaskOption_Mask::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorMaskOption_Mask::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

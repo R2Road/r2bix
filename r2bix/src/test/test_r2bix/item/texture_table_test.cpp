@@ -8,14 +8,14 @@
 
 namespace texture_table_test
 {
-	r2cm::iItem::TitleFuncT TextureTable_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureTable_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Table : GetTexture";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureTable_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureTable_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -47,14 +47,14 @@ namespace texture_table_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureTable_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureTable_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Table : GetTextureFrame";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureTable_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureTable_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -92,14 +92,14 @@ namespace texture_table_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureTable_3::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureTable_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Table : Add Texture, Remove Texture";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureTable_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureTable_3::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

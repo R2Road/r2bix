@@ -12,14 +12,14 @@
 
 namespace camera_test
 {
-	r2cm::iItem::TitleFuncT CameraPosition::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CameraPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Position";
 		};
 	}
-	r2cm::iItem::DoFuncT CameraPosition::GetDoFunction()
+	r2cm::iItem::DoFunctionT CameraPosition::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -53,14 +53,14 @@ namespace camera_test
 
 
 
-	r2cm::iItem::TitleFuncT CameraRect::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CameraRect::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Rect";
 		};
 	}
-	r2cm::iItem::DoFuncT CameraRect::GetDoFunction()
+	r2cm::iItem::DoFunctionT CameraRect::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -101,14 +101,14 @@ namespace camera_test
 
 
 
-	r2cm::iItem::TitleFuncT CameraMove::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CameraMove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Camera Move";
 		};
 	}
-	r2cm::iItem::DoFuncT CameraMove::GetDoFunction()
+	r2cm::iItem::DoFunctionT CameraMove::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{

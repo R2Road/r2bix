@@ -12,14 +12,14 @@
 
 namespace texture_test
 {
-	r2cm::iItem::TitleFuncT FillCharacterAll::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FillCharacterAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : Fill Character All";
 		};
 	}
-	r2cm::iItem::DoFuncT FillCharacterAll::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillCharacterAll::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -42,14 +42,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT FillCharacter::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FillCharacter::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : FillCharacter";
 		};
 	}
-	r2cm::iItem::DoFuncT FillCharacter::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillCharacter::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -75,14 +75,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT FillColorAll::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FillColorAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : Fill Color All";
 		};
 	}
-	r2cm::iItem::DoFuncT FillColorAll::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillColorAll::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -116,14 +116,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT FillColor ::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FillColor ::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : FillColor";
 		};
 	}
-	r2cm::iItem::DoFuncT FillColor::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillColor::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -159,14 +159,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT FillColorWithMask::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FillColorWithMask::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : FillColorWithMask";
 		};
 	}
-	r2cm::iItem::DoFuncT FillColorWithMask::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillColorWithMask::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -210,14 +210,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT BlendColor::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT BlendColor::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : BlendColor";
 		};
 	}
-	r2cm::iItem::DoFuncT BlendColor::GetDoFunction()
+	r2cm::iItem::DoFunctionT BlendColor::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -251,14 +251,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT FillCharacterDisuse::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT FillCharacterDisuse::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : FillCharacterDisuse";
 		};
 	}
-	r2cm::iItem::DoFuncT FillCharacterDisuse::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillCharacterDisuse::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -293,14 +293,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT InitWithChars_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT InitWithChars_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : Init With Chars 1";
 		};
 	}
-	r2cm::iItem::DoFuncT InitWithChars_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT InitWithChars_1::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -322,14 +322,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT InitWithChars_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT InitWithChars_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : Init With Chars 2";
 		};
 	}
-	r2cm::iItem::DoFuncT InitWithChars_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT InitWithChars_2::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -351,14 +351,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT InitWithChars_3::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT InitWithChars_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : Init With Chars 3";
 		};
 	}
-	r2cm::iItem::DoFuncT InitWithChars_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT InitWithChars_3::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -392,14 +392,14 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFuncT InitWithChars_4::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT InitWithChars_4::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture : Init With Chars 4";
 		};
 	}
-	r2cm::iItem::DoFuncT InitWithChars_4::GetDoFunction()
+	r2cm::iItem::DoFunctionT InitWithChars_4::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

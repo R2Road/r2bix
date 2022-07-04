@@ -9,14 +9,14 @@
 
 namespace visible_resource_research
 {
-	r2cm::iItem::TitleFuncT DrawWithPosition::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT DrawWithPosition::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Draw With Position";
 		};
 	}
-	r2cm::iItem::DoFuncT DrawWithPosition::GetDoFunction()
+	r2cm::iItem::DoFunctionT DrawWithPosition::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

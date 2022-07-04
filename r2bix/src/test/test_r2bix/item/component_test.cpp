@@ -27,14 +27,14 @@
 
 namespace component_test
 {
-	r2cm::iItem::TitleFuncT ComponentID::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ComponentID::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Component ID";
 		};
 	}
-	r2cm::iItem::DoFuncT ComponentID::GetDoFunction()
+	r2cm::iItem::DoFunctionT ComponentID::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -82,14 +82,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT Component_Add_Get::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Component_Add_Get::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Component : Add, Get";
 		};
 	}
-	r2cm::iItem::DoFuncT Component_Add_Get::GetDoFunction()
+	r2cm::iItem::DoFunctionT Component_Add_Get::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -123,14 +123,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureRenderComponentTest_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureRenderComponentTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Render Component 1";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureRenderComponentTest_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureRenderComponentTest_1::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -177,14 +177,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureRenderComponentTest_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureRenderComponentTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Render Component 2";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureRenderComponentTest_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureRenderComponentTest_2::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -255,14 +255,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureRenderComponentTest_3::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureRenderComponentTest_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Render Component 3";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureRenderComponentTest_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureRenderComponentTest_3::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -324,14 +324,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT CustomTextureComponentTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CustomTextureComponentTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Custom Texture Component";
 		};
 	}
-	r2cm::iItem::DoFuncT CustomTextureComponentTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT CustomTextureComponentTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -394,14 +394,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT LabelComponentTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LabelComponentTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Label Component";
 		};
 	}
-	r2cm::iItem::DoFuncT LabelComponentTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT LabelComponentTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -468,14 +468,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureFrameRenderComponentTest_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureFrameRenderComponentTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameRender Component 1";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureFrameRenderComponentTest_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureFrameRenderComponentTest_1::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -526,14 +526,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureFrameRenderComponentTest_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureFrameRenderComponentTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameRender Component 2";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureFrameRenderComponentTest_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureFrameRenderComponentTest_2::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -607,14 +607,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureFrameAnimationComponentTest_1::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureFrameAnimationComponentTest_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameAnimation Component 1";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureFrameAnimationComponentTest_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureFrameAnimationComponentTest_1::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -692,14 +692,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT TextureFrameAnimationComponentTest_2::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TextureFrameAnimationComponentTest_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameAnimation Component 2";
 		};
 	}
-	r2cm::iItem::DoFuncT TextureFrameAnimationComponentTest_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT TextureFrameAnimationComponentTest_2::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -777,14 +777,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFuncT ActionProcessComponentTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT ActionProcessComponentTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "ActionProcess Component";
 		};
 	}
-	r2cm::iItem::DoFuncT ActionProcessComponentTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT ActionProcessComponentTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{

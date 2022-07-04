@@ -8,7 +8,7 @@ namespace visible_resource_research
 	class DrawWithPosition : public r2cm::iItem, public r2cm::SingleTon<DrawWithPosition>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

@@ -13,14 +13,14 @@
 
 namespace window_input_test
 {
-	r2cm::iItem::TitleFuncT KeyStatus::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT KeyStatus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : KeyStatus";
 		};
 	}
-	r2cm::iItem::DoFuncT KeyStatus::GetDoFunction()
+	r2cm::iItem::DoFunctionT KeyStatus::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -70,14 +70,14 @@ namespace window_input_test
 
 
 
-	r2cm::iItem::TitleFuncT TestKeyboardInputCollector::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TestKeyboardInputCollector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Keyboard Input Collector";
 		};
 	}
-	r2cm::iItem::DoFuncT TestKeyboardInputCollector::GetDoFunction()
+	r2cm::iItem::DoFunctionT TestKeyboardInputCollector::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -32,14 +32,14 @@
 
 namespace action_test
 {
-	r2cm::iItem::TitleFuncT TickActionTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT TickActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TickAction";
 		};
 	}
-	r2cm::iItem::DoFuncT TickActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT TickActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -101,14 +101,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT DelayActionTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT DelayActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "DelayAction";
 		};
 	}
-	r2cm::iItem::DoFuncT DelayActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT DelayActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -176,14 +176,14 @@ namespace action_test
 	}
 
 
-	r2cm::iItem::TitleFuncT SequenceActionTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SequenceActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "SequenceAction";
 		};
 	}
-	r2cm::iItem::DoFuncT SequenceActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT SequenceActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -263,14 +263,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT MoveByActionTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MoveByActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "MoveByAction";
 		};
 	}
-	r2cm::iItem::DoFuncT MoveByActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MoveByActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -350,14 +350,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT MoveToActionTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MoveToActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "MoveToAction";
 		};
 	}
-	r2cm::iItem::DoFuncT MoveToActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MoveToActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -437,14 +437,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT RepeatActionTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT RepeatActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "RepeatAction";
 		};
 	}
-	r2cm::iItem::DoFuncT RepeatActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT RepeatActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -538,14 +538,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT BlinkActionTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT BlinkActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "BlinkAction";
 		};
 	}
-	r2cm::iItem::DoFuncT BlinkActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT BlinkActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -631,14 +631,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT CallbackActionTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT CallbackActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "CallbackAction";
 		};
 	}
-	r2cm::iItem::DoFuncT CallbackActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT CallbackActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -693,14 +693,14 @@ namespace action_test
 
 
 
-	r2cm::iItem::TitleFuncT AnimationRequestActionTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT AnimationRequestActionTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "AnimationRequestAction";
 		};
 	}
-	r2cm::iItem::DoFuncT AnimationRequestActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT AnimationRequestActionTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
