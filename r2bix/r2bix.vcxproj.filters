@@ -64,6 +64,9 @@
     <Filter Include="test\test_p2048">
       <UniqueIdentifier>{881f9dfd-f1f0-4aa0-9571-76f84aea0942}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_mini_adventure">
+      <UniqueIdentifier>{9ffd138b-0e0d-418e-80c9-6de54a6db100}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -376,6 +379,9 @@
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp">
       <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\project_mini_adventure\p_mini_adv_GameScene.cpp">
+      <Filter>project_mini_adventure</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -739,6 +745,12 @@
     </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
       <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\project_mini_adventure\p_mini_adv_VersionInfo.h">
+      <Filter>project_mini_adventure</Filter>
+    </ClInclude>
+    <ClInclude Include="src\project_mini_adventure\p_mini_adv_GameScene.h">
+      <Filter>project_mini_adventure</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,6 +8,7 @@
 #include "test/TestMainMenu.h"
 #include "p2048/p2048_EntryScene.h"
 #include "pmr/pmr_CompanyScene.h"
+#include "project_mini_adventure/p_mini_adv_GameScene.h"
 
 r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 {
@@ -74,6 +75,25 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				//
 				r2base::Director director;
 				director.Setup( pmr::CompanyScene::Create( director ) );
+
+				//
+				// Process
+				//
+				director.Run();
+
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+		ret->AddItem(
+			'd'
+			, []()->const char* { return p_mini_adv::GameScene::GetTitle(); }
+			, []()->r2cm::eItemLeaveAction
+			{
+				//
+				// Setup
+				//
+				r2base::Director director;
+				director.Setup( p_mini_adv::GameScene::Create( director ) );
 
 				//
 				// Process
