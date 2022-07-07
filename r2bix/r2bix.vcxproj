@@ -35,6 +35,7 @@
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp" />
+    <ClCompile Include="src\project_mini_adventure\p_mini_adv_CompanyScene.cpp" />
     <ClCompile Include="src\project_mini_adventure\p_mini_adv_GameScene.cpp" />
     <ClCompile Include="src\r2bix\r2action_AnimationRequestAction.cpp" />
     <ClCompile Include="src\r2bix\r2action_BlinkAction.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h" />
     <ClInclude Include="src\p2048\p2048table_TextureTable.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
+    <ClInclude Include="src\project_mini_adventure\p_mini_adv_CompanyScene.h" />
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_GameScene.h" />
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_VersionInfo.h" />
     <ClInclude Include="src\r2bix\r2action_AnimationRequestAction.h" />

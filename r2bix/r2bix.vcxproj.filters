@@ -383,6 +383,9 @@
     <ClCompile Include="src\project_mini_adventure\p_mini_adv_GameScene.cpp">
       <Filter>project_mini_adventure</Filter>
     </ClCompile>
+    <ClCompile Include="src\project_mini_adventure\p_mini_adv_CompanyScene.cpp">
+      <Filter>project_mini_adventure</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -750,6 +753,9 @@
       <Filter>project_mini_adventure</Filter>
     </ClInclude>
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_GameScene.h">
+      <Filter>project_mini_adventure</Filter>
+    </ClInclude>
+    <ClInclude Include="src\project_mini_adventure\p_mini_adv_CompanyScene.h">
       <Filter>project_mini_adventure</Filter>
     </ClInclude>
   </ItemGroup>
