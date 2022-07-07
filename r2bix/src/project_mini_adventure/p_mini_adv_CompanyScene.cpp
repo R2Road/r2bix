@@ -34,11 +34,21 @@ namespace p_mini_adv
 
 		{
 			auto node = AddChild<r2node::LabelNode>();
-			node->GetComponent<r2component::LabelComponent>()->SetString( VersionInfo.String4Version );
+			node->GetComponent<r2component::LabelComponent>()->SetString( VersionInfo.String4Summury );
 
 			node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.5f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.3f
+			);
+		}
+
+		{
+			auto node = AddChild<r2node::LabelNode>();
+			node->GetComponent<r2component::LabelComponent>()->SetString( VersionInfo.String4Road2Version_0_0_1 );
+
+			node->mTransformComponent->SetPosition(
+				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.6f
 			);
 		}
 
