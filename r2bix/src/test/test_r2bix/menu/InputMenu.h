@@ -15,6 +15,6 @@ private:
 	InputMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Input"; }
+	static const char* GetTitle() { return "Input Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };

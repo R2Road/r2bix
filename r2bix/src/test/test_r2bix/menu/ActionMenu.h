@@ -15,6 +15,6 @@ private:
 	ActionMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Action"; }
+	static const char* GetTitle() { return "Action Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };

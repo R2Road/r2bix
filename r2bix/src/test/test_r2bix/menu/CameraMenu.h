@@ -15,6 +15,6 @@ private:
 	CameraMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Camera"; }
+	static const char* GetTitle() { return "Camera Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };

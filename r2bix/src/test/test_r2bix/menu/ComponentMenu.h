@@ -15,6 +15,6 @@ private:
 	ComponentMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Component"; }
+	static const char* GetTitle() { return "Component Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
