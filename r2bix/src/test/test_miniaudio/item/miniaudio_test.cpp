@@ -509,6 +509,10 @@ namespace miniaudio_test
 
 			std::cout << r2cm::split;
 
+			std::cout << r2cm::tab << "ma_sound_init_copy 를 사용한 이후 종료시에 memory leak 이 검출된다." << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
