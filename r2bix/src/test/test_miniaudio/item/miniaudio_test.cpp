@@ -406,80 +406,6 @@ namespace miniaudio_test
 
 
 
-	r2cm::iItem::TitleFunctionT Sound_Duplicate::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Sound : Duplicate";
-		};
-	}
-	r2cm::iItem::DoFunctionT Sound_Duplicate::GetDoFunction()
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
-			std::cout << r2cm::split;
-
-			DECLARATION_SUB( ma_result result );
-			DECLARATION_SUB( ma_engine engine );
-			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
-			EXPECT_EQ( MA_SUCCESS, result );
-
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( ma_sound sound_orig );
-			DECLARATION_MAIN( ma_sound sound_duplicated );
-
-			std::cout << r2cm::split;
-
-			{
-				std::cout << r2cm::tab << "+ Load" << r2cm::linefeed2;
-
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound_orig ) );
-				EXPECT_EQ( MA_SUCCESS, result );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				std::cout << r2cm::tab << "+ Duplicate" << r2cm::linefeed2;
-
-				PROCESS_MAIN( result = ma_sound_init_copy( &engine, &sound_orig, 0, NULL, &sound_duplicated ) );
-				EXPECT_EQ( MA_SUCCESS, result );
-
-				PROCESS_MAIN( ma_sound_start( &sound_duplicated ) );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				std::cout << "[Any Key] End " << r2cm::linefeed2;
-				_getch();
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_MAIN( ma_sound_stop( &sound_duplicated ) );
-				PROCESS_MAIN( ma_sound_uninit( &sound_duplicated ) );
-				PROCESS_MAIN( ma_sound_uninit( &sound_orig ) );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				PROCESS_SUB( ma_engine_uninit( &engine ) );
-			}
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
 	r2cm::iItem::TitleFunctionT Sound_Play::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -552,6 +478,80 @@ namespace miniaudio_test
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_SUB( ma_engine_uninit( &engine ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT Sound_Duplicate::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Sound : Duplicate";
+		};
+	}
+	r2cm::iItem::DoFunctionT Sound_Duplicate::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( ma_result result );
+			DECLARATION_SUB( ma_engine engine );
+			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
+			EXPECT_EQ( MA_SUCCESS, result );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( ma_sound sound_orig );
+			DECLARATION_MAIN( ma_sound sound_duplicated );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Load" << r2cm::linefeed2;
+
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound_orig ) );
+				EXPECT_EQ( MA_SUCCESS, result );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Duplicate" << r2cm::linefeed2;
+
+				PROCESS_MAIN( result = ma_sound_init_copy( &engine, &sound_orig, 0, NULL, &sound_duplicated ) );
+				EXPECT_EQ( MA_SUCCESS, result );
+
+				PROCESS_MAIN( ma_sound_start( &sound_duplicated ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << "[Any Key] End " << r2cm::linefeed2;
+				_getch();
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( ma_sound_stop( &sound_duplicated ) );
+				PROCESS_MAIN( ma_sound_uninit( &sound_duplicated ) );
+				PROCESS_MAIN( ma_sound_uninit( &sound_orig ) );
 			}
 
 			std::cout << r2cm::split;

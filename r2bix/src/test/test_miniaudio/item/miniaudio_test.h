@@ -49,14 +49,14 @@ namespace miniaudio_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Sound_Duplicate : public r2cm::iItem, public r2cm::SingleTon<Sound_Duplicate>
+	class Sound_Play : public r2cm::iItem, public r2cm::SingleTon<Sound_Play>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Sound_Play : public r2cm::iItem, public r2cm::SingleTon<Sound_Play>
+	class Sound_Duplicate : public r2cm::iItem, public r2cm::SingleTon<Sound_Duplicate>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
