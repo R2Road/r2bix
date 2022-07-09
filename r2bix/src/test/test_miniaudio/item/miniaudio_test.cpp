@@ -720,21 +720,18 @@ namespace miniaudio_test
 
 			std::cout << r2cm::split;
 
+			std::cout << "Volume : " << std::setw( 10 ) << ma_sound_get_volume( &sound ) << r2cm::linefeed;
+			std::cout << "[1] Play" << r2cm::linefeed;
+			std::cout << "[2] Stop" << r2cm::linefeed;
+			std::cout << "[ESC] End " << r2cm::linefeed2;
+
 			{
 				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
-				float current_volume = ma_sound_get_volume( &sound );
-
-				bool bRun = true;
+				int input = 0;
 				do
 				{
-					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
-
-					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2cm::linefeed;
-					std::cout << "[1] Play" << r2cm::linefeed;
-					std::cout << "[2] Stop" << r2cm::linefeed;
-					std::cout << "[ESC] End " << r2cm::linefeed2;
-
-					switch( _getch() )
+					
+					switch( input )
 					{
 					case '1':
 						PROCESS_MAIN( ma_sound_set_fade_in_milliseconds( &sound, 0, -1, 2000 ) );
@@ -744,16 +741,14 @@ namespace miniaudio_test
 						PROCESS_MAIN( ma_sound_stop( &sound ) );
 						PROCESS_MAIN( ma_sound_seek_to_pcm_frame( &sound, 0 ) );
 						break;
-
-					case 27: // ESC
-						bRun = false;
-						r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 7 } );
-						break;
-
-					default:
-						continue;
 					}
-				} while( bRun );
+
+					input = _getch();
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_coord );
+
+				} while( 27 != input );
+
+				r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 7 } );
 			}
 
 			std::cout << r2cm::split;
