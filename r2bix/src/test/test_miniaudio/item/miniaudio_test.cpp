@@ -445,16 +445,16 @@ namespace miniaudio_test
 
 			{
 				std::cout << "[1] Play" << r2cm::linefeed;
-				std::cout << "[2] Stop" << r2cm::linefeed;
+				std::cout << "[2] Pause" << r2cm::linefeed;
+				std::cout << "[3] Stop" << r2cm::linefeed;
 				std::cout << "[ESC] End " << r2cm::linefeed2;
 
 				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
-				bool bRun = true;
+				int input = 0;
 				do
 				{
-					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
-					switch( _getch() )
+					switch( input )
 					{
 					case '1':
 						PROCESS_MAIN( ma_sound_start( &sound ) );
@@ -462,16 +462,16 @@ namespace miniaudio_test
 					case '2':
 						PROCESS_MAIN( ma_sound_stop( &sound ) );
 						break;
-
-					case 27: // ESC
-						bRun = false;
-						r2cm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 5 } );
+					case '3':
+						PROCESS_MAIN( ma_sound_stop( &sound ) );
+						PROCESS_MAIN( ma_sound_seek_to_pcm_frame( &sound, 0 ) );
 						break;
-
-					default:
-						continue;
 					}
-				} while( bRun );
+
+					input = _getch();
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_coord );
+
+				} while( 27 != input );
 			}
 
 			std::cout << r2cm::split;
