@@ -93,22 +93,17 @@ void Utility4Test::DrawTexture( const r2render::Texture& texture )
 }
 void Utility4Test::DrawTextureCharacter( const r2render::Texture& texture )
 {
-	std::size_t x = 0;
-	for( const auto c : texture.GetCharacterContainer() )
-	{
-		std::cout << c;
+	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
-		++x;
-		if( texture.GetWidth() <= x )
+	for( int y = 0; y < texture.GetHeight(); ++y )
+	{
+		for( int x = 0; x < texture.GetWidth(); ++x )
 		{
-			x = 0u;
-			std::cout << r2cm::linefeed;
+			r2cm::WindowUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetCharacter( x, y ) );
 		}
 	}
-	if( 0u != x )
-	{
-		std::cout << r2cm::linefeed;
-	}
+
+	r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
 }
 void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
 {
