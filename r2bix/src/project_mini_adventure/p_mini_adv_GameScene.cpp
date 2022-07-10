@@ -31,7 +31,7 @@ namespace p_mini_adv
 		}
 
 		{
-			auto node = AddChild<r2node::LabelNode>();
+			auto node = AddChild<r2node::LabelSNode>();
 			node->GetComponent<r2component::LabelComponent>()->SetString( GameScene::GetTitle() );
 
 			node->mTransformComponent->SetPosition(

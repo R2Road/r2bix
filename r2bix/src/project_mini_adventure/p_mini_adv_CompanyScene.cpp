@@ -33,7 +33,7 @@ namespace p_mini_adv
 		}
 
 		{
-			auto node = AddChild<r2node::LabelNode>();
+			auto node = AddChild<r2node::LabelSNode>();
 			node->GetComponent<r2component::LabelComponent>()->SetString( VersionInfo.String4Summury );
 
 			node->mTransformComponent->SetPosition(
@@ -43,7 +43,7 @@ namespace p_mini_adv
 		}
 
 		{
-			auto node = AddChild<r2node::LabelNode>();
+			auto node = AddChild<r2node::LabelSNode>();
 			node->GetComponent<r2component::LabelComponent>()->SetString( VersionInfo.String4Road2Version_0_0_1 );
 
 			node->mTransformComponent->SetPosition(

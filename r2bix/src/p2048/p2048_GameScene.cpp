@@ -89,12 +89,12 @@ namespace p2048
 			// Max Number
 			//
 			{
-				auto label_node = ret->AddChild<r2node::LabelNode>();
+				auto label_node = ret->AddChild<r2node::LabelSNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Max : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 9 );
 
-				auto max_number_label_node = ret->AddChild<r2node::LabelNode>( 1 );
+				auto max_number_label_node = ret->AddChild<r2node::LabelSNode>( 1 );
 				max_number_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				max_number_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				max_number_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 9 );
@@ -109,12 +109,12 @@ namespace p2048
 			// Score
 			//
 			{
-				auto label_node = ret->AddChild<r2node::LabelNode>();
+				auto label_node = ret->AddChild<r2node::LabelSNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Score : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 10 );
 
-				auto total_score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
+				auto total_score_label_node = ret->AddChild<r2node::LabelSNode>( 1 );
 				total_score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 10 );
@@ -129,12 +129,12 @@ namespace p2048
 			// Recent Score
 			//
 			{
-				auto label_node = ret->AddChild<r2node::LabelNode>();
+				auto label_node = ret->AddChild<r2node::LabelSNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Recent : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 11 );
 
-				auto total_score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
+				auto total_score_label_node = ret->AddChild<r2node::LabelSNode>( 1 );
 				total_score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 11 );

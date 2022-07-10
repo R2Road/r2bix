@@ -9,10 +9,10 @@ namespace r2base
 
 namespace r2node
 {
-	class LabelNode : public r2base::Node
+	class LabelSNode : public r2base::Node
 	{
 	private:
-		LabelNode() = delete;
+		LabelSNode() = delete;
 
 	public:
 		static r2base::NodeUp Create( r2base::Director& director );

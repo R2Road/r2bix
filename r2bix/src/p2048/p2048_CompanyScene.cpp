@@ -45,7 +45,7 @@ namespace p2048
 		// Company Name
 		//
 		{
-			auto label_node = AddChild<r2node::LabelNode>();
+			auto label_node = AddChild<r2node::LabelSNode>();
 
 			label_node->GetComponent<r2component::LabelComponent>()->SetString( "R2Road Studio" );
 

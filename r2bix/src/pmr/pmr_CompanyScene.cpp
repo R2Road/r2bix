@@ -31,7 +31,7 @@ namespace pmr
 		}
 
 		{
-			auto node = AddChild<r2node::LabelNode>();
+			auto node = AddChild<r2node::LabelSNode>();
 			node->GetComponent<r2component::LabelComponent>()->SetString( CompanyScene::GetTitle() );
 		}
 

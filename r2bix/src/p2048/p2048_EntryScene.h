@@ -6,7 +6,7 @@
 
 namespace r2node
 {
-	class LabelNode;
+	class LabelSNode;
 	class SpriteNode;
 }
 

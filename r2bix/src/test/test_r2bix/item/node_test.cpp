@@ -111,7 +111,7 @@ namespace node_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const auto dummy_node = r2node::LabelNode::Create( dummy_director ) );
+			DECLARATION_MAIN( const auto dummy_node = r2node::LabelSNode::Create( dummy_director ) );
 
 			std::cout << r2cm::split;
 

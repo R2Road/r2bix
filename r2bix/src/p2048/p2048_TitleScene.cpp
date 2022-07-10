@@ -215,7 +215,7 @@ namespace p2048
 		// Company Name
 		//
 		{
-			mLabelNode = AddChild<r2node::LabelNode>();
+			mLabelNode = AddChild<r2node::LabelSNode>();
 
 			mLabelNode->GetComponent<r2component::LabelComponent>()->SetString( "Press Any Key" );
 
