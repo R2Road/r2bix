@@ -10,6 +10,7 @@
 #include "r2bix/r2base_Node.h"
 #include "r2bix/r2component_CustomTextureComponent.h"
 #include "r2bix/r2component_LabelComponent.h"
+#include "r2bix/r2component_LabelMComponent.h"
 #include "r2bix/r2component_ActionProcessComponent.h"
 #include "r2bix/r2component_TextureFrameAnimationComponent.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
@@ -418,6 +419,80 @@ namespace component_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto label = node->AddComponent<r2component::LabelComponent>() );
+			EXPECT_NE( nullptr, label );
+			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, custom_texture );
+			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, texture_render );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( nullptr, label->GetCustomTextureComponent() );
+				PROCESS_MAIN( label->SetCustomTextureComponent( custom_texture ) );
+				EXPECT_EQ( custom_texture, label->GetCustomTextureComponent() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( nullptr, label->GetTextureRenderComponent() );
+				PROCESS_MAIN( label->SetTextureRenderComponent( texture_render ) );
+				EXPECT_EQ( texture_render, label->GetTextureRenderComponent() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( nullptr, texture_render->GetTexture() );
+				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
+				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( const char* const dummy_text = "Bla Bla Bla" );
+				PROCESS_MAIN( label->SetString( dummy_text ) );
+				EXPECT_EQ( dummy_text, label->GetString() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				std::cout << r2cm::linefeed;
+
+				Utility4Test::DrawTexture( render_target );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT LabelMComponentTest::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Label M Component";
+		};
+	}
+	r2cm::iItem::DoFunctionT LabelMComponentTest::GetDoFunction()
+	{
+		return[]()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2base::Director dummy_director );
+			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( auto label = node->AddComponent<r2component::LabelMComponent>() );
 			EXPECT_NE( nullptr, label );
 			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, custom_texture );

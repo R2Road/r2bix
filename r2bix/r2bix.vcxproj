@@ -60,6 +60,7 @@
     <ClCompile Include="src\r2bix\r2component_ActionProcessComponent.cpp" />
     <ClCompile Include="src\r2bix\r2component_CustomTextureComponent.cpp" />
     <ClCompile Include="src\r2bix\r2component_LabelComponent.cpp" />
+    <ClCompile Include="src\r2bix\r2component_LabelMComponent.cpp" />
     <ClCompile Include="src\r2bix\r2component_TextureFrameAnimationComponent.cpp" />
     <ClCompile Include="src\r2bix\r2component_TextureFrameRenderComponent.cpp" />
     <ClCompile Include="src\r2bix\r2component_TextureRenderComponent.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="src\r2bix\r2component_ActionProcessComponent.h" />
     <ClInclude Include="src\r2bix\r2component_CustomTextureComponent.h" />
     <ClInclude Include="src\r2bix\r2component_LabelComponent.h" />
+    <ClInclude Include="src\r2bix\r2component_LabelMComponent.h" />
     <ClInclude Include="src\r2bix\r2component_TextureFrameAnimationComponent.h" />
     <ClInclude Include="src\r2bix\r2component_TextureFrameRenderComponent.h" />
     <ClInclude Include="src\r2bix\r2component_TextureRenderComponent.h" />

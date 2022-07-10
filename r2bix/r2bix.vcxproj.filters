@@ -389,6 +389,9 @@
     <ClCompile Include="src\r2bix\r2node_LabelMNode.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2component_LabelMComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -763,6 +766,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2node_LabelMNode.h">
       <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2component_LabelMComponent.h">
+      <Filter>r2bix\component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
