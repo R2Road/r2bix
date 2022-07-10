@@ -130,6 +130,10 @@ namespace r2render
 		assert( 0u < width && 0u < height );
 
 		mGridIndexConverter = r2::GridIndexConverter( width, height );
+
+		//
+		// Chars
+		//
 		mChars.clear();
 		mChars.resize( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), fill_char );
 
