@@ -26,6 +26,13 @@ namespace node_test
 		DoFunctionT GetDoFunction() override;
 	};
 
+	class LabelM : public r2cm::iItem, public r2cm::SingleTon<LabelM>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
+
 	class Sprite : public r2cm::iItem, public r2cm::SingleTon<Sprite>
 	{
 	public:

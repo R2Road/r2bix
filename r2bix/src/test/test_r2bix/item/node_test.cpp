@@ -12,6 +12,7 @@
 #include "r2bix/r2component_TransformComponent.h"
 #include "r2bix/r2node_CustomTextureNode.h"
 #include "r2bix/r2node_LabelNode.h"
+#include "r2bix/r2node_LabelMNode.h"
 #include "r2bix/r2node_SceneNode.h"
 #include "r2bix/r2node_SpriteAnimationNode.h"
 #include "r2bix/r2node_SpriteNode.h"
@@ -111,6 +112,44 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const auto dummy_node = r2node::LabelNode::Create( dummy_director ) );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2component::CustomTextureComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureRenderComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2component::LabelComponent>() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT LabelM::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Label M";
+		};
+	}
+	r2cm::iItem::DoFunctionT LabelM::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const auto dummy_node = r2node::LabelMNode::Create( dummy_director ) );
 
 			std::cout << r2cm::split;
 
