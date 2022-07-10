@@ -11,7 +11,7 @@
 #include "r2bix/r2component_TextureRenderComponent.h"
 #include "r2bix/r2component_TransformComponent.h"
 #include "r2bix/r2node_CustomTextureNode.h"
-#include "r2bix/r2node_LabelNode.h"
+#include "r2bix/r2node_LabelSNode.h"
 #include "r2bix/r2node_LabelMNode.h"
 #include "r2bix/r2node_SceneNode.h"
 #include "r2bix/r2node_SpriteAnimationNode.h"
@@ -92,14 +92,14 @@ namespace node_test
 
 
 
-	r2cm::iItem::TitleFunctionT Label::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LabelS::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Label";
+			return "Label S";
 		};
 	}
-	r2cm::iItem::DoFunctionT Label::GetDoFunction()
+	r2cm::iItem::DoFunctionT LabelS::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

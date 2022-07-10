@@ -13,7 +13,7 @@
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 #include "r2bix/r2node_CustomTextureNode.h"
-#include "r2bix/r2node_LabelNode.h"
+#include "r2bix/r2node_LabelSNode.h"
 #include "r2bix/r2node_PivotNode.h"
 #include "r2bix/r2node_SpriteNode.h"
 

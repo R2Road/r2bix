@@ -70,7 +70,7 @@
     <ClCompile Include="src\r2bix\r2input_KeyboardInputListener.cpp" />
     <ClCompile Include="src\r2bix\r2node_CustomTextureNode.cpp" />
     <ClCompile Include="src\r2bix\r2node_LabelMNode.cpp" />
-    <ClCompile Include="src\r2bix\r2node_LabelNode.cpp" />
+    <ClCompile Include="src\r2bix\r2node_LabelSNode.cpp" />
     <ClCompile Include="src\r2bix\r2node_PivotNode.cpp" />
     <ClCompile Include="src\r2bix\r2node_SceneNode.cpp" />
     <ClCompile Include="src\r2bix\r2node_SpriteAnimationNode.cpp" />
@@ -187,7 +187,7 @@
     <ClInclude Include="src\r2bix\r2input_KeyboardInputListener.h" />
     <ClInclude Include="src\r2bix\r2node_CustomTextureNode.h" />
     <ClInclude Include="src\r2bix\r2node_LabelMNode.h" />
-    <ClInclude Include="src\r2bix\r2node_LabelNode.h" />
+    <ClInclude Include="src\r2bix\r2node_LabelSNode.h" />
     <ClInclude Include="src\r2bix\r2node_PivotNode.h" />
     <ClInclude Include="src\r2bix\r2node_SceneNode.h" />
     <ClInclude Include="src\r2bix\r2node_SpriteAnimationNode.h" />

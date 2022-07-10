@@ -1,4 +1,4 @@
-#include "r2node_LabelNode.h"
+#include "r2node_LabelSNode.h"
 
 #include "r2base_Director.h"
 #include "r2component_CustomTextureComponent.h"

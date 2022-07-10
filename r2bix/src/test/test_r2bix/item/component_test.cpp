@@ -484,7 +484,7 @@ namespace component_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 18, 8 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 			DECLARATION_SUB( auto node = r2base::Node::Create( dummy_director ) );
@@ -520,7 +520,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const char* const dummy_text = "Bla Bla Bla" );
+				DECLARATION_MAIN( const char* const dummy_text = "Bla\nBla\n\nBla" );
 				PROCESS_MAIN( label->SetString( dummy_text ) );
 				EXPECT_EQ( dummy_text, label->GetString() );
 			}
