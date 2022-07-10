@@ -14,13 +14,12 @@ namespace r2render
 		Reset( str );
 	}
 	Texture::Texture( const uint32_t width, const std::string_view str ) :
-		mGridIndexConverter( width, static_cast<int>( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) )
-		, mChars( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), 32 )
-		, mColors( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), r2base::DefaultColorValue )
-		, mCharDisuses( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), false )
+		mGridIndexConverter( 1, 1 )
+		, mChars()
+		, mColors()
+		, mCharDisuses()
 	{
-		assert( 0u < mGridIndexConverter.GetWidth() && 0u < mGridIndexConverter.GetHeight() );
-		memcpy_s( &mChars[0], mChars.size(), str.data(), str.size() );
+		Reset( width, str );
 	}
 	Texture::Texture( const uint32_t width, uint32_t height ) :
 		mGridIndexConverter( width, height )
@@ -95,13 +94,19 @@ namespace r2render
 
 	void Texture::Reset( const std::string_view str )
 	{
-		assert( 0u < str.length() );
+		Reset( str.length(), str );
+	}
+	void Texture::Reset( const uint32_t width, const std::string_view str )
+	{
+		assert( 0u < width && 0u < str.length() );
 
-		mGridIndexConverter = r2::GridIndexConverter( static_cast<int>( str.length() ), 1 );
+		mGridIndexConverter = r2::GridIndexConverter( width, static_cast<int>( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) );
+
+		//
+		// Chars
+		//
 		mChars.clear();
 		mChars.resize( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), 32 );
-
-		//std::copy( str.begin(), str.end(), mChars.begin() );
 		memcpy_s( &mChars[0], mChars.size(), str.data(), str.size() );
 
 		//

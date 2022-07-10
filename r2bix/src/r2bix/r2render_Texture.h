@@ -63,6 +63,7 @@ namespace r2render
 		//
 		//
 		void Reset( const std::string_view str );
+		void Reset( const uint32_t width, const std::string_view str );
 		void Reset( const uint32_t width, const uint32_t height, const char fill_char );
 		void Reset( const uint32_t width, const uint32_t height, const char fill_char, const r2base::ColorValue color_value );
 
