@@ -2,7 +2,7 @@
 
 #include "r2/r2_Assert.h"
 #include "r2bix/r2component_CustomTextureComponent.h"
-#include "r2bix/r2component_LabelComponent.h"
+#include "r2bix/r2component_LabelSComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 
 #include "p2048_NumberComponent.h"

@@ -9,7 +9,7 @@
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2component_ActionProcessComponent.h"
 #include "r2bix/r2component_CustomTextureComponent.h"
-#include "r2bix/r2component_LabelComponent.h"
+#include "r2bix/r2component_LabelSComponent.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 #include "r2bix/r2node_CustomTextureNode.h"

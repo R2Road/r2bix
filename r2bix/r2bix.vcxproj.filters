@@ -236,9 +236,6 @@
     <ClCompile Include="src\r2bix\r2component_CustomTextureComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_LabelComponent.cpp">
-      <Filter>r2bix\component</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2component_TextureFrameAnimationComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
@@ -391,6 +388,9 @@
     </ClCompile>
     <ClCompile Include="src\r2bix\r2node_LabelSNode.cpp">
       <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2component_LabelSComponent.cpp">
+      <Filter>r2bix\component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -584,9 +584,6 @@
     <ClInclude Include="src\r2bix\r2component_CustomTextureComponent.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_LabelComponent.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2component_TextureFrameAnimationComponent.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
@@ -769,6 +766,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2node_LabelSNode.h">
       <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2component_LabelSComponent.h">
+      <Filter>r2bix\component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

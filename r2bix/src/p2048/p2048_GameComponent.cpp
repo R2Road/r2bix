@@ -3,7 +3,7 @@
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_Node.h"
 #include "r2bix/r2component_ActionProcessComponent.h"
-#include "r2bix/r2component_LabelComponent.h"
+#include "r2bix/r2component_LabelSComponent.h"
 #include "r2bix/r2utility_InputUtil.h"
 #include "r2bix/r2utility_StringBuilder.h"
 

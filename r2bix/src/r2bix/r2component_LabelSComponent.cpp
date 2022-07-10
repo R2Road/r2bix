@@ -1,4 +1,4 @@
-#include "r2component_LabelComponent.h"
+#include "r2component_LabelSComponent.h"
 
 #include "r2component_CustomTextureComponent.h"
 #include "r2component_TextureRenderComponent.h"
