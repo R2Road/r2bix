@@ -78,19 +78,18 @@ void Utility4Test::DrawRectInfo_Min_Max( const r2::RectInt& rect )
 
 void Utility4Test::DrawTexture( const r2render::Texture& texture )
 {
+	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
+
 	for( int y = 0; y < texture.GetHeight(); ++y )
 	{
 		for( int x = 0; x < texture.GetWidth(); ++x )
 		{
-			std::cout
-				<< r2cm::clm( Convert_R2bixForegroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
-				<< r2cm::clm( Convert_R2bixBackgroundColor_to_R2CMColor( texture.GetColor( x, y ) ) )
-				<< ( texture.GetCharacterDisuse( x, y ) ? ' ' : texture.GetCharacter( x, y ) )
-				<< r2cm::clm();
+			r2cm::WindowUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetCharacter( x, y ) );
+			r2cm::WindowUtility::FillColor( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetColor( x, y ) );
 		}
-
-		std::cout << r2cm::linefeed;
 	}
+
+	r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
 }
 void Utility4Test::DrawTextureCharacter( const r2render::Texture& texture )
 {
