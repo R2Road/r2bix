@@ -45,7 +45,7 @@ namespace component_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class LabelComponentTest : public r2cm::iItem, public r2cm::SingleTon<LabelComponentTest>
+	class LabelSComponentTest : public r2cm::iItem, public r2cm::SingleTon<LabelSComponentTest>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

@@ -395,14 +395,14 @@ namespace component_test
 
 
 
-	r2cm::iItem::TitleFunctionT LabelComponentTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT LabelSComponentTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Label Component";
+			return "Label S Component";
 		};
 	}
-	r2cm::iItem::DoFunctionT LabelComponentTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT LabelSComponentTest::GetDoFunction()
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -418,7 +418,7 @@ namespace component_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto label = node->AddComponent<r2component::LabelComponent>() );
+			DECLARATION_MAIN( auto label = node->AddComponent<r2component::LabelSComponent>() );
 			EXPECT_NE( nullptr, label );
 			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, custom_texture );

@@ -34,7 +34,7 @@ namespace p_mini_adv
 
 		{
 			auto node = AddChild<r2node::LabelSNode>();
-			node->GetComponent<r2component::LabelComponent>()->SetString( VersionInfo.String4Summury );
+			node->GetComponent<r2component::LabelSComponent>()->SetString( VersionInfo.String4Summury );
 
 			node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
@@ -44,7 +44,7 @@ namespace p_mini_adv
 
 		{
 			auto node = AddChild<r2node::LabelSNode>();
-			node->GetComponent<r2component::LabelComponent>()->SetString( VersionInfo.String4Road2Version_0_0_1 );
+			node->GetComponent<r2component::LabelSComponent>()->SetString( VersionInfo.String4Road2Version_0_0_1 );
 
 			node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f

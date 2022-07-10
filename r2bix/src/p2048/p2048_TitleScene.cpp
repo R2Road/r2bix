@@ -217,7 +217,7 @@ namespace p2048
 		{
 			mLabelNode = AddChild<r2node::LabelSNode>();
 
-			mLabelNode->GetComponent<r2component::LabelComponent>()->SetString( "Press Any Key" );
+			mLabelNode->GetComponent<r2component::LabelSComponent>()->SetString( "Press Any Key" );
 
 			mLabelNode->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f

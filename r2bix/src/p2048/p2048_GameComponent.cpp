@@ -65,9 +65,9 @@ namespace p2048
 			mGameProcessor.Reset();
 
 			mStageViewComponent->GetOwnerNode().SetVisible( false );
-			mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
-			mTotalScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
-			mRecentScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mMaxNumberLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mTotalScoreLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mRecentScoreLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 
 			mYouWinNode->SetVisible( false );
 			mGameOverNode->SetVisible( false );
@@ -182,15 +182,15 @@ namespace p2048
 			//
 			if( 0 < mGameProcessor.GetSum4Merged() )
 			{
-				mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
+				mMaxNumberLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
 					, mGameProcessor.GetMaxNumber()
 				) );
 
-				mTotalScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
+				mTotalScoreLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
 					, mGameProcessor.GetScore()
 				) );
 				
-				mRecentScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "+ %d"
+				mRecentScoreLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "+ %d"
 					, mGameProcessor.GetSum4Merged()
 				) );
 			}

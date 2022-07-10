@@ -119,7 +119,7 @@ namespace node_test
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::CustomTextureComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureRenderComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::LabelComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2component::LabelSComponent>() );
 			}
 
 			std::cout << r2cm::split;
@@ -157,7 +157,7 @@ namespace node_test
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::CustomTextureComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureRenderComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::LabelComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2component::LabelSComponent>() );
 			}
 
 			std::cout << r2cm::split;

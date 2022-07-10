@@ -6,7 +6,7 @@
 namespace r2component
 {
 	class CustomTextureComponent;
-	class LabelComponent;
+	class LabelSComponent;
 }
 
 namespace p2048
@@ -20,7 +20,7 @@ namespace p2048
 		int GetStaticID() const override { return r2base::ComponentStaticID<NumberComponent>::Get(); }
 		static std::unique_ptr<NumberComponent> Create( r2base::Node& owner_node );
 
-		void SetLabelComponent( r2component::LabelComponent* const label_component )
+		void SetLabelComponent( r2component::LabelSComponent* const label_component )
 		{
 			mLabelComponent = label_component;
 		}
@@ -31,7 +31,7 @@ namespace p2048
 		void SetNumber( const int new_number, const bool merged, const bool newcomer );
 
 	private:
-		r2component::LabelComponent* mLabelComponent;
+		r2component::LabelSComponent* mLabelComponent;
 		r2component::CustomTextureComponent* mCustomTextureComponent;
 	};
 }
