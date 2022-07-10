@@ -22,12 +22,12 @@ namespace r2render
 		Reset( width, str );
 	}
 	Texture::Texture( const uint32_t width, uint32_t height ) :
-		mGridIndexConverter( width, height )
-		, mChars( width * height, 32 )
-		, mColors( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), r2base::DefaultColorValue )
-		, mCharDisuses( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), false )
+		mGridIndexConverter( 1, 1 )
+		, mChars()
+		, mColors()
+		, mCharDisuses()
 	{
-		assert( 0u < width && 0u < height );
+		Reset( width, height, 32 );
 	}
 	Texture::Texture( const uint32_t width, const uint32_t height, const char fill_char ) :
 		mGridIndexConverter( 1, 1 )
