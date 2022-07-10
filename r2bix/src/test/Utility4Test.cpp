@@ -1,9 +1,9 @@
 #include "Utility4Test.h"
 
 #include <iomanip>
-#include <Windows.h>
 
 #include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_WindowUtility.h"
 #include "r2bix/r2render_TextureFrame.h"
 
 r2cm::eColor Convert_R2bixForegroundColor_to_R2CMColor( r2base::ColorValue color_value )
@@ -62,15 +62,11 @@ r2cm::eColor Convert_R2bixBackgroundColor_to_R2CMColor( r2base::ColorValue color
 
 void Utility4Test::DrawRect( const int offset_y, const r2::RectInt& rect, const char c )
 {
-	HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-
 	for( int y = rect.GetMinY(); rect.GetMaxY() >= y; ++y )
 	{
 		for( int x = rect.GetMinX(); rect.GetMaxX() >= x; ++x )
 		{
-			SetConsoleCursorPosition( stdHandle, { static_cast<short>( x ), static_cast<short>( offset_y + y ) } );
-
-			std::cout << c;
+			r2cm::WindowUtility::FillCharacter( { static_cast<short>( x ), static_cast<short>( offset_y + y ) }, c );
 		}
 	}
 }
