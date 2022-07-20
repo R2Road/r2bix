@@ -163,9 +163,6 @@
     <ClCompile Include="src\test\TestMainMenu.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\TestR2bixRootMenu.cpp">
-      <Filter>test\test_r2bix</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\Utility4Test.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -398,6 +395,9 @@
     <ClCompile Include="src\test\test_r2bix\item\utility_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\R2bixMenu.cpp">
+      <Filter>test\test_r2bix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -507,9 +507,6 @@
     </ClInclude>
     <ClInclude Include="src\test\TestMainMenu.h">
       <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\TestR2bixRootMenu.h">
-      <Filter>test\test_r2bix</Filter>
     </ClInclude>
     <ClInclude Include="src\test\Utility4Test.h">
       <Filter>test</Filter>
@@ -781,6 +778,9 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\utility_test.h">
       <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\R2bixMenu.h">
+      <Filter>test\test_r2bix</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

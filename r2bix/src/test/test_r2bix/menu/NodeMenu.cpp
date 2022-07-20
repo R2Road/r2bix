@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
-#include "test/test_r2bix/TestR2bixRootMenu.h"
+#include "test/test_r2bix/R2bixMenu.h"
 
 #include "test/test_r2bix/item/node_test.h"
 
