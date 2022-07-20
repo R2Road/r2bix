@@ -15,6 +15,7 @@
 #include "test/test_r2bix/item/console_screen_buffer_manager_test.h"
 #include "test/test_r2bix/item/rect_test.h"
 #include "test/test_r2bix/item/render_test.h"
+#include "test/test_r2bix/item/utility_test.h"
 
 #include "test/test_r2bix/item/visible_resource_research.h"
 
@@ -51,6 +52,7 @@ r2cm::MenuUp TestR2bixRootMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+		ret->AddItem( '6', utility_test::StringSize::GetInstance() );
 
 
 
