@@ -1,13 +1,13 @@
 #include "R2bixMenu.h"
 
-#include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_Director.h"
 
 #include "test/test_r2bix/menu/ActionMenu.h"
 #include "test/test_r2bix/menu/CameraMenu.h"
 #include "test/test_r2bix/menu/ColorMenu.h"
-#include "test/test_r2bix/menu/InputMenu.h"
 #include "test/test_r2bix/menu/ComponentMenu.h"
+#include "test/test_r2bix/menu/InputMenu.h"
 #include "test/test_r2bix/menu/NodeMenu.h"
 #include "test/test_r2bix/menu/TextureMenu.h"
 
