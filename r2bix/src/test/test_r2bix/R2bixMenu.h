@@ -15,6 +15,6 @@ private:
 	TestR2bixRootMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Test R2BIX"; }
+	static const char* GetTitle() { return "R2bix Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
