@@ -60,6 +60,12 @@ namespace texture_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+	class InitWithChars_2 : public r2cm::iItem, public r2cm::SingleTon<InitWithChars_2>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 	class InitWithChars_3 : public r2cm::iItem, public r2cm::SingleTon<InitWithChars_3>
 	{
 	public:

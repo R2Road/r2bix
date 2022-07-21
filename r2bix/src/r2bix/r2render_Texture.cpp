@@ -16,6 +16,14 @@ namespace r2render
 	{
 		Reset( str );
 	}
+	Texture::Texture( const uint32_t width, const std::string_view str ) :
+		mGridIndexConverter( 1, 1 )
+		, mChars()
+		, mColors()
+		, mCharDisuses()
+	{
+		Reset( width, str );
+	}
 	Texture::Texture( const uint32_t width, uint32_t height ) :
 		mGridIndexConverter( 1, 1 )
 		, mChars()
@@ -103,6 +111,31 @@ namespace r2render
 
 			++current_y;
 		}
+	}
+	void Texture::Reset( const uint32_t width, const std::string_view str )
+	{
+		assert( 0u < width && 0u < str.length() );
+
+		mGridIndexConverter = r2::GridIndexConverter( width, static_cast<int>( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) );
+
+		//
+		// Chars
+		//
+		mChars.clear();
+		mChars.resize( mGridIndexConverter.GetWidth() * mGridIndexConverter.GetHeight(), 32 );
+		memcpy_s( &mChars[0], mChars.size(), str.data(), str.size() );
+
+		//
+		// Color
+		//
+		mColors.clear();
+		mColors.resize( mChars.size(), r2base::DefaultColorValue );
+
+		//
+		// Disuse
+		//
+		mCharDisuses.clear();
+		mCharDisuses.resize( mChars.size(), false );
 	}
 	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char )
 	{
