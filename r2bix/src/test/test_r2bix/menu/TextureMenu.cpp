@@ -30,7 +30,6 @@ r2cm::MenuUp TextureMenu::Create( r2cm::Director& director )
 
 
 		ret->AddItem( 'q', texture_test::InitWithChars_1::GetInstance() );
-		ret->AddItem( 'w', texture_test::InitWithChars_2::GetInstance() );
 		ret->AddItem( 'e', texture_test::InitWithChars_3::GetInstance() );
 		ret->AddItem( 'r', texture_test::InitWithChars_4::GetInstance() );
 

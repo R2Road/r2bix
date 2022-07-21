@@ -12,7 +12,7 @@ namespace
 {
 	const r2render::Texture& GetDummyTexture()
 	{
-		static const r2render::Texture texture( 7,
+		static const r2render::Texture texture( 7, 7,
 			"1111111"
 			"1222222"
 			"1233333"

@@ -14,7 +14,7 @@ namespace p2048table
 
 		{
 			auto result = mTextureContainer.emplace( "companyscene_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
-				50,
+				50, 10,
 				//		"          1         2         3         4         "
 				//		"01234567890123456789012345678901234567890123456789"
 				/* 0 */	"ttttttttttttttttttttttttttt                      |"
@@ -56,7 +56,7 @@ namespace p2048table
 
 		{
 			auto result = mTextureContainer.emplace( "title_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
-				71,
+				71, 16,
 				//		"          1         2         3         4         5         6         7"
 				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
 				/* 0 */ "#######################################################################"
@@ -112,7 +112,7 @@ namespace p2048table
 
 		{
 			auto result = mTextureContainer.emplace( "p2048_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
-				60,
+				60, 24,
 				//		"          1         2         3         4         5         6         7"
 				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
 				/* 0 */ "                                                            "

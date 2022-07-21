@@ -346,35 +346,6 @@ namespace texture_test
 
 
 
-	r2cm::iItem::TitleFunctionT InitWithChars_2::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Texture : Init With Chars 2";
-		};
-	}
-	r2cm::iItem::DoFunctionT InitWithChars_2::GetDoFunction()
-	{
-		return []()->r2cm::eItemLeaveAction
-		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
-			std::cout << r2cm::split;
-
-			DECLARATION_MAIN( const r2render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggghh" ) );
-
-			std::cout << r2cm::split;
-
-			Utility4Test::DrawTexture( texture );
-
-			std::cout << r2cm::split;
-
-			return r2cm::eItemLeaveAction::Pause;
-		};
-	}
-
-
-
 	r2cm::iItem::TitleFunctionT InitWithChars_3::GetTitleFunction() const
 	{
 		return []()->const char*
