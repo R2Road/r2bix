@@ -100,67 +100,47 @@ namespace utility_test
 
 			std::cout << r2cm::split;
 
+			const auto printer = []( const r2utility::StringDecomposition::ResultContainerT& result_container )
 			{
-				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" ) );
-
 				std::cout << "<Begin>" << r2cm::linefeed;
-				for( const auto& s : str_list )
+				for( const auto& s : result_container )
 				{
 					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
 				}
 				std::cout << "<End>" << r2cm::linefeed;
+			};
+
+			{
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" ) );
+				printer( str_list );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( " " ) );
-
-				std::cout << "<Begin>" << r2cm::linefeed;
-				for( const auto& s : str_list )
-				{
-					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
-				}
-				std::cout << "<End>" << r2cm::linefeed;
+				printer( str_list );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" "\n" ) );
-
-				std::cout << "<Begin>" << r2cm::linefeed;
-				for( const auto& s : str_list )
-				{
-					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
-				}
-				std::cout << "<End>" << r2cm::linefeed;
+				printer( str_list );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "\n" " " ) );
-
-				std::cout << "<Begin>" << r2cm::linefeed;
-				for( const auto& s : str_list )
-				{
-					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
-				}
-				std::cout << "<End>" << r2cm::linefeed;
+				printer( str_list );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" "\n" "\n123" "\n4567" "\n" "\nABC" ) );
-
-				std::cout << "<Begin>" << r2cm::linefeed;
-				for( const auto& s : str_list )
-				{
-					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
-				}
-				std::cout << "<End>" << r2cm::linefeed;
+				printer( str_list );
 			}
 
 			std::cout << r2cm::split;
