@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
 
+#include "r2bix/r2utility_StringDecomposition.h"
 #include "r2bix/r2utility_StringSize.h"
 
 namespace utility_test
@@ -74,6 +75,92 @@ namespace utility_test
 				DECLARATION_MAIN( const auto s = r2utility::StringSize::Calculate( "" "\n" "\n123" "\n4567" "\n" "\nABC" ) );
 				EXPECT_EQ( 4u, s.width );
 				EXPECT_EQ( 6u, s.height );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFunctionT StringDecomposition::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Utility : StringDecomposition";
+		};
+	}
+	r2cm::iItem::DoFunctionT StringDecomposition::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" ) );
+
+				std::cout << "<Begin>" << r2cm::linefeed;
+				for( const auto& s : str_list )
+				{
+					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
+				}
+				std::cout << "<End>" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( " " ) );
+
+				std::cout << "<Begin>" << r2cm::linefeed;
+				for( const auto& s : str_list )
+				{
+					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
+				}
+				std::cout << "<End>" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" "\n" ) );
+
+				std::cout << "<Begin>" << r2cm::linefeed;
+				for( const auto& s : str_list )
+				{
+					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
+				}
+				std::cout << "<End>" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "\n" " " ) );
+
+				std::cout << "<Begin>" << r2cm::linefeed;
+				for( const auto& s : str_list )
+				{
+					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
+				}
+				std::cout << "<End>" << r2cm::linefeed;
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" "\n" "\n123" "\n4567" "\n" "\nABC" ) );
+
+				std::cout << "<Begin>" << r2cm::linefeed;
+				for( const auto& s : str_list )
+				{
+					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
+				}
+				std::cout << "<End>" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;

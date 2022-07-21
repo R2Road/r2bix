@@ -53,6 +53,7 @@ r2cm::MenuUp TestR2bixRootMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem( '6', utility_test::StringSize::GetInstance() );
+		ret->AddItem( '7', utility_test::StringDecomposition::GetInstance() );
 
 
 

@@ -81,6 +81,7 @@
     <ClCompile Include="src\r2bix\r2utility_FileUtil.cpp" />
     <ClCompile Include="src\r2bix\r2utility_InputUtil.cpp" />
     <ClCompile Include="src\r2bix\r2utility_StringBuilder.cpp" />
+    <ClCompile Include="src\r2bix\r2utility_StringDecomposition.cpp" />
     <ClCompile Include="src\r2bix\r2utility_StringSize.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Inspector.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="src\r2bix\r2utility_FileUtil.h" />
     <ClInclude Include="src\r2bix\r2utility_InputUtil.h" />
     <ClInclude Include="src\r2bix\r2utility_StringBuilder.h" />
+    <ClInclude Include="src\r2bix\r2utility_StringDecomposition.h" />
     <ClInclude Include="src\r2bix\r2utility_StringSize.h" />
     <ClInclude Include="src\r2cm\r2cm_constant.h" />
     <ClInclude Include="src\r2cm\r2cm_Director.h" />

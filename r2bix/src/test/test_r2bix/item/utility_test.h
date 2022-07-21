@@ -11,4 +11,11 @@ namespace utility_test
 		TitleFunctionT GetTitleFunction() const override;
 		DoFunctionT GetDoFunction() override;
 	};
+
+	class StringDecomposition : public r2cm::iItem, public r2cm::SingleTon<StringDecomposition>
+	{
+	public:
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
+	};
 }
