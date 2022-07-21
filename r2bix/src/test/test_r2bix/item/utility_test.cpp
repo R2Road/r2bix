@@ -100,6 +100,10 @@ namespace utility_test
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( const std::string_view token( "\n" ) );
+
+			std::cout << r2cm::split;
+
 			const auto printer = []( const r2utility::StringDecomposition::ResultContainerT& result_container )
 			{
 				std::cout << "<Begin>" << r2cm::linefeed;
@@ -120,35 +124,35 @@ namespace utility_test
 			};
 
 			{
-				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" ) );
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( token, "" ) );
 				printer( str_list );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( " " ) );
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( token, " " ) );
 				printer( str_list );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" "\n" ) );
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( token, "" "\n" ) );
 				printer( str_list );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "\n" " " ) );
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( token, "\n" " " ) );
 				printer( str_list );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( "" "\n" "\n123" "\n4567" "\n" "\nABC" ) );
+				DECLARATION_MAIN( const auto str_list = r2utility::StringDecomposition::Do( token, "" "\n" "\n123" "\n4567" "\n" "\nABC" ) );
 				printer( str_list );
 			}
 

@@ -2,14 +2,12 @@
 
 namespace r2utility
 {
-	StringDecomposition::ResultContainerT StringDecomposition::Do( const std::string_view str )
+	StringDecomposition::ResultContainerT StringDecomposition::Do( const std::string_view token, const std::string_view str )
 	{
 		ResultContainerT out_container;
 
 		if( !str.empty() )
 		{
-			const char* key_string = "\n";
-
 			std::size_t pivot_pos = 0u;
 			std::size_t find_pos = 0u;
 			std::size_t fixed_find_pos = 0u;
@@ -17,7 +15,7 @@ namespace r2utility
 			do
 			{
 
-				find_pos = str.find( key_string, pivot_pos );
+				find_pos = str.find( token, pivot_pos );
 				if( std::string::npos == find_pos )
 				{
 					fixed_find_pos = str.size();

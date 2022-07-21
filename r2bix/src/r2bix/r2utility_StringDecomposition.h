@@ -14,6 +14,6 @@ namespace r2utility
 		StringDecomposition() = delete;
 
 	public:
-		static ResultContainerT Do( const std::string_view str );
+		static ResultContainerT Do( const std::string_view token, const std::string_view str );
 	};
 }
