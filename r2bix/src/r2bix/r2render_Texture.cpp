@@ -107,7 +107,9 @@ namespace r2render
 		for( const auto& s : str_list )
 		{
 			linear_index = mGridIndexConverter.To_Linear( 0, current_y );
-			memcpy_s( &mChars[linear_index], mGridIndexConverter.GetWidth(), str.data(), str.size() );
+			memcpy_s( &mChars[linear_index], mGridIndexConverter.GetWidth(), s.data(), s.size() );
+
+			++current_y;
 		}
 	}
 	void Texture::Reset( const uint32_t width, const std::string_view str )

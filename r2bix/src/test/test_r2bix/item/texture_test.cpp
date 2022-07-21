@@ -308,17 +308,35 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const std::string_view str( "Init With Chars" ) );
-			DECLARATION_MAIN( const r2render::Texture texture( str ) );
+			{
+				DECLARATION_MAIN( const std::string_view str( "Init With Chars" ) );
+				DECLARATION_MAIN( const r2render::Texture texture( str ) );
 
-			std::cout << r2cm::linefeed;
+				std::cout << r2cm::linefeed;
 
-			EXPECT_EQ( str.size(), texture.GetWidth() );
-			EXPECT_EQ( 1, texture.GetHeight() );
+				EXPECT_EQ( str.size(), texture.GetWidth() );
+				EXPECT_EQ( 1, texture.GetHeight() );
+
+				std::cout << r2cm::linefeed;
+
+				Utility4Test::DrawTexture( texture );
+			}
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( texture );
+			{
+				DECLARATION_MAIN( const std::string_view str( "Init\n With \nChars\n" ) );
+				DECLARATION_MAIN( const r2render::Texture texture( str ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( 6, texture.GetWidth() );
+				EXPECT_EQ( 4, texture.GetHeight() );
+
+				std::cout << r2cm::linefeed;
+
+				Utility4Test::DrawTexture( texture );
+			}
 
 			std::cout << r2cm::split;
 
