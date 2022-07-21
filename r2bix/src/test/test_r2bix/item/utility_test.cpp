@@ -105,7 +105,16 @@ namespace utility_test
 				std::cout << "<Begin>" << r2cm::linefeed;
 				for( const auto& s : result_container )
 				{
-					std::cout << r2cm::tab << ( s.empty() ? "<empty>" : s ) << " : " << ( s.size() ) << r2cm::linefeed;
+					std::cout << r2cm::tab << "<";
+					if( s.empty() )
+					{
+						std::cout << "empty";
+					}
+					else
+					{
+						std::cout << s;
+					}
+					std::cout << "> : " << s.size() << r2cm::linefeed;
 				}
 				std::cout << "<End>" << r2cm::linefeed;
 			};
