@@ -3,6 +3,9 @@
 #include <algorithm>
 #include <cassert>
 
+#include "r2utility_StringSize.h"
+#include "r2utility_StringDecomposition.h"
+
 namespace r2render
 {
 	Texture::Texture( const std::string_view str ) :
@@ -94,7 +97,18 @@ namespace r2render
 
 	void Texture::Reset( const std::string_view str )
 	{
-		Reset( str.length(), str );
+		const auto size = r2utility::StringSize::Calculate( str );
+		const auto str_list = r2utility::StringDecomposition::Do( "\n", str );
+
+		Reset( size.width, size.height, ' ' );
+
+		int current_y = 0;
+		int linear_index = 0;
+		for( const auto& s : str_list )
+		{
+			linear_index = mGridIndexConverter.To_Linear( 0, current_y );
+			memcpy_s( &mChars[linear_index], mGridIndexConverter.GetWidth(), str.data(), str.size() );
+		}
 	}
 	void Texture::Reset( const uint32_t width, const std::string_view str )
 	{
