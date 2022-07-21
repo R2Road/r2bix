@@ -308,7 +308,13 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const r2render::Texture texture( "Init With Chars" ) );
+			DECLARATION_MAIN( const std::string_view str( "Init With Chars" ) );
+			DECLARATION_MAIN( const r2render::Texture texture( str ) );
+
+			std::cout << r2cm::linefeed;
+
+			EXPECT_EQ( str.size(), texture.GetWidth() );
+			EXPECT_EQ( 1, texture.GetHeight() );
 
 			std::cout << r2cm::split;
 
