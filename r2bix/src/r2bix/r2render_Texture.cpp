@@ -100,7 +100,7 @@ namespace r2render
 		const auto size = r2utility::StringSize::Calculate( str );
 		const auto str_list = r2utility::StringDecomposition::Do( "\n", str );
 
-		Reset( size.width, size.height, ' ' );
+		Reset( static_cast<uint32_t>( size.width ), static_cast<uint32_t>( size.height ), ' ' );
 
 		int current_y = 0;
 		int linear_index = 0;
