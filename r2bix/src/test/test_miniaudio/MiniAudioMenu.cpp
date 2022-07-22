@@ -1,7 +1,7 @@
 #include "MiniAudioMenu.h"
 
-#include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_Director.h"
 
 #include "item/miniaudio_test.h"
 
@@ -52,15 +52,7 @@ r2cm::MenuUp MiniAudioMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return TestMainMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TestMainMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<TestMainMenu>( 27 );
 	}
 
 	return ret;
