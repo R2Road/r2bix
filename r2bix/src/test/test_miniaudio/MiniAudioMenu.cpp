@@ -7,7 +7,7 @@
 
 #include "test/TestMainMenu.h"
 
-r2cm::MenuUp TestMiniAudioMenu::Create( r2cm::Director& director )
+r2cm::MenuUp MiniAudioMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director

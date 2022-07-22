@@ -28,10 +28,10 @@ r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'2'
-			, []()->const char* { return TestMiniAudioMenu::GetTitle(); }
+			, []()->const char* { return MiniAudioMenu::GetTitle(); }
 			, [&director]()->r2cm::eItemLeaveAction
 			{
-				director.Setup( TestMiniAudioMenu::Create( director ) );
+				director.Setup( MiniAudioMenu::Create( director ) );
 				return r2cm::eItemLeaveAction::None;
 			}
 		);

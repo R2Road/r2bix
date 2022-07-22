@@ -8,12 +8,12 @@ namespace r2cm
 	class Director;
 }
 
-class TestMiniAudioMenu
+class MiniAudioMenu
 {
 private:
-	TestMiniAudioMenu() = delete;
+	MiniAudioMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Test Mini Audio"; }
+	static const char* GetTitle() { return "Mini Audio Menu"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
