@@ -1,7 +1,7 @@
 #include "TestMainMenu.h"
 
-#include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_Director.h"
 
 #include "test/test_miniaudio/MiniAudioMenu.h"
 #include "test/test_p2048/TestP2048RootMenu.h"
