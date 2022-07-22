@@ -21,7 +21,7 @@
 
 #include "test/TestMainMenu.h"
 
-r2cm::MenuUp TestR2bixRootMenu::Create( r2cm::Director& director )
+r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director

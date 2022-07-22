@@ -8,10 +8,10 @@ namespace r2cm
 	using MenuUp = std::unique_ptr<class Menu>;
 }
 
-class TestR2bixRootMenu
+class R2bixMenu
 {
 private:
-	TestR2bixRootMenu() = delete;
+	R2bixMenu() = delete;
 
 public:
 	static const char* GetTitle() { return "R2bix Menu"; }

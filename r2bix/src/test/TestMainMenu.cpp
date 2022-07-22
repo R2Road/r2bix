@@ -17,7 +17,7 @@ r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddMenu<TestR2bixRootMenu>( '1' );
+		ret->AddMenu<R2bixMenu>( '1' );
 		ret->AddMenu<MiniAudioMenu>( '2' );
 
 
