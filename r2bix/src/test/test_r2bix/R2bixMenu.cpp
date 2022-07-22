@@ -33,25 +33,9 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', console_screen_buffer_test::Basic::GetInstance() );
 		ret->AddItem( '2', console_screen_buffer_manager_test::Basic::GetInstance() );
-		ret->AddItem(
-			'3'
-			, []()->const char* { return InputMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( InputMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<InputMenu>( '3' );
 		ret->AddItem( '4', rect_test::Basic::GetInstance() );
-		ret->AddItem(
-			'5'
-			, []()->const char* { return ColorMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( ColorMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<ColorMenu>( '5' );
 		ret->AddItem( '6', utility_test::StringSize::GetInstance() );
 		ret->AddItem( '7', utility_test::StringDecomposition::GetInstance() );
 
@@ -62,72 +46,28 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem(
-			'q'
-			, []()->const char* { return TextureMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TextureMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'w'
-			, []()->const char* { return CameraMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( CameraMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<TextureMenu>( 'q' );
+		ret->AddMenu<CameraMenu>( 'w' );
 		ret->AddItem( 'e', render_test::Basic::GetInstance() );
-		ret->AddItem(
-			'r'
-			, []()->const char* { return ComponentMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( ComponentMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			't'
-			, []()->const char* { return ActionMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( ActionMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'y'
-			, []()->const char* { return NodeMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( NodeMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<ComponentMenu>( 'r' );
+		ret->AddMenu<ActionMenu>( 't' );
+		ret->AddMenu<NodeMenu>( 'y' );
+
 
 
 		ret->AddSplit();
+
 
 
 		ret->AddItem( 'z', visible_resource_research::DrawWithPosition::GetInstance() );
 
 
+
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return TestMainMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TestMainMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+
+		ret->AddMenu<TestMainMenu>( 27 );
 	}
 
 	return ret;
