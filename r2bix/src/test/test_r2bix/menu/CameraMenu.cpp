@@ -3,9 +3,9 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
-#include "test/test_r2bix/R2bixMenu.h"
-
 #include "test/test_r2bix/item/camera_test.h"
+
+#include "test/test_r2bix/R2bixMenu.h"
 
 r2cm::MenuUp CameraMenu::Create( r2cm::Director& director )
 {
@@ -26,15 +26,7 @@ r2cm::MenuUp CameraMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, []()->const char* { return "Return To Root"; }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( R2bixMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<R2bixMenu>( 27 );
 	}
 
 	return ret;
