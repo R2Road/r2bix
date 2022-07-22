@@ -17,39 +17,21 @@ r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem(
-			'1'
-			, []()->const char* { return TestR2bixRootMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TestR2bixRootMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'2'
-			, []()->const char* { return MiniAudioMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( MiniAudioMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+		ret->AddMenu<TestR2bixRootMenu>( '1' );
+		ret->AddMenu<MiniAudioMenu>( '2' );
+
+
 
 		ret->AddLineFeed();
 
-		ret->AddItem(
-			'q'
-			, []()->const char* { return TestP2048MiniRootMenu::GetTitle(); }
-			, [&director]()->r2cm::eItemLeaveAction
-			{
-				director.Setup( TestP2048MiniRootMenu::Create( director ) );
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
+
+
+		ret->AddMenu<TestP2048MiniRootMenu>( 'q' );
+
 
 
 		ret->AddSplit();
+
 
 
 		ret->AddItem(
