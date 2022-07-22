@@ -1,4 +1,4 @@
-#include "TestMiniAudioMenu.h"
+#include "MiniAudioMenu.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
