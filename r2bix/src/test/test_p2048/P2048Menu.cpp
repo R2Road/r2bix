@@ -16,8 +16,7 @@ r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
 		director
 		, GetTitle(),
 				"> 이 게임이 p2048mini 와 다른 것은 이동 과정을 보여준 다는 것에 있다."
-		"\n"	"> Inprogress : ..."
-		"\n"	"> To do : ..."
+		"\n"	"> 방치중..."
 	) );
 
 	{
