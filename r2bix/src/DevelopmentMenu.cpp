@@ -43,49 +43,13 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 		);
 
 
+
 		ret->AddLineFeed();
 
+		
 
 		ret->AddItem(
 			'a'
-			, []()->const char* { return p2048::EntryScene::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
-			{
-				//
-				// Setup
-				//
-				r2base::Director director;
-				director.Setup( p2048::EntryScene::Create( director ) );
-
-				//
-				// Process
-				//
-				director.Run();
-
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			's'
-			, []()->const char* { return pmr::CompanyScene::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
-			{
-				//
-				// Setup
-				//
-				r2base::Director director;
-				director.Setup( pmr::CompanyScene::Create( director ) );
-
-				//
-				// Process
-				//
-				director.Run();
-
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'd'
 			, []()->const char* { return p_mini_adv::CompanyScene::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{
@@ -105,7 +69,56 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 		);
 
 
+		
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+
+		
+		ret->AddItem(
+			'z'
+			, []()->const char* { return p2048::EntryScene::GetTitle(); }
+			, []()->r2cm::eItemLeaveAction
+			{
+				//
+				// Setup
+				//
+				r2base::Director director;
+				director.Setup( p2048::EntryScene::Create( director ) );
+
+				//
+				// Process
+				//
+				director.Run();
+
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+		ret->AddItem(
+			'x'
+			, []()->const char* { return pmr::CompanyScene::GetTitle(); }
+			, []()->r2cm::eItemLeaveAction
+			{
+				//
+				// Setup
+				//
+				r2base::Director director;
+				director.Setup( pmr::CompanyScene::Create( director ) );
+
+				//
+				// Process
+				//
+				director.Run();
+
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+
+
+		
 		ret->AddSplit();
+
 
 
 		ret->AddItem(
