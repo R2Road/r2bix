@@ -52,7 +52,7 @@ r2cm::MenuUp MiniAudioMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<TestMainMenu>( 27 );
+		ret->AddMenu<TestMenu>( 27 );
 	}
 
 	return ret;

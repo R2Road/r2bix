@@ -67,7 +67,7 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<TestMainMenu>( 27 );
+		ret->AddMenu<TestMenu>( 27 );
 	}
 
 	return ret;

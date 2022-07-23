@@ -31,7 +31,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				// Setup
 				//
 				r2cm::Director director;
-				director.Setup( TestMainMenu::Create( director ) );
+				director.Setup( TestMenu::Create( director ) );
 
 				//
 				// Process

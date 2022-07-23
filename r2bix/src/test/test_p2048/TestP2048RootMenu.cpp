@@ -50,7 +50,7 @@ r2cm::MenuUp TestP2048MiniRootMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<TestMainMenu>( 27 );
+		ret->AddMenu<TestMenu>( 27 );
 	}
 
 	return ret;

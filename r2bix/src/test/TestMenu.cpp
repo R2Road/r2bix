@@ -7,7 +7,7 @@
 #include "test/test_p2048/TestP2048RootMenu.h"
 #include "test/test_r2bix/R2bixMenu.h"
 
-r2cm::MenuUp TestMainMenu::Create( r2cm::Director& director )
+r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
