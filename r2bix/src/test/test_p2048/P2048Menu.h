@@ -9,12 +9,12 @@ namespace r2cm
 	class Director;
 }
 
-class TestP2048MiniRootMenu
+class P2048Menu
 {
 private:
-	TestP2048MiniRootMenu() = delete;
+	P2048Menu() = delete;
 
 public:
-	static const char* GetTitle() { return "Test P2048( To do )"; }
+	static const char* GetTitle() { return "P2048 Menu( To do )"; }
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };

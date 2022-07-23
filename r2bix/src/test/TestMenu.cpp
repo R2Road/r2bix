@@ -26,7 +26,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<TestP2048MiniRootMenu>( 'q' );
+		ret->AddMenu<P2048Menu>( 'q' );
 
 
 
