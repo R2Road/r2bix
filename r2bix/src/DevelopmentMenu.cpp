@@ -21,7 +21,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem(
 			'1'
-			, []()->const char* { return "Test"; }
+			, []()->const char* { return TestMenu::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{
 				// 2022.04.11 by R2Road
