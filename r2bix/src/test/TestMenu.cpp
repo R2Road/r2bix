@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_Director.h"
 
 #include "test/test_miniaudio/MiniAudioMenu.h"
-#include "test/test_p2048/TestP2048RootMenu.h"
+#include "test/test_p2048/P2048Menu.h"
 #include "test/test_r2bix/R2bixMenu.h"
 
 r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
