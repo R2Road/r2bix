@@ -15,6 +15,6 @@ private:
 	DevelopmentMenu() = delete;
 
 public:
-	static const char* GetTitle() { return "Development"; }
+	static const char* GetTitle();
 	static r2cm::MenuUp Create( r2cm::Director& director );
 };
