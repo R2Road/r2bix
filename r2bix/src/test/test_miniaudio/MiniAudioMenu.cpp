@@ -5,7 +5,7 @@
 
 #include "item/miniaudio_test.h"
 
-#include "test/TestMainMenu.h"
+#include "test/TestMenu.h"
 
 r2cm::MenuUp MiniAudioMenu::Create( r2cm::Director& director )
 {

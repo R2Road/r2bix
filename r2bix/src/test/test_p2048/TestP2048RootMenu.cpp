@@ -8,7 +8,7 @@
 #include "test_p2048_stage.h"
 #include "test_p2048_stageviewnode.h"
 
-#include "test/TestMainMenu.h"
+#include "test/TestMenu.h"
 
 r2cm::MenuUp TestP2048MiniRootMenu::Create( r2cm::Director& director )
 {

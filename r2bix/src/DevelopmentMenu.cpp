@@ -5,7 +5,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "test/TestMainMenu.h"
+#include "test/TestMenu.h"
 #include "p2048/p2048_EntryScene.h"
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"

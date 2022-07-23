@@ -19,7 +19,7 @@
 
 #include "test/test_r2bix/item/visible_resource_research.h"
 
-#include "test/TestMainMenu.h"
+#include "test/TestMenu.h"
 
 r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 {
