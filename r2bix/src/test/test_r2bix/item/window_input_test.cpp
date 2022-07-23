@@ -8,7 +8,7 @@
 
 #include "r2/r2_Rect_Int.h"
 #include "r2/r2_FPSTimer.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
 namespace window_input_test

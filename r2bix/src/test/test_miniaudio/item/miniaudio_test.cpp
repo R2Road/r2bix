@@ -5,7 +5,7 @@
 #include <iomanip>
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #define MINIAUDIO_IMPLEMENTATION
 #include "miniaudio/miniaudio.h"

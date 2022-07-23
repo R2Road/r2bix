@@ -2,7 +2,7 @@
 
 #include <iomanip>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 #include "r2bix/r2render_TextureFrame.h"
 

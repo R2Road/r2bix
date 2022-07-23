@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <Windows.h>
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "r2/r2_Point_Int.h"
 #include "r2/r2_Rect_Int.h"

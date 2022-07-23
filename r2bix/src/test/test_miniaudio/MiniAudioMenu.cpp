@@ -1,6 +1,6 @@
 #include "MiniAudioMenu.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
 #include "item/miniaudio_test.h"

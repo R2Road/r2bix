@@ -356,18 +356,6 @@
     <ClCompile Include="src\test\test_r2bix\menu\ColorMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp">
-      <Filter>r2cm</Filter>
-    </ClCompile>
     <ClCompile Include="src\project_mini_adventure\p_mini_adv_GameScene.cpp">
       <Filter>project_mini_adventure</Filter>
     </ClCompile>
@@ -400,6 +388,18 @@
     </ClCompile>
     <ClCompile Include="src\test\test_miniaudio\MiniAudioMenu.cpp">
       <Filter>test\test_miniaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Director.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp">
+      <Filter>r2cm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -728,30 +728,6 @@
     <ClInclude Include="src\test\test_r2bix\menu\ColorMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_constant.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Director.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_iItem.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Inspector.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Menu.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_Singleton.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_VersionInfo.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
-      <Filter>r2cm</Filter>
-    </ClInclude>
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_VersionInfo.h">
       <Filter>project_mini_adventure</Filter>
     </ClInclude>
@@ -787,6 +763,30 @@
     </ClInclude>
     <ClInclude Include="src\test\test_miniaudio\MiniAudioMenu.h">
       <Filter>test\test_miniaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Director.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_iItem.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Inspector.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Menu.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_ostream.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_Singleton.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_VersionInfo.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
+      <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

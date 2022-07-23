@@ -3,7 +3,7 @@
 #include <Windows.h>
 
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace console_screen_buffer_test
 {

@@ -3,7 +3,7 @@
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_VersionInfo.h"
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "test/TestMainMenu.h"
 #include "p2048/p2048_EntryScene.h"

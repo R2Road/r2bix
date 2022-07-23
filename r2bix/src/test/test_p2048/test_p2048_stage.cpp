@@ -4,7 +4,7 @@
 #include <iomanip>
 
 #include "r2bix/r2base_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
 #include "p2048/p2048_Stage.h"

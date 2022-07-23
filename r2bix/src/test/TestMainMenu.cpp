@@ -1,6 +1,6 @@
 #include "TestMainMenu.h"
 
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
 #include "test/test_miniaudio/MiniAudioMenu.h"

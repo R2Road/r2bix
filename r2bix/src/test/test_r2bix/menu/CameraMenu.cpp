@@ -1,7 +1,7 @@
 #include "CameraMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "test/test_r2bix/item/camera_test.h"
 
