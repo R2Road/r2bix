@@ -61,7 +61,7 @@ namespace node_test
 	{
 		return []()->const char*
 		{
-			return "Node : Child";
+			return "Child";
 		};
 	}
 	r2cm::iItem::DoFunctionT Child::GetDoFunction()
