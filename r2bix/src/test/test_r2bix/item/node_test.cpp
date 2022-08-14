@@ -57,6 +57,51 @@ namespace node_test
 
 
 
+	r2cm::iItem::TitleFunctionT Child::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Node : Child";
+		};
+	}
+	r2cm::iItem::DoFunctionT Child::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_SUB( r2base::Director dummy_director );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const auto dummy_node = r2base::Node::Create( dummy_director ) );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( 0, dummy_node->GetChildCount() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_NE( nullptr, dummy_node->AddChild<r2base::Node>() );
+				EXPECT_EQ( 1, dummy_node->GetChildCount() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_NE( nullptr, dummy_node->AddChild<r2base::Node>() );
+				EXPECT_EQ( 2, dummy_node->GetChildCount() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT Scene::GetTitleFunction() const
 	{
 		return []()->const char*
