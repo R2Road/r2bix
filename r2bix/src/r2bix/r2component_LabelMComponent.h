@@ -21,11 +21,8 @@ namespace r2component
 
 	class LabelMComponent : public r2base::Component<LabelMComponent>
 	{
-	private:
-		LabelMComponent( r2base::Node& owner_node );
-
 	public:
-		static std::unique_ptr<LabelMComponent> Create( r2base::Node& owner_node );
+		LabelMComponent( r2base::Node& owner_node );
 
 		//
 		//

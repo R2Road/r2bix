@@ -15,17 +15,6 @@ namespace r2component
 		, mColorMaskOption( r2base::eColorMaskFlag::CMF_Foreground | r2base::eColorMaskFlag::CMF_Background )
 	{}
 
-	std::unique_ptr<TextureRenderComponent> TextureRenderComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<TextureRenderComponent> ret( new ( std::nothrow ) TextureRenderComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
-
 	void TextureRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
 		if( !mTexture )

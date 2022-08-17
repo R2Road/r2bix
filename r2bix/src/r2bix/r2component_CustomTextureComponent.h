@@ -9,11 +9,8 @@ namespace r2component
 {
 	class CustomTextureComponent : public r2base::Component<CustomTextureComponent>
 	{
-	private:
-		CustomTextureComponent( r2base::Node& owner_node );
-
 	public:
-		static std::unique_ptr<CustomTextureComponent> Create( r2base::Node& owner_node );
+		CustomTextureComponent( r2base::Node& owner_node );
 
 		//
 		// Getter

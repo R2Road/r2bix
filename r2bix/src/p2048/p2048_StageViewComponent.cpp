@@ -19,17 +19,6 @@ namespace p2048
 		, mBackgroundNode( nullptr )
 	{}
 
-	std::unique_ptr<StageViewComponent> StageViewComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<StageViewComponent> ret( new ( std::nothrow ) StageViewComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
-
 	void StageViewComponent::Setup( const p2048::Stage& stage )
 	{
 		if( !mNumberComponentContainer.empty() )

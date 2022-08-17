@@ -21,11 +21,8 @@ namespace r2component
 
 	class LabelSComponent : public r2base::Component<LabelSComponent>
 	{
-	private:
-		LabelSComponent( r2base::Node& owner_node );
-
 	public:
-		static std::unique_ptr<LabelSComponent> Create( r2base::Node& owner_node );
+		LabelSComponent( r2base::Node& owner_node );
 
 		//
 		//

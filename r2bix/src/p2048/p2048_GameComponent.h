@@ -28,11 +28,9 @@ namespace p2048
 			GameStop,
 		};
 
-		GameComponent( r2base::Node& owner_node );
 	public:
+		GameComponent( r2base::Node& owner_node );
 		~GameComponent();
-
-		static std::unique_ptr<GameComponent> Create( r2base::Node& owner_node );
 
 	public:
 		void Update( const float delta_time ) override;

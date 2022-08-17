@@ -10,11 +10,8 @@ namespace r2component
 {
 	class ActionProcessComponent : public r2base::Component<ActionProcessComponent>
 	{
-	private:
-		ActionProcessComponent( r2base::Node& owner_node );
-
 	public:
-		static std::unique_ptr<ActionProcessComponent> Create( r2base::Node& owner_node );
+		ActionProcessComponent( r2base::Node& owner_node );
 
 		//
 		//

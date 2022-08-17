@@ -43,17 +43,6 @@ namespace p2048
 		GetOwnerNode().GetDirector().RemoveInputListener( &mKeyboardInputListener );
 	}
 
-	std::unique_ptr<GameComponent> GameComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<GameComponent> ret( new ( std::nothrow ) GameComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
-
 	void GameComponent::Update( const float delta_time )
 	{
 		mKeyboardInputListener.Update();

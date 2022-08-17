@@ -9,11 +9,8 @@ namespace r2component
 {
 	class TransformComponent : public r2base::Component<TransformComponent>
 	{
-	private:
-		TransformComponent( r2base::Node& owner_node );
-
 	public:
-		static std::unique_ptr<TransformComponent> Create( r2base::Node& owner_node );
+		TransformComponent( r2base::Node& owner_node );
 
 		//
 		//

@@ -10,17 +10,6 @@ namespace p2048
 		, mCustomTextureComponent( nullptr )
 	{}
 
-	std::unique_ptr<NumberComponent> NumberComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<NumberComponent> ret( new ( std::nothrow ) NumberComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
-
 	void NumberComponent::SetNumber( const int new_number, const bool merged, const bool newcomer )
 	{
 		mLabelComponent->SetString( std::to_string( new_number ) );

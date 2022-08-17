@@ -12,11 +12,8 @@ namespace p2048
 
 	class StageViewComponent : public r2base::Component<StageViewComponent>
 	{
-	private:
-		StageViewComponent( r2base::Node& owner_node );
-
 	public:
-		static std::unique_ptr<StageViewComponent> Create( r2base::Node& owner_node );
+		StageViewComponent( r2base::Node& owner_node );
 
 		void Setup( const p2048::Stage& stage );
 		void SetBackgroundNode( r2base::Node* const background_node )

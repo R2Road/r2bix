@@ -34,10 +34,8 @@ namespace r2component
 		};
 		using AnimationPackageT = std::vector<Animation>;
 
-		TextureFrameAnimationComponent( r2base::Node& owner_node );
-
 	public:
-		static std::unique_ptr<TextureFrameAnimationComponent> Create( r2base::Node& owner_node );
+		TextureFrameAnimationComponent( r2base::Node& owner_node );
 
 		//
 		//

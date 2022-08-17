@@ -10,15 +10,4 @@ namespace r2component
 	CustomTextureComponent::CustomTextureComponent( r2base::Node& owner_node ) : r2base::Component<CustomTextureComponent>( owner_node )
 		, mTexture( 1, 1, ' ')
 	{}
-
-	std::unique_ptr<CustomTextureComponent> CustomTextureComponent::Create( r2base::Node& owner_node )
-	{
-		std::unique_ptr<CustomTextureComponent> ret( new ( std::nothrow ) CustomTextureComponent( owner_node ) );
-		if( !ret || !ret->Init() )
-		{
-			ret.reset();
-		}
-
-		return ret;
-	}
 }
