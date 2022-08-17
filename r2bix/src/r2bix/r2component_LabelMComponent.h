@@ -19,13 +19,12 @@ namespace r2component
 	class CustomTextureComponent;
 	class TextureRenderComponent;
 
-	class LabelMComponent : public r2base::Component
+	class LabelMComponent : public r2base::Component<LabelMComponent>
 	{
 	private:
 		LabelMComponent( r2base::Node& owner_node );
 
 	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<LabelMComponent>::Get(); }
 		static std::unique_ptr<LabelMComponent> Create( r2base::Node& owner_node );
 
 		//

@@ -12,7 +12,7 @@
 
 namespace p2048
 {
-	GameComponent::GameComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+	GameComponent::GameComponent( r2base::Node& owner_node ) : r2base::Component<GameComponent>( owner_node )
 		, mStep( eStep::GameReady )
 		, mStage( 4u, 4u )
 		, mGameProcessor( &mStage )
@@ -166,7 +166,7 @@ namespace p2048
 			GetOwnerNode().GetDirector().RequestAbort();
 		}
 
-		r2base::Component::Update( delta_time );
+		r2base::iComponent::Update( delta_time );
 	}
 
 	bool GameComponent::MoveNumber( const r2::Direction4::eState move_direction )

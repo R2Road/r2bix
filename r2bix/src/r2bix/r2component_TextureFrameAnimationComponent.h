@@ -19,7 +19,7 @@ namespace r2render
 
 namespace r2component
 {
-	class TextureFrameAnimationComponent : public r2base::Component
+	class TextureFrameAnimationComponent : public r2base::Component<TextureFrameAnimationComponent>
 	{
 	private:
 		struct AnimationFrame
@@ -37,7 +37,6 @@ namespace r2component
 		TextureFrameAnimationComponent( r2base::Node& owner_node );
 
 	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<TextureFrameAnimationComponent>::Get(); }
 		static std::unique_ptr<TextureFrameAnimationComponent> Create( r2base::Node& owner_node );
 
 		//

@@ -10,13 +10,12 @@ namespace p2048
 	class NumberComponent;
 	class Stage;
 
-	class StageViewComponent : public r2base::Component
+	class StageViewComponent : public r2base::Component<StageViewComponent>
 	{
 	private:
 		StageViewComponent( r2base::Node& owner_node );
 
 	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<StageViewComponent>::Get(); }
 		static std::unique_ptr<StageViewComponent> Create( r2base::Node& owner_node );
 
 		void Setup( const p2048::Stage& stage );

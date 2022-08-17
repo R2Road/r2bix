@@ -2,7 +2,7 @@
 
 namespace r2component
 {
-	ActionProcessComponent::ActionProcessComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+	ActionProcessComponent::ActionProcessComponent( r2base::Node& owner_node ) : r2base::Component<ActionProcessComponent>( owner_node )
 		, mAction()
 		, mbStart( false )
 	{}

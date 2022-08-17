@@ -14,7 +14,7 @@ namespace p2048
 {
 	class StageViewComponent;
 
-	class GameComponent : public r2base::Component
+	class GameComponent : public r2base::Component<GameComponent>
 	{
 	private:
 		enum class eStep
@@ -32,7 +32,6 @@ namespace p2048
 	public:
 		~GameComponent();
 
-		int GetStaticID() const override { return r2base::ComponentStaticID<GameComponent>::Get(); }
 		static std::unique_ptr<GameComponent> Create( r2base::Node& owner_node );
 
 	public:

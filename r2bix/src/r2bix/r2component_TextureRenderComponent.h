@@ -14,13 +14,12 @@ namespace r2render
 
 namespace r2component
 {
-	class TextureRenderComponent : public r2base::Component
+	class TextureRenderComponent : public r2base::Component<TextureRenderComponent>
 	{
 	private:
 		TextureRenderComponent( r2base::Node& owner_node );
 
 	public:
-		int GetStaticID() const override { return r2base::ComponentStaticID<TextureRenderComponent>::Get(); }
 		static std::unique_ptr<TextureRenderComponent> Create( r2base::Node& owner_node );
 
 		//
