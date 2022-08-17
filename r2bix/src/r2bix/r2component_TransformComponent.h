@@ -1,7 +1,6 @@
 #pragma once
 
 #include "r2base_Component.h"
-#include "r2base_ComponentStaticID.h"
 
 #include "r2/r2_Point_Int.h"
 

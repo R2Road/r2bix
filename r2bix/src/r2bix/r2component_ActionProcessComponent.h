@@ -4,7 +4,6 @@
 
 #include "r2base_Action.h"
 #include "r2base_Component.h"
-#include "r2base_ComponentStaticID.h"
 
 namespace r2component
 {
