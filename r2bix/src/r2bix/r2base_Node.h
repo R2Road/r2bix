@@ -100,6 +100,10 @@ namespace r2base
 		{
 			return static_cast<int>( mChildContainer.size() );
 		}
+		const ChildContainerT& GetChildContainer() const
+		{
+			return mChildContainer;
+		}
 		template<typename NodeT>
 		Node* AddChild()
 		{
