@@ -106,7 +106,7 @@ namespace node_test
 	{
 		return []()->const char*
 		{
-			return "Child : Count";
+			return "Child : Sequence";
 		};
 	}
 	r2cm::iItem::DoFunctionT Child_Sequence::GetDoFunction()
