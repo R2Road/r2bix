@@ -12,7 +12,7 @@ namespace node_test
 		DoFunctionT GetDoFunction() override;
 	};
 
-	class Child : public r2cm::iItem, public r2cm::SingleTon<Child>
+	class Child_Count : public r2cm::iItem, public r2cm::SingleTon<Child_Count>
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;

@@ -57,14 +57,14 @@ namespace node_test
 
 
 
-	r2cm::iItem::TitleFunctionT Child::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Child_Count::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Child";
+			return "Child : Count";
 		};
 	}
-	r2cm::iItem::DoFunctionT Child::GetDoFunction()
+	r2cm::iItem::DoFunctionT Child_Count::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
