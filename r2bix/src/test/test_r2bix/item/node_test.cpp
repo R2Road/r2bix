@@ -122,22 +122,8 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const auto dummy_node = r2base::Node::Create( dummy_director ) );
+				std::cout << r2cm::tab << "+ Z값이 큰 노드가 목록의 뒤쪽으로 자리한다." << r2cm::linefeed2;
 
-				std::cout << r2cm::linefeed;
-
-				DECLARATION_MAIN( auto child_1 = dummy_node->AddChild<r2base::Node>() );
-				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
-
-				std::cout << r2cm::linefeed;
-
-				DECLARATION_MAIN( auto child_2 = dummy_node->AddChild<r2base::Node>() );
-				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
-			}
-
-			std::cout << r2cm::split;
-
-			{
 				DECLARATION_MAIN( const auto dummy_node = r2base::Node::Create( dummy_director ) );
 
 				std::cout << r2cm::linefeed;
@@ -149,6 +135,29 @@ namespace node_test
 
 				DECLARATION_MAIN( auto child_2 = dummy_node->AddChild<r2base::Node>( 0 ) );
 				EXPECT_EQ( child_2, ( *dummy_node->GetChildContainer().begin() ).get() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ 동일한 Z의 노드가 이미 있다면 새로 추가된 노드는 같은 Z를 가진 노드 군의 가장 마지막에 자리한다." << r2cm::linefeed2;
+
+				DECLARATION_MAIN( const auto dummy_node = r2base::Node::Create( dummy_director ) );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto child_1 = dummy_node->AddChild<r2base::Node>() );
+				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto child_2 = dummy_node->AddChild<r2base::Node>() );
+				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( dummy_node->AddChild<r2base::Node>() );
+				EXPECT_EQ( child_2, ( *( ++dummy_node->GetChildContainer().begin() ) ).get() );
 			}
 
 			std::cout << r2cm::split;
