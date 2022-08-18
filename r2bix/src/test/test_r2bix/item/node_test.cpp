@@ -121,11 +121,11 @@ namespace node_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const auto dummy_node = r2base::Node::Create( dummy_director ) );
-
-			std::cout << r2cm::split;
-
 			{
+				DECLARATION_MAIN( const auto dummy_node = r2base::Node::Create( dummy_director ) );
+
+				std::cout << r2cm::linefeed;
+
 				DECLARATION_MAIN( auto child_1 = dummy_node->AddChild<r2base::Node>() );
 				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
 
@@ -133,6 +133,22 @@ namespace node_test
 
 				DECLARATION_MAIN( auto child_2 = dummy_node->AddChild<r2base::Node>() );
 				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				DECLARATION_MAIN( const auto dummy_node = r2base::Node::Create( dummy_director ) );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto child_1 = dummy_node->AddChild<r2base::Node>( 1 ) );
+				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
+
+				std::cout << r2cm::linefeed;
+
+				DECLARATION_MAIN( auto child_2 = dummy_node->AddChild<r2base::Node>( 0 ) );
+				EXPECT_EQ( child_2, ( *dummy_node->GetChildContainer().begin() ).get() );
 			}
 
 			std::cout << r2cm::split;
