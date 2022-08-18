@@ -324,13 +324,13 @@ namespace action_test
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
-				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
+				std::cout << "X : " << node->mTransformComponent->GetPositionX() << "   Y : " << node->mTransformComponent->GetPositionY() << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
-				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
+				std::cout << "X : " << node->mTransformComponent->GetPositionX() << "   Y : " << node->mTransformComponent->GetPositionY() << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 
@@ -411,13 +411,13 @@ namespace action_test
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
-				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
+				std::cout << "X : " << node->mTransformComponent->GetPositionX() << "   Y : " << node->mTransformComponent->GetPositionY() << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( component->Update( 0.7f ) );
 				EXPECT_TRUE( component->IsRunning() );
-				std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
+				std::cout << "X : " << node->mTransformComponent->GetPositionX() << "   Y : " << node->mTransformComponent->GetPositionY() << r2cm::linefeed;
 
 				std::cout << r2cm::linefeed;
 
@@ -521,7 +521,7 @@ namespace action_test
 					r2cm::WindowUtility::MoveCursorPoint( cursor_point );
 
 					PROCESS_MAIN( component->Update( 0.0005f ) );
-					std::cout << "X : " << node->mTransformComponent->GetPosition().GetX() << "   Y : " << node->mTransformComponent->GetPosition().GetY() << r2cm::linefeed;
+					std::cout << "X : " << node->mTransformComponent->GetPositionX() << "   Y : " << node->mTransformComponent->GetPositionY() << r2cm::linefeed;
 
 					if( _kbhit() )
 					{
