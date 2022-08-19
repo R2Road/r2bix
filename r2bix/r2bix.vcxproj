@@ -112,7 +112,6 @@
     <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\key_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\node_test.cpp" />
-    <ClCompile Include="src\test\test_r2bix\item\rect_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\render_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\texture_frame_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\texture_table_test.cpp" />
@@ -245,7 +244,6 @@
     <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\key_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\node_test.h" />
-    <ClInclude Include="src\test\test_r2bix\item\rect_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\render_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\texture_frame_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\texture_table_test.h" />

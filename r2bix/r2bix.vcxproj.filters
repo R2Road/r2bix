@@ -97,9 +97,6 @@
     <ClCompile Include="src\test\test_r2bix\item\node_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\rect_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\render_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
@@ -428,9 +425,6 @@
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\node_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\rect_test.h">
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\render_test.h">

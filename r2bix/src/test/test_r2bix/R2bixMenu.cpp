@@ -13,7 +13,6 @@
 
 #include "test/test_r2bix/item/console_screen_buffer_test.h"
 #include "test/test_r2bix/item/console_screen_buffer_manager_test.h"
-#include "test/test_r2bix/item/rect_test.h"
 #include "test/test_r2bix/item/render_test.h"
 #include "test/test_r2bix/item/utility_test.h"
 
@@ -34,10 +33,9 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', console_screen_buffer_test::Basic::GetInstance() );
 		ret->AddItem( '2', console_screen_buffer_manager_test::Basic::GetInstance() );
 		ret->AddMenu<InputMenu>( '3' );
-		ret->AddItem( '4', rect_test::Basic::GetInstance() );
-		ret->AddMenu<ColorMenu>( '5' );
-		ret->AddItem( '6', utility_test::StringSize::GetInstance() );
-		ret->AddItem( '7', utility_test::StringDecomposition::GetInstance() );
+		ret->AddMenu<ColorMenu>( '4' );
+		ret->AddItem( '5', utility_test::StringSize::GetInstance() );
+		ret->AddItem( '6', utility_test::StringDecomposition::GetInstance() );
 
 
 

@@ -60,17 +60,6 @@ r2cm::eColor Convert_R2bixBackgroundColor_to_R2CMColor( r2base::ColorValue color
 	return r2cm::eColor::FG_White;
 }
 
-void Utility4Test::DrawRect( const int offset_y, const r2::RectInt& rect, const char c )
-{
-	for( int y = rect.GetMinY(); rect.GetMaxY() >= y; ++y )
-	{
-		for( int x = rect.GetMinX(); rect.GetMaxX() >= x; ++x )
-		{
-			r2cm::WindowUtility::FillCharacter( { static_cast<short>( x ), static_cast<short>( offset_y + y ) }, c );
-		}
-	}
-}
-
 void Utility4Test::DrawRectInfo_Min_Max( const r2::RectInt& rect )
 {
 	std::cout << r2cm::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2cm::linefeed;
