@@ -136,7 +136,7 @@ namespace render_test
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
-			r2base::Director dummy_director;
+			r2base::Director dummy_director( {} );
 			RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );
 
 			std::cout << r2cm::split;
