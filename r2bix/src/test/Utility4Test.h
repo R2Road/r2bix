@@ -14,8 +14,6 @@ private:
 	Utility4Test() = delete;
 
 public:
-	static void DrawRectInfo_Min_Max( const r2::RectInt& rect );
-
 	static void DrawTexture( const r2render::Texture& texture );
 	static void DrawTextureCharacter( const r2render::Texture& texture );
 	static void DrawTextureColor( const r2render::Texture& texture );

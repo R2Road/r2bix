@@ -24,6 +24,11 @@ namespace
 
 		return texture;
 	}
+
+	void PrintRectInfo( const r2::RectInt& rect )
+	{
+		std::cout << r2cm::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2cm::linefeed;
+	}
 }
 
 namespace texture_frame_test
@@ -59,7 +64,7 @@ namespace texture_frame_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
+			PrintRectInfo( frame.GetVisibleRect() );
 
 			std::cout << r2cm::linefeed;
 
@@ -121,7 +126,7 @@ namespace texture_frame_test
 			std::cout << r2cm::split;
 
 			{
-				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
+				PrintRectInfo( frame.GetVisibleRect() );
 
 				std::cout << r2cm::linefeed;
 
@@ -130,7 +135,7 @@ namespace texture_frame_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
+				PrintRectInfo( frame.GetVisibleRect() );
 
 				std::cout << r2cm::linefeed;
 
@@ -194,7 +199,7 @@ namespace texture_frame_test
 			std::cout << r2cm::linefeed;
 
 			{
-				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
+				PrintRectInfo( frame.GetVisibleRect() );
 
 				std::cout << r2cm::linefeed;
 
@@ -203,7 +208,7 @@ namespace texture_frame_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
+				PrintRectInfo( frame.GetVisibleRect() );
 
 				std::cout << r2cm::linefeed;
 
@@ -221,7 +226,7 @@ namespace texture_frame_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawRectInfo_Min_Max( frame.GetVisibleRect() );
+				PrintRectInfo( frame.GetVisibleRect() );
 
 				std::cout << r2cm::linefeed;
 

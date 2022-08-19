@@ -60,11 +60,6 @@ r2cm::eColor Convert_R2bixBackgroundColor_to_R2CMColor( r2base::ColorValue color
 	return r2cm::eColor::FG_White;
 }
 
-void Utility4Test::DrawRectInfo_Min_Max( const r2::RectInt& rect )
-{
-	std::cout << r2cm::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2cm::linefeed;
-}
-
 void Utility4Test::DrawTexture( const r2render::Texture& texture )
 {
 	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
