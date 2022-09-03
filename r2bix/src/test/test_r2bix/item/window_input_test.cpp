@@ -6,7 +6,7 @@
 #include "r2bix/r2input_KeyboardInputCollector.h"
 #include "r2bix/r2input_KeyboardInputListener.h"
 
-#include "r2/r2_Rect_Int.h"
+#include "r2/r2_RectInt.h"
 #include "r2/r2_FPSTimer.h"
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"

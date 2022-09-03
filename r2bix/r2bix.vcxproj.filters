@@ -380,9 +380,6 @@
     <ClCompile Include="external\r2\r2_Random.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_Rect_Int.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_Size_Int.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
@@ -400,6 +397,9 @@
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_RectInt.cpp">
+      <Filter>external\r2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -740,9 +740,6 @@
     <ClInclude Include="external\r2\r2_Rect.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Rect_Int.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_Size.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -790,6 +787,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2base_DirectorConfig.h">
       <Filter>r2bix\base</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RectInt.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
