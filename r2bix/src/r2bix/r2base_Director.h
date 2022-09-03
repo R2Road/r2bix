@@ -6,7 +6,7 @@
 #include "r2input_KeyboardInputCollector.h"
 #include "r2node_SceneNode.h"
 #include "r2/r2_FPSTimer.h"
-#include "r2/r2_Size_Int.h"
+#include "r2/r2_SizeInt.h"
 
 #include "r2base_DirectorConfig.h"
 
