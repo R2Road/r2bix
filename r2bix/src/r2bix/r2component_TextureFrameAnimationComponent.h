@@ -24,7 +24,7 @@ namespace r2component
 	private:
 		struct AnimationFrame
 		{
-			r2::Timer_Float Timer;
+			r2::TimerFloat Timer;
 			const r2render::TextureFrame* Frame = nullptr;
 		};
 		struct Animation

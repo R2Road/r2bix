@@ -17,13 +17,12 @@ namespace r2component
 	{
 		if( mAnimationPackage.end() != mCurrentAnimation )
 		{
-			if( !mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.update( delta_time ) )
+			if( !mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Update( delta_time ) )
 			{
-				mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.reset();
-
 				if( mCurrentAnimation->Container.size() > mCurrentAnimationFrameIndex + 1u )
 				{
 					mCurrentAnimationFrameIndex = mCurrentAnimationFrameIndex + 1u;
+					mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Start();
 					mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
 				}
 				else
@@ -31,6 +30,7 @@ namespace r2component
 					if( mbRepeat )
 					{
 						mCurrentAnimationFrameIndex = 0u;
+						mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Start();
 						mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
 					}
 					else
@@ -83,6 +83,7 @@ namespace r2component
 			{
 				mbRepeat = false;
 				mCurrentAnimation = cur;
+				mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Start();
 				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
 				break;
 			}
@@ -98,6 +99,7 @@ namespace r2component
 			{
 				mbRepeat = true;
 				mCurrentAnimation = cur;
+				mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Start();
 				mTextureFrameRenderComponent->SetTextureFrame( mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Frame );
 				break;
 			}
@@ -106,6 +108,10 @@ namespace r2component
 	void TextureFrameAnimationComponent::StopAnimation()
 	{
 		mbRepeat = false;
+		if( mAnimationPackage.end() != mCurrentAnimation )
+		{
+			mCurrentAnimation->Container[mCurrentAnimationFrameIndex].Timer.Stop();
+		}
 		mCurrentAnimation = mAnimationPackage.end();
 		mCurrentAnimationFrameIndex = 0u;
 	}

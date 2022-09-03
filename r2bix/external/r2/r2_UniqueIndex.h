@@ -5,11 +5,9 @@ namespace r2
 	template<typename T, typename Index_T = unsigned long long, Index_T Start_Value = 1, Index_T Invalid_Value = 0>
 	class UniqueIndex
 	{
-	private:
-		using OwnerT = T;
-
 	public:
-		using MyT = UniqueIndex<T>;
+		using OwnerT = T;
+		using MyT = UniqueIndex<OwnerT>;
 		using ValueT = Index_T;
 
 		explicit UniqueIndex() : mIndex( getNewIndex() ) {}

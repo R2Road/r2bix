@@ -29,11 +29,11 @@ namespace r2action
 
 		void SetTimeLimit( const float time_limit )
 		{
-			mTimer.reset( time_limit );
+			mTimer.SetLimitTime( time_limit );
 		}
 
 	private:
 		bool mbLastVisible;
-		r2::Timer_Float mTimer;
+		r2::TimerFloat mTimer;
 	};
 }

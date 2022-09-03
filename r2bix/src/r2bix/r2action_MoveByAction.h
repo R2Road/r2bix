@@ -30,13 +30,13 @@ namespace r2action
 		}
 		void SetTimeLimit( const float time_limit )
 		{
-			mTimer.reset( time_limit );
+			mTimer.SetLimitTime( time_limit );
 		}
 
 	private:
 		r2::PointInt mMoveAmount;
 
 		r2::PointInt mStartPoint;
-		r2::Timer_Float mTimer;
+		r2::TimerFloat mTimer;
 	};
 }

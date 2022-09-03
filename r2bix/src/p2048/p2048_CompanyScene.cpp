@@ -76,7 +76,7 @@ namespace p2048
 	}
 	void CompanyScene::Update( const float delta_time )
 	{
-		if( !mChangeSceneTimer.update( delta_time ) )
+		if( !mChangeSceneTimer.Update( delta_time ) )
 		{
 			mDirector.Setup( p2048::TitleScene::Create( mDirector ) );
 		}

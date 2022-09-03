@@ -20,6 +20,6 @@ namespace p2048
 		void Update( const float delta_time ) override;
 
 	private:
-		r2::Timer_Float mChangeSceneTimer;
+		r2::TimerFloat mChangeSceneTimer;
 	};
 }
