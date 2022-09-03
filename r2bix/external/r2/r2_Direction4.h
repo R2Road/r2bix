@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2_Point_Int.h"
+#include "r2_PointInt.h"
 
 namespace r2
 {

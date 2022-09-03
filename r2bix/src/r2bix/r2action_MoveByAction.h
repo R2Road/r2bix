@@ -2,7 +2,7 @@
 
 #include "r2base_Action.h"
 
-#include "r2/r2_Point_Int.h"
+#include "r2/r2_PointInt.h"
 #include "r2/r2_TimerFloat.h"
 
 namespace r2action
