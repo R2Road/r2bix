@@ -380,9 +380,6 @@
     <ClCompile Include="external\r2\r2_Random.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_Timer_Float.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_Director.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
@@ -399,6 +396,9 @@
       <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_SizeInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_TimerFloat.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
   </ItemGroup>
@@ -746,9 +746,6 @@
     <ClInclude Include="external\r2\r2_Timer.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Timer_Float.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_UniqueIndex.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -789,6 +786,9 @@
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_SizeInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_TimerFloat.h">
       <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>

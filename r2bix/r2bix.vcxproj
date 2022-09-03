@@ -31,7 +31,7 @@
     <ClCompile Include="external\r2\r2_Random.cpp" />
     <ClCompile Include="external\r2\r2_RectInt.cpp" />
     <ClCompile Include="external\r2\r2_SizeInt.cpp" />
-    <ClCompile Include="external\r2\r2_Timer_Float.cpp" />
+    <ClCompile Include="external\r2\r2_TimerFloat.cpp" />
     <ClCompile Include="src\DevelopmentMenu.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp" />
@@ -154,7 +154,7 @@
     <ClInclude Include="external\r2\r2_Size.h" />
     <ClInclude Include="external\r2\r2_SizeInt.h" />
     <ClInclude Include="external\r2\r2_Timer.h" />
-    <ClInclude Include="external\r2\r2_Timer_Float.h" />
+    <ClInclude Include="external\r2\r2_TimerFloat.h" />
     <ClInclude Include="external\r2\r2_UniqueIndex.h" />
     <ClInclude Include="src\DevelopmentMenu.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />

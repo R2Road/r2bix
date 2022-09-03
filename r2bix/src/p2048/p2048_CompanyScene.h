@@ -2,7 +2,7 @@
 
 #include "r2bix/r2node_SceneNode.h"
 
-#include "r2/r2_Timer_Float.h"
+#include "r2/r2_TimerFloat.h"
 
 namespace p2048
 {
