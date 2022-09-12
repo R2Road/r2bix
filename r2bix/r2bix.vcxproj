@@ -105,6 +105,7 @@
     <ClCompile Include="src\test\test_p2048\test_p2048_numbernode.cpp" />
     <ClCompile Include="src\test\test_p2048\test_p2048_stage.cpp" />
     <ClCompile Include="src\test\test_p2048\test_p2048_stageviewnode.cpp" />
+    <ClCompile Include="src\test\test_psnake\PSnakeMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\action_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\camera_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\color_value_test.cpp" />
@@ -238,6 +239,7 @@
     <ClInclude Include="src\test\test_p2048\test_p2048_numbernode.h" />
     <ClInclude Include="src\test\test_p2048\test_p2048_stage.h" />
     <ClInclude Include="src\test\test_p2048\test_p2048_stageviewnode.h" />
+    <ClInclude Include="src\test\test_psnake\PSnakeMenu.h" />
     <ClInclude Include="src\test\test_r2bix\item\action_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\camera_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\color_value_test.h" />

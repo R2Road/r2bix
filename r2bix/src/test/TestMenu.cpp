@@ -5,6 +5,7 @@
 
 #include "test/test_miniaudio/MiniAudioMenu.h"
 #include "test/test_p2048/P2048Menu.h"
+#include "test/test_psnake/PSnakeMenu.h"
 #include "test/test_r2bix/R2bixMenu.h"
 
 r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
@@ -26,7 +27,8 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<P2048Menu>( 'q' );
+		ret->AddMenu<PSnakeMenu>( 'q' );
+		ret->AddMenu<P2048Menu>( 'w' );
 
 
 

@@ -73,6 +73,9 @@
     <Filter Include="project_snake">
       <UniqueIdentifier>{8f343807-44d6-4e06-9852-97a51204fd85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\test_psnake">
+      <UniqueIdentifier>{90205c11-7a0a-47f5-a417-aa53424b3bb4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -406,6 +409,9 @@
     </ClCompile>
     <ClCompile Include="src\psnake\psnake_CompanyScene.cpp">
       <Filter>project_snake</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_psnake\PSnakeMenu.cpp">
+      <Filter>test\test_psnake</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -799,6 +805,9 @@
     </ClInclude>
     <ClInclude Include="src\psnake\psnake_CompanyScene.h">
       <Filter>project_snake</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_psnake\PSnakeMenu.h">
+      <Filter>test\test_psnake</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
