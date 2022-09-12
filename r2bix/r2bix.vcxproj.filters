@@ -70,6 +70,9 @@
     <Filter Include="external\r2cm">
       <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_snake">
+      <UniqueIdentifier>{8f343807-44d6-4e06-9852-97a51204fd85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -400,6 +403,9 @@
     </ClCompile>
     <ClCompile Include="external\r2\r2_PointInt.cpp">
       <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\psnake\psnake_CompanyScene.cpp">
+      <Filter>project_snake</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -790,6 +796,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_PointInt.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\psnake\psnake_CompanyScene.h">
+      <Filter>project_snake</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

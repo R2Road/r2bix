@@ -12,6 +12,7 @@
 #include "p2048/p2048_EntryScene.h"
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
+#include "psnake/psnake_CompanyScene.h"
 
 const char* DevelopmentMenu::GetTitle()
 {
@@ -58,10 +59,38 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 		ret->AddLineFeed();
 
-		
+
 
 		ret->AddItem(
 			'a'
+			, []()->const char* { return psnake::CompanyScene::GetTitle(); }
+			, []()->r2cm::eItemLeaveAction
+			{
+				//
+				// Setup
+				//
+				r2base::Director director( {} );
+				director.Setup( psnake::CompanyScene::Create( director ) );
+
+				//
+				// Process
+				//
+				director.Run();
+
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+
+
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+		
+
+		ret->AddItem(
+			'z'
 			, []()->const char* { return p_mini_adv::CompanyScene::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{
@@ -79,17 +108,8 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
-
-
-		
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-
-
-		
 		ret->AddItem(
-			'z'
+			'x'
 			, []()->const char* { return p2048::EntryScene::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{
@@ -108,7 +128,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 			}
 		);
 		ret->AddItem(
-			'x'
+			'c'
 			, []()->const char* { return pmr::CompanyScene::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{

@@ -4,7 +4,7 @@
 
 #include "r2bix/r2node_SceneNode.h"
 
-namespace p_mini_adv
+namespace psnake
 {
 	class CompanyScene : public r2node::SceneNode
 	{
@@ -12,7 +12,7 @@ namespace p_mini_adv
 		CompanyScene( r2base::Director& director );
 
 	public:
-		static const char* const GetTitle() { return "Game : Mini Adventure( To do )"; }
+		static const char* const GetTitle() { return "Game : Snake( In Progress )"; }
 		static r2node::SceneNodeUp Create( r2base::Director& director );
 
 	private:
