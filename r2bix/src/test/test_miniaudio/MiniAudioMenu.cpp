@@ -5,7 +5,7 @@
 
 #include "item/miniaudio_test.h"
 
-#include "test/TestMenu.h"
+#include "DevelopmentMenu.h"
 
 r2cm::MenuUp MiniAudioMenu::Create( r2cm::Director& director )
 {
@@ -52,7 +52,7 @@ r2cm::MenuUp MiniAudioMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<TestMenu>( 27 );
+		ret->AddMenu<DevelopmentMenu>( 27 );
 	}
 
 	return ret;

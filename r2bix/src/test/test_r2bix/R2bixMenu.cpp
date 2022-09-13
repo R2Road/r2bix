@@ -18,7 +18,7 @@
 
 #include "test/test_r2bix/item/visible_resource_research.h"
 
-#include "test/TestMenu.h"
+#include "DevelopmentMenu.h"
 
 r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 {
@@ -65,7 +65,7 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<TestMenu>( 27 );
+		ret->AddMenu<DevelopmentMenu>( 27 );
 	}
 
 	return ret;

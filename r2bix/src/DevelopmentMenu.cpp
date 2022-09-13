@@ -8,6 +8,9 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_VersionInfo.h"
 
+#include "test/test_miniaudio/MiniAudioMenu.h"
+#include "test/test_r2bix/R2bixMenu.h"
+
 #include "test/TestMenu.h"
 #include "p2048/p2048_EntryScene.h"
 #include "pmr/pmr_CompanyScene.h"
@@ -32,8 +35,11 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 	) );
 
 	{
+		ret->AddMenu<R2bixMenu>( '1' );
+		ret->AddMenu<MiniAudioMenu>( '2' );
+
 		ret->AddItem(
-			'1'
+			'3'
 			, []()->const char* { return TestMenu::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{
