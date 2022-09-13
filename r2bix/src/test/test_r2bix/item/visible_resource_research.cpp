@@ -1,9 +1,10 @@
 #include "visible_resource_research.h"
 
 #include <conio.h> // _kbhit(), _getch()
-#include <Windows.h> // HANDLE, COORD, SetConsoleCursorPosition()
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "r2bix/r2render_Texture.h"
 
@@ -24,18 +25,15 @@ namespace visible_resource_research
 
 			std::cout << r2cm::split;
 
-			const r2render::Texture visible_resource( 10, 10, '0' );
-			COORD pos = { 10, 11 };
-
-			std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-			std::cout << r2cm::tab2 << "const r2render::Texture visible_resource( 10, 10, '0' );" << r2cm::linefeed;
-			std::cout << r2cm::tab2 << "COORD pos = { 10, 11 };" << r2cm::linefeed;
+			DECLARATION_MAIN( const r2render::Texture visible_resource( 10, 10, '0' ) );
 
 			std::cout << r2cm::split;
 
 			{
-				HANDLE stdHandle = GetStdHandle( STD_OUTPUT_HANDLE );
-				SetConsoleCursorPosition( stdHandle, pos );
+				DECLARATION_MAIN( r2cm::WindowUtility::CursorPoint pos );
+				PROCESS_MAIN( pos.x = 15 );
+				PROCESS_MAIN( pos.y = 15 );
+				PROCESS_MAIN( r2cm::WindowUtility::MoveCursorPoint( pos ) );
 
 				int count = 0;
 				for( const char element : visible_resource )
@@ -46,8 +44,8 @@ namespace visible_resource_research
 					if( visible_resource.GetWidth() <= count )
 					{
 						count = 0;
-						pos.Y += 1;
-						SetConsoleCursorPosition( stdHandle, pos );
+						pos.y += 1;
+						r2cm::WindowUtility::MoveCursorPoint( pos );
 					}
 				}
 			}
