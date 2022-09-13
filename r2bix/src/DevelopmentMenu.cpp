@@ -12,9 +12,7 @@
 #include "test/test_r2bix/R2bixMenu.h"
 #include "test/test_p2048/P2048Menu.h"
 #include "test/test_psnake/PSnakeMenu.h"
-#include "test/TestMenu.h"
 
-#include "p2048/p2048_EntryScene.h"
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
 
@@ -38,29 +36,6 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 	{
 		ret->AddMenu<R2bixMenu>( '1' );
 		ret->AddMenu<MiniAudioMenu>( '2' );
-
-		ret->AddItem(
-			'3'
-			, []()->const char* { return TestMenu::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
-			{
-				// 2022.04.11 by R2Road
-				// 인자로 넘어온 director 를 사용해도 되지만 아래 코드와의 일관성을 위해 새 r2cm::Director를 만들어 돌린다.
-
-				//
-				// Setup
-				//
-				r2cm::Director director;
-				director.Setup( TestMenu::Create( director ) );
-
-				//
-				// Process
-				//
-				director.Run();
-
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
 
 
 
@@ -89,25 +64,6 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				//
 			r2base::Director director( {} );
 				director.Setup( p_mini_adv::CompanyScene::Create( director ) );
-
-				//
-				// Process
-				//
-				director.Run();
-
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
-		ret->AddItem(
-			'x'
-			, []()->const char* { return p2048::EntryScene::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
-			{
-				//
-				// Setup
-				//
-				r2base::Director director( {} );
-				director.Setup( p2048::EntryScene::Create( director ) );
 
 				//
 				// Process

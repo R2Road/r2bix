@@ -1,5 +1,6 @@
 #include "P2048Menu.h"
 
+#include "r2bix/r2base_Director.h"
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
@@ -9,6 +10,8 @@
 #include "test_p2048_stageviewnode.h"
 
 #include "DevelopmentMenu.h"
+
+#include "p2048/p2048_EntryScene.h"
 
 r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
 {
@@ -46,7 +49,35 @@ r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
 		ret->AddItem( 'c', test_p2048_stageviewnode::UpdateView::GetInstance() );
 
 
+
 		ret->AddSplit();
+
+
+
+		ret->AddItem(
+			32
+			, []()->const char* { return p2048::EntryScene::GetTitle(); }
+			, []()->r2cm::eItemLeaveAction
+			{
+				//
+				// Setup
+				//
+				r2base::Director director( {} );
+				director.Setup( p2048::EntryScene::Create( director ) );
+
+				//
+				// Process
+				//
+				director.Run();
+
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+
+
+
+		ret->AddSplit();
+
 
 
 		ret->AddMenu<DevelopmentMenu>( 27 );
