@@ -9,9 +9,9 @@
 #include "r2cm/r2cm_VersionInfo.h"
 
 #include "test/test_miniaudio/MiniAudioMenu.h"
-#include "test/test_r2bix/R2bixMenu.h"
 #include "test/test_p2048/P2048Menu.h"
 #include "test/test_psnake/PSnakeMenu.h"
+#include "test/test_r2bix/R2bixMenu.h"
 
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
@@ -40,11 +40,12 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 
 		ret->AddLineFeed();
+		ret->AddLineFeed();
+		ret->AddLineFeed();
 
 
 
 		ret->AddMenu<PSnakeMenu>( 'a' );
-		ret->AddMenu<P2048Menu>( 's' );
 
 
 
@@ -54,6 +55,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 		
 
+		ret->AddMenu<P2048Menu>( 's' );
 		ret->AddItem(
 			'z'
 			, []()->const char* { return p_mini_adv::CompanyScene::GetTitle(); }
