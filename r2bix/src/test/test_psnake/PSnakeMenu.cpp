@@ -1,11 +1,15 @@
 #include "PSnakeMenu.h"
 
+#include "r2bix/r2base_Director.h"
+
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
 #include "psnake/psnake_VersionInfo.h"
+#include "psnake/psnake_CompanyScene.h"
 
 #include "DevelopmentMenu.h"
+
 
 r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
 {
@@ -20,6 +24,33 @@ r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
 
 
 		ret->AddSplit();
+
+
+
+		ret->AddItem(
+			32
+			, []()->const char* { return psnake::CompanyScene::GetTitle(); }
+			, []()->r2cm::eItemLeaveAction
+			{
+				//
+				// Setup
+				//
+				r2base::Director director( {} );
+				director.Setup( psnake::CompanyScene::Create( director ) );
+
+				//
+				// Process
+				//
+				director.Run();
+
+				return r2cm::eItemLeaveAction::None;
+			}
+		);
+
+
+
+		ret->AddSplit();
+
 
 
 		ret->AddMenu<DevelopmentMenu>( 27 );

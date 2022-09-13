@@ -16,7 +16,6 @@
 #include "p2048/p2048_EntryScene.h"
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
-#include "psnake/psnake_CompanyScene.h"
 
 const char* DevelopmentMenu::GetTitle()
 {
@@ -69,25 +68,6 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 
 		ret->AddMenu<PSnakeMenu>( 'a' );
-		ret->AddItem(
-			's'
-			, []()->const char* { return psnake::CompanyScene::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
-			{
-				//
-				// Setup
-				//
-				r2base::Director director( {} );
-				director.Setup( psnake::CompanyScene::Create( director ) );
-
-				//
-				// Process
-				//
-				director.Run();
-
-				return r2cm::eItemLeaveAction::None;
-			}
-		);
 
 
 
