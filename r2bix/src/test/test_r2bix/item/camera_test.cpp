@@ -14,6 +14,78 @@
 
 namespace camera_test
 {
+	r2cm::iItem::TitleFunctionT Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera : Declaration";
+		};
+	}
+	r2cm::iItem::DoFunctionT Declaration::GetDoFunction()
+	{
+		return[]()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( const r2::Point<int> position( 20, 30 ) );
+			DECLARATION_MAIN( const r2::Size<int> size( 10, 50 ) );
+			DECLARATION_MAIN( r2render::Camera camera( position, size ) );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( position.GetX(), camera.GetX() );
+				EXPECT_EQ( position.GetY(), camera.GetY() );
+				EXPECT_EQ( position, camera.GetPoint() );
+				EXPECT_EQ( size.GetWidth(), camera.GetWidth() );
+				EXPECT_EQ( size.GetHeight(), camera.GetHeight() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( ( size + r2::Size<int>( -1, -1 ) ), camera.GetCameraSpaceRect().GetSize() );
+				EXPECT_EQ( -( ( size.GetWidth() - 1 ) / 2 ), camera.GetCameraSpaceRect().GetOrigin().GetX() );
+				EXPECT_EQ( -( ( size.GetHeight() - 1 ) / 2 ), camera.GetCameraSpaceRect().GetOrigin().GetY() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_EQ( ( size + r2::Size<int>( -1, -1 ) ), camera.GetRect().GetSize() );
+				EXPECT_EQ( position.GetX() - ( ( size.GetWidth() - 1 ) / 2 ), camera.GetRect().GetOrigin().GetX() );
+				EXPECT_EQ( position.GetY() - ( ( size.GetHeight() - 1 ) / 2 ), camera.GetRect().GetOrigin().GetY() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				OUTPUT_VALUE( camera.GetX() );
+				OUTPUT_VALUE( camera.GetY() );
+				OUTPUT_VALUE( camera.GetWidth() );
+				OUTPUT_VALUE( camera.GetHeight() );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetOrigin().GetX() );
+				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetOrigin().GetY() );
+				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetSize().GetWidth() );
+				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetSize().GetHeight() );
+
+				std::cout << r2cm::linefeed;
+
+				OUTPUT_VALUE( camera.GetRect().GetOrigin().GetX() );
+				OUTPUT_VALUE( camera.GetRect().GetOrigin().GetY() );
+				OUTPUT_VALUE( camera.GetRect().GetSize().GetWidth() );
+				OUTPUT_VALUE( camera.GetRect().GetSize().GetHeight() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFunctionT CameraPosition::GetTitleFunction() const
 	{
 		return []()->const char*

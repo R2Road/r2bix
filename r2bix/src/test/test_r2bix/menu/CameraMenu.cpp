@@ -18,9 +18,10 @@ r2cm::MenuUp CameraMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', camera_test::CameraPosition::GetInstance() );
-		ret->AddItem( '2', camera_test::CameraRect::GetInstance() );
-		ret->AddItem( '3', camera_test::CameraMove::GetInstance() );
+		ret->AddItem( '1', camera_test::Declaration::GetInstance() );
+		ret->AddItem( '2', camera_test::CameraPosition::GetInstance() );
+		ret->AddItem( '3', camera_test::CameraRect::GetInstance() );
+		ret->AddItem( '4', camera_test::CameraMove::GetInstance() );
 
 
 		ret->AddSplit();
