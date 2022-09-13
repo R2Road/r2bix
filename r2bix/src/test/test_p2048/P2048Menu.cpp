@@ -8,7 +8,7 @@
 #include "test_p2048_stage.h"
 #include "test_p2048_stageviewnode.h"
 
-#include "test/TestMenu.h"
+#include "DevelopmentMenu.h"
 
 r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
 {
@@ -49,7 +49,7 @@ r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<TestMenu>( 27 );
+		ret->AddMenu<DevelopmentMenu>( 27 );
 	}
 
 	return ret;

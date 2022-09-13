@@ -3,8 +3,6 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
-#include "test/test_p2048/P2048Menu.h"
-
 r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
@@ -15,10 +13,6 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddMenu<P2048Menu>( 'w' );
-
-
-
 		ret->AddSplit();
 
 
