@@ -3,7 +3,9 @@
 #include <conio.h>
 #include <Windows.h>
 
+#include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "r2/r2_PointInt.h"
 #include "r2/r2_RectInt.h"
@@ -27,12 +29,7 @@ namespace camera_test
 
 			std::cout << r2cm::split;
 
-			r2render::Camera camera( { 20, 30 }, { 20, 10 } );
-
-			{
-				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2cm::linefeed;
-			}
+			DECLARATION_MAIN( r2render::Camera camera( { 20, 30 }, { 20, 10 } ) );
 
 			std::cout << r2cm::split;
 
@@ -41,11 +38,13 @@ namespace camera_test
 
 				std::cout << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3 << r2cm::linefeed3;
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+				r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
+				r2cm::WindowUtility::MoveCursorPoint( { 0, 50 } );
 			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
