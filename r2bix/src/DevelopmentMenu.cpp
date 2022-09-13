@@ -10,8 +10,9 @@
 
 #include "test/test_miniaudio/MiniAudioMenu.h"
 #include "test/test_r2bix/R2bixMenu.h"
-
+#include "test/test_psnake/PSnakeMenu.h"
 #include "test/TestMenu.h"
+
 #include "p2048/p2048_EntryScene.h"
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
@@ -67,8 +68,9 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 
 
+		ret->AddMenu<PSnakeMenu>( 'a' );
 		ret->AddItem(
-			'a'
+			's'
 			, []()->const char* { return psnake::CompanyScene::GetTitle(); }
 			, []()->r2cm::eItemLeaveAction
 			{

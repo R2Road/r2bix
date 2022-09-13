@@ -3,10 +3,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
-
-
 #include "test/test_p2048/P2048Menu.h"
-#include "test/test_psnake/PSnakeMenu.h"
 
 r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 {
@@ -18,7 +15,6 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddMenu<PSnakeMenu>( 'q' );
 		ret->AddMenu<P2048Menu>( 'w' );
 
 

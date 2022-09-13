@@ -5,7 +5,7 @@
 
 #include "psnake/psnake_VersionInfo.h"
 
-#include "test/TestMenu.h"
+#include "DevelopmentMenu.h"
 
 r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
 {
@@ -22,7 +22,7 @@ r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<TestMenu>( 27 );
+		ret->AddMenu<DevelopmentMenu>( 27 );
 	}
 
 	return ret;
