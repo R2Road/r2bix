@@ -1,7 +1,6 @@
 #include "window_input_test.h"
 
 #include <algorithm>
-#include <Windows.h>
 
 #include "r2bix/r2input_KeyboardInputCollector.h"
 #include "r2bix/r2input_KeyboardInputListener.h"
@@ -101,10 +100,10 @@ namespace window_input_test
 			{
 				r2::FPSTimer fps_timer( 60u );
 				r2::RectInt stage_area( 6, 10, 50, 30 );
-				COORD pos = { 20, 20 };
-				COORD temp_pos;
+				r2cm::WindowUtility::CursorPoint pos{ 20, 20 };
+				r2cm::WindowUtility::CursorPoint temp_pos{ 20, 20 };
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
+				r2cm::WindowUtility::MoveCursorPoint( pos );
 				std::cout << '@';
 
 				while( 1 )
@@ -126,31 +125,31 @@ namespace window_input_test
 
 						if( keyboard_input_listener.HasInput( 1 ) )
 						{
-							--temp_pos.X;
+							--temp_pos.x;
 						}
 						if( keyboard_input_listener.HasInput( 2 ) )
 						{
-							++temp_pos.X;
+							++temp_pos.x;
 						}
 						if( keyboard_input_listener.HasInput( 4 ) )
 						{
-							--temp_pos.Y;
+							--temp_pos.y;
 						}
 						if( keyboard_input_listener.HasInput( 3 ) )
 						{
-							++temp_pos.Y;
+							++temp_pos.y;
 						}
-						if( !stage_area.ContainsPoint( temp_pos.X, temp_pos.Y ) )
+						if( !stage_area.ContainsPoint( temp_pos.x, temp_pos.y ) )
 						{
-							temp_pos.X = std::clamp( temp_pos.X, static_cast<short>( stage_area.GetMinX() ), static_cast<short>( stage_area.GetMaxX() ) );
-							temp_pos.Y = std::clamp( temp_pos.Y, static_cast<short>( stage_area.GetMinY() ), static_cast<short>( stage_area.GetMaxY() ) );
+							temp_pos.x = std::clamp( temp_pos.x, static_cast<short>( stage_area.GetMinX() ), static_cast<short>( stage_area.GetMaxX() ) );
+							temp_pos.y = std::clamp( temp_pos.y, static_cast<short>( stage_area.GetMinY() ), static_cast<short>( stage_area.GetMaxY() ) );
 						}
 
-						if( temp_pos.X != pos.X || temp_pos.Y != pos.Y )
+						if( temp_pos.x != pos.x || temp_pos.y != pos.y )
 						{
-							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), pos );
+							r2cm::WindowUtility::MoveCursorPoint( pos );
 							std::cout << ' ';
-							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), temp_pos );
+							r2cm::WindowUtility::MoveCursorPoint( temp_pos );
 							std::cout << '@';
 
 							pos = temp_pos;
