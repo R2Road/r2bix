@@ -1,7 +1,6 @@
 #include "camera_test.h"
 
 #include <conio.h>
-#include <Windows.h>
 
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
@@ -155,16 +154,16 @@ namespace camera_test
 				{
 					for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
 					{
-						SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
+						r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( x ), static_cast<short>( y ) } );
 						std::cout << '#';
 					}
 				}
 				
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+				r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
 			}
 
-			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+			r2cm::WindowUtility::MoveCursorPoint( { 0, 50 } );
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -207,16 +206,16 @@ namespace camera_test
 					{
 						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
 						{
-							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
+							r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( x ), static_cast<short>( y ) } );
 							std::cout << '#';
 						}
 					}
 
-					SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+					r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 					std::cout << 'X';
 				}
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 40 } );
+				r2cm::WindowUtility::MoveCursorPoint( { 0, 40 } );
 
 				std::cout << "[ESC] Exit" << r2cm::linefeed;
 				std::cout << "[Any Key] Move Camera" << r2cm::linefeed2;
