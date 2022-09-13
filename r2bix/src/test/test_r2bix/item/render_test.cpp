@@ -1,9 +1,8 @@
 #include "render_test.h"
 
-#include <Windows.h>
-
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_Node.h"
@@ -159,7 +158,7 @@ namespace render_test
 					{
 						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
 						{
-							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( x ), static_cast<short>( y ) } );
+							r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( x ), static_cast<short>( y ) } );
 							std::cout << '#';
 						}
 					}
@@ -173,29 +172,27 @@ namespace render_test
 					{
 						for( int x = 0; current_rect.GetWidth() > x; ++x )
 						{
-							SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
+							r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
 							std::cout << render_test_node.mTexture.GetCharacter( x, y );
 						}
 					}
 				}
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+				r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { static_cast<short>( render_test_node.mPosition.GetX() ), static_cast<short>( render_test_node.mPosition.GetY() ) } );
+				r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( render_test_node.mPosition.GetX() ), static_cast<short>( render_test_node.mPosition.GetY() ) } );
 				std::cout << '+';
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+				r2cm::WindowUtility::MoveCursorPoint( { 0, 50 } );
 			}
 
 			std::cout << r2cm::split;
 
-			DWORD ret;
 			system( "pause" );
-			FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), ' ', 40 * 120, { 0, 13 }, &ret );
 
 			{
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 13 } );
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( { 0, 13 } );
 
 				std::cout << r2cm::tab << "+ Show Render Target" << r2cm::linefeed2;
 
@@ -215,7 +212,7 @@ namespace render_test
 					}
 				}
 
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), { 0, 50 } );
+				r2cm::WindowUtility::MoveCursorPoint( { 0, 50 } );
 			}
 
 			return r2cm::eItemLeaveAction::Pause;
