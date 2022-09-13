@@ -1,7 +1,7 @@
 #include "window_input_test.h"
 
 #include <algorithm>
-#include <windows.h>
+#include <Windows.h>
 
 #include "r2bix/r2input_KeyboardInputCollector.h"
 #include "r2bix/r2input_KeyboardInputListener.h"
