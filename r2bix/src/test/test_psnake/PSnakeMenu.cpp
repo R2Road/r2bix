@@ -3,6 +3,8 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "psnake/psnake_VersionInfo.h"
+
 #include "test/TestMenu.h"
 
 r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
@@ -10,6 +12,7 @@ r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle()
+		, psnake::VersionInfo.String4Road2Version_0_0_1
 	) );
 
 	{

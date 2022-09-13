@@ -809,5 +809,8 @@
     <ClInclude Include="src\test\test_psnake\PSnakeMenu.h">
       <Filter>test\test_psnake</Filter>
     </ClInclude>
+    <ClInclude Include="src\psnake\psnake_VersionInfo.h">
+      <Filter>r2bix\base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
