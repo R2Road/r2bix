@@ -7,6 +7,7 @@
 #include "menu/CameraMenu.h"
 #include "menu/ColorMenu.h"
 #include "menu/ComponentMenu.h"
+#include "menu/DirectorMenu.h"
 #include "menu/InputMenu.h"
 #include "menu/NodeMenu.h"
 #include "menu/TextureMenu.h"
@@ -30,11 +31,10 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', console_screen_buffer_test::Basic::GetInstance() );
-		ret->AddItem( '2', console_screen_buffer_manager_test::Basic::GetInstance() );
-		ret->AddMenu<InputMenu>( '3' );
-		ret->AddMenu<ColorMenu>( '4' );
-		ret->AddMenu<UtilityMenu>( '5' );
+		ret->AddMenu<DirectorMenu>( '1' );
+		ret->AddMenu<InputMenu>( '2' );
+		ret->AddMenu<ColorMenu>( '3' );
+		ret->AddMenu<UtilityMenu>( '4' );
 
 
 
