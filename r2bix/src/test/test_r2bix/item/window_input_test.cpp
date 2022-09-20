@@ -23,7 +23,8 @@ namespace window_input_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
+
 			std::cout << "[ESC] Exit" << r2cm::linefeed;
 			std::cout << "[A] ..." << r2cm::linefeed;
 
@@ -80,7 +81,8 @@ namespace window_input_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed2;
+			std::cout << r2cm::split;
+
 			std::cout << "[ESC] Exit" << r2cm::linefeed;
 			std::cout << "[WASD] Move" << r2cm::linefeed;
 

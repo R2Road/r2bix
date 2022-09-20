@@ -26,8 +26,6 @@ namespace test_p2048_stageviewnode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 41, 21 } ) );
@@ -69,8 +67,6 @@ namespace test_p2048_stageviewnode
 		return []()->r2cm::eItemLeaveAction
 		{
 			p2048table::TextureTable::GetInstance().Load();
-
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 
@@ -124,8 +120,6 @@ namespace test_p2048_stageviewnode
 		return []()->r2cm::eItemLeaveAction
 		{
 			p2048table::TextureTable::GetInstance().Load();
-
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
 			std::cout << r2cm::split;
 

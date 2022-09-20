@@ -23,8 +23,6 @@ namespace test_p2048_numbernode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 21, 11 } ) );
@@ -65,8 +63,6 @@ namespace test_p2048_numbernode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 11, 5 } ) );

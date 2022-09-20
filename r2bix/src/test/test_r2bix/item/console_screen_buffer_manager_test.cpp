@@ -19,8 +19,6 @@ namespace console_screen_buffer_manager_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2base::ScreenBufferManager screen_buffer_manager );

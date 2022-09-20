@@ -39,8 +39,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2base::Director dummy_director( {} ) );
@@ -94,8 +92,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2base::Director dummy_director( {} ) );
@@ -135,8 +131,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
@@ -189,8 +183,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
@@ -267,8 +259,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 13, 7 } ) );
@@ -336,8 +326,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 13, 7 } ) );
@@ -406,8 +394,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
@@ -480,8 +466,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 18, 8 } ) );
@@ -554,8 +538,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
@@ -612,8 +594,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
@@ -693,8 +673,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -778,8 +756,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -863,8 +839,6 @@ namespace component_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 

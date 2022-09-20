@@ -130,8 +130,6 @@ namespace render_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-			
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 

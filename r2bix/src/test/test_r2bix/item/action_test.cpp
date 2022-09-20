@@ -43,8 +43,6 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -112,8 +110,6 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -187,8 +183,6 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -274,8 +268,6 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -361,8 +353,6 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -448,8 +438,6 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -549,8 +537,6 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -642,8 +628,6 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
@@ -704,8 +688,6 @@ namespace action_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 

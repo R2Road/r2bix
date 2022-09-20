@@ -24,8 +24,6 @@ namespace camera_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2::Point<int> position( 20, 30 ) );
@@ -96,8 +94,6 @@ namespace camera_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2render::Camera camera( { 20, 30 }, { 20, 10 } ) );
@@ -134,8 +130,6 @@ namespace camera_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			r2render::Camera camera( { 20, 30 }, { 20, 10 } );
@@ -182,26 +176,37 @@ namespace camera_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			r2render::Camera camera( { 20, 30 }, { 19, 9 } );
+			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( r2render::Camera camera( { 20, 30 }, { 19, 9 } ) );
+
+			std::cout << r2cm::split;
+
+			std::cout << r2cm::tab << "+ Show Camera Rect" << r2cm::linefeed2;
+			std::cout << "[ESC] Exit" << r2cm::linefeed;
+			std::cout << "[Any Key] Move Camera" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			const auto current_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 			int step = 0;
-
+			int input = 0;
 			do
 			{
-				std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+				r2cm::WindowUtility::MoveCursorPointWithClearBuffer( current_cursor_point );
 
-				std::cout << r2cm::split;
-
+				if( 0 == step )
 				{
-					std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-					std::cout << r2cm::tab2 << "r2render::Camera camera( { 20, 30 }, { 19, 9 } );" << r2cm::linefeed;
+					camera.SetPoint( 30, 20 );
+					step = 1;
+				}
+				else
+				{
+					camera.SetPoint( 20, 30 );
+					step = 0;
 				}
 
-				std::cout << r2cm::split;
-
 				{
-					std::cout << r2cm::tab << "+ Show Camera Rect" << r2cm::linefeed2;
-
 					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() >= y; ++y )
 					{
 						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
@@ -216,32 +221,9 @@ namespace camera_test
 				}
 
 				r2cm::WindowUtility::MoveCursorPoint( { 0, 40 } );
+				input = _getch();
 
-				std::cout << "[ESC] Exit" << r2cm::linefeed;
-				std::cout << "[Any Key] Move Camera" << r2cm::linefeed2;
-
-				const int input = _getch();
-				if( 27 == input )
-				{
-					break;
-				}
-				else
-				{
-					system( "cls" );
-
-					if( 0 == step )
-					{
-						camera.SetPoint( 30, 20 );
-						step = 1;
-					}
-					else
-					{
-						camera.SetPoint( 20, 30 );
-						step = 0;
-					}
-				}
-
-			} while( true );
+			} while( 27 != input );
 
 			return r2cm::eItemLeaveAction::None;
 		};

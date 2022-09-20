@@ -21,8 +21,6 @@ namespace visible_resource_research
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( const r2render::Texture visible_resource( 10, 10, '0' ) );

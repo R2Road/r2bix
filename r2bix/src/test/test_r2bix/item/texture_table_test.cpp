@@ -19,8 +19,6 @@ namespace texture_table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
@@ -58,8 +56,6 @@ namespace texture_table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
@@ -103,8 +99,6 @@ namespace texture_table_test
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			{
