@@ -3,20 +3,20 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
-#include "test/test_r2bix/menu/ActionMenu.h"
-#include "test/test_r2bix/menu/CameraMenu.h"
-#include "test/test_r2bix/menu/ColorMenu.h"
-#include "test/test_r2bix/menu/ComponentMenu.h"
-#include "test/test_r2bix/menu/InputMenu.h"
-#include "test/test_r2bix/menu/NodeMenu.h"
-#include "test/test_r2bix/menu/TextureMenu.h"
-#include "test/test_r2bix/menu/UtilityMenu.h"
+#include "menu/ActionMenu.h"
+#include "menu/CameraMenu.h"
+#include "menu/ColorMenu.h"
+#include "menu/ComponentMenu.h"
+#include "menu/InputMenu.h"
+#include "menu/NodeMenu.h"
+#include "menu/TextureMenu.h"
+#include "menu/UtilityMenu.h"
 
-#include "test/test_r2bix/item/console_screen_buffer_test.h"
-#include "test/test_r2bix/item/console_screen_buffer_manager_test.h"
-#include "test/test_r2bix/item/render_test.h"
+#include "item/console_screen_buffer_test.h"
+#include "item/console_screen_buffer_manager_test.h"
+#include "item/render_test.h"
 
-#include "test/test_r2bix/item/visible_resource_research.h"
+#include "item/visible_resource_research.h"
 
 #include "DevelopmentMenu.h"
 
