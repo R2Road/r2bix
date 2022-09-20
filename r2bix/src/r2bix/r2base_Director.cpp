@@ -9,7 +9,7 @@ namespace r2base
 	Director::Director( const DirectorConfig& director_config ) :
 		mScreenBufferManager()
 		, mFPSTimer( director_config.FramePerSeconds )
-		, mRenderTimer( director_config.FramePerSeconds )
+		, mRenderTimer( director_config.RenderFramePerSeconds )
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSIze )
 

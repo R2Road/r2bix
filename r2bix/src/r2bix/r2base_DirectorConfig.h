@@ -10,5 +10,6 @@ namespace r2base
 	{
 		r2::SizeInt ScreenBufferSIze = { 107, 53 };
 		const int FramePerSeconds = 30u;
+		const int RenderFramePerSeconds = 30u;
 	};
 }
