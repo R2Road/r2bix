@@ -26,8 +26,8 @@ namespace r2base
 			"\n"	"[o] " "Render : Color Mask : 전경과 원경의 색상 유효성 처리."
 			"\n"	"[o] " "Render : Color Blend"
 			"\n"	"[o] " "Audio : 라이브러리 선택 및 테스트( 재생, 중단 등의 기본 사항 )"
+			"\n"	"[o] " "Split The Render And Update Process"
 			"\n"	"[ ] " "Audio : Pre Load"
-			"\n"	"[ ] " "Split The Render And Update Process"
 			"\n"	"[ ] " "Node Delete And Caching Pipe Line"
 			"\n"	"[ ] " "Make Simple Texture Adventure"
 
