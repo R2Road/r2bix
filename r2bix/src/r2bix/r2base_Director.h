@@ -42,6 +42,7 @@ namespace r2base
 	private:
 		ScreenBufferManager mScreenBufferManager;
 		r2::FPSTimer mFPSTimer;
+		r2::FPSTimer mRenderTimer;
 		bool mbAbort;
 		r2::SizeInt mScreenBufferSIze;
 

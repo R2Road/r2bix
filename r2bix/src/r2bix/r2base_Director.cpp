@@ -9,6 +9,7 @@ namespace r2base
 	Director::Director( const DirectorConfig& director_config ) :
 		mScreenBufferManager()
 		, mFPSTimer( director_config.FramePerSeconds )
+		, mRenderTimer( director_config.FramePerSeconds )
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSIze )
 
@@ -46,6 +47,10 @@ namespace r2base
 				mKeyboardInputCollector.Collect();
 
 				mCurrentSceneNode->Update( mFPSTimer.GetElapsedTime() );
+			}
+
+			if( mRenderTimer.Update() )
+			{
 				mCurrentSceneNode->Render();
 
 				mScreenBufferManager.InitCursor();
