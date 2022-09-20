@@ -8,7 +8,7 @@ namespace r2base
 {
 	Director::Director( const DirectorConfig& director_config ) :
 		mScreenBufferManager()
-		, mFPSTimer( director_config.UpdateFramePerSeconds )
+		, mUpdateTimer( director_config.UpdateFramePerSeconds )
 		, mRenderTimer( director_config.RenderFramePerSeconds )
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSIze )
@@ -42,11 +42,11 @@ namespace r2base
 				mCurrentSceneNode = std::move( mNextSceneNode );
 			}
 
-			if( mFPSTimer.Update() )
+			if( mUpdateTimer.Update() )
 			{
 				mKeyboardInputCollector.Collect();
 
-				mCurrentSceneNode->Update( mFPSTimer.GetElapsedTime() );
+				mCurrentSceneNode->Update( mUpdateTimer.GetElapsedTime() );
 			}
 
 			if( mRenderTimer.Update() )
