@@ -13,8 +13,6 @@
 #include "menu/TextureMenu.h"
 #include "menu/UtilityMenu.h"
 
-#include "item/console_screen_buffer_test.h"
-#include "item/console_screen_buffer_manager_test.h"
 #include "item/render_test.h"
 
 #include "item/visible_resource_research.h"
