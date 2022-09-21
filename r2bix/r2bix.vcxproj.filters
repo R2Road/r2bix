@@ -416,9 +416,6 @@
     <ClCompile Include="src\r2bix\r2base_Director.cpp">
       <Filter>r2bix\director</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2base_ScreenBufferManager.cpp">
-      <Filter>r2bix\director</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_director_Scheduler.cpp">
       <Filter>r2bix\director</Filter>
     </ClCompile>
@@ -426,6 +423,9 @@
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_director_CoutBufferRedirector.cpp">
+      <Filter>r2bix\director</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_director_ScreenBufferManager.cpp">
       <Filter>r2bix\director</Filter>
     </ClCompile>
   </ItemGroup>
@@ -824,9 +824,6 @@
     <ClInclude Include="src\r2bix\r2base_Director.h">
       <Filter>r2bix\director</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_ScreenBufferManager.h">
-      <Filter>r2bix\director</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_director_Scheduler.h">
       <Filter>r2bix\director</Filter>
     </ClInclude>
@@ -837,6 +834,9 @@
       <Filter>r2bix\director</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_director_CoutBufferRedirector.h">
+      <Filter>r2bix\director</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_director_ScreenBufferManager.h">
       <Filter>r2bix\director</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 #include <conio.h>
 
-#include "r2bix/r2base_ScreenBufferManager.h"
+#include "r2bix/r2bix_director_ScreenBufferManager.h"
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 

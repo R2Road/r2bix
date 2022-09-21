@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "r2base_ScreenBufferManager.h"
+#include "r2bix_director_ScreenBufferManager.h"
 #include "r2input_KeyboardInputCollector.h"
 #include "r2node_SceneNode.h"
 #include "r2/r2_FPSTimer.h"
