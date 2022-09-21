@@ -5,9 +5,9 @@
 
 namespace r2bix_director
 {
-	Scheduler::Scheduler( const Config& config, const std::function<void( float )> scene_update_func, const std::function<void()> scene_render_func )
+	const std::function<void()> MakeProcessor( const Config& config, const std::function<void( float )> scene_update_func, const std::function<void()> scene_render_func )
 	{
-		mProcessor = [mUpdateTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), mRenderTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), scene_update_func, scene_render_func]() mutable
+		return [mUpdateTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), mRenderTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), scene_update_func, scene_render_func]() mutable
 		{
 			if( mUpdateTimer.Update() )
 			{
@@ -20,6 +20,10 @@ namespace r2bix_director
 			}
 		};
 	}
+
+	Scheduler::Scheduler( const Config& config, const std::function<void( float )> scene_update_func, const std::function<void()> scene_render_func ) :
+		mProcessor( MakeProcessor( config, scene_update_func, scene_render_func ) )
+	{}
 
 	void Scheduler::Do()
 	{

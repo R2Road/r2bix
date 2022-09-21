@@ -17,6 +17,6 @@ namespace r2bix_director
 		void Do();
 
 	private:
-		ProcessorT mProcessor;
+		const ProcessorT mProcessor;
 	};
 }
