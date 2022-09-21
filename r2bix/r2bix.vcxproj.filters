@@ -76,6 +76,9 @@
     <Filter Include="test\test_psnake">
       <UniqueIdentifier>{90205c11-7a0a-47f5-a417-aa53424b3bb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2bix\director">
+      <UniqueIdentifier>{c183a091-f503-41cd-b02e-f50c91446e90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -179,19 +182,10 @@
     <ClCompile Include="src\r2bix\r2animation_constant.cpp">
       <Filter>r2bix\animation</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2base_CoutBufferRedirector.cpp">
-      <Filter>r2bix\base</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2base_DebugConfig.cpp">
       <Filter>r2bix\base</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2base_Director.cpp">
-      <Filter>r2bix\base</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2base_Node.cpp">
-      <Filter>r2bix\base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2base_ScreenBufferManager.cpp">
       <Filter>r2bix\base</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationInfo.cpp">
@@ -419,6 +413,15 @@
     <ClCompile Include="src\test\test_r2bix\menu\DirectorMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2base_Director.cpp">
+      <Filter>r2bix\director</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2base_ScreenBufferManager.cpp">
+      <Filter>r2bix\director</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2base_CoutBufferRedirector.cpp">
+      <Filter>r2bix\director</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -530,19 +533,10 @@
     <ClInclude Include="src\r2bix\r2base_ComponentStaticID.h">
       <Filter>r2bix\base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_CoutBufferRedirector.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2base_DebugConfig.h">
       <Filter>r2bix\base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_Director.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2base_Node.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_ScreenBufferManager.h">
       <Filter>r2bix\base</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationInfo.h">
@@ -764,9 +758,6 @@
     <ClInclude Include="src\r2bix\r2base_iComponent.h">
       <Filter>r2bix\base</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_DirectorConfig.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_RectInt.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -823,6 +814,18 @@
     </ClInclude>
     <ClInclude Include="src\psnake\psnake_VersionInfo.h">
       <Filter>project_snake</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_Director.h">
+      <Filter>r2bix\director</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_DirectorConfig.h">
+      <Filter>r2bix\director</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_ScreenBufferManager.h">
+      <Filter>r2bix\director</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_CoutBufferRedirector.h">
+      <Filter>r2bix\director</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
