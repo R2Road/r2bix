@@ -7,18 +7,23 @@ namespace r2bix_director
 {
 	const std::function<void()> MakeProcessor( const Config& config, const std::function<void( float )> scene_update_func, const std::function<void()> scene_render_func )
 	{
-		return [mUpdateTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), mRenderTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), scene_update_func, scene_render_func]() mutable
+		switch( config.ScheduleType )
 		{
-			if( mUpdateTimer.Update() )
+		default:
+		case Config::eScheduleType::Infinite:
+			return [mUpdateTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), mRenderTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), scene_update_func, scene_render_func]() mutable
 			{
-				scene_update_func( mUpdateTimer.GetElapsedTime() );
-			}
+				if( mUpdateTimer.Update() )
+				{
+					scene_update_func( mUpdateTimer.GetElapsedTime() );
+				}
 
-			if( mRenderTimer.Update() )
-			{
-				scene_render_func();
-			}
-		};
+				if( mRenderTimer.Update() )
+				{
+					scene_render_func();
+				}
+			};
+		}
 	}
 
 	Scheduler::Scheduler( const Config& config, const std::function<void( float )> scene_update_func, const std::function<void()> scene_render_func ) :
