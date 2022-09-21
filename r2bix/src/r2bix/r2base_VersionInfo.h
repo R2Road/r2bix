@@ -22,18 +22,18 @@ namespace r2base
 		const char* const String4Road2Version_0_0_3 =
 					"### Road 2 Version 0.0.3 ###"
 			"\n"
-			"\n"	"[ ] " "Split Scene Graph Struct And Update Process"
-			"\n"	"[ ] " "Audio : Pre Load"
+			"\n"	"[ ] " "Texture Viewer"
 			"\n"	"[ ] " "Node Delete And Caching Pipe Line"
+			"\n"	"[ ] " "Split Scene Graph Struct And Update Process"
 			"\n"	"[ ] " "Make Simple Texture Adventure"
 
 			"\n\n"	"------------------------------------------"
 
 			"\n\n"	"[ ] " "Json"
 			"\n"	"[ ] " "Script"
-			"\n"	"[ ] " "Texture Viewer"
 			"\n"	"[ ] " "Texture Editor"
 			"\n"	"[ ] " "Korean"
+			"\n"	"[ ] " "Audio : Pre Load"
 		;
 
 		const char* const String4Road2Version_0_0_2 =
