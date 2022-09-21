@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2base_CoutBufferRedirector.h"
+#include "r2bix_director_CoutBufferRedirector.h"
 
 namespace r2render
 {

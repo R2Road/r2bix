@@ -64,7 +64,7 @@
     <ClCompile Include="src\r2bix\r2animation_constant.cpp" />
     <ClCompile Include="src\r2bix\r2base_ColorMaskOption.cpp" />
     <ClCompile Include="src\r2bix\r2base_ColorValue.cpp" />
-    <ClCompile Include="src\r2bix\r2base_CoutBufferRedirector.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_director_CoutBufferRedirector.cpp" />
     <ClCompile Include="src\r2bix\r2base_DebugConfig.cpp" />
     <ClCompile Include="src\r2bix\r2base_Director.cpp" />
     <ClCompile Include="src\r2bix\r2base_Node.cpp" />
@@ -199,7 +199,7 @@
     <ClInclude Include="src\r2bix\r2base_Component.h" />
     <ClInclude Include="src\r2bix\r2base_ComponentStaticID.h" />
     <ClInclude Include="src\r2bix\r2base_ColorValue.h" />
-    <ClInclude Include="src\r2bix\r2base_CoutBufferRedirector.h" />
+    <ClInclude Include="src\r2bix\r2bix_director_CoutBufferRedirector.h" />
     <ClInclude Include="src\r2bix\r2base_DebugConfig.h" />
     <ClInclude Include="src\r2bix\r2base_Director.h" />
     <ClInclude Include="src\r2bix\r2bix_director_Config.h" />
