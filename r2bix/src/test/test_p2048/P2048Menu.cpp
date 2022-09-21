@@ -1,6 +1,6 @@
 #include "P2048Menu.h"
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 

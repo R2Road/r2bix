@@ -1,6 +1,6 @@
 #include "test_p2048_stageviewnode.h"
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 #include "r2bix/r2render_Camera.h"

@@ -1,6 +1,6 @@
 #include "r2node_SpriteAnimationNode.h"
 
-#include "r2base_Director.h"
+#include "r2bix_Director.h"
 #include "r2component_TextureFrameAnimationComponent.h"
 #include "r2component_TextureFrameRenderComponent.h"
 

@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <utility> // std::move
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 #include "p2048_CompanyScene.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"

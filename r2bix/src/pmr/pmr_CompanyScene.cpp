@@ -2,7 +2,7 @@
 
 #include <conio.h>
 
-#include "r2bix/r2base_Director.h"
+#include "r2bix/r2bix_Director.h"
 #include "r2bix/r2component_LabelSComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 #include "r2bix/r2node_LabelSNode.h"
