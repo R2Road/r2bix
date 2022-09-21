@@ -13,7 +13,7 @@
 
 #include "r2render_Texture.h"
 
-namespace r2base
+namespace r2bix_director
 {
 	ScreenBufferManager::ScreenBufferManager() :
 		mCoutOriginalStreamBuffer( nullptr )

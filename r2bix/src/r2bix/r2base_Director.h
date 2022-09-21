@@ -40,7 +40,7 @@ namespace r2base
 		void RemoveInputListener( r2input::KeyboardInputListener* const keyboard_input_listener );
 
 	private:
-		ScreenBufferManager mScreenBufferManager;
+		r2bix_director::ScreenBufferManager mScreenBufferManager;
 		r2::FPSTimer mUpdateTimer;
 		r2::FPSTimer mRenderTimer;
 		bool mbAbort;

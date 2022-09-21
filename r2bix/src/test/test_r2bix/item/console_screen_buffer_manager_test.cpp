@@ -21,7 +21,7 @@ namespace console_screen_buffer_manager_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2base::ScreenBufferManager screen_buffer_manager );
+			DECLARATION_MAIN( r2bix_director::ScreenBufferManager screen_buffer_manager );
 
 			std::cout << r2cm::split;
 
