@@ -8,8 +8,7 @@ namespace r2bix
 {
 	Director::Director( const r2bix_director::Config& director_config ) :
 		mScreenBufferManager()
-		, mUpdateTimer( director_config.UpdateFramePerSeconds )
-		, mRenderTimer( director_config.RenderFramePerSeconds )
+		, mScheduler( director_config, std::bind( &Director::onUpdate, this, std::placeholders::_1 ), std::bind( &Director::onRender, this ) )
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSIze )
 
@@ -42,15 +41,7 @@ namespace r2bix
 				mCurrentSceneNode = std::move( mNextSceneNode );
 			}
 
-			if( mUpdateTimer.Update() )
-			{
-				onUpdate( mUpdateTimer.GetElapsedTime() );
-			}
-
-			if( mRenderTimer.Update() )
-			{
-				onRender();
-			}
+			mScheduler.Do();
 		}
 	}
 	void Director::onUpdate( const float delta_time )

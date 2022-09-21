@@ -5,10 +5,10 @@
 #include "r2bix_director_ScreenBufferManager.h"
 #include "r2input_KeyboardInputCollector.h"
 #include "r2node_SceneNode.h"
-#include "r2/r2_FPSTimer.h"
 #include "r2/r2_SizeInt.h"
 
 #include "r2bix_director_Config.h"
+#include "r2bix_director_Scheduler.h"
 
 namespace r2bix
 {
@@ -45,8 +45,7 @@ namespace r2bix
 
 	private:
 		r2bix_director::ScreenBufferManager mScreenBufferManager;
-		r2::FPSTimer mUpdateTimer;
-		r2::FPSTimer mRenderTimer;
+		r2bix_director::Scheduler mScheduler;
 		bool mbAbort;
 		r2::SizeInt mScreenBufferSIze;
 
