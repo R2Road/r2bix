@@ -44,9 +44,7 @@ namespace r2bix
 
 			if( mUpdateTimer.Update() )
 			{
-				mKeyboardInputCollector.Collect();
-
-				mCurrentSceneNode->Update( mUpdateTimer.GetElapsedTime() );
+				onUpdate( mUpdateTimer.GetElapsedTime() );
 			}
 
 			if( mRenderTimer.Update() )
@@ -57,6 +55,12 @@ namespace r2bix
 				mScreenBufferManager.Swap();
 			}
 		}
+	}
+	void Director::onUpdate( const float delta_time )
+	{
+		mKeyboardInputCollector.Collect();
+
+		mCurrentSceneNode->Update( delta_time );
 	}
 
 	void Director::ClearScreen()

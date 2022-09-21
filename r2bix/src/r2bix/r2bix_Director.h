@@ -20,7 +20,10 @@ namespace r2bix
 		void Setup( r2node::SceneNodeUp node );
 
 		void Run();
+	private:
+		void onUpdate( const float delta_time );
 
+	public:
 		//
 		//
 		//
