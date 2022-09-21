@@ -22,6 +22,7 @@ namespace r2bix
 		void Run();
 	private:
 		void onUpdate( const float delta_time );
+		void onRender();
 
 	public:
 		//

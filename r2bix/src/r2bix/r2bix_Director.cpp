@@ -49,10 +49,7 @@ namespace r2bix
 
 			if( mRenderTimer.Update() )
 			{
-				mCurrentSceneNode->Render();
-
-				mScreenBufferManager.InitCursor();
-				mScreenBufferManager.Swap();
+				onRender();
 			}
 		}
 	}
@@ -61,6 +58,13 @@ namespace r2bix
 		mKeyboardInputCollector.Collect();
 
 		mCurrentSceneNode->Update( delta_time );
+	}
+	void Director::onRender()
+	{
+		mCurrentSceneNode->Render();
+
+		mScreenBufferManager.InitCursor();
+		mScreenBufferManager.Swap();
 	}
 
 	void Director::ClearScreen()
