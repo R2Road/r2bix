@@ -6,7 +6,7 @@
 
 namespace r2base
 {
-	Director::Director( const DirectorConfig& director_config ) :
+	Director::Director( const r2bix_director::Config& director_config ) :
 		mScreenBufferManager()
 		, mUpdateTimer( director_config.UpdateFramePerSeconds )
 		, mRenderTimer( director_config.RenderFramePerSeconds )

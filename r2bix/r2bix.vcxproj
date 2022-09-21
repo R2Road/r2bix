@@ -202,7 +202,7 @@
     <ClInclude Include="src\r2bix\r2base_CoutBufferRedirector.h" />
     <ClInclude Include="src\r2bix\r2base_DebugConfig.h" />
     <ClInclude Include="src\r2bix\r2base_Director.h" />
-    <ClInclude Include="src\r2bix\r2base_DirectorConfig.h" />
+    <ClInclude Include="src\r2bix\r2bix_director_Config.h" />
     <ClInclude Include="src\r2bix\r2base_iComponent.h" />
     <ClInclude Include="src\r2bix\r2base_Node.h" />
     <ClInclude Include="src\r2bix\r2base_ScreenBufferManager.h" />

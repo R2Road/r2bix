@@ -8,14 +8,14 @@
 #include "r2/r2_FPSTimer.h"
 #include "r2/r2_SizeInt.h"
 
-#include "r2base_DirectorConfig.h"
+#include "r2bix_director_Config.h"
 
 namespace r2base
 {
 	class Director
 	{
 	public:
-		Director( const DirectorConfig& director_config );
+		Director( const r2bix_director::Config& director_config );
 
 		void Setup( r2node::SceneNodeUp node );
 

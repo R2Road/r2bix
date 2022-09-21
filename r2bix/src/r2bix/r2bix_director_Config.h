@@ -4,9 +4,9 @@
 
 #include "r2/r2_SizeInt.h"
 
-namespace r2base
+namespace r2bix_director
 {
-	struct DirectorConfig
+	struct Config
 	{
 		r2::SizeInt ScreenBufferSIze = { 107, 53 };
 		const int UpdateFramePerSeconds = 30u;
