@@ -209,7 +209,7 @@
     <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationInfo.h" />
     <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\r2bix\r2base_TextureTableBase.h" />
-    <ClInclude Include="src\r2bix\r2base_VersionInfo.h" />
+    <ClInclude Include="src\r2bix\r2bix_VersionInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_director_Scheduler.h" />
     <ClInclude Include="src\r2bix\r2component_ActionProcessComponent.h" />
     <ClInclude Include="src\r2bix\r2component_CustomTextureComponent.h" />

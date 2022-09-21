@@ -2,7 +2,7 @@
 	#include "vld/include/vld.h"
 #endif
 
-#include "r2bix/r2base_VersionInfo.h"
+#include "r2bix/r2bix_VersionInfo.h"
 
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_WindowUtility.h"
@@ -14,7 +14,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2cm::WindowUtility::ChangeTitle( r2base::VersionInfo.String4Version );
+	r2cm::WindowUtility::ChangeTitle( r2bix::VersionInfo.String4Version );
 
 	//
 	// Environment : Size
