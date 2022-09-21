@@ -7,6 +7,7 @@
 
 #include "../item/console_screen_buffer_test.h"
 #include "../item/console_screen_buffer_manager_test.h"
+#include "../item/director_scheduler_test.h"
 
 r2cm::MenuUp DirectorMenu::Create( r2cm::Director& director )
 {
@@ -18,6 +19,7 @@ r2cm::MenuUp DirectorMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem( '1', console_screen_buffer_test::Basic::GetInstance() );
 		ret->AddItem( '2', console_screen_buffer_manager_test::Basic::GetInstance() );
+		ret->AddItem( '3', director_scheduler_test::Declaration::GetInstance() );
 
 
 		ret->AddSplit();

@@ -72,6 +72,7 @@
     <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationInfo.cpp" />
     <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationTableBase.cpp" />
     <ClCompile Include="src\r2bix\r2base_TextureTableBase.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_director_Scheduler.cpp" />
     <ClCompile Include="src\r2bix\r2component_ActionProcessComponent.cpp" />
     <ClCompile Include="src\r2bix\r2component_CustomTextureComponent.cpp" />
     <ClCompile Include="src\r2bix\r2component_LabelSComponent.cpp" />
@@ -112,6 +113,7 @@
     <ClCompile Include="src\test\test_r2bix\item\component_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_manager_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_test.cpp" />
+    <ClCompile Include="src\test\test_r2bix\item\director_scheduler_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\key_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\node_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\render_test.cpp" />
@@ -208,6 +210,7 @@
     <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\r2bix\r2base_TextureTableBase.h" />
     <ClInclude Include="src\r2bix\r2base_VersionInfo.h" />
+    <ClInclude Include="src\r2bix\r2bix_director_Scheduler.h" />
     <ClInclude Include="src\r2bix\r2component_ActionProcessComponent.h" />
     <ClInclude Include="src\r2bix\r2component_CustomTextureComponent.h" />
     <ClInclude Include="src\r2bix\r2component_LabelSComponent.h" />
@@ -249,6 +252,7 @@
     <ClInclude Include="src\test\test_r2bix\item\component_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_manager_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_test.h" />
+    <ClInclude Include="src\test\test_r2bix\item\director_scheduler_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\key_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\node_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\render_test.h" />
