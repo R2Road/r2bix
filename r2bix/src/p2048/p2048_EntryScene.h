@@ -15,11 +15,11 @@ namespace p2048
 	class EntryScene : public r2node::SceneNode
 	{
 	private:
-		EntryScene( r2base::Director& director );
+		EntryScene( r2bix::Director& director );
 
 	public:
 		static const char* const GetTitle() { return "Game : 2048( ...Zzz )"; }
-		static r2node::SceneNodeUp Create( r2base::Director& director );
+		static r2node::SceneNodeUp Create( r2bix::Director& director );
 
 	public:
 		void Update( const float delta_time ) override;

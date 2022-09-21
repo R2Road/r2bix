@@ -5,7 +5,7 @@
 
 namespace r2node
 {
-	r2base::NodeUp SpriteNode::Create( r2base::Director& director )
+	r2base::NodeUp SpriteNode::Create( r2bix::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )

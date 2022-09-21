@@ -26,12 +26,12 @@
 
 namespace p2048
 {
-	TitleScene::TitleScene( r2base::Director& director ) : r2node::SceneNode( director )
+	TitleScene::TitleScene( r2bix::Director& director ) : r2node::SceneNode( director )
 		, mLabelNode( nullptr )
 		, mSpriteNode( nullptr )
 	{}
 
-	r2node::SceneNodeUp TitleScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp TitleScene::Create( r2bix::Director& director )
 	{
 		r2node::SceneNodeUp ret( new ( std::nothrow ) TitleScene( director ) );
 		if( !ret->Init() )

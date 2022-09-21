@@ -27,7 +27,7 @@ namespace r2base
 			"\n"	"[o] " "Render : Color Blend"
 			"\n"	"[o] " "Audio : 라이브러리 선택 및 테스트( 재생, 중단 등의 기본 사항 )"
 			"\n"	"[o] " "Split The Render And Update Process"
-			"\n"	"[ ] " "CPU 사용량 감소 : r2base::Director 에 r2::FPSTimer 와 std::this_thread::sleep_for 를 선택 적용"
+			"\n"	"[ ] " "CPU 사용량 감소 : r2bix::Director 에 r2::FPSTimer 와 std::this_thread::sleep_for 를 선택 적용"
 			"\n"	"[ ] " "Split Scene Graph Struct And Update Process"
 			"\n"	"[ ] " "Audio : Pre Load"
 			"\n"	"[ ] " "Node Delete And Caching Pipe Line"

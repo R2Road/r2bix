@@ -62,7 +62,7 @@ r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
 				//
 				// Setup
 				//
-				r2base::Director director( {} );
+				r2bix::Director director( {} );
 				director.Setup( p2048::EntryScene::Create( director ) );
 
 				//

@@ -9,10 +9,10 @@
 
 namespace p_mini_adv
 {
-	GameScene::GameScene( r2base::Director& director ) : r2node::SceneNode( director )
+	GameScene::GameScene( r2bix::Director& director ) : r2node::SceneNode( director )
 	{}
 
-	r2node::SceneNodeUp GameScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp GameScene::Create( r2bix::Director& director )
 	{
 		r2node::SceneNodeUp ret( new ( std::nothrow ) GameScene( director ) );
 		if( !ret || !ret->Init() )

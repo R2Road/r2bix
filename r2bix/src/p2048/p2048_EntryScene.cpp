@@ -11,10 +11,10 @@
 
 namespace p2048
 {
-	EntryScene::EntryScene( r2base::Director& director ) : r2node::SceneNode( director )
+	EntryScene::EntryScene( r2bix::Director& director ) : r2node::SceneNode( director )
 	{}
 
-	r2node::SceneNodeUp EntryScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp EntryScene::Create( r2bix::Director& director )
 	{
 		r2node::SceneNodeUp ret( new ( std::nothrow ) EntryScene( director ) );
 		if( !ret->Init() )

@@ -35,7 +35,7 @@ r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
 				//
 				// Setup
 				//
-				r2base::Director director( {} );
+				r2bix::Director director( {} );
 				director.Setup( psnake::CompanyScene::Create( director ) );
 
 				//

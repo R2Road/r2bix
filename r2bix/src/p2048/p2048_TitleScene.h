@@ -9,10 +9,10 @@ namespace p2048
 	class TitleScene : public r2node::SceneNode
 	{
 	private:
-		TitleScene( r2base::Director& director );
+		TitleScene( r2bix::Director& director );
 
 	public:
-		static r2node::SceneNodeUp Create( r2base::Director& director );
+		static r2node::SceneNodeUp Create( r2bix::Director& director );
 
 	private:
 		bool Init() override;

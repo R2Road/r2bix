@@ -9,10 +9,10 @@ namespace p2048
 	class CompanyScene : public r2node::SceneNode
 	{
 	private:
-		CompanyScene( r2base::Director& director );
+		CompanyScene( r2bix::Director& director );
 
 	public:
-		static r2node::SceneNodeUp Create( r2base::Director& director );
+		static r2node::SceneNodeUp Create( r2bix::Director& director );
 
 	private:
 		bool Init() override;

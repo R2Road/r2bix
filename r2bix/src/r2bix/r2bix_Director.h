@@ -10,7 +10,7 @@
 
 #include "r2bix_director_Config.h"
 
-namespace r2base
+namespace r2bix
 {
 	class Director
 	{

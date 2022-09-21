@@ -9,10 +9,10 @@
 
 namespace pmr
 {
-	CompanyScene::CompanyScene( r2base::Director& director ) : r2node::SceneNode( director )
+	CompanyScene::CompanyScene( r2bix::Director& director ) : r2node::SceneNode( director )
 	{}
 
-	r2node::SceneNodeUp CompanyScene::Create( r2base::Director& director )
+	r2node::SceneNodeUp CompanyScene::Create( r2bix::Director& director )
 	{
 		r2node::SceneNodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
 		if( !ret || !ret->Init() )

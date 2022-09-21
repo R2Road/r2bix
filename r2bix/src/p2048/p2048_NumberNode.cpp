@@ -17,7 +17,7 @@
 
 namespace p2048
 {
-	r2base::NodeUp NumberNode::Create( r2base::Director& director )
+	r2base::NodeUp NumberNode::Create( r2bix::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )

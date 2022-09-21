@@ -14,7 +14,7 @@ namespace render_test
 	class RenderTestNode : r2base::Node
 	{
 	public:
-		RenderTestNode( r2base::Director& director, const r2::PointInt& position, const r2::SizeInt size, const r2::PointInt rect_offset ) : r2base::Node( director )
+		RenderTestNode( r2bix::Director& director, const r2::PointInt& position, const r2::SizeInt size, const r2::PointInt rect_offset ) : r2base::Node( director )
 			, mPosition( position )
 			, mTexture( size.GetWidth(), size.GetHeight() )
 			, mRect( rect_offset.GetX(), rect_offset.GetY(), mTexture.GetWidth() - 1, mTexture.GetHeight() - 1 )
@@ -133,7 +133,7 @@ namespace render_test
 			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
 			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
-			r2base::Director dummy_director( {} );
+			r2bix::Director dummy_director( {} );
 			RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );
 
 			std::cout << r2cm::split;
@@ -142,7 +142,7 @@ namespace render_test
 				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
 				std::cout << r2cm::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "r2base::Director dummy_director;" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "r2bix::Director dummy_director;" << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );" << r2cm::linefeed;
 			}
 

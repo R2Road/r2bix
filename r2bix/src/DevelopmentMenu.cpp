@@ -64,7 +64,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				//
 				// Setup
 				//
-			r2base::Director director( {} );
+			r2bix::Director director( {} );
 				director.Setup( p_mini_adv::CompanyScene::Create( director ) );
 
 				//
@@ -83,7 +83,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				//
 				// Setup
 				//
-				r2base::Director director( {} );
+				r2bix::Director director( {} );
 				director.Setup( pmr::CompanyScene::Create( director ) );
 
 				//

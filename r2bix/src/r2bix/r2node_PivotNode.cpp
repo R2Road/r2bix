@@ -6,7 +6,7 @@
 
 namespace r2node
 {
-	r2base::NodeUp PivotNode::Create( r2base::Director& director )
+	r2base::NodeUp PivotNode::Create( r2bix::Director& director )
 	{
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )

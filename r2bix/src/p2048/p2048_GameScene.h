@@ -10,6 +10,6 @@ namespace p2048
 		GameScene() = delete;
 
 	public:
-		static r2node::SceneNodeUp Create( r2base::Director& director );
+		static r2node::SceneNodeUp Create( r2bix::Director& director );
 	};
 }

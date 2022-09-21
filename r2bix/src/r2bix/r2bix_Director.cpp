@@ -4,7 +4,7 @@
 
 #include "r2node_SceneNode.h"
 
-namespace r2base
+namespace r2bix
 {
 	Director::Director( const r2bix_director::Config& director_config ) :
 		mScreenBufferManager()
