@@ -120,7 +120,6 @@
     <ClCompile Include="src\test\test_r2bix\item\texture_frame_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\texture_table_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\texture_test.cpp" />
-    <ClCompile Include="src\test\test_r2bix\item\utility_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\visible_resource_research.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\window_input_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\ActionMenu.cpp" />
@@ -131,7 +130,6 @@
     <ClCompile Include="src\test\test_r2bix\menu\InputMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\NodeMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\TextureMenu.cpp" />
-    <ClCompile Include="src\test\test_r2bix\menu\UtilityMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\R2bixMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.cpp" />
     <ClCompile Include="src\test\test_r2bix\TextureTable4Test.cpp" />
@@ -259,7 +257,6 @@
     <ClInclude Include="src\test\test_r2bix\item\texture_frame_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\texture_table_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\texture_test.h" />
-    <ClInclude Include="src\test\test_r2bix\item\utility_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\visible_resource_research.h" />
     <ClInclude Include="src\test\test_r2bix\item\window_input_test.h" />
     <ClInclude Include="src\test\test_r2bix\menu\ActionMenu.h" />
@@ -270,7 +267,6 @@
     <ClInclude Include="src\test\test_r2bix\menu\InputMenu.h" />
     <ClInclude Include="src\test\test_r2bix\menu\NodeMenu.h" />
     <ClInclude Include="src\test\test_r2bix\menu\TextureMenu.h" />
-    <ClInclude Include="src\test\test_r2bix\menu\UtilityMenu.h" />
     <ClInclude Include="src\test\test_r2bix\R2bixMenu.h" />
     <ClInclude Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.h" />
     <ClInclude Include="src\test\test_r2bix\TextureTable4Test.h" />

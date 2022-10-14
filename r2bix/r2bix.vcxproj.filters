@@ -344,9 +344,6 @@
     <ClCompile Include="src\r2bix\r2utility_StringSize.cpp">
       <Filter>r2bix\utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\utility_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\R2bixMenu.cpp">
       <Filter>test\test_r2bix</Filter>
     </ClCompile>
@@ -406,9 +403,6 @@
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\menu\UtilityMenu.cpp">
-      <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\DirectorMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
@@ -710,9 +704,6 @@
     <ClInclude Include="src\r2bix\r2utility_StringSize.h">
       <Filter>r2bix\utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\utility_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_r2bix\R2bixMenu.h">
       <Filter>test\test_r2bix</Filter>
     </ClInclude>
@@ -808,9 +799,6 @@
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
       <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\menu\UtilityMenu.h">
-      <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\DirectorMenu.h">
       <Filter>test\test_r2bix\menu</Filter>

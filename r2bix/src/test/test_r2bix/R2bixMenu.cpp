@@ -11,7 +11,6 @@
 #include "menu/InputMenu.h"
 #include "menu/NodeMenu.h"
 #include "menu/TextureMenu.h"
-#include "menu/UtilityMenu.h"
 
 #include "item/render_test.h"
 
@@ -32,7 +31,6 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 		ret->AddMenu<DirectorMenu>( '1' );
 		ret->AddMenu<InputMenu>( '2' );
 		ret->AddMenu<ColorMenu>( '3' );
-		ret->AddMenu<UtilityMenu>( '4' );
 
 
 
