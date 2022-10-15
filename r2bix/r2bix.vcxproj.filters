@@ -251,9 +251,6 @@
     <ClCompile Include="src\r2bix\r2utility_InputUtil.cpp">
       <Filter>r2bix\utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2utility_StringBuilder.cpp">
-      <Filter>r2bix\utility</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_miniaudio\item\miniaudio_test.cpp">
       <Filter>test\test_miniaudio\item</Filter>
     </ClCompile>
@@ -341,14 +338,8 @@
     <ClCompile Include="src\r2bix\r2component_LabelSComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2utility_StringSize.cpp">
-      <Filter>r2bix\utility</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\R2bixMenu.cpp">
       <Filter>test\test_r2bix</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2utility_StringDecomposition.cpp">
-      <Filter>r2bix\utility</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_miniaudio\MiniAudioMenu.cpp">
       <Filter>test\test_miniaudio</Filter>
@@ -421,6 +412,15 @@
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_Director.cpp">
       <Filter>r2bix\director</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2utility_StringBuilder.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2utility_StringDecomposition.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2utility_StringSize.cpp">
+      <Filter>external\r2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -605,9 +605,6 @@
     <ClInclude Include="src\r2bix\r2utility_InputUtil.h">
       <Filter>r2bix\utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2utility_StringBuilder.h">
-      <Filter>r2bix\utility</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_miniaudio\item\miniaudio_test.h">
       <Filter>test\test_miniaudio\item</Filter>
     </ClInclude>
@@ -701,14 +698,8 @@
     <ClInclude Include="src\r2bix\r2component_LabelSComponent.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2utility_StringSize.h">
-      <Filter>r2bix\utility</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_r2bix\R2bixMenu.h">
       <Filter>test\test_r2bix</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2utility_StringDecomposition.h">
-      <Filter>r2bix\utility</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_miniaudio\MiniAudioMenu.h">
       <Filter>test\test_miniaudio</Filter>
@@ -826,6 +817,15 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_VersionInfo.h">
       <Filter>r2bix\base</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2utility_StringBuilder.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2utility_StringDecomposition.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2utility_StringSize.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

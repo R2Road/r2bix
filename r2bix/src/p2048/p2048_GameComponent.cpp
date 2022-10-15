@@ -1,11 +1,11 @@
 #include "p2048_GameComponent.h"
 
+#include "r2/r2utility_StringBuilder.h"
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2base_Node.h"
 #include "r2bix/r2component_ActionProcessComponent.h"
 #include "r2bix/r2component_LabelSComponent.h"
 #include "r2bix/r2utility_InputUtil.h"
-#include "r2bix/r2utility_StringBuilder.h"
 
 #include "p2048_Config.h"
 #include "p2048_StageViewComponent.h"

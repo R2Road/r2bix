@@ -3,8 +3,8 @@
 #include <algorithm>
 #include <cassert>
 
-#include "r2utility_StringSize.h"
-#include "r2utility_StringDecomposition.h"
+#include "r2/r2utility_StringSize.h"
+#include "r2/r2utility_StringDecomposition.h"
 
 namespace r2render
 {
