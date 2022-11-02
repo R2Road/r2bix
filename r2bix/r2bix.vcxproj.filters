@@ -803,9 +803,6 @@
     <ClInclude Include="src\r2bix\r2bix_Director.h">
       <Filter>r2bix\director</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_VersionInfo.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2utility_StringBuilder.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -825,6 +822,9 @@
       <Filter>r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_DebugConfig.h">
+      <Filter>r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_VersionInfo.h">
       <Filter>r2bix</Filter>
     </ClInclude>
   </ItemGroup>
