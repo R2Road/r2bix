@@ -4,11 +4,11 @@
 #include <conio.h>
 #include <utility> // std::move
 
-#include "r2bix/r2action_BlinkAction.h"
-#include "r2bix/r2action_CallbackAction.h"
-#include "r2bix/r2action_DelayAction.h"
-#include "r2bix/r2action_RepeatAction.h"
-#include "r2bix/r2action_SequenceAction.h"
+#include "r2bix/r2bix_action_BlinkAction.h"
+#include "r2bix/r2bix_action_CallbackAction.h"
+#include "r2bix/r2bix_action_DelayAction.h"
+#include "r2bix/r2bix_action_RepeatAction.h"
+#include "r2bix/r2bix_action_SequenceAction.h"
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2component_ActionProcessComponent.h"
 #include "r2bix/r2component_LabelSComponent.h"

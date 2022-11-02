@@ -1,27 +1,29 @@
-#include "r2action_MoveByAction.h"
+#include "r2bix_action_MoveToAction.h"
 
 #include "r2base_Node.h"
 
 namespace r2bix_action
 {
-	MoveByAction::MoveByAction() :
+	MoveToAction::MoveToAction() :
 		mMoveAmount()
 		, mStartPoint()
+		, mEndPoint()
 		, mTimer( 1.f )
 	{}
 
-	std::unique_ptr<MoveByAction> MoveByAction::Create()
+	std::unique_ptr<MoveToAction> MoveToAction::Create()
 	{
-		std::unique_ptr<MoveByAction> ret( new ( std::nothrow ) MoveByAction() );
+		std::unique_ptr<MoveToAction> ret( new ( std::nothrow ) MoveToAction() );
 		return ret;
 	}
 
-	void MoveByAction::Enter()
+	void MoveToAction::Enter()
 	{
 		mStartPoint = mOwnerNode->mTransformComponent->GetPosition();
+		mMoveAmount = mEndPoint - mStartPoint;
 		mTimer.Start();
 	}
-	bool MoveByAction::Update( const float delta_time )
+	bool MoveToAction::Update( const float delta_time )
 	{
 		if( mTimer.Update( delta_time ) )
 		{
@@ -32,7 +34,7 @@ namespace r2bix_action
 		}
 		else
 		{
-			mOwnerNode->mTransformComponent->SetPosition( mStartPoint + mMoveAmount );
+			mOwnerNode->mTransformComponent->SetPosition( mEndPoint );
 		}
 
 		return mTimer.IsAlive();

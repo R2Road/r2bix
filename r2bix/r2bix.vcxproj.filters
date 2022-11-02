@@ -152,33 +152,6 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\DevelopmentMenu.cpp" />
-    <ClCompile Include="src\r2bix\r2action_AnimationRequestAction.cpp">
-      <Filter>r2bix\action</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2action_BlinkAction.cpp">
-      <Filter>r2bix\action</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2action_CallbackAction.cpp">
-      <Filter>r2bix\action</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2action_DelayAction.cpp">
-      <Filter>r2bix\action</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2action_MoveByAction.cpp">
-      <Filter>r2bix\action</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2action_MoveToAction.cpp">
-      <Filter>r2bix\action</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2action_RepeatAction.cpp">
-      <Filter>r2bix\action</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2action_SequenceAction.cpp">
-      <Filter>r2bix\action</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2action_TickAction.cpp">
-      <Filter>r2bix\action</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2base_Node.cpp">
       <Filter>r2bix\base</Filter>
     </ClCompile>
@@ -422,6 +395,33 @@
     <ClCompile Include="src\r2bix\r2bix_animation_constant.cpp">
       <Filter>r2bix\animation</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_action_TickAction.cpp">
+      <Filter>r2bix\action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_action_SequenceAction.cpp">
+      <Filter>r2bix\action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_action_RepeatAction.cpp">
+      <Filter>r2bix\action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_action_MoveToAction.cpp">
+      <Filter>r2bix\action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_action_MoveByAction.cpp">
+      <Filter>r2bix\action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_action_DelayAction.cpp">
+      <Filter>r2bix\action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_action_CallbackAction.cpp">
+      <Filter>r2bix\action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_action_BlinkAction.cpp">
+      <Filter>r2bix\action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_action_AnimationRequestAction.cpp">
+      <Filter>r2bix\action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -494,33 +494,6 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\DevelopmentMenu.h" />
-    <ClInclude Include="src\r2bix\r2action_AnimationRequestAction.h">
-      <Filter>r2bix\action</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2action_BlinkAction.h">
-      <Filter>r2bix\action</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2action_CallbackAction.h">
-      <Filter>r2bix\action</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2action_DelayAction.h">
-      <Filter>r2bix\action</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2action_MoveByAction.h">
-      <Filter>r2bix\action</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2action_MoveToAction.h">
-      <Filter>r2bix\action</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2action_RepeatAction.h">
-      <Filter>r2bix\action</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2action_SequenceAction.h">
-      <Filter>r2bix\action</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2action_TickAction.h">
-      <Filter>r2bix\action</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2base_Component.h">
       <Filter>r2bix\base</Filter>
     </ClInclude>
@@ -825,6 +798,33 @@
       <Filter>r2bix\animation</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_action_iAction.h">
+      <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_TickAction.h">
+      <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_SequenceAction.h">
+      <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_RepeatAction.h">
+      <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_MoveToAction.h">
+      <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_MoveByAction.h">
+      <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_DelayAction.h">
+      <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_CallbackAction.h">
+      <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_BlinkAction.h">
+      <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_AnimationRequestAction.h">
       <Filter>r2bix\action</Filter>
     </ClInclude>
   </ItemGroup>

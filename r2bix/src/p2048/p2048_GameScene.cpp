@@ -2,10 +2,10 @@
 
 #include <numeric>
 
-#include "r2bix/r2action_SequenceAction.h"
-#include "r2bix/r2action_DelayAction.h"
-#include "r2bix/r2action_MoveByAction.h"
-#include "r2bix/r2action_MoveToAction.h"
+#include "r2bix/r2bix_action_SequenceAction.h"
+#include "r2bix/r2bix_action_DelayAction.h"
+#include "r2bix/r2bix_action_MoveByAction.h"
+#include "r2bix/r2bix_action_MoveToAction.h"
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2component_ActionProcessComponent.h"
 #include "r2bix/r2component_CustomTextureComponent.h"
