@@ -494,12 +494,6 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\DevelopmentMenu.h" />
-    <ClInclude Include="src\r2bix\r2base_Component.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_ComponentStaticID.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2base_Node.h">
       <Filter>r2bix\base</Filter>
     </ClInclude>
@@ -695,9 +689,6 @@
     <ClInclude Include="external\miniaudio\miniaudio.h">
       <Filter>external\miniaudio</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_iComponent.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_RectInt.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -826,6 +817,15 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_action_AnimationRequestAction.h">
       <Filter>r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_iComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_ComponentStaticID.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_Component.h">
+      <Filter>r2bix\component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
