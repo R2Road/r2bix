@@ -718,7 +718,7 @@ namespace action_test
 
 			{
 				DECLARATION_MAIN( auto action = r2action::AnimationRequestAction::Create() );
-				PROCESS_MAIN( action->SetAnimationIndex( r2animation::eIndex::Run_1 ) );
+				PROCESS_MAIN( action->SetAnimationIndex( r2bix_animation::eIndex::Run_1 ) );
 				PROCESS_MAIN( action->SetOrder( r2action::AnimationRequestAction::eOrder::PlayOnce ) );
 
 				std::cout << r2cm::linefeed;

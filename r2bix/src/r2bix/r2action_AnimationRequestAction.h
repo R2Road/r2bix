@@ -30,13 +30,13 @@ namespace r2action
 		{
 			mOrder = order;
 		}
-		void SetAnimationIndex( const r2animation::eIndex animation_index )
+		void SetAnimationIndex( const r2bix_animation::eIndex animation_index )
 		{
 			mAnimationIndex = animation_index;
 		}
 
 	private:
 		eOrder mOrder;
-		r2animation::eIndex mAnimationIndex;
+		r2bix_animation::eIndex mAnimationIndex;
 	};
 }

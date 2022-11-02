@@ -29,7 +29,7 @@ namespace r2component
 		};
 		struct Animation
 		{
-			r2animation::eIndex Index;
+			r2bix_animation::eIndex Index;
 			std::vector<AnimationFrame> Container;
 		};
 		using AnimationPackageT = std::vector<Animation>;
@@ -58,12 +58,12 @@ namespace r2component
 		//
 		//
 		void LoadAnimation( const r2base::TextureFrameAnimationInfo& info );
-		bool HasAnimation( const r2animation::eIndex animation_index ) const;
-		void RunAnimation_Once( const r2animation::eIndex animation_index );
-		void RunAnimation_Repeat( const r2animation::eIndex animation_index );
+		bool HasAnimation( const r2bix_animation::eIndex animation_index ) const;
+		void RunAnimation_Once( const r2bix_animation::eIndex animation_index );
+		void RunAnimation_Repeat( const r2bix_animation::eIndex animation_index );
 		bool IsRunning() const { return mAnimationPackage.end() != mCurrentAnimation; }
 		void StopAnimation();
-		const r2animation::eIndex GetCurrentAnimationIndex() const;
+		const r2bix_animation::eIndex GetCurrentAnimationIndex() const;
 
 	private:
 		r2component::TextureFrameRenderComponent* mTextureFrameRenderComponent;

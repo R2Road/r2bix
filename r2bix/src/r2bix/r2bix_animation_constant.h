@@ -1,6 +1,6 @@
 #pragma once
 
-namespace r2animation
+namespace r2bix_animation
 {
 	enum class eIndex
 	{

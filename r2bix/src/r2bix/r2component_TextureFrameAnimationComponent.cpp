@@ -65,7 +65,7 @@ namespace r2component
 
 		mCurrentAnimation = mAnimationPackage.end();
 	}
-	bool TextureFrameAnimationComponent::HasAnimation( const r2animation::eIndex animation_index ) const
+	bool TextureFrameAnimationComponent::HasAnimation( const r2bix_animation::eIndex animation_index ) const
 	{
 		for( const auto& a : mAnimationPackage )
 		{
@@ -77,7 +77,7 @@ namespace r2component
 
 		return false;
 	}
-	void TextureFrameAnimationComponent::RunAnimation_Once( const r2animation::eIndex animation_index )
+	void TextureFrameAnimationComponent::RunAnimation_Once( const r2bix_animation::eIndex animation_index )
 	{
 		StopAnimation();
 
@@ -93,7 +93,7 @@ namespace r2component
 			}
 		}
 	}
-	void TextureFrameAnimationComponent::RunAnimation_Repeat( const r2animation::eIndex animation_index )
+	void TextureFrameAnimationComponent::RunAnimation_Repeat( const r2bix_animation::eIndex animation_index )
 	{
 		StopAnimation();
 
@@ -120,11 +120,11 @@ namespace r2component
 		mCurrentAnimationFrameIndex = 0u;
 	}
 
-	const r2animation::eIndex TextureFrameAnimationComponent::GetCurrentAnimationIndex() const
+	const r2bix_animation::eIndex TextureFrameAnimationComponent::GetCurrentAnimationIndex() const
 	{
 		if( mAnimationPackage.end() == mCurrentAnimation )
 		{
-			return r2animation::eIndex::None;
+			return r2bix_animation::eIndex::None;
 		}
 
 		return mCurrentAnimation->Index;

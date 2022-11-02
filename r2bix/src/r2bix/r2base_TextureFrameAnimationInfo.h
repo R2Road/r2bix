@@ -21,7 +21,7 @@ namespace r2base
 		};
 		struct Animation
 		{
-			r2animation::eIndex Index;
+			r2bix_animation::eIndex Index;
 			std::vector<AnimationFrame> Container;
 		};
 		using AnimationPackageT = std::vector<Animation>;

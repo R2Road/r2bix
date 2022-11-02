@@ -7,7 +7,7 @@
 
 namespace r2action
 {
-	AnimationRequestAction::AnimationRequestAction() : mAnimationIndex( r2animation::eIndex::None )
+	AnimationRequestAction::AnimationRequestAction() : mAnimationIndex( r2bix_animation::eIndex::None )
 	{}
 
 	std::unique_ptr<AnimationRequestAction> AnimationRequestAction::Create()

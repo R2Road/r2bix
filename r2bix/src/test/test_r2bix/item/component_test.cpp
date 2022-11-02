@@ -698,15 +698,15 @@ namespace component_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
-				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_1 ) );
-				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Run_1 ) );
-				EXPECT_FALSE( tfac->HasAnimation( r2animation::eIndex::Walk_1 ) );
+				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Idle_1 ) );
+				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Run_1 ) );
+				EXPECT_FALSE( tfac->HasAnimation( r2bix_animation::eIndex::Walk_1 ) );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( tfac->RunAnimation_Once( r2animation::eIndex::Run_1 ) );
-				EXPECT_FALSE( r2animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
-				EXPECT_TRUE( r2animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
+				PROCESS_MAIN( tfac->RunAnimation_Once( r2bix_animation::eIndex::Run_1 ) );
+				EXPECT_FALSE( r2bix_animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
+				EXPECT_TRUE( r2bix_animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
 			}
 
 			std::cout << r2cm::split;
@@ -734,7 +734,7 @@ namespace component_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( tfac->StopAnimation() );
-				EXPECT_EQ( r2animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
+				EXPECT_EQ( r2bix_animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
 			}
 
 			std::cout << r2cm::split;
@@ -781,15 +781,15 @@ namespace component_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
-				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Idle_1 ) );
-				EXPECT_TRUE( tfac->HasAnimation( r2animation::eIndex::Run_1 ) );
-				EXPECT_FALSE( tfac->HasAnimation( r2animation::eIndex::Walk_1 ) );
+				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Idle_1 ) );
+				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Run_1 ) );
+				EXPECT_FALSE( tfac->HasAnimation( r2bix_animation::eIndex::Walk_1 ) );
 
 				std::cout << r2cm::linefeed;
 
-				PROCESS_MAIN( tfac->RunAnimation_Repeat( r2animation::eIndex::Run_1 ) );
-				EXPECT_FALSE( r2animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
-				EXPECT_TRUE( r2animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
+				PROCESS_MAIN( tfac->RunAnimation_Repeat( r2bix_animation::eIndex::Run_1 ) );
+				EXPECT_FALSE( r2bix_animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
+				EXPECT_TRUE( r2bix_animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
 			}
 
 			std::cout << r2cm::split;
@@ -817,7 +817,7 @@ namespace component_test
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( tfac->StopAnimation() );
-				EXPECT_EQ( r2animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
+				EXPECT_EQ( r2bix_animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
 			}
 
 			std::cout << r2cm::split;
