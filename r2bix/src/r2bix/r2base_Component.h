@@ -13,7 +13,8 @@ namespace r2base
 		using MyUp = std::unique_ptr<MyT>;
 
 	protected:
-		Component( r2base::Node& owner_node ) : r2base::iComponent( owner_node ) {}
+		Component( r2base::Node& owner_node ) : r2base::iComponent( owner_node )
+		{}
 
 	public:
 		static MyUp Create( r2base::Node& owner_node )
@@ -27,6 +28,9 @@ namespace r2base
 			return ret;
 		}
 
-		int GetStaticID() const override { return r2base::ComponentStaticID<MyT>::Get(); }
+		int GetStaticID() const override
+		{
+			return r2base::ComponentStaticID<MyT>::Get();
+		}
 	};
 }
