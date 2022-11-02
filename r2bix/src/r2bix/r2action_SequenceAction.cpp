@@ -1,6 +1,6 @@
 #include "r2action_SequenceAction.h"
 
-namespace r2action
+namespace r2bix_action
 {
 	SequenceAction::SequenceAction() :
 		mActionContainer()

@@ -3,7 +3,7 @@
 #include "r2bix_action_iAction.h"
 #include "r2bix_animation_constant.h"
 
-namespace r2action
+namespace r2bix_action
 {
 	class AnimationRequestAction : public r2bix_action::iAction
 	{

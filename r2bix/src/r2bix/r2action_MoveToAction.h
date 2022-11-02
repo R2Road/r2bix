@@ -5,7 +5,7 @@
 #include "r2/r2_PointInt.h"
 #include "r2/r2_TimerFloat.h"
 
-namespace r2action
+namespace r2bix_action
 {
 	class MoveToAction : public r2bix_action::iAction
 	{

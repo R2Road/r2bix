@@ -2,7 +2,7 @@
 
 #include "r2bix_action_iAction.h"
 
-namespace r2action
+namespace r2bix_action
 {
 	class RepeatAction : public r2bix_action::iAction
 	{

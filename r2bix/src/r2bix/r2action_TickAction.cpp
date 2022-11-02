@@ -2,7 +2,7 @@
 
 #include "r2base_Node.h"
 
-namespace r2action
+namespace r2bix_action
 {
 	TickAction::TickAction() : mTickLimit( 0u ), mCurrentTick( 0u )
 	{}

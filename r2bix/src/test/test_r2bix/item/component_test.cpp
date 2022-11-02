@@ -867,7 +867,7 @@ namespace component_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto tick_action = r2action::TickAction::Create() );
+				DECLARATION_MAIN( auto tick_action = r2bix_action::TickAction::Create() );
 				PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 
 				std::cout << r2cm::linefeed;

@@ -4,7 +4,7 @@
 
 #include "r2/r2_TimerFloat.h"
 
-namespace r2action
+namespace r2bix_action
 {
 	class DelayAction : public r2bix_action::iAction
 	{

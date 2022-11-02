@@ -76,40 +76,40 @@ namespace p2048
 				{
 					auto component = number_node->AddComponent<r2component::ActionProcessComponent>();
 
-					auto repeat_action = r2action::RepeatAction::Create();
+					auto repeat_action = r2bix_action::RepeatAction::Create();
 					{
-						auto sequence_action = r2action::SequenceAction::Create();
+						auto sequence_action = r2bix_action::SequenceAction::Create();
 						
 						{
-							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							auto action = sequence_action->AddAction<r2bix_action::DelayAction>();
 							action->SetTimeLimit( 3.f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							auto action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 							action->SetTimeLimit( 0.1f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							auto action = sequence_action->AddAction<r2bix_action::DelayAction>();
 							action->SetTimeLimit( 4.f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							auto action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 							action->SetTimeLimit( 0.1f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							auto action = sequence_action->AddAction<r2bix_action::DelayAction>();
 							action->SetTimeLimit( 1.f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							auto action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 							action->SetTimeLimit( 0.2f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							auto action = sequence_action->AddAction<r2bix_action::DelayAction>();
 							action->SetTimeLimit( 0.2f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							auto action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 							action->SetTimeLimit( 0.1f );
 						}
 
@@ -135,39 +135,39 @@ namespace p2048
 				{
 					auto component = number_node->AddComponent<r2component::ActionProcessComponent>();
 
-					auto repeat_action = r2action::RepeatAction::Create();
+					auto repeat_action = r2bix_action::RepeatAction::Create();
 					{
-						auto sequence_action = r2action::SequenceAction::Create();
+						auto sequence_action = r2bix_action::SequenceAction::Create();
 						{
-							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							auto action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 							action->SetTimeLimit( 0.2f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							auto action = sequence_action->AddAction<r2bix_action::DelayAction>();
 							action->SetTimeLimit( 1.2f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							auto action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 							action->SetTimeLimit( 0.2f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							auto action = sequence_action->AddAction<r2bix_action::DelayAction>();
 							action->SetTimeLimit( 0.2f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							auto action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 							action->SetTimeLimit( 0.1f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							auto action = sequence_action->AddAction<r2bix_action::DelayAction>();
 							action->SetTimeLimit( 0.3f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::BlinkAction>();
+							auto action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 							action->SetTimeLimit( 0.4f );
 						}
 						{
-							auto action = sequence_action->AddAction<r2action::DelayAction>();
+							auto action = sequence_action->AddAction<r2bix_action::DelayAction>();
 							action->SetTimeLimit( 0.4f );
 						}
 
@@ -187,13 +187,13 @@ namespace p2048
 				{
 					auto component = number_node->AddComponent<r2component::ActionProcessComponent>();
 
-					auto repeat_action = r2action::RepeatAction::Create();
+					auto repeat_action = r2bix_action::RepeatAction::Create();
 					{
-						auto sequence_action = r2action::SequenceAction::Create();
+						auto sequence_action = r2bix_action::SequenceAction::Create();
 						{
-							auto callback_action = sequence_action->AddAction<r2action::CallbackAction>();
-							auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
-							auto blink_action = sequence_action->AddAction<r2action::BlinkAction>();
+							auto callback_action = sequence_action->AddAction<r2bix_action::CallbackAction>();
+							auto delay_action = sequence_action->AddAction<r2bix_action::DelayAction>();
+							auto blink_action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 							
 							callback_action->SetCallback( [delay_action, blink_action]()
 							{
@@ -226,15 +226,15 @@ namespace p2048
 
 			auto action_process_component = mLabelNode->AddComponent<r2component::ActionProcessComponent>();
 
-			auto repeat_action = r2action::RepeatAction::Create();
+			auto repeat_action = r2bix_action::RepeatAction::Create();
 			{
-				auto sequence_action = r2action::SequenceAction::Create();
+				auto sequence_action = r2bix_action::SequenceAction::Create();
 				{
-					auto action = sequence_action->AddAction<r2action::DelayAction>();
+					auto action = sequence_action->AddAction<r2bix_action::DelayAction>();
 					action->SetTimeLimit( 1.1f );
 				}
 				{
-					auto action = sequence_action->AddAction<r2action::BlinkAction>();
+					auto action = sequence_action->AddAction<r2bix_action::BlinkAction>();
 					action->SetTimeLimit( 0.5f );
 				}
 

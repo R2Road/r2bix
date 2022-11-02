@@ -2,7 +2,7 @@
 
 #include <cassert>
 
-namespace r2action
+namespace r2bix_action
 {
 	CallbackAction::CallbackAction() : mCallback()
 	{}

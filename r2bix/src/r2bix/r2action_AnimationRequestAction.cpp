@@ -5,7 +5,7 @@
 #include "r2base_Node.h"
 #include "r2component_TextureFrameAnimationComponent.h"
 
-namespace r2action
+namespace r2bix_action
 {
 	AnimationRequestAction::AnimationRequestAction() : mAnimationIndex( r2bix_animation::eIndex::None )
 	{}

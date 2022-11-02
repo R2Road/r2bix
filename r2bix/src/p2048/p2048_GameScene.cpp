@@ -168,16 +168,16 @@ namespace p2048
 
 				auto action_process_component = you_win_node->AddComponent<r2component::ActionProcessComponent>();
 				{
-					auto sequence_action = r2action::SequenceAction::Create();
+					auto sequence_action = r2bix_action::SequenceAction::Create();
 
-					auto moveto_action = sequence_action->AddAction<r2action::MoveToAction>();
+					auto moveto_action = sequence_action->AddAction<r2bix_action::MoveToAction>();
 					moveto_action->SetEndPoint( you_win_node->GetComponent<r2component::TransformComponent>()->GetPosition() );
 					moveto_action->SetTimeLimit( 0.f );
 
-					auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
+					auto delay_action = sequence_action->AddAction<r2bix_action::DelayAction>();
 					delay_action->SetTimeLimit( 1.f );
 
-					auto moveby_action = sequence_action->AddAction<r2action::MoveByAction>();
+					auto moveby_action = sequence_action->AddAction<r2bix_action::MoveByAction>();
 					moveby_action->SetMoveAmount( r2::PointInt( 0, 17 ) );
 					moveby_action->SetTimeLimit( 1.2f );
 
@@ -204,16 +204,16 @@ namespace p2048
 
 				auto action_process_component = game_over_node->AddComponent<r2component::ActionProcessComponent>();
 				{
-					auto sequence_action = r2action::SequenceAction::Create();
+					auto sequence_action = r2bix_action::SequenceAction::Create();
 
-					auto moveto_action = sequence_action->AddAction<r2action::MoveToAction>();
+					auto moveto_action = sequence_action->AddAction<r2bix_action::MoveToAction>();
 					moveto_action->SetEndPoint( game_over_node->GetComponent<r2component::TransformComponent>()->GetPosition() );
 					moveto_action->SetTimeLimit( 0.f );
 
-					auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
+					auto delay_action = sequence_action->AddAction<r2bix_action::DelayAction>();
 					delay_action->SetTimeLimit( 1.f );
 
-					auto moveby_action = sequence_action->AddAction<r2action::MoveByAction>();
+					auto moveby_action = sequence_action->AddAction<r2bix_action::MoveByAction>();
 					moveby_action->SetMoveAmount( r2::PointInt( 0, 17 ) );
 					moveby_action->SetTimeLimit( 1.2f );
 

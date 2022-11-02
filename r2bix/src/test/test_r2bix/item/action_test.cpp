@@ -67,7 +67,7 @@ namespace action_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( auto tick_action = r2action::TickAction::Create() );
+				DECLARATION_MAIN( auto tick_action = r2bix_action::TickAction::Create() );
 				PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 
 				std::cout << r2cm::linefeed;
@@ -134,7 +134,7 @@ namespace action_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( auto move_by_action = r2action::DelayAction::Create() );
+				DECLARATION_MAIN( auto move_by_action = r2bix_action::DelayAction::Create() );
 				PROCESS_MAIN( move_by_action->SetTimeLimit( 1.5f ) );
 
 				std::cout << r2cm::linefeed;
@@ -207,19 +207,19 @@ namespace action_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
+				DECLARATION_MAIN( auto sequence_action = r2bix_action::SequenceAction::Create() );
 
 				std::cout << r2cm::linefeed;
 
 				{
-					DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
+					DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2bix_action::TickAction>() );
 					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 				}
 
 				std::cout << r2cm::linefeed;
 
 				{
-					DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2action::TickAction>() );
+					DECLARATION_MAIN( auto tick_action = sequence_action->AddAction<r2bix_action::TickAction>() );
 					PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 				}
 
@@ -292,7 +292,7 @@ namespace action_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( auto move_by_action = r2action::MoveByAction::Create() );
+				DECLARATION_MAIN( auto move_by_action = r2bix_action::MoveByAction::Create() );
 				PROCESS_MAIN( move_by_action->SetMoveAmount( { 5, 5 } ) );
 				PROCESS_MAIN( move_by_action->SetTimeLimit( 1.5f ) );
 
@@ -377,7 +377,7 @@ namespace action_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( auto move_to_action = r2action::MoveToAction::Create() );
+				DECLARATION_MAIN( auto move_to_action = r2bix_action::MoveToAction::Create() );
 				PROCESS_MAIN( move_to_action->SetEndPoint( { 5, 5 } ) );
 				PROCESS_MAIN( move_to_action->SetTimeLimit( 1.5f ) );
 
@@ -458,32 +458,32 @@ namespace action_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto repeat_action = r2action::RepeatAction::Create() );
+				DECLARATION_MAIN( auto repeat_action = r2bix_action::RepeatAction::Create() );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
+				DECLARATION_MAIN( auto sequence_action = r2bix_action::SequenceAction::Create() );
 				{
 					std::cout << r2cm::linefeed;
 
-					DECLARATION_MAIN( auto move_by_action_1 = sequence_action->AddAction<r2action::MoveByAction>() );
+					DECLARATION_MAIN( auto move_by_action_1 = sequence_action->AddAction<r2bix_action::MoveByAction>() );
 					PROCESS_MAIN( move_by_action_1->SetMoveAmount( { 5, 5 } ) );
 					PROCESS_MAIN( move_by_action_1->SetTimeLimit( 1.5f ) );
 
 					std::cout << r2cm::linefeed;
 
-					DECLARATION_MAIN( auto delay_action_1 = sequence_action->AddAction<r2action::DelayAction>() );
+					DECLARATION_MAIN( auto delay_action_1 = sequence_action->AddAction<r2bix_action::DelayAction>() );
 					PROCESS_MAIN( delay_action_1->SetTimeLimit( 1.5f ) );
 
 					std::cout << r2cm::linefeed;
 
-					DECLARATION_MAIN( auto move_by_action_2 = sequence_action->AddAction<r2action::MoveByAction>() );
+					DECLARATION_MAIN( auto move_by_action_2 = sequence_action->AddAction<r2bix_action::MoveByAction>() );
 					PROCESS_MAIN( move_by_action_2->SetMoveAmount( { -5, -5 } ) );
 					PROCESS_MAIN( move_by_action_2->SetTimeLimit( 1.5f ) );
 
 					std::cout << r2cm::linefeed;
 
-					DECLARATION_MAIN( auto delay_action_2 = sequence_action->AddAction<r2action::DelayAction>() );
+					DECLARATION_MAIN( auto delay_action_2 = sequence_action->AddAction<r2bix_action::DelayAction>() );
 					PROCESS_MAIN( delay_action_2->SetTimeLimit( 1.5f ) );
 				}
 
@@ -557,23 +557,23 @@ namespace action_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto repeat_action = r2action::RepeatAction::Create() );
+				DECLARATION_MAIN( auto repeat_action = r2bix_action::RepeatAction::Create() );
 
 				std::cout << r2cm::linefeed;
 				{
-					DECLARATION_MAIN( auto sequence_action = r2action::SequenceAction::Create() );
+					DECLARATION_MAIN( auto sequence_action = r2bix_action::SequenceAction::Create() );
 
 					std::cout << r2cm::linefeed;
 
 					{
-						DECLARATION_MAIN( auto action = sequence_action->AddAction<r2action::BlinkAction>() );
+						DECLARATION_MAIN( auto action = sequence_action->AddAction<r2bix_action::BlinkAction>() );
 						PROCESS_MAIN( action->SetTimeLimit( 0.5f ) );
 					}
 
 					std::cout << r2cm::linefeed;
 
 					{
-						DECLARATION_MAIN( auto action = sequence_action->AddAction<r2action::DelayAction>() );
+						DECLARATION_MAIN( auto action = sequence_action->AddAction<r2bix_action::DelayAction>() );
 						PROCESS_MAIN( action->SetTimeLimit( 0.5f ) );
 					}
 
@@ -648,7 +648,7 @@ namespace action_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto repeat_action = r2action::CallbackAction::Create() );
+				DECLARATION_MAIN( auto repeat_action = r2bix_action::CallbackAction::Create() );
 
 				std::cout << r2cm::linefeed;
 
@@ -717,9 +717,9 @@ namespace action_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto action = r2action::AnimationRequestAction::Create() );
+				DECLARATION_MAIN( auto action = r2bix_action::AnimationRequestAction::Create() );
 				PROCESS_MAIN( action->SetAnimationIndex( r2bix_animation::eIndex::Run_1 ) );
-				PROCESS_MAIN( action->SetOrder( r2action::AnimationRequestAction::eOrder::PlayOnce ) );
+				PROCESS_MAIN( action->SetOrder( r2bix_action::AnimationRequestAction::eOrder::PlayOnce ) );
 
 				std::cout << r2cm::linefeed;
 
