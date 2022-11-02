@@ -179,9 +179,6 @@
     <ClCompile Include="src\r2bix\r2action_TickAction.cpp">
       <Filter>r2bix\action</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2animation_constant.cpp">
-      <Filter>r2bix\animation</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2base_Node.cpp">
       <Filter>r2bix\base</Filter>
     </ClCompile>
@@ -422,6 +419,9 @@
     <ClCompile Include="src\r2bix\r2bix_DebugConfig.cpp">
       <Filter>r2bix</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_animation_constant.cpp">
+      <Filter>r2bix\animation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -520,9 +520,6 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2action_TickAction.h">
       <Filter>r2bix\action</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2animation_constant.h">
-      <Filter>r2bix\animation</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2base_Action.h">
       <Filter>r2bix\base</Filter>
@@ -826,6 +823,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_VersionInfo.h">
       <Filter>r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_animation_constant.h">
+      <Filter>r2bix\animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

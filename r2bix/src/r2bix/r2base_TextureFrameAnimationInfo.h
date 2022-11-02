@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "r2animation_constant.h"
+#include "r2bix_animation_constant.h"
 
 namespace r2render
 {

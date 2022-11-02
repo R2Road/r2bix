@@ -1,7 +1,7 @@
 #pragma once
 
 #include "r2base_Action.h"
-#include "r2animation_constant.h"
+#include "r2bix_animation_constant.h"
 
 namespace r2action
 {
