@@ -4,7 +4,7 @@
 
 #include "r2input_Constant.h"
 
-namespace r2input
+namespace r2bix_input
 {
 	class KeyboardInputListener;
 

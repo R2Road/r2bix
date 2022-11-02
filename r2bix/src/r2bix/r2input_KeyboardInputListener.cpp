@@ -1,6 +1,6 @@
 #include "r2input_KeyboardInputListener.h"
 
-namespace r2input
+namespace r2bix_input
 {
 	KeyboardInputListener::KeyboardInputListener( std::initializer_list<uint8_t> list ) :
 		mObservationKeyList( list )

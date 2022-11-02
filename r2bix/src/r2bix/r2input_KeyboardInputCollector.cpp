@@ -4,7 +4,7 @@
 
 #include "r2input_KeyboardInputListener.h"
 
-namespace r2input
+namespace r2bix_input
 {
 	KeyboardInputCollector::KeyboardInputCollector() : mKeyboardInputListener( nullptr )
 	{}

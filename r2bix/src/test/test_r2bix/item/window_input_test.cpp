@@ -28,8 +28,8 @@ namespace window_input_test
 			std::cout << "[ESC] Exit" << r2cm::linefeed;
 			std::cout << "[A] ..." << r2cm::linefeed;
 
-			r2input::KeyboardInputCollector keyboard_input_collector;
-			r2input::KeyboardInputListener keyboard_input_listener( {
+			r2bix_input::KeyboardInputCollector keyboard_input_collector;
+			r2bix_input::KeyboardInputListener keyboard_input_listener( {
 				0x1B		// esc
 				, 0x41		// a
 			} );
@@ -86,8 +86,8 @@ namespace window_input_test
 			std::cout << "[ESC] Exit" << r2cm::linefeed;
 			std::cout << "[WASD] Move" << r2cm::linefeed;
 
-			r2input::KeyboardInputCollector keyboard_input_collector;
-			r2input::KeyboardInputListener keyboard_input_listener( {
+			r2bix_input::KeyboardInputCollector keyboard_input_collector;
+			r2bix_input::KeyboardInputListener keyboard_input_listener( {
 				0x1B		// esc
 				, 0x41		// a
 				, 0x44		// d

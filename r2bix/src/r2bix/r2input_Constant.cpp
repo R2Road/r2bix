@@ -2,7 +2,7 @@
 
 #include <Windows.h>
 
-namespace r2input
+namespace r2bix_input
 {
 	int GetKeyState( const KeyCodeTypeT key_code )
 	{

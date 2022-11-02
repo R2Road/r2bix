@@ -62,6 +62,6 @@ namespace p2048
 		r2base::Node* mYouWinNode;
 		r2base::Node* mGameOverNode;
 
-		r2input::KeyboardInputListener mKeyboardInputListener;
+		r2bix_input::KeyboardInputListener mKeyboardInputListener;
 	};
 }

@@ -68,11 +68,11 @@ namespace r2bix
 		mScreenBufferManager.Write2BackBuffer( texture );
 	}
 
-	void Director::AddInputListener( r2input::KeyboardInputListener* const keyboard_input_listener )
+	void Director::AddInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
 	{
 		mKeyboardInputCollector.AddListener( keyboard_input_listener );
 	}
-	void Director::RemoveInputListener( r2input::KeyboardInputListener* const keyboard_input_listener )
+	void Director::RemoveInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
 	{
 		mKeyboardInputCollector.RemoveListener( keyboard_input_listener );
 	}

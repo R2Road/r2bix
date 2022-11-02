@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-namespace r2input
+namespace r2bix_input
 {
 	using KeyCodeTypeT = uint8_t;
 

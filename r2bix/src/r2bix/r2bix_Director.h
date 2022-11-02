@@ -40,8 +40,8 @@ namespace r2bix
 		//
 		// Input
 		//
-		void AddInputListener( r2input::KeyboardInputListener* const keyboard_input_listener );
-		void RemoveInputListener( r2input::KeyboardInputListener* const keyboard_input_listener );
+		void AddInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener );
+		void RemoveInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener );
 
 	private:
 		r2bix_director::ScreenBufferManager mScreenBufferManager;
@@ -49,7 +49,7 @@ namespace r2bix
 		bool mbAbort;
 		r2::SizeInt mScreenBufferSIze;
 
-		r2input::KeyboardInputCollector mKeyboardInputCollector;
+		r2bix_input::KeyboardInputCollector mKeyboardInputCollector;
 
 		r2node::SceneNodeUp mCurrentSceneNode;
 		r2node::SceneNodeUp mNextSceneNode;
