@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "r2base_Action.h"
+#include "r2bix_action_iAction.h"
 #include "r2base_Component.h"
 
 namespace r2component
@@ -15,7 +15,7 @@ namespace r2component
 		//
 		//
 		//
-		void SetAction( r2base::ActionUp action )
+		void SetAction( r2bix_action::ActionUp action )
 		{
 			mAction = std::move( action );
 		}
@@ -29,7 +29,7 @@ namespace r2component
 		void Update( const float delta_time ) override;
 
 	private:
-		r2base::ActionUp mAction;
+		r2bix_action::ActionUp mAction;
 		bool mbStart;
 	};
 }

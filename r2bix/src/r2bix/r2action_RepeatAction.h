@@ -1,10 +1,10 @@
 #pragma once
 
-#include "r2base_Action.h"
+#include "r2bix_action_iAction.h"
 
 namespace r2action
 {
-	class RepeatAction : public r2base::Action
+	class RepeatAction : public r2bix_action::iAction
 	{
 	private:
 		RepeatAction();
@@ -21,12 +21,12 @@ namespace r2action
 		//
 		//
 		//
-		void SetAction( r2base::ActionUp action )
+		void SetAction( r2bix_action::ActionUp action )
 		{
 			mAction = std::move( action );
 		}
 
 	private:
-		r2base::ActionUp mAction;
+		r2bix_action::ActionUp mAction;
 	};
 }

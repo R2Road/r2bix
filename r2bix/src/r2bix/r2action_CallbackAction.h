@@ -2,11 +2,11 @@
 
 #include <functional>
 
-#include "r2base_Action.h"
+#include "r2bix_action_iAction.h"
 
 namespace r2action
 {
-	class CallbackAction : public r2base::Action
+	class CallbackAction : public r2bix_action::iAction
 	{
 	public:
 		using CallbackT = std::function<void()>;

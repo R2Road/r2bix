@@ -2,14 +2,14 @@
 
 #include <vector>
 
-#include "r2base_Action.h"
+#include "r2bix_action_iAction.h"
 
 namespace r2action
 {
-	class SequenceAction : public r2base::Action
+	class SequenceAction : public r2bix_action::iAction
 	{
 	private:
-		using ActionContainerT = std::vector<r2base::ActionUp>;
+		using ActionContainerT = std::vector<r2bix_action::ActionUp>;
 
 		SequenceAction();
 
@@ -22,7 +22,7 @@ namespace r2action
 		template<typename ActionT>
 		ActionT* AddAction()
 		{
-			static_assert( std::is_base_of<r2base::Action, ActionT>() );
+			static_assert( std::is_base_of<r2bix_action::iAction, ActionT>() );
 
 			auto action = ActionT::Create();
 			auto ret = action.get();

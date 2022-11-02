@@ -1,12 +1,12 @@
 #pragma once
 
-#include "r2base_Action.h"
+#include "r2bix_action_iAction.h"
 
 #include "r2/r2_TimerFloat.h"
 
 namespace r2action
 {
-	class DelayAction : public r2base::Action
+	class DelayAction : public r2bix_action::iAction
 	{
 	private:
 		DelayAction();

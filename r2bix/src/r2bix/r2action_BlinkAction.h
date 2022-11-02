@@ -1,12 +1,12 @@
 #pragma once
 
-#include "r2base_Action.h"
+#include "r2bix_action_iAction.h"
 
 #include "r2/r2_TimerFloat.h"
 
 namespace r2action
 {
-	class BlinkAction : public r2base::Action
+	class BlinkAction : public r2bix_action::iAction
 	{
 	public:
 		enum class eStep

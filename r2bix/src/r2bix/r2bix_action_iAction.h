@@ -5,13 +5,16 @@
 namespace r2base
 {
 	class Node;
+}
 
-	using ActionUp = std::unique_ptr<class Action>;
-	class Action
+namespace r2bix_action
+{
+	using ActionUp = std::unique_ptr<class iAction>;
+	class iAction
 	{
 	public:
-		Action() : mOwnerNode( nullptr ) {}
-		virtual ~Action() {}
+		iAction() : mOwnerNode( nullptr ) {}
+		virtual ~iAction() {}
 
 		void SetOwnerNode( r2base::Node* const owner_node )
 		{

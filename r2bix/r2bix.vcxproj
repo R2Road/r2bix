@@ -195,7 +195,7 @@
     <ClInclude Include="src\r2bix\r2action_SequenceAction.h" />
     <ClInclude Include="src\r2bix\r2action_TickAction.h" />
     <ClInclude Include="src\r2bix\r2bix_animation_constant.h" />
-    <ClInclude Include="src\r2bix\r2base_Action.h" />
+    <ClInclude Include="src\r2bix\r2bix_action_iAction.h" />
     <ClInclude Include="src\r2bix\r2base_ColorMaskOption.h" />
     <ClInclude Include="src\r2bix\r2base_Component.h" />
     <ClInclude Include="src\r2bix\r2base_ComponentStaticID.h" />

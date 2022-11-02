@@ -1,11 +1,11 @@
 #pragma once
 
-#include "r2base_Action.h"
+#include "r2bix_action_iAction.h"
 #include "r2bix_animation_constant.h"
 
 namespace r2action
 {
-	class AnimationRequestAction : public r2base::Action
+	class AnimationRequestAction : public r2bix_action::iAction
 	{
 	public:
 		enum class eOrder

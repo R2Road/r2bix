@@ -521,9 +521,6 @@
     <ClInclude Include="src\r2bix\r2action_TickAction.h">
       <Filter>r2bix\action</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_Action.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2base_Component.h">
       <Filter>r2bix\base</Filter>
     </ClInclude>
@@ -826,6 +823,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_animation_constant.h">
       <Filter>r2bix\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_action_iAction.h">
+      <Filter>r2bix\action</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

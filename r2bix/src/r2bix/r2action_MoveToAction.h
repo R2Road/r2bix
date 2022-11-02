@@ -1,13 +1,13 @@
 #pragma once
 
-#include "r2base_Action.h"
+#include "r2bix_action_iAction.h"
 
 #include "r2/r2_PointInt.h"
 #include "r2/r2_TimerFloat.h"
 
 namespace r2action
 {
-	class MoveToAction : public r2base::Action
+	class MoveToAction : public r2bix_action::iAction
 	{
 	private:
 		MoveToAction();

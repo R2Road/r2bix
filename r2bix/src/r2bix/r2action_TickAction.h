@@ -1,10 +1,10 @@
 #pragma once
 
-#include "r2base_Action.h"
+#include "r2bix_action_iAction.h"
 
 namespace r2action
 {
-	class TickAction : public r2base::Action
+	class TickAction : public r2bix_action::iAction
 	{
 	private:
 		TickAction();
