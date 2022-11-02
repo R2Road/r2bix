@@ -1,6 +1,6 @@
 #include "r2bix_DebugConfig.h"
 
-namespace r2base
+namespace r2bix
 {
 	DebugConfig DebugConfig::instance;
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace r2base
+namespace r2bix
 {
 	class DebugConfig
 	{
