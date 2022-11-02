@@ -215,15 +215,6 @@
     <ClCompile Include="src\r2bix\r2component_TransformComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2input_Constant.cpp">
-      <Filter>r2bix\input</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2input_KeyboardInputCollector.cpp">
-      <Filter>r2bix\input</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2input_KeyboardInputListener.cpp">
-      <Filter>r2bix\input</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2node_CustomTextureNode.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
@@ -422,6 +413,15 @@
     <ClCompile Include="external\r2\r2utility_StringSize.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_input_KeyboardInputListener.cpp">
+      <Filter>r2bix\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_input_KeyboardInputCollector.cpp">
+      <Filter>r2bix\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_input_Constant.cpp">
+      <Filter>r2bix\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -565,15 +565,6 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2component_TransformComponent.h">
       <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2input_Constant.h">
-      <Filter>r2bix\input</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2input_KeyboardInputCollector.h">
-      <Filter>r2bix\input</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2input_KeyboardInputListener.h">
-      <Filter>r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2node_CustomTextureNode.h">
       <Filter>r2bix\node</Filter>
@@ -826,6 +817,15 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2utility_StringSize.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_input_KeyboardInputListener.h">
+      <Filter>r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_input_KeyboardInputCollector.h">
+      <Filter>r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_input_Constant.h">
+      <Filter>r2bix\input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

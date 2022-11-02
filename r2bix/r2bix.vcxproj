@@ -84,9 +84,9 @@
     <ClCompile Include="src\r2bix\r2component_TextureFrameRenderComponent.cpp" />
     <ClCompile Include="src\r2bix\r2component_TextureRenderComponent.cpp" />
     <ClCompile Include="src\r2bix\r2component_TransformComponent.cpp" />
-    <ClCompile Include="src\r2bix\r2input_Constant.cpp" />
-    <ClCompile Include="src\r2bix\r2input_KeyboardInputCollector.cpp" />
-    <ClCompile Include="src\r2bix\r2input_KeyboardInputListener.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_input_Constant.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_input_KeyboardInputCollector.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_input_KeyboardInputListener.cpp" />
     <ClCompile Include="src\r2bix\r2node_CustomTextureNode.cpp" />
     <ClCompile Include="src\r2bix\r2node_LabelMNode.cpp" />
     <ClCompile Include="src\r2bix\r2node_LabelSNode.cpp" />
@@ -220,9 +220,9 @@
     <ClInclude Include="src\r2bix\r2component_TextureFrameRenderComponent.h" />
     <ClInclude Include="src\r2bix\r2component_TextureRenderComponent.h" />
     <ClInclude Include="src\r2bix\r2component_TransformComponent.h" />
-    <ClInclude Include="src\r2bix\r2input_Constant.h" />
-    <ClInclude Include="src\r2bix\r2input_KeyboardInputCollector.h" />
-    <ClInclude Include="src\r2bix\r2input_KeyboardInputListener.h" />
+    <ClInclude Include="src\r2bix\r2bix_input_Constant.h" />
+    <ClInclude Include="src\r2bix\r2bix_input_KeyboardInputCollector.h" />
+    <ClInclude Include="src\r2bix\r2bix_input_KeyboardInputListener.h" />
     <ClInclude Include="src\r2bix\r2node_CustomTextureNode.h" />
     <ClInclude Include="src\r2bix\r2node_LabelMNode.h" />
     <ClInclude Include="src\r2bix\r2node_LabelSNode.h" />
