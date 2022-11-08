@@ -57,7 +57,7 @@ namespace r2bix_component
 		//
 		//
 		//
-		void LoadAnimation( const r2base::TextureFrameAnimationInfo& info );
+		void LoadAnimation( const r2bix_table::TextureFrameAnimationInfo& info );
 		bool HasAnimation( const r2bix_animation::eIndex animation_index ) const;
 		void RunAnimation_Once( const r2bix_animation::eIndex animation_index );
 		void RunAnimation_Repeat( const r2bix_animation::eIndex animation_index );

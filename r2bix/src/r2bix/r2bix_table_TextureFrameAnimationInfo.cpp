@@ -2,7 +2,7 @@
 
 #include <utility>
 
-namespace r2base
+namespace r2bix_table
 {
 	TextureFrameAnimationInfo::TextureFrameAnimationInfo( AnimationPackageT&& animation_package ) : mAnimationPackage( std::move( animation_package ) )
 	{}

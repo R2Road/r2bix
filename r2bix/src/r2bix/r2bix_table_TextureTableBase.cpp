@@ -3,7 +3,7 @@
 #include "r2render_Texture.h"
 #include "r2render_TextureFrame.h"
 
-namespace r2base
+namespace r2bix_table
 {
 	TextureTableBase::TextureTableBase() : mTextureContainer()
 	{}

@@ -9,7 +9,7 @@ namespace r2render
 	class TextureFrame;
 }
 
-namespace r2base
+namespace r2bix_table
 {
 	class TextureFrameAnimationInfo
 	{

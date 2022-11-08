@@ -5,7 +5,7 @@
 
 namespace p2048table
 {
-	class TextureFrameAnimationTable : public r2base::TextureFrameAnimationTableBase, public r2cm::SingleTon<TextureFrameAnimationTable>
+	class TextureFrameAnimationTable : public r2bix_table::TextureFrameAnimationTableBase, public r2cm::SingleTon<TextureFrameAnimationTable>
 	{
 	public:
 		void Load() override;

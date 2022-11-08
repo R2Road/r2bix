@@ -11,8 +11,8 @@ void TextureFrameAnimationTable4Test::Load()
 		return;
 	}
 
-	r2base::TextureFrameAnimationInfo::Animation animation;
-	r2base::TextureFrameAnimationInfo::AnimationPackageT animation_package;
+	r2bix_table::TextureFrameAnimationInfo::Animation animation;
+	r2bix_table::TextureFrameAnimationInfo::AnimationPackageT animation_package;
 
 	//
 	// 1
@@ -21,7 +21,7 @@ void TextureFrameAnimationTable4Test::Load()
 		// Idle_1
 		{
 			animation.Index = r2bix_animation::eIndex::Idle_1;
-			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
+			animation.Container.push_back( r2bix_table::TextureFrameAnimationInfo::AnimationFrame{ 0.1f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
 
 			animation_package.push_back( std::move( animation ) );
 		}
@@ -29,10 +29,10 @@ void TextureFrameAnimationTable4Test::Load()
 		// Run_1
 		{
 			animation.Index = r2bix_animation::eIndex::Run_1;
-			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
-			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_2" ) } );
-			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
-			animation.Container.push_back( r2base::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_3" ) } );
+			animation.Container.push_back( r2bix_table::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
+			animation.Container.push_back( r2bix_table::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_2" ) } );
+			animation.Container.push_back( r2bix_table::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) } );
+			animation.Container.push_back( r2bix_table::TextureFrameAnimationInfo::AnimationFrame{ 0.25f, TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_3" ) } );
 
 			animation_package.push_back( std::move( animation ) );
 		}

@@ -11,7 +11,7 @@ namespace r2render
 	class Texture;
 }
 
-namespace r2base
+namespace r2bix_table
 {
 	class TextureTableBase
 	{

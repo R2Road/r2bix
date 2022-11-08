@@ -46,7 +46,7 @@ namespace r2bix_component
 		}
 	}
 
-	void TextureFrameAnimationComponent::LoadAnimation( const r2base::TextureFrameAnimationInfo& info )
+	void TextureFrameAnimationComponent::LoadAnimation( const r2bix_table::TextureFrameAnimationInfo& info )
 	{
 		StopAnimation();
 

@@ -5,7 +5,7 @@
 
 namespace p2048table
 {
-	class TextureTable : public r2base::TextureTableBase, public r2cm::SingleTon<TextureTable>
+	class TextureTable : public r2bix_table::TextureTableBase, public r2cm::SingleTon<TextureTable>
 	{
 	public:
 		void Load() override;

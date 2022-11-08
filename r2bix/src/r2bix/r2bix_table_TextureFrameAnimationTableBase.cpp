@@ -1,11 +1,11 @@
 #include "r2bix_table_TextureFrameAnimationTableBase.h"
 
-namespace r2base
+namespace r2bix_table
 {
 	TextureFrameAnimationTableBase::TextureFrameAnimationTableBase() : mContainer()
 	{}
 
-	const r2base::TextureFrameAnimationInfo& TextureFrameAnimationTableBase::Get( const int index ) const
+	const r2bix_table::TextureFrameAnimationInfo& TextureFrameAnimationTableBase::Get( const int index ) const
 	{
 		auto itr = mContainer.find( index );
 		if( mContainer.end() != itr )
@@ -13,7 +13,7 @@ namespace r2base
 			return itr->second;
 		}
 
-		static r2base::TextureFrameAnimationInfo dummy_package( std::move( r2base::TextureFrameAnimationInfo::AnimationPackageT() ) );
+		static r2bix_table::TextureFrameAnimationInfo dummy_package( std::move( r2bix_table::TextureFrameAnimationInfo::AnimationPackageT() ) );
 		return dummy_package;
 	}
 }
