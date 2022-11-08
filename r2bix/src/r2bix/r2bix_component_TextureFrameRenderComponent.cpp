@@ -1,23 +1,23 @@
-#include "r2component_TextureRenderComponent.h"
+#include "r2bix_component_TextureFrameRenderComponent.h"
 
 #include "r2bix_node_Node.h"
 #include "r2bix_DebugConfig.h"
-#include "r2component_TransformComponent.h"
+#include "r2bix_component_TransformComponent.h"
 #include "r2render_Camera.h"
-#include "r2render_Texture.h"
+#include "r2render_TextureFrame.h"
 
 namespace r2bix_component
 {
-	TextureRenderComponent::TextureRenderComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureRenderComponent>( owner_node )
+	TextureFrameRenderComponent::TextureFrameRenderComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureFrameRenderComponent>( owner_node )
 		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
-		, mTexture( nullptr )
+		, mTextureFrame( nullptr )
 		, mColorMaskOption( r2base::eColorMaskFlag::CMF_Foreground | r2base::eColorMaskFlag::CMF_Background )
 	{}
 
-	void TextureRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
+	void TextureFrameRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
-		if( !mTexture )
+		if( nullptr == mTextureFrame )
 		{
 			return;
 		}
@@ -62,17 +62,17 @@ namespace r2bix_component
 		{
 			for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() >= x; ++x, ++tx )
 			{
-				if( !mTexture->GetCharacterDisuse( off_set_point.GetX() + tx, off_set_point.GetY() + ty ) )
+				if( !mTextureFrame->GetCharacterDisuse( off_set_point.GetX() + tx, off_set_point.GetY() + ty ) )
 				{
 					render_target->FillCharacter(
 						x, y
-						, mTexture->GetCharacter( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+						, mTextureFrame->GetCharacter( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 					);
 				}
 
 				render_target->FillColorWithMask(
 					x, y
-					, mTexture->GetColor( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+					, mTextureFrame->GetColor( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 					, mColorMaskOption
 				);
 			}
@@ -87,30 +87,30 @@ namespace r2bix_component
 		}
 	}
 
-	void TextureRenderComponent::SetPivotPoint( const float x, const float y )
+	void TextureFrameRenderComponent::SetPivotPoint( const float x, const float y )
 	{
 		mPivotPoint.Set( x, y );
 
-		ResetVisibleRect();
+		resetVisibleRect();
 	}
-	void TextureRenderComponent::SetTexture( const r2render::Texture* const texture )
+	void TextureFrameRenderComponent::SetTextureFrame( const r2render::TextureFrame* const texture_frame )
 	{
-		mTexture = texture;
+		mTextureFrame = texture_frame;
 
-		ResetVisibleRect();
+		resetVisibleRect();
 	}
-	void TextureRenderComponent::ResetVisibleRect()
+	void TextureFrameRenderComponent::resetVisibleRect()
 	{
-		if( !mTexture )
+		if( !mTextureFrame )
 		{
 			return;
 		}
 
 		mVisibleRect.Set(
-			-static_cast<int>( mTexture->GetWidth() * mPivotPoint.GetX() )
-			, -static_cast<int>( mTexture->GetHeight() * mPivotPoint.GetY() )
-			, mTexture->GetWidth() - 1
-			, mTexture->GetHeight() - 1
+			-static_cast<int>( mTextureFrame->GetWidth() * mPivotPoint.GetX() )
+			, -static_cast<int>( mTextureFrame->GetHeight() * mPivotPoint.GetY() )
+			, mTextureFrame->GetVisibleRect().GetSize().GetWidth()
+			, mTextureFrame->GetVisibleRect().GetSize().GetHeight()
 		);
 	}
 }

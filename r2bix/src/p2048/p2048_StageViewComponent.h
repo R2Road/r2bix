@@ -2,8 +2,8 @@
 
 #include <vector>
 
-#include "r2bix/r2base_Component.h"
-#include "r2bix/r2base_ComponentStaticID.h"
+#include "r2bix/r2bix_component_Component.h"
+#include "r2bix/r2bix_component_ComponentStaticID.h"
 
 namespace p2048
 {

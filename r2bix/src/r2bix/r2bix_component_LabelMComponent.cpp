@@ -1,7 +1,7 @@
-#include "r2component_LabelMComponent.h"
+#include "r2bix_component_LabelMComponent.h"
 
-#include "r2component_CustomTextureComponent.h"
-#include "r2component_TextureRenderComponent.h"
+#include "r2bix_component_CustomTextureComponent.h"
+#include "r2bix_component_TextureRenderComponent.h"
 
 namespace r2bix_component
 {

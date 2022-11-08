@@ -1,6 +1,6 @@
-#include "r2component_TextureFrameAnimationComponent.h"
+#include "r2bix_component_TextureFrameAnimationComponent.h"
 
-#include "r2component_TextureFrameRenderComponent.h"
+#include "r2bix_component_TextureFrameRenderComponent.h"
 
 namespace r2bix_component
 {

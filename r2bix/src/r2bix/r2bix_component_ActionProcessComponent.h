@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "r2bix_action_iAction.h"
-#include "r2base_Component.h"
+#include "r2bix_component_Component.h"
 
 namespace r2bix_component
 {

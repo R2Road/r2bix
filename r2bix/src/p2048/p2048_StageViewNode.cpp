@@ -4,8 +4,8 @@
 
 #include "r2bix/r2bix_Director.h"
 
-#include "r2bix/r2component_CustomTextureComponent.h"
-#include "r2bix/r2component_TextureRenderComponent.h"
+#include "r2bix/r2bix_component_CustomTextureComponent.h"
+#include "r2bix/r2bix_component_TextureRenderComponent.h"
 #include "r2bix/r2bix_node_CustomTextureNode.h"
 #include "r2bix/r2bix_node_PivotNode.h"
 

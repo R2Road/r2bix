@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2base_Component.h"
+#include "r2bix_component_Component.h"
 
 #include "r2render_Texture.h"
 

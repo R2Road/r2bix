@@ -1,4 +1,4 @@
-#include "r2component_ActionProcessComponent.h"
+#include "r2bix_component_ActionProcessComponent.h"
 
 namespace r2bix_component
 {

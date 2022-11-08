@@ -5,7 +5,7 @@
 #include <type_traits>
 
 #include "r2/r2_PointInt.h"
-#include "r2component_TransformComponent.h"
+#include "r2bix_component_TransformComponent.h"
 
 //
 // # 2022.02.28 by R2Road

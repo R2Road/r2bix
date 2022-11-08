@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2base_Component.h"
+#include "r2bix_component_Component.h"
 
 #include "r2base_ColorMaskOption.h"
 
@@ -9,15 +9,15 @@
 
 namespace r2render
 {
-	class TextureFrame;
+	class Texture;
 }
 
 namespace r2bix_component
 {
-	class TextureFrameRenderComponent : public r2bix_component::Component<TextureFrameRenderComponent>
+	class TextureRenderComponent : public r2bix_component::Component<TextureRenderComponent>
 	{
 	public:
-		TextureFrameRenderComponent( r2bix_node::Node& owner_node );
+		TextureRenderComponent( r2bix_node::Node& owner_node );
 
 		//
 		// Override
@@ -27,31 +27,34 @@ namespace r2bix_component
 		//
 		// Getter
 		//
-		const r2render::TextureFrame* const GetTextureFrame() const
+		const r2render::Texture* const GetTexture() const
 		{
-			return mTextureFrame;
+			return mTexture;
+		}
+		r2::RectInt GetRect() const
+		{
+			return mVisibleRect;
 		}
 
 		//
 		// Setter
 		//
 		void SetPivotPoint( const float x, const float y );
-		void SetTextureFrame( const r2render::TextureFrame* const texture_frame );
+		void SetTexture( const r2render::Texture* const texture );
+		void ResetVisibleRect();
 		void SetVisibleRectForced( const int x, const int y, const int width, const int height )
 		{
 			mVisibleRect.Set( x, y, width, height );
 		}
-		void MoveRectOriginForced( const int move_x, const int move_y )
+		void MoveRectOrigin( const int move_x, const int move_y )
 		{
 			mVisibleRect.MoveOrigin( move_x, move_y );
 		}
-	private:
-		void resetVisibleRect();
 
 	private:
 		r2::PointFloat mPivotPoint;
 		r2::RectInt mVisibleRect;
-		const r2render::TextureFrame* mTextureFrame;
+		const r2render::Texture* mTexture;
 		r2base::ColorMaskOption mColorMaskOption;
 	};
 }

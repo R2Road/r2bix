@@ -3,7 +3,7 @@
 #include <cassert>
 
 #include "r2bix_node_Node.h"
-#include "r2component_TextureFrameAnimationComponent.h"
+#include "r2bix_component_TextureFrameAnimationComponent.h"
 
 namespace r2bix_action
 {

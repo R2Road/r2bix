@@ -161,24 +161,6 @@
     <ClCompile Include="src\r2bix\r2base_TextureTableBase.cpp">
       <Filter>r2bix\base</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_ActionProcessComponent.cpp">
-      <Filter>r2bix\component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_CustomTextureComponent.cpp">
-      <Filter>r2bix\component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_TextureFrameAnimationComponent.cpp">
-      <Filter>r2bix\component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_TextureFrameRenderComponent.cpp">
-      <Filter>r2bix\component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_TextureRenderComponent.cpp">
-      <Filter>r2bix\component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_TransformComponent.cpp">
-      <Filter>r2bix\component</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2render_Camera.cpp">
       <Filter>r2bix\render</Filter>
     </ClCompile>
@@ -265,12 +247,6 @@
     </ClCompile>
     <ClCompile Include="src\project_mini_adventure\p_mini_adv_CompanyScene.cpp">
       <Filter>project_mini_adventure</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_LabelMComponent.cpp">
-      <Filter>r2bix\component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_LabelSComponent.cpp">
-      <Filter>r2bix\component</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\R2bixMenu.cpp">
       <Filter>test\test_r2bix</Filter>
@@ -422,6 +398,30 @@
     <ClCompile Include="src\r2bix\r2bix_node_SpriteNode.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_ActionProcessComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_CustomTextureComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_LabelMComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_LabelSComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_TextureFrameAnimationComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_TextureFrameRenderComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_TextureRenderComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_TransformComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -502,24 +502,6 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2base_TextureTableBase.h">
       <Filter>r2bix\base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_ActionProcessComponent.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_CustomTextureComponent.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_TextureFrameAnimationComponent.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_TextureFrameRenderComponent.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_TextureRenderComponent.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_TransformComponent.h">
-      <Filter>r2bix\component</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2render_Camera.h">
       <Filter>r2bix\render</Filter>
@@ -616,12 +598,6 @@
     </ClInclude>
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_CompanyScene.h">
       <Filter>project_mini_adventure</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_LabelMComponent.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_LabelSComponent.h">
-      <Filter>r2bix\component</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\R2bixMenu.h">
       <Filter>test\test_r2bix</Filter>
@@ -794,15 +770,6 @@
     <ClInclude Include="src\r2bix\r2bix_action_AnimationRequestAction.h">
       <Filter>r2bix\action</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_iComponent.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_ComponentStaticID.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_Component.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_node_Node.h">
       <Filter>r2bix\node</Filter>
     </ClInclude>
@@ -826,6 +793,39 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_node_SpriteNode.h">
       <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_Component.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_ComponentStaticID.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_iComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_ActionProcessComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_CustomTextureComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_LabelMComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_LabelSComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_TextureFrameAnimationComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_TextureFrameRenderComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_TextureRenderComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_TransformComponent.h">
+      <Filter>r2bix\component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

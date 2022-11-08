@@ -1,9 +1,9 @@
 #include "r2bix_node_LabelSNode.h"
 
 #include "r2bix_Director.h"
-#include "r2component_CustomTextureComponent.h"
-#include "r2component_TextureRenderComponent.h"
-#include "r2component_LabelSComponent.h"
+#include "r2bix_component_CustomTextureComponent.h"
+#include "r2bix_component_TextureRenderComponent.h"
+#include "r2bix_component_LabelSComponent.h"
 
 namespace r2bix_node
 {

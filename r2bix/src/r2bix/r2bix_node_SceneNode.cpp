@@ -1,7 +1,7 @@
 #include "r2bix_node_SceneNode.h"
 
 #include "r2bix_Director.h"
-#include "r2component_TransformComponent.h"
+#include "r2bix_component_TransformComponent.h"
 
 namespace r2bix_node
 {

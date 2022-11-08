@@ -1,4 +1,4 @@
-#include "r2component_CustomTextureComponent.h"
+#include "r2bix_component_CustomTextureComponent.h"
 
 namespace r2bix_component
 {
