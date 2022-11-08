@@ -1,4 +1,4 @@
-#include "r2node_SceneNode.h"
+#include "r2bix_node_SceneNode.h"
 
 #include "r2bix_Director.h"
 #include "r2component_TransformComponent.h"

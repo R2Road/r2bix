@@ -2,7 +2,7 @@
 
 #include <utility> // std::move
 
-#include "r2node_SceneNode.h"
+#include "r2bix_node_SceneNode.h"
 
 namespace r2bix
 {

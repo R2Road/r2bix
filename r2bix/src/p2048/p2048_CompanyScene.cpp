@@ -10,8 +10,8 @@
 #include "r2bix/r2component_TextureFrameRenderComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 #include "r2bix/r2component_TransformComponent.h"
-#include "r2bix/r2node_LabelSNode.h"
-#include "r2bix/r2node_SpriteAnimationNode.h"
+#include "r2bix/r2bix_node_LabelSNode.h"
+#include "r2bix/r2bix_node_SpriteAnimationNode.h"
 
 #include "p2048_TitleScene.h"
 #include "p2048table_TextureFrameAnimationTable.h"

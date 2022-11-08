@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "r2bix/r2node_SceneNode.h"
+#include "r2bix/r2bix_node_SceneNode.h"
 
 namespace p2048
 {

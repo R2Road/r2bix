@@ -4,7 +4,7 @@
 
 #include "r2bix_director_ScreenBufferManager.h"
 #include "r2bix_input_KeyboardInputCollector.h"
-#include "r2node_SceneNode.h"
+#include "r2bix_node_SceneNode.h"
 #include "r2/r2_SizeInt.h"
 
 #include "r2bix_director_Config.h"

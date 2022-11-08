@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2bix/r2base_Node.h"
+#include "r2bix/r2bix_node_Node.h"
 
 namespace r2bix
 {

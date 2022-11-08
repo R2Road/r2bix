@@ -1,4 +1,4 @@
-#include "r2node_SpriteNode.h"
+#include "r2bix_node_SpriteNode.h"
 
 #include "r2bix_Director.h"
 #include "r2component_TextureFrameRenderComponent.h"

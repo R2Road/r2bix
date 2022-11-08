@@ -15,7 +15,7 @@
 #include "r2bix/r2bix_action_SequenceAction.h"
 #include "r2bix/r2bix_action_TickAction.h"
 #include "r2bix/r2bix_Director.h"
-#include "r2bix/r2base_Node.h"
+#include "r2bix/r2bix_node_Node.h"
 #include "r2bix/r2component_ActionProcessComponent.h"
 #include "r2bix/r2component_TextureFrameAnimationComponent.h"
 #include "r2bix/r2component_TextureFrameRenderComponent.h"

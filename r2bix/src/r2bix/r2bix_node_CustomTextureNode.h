@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2base_Node.h"
+#include "r2bix_node_Node.h"
 
 namespace r2bix
 {
@@ -9,10 +9,10 @@ namespace r2bix
 
 namespace r2bix_node
 {
-	class LabelSNode : public r2bix_node::Node
+	class CustomTextureNode : public r2bix_node::Node
 	{
 	private:
-		LabelSNode() = delete;
+		CustomTextureNode() = delete;
 
 	public:
 		static r2bix_node::NodeUp Create( r2bix::Director& director );

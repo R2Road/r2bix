@@ -179,21 +179,6 @@
     <ClCompile Include="src\r2bix\r2component_TransformComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2node_CustomTextureNode.cpp">
-      <Filter>r2bix\node</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2node_PivotNode.cpp">
-      <Filter>r2bix\node</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2node_SceneNode.cpp">
-      <Filter>r2bix\node</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2node_SpriteAnimationNode.cpp">
-      <Filter>r2bix\node</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2node_SpriteNode.cpp">
-      <Filter>r2bix\node</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2render_Camera.cpp">
       <Filter>r2bix\render</Filter>
     </ClCompile>
@@ -281,14 +266,8 @@
     <ClCompile Include="src\project_mini_adventure\p_mini_adv_CompanyScene.cpp">
       <Filter>project_mini_adventure</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2node_LabelMNode.cpp">
-      <Filter>r2bix\node</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2component_LabelMComponent.cpp">
       <Filter>r2bix\component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2node_LabelSNode.cpp">
-      <Filter>r2bix\node</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2component_LabelSComponent.cpp">
       <Filter>r2bix\component</Filter>
@@ -422,6 +401,27 @@
     <ClCompile Include="src\r2bix\r2base_Node.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_CustomTextureNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_LabelMNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_LabelSNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_PivotNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_SceneNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_SpriteAnimationNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_SpriteNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -521,21 +521,6 @@
     <ClInclude Include="src\r2bix\r2component_TransformComponent.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2node_CustomTextureNode.h">
-      <Filter>r2bix\node</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2node_PivotNode.h">
-      <Filter>r2bix\node</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2node_SceneNode.h">
-      <Filter>r2bix\node</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2node_SpriteAnimationNode.h">
-      <Filter>r2bix\node</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2node_SpriteNode.h">
-      <Filter>r2bix\node</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2render_Camera.h">
       <Filter>r2bix\render</Filter>
     </ClInclude>
@@ -632,14 +617,8 @@
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_CompanyScene.h">
       <Filter>project_mini_adventure</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2node_LabelMNode.h">
-      <Filter>r2bix\node</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2component_LabelMComponent.h">
       <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2node_LabelSNode.h">
-      <Filter>r2bix\node</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2component_LabelSComponent.h">
       <Filter>r2bix\component</Filter>
@@ -824,7 +803,28 @@
     <ClInclude Include="src\r2bix\r2base_Component.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_Node.h">
+    <ClInclude Include="src\r2bix\r2bix_node_Node.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_CustomTextureNode.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_LabelMNode.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_LabelSNode.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_PivotNode.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_SceneNode.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_SpriteAnimationNode.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_SpriteNode.h">
       <Filter>r2bix\node</Filter>
     </ClInclude>
   </ItemGroup>

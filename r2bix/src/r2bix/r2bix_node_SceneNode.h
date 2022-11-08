@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2base_Node.h"
+#include "r2bix_node_Node.h"
 
 #include "r2render_Camera.h"
 #include "r2render_Texture.h"

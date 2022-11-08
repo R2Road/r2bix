@@ -7,7 +7,7 @@
 
 #include "r2bix/r2bix_action_TickAction.h"
 #include "r2bix/r2bix_Director.h"
-#include "r2bix/r2base_Node.h"
+#include "r2bix/r2bix_node_Node.h"
 #include "r2bix/r2component_CustomTextureComponent.h"
 #include "r2bix/r2component_LabelSComponent.h"
 #include "r2bix/r2component_LabelMComponent.h"

@@ -1,4 +1,4 @@
-#include "r2node_LabelMNode.h"
+#include "r2bix_node_LabelSNode.h"
 
 #include "r2bix_Director.h"
 #include "r2component_CustomTextureComponent.h"
@@ -7,7 +7,7 @@
 
 namespace r2bix_node
 {
-	r2bix_node::NodeUp LabelMNode::Create( r2bix::Director& director )
+	r2bix_node::NodeUp LabelSNode::Create( r2bix::Director& director )
 	{
 		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )

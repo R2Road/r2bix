@@ -1,6 +1,6 @@
 #include "r2component_TextureFrameRenderComponent.h"
 
-#include "r2base_Node.h"
+#include "r2bix_node_Node.h"
 #include "r2bix_DebugConfig.h"
 #include "r2component_TransformComponent.h"
 #include "r2render_Camera.h"

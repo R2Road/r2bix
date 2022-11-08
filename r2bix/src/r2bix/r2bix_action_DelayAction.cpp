@@ -1,6 +1,6 @@
 #include "r2bix_action_DelayAction.h"
 
-#include "r2base_Node.h"
+#include "r2bix_node_Node.h"
 
 namespace r2bix_action
 {
