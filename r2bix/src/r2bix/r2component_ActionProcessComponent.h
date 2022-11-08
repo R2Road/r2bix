@@ -10,7 +10,7 @@ namespace r2component
 	class ActionProcessComponent : public r2base::Component<ActionProcessComponent>
 	{
 	public:
-		ActionProcessComponent( r2base::Node& owner_node );
+		ActionProcessComponent( r2bix_node::Node& owner_node );
 
 		//
 		//

@@ -9,12 +9,12 @@
 
 namespace psnake
 {
-	CompanyScene::CompanyScene( r2bix::Director& director ) : r2node::SceneNode( director )
+	CompanyScene::CompanyScene( r2bix::Director& director ) : r2bix_node::SceneNode( director )
 	{}
 
-	r2node::SceneNodeUp CompanyScene::Create( r2bix::Director& director )
+	r2bix_node::SceneNodeUp CompanyScene::Create( r2bix::Director& director )
 	{
-		r2node::SceneNodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
+		r2bix_node::SceneNodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
 		if( !ret || !ret->Init() )
 		{
 			ret.reset();
@@ -25,13 +25,13 @@ namespace psnake
 
 	bool CompanyScene::Init()
 	{
-		if( !r2base::Node::Init() )
+		if( !r2bix_node::Node::Init() )
 		{
 			return false;
 		}
 
 		{
-			auto node = AddChild<r2node::LabelSNode>();
+			auto node = AddChild<r2bix_node::LabelSNode>();
 			node->GetComponent<r2component::LabelSComponent>()->SetString( CompanyScene::GetTitle() );
 		}
 
@@ -48,6 +48,6 @@ namespace psnake
 			}
 		}
 
-		r2node::SceneNode::Update( delta_time );
+		r2bix_node::SceneNode::Update( delta_time );
 	}
 }

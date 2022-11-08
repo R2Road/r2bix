@@ -19,13 +19,13 @@
 
 namespace p2048
 {
-	CompanyScene::CompanyScene( r2bix::Director& director ) : r2node::SceneNode( director )
+	CompanyScene::CompanyScene( r2bix::Director& director ) : r2bix_node::SceneNode( director )
 		, mChangeSceneTimer( 2.f, true )
 	{}
 
-	r2node::SceneNodeUp CompanyScene::Create( r2bix::Director& director )
+	r2bix_node::SceneNodeUp CompanyScene::Create( r2bix::Director& director )
 	{
-		r2node::SceneNodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
+		r2bix_node::SceneNodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
 		if( !ret->Init() )
 		{
 			assert( false );
@@ -36,7 +36,7 @@ namespace p2048
 
 	bool CompanyScene::Init()
 	{
-		if( !r2base::Node::Init() )
+		if( !r2bix_node::Node::Init() )
 		{
 			return false;
 		}
@@ -45,7 +45,7 @@ namespace p2048
 		// Company Name
 		//
 		{
-			auto label_node = AddChild<r2node::LabelSNode>();
+			auto label_node = AddChild<r2bix_node::LabelSNode>();
 
 			label_node->GetComponent<r2component::LabelSComponent>()->SetString( "R2Road Studio" );
 
@@ -59,7 +59,7 @@ namespace p2048
 		// Logo
 		//
 		{
-			auto sprite_animation_node = AddChild<r2node::SpriteAnimationNode>( 1 );
+			auto sprite_animation_node = AddChild<r2bix_node::SpriteAnimationNode>( 1 );
 
 			sprite_animation_node->GetComponent<r2component::TextureFrameAnimationComponent>()->LoadAnimation(
 				p2048table::TextureFrameAnimationTable::GetInstance().Get( 1 )
@@ -96,6 +96,6 @@ namespace p2048
 			}
 		}
 
-		r2node::SceneNode::Update( delta_time );
+		r2bix_node::SceneNode::Update( delta_time );
 	}
 }

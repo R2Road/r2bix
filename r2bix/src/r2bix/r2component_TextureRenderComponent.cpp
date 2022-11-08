@@ -8,7 +8,7 @@
 
 namespace r2component
 {
-	TextureRenderComponent::TextureRenderComponent( r2base::Node& owner_node ) : r2base::Component<TextureRenderComponent>( owner_node )
+	TextureRenderComponent::TextureRenderComponent( r2bix_node::Node& owner_node ) : r2base::Component<TextureRenderComponent>( owner_node )
 		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTexture( nullptr )

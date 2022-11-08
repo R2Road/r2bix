@@ -17,7 +17,7 @@ namespace r2component
 	class TextureRenderComponent : public r2base::Component<TextureRenderComponent>
 	{
 	public:
-		TextureRenderComponent( r2base::Node& owner_node );
+		TextureRenderComponent( r2bix_node::Node& owner_node );
 
 		//
 		// Override

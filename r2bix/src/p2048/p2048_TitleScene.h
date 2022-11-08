@@ -6,13 +6,13 @@
 
 namespace p2048
 {
-	class TitleScene : public r2node::SceneNode
+	class TitleScene : public r2bix_node::SceneNode
 	{
 	private:
 		TitleScene( r2bix::Director& director );
 
 	public:
-		static r2node::SceneNodeUp Create( r2bix::Director& director );
+		static r2bix_node::SceneNodeUp Create( r2bix::Director& director );
 
 	private:
 		bool Init() override;
@@ -20,7 +20,7 @@ namespace p2048
 		void Update( const float delta_time ) override;
 
 	private:
-		r2base::Node* mLabelNode;
-		r2base::Node* mSpriteNode;
+		r2bix_node::Node* mLabelNode;
+		r2bix_node::Node* mSpriteNode;
 	};
 }

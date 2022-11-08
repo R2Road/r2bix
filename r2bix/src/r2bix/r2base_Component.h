@@ -13,11 +13,11 @@ namespace r2base
 		using MyUp = std::unique_ptr<MyT>;
 
 	protected:
-		Component( r2base::Node& owner_node ) : r2base::iComponent( owner_node )
+		Component( r2bix_node::Node& owner_node ) : r2base::iComponent( owner_node )
 		{}
 
 	public:
-		static MyUp Create( r2base::Node& owner_node )
+		static MyUp Create( r2bix_node::Node& owner_node )
 		{
 			MyUp ret( new ( std::nothrow ) MyT( owner_node ) );
 			if( !ret || !ret->Init() )

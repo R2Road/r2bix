@@ -21,7 +21,7 @@ namespace r2component
 	class LabelMComponent : public r2base::Component<LabelMComponent>
 	{
 	public:
-		LabelMComponent( r2base::Node& owner_node );
+		LabelMComponent( r2bix_node::Node& owner_node );
 
 		//
 		//

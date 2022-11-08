@@ -4,11 +4,11 @@
 #include "r2component_TextureFrameAnimationComponent.h"
 #include "r2component_TextureFrameRenderComponent.h"
 
-namespace r2node
+namespace r2bix_node
 {
-	r2base::NodeUp SpriteAnimationNode::Create( r2bix::Director& director )
+	r2bix_node::NodeUp SpriteAnimationNode::Create( r2bix::Director& director )
 	{
-		auto ret( r2base::Node::Create( director ) );
+		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
 			auto frame_render_component = ret->AddComponent<r2component::TextureFrameRenderComponent>();

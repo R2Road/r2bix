@@ -3,9 +3,9 @@
 #include "r2bix_Director.h"
 #include "r2component_TransformComponent.h"
 
-namespace r2node
+namespace r2bix_node
 {
-	SceneNode::SceneNode( r2bix::Director& director ) : r2base::Node( director )
+	SceneNode::SceneNode( r2bix::Director& director ) : r2bix_node::Node( director )
 		, mCamera( { director.GetScreenBufferSize().GetWidth() / 2, director.GetScreenBufferSize().GetHeight() / 2 }, director.GetScreenBufferSize() )
 		, mRenderTarget( director.GetScreenBufferSize().GetWidth(), director.GetScreenBufferSize().GetHeight(), '@' )
 	{}
@@ -26,7 +26,7 @@ namespace r2node
 		mRenderTarget.FillCharacterAll( ' ' );
 		mRenderTarget.FillColorAll( r2base::DefaultColorValue );
 
-		r2base::Node::Render( &mCamera, &mRenderTarget, mTransformComponent->GetPosition() );
+		r2bix_node::Node::Render( &mCamera, &mRenderTarget, mTransformComponent->GetPosition() );
 
 		mDirector.Write2BackBuffer( &mRenderTarget );
 	}

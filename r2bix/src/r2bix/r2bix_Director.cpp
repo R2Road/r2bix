@@ -18,7 +18,7 @@ namespace r2bix
 		, mNextSceneNode()
 	{}
 
-	void Director::Setup( r2node::SceneNodeUp node )
+	void Director::Setup( r2bix_node::SceneNodeUp node )
 	{
 		if( mCurrentSceneNode )
 		{

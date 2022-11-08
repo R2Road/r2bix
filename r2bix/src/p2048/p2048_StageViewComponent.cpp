@@ -11,7 +11,7 @@
 
 namespace p2048
 {
-	StageViewComponent::StageViewComponent( r2base::Node& owner_node ) : r2base::Component<StageViewComponent>( owner_node )
+	StageViewComponent::StageViewComponent( r2bix_node::Node& owner_node ) : r2base::Component<StageViewComponent>( owner_node )
 		, mStage( nullptr )
 		, mWidth( 0u )
 		, mHeight( 0u )

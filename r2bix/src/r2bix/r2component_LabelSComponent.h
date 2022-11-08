@@ -21,7 +21,7 @@ namespace r2component
 	class LabelSComponent : public r2base::Component<LabelSComponent>
 	{
 	public:
-		LabelSComponent( r2base::Node& owner_node );
+		LabelSComponent( r2bix_node::Node& owner_node );
 
 		//
 		//

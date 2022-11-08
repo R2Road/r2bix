@@ -4,11 +4,11 @@
 #include "r2component_CustomTextureComponent.h"
 #include "r2component_TextureRenderComponent.h"
 
-namespace r2node
+namespace r2bix_node
 {
-	r2base::NodeUp PivotNode::Create( r2bix::Director& director )
+	r2bix_node::NodeUp PivotNode::Create( r2bix::Director& director )
 	{
-		auto ret( r2base::Node::Create( director ) );
+		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
 			r2component::TextureRenderComponent* texture_render_component = ret->AddComponent<r2component::TextureRenderComponent>();

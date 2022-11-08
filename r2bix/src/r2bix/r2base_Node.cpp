@@ -1,6 +1,6 @@
 #include "r2base_Node.h"
 
-namespace r2base
+namespace r2bix_node
 {
 	Node::Node( r2bix::Director& director ) :
 		mDirector( director )

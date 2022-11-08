@@ -6,14 +6,14 @@
 
 namespace psnake
 {
-	class CompanyScene : public r2node::SceneNode
+	class CompanyScene : public r2bix_node::SceneNode
 	{
 	private:
 		CompanyScene( r2bix::Director& director );
 
 	public:
 		static const char* const GetTitle() { return "Game : Snake( In Progress )"; }
-		static r2node::SceneNodeUp Create( r2bix::Director& director );
+		static r2bix_node::SceneNodeUp Create( r2bix::Director& director );
 
 	private:
 		bool Init() override;

@@ -17,9 +17,9 @@
 
 namespace p2048
 {
-	r2base::NodeUp NumberNode::Create( r2bix::Director& director )
+	r2bix_node::NodeUp NumberNode::Create( r2bix::Director& director )
 	{
-		auto ret( r2base::Node::Create( director ) );
+		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
 			auto number_component = ret->AddComponent<p2048::NumberComponent>();
@@ -28,7 +28,7 @@ namespace p2048
 			// Frame
 			//
 			{
-				auto node = ret->AddChild<r2node::CustomTextureNode>( std::numeric_limits<int>::min() );
+				auto node = ret->AddChild<r2bix_node::CustomTextureNode>( std::numeric_limits<int>::min() );
 				node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 8u, 3u, ' ' );
 				node->GetComponent<r2component::TextureRenderComponent>()->SetTexture(
 					node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()
@@ -41,7 +41,7 @@ namespace p2048
 			// Label
 			//
 			{
-				auto node = ret->AddChild<r2node::LabelSNode>();
+				auto node = ret->AddChild<r2bix_node::LabelSNode>();
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				node->GetComponent<r2component::TransformComponent>()->SetPosition( 2, 0 );
 				node->GetComponent<r2component::LabelSComponent>()->SetColor( r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black );
@@ -54,7 +54,7 @@ namespace p2048
 			//
 			if( p2048::Config::GetNodeConfig().pivot )
 			{
-				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
 			}
 		}
 

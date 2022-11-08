@@ -17,7 +17,7 @@ namespace r2bix
 	public:
 		Director( const r2bix_director::Config& director_config );
 
-		void Setup( r2node::SceneNodeUp node );
+		void Setup( r2bix_node::SceneNodeUp node );
 
 		void Run();
 	private:
@@ -51,7 +51,7 @@ namespace r2bix
 
 		r2bix_input::KeyboardInputCollector mKeyboardInputCollector;
 
-		r2node::SceneNodeUp mCurrentSceneNode;
-		r2node::SceneNodeUp mNextSceneNode;
+		r2bix_node::SceneNodeUp mCurrentSceneNode;
+		r2bix_node::SceneNodeUp mNextSceneNode;
 	};
 }

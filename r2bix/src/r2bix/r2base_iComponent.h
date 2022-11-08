@@ -10,15 +10,18 @@ namespace r2render
 	class iRenderTarget;
 }
 
-namespace r2base
+namespace r2bix_node
 {
 	class Node;
+}
 
+namespace r2base
+{
 	using ComponentUp = std::unique_ptr<class iComponent>;
 	class iComponent
 	{
 	protected:
-		iComponent( Node& owner_node ) : mOwnerNode( owner_node )
+		iComponent( r2bix_node::Node& owner_node ) : mOwnerNode( owner_node )
 		{}
 
 	public:
@@ -26,7 +29,7 @@ namespace r2base
 		{}
 
 	public:
-		Node& GetOwnerNode() const
+		r2bix_node::Node& GetOwnerNode() const
 		{
 			return mOwnerNode;
 		}
@@ -43,6 +46,6 @@ namespace r2base
 		{}
 
 	protected:
-		Node& mOwnerNode;
+		r2bix_node::Node& mOwnerNode;
 	};
 }

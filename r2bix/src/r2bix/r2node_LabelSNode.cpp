@@ -5,11 +5,11 @@
 #include "r2component_TextureRenderComponent.h"
 #include "r2component_LabelSComponent.h"
 
-namespace r2node
+namespace r2bix_node
 {
-	r2base::NodeUp LabelSNode::Create( r2bix::Director& director )
+	r2bix_node::NodeUp LabelSNode::Create( r2bix::Director& director )
 	{
-		auto ret( r2base::Node::Create( director ) );
+		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
 			r2component::CustomTextureComponent* custom_texture_component = ret->AddComponent<r2component::CustomTextureComponent>();

@@ -14,7 +14,7 @@ namespace p2048
 	class NumberComponent : public r2base::Component<NumberComponent>
 	{
 	public:
-		NumberComponent( r2base::Node& owner_node );
+		NumberComponent( r2bix_node::Node& owner_node );
 
 		void SetLabelComponent( r2component::LabelSComponent* const label_component )
 		{

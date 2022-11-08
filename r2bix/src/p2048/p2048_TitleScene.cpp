@@ -26,14 +26,14 @@
 
 namespace p2048
 {
-	TitleScene::TitleScene( r2bix::Director& director ) : r2node::SceneNode( director )
+	TitleScene::TitleScene( r2bix::Director& director ) : r2bix_node::SceneNode( director )
 		, mLabelNode( nullptr )
 		, mSpriteNode( nullptr )
 	{}
 
-	r2node::SceneNodeUp TitleScene::Create( r2bix::Director& director )
+	r2bix_node::SceneNodeUp TitleScene::Create( r2bix::Director& director )
 	{
-		r2node::SceneNodeUp ret( new ( std::nothrow ) TitleScene( director ) );
+		r2bix_node::SceneNodeUp ret( new ( std::nothrow ) TitleScene( director ) );
 		if( !ret->Init() )
 		{
 			assert( false );
@@ -44,7 +44,7 @@ namespace p2048
 
 	bool TitleScene::Init()
 	{
-		if( !r2base::Node::Init() )
+		if( !r2bix_node::Node::Init() )
 		{
 			return false;
 		}
@@ -55,7 +55,7 @@ namespace p2048
 		{
 			// Frame
 			{
-				mSpriteNode = AddChild<r2node::SpriteNode>();
+				mSpriteNode = AddChild<r2bix_node::SpriteNode>();
 
 				auto frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "title_frame" );
 
@@ -69,7 +69,7 @@ namespace p2048
 
 			// Number 2
 			{
-				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
+				auto number_node = mSpriteNode->AddChild<r2bix_node::SpriteNode>();
 				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_2" ) );
 				number_node->mTransformComponent->SetPosition( -26, 0 );
 
@@ -122,13 +122,13 @@ namespace p2048
 			}
 			// Number 0
 			{
-				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
+				auto number_node = mSpriteNode->AddChild<r2bix_node::SpriteNode>();
 				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
 				number_node->mTransformComponent->SetPosition( -9, 0 );
 			}
 			// Number 4
 			{
-				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
+				auto number_node = mSpriteNode->AddChild<r2bix_node::SpriteNode>();
 				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_4" ) );
 				number_node->mTransformComponent->SetPosition( 9, 0 );
 
@@ -180,7 +180,7 @@ namespace p2048
 			}
 			// Number 8
 			{
-				auto number_node = mSpriteNode->AddChild<r2node::SpriteNode>();
+				auto number_node = mSpriteNode->AddChild<r2bix_node::SpriteNode>();
 				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_8" ) );
 				number_node->mTransformComponent->SetPosition( 26, 0 );
 
@@ -215,7 +215,7 @@ namespace p2048
 		// Company Name
 		//
 		{
-			mLabelNode = AddChild<r2node::LabelSNode>();
+			mLabelNode = AddChild<r2bix_node::LabelSNode>();
 
 			mLabelNode->GetComponent<r2component::LabelSComponent>()->SetString( "Press Any Key" );
 
@@ -262,6 +262,6 @@ namespace p2048
 			}
 		}
 
-		r2node::SceneNode::Update( delta_time );
+		r2bix_node::SceneNode::Update( delta_time );
 	}
 }

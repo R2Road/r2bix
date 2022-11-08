@@ -2,7 +2,7 @@
 
 #include <memory>
 
-namespace r2base
+namespace r2bix_node
 {
 	class Node;
 }
@@ -16,7 +16,7 @@ namespace r2bix_action
 		iAction() : mOwnerNode( nullptr ) {}
 		virtual ~iAction() {}
 
-		void SetOwnerNode( r2base::Node* const owner_node )
+		void SetOwnerNode( r2bix_node::Node* const owner_node )
 		{
 			mOwnerNode = owner_node;
 		}
@@ -28,6 +28,6 @@ namespace r2bix_action
 		virtual bool Update( const float delta_time ) = 0;
 
 	protected:
-		r2base::Node* mOwnerNode;
+		r2bix_node::Node* mOwnerNode;
 	};
 }

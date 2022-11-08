@@ -14,9 +14,9 @@
 
 namespace p2048
 {
-	r2base::NodeUp StageViewNode::Create( r2bix::Director& director )
+	r2bix_node::NodeUp StageViewNode::Create( r2bix::Director& director )
 	{
-		auto ret( r2base::Node::Create( director ) );
+		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
 			auto stage_view_component = ret->AddComponent<p2048::StageViewComponent>();
@@ -25,7 +25,7 @@ namespace p2048
 			// Background
 			//
 			{
-				auto node = ret->AddChild<r2node::CustomTextureNode>( std::numeric_limits<int>::min() );
+				auto node = ret->AddChild<r2bix_node::CustomTextureNode>( std::numeric_limits<int>::min() );
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 				node->mTransformComponent->SetPosition( -1, -1 );
 
@@ -36,7 +36,7 @@ namespace p2048
 				//
 				if( p2048::Config::GetNodeConfig().pivot )
 				{
-					node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
+					node->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
 				}
 			}
 
@@ -45,7 +45,7 @@ namespace p2048
 			//
 			if( p2048::Config::GetNodeConfig().pivot )
 			{
-				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
 			}
 		}
 

@@ -9,12 +9,12 @@ namespace r2bix
 
 namespace p2048
 {
-	class NumberNode : public r2base::Node
+	class NumberNode : public r2bix_node::Node
 	{
 	private:
 		NumberNode() = delete;
 
 	public:
-		static r2base::NodeUp Create( r2bix::Director& director );
+		static r2bix_node::NodeUp Create( r2bix::Director& director );
 	};
 }

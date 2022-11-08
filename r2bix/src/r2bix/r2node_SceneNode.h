@@ -10,11 +10,11 @@ namespace r2bix
 	class Director;
 }
 
-namespace r2node
+namespace r2bix_node
 {
 	using SceneNodeUp = std::unique_ptr<class SceneNode>;
 
-	class SceneNode : public r2base::Node
+	class SceneNode : public r2bix_node::Node
 	{
 	public:
 		SceneNode( r2bix::Director& director );

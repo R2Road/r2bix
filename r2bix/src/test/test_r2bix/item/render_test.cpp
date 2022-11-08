@@ -11,10 +11,10 @@
 
 namespace render_test
 {
-	class RenderTestNode : r2base::Node
+	class RenderTestNode : r2bix_node::Node
 	{
 	public:
-		RenderTestNode( r2bix::Director& director, const r2::PointInt& position, const r2::SizeInt size, const r2::PointInt rect_offset ) : r2base::Node( director )
+		RenderTestNode( r2bix::Director& director, const r2::PointInt& position, const r2::SizeInt size, const r2::PointInt rect_offset ) : r2bix_node::Node( director )
 			, mPosition( position )
 			, mTexture( size.GetWidth(), size.GetHeight() )
 			, mRect( rect_offset.GetX(), rect_offset.GetY(), mTexture.GetWidth() - 1, mTexture.GetHeight() - 1 )

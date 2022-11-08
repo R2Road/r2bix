@@ -29,7 +29,7 @@ namespace p2048
 		};
 
 	public:
-		GameComponent( r2base::Node& owner_node );
+		GameComponent( r2bix_node::Node& owner_node );
 		~GameComponent();
 
 	public:
@@ -39,11 +39,11 @@ namespace p2048
 
 		void SetStageViewComponent( p2048::StageViewComponent* const stage_view_component ) { mStageViewComponent = stage_view_component; }
 		void SetStageViewComponent4History( p2048::StageViewComponent* const stage_view_component ) { mStageViewComponent4History = stage_view_component; }
-		void SetMaxNumberLabel( r2base::Node* const node ) { mMaxNumberLabel = node; }
-		void SetTotalScoreLabel( r2base::Node* const node ) { mTotalScoreLabel = node; }
-		void SetRecentScoreLabel( r2base::Node* const node ) { mRecentScoreLabel = node; }
-		void SetYouWinNode( r2base::Node* const node ) { mYouWinNode = node; }
-		void SetGameOverNode( r2base::Node* const node ) { mGameOverNode = node; }
+		void SetMaxNumberLabel( r2bix_node::Node* const node ) { mMaxNumberLabel = node; }
+		void SetTotalScoreLabel( r2bix_node::Node* const node ) { mTotalScoreLabel = node; }
+		void SetRecentScoreLabel( r2bix_node::Node* const node ) { mRecentScoreLabel = node; }
+		void SetYouWinNode( r2bix_node::Node* const node ) { mYouWinNode = node; }
+		void SetGameOverNode( r2bix_node::Node* const node ) { mGameOverNode = node; }
 
 	private:
 		bool MoveNumber( const r2::Direction4::eState move_direction );
@@ -55,12 +55,12 @@ namespace p2048
 
 		p2048::StageViewComponent* mStageViewComponent;
 		p2048::StageViewComponent* mStageViewComponent4History;
-		r2base::Node* mMaxNumberLabel;
-		r2base::Node* mTotalScoreLabel;
-		r2base::Node* mRecentScoreLabel;
+		r2bix_node::Node* mMaxNumberLabel;
+		r2bix_node::Node* mTotalScoreLabel;
+		r2bix_node::Node* mRecentScoreLabel;
 
-		r2base::Node* mYouWinNode;
-		r2base::Node* mGameOverNode;
+		r2bix_node::Node* mYouWinNode;
+		r2bix_node::Node* mGameOverNode;
 
 		r2bix_input::KeyboardInputListener mKeyboardInputListener;
 	};

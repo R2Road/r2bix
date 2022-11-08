@@ -32,14 +32,14 @@ namespace r2render
 	class iRenderTarget;
 }
 
-namespace r2base
+namespace r2bix_node
 {
 	using NodeUp = std::unique_ptr<class Node>;
 	class Node
 	{
 	protected:
-		using ComponentContainerT = std::list<ComponentUp>;
-		using ChildContainerT = std::list<r2base::NodeUp>;
+		using ComponentContainerT = std::list<r2base::ComponentUp>;
+		using ChildContainerT = std::list<NodeUp>;
 
 		Node( r2bix::Director& director );
 
@@ -115,7 +115,7 @@ namespace r2base
 		template<typename NodeT>
 		Node* AddChild( const int32_t z_order )
 		{
-			static_assert( std::is_base_of<r2base::Node, NodeT>() );
+			static_assert( std::is_base_of<r2bix_node::Node, NodeT>() );
 
 			auto child_node = NodeT::Create( mDirector );
 			child_node->mTransformComponent->SetZ( z_order );

@@ -5,7 +5,7 @@
 
 namespace r2component
 {
-	LabelMComponent::LabelMComponent( r2base::Node& owner_node ) : r2base::Component<LabelMComponent>( owner_node )
+	LabelMComponent::LabelMComponent( r2bix_node::Node& owner_node ) : r2base::Component<LabelMComponent>( owner_node )
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 		, mColorValue( r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black )

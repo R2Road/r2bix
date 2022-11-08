@@ -26,9 +26,9 @@
 
 namespace p2048
 {
-	r2node::SceneNodeUp GameScene::Create( r2bix::Director& director )
+	r2bix_node::SceneNodeUp GameScene::Create( r2bix::Director& director )
 	{
-		auto ret( r2node::SceneNode::Create( director ) );
+		auto ret( r2bix_node::SceneNode::Create( director ) );
 		if( ret )
 		{
 			//
@@ -89,12 +89,12 @@ namespace p2048
 			// Max Number
 			//
 			{
-				auto label_node = ret->AddChild<r2node::LabelSNode>();
+				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
 				label_node->GetComponent<r2component::LabelSComponent>()->SetString( "Max : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 9 );
 
-				auto max_number_label_node = ret->AddChild<r2node::LabelSNode>( 1 );
+				auto max_number_label_node = ret->AddChild<r2bix_node::LabelSNode>( 1 );
 				max_number_label_node->GetComponent<r2component::LabelSComponent>()->SetString( "0" );
 				max_number_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				max_number_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 9 );
@@ -109,12 +109,12 @@ namespace p2048
 			// Score
 			//
 			{
-				auto label_node = ret->AddChild<r2node::LabelSNode>();
+				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
 				label_node->GetComponent<r2component::LabelSComponent>()->SetString( "Score : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 10 );
 
-				auto total_score_label_node = ret->AddChild<r2node::LabelSNode>( 1 );
+				auto total_score_label_node = ret->AddChild<r2bix_node::LabelSNode>( 1 );
 				total_score_label_node->GetComponent<r2component::LabelSComponent>()->SetString( "0" );
 				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 10 );
@@ -129,12 +129,12 @@ namespace p2048
 			// Recent Score
 			//
 			{
-				auto label_node = ret->AddChild<r2node::LabelSNode>();
+				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
 				label_node->GetComponent<r2component::LabelSComponent>()->SetString( "Recent : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 11 );
 
-				auto total_score_label_node = ret->AddChild<r2node::LabelSNode>( 1 );
+				auto total_score_label_node = ret->AddChild<r2bix_node::LabelSNode>( 1 );
 				total_score_label_node->GetComponent<r2component::LabelSComponent>()->SetString( "0" );
 				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 11 );
@@ -149,7 +149,7 @@ namespace p2048
 			// Key Info
 			//
 			{
-				auto sprite_node = ret->AddChild<r2node::SpriteNode>();
+				auto sprite_node = ret->AddChild<r2bix_node::SpriteNode>();
 				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
 				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 23, 33 );
 			}
@@ -158,7 +158,7 @@ namespace p2048
 			// You Win
 			//
 			{
-				auto you_win_node = ret->AddChild<r2node::SpriteNode>( 2 );
+				auto you_win_node = ret->AddChild<r2bix_node::SpriteNode>( 2 );
 				you_win_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "you_win_0" ) );
 				you_win_node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
@@ -194,7 +194,7 @@ namespace p2048
 			// Game Over
 			//
 			{
-				auto game_over_node = ret->AddChild<r2node::SpriteNode>( 2 );
+				auto game_over_node = ret->AddChild<r2bix_node::SpriteNode>( 2 );
 				game_over_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "game_over_0" ) );
 				game_over_node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
@@ -234,12 +234,12 @@ namespace p2048
 				//
 				//
 				//
-				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
-				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() - 1, 0 );
-				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() - 1, director.GetScreenBufferSize().GetHeight() - 1 );
-				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( 0, director.GetScreenBufferSize().GetHeight() - 1 );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() - 1, 0 );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() - 1, director.GetScreenBufferSize().GetHeight() - 1 );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( 0, director.GetScreenBufferSize().GetHeight() - 1 );
 
-				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() * 0.5f, director.GetScreenBufferSize().GetHeight() * 0.5f );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() * 0.5f, director.GetScreenBufferSize().GetHeight() * 0.5f );
 			}
 		}
 

@@ -9,7 +9,7 @@ namespace r2component
 	class TransformComponent : public r2base::Component<TransformComponent>
 	{
 	public:
-		TransformComponent( r2base::Node& owner_node );
+		TransformComponent( r2bix_node::Node& owner_node );
 
 		//
 		// Getter

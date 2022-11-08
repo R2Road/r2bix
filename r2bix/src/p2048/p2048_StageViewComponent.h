@@ -13,10 +13,10 @@ namespace p2048
 	class StageViewComponent : public r2base::Component<StageViewComponent>
 	{
 	public:
-		StageViewComponent( r2base::Node& owner_node );
+		StageViewComponent( r2bix_node::Node& owner_node );
 
 		void Setup( const p2048::Stage& stage );
-		void SetBackgroundNode( r2base::Node* const background_node )
+		void SetBackgroundNode( r2bix_node::Node* const background_node )
 		{
 			mBackgroundNode = background_node;
 		}
@@ -34,6 +34,6 @@ namespace p2048
 		int32_t mHeight;
 		std::vector<p2048::NumberComponent*> mNumberComponentContainer;
 
-		r2base::Node* mBackgroundNode;
+		r2bix_node::Node* mBackgroundNode;
 	};
 }
