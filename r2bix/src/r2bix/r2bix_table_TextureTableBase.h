@@ -4,7 +4,7 @@
 #include <string>
 #include <unordered_map>
 
-#include "r2render_TextureFrame.h"
+#include "r2bix_render_TextureFrame.h"
 
 namespace r2render
 {

@@ -5,8 +5,8 @@
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
-#include "r2bix/r2render_Texture.h"
-#include "r2bix/r2render_TextureFrame.h"
+#include "r2bix/r2bix_render_Texture.h"
+#include "r2bix/r2bix_render_TextureFrame.h"
 
 #include "test/Utility4Test.h"
 

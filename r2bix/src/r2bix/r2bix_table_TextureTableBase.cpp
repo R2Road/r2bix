@@ -1,7 +1,7 @@
 #include "r2bix_table_TextureTableBase.h"
 
-#include "r2render_Texture.h"
-#include "r2render_TextureFrame.h"
+#include "r2bix_render_Texture.h"
+#include "r2bix_render_TextureFrame.h"
 
 namespace r2bix_table
 {

@@ -155,15 +155,6 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\DevelopmentMenu.cpp" />
-    <ClCompile Include="src\r2bix\r2render_Camera.cpp">
-      <Filter>r2bix\render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2render_Texture.cpp">
-      <Filter>r2bix\render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2render_TextureFrame.cpp">
-      <Filter>r2bix\render</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2utility_InputUtil.cpp">
       <Filter>r2bix\utility</Filter>
     </ClCompile>
@@ -425,6 +416,15 @@
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.cpp">
       <Filter>r2bix\table</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_render_Camera.cpp">
+      <Filter>r2bix\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_render_Texture.cpp">
+      <Filter>r2bix\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_render_TextureFrame.cpp">
+      <Filter>r2bix\render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -497,18 +497,6 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\DevelopmentMenu.h" />
-    <ClInclude Include="src\r2bix\r2render_Camera.h">
-      <Filter>r2bix\render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2render_iRenderTarget.h">
-      <Filter>r2bix\render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2render_Texture.h">
-      <Filter>r2bix\render</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2render_TextureFrame.h">
-      <Filter>r2bix\render</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2utility_InputUtil.h">
       <Filter>r2bix\utility</Filter>
     </ClInclude>
@@ -829,6 +817,18 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h">
       <Filter>r2bix\table</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_render_Camera.h">
+      <Filter>r2bix\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_render_iRenderTarget.h">
+      <Filter>r2bix\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_render_Texture.h">
+      <Filter>r2bix\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_render_TextureFrame.h">
+      <Filter>r2bix\render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

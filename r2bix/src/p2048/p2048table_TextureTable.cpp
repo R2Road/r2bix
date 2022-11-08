@@ -1,7 +1,7 @@
 #include "p2048table_TextureTable.h"
 
-#include "r2bix/r2render_Texture.h"
-#include "r2bix/r2render_TextureFrame.h"
+#include "r2bix/r2bix_render_Texture.h"
+#include "r2bix/r2bix_render_TextureFrame.h"
 
 namespace p2048table
 {

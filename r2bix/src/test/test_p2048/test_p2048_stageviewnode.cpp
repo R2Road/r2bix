@@ -3,7 +3,7 @@
 #include "r2bix/r2bix_Director.h"
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
-#include "r2bix/r2render_Camera.h"
+#include "r2bix/r2bix_render_Camera.h"
 
 #include "p2048/p2048_Stage.h"
 #include "p2048/p2048_StageViewComponent.h"

@@ -11,7 +11,7 @@
 #undef min
 #undef max
 
-#include "r2render_Texture.h"
+#include "r2bix_render_Texture.h"
 
 namespace r2bix_director
 {

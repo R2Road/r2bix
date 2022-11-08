@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "r2base_ColorValue.h"
-#include "r2render_iRenderTarget.h"
+#include "r2bix_render_iRenderTarget.h"
 
 #include "r2/r2_GridIndexConverter.h"
 #include "r2/r2_RectInt.h"

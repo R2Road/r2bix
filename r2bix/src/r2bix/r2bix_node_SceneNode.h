@@ -2,8 +2,8 @@
 
 #include "r2bix_node_Node.h"
 
-#include "r2render_Camera.h"
-#include "r2render_Texture.h"
+#include "r2bix_render_Camera.h"
+#include "r2bix_render_Texture.h"
 
 namespace r2bix
 {

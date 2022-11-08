@@ -4,7 +4,7 @@
 
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
-#include "r2bix/r2render_TextureFrame.h"
+#include "r2bix/r2bix_render_TextureFrame.h"
 
 r2cm::eColor Convert_R2bixForegroundColor_to_R2CMColor( r2base::ColorValue color_value )
 {

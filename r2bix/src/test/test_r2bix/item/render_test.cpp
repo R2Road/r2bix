@@ -6,8 +6,8 @@
 
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_node_Node.h"
-#include "r2bix/r2render_Camera.h"
-#include "r2bix/r2render_Texture.h"
+#include "r2bix/r2bix_render_Camera.h"
+#include "r2bix/r2bix_render_Texture.h"
 
 namespace render_test
 {

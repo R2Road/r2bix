@@ -1,7 +1,7 @@
 #include "TextureTable4Test.h"
 
-#include "r2bix/r2render_Texture.h"
-#include "r2bix/r2render_TextureFrame.h"
+#include "r2bix/r2bix_render_Texture.h"
+#include "r2bix/r2bix_render_TextureFrame.h"
 
 void TextureTable4Test::Load()
 {
