@@ -152,9 +152,6 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\DevelopmentMenu.cpp" />
-    <ClCompile Include="src\r2bix\r2base_Node.cpp">
-      <Filter>r2bix\base</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationInfo.cpp">
       <Filter>r2bix\base</Filter>
     </ClCompile>
@@ -422,6 +419,9 @@
     <ClCompile Include="src\r2bix\r2bix_action_AnimationRequestAction.cpp">
       <Filter>r2bix\action</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2base_Node.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -494,9 +494,6 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\DevelopmentMenu.h" />
-    <ClInclude Include="src\r2bix\r2base_Node.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationInfo.h">
       <Filter>r2bix\base</Filter>
     </ClInclude>
@@ -826,6 +823,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2base_Component.h">
       <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_Node.h">
+      <Filter>r2bix\node</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
