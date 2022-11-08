@@ -145,7 +145,7 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
 				std::cout << r2cm::linefeed;
@@ -236,7 +236,7 @@ namespace miniaudio_test
 			{
 				std::cout << r2cm::tab << "+ fire and forget" << r2cm::linefeed2;
 
-				PROCESS_MAIN( result = ma_engine_play_sound( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), nullptr ) );
+				PROCESS_MAIN( result = ma_engine_play_sound( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), nullptr ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
@@ -284,7 +284,7 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound, true ) );
 				PROCESS_SUB( ma_sound_start( &sound ) );
 			}
@@ -370,7 +370,7 @@ namespace miniaudio_test
 			{
 				std::cout << r2cm::tab << "+ 파일 있다." << r2cm::linefeed2;
 
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeSFXPath( "test_sfx_01.wav" ).c_str() , 0, NULL, NULL, &sound ) );
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeSFXPath( "test_sfx_01.wav" ).c_str() , 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
@@ -419,7 +419,7 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
 				std::cout << r2cm::linefeed;
@@ -512,7 +512,7 @@ namespace miniaudio_test
 			{
 				std::cout << r2cm::tab << "+ Load" << r2cm::linefeed2;
 
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound_orig ) );
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound_orig ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
@@ -581,7 +581,7 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
 				std::cout << r2cm::linefeed;
@@ -673,7 +673,7 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound, true ) );
 				PROCESS_SUB( ma_sound_start( &sound ) );
 			}
@@ -766,7 +766,7 @@ namespace miniaudio_test
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
+				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
 				std::cout << r2cm::linefeed;
@@ -902,14 +902,14 @@ namespace miniaudio_test
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, &sound_group, NULL, &sound_1 ) );
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, &sound_group, NULL, &sound_1 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_1, 0.1f ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound_1, true ) );
 				PROCESS_SUB( ma_sound_start( &sound_1 ) );
 				
 				std::cout << r2cm::linefeed;
 				
-				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_2, 1.0f ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound_2, true ) );
 				PROCESS_SUB( ma_sound_start( &sound_2 ) );
@@ -1005,14 +1005,14 @@ namespace miniaudio_test
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, &sound_group, NULL, &sound_1 ) );
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, &sound_group, NULL, &sound_1 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_1, 0.1f ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound_1, true ) );
 				PROCESS_SUB( ma_sound_start( &sound_1 ) );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
+				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_2, 1.0f ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound_2, true ) );
 				PROCESS_SUB( ma_sound_start( &sound_2 ) );

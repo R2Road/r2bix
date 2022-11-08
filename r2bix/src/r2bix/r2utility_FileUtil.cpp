@@ -2,7 +2,7 @@
 
 #include <filesystem>
 
-namespace r2utility
+namespace r2bix_utility
 {
 	std::string MakeOutPutPath( const char* file_name )
 	{
