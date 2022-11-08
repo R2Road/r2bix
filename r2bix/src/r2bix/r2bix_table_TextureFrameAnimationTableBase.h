@@ -2,7 +2,7 @@
 
 #include <unordered_map>
 
-#include "r2base_TextureFrameAnimationInfo.h"
+#include "r2bix_table_TextureFrameAnimationInfo.h"
 
 namespace r2base
 {

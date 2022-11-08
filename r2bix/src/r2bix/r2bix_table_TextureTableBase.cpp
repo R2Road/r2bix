@@ -1,4 +1,4 @@
-#include "r2base_TextureTableBase.h"
+#include "r2bix_table_TextureTableBase.h"
 
 #include "r2render_Texture.h"
 #include "r2render_TextureFrame.h"

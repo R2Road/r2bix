@@ -416,13 +416,13 @@
     <ClCompile Include="src\r2bix\r2bix_node_Node.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationInfo.cpp">
+    <ClCompile Include="src\r2bix\r2bix_table_TextureTableBase.cpp">
       <Filter>r2bix\table</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationTableBase.cpp">
+    <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.cpp">
       <Filter>r2bix\table</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2base_TextureTableBase.cpp">
+    <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.cpp">
       <Filter>r2bix\table</Filter>
     </ClCompile>
   </ItemGroup>
@@ -821,13 +821,13 @@
     <ClInclude Include="src\r2bix\r2bix_component_TransformComponent.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationInfo.h">
+    <ClInclude Include="src\r2bix\r2bix_table_TextureTableBase.h">
       <Filter>r2bix\table</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationTableBase.h">
+    <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.h">
       <Filter>r2bix\table</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_TextureTableBase.h">
+    <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h">
       <Filter>r2bix\table</Filter>
     </ClInclude>
   </ItemGroup>

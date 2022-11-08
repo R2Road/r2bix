@@ -1,7 +1,7 @@
 #pragma once
 
 #include "r2cm/r2cm_Singleton.h"
-#include "r2bix/r2base_TextureTableBase.h"
+#include "r2bix/r2bix_table_TextureTableBase.h"
 
 namespace p2048table
 {

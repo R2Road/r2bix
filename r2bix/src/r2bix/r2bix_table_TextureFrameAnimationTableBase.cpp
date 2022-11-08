@@ -1,4 +1,4 @@
-#include "r2base_TextureFrameAnimationTableBase.h"
+#include "r2bix_table_TextureFrameAnimationTableBase.h"
 
 namespace r2base
 {

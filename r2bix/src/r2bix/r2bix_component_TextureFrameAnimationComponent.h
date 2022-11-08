@@ -5,7 +5,7 @@
 #include "r2bix_component_Component.h"
 
 #include "r2/r2_TimerFloat.h"
-#include "r2base_TextureFrameAnimationInfo.h"
+#include "r2bix_table_TextureFrameAnimationInfo.h"
 
 namespace r2bix_component
 {

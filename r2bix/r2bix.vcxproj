@@ -72,9 +72,9 @@
     <ClCompile Include="src\r2bix\r2bix_Director.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_Node.cpp" />
     <ClCompile Include="src\r2bix\r2bix_director_ScreenBufferManager.cpp" />
-    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationInfo.cpp" />
-    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationTableBase.cpp" />
-    <ClCompile Include="src\r2bix\r2base_TextureTableBase.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_table_TextureTableBase.cpp" />
     <ClCompile Include="src\r2bix\r2bix_director_Scheduler.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_ActionProcessComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_CustomTextureComponent.cpp" />
@@ -207,9 +207,9 @@
     <ClInclude Include="src\r2bix\r2bix_component_iComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_node_Node.h" />
     <ClInclude Include="src\r2bix\r2bix_director_ScreenBufferManager.h" />
-    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationInfo.h" />
-    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationTableBase.h" />
-    <ClInclude Include="src\r2bix\r2base_TextureTableBase.h" />
+    <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h" />
+    <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.h" />
+    <ClInclude Include="src\r2bix\r2bix_table_TextureTableBase.h" />
     <ClInclude Include="src\r2bix\r2bix_VersionInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_director_Scheduler.h" />
     <ClInclude Include="src\r2bix\r2bix_component_ActionProcessComponent.h" />
