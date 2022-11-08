@@ -1,8 +1,8 @@
 #include "r2component_TransformComponent.h"
 
-namespace r2component
+namespace r2bix_component
 {
-	TransformComponent::TransformComponent( r2bix_node::Node& owner_node ) : r2base::Component<TransformComponent>( owner_node )
+	TransformComponent::TransformComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TransformComponent>( owner_node )
 		, mPosition()
 		, mZOrder( 0 )
 	{}

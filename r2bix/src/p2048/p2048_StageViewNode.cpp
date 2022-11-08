@@ -26,7 +26,7 @@ namespace p2048
 			//
 			{
 				auto node = ret->AddChild<r2bix_node::CustomTextureNode>( std::numeric_limits<int>::min() );
-				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 				node->mTransformComponent->SetPosition( -1, -1 );
 
 				stage_view_component->SetBackgroundNode( node );

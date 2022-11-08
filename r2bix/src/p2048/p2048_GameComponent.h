@@ -14,7 +14,7 @@ namespace p2048
 {
 	class StageViewComponent;
 
-	class GameComponent : public r2base::Component<GameComponent>
+	class GameComponent : public r2bix_component::Component<GameComponent>
 	{
 	private:
 		enum class eStep

@@ -27,7 +27,7 @@ namespace r2bix_node
 		//
 		// Transform
 		//
-		mTransformComponent = AddComponent<r2component::TransformComponent>();
+		mTransformComponent = AddComponent<r2bix_component::TransformComponent>();
 
 		return true;
 	}

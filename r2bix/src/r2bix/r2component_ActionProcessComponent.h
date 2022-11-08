@@ -5,9 +5,9 @@
 #include "r2bix_action_iAction.h"
 #include "r2base_Component.h"
 
-namespace r2component
+namespace r2bix_component
 {
-	class ActionProcessComponent : public r2base::Component<ActionProcessComponent>
+	class ActionProcessComponent : public r2bix_component::Component<ActionProcessComponent>
 	{
 	public:
 		ActionProcessComponent( r2bix_node::Node& owner_node );

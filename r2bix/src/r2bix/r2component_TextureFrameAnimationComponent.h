@@ -7,7 +7,7 @@
 #include "r2/r2_TimerFloat.h"
 #include "r2base_TextureFrameAnimationInfo.h"
 
-namespace r2component
+namespace r2bix_component
 {
 	class TextureFrameRenderComponent;
 }
@@ -17,9 +17,9 @@ namespace r2render
 	class TextureFrame;
 }
 
-namespace r2component
+namespace r2bix_component
 {
-	class TextureFrameAnimationComponent : public r2base::Component<TextureFrameAnimationComponent>
+	class TextureFrameAnimationComponent : public r2bix_component::Component<TextureFrameAnimationComponent>
 	{
 	private:
 		struct AnimationFrame
@@ -45,11 +45,11 @@ namespace r2component
 		//
 		//
 		//
-		r2component::TextureFrameRenderComponent* const GetTextureFrameRenderComponent()
+		r2bix_component::TextureFrameRenderComponent* const GetTextureFrameRenderComponent()
 		{
 			return mTextureFrameRenderComponent;
 		}
-		void SetTextureFrameRenderComponent( r2component::TextureFrameRenderComponent* const texture_frame_render_component )
+		void SetTextureFrameRenderComponent( r2bix_component::TextureFrameRenderComponent* const texture_frame_render_component )
 		{
 			mTextureFrameRenderComponent = texture_frame_render_component;
 		}
@@ -66,7 +66,7 @@ namespace r2component
 		const r2bix_animation::eIndex GetCurrentAnimationIndex() const;
 
 	private:
-		r2component::TextureFrameRenderComponent* mTextureFrameRenderComponent;
+		r2bix_component::TextureFrameRenderComponent* mTextureFrameRenderComponent;
 
 		bool mbRepeat;
 		AnimationPackageT mAnimationPackage;

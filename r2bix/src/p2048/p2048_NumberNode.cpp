@@ -29,12 +29,12 @@ namespace p2048
 			//
 			{
 				auto node = ret->AddChild<r2bix_node::CustomTextureNode>( std::numeric_limits<int>::min() );
-				node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 8u, 3u, ' ' );
-				node->GetComponent<r2component::TextureRenderComponent>()->SetTexture(
-					node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()
+				node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 8u, 3u, ' ' );
+				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetTexture(
+					node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()
 				);
 
-				number_component->SetCustomTextureComponent( node->GetComponent<r2component::CustomTextureComponent>() );
+				number_component->SetCustomTextureComponent( node->GetComponent<r2bix_component::CustomTextureComponent>() );
 			}
 
 			//
@@ -42,11 +42,11 @@ namespace p2048
 			//
 			{
 				auto node = ret->AddChild<r2bix_node::LabelSNode>();
-				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				node->GetComponent<r2component::TransformComponent>()->SetPosition( 2, 0 );
-				node->GetComponent<r2component::LabelSComponent>()->SetColor( r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black );
+				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 2, 0 );
+				node->GetComponent<r2bix_component::LabelSComponent>()->SetColor( r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black );
 
-				number_component->SetLabelComponent( node->GetComponent<r2component::LabelSComponent>() );
+				number_component->SetLabelComponent( node->GetComponent<r2bix_component::LabelSComponent>() );
 			}
 
 			//

@@ -11,8 +11,8 @@ namespace r2bix_node
 		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
-			r2component::TextureRenderComponent* texture_render_component = ret->AddComponent<r2component::TextureRenderComponent>();
-			r2component::CustomTextureComponent* custome_texture_component = ret->AddComponent<r2component::CustomTextureComponent>();
+			r2bix_component::TextureRenderComponent* texture_render_component = ret->AddComponent<r2bix_component::TextureRenderComponent>();
+			r2bix_component::CustomTextureComponent* custome_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
 			custome_texture_component->GetTexture()->Reset( 1u, 1u, '+' );
 			custome_texture_component->GetTexture()->FillColor( 1u, 1u, r2base::eForegroundColor::FG_Red | r2base::eBackgroundColor::BG_White );
 

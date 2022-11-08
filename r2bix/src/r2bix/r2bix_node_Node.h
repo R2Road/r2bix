@@ -38,7 +38,7 @@ namespace r2bix_node
 	class Node
 	{
 	protected:
-		using ComponentContainerT = std::list<r2base::ComponentUp>;
+		using ComponentContainerT = std::list<r2bix_component::ComponentUp>;
 		using ChildContainerT = std::list<NodeUp>;
 
 		Node( r2bix::Director& director );
@@ -71,7 +71,7 @@ namespace r2bix_node
 		{
 			for( auto& c : mComponentContainer )
 			{
-				if( r2base::ComponentStaticID<ComponentT>::Get() == c->GetStaticID() )
+				if( r2bix_component::ComponentStaticID<ComponentT>::Get() == c->GetStaticID() )
 				{
 					return static_cast<ComponentT*>( c.get() );
 				}
@@ -82,7 +82,7 @@ namespace r2bix_node
 		template<typename ComponentT>
 		ComponentT* AddComponent()
 		{
-			static_assert( std::is_base_of<r2base::iComponent, ComponentT>() );
+			static_assert( std::is_base_of<r2bix_component::iComponent, ComponentT>() );
 
 			if( GetComponent<ComponentT>() )
 			{
@@ -176,6 +176,6 @@ namespace r2bix_node
 		ComponentContainerT mComponentContainer;
 		ChildContainerT mChildContainer;
 	public:
-		r2component::TransformComponent* mTransformComponent;
+		r2bix_component::TransformComponent* mTransformComponent;
 	};
 }

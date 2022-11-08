@@ -11,8 +11,8 @@ namespace r2bix_node
 		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
-			auto frame_render_component = ret->AddComponent<r2component::TextureFrameRenderComponent>();
-			auto frame_animation_component = ret->AddComponent<r2component::TextureFrameAnimationComponent>();
+			auto frame_render_component = ret->AddComponent<r2bix_component::TextureFrameRenderComponent>();
+			auto frame_animation_component = ret->AddComponent<r2bix_component::TextureFrameAnimationComponent>();
 
 			frame_animation_component->SetTextureFrameRenderComponent( frame_render_component );
 		}

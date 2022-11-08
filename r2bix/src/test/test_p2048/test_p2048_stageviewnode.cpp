@@ -88,7 +88,7 @@ namespace test_p2048_stageviewnode
 			DECLARATION_MAIN( auto svn = p2048::StageViewNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048::StageViewComponent>() );
 			PROCESS_MAIN( svc->Setup( stage ) );
-			PROCESS_MAIN( svn->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
+			PROCESS_MAIN( svn->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
 			std::cout << r2cm::split;
 
@@ -142,7 +142,7 @@ namespace test_p2048_stageviewnode
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048::StageViewComponent>() );
 			PROCESS_MAIN( svc->Setup( stage ) );
 			PROCESS_MAIN( svc->UpdateView() );
-			PROCESS_MAIN( svn->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
+			PROCESS_MAIN( svn->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
 			std::cout << r2cm::split;
 

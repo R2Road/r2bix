@@ -1,8 +1,8 @@
 #include "r2component_ActionProcessComponent.h"
 
-namespace r2component
+namespace r2bix_component
 {
-	ActionProcessComponent::ActionProcessComponent( r2bix_node::Node& owner_node ) : r2base::Component<ActionProcessComponent>( owner_node )
+	ActionProcessComponent::ActionProcessComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<ActionProcessComponent>( owner_node )
 		, mAction()
 		, mbStart( false )
 	{}

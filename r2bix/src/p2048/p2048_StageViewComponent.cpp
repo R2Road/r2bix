@@ -11,7 +11,7 @@
 
 namespace p2048
 {
-	StageViewComponent::StageViewComponent( r2bix_node::Node& owner_node ) : r2base::Component<StageViewComponent>( owner_node )
+	StageViewComponent::StageViewComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<StageViewComponent>( owner_node )
 		, mStage( nullptr )
 		, mWidth( 0u )
 		, mHeight( 0u )
@@ -55,7 +55,7 @@ namespace p2048
 				number_component->SetNumber( 2048, false, false );
 				mNumberComponentContainer.push_back( number_component );
 
-				node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
 					4 + static_cast<int>( x * ( NUMBER_WIDTH + SPACING_WIDTH ) )
 					, 1 + static_cast<int>( y * ( NUMBER_HEIGHT + SPACING_HEIGHT ) )
 				);
@@ -66,8 +66,8 @@ namespace p2048
 		// Background
 		//
 		R2ASSERT( nullptr != mBackgroundNode, "WTF" );
-		mBackgroundNode->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( mWidth + 2u, mHeight + 2u, '=' );
-		mBackgroundNode->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
+		mBackgroundNode->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( mWidth + 2u, mHeight + 2u, '=' );
+		mBackgroundNode->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect();
 	}
 
 	void StageViewComponent::UpdateView()

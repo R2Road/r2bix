@@ -10,7 +10,7 @@ namespace r2bix_node
 		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
-			ret->AddComponent<r2component::TextureFrameRenderComponent>();
+			ret->AddComponent<r2bix_component::TextureFrameRenderComponent>();
 		}
 
 		return ret;

@@ -12,7 +12,7 @@
 
 namespace p2048
 {
-	GameComponent::GameComponent( r2bix_node::Node& owner_node ) : r2base::Component<GameComponent>( owner_node )
+	GameComponent::GameComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<GameComponent>( owner_node )
 		, mStep( eStep::GameReady )
 		, mStage( 4u, 4u )
 		, mGameProcessor( &mStage )
@@ -54,9 +54,9 @@ namespace p2048
 			mGameProcessor.Reset();
 
 			mStageViewComponent->GetOwnerNode().SetVisible( false );
-			mMaxNumberLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
-			mTotalScoreLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
-			mRecentScoreLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mMaxNumberLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mTotalScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mRecentScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 
 			mYouWinNode->SetVisible( false );
 			mGameOverNode->SetVisible( false );
@@ -125,13 +125,13 @@ namespace p2048
 
 		case eStep::GameEnd:
 			mGameOverNode->SetVisible( true );
-			mGameOverNode->GetComponent<r2component::ActionProcessComponent>()->StartAction();
+			mGameOverNode->GetComponent<r2bix_component::ActionProcessComponent>()->StartAction();
 			mStep = eStep::GameStop;
 			break;
 
 		case eStep::GameClear:
 			mYouWinNode->SetVisible( true );
-			mYouWinNode->GetComponent<r2component::ActionProcessComponent>()->StartAction();
+			mYouWinNode->GetComponent<r2bix_component::ActionProcessComponent>()->StartAction();
 			mStep = eStep::GameStop;
 			break;
 		}
@@ -155,7 +155,7 @@ namespace p2048
 			GetOwnerNode().GetDirector().RequestAbort();
 		}
 
-		r2base::iComponent::Update( delta_time );
+		r2bix_component::iComponent::Update( delta_time );
 	}
 
 	bool GameComponent::MoveNumber( const r2::Direction4::eState move_direction )
@@ -171,15 +171,15 @@ namespace p2048
 			//
 			if( 0 < mGameProcessor.GetSum4Merged() )
 			{
-				mMaxNumberLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
+				mMaxNumberLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
 					, mGameProcessor.GetMaxNumber()
 				) );
 
-				mTotalScoreLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
+				mTotalScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
 					, mGameProcessor.GetScore()
 				) );
 				
-				mRecentScoreLabel->GetComponent<r2component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "+ %d"
+				mRecentScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "+ %d"
 					, mGameProcessor.GetSum4Merged()
 				) );
 			}

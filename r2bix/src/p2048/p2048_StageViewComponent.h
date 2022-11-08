@@ -10,7 +10,7 @@ namespace p2048
 	class NumberComponent;
 	class Stage;
 
-	class StageViewComponent : public r2base::Component<StageViewComponent>
+	class StageViewComponent : public r2bix_component::Component<StageViewComponent>
 	{
 	public:
 		StageViewComponent( r2bix_node::Node& owner_node );

@@ -4,9 +4,9 @@
 
 #include "r2/r2_PointInt.h"
 
-namespace r2component
+namespace r2bix_component
 {
-	class TransformComponent : public r2base::Component<TransformComponent>
+	class TransformComponent : public r2bix_component::Component<TransformComponent>
 	{
 	public:
 		TransformComponent( r2bix_node::Node& owner_node );

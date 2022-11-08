@@ -3,9 +3,9 @@
 #include "r2component_CustomTextureComponent.h"
 #include "r2component_TextureRenderComponent.h"
 
-namespace r2component
+namespace r2bix_component
 {
-	LabelSComponent::LabelSComponent( r2bix_node::Node& owner_node ) : r2base::Component<LabelSComponent>( owner_node )
+	LabelSComponent::LabelSComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<LabelSComponent>( owner_node )
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 		, mColorValue( r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black )

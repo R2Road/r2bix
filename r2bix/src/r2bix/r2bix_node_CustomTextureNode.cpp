@@ -17,8 +17,8 @@ namespace r2bix_node
 			//
 			//
 			{
-				auto custome_texture_component = ret->AddComponent<r2component::CustomTextureComponent>();
-				auto texture_render_component = ret->AddComponent<r2component::TextureRenderComponent>();
+				auto custome_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
+				auto texture_render_component = ret->AddComponent<r2bix_component::TextureRenderComponent>();
 
 				texture_render_component->SetTexture( custome_texture_component->GetTexture() );
 			}

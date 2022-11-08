@@ -32,7 +32,7 @@ namespace psnake
 
 		{
 			auto node = AddChild<r2bix_node::LabelSNode>();
-			node->GetComponent<r2component::LabelSComponent>()->SetString( CompanyScene::GetTitle() );
+			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( CompanyScene::GetTitle() );
 		}
 
 		return true;

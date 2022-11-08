@@ -6,9 +6,9 @@
 #include "r2render_Camera.h"
 #include "r2render_Texture.h"
 
-namespace r2component
+namespace r2bix_component
 {
-	TextureRenderComponent::TextureRenderComponent( r2bix_node::Node& owner_node ) : r2base::Component<TextureRenderComponent>( owner_node )
+	TextureRenderComponent::TextureRenderComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureRenderComponent>( owner_node )
 		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTexture( nullptr )

@@ -15,7 +15,7 @@ namespace r2bix_node
 	class Node;
 }
 
-namespace r2base
+namespace r2bix_component
 {
 	using ComponentUp = std::unique_ptr<class iComponent>;
 	class iComponent

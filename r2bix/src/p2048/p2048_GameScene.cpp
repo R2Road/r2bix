@@ -51,7 +51,7 @@ namespace p2048
 				auto stage_view_component = stage_view_node->GetComponent<p2048::StageViewComponent>();
 				stage_view_component->Setup( game_component->GetStage() );
 
-				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				stage_view_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component->GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component->GetHeight() * 0.5f )
 				);
@@ -71,7 +71,7 @@ namespace p2048
 				auto stage_view_component_4debug = stage_view_node->GetComponent<p2048::StageViewComponent>();
 				stage_view_component_4debug->Setup( game_component->GetStage() );
 
-				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				stage_view_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component_4debug->GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component_4debug->GetHeight() * 0.5f )
 				);
@@ -90,14 +90,14 @@ namespace p2048
 			//
 			{
 				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
-				label_node->GetComponent<r2component::LabelSComponent>()->SetString( "Max : " );
-				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 9 );
+				label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Max : " );
+				label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_label_x, 9 );
 
 				auto max_number_label_node = ret->AddChild<r2bix_node::LabelSNode>( 1 );
-				max_number_label_node->GetComponent<r2component::LabelSComponent>()->SetString( "0" );
-				max_number_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				max_number_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 9 );
+				max_number_label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "0" );
+				max_number_label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				max_number_label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_number_x, 9 );
 
 				//
 				//
@@ -110,14 +110,14 @@ namespace p2048
 			//
 			{
 				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
-				label_node->GetComponent<r2component::LabelSComponent>()->SetString( "Score : " );
-				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 10 );
+				label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Score : " );
+				label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_label_x, 10 );
 
 				auto total_score_label_node = ret->AddChild<r2bix_node::LabelSNode>( 1 );
-				total_score_label_node->GetComponent<r2component::LabelSComponent>()->SetString( "0" );
-				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 10 );
+				total_score_label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "0" );
+				total_score_label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				total_score_label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_number_x, 10 );
 
 				//
 				//
@@ -130,14 +130,14 @@ namespace p2048
 			//
 			{
 				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
-				label_node->GetComponent<r2component::LabelSComponent>()->SetString( "Recent : " );
-				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 11 );
+				label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Recent : " );
+				label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_label_x, 11 );
 
 				auto total_score_label_node = ret->AddChild<r2bix_node::LabelSNode>( 1 );
-				total_score_label_node->GetComponent<r2component::LabelSComponent>()->SetString( "0" );
-				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 11 );
+				total_score_label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "0" );
+				total_score_label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				total_score_label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_number_x, 11 );
 
 				//
 				//
@@ -150,8 +150,8 @@ namespace p2048
 			//
 			{
 				auto sprite_node = ret->AddChild<r2bix_node::SpriteNode>();
-				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
-				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 23, 33 );
+				sprite_node->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
+				sprite_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 23, 33 );
 			}
 
 			//
@@ -159,19 +159,19 @@ namespace p2048
 			//
 			{
 				auto you_win_node = ret->AddChild<r2bix_node::SpriteNode>( 2 );
-				you_win_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "you_win_0" ) );
-				you_win_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				you_win_node->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "you_win_0" ) );
+				you_win_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
 				you_win_node->SetVisible( false );
 
-				auto action_process_component = you_win_node->AddComponent<r2component::ActionProcessComponent>();
+				auto action_process_component = you_win_node->AddComponent<r2bix_component::ActionProcessComponent>();
 				{
 					auto sequence_action = r2bix_action::SequenceAction::Create();
 
 					auto moveto_action = sequence_action->AddAction<r2bix_action::MoveToAction>();
-					moveto_action->SetEndPoint( you_win_node->GetComponent<r2component::TransformComponent>()->GetPosition() );
+					moveto_action->SetEndPoint( you_win_node->GetComponent<r2bix_component::TransformComponent>()->GetPosition() );
 					moveto_action->SetTimeLimit( 0.f );
 
 					auto delay_action = sequence_action->AddAction<r2bix_action::DelayAction>();
@@ -195,19 +195,19 @@ namespace p2048
 			//
 			{
 				auto game_over_node = ret->AddChild<r2bix_node::SpriteNode>( 2 );
-				game_over_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "game_over_0" ) );
-				game_over_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				game_over_node->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "game_over_0" ) );
+				game_over_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
 				game_over_node->SetVisible( false );
 
-				auto action_process_component = game_over_node->AddComponent<r2component::ActionProcessComponent>();
+				auto action_process_component = game_over_node->AddComponent<r2bix_component::ActionProcessComponent>();
 				{
 					auto sequence_action = r2bix_action::SequenceAction::Create();
 
 					auto moveto_action = sequence_action->AddAction<r2bix_action::MoveToAction>();
-					moveto_action->SetEndPoint( game_over_node->GetComponent<r2component::TransformComponent>()->GetPosition() );
+					moveto_action->SetEndPoint( game_over_node->GetComponent<r2bix_component::TransformComponent>()->GetPosition() );
 					moveto_action->SetTimeLimit( 0.f );
 
 					auto delay_action = sequence_action->AddAction<r2bix_action::DelayAction>();

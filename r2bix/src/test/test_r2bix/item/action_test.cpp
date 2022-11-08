@@ -56,7 +56,7 @@ namespace action_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
@@ -123,7 +123,7 @@ namespace action_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
@@ -196,7 +196,7 @@ namespace action_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
@@ -281,7 +281,7 @@ namespace action_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
@@ -366,7 +366,7 @@ namespace action_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
@@ -451,7 +451,7 @@ namespace action_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
@@ -550,7 +550,7 @@ namespace action_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
@@ -641,7 +641,7 @@ namespace action_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
@@ -702,15 +702,15 @@ namespace action_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( auto tfrc = node->AddComponent<r2component::TextureFrameRenderComponent>() );
-				DECLARATION_MAIN( auto tfac = node->AddComponent<r2component::TextureFrameAnimationComponent>() );
+				DECLARATION_MAIN( auto tfrc = node->AddComponent<r2bix_component::TextureFrameRenderComponent>() );
+				DECLARATION_MAIN( auto tfac = node->AddComponent<r2bix_component::TextureFrameAnimationComponent>() );
 				PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
 				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
 			}
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2component::ActionProcessComponent>() );
+			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_FALSE( component->HasAction() );
 
@@ -741,8 +741,8 @@ namespace action_test
 					PROCESS_MAIN( node->Update( 0.001f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-					std::cout << "Action Process Running : " << node->GetComponent<r2component::ActionProcessComponent>()->IsRunning() << r2cm::linefeed;
-					std::cout << "Animation Running : " << node->GetComponent<r2component::TextureFrameAnimationComponent>()->IsRunning() << r2cm::linefeed2;
+					std::cout << "Action Process Running : " << node->GetComponent<r2bix_component::ActionProcessComponent>()->IsRunning() << r2cm::linefeed;
+					std::cout << "Animation Running : " << node->GetComponent<r2bix_component::TextureFrameAnimationComponent>()->IsRunning() << r2cm::linefeed2;
 
 					Utility4Test::DrawTexture( render_target );
 

@@ -3,7 +3,7 @@
 #include "r2base_iComponent.h"
 #include "r2base_ComponentStaticID.h"
 
-namespace r2base
+namespace r2bix_component
 {
 	template<typename T>
 	class Component : public iComponent
@@ -13,7 +13,7 @@ namespace r2base
 		using MyUp = std::unique_ptr<MyT>;
 
 	protected:
-		Component( r2bix_node::Node& owner_node ) : r2base::iComponent( owner_node )
+		Component( r2bix_node::Node& owner_node ) : r2bix_component::iComponent( owner_node )
 		{}
 
 	public:
@@ -30,7 +30,7 @@ namespace r2base
 
 		int GetStaticID() const override
 		{
-			return r2base::ComponentStaticID<MyT>::Get();
+			return r2bix_component::ComponentStaticID<MyT>::Get();
 		}
 	};
 }

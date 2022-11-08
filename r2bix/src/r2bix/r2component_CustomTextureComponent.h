@@ -4,9 +4,9 @@
 
 #include "r2render_Texture.h"
 
-namespace r2component
+namespace r2bix_component
 {
-	class CustomTextureComponent : public r2base::Component<CustomTextureComponent>
+	class CustomTextureComponent : public r2bix_component::Component<CustomTextureComponent>
 	{
 	public:
 		CustomTextureComponent( r2bix_node::Node& owner_node );

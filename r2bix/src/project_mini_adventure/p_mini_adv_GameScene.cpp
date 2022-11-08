@@ -32,7 +32,7 @@ namespace p_mini_adv
 
 		{
 			auto node = AddChild<r2bix_node::LabelSNode>();
-			node->GetComponent<r2component::LabelSComponent>()->SetString( GameScene::GetTitle() );
+			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( GameScene::GetTitle() );
 
 			node->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f

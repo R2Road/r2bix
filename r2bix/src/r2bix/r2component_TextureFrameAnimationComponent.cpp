@@ -2,9 +2,9 @@
 
 #include "r2component_TextureFrameRenderComponent.h"
 
-namespace r2component
+namespace r2bix_component
 {
-	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2bix_node::Node& owner_node ) : r2base::Component<TextureFrameAnimationComponent>( owner_node )
+	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureFrameAnimationComponent>( owner_node )
 		, mTextureFrameRenderComponent( nullptr )
 
 		, mbRepeat( false )

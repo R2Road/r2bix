@@ -12,9 +12,9 @@ namespace r2render
 	class TextureFrame;
 }
 
-namespace r2component
+namespace r2bix_component
 {
-	class TextureFrameRenderComponent : public r2base::Component<TextureFrameRenderComponent>
+	class TextureFrameRenderComponent : public r2bix_component::Component<TextureFrameRenderComponent>
 	{
 	public:
 		TextureFrameRenderComponent( r2bix_node::Node& owner_node );

@@ -44,7 +44,7 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
 			}
 
 			std::cout << r2cm::split;
@@ -184,7 +184,7 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
 			}
 
 			std::cout << r2cm::split;
@@ -217,10 +217,10 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::CustomTextureComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureRenderComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::LabelSComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::CustomTextureComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TextureRenderComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::LabelSComponent>() );
 			}
 
 			std::cout << r2cm::split;
@@ -253,10 +253,10 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::CustomTextureComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureRenderComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::LabelSComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::CustomTextureComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TextureRenderComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::LabelSComponent>() );
 			}
 
 			std::cout << r2cm::split;
@@ -289,8 +289,8 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureFrameRenderComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 			}
 
 			std::cout << r2cm::split;
@@ -323,14 +323,14 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			{
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TransformComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureFrameRenderComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( auto frame = dummy_node->GetComponent<r2component::TextureFrameRenderComponent>() );
-				DECLARATION_MAIN( auto animation = dummy_node->GetComponent<r2component::TextureFrameAnimationComponent>() );
+				DECLARATION_MAIN( auto frame = dummy_node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
+				DECLARATION_MAIN( auto animation = dummy_node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
 				EXPECT_EQ( frame, animation->GetTextureFrameRenderComponent() );
 			}
 
@@ -362,9 +362,9 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto node = r2bix_node::CustomTextureNode::Create( dummy_director ) );
-			EXPECT_NE( nullptr, node->GetComponent<r2component::TransformComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2component::CustomTextureComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
 
 			std::cout << r2cm::split;
 
@@ -376,8 +376,8 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 3, 3, 'T' ) );
-				PROCESS_MAIN( node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect() );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 3, 3, 'T' ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
 
 				std::cout << r2cm::linefeed;
 
@@ -389,8 +389,8 @@ namespace node_test
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 5, 5, 'S' ) );
-				PROCESS_MAIN( node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect() );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 5, 5, 'S' ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
 
 				std::cout << r2cm::linefeed;
 

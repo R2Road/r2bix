@@ -13,12 +13,12 @@ namespace r2render
 	class Texture;
 }
 
-namespace r2component
+namespace r2bix_component
 {
 	class CustomTextureComponent;
 	class TextureRenderComponent;
 
-	class LabelSComponent : public r2base::Component<LabelSComponent>
+	class LabelSComponent : public r2bix_component::Component<LabelSComponent>
 	{
 	public:
 		LabelSComponent( r2bix_node::Node& owner_node );

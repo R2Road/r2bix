@@ -59,7 +59,7 @@ namespace p2048
 
 				auto frame = p2048table::TextureTable::GetInstance().GetTextureFrame( "title_frame" );
 
-				mSpriteNode->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( frame );
+				mSpriteNode->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( frame );
 
 				mSpriteNode->mTransformComponent->SetPosition(
 					mDirector.GetScreenBufferSize().GetWidth() * 0.5f
@@ -70,11 +70,11 @@ namespace p2048
 			// Number 2
 			{
 				auto number_node = mSpriteNode->AddChild<r2bix_node::SpriteNode>();
-				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_2" ) );
+				number_node->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_2" ) );
 				number_node->mTransformComponent->SetPosition( -26, 0 );
 
 				{
-					auto component = number_node->AddComponent<r2component::ActionProcessComponent>();
+					auto component = number_node->AddComponent<r2bix_component::ActionProcessComponent>();
 
 					auto repeat_action = r2bix_action::RepeatAction::Create();
 					{
@@ -123,17 +123,17 @@ namespace p2048
 			// Number 0
 			{
 				auto number_node = mSpriteNode->AddChild<r2bix_node::SpriteNode>();
-				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
+				number_node->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
 				number_node->mTransformComponent->SetPosition( -9, 0 );
 			}
 			// Number 4
 			{
 				auto number_node = mSpriteNode->AddChild<r2bix_node::SpriteNode>();
-				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_4" ) );
+				number_node->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_4" ) );
 				number_node->mTransformComponent->SetPosition( 9, 0 );
 
 				{
-					auto component = number_node->AddComponent<r2component::ActionProcessComponent>();
+					auto component = number_node->AddComponent<r2bix_component::ActionProcessComponent>();
 
 					auto repeat_action = r2bix_action::RepeatAction::Create();
 					{
@@ -181,11 +181,11 @@ namespace p2048
 			// Number 8
 			{
 				auto number_node = mSpriteNode->AddChild<r2bix_node::SpriteNode>();
-				number_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_8" ) );
+				number_node->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "title_8" ) );
 				number_node->mTransformComponent->SetPosition( 26, 0 );
 
 				{
-					auto component = number_node->AddComponent<r2component::ActionProcessComponent>();
+					auto component = number_node->AddComponent<r2bix_component::ActionProcessComponent>();
 
 					auto repeat_action = r2bix_action::RepeatAction::Create();
 					{
@@ -217,14 +217,14 @@ namespace p2048
 		{
 			mLabelNode = AddChild<r2bix_node::LabelSNode>();
 
-			mLabelNode->GetComponent<r2component::LabelSComponent>()->SetString( "Press Any Key" );
+			mLabelNode->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Press Any Key" );
 
 			mLabelNode->mTransformComponent->SetPosition(
 				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
 				, mDirector.GetScreenBufferSize().GetHeight() * 0.65f
 			);
 
-			auto action_process_component = mLabelNode->AddComponent<r2component::ActionProcessComponent>();
+			auto action_process_component = mLabelNode->AddComponent<r2bix_component::ActionProcessComponent>();
 
 			auto repeat_action = r2bix_action::RepeatAction::Create();
 			{

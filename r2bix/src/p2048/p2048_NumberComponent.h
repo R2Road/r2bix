@@ -3,7 +3,7 @@
 #include "r2bix/r2base_Component.h"
 #include "r2bix/r2base_ComponentStaticID.h"
 
-namespace r2component
+namespace r2bix_component
 {
 	class CustomTextureComponent;
 	class LabelSComponent;
@@ -11,23 +11,23 @@ namespace r2component
 
 namespace p2048
 {
-	class NumberComponent : public r2base::Component<NumberComponent>
+	class NumberComponent : public r2bix_component::Component<NumberComponent>
 	{
 	public:
 		NumberComponent( r2bix_node::Node& owner_node );
 
-		void SetLabelComponent( r2component::LabelSComponent* const label_component )
+		void SetLabelComponent( r2bix_component::LabelSComponent* const label_component )
 		{
 			mLabelComponent = label_component;
 		}
-		void SetCustomTextureComponent( r2component::CustomTextureComponent* const custom_texture_component )
+		void SetCustomTextureComponent( r2bix_component::CustomTextureComponent* const custom_texture_component )
 		{
 			mCustomTextureComponent = custom_texture_component;
 		}
 		void SetNumber( const int new_number, const bool merged, const bool newcomer );
 
 	private:
-		r2component::LabelSComponent* mLabelComponent;
-		r2component::CustomTextureComponent* mCustomTextureComponent;
+		r2bix_component::LabelSComponent* mLabelComponent;
+		r2bix_component::CustomTextureComponent* mCustomTextureComponent;
 	};
 }

@@ -18,20 +18,20 @@ namespace r2bix_action
 
 	void AnimationRequestAction::Enter()
 	{
-		assert( nullptr != mOwnerNode->GetComponent<r2component::TextureFrameAnimationComponent>() );
+		assert( nullptr != mOwnerNode->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
 	}
 	bool AnimationRequestAction::Update( const float /*delta_time*/ )
 	{
 		switch( mOrder )
 		{
 		case eOrder::PlayOnce:
-			mOwnerNode->GetComponent<r2component::TextureFrameAnimationComponent>()->RunAnimation_Once( mAnimationIndex );
+			mOwnerNode->GetComponent<r2bix_component::TextureFrameAnimationComponent>()->RunAnimation_Once( mAnimationIndex );
 			break;
 		case eOrder::PlayRepeat:
-			mOwnerNode->GetComponent<r2component::TextureFrameAnimationComponent>()->RunAnimation_Repeat( mAnimationIndex );
+			mOwnerNode->GetComponent<r2bix_component::TextureFrameAnimationComponent>()->RunAnimation_Repeat( mAnimationIndex );
 			break;
 		case eOrder::Stop:
-			mOwnerNode->GetComponent<r2component::TextureFrameAnimationComponent>()->StopAnimation();
+			mOwnerNode->GetComponent<r2bix_component::TextureFrameAnimationComponent>()->StopAnimation();
 			break;
 		}
 		return false;
