@@ -79,6 +79,9 @@
     <Filter Include="r2bix\director">
       <UniqueIdentifier>{c183a091-f503-41cd-b02e-f50c91446e90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2bix\table">
+      <UniqueIdentifier>{680e836c-9c97-4883-862b-f6f89b465ff2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -152,15 +155,6 @@
       <Filter>test</Filter>
     </ClCompile>
     <ClCompile Include="src\DevelopmentMenu.cpp" />
-    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationInfo.cpp">
-      <Filter>r2bix\base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationTableBase.cpp">
-      <Filter>r2bix\base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2base_TextureTableBase.cpp">
-      <Filter>r2bix\base</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2render_Camera.cpp">
       <Filter>r2bix\render</Filter>
     </ClCompile>
@@ -422,6 +416,15 @@
     <ClCompile Include="src\r2bix\r2bix_node_Node.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationInfo.cpp">
+      <Filter>r2bix\table</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationTableBase.cpp">
+      <Filter>r2bix\table</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2base_TextureTableBase.cpp">
+      <Filter>r2bix\table</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -494,15 +497,6 @@
       <Filter>test</Filter>
     </ClInclude>
     <ClInclude Include="src\DevelopmentMenu.h" />
-    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationInfo.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationTableBase.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2base_TextureTableBase.h">
-      <Filter>r2bix\base</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2render_Camera.h">
       <Filter>r2bix\render</Filter>
     </ClInclude>
@@ -826,6 +820,15 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_TransformComponent.h">
       <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationInfo.h">
+      <Filter>r2bix\table</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationTableBase.h">
+      <Filter>r2bix\table</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2base_TextureTableBase.h">
+      <Filter>r2bix\table</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
