@@ -70,7 +70,7 @@
     <ClCompile Include="src\r2bix\r2bix_director_CoutBufferRedirector.cpp" />
     <ClCompile Include="src\r2bix\r2bix_DebugConfig.cpp" />
     <ClCompile Include="src\r2bix\r2bix_Director.cpp" />
-    <ClCompile Include="src\r2bix\r2base_Node.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_node_Node.cpp" />
     <ClCompile Include="src\r2bix\r2bix_director_ScreenBufferManager.cpp" />
     <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationInfo.cpp" />
     <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationTableBase.cpp" />
