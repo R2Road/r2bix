@@ -2,7 +2,7 @@
 
 #include "r2/r2_RectInt.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class Texture;
 	class TextureFrame;
@@ -14,10 +14,10 @@ private:
 	Utility4Test() = delete;
 
 public:
-	static void DrawTexture( const r2render::Texture& texture );
-	static void DrawTextureCharacter( const r2render::Texture& texture );
-	static void DrawTextureColor( const r2render::Texture& texture );
-	static void DrawTextureDisuse( const r2render::Texture& texture );
+	static void DrawTexture( const r2bix_render::Texture& texture );
+	static void DrawTextureCharacter( const r2bix_render::Texture& texture );
+	static void DrawTextureColor( const r2bix_render::Texture& texture );
+	static void DrawTextureDisuse( const r2bix_render::Texture& texture );
 
-	static void DrawTextureFrame( const r2render::TextureFrame& frame );
+	static void DrawTextureFrame( const r2bix_render::TextureFrame& frame );
 };

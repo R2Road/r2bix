@@ -35,7 +35,7 @@ namespace r2bix
 		//
 		void RequestAbort() { mbAbort = true; }
 		void ClearScreen();
-		void Write2BackBuffer( const r2render::Texture* const texture );
+		void Write2BackBuffer( const r2bix_render::Texture* const texture );
 
 		//
 		// Input

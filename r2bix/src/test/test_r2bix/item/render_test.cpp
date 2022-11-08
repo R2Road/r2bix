@@ -28,7 +28,7 @@ namespace render_test
 			}
 		}
 
-		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt /*offset*/ ) override
+		void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt /*offset*/ ) override
 		{
 			std::cout << "world space : my pos : " << mPosition.GetX() << "   " << mPosition.GetY() << r2cm::linefeed;
 			std::cout << "world space : camera pos : " << camera->GetPoint().GetX() << "   " << camera->GetPoint().GetY() << r2cm::linefeed2;
@@ -115,7 +115,7 @@ namespace render_test
 		}
 
 		r2::PointInt mPosition;
-		r2render::Texture mTexture;
+		r2bix_render::Texture mTexture;
 		r2::RectInt mRect;
 	};
 
@@ -130,8 +130,8 @@ namespace render_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			r2render::Camera camera( { 20, 25 }, { 20, 10 } );
-			r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
+			r2bix_render::Camera camera( { 20, 25 }, { 20, 10 } );
+			r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
 			r2bix::Director dummy_director( {} );
 			RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );
@@ -140,8 +140,8 @@ namespace render_test
 
 			{
 				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "r2render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2cm::linefeed;
-				std::cout << r2cm::tab2 << "r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2cm::linefeed2;
+				std::cout << r2cm::tab2 << "r2bix_render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2cm::linefeed2;
 				std::cout << r2cm::tab2 << "r2bix::Director dummy_director;" << r2cm::linefeed;
 				std::cout << r2cm::tab2 << "RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );" << r2cm::linefeed;
 			}

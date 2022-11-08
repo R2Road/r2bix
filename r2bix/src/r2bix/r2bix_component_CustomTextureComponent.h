@@ -14,16 +14,16 @@ namespace r2bix_component
 		//
 		// Getter
 		//
-		const r2render::Texture* const GetTexture() const
+		const r2bix_render::Texture* const GetTexture() const
 		{
 			return &mTexture;
 		}
-		r2render::Texture* const GetTexture()
+		r2bix_render::Texture* const GetTexture()
 		{
 			return &mTexture;
 		}
 
 	private:
-		r2render::Texture mTexture;
+		r2bix_render::Texture mTexture;
 	};
 }

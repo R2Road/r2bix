@@ -6,7 +6,7 @@
 #include "r2/r2utility_StringSize.h"
 #include "r2/r2utility_StringDecomposition.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	Texture::Texture( const std::string_view str ) :
 		mGridIndexConverter( 1, 1 )

@@ -6,7 +6,7 @@
 #include "r2base_ColorValue.h"
 #include "r2base_ColorMaskOption.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class iRenderTarget
 	{

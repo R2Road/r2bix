@@ -151,7 +151,7 @@ namespace r2bix_director
 		SetConsoleCursorPosition( current_buffer_handle, top_left );
 	}
 
-	void ScreenBufferManager::Write2BackBuffer( const r2render::Texture* const texture )
+	void ScreenBufferManager::Write2BackBuffer( const r2bix_render::Texture* const texture )
 	{
 		void* back_buffer_handle = nullptr;
 		if( !mbFirst )

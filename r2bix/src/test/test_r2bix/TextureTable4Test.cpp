@@ -11,7 +11,7 @@ void TextureTable4Test::Load()
 	}
 
 	{
-		auto result = mTextureContainer.emplace( "test_texture_001", TextureValueT( new ( std::nothrow ) r2render::Texture(
+		auto result = mTextureContainer.emplace( "test_texture_001", TextureValueT( new ( std::nothrow ) r2bix_render::Texture(
 			50, 10,
 			//		"1         2         3         4         5"
 			//		"01234567890123456789012345678901234567890123456789"
@@ -28,25 +28,25 @@ void TextureTable4Test::Load()
 		) ) );
 		mTextureFrameContainer.emplace(
 			"texture_001"
-			, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+			, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 		);
 
 		{
 			auto frame_result = mTextureFrameContainer.emplace(
 				"dguy_walk_1"
-				, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 			);
 			frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 1, 6, 7 ) );
 
 			frame_result = mTextureFrameContainer.emplace(
 				"dguy_walk_2"
-				, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 			);
 			frame_result.first->second->SetVisibleRect( r2::RectInt( 10, 1, 6, 7 ) );
 
 			frame_result = mTextureFrameContainer.emplace(
 				"dguy_walk_3"
-				, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 			);
 			frame_result.first->second->SetVisibleRect( r2::RectInt( 19, 1, 6, 7 ) );
 		}

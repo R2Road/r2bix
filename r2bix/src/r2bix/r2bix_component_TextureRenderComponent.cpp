@@ -15,7 +15,7 @@ namespace r2bix_component
 		, mColorMaskOption( r2base::eColorMaskFlag::CMF_Foreground | r2base::eColorMaskFlag::CMF_Background )
 	{}
 
-	void TextureRenderComponent::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
+	void TextureRenderComponent::Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
 		if( !mTexture )
 		{
@@ -93,7 +93,7 @@ namespace r2bix_component
 
 		ResetVisibleRect();
 	}
-	void TextureRenderComponent::SetTexture( const r2render::Texture* const texture )
+	void TextureRenderComponent::SetTexture( const r2bix_render::Texture* const texture )
 	{
 		mTexture = texture;
 

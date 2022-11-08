@@ -1,6 +1,6 @@
 #include "r2bix_render_TextureFrame.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	TextureFrame::TextureFrame( const Texture* const texture ) :
 		mTexture( texture )

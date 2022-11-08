@@ -7,7 +7,7 @@
 #include "r2/r2_PointFloat.h"
 #include "r2/r2_RectInt.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class Texture;
 }
@@ -22,12 +22,12 @@ namespace r2bix_component
 		//
 		// Override
 		//
-		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset ) override;
+		void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset ) override;
 
 		//
 		// Getter
 		//
-		const r2render::Texture* const GetTexture() const
+		const r2bix_render::Texture* const GetTexture() const
 		{
 			return mTexture;
 		}
@@ -40,7 +40,7 @@ namespace r2bix_component
 		// Setter
 		//
 		void SetPivotPoint( const float x, const float y );
-		void SetTexture( const r2render::Texture* const texture );
+		void SetTexture( const r2bix_render::Texture* const texture );
 		void ResetVisibleRect();
 		void SetVisibleRectForced( const int x, const int y, const int width, const int height )
 		{
@@ -54,7 +54,7 @@ namespace r2bix_component
 	private:
 		r2::PointFloat mPivotPoint;
 		r2::RectInt mVisibleRect;
-		const r2render::Texture* mTexture;
+		const r2bix_render::Texture* mTexture;
 		r2base::ColorMaskOption mColorMaskOption;
 	};
 }

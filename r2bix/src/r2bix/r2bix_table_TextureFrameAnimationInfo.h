@@ -4,7 +4,7 @@
 
 #include "r2bix_animation_constant.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class TextureFrame;
 }
@@ -17,7 +17,7 @@ namespace r2bix_table
 		struct AnimationFrame
 		{
 			float TimeLimit;
-			const r2render::TextureFrame* Frame = nullptr;
+			const r2bix_render::TextureFrame* Frame = nullptr;
 		};
 		struct Animation
 		{

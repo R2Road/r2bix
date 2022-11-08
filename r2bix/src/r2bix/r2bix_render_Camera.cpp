@@ -1,6 +1,6 @@
 #include "r2bix_render_Camera.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	Camera::Camera( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size ) :
 		mPosition( position )

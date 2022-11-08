@@ -45,7 +45,7 @@ namespace r2bix_node
 		}
 	}
 
-	void Node::Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset )
+	void Node::Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
 		if( !mbVisible )
 		{

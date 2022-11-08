@@ -60,7 +60,7 @@ r2cm::eColor Convert_R2bixBackgroundColor_to_R2CMColor( r2base::ColorValue color
 	return r2cm::eColor::FG_White;
 }
 
-void Utility4Test::DrawTexture( const r2render::Texture& texture )
+void Utility4Test::DrawTexture( const r2bix_render::Texture& texture )
 {
 	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
@@ -75,7 +75,7 @@ void Utility4Test::DrawTexture( const r2render::Texture& texture )
 
 	r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
 }
-void Utility4Test::DrawTextureCharacter( const r2render::Texture& texture )
+void Utility4Test::DrawTextureCharacter( const r2bix_render::Texture& texture )
 {
 	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 
@@ -89,7 +89,7 @@ void Utility4Test::DrawTextureCharacter( const r2render::Texture& texture )
 
 	r2cm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
 }
-void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
+void Utility4Test::DrawTextureColor( const r2bix_render::Texture& texture )
 {
 	std::size_t x = 0;
 	for( const auto color : texture.GetColorContainer() )
@@ -108,7 +108,7 @@ void Utility4Test::DrawTextureColor( const r2render::Texture& texture )
 		std::cout << r2cm::linefeed;
 	}
 }
-void Utility4Test::DrawTextureDisuse( const r2render::Texture& texture )
+void Utility4Test::DrawTextureDisuse( const r2bix_render::Texture& texture )
 {
 	std::size_t x = 0;
 	for( const auto disuse : texture.GetCharacterDisuseContainer() )
@@ -128,7 +128,7 @@ void Utility4Test::DrawTextureDisuse( const r2render::Texture& texture )
 	}
 }
 
-void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
+void Utility4Test::DrawTextureFrame( const r2bix_render::TextureFrame& frame )
 {
 	const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
 

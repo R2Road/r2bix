@@ -133,8 +133,8 @@ namespace component_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
@@ -185,8 +185,8 @@ namespace component_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
@@ -198,7 +198,7 @@ namespace component_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2render::Texture texture( 3, 3, 'A' ) );
+			DECLARATION_MAIN( r2bix_render::Texture texture( 3, 3, 'A' ) );
 			{
 				EXPECT_EQ( nullptr, component->GetTexture() );
 				PROCESS_MAIN( component->SetTexture( &texture ) );
@@ -261,8 +261,8 @@ namespace component_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 13, 7 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 20, 25 }, { 13, 7 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
@@ -270,7 +270,7 @@ namespace component_test
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
-			DECLARATION_MAIN( r2render::Texture texture( 3, 3, "123" "abc" "zxc" ) );
+			DECLARATION_MAIN( r2bix_render::Texture texture( 3, 3, "123" "abc" "zxc" ) );
 			PROCESS_MAIN( component->SetTexture( &texture ) );
 
 			std::cout << r2cm::split;
@@ -328,8 +328,8 @@ namespace component_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 13, 7 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 0, 0 }, { 13, 7 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 
@@ -396,8 +396,8 @@ namespace component_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
@@ -468,8 +468,8 @@ namespace component_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 18, 8 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 0, 0 }, { 18, 8 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
@@ -540,8 +540,8 @@ namespace component_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
 			std::cout << r2cm::linefeed;
 
@@ -596,8 +596,8 @@ namespace component_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 6 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 20, 25 }, { 14, 6 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
@@ -614,12 +614,12 @@ namespace component_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2render::Texture texture( 3, 3,
+			DECLARATION_MAIN( r2bix_render::Texture texture( 3, 3,
 				"123"
 				"456"
 				"abc"
 			) );
-			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
+			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 			PROCESS_MAIN( frame.MoveVisibleOrigin( 1, 1 ) );
 
 			std::cout << r2cm::split;
@@ -678,8 +678,8 @@ namespace component_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 10 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 20, 25 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
@@ -761,8 +761,8 @@ namespace component_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 20, 25 }, { 14, 10 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 20, 25 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
@@ -844,8 +844,8 @@ namespace component_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 14, 10 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 0, 0 }, { 14, 10 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );

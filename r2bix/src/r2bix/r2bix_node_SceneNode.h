@@ -25,7 +25,7 @@ namespace r2bix_node
 		// Override
 		//
 	private:
-		void Render( const r2render::Camera* const /*camera*/, r2render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ ) override {}
+		void Render( const r2bix_render::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ ) override {}
 
 		//
 		//
@@ -34,7 +34,7 @@ namespace r2bix_node
 		void Render();
 
 	protected:
-		r2render::Camera mCamera;
-		r2render::Texture mRenderTarget;
+		r2bix_render::Camera mCamera;
+		r2bix_render::Texture mRenderTarget;
 	};
 }

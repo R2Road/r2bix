@@ -7,7 +7,7 @@
 #include "r2/r2_PointFloat.h"
 #include "r2/r2_RectInt.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class TextureFrame;
 }
@@ -22,12 +22,12 @@ namespace r2bix_component
 		//
 		// Override
 		//
-		void Render( const r2render::Camera* const camera, r2render::iRenderTarget* const render_target, r2::PointInt offset ) override;
+		void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset ) override;
 
 		//
 		// Getter
 		//
-		const r2render::TextureFrame* const GetTextureFrame() const
+		const r2bix_render::TextureFrame* const GetTextureFrame() const
 		{
 			return mTextureFrame;
 		}
@@ -36,7 +36,7 @@ namespace r2bix_component
 		// Setter
 		//
 		void SetPivotPoint( const float x, const float y );
-		void SetTextureFrame( const r2render::TextureFrame* const texture_frame );
+		void SetTextureFrame( const r2bix_render::TextureFrame* const texture_frame );
 		void SetVisibleRectForced( const int x, const int y, const int width, const int height )
 		{
 			mVisibleRect.Set( x, y, width, height );
@@ -51,7 +51,7 @@ namespace r2bix_component
 	private:
 		r2::PointFloat mPivotPoint;
 		r2::RectInt mVisibleRect;
-		const r2render::TextureFrame* mTextureFrame;
+		const r2bix_render::TextureFrame* mTextureFrame;
 		r2base::ColorMaskOption mColorMaskOption;
 	};
 }

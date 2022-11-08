@@ -63,7 +63,7 @@ namespace r2bix
 		mScreenBufferManager.ClearCurrentBuffer();
 	}
 
-	void Director::Write2BackBuffer( const r2render::Texture* const texture )
+	void Director::Write2BackBuffer( const r2bix_render::Texture* const texture )
 	{
 		mScreenBufferManager.Write2BackBuffer( texture );
 	}

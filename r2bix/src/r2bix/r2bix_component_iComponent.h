@@ -4,7 +4,7 @@
 
 #include "r2/r2_PointInt.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class Camera;
 	class iRenderTarget;
@@ -42,7 +42,7 @@ namespace r2bix_component
 		}
 		virtual void Update( const float /*delta_time*/ )
 		{}
-		virtual void Render( const r2render::Camera* const /*camera*/, r2render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
+		virtual void Render( const r2bix_render::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
 		{}
 
 	protected:

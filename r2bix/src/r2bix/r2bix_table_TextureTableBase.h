@@ -6,7 +6,7 @@
 
 #include "r2bix_render_TextureFrame.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class Texture;
 }
@@ -16,10 +16,10 @@ namespace r2bix_table
 	class TextureTableBase
 	{
 	protected:
-		using TextureValueT = std::unique_ptr<r2render::Texture>;
+		using TextureValueT = std::unique_ptr<r2bix_render::Texture>;
 		using TextureContainerT = std::unordered_map<std::string, TextureValueT>;
 
-		using TextureFrameValueT = std::unique_ptr<r2render::TextureFrame>;
+		using TextureFrameValueT = std::unique_ptr<r2bix_render::TextureFrame>;
 		using TextureFrameContainerT = std::unordered_map<std::string, TextureFrameValueT>;
 
 	public:
@@ -30,8 +30,8 @@ namespace r2bix_table
 		bool AddTexture( const char* const key_name, const uint32_t width, const uint32_t height, const char fill_char );
 		bool RemoveTexture( const char* const key_name );
 
-		r2render::Texture* const GetTexture( const char* const key_name ) const;
-		r2render::TextureFrame* const GetTextureFrame( const char* const key_name ) const;
+		r2bix_render::Texture* const GetTexture( const char* const key_name ) const;
+		r2bix_render::TextureFrame* const GetTextureFrame( const char* const key_name ) const;
 
 	protected:
 		TextureContainerT mTextureContainer;

@@ -9,7 +9,7 @@
 #include "r2/r2_GridIndexConverter.h"
 #include "r2/r2_RectInt.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class Texture : public iRenderTarget
 	{

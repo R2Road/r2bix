@@ -2,7 +2,7 @@
 
 #include "r2bix_director_CoutBufferRedirector.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class Texture;
 }
@@ -26,7 +26,7 @@ namespace r2bix_director
 	public:
 		void InitCursor();
 		void ClearCurrentBuffer();
-		void Write2BackBuffer( const r2render::Texture* const texture );
+		void Write2BackBuffer( const r2bix_render::Texture* const texture );
 		void Swap();
 
 	private:

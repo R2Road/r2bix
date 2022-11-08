@@ -8,7 +8,7 @@
 #include "r2base_ColorValue.h"
 #include "r2bix_render_Texture.h"
 
-namespace r2render
+namespace r2bix_render
 {
 	class Texture;
 }

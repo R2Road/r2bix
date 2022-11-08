@@ -25,7 +25,7 @@ namespace texture_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2render::Texture texture( 30, 20 ) );
+			DECLARATION_MAIN( r2bix_render::Texture texture( 30, 20 ) );
 			PROCESS_MAIN( texture.FillCharacterAll( '1' ) );
 
 			std::cout << r2cm::split;
@@ -53,7 +53,7 @@ namespace texture_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2render::Texture texture( 30, 20 ) );
+			DECLARATION_MAIN( r2bix_render::Texture texture( 30, 20 ) );
 			PROCESS_MAIN( texture.FillCharacter( 0, 0, '0' ) );
 			PROCESS_MAIN( texture.FillCharacter( texture.GetXEnd(), 0, '0' ) );
 			PROCESS_MAIN( texture.FillCharacter( texture.GetXEnd(), texture.GetYEnd(), '0' ) );
@@ -91,7 +91,7 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( r2render::Texture texture( 5, 5, 'A' ) );
+			DECLARATION_MAIN( r2bix_render::Texture texture( 5, 5, 'A' ) );
 			PROCESS_MAIN( texture.FillColorAll( fore | back ) );
 
 			std::cout << r2cm::split;
@@ -128,7 +128,7 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( r2render::Texture texture( 10, 10 ) );
+			DECLARATION_MAIN( r2bix_render::Texture texture( 10, 10 ) );
 			PROCESS_MAIN( texture.FillColor( 0, 0, fore | back ) );
 			PROCESS_MAIN( texture.FillColor( texture.GetXEnd(), 0, r2base::DefaultColorValue ) );
 			PROCESS_MAIN( texture.FillColor( texture.GetXEnd(), texture.GetYEnd(), back ) );
@@ -179,7 +179,7 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A', base_color ) );
+			DECLARATION_MAIN( r2bix_render::Texture texture( 10, 10, 'A', base_color ) );
 			PROCESS_MAIN( texture.FillColorWithMask( 0, 0, new_fore_color, only_foregound_cmo ) );
 			PROCESS_MAIN( texture.FillColorWithMask( 1, 0, new_fore_color, only_background_cmo ) );
 			PROCESS_MAIN( texture.FillColorWithMask( 0, 1, new_back_color, only_background_cmo ) );
@@ -220,7 +220,7 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A', fore | back ) )
+			DECLARATION_MAIN( r2bix_render::Texture texture( 10, 10, 'A', fore | back ) )
 			PROCESS_MAIN( texture.BlendColor( 0, 0, new_fore ) );
 
 			std::cout << r2cm::split;
@@ -257,7 +257,7 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( r2render::Texture texture( 10, 10, 'A', fore | back ) );
+			DECLARATION_MAIN( r2bix_render::Texture texture( 10, 10, 'A', fore | back ) );
 			PROCESS_MAIN( texture.FillCharacterDisuse( 0, 0, true ) );
 			PROCESS_MAIN( texture.FillCharacterDisuse( texture.GetXEnd(), 0, true ) );
 			PROCESS_MAIN( texture.FillCharacterDisuse( texture.GetXEnd(), texture.GetYEnd(), true ) );
@@ -294,7 +294,7 @@ namespace texture_test
 
 			{
 				DECLARATION_MAIN( const std::string_view str( "Init With Chars" ) );
-				DECLARATION_MAIN( const r2render::Texture texture( str ) );
+				DECLARATION_MAIN( const r2bix_render::Texture texture( str ) );
 
 				std::cout << r2cm::linefeed;
 
@@ -310,7 +310,7 @@ namespace texture_test
 
 			{
 				DECLARATION_MAIN( const std::string_view str( "Init\n With \nChars\n" ) );
-				DECLARATION_MAIN( const r2render::Texture texture( str ) );
+				DECLARATION_MAIN( const r2bix_render::Texture texture( str ) );
 
 				std::cout << r2cm::linefeed;
 
@@ -343,7 +343,7 @@ namespace texture_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const r2render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggghh" ) );
+			DECLARATION_MAIN( const r2bix_render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggghh" ) );
 
 			std::cout << r2cm::split;
 
@@ -371,7 +371,7 @@ namespace texture_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const r2render::Texture texture( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
+				DECLARATION_MAIN( const r2bix_render::Texture texture( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
 				std::cout << r2cm::linefeed;
 
@@ -381,7 +381,7 @@ namespace texture_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const r2render::Texture texture( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
+				DECLARATION_MAIN( const r2bix_render::Texture texture( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
 				std::cout << r2cm::linefeed;
 
@@ -409,7 +409,7 @@ namespace texture_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const r2render::Texture texture( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
+			DECLARATION_MAIN( const r2bix_render::Texture texture( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
 			std::cout << r2cm::linefeed;
 

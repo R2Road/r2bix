@@ -13,7 +13,7 @@ namespace p2048table
 		}
 
 		{
-			auto result = mTextureContainer.emplace( "companyscene_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
+			auto result = mTextureContainer.emplace( "companyscene_image", TextureValueT( new ( std::nothrow ) r2bix_render::Texture(
 				50,
 				//		"          1         2         3         4         "
 				//		"01234567890123456789012345678901234567890123456789"
@@ -30,32 +30,32 @@ namespace p2048table
 			) ) );
 			mTextureFrameContainer.emplace(
 				"texture_001"
-				, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+				, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 			);
 
 			{
 				auto frame_result = mTextureFrameContainer.emplace(
 					"dguy_walk_1"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 1, 6, 7 ) );
 
 				frame_result = mTextureFrameContainer.emplace(
 					"dguy_walk_2"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 10, 1, 6, 7 ) );
 
 				frame_result = mTextureFrameContainer.emplace(
 					"dguy_walk_3"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 19, 1, 6, 7 ) );
 			}
 		}
 
 		{
-			auto result = mTextureContainer.emplace( "title_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
+			auto result = mTextureContainer.emplace( "title_image", TextureValueT( new ( std::nothrow ) r2bix_render::Texture(
 				71,
 				//		"          1         2         3         4         5         6         7"
 				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
@@ -80,38 +80,38 @@ namespace p2048table
 			{
 				auto frame_result = mTextureFrameContainer.emplace(
 					"title_frame"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 70, 8 ) );
 
 				frame_result = mTextureFrameContainer.emplace(
 					"title_2"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 1, 10, 6, 4 ) );
 
 				frame_result = mTextureFrameContainer.emplace(
 					"title_0"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 9, 10, 6, 4 ) );
 
 				frame_result = mTextureFrameContainer.emplace(
 					"title_4"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 17, 10, 6, 4 ) );
 
 				frame_result = mTextureFrameContainer.emplace(
 					"title_8"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 25, 10, 6, 4 ) );
 			}
 		}
 
 		{
-			auto result = mTextureContainer.emplace( "p2048_image", TextureValueT( new ( std::nothrow ) r2render::Texture(
+			auto result = mTextureContainer.emplace( "p2048_image", TextureValueT( new ( std::nothrow ) r2bix_render::Texture(
 				60,
 				//		"          1         2         3         4         5         6         7"
 				//		"01234567890123456789012345678901234567890123456789012345678901234567890"
@@ -144,7 +144,7 @@ namespace p2048table
 			{
 				auto frame_result = mTextureFrameContainer.emplace(
 					"keyinfo_0"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 13, 22, 3 ) );
 			}
@@ -152,7 +152,7 @@ namespace p2048table
 			{
 				auto frame_result = mTextureFrameContainer.emplace(
 					"game_over_0"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 0, 58, 6 ) );
 			}
@@ -160,7 +160,7 @@ namespace p2048table
 			{
 				auto frame_result = mTextureFrameContainer.emplace(
 					"you_win_0"
-					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
+					, TextureFrameValueT( new ( std::nothrow ) r2bix_render::TextureFrame( result.first->second.get() ) )
 				);
 				frame_result.first->second->SetVisibleRect( 0, 17, 47, 22 );
 			}

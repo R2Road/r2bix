@@ -25,8 +25,8 @@ namespace test_p2048_numbernode
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 21, 11 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 0, 0 }, { 21, 11 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
 			std::cout << r2cm::split;
@@ -65,8 +65,8 @@ namespace test_p2048_numbernode
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 11, 5 } ) );
-			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix_render::Camera camera( { 0, 0 }, { 11, 5 } ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_MAIN( auto number_node = p2048::NumberNode::Create( dummy_director ) );
 

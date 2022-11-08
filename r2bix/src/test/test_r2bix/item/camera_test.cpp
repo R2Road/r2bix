@@ -28,7 +28,7 @@ namespace camera_test
 
 			DECLARATION_MAIN( const r2::Point<int> position( 20, 30 ) );
 			DECLARATION_MAIN( const r2::Size<int> size( 10, 50 ) );
-			DECLARATION_MAIN( r2render::Camera camera( position, size ) );
+			DECLARATION_MAIN( r2bix_render::Camera camera( position, size ) );
 
 			std::cout << r2cm::split;
 
@@ -96,7 +96,7 @@ namespace camera_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2render::Camera camera( { 20, 30 }, { 20, 10 } ) );
+			DECLARATION_MAIN( r2bix_render::Camera camera( { 20, 30 }, { 20, 10 } ) );
 
 			std::cout << r2cm::split;
 
@@ -132,11 +132,11 @@ namespace camera_test
 		{
 			std::cout << r2cm::split;
 
-			r2render::Camera camera( { 20, 30 }, { 20, 10 } );
+			r2bix_render::Camera camera( { 20, 30 }, { 20, 10 } );
 
 			{
 				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
-				std::cout << r2cm::tab2 << "r2render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2cm::linefeed;
+				std::cout << r2cm::tab2 << "r2bix_render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2cm::linefeed;
 			}
 
 			std::cout << r2cm::split;
@@ -178,7 +178,7 @@ namespace camera_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2render::Camera camera( { 20, 30 }, { 19, 9 } ) );
+			DECLARATION_MAIN( r2bix_render::Camera camera( { 20, 30 }, { 19, 9 } ) );
 
 			std::cout << r2cm::split;
 

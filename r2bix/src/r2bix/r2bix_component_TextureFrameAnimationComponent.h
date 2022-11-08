@@ -12,7 +12,7 @@ namespace r2bix_component
 	class TextureFrameRenderComponent;
 }
 
-namespace r2render
+namespace r2bix_render
 {
 	class TextureFrame;
 }
@@ -25,7 +25,7 @@ namespace r2bix_component
 		struct AnimationFrame
 		{
 			r2::TimerFloat Timer;
-			const r2render::TextureFrame* Frame = nullptr;
+			const r2bix_render::TextureFrame* Frame = nullptr;
 		};
 		struct Animation
 		{

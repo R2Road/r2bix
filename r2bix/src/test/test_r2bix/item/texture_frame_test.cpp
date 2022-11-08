@@ -10,9 +10,9 @@
 
 namespace
 {
-	const r2render::Texture& GetDummyTexture()
+	const r2bix_render::Texture& GetDummyTexture()
 	{
-		static const r2render::Texture texture( 7,
+		static const r2bix_render::Texture texture( 7,
 			"1111111"
 			"1222222"
 			"1233333"
@@ -46,7 +46,7 @@ namespace texture_frame_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const r2render::Texture& texture = GetDummyTexture() );
+			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 
 			std::cout << r2cm::linefeed;
 
@@ -54,7 +54,7 @@ namespace texture_frame_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
+			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
 			std::cout << r2cm::linefeed;
 
@@ -95,8 +95,8 @@ namespace texture_frame_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const r2render::Texture& texture = GetDummyTexture() );
-			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
+			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
+			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
 			std::cout << r2cm::linefeed;
 
@@ -163,7 +163,7 @@ namespace texture_frame_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const r2render::Texture& texture = GetDummyTexture() );
+			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 
 			std::cout << r2cm::linefeed;
 
@@ -188,7 +188,7 @@ namespace texture_frame_test
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2render::TextureFrame frame( &texture ) );
+			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
 			std::cout << r2cm::linefeed;
 

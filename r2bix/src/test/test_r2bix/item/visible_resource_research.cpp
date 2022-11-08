@@ -23,7 +23,7 @@ namespace visible_resource_research
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const r2render::Texture visible_resource( 10, 10, '0' ) );
+			DECLARATION_MAIN( const r2bix_render::Texture visible_resource( 10, 10, '0' ) );
 
 			std::cout << r2cm::split;
 
