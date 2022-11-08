@@ -2,7 +2,7 @@
 
 #include <conio.h>
 
-namespace r2utility
+namespace r2bix_utility
 {
 	void ClearCInputBuffer()
 	{

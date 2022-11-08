@@ -151,7 +151,7 @@ namespace p2048
 		}
 		else if( mKeyboardInputListener.IsRelease( 0 ) )
 		{
-			r2utility::ClearCInputBuffer();
+			r2bix_utility::ClearCInputBuffer();
 			GetOwnerNode().GetDirector().RequestAbort();
 		}
 
