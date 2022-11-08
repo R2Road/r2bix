@@ -98,7 +98,7 @@
     <ClCompile Include="src\r2bix\r2bix_render_Texture.cpp" />
     <ClCompile Include="src\r2bix\r2bix_render_TextureFrame.cpp" />
     <ClCompile Include="src\r2bix\r2utility_FileUtil.cpp" />
-    <ClCompile Include="src\r2bix\r2utility_InputUtil.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_utility_InputUtil.cpp" />
     <ClCompile Include="src\test\test_miniaudio\item\miniaudio_test.cpp" />
     <ClCompile Include="src\test\test_miniaudio\MiniAudioMenu.cpp" />
     <ClCompile Include="src\test\test_p2048\P2048Menu.cpp" />
@@ -235,7 +235,7 @@
     <ClInclude Include="src\r2bix\r2bix_render_Texture.h" />
     <ClInclude Include="src\r2bix\r2bix_render_TextureFrame.h" />
     <ClInclude Include="src\r2bix\r2utility_FileUtil.h" />
-    <ClInclude Include="src\r2bix\r2utility_InputUtil.h" />
+    <ClInclude Include="src\r2bix\r2bix_utility_InputUtil.h" />
     <ClInclude Include="src\test\test_miniaudio\item\miniaudio_test.h" />
     <ClInclude Include="src\test\test_miniaudio\MiniAudioMenu.h" />
     <ClInclude Include="src\test\test_p2048\P2048Menu.h" />

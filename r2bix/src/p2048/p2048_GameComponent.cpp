@@ -5,7 +5,7 @@
 #include "r2bix/r2bix_node_Node.h"
 #include "r2bix/r2bix_component_ActionProcessComponent.h"
 #include "r2bix/r2bix_component_LabelSComponent.h"
-#include "r2bix/r2utility_InputUtil.h"
+#include "r2bix/r2bix_utility_InputUtil.h"
 
 #include "p2048_Config.h"
 #include "p2048_StageViewComponent.h"
