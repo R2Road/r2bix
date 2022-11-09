@@ -12,19 +12,11 @@ namespace r2base
 	class ColorMaskOption
 	{
 	public:
-		ColorMaskOption() : mMaskFlags( CMF_Foreground | CMF_Background ) { updateMask(); }
-		ColorMaskOption( const int flags ) : mMaskFlags( flags ) { updateMask(); }
+		ColorMaskOption();
+		ColorMaskOption( const int flags );
 
-		void On( const eColorMaskFlag flag )
-		{
-			mMaskFlags |= flag;
-			updateMask();
-		}
-		void Off( const eColorMaskFlag flag )
-		{
-			mMaskFlags &= ( ~flag );
-			updateMask();
-		}
+		void On( const eColorMaskFlag flag );
+		void Off( const eColorMaskFlag flag );
 
 		uint8_t GetMask() const { return mMask; }
 	private:
