@@ -416,11 +416,11 @@
     <ClCompile Include="src\r2bix\r2bix_utility_PathUtil.cpp">
       <Filter>r2bix\utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_ColorValue.cpp">
-      <Filter>r2bix\render</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_ColorMaskOption.cpp">
-      <Filter>r2bix\render</Filter>
+      <Filter>r2bix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_ColorValue.cpp">
+      <Filter>r2bix</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -821,11 +821,11 @@
     <ClInclude Include="src\r2bix\r2bix_utility_PathUtil.h">
       <Filter>r2bix\utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_ColorValue.h">
-      <Filter>r2bix\render</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_ColorMaskOption.h">
-      <Filter>r2bix\render</Filter>
+      <Filter>r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_ColorValue.h">
+      <Filter>r2bix</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
