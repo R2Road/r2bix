@@ -1,6 +1,6 @@
 #include "r2bix_ColorMaskOption.h"
 
-namespace r2base
+namespace r2bix
 {
 	void updateMask( const uint32_t mask_flags, uint8_t* out_mask_value )
 	{

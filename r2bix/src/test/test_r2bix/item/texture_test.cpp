@@ -172,9 +172,9 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			DECLARATION_MAIN( const r2base::ColorMaskOption only_foregound_cmo( r2base::eColorMaskFlag::CMF_Foreground ) );
+			DECLARATION_MAIN( const r2bix::ColorMaskOption only_foregound_cmo( r2bix::eColorMaskFlag::CMF_Foreground ) );
 			OUTPUT_BINARY( only_foregound_cmo.GetMask() );
-			DECLARATION_MAIN( const r2base::ColorMaskOption only_background_cmo( r2base::eColorMaskFlag::CMF_Background ) );
+			DECLARATION_MAIN( const r2bix::ColorMaskOption only_background_cmo( r2bix::eColorMaskFlag::CMF_Background ) );
 			OUTPUT_BINARY( only_background_cmo.GetMask() );
 
 			std::cout << r2cm::linefeed;

@@ -55,6 +55,6 @@ namespace r2bix_component
 		r2::PointFloat mPivotPoint;
 		r2::RectInt mVisibleRect;
 		const r2bix_render::Texture* mTexture;
-		r2base::ColorMaskOption mColorMaskOption;
+		r2bix::ColorMaskOption mColorMaskOption;
 	};
 }

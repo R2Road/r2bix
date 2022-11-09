@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-namespace r2base
+namespace r2bix
 {
 	enum eColorMaskFlag
 	{

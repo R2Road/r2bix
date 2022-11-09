@@ -190,7 +190,7 @@ namespace r2bix_render
 		mColors[target_linear_index] = color_value;
 	}
 
-	void Texture::FillColorWithMask( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value, const r2base::ColorMaskOption color_mask_option )
+	void Texture::FillColorWithMask( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value, const r2bix::ColorMaskOption color_mask_option )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 

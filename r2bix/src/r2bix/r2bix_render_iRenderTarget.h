@@ -15,7 +15,7 @@ namespace r2bix_render
 		virtual void FillCharacter( const uint32_t x, const uint32_t y, const char c ) = 0;
 		virtual void FillColorAll( const r2bix::ColorValue color_value ) = 0;
 		virtual void FillColor( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value ) = 0;
-		virtual void FillColorWithMask( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value, const r2base::ColorMaskOption color_mask_option ) = 0;
+		virtual void FillColorWithMask( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value, const r2bix::ColorMaskOption color_mask_option ) = 0;
 		virtual void BlendColor( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value ) = 0;
 
 		virtual r2::RectInt GetRect() const = 0;

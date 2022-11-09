@@ -12,7 +12,7 @@ namespace r2bix_component
 		, mPivotPoint( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTexture( nullptr )
-		, mColorMaskOption( r2base::eColorMaskFlag::CMF_Foreground | r2base::eColorMaskFlag::CMF_Background )
+		, mColorMaskOption( r2bix::eColorMaskFlag::CMF_Foreground | r2bix::eColorMaskFlag::CMF_Background )
 	{}
 
 	void TextureRenderComponent::Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset )
