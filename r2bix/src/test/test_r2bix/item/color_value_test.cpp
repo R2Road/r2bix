@@ -3,7 +3,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
-#include "r2bix/r2base_ColorMaskOption.h"
+#include "r2bix/r2bix_ColorMaskOption.h"
 #include "r2bix/r2bix_ColorValue.h"
 
 #include "test/Utility4Test.h"
