@@ -5,7 +5,7 @@
 
 #include "r2bix_component_Component.h"
 
-#include "r2base_ColorValue.h"
+#include "r2bix_ColorValue.h"
 #include "r2bix_render_Texture.h"
 
 namespace r2bix_render

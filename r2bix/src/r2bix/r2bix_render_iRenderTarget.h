@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 #include "r2/r2_RectInt.h"
-#include "r2base_ColorValue.h"
+#include "r2bix_ColorValue.h"
 #include "r2base_ColorMaskOption.h"
 
 namespace r2bix_render
