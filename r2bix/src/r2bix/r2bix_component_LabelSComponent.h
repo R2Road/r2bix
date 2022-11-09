@@ -43,13 +43,13 @@ namespace r2bix_component
 			mTextureRenderComponent = texture_render_component;
 		}
 		void SetString( const std::string_view str );
-		void SetColor( const r2base::ColorValue color_value );
+		void SetColor( const r2bix::ColorValue color_value );
 
 	private:
 		std::string mText;
 		CustomTextureComponent* mCustomTextureComponent;
 		TextureRenderComponent* mTextureRenderComponent;
 
-		r2base::ColorValue mColorValue;
+		r2bix::ColorValue mColorValue;
 	};
 }

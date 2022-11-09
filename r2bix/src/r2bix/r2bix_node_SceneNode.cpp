@@ -24,7 +24,7 @@ namespace r2bix_node
 	void SceneNode::Render()
 	{
 		mRenderTarget.FillCharacterAll( ' ' );
-		mRenderTarget.FillColorAll( r2base::DefaultColorValue );
+		mRenderTarget.FillColorAll( r2bix::DefaultColorValue );
 
 		r2bix_node::Node::Render( &mCamera, &mRenderTarget, mTransformComponent->GetPosition() );
 

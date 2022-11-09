@@ -24,7 +24,7 @@ namespace r2bix_render
 
 		const r2::RectInt& GetVisibleRect() const { return mVisibleRect; }
 		Texture::ValueT GetCharacter( const uint32_t x, const uint32_t y ) const;
-		r2base::ColorValue GetColor( const uint32_t x, const uint32_t y ) const;
+		r2bix::ColorValue GetColor( const uint32_t x, const uint32_t y ) const;
 		bool GetCharacterDisuse( const uint32_t x, const uint32_t y ) const;
 
 		//

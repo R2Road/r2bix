@@ -8,7 +8,7 @@ namespace r2bix_component
 	LabelSComponent::LabelSComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<LabelSComponent>( owner_node )
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
-		, mColorValue( r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black )
+		, mColorValue( r2bix::eForegroundColor::FG_White | r2bix::eBackgroundColor::BG_Black )
 	{}
 
 	void LabelSComponent::SetString( const std::string_view str )
@@ -31,7 +31,7 @@ namespace r2bix_component
 			mTextureRenderComponent->ResetVisibleRect();
 		}
 	}
-	void LabelSComponent::SetColor( const r2base::ColorValue color_value )
+	void LabelSComponent::SetColor( const r2bix::ColorValue color_value )
 	{
 		if( color_value == mColorValue )
 		{

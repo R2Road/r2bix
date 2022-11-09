@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-namespace r2base
+namespace r2bix
 {
 	enum eForegroundColor : unsigned char
 	{
@@ -48,5 +48,5 @@ namespace r2base
 	unsigned char GetForegroundColor( const ColorValue color_value );
 	unsigned char GetBackgroundColor( const ColorValue color_value );
 
-	const ColorValue DefaultColorValue = r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black;
+	const ColorValue DefaultColorValue = r2bix::eForegroundColor::FG_White | r2bix::eBackgroundColor::BG_Black;
 }

@@ -16,16 +16,16 @@ namespace p2048
 
 		if( merged )
 		{
-			mCustomTextureComponent->GetTexture()->FillColorAll( r2base::BG_Aqua);
-			mLabelComponent->GetCustomTextureComponent()->GetTexture()->FillColorAll( r2base::BG_Aqua | r2base::FG_Black );
+			mCustomTextureComponent->GetTexture()->FillColorAll( r2bix::BG_Aqua);
+			mLabelComponent->GetCustomTextureComponent()->GetTexture()->FillColorAll( r2bix::BG_Aqua | r2bix::FG_Black );
 		}
 		else
 		{
-			mCustomTextureComponent->GetTexture()->FillColorAll( r2base::BG_Black );
+			mCustomTextureComponent->GetTexture()->FillColorAll( r2bix::BG_Black );
 			mLabelComponent->GetCustomTextureComponent()->GetTexture()->FillColorAll(
 				newcomer
-				? r2base::BG_Black | r2base::FG_LightYellow
-				: r2base::BG_Black | r2base::FG_Aqua
+				? r2bix::BG_Black | r2bix::FG_LightYellow
+				: r2bix::BG_Black | r2bix::FG_Aqua
 			);
 		}
 	}

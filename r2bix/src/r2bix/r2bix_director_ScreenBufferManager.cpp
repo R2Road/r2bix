@@ -168,7 +168,7 @@ namespace r2bix_director
 		DWORD out_result;
 
 		std::string_view output_line;
-		const r2base::ColorValue* color_line;
+		const r2bix::ColorValue* color_line;
 		for( SHORT y = 0, end_y = static_cast<SHORT>( texture->GetHeight() ); end_y > y; ++y )
 		{
 			current_write_coord = write_offset_coord;

@@ -24,26 +24,26 @@ namespace color_value_test
 			std::cout << r2cm::split;
 
 			{
-				OUTPUT_VALUE( r2base::DefaultColorValue );
+				OUTPUT_VALUE( r2bix::DefaultColorValue );
 
 				std::cout << r2cm::linefeed;
 
-				EXPECT_EQ( r2base::eForegroundColor::FG_White, r2base::GetForegroundColor( r2base::DefaultColorValue ) );
-				EXPECT_EQ( r2base::eBackgroundColor::BG_Black, r2base::GetBackgroundColor( r2base::DefaultColorValue ) );
+				EXPECT_EQ( r2bix::eForegroundColor::FG_White, r2bix::GetForegroundColor( r2bix::DefaultColorValue ) );
+				EXPECT_EQ( r2bix::eBackgroundColor::BG_Black, r2bix::GetBackgroundColor( r2bix::DefaultColorValue ) );
 			}
 
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
-				DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Gray );
-				DECLARATION_MAIN( r2base::ColorValue color_value{ fore | back } );
+				DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
+				DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_Gray );
+				DECLARATION_MAIN( r2bix::ColorValue color_value{ fore | back } );
 
 				std::cout << r2cm::linefeed;
 
 				EXPECT_EQ( fore | back, color_value );
-				EXPECT_EQ( fore, r2base::GetForegroundColor( color_value ) );
-				EXPECT_EQ( back, r2base::GetBackgroundColor( color_value ) );
+				EXPECT_EQ( fore, r2bix::GetForegroundColor( color_value ) );
+				EXPECT_EQ( back, r2bix::GetBackgroundColor( color_value ) );
 			}
 
 			std::cout << r2cm::split;
@@ -200,9 +200,9 @@ namespace color_value_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+			DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
 			OUTPUT_BINARY( uint8_t( fore ) );
-			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Gray );
+			DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_Gray );
 			OUTPUT_BINARY( uint8_t( back ) );
 
 			std::cout << r2cm::split;

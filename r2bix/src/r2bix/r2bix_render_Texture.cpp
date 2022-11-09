@@ -40,7 +40,7 @@ namespace r2bix_render
 	{
 		Reset( width, height, fill_char );
 	}
-	Texture::Texture( const uint32_t width, const uint32_t height, const char fill_char, const r2base::ColorValue color_value ) :
+	Texture::Texture( const uint32_t width, const uint32_t height, const char fill_char, const r2bix::ColorValue color_value ) :
 		mGridIndexConverter( 1, 1 )
 		, mChars()
 		, mColors()
@@ -51,7 +51,7 @@ namespace r2bix_render
 	Texture::Texture( const uint32_t width, const uint32_t height, const std::string_view str ) :
 		mGridIndexConverter( width, height )
 		, mChars( width * height, 32 )
-		, mColors( width * height, r2base::DefaultColorValue )
+		, mColors( width * height, r2bix::DefaultColorValue )
 		, mCharDisuses( width * height, false )
 	{
 		assert( 0u < width && 0u < height );
@@ -60,7 +60,7 @@ namespace r2bix_render
 	Texture::Texture( const uint32_t width, uint32_t height, const char fill_char, const std::string_view str ) :
 		mGridIndexConverter( width, height )
 		, mChars( width * height, fill_char )
-		, mColors( width * height, r2base::DefaultColorValue )
+		, mColors( width * height, r2bix::DefaultColorValue )
 		, mCharDisuses( width * height, false )
 	{
 		assert( 0u < width && 0u < height );
@@ -79,12 +79,12 @@ namespace r2bix_render
 		return temp.substr( mGridIndexConverter.To_Linear( 0, y ), mGridIndexConverter.GetWidth() );
 	}
 
-	r2base::ColorValue Texture::GetColor( const uint32_t x, const uint32_t y ) const
+	r2bix::ColorValue Texture::GetColor( const uint32_t x, const uint32_t y ) const
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 		return mColors[target_linear_index];
 	}
-	const r2base::ColorValue* Texture::GetColorLine( const uint32_t y ) const
+	const r2bix::ColorValue* Texture::GetColorLine( const uint32_t y ) const
 	{
 		return &mColors[mGridIndexConverter.To_Linear( 0, y )];
 	}
@@ -129,7 +129,7 @@ namespace r2bix_render
 		// Color
 		//
 		mColors.clear();
-		mColors.resize( mChars.size(), r2base::DefaultColorValue );
+		mColors.resize( mChars.size(), r2bix::DefaultColorValue );
 
 		//
 		// Disuse
@@ -139,9 +139,9 @@ namespace r2bix_render
 	}
 	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char )
 	{
-		Reset( width, height, fill_char, r2base::DefaultColorValue );
+		Reset( width, height, fill_char, r2bix::DefaultColorValue );
 	}
-	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char, const r2base::ColorValue color_value )
+	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char, const r2bix::ColorValue color_value )
 	{
 		assert( 0u < width && 0u < height );
 
@@ -178,19 +178,19 @@ namespace r2bix_render
 		mChars[target_linear_index] = c;
 	}
 
-	void Texture::FillColorAll( const r2base::ColorValue color_value )
+	void Texture::FillColorAll( const r2bix::ColorValue color_value )
 	{
 		std::fill( mColors.begin(), mColors.end(), color_value );
 	}
 
-	void Texture::FillColor( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value )
+	void Texture::FillColor( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 
 		mColors[target_linear_index] = color_value;
 	}
 
-	void Texture::FillColorWithMask( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value, const r2base::ColorMaskOption color_mask_option )
+	void Texture::FillColorWithMask( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value, const r2base::ColorMaskOption color_mask_option )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 
@@ -200,7 +200,7 @@ namespace r2bix_render
 		);
 	}
 
-	void Texture::BlendColor( const uint32_t x, const uint32_t y, const r2base::ColorValue color_value )
+	void Texture::BlendColor( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 

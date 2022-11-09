@@ -1,7 +1,7 @@
 #pragma once
 #include "r2base_ColorValue.h"
 
-namespace r2base
+namespace r2bix
 {
 	unsigned char GetForegroundColor( const ColorValue color_value )
 	{

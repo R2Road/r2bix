@@ -44,7 +44,7 @@ namespace p2048
 				auto node = ret->AddChild<r2bix_node::LabelSNode>();
 				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
 				node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 2, 0 );
-				node->GetComponent<r2bix_component::LabelSComponent>()->SetColor( r2base::eForegroundColor::FG_White | r2base::eBackgroundColor::BG_Black );
+				node->GetComponent<r2bix_component::LabelSComponent>()->SetColor( r2bix::eForegroundColor::FG_White | r2bix::eBackgroundColor::BG_Black );
 
 				number_component->SetLabelComponent( node->GetComponent<r2bix_component::LabelSComponent>() );
 			}

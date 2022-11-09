@@ -76,32 +76,32 @@ namespace test_p2048_numbernode
 				PROCESS_MAIN( number_node->GetComponent<p2048::NumberComponent>()->SetNumber( 2048, false, false ) );
 				number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				Utility4Test::DrawTexture( render_target );
-				EXPECT_EQ( r2base::BG_Black, render_target.GetColor( 1, 1 ) );
-				EXPECT_EQ( r2base::BG_Black | r2base::FG_Aqua, render_target.GetColor( 6, 2 ) );
+				EXPECT_EQ( r2bix::BG_Black, render_target.GetColor( 1, 1 ) );
+				EXPECT_EQ( r2bix::BG_Black | r2bix::FG_Aqua, render_target.GetColor( 6, 2 ) );
 
 				std::cout << r2cm::linefeed2;
 
 				PROCESS_MAIN( number_node->GetComponent<p2048::NumberComponent>()->SetNumber( 1024, true, false ) );
 				number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				Utility4Test::DrawTexture( render_target );
-				EXPECT_EQ( r2base::BG_Aqua, render_target.GetColor( 1, 1 ) );
-				EXPECT_EQ( r2base::BG_Aqua | r2base::FG_Black, render_target.GetColor( 6, 2 ) );
+				EXPECT_EQ( r2bix::BG_Aqua, render_target.GetColor( 1, 1 ) );
+				EXPECT_EQ( r2bix::BG_Aqua | r2bix::FG_Black, render_target.GetColor( 6, 2 ) );
 
 				std::cout << r2cm::linefeed2;
 
 				PROCESS_MAIN( number_node->GetComponent<p2048::NumberComponent>()->SetNumber( 512, true, true ) );
 				number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				Utility4Test::DrawTexture( render_target );
-				EXPECT_EQ( r2base::BG_Aqua, render_target.GetColor( 1, 1 ) );
-				EXPECT_EQ( r2base::BG_Aqua | r2base::FG_Black, render_target.GetColor( 6, 2 ) );
+				EXPECT_EQ( r2bix::BG_Aqua, render_target.GetColor( 1, 1 ) );
+				EXPECT_EQ( r2bix::BG_Aqua | r2bix::FG_Black, render_target.GetColor( 6, 2 ) );
 
 				std::cout << r2cm::linefeed2;
 
 				PROCESS_MAIN( number_node->GetComponent<p2048::NumberComponent>()->SetNumber( 4096, false, true ) );
 				number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				Utility4Test::DrawTexture( render_target );
-				EXPECT_EQ( r2base::BG_Black, render_target.GetColor( 1, 1 ) );
-				EXPECT_EQ( r2base::BG_Black | r2base::FG_LightYellow, render_target.GetColor( 6, 2 ) );
+				EXPECT_EQ( r2bix::BG_Black, render_target.GetColor( 1, 1 ) );
+				EXPECT_EQ( r2bix::BG_Black | r2bix::FG_LightYellow, render_target.GetColor( 6, 2 ) );
 			}
 
 			std::cout << r2cm::split;

@@ -84,9 +84,9 @@ namespace texture_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
+			DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
 			OUTPUT_VALUE( fore );
-			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_BrightWhite );
+			DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_BrightWhite );
 			OUTPUT_VALUE( back );
 
 			std::cout << r2cm::linefeed;
@@ -123,14 +123,14 @@ namespace texture_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
-			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_BrightWhite );
+			DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
+			DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_BrightWhite );
 
 			std::cout << r2cm::linefeed;
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 10, 10 ) );
 			PROCESS_MAIN( texture.FillColor( 0, 0, fore | back ) );
-			PROCESS_MAIN( texture.FillColor( texture.GetXEnd(), 0, r2base::DefaultColorValue ) );
+			PROCESS_MAIN( texture.FillColor( texture.GetXEnd(), 0, r2bix::DefaultColorValue ) );
 			PROCESS_MAIN( texture.FillColor( texture.GetXEnd(), texture.GetYEnd(), back ) );
 			PROCESS_MAIN( texture.FillColor( 0, texture.GetYEnd(), fore ) );
 			PROCESS_SUB( texture.FillCharacterAll( 'A' ) );
@@ -164,10 +164,10 @@ namespace texture_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( const auto base_color = r2base::eForegroundColor::FG_Aqua | r2base::eBackgroundColor::BG_Aqua );
-			DECLARATION_MAIN( const auto new_fore_color = r2base::eForegroundColor::FG_Red );
+			DECLARATION_SUB( const auto base_color = r2bix::eForegroundColor::FG_Aqua | r2bix::eBackgroundColor::BG_Aqua );
+			DECLARATION_MAIN( const auto new_fore_color = r2bix::eForegroundColor::FG_Red );
 			OUTPUT_VALUE( new_fore_color );
-			DECLARATION_MAIN( const auto new_back_color = r2base::eBackgroundColor::BG_Red );
+			DECLARATION_MAIN( const auto new_back_color = r2bix::eBackgroundColor::BG_Red );
 			OUTPUT_VALUE( new_back_color );
 
 			std::cout << r2cm::linefeed;
@@ -213,9 +213,9 @@ namespace texture_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
-			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Aqua );
-			DECLARATION_MAIN( const auto new_fore = r2base::eForegroundColor::FG_Red );
+			DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
+			DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_Aqua );
+			DECLARATION_MAIN( const auto new_fore = r2bix::eForegroundColor::FG_Red );
 			OUTPUT_VALUE( new_fore );
 
 			std::cout << r2cm::linefeed;
@@ -252,8 +252,8 @@ namespace texture_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const auto fore = r2base::eForegroundColor::FG_Aqua );
-			DECLARATION_MAIN( const auto back = r2base::eBackgroundColor::BG_Blue );
+			DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
+			DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_Blue );
 
 			std::cout << r2cm::linefeed;
 
