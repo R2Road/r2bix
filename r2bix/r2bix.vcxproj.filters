@@ -79,6 +79,12 @@
     <Filter Include="r2bix\table">
       <UniqueIdentifier>{680e836c-9c97-4883-862b-f6f89b465ff2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="tool">
+      <UniqueIdentifier>{af727aea-64a7-4d6e-a6aa-ae1d754dec4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tool\texture_viewer">
+      <UniqueIdentifier>{a6f4f786-5859-4d25-84bc-397e6264a703}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -421,6 +427,9 @@
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_ColorValue.cpp">
       <Filter>r2bix</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tool\ToolMenu.cpp">
+      <Filter>tool</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -826,6 +835,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_ColorValue.h">
       <Filter>r2bix</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tool\ToolMenu.h">
+      <Filter>tool</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

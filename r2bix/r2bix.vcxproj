@@ -134,6 +134,7 @@
     <ClCompile Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.cpp" />
     <ClCompile Include="src\test\test_r2bix\TextureTable4Test.cpp" />
     <ClCompile Include="src\test\Utility4Test.cpp" />
+    <ClCompile Include="src\tool\ToolMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\miniaudio\miniaudio.h" />
@@ -271,6 +272,7 @@
     <ClInclude Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.h" />
     <ClInclude Include="src\test\test_r2bix\TextureTable4Test.h" />
     <ClInclude Include="src\test\Utility4Test.h" />
+    <ClInclude Include="src\tool\ToolMenu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

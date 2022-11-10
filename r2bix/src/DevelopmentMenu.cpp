@@ -13,6 +13,8 @@
 #include "test/test_psnake/PSnakeMenu.h"
 #include "test/test_r2bix/R2bixMenu.h"
 
+#include "tool/ToolMenu.h"
+
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
 
@@ -36,6 +38,16 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 	{
 		ret->AddMenu<R2bixMenu>( '1' );
 		ret->AddMenu<MiniAudioMenu>( '2' );
+
+
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+
+
+		ret->AddMenu<ToolMenu>( 'q' );
 
 
 
