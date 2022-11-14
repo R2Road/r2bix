@@ -85,6 +85,9 @@
     <Filter Include="tool\texture_viewer">
       <UniqueIdentifier>{a6f4f786-5859-4d25-84bc-397e6264a703}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2bix\geometry">
+      <UniqueIdentifier>{650070f7-4b76-4353-babe-b159e7e04889}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -430,6 +433,9 @@
     </ClCompile>
     <ClCompile Include="src\tool\ToolMenu.cpp">
       <Filter>tool</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\menu\GeometryMenu.cpp">
+      <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -838,6 +844,9 @@
     </ClInclude>
     <ClInclude Include="src\tool\ToolMenu.h">
       <Filter>tool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\menu\GeometryMenu.h">
+      <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

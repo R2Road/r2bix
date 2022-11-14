@@ -8,6 +8,7 @@
 #include "menu/ColorMenu.h"
 #include "menu/ComponentMenu.h"
 #include "menu/DirectorMenu.h"
+#include "menu/GeometryMenu.h"
 #include "menu/InputMenu.h"
 #include "menu/NodeMenu.h"
 #include "menu/TextureMenu.h"
@@ -45,6 +46,15 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 		ret->AddMenu<ComponentMenu>( 'r' );
 		ret->AddMenu<ActionMenu>( 't' );
 		ret->AddMenu<NodeMenu>( 'y' );
+
+
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+
+
+		ret->AddMenu<GeometryMenu>( 'a' );
 
 
 
