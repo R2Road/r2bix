@@ -11,8 +11,20 @@
 #include "r2bix/r2bix_render_Camera.h"
 #include "r2bix/r2bix_render_Texture.h"
 
+
 namespace camera_test
 {
+	std::ostream& operator<<( std::ostream& o, const r2::PointInt& p )
+	{
+		o << "x : " << p.GetX() << "      " "y : " << p.GetY() << r2cm::linefeed;
+		return o;
+	}
+	std::ostream& operator<<( std::ostream& o, const r2::Size<int>& s )
+	{
+		o << "s : " << s.GetWidth() << "      " "h : " << s.GetHeight() << r2cm::linefeed;
+		return o;
+	}
+
 	r2cm::iItem::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*

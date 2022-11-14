@@ -30,8 +30,15 @@
 
 #include "r2cm/r2cm_WindowUtility.h"
 
+
 namespace action_test
 {
+	std::ostream& operator<<( std::ostream& o, const r2::PointInt& p )
+	{
+		o << "x : " << p.GetX() << "      " "y : " << p.GetY() << r2cm::linefeed;
+		return o;
+	}
+
 	r2cm::iItem::TitleFunctionT TickActionTest::GetTitleFunction() const
 	{
 		return []()->const char*

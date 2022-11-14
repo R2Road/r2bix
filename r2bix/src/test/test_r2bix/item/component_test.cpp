@@ -28,6 +28,12 @@
 
 namespace component_test
 {
+	std::ostream& operator<<( std::ostream& o, const r2bix_animation::eIndex& i )
+	{
+		o << "x : " << static_cast<int>( i ) << r2cm::linefeed;
+		return o;
+	}
+
 	r2cm::iItem::TitleFunctionT ComponentID::GetTitleFunction() const
 	{
 		return []()->const char*
