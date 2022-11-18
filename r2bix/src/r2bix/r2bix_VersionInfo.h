@@ -22,6 +22,7 @@ namespace r2bix
 		const char* const String4Road2Version_0_0_3 =
 					"### Road 2 Version 0.0.3 ###"
 			"\n"
+			"\n"	"[o] " "Json"
 			"\n"	"[ ] " "Texture Viewer"
 			"\n"	"[ ] " "Node Delete And Caching Pipe Line"
 			"\n"	"[ ] " "Split Scene Graph Struct And Update Process"
@@ -29,7 +30,6 @@ namespace r2bix
 
 			"\n\n"	"------------------------------------------" "\n"
 
-			"\n"	"[ ] " "Json"
 			"\n"	"[ ] " "Script"
 			"\n"	"[ ] " "Texture Editor"
 			"\n"	"[ ] " "Korean"
