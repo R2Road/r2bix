@@ -3,6 +3,8 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
+#include "item/rapidjson_test.h"
+
 #include "DevelopmentMenu.h"
 
 r2cm::MenuUp RapidjsonMenu::Create( r2cm::Director& director )
@@ -15,7 +17,7 @@ r2cm::MenuUp RapidjsonMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		//ret->AddItem( '1', miniaudio_test::Engine_Init::GetInstance() );
+		ret->AddItem( '1', rapidjson_test::Basic::GetInstance() );
 
 
 
