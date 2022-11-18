@@ -27,9 +27,9 @@ namespace r2bix
 			"\n"	"[ ] " "Split Scene Graph Struct And Update Process"
 			"\n"	"[ ] " "Make Simple Texture Adventure"
 
-			"\n\n"	"------------------------------------------"
+			"\n\n"	"------------------------------------------" "\n"
 
-			"\n\n"	"[ ] " "Json"
+			"\n"	"[ ] " "Json"
 			"\n"	"[ ] " "Script"
 			"\n"	"[ ] " "Texture Editor"
 			"\n"	"[ ] " "Korean"
