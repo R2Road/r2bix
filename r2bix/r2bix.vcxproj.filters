@@ -446,6 +446,12 @@
     <ClCompile Include="src\test\test_r2bix\menu\Vector3Menu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\vector2_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\menu\Vector2Menu.cpp">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -867,6 +873,15 @@
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\Vector3Menu.h">
+      <Filter>test\test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_Vector2.h">
+      <Filter>r2bix\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\vector2_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\menu\Vector2Menu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
   </ItemGroup>
