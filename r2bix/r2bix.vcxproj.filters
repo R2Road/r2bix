@@ -88,6 +88,12 @@
     <Filter Include="r2bix\geometry">
       <UniqueIdentifier>{650070f7-4b76-4353-babe-b159e7e04889}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\test_rapidjson">
+      <UniqueIdentifier>{58037e01-3315-46c3-a67a-14f9b47ac040}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\test_rapidjson\item">
+      <UniqueIdentifier>{832f8b55-dc87-47d3-86a7-6329e9842e01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -451,6 +457,9 @@
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\Vector2Menu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_rapidjson\RapidjsonMenu.cpp">
+      <Filter>test\test_rapidjson</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -883,6 +892,9 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\Vector2Menu.h">
       <Filter>test\test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_rapidjson\RapidjsonMenu.h">
+      <Filter>test\test_rapidjson</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
