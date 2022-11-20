@@ -4,12 +4,6 @@
 
 #include "r2bix/r2bix_node_SceneNode.h"
 
-namespace r2node
-{
-	class LabelSNode;
-	class SpriteNode;
-}
-
 namespace p2048
 {
 	class EntryScene : public r2bix_node::SceneNode
