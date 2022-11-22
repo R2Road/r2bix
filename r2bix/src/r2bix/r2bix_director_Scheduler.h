@@ -12,7 +12,11 @@ namespace r2bix_director
 		using ProcessorT = std::function<void()>;
 
 	public:
-		Scheduler( const Config& config, const std::function<void(float)> scene_update_func, const std::function<void()> scene_render_func );
+		using UpdateFunctionT = std::function<void( float )>;
+		using RenderFunctionT = std::function<void()>;
+
+	public:
+		Scheduler( const Config& config, const UpdateFunctionT& scene_update_func, const RenderFunctionT& scene_render_func );
 
 		void Do();
 

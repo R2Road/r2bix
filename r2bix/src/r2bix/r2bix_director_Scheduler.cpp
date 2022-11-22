@@ -9,7 +9,7 @@
 
 namespace r2bix_director
 {
-	const std::function<void()> MakeProcessor( const Config& config, const std::function<void( float )> scene_update_func, const std::function<void()> scene_render_func )
+	const std::function<void()> MakeProcessor( const Config& config, const Scheduler::UpdateFunctionT& scene_update_func, const Scheduler::RenderFunctionT& scene_render_func )
 	{
 		switch( config.ScheduleType )
 		{
@@ -99,7 +99,7 @@ namespace r2bix_director
 		}
 	}
 
-	Scheduler::Scheduler( const Config& config, const std::function<void( float )> scene_update_func, const std::function<void()> scene_render_func ) :
+	Scheduler::Scheduler( const Config& config, const UpdateFunctionT& scene_update_func, const RenderFunctionT& scene_render_func ) :
 		mProcessor( MakeProcessor( config, scene_update_func, scene_render_func ) )
 	{}
 
