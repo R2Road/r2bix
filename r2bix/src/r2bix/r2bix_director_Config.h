@@ -8,8 +8,6 @@ namespace r2bix_director
 	{
 		const int ScreenBufferSize_Width = 107;
 		const int ScreenBufferSize_Height = 53;
-		const int UpdateFramePerSeconds = 30u;
-		const int RenderFramePerSeconds = 30u;
 
 		enum class eScheduleType
 		{
@@ -17,5 +15,9 @@ namespace r2bix_director
 			Sleep,
 		};
 		const eScheduleType ScheduleType = eScheduleType::Infinite;
+
+		const int UpdateFramePerSeconds = 30u;
+		const int RenderFramePerSeconds = 30u;
+
 	};
 }

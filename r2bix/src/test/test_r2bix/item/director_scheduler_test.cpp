@@ -22,7 +22,7 @@ namespace director_scheduler_test
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( r2bix_director::Scheduler scheduler( { 0, 0, 10, 20 }, [](float) {}, []() {} ) );
+				DECLARATION_MAIN( r2bix_director::Scheduler scheduler( { 0, 0, r2bix_director::Config::eScheduleType::Infinite, 10, 20 }, [](float) {}, []() {} ) );
 			}
 
 			std::cout << r2cm::split;
