@@ -449,18 +449,6 @@
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\vector3_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\menu\Vector3Menu.cpp">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\vector2_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\menu\Vector2Menu.cpp">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_rapidjson\RapidjsonMenu.cpp">
       <Filter>test\test_rapidjson</Filter>
     </ClCompile>
@@ -884,24 +872,6 @@
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_Vector3.h">
-      <Filter>r2bix\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\vector3_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\menu\Vector3Menu.h">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_Vector2.h">
-      <Filter>r2bix\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\vector2_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\menu\Vector2Menu.h">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_rapidjson\RapidjsonMenu.h">
       <Filter>test\test_rapidjson</Filter>
     </ClInclude>
@@ -973,6 +943,12 @@
     </ClInclude>
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_EntryScene.h">
       <Filter>tool\texture_viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Vector2.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Vector3.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

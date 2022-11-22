@@ -115,8 +115,6 @@
     <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_manager_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\director_scheduler_test.cpp" />
-    <ClCompile Include="src\test\test_r2bix\item\vector2_test.cpp" />
-    <ClCompile Include="src\test\test_r2bix\item\vector3_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\key_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\node_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\render_test.cpp" />
@@ -134,8 +132,6 @@
     <ClCompile Include="src\test\test_r2bix\menu\InputMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\NodeMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\TextureMenu.cpp" />
-    <ClCompile Include="src\test\test_r2bix\menu\Vector2Menu.cpp" />
-    <ClCompile Include="src\test\test_r2bix\menu\Vector3Menu.cpp" />
     <ClCompile Include="src\test\test_r2bix\R2bixMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.cpp" />
     <ClCompile Include="src\test\test_r2bix\TextureTable4Test.cpp" />
@@ -175,6 +171,8 @@
     <ClInclude Include="external\r2\r2_Timer.h" />
     <ClInclude Include="external\r2\r2_TimerFloat.h" />
     <ClInclude Include="external\r2\r2_UniqueIndex.h" />
+    <ClInclude Include="external\r2\r2_Vector2.h" />
+    <ClInclude Include="external\r2\r2_Vector3.h" />
     <ClInclude Include="external\rapidjson\allocators.h" />
     <ClInclude Include="external\rapidjson\cursorstreamwrapper.h" />
     <ClInclude Include="external\rapidjson\document.h" />
@@ -242,8 +240,6 @@
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureTableBase.h" />
-    <ClInclude Include="src\r2bix\r2bix_Vector2.h" />
-    <ClInclude Include="src\r2bix\r2bix_Vector3.h" />
     <ClInclude Include="src\r2bix\r2bix_VersionInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_director_Scheduler.h" />
     <ClInclude Include="src\r2bix\r2bix_component_ActionProcessComponent.h" />
@@ -285,8 +281,6 @@
     <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_manager_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\director_scheduler_test.h" />
-    <ClInclude Include="src\test\test_r2bix\item\vector2_test.h" />
-    <ClInclude Include="src\test\test_r2bix\item\vector3_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\key_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\node_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\render_test.h" />
@@ -304,8 +298,6 @@
     <ClInclude Include="src\test\test_r2bix\menu\InputMenu.h" />
     <ClInclude Include="src\test\test_r2bix\menu\NodeMenu.h" />
     <ClInclude Include="src\test\test_r2bix\menu\TextureMenu.h" />
-    <ClInclude Include="src\test\test_r2bix\menu\Vector2Menu.h" />
-    <ClInclude Include="src\test\test_r2bix\menu\Vector3Menu.h" />
     <ClInclude Include="src\test\test_r2bix\R2bixMenu.h" />
     <ClInclude Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.h" />
     <ClInclude Include="src\test\test_r2bix\TextureTable4Test.h" />

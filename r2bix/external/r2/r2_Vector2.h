@@ -1,6 +1,6 @@
 #pragma once
 
-namespace r2bix
+namespace r2
 {
 	struct Vector2
 	{
