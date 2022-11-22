@@ -10,7 +10,7 @@ namespace r2bix
 		mScreenBufferManager()
 		, mScheduler( director_config, std::bind( &Director::onUpdate, this, std::placeholders::_1 ), std::bind( &Director::onRender, this ) )
 		, mbAbort( false )
-		, mScreenBufferSIze( director_config.ScreenBufferSIze )
+		, mScreenBufferSIze( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height )
 
 		, mKeyboardInputCollector()
 

@@ -2,13 +2,12 @@
 
 #include <stdint.h>
 
-#include "r2/r2_SizeInt.h"
-
 namespace r2bix_director
 {
 	struct Config
 	{
-		r2::SizeInt ScreenBufferSIze = { 107, 53 };
+		const int ScreenBufferSize_Width = 107;
+		const int ScreenBufferSize_Height = 53;
 		const int UpdateFramePerSeconds = 30u;
 		const int RenderFramePerSeconds = 30u;
 
