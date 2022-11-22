@@ -15,7 +15,11 @@ namespace r2bix_director
 		{
 		default:
 		case Config::eScheduleType::Infinite:
-			return [mUpdateTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), mRenderTimer = r2::FPSTimer( config.UpdateFramePerSeconds ), scene_update_func, scene_render_func]() mutable
+			return [
+				mUpdateTimer = r2::FPSTimer( config.UpdateFramePerSeconds )
+				, mRenderTimer = r2::FPSTimer( config.UpdateFramePerSeconds )
+				, scene_update_func, scene_render_func
+			]() mutable
 			{
 				if( mUpdateTimer.Update() )
 				{
