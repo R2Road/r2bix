@@ -2,20 +2,25 @@
 
 #include <memory>
 
-#include "r2bix/r2bix_node_SceneNode.h"
+namespace r2bix
+{
+	class Director;
+}
+
+namespace r2bix_node
+{
+	using SceneNodeUp = std::unique_ptr<class SceneNode>;
+}
 
 namespace tool_texture_viewer
 {
-	class EntryScene : public r2bix_node::SceneNode
+	class EntryScene
 	{
 	private:
-		EntryScene( r2bix::Director& director );
+		EntryScene() = delete;
 
 	public:
 		static const char* const GetTitle() { return "Texture Viewer"; }
 		static r2bix_node::SceneNodeUp Create( r2bix::Director& director );
-
-	public:
-		void Update( const float delta_time ) override;
 	};
 }

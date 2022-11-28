@@ -458,6 +458,9 @@
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_EntryScene.cpp">
       <Filter>tool\texture_viewer</Filter>
     </ClCompile>
+    <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_EntryComponent.cpp">
+      <Filter>tool\texture_viewer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -949,6 +952,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_Vector3.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_EntryComponent.h">
+      <Filter>tool\texture_viewer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
