@@ -140,6 +140,7 @@
     <ClCompile Include="src\test\Utility4Test.cpp" />
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_EntryComponent.cpp" />
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_EntryScene.cpp" />
+    <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.cpp" />
     <ClCompile Include="src\tool\ToolMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +308,7 @@
     <ClInclude Include="src\test\Utility4Test.h" />
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_EntryComponent.h" />
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_EntryScene.h" />
+    <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.h" />
     <ClInclude Include="src\tool\ToolMenu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -1,5 +1,10 @@
 #include "tool_texture_viewer_EntryComponent.h"
 
+#include "r2bix/r2bix_Director.h"
+#include "r2bix/r2bix_node_Node.h"
+
+#include "tool_texture_viewer_ViewerScene.h"
+
 namespace tool_texture_viewer
 {
 	EntryComponent::EntryComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<EntryComponent>( owner_node )
@@ -18,7 +23,7 @@ namespace tool_texture_viewer
 		//
 		// Move 2 Company Scene
 		//
-		//mDirector.Setup( p2048::CompanyScene::Create( mDirector ) );
+		GetOwnerNode().GetDirector().Setup( ViewerScene::Create( GetOwnerNode().GetDirector() ) );
 
 		r2bix_component::iComponent::Update( delta_time );
 	}
