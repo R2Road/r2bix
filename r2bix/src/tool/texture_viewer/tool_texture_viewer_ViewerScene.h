@@ -2,11 +2,19 @@
 
 #include <memory>
 
-#include "r2bix/r2bix_node_SceneNode.h"
+namespace r2bix
+{
+	class Director;
+}
+
+namespace r2bix_node
+{
+	using SceneNodeUp = std::unique_ptr<class SceneNode>;
+}
 
 namespace tool_texture_viewer
 {
-	class ViewerScene : public r2bix_node::SceneNode
+	class ViewerScene
 	{
 	private:
 		ViewerScene() = delete;
