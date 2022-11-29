@@ -46,7 +46,7 @@ namespace action_test
 			return "TickAction";
 		};
 	}
-	r2cm::iItem::DoFunctionT TickActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT TickActionTest::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -113,7 +113,7 @@ namespace action_test
 			return "DelayAction";
 		};
 	}
-	r2cm::iItem::DoFunctionT DelayActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT DelayActionTest::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -186,7 +186,7 @@ namespace action_test
 			return "SequenceAction";
 		};
 	}
-	r2cm::iItem::DoFunctionT SequenceActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT SequenceActionTest::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -271,7 +271,7 @@ namespace action_test
 			return "MoveByAction";
 		};
 	}
-	r2cm::iItem::DoFunctionT MoveByActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MoveByActionTest::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -356,7 +356,7 @@ namespace action_test
 			return "MoveToAction";
 		};
 	}
-	r2cm::iItem::DoFunctionT MoveToActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MoveToActionTest::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -441,7 +441,7 @@ namespace action_test
 			return "RepeatAction";
 		};
 	}
-	r2cm::iItem::DoFunctionT RepeatActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT RepeatActionTest::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -540,7 +540,7 @@ namespace action_test
 			return "BlinkAction";
 		};
 	}
-	r2cm::iItem::DoFunctionT BlinkActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT BlinkActionTest::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -631,7 +631,7 @@ namespace action_test
 			return "CallbackAction";
 		};
 	}
-	r2cm::iItem::DoFunctionT CallbackActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT CallbackActionTest::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -691,7 +691,7 @@ namespace action_test
 			return "AnimationRequestAction";
 		};
 	}
-	r2cm::iItem::DoFunctionT AnimationRequestActionTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT AnimationRequestActionTest::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{

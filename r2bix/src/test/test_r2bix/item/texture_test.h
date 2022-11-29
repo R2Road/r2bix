@@ -1,81 +1,80 @@
 #pragma once
 
 #include "r2cm/r2cm_iItem.h"
-#include "r2cm/r2cm_Singleton.h"
 
 namespace texture_test
 {
-	class FillCharacterAll : public r2cm::iItem, public r2cm::SingleTon<FillCharacterAll>
+	class FillCharacterAll : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class FillCharacter : public r2cm::iItem, public r2cm::SingleTon<FillCharacter>
+	class FillCharacter : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class FillColorAll : public r2cm::iItem, public r2cm::SingleTon<FillColorAll>
+	class FillColorAll : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class FillColor : public r2cm::iItem, public r2cm::SingleTon<FillColor>
+	class FillColor : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class FillColorWithMask : public r2cm::iItem, public r2cm::SingleTon<FillColorWithMask>
+	class FillColorWithMask : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class BlendColor : public r2cm::iItem, public r2cm::SingleTon<BlendColor>
+	class BlendColor : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class FillCharacterDisuse : public r2cm::iItem, public r2cm::SingleTon<FillCharacterDisuse>
+	class FillCharacterDisuse : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 
-	class InitWithChars_1 : public r2cm::iItem, public r2cm::SingleTon<InitWithChars_1>
+	class InitWithChars_1 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class InitWithChars_2 : public r2cm::iItem, public r2cm::SingleTon<InitWithChars_2>
+	class InitWithChars_2 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class InitWithChars_3 : public r2cm::iItem, public r2cm::SingleTon<InitWithChars_3>
+	class InitWithChars_3 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
-	class InitWithChars_4 : public r2cm::iItem, public r2cm::SingleTon<InitWithChars_4>
+	class InitWithChars_4 : public r2cm::iItem
 	{
 	public:
 		TitleFunctionT GetTitleFunction() const override;
-		DoFunctionT GetDoFunction() override;
+		DoFunctionT GetDoFunction() const override;
 	};
 }

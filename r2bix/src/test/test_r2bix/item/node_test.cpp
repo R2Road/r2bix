@@ -29,7 +29,7 @@ namespace node_test
 			return "Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -62,7 +62,7 @@ namespace node_test
 			return "Child : Count";
 		};
 	}
-	r2cm::iItem::DoFunctionT Child_Count::GetDoFunction()
+	r2cm::iItem::DoFunctionT Child_Count::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -105,7 +105,7 @@ namespace node_test
 			return "Child : Sequence";
 		};
 	}
-	r2cm::iItem::DoFunctionT Child_Sequence::GetDoFunction()
+	r2cm::iItem::DoFunctionT Child_Sequence::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -169,7 +169,7 @@ namespace node_test
 			return "Scene";
 		};
 	}
-	r2cm::iItem::DoFunctionT Scene::GetDoFunction()
+	r2cm::iItem::DoFunctionT Scene::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -202,7 +202,7 @@ namespace node_test
 			return "Label S";
 		};
 	}
-	r2cm::iItem::DoFunctionT LabelS::GetDoFunction()
+	r2cm::iItem::DoFunctionT LabelS::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -238,7 +238,7 @@ namespace node_test
 			return "Label M";
 		};
 	}
-	r2cm::iItem::DoFunctionT LabelM::GetDoFunction()
+	r2cm::iItem::DoFunctionT LabelM::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -274,7 +274,7 @@ namespace node_test
 			return "Sprite";
 		};
 	}
-	r2cm::iItem::DoFunctionT Sprite::GetDoFunction()
+	r2cm::iItem::DoFunctionT Sprite::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -308,7 +308,7 @@ namespace node_test
 			return "Sprite Animation";
 		};
 	}
-	r2cm::iItem::DoFunctionT SpriteAnimation::GetDoFunction()
+	r2cm::iItem::DoFunctionT SpriteAnimation::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -349,7 +349,7 @@ namespace node_test
 			return "Custome Texture Node";
 		};
 	}
-	r2cm::iItem::DoFunctionT CustomeTexture::GetDoFunction()
+	r2cm::iItem::DoFunctionT CustomeTexture::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

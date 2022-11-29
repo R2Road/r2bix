@@ -1,7 +1,6 @@
 #include "ColorMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
@@ -15,10 +14,10 @@ r2cm::MenuUp ColorMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', color_value_test::Basic::GetInstance() );
-		ret->AddItem( '2', color_value_test::ColorMaskOption_Generate::GetInstance() );
-		ret->AddItem( '3', color_value_test::ColorMaskOption_On_Off::GetInstance() );
-		ret->AddItem( '4', color_value_test::ColorMaskOption_Mask::GetInstance() );
+		ret->AddItem( '1', color_value_test::Basic() );
+		ret->AddItem( '2', color_value_test::ColorMaskOption_Generate() );
+		ret->AddItem( '3', color_value_test::ColorMaskOption_On_Off() );
+		ret->AddItem( '4', color_value_test::ColorMaskOption_Mask() );
 
 
 		ret->AddSplit();

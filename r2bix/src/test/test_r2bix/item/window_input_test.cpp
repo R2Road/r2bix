@@ -19,7 +19,7 @@ namespace window_input_test
 			return "Window Input : KeyStatus";
 		};
 	}
-	r2cm::iItem::DoFunctionT KeyStatus::GetDoFunction()
+	r2cm::iItem::DoFunctionT KeyStatus::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -77,7 +77,7 @@ namespace window_input_test
 			return "Keyboard Input Collector";
 		};
 	}
-	r2cm::iItem::DoFunctionT TestKeyboardInputCollector::GetDoFunction()
+	r2cm::iItem::DoFunctionT TestKeyboardInputCollector::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

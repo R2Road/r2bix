@@ -15,7 +15,7 @@ namespace director_scheduler_test
 			return "Director Scheduler : Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT Declaration::GetDoFunction()
+	r2cm::iItem::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

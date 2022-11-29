@@ -15,7 +15,7 @@ namespace console_screen_buffer_manager_test
 			return "Console Screen Buffer Manager : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

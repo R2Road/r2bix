@@ -23,7 +23,7 @@ namespace miniaudio_test
 			return "Engine : Init";
 		};
 	}
-	r2cm::iItem::DoFunctionT Engine_Init::GetDoFunction()
+	r2cm::iItem::DoFunctionT Engine_Init::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -73,7 +73,7 @@ namespace miniaudio_test
 			return "Engine : Config";
 		};
 	}
-	r2cm::iItem::DoFunctionT Engine_Config::GetDoFunction()
+	r2cm::iItem::DoFunctionT Engine_Config::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -127,7 +127,7 @@ namespace miniaudio_test
 			return "Engine : Volume";
 		};
 	}
-	r2cm::iItem::DoFunctionT Engine_Volume::GetDoFunction()
+	r2cm::iItem::DoFunctionT Engine_Volume::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -221,7 +221,7 @@ namespace miniaudio_test
 			return "Engine : Play Sound";
 		};
 	}
-	r2cm::iItem::DoFunctionT Engine_PlaySound::GetDoFunction()
+	r2cm::iItem::DoFunctionT Engine_PlaySound::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -268,7 +268,7 @@ namespace miniaudio_test
 			return "Engine : Time";
 		};
 	}
-	r2cm::iItem::DoFunctionT Engine_Time::GetDoFunction()
+	r2cm::iItem::DoFunctionT Engine_Time::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -341,7 +341,7 @@ namespace miniaudio_test
 			return "Sound : Init, Load";
 		};
 	}
-	r2cm::iItem::DoFunctionT Sound_Init_Load::GetDoFunction()
+	r2cm::iItem::DoFunctionT Sound_Init_Load::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -401,7 +401,7 @@ namespace miniaudio_test
 			return "Sound : Play";
 		};
 	}
-	r2cm::iItem::DoFunctionT Sound_Play::GetDoFunction()
+	r2cm::iItem::DoFunctionT Sound_Play::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -487,7 +487,7 @@ namespace miniaudio_test
 			return "Sound : Duplicate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Sound_Duplicate::GetDoFunction()
+	r2cm::iItem::DoFunctionT Sound_Duplicate::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -563,7 +563,7 @@ namespace miniaudio_test
 			return "Sound : Volume";
 		};
 	}
-	r2cm::iItem::DoFunctionT Sound_Volume::GetDoFunction()
+	r2cm::iItem::DoFunctionT Sound_Volume::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -657,7 +657,7 @@ namespace miniaudio_test
 			return "Sound : Time";
 		};
 	}
-	r2cm::iItem::DoFunctionT Sound_Time::GetDoFunction()
+	r2cm::iItem::DoFunctionT Sound_Time::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -748,7 +748,7 @@ namespace miniaudio_test
 			return "Sound : FadeIn";
 		};
 	}
-	r2cm::iItem::DoFunctionT Sound_FadeIn::GetDoFunction()
+	r2cm::iItem::DoFunctionT Sound_FadeIn::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -834,7 +834,7 @@ namespace miniaudio_test
 			return "Group : Init";
 		};
 	}
-	r2cm::iItem::DoFunctionT Group_Init::GetDoFunction()
+	r2cm::iItem::DoFunctionT Group_Init::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -878,7 +878,7 @@ namespace miniaudio_test
 			return "Group : Volume";
 		};
 	}
-	r2cm::iItem::DoFunctionT Group_Volume::GetDoFunction()
+	r2cm::iItem::DoFunctionT Group_Volume::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -981,7 +981,7 @@ namespace miniaudio_test
 			return "Group : Time";
 		};
 	}
-	r2cm::iItem::DoFunctionT Group_Time::GetDoFunction()
+	r2cm::iItem::DoFunctionT Group_Time::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

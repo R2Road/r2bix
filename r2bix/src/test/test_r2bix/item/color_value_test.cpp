@@ -17,7 +17,7 @@ namespace color_value_test
 			return "Color : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction()
+	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -61,7 +61,7 @@ namespace color_value_test
 			return "Color Mask Option : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT ColorMaskOption_Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorMaskOption_Generate::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -120,7 +120,7 @@ namespace color_value_test
 			return "Color Mask Option : On / Off";
 		};
 	}
-	r2cm::iItem::DoFunctionT ColorMaskOption_On_Off::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorMaskOption_On_Off::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -194,7 +194,7 @@ namespace color_value_test
 			return "Color Mask Option : Mask";
 		};
 	}
-	r2cm::iItem::DoFunctionT ColorMaskOption_Mask::GetDoFunction()
+	r2cm::iItem::DoFunctionT ColorMaskOption_Mask::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

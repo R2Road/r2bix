@@ -1,6 +1,5 @@
 #include "RapidjsonMenu.h"
 
-#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
 #include "item/rapidjson_test.h"
@@ -17,7 +16,7 @@ r2cm::MenuUp RapidjsonMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', rapidjson_test::Basic::GetInstance() );
+		ret->AddItem( '1', rapidjson_test::Basic() );
 
 
 

@@ -1,7 +1,6 @@
 #include "InputMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "test/test_r2bix/item/key_test.h"
 #include "test/test_r2bix/item/window_input_test.h"
@@ -16,14 +15,14 @@ r2cm::MenuUp InputMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', key_test::Basic::GetInstance() );
+		ret->AddItem( '1', key_test::Basic() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', window_input_test::KeyStatus::GetInstance() );
-		ret->AddItem( 'w', window_input_test::TestKeyboardInputCollector::GetInstance() );
+		ret->AddItem( 'q', window_input_test::KeyStatus() );
+		ret->AddItem( 'w', window_input_test::TestKeyboardInputCollector() );
 
 
 		ret->AddSplit();

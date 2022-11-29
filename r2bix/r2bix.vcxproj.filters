@@ -431,24 +431,6 @@
     <ClCompile Include="src\test\test_r2bix\menu\GeometryMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_BinaryPrint.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Director.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Inspector.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
-      <Filter>external\r2cm</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_rapidjson\RapidjsonMenu.cpp">
       <Filter>test\test_rapidjson</Filter>
     </ClCompile>
@@ -463,6 +445,24 @@
     </ClCompile>
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.cpp">
       <Filter>tool\texture_viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_Director.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_PrintBinary.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_PrintFile.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
+      <Filter>external\r2cm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -848,36 +848,6 @@
     <ClInclude Include="src\test\test_r2bix\menu\GeometryMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_BinaryPrint.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Director.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_iItem.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Inspector.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Menu.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_ostream.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Singleton.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_rapidjson\RapidjsonMenu.h">
       <Filter>test\test_rapidjson</Filter>
     </ClInclude>
@@ -961,6 +931,39 @@
     </ClInclude>
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.h">
       <Filter>tool\texture_viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_Director.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_iItem.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_Inspector.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_Menu.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_ostream.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_PrintBinary.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_PrintFile.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_NoneCopyable.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,6 @@
 #include "ActionMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
@@ -15,18 +14,18 @@ r2cm::MenuUp ActionMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', action_test::TickActionTest::GetInstance() );
-		ret->AddItem( '2', action_test::DelayActionTest::GetInstance() );
-		ret->AddItem( '3', action_test::SequenceActionTest::GetInstance() );
-		ret->AddItem( '4', action_test::MoveByActionTest::GetInstance() );
-		ret->AddItem( '5', action_test::MoveToActionTest::GetInstance() );
+		ret->AddItem( '1', action_test::TickActionTest() );
+		ret->AddItem( '2', action_test::DelayActionTest() );
+		ret->AddItem( '3', action_test::SequenceActionTest() );
+		ret->AddItem( '4', action_test::MoveByActionTest() );
+		ret->AddItem( '5', action_test::MoveToActionTest() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'q', action_test::RepeatActionTest::GetInstance() );
-		ret->AddItem( 'w', action_test::BlinkActionTest::GetInstance() );
-		ret->AddItem( 'e', action_test::CallbackActionTest::GetInstance() );
-		ret->AddItem( 'r', action_test::AnimationRequestActionTest::GetInstance() );
+		ret->AddItem( 'q', action_test::RepeatActionTest() );
+		ret->AddItem( 'w', action_test::BlinkActionTest() );
+		ret->AddItem( 'e', action_test::CallbackActionTest() );
+		ret->AddItem( 'r', action_test::AnimationRequestActionTest() );
 
 
 		ret->AddSplit();

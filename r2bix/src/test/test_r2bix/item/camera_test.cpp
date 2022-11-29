@@ -32,7 +32,7 @@ namespace camera_test
 			return "Camera : Declaration";
 		};
 	}
-	r2cm::iItem::DoFunctionT Declaration::GetDoFunction()
+	r2cm::iItem::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -102,7 +102,7 @@ namespace camera_test
 			return "Camera Position";
 		};
 	}
-	r2cm::iItem::DoFunctionT CameraPosition::GetDoFunction()
+	r2cm::iItem::DoFunctionT CameraPosition::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -138,7 +138,7 @@ namespace camera_test
 			return "Camera Rect";
 		};
 	}
-	r2cm::iItem::DoFunctionT CameraRect::GetDoFunction()
+	r2cm::iItem::DoFunctionT CameraRect::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
@@ -184,7 +184,7 @@ namespace camera_test
 			return "Camera Move";
 		};
 	}
-	r2cm::iItem::DoFunctionT CameraMove::GetDoFunction()
+	r2cm::iItem::DoFunctionT CameraMove::GetDoFunction() const
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{

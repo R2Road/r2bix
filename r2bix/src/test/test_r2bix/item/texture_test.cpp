@@ -19,7 +19,7 @@ namespace texture_test
 			return "Texture : Fill Character All";
 		};
 	}
-	r2cm::iItem::DoFunctionT FillCharacterAll::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillCharacterAll::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -47,7 +47,7 @@ namespace texture_test
 			return "Texture : FillCharacter";
 		};
 	}
-	r2cm::iItem::DoFunctionT FillCharacter::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillCharacter::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -78,7 +78,7 @@ namespace texture_test
 			return "Texture : Fill Color All";
 		};
 	}
-	r2cm::iItem::DoFunctionT FillColorAll::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillColorAll::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -117,7 +117,7 @@ namespace texture_test
 			return "Texture : FillColor";
 		};
 	}
-	r2cm::iItem::DoFunctionT FillColor::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillColor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -158,7 +158,7 @@ namespace texture_test
 			return "Texture : FillColorWithMask";
 		};
 	}
-	r2cm::iItem::DoFunctionT FillColorWithMask::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillColorWithMask::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -207,7 +207,7 @@ namespace texture_test
 			return "Texture : BlendColor";
 		};
 	}
-	r2cm::iItem::DoFunctionT BlendColor::GetDoFunction()
+	r2cm::iItem::DoFunctionT BlendColor::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -246,7 +246,7 @@ namespace texture_test
 			return "Texture : FillCharacterDisuse";
 		};
 	}
-	r2cm::iItem::DoFunctionT FillCharacterDisuse::GetDoFunction()
+	r2cm::iItem::DoFunctionT FillCharacterDisuse::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -286,7 +286,7 @@ namespace texture_test
 			return "Texture : Init With Chars 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT InitWithChars_1::GetDoFunction()
+	r2cm::iItem::DoFunctionT InitWithChars_1::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -337,7 +337,7 @@ namespace texture_test
 			return "Texture : Init With Chars 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT InitWithChars_2::GetDoFunction()
+	r2cm::iItem::DoFunctionT InitWithChars_2::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -364,7 +364,7 @@ namespace texture_test
 			return "Texture : Init With Chars 3";
 		};
 	}
-	r2cm::iItem::DoFunctionT InitWithChars_3::GetDoFunction()
+	r2cm::iItem::DoFunctionT InitWithChars_3::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -403,7 +403,7 @@ namespace texture_test
 			return "Texture : Init With Chars 4";
 		};
 	}
-	r2cm::iItem::DoFunctionT InitWithChars_4::GetDoFunction()
+	r2cm::iItem::DoFunctionT InitWithChars_4::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -1,6 +1,5 @@
 #include "R2bixMenu.h"
 
-#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 
 #include "menu/ActionMenu.h"
@@ -42,7 +41,7 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 
 		ret->AddMenu<TextureMenu>( 'q' );
 		ret->AddMenu<CameraMenu>( 'w' );
-		ret->AddItem( 'e', render_test::Basic::GetInstance() );
+		ret->AddItem( 'e', render_test::Basic() );
 		ret->AddMenu<ComponentMenu>( 'r' );
 		ret->AddMenu<ActionMenu>( 't' );
 		ret->AddMenu<NodeMenu>( 'y' );
@@ -62,7 +61,7 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddItem( 'z', visible_resource_research::DrawWithPosition::GetInstance() );
+		ret->AddItem( 'z', visible_resource_research::DrawWithPosition() );
 
 
 

@@ -1,7 +1,6 @@
 #include "DirectorMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
@@ -17,9 +16,9 @@ r2cm::MenuUp DirectorMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', console_screen_buffer_test::Basic::GetInstance() );
-		ret->AddItem( '2', console_screen_buffer_manager_test::Basic::GetInstance() );
-		ret->AddItem( '3', director_scheduler_test::Declaration::GetInstance() );
+		ret->AddItem( '1', console_screen_buffer_test::Basic() );
+		ret->AddItem( '2', console_screen_buffer_manager_test::Basic() );
+		ret->AddItem( '3', director_scheduler_test::Declaration() );
 
 
 		ret->AddSplit();
