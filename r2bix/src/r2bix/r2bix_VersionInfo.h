@@ -23,13 +23,15 @@ namespace r2bix
 					"### Road 2 Version 0.0.3 ###"
 			"\n"
 			"\n"	"[o] " "Json"
+			"\n"	"[ ] " "FSM"
+			"\n"	"[ ] " "B-Tree"
+
+			"\n\n"	"------------------------------------------" "\n"
+
 			"\n"	"[ ] " "Texture Viewer"
 			"\n"	"[ ] " "Node Delete And Caching Pipe Line"
 			"\n"	"[ ] " "Split Scene Graph Struct And Update Process"
 			"\n"	"[ ] " "Make Simple Texture Adventure"
-
-			"\n\n"	"------------------------------------------" "\n"
-
 			"\n"	"[ ] " "Script"
 			"\n"	"[ ] " "Texture Editor"
 			"\n"	"[ ] " "Korean"
