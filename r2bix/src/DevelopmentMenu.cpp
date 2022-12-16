@@ -33,7 +33,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
 		, GetTitle()
-		, r2bix::VersionInfo.String4Road2Version_0_0_3
+		, r2bix::VersionInfo.String4Road2Version_0_0_3_0
 	) );
 
 	{
@@ -45,7 +45,6 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
-		ret->AddLineFeed();
 
 
 
@@ -55,7 +54,6 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
-		ret->AddLineFeed();
 
 
 
@@ -63,7 +61,6 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddLineFeed();
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 

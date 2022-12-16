@@ -14,13 +14,22 @@ namespace r2bix
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '0';
 		const char VersionNumber_3 = '2';
+		const char VersionNumber_4 = '1';
 
 
-		const char String4Version[15] = { 'r', '2', 'b', 'i', 'x', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '\0' };
+		const char String4Version[17] = { 'r', '2', 'b', 'i', 'x', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '\0' };
 
 
-		const char* const String4Road2Version_0_0_3 =
-					"### Road 2 Version 0.0.3 ###"
+		const char* const String4Road2Version_0_0_3_0 =
+					"### Version Rule ###"
+			"\n"
+			"\n"	"> " "1.0.0.0"  " : "  "완성?"
+			"\n"	"> " "0.1.0.0"  " : "  "10개의 Road 마다 1씩 증가"
+			"\n"	"> " "0.0.1.0"  " : "  "Road 를 완주"
+			"\n"	"> " "0.0.0.1"  " : "  "[ ] 완료, 자잘한 수정"
+			"\n"
+			"\n"
+			"\n"	"### Road 2 Version 0.0.3.0 ###"
 			"\n"
 			"\n"	"[o] " "Json"
 			"\n"	"[ ] " "FSM"
@@ -38,8 +47,8 @@ namespace r2bix
 			"\n"	"[ ] " "Audio : Pre Load"
 		;
 
-		const char* const String4Road2Version_0_0_2 =
-					"### Road 2 Version 0.0.2 ###"
+		const char* const String4Road2Version_0_0_2_0 =
+					"### Road 2 Version 0.0.2.0 ###"
 			"\n"
 			"\n"	"[o] " "Texture : Color : 각 문자에 전경, 원경 색상 지정"
 			"\n"	"[o] " "Texture : Character : 글자 유효성. 버퍼에 글자를 기록할지 여부"
@@ -50,8 +59,8 @@ namespace r2bix
 			"\n"	"[o] " "Scheduler : r2bix::Director에 r2::FPSTimer 와 std::this_thread::sleep_for( CPU 사용량 감소 ) 선택 적용"
 		;
 
-		const char* const String4Road2Version_0_0_1 =
-					"### Road 2 Version 0.0.1 ###"
+		const char* const String4Road2Version_0_0_1_0 =
+					"### Road 2 Version 0.0.1.0 ###"
 			"\n"
 			"\n"	"[o] " "Double Buffering"
 			"\n"	"[o] " "Input"
