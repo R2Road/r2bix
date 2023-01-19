@@ -438,7 +438,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const char* const dummy_text = "Bla Bla Bla" );
+				DECLARATION_MAIN( const char* const dummy_text = "Bla\nBla\nBla" );
 				PROCESS_MAIN( label->SetString( dummy_text ) );
 				EXPECT_EQ( dummy_text, label->GetString() );
 			}
