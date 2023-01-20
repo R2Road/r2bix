@@ -6,6 +6,7 @@
 #include "r2bix/r2bix_node_Node.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
 #include "r2bix/r2bix_component_LabelSComponent.h"
+#include "r2bix/r2bix_component_LabelMComponent.h"
 #include "r2bix/r2bix_component_TextureFrameAnimationComponent.h"
 #include "r2bix/r2bix_component_TextureFrameRenderComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
@@ -256,7 +257,7 @@ namespace node_test
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::CustomTextureComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TextureRenderComponent>() );
-				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::LabelSComponent>() );
+				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::LabelMComponent>() );
 			}
 
 			std::cout << r2cm::split;
