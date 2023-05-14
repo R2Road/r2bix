@@ -5,8 +5,8 @@
 
 #include "r2bix/r2bix_ColorMaskOption.h"
 #include "r2bix/r2bix_ColorValue.h"
+#include "r2bix_helper/r2bix_helper_Printer4Texture.h"
 
-#include "test/Utility4Test.h"
 
 namespace color_value_test
 {

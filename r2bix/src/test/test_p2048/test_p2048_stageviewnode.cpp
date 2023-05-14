@@ -1,17 +1,18 @@
 #include "test_p2048_stageviewnode.h"
 
 #include "r2bix/r2bix_Director.h"
+#include "r2bix/r2bix_render_Camera.h"
+#include "r2bix_helper/r2bix_helper_Printer4Texture.h"
+
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
-#include "r2bix/r2bix_render_Camera.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "p2048/p2048_Stage.h"
 #include "p2048/p2048_StageViewComponent.h"
 #include "p2048/p2048_StageViewNode.h"
 #include "p2048/p2048table_TextureTable.h"
 
-#include "test/Utility4Test.h"
-#include "r2cm/r2cm_WindowUtility.h"
 
 namespace test_p2048_stageviewnode
 {

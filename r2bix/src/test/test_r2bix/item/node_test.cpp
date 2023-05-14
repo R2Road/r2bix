@@ -1,7 +1,5 @@
 #include "node_test.h"
 
-#include "r2cm/r2cm_ostream.h"
-
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_node_Node.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
@@ -17,9 +15,10 @@
 #include "r2bix/r2bix_node_SceneNode.h"
 #include "r2bix/r2bix_node_SpriteAnimationNode.h"
 #include "r2bix/r2bix_node_SpriteNode.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2bix_helper/r2bix_helper_Printer4Texture.h"
 
-#include "test/Utility4Test.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace node_test
 {

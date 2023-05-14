@@ -2,9 +2,6 @@
 
 #include <conio.h>
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
-
 #include "r2bix/r2bix_action_AnimationRequestAction.h"
 #include "r2bix/r2bix_action_BlinkAction.h"
 #include "r2bix/r2bix_action_CallbackAction.h"
@@ -23,12 +20,15 @@
 #include "r2bix/r2bix_render_Camera.h"
 #include "r2bix/r2bix_render_Texture.h"
 #include "r2bix/r2bix_render_TextureFrame.h"
+#include "r2bix_helper/r2bix_helper_Printer4Texture.h"
+
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "test/test_r2bix/TextureFrameAnimationTable4Test.h"
 #include "test/test_r2bix/TextureTable4Test.h"
-#include "test/Utility4Test.h"
 
-#include "r2cm/r2cm_WindowUtility.h"
 
 
 namespace action_test

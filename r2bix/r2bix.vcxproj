@@ -100,6 +100,7 @@
     <ClCompile Include="src\r2bix\r2bix_render_TextureFrame.cpp" />
     <ClCompile Include="src\r2bix\r2bix_utility_PathUtil.cpp" />
     <ClCompile Include="src\r2bix\r2bix_utility_InputUtil.cpp" />
+    <ClCompile Include="src\r2bix_helper\r2bix_helper_Printer4Texture.cpp" />
     <ClCompile Include="src\test\test_miniaudio\item\miniaudio_test.cpp" />
     <ClCompile Include="src\test\test_miniaudio\MiniAudioMenu.cpp" />
     <ClCompile Include="src\test\test_p2048\P2048Menu.cpp" />
@@ -137,7 +138,6 @@
     <ClCompile Include="src\test\test_r2bix\TextureTable4Test.cpp" />
     <ClCompile Include="src\test\test_rapidjson\item\rapidjson_test.cpp" />
     <ClCompile Include="src\test\test_rapidjson\RapidjsonMenu.cpp" />
-    <ClCompile Include="src\test\Utility4Test.cpp" />
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_EntryComponent.cpp" />
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_EntryScene.cpp" />
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.cpp" />
@@ -269,6 +269,7 @@
     <ClInclude Include="src\r2bix\r2bix_render_TextureFrame.h" />
     <ClInclude Include="src\r2bix\r2bix_utility_PathUtil.h" />
     <ClInclude Include="src\r2bix\r2bix_utility_InputUtil.h" />
+    <ClInclude Include="src\r2bix_helper\r2bix_helper_Printer4Texture.h" />
     <ClInclude Include="src\test\test_miniaudio\item\miniaudio_test.h" />
     <ClInclude Include="src\test\test_miniaudio\MiniAudioMenu.h" />
     <ClInclude Include="src\test\test_p2048\P2048Menu.h" />
@@ -306,7 +307,6 @@
     <ClInclude Include="src\test\test_r2bix\TextureTable4Test.h" />
     <ClInclude Include="src\test\test_rapidjson\item\rapidjson_test.h" />
     <ClInclude Include="src\test\test_rapidjson\RapidjsonMenu.h" />
-    <ClInclude Include="src\test\Utility4Test.h" />
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_EntryComponent.h" />
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_EntryScene.h" />
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.h" />

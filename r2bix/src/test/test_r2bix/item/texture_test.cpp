@@ -2,13 +2,12 @@
 
 #include <string>
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
-
 #include "r2bix/r2bix_render_Texture.h"
 #include "r2bix/r2bix_render_TextureFrame.h"
+#include "r2bix_helper/r2bix_helper_Printer4Texture.h"
 
-#include "test/Utility4Test.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_ostream.h"
 
 namespace texture_test
 {

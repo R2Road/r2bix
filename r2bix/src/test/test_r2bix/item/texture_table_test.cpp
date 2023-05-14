@@ -1,10 +1,11 @@
 #include "texture_table_test.h"
 
+#include "r2bix_helper/r2bix_helper_Printer4Texture.h"
+
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
 
 #include "test/test_r2bix/TextureTable4Test.h"
-#include "test/Utility4Test.h"
 
 namespace texture_table_test
 {
