@@ -167,7 +167,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -219,7 +219,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -231,7 +231,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -243,7 +243,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -286,7 +286,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -298,7 +298,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -310,7 +310,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -366,7 +366,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -378,7 +378,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -450,7 +450,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -522,7 +522,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -578,7 +578,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -644,7 +644,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -657,7 +657,7 @@ namespace component_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -729,7 +729,7 @@ namespace component_test
 
 					std::cout << r2cm::linefeed;
 
-					Utility4Test::DrawTexture( render_target );
+					r2bix_helper::Printer4Texture::DrawTexture( render_target );
 
 					if( _kbhit() )
 					{
@@ -812,7 +812,7 @@ namespace component_test
 
 					std::cout << r2cm::linefeed;
 
-					Utility4Test::DrawTexture( render_target );
+					r2bix_helper::Printer4Texture::DrawTexture( render_target );
 
 					if( _kbhit() )
 					{

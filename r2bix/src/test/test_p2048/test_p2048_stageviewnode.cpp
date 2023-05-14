@@ -44,7 +44,7 @@ namespace test_p2048_stageviewnode
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -97,7 +97,7 @@ namespace test_p2048_stageviewnode
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -151,7 +151,7 @@ namespace test_p2048_stageviewnode
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;

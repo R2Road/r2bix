@@ -371,7 +371,7 @@ namespace node_test
 
 			{
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -384,7 +384,7 @@ namespace node_test
 
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;
@@ -397,7 +397,7 @@ namespace node_test
 
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-				Utility4Test::DrawTexture( render_target );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			std::cout << r2cm::split;

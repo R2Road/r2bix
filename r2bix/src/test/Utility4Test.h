@@ -8,16 +8,19 @@ namespace r2bix_render
 	class TextureFrame;
 }
 
-class Utility4Test
+namespace r2bix_helper
 {
-private:
-	Utility4Test() = delete;
+	class Printer4Texture
+	{
+	private:
+		Printer4Texture() = delete;
 
-public:
-	static void DrawTexture( const r2bix_render::Texture& texture );
-	static void DrawTextureCharacter( const r2bix_render::Texture& texture );
-	static void DrawTextureColor( const r2bix_render::Texture& texture );
-	static void DrawTextureDisuse( const r2bix_render::Texture& texture );
+	public:
+		static void DrawTexture( const r2bix_render::Texture& texture );
+		static void DrawTextureCharacter( const r2bix_render::Texture& texture );
+		static void DrawTextureColor( const r2bix_render::Texture& texture );
+		static void DrawTextureDisuse( const r2bix_render::Texture& texture );
 
-	static void DrawTextureFrame( const r2bix_render::TextureFrame& frame );
-};
+		static void DrawTextureFrame( const r2bix_render::TextureFrame& frame );
+	};
+}

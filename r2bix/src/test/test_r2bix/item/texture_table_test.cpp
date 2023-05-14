@@ -27,14 +27,14 @@ namespace texture_table_test
 
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" ) );
-				Utility4Test::DrawTexture( *texture );
+				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
 			std::cout << r2cm::split;
 
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" ) );
-				Utility4Test::DrawTexture( *texture );
+				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
 			std::cout << r2cm::split;
@@ -67,7 +67,7 @@ namespace texture_table_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( *texture );
+				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
 			std::cout << r2cm::split;
@@ -77,7 +77,7 @@ namespace texture_table_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTextureFrame( *frame );
+				r2bix_helper::Printer4Texture::DrawTextureFrame( *frame );
 			}
 
 			std::cout << r2cm::split;
@@ -112,7 +112,7 @@ namespace texture_table_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( *texture );
+				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
 			std::cout << r2cm::split;
@@ -134,7 +134,7 @@ namespace texture_table_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( *texture );
+				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
 			std::cout << r2cm::split;

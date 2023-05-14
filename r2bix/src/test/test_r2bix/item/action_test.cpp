@@ -751,7 +751,7 @@ namespace action_test
 					std::cout << "Action Process Running : " << node->GetComponent<r2bix_component::ActionProcessComponent>()->IsRunning() << r2cm::linefeed;
 					std::cout << "Animation Running : " << node->GetComponent<r2bix_component::TextureFrameAnimationComponent>()->IsRunning() << r2cm::linefeed2;
 
-					Utility4Test::DrawTexture( render_target );
+					r2bix_helper::Printer4Texture::DrawTexture( render_target );
 
 					if( _kbhit() )
 					{

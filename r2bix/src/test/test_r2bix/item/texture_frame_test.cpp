@@ -50,7 +50,7 @@ namespace texture_frame_test
 
 			std::cout << r2cm::linefeed;
 
-			Utility4Test::DrawTexture( texture );
+			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
 			std::cout << r2cm::split;
 
@@ -58,7 +58,7 @@ namespace texture_frame_test
 
 			std::cout << r2cm::linefeed;
 
-			Utility4Test::DrawTextureFrame( frame );
+			r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 
 			std::cout << r2cm::split;
 
@@ -139,7 +139,7 @@ namespace texture_frame_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTextureFrame( frame );
+				r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 			}
 
 			std::cout << r2cm::split;
@@ -210,7 +210,7 @@ namespace texture_frame_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTextureFrame( frame );
+				r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 			}
 
 			std::cout << r2cm::split;
@@ -228,7 +228,7 @@ namespace texture_frame_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTextureFrame( frame );
+				r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 			}
 
 			std::cout << r2cm::split;

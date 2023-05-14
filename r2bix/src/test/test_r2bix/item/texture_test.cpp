@@ -30,7 +30,7 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTextureCharacter( texture );
+			r2bix_helper::Printer4Texture::DrawTextureCharacter( texture );
 
 			std::cout << r2cm::split;
 
@@ -61,7 +61,7 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTextureCharacter( texture );
+			r2bix_helper::Printer4Texture::DrawTextureCharacter( texture );
 
 			std::cout << r2cm::split;
 
@@ -96,11 +96,11 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTextureColor( texture );
+			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( texture );
+			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
 			std::cout << r2cm::split;
 
@@ -137,11 +137,11 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTextureColor( texture );
+			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( texture );
+			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
 			std::cout << r2cm::split;
 
@@ -186,11 +186,11 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTextureColor( texture );
+			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( texture );
+			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
 			std::cout << r2cm::split;
 
@@ -225,11 +225,11 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTextureColor( texture );
+			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( texture );
+			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
 			std::cout << r2cm::split;
 
@@ -265,11 +265,11 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTextureDisuse( texture );
+			r2bix_helper::Printer4Texture::DrawTextureDisuse( texture );
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( texture );
+			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
 			std::cout << r2cm::split;
 
@@ -303,7 +303,7 @@ namespace texture_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( texture );
+				r2bix_helper::Printer4Texture::DrawTexture( texture );
 			}
 
 			std::cout << r2cm::split;
@@ -319,7 +319,7 @@ namespace texture_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( texture );
+				r2bix_helper::Printer4Texture::DrawTexture( texture );
 			}
 
 			std::cout << r2cm::split;
@@ -347,7 +347,7 @@ namespace texture_test
 
 			std::cout << r2cm::split;
 
-			Utility4Test::DrawTexture( texture );
+			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
 			std::cout << r2cm::split;
 
@@ -375,7 +375,7 @@ namespace texture_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( texture );
+				r2bix_helper::Printer4Texture::DrawTexture( texture );
 			}
 
 			std::cout << r2cm::split;
@@ -385,7 +385,7 @@ namespace texture_test
 
 				std::cout << r2cm::linefeed;
 
-				Utility4Test::DrawTexture( texture );
+				r2bix_helper::Printer4Texture::DrawTexture( texture );
 			}
 
 			std::cout << r2cm::split;
@@ -413,7 +413,7 @@ namespace texture_test
 
 			std::cout << r2cm::linefeed;
 
-			Utility4Test::DrawTexture( texture );
+			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
 			std::cout << r2cm::split;
 

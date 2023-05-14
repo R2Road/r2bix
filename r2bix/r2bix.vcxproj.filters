@@ -97,6 +97,9 @@
     <Filter Include="external\rapidjson">
       <UniqueIdentifier>{91305047-c6be-4e61-adeb-9cdedc80260f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2bix_helper">
+      <UniqueIdentifier>{2493c103-dd4f-4e59-ac20-610b16b79e60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
