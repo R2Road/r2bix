@@ -1,7 +1,5 @@
 #pragma once
 
-#include "r2/r2_RectInt.h"
-
 namespace r2bix_render
 {
 	class Texture;
