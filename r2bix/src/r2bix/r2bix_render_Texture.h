@@ -85,7 +85,7 @@ namespace r2bix_render
 		void FillCharacterDisuse( const uint32_t x, const uint32_t y, const bool disuse );
 
 	private:
-		r2::GridIndexConverter mGridIndexConverter;
+		r2::GridIndexConverter<int, int> mGridIndexConverter;
 		ContainerT mChars;
 		ColorContainerT mColors;
 		DisuseContainerT mCharDisuses;

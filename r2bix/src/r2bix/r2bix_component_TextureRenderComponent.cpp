@@ -9,7 +9,7 @@
 namespace r2bix_component
 {
 	TextureRenderComponent::TextureRenderComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureRenderComponent>( owner_node )
-		, mPivotPoint( 0.5f, 0.5f )
+		, mPivotVector( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTexture( nullptr )
 		, mColorMaskOption( r2bix::eColorMaskFlag::CMF_Foreground | r2bix::eColorMaskFlag::CMF_Background )
@@ -89,7 +89,8 @@ namespace r2bix_component
 
 	void TextureRenderComponent::SetPivotPoint( const float x, const float y )
 	{
-		mPivotPoint.Set( x, y );
+		mPivotVector.x = x;
+		mPivotVector.y = y;
 
 		ResetVisibleRect();
 	}
@@ -107,8 +108,8 @@ namespace r2bix_component
 		}
 
 		mVisibleRect.Set(
-			-static_cast<int>( mTexture->GetWidth() * mPivotPoint.GetX() )
-			, -static_cast<int>( mTexture->GetHeight() * mPivotPoint.GetY() )
+			  -static_cast<int>( mTexture->GetWidth() * mPivotVector.x )
+			, -static_cast<int>( mTexture->GetHeight() * mPivotVector.y )
 			, mTexture->GetWidth() - 1
 			, mTexture->GetHeight() - 1
 		);

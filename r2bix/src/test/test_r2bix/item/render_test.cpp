@@ -130,11 +130,11 @@ namespace render_test
 	{
 		return[]()->r2cm::eItemLeaveAction
 		{
-			r2bix_render::Camera camera( { 20, 25 }, { 20, 10 } );
+			r2bix_render::Camera camera( 20, 25, 20, 10 );
 			r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
 
 			r2bix::Director dummy_director( {} );
-			RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );
+			RenderTestNode render_test_node( dummy_director, r2::PointInt{ 12, 26 }, r2::SizeInt{ 9, 9 }, r2::PointInt{ -4, -2 } );
 
 			std::cout << r2cm::split;
 

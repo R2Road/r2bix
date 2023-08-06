@@ -86,25 +86,25 @@ namespace p2048
 		case eStep::GameUpdate:
 		{
 			// Input Process, Game End Check
-			r2::Direction4::eState input_direction = r2::Direction4::eState::None;
+			r2::Direction4Sequential::eState input_direction = r2::Direction4Sequential::eState::NONE;
 			if( mKeyboardInputListener.IsPushed( 1 ) ) // A
 			{
-				input_direction = r2::Direction4::eState::Left;
+				input_direction = r2::Direction4Sequential::eState::Left;
 			}
 			else if( mKeyboardInputListener.IsPushed( 2 ) ) // D
 			{
-				input_direction = r2::Direction4::eState::Right;
+				input_direction = r2::Direction4Sequential::eState::Right;
 			}
 			else if( mKeyboardInputListener.IsPushed( 3 ) ) // S
 			{
-				input_direction = r2::Direction4::eState::Up;
+				input_direction = r2::Direction4Sequential::eState::Up;
 			}
 			else if( mKeyboardInputListener.IsPushed( 4 ) ) // W
 			{
-				input_direction = r2::Direction4::eState::Down;
+				input_direction = r2::Direction4Sequential::eState::Down;
 			}
 
-			if( r2::Direction4::eState::None != input_direction )
+			if( r2::Direction4Sequential::eState::NONE != input_direction )
 			{
 				mStageViewComponent4History->UpdateView();
 
@@ -158,7 +158,7 @@ namespace p2048
 		r2bix_component::iComponent::Update( delta_time );
 	}
 
-	bool GameComponent::MoveNumber( const r2::Direction4::eState move_direction )
+	bool GameComponent::MoveNumber( const r2::Direction4Sequential::eState move_direction )
 	{
 		const auto move_result = mGameProcessor.Move( move_direction );
 		if( move_result.has_moved )

@@ -1,3 +1,13 @@
+//
+// # Version Rule
+// - 1.0.0 : 사용 가능
+// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
+// - 0.0.1 : 자잘한 변화
+//
+// # Last Update		: 2023.08.01 PM.10.26
+// # Version			: 1.1.1
+//
+
 #pragma once
 
 #include <algorithm>
@@ -5,6 +15,8 @@
 
 #include "r2_Point.h"
 #include "r2_Size.h"
+#include "r2_RectIterator.h"
+#include "r2_TypeTraits.h"
 
 namespace r2
 {
@@ -12,10 +24,24 @@ namespace r2
 	class Rect
 	{
 	public:
+		static_assert(
+			   r2::is_same_v<T, char>
+			|| r2::is_same_v<T, short>
+			|| r2::is_same_v<T, int>
+			|| r2::is_same_v<T, long long>
+			, "r2::Rect - Not Allowed Type"
+		);
+
+
+
 		using ElementT = T;
-		using MyPointT = r2::Point<T>;
-		using MySizeT = r2::Size<T>;
-		using MyT = Rect<T>;
+		using MyT = Rect<ElementT>;
+		using PointT = r2::Point<ElementT>;
+		using SizeT = r2::Size<ElementT>;
+
+		using ConstIteratorT = r2::RectConstIterator<MyT>;
+
+
 
 		static const MyT& GetZero()
 		{
@@ -23,39 +49,62 @@ namespace r2
 			return rect_zero;
 		}
 
+
+
 		Rect() : mOrigin( 0, 0 ), mSize( 0, 0 )
 		{}
 		explicit Rect( const ElementT x, const ElementT y, const ElementT width, const ElementT height ) : mOrigin( x, y ), mSize( width, height )
 		{}
-		explicit Rect( const MyPointT origin, const MySizeT size ) : mOrigin( origin ), mSize( size )
+		explicit Rect( const PointT origin, const SizeT size ) : mOrigin( origin ), mSize( size )
 		{}
-		explicit Rect( const MyPointT origin, const ElementT width, const ElementT height ) : mOrigin( origin ), mSize( width, height )
+		explicit Rect( const PointT origin, const ElementT width, const ElementT height ) : mOrigin( origin ), mSize( width, height )
 		{}
-		explicit Rect( const ElementT x, const ElementT y, const MySizeT size ) : mOrigin( x, y ), mSize( size )
+		explicit Rect( const ElementT x, const ElementT y, const SizeT size ) : mOrigin( x, y ), mSize( size )
 		{}
-		explicit Rect( const MyPointT origin ) : mOrigin( origin ), mSize( 0, 0 )
+		explicit Rect( const PointT origin ) : mOrigin( origin ), mSize( 0, 0 )
 		{}
-		explicit Rect( const MySizeT size ) : mOrigin( 0, 0 ), mSize( size )
+		explicit Rect( const SizeT size ) : mOrigin( 0, 0 ), mSize( size )
 		{}
-		explicit Rect( const MyPointT point1, const MyPointT point2 )
+		explicit Rect( const PointT point1, const PointT point2 )
 		{
 			Set( point1, point2 );
 		}
 
+
+
+		//
+		// Iterator
+		//
+		ConstIteratorT begin() const
+		{
+			return ConstIteratorT( this, GetOrigin() );
+		}
+		ConstIteratorT end() const
+		{
+			return ConstIteratorT( this, PointT( GetMinX(), GetMaxY() + 1 ) );
+		}
+
+
+
+		//
+		// Operator
+		//
 		bool operator==( const MyT& rhs ) const
 		{
 			return mOrigin == rhs.GetOrigin() && mSize == rhs.GetSize();
 		}
-		MyT& operator= ( const MyT& other )
+		bool operator!=( const MyT& rhs ) const
+		{
+			return !( *this == rhs );
+		}
+
+		MyT& operator=( const MyT& other )
 		{
 			Set( other.mOrigin.GetX(), other.mOrigin.GetY(), other.mSize.GetWidth(), other.mSize.GetHeight() );
 			return *this;
 		}
 
-		inline bool Equals( const MyT& rect ) const
-		{
-			return ( mOrigin.Equals( rect.mOrigin ) && mSize.equals( rect.mSize ) );
-		}
+
 
 		//
 		//
@@ -65,7 +114,7 @@ namespace r2
 			mOrigin.Set( x, y );
 			mSize.Set( width, height );
 		}
-		inline void Set( const MyPointT point1, const MyPointT point2 )
+		inline void Set( const PointT point1, const PointT point2 )
 		{
 			Set(
 				std::min( point1.GetX(), point2.GetX() )
@@ -82,13 +131,13 @@ namespace r2
 		{
 			mOrigin.Set( x, y );
 		}
-		inline void SetOrigin( const MyPointT point )
+		inline void SetOrigin( const PointT point )
 		{
 			mOrigin = ( point );
 		}
 		inline void MoveOrigin( const ElementT move_x, const ElementT move_y )
 		{
-			mOrigin.Add( move_x, move_y );
+			mOrigin.Plus( move_x, move_y );
 		}
 
 		//
@@ -98,50 +147,64 @@ namespace r2
 		{
 			mSize.Set( width, height );
 		}
-		inline void SetSize( const MySizeT size )
+		inline void SetSize( const SizeT size )
 		{
 			mSize = ( size );
 		}
 		inline void ChangeSize( const ElementT change_w, const ElementT change_h )
 		{
-			mSize.Add( change_w, change_h );
+			mSize.Plus( change_w, change_h );
 		}
+
+
 
 		//
 		//
 		//
-		inline const MyPointT& GetOrigin() const
+		inline const PointT& GetOrigin() const
 		{
 			return mOrigin;
 		}
-		inline const MySizeT& GetSize() const
+		inline const SizeT& GetSize() const
 		{
 			return mSize;
 		}
-		inline ElementT GetMaxX() const
-		{
-			return mOrigin.GetX() + mSize.GetWidth();
-		}
-		inline ElementT GetMidX() const
-		{
-			return mOrigin.GetX() + ( mSize.GetWidth() / 2 );
-		}
+
 		inline ElementT GetMinX() const
 		{
 			return mOrigin.GetX();
-		}
-		inline ElementT GetMaxY() const
-		{
-			return mOrigin.GetY() + mSize.GetHeight();
-		}
-		inline ElementT GetMidY() const
-		{
-			return mOrigin.GetY() + ( mSize.GetHeight() / 2 );
 		}
 		inline ElementT GetMinY() const
 		{
 			return mOrigin.GetY();
 		}
+
+		inline ElementT GetMaxX() const
+		{
+			return mOrigin.GetX() + mSize.GetWidth();
+		}
+		inline ElementT GetMaxY() const
+		{
+			return mOrigin.GetY() + mSize.GetHeight();
+		}
+		inline PointT GetMax() const
+		{
+			return PointT( GetMaxX(), GetMaxY() );
+		}
+
+		inline ElementT GetMidX() const
+		{
+			return mOrigin.GetX() + ( mSize.GetWidth() / 2 );
+		}
+		inline ElementT GetMidY() const
+		{
+			return mOrigin.GetY() + ( mSize.GetHeight() / 2 );
+		}
+		inline PointT GetMid() const
+		{
+			return PointT( GetMidX(), GetMidY() );
+		}
+
 		inline ElementT GetWidth() const
 		{
 			//
@@ -154,13 +217,13 @@ namespace r2
 			//  ****	- "*" is size
 			//  ****
 			//
-			return std::abs( mSize.GetWidth() ) + 1;
+			return static_cast<ElementT>( std::abs( mSize.GetWidth() ) ) + 1;
 		}
 		inline ElementT GetHeight() const
 		{
-			return std::abs( mSize.GetHeight() ) + 1;
+			return static_cast<ElementT>( std::abs( mSize.GetHeight() ) ) + 1;
 		}
-		inline ElementT GetWide() const
+		inline std::size_t GetWide() const
 		{
 			return GetWidth() * GetHeight();
 		}
@@ -169,10 +232,12 @@ namespace r2
 			return std::sqrt( ( GetWidth() * GetWidth() ) + ( GetHeight() * GetHeight() ) );
 		}
 
+
+
 		//
 		//
 		//
-		bool ContainsPoint( const MyPointT& point ) const
+		bool ContainsPoint( const PointT& point ) const
 		{
 			bool bRet = false;
 
@@ -197,25 +262,105 @@ namespace r2
 			return bRet;
 		}
 
+
+
 		//
 		//
 		//
-		MyPointT Distance( const MyPointT& point ) const
+		PointT Clamp( const PointT& point ) const
+		{
+			return Clamp( point.GetX(), point.GetY() );
+		}
+		PointT Clamp( const ElementT x, const ElementT y ) const
+		{
+			ElementT fx = 0;
+			ElementT fy = 0;
+
+			//
+			// X 좌표가 사각형의 가로 영역 안에 있다면 dx = x
+			// X 좌표가 사각형의 가로 영역 밖에 있다면 계산
+			//
+			//       X X X X X
+			//       
+			//       # # # # #
+			//       # # # # # 
+			//       # # # # #
+			//       # # # # #
+			//       # # # # #
+			//
+			//       X X X X X
+			//
+			// 그 밖의 경우에는 각 모서리와의 거리를 계산하여 작은 쪽을 사용한다.
+			//
+			fx = static_cast<ElementT>(
+				  ( GetMinX() > x || x > GetMaxX() )
+
+				// Rect 영역 밖이면 가까운 모서리 값을 사용
+				? ( std::abs( GetMinX() - x ) < std::abs( GetMaxX() - x ) ? GetMinX() : GetMaxX() )
+
+				: ( x )
+			);
+
+			fy = static_cast<ElementT>(
+				  ( GetMinY() > y || y > GetMaxY() )
+
+				// Rect 영역 밖이면 가까운 모서리 값을 사용
+				? ( std::abs( GetMinY() - y ) < std::abs( GetMaxY() - y ) ? GetMinY() : GetMaxY() )
+
+				: ( y )
+			);
+
+			return PointT( fx, fy );
+		}
+
+
+
+		//
+		//
+		//
+		PointT Distance( const PointT& point ) const
 		{
 			return Distance( point.GetX(), point.GetY() );
 		}
-		MyPointT Distance( const ElementT x, const ElementT y ) const
+		PointT Distance( const ElementT x, const ElementT y ) const
 		{
-			if( ContainsPoint( x, y ) )
-			{
-				return MyPointT::GetZero();
-			}
+			ElementT dx = 0;
+			ElementT dy = 0;
 
-			return MyPointT(
-				std::min( std::abs( GetMinX() - x ), std::abs( GetMaxX() - x ) )
-				, std::min( std::abs( GetMinY() - y ), std::abs( GetMaxY() - y ) )
+			//
+			// X 좌표가 사각형의 가로 영역 안에 있다면 dx = 0
+			// X 좌표가 사각형의 가로 영역 밖에 있다면 계산
+			//
+			//       X X X X X
+			//       
+			//       # # # # #
+			//       # # # # # 
+			//       # # # # #
+			//       # # # # #
+			//       # # # # #
+			//
+			//       X X X X X
+			//
+			// 위의 경우 dx = 0
+			//
+			// 그 밖의 경우에는 각 모서리와의 거리를 계산하여 작은 쪽을 사용한다.
+			//
+			dx = static_cast<ElementT>(
+				  ( GetMinX() > x || x > GetMaxX() )
+				? ( std::min( std::abs( GetMinX() - x ), std::abs( GetMaxX() - x ) ) )
+				: 0
 			);
+
+			dy = static_cast<ElementT>(
+				  ( GetMinY() > y || y > GetMaxY() )
+				? ( std::min( std::abs( GetMinY() - y ), std::abs( GetMaxY() - y ) ) )
+				: 0
+			);
+
+			return PointT( dx, dy );
 		}
+
+
 
 		//
 		//
@@ -238,6 +383,8 @@ namespace r2
 				|| GetMaxY() < rect.GetMaxY()
 			);
 		}
+
+
 
 		//
 		//
@@ -294,6 +441,8 @@ namespace r2
 			return MyT( combinedLeftX, combinedTopY, combinedRightX - combinedLeftX, combinedBottomY - combinedTopY );
 		}
 
+
+
 		//
 		//
 		//
@@ -337,8 +486,10 @@ namespace r2
 			return MyT( combinedLeftX, combinedTopY, combinedRightX - combinedLeftX, combinedBottomY - combinedTopY );
 		}
 
+
+
 	private:
-		MyPointT mOrigin;
-		MySizeT mSize;
+		PointT mOrigin;
+		SizeT mSize;
 	};
 }

@@ -8,7 +8,7 @@
 #include "p2048_GameProcessor.h"
 #include "p2048_Stage.h"
 
-#include "r2/r2_Direction4.h"
+#include "r2/r2_Direction4Sequential.h"
 
 namespace p2048
 {
@@ -46,7 +46,7 @@ namespace p2048
 		void SetGameOverNode( r2bix_node::Node* const node ) { mGameOverNode = node; }
 
 	private:
-		bool MoveNumber( const r2::Direction4::eState move_direction );
+		bool MoveNumber( const r2::Direction4Sequential::eState move_direction );
 
 	private:
 		eStep mStep;

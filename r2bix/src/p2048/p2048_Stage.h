@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "r2/r2_Direction4.h"
+#include "r2/r2_Direction4Sequential.h"
 #include "r2/r2_GridIndexConverter.h"
 
 namespace p2048
@@ -66,7 +66,7 @@ namespace p2048
 		bool IsNewcomer( const uint32_t x, const uint32_t y ) const;
 
 	private:
-		r2::GridIndexConverter mGridIndexConverter;
+		r2::GridIndexConverter<int, int> mGridIndexConverter;
 		ContainerT mContainer;
 		int32_t mCurrentNumberCount;
 	};

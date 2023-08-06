@@ -108,7 +108,7 @@ namespace camera_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2bix_render::Camera camera( { 20, 30 }, { 20, 10 } ) );
+			DECLARATION_MAIN( r2bix_render::Camera camera( 20, 30, 20, 10 ) );
 
 			std::cout << r2cm::split;
 
@@ -144,7 +144,7 @@ namespace camera_test
 		{
 			std::cout << r2cm::split;
 
-			r2bix_render::Camera camera( { 20, 30 }, { 20, 10 } );
+			r2bix_render::Camera camera( 20, 30, 20, 10 );
 
 			{
 				std::cout << r2cm::tab << "+ Declaration" << r2cm::linefeed2;
@@ -190,7 +190,7 @@ namespace camera_test
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( r2bix_render::Camera camera( { 20, 30 }, { 19, 9 } ) );
+			DECLARATION_MAIN( r2bix_render::Camera camera( 20, 30, 19, 9 ) );
 
 			std::cout << r2cm::split;
 

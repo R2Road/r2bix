@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include "r2/r2_VersionInfo.h"
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_VersionInfo.h"
 #include "r2cm/r2cm_Director.h"
@@ -24,7 +25,9 @@ const char* DevelopmentMenu::GetTitle()
 	static const std::string ret =
 		std::string( "Development Menu" )
 		+ " : <" + r2cm::VersionInfo.String4Version + ">"
-		+ " : <" + r2bix::VersionInfo.String4Version + ">";
+		+ " | <" + r2bix::VersionInfo.String4Version + ">"
+		+ " | <" + r2::VersionInfo.String4Version + ">"
+	;
 	return ret.c_str();
 }
 

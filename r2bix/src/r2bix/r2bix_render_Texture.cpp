@@ -116,7 +116,7 @@ namespace r2bix_render
 	{
 		assert( 0u < width && 0u < str.length() );
 
-		mGridIndexConverter = r2::GridIndexConverter( width, static_cast<int>( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) );
+		mGridIndexConverter = r2::GridIndexConverter<int, int>( width, static_cast<int>( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) );
 
 		//
 		// Chars
@@ -145,7 +145,7 @@ namespace r2bix_render
 	{
 		assert( 0u < width && 0u < height );
 
-		mGridIndexConverter = r2::GridIndexConverter( width, height );
+		mGridIndexConverter = r2::GridIndexConverter<int, int>( width, height );
 
 		//
 		// Chars

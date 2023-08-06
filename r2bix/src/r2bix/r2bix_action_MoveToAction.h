@@ -24,6 +24,10 @@ namespace r2bix_action
 		//
 		//
 		//
+		void SetEndPoint( const r2::PointInt::ValueT x, const r2::PointInt::ValueT y )
+		{
+			mEndPoint.Set( x, y );
+		}
 		void SetEndPoint( const r2::PointInt end_point )
 		{
 			mEndPoint = end_point;

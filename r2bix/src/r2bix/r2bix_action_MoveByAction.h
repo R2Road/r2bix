@@ -24,6 +24,10 @@ namespace r2bix_action
 		//
 		//
 		//
+		void SetMoveAmount( const r2::PointInt::ValueT x, const r2::PointInt::ValueT y )
+		{
+			mMoveAmount.Set( x, y );
+		}
 		void SetMoveAmount( const r2::PointInt move_amount )
 		{
 			mMoveAmount = move_amount;

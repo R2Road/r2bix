@@ -4,14 +4,15 @@
 #include <iomanip>
 
 #include "r2bix/r2bix_Director.h"
+
 #include "r2cm/r2cm_Inspector.h"
 #include "r2cm/r2cm_ostream.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "p2048/p2048_GameProcessor.h"
 #include "p2048/p2048_Stage.h"
 
-#include "r2cm/r2cm_WindowUtility.h"
-
+#include "r2/r2utility_Operator4Direction4SequentialWithPoint.h"
 
 namespace test_p2048_gameprocessor
 {
@@ -54,7 +55,7 @@ namespace test_p2048_gameprocessor
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( r2::Direction4 move_dir );
+				DECLARATION_MAIN( r2::Direction4Sequential move_dir );
 				DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
 				DECLARATION_MAIN( r2::PointInt pivot_point_1 );
 				DECLARATION_MAIN( r2::PointInt pivot_point_2 );
@@ -72,16 +73,16 @@ namespace test_p2048_gameprocessor
 					switch( _getch() )
 					{
 					case 97: // L
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Left ) );
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Left ) );
 						break;
 					case 100: // R
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Right ) );
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Right ) );
 						break;
 					case 119: // U
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) ); // swap D 4 ez look
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Down ) ); // swap D 4 ez look
 						break;
 					case 115: // D
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) ); // swap U 4 ez look
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Up ) ); // swap U 4 ez look
 						break;
 
 					case 27: // ESC
@@ -97,7 +98,7 @@ namespace test_p2048_gameprocessor
 					if( bRun )
 					{
 						{
-							PROCESS_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetPoint().GetX(), center_point.GetY() * move_dir.GetPoint().GetY() ) );
+							PROCESS_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetX(), center_point.GetY() * move_dir.GetY() ) );
 							PROCESS_MAIN( pivot_point_1.SetX( std::clamp( pivot_point_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
 							PROCESS_MAIN( pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
 						}
@@ -105,7 +106,7 @@ namespace test_p2048_gameprocessor
 						std::cout << r2cm::linefeed;
 
 						{
-							PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetPoint().GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetPoint().GetY() ) ) );
+							PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetY() ) ) );
 						}
 
 						std::cout << r2cm::linefeed;
@@ -129,7 +130,7 @@ namespace test_p2048_gameprocessor
 							{
 								for( uint32_t x = 0; stage.GetWidth() > x; ++x )
 								{
-									r2::PointInt temp_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
+									r2::PointInt temp_point( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
 
 									if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
 									{
@@ -138,7 +139,7 @@ namespace test_p2048_gameprocessor
 								}
 							}
 
-							pivot_point_2 += reverse_dir.GetPoint();
+							pivot_point_2 += reverse_dir;
 						}
 						PROCESS_MAIN( PrintStage( stage ) );
 					}
@@ -196,16 +197,16 @@ namespace test_p2048_gameprocessor
 					switch( _getch() )
 					{
 					case 97: // L
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Left ).has_moved );
+						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Left ).has_moved );
 						break;
 					case 100: // R
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Right ).has_moved );
+						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Right ).has_moved );
 						break;
 					case 119: // U
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Down ).has_moved ); // swap D 4 ez look
+						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Down ).has_moved ); // swap D 4 ez look
 						break;
 					case 115: // D
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Up ).has_moved ); // swap U 4 ez look
+						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Up ).has_moved ); // swap U 4 ez look
 						break;
 
 					case 27: // ESC
@@ -260,7 +261,7 @@ namespace test_p2048_gameprocessor
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
+				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
 				std::cout << r2cm::linefeed;
@@ -276,7 +277,7 @@ namespace test_p2048_gameprocessor
 			std::cout << r2cm::split;
 
 			{
-				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
+				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
 				std::cout << r2cm::linefeed;
@@ -298,7 +299,7 @@ namespace test_p2048_gameprocessor
 
 				std::cout << r2cm::linefeed;
 
-				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
+				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
 				std::cout << r2cm::linefeed;

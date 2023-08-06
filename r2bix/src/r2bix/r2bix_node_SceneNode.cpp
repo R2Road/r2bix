@@ -6,7 +6,12 @@
 namespace r2bix_node
 {
 	SceneNode::SceneNode( r2bix::Director& director ) : r2bix_node::Node( director )
-		, mCamera( { director.GetScreenBufferSize().GetWidth() / 2, director.GetScreenBufferSize().GetHeight() / 2 }, director.GetScreenBufferSize() )
+		, mCamera(
+			  director.GetScreenBufferSize().GetWidth() / 2
+			, director.GetScreenBufferSize().GetHeight() / 2
+			, director.GetScreenBufferSize().GetWidth()
+			, director.GetScreenBufferSize().GetHeight()
+		)
 		, mRenderTarget( director.GetScreenBufferSize().GetWidth(), director.GetScreenBufferSize().GetHeight(), '@' )
 	{}
 

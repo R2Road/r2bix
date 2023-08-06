@@ -1,10 +1,20 @@
+//
+// # Version Rule
+// - 1.0.0 : 사용 가능
+// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
+// - 0.0.1 : 자잘한 변화
+//
+// # Last Update		: 2023.05.19 AM.08.05
+// # Version			: 1.0.1
+//
+
 #pragma once
 
 #include <algorithm>
 #include <limits>
-#include <type_traits>
 
 #include "r2_Assert.h"
+#include "r2_TypeTraits.h"
 
 namespace r2
 {
@@ -13,30 +23,36 @@ namespace r2
 	{
 	public:
 		static_assert(
-			std::is_same<float, T>::value
-			|| std::is_same<double, T>::value
+			   r2::is_same_v<T, float>
+			|| r2::is_same_v<T, double>
 			, "r2::Timer - Not Allowed Type"
-			);
+		);
+
 		using ValueT = T;
-		const ValueT ValueMAX = std::numeric_limits<ValueT>::max();
-		const ValueT ValueZERO = static_cast<ValueT>( 0 );
-		const ValueT ValueONE = static_cast<ValueT>( 1 );
+
+		static constexpr ValueT ValueMAX = std::numeric_limits<ValueT>::max();
+		static constexpr ValueT ValueZERO = static_cast<ValueT>( 0 );
+		static constexpr ValueT ValueONE = static_cast<ValueT>( 1 );
+
+
 
 		Timer() :
 			mAlive( false )
 			, mLimitTime( ValueZERO )
 			, mElapsedTime( ValueZERO )
 		{}
-		Timer( const ValueT limit_time ) :
+		explicit Timer( const ValueT limit_time ) :
 			mAlive( false )
 			, mLimitTime( limit_time )
 			, mElapsedTime( ValueZERO )
 		{}
-		Timer( const ValueT limit_time, const bool on_timer ) :
+		explicit Timer( const ValueT limit_time, const bool on_timer ) :
 			mAlive( on_timer )
 			, mLimitTime( limit_time )
 			, mElapsedTime( ValueZERO )
 		{}
+
+
 
 		//
 		//
@@ -50,11 +66,17 @@ namespace r2
 		{
 			mAlive = false;
 		}
-		void Clear()
+		void Resume()
+		{
+			mAlive = true;
+		}
+		void Reset()
 		{
 			mElapsedTime = ValueZERO;
 			mAlive = false;
 		}
+
+
 
 		//
 		//
@@ -64,10 +86,8 @@ namespace r2
 			mElapsedTime = std::min( mElapsedTime, mLimitTime );
 			mElapsedTime = mLimitTime - mElapsedTime;
 		}
-		void KeepGoing()
-		{
-			mAlive = true;
-		}
+
+
 
 		//
 		//
@@ -80,6 +100,8 @@ namespace r2
 		{
 			mLimitTime += additional_time;
 		}
+
+
 
 		//
 		//
@@ -103,6 +125,8 @@ namespace r2
 			return mAlive;
 		}
 
+
+
 		//
 		//
 		//
@@ -122,7 +146,6 @@ namespace r2
 		{
 			return mLimitTime;
 		}
-
 		//
 		//
 		//
@@ -145,6 +168,8 @@ namespace r2
 		{
 			return ( ValueZERO >= mLimitTime ? ValueZERO : mElapsedTime / mLimitTime );
 		}
+
+
 
 	private:
 		bool mAlive;

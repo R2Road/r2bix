@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\r2_cpp\r2\source\r2\r2_Direction4SequentialState.cpp" />
     <ClCompile Include="external\r2cm\r2cm_Director.cpp" />
     <ClCompile Include="external\r2cm\r2cm_Menu.cpp" />
     <ClCompile Include="external\r2cm\r2cm_PrintBinary.cpp" />
@@ -28,10 +29,7 @@
     <ClCompile Include="external\r2\r2utility_StringBuilder.cpp" />
     <ClCompile Include="external\r2\r2utility_StringDecomposition.cpp" />
     <ClCompile Include="external\r2\r2utility_StringSize.cpp" />
-    <ClCompile Include="external\r2\r2_Direction4.cpp" />
     <ClCompile Include="external\r2\r2_FPSTimer.cpp" />
-    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp" />
-    <ClCompile Include="external\r2\r2_PointFloat.cpp" />
     <ClCompile Include="external\r2\r2_PointInt.cpp" />
     <ClCompile Include="external\r2\r2_Random.cpp" />
     <ClCompile Include="external\r2\r2_RectInt.cpp" />
@@ -144,6 +142,8 @@
     <ClCompile Include="src\tool\ToolMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\r2_cpp\r2\source\r2\r2_Direction4Sequential.h" />
+    <ClInclude Include="..\..\r2_cpp\r2\source\r2\r2_Direction4SequentialState.h" />
     <ClInclude Include="external\miniaudio\miniaudio.h" />
     <ClInclude Include="external\r2cm\r2cm_Director.h" />
     <ClInclude Include="external\r2cm\r2cm_iItem.h" />
@@ -155,27 +155,30 @@
     <ClInclude Include="external\r2cm\r2cm_StopWatch.h" />
     <ClInclude Include="external\r2cm\r2cm_VersionInfo.h" />
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h" />
+    <ClInclude Include="external\r2\r2utility_Operator4Direction4SequentialWithPoint.h" />
     <ClInclude Include="external\r2\r2utility_StringBuilder.h" />
     <ClInclude Include="external\r2\r2utility_StringDecomposition.h" />
     <ClInclude Include="external\r2\r2utility_StringSize.h" />
     <ClInclude Include="external\r2\r2_Assert.h" />
-    <ClInclude Include="external\r2\r2_Direction4.h" />
     <ClInclude Include="external\r2\r2_FPSTimer.h" />
     <ClInclude Include="external\r2\r2_GridIndexConverter.h" />
     <ClInclude Include="external\r2\r2_NoneCopyable.h" />
     <ClInclude Include="external\r2\r2_Point.h" />
-    <ClInclude Include="external\r2\r2_PointFloat.h" />
     <ClInclude Include="external\r2\r2_PointInt.h" />
     <ClInclude Include="external\r2\r2_Random.h" />
     <ClInclude Include="external\r2\r2_Rect.h" />
     <ClInclude Include="external\r2\r2_RectInt.h" />
+    <ClInclude Include="external\r2\r2_RectIterator.h" />
+    <ClInclude Include="external\r2\r2_RemovePointer.h" />
     <ClInclude Include="external\r2\r2_Size.h" />
     <ClInclude Include="external\r2\r2_SizeInt.h" />
     <ClInclude Include="external\r2\r2_Timer.h" />
     <ClInclude Include="external\r2\r2_TimerFloat.h" />
+    <ClInclude Include="external\r2\r2_TypeTraits.h" />
     <ClInclude Include="external\r2\r2_UniqueIndex.h" />
     <ClInclude Include="external\r2\r2_Vector2.h" />
     <ClInclude Include="external\r2\r2_Vector3.h" />
+    <ClInclude Include="external\r2\r2_VersionInfo.h" />
     <ClInclude Include="external\rapidjson\allocators.h" />
     <ClInclude Include="external\rapidjson\cursorstreamwrapper.h" />
     <ClInclude Include="external\rapidjson\document.h" />

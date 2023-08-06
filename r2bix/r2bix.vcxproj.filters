@@ -245,13 +245,7 @@
     <ClCompile Include="src\test\test_p2048\P2048Menu.cpp">
       <Filter>test\test_p2048</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_FPSTimer.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_Random.cpp">
@@ -261,12 +255,6 @@
       <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_SizeInt.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_TimerFloat.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_PointFloat.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_PointInt.cpp">
@@ -467,6 +455,12 @@
     <ClCompile Include="src\r2bix_helper\r2bix_helper_Printer4Texture.cpp">
       <Filter>r2bix_helper</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\r2_cpp\r2\source\r2\r2_Direction4SequentialState.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_TimerFloat.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -620,9 +614,6 @@
     <ClInclude Include="external\r2\r2_Assert.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_FPSTimer.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -641,9 +632,6 @@
     <ClInclude Include="external\r2\r2_Size.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Timer.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_UniqueIndex.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -654,12 +642,6 @@
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_SizeInt.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_TimerFloat.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_PointFloat.h">
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_PointInt.h">
@@ -967,6 +949,33 @@
     </ClInclude>
     <ClInclude Include="src\r2bix_helper\r2bix_helper_Printer4Texture.h">
       <Filter>r2bix_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\r2_cpp\r2\source\r2\r2_Direction4Sequential.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\r2_cpp\r2\source\r2\r2_Direction4SequentialState.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2utility_Operator4Direction4SequentialWithPoint.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_TypeTraits.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RectIterator.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RemovePointer.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Timer.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_TimerFloat.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_VersionInfo.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

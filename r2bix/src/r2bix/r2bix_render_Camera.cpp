@@ -2,7 +2,17 @@
 
 namespace r2bix_render
 {
-	Camera::Camera( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size ) :
+	Camera::Camera(
+		const r2::RectInt::PointT::ValueT& x, const r2::RectInt::PointT::ValueT& y
+		, const r2::RectInt::SizeT::ValueT& width, const r2::RectInt::SizeT::ValueT& height
+	) :
+		  mPosition( x, y )
+		, mCameraSpaceRect()
+		, mWorldSpaceRect()
+	{
+		buildRect( mPosition, { width - 1, height - 1 } );
+	}
+	Camera::Camera( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size ) :
 		mPosition( position )
 		, mCameraSpaceRect()
 		, mWorldSpaceRect()
@@ -10,7 +20,7 @@ namespace r2bix_render
 		buildRect( mPosition, { size.GetWidth() - 1, size.GetHeight() - 1 } );
 	}
 
-	void Camera::SetPoint( const r2::RectInt::MyPointT& point )
+	void Camera::SetPoint( const r2::RectInt::PointT& point )
 	{
 		mPosition = point;
 
@@ -23,7 +33,7 @@ namespace r2bix_render
 		buildRect( mPosition, mWorldSpaceRect.GetSize() );
 	}
 
-	void Camera::buildRect( const r2::RectInt::MyPointT& position, const r2::RectInt::MySizeT& size )
+	void Camera::buildRect( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size )
 	{
 		const int half_width = size.GetWidth() / 2;
 		const int half_height = size.GetHeight() / 2;

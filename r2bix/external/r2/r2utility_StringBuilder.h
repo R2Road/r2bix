@@ -1,15 +1,10 @@
 #pragma once
 
-#include <string_view>
-
 namespace r2utility
 {
-	class StringBuilder
+	namespace StringBuilder
 	{
-	private:
-		StringBuilder() = delete;
-
-	public:
-		static const std::string_view Build( const char* format_string, ... );
-	};
+		const char* Build( const char* format_string, ... );
+		const char* Build( const int value );
+	}
 }

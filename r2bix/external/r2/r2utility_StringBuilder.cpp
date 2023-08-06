@@ -5,17 +5,25 @@
 
 namespace r2utility
 {
-	const std::string_view StringBuilder::Build( const char* format_string, ... )
+	namespace StringBuilder
 	{
-		static char buffer[256] = { 0, };
+		const char* Build( const char* format_string, ... )
+		{
+			static char buffer[256] = { 0, };
 
-		va_list argList;
-		va_start( argList, format_string );
+			va_list argList;
+			va_start( argList, format_string );
 
-		vsnprintf( buffer, 256, format_string, argList );
+			vsnprintf( buffer, 256, format_string, argList );
 
-		va_end( argList );
+			va_end( argList );
 
-		return std::string_view( buffer );
+			return buffer;
+		}
+
+		const char* Build( const int value )
+		{
+			return Build( "%d", value );
+		}
 	}
 }

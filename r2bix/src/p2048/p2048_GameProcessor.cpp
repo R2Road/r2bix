@@ -1,8 +1,12 @@
 #include "p2048_GameProcessor.h"
 
+#include <algorithm>
+
 #include "p2048_Stage.h"
 
+#include "r2/r2_PointInt.h"
 #include "r2/r2_Random.h"
+#include "r2/r2utility_Operator4Direction4SequentialWithPoint.h"
 
 namespace p2048
 {
@@ -48,7 +52,7 @@ namespace p2048
 	// 1. 도착점에 가장 가까운 녀석부터 이동
 	// 2. 아무도 움직이지 못했다면 이동 한 것이 아니다.
 	//
-	GameProcessor::MoveResult GameProcessor::Move( const r2::Direction4::eState direction_state )
+	GameProcessor::MoveResult GameProcessor::Move( const r2::Direction4Sequential::eState direction_state )
 	{
 		mStage->ClearAllFlags();
 		mSum4Merged = 0;
@@ -59,8 +63,8 @@ namespace p2048
 
 		const r2::PointInt center_point( mStage->GetWidth() / 2, mStage->GetHeight() );
 
-		const r2::Direction4 move_dir( direction_state );
-		r2::Direction4 reverse_dir = move_dir;
+		const r2::Direction4Sequential move_dir( direction_state );
+		r2::Direction4Sequential reverse_dir = move_dir;
 		reverse_dir.Rotate( true );
 		reverse_dir.Rotate( true );
 
@@ -85,7 +89,7 @@ namespace p2048
 		// P====
 		// =====
 		//
-		pivot_point_1 += r2::PointInt( center_point.GetX() * move_dir.GetPoint().GetX(), center_point.GetY() * move_dir.GetPoint().GetY() );
+		pivot_point_1 += r2::PointInt( center_point.GetX() * move_dir.GetX(), center_point.GetY() * move_dir.GetY() );
 		pivot_point_1.SetX( std::clamp( pivot_point_1.GetX(), 0, static_cast<int32_t>( mStage->GetMaxX() ) ) );
 		pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( mStage->GetMaxY() ) ) );
 
@@ -100,7 +104,7 @@ namespace p2048
 		// =====
 		// =====
 		//
-		r2::PointInt pivot_point_2( pivot_point_1.GetX() * std::abs( move_dir.GetPoint().GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetPoint().GetY() ) );
+		r2::PointInt pivot_point_2( pivot_point_1.GetX() * std::abs( move_dir.GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetY() ) );
 
 		//
 		// # Step 4
@@ -123,13 +127,13 @@ namespace p2048
 		// 01234
 		// 01234
 		//
-		for( ; mStage->IsIn( pivot_point_2.GetX(), pivot_point_2.GetY() ); pivot_point_2 += reverse_dir.GetPoint() )
+		for( ; mStage->IsIn( pivot_point_2.GetX(), pivot_point_2.GetY() ); pivot_point_2 += reverse_dir )
 		{
 			for( uint32_t y = 0; mStage->GetHeight() > y; ++y )
 			{
 				for( uint32_t x = 0; mStage->GetWidth() > x; ++x )
 				{
-					r2::PointInt check_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
+					r2::PointInt check_point( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
 
 					if( pivot_point_2.GetX() != check_point.GetX() || pivot_point_2.GetY() != check_point.GetY() )
 					{
@@ -154,7 +158,7 @@ namespace p2048
 
 						// Is In?
 						r2::PointInt next_point( currept_point.GetX(), currept_point.GetY() );
-						next_point += move_dir.GetPoint();
+						next_point += move_dir;
 						if( !mStage->IsIn( next_point.GetX(), next_point.GetY() ) )
 						{
 							break;
@@ -219,7 +223,7 @@ namespace p2048
 
 	bool GameProcessor::IsMovable() const
 	{
-		r2::Direction4 dir4;
+		r2::Direction4Sequential dir4;
 		r2::PointInt currept_point;
 		r2::PointInt next_point;
 		for( uint32_t y = 0; mStage->GetHeight() > y; ++y )
@@ -235,10 +239,10 @@ namespace p2048
 					return true;
 				}
 
-				dir4.SetState( r2::Direction4::eState::Up );
-				for( int d = 0, e = static_cast<int>( r2::Direction4::eState::SIZE ); e > d; ++d, dir4.Rotate( true ) )
+				dir4.SetState( r2::Direction4Sequential::eState::Up );
+				for( int d = 0, e = static_cast<int>( r2::Direction4Sequential::eState::SIZE ); e > d; ++d, dir4.Rotate( true ) )
 				{
-					next_point = currept_point + dir4.GetPoint();
+					next_point = currept_point + dir4;
 					if( !mStage->IsIn( next_point.GetX(), next_point.GetY() ) )
 					{
 						continue;

@@ -4,8 +4,8 @@
 
 #include "r2bix_ColorMaskOption.h"
 
-#include "r2/r2_PointFloat.h"
 #include "r2/r2_RectInt.h"
+#include "r2/r2_Vector2.h"
 
 namespace r2bix_render
 {
@@ -49,7 +49,7 @@ namespace r2bix_component
 		void resetVisibleRect();
 
 	private:
-		r2::PointFloat mPivotPoint;
+		r2::Vector2 mPivotVector;
 		r2::RectInt mVisibleRect;
 		const r2bix_render::TextureFrame* mTextureFrame;
 		r2bix::ColorMaskOption mColorMaskOption;

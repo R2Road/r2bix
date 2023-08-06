@@ -1,6 +1,8 @@
 #pragma once
 
-#include "r2/r2_Direction4.h"
+#include <stdint.h>
+
+#include "r2/r2_Direction4Sequential.h"
 
 namespace p2048
 {
@@ -32,7 +34,7 @@ namespace p2048
 
 		void AddNumber( const uint32_t min, const uint32_t max );
 
-		MoveResult Move( const r2::Direction4::eState direction_state );
+		MoveResult Move( const r2::Direction4Sequential::eState direction_state );
 		bool IsMovable() const;
 		bool IsGameClear() const;
 		bool IsGameEnd() const;
