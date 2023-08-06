@@ -4,7 +4,7 @@
 
 #include "r2cm/r2cm_ostream.h"
 
-namespace key_test
+namespace key_code_viewer
 {
 	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
 	{

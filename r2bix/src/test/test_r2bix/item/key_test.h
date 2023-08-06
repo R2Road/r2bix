@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace key_test
+namespace key_code_viewer
 {
 	class Basic : public r2cm::iItem
 	{

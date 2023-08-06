@@ -15,7 +15,7 @@ r2cm::MenuUp InputMenu::Create( r2cm::Director& director )
 	) );
 
 	{
-		ret->AddItem( '1', key_test::Basic() );
+		ret->AddItem( '1', key_code_viewer::Basic() );
 
 
 		ret->AddLineFeed();
