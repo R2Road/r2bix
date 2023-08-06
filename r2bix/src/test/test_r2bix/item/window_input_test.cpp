@@ -7,26 +7,26 @@
 
 #include "r2/r2_RectInt.h"
 #include "r2/r2_FPSTimer.h"
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_WindowUtility.h"
 
 namespace window_input_test
 {
-	r2cm::iItem::TitleFunctionT KeyStatus::GetTitleFunction() const
+	r2tm::TitleFunctionT KeyStatus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Window Input : KeyStatus";
 		};
 	}
-	r2cm::iItem::DoFunctionT KeyStatus::GetDoFunction() const
+	r2tm::DoFunctionT KeyStatus::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "[ESC] Exit" << r2cm::linefeed;
-			std::cout << "[A] ..." << r2cm::linefeed;
+			std::cout << "[ESC] Exit" << r2tm::linefeed;
+			std::cout << "[A] ..." << r2tm::linefeed;
 
 			r2bix_input::KeyboardInputCollector keyboard_input_collector;
 			r2bix_input::KeyboardInputListener keyboard_input_listener( {
@@ -36,7 +36,7 @@ namespace window_input_test
 
 			keyboard_input_collector.AddListener( &keyboard_input_listener );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				auto last_input_status = keyboard_input_listener.Get( 1 );
@@ -59,32 +59,32 @@ namespace window_input_test
 					if( last_input_status != keyboard_input_listener.Get( 1 ) )
 					{
 						last_input_status = keyboard_input_listener.Get( 1 );
-						std::cout << "status : " << static_cast<int>( last_input_status ) << r2cm::linefeed;
+						std::cout << "status : " << static_cast<int>( last_input_status ) << r2tm::linefeed;
 					}
 				}
 			}
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT TestKeyboardInputCollector::GetTitleFunction() const
+	r2tm::TitleFunctionT TestKeyboardInputCollector::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Keyboard Input Collector";
 		};
 	}
-	r2cm::iItem::DoFunctionT TestKeyboardInputCollector::GetDoFunction() const
+	r2tm::DoFunctionT TestKeyboardInputCollector::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << "[ESC] Exit" << r2cm::linefeed;
-			std::cout << "[WASD] Move" << r2cm::linefeed;
+			std::cout << "[ESC] Exit" << r2tm::linefeed;
+			std::cout << "[WASD] Move" << r2tm::linefeed;
 
 			r2bix_input::KeyboardInputCollector keyboard_input_collector;
 			r2bix_input::KeyboardInputListener keyboard_input_listener( {
@@ -97,15 +97,15 @@ namespace window_input_test
 
 			keyboard_input_collector.AddListener( &keyboard_input_listener );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				r2::FPSTimer fps_timer( 60u );
 				r2::RectInt stage_area( 6, 10, 50, 30 );
-				r2cm::WindowUtility::CursorPoint pos{ 20, 20 };
-				r2cm::WindowUtility::CursorPoint temp_pos{ 20, 20 };
+				r2tm::WindowUtility::CursorPoint pos{ 20, 20 };
+				r2tm::WindowUtility::CursorPoint temp_pos{ 20, 20 };
 
-				r2cm::WindowUtility::MoveCursorPoint( pos );
+				r2tm::WindowUtility::MoveCursorPoint( pos );
 				std::cout << '@';
 
 				while( 1 )
@@ -149,9 +149,9 @@ namespace window_input_test
 
 						if( temp_pos.x != pos.x || temp_pos.y != pos.y )
 						{
-							r2cm::WindowUtility::MoveCursorPoint( pos );
+							r2tm::WindowUtility::MoveCursorPoint( pos );
 							std::cout << ' ';
-							r2cm::WindowUtility::MoveCursorPoint( temp_pos );
+							r2tm::WindowUtility::MoveCursorPoint( temp_pos );
 							std::cout << '@';
 
 							pos = temp_pos;
@@ -160,7 +160,7 @@ namespace window_input_test
 				}
 			}
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

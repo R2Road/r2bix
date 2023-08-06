@@ -1,18 +1,28 @@
 #include "ActionMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
 #include "test/test_r2bix/item/action_test.h"
 
-r2cm::MenuUp ActionMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT ActionMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-	) );
-
+	return []()->const char*
+	{
+		return "Action";
+	};
+}
+r2tm::DescriptionFunctionT ActionMenu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return "";
+	};
+}
+r2tm::WriteFunctionT ActionMenu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', action_test::TickActionTest() );
 		ret->AddItem( '2', action_test::DelayActionTest() );
@@ -31,8 +41,6 @@ r2cm::MenuUp ActionMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<R2bixMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, R2bixMenu() );
+	};
 }

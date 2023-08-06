@@ -2,8 +2,8 @@
 
 #include "r2bix/r2bix_Director.h"
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_ostream.h"
 
 #include "psnake/psnake_VersionInfo.h"
 #include "psnake/psnake_CompanyScene.h"
@@ -11,14 +11,25 @@
 #include "DevelopmentMenu.h"
 
 
-r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT PSnakeMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-		, psnake::VersionInfo.String4Road2Version_0_0_1
-	) );
-
+	return []()->const char*
+	{
+		return "PSnake Menu( In Progress )";
+	};
+}
+r2tm::DescriptionFunctionT PSnakeMenu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return
+					"> Inprogress : ..."
+			"\n"	"> ...";
+	};
+}
+r2tm::WriteFunctionT PSnakeMenu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
 	{
 		//ret->AddItem( '1', test_p2048_stage::Generate::GetInstance() );
 
@@ -30,7 +41,7 @@ r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			32
 			, []()->const char* { return psnake::CompanyScene::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
 				//
 				// Setup
@@ -43,7 +54,7 @@ r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
 				//
 				director.Run();
 
-				return r2cm::eItemLeaveAction::None;
+				return r2tm::eDoLeaveAction::None;
 			}
 		);
 
@@ -53,8 +64,6 @@ r2cm::MenuUp PSnakeMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<DevelopmentMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, DevelopmentMenu() );
+	};
 }

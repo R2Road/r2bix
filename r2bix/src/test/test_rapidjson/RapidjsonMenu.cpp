@@ -1,20 +1,30 @@
 #include "RapidjsonMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "item/rapidjson_test.h"
 
 #include "DevelopmentMenu.h"
 
-r2cm::MenuUp RapidjsonMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT RapidjsonMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle(),
-				"> Inprogress : ..."
-		"\n"	"> ..."
-	) );
-
+	return []()->const char*
+	{
+		return "Rapidjson";
+	};
+}
+r2tm::DescriptionFunctionT RapidjsonMenu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return
+					"> Inprogress : ..."
+			"\n"	"> ...";
+	};
+}
+r2tm::WriteFunctionT RapidjsonMenu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', rapidjson_test::Basic() );
 
@@ -24,8 +34,6 @@ r2cm::MenuUp RapidjsonMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<DevelopmentMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, DevelopmentMenu() );
+	};
 }

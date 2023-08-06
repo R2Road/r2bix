@@ -5,9 +5,9 @@
 #include "r2/r2_VersionInfo.h"
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_VersionInfo.h"
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_VersionInfo.h"
+#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_VersionInfo.h"
 
 #include "test/test_miniaudio/MiniAudioMenu.h"
 #include "test/test_p2048/P2048Menu.h"
@@ -20,29 +20,33 @@
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
 
-const char* DevelopmentMenu::GetTitle()
+r2tm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
 {
-	static const std::string ret =
-		std::string( "Development Menu" )
-		+ " : <" + r2cm::VersionInfo.String4Version + ">"
-		+ " | <" + r2bix::VersionInfo.String4Version + ">"
-		+ " | <" + r2::VersionInfo.String4Version + ">"
-	;
-	return ret.c_str();
-}
-
-r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
-{
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-		, r2bix::VersionInfo.String4Road2Version_0_0_3_0
-	) );
-
+	return []()->const char*
 	{
-		ret->AddMenu<R2bixMenu>( '1' );
-		ret->AddMenu<MiniAudioMenu>( '2' );
-		ret->AddMenu<RapidjsonMenu>( '3' );
+		static const std::string ret =
+				std::string( "Development Menu" )
+			+	" : <" + r2tm::VersionInfo.String4Version + ">"
+			+	" | <" + r2bix::VersionInfo.String4Version + ">"
+			+	" | <" + r2::VersionInfo.String4Version + ">"
+		;
+		return ret.c_str();
+	};
+}
+r2tm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return r2bix::VersionInfo.String4Road2Version_0_0_3_0;
+	};
+}
+r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
+	{
+		ret->AddMenu( '1', R2bixMenu() );
+		ret->AddMenu( '2', MiniAudioMenu() );
+		ret->AddMenu( '3', RapidjsonMenu() );
 
 
 
@@ -51,7 +55,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<ToolMenu>( 'q' );
+		ret->AddMenu( 'q', ToolMenu() );
 
 
 
@@ -60,7 +64,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<PSnakeMenu>( 'a' );
+		ret->AddMenu( 'a', PSnakeMenu() );
 
 
 
@@ -69,11 +73,11 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 		
 
-		ret->AddMenu<P2048Menu>( 's' );
+		ret->AddMenu( 's', P2048Menu() );
 		ret->AddItem(
 			'z'
 			, []()->const char* { return p_mini_adv::CompanyScene::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
 				//
 				// Setup
@@ -86,13 +90,13 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				//
 				director.Run();
 
-				return r2cm::eItemLeaveAction::None;
+				return r2tm::eDoLeaveAction::None;
 			}
 		);
 		ret->AddItem(
 			'c'
 			, []()->const char* { return pmr::CompanyScene::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
 				//
 				// Setup
@@ -105,7 +109,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				//
 				director.Run();
 
-				return r2cm::eItemLeaveAction::None;
+				return r2tm::eDoLeaveAction::None;
 			}
 		);
 
@@ -118,12 +122,10 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eItemLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
-				return r2cm::eItemLeaveAction::Exit;
+				return r2tm::eDoLeaveAction::Exit;
 			}
 		);
-	}
-
-	return ret;
+	};
 }

@@ -1,21 +1,31 @@
 #include "CameraMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test/test_r2bix/item/camera_test.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
-r2cm::MenuUp CameraMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT CameraMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle(),
-				"> 카메라는 무언가를 할 필요 없다."
-		"\n"	"> 요구하는 위치에 자리하고, 그 데이터를 잘 가지고만 있으면 된다."
-		"\n"	"> 뭐 하려고 하지마."
-	) );
-
+	return []()->const char*
+	{
+		return "Camera";
+	};
+}
+r2tm::DescriptionFunctionT CameraMenu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return 
+					"> 카메라는 무언가를 할 필요 없다."
+			"\n"	"> 요구하는 위치에 자리하고, 그 데이터를 잘 가지고만 있으면 된다."
+			"\n"	"> 뭐 하려고 하지마.";
+	};
+}
+r2tm::WriteFunctionT CameraMenu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', camera_test::Declaration() );
 		ret->AddItem( '2', camera_test::CameraPosition() );
@@ -26,8 +36,6 @@ r2cm::MenuUp CameraMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<R2bixMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, R2bixMenu() );
+	};
 }

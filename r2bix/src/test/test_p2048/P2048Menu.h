@@ -1,20 +1,11 @@
 #pragma once
 
-#include <memory>
+#include "r2tm/r2tm_iMenu.h"
 
-namespace r2cm
+class P2048Menu : public r2tm::iMenu
 {
-	using MenuUp = std::unique_ptr<class Menu>;
-
-	class Director;
-}
-
-class P2048Menu
-{
-private:
-	P2048Menu() = delete;
-
 public:
-	static const char* GetTitle() { return "P2048 Menu( To do )"; }
-	static r2cm::MenuUp Create( r2cm::Director& director );
+	r2tm::TitleFunctionT GetTitleFunction() const override;
+	r2tm::DescriptionFunctionT GetDescriptionFunction() const override;
+	r2tm::WriteFunctionT GetWriteFunction() const override;
 };

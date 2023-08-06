@@ -1,7 +1,7 @@
 #include "P2048Menu.h"
 
 #include "r2bix/r2bix_Director.h"
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test_p2048_gameprocessor.h"
 #include "test_p2048_numbernode.h"
@@ -12,15 +12,26 @@
 
 #include "p2048/p2048_EntryScene.h"
 
-r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT P2048Menu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle(),
-				"> 이 게임이 p2048mini 와 다른 것은 이동 과정을 보여준 다는 것에 있다."
-		"\n"	"> 방치중..."
-	) );
-
+	return []()->const char*
+	{
+		return "P2048 Menu( To do )";
+	};
+}
+r2tm::DescriptionFunctionT P2048Menu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return
+					"> 이 게임이 p2048mini 와 다른 것은 이동 과정을 보여준 다는 것에 있다."
+			"\n"	"> 방치중..."
+		;
+	};
+}
+r2tm::WriteFunctionT P2048Menu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', test_p2048_stage::Generate() );
 		ret->AddItem( '2', test_p2048_stage::Add_Remove_ClearAll() );
@@ -56,7 +67,7 @@ r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
 		ret->AddItem(
 			32
 			, []()->const char* { return p2048::EntryScene::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
 				//
 				// Setup
@@ -69,7 +80,7 @@ r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
 				//
 				director.Run();
 
-				return r2cm::eItemLeaveAction::None;
+				return r2tm::eDoLeaveAction::None;
 			}
 		);
 
@@ -79,8 +90,6 @@ r2cm::MenuUp P2048Menu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<DevelopmentMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, DevelopmentMenu() );
+	};
 }

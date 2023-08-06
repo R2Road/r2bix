@@ -4,8 +4,8 @@
 #include "r2bix/r2bix_render_TextureFrame.h"
 #include "r2bix_helper/r2bix_helper_Printer4Texture.h"
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 #include "test/test_r2bix/TextureTable4Test.h"
 
@@ -28,44 +28,44 @@ namespace
 
 	void PrintRectInfo( const r2::RectInt& rect )
 	{
-		std::cout << r2cm::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2cm::linefeed;
+		std::cout << r2tm::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2tm::linefeed;
 	}
 }
 
 namespace texture_frame_test
 {
-	r2cm::iItem::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Basic";
 		};
 	}
-	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Basic::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 
 			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 
 			r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			PrintRectInfo( frame.GetVisibleRect() );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 
 			EXPECT_EQ( &texture, frame.GetTexture() );
 
@@ -75,31 +75,31 @@ namespace texture_frame_test
 			EXPECT_EQ( texture.GetCharacter( 6, 6 ), frame.GetCharacter( 6, 6 ) );
 			EXPECT_EQ( '7', frame.GetCharacter( 6, 6 ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT VisibleRect_1::GetTitleFunction() const
+	r2tm::TitleFunctionT VisibleRect_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 1";
 		};
 	}
-	r2cm::iItem::DoFunctionT VisibleRect_1::GetDoFunction() const
+	r2tm::DoFunctionT VisibleRect_1::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 
 			{
 				std::size_t cur_x = 0;
@@ -111,62 +111,62 @@ namespace texture_frame_test
 					if( texture.GetWidth() <= cur_x )
 					{
 						cur_x = 0u;
-						std::cout << r2cm::linefeed;
+						std::cout << r2tm::linefeed;
 					}
 				}
 				if( 0u != cur_x )
 				{
-					std::cout << r2cm::linefeed;
+					std::cout << r2tm::linefeed;
 				}
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( frame.MoveVisibleOrigin( 2, 1 ) );
 				PROCESS_MAIN( frame.ChangeVisibleSize( -3, -1 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( texture.GetCharacter( frame.GetMinX(), frame.GetMinY() ), frame.GetCharacter( 0, 0 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT VisibleRect_2::GetTitleFunction() const
+	r2tm::TitleFunctionT VisibleRect_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrame : Visible Rect 2";
 		};
 	}
-	r2cm::iItem::DoFunctionT VisibleRect_2::GetDoFunction() const
+	r2tm::DoFunctionT VisibleRect_2::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 
 			{
 				std::size_t cur_x = 0;
@@ -178,63 +178,63 @@ namespace texture_frame_test
 					if( texture.GetWidth() <= cur_x )
 					{
 						cur_x = 0u;
-						std::cout << r2cm::linefeed;
+						std::cout << r2tm::linefeed;
 					}
 				}
 				if( 0u != cur_x )
 				{
-					std::cout << r2cm::linefeed;
+					std::cout << r2tm::linefeed;
 				}
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 
 			{
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PROCESS_MAIN( frame.MoveVisibleOrigin( -3, -3 ) );
 				PROCESS_MAIN( frame.ChangeVisibleSize( -1, -1 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( '1', frame.GetCharacter( 0, 0 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( frame.MoveVisibleOrigin( 6, 6 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( '4', frame.GetCharacter( 0, 0 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

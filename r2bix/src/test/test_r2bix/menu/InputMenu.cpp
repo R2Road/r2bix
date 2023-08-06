@@ -1,19 +1,29 @@
 #include "InputMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test/test_r2bix/item/key_code_viewer.h"
 #include "test/test_r2bix/item/window_input_test.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
-r2cm::MenuUp InputMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT InputMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-	) );
-
+	return []()->const char*
+	{
+		return "Input";
+	};
+}
+r2tm::DescriptionFunctionT InputMenu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return "";
+	};
+}
+r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', key_code_viewer::Basic() );
 
@@ -28,8 +38,6 @@ r2cm::MenuUp InputMenu::Create( r2cm::Director& director )
 		ret->AddSplit();
 
 
-		ret->AddMenu<R2bixMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, R2bixMenu() );
+	};
 }

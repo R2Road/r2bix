@@ -1,27 +1,37 @@
 #include "ToolMenu.h"
 
 #include "r2bix/r2bix_Director.h"
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_ostream.h"
 
 #include "texture_viewer/tool_texture_viewer_EntryScene.h"
 
 #include "DevelopmentMenu.h"
 
-r2cm::MenuUp ToolMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT ToolMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle(),
-				"> Inprogress : ..."
-		"\n"	"> ..."
-	) );
-
+	return []()->const char*
+	{
+		return "Tool";
+	};
+}
+r2tm::DescriptionFunctionT ToolMenu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return
+					"> Inprogress : ..."
+			"\n"	"> ...";
+	};
+}
+r2tm::WriteFunctionT ToolMenu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem(
 			'a'
 			, []()->const char* { return tool_texture_viewer::EntryScene::GetTitle(); }
-			, []()->r2cm::eItemLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
 				//
 				// Setup
@@ -34,7 +44,7 @@ r2cm::MenuUp ToolMenu::Create( r2cm::Director& director )
 				//
 				director.Run();
 
-				return r2cm::eItemLeaveAction::None;
+				return r2tm::eDoLeaveAction::None;
 			}
 		);
 
@@ -48,8 +58,6 @@ r2cm::MenuUp ToolMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<DevelopmentMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, DevelopmentMenu() );
+	};
 }

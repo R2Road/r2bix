@@ -57,7 +57,7 @@ namespace r2bix_component
 
 			for( const auto& f : a.Container )
 			{
-				animation.Container.push_back( AnimationFrame{ { f.TimeLimit, true }, f.Frame } );
+				animation.Container.push_back( AnimationFrame{ r2::TimerFloat{ f.TimeLimit, true }, f.Frame } );
 			}
 
 			mAnimationPackage.emplace_back( std::move( animation ) );

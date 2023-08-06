@@ -1,18 +1,28 @@
 #include "NodeMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "test/test_r2bix/item/node_test.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
-r2cm::MenuUp NodeMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT NodeMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-	) );
-
+	return []()->const char*
+	{
+		return "Node";
+	};
+}
+r2tm::DescriptionFunctionT NodeMenu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return "";
+	};
+}
+r2tm::WriteFunctionT NodeMenu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', node_test::Basic() );
 		ret->AddItem( '2', node_test::Child_Count() );
@@ -37,8 +47,6 @@ r2cm::MenuUp NodeMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<R2bixMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, R2bixMenu() );
+	};
 }

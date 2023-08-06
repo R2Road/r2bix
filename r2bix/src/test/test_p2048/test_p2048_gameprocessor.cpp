@@ -5,9 +5,9 @@
 
 #include "r2bix/r2bix_Director.h"
 
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_WindowUtility.h"
 
 #include "p2048/p2048_GameProcessor.h"
 #include "p2048/p2048_Stage.h"
@@ -28,31 +28,31 @@ namespace test_p2048_gameprocessor
 				std::cout << std::setw( 2 ) << std::right << val;
 				std::cout << std::setw( 1 ) << std::left; // roll back
 
-				std::cout << r2cm::tab;
+				std::cout << r2tm::tab;
 			}
 
-			std::cout << r2cm::linefeed;
+			std::cout << r2tm::linefeed;
 		}
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT MoveReadyTest::GetTitleFunction() const
+	r2tm::TitleFunctionT MoveReadyTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move Ready";
 		};
 	}
-	r2cm::iItem::DoFunctionT MoveReadyTest::GetDoFunction() const
+	r2tm::DoFunctionT MoveReadyTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( r2::Direction4Sequential move_dir );
@@ -60,15 +60,15 @@ namespace test_p2048_gameprocessor
 				DECLARATION_MAIN( r2::PointInt pivot_point_1 );
 				DECLARATION_MAIN( r2::PointInt pivot_point_2 );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
-				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
-					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
 
-					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
+					std::cout << "Press [W, A, S, D]" << r2tm::linefeed2;
 
 					switch( _getch() )
 					{
@@ -93,7 +93,7 @@ namespace test_p2048_gameprocessor
 						continue;
 					}
 
-					std::cout << r2cm::linefeed;
+					std::cout << r2tm::linefeed;
 
 					if( bRun )
 					{
@@ -103,13 +103,13 @@ namespace test_p2048_gameprocessor
 							PROCESS_MAIN( pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
 						}
 
-						std::cout << r2cm::linefeed;
+						std::cout << r2tm::linefeed;
 
 						{
 							PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetY() ) ) );
 						}
 
-						std::cout << r2cm::linefeed;
+						std::cout << r2tm::linefeed;
 
 						stage.ClearAll();
 						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
@@ -117,7 +117,7 @@ namespace test_p2048_gameprocessor
 						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 7 ) );
 						PROCESS_MAIN( PrintStage( stage ) );
 
-						std::cout << r2cm::linefeed;
+						std::cout << r2tm::linefeed;
 
 						stage.ClearAll();
 
@@ -146,31 +146,31 @@ namespace test_p2048_gameprocessor
 				} while( bRun );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT MoveTest::GetTitleFunction() const
+	r2tm::TitleFunctionT MoveTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move";
 		};
 	}
-	r2cm::iItem::DoFunctionT MoveTest::GetDoFunction() const
+	r2tm::DoFunctionT MoveTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
 			DECLARATION_MAIN( p2048::GameProcessor game_processor( &stage ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( stage.Add( 0, 0, 1 ) );
@@ -181,17 +181,17 @@ namespace test_p2048_gameprocessor
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 
 			{
-				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
-					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
 
-					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
+					std::cout << "Press [W, A, S, D]" << r2tm::linefeed2;
 
 					bool has_moved = false;
 					switch( _getch() )
@@ -217,39 +217,39 @@ namespace test_p2048_gameprocessor
 						continue;
 					}
 
-					std::cout << r2cm::linefeed;
+					std::cout << r2tm::linefeed;
 
 					PROCESS_MAIN( PrintStage( stage ) );
-					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2cm::linefeed;
+					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2tm::linefeed;
 
 				} while( bRun );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT MergeTest::GetTitleFunction() const
+	r2tm::TitleFunctionT MergeTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Merge";
 		};
 	}
-	r2cm::iItem::DoFunctionT MergeTest::GetDoFunction() const
+	r2tm::DoFunctionT MergeTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( p2048::Stage stage( 4, 1 ) );
 			DECLARATION_MAIN( p2048::GameProcessor game_processor( &stage ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				stage.Add( 0, 0, 2 );
@@ -258,38 +258,38 @@ namespace test_p2048_gameprocessor
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 2, stage.GetNumber( 2, 0 ) );
 				EXPECT_EQ( 2, stage.GetNumber( 3, 0 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 2, game_processor.GetSum4Merged() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 4, stage.GetNumber( 3, 0 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 4, game_processor.GetSum4Merged() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				PROCESS_MAIN( stage.Add( 0, 0, 4 ) );
@@ -297,50 +297,50 @@ namespace test_p2048_gameprocessor
 				PROCESS_MAIN( stage.Add( 2, 0, 4 ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 8, stage.GetNumber( 2, 0 ) );
 				EXPECT_EQ( 8, stage.GetNumber( 3, 0 ) );
 
-				std::cout << r2cm::linefeed;
+				std::cout << r2tm::linefeed;
 
 				EXPECT_EQ( 16, game_processor.GetSum4Merged() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT MovableCheck::GetTitleFunction() const
+	r2tm::TitleFunctionT MovableCheck::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Movable Check";
 		};
 	}
-	r2cm::iItem::DoFunctionT MovableCheck::GetDoFunction() const
+	r2tm::DoFunctionT MovableCheck::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			std::cout << r2cm::tab << "+ Node : 주변의 숫자가 0 이거나 같다면 이동 한다." << r2cm::linefeed;
+			std::cout << r2tm::tab << "+ Node : 주변의 숫자가 0 이거나 같다면 이동 한다." << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
 			DECLARATION_MAIN( p2048::GameProcessor game_processor( &stage ) );
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				stage.Add( 0, 0, 7 );
@@ -351,7 +351,7 @@ namespace test_p2048_gameprocessor
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -362,7 +362,7 @@ namespace test_p2048_gameprocessor
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -373,7 +373,7 @@ namespace test_p2048_gameprocessor
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -384,7 +384,7 @@ namespace test_p2048_gameprocessor
 				EXPECT_FALSE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -395,9 +395,9 @@ namespace test_p2048_gameprocessor
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			std::cout << r2tm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

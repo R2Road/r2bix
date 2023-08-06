@@ -4,8 +4,8 @@
 
 #include "r2bix/r2bix_VersionInfo.h"
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_WindowUtility.h"
 
 #include "DevelopmentMenu.h"
 
@@ -14,23 +14,23 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2cm::WindowUtility::ChangeTitle( r2bix::VersionInfo.String4Version );
+	r2tm::WindowUtility::ChangeTitle( r2bix::VersionInfo.String4Version );
 
 	//
 	// Environment : Size
 	//
-	r2cm::WindowUtility::Resize( 960, 960 );
+	r2tm::WindowUtility::Resize( 960, 960 );
 
 	//
 	// Environment : Position
 	//
-	r2cm::WindowUtility::Move( 0, 0 );
+	r2tm::WindowUtility::Move( 0, 0 );
 
 	//
 	// Setup
 	//
-	r2cm::Director director;
-	director.Setup( DevelopmentMenu::Create( director ) );
+	r2tm::Director director;
+	director.Setup( DevelopmentMenu() );
 
 	//
 	// Process

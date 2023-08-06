@@ -1,6 +1,6 @@
 #include "R2bixMenu.h"
 
-#include "r2cm/r2cm_Director.h"
+#include "r2tm/r2tm_Director.h"
 
 #include "menu/ActionMenu.h"
 #include "menu/CameraMenu.h"
@@ -18,19 +18,29 @@
 
 #include "DevelopmentMenu.h"
 
-r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
+r2tm::TitleFunctionT R2bixMenu::GetTitleFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle(),
-				"> Inprogress : ..."
-		"\n"	"> ..."
-	) );
-
+	return []()->const char*
 	{
-		ret->AddMenu<DirectorMenu>( '1' );
-		ret->AddMenu<InputMenu>( '2' );
-		ret->AddMenu<ColorMenu>( '3' );
+		return "R2bix";
+	};
+}
+r2tm::DescriptionFunctionT R2bixMenu::GetDescriptionFunction() const
+{
+	return []()->const char*
+	{
+		return
+					"> Inprogress : ..."
+			"\n"	"> ...";
+	};
+}
+r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
+{
+	return []( r2tm::MenuProcessor* ret )
+	{
+		ret->AddMenu( '1', DirectorMenu() );
+		ret->AddMenu( '2', InputMenu() );
+		ret->AddMenu( '3', ColorMenu() );
 
 
 
@@ -39,12 +49,12 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<TextureMenu>( 'q' );
-		ret->AddMenu<CameraMenu>( 'w' );
+		ret->AddMenu( 'q', TextureMenu() );
+		ret->AddMenu( 'w', CameraMenu() );
 		ret->AddItem( 'e', render_test::Basic() );
-		ret->AddMenu<ComponentMenu>( 'r' );
-		ret->AddMenu<ActionMenu>( 't' );
-		ret->AddMenu<NodeMenu>( 'y' );
+		ret->AddMenu( 'r', ComponentMenu() );
+		ret->AddMenu( 't', ActionMenu() );
+		ret->AddMenu( 'y', NodeMenu() );
 
 
 
@@ -53,7 +63,7 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<GeometryMenu>( 'a' );
+		ret->AddMenu( 'a', GeometryMenu() );
 
 
 
@@ -69,8 +79,6 @@ r2cm::MenuUp R2bixMenu::Create( r2cm::Director& director )
 
 
 
-		ret->AddMenu<DevelopmentMenu>( 27 );
-	}
-
-	return ret;
+		ret->AddMenu( 27, DevelopmentMenu() );
+	};
 }
