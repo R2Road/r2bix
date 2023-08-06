@@ -45,19 +45,19 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto transform_1 = r2bix_component::TransformComponent::Create( *node ) );
 			DECLARATION_MAIN( auto transform_2 = r2bix_component::TransformComponent::Create( *node ) );
 			DECLARATION_MAIN( auto tex_render_1 = r2bix_component::TextureRenderComponent::Create( *node ) );
 			DECLARATION_MAIN( auto tex_render_2 = r2bix_component::TextureRenderComponent::Create( *node ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( transform_1->GetStaticID(), transform_2->GetStaticID() );
@@ -70,7 +70,7 @@ namespace component_test
 				EXPECT_NE( tex_render_1->GetStaticID(), transform_1->GetStaticID() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "transform_1->GetStaticID();" << " : " << transform_1->GetStaticID() << r2tm::linefeed;
@@ -79,7 +79,7 @@ namespace component_test
 				std::cout << "tex_render_2->GetStaticID();" << " : " << tex_render_2->GetStaticID() << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -98,27 +98,27 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2bix::Director dummy_director( {} ) );
 			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( node->AddComponent<r2bix_component::TextureRenderComponent>() );
 				EXPECT_FALSE( node->AddComponent<r2bix_component::TextureRenderComponent>() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( node->GetComponent<r2bix_component::TextureRenderComponent>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -137,7 +137,7 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -145,32 +145,32 @@ namespace component_test
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, component );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( nullptr, component->GetTexture() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( component->SetPivotPoint( 0.5f, 0.5f ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -189,7 +189,7 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -197,12 +197,12 @@ namespace component_test
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, component );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 3, 3, 'A' ) );
 			{
@@ -211,42 +211,42 @@ namespace component_test
 				EXPECT_EQ( &texture, component->GetTexture() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( component->SetPivotPoint( 0.f, 0.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				render_target.FillCharacterAll( '=' );
 				PROCESS_MAIN( component->SetPivotPoint( 0.5f, 0.5f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				render_target.FillCharacterAll( '=' );
 				PROCESS_MAIN( component->SetPivotPoint( 1.f, 1.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -265,7 +265,7 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 13, 7 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -273,47 +273,47 @@ namespace component_test
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			DECLARATION_MAIN( r2bix_render::Texture texture( 3, 3, "123" "abc" "zxc" ) );
 			PROCESS_MAIN( component->SetTexture( &texture ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( component->SetVisibleRectForced( -4, -2, 1, 1 ) );
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( component->ResetVisibleRect() );
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -332,56 +332,56 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 7 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, custom_texture );
 			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, texture_render );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_NE( nullptr, custom_texture->GetTexture() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( nullptr, texture_render->GetTexture() );
 				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
 				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( custom_texture->GetTexture()->FillCharacterAll( '?' ) );
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( custom_texture->GetTexture()->Reset( "Bla Bla Bla" ) );
 				PROCESS_MAIN( texture_render->ResetVisibleRect() );
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -400,7 +400,7 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -408,7 +408,7 @@ namespace component_test
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto label = node->AddComponent<r2bix_component::LabelSComponent>() );
 			EXPECT_NE( nullptr, label );
@@ -417,43 +417,43 @@ namespace component_test
 			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, texture_render );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( nullptr, label->GetCustomTextureComponent() );
 				PROCESS_MAIN( label->SetCustomTextureComponent( custom_texture ) );
 				EXPECT_EQ( custom_texture, label->GetCustomTextureComponent() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( nullptr, label->GetTextureRenderComponent() );
 				PROCESS_MAIN( label->SetTextureRenderComponent( texture_render ) );
 				EXPECT_EQ( texture_render, label->GetTextureRenderComponent() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( nullptr, texture_render->GetTexture() );
 				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
 				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const char* const dummy_text = "Bla\nBla\nBla" );
 				PROCESS_MAIN( label->SetString( dummy_text ) );
 				EXPECT_EQ( dummy_text, label->GetString() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -472,7 +472,7 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 18, 8 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -480,7 +480,7 @@ namespace component_test
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto label = node->AddComponent<r2bix_component::LabelMComponent>() );
 			EXPECT_NE( nullptr, label );
@@ -489,43 +489,43 @@ namespace component_test
 			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, texture_render );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( nullptr, label->GetCustomTextureComponent() );
 				PROCESS_MAIN( label->SetCustomTextureComponent( custom_texture ) );
 				EXPECT_EQ( custom_texture, label->GetCustomTextureComponent() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( nullptr, label->GetTextureRenderComponent() );
 				PROCESS_MAIN( label->SetTextureRenderComponent( texture_render ) );
 				EXPECT_EQ( texture_render, label->GetTextureRenderComponent() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( nullptr, texture_render->GetTexture() );
 				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
 				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const char* const dummy_text = "Bla\nBla\n\nBla" );
 				PROCESS_MAIN( label->SetString( dummy_text ) );
 				EXPECT_EQ( dummy_text, label->GetString() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -544,44 +544,44 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			EXPECT_EQ( nullptr, node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureFrameRenderComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_EQ( component, node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( nullptr, component->GetTextureFrame() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -600,7 +600,7 @@ namespace component_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -608,17 +608,17 @@ namespace component_test
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			EXPECT_EQ( nullptr, node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 			
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureFrameRenderComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_EQ( component, node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 3, 3,
 				"123"
@@ -628,7 +628,7 @@ namespace component_test
 			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 			PROCESS_MAIN( frame.MoveVisibleOrigin( 1, 1 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( component->SetTextureFrame( &frame ) );
@@ -636,18 +636,18 @@ namespace component_test
 				EXPECT_EQ( &frame, component->GetTextureFrame() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( component->SetPivotPoint( 0.f, 0.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( component->SetPivotPoint( 1.f, 1.f ) );
@@ -655,12 +655,12 @@ namespace component_test
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -682,7 +682,7 @@ namespace component_test
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 10 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -690,32 +690,32 @@ namespace component_test
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			EXPECT_TRUE( node->AddComponent<r2bix_component::TextureFrameRenderComponent>() );
 			EXPECT_TRUE( node->AddComponent<r2bix_component::TextureFrameAnimationComponent>() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto tfrc = node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 			DECLARATION_MAIN( auto tfac = node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
 			PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
 			{
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Idle_1 ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Run_1 ) );
 				EXPECT_FALSE( tfac->HasAnimation( r2bix_animation::eIndex::Walk_1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( tfac->RunAnimation_Once( r2bix_animation::eIndex::Run_1 ) );
 				EXPECT_FALSE( r2bix_animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
 				EXPECT_TRUE( r2bix_animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto current_cursor_point = r2tm::WindowUtility::GetCursorPoint();
@@ -727,7 +727,7 @@ namespace component_test
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2tm::linefeed;
 
-					std::cout << r2tm::linefeed;
+					LF();
 
 					r2bix_helper::Printer4Texture::DrawTexture( render_target );
 
@@ -737,13 +737,13 @@ namespace component_test
 					}
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( tfac->StopAnimation() );
 				EXPECT_EQ( r2bix_animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -765,7 +765,7 @@ namespace component_test
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 10 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -773,32 +773,32 @@ namespace component_test
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			EXPECT_TRUE( node->AddComponent<r2bix_component::TextureFrameRenderComponent>() );
 			EXPECT_TRUE( node->AddComponent<r2bix_component::TextureFrameAnimationComponent>() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto tfrc = node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 			DECLARATION_MAIN( auto tfac = node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
 			PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
 			{
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Idle_1 ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Run_1 ) );
 				EXPECT_FALSE( tfac->HasAnimation( r2bix_animation::eIndex::Walk_1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( tfac->RunAnimation_Repeat( r2bix_animation::eIndex::Run_1 ) );
 				EXPECT_FALSE( r2bix_animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
 				EXPECT_TRUE( r2bix_animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto current_cursor_point = r2tm::WindowUtility::GetCursorPoint();
@@ -810,7 +810,7 @@ namespace component_test
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2tm::linefeed;
 
-					std::cout << r2tm::linefeed;
+					LF();
 
 					r2bix_helper::Printer4Texture::DrawTexture( render_target );
 
@@ -820,13 +820,13 @@ namespace component_test
 					}
 				}
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( tfac->StopAnimation() );
 				EXPECT_EQ( r2bix_animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -848,7 +848,7 @@ namespace component_test
 			TextureTable4Test::GetInstance().Load();
 			TextureFrameAnimationTable4Test::GetInstance().Load();
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 14, 10 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
@@ -856,12 +856,12 @@ namespace component_test
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_FALSE( component->HasAction() );
@@ -870,13 +870,13 @@ namespace component_test
 				EXPECT_FALSE( component->IsRunning() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto tick_action = r2bix_action::TickAction::Create() );
 				PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_FALSE( component->HasAction() );
 				PROCESS_MAIN( component->SetAction( std::move( tick_action ) ) );
@@ -884,19 +884,19 @@ namespace component_test
 				EXPECT_FALSE( component->IsRunning() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( component->StartAction() );
 				EXPECT_TRUE( component->IsRunning() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( component->Update( 0.f ) );
 				EXPECT_FALSE( component->IsRunning() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

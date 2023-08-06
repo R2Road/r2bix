@@ -23,7 +23,7 @@ namespace window_input_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ESC] Exit" << r2tm::linefeed;
 			std::cout << "[A] ..." << r2tm::linefeed;
@@ -36,7 +36,7 @@ namespace window_input_test
 
 			keyboard_input_collector.AddListener( &keyboard_input_listener );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				auto last_input_status = keyboard_input_listener.Get( 1 );
@@ -81,7 +81,7 @@ namespace window_input_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ESC] Exit" << r2tm::linefeed;
 			std::cout << "[WASD] Move" << r2tm::linefeed;
@@ -97,7 +97,7 @@ namespace window_input_test
 
 			keyboard_input_collector.AddListener( &keyboard_input_listener );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				r2::FPSTimer fps_timer( 60u );

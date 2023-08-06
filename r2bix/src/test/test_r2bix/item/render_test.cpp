@@ -136,7 +136,7 @@ namespace render_test
 			r2bix::Director dummy_director( {} );
 			RenderTestNode render_test_node( dummy_director, r2::PointInt{ 12, 26 }, r2::SizeInt{ 9, 9 }, r2::PointInt{ -4, -2 } );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
@@ -146,7 +146,7 @@ namespace render_test
 				std::cout << r2tm::tab2 << "RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Show : RenderTestNode, Camera Rect( #, X )" << r2tm::linefeed2;
@@ -185,7 +185,7 @@ namespace render_test
 				r2tm::WindowUtility::MoveCursorPoint( { 0, 50 } );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			system( "pause" );
 
@@ -206,7 +206,7 @@ namespace render_test
 					if( render_target.GetWidth() <= current_x )
 					{
 						current_x = 0;
-						std::cout << r2tm::linefeed;
+						LF();
 					}
 				}
 

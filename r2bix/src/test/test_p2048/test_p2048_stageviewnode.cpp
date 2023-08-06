@@ -27,28 +27,28 @@ namespace test_p2048_stageviewnode
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 41, 21 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto stage_view_node = p2048::StageViewNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, stage_view_node->GetComponent<p2048::StageViewComponent>() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( stage_view_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -69,13 +69,13 @@ namespace test_p2048_stageviewnode
 		{
 			p2048table::TextureTable::GetInstance().Load();
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 41, 21 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
 			PROCESS_MAIN( stage.Add( 0, 0, 32 ) );
@@ -84,24 +84,24 @@ namespace test_p2048_stageviewnode
 			PROCESS_MAIN( stage.Add( 0, 3, 1024 ) );
 			PROCESS_MAIN( stage.Add( 3, 3, 2048 ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( auto svn = p2048::StageViewNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048::StageViewComponent>() );
 			PROCESS_MAIN( svc->Setup( stage ) );
 			PROCESS_MAIN( svn->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -122,13 +122,13 @@ namespace test_p2048_stageviewnode
 		{
 			p2048table::TextureTable::GetInstance().Load();
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 41, 21 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
 			PROCESS_MAIN( stage.Add( 0, 0, 32 ) );
@@ -137,7 +137,7 @@ namespace test_p2048_stageviewnode
 			PROCESS_MAIN( stage.Add( 0, 3, 1024 ) );
 			PROCESS_MAIN( stage.Add( 3, 3, 2048 ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( auto svn = p2048::StageViewNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048::StageViewComponent>() );
@@ -145,17 +145,17 @@ namespace test_p2048_stageviewnode
 			PROCESS_MAIN( svc->UpdateView() );
 			PROCESS_MAIN( svn->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

@@ -17,11 +17,11 @@ namespace key_code_viewer
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "[ESC] End" << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			bool process = true;
 			int input = 0;
@@ -34,7 +34,7 @@ namespace key_code_viewer
 				process = ( 27 != input ); // ESC
 			} while( process );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

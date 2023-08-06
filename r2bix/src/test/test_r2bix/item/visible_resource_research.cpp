@@ -21,11 +21,11 @@ namespace visible_resource_research
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const r2bix_render::Texture visible_resource( 10, 10, '0' ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( r2tm::WindowUtility::CursorPoint pos );
@@ -48,7 +48,7 @@ namespace visible_resource_research
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

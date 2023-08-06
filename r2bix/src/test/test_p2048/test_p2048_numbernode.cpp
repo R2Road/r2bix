@@ -24,28 +24,28 @@ namespace test_p2048_numbernode
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 21, 11 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto number_node = p2048::NumberNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, number_node->GetComponent<p2048::NumberComponent>() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -64,14 +64,14 @@ namespace test_p2048_numbernode
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 11, 5 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_MAIN( auto number_node = p2048::NumberNode::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( number_node->GetComponent<p2048::NumberComponent>()->SetNumber( 2048, false, false ) );
@@ -105,7 +105,7 @@ namespace test_p2048_numbernode
 				EXPECT_EQ( r2bix::BG_Black | r2bix::FG_LightYellow, render_target.GetColor( 6, 2 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

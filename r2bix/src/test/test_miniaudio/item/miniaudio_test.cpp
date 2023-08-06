@@ -27,38 +27,38 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_result result );
 			DECLARATION_MAIN( ma_engine engine );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( result = ma_engine_init( nullptr, &engine ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( engine.ownsResourceManager );
 				EXPECT_TRUE( engine.ownsDevice );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				OUTPUT_VALUE( ma_engine_get_channels( &engine ) );
 				OUTPUT_VALUE( ma_engine_get_sample_rate( &engine ) );
 				OUTPUT_VALUE( ma_engine_get_listener_count( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -77,13 +77,13 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_result result );
 			DECLARATION_MAIN( ma_engine engine );
 			DECLARATION_MAIN( ma_engine_config engine_config );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( engine_config = ma_engine_config_init() );
@@ -99,20 +99,20 @@ namespace miniaudio_test
 				OUTPUT_VALUE( engine_config.noDevice );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( result = ma_engine_init( &engine_config, &engine ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -131,33 +131,33 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ma_sound_start( &sound ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
@@ -194,19 +194,19 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -225,13 +225,13 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine )
 				EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ fire and forget" << r2tm::linefeed2;
@@ -240,20 +240,20 @@ namespace miniaudio_test
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "[Any Key] End " << r2tm::linefeed2;
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -272,16 +272,16 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_engine engine );
 			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_sound sound );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
@@ -289,11 +289,11 @@ namespace miniaudio_test
 				PROCESS_SUB( ma_sound_start( &sound ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_VALUE( ma_engine_get_sample_rate( &engine ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "[Any Key] End" << r2tm::linefeed2;
@@ -319,14 +319,14 @@ namespace miniaudio_test
 				} while( true );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_sound_uninit( &sound ) );
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -345,18 +345,18 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 파일 없다." << r2tm::linefeed2;
@@ -365,7 +365,7 @@ namespace miniaudio_test
 				EXPECT_EQ( MA_DOES_NOT_EXIST, result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 파일 있다." << r2tm::linefeed2;
@@ -374,19 +374,19 @@ namespace miniaudio_test
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -405,29 +405,29 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "[1] Play" << r2tm::linefeed;
@@ -460,19 +460,19 @@ namespace miniaudio_test
 				} while( 27 != input );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -491,23 +491,23 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << r2tm::tab << "ma_sound_init_copy 를 사용한 이후 종료시에 memory leak 이 검출된다." << r2tm::linefeed;
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_sound sound_orig );
 			DECLARATION_MAIN( ma_sound sound_duplicated );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Load" << r2tm::linefeed2;
@@ -516,7 +516,7 @@ namespace miniaudio_test
 				EXPECT_EQ( MA_SUCCESS, result );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Duplicate" << r2tm::linefeed2;
@@ -527,14 +527,14 @@ namespace miniaudio_test
 				PROCESS_MAIN( ma_sound_start( &sound_duplicated ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "[Any Key] End " << r2tm::linefeed2;
 				_getch();
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_sound_stop( &sound_duplicated ) );
@@ -542,13 +542,13 @@ namespace miniaudio_test
 				PROCESS_MAIN( ma_sound_uninit( &sound_orig ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -567,33 +567,33 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ma_sound_start( &sound ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
@@ -630,19 +630,19 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -661,16 +661,16 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_engine engine );
 			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_sound sound );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
@@ -678,7 +678,7 @@ namespace miniaudio_test
 				PROCESS_SUB( ma_sound_start( &sound ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "[1] Play" << r2tm::linefeed;
@@ -689,7 +689,7 @@ namespace miniaudio_test
 				DECLARATION_MAIN( ma_int64 sound_time = 0ll );
 				const auto system_start_time_point = std::chrono::system_clock::now();
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
 				bool bRun = true;
@@ -726,14 +726,14 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_sound_uninit( &sound ) );
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -752,29 +752,29 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_sound sound );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( result = ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, NULL, NULL, &sound ) );
 				EXPECT_EQ( MA_SUCCESS, result );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ma_sound_set_looping( &sound, true ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			std::cout << "Volume : " << std::setw( 10 ) << ma_sound_get_volume( &sound ) << r2tm::linefeed;
 			std::cout << "[1] Play" << r2tm::linefeed;
@@ -807,19 +807,19 @@ namespace miniaudio_test
 				r2tm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 7 } );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -838,32 +838,32 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_engine engine );
 			EXPECT_EQ( MA_SUCCESS, ma_engine_init( nullptr, &engine ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( ma_sound_group sound_group );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( MA_SUCCESS, ma_sound_group_init( &engine, 0, nullptr, &sound_group ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( ma_sound_group_uninit( &sound_group ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -882,32 +882,32 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_sound sound_1 );
 			DECLARATION_MAIN( ma_sound sound_2 );
 			DECLARATION_MAIN( ma_sound_group sound_group );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( MA_SUCCESS, ma_sound_group_init( &engine, 0, nullptr, &sound_group ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, &sound_group, NULL, &sound_1 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_1, 0.1f ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound_1, true ) );
 				PROCESS_SUB( ma_sound_start( &sound_1 ) );
 				
-				std::cout << r2tm::linefeed;
+				LF();
 				
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_2, 1.0f ) );
@@ -915,7 +915,7 @@ namespace miniaudio_test
 				PROCESS_SUB( ma_sound_start( &sound_2 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
@@ -952,7 +952,7 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound_1 ) );
@@ -960,13 +960,13 @@ namespace miniaudio_test
 				PROCESS_MAIN( ma_sound_group_uninit( &sound_group ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -985,32 +985,32 @@ namespace miniaudio_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( ma_result result );
 			DECLARATION_SUB( ma_engine engine );
 			PROCESS_SUB( result = ma_engine_init( nullptr, &engine ) );
 			EXPECT_EQ( MA_SUCCESS, result );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( ma_sound sound_1 );
 			DECLARATION_MAIN( ma_sound sound_2 );
 			DECLARATION_MAIN( ma_sound_group sound_group );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( MA_SUCCESS, ma_sound_group_init( &engine, 0, nullptr, &sound_group ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "Joth_8bit_Bossa.mp3" ).c_str(), 0, &sound_group, NULL, &sound_1 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_1, 0.1f ) );
 				PROCESS_SUB( ma_sound_set_looping( &sound_1, true ) );
 				PROCESS_SUB( ma_sound_start( &sound_1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( MA_SUCCESS, ma_sound_init_from_file( &engine, r2bix_utility::MakeBGMPath( "TinyWorlds_Forest_Ambience.mp3" ).c_str(), 0, &sound_group, NULL, &sound_2 ) );
 				PROCESS_SUB( ma_sound_set_volume( &sound_2, 1.0f ) );
@@ -1018,7 +1018,7 @@ namespace miniaudio_test
 				PROCESS_SUB( ma_sound_start( &sound_2 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << "[Any Key] End " << r2tm::linefeed2;
@@ -1056,7 +1056,7 @@ namespace miniaudio_test
 				} while( bRun );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( ma_sound_uninit( &sound_1 ) );
@@ -1064,13 +1064,13 @@ namespace miniaudio_test
 				PROCESS_MAIN( ma_sound_group_uninit( &sound_group ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_SUB( ma_engine_uninit( &engine ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

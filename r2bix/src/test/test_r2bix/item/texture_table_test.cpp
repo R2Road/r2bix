@@ -20,25 +20,25 @@ namespace texture_table_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" ) );
 				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" ) );
 				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -57,31 +57,31 @@ namespace texture_table_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto frame = TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTextureFrame( *frame );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -100,45 +100,45 @@ namespace texture_table_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( TextureTable4Test::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 				
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_FALSE( TextureTable4Test::GetInstance().AddTexture( "TextureTable_3", 10, 4, 'S' ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( TextureTable4Test::GetInstance().RemoveTexture( "TextureTable_3" ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

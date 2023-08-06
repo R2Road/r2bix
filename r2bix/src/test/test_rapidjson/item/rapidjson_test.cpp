@@ -20,40 +20,40 @@ namespace rapidjson_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			OUTPUT_NOTE( "Copy From : https://github.com/Tencent/rapidjson" );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( rapidjson::Document d );
 
-			std::cout << r2tm::split;
+			LS();
 			{
 				// 1. Parse a JSON string into DOM.
 				DECLARATION_MAIN( const char* json = "{ \"project\":\"rapidjson\", \"stars\":10 }" );
 				PROCESS_MAIN( d.Parse( json ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				// 2. Modify it by DOM.
 				DECLARATION_MAIN( rapidjson::Value& s = d["stars"] );
 				PROCESS_MAIN( s.SetInt( s.GetInt() + 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				// 3. Stringify the DOM
 				DECLARATION_MAIN( rapidjson::StringBuffer buffer );
 				DECLARATION_MAIN( rapidjson::Writer<rapidjson::StringBuffer> writer( buffer ) );
 				PROCESS_MAIN( d.Accept( writer ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				// 4. Output {"project":"rapidjson","stars":11}
 				OUTPUT_VALUE( buffer.GetString() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

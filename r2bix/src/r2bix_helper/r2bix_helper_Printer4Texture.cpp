@@ -102,12 +102,12 @@ namespace r2bix_helper
 			if( texture.GetWidth() <= x )
 			{
 				x = 0u;
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 		}
 		if( 0u != x )
 		{
-			std::cout << r2tm::linefeed;
+			LF();
 		}
 	}
 	void Printer4Texture::DrawTextureDisuse( const r2bix_render::Texture& texture )
@@ -121,12 +121,12 @@ namespace r2bix_helper
 			if( texture.GetWidth() <= x )
 			{
 				x = 0u;
-				std::cout << r2tm::linefeed;
+				LF();
 			}
 		}
 		if( 0u != x )
 		{
-			std::cout << r2tm::linefeed;
+			LF();
 		}
 	}
 

@@ -18,17 +18,17 @@ namespace console_screen_buffer_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
 			DECLARATION_MAIN( CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto result = GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info ) );
 			EXPECT_TRUE( result );
 
-			std::cout << r2tm::split;
+			LS();
 
 			if( result )
 			{
@@ -58,7 +58,7 @@ namespace console_screen_buffer_test
 				std::cout << r2tm::tab << "Failed : " "GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info )" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

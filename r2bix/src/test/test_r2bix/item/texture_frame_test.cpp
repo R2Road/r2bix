@@ -45,27 +45,27 @@ namespace texture_frame_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 
-			std::cout << r2tm::split;
+			LS();
 
 			PrintRectInfo( frame.GetVisibleRect() );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			EXPECT_EQ( &texture, frame.GetTexture() );
 
@@ -75,7 +75,7 @@ namespace texture_frame_test
 			EXPECT_EQ( texture.GetCharacter( 6, 6 ), frame.GetCharacter( 6, 6 ) );
 			EXPECT_EQ( '7', frame.GetCharacter( 6, 6 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -94,12 +94,12 @@ namespace texture_frame_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				std::size_t cur_x = 0;
@@ -111,39 +111,39 @@ namespace texture_frame_test
 					if( texture.GetWidth() <= cur_x )
 					{
 						cur_x = 0u;
-						std::cout << r2tm::linefeed;
+						LF();
 					}
 				}
 				if( 0u != cur_x )
 				{
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( frame.MoveVisibleOrigin( 2, 1 ) );
 				PROCESS_MAIN( frame.ChangeVisibleSize( -3, -1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( texture.GetCharacter( frame.GetMinX(), frame.GetMinY() ), frame.GetCharacter( 0, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -162,11 +162,11 @@ namespace texture_frame_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				std::size_t cur_x = 0;
@@ -178,61 +178,61 @@ namespace texture_frame_test
 					if( texture.GetWidth() <= cur_x )
 					{
 						cur_x = 0u;
-						std::cout << r2tm::linefeed;
+						LF();
 					}
 				}
 				if( 0u != cur_x )
 				{
-					std::cout << r2tm::linefeed;
+					LF();
 				}
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			{
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( frame.MoveVisibleOrigin( -3, -3 ) );
 				PROCESS_MAIN( frame.ChangeVisibleSize( -1, -1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( '1', frame.GetCharacter( 0, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( frame.MoveVisibleOrigin( 6, 6 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PrintRectInfo( frame.GetVisibleRect() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( '4', frame.GetCharacter( 0, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTextureFrame( frame );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

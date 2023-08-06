@@ -22,16 +22,16 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 30, 20 ) );
 			PROCESS_MAIN( texture.FillCharacterAll( '1' ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTextureCharacter( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -50,7 +50,7 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 30, 20 ) );
 			PROCESS_MAIN( texture.FillCharacter( 0, 0, '0' ) );
@@ -58,11 +58,11 @@ namespace texture_test
 			PROCESS_MAIN( texture.FillCharacter( texture.GetXEnd(), texture.GetYEnd(), '0' ) );
 			PROCESS_MAIN( texture.FillCharacter( 0, texture.GetYEnd(), '0' ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTextureCharacter( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -81,27 +81,27 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
 			OUTPUT_VALUE( fore );
 			DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_BrightWhite );
 			OUTPUT_VALUE( back );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 5, 5, 'A' ) );
 			PROCESS_MAIN( texture.FillColorAll( fore | back ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -120,12 +120,12 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
 			DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_BrightWhite );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 10, 10 ) );
 			PROCESS_MAIN( texture.FillColor( 0, 0, fore | back ) );
@@ -134,15 +134,15 @@ namespace texture_test
 			PROCESS_MAIN( texture.FillColor( 0, texture.GetYEnd(), fore ) );
 			PROCESS_SUB( texture.FillCharacterAll( 'A' ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -161,7 +161,7 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( const auto base_color = r2bix::eForegroundColor::FG_Aqua | r2bix::eBackgroundColor::BG_Aqua );
 			DECLARATION_MAIN( const auto new_fore_color = r2bix::eForegroundColor::FG_Red );
@@ -169,29 +169,29 @@ namespace texture_test
 			DECLARATION_MAIN( const auto new_back_color = r2bix::eBackgroundColor::BG_Red );
 			OUTPUT_VALUE( new_back_color );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( const r2bix::ColorMaskOption only_foregound_cmo( r2bix::eColorMaskFlag::CMF_Foreground ) );
 			OUTPUT_BINARY( only_foregound_cmo.GetMask() );
 			DECLARATION_MAIN( const r2bix::ColorMaskOption only_background_cmo( r2bix::eColorMaskFlag::CMF_Background ) );
 			OUTPUT_BINARY( only_background_cmo.GetMask() );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 10, 10, 'A', base_color ) );
 			PROCESS_MAIN( texture.FillColorWithMask( 0, 0, new_fore_color, only_foregound_cmo ) );
 			PROCESS_MAIN( texture.FillColorWithMask( 1, 0, new_fore_color, only_background_cmo ) );
 			PROCESS_MAIN( texture.FillColorWithMask( 0, 1, new_back_color, only_background_cmo ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -210,27 +210,27 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
 			DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_Aqua );
 			DECLARATION_MAIN( const auto new_fore = r2bix::eForegroundColor::FG_Red );
 			OUTPUT_VALUE( new_fore );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 10, 10, 'A', fore | back ) )
 			PROCESS_MAIN( texture.BlendColor( 0, 0, new_fore ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -249,12 +249,12 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
 			DECLARATION_MAIN( const auto back = r2bix::eBackgroundColor::BG_Blue );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			DECLARATION_MAIN( r2bix_render::Texture texture( 10, 10, 'A', fore | back ) );
 			PROCESS_MAIN( texture.FillCharacterDisuse( 0, 0, true ) );
@@ -262,15 +262,15 @@ namespace texture_test
 			PROCESS_MAIN( texture.FillCharacterDisuse( texture.GetXEnd(), texture.GetYEnd(), true ) );
 			PROCESS_MAIN( texture.FillCharacterDisuse( 0, texture.GetYEnd(), true ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTextureDisuse( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -289,39 +289,39 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const std::string_view str( "Init With Chars" ) );
 				DECLARATION_MAIN( const r2bix_render::Texture texture( str ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( str.size(), texture.GetWidth() );
 				EXPECT_EQ( 1, texture.GetHeight() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( texture );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const std::string_view str( "Init\n With \nChars\n" ) );
 				DECLARATION_MAIN( const r2bix_render::Texture texture( str ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_EQ( 6, texture.GetWidth() );
 				EXPECT_EQ( 4, texture.GetHeight() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( texture );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -340,15 +340,15 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const r2bix_render::Texture texture( 5, "aaaaaaabbbbbbbcccddddeeeeeeeefffggghh" ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -367,27 +367,27 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const r2bix_render::Texture texture( 8, 8, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( texture );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const r2bix_render::Texture texture( 3, 3, '#', "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				r2bix_helper::Printer4Texture::DrawTexture( texture );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -406,15 +406,15 @@ namespace texture_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const r2bix_render::Texture texture( 7, 7, "aaaaaaabbbbbbbcccddddeeeeeeeefffggg" ) );
 
-			std::cout << r2tm::linefeed;
+			LF();
 
 			r2bix_helper::Printer4Texture::DrawTexture( texture );
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

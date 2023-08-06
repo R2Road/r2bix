@@ -33,21 +33,21 @@ namespace node_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto dummy_node = r2bix_node::Node::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -66,31 +66,31 @@ namespace node_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto dummy_node = r2bix_node::Node::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( 0, dummy_node->GetChildCount() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_NE( nullptr, dummy_node->AddChild<r2bix_node::Node>() );
 				EXPECT_EQ( 1, dummy_node->GetChildCount() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_NE( nullptr, dummy_node->AddChild<r2bix_node::Node>() );
 				EXPECT_EQ( 2, dummy_node->GetChildCount() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -109,52 +109,52 @@ namespace node_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Z값이 큰 노드가 목록의 뒤쪽으로 자리한다." << r2tm::linefeed2;
 
 				DECLARATION_MAIN( const auto dummy_node = r2bix_node::Node::Create( dummy_director ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto child_1 = dummy_node->AddChild<r2bix_node::Node>( 1 ) );
 				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto child_2 = dummy_node->AddChild<r2bix_node::Node>( 0 ) );
 				EXPECT_EQ( child_2, ( *dummy_node->GetChildContainer().begin() ).get() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ 동일한 Z의 노드가 이미 있다면 새로 추가된 노드는 같은 Z를 가진 노드 군의 가장 마지막에 자리한다." << r2tm::linefeed2;
 
 				DECLARATION_MAIN( const auto dummy_node = r2bix_node::Node::Create( dummy_director ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto child_1 = dummy_node->AddChild<r2bix_node::Node>() );
 				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto child_2 = dummy_node->AddChild<r2bix_node::Node>() );
 				EXPECT_EQ( child_1, ( *dummy_node->GetChildContainer().begin() ).get() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( dummy_node->AddChild<r2bix_node::Node>() );
 				EXPECT_EQ( child_2, ( *( ++dummy_node->GetChildContainer().begin() ) ).get() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -173,21 +173,21 @@ namespace node_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto dummy_node = r2bix_node::SceneNode::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -206,15 +206,15 @@ namespace node_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto dummy_node = r2bix_node::LabelSNode::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
@@ -223,7 +223,7 @@ namespace node_test
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::LabelSComponent>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -242,15 +242,15 @@ namespace node_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto dummy_node = r2bix_node::LabelMNode::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
@@ -259,7 +259,7 @@ namespace node_test
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::LabelMComponent>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -278,22 +278,22 @@ namespace node_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto dummy_node = r2bix_node::SpriteNode::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -312,29 +312,29 @@ namespace node_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const auto dummy_node = r2bix_node::SpriteAnimationNode::Create( dummy_director ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( auto frame = dummy_node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 				DECLARATION_MAIN( auto animation = dummy_node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
 				EXPECT_EQ( frame, animation->GetTextureFrameRenderComponent() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -353,53 +353,53 @@ namespace node_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( auto node = r2bix_node::CustomTextureNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 3, 3, 'T' ) );
 				PROCESS_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 5, 5, 'S' ) );
 				PROCESS_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

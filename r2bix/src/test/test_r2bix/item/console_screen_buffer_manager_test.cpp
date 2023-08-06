@@ -19,18 +19,18 @@ namespace console_screen_buffer_manager_test
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( r2bix_director::ScreenBufferManager screen_buffer_manager );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "[ESC] End" << r2tm::linefeed;
 				std::cout << r2tm::tab << "[Any Key] screen_buffer_manager.Swap();" << r2tm::linefeed;
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				int key_code = -1;

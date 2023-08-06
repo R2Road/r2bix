@@ -27,7 +27,7 @@ namespace test_p2048_stage
 				std::cout << r2tm::tab;
 			}
 
-			std::cout << r2tm::linefeed;
+			LF();
 		}
 	}
 
@@ -44,25 +44,25 @@ namespace test_p2048_stage
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( const uint32_t width = 4 );
 			DECLARATION_MAIN( const uint32_t height = 3 );
 			DECLARATION_MAIN( p2048::Stage stage( width, height ) );
 
-			std::cout << r2tm::split;
+			LS();
 			{
 				EXPECT_EQ( width, stage.GetWidth() );
 				EXPECT_EQ( height, stage.GetHeight() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_EQ( width - 1, stage.GetMaxX() );
@@ -70,7 +70,7 @@ namespace test_p2048_stage
 				EXPECT_EQ( width * height, stage.Size() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -89,11 +89,11 @@ namespace test_p2048_stage
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048::Stage stage( 4, 3 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Add" << r2tm::linefeed2;
@@ -104,7 +104,7 @@ namespace test_p2048_stage
 				PrintStage( stage );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Remove" << r2tm::linefeed2;
@@ -115,7 +115,7 @@ namespace test_p2048_stage
 				PrintStage( stage );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( stage.Add( 1, 1, 1 ) );
@@ -125,7 +125,7 @@ namespace test_p2048_stage
 				PrintStage( stage );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Clear All" << r2tm::linefeed2;
@@ -138,7 +138,7 @@ namespace test_p2048_stage
 				PrintStage( stage );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -157,11 +157,11 @@ namespace test_p2048_stage
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_TRUE( stage.IsIn( 0, 0 ) );
@@ -170,7 +170,7 @@ namespace test_p2048_stage
 				EXPECT_TRUE( stage.IsIn( 0, 1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				EXPECT_FALSE( stage.IsIn( -1, -1 ) );
@@ -178,14 +178,14 @@ namespace test_p2048_stage
 				EXPECT_FALSE( stage.IsIn( 2, -1 ) );
 				EXPECT_FALSE( stage.IsIn( 2, 2 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_FALSE( stage.IsIn( -1, 0 ) );
 				EXPECT_FALSE( stage.IsIn( 2, 0 ) );
 				EXPECT_FALSE( stage.IsIn( 0, 2 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -204,12 +204,12 @@ namespace test_p2048_stage
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
 			EXPECT_EQ( 0, stage.GetNumberSpaceCount() );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Add New" << r2tm::linefeed2;
@@ -218,7 +218,7 @@ namespace test_p2048_stage
 				EXPECT_EQ( 1, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 3, stage.GetEmptySpaceCount() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
 				PROCESS_MAIN( stage.Add( 1, 0, 7 ) );
@@ -226,7 +226,7 @@ namespace test_p2048_stage
 				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Over Write" << r2tm::linefeed2;
@@ -236,7 +236,7 @@ namespace test_p2048_stage
 				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Remove" << r2tm::linefeed2;
@@ -246,7 +246,7 @@ namespace test_p2048_stage
 				EXPECT_EQ( 2, stage.GetEmptySpaceCount() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Full" << r2tm::linefeed2;
@@ -256,19 +256,19 @@ namespace test_p2048_stage
 				EXPECT_EQ( 4, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 0, stage.GetEmptySpaceCount() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( stage.IsFull() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( stage.Remove( 0, 1 ) );
 				EXPECT_FALSE( stage.IsFull() );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -287,45 +287,45 @@ namespace test_p2048_stage
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
 
 				PROCESS_MAIN( stage.Lock( 0, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( stage.IsLock( 0, 0 ) );
 				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
 				EXPECT_FALSE( stage.IsLock( 1, 1 ) );
 				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( stage.Lock( 0, 1 ) );
 				PROCESS_MAIN( stage.Lock( 1, 1 ) );
 				PROCESS_MAIN( stage.Lock( 1, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( stage.IsLock( 0, 1 ) );
 				EXPECT_TRUE( stage.IsLock( 1, 1 ) );
 				EXPECT_TRUE( stage.IsLock( 1, 0 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ ClearAllFlags" << r2tm::linefeed2;
 
 				PROCESS_MAIN( stage.ClearAllFlags() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_FALSE( stage.IsLock( 0, 0 ) );
 				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
@@ -333,7 +333,7 @@ namespace test_p2048_stage
 				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ ClearAll" << r2tm::linefeed2;
@@ -344,7 +344,7 @@ namespace test_p2048_stage
 				PROCESS_MAIN( stage.Lock( 1, 0 ) );
 				PROCESS_MAIN( stage.ClearAll() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_FALSE( stage.IsLock( 0, 0 ) );
 				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
@@ -352,7 +352,7 @@ namespace test_p2048_stage
 				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -371,45 +371,45 @@ namespace test_p2048_stage
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
-			std::cout << r2tm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
 
 				PROCESS_MAIN( stage.SetNewcomer( 0, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( stage.IsNewcomer( 0, 0 ) );
 				EXPECT_FALSE( stage.IsNewcomer( 1, 0 ) );
 				EXPECT_FALSE( stage.IsNewcomer( 1, 1 ) );
 				EXPECT_FALSE( stage.IsNewcomer( 0, 1 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				PROCESS_MAIN( stage.SetNewcomer( 0, 1 ) );
 				PROCESS_MAIN( stage.SetNewcomer( 1, 1 ) );
 				PROCESS_MAIN( stage.SetNewcomer( 1, 0 ) );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_TRUE( stage.IsNewcomer( 0, 1 ) );
 				EXPECT_TRUE( stage.IsNewcomer( 1, 1 ) );
 				EXPECT_TRUE( stage.IsNewcomer( 1, 0 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ ClearAllFlags" << r2tm::linefeed2;
 
 				PROCESS_MAIN( stage.ClearAllFlags() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_FALSE( stage.IsNewcomer( 0, 0 ) );
 				EXPECT_FALSE( stage.IsNewcomer( 1, 0 ) );
@@ -417,7 +417,7 @@ namespace test_p2048_stage
 				EXPECT_FALSE( stage.IsNewcomer( 0, 1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			{
 				std::cout << r2tm::tab << "+ ClearAll" << r2tm::linefeed2;
@@ -428,7 +428,7 @@ namespace test_p2048_stage
 				PROCESS_MAIN( stage.Lock( 1, 0 ) );
 				PROCESS_MAIN( stage.ClearAll() );
 
-				std::cout << r2tm::linefeed;
+				LF();
 
 				EXPECT_FALSE( stage.IsLock( 0, 0 ) );
 				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
@@ -436,7 +436,7 @@ namespace test_p2048_stage
 				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
 			}
 
-			std::cout << r2tm::split;
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
