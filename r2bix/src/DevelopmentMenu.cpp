@@ -37,7 +37,7 @@ r2tm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
-		return r2bix::VersionInfo.String4Road2Version_0_0_3_0;
+		return r2bix::VersionInfo.String4Road2NextVersion;
 	};
 }
 r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const

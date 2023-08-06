@@ -69,5 +69,9 @@ namespace r2bix
 			"\n"	"[o] " "Component"
 			"\n"	"[o] " "Make Simple Puzzle Game"
 		;
+
+
+
+		const char* const String4Road2NextVersion = String4Road2Version_0_0_3_0;
 	} VersionInfo;
 }
