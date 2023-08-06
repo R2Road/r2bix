@@ -11,6 +11,7 @@ namespace r2bix
 
 	static struct
 	{
+
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '0';
 		const char VersionNumber_3 = '2';
@@ -73,5 +74,6 @@ namespace r2bix
 
 
 		const char* const String4Road2NextVersion = String4Road2Version_0_0_3_0;
+
 	} VersionInfo;
 }
