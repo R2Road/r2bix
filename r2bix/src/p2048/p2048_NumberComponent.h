@@ -1,7 +1,7 @@
 #pragma once
 
-#include "r2bix/r2bix_component_Component.h"
-#include "r2bix/r2bix_component_ComponentStaticID.h"
+#include "r2bix_component_Component.h"
+#include "r2bix_component_ComponentStaticID.h"
 
 namespace r2bix_component
 {

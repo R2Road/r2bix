@@ -11,7 +11,7 @@
 #include "miniaudio/miniaudio.h"
 // # Miniaudio REF : https://miniaud.io/docs/manual/index.html
 
-#include "r2bix/r2bix_utility_PathUtil.h"
+#include "r2bix_utility_PathUtil.h"
 #include "r2tm/r2tm_WindowUtility.h"
 
 namespace miniaudio_test

@@ -4,25 +4,25 @@
 #include <conio.h>
 #include <utility> // std::move
 
-#include "r2bix/r2bix_action_BlinkAction.h"
-#include "r2bix/r2bix_action_CallbackAction.h"
-#include "r2bix/r2bix_action_DelayAction.h"
-#include "r2bix/r2bix_action_RepeatAction.h"
-#include "r2bix/r2bix_action_SequenceAction.h"
-#include "r2bix/r2bix_Director.h"
-#include "r2bix/r2bix_component_ActionProcessComponent.h"
-#include "r2bix/r2bix_component_LabelSComponent.h"
-#include "r2bix/r2bix_component_TextureFrameRenderComponent.h"
-#include "r2bix/r2bix_component_TextureRenderComponent.h"
-#include "r2bix/r2bix_component_TransformComponent.h"
-#include "r2bix/r2bix_node_LabelSNode.h"
-#include "r2bix/r2bix_node_SpriteNode.h"
+#include "r2bix_action_BlinkAction.h"
+#include "r2bix_action_CallbackAction.h"
+#include "r2bix_action_DelayAction.h"
+#include "r2bix_action_RepeatAction.h"
+#include "r2bix_action_SequenceAction.h"
+#include "r2bix_Director.h"
+#include "r2bix_component_ActionProcessComponent.h"
+#include "r2bix_component_LabelSComponent.h"
+#include "r2bix_component_TextureFrameRenderComponent.h"
+#include "r2bix_component_TextureRenderComponent.h"
+#include "r2bix_component_TransformComponent.h"
+#include "r2bix_node_LabelSNode.h"
+#include "r2bix_node_SpriteNode.h"
 
 #include "p2048_GameScene.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
 
-#include "r2/r2_Random.h"
+#include "r2_Random.h"
 
 namespace p2048
 {

@@ -4,7 +4,7 @@
 
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowUtility.h"
-#include "r2bix/r2bix_render_TextureFrame.h"
+#include "r2bix_render_TextureFrame.h"
 
 namespace r2bix_helper
 {

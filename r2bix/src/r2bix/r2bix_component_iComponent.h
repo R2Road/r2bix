@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "r2/r2_PointInt.h"
+#include "r2_PointInt.h"
 
 namespace r2bix_render
 {

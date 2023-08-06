@@ -1,7 +1,7 @@
 #pragma once
 
-#include "r2/r2_SingletonWithStaticVariable.h"
-#include "r2bix/r2bix_table_TextureFrameAnimationTableBase.h"
+#include "r2_SingletonWithStaticVariable.h"
+#include "r2bix_table_TextureFrameAnimationTableBase.h"
 
 namespace p2048table
 {

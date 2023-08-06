@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-#include "r2/r2_RectInt.h"
+#include "r2_RectInt.h"
 #include "r2bix_ColorValue.h"
 #include "r2bix_ColorMaskOption.h"
 

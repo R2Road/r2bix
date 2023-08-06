@@ -2,11 +2,11 @@
 
 #include <algorithm>
 
-#include "r2bix/r2bix_input_KeyboardInputCollector.h"
-#include "r2bix/r2bix_input_KeyboardInputListener.h"
+#include "r2bix_input_KeyboardInputCollector.h"
+#include "r2bix_input_KeyboardInputListener.h"
 
-#include "r2/r2_RectInt.h"
-#include "r2/r2_FPSTimer.h"
+#include "r2_RectInt.h"
+#include "r2_FPSTimer.h"
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowUtility.h"
 

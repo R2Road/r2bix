@@ -1,8 +1,8 @@
 #pragma once
 
-#include "r2bix/r2bix_node_SceneNode.h"
+#include "r2bix_node_SceneNode.h"
 
-#include "r2/r2_TimerFloat.h"
+#include "r2_TimerFloat.h"
 
 namespace p2048
 {

@@ -2,8 +2,8 @@
 
 #include <string>
 
-#include "r2bix/r2bix_render_Texture.h"
-#include "r2bix/r2bix_render_TextureFrame.h"
+#include "r2bix_render_Texture.h"
+#include "r2bix_render_TextureFrame.h"
 #include "r2bix_helper/r2bix_helper_Printer4Texture.h"
 
 #include "r2tm/r2tm_Inspector.h"

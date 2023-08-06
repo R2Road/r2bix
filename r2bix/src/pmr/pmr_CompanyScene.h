@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "r2bix/r2bix_node_SceneNode.h"
+#include "r2bix_node_SceneNode.h"
 
 namespace pmr
 {

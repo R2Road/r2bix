@@ -1,7 +1,7 @@
 #include "tool_texture_viewer_EntryComponent.h"
 
-#include "r2bix/r2bix_Director.h"
-#include "r2bix/r2bix_node_Node.h"
+#include "r2bix_Director.h"
+#include "r2bix_node_Node.h"
 
 #include "tool_texture_viewer_ViewerScene.h"
 

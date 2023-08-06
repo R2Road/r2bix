@@ -4,9 +4,9 @@
 
 #include "p2048_Stage.h"
 
-#include "r2/r2_PointInt.h"
-#include "r2/r2_Random.h"
-#include "r2/r2utility_Operator4Direction4SequentialWithPoint.h"
+#include "r2_PointInt.h"
+#include "r2_Random.h"
+#include "r2utility_Operator4Direction4SequentialWithPoint.h"
 
 namespace p2048
 {

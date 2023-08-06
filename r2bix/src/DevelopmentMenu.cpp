@@ -2,9 +2,9 @@
 
 #include <string>
 
-#include "r2/r2_VersionInfo.h"
-#include "r2bix/r2bix_Director.h"
-#include "r2bix/r2bix_VersionInfo.h"
+#include "r2_VersionInfo.h"
+#include "r2bix_Director.h"
+#include "r2bix_VersionInfo.h"
 #include "r2tm/r2tm_Director.h"
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_VersionInfo.h"

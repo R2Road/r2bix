@@ -6,8 +6,8 @@
 #include "r2bix_ColorValue.h"
 #include "r2bix_render_iRenderTarget.h"
 
-#include "r2/r2_GridIndexConverter.h"
-#include "r2/r2_RectInt.h"
+#include "r2_GridIndexConverter.h"
+#include "r2_RectInt.h"
 
 namespace r2bix_render
 {

@@ -2,7 +2,7 @@
 	#include "vld/include/vld.h"
 #endif
 
-#include "r2bix/r2bix_VersionInfo.h"
+#include "r2bix_VersionInfo.h"
 
 #include "r2tm/r2tm_Director.h"
 #include "r2tm/r2tm_WindowUtility.h"

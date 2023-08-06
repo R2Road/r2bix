@@ -6,7 +6,7 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowUtility.h"
 
-#include "r2bix/r2bix_render_Texture.h"
+#include "r2bix_render_Texture.h"
 
 namespace visible_resource_research
 {

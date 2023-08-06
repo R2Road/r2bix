@@ -4,14 +4,14 @@
 #include <conio.h>
 #include <utility> // std::move
 
-#include "r2bix/r2bix_Director.h"
-#include "r2bix/r2bix_component_LabelSComponent.h"
-#include "r2bix/r2bix_component_TextureFrameAnimationComponent.h"
-#include "r2bix/r2bix_component_TextureFrameRenderComponent.h"
-#include "r2bix/r2bix_component_TextureRenderComponent.h"
-#include "r2bix/r2bix_component_TransformComponent.h"
-#include "r2bix/r2bix_node_LabelSNode.h"
-#include "r2bix/r2bix_node_SpriteAnimationNode.h"
+#include "r2bix_Director.h"
+#include "r2bix_component_LabelSComponent.h"
+#include "r2bix_component_TextureFrameAnimationComponent.h"
+#include "r2bix_component_TextureFrameRenderComponent.h"
+#include "r2bix_component_TextureRenderComponent.h"
+#include "r2bix_component_TransformComponent.h"
+#include "r2bix_node_LabelSNode.h"
+#include "r2bix_node_SpriteAnimationNode.h"
 
 #include "p2048_TitleScene.h"
 #include "p2048table_TextureFrameAnimationTable.h"

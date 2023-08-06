@@ -4,8 +4,8 @@
 
 #include "r2bix_ColorMaskOption.h"
 
-#include "r2/r2_RectInt.h"
-#include "r2/r2_Vector2.h"
+#include "r2_RectInt.h"
+#include "r2_Vector2.h"
 
 namespace r2bix_render
 {

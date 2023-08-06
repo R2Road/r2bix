@@ -2,14 +2,14 @@
 
 #include <numeric>
 
-#include "r2bix/r2bix_Director.h"
-#include "r2bix/r2bix_component_CustomTextureComponent.h"
-#include "r2bix/r2bix_component_LabelSComponent.h"
-#include "r2bix/r2bix_component_TextureRenderComponent.h"
-#include "r2bix/r2bix_node_CustomTextureNode.h"
-#include "r2bix/r2bix_node_LabelSNode.h"
-#include "r2bix/r2bix_node_PivotNode.h"
-#include "r2bix/r2bix_node_SpriteNode.h"
+#include "r2bix_Director.h"
+#include "r2bix_component_CustomTextureComponent.h"
+#include "r2bix_component_LabelSComponent.h"
+#include "r2bix_component_TextureRenderComponent.h"
+#include "r2bix_node_CustomTextureNode.h"
+#include "r2bix_node_LabelSNode.h"
+#include "r2bix_node_PivotNode.h"
+#include "r2bix_node_SpriteNode.h"
 
 #include "p2048_Config.h"
 #include "p2048_NumberComponent.h"

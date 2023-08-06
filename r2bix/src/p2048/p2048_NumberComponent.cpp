@@ -1,7 +1,7 @@
 #include "p2048_NumberComponent.h"
 
-#include "r2bix/r2bix_component_CustomTextureComponent.h"
-#include "r2bix/r2bix_component_LabelSComponent.h"
+#include "r2bix_component_CustomTextureComponent.h"
+#include "r2bix_component_LabelSComponent.h"
 
 namespace p2048
 {

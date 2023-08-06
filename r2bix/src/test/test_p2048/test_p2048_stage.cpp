@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <iomanip>
 
-#include "r2bix/r2bix_Director.h"
+#include "r2bix_Director.h"
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_Inspector.h"
 

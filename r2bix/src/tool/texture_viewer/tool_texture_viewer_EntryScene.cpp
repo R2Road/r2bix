@@ -1,6 +1,6 @@
 #include "tool_texture_viewer_EntryScene.h"
 
-#include "r2bix/r2bix_node_SceneNode.h"
+#include "r2bix_node_SceneNode.h"
 
 #include "tool_texture_viewer_EntryComponent.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2bix/r2bix_component_Component.h"
+#include "r2bix_component_Component.h"
 
 namespace tool_texture_viewer
 {

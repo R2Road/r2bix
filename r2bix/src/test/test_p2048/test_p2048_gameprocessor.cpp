@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <iomanip>
 
-#include "r2bix/r2bix_Director.h"
+#include "r2bix_Director.h"
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
@@ -12,7 +12,7 @@
 #include "p2048/p2048_GameProcessor.h"
 #include "p2048/p2048_Stage.h"
 
-#include "r2/r2utility_Operator4Direction4SequentialWithPoint.h"
+#include "r2utility_Operator4Direction4SequentialWithPoint.h"
 
 namespace test_p2048_gameprocessor
 {

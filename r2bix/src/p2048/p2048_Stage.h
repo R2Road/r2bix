@@ -2,8 +2,8 @@
 
 #include <vector>
 
-#include "r2/r2_Direction4Sequential.h"
-#include "r2/r2_GridIndexConverter.h"
+#include "r2_Direction4Sequential.h"
+#include "r2_GridIndexConverter.h"
 
 namespace p2048
 {

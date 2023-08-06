@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-#include "r2/r2_Direction4Sequential.h"
+#include "r2_Direction4Sequential.h"
 
 namespace p2048
 {

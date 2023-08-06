@@ -1,10 +1,10 @@
 #include "tool_texture_viewer_ViewerScene.h"
 
-#include "r2bix/r2bix_Director.h"
-#include "r2bix/r2bix_node_SceneNode.h"
+#include "r2bix_Director.h"
+#include "r2bix_node_SceneNode.h"
 
-#include "r2bix/r2bix_component_LabelSComponent.h"
-#include "r2bix/r2bix_node_LabelSNode.h"
+#include "r2bix_component_LabelSComponent.h"
+#include "r2bix_node_LabelSNode.h"
 
 namespace tool_texture_viewer
 {

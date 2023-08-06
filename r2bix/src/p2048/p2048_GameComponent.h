@@ -1,14 +1,14 @@
 #pragma once
 
-#include "r2bix/r2bix_component_Component.h"
-#include "r2bix/r2bix_component_ComponentStaticID.h"
+#include "r2bix_component_Component.h"
+#include "r2bix_component_ComponentStaticID.h"
 
-#include "r2bix/r2bix_input_KeyboardInputListener.h"
+#include "r2bix_input_KeyboardInputListener.h"
 
 #include "p2048_GameProcessor.h"
 #include "p2048_Stage.h"
 
-#include "r2/r2_Direction4Sequential.h"
+#include "r2_Direction4Sequential.h"
 
 namespace p2048
 {
