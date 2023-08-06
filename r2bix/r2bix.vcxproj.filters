@@ -121,9 +121,6 @@
     <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\key_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\node_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
@@ -461,6 +458,9 @@
     <ClCompile Include="external\r2\r2_TimerFloat.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\key_code_viewer.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -479,9 +479,6 @@
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\key_test.h">
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\node_test.h">
@@ -976,6 +973,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_VersionInfo.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\key_code_viewer.h">
+      <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

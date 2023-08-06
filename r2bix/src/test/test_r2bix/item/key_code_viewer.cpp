@@ -1,4 +1,4 @@
-#include "key_test.h"
+#include "key_code_viewer.h"
 
 #include <conio.h>
 
@@ -10,7 +10,7 @@ namespace key_code_viewer
 	{
 		return []()->const char*
 		{
-			return "Key : Basic";
+			return "Key Code Viewer";
 		};
 	}
 	r2cm::iItem::DoFunctionT Basic::GetDoFunction() const

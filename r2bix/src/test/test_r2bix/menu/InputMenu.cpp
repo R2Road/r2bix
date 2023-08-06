@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_Director.h"
 
-#include "test/test_r2bix/item/key_test.h"
+#include "test/test_r2bix/item/key_code_viewer.h"
 #include "test/test_r2bix/item/window_input_test.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
