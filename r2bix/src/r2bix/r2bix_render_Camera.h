@@ -7,11 +7,17 @@ namespace r2bix_render
 	class Camera
 	{
 	public:
+		using RectT = r2::RectInt;
+		using PointT = RectT::PointT;
+		using SizeT = RectT::SizeT;
+
+
+
 		explicit Camera(
-			  const r2::RectInt::PointT::ValueT& x, const r2::RectInt::PointT::ValueT& y
-			, const r2::RectInt::SizeT::ValueT& width, const r2::RectInt::SizeT::ValueT& height
+			  const PointT::ValueT& x, const PointT::ValueT& y
+			, const SizeT::ValueT& width, const SizeT::ValueT& height
 		);
-		explicit Camera( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size );
+		explicit Camera( const PointT& position, const SizeT& size );
 
 
 
@@ -26,23 +32,23 @@ namespace r2bix_render
 		{
 			return mPosition.GetY();
 		}
-		r2::RectInt::PointT GetPoint() const
+		PointT GetPoint() const
 		{
 			return mPosition;
 		}
-		r2::RectInt::SizeT::ValueT GetWidth() const
+		SizeT::ValueT GetWidth() const
 		{
 			return mCameraSpaceRect.GetWidth();
 		}
-		r2::RectInt::SizeT::ValueT GetHeight() const
+		SizeT::ValueT GetHeight() const
 		{
 			return mCameraSpaceRect.GetHeight();
 		}
-		r2::RectInt GetCameraSpaceRect() const
+		RectT GetCameraSpaceRect() const
 		{
 			return mCameraSpaceRect;
 		}
-		r2::RectInt GetRect() const
+		RectT GetRect() const
 		{
 			return mWorldSpaceRect;
 		}
@@ -52,19 +58,19 @@ namespace r2bix_render
 		//
 		// Setter
 		//
-		void SetPoint( const r2::RectInt::PointT& point );
+		void SetPoint( const PointT& point );
 		void SetPoint( const int x, const int y );
 
 
 
 	private:
-		void buildRect( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size );
+		void buildRect( const PointT& position, const SizeT& size );
 
 
 
 	private:
-		r2::RectInt::PointT mPosition;
-		r2::RectInt mCameraSpaceRect;
-		r2::RectInt mWorldSpaceRect;
+		PointT mPosition;
+		RectT mCameraSpaceRect;
+		RectT mWorldSpaceRect;
 	};
 }

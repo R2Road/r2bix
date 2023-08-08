@@ -3,8 +3,8 @@
 namespace r2bix_render
 {
 	Camera::Camera(
-		const r2::RectInt::PointT::ValueT& x, const r2::RectInt::PointT::ValueT& y
-		, const r2::RectInt::SizeT::ValueT& width, const r2::RectInt::SizeT::ValueT& height
+		const PointT::ValueT& x, const PointT::ValueT& y
+		, const SizeT::ValueT& width, const SizeT::ValueT& height
 	) :
 		  mPosition( x, y )
 		, mCameraSpaceRect()
@@ -12,7 +12,7 @@ namespace r2bix_render
 	{
 		buildRect( mPosition, { width - 1, height - 1 } );
 	}
-	Camera::Camera( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size ) :
+	Camera::Camera( const PointT& position, const SizeT& size ) :
 		mPosition( position )
 		, mCameraSpaceRect()
 		, mWorldSpaceRect()
@@ -22,7 +22,7 @@ namespace r2bix_render
 
 
 
-	void Camera::SetPoint( const r2::RectInt::PointT& point )
+	void Camera::SetPoint( const PointT& point )
 	{
 		mPosition = point;
 
@@ -37,7 +37,7 @@ namespace r2bix_render
 
 
 
-	void Camera::buildRect( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size )
+	void Camera::buildRect( const PointT& position, const SizeT& size )
 	{
 		const int half_width = size.GetWidth() / 2;
 		const int half_height = size.GetHeight() / 2;
