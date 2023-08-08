@@ -7,11 +7,11 @@ namespace r2bix_render
 	class Camera
 	{
 	public:
-		Camera(
+		explicit Camera(
 			  const r2::RectInt::PointT::ValueT& x, const r2::RectInt::PointT::ValueT& y
 			, const r2::RectInt::SizeT::ValueT& width, const r2::RectInt::SizeT::ValueT& height
 		);
-		Camera( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size );
+		explicit Camera( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size );
 
 		//
 		// Getter
