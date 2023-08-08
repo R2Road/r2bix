@@ -13,6 +13,8 @@ namespace r2bix_render
 		);
 		explicit Camera( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size );
 
+
+
 		//
 		// Getter
 		//
@@ -45,14 +47,20 @@ namespace r2bix_render
 			return mWorldSpaceRect;
 		}
 
+
+
 		//
 		// Setter
 		//
 		void SetPoint( const r2::RectInt::PointT& point );
 		void SetPoint( const int x, const int y );
 
+
+
 	private:
 		void buildRect( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size );
+
+
 
 	private:
 		r2::RectInt::PointT mPosition;

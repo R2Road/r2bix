@@ -20,6 +20,8 @@ namespace r2bix_render
 		buildRect( mPosition, { size.GetWidth() - 1, size.GetHeight() - 1 } );
 	}
 
+
+
 	void Camera::SetPoint( const r2::RectInt::PointT& point )
 	{
 		mPosition = point;
@@ -32,6 +34,8 @@ namespace r2bix_render
 
 		buildRect( mPosition, mWorldSpaceRect.GetSize() );
 	}
+
+
 
 	void Camera::buildRect( const r2::RectInt::PointT& position, const r2::RectInt::SizeT& size )
 	{
