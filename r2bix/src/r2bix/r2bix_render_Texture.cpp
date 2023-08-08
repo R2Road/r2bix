@@ -67,6 +67,8 @@ namespace r2bix_render
 		memcpy_s( &mChars[0], mChars.size(), str.data(), std::min( str.size(), mChars.size() ) );
 	}
 
+
+
 	Texture::ValueT Texture::GetCharacter( const uint32_t x, const uint32_t y ) const
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
@@ -94,6 +96,8 @@ namespace r2bix_render
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 		return mCharDisuses[target_linear_index];
 	}
+
+
 
 	void Texture::Reset( const std::string_view str )
 	{
@@ -166,6 +170,8 @@ namespace r2bix_render
 		mCharDisuses.resize( mChars.size(), false );
 	}
 
+
+
 	void Texture::FillCharacterAll( const char c )
 	{
 		memset( &mChars[0], c, mChars.size() );
@@ -200,12 +206,16 @@ namespace r2bix_render
 		);
 	}
 
+
+
 	void Texture::BlendColor( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value )
 	{
 		const auto target_linear_index = mGridIndexConverter.To_Linear( x, y );
 
 		mColors[target_linear_index] |= color_value;
 	}
+
+
 
 	void Texture::FillCharacterDisuse( const uint32_t x, const uint32_t y, const bool disuse )
 	{

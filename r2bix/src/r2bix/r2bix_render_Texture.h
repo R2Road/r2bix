@@ -22,6 +22,8 @@ namespace r2bix_render
 
 		using DisuseContainerT = std::vector<bool>;
 
+
+
 		explicit Texture( const std::string_view str );
 		explicit Texture( const uint32_t width, const std::string_view str );
 		explicit Texture( const uint32_t width, const uint32_t height );
@@ -30,12 +32,15 @@ namespace r2bix_render
 		explicit Texture( const uint32_t width, const uint32_t height, const std::string_view str );
 		explicit Texture( const uint32_t width, const uint32_t height, const char fill_char, const std::string_view str );
 
-	public:
+
+
 		//
 		// Iteration
 		//
 		ConstIteratorT begin() const { return mChars.begin(); }
 		ConstIteratorT end() const { return mChars.end(); }
+
+
 
 		//
 		// Getter
@@ -59,6 +64,8 @@ namespace r2bix_render
 		const DisuseContainerT& GetCharacterDisuseContainer() const { return mCharDisuses; }
 		bool GetCharacterDisuse( const uint32_t x, const uint32_t y ) const;
 
+
+
 		//
 		//
 		//
@@ -66,6 +73,7 @@ namespace r2bix_render
 		void Reset( const uint32_t width, const std::string_view str );
 		void Reset( const uint32_t width, const uint32_t height, const char fill_char );
 		void Reset( const uint32_t width, const uint32_t height, const char fill_char, const r2bix::ColorValue color_value );
+
 
 
 		//
@@ -79,10 +87,15 @@ namespace r2bix_render
 		void BlendColor( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value ) override;
 		r2::RectInt GetRect() const override { return r2::RectInt( 0, 0, GetWidth(), GetHeight() ); };
 
+
+
 		//
 		//
 		//
 		void FillCharacterDisuse( const uint32_t x, const uint32_t y, const bool disuse );
+
+
+
 
 	private:
 		r2::GridIndexConverter<int, int> mGridIndexConverter;
