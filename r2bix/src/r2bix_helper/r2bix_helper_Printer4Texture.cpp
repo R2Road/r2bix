@@ -26,7 +26,7 @@ namespace r2bix_helper
 		case r2bix::eForegroundColor::FG_LightBlue:		return r2tm::eColor::FG_LightBlue;
 		case r2bix::eForegroundColor::FG_LightGreen:	return r2tm::eColor::FG_LightGreen;
 		case r2bix::eForegroundColor::FG_LightAqua:		return r2tm::eColor::FG_LightAqua;
-		case r2bix::eForegroundColor::FG_LightLed:		return r2tm::eColor::FG_LightRed;
+		case r2bix::eForegroundColor::FG_LightRed:		return r2tm::eColor::FG_LightRed;
 		case r2bix::eForegroundColor::FG_LightPurple:	return r2tm::eColor::FG_LightPurple;
 		case r2bix::eForegroundColor::FG_LightYellow:	return r2tm::eColor::FG_LightYellow;
 		case r2bix::eForegroundColor::FG_BrightWhite:	return r2tm::eColor::FG_BrightWhite;
@@ -53,7 +53,7 @@ namespace r2bix_helper
 		case r2bix::eBackgroundColor::BG_LightBlue:		return r2tm::eColor::BG_LightBlue;
 		case r2bix::eBackgroundColor::BG_LightGreen:	return r2tm::eColor::BG_LightGreen;
 		case r2bix::eBackgroundColor::BG_LightAqua:		return r2tm::eColor::BG_LightAqua;
-		case r2bix::eBackgroundColor::BG_LightLed:		return r2tm::eColor::BG_LightRed;
+		case r2bix::eBackgroundColor::BG_LightRed:		return r2tm::eColor::BG_LightRed;
 		case r2bix::eBackgroundColor::BG_LightPurple:	return r2tm::eColor::BG_LightPurple;
 		case r2bix::eBackgroundColor::BG_LightYellow:	return r2tm::eColor::BG_LightYellow;
 		case r2bix::eBackgroundColor::BG_BrightWhite:	return r2tm::eColor::BG_BrightWhite;
