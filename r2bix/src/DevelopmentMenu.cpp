@@ -26,8 +26,8 @@ r2tm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
 	{
 		static const std::string ret =
 				std::string( "Development Menu" )
-			+	" : <" + r2tm::VersionInfo.String4Version + ">"
-			+	" | <" + r2bix::VersionInfo.String4Version + ">"
+			+	" : <" + r2bix::VersionInfo.String4Version + ">"
+			+	" | <" + r2tm::VersionInfo.String4Version + ">"
 			+	" | <" + r2::VersionInfo.String4Version + ">"
 		;
 		return ret.c_str();
