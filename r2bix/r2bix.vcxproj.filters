@@ -986,5 +986,26 @@
     <ClInclude Include="external\r2tm\r2tm_WindowUtility.h">
       <Filter>external\r2tm</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Point.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Rect.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Size.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2helper_TMPrinter4Rect.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2helper_TMPrinter4Rect_Color.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2helper_TMPrinter4RectGuide.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2helper_TMPrinter4RectGuide_Color.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

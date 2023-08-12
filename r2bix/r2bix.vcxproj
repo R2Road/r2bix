@@ -158,6 +158,13 @@
     <ClInclude Include="external\r2tm\r2tm_StopWatch.h" />
     <ClInclude Include="external\r2tm\r2tm_VersionInfo.h" />
     <ClInclude Include="external\r2tm\r2tm_WindowUtility.h" />
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Point.h" />
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Rect.h" />
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Size.h" />
+    <ClInclude Include="external\r2\r2helper_TMPrinter4Rect.h" />
+    <ClInclude Include="external\r2\r2helper_TMPrinter4RectGuide.h" />
+    <ClInclude Include="external\r2\r2helper_TMPrinter4RectGuide_Color.h" />
+    <ClInclude Include="external\r2\r2helper_TMPrinter4Rect_Color.h" />
     <ClInclude Include="external\r2\r2utility_Operator4Direction4SequentialWithPoint.h" />
     <ClInclude Include="external\r2\r2utility_StringBuilder.h" />
     <ClInclude Include="external\r2\r2utility_StringDecomposition.h" />
