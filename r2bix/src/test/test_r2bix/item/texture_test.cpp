@@ -5,6 +5,7 @@
 #include "r2bix_render_Texture.h"
 #include "r2bix_render_TextureFrame.h"
 #include "r2bix_helper/r2bix_helper_Printer4Texture.h"
+#include "r2bixhelper_STDPrinter4Texture.h"
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
@@ -95,7 +96,7 @@ namespace texture_test
 
 			LS();
 
-			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
+			r2bixhelper::STDPrinter4Texture::DrawTextureColor( texture );
 
 			LS();
 
@@ -136,7 +137,7 @@ namespace texture_test
 
 			LS();
 
-			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
+			r2bixhelper::STDPrinter4Texture::DrawTextureColor( texture );
 
 			LS();
 
@@ -185,7 +186,7 @@ namespace texture_test
 
 			LS();
 
-			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
+			r2bixhelper::STDPrinter4Texture::DrawTextureColor( texture );
 
 			LS();
 
@@ -224,7 +225,7 @@ namespace texture_test
 
 			LS();
 
-			r2bix_helper::Printer4Texture::DrawTextureColor( texture );
+			r2bixhelper::STDPrinter4Texture::DrawTextureColor( texture );
 
 			LS();
 
@@ -264,7 +265,7 @@ namespace texture_test
 
 			LS();
 
-			r2bix_helper::Printer4Texture::DrawTextureDisuse( texture );
+			r2bixhelper::STDPrinter4Texture::DrawTextureDisuse( texture );
 
 			LS();
 

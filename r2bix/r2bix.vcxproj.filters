@@ -103,6 +103,9 @@
     <Filter Include="project\project_snake">
       <UniqueIdentifier>{8f343807-44d6-4e06-9852-97a51204fd85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2bix\helper">
+      <UniqueIdentifier>{9572c2b8-6481-41d3-926d-d97379da1d87}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -1009,6 +1012,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2helper_TMPrinter4RectGuide_Color.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bixhelper_STDPrinter4Texture.h">
+      <Filter>r2bix\helper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

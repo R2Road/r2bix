@@ -91,44 +91,6 @@ namespace r2bix_helper
 
 		r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
 	}
-	void Printer4Texture::DrawTextureColor( const r2bix_render::Texture& texture )
-	{
-		std::size_t x = 0;
-		for( const auto color : texture.GetColorContainer() )
-		{
-			std::cout << std::setw( 3 ) << color << " ";
-
-			++x;
-			if( texture.GetWidth() <= x )
-			{
-				x = 0u;
-				LF();
-			}
-		}
-		if( 0u != x )
-		{
-			LF();
-		}
-	}
-	void Printer4Texture::DrawTextureDisuse( const r2bix_render::Texture& texture )
-	{
-		std::size_t x = 0;
-		for( const auto disuse : texture.GetCharacterDisuseContainer() )
-		{
-			std::cout << std::setw( 3 ) << disuse << " ";
-
-			++x;
-			if( texture.GetWidth() <= x )
-			{
-				x = 0u;
-				LF();
-			}
-		}
-		if( 0u != x )
-		{
-			LF();
-		}
-	}
 
 	void Printer4Texture::DrawTextureFrame( const r2bix_render::TextureFrame& frame )
 	{
