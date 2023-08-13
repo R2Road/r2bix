@@ -4,6 +4,8 @@
 #include "r2bix_render_TextureFrame.h"
 #include "r2bix_helper/r2bix_helper_Printer4Texture.h"
 
+#include "r2helper_STDPrinter4Rect.h"
+
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
@@ -24,11 +26,6 @@ namespace
 		);
 
 		return texture;
-	}
-
-	void PrintRectInfo( const r2::RectInt& rect )
-	{
-		std::cout << r2tm::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2tm::linefeed;
 	}
 }
 
@@ -63,7 +60,7 @@ namespace texture_frame_test
 
 			LS();
 
-			PrintRectInfo( frame.GetVisibleRect() );
+			r2helper::STDPrinter4Rect::PrintMinMax( frame.GetVisibleRect() );
 
 			LF();
 
@@ -123,7 +120,7 @@ namespace texture_frame_test
 			LS();
 
 			{
-				PrintRectInfo( frame.GetVisibleRect() );
+				r2helper::STDPrinter4Rect::PrintMinMax( frame.GetVisibleRect() );
 
 				LF();
 
@@ -132,7 +129,7 @@ namespace texture_frame_test
 
 				LF();
 
-				PrintRectInfo( frame.GetVisibleRect() );
+				r2helper::STDPrinter4Rect::PrintMinMax( frame.GetVisibleRect() );
 
 				LF();
 
@@ -194,7 +191,7 @@ namespace texture_frame_test
 			LF();
 
 			{
-				PrintRectInfo( frame.GetVisibleRect() );
+				r2helper::STDPrinter4Rect::PrintMinMax( frame.GetVisibleRect() );
 
 				LF();
 
@@ -203,7 +200,7 @@ namespace texture_frame_test
 
 				LF();
 
-				PrintRectInfo( frame.GetVisibleRect() );
+				r2helper::STDPrinter4Rect::PrintMinMax( frame.GetVisibleRect() );
 
 				LF();
 
@@ -221,7 +218,7 @@ namespace texture_frame_test
 
 				LF();
 
-				PrintRectInfo( frame.GetVisibleRect() );
+				r2helper::STDPrinter4Rect::PrintMinMax( frame.GetVisibleRect() );
 
 				LF();
 
