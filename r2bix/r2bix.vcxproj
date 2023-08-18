@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\r2_cpp\r2\source\r2\r2_Direction4SequentialState.cpp" />
     <ClCompile Include="external\r2tm\r2tm_Director.cpp" />
     <ClCompile Include="external\r2tm\r2tm_MenuProcessor.cpp" />
     <ClCompile Include="external\r2tm\r2tm_PrintBinary.cpp" />
@@ -29,6 +28,7 @@
     <ClCompile Include="external\r2\r2utility_StringBuilder.cpp" />
     <ClCompile Include="external\r2\r2utility_StringDecomposition.cpp" />
     <ClCompile Include="external\r2\r2utility_StringSize.cpp" />
+    <ClCompile Include="external\r2\r2_Direction4SequentialState.cpp" />
     <ClCompile Include="external\r2\r2_FPSTimer.cpp" />
     <ClCompile Include="external\r2\r2_PointInt.cpp" />
     <ClCompile Include="external\r2\r2_Random.cpp" />
@@ -142,8 +142,6 @@
     <ClCompile Include="src\tool\ToolMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\r2_cpp\r2\source\r2\r2_Direction4Sequential.h" />
-    <ClInclude Include="..\..\r2_cpp\r2\source\r2\r2_Direction4SequentialState.h" />
     <ClInclude Include="external\miniaudio\miniaudio.h" />
     <ClInclude Include="external\r2tm\r2tm_ColorModifier.h" />
     <ClInclude Include="external\r2tm\r2tm_Director.h" />
@@ -170,6 +168,8 @@
     <ClInclude Include="external\r2\r2utility_StringDecomposition.h" />
     <ClInclude Include="external\r2\r2utility_StringSize.h" />
     <ClInclude Include="external\r2\r2_Assert.h" />
+    <ClInclude Include="external\r2\r2_Direction4Sequential.h" />
+    <ClInclude Include="external\r2\r2_Direction4SequentialState.h" />
     <ClInclude Include="external\r2\r2_FPSTimer.h" />
     <ClInclude Include="external\r2\r2_GridIndexConverter.h" />
     <ClInclude Include="external\r2\r2_NoneCopyable.h" />
@@ -180,6 +180,7 @@
     <ClInclude Include="external\r2\r2_RectInt.h" />
     <ClInclude Include="external\r2\r2_RectIterator.h" />
     <ClInclude Include="external\r2\r2_RemovePointer.h" />
+    <ClInclude Include="external\r2\r2_SingletonWithStaticVariable.h" />
     <ClInclude Include="external\r2\r2_Size.h" />
     <ClInclude Include="external\r2\r2_SizeInt.h" />
     <ClInclude Include="external\r2\r2_Timer.h" />
