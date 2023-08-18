@@ -1,24 +1,28 @@
 #pragma once
 
+#include "r2_SingletonWithStaticVariable.h"
+
 namespace r2bix
 {
-	class DebugConfig
+	class DebugConfig : public r2::SingletonWithStaticVariable<DebugConfig>
 	{
 	public:
 		struct LabelConfig
 		{
-			bool bShowPositionPivot = false;
+			bool bShowPositionPivot = true;
 		};
 
-	private:
-		DebugConfig() = default;
+
 
 	public:
-		static const LabelConfig& GetLabelConfig() { return instance.mLabelConfig; }
+		const LabelConfig& GetLabelConfig() const
+		{
+			return mLabelConfig;
+		}
+
+
 
 	private:
-		static DebugConfig instance;
-
 		LabelConfig mLabelConfig;
 	};
 }
