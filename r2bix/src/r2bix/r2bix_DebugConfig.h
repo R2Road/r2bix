@@ -15,6 +15,10 @@ namespace r2bix
 
 
 	public:
+		void SetLabelConfig( const LabelConfig& label_config )
+		{
+			mLabelConfig = label_config;
+		}
 		const LabelConfig& GetLabelConfig() const
 		{
 			return mLabelConfig;

@@ -2,6 +2,7 @@
 	#include "vld/include/vld.h"
 #endif
 
+#include "r2bix_DebugConfig.h"
 #include "r2bix_VersionInfo.h"
 
 #include "r2tm/r2tm_Director.h"
@@ -25,6 +26,11 @@ int main()
 	// Environment : Position
 	//
 	r2tm::WindowUtility::Move( 0, 0 );
+
+	//
+	// R2bix Debug Config
+	//
+	r2bix::DebugConfig::GetInstance().SetLabelConfig( { true } );
 
 	//
 	// Setup
