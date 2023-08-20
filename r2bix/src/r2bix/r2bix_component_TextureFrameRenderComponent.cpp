@@ -81,7 +81,7 @@ namespace r2bix_component
 		//
 		// Debug
 		//
-		if( r2bix::DebugConfig::GetInstance().GetLabelConfig().bShowPositionPivot )
+		if( r2bix::DebugConfig::GetInstance().GetRenderConfig().bShowPositionPivot )
 		{
 			render_target->FillCharacter( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), '+' );
 		}

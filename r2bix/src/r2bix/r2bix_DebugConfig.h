@@ -7,7 +7,7 @@ namespace r2bix
 	class DebugConfig : public r2::SingletonWithStaticVariable<DebugConfig>
 	{
 	public:
-		struct LabelConfig
+		struct RenderConfig
 		{
 			bool bShowPositionPivot = true;
 		};
@@ -17,11 +17,11 @@ namespace r2bix
 		//
 		//
 		//
-		void SetLabelConfig( const LabelConfig& label_config )
+		void SetRenderConfig( const RenderConfig& label_config )
 		{
 			mLabelConfig = label_config;
 		}
-		const LabelConfig& GetLabelConfig() const
+		const RenderConfig& GetRenderConfig() const
 		{
 			return mLabelConfig;
 		}
@@ -29,6 +29,6 @@ namespace r2bix
 
 
 	private:
-		LabelConfig mLabelConfig;
+		RenderConfig mLabelConfig;
 	};
 }
