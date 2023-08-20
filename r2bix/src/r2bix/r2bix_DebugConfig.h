@@ -14,7 +14,9 @@ namespace r2bix
 
 
 
-	public:
+		//
+		//
+		//
 		void SetLabelConfig( const LabelConfig& label_config )
 		{
 			mLabelConfig = label_config;
