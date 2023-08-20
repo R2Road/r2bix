@@ -84,6 +84,7 @@ namespace r2bix_component
 		if( r2bix::DebugConfig::GetInstance().GetLabelConfig().bShowPositionPivot )
 		{
 			render_target->FillCharacter( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), '+' );
+			render_target->FillColor( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), r2bix::eBackgroundColor::BG_Red );
 		}
 	}
 
