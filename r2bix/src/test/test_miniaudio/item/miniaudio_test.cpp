@@ -185,7 +185,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2tm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
+						r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 6 );
 						break;
 
 					default:
@@ -621,7 +621,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2tm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
+						r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 6 );
 						break;
 
 					default:
@@ -719,7 +719,7 @@ namespace miniaudio_test
 
 						case 27: // ESC
 							bRun = false;
-							r2tm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 5 } );
+							r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 5 );
 							break;
 						}
 					}
@@ -804,7 +804,7 @@ namespace miniaudio_test
 
 				} while( 27 != input );
 
-				r2tm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 7 } );
+				r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 7 );
 			}
 
 			LS();
@@ -943,7 +943,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2tm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 6 } );
+						r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 6 );
 						break;
 
 					default:
@@ -1046,7 +1046,7 @@ namespace miniaudio_test
 
 						case 27: // ESC
 							bRun = false;
-							r2tm::WindowUtility::MoveCursorPoint( { pivot_coord.x, pivot_coord.y + 2 } );
+							r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 2 );
 							break;
 
 						default:
