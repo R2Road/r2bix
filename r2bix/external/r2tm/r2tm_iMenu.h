@@ -9,7 +9,7 @@ namespace r2tm
 	public:
 		virtual ~iMenu() {}
 
-		virtual r2tm::TitleFunctionT GetTitleFunction() const = 0;
+		virtual TitleFunctionT GetTitleFunction() const = 0;
 		virtual DescriptionFunctionT GetDescriptionFunction() const = 0;
 		virtual WriteFunctionT GetWriteFunction() const = 0;
 	};

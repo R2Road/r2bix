@@ -162,14 +162,14 @@ do {																						\
 // Important Declaration Code
 //
 #define	DECLARATION_MAIN( condition )														\
-condition;																					\
-printf( "\x1B[93m" "[DECLARATION]" "\033[0m" " %s\n", #condition );
+printf( "\x1B[93m" "[DECLARATION]" "\033[0m" " %s\n", #condition );							\
+condition;
 //
 // Sub Declaration Code
 //
 #define	DECLARATION_SUB( condition )														\
-condition;																					\
-printf( "\x1B[90m" "[DECLARATION]" " %s" "\033[0m" "\n", #condition );
+printf( "\x1B[90m" "[DECLARATION]" " %s" "\033[0m" "\n", #condition );						\
+condition;
 
 
 
@@ -282,3 +282,9 @@ do {																						\
 do {																						\
 	r2tm::PrintFile( file_path, min, max );													\
 } while( false )
+
+#define OUTPUT_SOURCE_READY		int src_begin, src_end = -1
+#define OUTPUT_SOURCE_BEGIN		do { src_begin = __LINE__ + 1; } while( false )
+#define OUTPUT_SOURCE_END		do { src_end = __LINE__ - 1; r2tm::PrintFile( __FILE__, src_begin, src_end ); } while( false )
+
+#define OUTPUT_SOURCE_READY_N_BEGIN		OUTPUT_SOURCE_READY; OUTPUT_SOURCE_BEGIN
