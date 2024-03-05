@@ -11,6 +11,7 @@
 #include "menu/InputMenu.h"
 #include "menu/NodeMenu.h"
 #include "menu/TextureMenu.h"
+#include "menu/UIMenu.h"
 
 #include "item/render_test.h"
 
@@ -64,6 +65,7 @@ r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
 
 
 		ret->AddMenu( 'a', GeometryMenu() );
+		ret->AddMenu( 's', UIMenu() );
 
 
 
