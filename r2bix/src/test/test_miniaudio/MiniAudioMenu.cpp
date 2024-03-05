@@ -10,7 +10,7 @@ r2tm::TitleFunctionT MiniAudioMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "MiniAudio";
+		return "MiniAudio : v0.11.9";
 	};
 }
 r2tm::DescriptionFunctionT MiniAudioMenu::GetDescriptionFunction() const
