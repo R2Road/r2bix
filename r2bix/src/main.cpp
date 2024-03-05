@@ -30,7 +30,7 @@ int main()
 	//
 	// R2bix Debug Config
 	//
-	r2bix::DebugConfig::GetInstance().SetLabelConfig( { true } );
+	r2bix::DebugConfig::GetInstance().SetRenderConfig( { true } );
 
 	//
 	// Setup
