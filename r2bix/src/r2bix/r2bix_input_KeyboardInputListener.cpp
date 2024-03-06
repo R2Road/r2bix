@@ -4,8 +4,8 @@ namespace r2bix_input
 {
 	KeyboardInputListener::KeyboardInputListener( std::initializer_list<uint8_t> list ) :
 		mObservationKeyList( list )
-		, mKeyFlags( mObservationKeyList.size(), 0 )
-		, mKeyStatusContainer( mObservationKeyList.size(), eKeyStatus::None )
+		, mKeyFlags( list.size(), 0)
+		, mKeyStatusContainer( list.size(), eKeyStatus::None )
 	{}
 
 	void KeyboardInputListener::Update()
