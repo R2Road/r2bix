@@ -47,8 +47,8 @@ namespace r2bix_input
 		}
 
 	private:
-		std::array<char, 256> mObservationKeyList;
-		std::bitset<256> mObservationKeyStates;
+		std::array<char, 255> mObservationKeyList;
+		std::bitset<255> mObservationKeyStates;
 
 		KeyboardInputListener* mKeyboardInputListener;
 	};

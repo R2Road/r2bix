@@ -37,7 +37,7 @@ namespace r2bix_input
 
 		int key_value = 0;
 
-		for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() - 1 ); end > i; ++i )
+		for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
 		{
 			if( 0 == mObservationKeyList[i] )
 			{
