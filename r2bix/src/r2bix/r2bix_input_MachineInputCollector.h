@@ -41,13 +41,13 @@ namespace r2bix_input
 		//
 		//
 		//
-		bool HasInput( const char key_value ) const
+		bool HasInput( const KeyCodeTypeT key_value ) const
 		{
 			return mObservationKeyStates.test( key_value );
 		}
 
 	private:
-		std::array<char, 255> mObservationKeyList;
+		std::array<KeyCodeTypeT, 255> mObservationKeyList;
 		std::bitset<255> mObservationKeyStates;
 
 		KeyboardInputListener* mKeyboardInputListener;
