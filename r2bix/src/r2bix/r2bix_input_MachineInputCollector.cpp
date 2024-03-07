@@ -12,15 +12,6 @@ namespace r2bix_input
 		,	mObservationKeyStates()
 	{
 		mObservationKeyList.fill( 0 );
-
-		//
-		// for Test
-		//
-		mObservationKeyList[0x1B] = 1;	// esc
-		mObservationKeyList[0x41] = 1;	// a
-		mObservationKeyList[0x44] = 1;	// d
-		mObservationKeyList[0x53] = 1;	// s
-		mObservationKeyList[0x57] = 1;	// w
 	}
 
 	void MachineInputCollector::Collect()
@@ -61,6 +52,18 @@ namespace r2bix_input
 			mKeyboardInputListener->mKeyFlags[i] = key_value & 0x8000;
 
 			++i;
+		}
+	}
+
+
+
+	void MachineInputCollector::AddListener( KeyboardInputListener* listener )
+	{
+		mKeyboardInputListener = listener;
+
+		for( const auto k : mKeyboardInputListener->mObservationKeys )
+		{
+			++mObservationKeyList[k];
 		}
 	}
 }
