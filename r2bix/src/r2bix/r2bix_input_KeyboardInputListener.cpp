@@ -3,7 +3,7 @@
 namespace r2bix_input
 {
 	KeyboardInputListener::KeyboardInputListener( std::initializer_list<uint8_t> list ) :
-		mObservationKeyList( list )
+		mObservationKeys( list )
 		, mKeyFlags( list.size(), 0)
 		, mKeyStatusContainer( list.size(), eKeyStatus::None )
 	{}

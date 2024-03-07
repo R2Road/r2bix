@@ -1,8 +1,6 @@
 #pragma once
 
-#include <vector>
-
-#include "r2bix_input_Constant.h"
+#include "r2bix_input_ObservationKeys.h"
 
 namespace r2bix_input
 {
@@ -44,7 +42,7 @@ namespace r2bix_input
 		//
 		void Update();
 
-		std::vector<KeyCodeTypeT> mObservationKeyList;
+		ObservationKeys mObservationKeys;
 		std::vector<bool> mKeyFlags;
 		std::vector<eKeyStatus> mKeyStatusContainer;
 	};
