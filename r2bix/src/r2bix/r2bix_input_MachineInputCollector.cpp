@@ -6,8 +6,12 @@
 
 namespace r2bix_input
 {
-	MachineInputCollector::MachineInputCollector() : mKeyboardInputListener( nullptr )
-	{}
+	MachineInputCollector::MachineInputCollector() :
+			mKeyboardInputListener( nullptr )
+		,	mObservationKeyList()
+	{
+		mObservationKeyList.fill( 0 );
+	}
 
 	void MachineInputCollector::Collect()
 	{

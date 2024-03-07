@@ -1,6 +1,6 @@
 #pragma once
 
-#include <vector>
+#include <array>
 
 #include "r2bix_input_Constant.h"
 
@@ -38,6 +38,7 @@ namespace r2bix_input
 		}
 
 	private:
+		std::array<char, 256> mObservationKeyList;
 		KeyboardInputListener* mKeyboardInputListener;
 	};
 }
