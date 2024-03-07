@@ -33,6 +33,7 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 
 		ret->AddItem( 'q', window_input_test::KeyStatus() );
 		ret->AddItem( 'w', window_input_test::TestKeyboardInputCollector() );
+		ret->AddItem( 'e', window_input_test::TestKeyboardInputListener() );
 
 
 		ret->AddSplit();
