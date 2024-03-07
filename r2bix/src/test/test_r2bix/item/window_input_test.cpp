@@ -28,13 +28,13 @@ namespace window_input_test
 			std::cout << "[ESC] Exit" << r2tm::linefeed;
 			std::cout << "[A] ..." << r2tm::linefeed;
 
-			r2bix_input::KeyboardInputCollector keyboard_input_collector;
+			r2bix_input::MachineInputCollector machine_input_collector;
 			r2bix_input::KeyboardInputListener keyboard_input_listener( {
 				0x1B		// esc
 				, 0x41		// a
 			} );
 
-			keyboard_input_collector.AddListener( &keyboard_input_listener );
+			machine_input_collector.AddListener( &keyboard_input_listener );
 
 			LS();
 
@@ -42,7 +42,7 @@ namespace window_input_test
 				auto last_input_status = keyboard_input_listener.Get( 1 );
 				while( 1 )
 				{
-					keyboard_input_collector.Collect();
+					machine_input_collector.Collect();
 					keyboard_input_listener.Update();
 
 					//
@@ -86,7 +86,7 @@ namespace window_input_test
 			std::cout << "[ESC] Exit" << r2tm::linefeed;
 			std::cout << "[WASD] Move" << r2tm::linefeed;
 
-			r2bix_input::KeyboardInputCollector keyboard_input_collector;
+			r2bix_input::MachineInputCollector keyboard_input_collector;
 			r2bix_input::KeyboardInputListener keyboard_input_listener( {
 				0x1B		// esc
 				, 0x41		// a

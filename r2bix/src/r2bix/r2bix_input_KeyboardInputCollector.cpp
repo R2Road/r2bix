@@ -6,10 +6,10 @@
 
 namespace r2bix_input
 {
-	KeyboardInputCollector::KeyboardInputCollector() : mKeyboardInputListener( nullptr )
+	MachineInputCollector::MachineInputCollector() : mKeyboardInputListener( nullptr )
 	{}
 
-	void KeyboardInputCollector::Collect()
+	void MachineInputCollector::Collect()
 	{
 		if( !HasWindowFocus() )
 		{

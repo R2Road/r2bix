@@ -49,7 +49,7 @@ namespace r2bix
 		bool mbAbort;
 		r2::SizeInt mScreenBufferSIze;
 
-		r2bix_input::KeyboardInputCollector mKeyboardInputCollector;
+		r2bix_input::MachineInputCollector mMachineInputCollector;
 
 		r2bix_node::SceneNodeUp mCurrentSceneNode;
 		r2bix_node::SceneNodeUp mNextSceneNode;

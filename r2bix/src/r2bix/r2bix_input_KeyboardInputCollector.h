@@ -8,10 +8,10 @@ namespace r2bix_input
 {
 	class KeyboardInputListener;
 
-	class KeyboardInputCollector
+	class MachineInputCollector
 	{
 	public:
-		KeyboardInputCollector();
+		MachineInputCollector();
 
 		//
 		//
