@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-#include "r2bix_input_KeyboardInputCollector.h"
+#include "r2bix_input_MachineInputCollector.h"
 #include "r2bix_input_KeyboardInputListener.h"
 
 #include "r2_RectInt.h"

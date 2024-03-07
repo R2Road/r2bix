@@ -1,4 +1,4 @@
-#include "r2bix_input_KeyboardInputCollector.h"
+#include "r2bix_input_MachineInputCollector.h"
 
 #include <numeric>
 

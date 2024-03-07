@@ -275,7 +275,7 @@
     <ClCompile Include="src\r2bix\r2bix_input_KeyboardInputListener.cpp">
       <Filter>r2bix\input</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_input_KeyboardInputCollector.cpp">
+    <ClCompile Include="src\r2bix\r2bix_input_MachineInputCollector.cpp">
       <Filter>r2bix\input</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_input_Constant.cpp">
@@ -653,7 +653,7 @@
     <ClInclude Include="src\r2bix\r2bix_input_KeyboardInputListener.h">
       <Filter>r2bix\input</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_input_KeyboardInputCollector.h">
+    <ClInclude Include="src\r2bix\r2bix_input_MachineInputCollector.h">
       <Filter>r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_input_Constant.h">

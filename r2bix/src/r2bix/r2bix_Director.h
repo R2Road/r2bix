@@ -3,7 +3,7 @@
 #include <memory>
 
 #include "r2bix_director_ScreenBufferManager.h"
-#include "r2bix_input_KeyboardInputCollector.h"
+#include "r2bix_input_MachineInputCollector.h"
 #include "r2bix_node_SceneNode.h"
 #include "r2_SizeInt.h"
 
