@@ -11,7 +11,14 @@ namespace r2bix_input
 
 	void InputManager::Update()
 	{
+		//
+		// 입력 수집
+		//
 		mMachineInputCollector.Collect();
+
+		//
+		// 키 상태 업데이트
+		//
 		mKeyboardInputListener->Update( mMachineInputCollector.GetObservationKeyStates() );
 	}
 
