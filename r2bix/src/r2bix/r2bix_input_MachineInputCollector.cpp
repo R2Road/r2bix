@@ -35,26 +35,16 @@ namespace r2bix_input
 
 
 
-	void MachineInputCollector::AddListener( KeyboardInputListener* listener )
+	void MachineInputCollector::AddListener( const ObservationKeys& observation_keys )
 	{
-		if( nullptr == listener )
-		{
-			return;
-		}
-
-		for( const auto k : listener->mObservationKeys )
+		for( const auto k : observation_keys )
 		{
 			++mObservationKeyList[k];
 		}
 	}
-	void MachineInputCollector::RemoveListener( KeyboardInputListener* listener )
+	void MachineInputCollector::RemoveListener( const ObservationKeys& observation_keys )
 	{
-		if( nullptr == listener )
-		{
-			return;
-		}
-
-		for( const auto k : listener->mObservationKeys )
+		for( const auto k : observation_keys )
 		{
 			--mObservationKeyList[k];
 		}

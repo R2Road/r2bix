@@ -4,6 +4,7 @@
 #include <bitset>
 
 #include "r2bix_input_Constant.h"
+#include "r2bix_input_ObservationKeys.h"
 
 namespace r2bix_input
 {
@@ -32,8 +33,8 @@ namespace r2bix_input
 		//
 		//
 		//
-		void AddListener( KeyboardInputListener* listener );
-		void RemoveListener( KeyboardInputListener* listener );
+		void AddListener( const ObservationKeys& observation_keys );
+		void RemoveListener( const ObservationKeys& observation_keys );
 
 		//
 		//

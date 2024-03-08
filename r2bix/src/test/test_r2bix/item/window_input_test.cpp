@@ -30,7 +30,7 @@ namespace window_input_test
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
 				r2bix_input::MachineInputCollector keyboard_input_collector;
-				r2bix_input::KeyboardInputListener keyboard_input_listener( {
+				r2bix_input::ObservationKeys observation_keys( {
 					0x1B		// esc
 					, 0x41		// a
 					, 0x44		// d
@@ -38,7 +38,7 @@ namespace window_input_test
 					, 0x57		// w
 					} );
 
-				keyboard_input_collector.AddListener( &keyboard_input_listener );
+				keyboard_input_collector.AddListener( observation_keys );
 
 				LS();
 
