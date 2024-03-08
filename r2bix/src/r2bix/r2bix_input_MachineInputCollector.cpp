@@ -45,14 +45,7 @@ namespace r2bix_input
 			mObservationKeyStates[i] = key_value & 0x8000;
 		}
 
-		std::size_t i = 0;
-		for( const auto k : mKeyboardInputListener->mObservationKeys )
-		{
-			key_value = GetKeyState( k );
-			mKeyboardInputListener->mKeyFlags[i] = key_value & 0x8000;
-
-			++i;
-		}
+		mKeyboardInputListener->Update( mObservationKeyStates );
 	}
 
 

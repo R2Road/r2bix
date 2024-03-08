@@ -45,8 +45,6 @@ namespace p2048
 
 	void GameComponent::Update( const float delta_time )
 	{
-		mKeyboardInputListener.Update();
-
 		switch( mStep )
 		{
 		case eStep::GameReset:

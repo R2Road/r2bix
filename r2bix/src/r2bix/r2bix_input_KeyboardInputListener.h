@@ -1,5 +1,7 @@
 #pragma once
 
+#include <bitset>
+
 #include "r2bix_input_ObservationKeys.h"
 
 namespace r2bix_input
@@ -40,10 +42,9 @@ namespace r2bix_input
 		//
 		//
 		//
-		void Update();
+		void Update( const std::bitset<255>& observation_key_states );
 
 		ObservationKeys mObservationKeys;
-		std::vector<bool> mKeyFlags;
 		std::vector<eKeyStatus> mKeyStatusContainer;
 	};
 }

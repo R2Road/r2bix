@@ -43,7 +43,6 @@ namespace window_input_test
 				while( 1 )
 				{
 					machine_input_collector.Collect();
-					keyboard_input_listener.Update();
 
 					//
 					// ESC
@@ -111,7 +110,6 @@ namespace window_input_test
 				while( 1 )
 				{
 					keyboard_input_collector.Collect();
-					keyboard_input_listener.Update();
 
 					//
 					// ESC
@@ -207,7 +205,6 @@ namespace window_input_test
 					while( 1 )
 					{
 						keyboard_input_collector.Collect();
-						keyboard_input_listener.Update();
 
 						//
 						// ESC

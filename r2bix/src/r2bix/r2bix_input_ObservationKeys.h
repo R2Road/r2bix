@@ -33,6 +33,15 @@ namespace r2bix_input
 		}
 
 
+		//
+		//
+		//
+		KeyCodeTypeT operator[]( const unsigned char key_index ) const
+		{
+			return mContainer[key_index];
+		}
+
+
 	private:
 		ContainerT mContainer;
 	};
