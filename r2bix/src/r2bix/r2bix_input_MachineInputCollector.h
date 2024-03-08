@@ -27,13 +27,7 @@ namespace r2bix_input
 			mKeyboardInputListener = nullptr;
 		}
 		void AddListener( KeyboardInputListener* listener );
-		void RemoveListener( KeyboardInputListener* listener )
-		{
-			if( listener == mKeyboardInputListener )
-			{
-				mKeyboardInputListener = nullptr;
-			}
-		}
+		void RemoveListener( KeyboardInputListener* listener );
 
 		//
 		//

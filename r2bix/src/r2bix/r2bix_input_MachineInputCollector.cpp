@@ -54,4 +54,11 @@ namespace r2bix_input
 			++mObservationKeyList[k];
 		}
 	}
+	void MachineInputCollector::RemoveListener( KeyboardInputListener* listener )
+	{
+		if( listener == mKeyboardInputListener )
+		{
+			mKeyboardInputListener = nullptr;
+		}
+	}
 }
