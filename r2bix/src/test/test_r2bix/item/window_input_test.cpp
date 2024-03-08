@@ -99,6 +99,77 @@ namespace window_input_test
 								pos = temp_pos;
 							}
 						}
+					}
+				}
+
+				return r2tm::eDoLeaveAction::Pause;
+			};
+	}
+
+
+
+	r2tm::TitleFunctionT TestKeyboardInputCollector_Mouse::GetTitleFunction() const
+	{
+		return []()->const char*
+			{
+				return "Keyboard Input Collector : Mouse";
+			};
+	}
+	r2tm::DoFunctionT TestKeyboardInputCollector_Mouse::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+			{
+				LS();
+
+				std::cout << "[ ESC ] Exit" << r2tm::linefeed;
+				std::cout << "[MOUSE] Move" << r2tm::linefeed;
+
+				r2bix_input::MachineInputCollector keyboard_input_collector;
+				r2bix_input::ObservationKeys observation_keys( { 0x1B } ); // ESC
+				keyboard_input_collector.AddObservationKeys( observation_keys );
+
+				LS();
+
+				{
+					r2::FPSTimer fps_timer( 60u );
+					r2::RectInt stage_area( 6, 10, 50, 30 );
+					r2bix_input::CursorPoint pos;
+					r2bix_input::CursorPoint temp_pos;
+
+					r2tm::WindowUtility::MoveCursorPoint( pos.GetX(), pos.GetY() );
+					std::cout << '@';
+
+					while( 1 )
+					{
+						keyboard_input_collector.Collect();
+
+						//
+						// ESC
+						//
+						if( keyboard_input_collector.HasInput( 0x1B ) )
+						{
+							break;
+						}
+
+						if( fps_timer.Update() )
+						{
+							temp_pos = keyboard_input_collector.GetCursorPoint();
+
+							if( !stage_area.ContainsPoint( temp_pos ) )
+							{
+								temp_pos = stage_area.Clamp( temp_pos );
+							}
+
+							if( temp_pos != pos )
+							{
+								r2tm::WindowUtility::MoveCursorPoint( pos.GetX(), pos.GetY() );
+								std::cout << ' ';
+								r2tm::WindowUtility::MoveCursorPoint( temp_pos.GetX(), temp_pos.GetY() );
+								std::cout << '@';
+
+								pos = temp_pos;
+							}
+						}
 
 						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
 						std::cout << "      ";

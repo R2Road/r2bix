@@ -11,6 +11,13 @@ namespace window_input_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
+	class TestKeyboardInputCollector_Mouse : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class KeyStatus : public r2tm::iItem
 	{
 	public:

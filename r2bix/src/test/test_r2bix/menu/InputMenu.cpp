@@ -32,8 +32,14 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 
 
 		ret->AddItem( 'q', window_input_test::TestKeyboardInputCollector_Keyboard() );
-		ret->AddItem( 'w', window_input_test::KeyStatus() );
-		ret->AddItem( 'e', window_input_test::TestKeyboardInputListener() );
+		ret->AddItem( 'w', window_input_test::TestKeyboardInputCollector_Mouse() );
+
+
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'a', window_input_test::KeyStatus() );
+		ret->AddItem( 's', window_input_test::TestKeyboardInputListener() );
 
 
 		ret->AddSplit();
