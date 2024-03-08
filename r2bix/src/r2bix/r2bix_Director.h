@@ -3,7 +3,7 @@
 #include <memory>
 
 #include "r2bix_director_ScreenBufferManager.h"
-#include "r2bix_input_MachineInputCollector.h"
+#include "r2bix_input_InputManager.h"
 #include "r2bix_node_SceneNode.h"
 #include "r2_SizeInt.h"
 
@@ -49,7 +49,7 @@ namespace r2bix
 		bool mbAbort;
 		r2::SizeInt mScreenBufferSIze;
 
-		r2bix_input::MachineInputCollector mMachineInputCollector;
+		r2bix_input::InputManager mInputManager;
 
 		r2bix_node::SceneNodeUp mCurrentSceneNode;
 		r2bix_node::SceneNodeUp mNextSceneNode;

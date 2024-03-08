@@ -12,7 +12,7 @@ namespace r2bix
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height )
 
-		, mMachineInputCollector()
+		, mInputManager()
 
 		, mCurrentSceneNode()
 		, mNextSceneNode()
@@ -46,7 +46,7 @@ namespace r2bix
 	}
 	void Director::onUpdate( const float delta_time )
 	{
-		mMachineInputCollector.Collect();
+		mInputManager.Update();
 
 		mCurrentSceneNode->Update( delta_time );
 	}
@@ -70,10 +70,10 @@ namespace r2bix
 
 	void Director::AddInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
 	{
-		mMachineInputCollector.AddListener( keyboard_input_listener );
+		mInputManager.mMachineInputCollector.AddListener( keyboard_input_listener );
 	}
 	void Director::RemoveInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
 	{
-		mMachineInputCollector.RemoveListener( keyboard_input_listener );
+		mInputManager.mMachineInputCollector.RemoveListener( keyboard_input_listener );
 	}
 }

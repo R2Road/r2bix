@@ -2,6 +2,11 @@
 
 namespace r2bix_input
 {
-	InputManager::InputManager()
+	InputManager::InputManager() : mMachineInputCollector()
 	{}
+
+	void InputManager::Update()
+	{
+		mMachineInputCollector.Collect();
+	}
 }
