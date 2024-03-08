@@ -40,7 +40,7 @@ namespace r2bix_input
 			mObservationKeyStates[i] = key_value & 0x8000;
 		}
 
-		mKeyboardInputListener->Update( mObservationKeyStates );
+		mKeyboardInputListener->Update( GetObservationKeyStates() );
 	}
 
 

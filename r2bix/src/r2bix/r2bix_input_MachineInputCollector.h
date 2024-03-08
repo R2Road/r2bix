@@ -14,6 +14,16 @@ namespace r2bix_input
 	public:
 		MachineInputCollector();
 
+
+
+		//
+		//
+		//
+		const std::bitset<255>& GetObservationKeyStates() const
+		{
+			return mObservationKeyStates;
+		}
+		
 		//
 		//
 		//
