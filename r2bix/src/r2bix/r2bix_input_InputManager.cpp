@@ -4,7 +4,9 @@
 
 namespace r2bix_input
 {
-	InputManager::InputManager() : mMachineInputCollector()
+	InputManager::InputManager() :
+		  mMachineInputCollector()
+		, mKeyboardInputListener( nullptr )
 	{}
 
 	void InputManager::Update()
