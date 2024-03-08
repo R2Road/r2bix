@@ -99,6 +99,11 @@ namespace window_input_test
 								pos = temp_pos;
 							}
 						}
+
+						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
+						std::cout << "      ";
+						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
+						std::cout << keyboard_input_collector.GetCursorPoint().GetX() << " " << keyboard_input_collector.GetCursorPoint().GetY();
 					}
 				}
 

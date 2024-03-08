@@ -22,6 +22,10 @@ namespace r2bix_input
 		{
 			return mObservationKeyStates;
 		}
+		CursorPoint GetCursorPoint() const
+		{
+			return mCursorPoint;
+		}
 		
 
 
@@ -53,5 +57,6 @@ namespace r2bix_input
 	private:
 		std::array<KeyCodeTypeT, 255> mObservationKeyList;
 		std::bitset<255> mObservationKeyStates;
+		CursorPoint mCursorPoint;
 	};
 }

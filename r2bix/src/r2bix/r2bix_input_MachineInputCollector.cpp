@@ -5,6 +5,7 @@ namespace r2bix_input
 	MachineInputCollector::MachineInputCollector() :
 			mObservationKeyList()
 		,	mObservationKeyStates()
+		,	mCursorPoint()
 	{
 		mObservationKeyList.fill( 0 );
 	}
@@ -16,18 +17,29 @@ namespace r2bix_input
 			return;
 		}
 
-		int key_value = 0;
-
-		for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
+		//
+		// Key : Keyboard, Mouse
+		//
 		{
-			if( 0 == mObservationKeyList[i] )
+			int key_value = 0;
+			for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
 			{
-				continue;
+				if( 0 == mObservationKeyList[i] )
+				{
+					continue;
+				}
+
+				key_value = GetKeyState( i );
+
+				mObservationKeyStates[i] = key_value & 0x8000;
 			}
+		}
 
-			key_value = GetKeyState( i );
-
-			mObservationKeyStates[i] = key_value & 0x8000;
+		//
+		// Mouse Position
+		//
+		{
+			mCursorPoint = r2bix_input::GetCursorPoint();
 		}
 	}
 
