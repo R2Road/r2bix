@@ -2,6 +2,7 @@
 
 #include <algorithm>
 
+#include "r2bix_input_InputManager.h"
 #include "r2bix_input_MachineInputCollector.h"
 #include "r2bix_input_KeyboardInputListener.h"
 
@@ -28,13 +29,13 @@ namespace window_input_test
 			std::cout << "[ESC] Exit" << r2tm::linefeed;
 			std::cout << "[A] ..." << r2tm::linefeed;
 
-			r2bix_input::MachineInputCollector machine_input_collector;
+			r2bix_input::InputManager input_manager;
 			r2bix_input::KeyboardInputListener keyboard_input_listener( {
 				0x1B		// esc
 				, 0x41		// a
 			} );
 
-			machine_input_collector.AddListener( &keyboard_input_listener );
+			input_manager.AddInputListener( &keyboard_input_listener );
 
 			LS();
 
@@ -42,7 +43,7 @@ namespace window_input_test
 				auto last_input_status = keyboard_input_listener.Get( 1 );
 				while( 1 )
 				{
-					machine_input_collector.Collect();
+					input_manager.Update();
 
 					//
 					// ESC
@@ -180,7 +181,7 @@ namespace window_input_test
 				std::cout << "[ESC] Exit" << r2tm::linefeed;
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
-				r2bix_input::MachineInputCollector keyboard_input_collector;
+				r2bix_input::InputManager input_manager;
 				r2bix_input::KeyboardInputListener keyboard_input_listener( {
 					0x1B		// esc
 					, 0x41		// a
@@ -189,7 +190,7 @@ namespace window_input_test
 					, 0x57		// w
 					} );
 
-				keyboard_input_collector.AddListener( &keyboard_input_listener );
+				input_manager.AddInputListener( &keyboard_input_listener );
 
 				LS();
 
@@ -204,7 +205,7 @@ namespace window_input_test
 
 					while( 1 )
 					{
-						keyboard_input_collector.Collect();
+						input_manager.Update();
 
 						//
 						// ESC

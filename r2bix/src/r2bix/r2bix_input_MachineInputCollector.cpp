@@ -1,7 +1,5 @@
 #include "r2bix_input_MachineInputCollector.h"
 
-#include <numeric>
-
 #include "r2bix_input_KeyboardInputListener.h"
 
 namespace r2bix_input
@@ -9,7 +7,6 @@ namespace r2bix_input
 	MachineInputCollector::MachineInputCollector() :
 			mObservationKeyList()
 		,	mObservationKeyStates()
-		,	mKeyboardInputListener( nullptr )
 	{
 		mObservationKeyList.fill( 0 );
 	}
@@ -17,11 +14,6 @@ namespace r2bix_input
 	void MachineInputCollector::Collect()
 	{
 		if( !HasWindowFocus() )
-		{
-			return;
-		}
-
-		if( nullptr == mKeyboardInputListener )
 		{
 			return;
 		}
@@ -39,19 +31,18 @@ namespace r2bix_input
 
 			mObservationKeyStates[i] = key_value & 0x8000;
 		}
-
-		mKeyboardInputListener->Update( GetObservationKeyStates() );
 	}
 
 
 
 	void MachineInputCollector::AddListener( KeyboardInputListener* listener )
 	{
-		RemoveListener( mKeyboardInputListener );
+		if( nullptr == listener )
+		{
+			return;
+		}
 
-		mKeyboardInputListener = listener;
-
-		for( const auto k : mKeyboardInputListener->mObservationKeys )
+		for( const auto k : listener->mObservationKeys )
 		{
 			++mObservationKeyList[k];
 		}
@@ -63,16 +54,9 @@ namespace r2bix_input
 			return;
 		}
 
-		if( listener != mKeyboardInputListener )
-		{
-			return;
-		}
-
-		for( const auto k : mKeyboardInputListener->mObservationKeys )
+		for( const auto k : listener->mObservationKeys )
 		{
 			--mObservationKeyList[k];
 		}
-
-		mKeyboardInputListener = nullptr;
 	}
 }

@@ -32,10 +32,6 @@ namespace r2bix_input
 		//
 		//
 		//
-		void ClearListener()
-		{
-			mKeyboardInputListener = nullptr;
-		}
 		void AddListener( KeyboardInputListener* listener );
 		void RemoveListener( KeyboardInputListener* listener );
 
@@ -50,7 +46,5 @@ namespace r2bix_input
 	private:
 		std::array<KeyCodeTypeT, 255> mObservationKeyList;
 		std::bitset<255> mObservationKeyStates;
-
-		KeyboardInputListener* mKeyboardInputListener;
 	};
 }

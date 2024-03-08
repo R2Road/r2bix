@@ -16,10 +16,16 @@ namespace r2bix_input
 		//
 		//
 		//
+		void ClearListener()
+		{
+			mKeyboardInputListener = nullptr;
+		}
 		void AddInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener );
 		void RemoveInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener );
 
 	public:
 		MachineInputCollector mMachineInputCollector;
+
+		KeyboardInputListener* mKeyboardInputListener;
 	};
 }
