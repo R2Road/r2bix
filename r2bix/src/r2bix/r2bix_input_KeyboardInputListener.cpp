@@ -9,7 +9,7 @@ namespace r2bix_input
 
 	void KeyboardInputListener::Update( const std::bitset<255>& observation_key_states )
 	{
-		for( std::size_t i = 0u; mKeyStatusContainer.size() > i; ++i )
+		for( std::size_t i = 0u, end = mKeyStatusContainer.size(); end > i; ++i )
 		{
 			if( observation_key_states.test( mObservationKeys[i]) )
 			{
