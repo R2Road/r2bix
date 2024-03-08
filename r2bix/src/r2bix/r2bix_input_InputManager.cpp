@@ -23,7 +23,7 @@ namespace r2bix_input
 
 		mKeyboardInputListener = keyboard_input_listener;
 
-		mMachineInputCollector.AddObservationKeys( mKeyboardInputListener->mObservationKeys );
+		mMachineInputCollector.AddObservationKeys( mKeyboardInputListener->GetObservationKeys() );
 	}
 	void InputManager::RemoveInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
 	{
@@ -37,7 +37,7 @@ namespace r2bix_input
 			return;
 		}
 
-		mMachineInputCollector.RemoveObservationKeys( mKeyboardInputListener->mObservationKeys );
+		mMachineInputCollector.RemoveObservationKeys( mKeyboardInputListener->GetObservationKeys() );
 
 		mKeyboardInputListener = nullptr;
 	}

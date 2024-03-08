@@ -26,6 +26,11 @@ namespace r2bix_input
 		//
 		// Getter
 		//
+		const ObservationKeys& GetObservationKeys() const
+		{
+			return mObservationKeys;
+		}
+
 		eKeyStatus Get( const std::size_t key_index ) const
 		{
 			return mKeyStatusContainer[key_index];
@@ -52,6 +57,7 @@ namespace r2bix_input
 
 
 
+	private:
 		ObservationKeys mObservationKeys;
 		std::vector<eKeyStatus> mKeyStatusContainer;
 	};
