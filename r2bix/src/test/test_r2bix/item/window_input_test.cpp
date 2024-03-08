@@ -13,14 +13,14 @@
 
 namespace window_input_test
 {
-	r2tm::TitleFunctionT TestKeyboardInputCollector::GetTitleFunction() const
+	r2tm::TitleFunctionT TestKeyboardInputCollector_Keyboard::GetTitleFunction() const
 	{
 		return []()->const char*
 			{
-				return "Keyboard Input Collector";
+				return "Keyboard Input Collector : Keyboard";
 			};
 	}
-	r2tm::DoFunctionT TestKeyboardInputCollector::GetDoFunction() const
+	r2tm::DoFunctionT TestKeyboardInputCollector_Keyboard::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 			{
