@@ -4,6 +4,8 @@
 
 namespace r2bix_input
 {
+	class KeyboardInputListener;
+
 	class InputManager
 	{
 	public:

@@ -1,7 +1,5 @@
 #include "r2bix_input_MachineInputCollector.h"
 
-#include "r2bix_input_KeyboardInputListener.h"
-
 namespace r2bix_input
 {
 	MachineInputCollector::MachineInputCollector() :
