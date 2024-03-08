@@ -17,7 +17,11 @@ namespace r2bix_input
 			Release,
 		};
 
+
+
 		KeyboardInputListener( std::initializer_list<uint8_t> list );
+
+
 
 		//
 		// Getter
@@ -39,10 +43,14 @@ namespace r2bix_input
 			return ( eKeyStatus::None < mKeyStatusContainer[key_index] );
 		}
 
+
+
 		//
 		//
 		//
 		void Update( const std::bitset<255>& observation_key_states );
+
+
 
 		ObservationKeys mObservationKeys;
 		std::vector<eKeyStatus> mKeyStatusContainer;

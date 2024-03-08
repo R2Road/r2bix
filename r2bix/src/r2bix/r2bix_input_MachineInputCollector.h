@@ -23,16 +23,22 @@ namespace r2bix_input
 			return mObservationKeyStates;
 		}
 		
+
+
 		//
 		//
 		//
 		void Collect();
+
+
 
 		//
 		//
 		//
 		void AddObservationKeys( const ObservationKeys& observation_keys );
 		void RemoveObservationKeys( const ObservationKeys& observation_keys );
+
+
 
 		//
 		//
@@ -41,6 +47,8 @@ namespace r2bix_input
 		{
 			return mObservationKeyStates.test( key_value );
 		}
+
+
 
 	private:
 		std::array<KeyCodeTypeT, 255> mObservationKeyList;
