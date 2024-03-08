@@ -37,11 +37,6 @@ namespace r2bix_input
 
 			key_value = GetKeyState( i );
 
-			if( key_value & 0x8000 )
-			{
-				int i = 0;
-			}
-
 			mObservationKeyStates[i] = key_value & 0x8000;
 		}
 
