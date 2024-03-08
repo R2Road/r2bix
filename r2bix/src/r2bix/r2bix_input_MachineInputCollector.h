@@ -33,8 +33,8 @@ namespace r2bix_input
 		//
 		//
 		//
-		void AddListener( const ObservationKeys& observation_keys );
-		void RemoveListener( const ObservationKeys& observation_keys );
+		void AddObservationKeys( const ObservationKeys& observation_keys );
+		void RemoveObservationKeys( const ObservationKeys& observation_keys );
 
 		//
 		//

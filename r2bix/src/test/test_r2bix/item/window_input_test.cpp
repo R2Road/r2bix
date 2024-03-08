@@ -38,7 +38,7 @@ namespace window_input_test
 					, 0x57		// w
 					} );
 
-				keyboard_input_collector.AddListener( observation_keys );
+				keyboard_input_collector.AddObservationKeys( observation_keys );
 
 				LS();
 
