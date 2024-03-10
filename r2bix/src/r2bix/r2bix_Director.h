@@ -28,7 +28,10 @@ namespace r2bix
 		//
 		//
 		//
-		r2::SizeInt GetScreenBufferSize() const { return mScreenBufferSIze; }
+		r2::SizeInt GetScreenBufferSize() const
+		{
+			return mScreenBufferSIze;
+		}
 
 		//
 		//
