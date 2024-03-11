@@ -4,28 +4,28 @@
 
 namespace r2bix_input_test
 {
-	class TestMachineeInputCollector_Keyboard : public r2tm::iItem
+	class MachineeInputCollector_Keyboard : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class TestMachineInputCollector_Mouse : public r2tm::iItem
+	class MachineInputCollector_Mouse : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class TestKeyboardInputListener_KeyStatus : public r2tm::iItem
+	class KeyboardInputListener_KeyStatus : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class TestKeyboardInputListener : public r2tm::iItem
+	class KeyboardInputListener_Play : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

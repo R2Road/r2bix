@@ -13,14 +13,14 @@
 
 namespace r2bix_input_test
 {
-	r2tm::TitleFunctionT TestMachineeInputCollector_Keyboard::GetTitleFunction() const
+	r2tm::TitleFunctionT MachineeInputCollector_Keyboard::GetTitleFunction() const
 	{
 		return []()->const char*
 			{
 				return "Machine Input Collector : Keyboard";
 			};
 	}
-	r2tm::DoFunctionT TestMachineeInputCollector_Keyboard::GetDoFunction() const
+	r2tm::DoFunctionT MachineeInputCollector_Keyboard::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 			{
@@ -108,14 +108,14 @@ namespace r2bix_input_test
 
 
 
-	r2tm::TitleFunctionT TestMachineInputCollector_Mouse::GetTitleFunction() const
+	r2tm::TitleFunctionT MachineInputCollector_Mouse::GetTitleFunction() const
 	{
 		return []()->const char*
 			{
 				return "Machine Input Collector : Mouse";
 			};
 	}
-	r2tm::DoFunctionT TestMachineInputCollector_Mouse::GetDoFunction() const
+	r2tm::DoFunctionT MachineInputCollector_Mouse::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 			{
@@ -194,14 +194,14 @@ namespace r2bix_input_test
 
 
 
-	r2tm::TitleFunctionT TestKeyboardInputListener_KeyStatus::GetTitleFunction() const
+	r2tm::TitleFunctionT KeyboardInputListener_KeyStatus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Keyboard Input Listener : KeyStatus";
 		};
 	}
-	r2tm::DoFunctionT TestKeyboardInputListener_KeyStatus::GetDoFunction() const
+	r2tm::DoFunctionT KeyboardInputListener_KeyStatus::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -251,14 +251,14 @@ namespace r2bix_input_test
 
 
 	
-	r2tm::TitleFunctionT TestKeyboardInputListener::GetTitleFunction() const
+	r2tm::TitleFunctionT KeyboardInputListener_Play::GetTitleFunction() const
 	{
 		return []()->const char*
 			{
-				return "Keyboard Input Listener";
+				return "Keyboard Input Listener : Play";
 			};
 	}
-	r2tm::DoFunctionT TestKeyboardInputListener::GetDoFunction() const
+	r2tm::DoFunctionT KeyboardInputListener_Play::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 			{

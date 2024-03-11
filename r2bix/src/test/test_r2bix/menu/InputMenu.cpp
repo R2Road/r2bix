@@ -31,15 +31,15 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', r2bix_input_test::TestMachineeInputCollector_Keyboard() );
-		ret->AddItem( 'w', r2bix_input_test::TestMachineInputCollector_Mouse() );
+		ret->AddItem( 'q', r2bix_input_test::MachineeInputCollector_Keyboard() );
+		ret->AddItem( 'w', r2bix_input_test::MachineInputCollector_Mouse() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', r2bix_input_test::TestKeyboardInputListener_KeyStatus() );
-		ret->AddItem( 's', r2bix_input_test::TestKeyboardInputListener() );
+		ret->AddItem( 'a', r2bix_input_test::KeyboardInputListener_KeyStatus() );
+		ret->AddItem( 's', r2bix_input_test::KeyboardInputListener_Play() );
 
 
 		ret->AddSplit();
