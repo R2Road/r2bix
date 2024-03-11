@@ -72,6 +72,7 @@
     <ClCompile Include="src\r2bix\r2bix_input_InputManager.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_Node.cpp" />
     <ClCompile Include="src\r2bix\r2bix_director_ScreenBufferManager.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_node_UIButtonNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureTableBase.cpp" />
@@ -259,6 +260,7 @@
     <ClInclude Include="src\r2bix\r2bix_input_ObservationKeys.h" />
     <ClInclude Include="src\r2bix\r2bix_node_Node.h" />
     <ClInclude Include="src\r2bix\r2bix_director_ScreenBufferManager.h" />
+    <ClInclude Include="src\r2bix\r2bix_node_UIButtonNode.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureTableBase.h" />

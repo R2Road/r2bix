@@ -15,6 +15,7 @@
 #include "r2bix_node_SceneNode.h"
 #include "r2bix_node_SpriteAnimationNode.h"
 #include "r2bix_node_SpriteNode.h"
+#include "r2bix_node_UIButtonNode.h"
 #include "r2bix_helper/r2bix_helper_Printer4Texture.h"
 
 #include "r2tm/r2tm_Inspector.h"
@@ -362,6 +363,74 @@ namespace node_test
 			LS();
 
 			DECLARATION_MAIN( auto node = r2bix_node::CustomTextureNode::Create( dummy_director ) );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
+
+			LS();
+
+			{
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 3, 3, 'T' ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
+
+				LF();
+
+				render_target.FillCharacterAll( '=' );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 5, 5, 'S' ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
+
+				LF();
+
+				render_target.FillCharacterAll( '=' );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+
+
+
+	r2tm::TitleFunctionT UIButton::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIButton";
+		};
+	}
+	r2tm::DoFunctionT UIButton::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto node = r2bix_node::UIButtonNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
