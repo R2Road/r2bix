@@ -136,7 +136,7 @@ namespace window_input_test
 					r2bix_input::CursorPoint pos;
 					r2bix_input::CursorPoint temp_pos;
 
-					r2tm::WindowUtility::MoveCursorPoint( pos.GetX(), pos.GetY() );
+					r2tm::WindowUtility::MoveCursorPoint( ( short )pos.GetX(), ( short )pos.GetY() );
 					std::cout << '@';
 
 					while( 1 )
@@ -162,9 +162,9 @@ namespace window_input_test
 
 							if( temp_pos != pos )
 							{
-								r2tm::WindowUtility::MoveCursorPoint( pos.GetX(), pos.GetY() );
+								r2tm::WindowUtility::MoveCursorPoint( ( short )pos.GetX(), ( short )pos.GetY() );
 								std::cout << ' ';
-								r2tm::WindowUtility::MoveCursorPoint( temp_pos.GetX(), temp_pos.GetY() );
+								r2tm::WindowUtility::MoveCursorPoint( ( short )temp_pos.GetX(), ( short )temp_pos.GetY() );
 								std::cout << '@';
 
 								pos = temp_pos;
