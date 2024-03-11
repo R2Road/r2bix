@@ -29,7 +29,7 @@ namespace window_input_test
 				std::cout << "[ESC] Exit" << r2tm::linefeed;
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
-				r2bix_input::MachineInputCollector keyboard_input_collector( 0, 0 );
+				r2bix_input::MachineInputCollector machine_input_collector( 0, 0 );
 				r2bix_input::ObservationKeys observation_keys( {
 					0x1B		// esc
 					, 0x41		// a
@@ -38,7 +38,7 @@ namespace window_input_test
 					, 0x57		// w
 					} );
 
-				keyboard_input_collector.AddObservationKeys( observation_keys );
+				machine_input_collector.AddObservationKeys( observation_keys );
 
 				LS();
 
@@ -53,12 +53,12 @@ namespace window_input_test
 
 					while( 1 )
 					{
-						keyboard_input_collector.Collect();
+						machine_input_collector.Collect();
 
 						//
 						// ESC
 						//
-						if( keyboard_input_collector.HasInput( 0x1B ) )
+						if( machine_input_collector.HasInput( 0x1B ) )
 						{
 							break;
 						}
@@ -67,19 +67,19 @@ namespace window_input_test
 						{
 							temp_pos = pos;
 
-							if( keyboard_input_collector.HasInput( 0x41 ) )
+							if( machine_input_collector.HasInput( 0x41 ) )
 							{
 								--temp_pos.x;
 							}
-							if( keyboard_input_collector.HasInput( 0x44 ) )
+							if( machine_input_collector.HasInput( 0x44 ) )
 							{
 								++temp_pos.x;
 							}
-							if( keyboard_input_collector.HasInput( 0x57 ) )
+							if( machine_input_collector.HasInput( 0x57 ) )
 							{
 								--temp_pos.y;
 							}
-							if( keyboard_input_collector.HasInput( 0x53 ) )
+							if( machine_input_collector.HasInput( 0x53 ) )
 							{
 								++temp_pos.y;
 							}
@@ -124,9 +124,9 @@ namespace window_input_test
 				std::cout << "[ ESC ] Exit" << r2tm::linefeed;
 				std::cout << "[MOUSE] Move" << r2tm::linefeed;
 
-				r2bix_input::MachineInputCollector keyboard_input_collector( 6, 10 );
+				r2bix_input::MachineInputCollector machine_input_collector( 6, 10 );
 				r2bix_input::ObservationKeys observation_keys( { 0x1B } ); // ESC
-				keyboard_input_collector.AddObservationKeys( observation_keys );
+				machine_input_collector.AddObservationKeys( observation_keys );
 
 				LS();
 
@@ -141,19 +141,19 @@ namespace window_input_test
 
 					while( 1 )
 					{
-						keyboard_input_collector.Collect();
+						machine_input_collector.Collect();
 
 						//
 						// ESC
 						//
-						if( keyboard_input_collector.HasInput( 0x1B ) )
+						if( machine_input_collector.HasInput( 0x1B ) )
 						{
 							break;
 						}
 
 						if( fps_timer.Update() )
 						{
-							temp_pos = keyboard_input_collector.GetCursorPoint();
+							temp_pos = machine_input_collector.GetCursorPoint();
 
 							if( !stage_area.IsIn( temp_pos ) )
 							{
@@ -183,8 +183,8 @@ namespace window_input_test
 						std::cout << "      ";
 						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
 						std::cout
-							<< keyboard_input_collector.GetCursorPoint().GetX() << " " << keyboard_input_collector.GetCursorPoint().GetY()
-							<< "\t" << ( keyboard_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n";
+							<< machine_input_collector.GetCursorPoint().GetX() << " " << machine_input_collector.GetCursorPoint().GetY()
+							<< "\t" << ( machine_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n";
 					}
 				}
 
