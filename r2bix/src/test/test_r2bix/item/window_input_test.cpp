@@ -171,16 +171,20 @@ namespace window_input_test
 							}
 						}
 
+						//
+						// # 2024.03.11 by R
+						// Mouse Move Flag 의 가시적인 문제점
+						//  > 커서 단위로 CursorPoint 값을 만들다 보니 일정 이상의 이동량이 발생하지 않으면 CursorPoint 가 그대로 이기 때문에
+						//  > Mouse가 이동하는 중임에도 값이 Off 로 나온다.
+						//  > 한 프레임에 폰트 가로 세로 이상의 움직임을 꾸준히 보여야 On 으로 유지된다는 것이다.
+						// 기능적으로는 문제 없다.
+						//
 						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
 						std::cout << "      ";
 						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
-						std::cout << keyboard_input_collector.GetCursorPoint().GetX() << " " << keyboard_input_collector.GetCursorPoint().GetY();
-							r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
-							std::cout << "             ";
-							r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
-							std::cout
-								<< keyboard_input_collector.GetCursorPoint().GetX() << " " << keyboard_input_collector.GetCursorPoint().GetY()
-								<< "\t" << ( keyboard_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n";
+						std::cout
+							<< keyboard_input_collector.GetCursorPoint().GetX() << " " << keyboard_input_collector.GetCursorPoint().GetY()
+							<< "\t" << ( keyboard_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n";
 					}
 				}
 
