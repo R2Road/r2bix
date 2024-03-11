@@ -26,6 +26,10 @@ namespace r2bix_input
 		{
 			return mCursorPoint;
 		}
+		bool IsMouseMoved() const
+		{
+			return mbMouseMoved;
+		}
 		
 
 
@@ -59,6 +63,9 @@ namespace r2bix_input
 
 		std::array<KeyCodeTypeT, 255> mObservationKeyList;
 		std::bitset<255> mObservationKeyStates;
+
+		CursorPoint mCursorPoint_Last;
 		CursorPoint mCursorPoint;
+		bool mbMouseMoved;
 	};
 }

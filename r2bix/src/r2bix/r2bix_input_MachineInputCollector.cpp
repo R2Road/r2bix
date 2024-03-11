@@ -6,7 +6,9 @@ namespace r2bix_input
 			mOffset( offset_x, offset_y )
 		,	mObservationKeyList()
 		,	mObservationKeyStates()
+		,	mCursorPoint_Last()
 		,	mCursorPoint()
+		,	mbMouseMoved( false )
 	{
 		mObservationKeyList.fill( 0 );
 	}
@@ -40,7 +42,9 @@ namespace r2bix_input
 		// Mouse Position
 		//
 		{
+			mCursorPoint_Last = mCursorPoint;
 			mCursorPoint = ( r2bix_input::GetCursorPoint() - mOffset );
+			mbMouseMoved = ( mCursorPoint_Last != mCursorPoint );
 		}
 	}
 
