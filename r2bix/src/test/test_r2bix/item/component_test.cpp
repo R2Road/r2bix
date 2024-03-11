@@ -954,9 +954,9 @@ namespace component_test
 
 				LF();
 
-				PROCESS_MAIN( ui_button->SetSize( 3, 2 ) );
-				EXPECT_EQ( 3, ui_button->GetWidth() );
-				EXPECT_EQ( 2, ui_button->GetHeight() );
+				PROCESS_MAIN( ui_button->SetSize( 7, 5 ) );
+				EXPECT_EQ( 7, ui_button->GetWidth() );
+				EXPECT_EQ( 5, ui_button->GetHeight() );
 			}
 
 			LS();
