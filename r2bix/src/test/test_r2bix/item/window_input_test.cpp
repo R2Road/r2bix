@@ -194,14 +194,14 @@ namespace window_input_test
 
 
 
-	r2tm::TitleFunctionT KeyStatus::GetTitleFunction() const
+	r2tm::TitleFunctionT TestKeyboardInputListener_KeyStatus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Window Input : KeyStatus";
+			return "Keyboard Input Listener : KeyStatus";
 		};
 	}
-	r2tm::DoFunctionT KeyStatus::GetDoFunction() const
+	r2tm::DoFunctionT TestKeyboardInputListener_KeyStatus::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

@@ -38,7 +38,7 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', window_input_test::KeyStatus() );
+		ret->AddItem( 'a', window_input_test::TestKeyboardInputListener_KeyStatus() );
 		ret->AddItem( 's', window_input_test::TestKeyboardInputListener() );
 
 
