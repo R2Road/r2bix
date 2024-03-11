@@ -19,7 +19,10 @@ namespace r2bix_input
 		//
 		// 키 상태 업데이트
 		//
-		mKeyboardInputListener->Update( mMachineInputCollector.GetObservationKeyStates() );
+		if( mKeyboardInputListener )
+		{
+			mKeyboardInputListener->Update( mMachineInputCollector.GetObservationKeyStates() );
+		}
 	}
 
 
