@@ -10,6 +10,8 @@ namespace r2bix_component
 		, mTextureRenderComponent( nullptr )
 	{}
 
+
+
 	int UIButtonComponent::GetWidth() const
 	{
 		return mCustomTextureComponent->GetTexture()->GetWidth();
@@ -18,6 +20,8 @@ namespace r2bix_component
 	{
 		return mCustomTextureComponent->GetTexture()->GetHeight();
 	}
+
+
 
 	void UIButtonComponent::SetSize( const uint32_t width, const uint32_t height )
 	{

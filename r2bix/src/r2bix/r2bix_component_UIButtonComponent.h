@@ -12,11 +12,19 @@ namespace r2bix_component
 	public:
 		UIButtonComponent( r2bix_node::Node& owner_node );
 
+
+
 		//
 		//
 		//
-		CustomTextureComponent* const GetCustomTextureComponent() const { return mCustomTextureComponent; }
-		TextureRenderComponent* const GetTextureRenderComponent() const { return mTextureRenderComponent; }
+		CustomTextureComponent* const GetCustomTextureComponent() const
+		{
+			return mCustomTextureComponent;
+		}
+		TextureRenderComponent* const GetTextureRenderComponent() const
+		{
+			return mTextureRenderComponent;
+		}
 
 		int GetWidth() const;
 		int GetHeight() const;
@@ -36,6 +44,8 @@ namespace r2bix_component
 		}
 
 		void SetSize( const uint32_t width, const uint32_t height );
+
+
 
 	private:
 		CustomTextureComponent* mCustomTextureComponent;
