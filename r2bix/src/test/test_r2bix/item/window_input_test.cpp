@@ -29,7 +29,7 @@ namespace window_input_test
 				std::cout << "[ESC] Exit" << r2tm::linefeed;
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
-				r2bix_input::MachineInputCollector keyboard_input_collector;
+				r2bix_input::MachineInputCollector keyboard_input_collector( 0, 0 );
 				r2bix_input::ObservationKeys observation_keys( {
 					0x1B		// esc
 					, 0x41		// a
@@ -124,7 +124,7 @@ namespace window_input_test
 				std::cout << "[ ESC ] Exit" << r2tm::linefeed;
 				std::cout << "[MOUSE] Move" << r2tm::linefeed;
 
-				r2bix_input::MachineInputCollector keyboard_input_collector;
+				r2bix_input::MachineInputCollector keyboard_input_collector( 6, 10 );
 				r2bix_input::ObservationKeys observation_keys( { 0x1B } ); // ESC
 				keyboard_input_collector.AddObservationKeys( observation_keys );
 
@@ -200,7 +200,7 @@ namespace window_input_test
 			std::cout << "[ESC] Exit" << r2tm::linefeed;
 			std::cout << "[A] ..." << r2tm::linefeed;
 
-			r2bix_input::InputManager input_manager;
+			r2bix_input::InputManager input_manager( 0, 0 );
 			r2bix_input::KeyboardInputListener keyboard_input_listener( {
 				0x1B		// esc
 				, 0x41		// a
@@ -257,7 +257,7 @@ namespace window_input_test
 				std::cout << "[ESC] Exit" << r2tm::linefeed;
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
-				r2bix_input::InputManager input_manager;
+				r2bix_input::InputManager input_manager( 0, 0 );
 				r2bix_input::KeyboardInputListener keyboard_input_listener( {
 					0x1B		// esc
 					, 0x41		// a

@@ -2,8 +2,9 @@
 
 namespace r2bix_input
 {
-	MachineInputCollector::MachineInputCollector() :
-			mObservationKeyList()
+	MachineInputCollector::MachineInputCollector( const int offset_x, const int offset_y ) :
+			mOffset( offset_x, offset_y )
+		,	mObservationKeyList()
 		,	mObservationKeyStates()
 		,	mCursorPoint()
 	{
@@ -39,7 +40,7 @@ namespace r2bix_input
 		// Mouse Position
 		//
 		{
-			mCursorPoint = r2bix_input::GetCursorPoint();
+			mCursorPoint = ( r2bix_input::GetCursorPoint() - mOffset );
 		}
 	}
 

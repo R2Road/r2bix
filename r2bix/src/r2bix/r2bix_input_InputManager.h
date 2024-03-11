@@ -9,7 +9,7 @@ namespace r2bix_input
 	class InputManager
 	{
 	public:
-		InputManager();
+		InputManager( const short offset_x, const short offset_y );
 
 
 

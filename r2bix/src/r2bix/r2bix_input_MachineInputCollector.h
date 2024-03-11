@@ -11,7 +11,7 @@ namespace r2bix_input
 	class MachineInputCollector
 	{
 	public:
-		MachineInputCollector();
+		MachineInputCollector( const int offset_x, const int offset_y );
 
 
 
@@ -55,6 +55,8 @@ namespace r2bix_input
 
 
 	private:
+		CursorPoint mOffset;
+
 		std::array<KeyCodeTypeT, 255> mObservationKeyList;
 		std::bitset<255> mObservationKeyStates;
 		CursorPoint mCursorPoint;

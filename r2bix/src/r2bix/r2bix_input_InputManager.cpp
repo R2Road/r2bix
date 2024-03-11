@@ -4,8 +4,8 @@
 
 namespace r2bix_input
 {
-	InputManager::InputManager() :
-		  mMachineInputCollector()
+	InputManager::InputManager( const short offset_x, const short offset_y ) :
+		  mMachineInputCollector( offset_x, offset_y )
 		, mKeyboardInputListener( nullptr )
 	{}
 

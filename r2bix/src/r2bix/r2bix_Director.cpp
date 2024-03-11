@@ -12,7 +12,7 @@ namespace r2bix
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height )
 
-		, mInputManager()
+		, mInputManager( director_config.ScreenBufferOffset_X, director_config.ScreenBufferOffset_Y )
 
 		, mCurrentSceneNode()
 		, mNextSceneNode()
