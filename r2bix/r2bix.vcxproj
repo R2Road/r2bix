@@ -182,7 +182,7 @@
     <ClInclude Include="external\r2\r2_RectInt.h" />
     <ClInclude Include="external\r2\r2_RectIterator.h" />
     <ClInclude Include="external\r2\r2_RemovePointer.h" />
-    <ClInclude Include="external\r2\r2_SingletonWithStaticVariable.h" />
+    <ClInclude Include="external\r2\r2_SingletonWithStaticFunction.h" />
     <ClInclude Include="external\r2\r2_Size.h" />
     <ClInclude Include="external\r2\r2_SizeInt.h" />
     <ClInclude Include="external\r2\r2_Timer.h" />

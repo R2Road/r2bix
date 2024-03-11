@@ -1,10 +1,10 @@
 #pragma once
 
-#include "r2_SingletonWithStaticVariable.h"
+#include "r2_SingletonWithStaticFunction.h"
 
 namespace r2bix
 {
-	class DebugConfig : public r2::SingletonWithStaticVariable<DebugConfig>
+	class DebugConfig : public r2::SingletonWithStaticFunction<DebugConfig>
 	{
 	public:
 		struct RenderConfig

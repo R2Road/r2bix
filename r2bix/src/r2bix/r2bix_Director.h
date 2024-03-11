@@ -36,6 +36,11 @@ namespace r2bix
 		//
 		//
 		//
+		void SetScreenBufferOffset( const short x, const short y );
+
+		//
+		//
+		//
 		void RequestAbort()
 		{
 			mbAbort = true;

@@ -83,7 +83,7 @@ namespace window_input_test
 							{
 								++temp_pos.y;
 							}
-							if( !stage_area.ContainsPoint( temp_pos.x, temp_pos.y ) )
+							if( !stage_area.IsIn( temp_pos.x, temp_pos.y ) )
 							{
 								temp_pos.x = std::clamp( temp_pos.x, static_cast< short >( stage_area.GetMinX() ), static_cast< short >( stage_area.GetMaxX() ) );
 								temp_pos.y = std::clamp( temp_pos.y, static_cast< short >( stage_area.GetMinY() ), static_cast< short >( stage_area.GetMaxY() ) );
@@ -155,7 +155,7 @@ namespace window_input_test
 						{
 							temp_pos = keyboard_input_collector.GetCursorPoint();
 
-							if( !stage_area.ContainsPoint( temp_pos ) )
+							if( !stage_area.IsIn( temp_pos ) )
 							{
 								temp_pos = stage_area.Clamp( temp_pos );
 							}
@@ -311,7 +311,7 @@ namespace window_input_test
 							{
 								++temp_pos.y;
 							}
-							if( !stage_area.ContainsPoint( temp_pos.x, temp_pos.y ) )
+							if( !stage_area.IsIn( temp_pos.x, temp_pos.y ) )
 							{
 								temp_pos.x = std::clamp( temp_pos.x, static_cast< short >( stage_area.GetMinX() ), static_cast< short >( stage_area.GetMaxX() ) );
 								temp_pos.y = std::clamp( temp_pos.y, static_cast< short >( stage_area.GetMinY() ), static_cast< short >( stage_area.GetMaxY() ) );

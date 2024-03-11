@@ -962,9 +962,6 @@
     <ClInclude Include="external\r2\r2_RemovePointer.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_SingletonWithStaticVariable.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_Size.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -1033,6 +1030,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_input_InputManager.h">
       <Filter>r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_SingletonWithStaticFunction.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

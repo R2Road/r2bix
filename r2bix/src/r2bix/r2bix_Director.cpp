@@ -58,6 +58,15 @@ namespace r2bix
 		mScreenBufferManager.Swap();
 	}
 
+
+
+	void Director::SetScreenBufferOffset( const short x, const short y )
+	{
+		mScreenBufferManager.SetScreenBufferOffset( x, y );
+	}
+
+
+
 	void Director::ClearScreen()
 	{
 		mScreenBufferManager.ClearCurrentBuffer();

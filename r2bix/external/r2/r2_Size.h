@@ -27,6 +27,7 @@ namespace r2
 			|| r2::is_same_v<T, int>
 
 			|| r2::is_same_v<T, long long int>
+			|| r2::is_same_v<T, unsigned long long int>
 
 			|| r2::is_same_v<T, float>
 
