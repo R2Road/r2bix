@@ -9,6 +9,7 @@
 #include "r2bix_component_TextureFrameRenderComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_TransformComponent.h"
+#include "r2bix_component_UIButtonComponent.h"
 #include "r2bix_node_CustomTextureNode.h"
 #include "r2bix_node_LabelSNode.h"
 #include "r2bix_node_LabelMNode.h"
@@ -434,6 +435,7 @@ namespace node_test
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIButtonComponent>() );
 
 			LS();
 
