@@ -31,8 +31,8 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', window_input_test::TestKeyboardInputCollector_Keyboard() );
-		ret->AddItem( 'w', window_input_test::TestKeyboardInputCollector_Mouse() );
+		ret->AddItem( 'q', window_input_test::TestMachineeInputCollector_Keyboard() );
+		ret->AddItem( 'w', window_input_test::TestMachineInputCollector_Mouse() );
 
 
 		ret->AddLineFeed();

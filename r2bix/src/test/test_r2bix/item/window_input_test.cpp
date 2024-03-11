@@ -13,14 +13,14 @@
 
 namespace window_input_test
 {
-	r2tm::TitleFunctionT TestKeyboardInputCollector_Keyboard::GetTitleFunction() const
+	r2tm::TitleFunctionT TestMachineeInputCollector_Keyboard::GetTitleFunction() const
 	{
 		return []()->const char*
 			{
-				return "Keyboard Input Collector : Keyboard";
+				return "Machine Input Collector : Keyboard";
 			};
 	}
-	r2tm::DoFunctionT TestKeyboardInputCollector_Keyboard::GetDoFunction() const
+	r2tm::DoFunctionT TestMachineeInputCollector_Keyboard::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 			{
@@ -108,14 +108,14 @@ namespace window_input_test
 
 
 
-	r2tm::TitleFunctionT TestKeyboardInputCollector_Mouse::GetTitleFunction() const
+	r2tm::TitleFunctionT TestMachineInputCollector_Mouse::GetTitleFunction() const
 	{
 		return []()->const char*
 			{
-				return "Keyboard Input Collector : Mouse";
+				return "Machine Input Collector : Mouse";
 			};
 	}
-	r2tm::DoFunctionT TestKeyboardInputCollector_Mouse::GetDoFunction() const
+	r2tm::DoFunctionT TestMachineInputCollector_Mouse::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 			{

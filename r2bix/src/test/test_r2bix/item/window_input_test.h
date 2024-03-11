@@ -4,14 +4,14 @@
 
 namespace window_input_test
 {
-	class TestKeyboardInputCollector_Keyboard : public r2tm::iItem
+	class TestMachineeInputCollector_Keyboard : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class TestKeyboardInputCollector_Mouse : public r2tm::iItem
+	class TestMachineInputCollector_Mouse : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
