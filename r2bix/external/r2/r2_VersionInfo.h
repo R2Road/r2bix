@@ -24,7 +24,7 @@ namespace r2
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '1';
 		const char VersionNumber_3 = '0';
-		const char VersionNumber_4 = '2';
+		const char VersionNumber_4 = '3';
 
 		const char* const String4VersionRule =
 					"### Version Rule ###"
@@ -35,7 +35,7 @@ namespace r2
 			"\n"	"> " "0.0.0.1"  " : "  "자잘한 수정"
 		;
 
-		const char String4Version[14] = { 'R', '2', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '\0' };
+		const char String4Version[14] = { 'r', '2', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '\0' };
 
 
 
@@ -44,6 +44,7 @@ namespace r2
 			"\n"
 			"\n"	"[o] " "Add Method     : r2 - Point - PlusX, PlusY, MinusX, MinusY"
 			"\n"	"[o] " "Add Class      : r2 - RectIterator"
+			"\n"	"[o] " "Update Class   : r2 - Point - Add Support Type - short, unsigned short"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"

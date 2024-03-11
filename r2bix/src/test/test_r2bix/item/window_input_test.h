@@ -4,6 +4,20 @@
 
 namespace window_input_test
 {
+	class TestKeyboardInputCollector_Keyboard : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
+	class TestKeyboardInputCollector_Mouse : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class KeyStatus : public r2tm::iItem
 	{
 	public:
@@ -11,7 +25,7 @@ namespace window_input_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class TestKeyboardInputCollector : public r2tm::iItem
+	class TestKeyboardInputListener : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

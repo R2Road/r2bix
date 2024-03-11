@@ -3,7 +3,7 @@
 #include <memory>
 
 #include "r2bix_director_ScreenBufferManager.h"
-#include "r2bix_input_KeyboardInputCollector.h"
+#include "r2bix_input_InputManager.h"
 #include "r2bix_node_SceneNode.h"
 #include "r2_SizeInt.h"
 
@@ -28,20 +28,33 @@ namespace r2bix
 		//
 		//
 		//
-		r2::SizeInt GetScreenBufferSize() const { return mScreenBufferSIze; }
+		r2::SizeInt GetScreenBufferSize() const
+		{
+			return mScreenBufferSIze;
+		}
 
 		//
 		//
 		//
-		void RequestAbort() { mbAbort = true; }
+		void SetScreenBufferOffset( const short x, const short y );
+
+		//
+		//
+		//
+		void RequestAbort()
+		{
+			mbAbort = true;
+		}
 		void ClearScreen();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
 
 		//
 		// Input
 		//
-		void AddInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener );
-		void RemoveInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener );
+		r2bix_input::InputManager& GetInputManager()
+		{
+			return mInputManager;
+		}
 
 	private:
 		r2bix_director::ScreenBufferManager mScreenBufferManager;
@@ -49,7 +62,7 @@ namespace r2bix
 		bool mbAbort;
 		r2::SizeInt mScreenBufferSIze;
 
-		r2bix_input::KeyboardInputCollector mKeyboardInputCollector;
+		r2bix_input::InputManager mInputManager;
 
 		r2bix_node::SceneNodeUp mCurrentSceneNode;
 		r2bix_node::SceneNodeUp mNextSceneNode;

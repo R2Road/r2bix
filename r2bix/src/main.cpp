@@ -28,6 +28,11 @@ int main()
 	r2tm::WindowUtility::Move( 0, 0 );
 
 	//
+	// Environment : Quick Edit Off
+	//
+	r2tm::WindowUtility::QuickEditEnable( false );
+
+	//
 	// R2bix Debug Config
 	//
 	r2bix::DebugConfig::GetInstance().SetRenderConfig( { true } );

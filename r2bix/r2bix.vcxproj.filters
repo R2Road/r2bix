@@ -275,7 +275,7 @@
     <ClCompile Include="src\r2bix\r2bix_input_KeyboardInputListener.cpp">
       <Filter>r2bix\input</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_input_KeyboardInputCollector.cpp">
+    <ClCompile Include="src\r2bix\r2bix_input_MachineInputCollector.cpp">
       <Filter>r2bix\input</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_input_Constant.cpp">
@@ -470,6 +470,9 @@
     <ClCompile Include="src\test\test_r2bix\menu\UIMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_input_InputManager.cpp">
+      <Filter>r2bix\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -653,7 +656,7 @@
     <ClInclude Include="src\r2bix\r2bix_input_KeyboardInputListener.h">
       <Filter>r2bix\input</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_input_KeyboardInputCollector.h">
+    <ClInclude Include="src\r2bix\r2bix_input_MachineInputCollector.h">
       <Filter>r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_input_Constant.h">
@@ -959,9 +962,6 @@
     <ClInclude Include="external\r2\r2_RemovePointer.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_SingletonWithStaticVariable.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_Size.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -1024,6 +1024,15 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\UIMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_input_ObservationKeys.h">
+      <Filter>r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_input_InputManager.h">
+      <Filter>r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_SingletonWithStaticFunction.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

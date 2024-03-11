@@ -1,8 +1,8 @@
 #pragma once
 
-#include <vector>
+#include <bitset>
 
-#include "r2bix_input_Constant.h"
+#include "r2bix_input_ObservationKeys.h"
 
 namespace r2bix_input
 {
@@ -17,11 +17,20 @@ namespace r2bix_input
 			Release,
 		};
 
+
+
 		KeyboardInputListener( std::initializer_list<uint8_t> list );
+
+
 
 		//
 		// Getter
 		//
+		const ObservationKeys& GetObservationKeys() const
+		{
+			return mObservationKeys;
+		}
+
 		eKeyStatus Get( const std::size_t key_index ) const
 		{
 			return mKeyStatusContainer[key_index];
@@ -39,13 +48,17 @@ namespace r2bix_input
 			return ( eKeyStatus::None < mKeyStatusContainer[key_index] );
 		}
 
-		//
-		//
-		//
-		void Update();
 
-		std::vector<KeyCodeTypeT> mObservationKeyList;
-		std::vector<bool> mKeyFlags;
+
+		//
+		//
+		//
+		void Update( const std::bitset<255>& observation_key_states );
+
+
+
+	private:
+		ObservationKeys mObservationKeys;
 		std::vector<eKeyStatus> mKeyStatusContainer;
 	};
 }

@@ -3,16 +3,15 @@
 namespace r2bix_input
 {
 	KeyboardInputListener::KeyboardInputListener( std::initializer_list<uint8_t> list ) :
-		mObservationKeyList( list )
-		, mKeyFlags( mObservationKeyList.size(), 0 )
-		, mKeyStatusContainer( mObservationKeyList.size(), eKeyStatus::None )
+		mObservationKeys( list )
+		, mKeyStatusContainer( list.size(), eKeyStatus::None )
 	{}
 
-	void KeyboardInputListener::Update()
+	void KeyboardInputListener::Update( const std::bitset<255>& observation_key_states )
 	{
-		for( std::size_t i = 0u; mKeyFlags.size() > i; ++i )
+		for( std::size_t i = 0u, end = mKeyStatusContainer.size(); end > i; ++i )
 		{
-			if( mKeyFlags[i] )
+			if( observation_key_states.test( mObservationKeys[i]) )
 			{
 				switch( mKeyStatusContainer[i] )
 				{

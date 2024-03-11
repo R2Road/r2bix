@@ -12,7 +12,7 @@ namespace r2bix
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height )
 
-		, mKeyboardInputCollector()
+		, mInputManager()
 
 		, mCurrentSceneNode()
 		, mNextSceneNode()
@@ -46,7 +46,7 @@ namespace r2bix
 	}
 	void Director::onUpdate( const float delta_time )
 	{
-		mKeyboardInputCollector.Collect();
+		mInputManager.Update();
 
 		mCurrentSceneNode->Update( delta_time );
 	}
@@ -58,6 +58,15 @@ namespace r2bix
 		mScreenBufferManager.Swap();
 	}
 
+
+
+	void Director::SetScreenBufferOffset( const short x, const short y )
+	{
+		mScreenBufferManager.SetScreenBufferOffset( x, y );
+	}
+
+
+
 	void Director::ClearScreen()
 	{
 		mScreenBufferManager.ClearCurrentBuffer();
@@ -66,14 +75,5 @@ namespace r2bix
 	void Director::Write2BackBuffer( const r2bix_render::Texture* const texture )
 	{
 		mScreenBufferManager.Write2BackBuffer( texture );
-	}
-
-	void Director::AddInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
-	{
-		mKeyboardInputCollector.AddListener( keyboard_input_listener );
-	}
-	void Director::RemoveInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
-	{
-		mKeyboardInputCollector.RemoveListener( keyboard_input_listener );
 	}
 }

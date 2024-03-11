@@ -237,29 +237,16 @@ namespace r2
 		//
 		//
 		//
-		bool ContainsPoint( const PointT& point ) const
+		bool IsIn( const PointT& point ) const
 		{
-			bool bRet = false;
-
-			if( point.GetX() >= GetMinX() && point.GetX() <= GetMaxX()
-				&& point.GetY() >= GetMinY() && point.GetY() <= GetMaxY() )
-			{
-				bRet = true;
-			}
-
-			return bRet;
+			return IsIn( point.GetX(), point.GetY() );
 		}
-		bool ContainsPoint( const ElementT x, const ElementT y ) const
+		bool IsIn( const ElementT x, const ElementT y ) const
 		{
-			bool bRet = false;
-
-			if( x >= GetMinX() && x <= GetMaxX()
-				&& y >= GetMinY() && y <= GetMaxY() )
-			{
-				bRet = true;
-			}
-
-			return bRet;
+			return ( 
+				   x >= GetMinX() && x <= GetMaxX()
+				&& y >= GetMinY() && y <= GetMaxY()
+			);
 		}
 
 

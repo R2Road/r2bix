@@ -25,6 +25,8 @@ namespace r2bix_director
 		, mCoutBufferRedirector4Second( nullptr )
 
 		, mbFirst( true )
+
+		, mScreenBufferOffset()
 	{
 		init();
 	}
@@ -140,7 +142,7 @@ namespace r2bix_director
 			current_buffer_handle = mBufferHandle4Second;
 		}
 
-		COORD top_left = { 0, 0 };
+		COORD top_left = { mScreenBufferOffset.GetX(), mScreenBufferOffset.GetY() };
 		CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info{};
 		DWORD out_result;
 		GetConsoleScreenBufferInfo( current_buffer_handle, &cs_buffer_info );

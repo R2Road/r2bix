@@ -25,6 +25,9 @@ namespace r2
 			   r2::is_same_v<T, char>
 			|| r2::is_same_v<T, unsigned char>
 
+			|| r2::is_same_v<T, int16_t>
+			|| r2::is_same_v<T, uint16_t>
+
 			|| r2::is_same_v<T, int32_t>
 			|| r2::is_same_v<T, uint32_t>
 

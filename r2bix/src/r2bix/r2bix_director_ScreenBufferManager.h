@@ -1,5 +1,7 @@
 #pragma once
 
+#include "r2/r2_Point.h"
+
 #include "r2bix_director_CoutBufferRedirector.h"
 
 namespace r2bix_render
@@ -17,6 +19,14 @@ namespace r2bix_director
 	public:
 		ScreenBufferManager();
 		~ScreenBufferManager();
+
+		//
+		//
+		//
+		void SetScreenBufferOffset( const short x, const short y )
+		{
+			mScreenBufferOffset.Set( x, y );
+		}
 
 	private:
 		void init();
@@ -39,5 +49,7 @@ namespace r2bix_director
 		CoutBufferRedirector mCoutBufferRedirector4Second;
 
 		bool mbFirst;
+
+		r2::Point<short> mScreenBufferOffset;
 	};
 }
