@@ -60,6 +60,13 @@ r2tm::WriteFunctionT ComponentMenu::GetWriteFunction() const
 
 		ret->AddItem( 'g', component_test::ActionProcessComponentTest() );
 
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+		ret->AddItem( 'z', component_test::UIButton() );
+
+
+
 
 		ret->AddSplit();
 

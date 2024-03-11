@@ -18,6 +18,11 @@ namespace r2bix_component
 		CustomTextureComponent* const GetCustomTextureComponent() const { return mCustomTextureComponent; }
 		TextureRenderComponent* const GetTextureRenderComponent() const { return mTextureRenderComponent; }
 
+		int GetWidth() const;
+		int GetHeight() const;
+
+		
+
 		//
 		// Setter
 		//
@@ -29,6 +34,8 @@ namespace r2bix_component
 		{
 			mTextureRenderComponent = texture_render_component;
 		}
+
+		void SetSize( const uint32_t width, const uint32_t height );
 
 	private:
 		CustomTextureComponent* mCustomTextureComponent;

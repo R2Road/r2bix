@@ -13,6 +13,7 @@
 #include "r2bix_component_TextureFrameRenderComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_TransformComponent.h"
+#include "r2bix_component_UIButtonComponent.h"
 #include "r2bix_render_Camera.h"
 #include "r2bix_render_Texture.h"
 #include "r2bix_render_TextureFrame.h"
@@ -894,6 +895,78 @@ namespace component_test
 
 				PROCESS_MAIN( component->Update( 0.f ) );
 				EXPECT_FALSE( component->IsRunning() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT UIButton::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UI Button Component";
+		};
+	}
+	r2tm::DoFunctionT UIButton::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 18, 8 ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto ui_button = node->AddComponent<r2bix_component::UIButtonComponent>() );
+			EXPECT_NE( nullptr, ui_button );
+			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, custom_texture );
+			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, texture_render );
+
+			LS();
+
+			{
+				EXPECT_EQ( nullptr, ui_button->GetCustomTextureComponent() );
+				PROCESS_MAIN( ui_button->SetCustomTextureComponent( custom_texture ) );
+				EXPECT_EQ( custom_texture, ui_button->GetCustomTextureComponent() );
+
+				LF();
+
+				EXPECT_EQ( nullptr, ui_button->GetTextureRenderComponent() );
+				PROCESS_MAIN( ui_button->SetTextureRenderComponent( texture_render ) );
+				EXPECT_EQ( texture_render, ui_button->GetTextureRenderComponent() );
+
+				LF();
+
+				EXPECT_EQ( nullptr, texture_render->GetTexture() );
+				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
+				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
+
+				LF();
+
+				PROCESS_MAIN( ui_button->SetSize( 3, 2 ) );
+				EXPECT_EQ( 3, ui_button->GetWidth() );
+				EXPECT_EQ( 2, ui_button->GetHeight() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				LF();
+
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			LS();
