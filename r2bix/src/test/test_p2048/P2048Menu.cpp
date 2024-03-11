@@ -72,9 +72,8 @@ r2tm::WriteFunctionT P2048Menu::GetWriteFunction() const
 				//
 				// Setup
 				//
-				r2bix::Director director( { 107, 53, r2bix_director::Config::eScheduleType::Sleep, 30, 60 } );
+				r2bix::Director director( { 107, 53, r2bix_director::Config::eScheduleType::Sleep, 30, 60, 2, 1 } );
 				director.Setup( p2048::EntryScene::Create( director ) );
-				director.SetScreenBufferOffset( 2, 1 );
 
 				//
 				// Process

@@ -30,6 +30,22 @@ namespace r2bix_director
 	{
 		init();
 	}
+
+	ScreenBufferManager::ScreenBufferManager( const short x, const short y ) :
+		mCoutOriginalStreamBuffer( nullptr )
+
+		, mBufferHandle4First( INVALID_HANDLE_VALUE )
+		, mCoutBufferRedirector4First( nullptr )
+
+		, mBufferHandle4Second( INVALID_HANDLE_VALUE )
+		, mCoutBufferRedirector4Second( nullptr )
+
+		, mbFirst( true )
+
+		, mScreenBufferOffset( x, y )
+	{
+		init();
+	}
 	ScreenBufferManager::~ScreenBufferManager()
 	{
 		release();

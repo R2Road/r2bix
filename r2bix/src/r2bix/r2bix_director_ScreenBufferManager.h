@@ -18,15 +18,8 @@ namespace r2bix_director
 
 	public:
 		ScreenBufferManager();
+		ScreenBufferManager( const short x, const short y );
 		~ScreenBufferManager();
-
-		//
-		//
-		//
-		void SetScreenBufferOffset( const short x, const short y )
-		{
-			mScreenBufferOffset.Set( x, y );
-		}
 
 	private:
 		void init();

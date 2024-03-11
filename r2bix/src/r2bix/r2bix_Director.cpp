@@ -7,7 +7,7 @@
 namespace r2bix
 {
 	Director::Director( const r2bix_director::Config& director_config ) :
-		mScreenBufferManager()
+		mScreenBufferManager( director_config.ScreenBufferOffset_X, director_config.ScreenBufferOffset_Y )
 		, mScheduler( director_config, std::bind( &Director::onUpdate, this, std::placeholders::_1 ), std::bind( &Director::onRender, this ) )
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height )
@@ -56,13 +56,6 @@ namespace r2bix
 
 		mScreenBufferManager.InitCursor();
 		mScreenBufferManager.Swap();
-	}
-
-
-
-	void Director::SetScreenBufferOffset( const short x, const short y )
-	{
-		mScreenBufferManager.SetScreenBufferOffset( x, y );
 	}
 
 
