@@ -1,4 +1,4 @@
-#include "window_input_test.h"
+#include "r2bix_input_test.h"
 
 #include <algorithm>
 
@@ -11,7 +11,7 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowUtility.h"
 
-namespace window_input_test
+namespace r2bix_input_test
 {
 	r2tm::TitleFunctionT TestMachineeInputCollector_Keyboard::GetTitleFunction() const
 	{

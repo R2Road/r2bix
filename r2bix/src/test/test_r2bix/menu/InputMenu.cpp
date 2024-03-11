@@ -3,7 +3,7 @@
 #include "r2tm/r2tm_Director.h"
 
 #include "test/test_r2bix/item/key_code_viewer.h"
-#include "test/test_r2bix/item/window_input_test.h"
+#include "test/test_r2bix/item/r2bix_input_test.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
@@ -31,15 +31,15 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'q', window_input_test::TestMachineeInputCollector_Keyboard() );
-		ret->AddItem( 'w', window_input_test::TestMachineInputCollector_Mouse() );
+		ret->AddItem( 'q', r2bix_input_test::TestMachineeInputCollector_Keyboard() );
+		ret->AddItem( 'w', r2bix_input_test::TestMachineInputCollector_Mouse() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'a', window_input_test::TestKeyboardInputListener_KeyStatus() );
-		ret->AddItem( 's', window_input_test::TestKeyboardInputListener() );
+		ret->AddItem( 'a', r2bix_input_test::TestKeyboardInputListener_KeyStatus() );
+		ret->AddItem( 's', r2bix_input_test::TestKeyboardInputListener() );
 
 
 		ret->AddSplit();
