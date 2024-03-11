@@ -17,34 +17,53 @@ namespace r2bix_input
 	{
 		if( !HasWindowFocus() )
 		{
-			return;
-		}
-
-		//
-		// Key : Keyboard, Mouse
-		//
-		{
-			int key_value = 0;
-			for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
+			//
+			// Key : Keyboard, Mouse
+			//
 			{
-				if( 0 == mObservationKeyList[i] )
+				int key_value = 0;
+				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
 				{
-					continue;
+					mObservationKeyStates[i] = false;
 				}
+			}
 
-				key_value = GetKeyState( i );
-
-				mObservationKeyStates[i] = key_value & 0x8000;
+			//
+			// Mouse Position
+			//
+			{
+				mCursorPoint_Last = mCursorPoint;
+				mbMouseMoved = false;
 			}
 		}
-
-		//
-		// Mouse Position
-		//
+		else
 		{
-			mCursorPoint_Last = mCursorPoint;
-			mCursorPoint = ( r2bix_input::GetCursorPoint() - mOffset );
-			mbMouseMoved = ( mCursorPoint_Last != mCursorPoint );
+			//
+			// Key : Keyboard, Mouse
+			//
+			{
+				int key_value = 0;
+				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
+				{
+					if( 0 == mObservationKeyList[i] )
+					{
+						continue;
+					}
+
+					key_value = GetKeyState( i );
+
+					mObservationKeyStates[i] = key_value & 0x8000;
+				}
+			}
+
+			//
+			// Mouse Position
+			//
+			{
+				mCursorPoint_Last = mCursorPoint;
+				mCursorPoint = ( r2bix_input::GetCursorPoint() - mOffset );
+				mbMouseMoved = ( mCursorPoint_Last != mCursorPoint );
+			}
 		}
 	}
 
