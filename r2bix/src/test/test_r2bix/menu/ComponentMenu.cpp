@@ -31,34 +31,34 @@ r2tm::WriteFunctionT ComponentMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
-		ret->AddItem( 'q', component_test::TextureRenderComponentTest_1() );
-		ret->AddItem( 'w', component_test::TextureRenderComponentTest_2() );
-		ret->AddItem( 'e', component_test::TextureRenderComponentTest_3() );
+		ret->AddItem( 'q', component_test::TextureRender_1() );
+		ret->AddItem( 'w', component_test::TextureRender_2() );
+		ret->AddItem( 'e', component_test::TextureRender_3() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'r', component_test::CustomTextureComponentTest() );
+		ret->AddItem( 'r', component_test::CustomTexture() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 't', component_test::LabelSComponentTest() );
-		ret->AddItem( 'y', component_test::LabelMComponentTest() );
-
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-
-		ret->AddItem( 'a', component_test::TextureFrameRenderComponentTest_1() );
-		ret->AddItem( 's', component_test::TextureFrameRenderComponentTest_2() );
-
-		ret->AddLineFeed();
-
-		ret->AddItem( 'd', component_test::TextureFrameAnimationComponentTest_1() );
-		ret->AddItem( 'f', component_test::TextureFrameAnimationComponentTest_2() );
+		ret->AddItem( 't', component_test::LabelS() );
+		ret->AddItem( 'y', component_test::LabelM() );
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
-		ret->AddItem( 'g', component_test::ActionProcessComponentTest() );
+		ret->AddItem( 'a', component_test::TextureFrameRender_1() );
+		ret->AddItem( 's', component_test::TextureFrameRender_2() );
+
+		ret->AddLineFeed();
+
+		ret->AddItem( 'd', component_test::TextureFrameAnimation_1() );
+		ret->AddItem( 'f', component_test::TextureFrameAnimation_2() );
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+		ret->AddItem( 'g', component_test::ActionProcess() );
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();

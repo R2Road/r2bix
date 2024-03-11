@@ -127,14 +127,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureRenderComponentTest_1::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureRender_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Render Component 1";
 		};
 	}
-	r2tm::DoFunctionT TextureRenderComponentTest_1::GetDoFunction() const
+	r2tm::DoFunctionT TextureRender_1::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -179,14 +179,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureRenderComponentTest_2::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureRender_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Render Component 2";
 		};
 	}
-	r2tm::DoFunctionT TextureRenderComponentTest_2::GetDoFunction() const
+	r2tm::DoFunctionT TextureRender_2::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -255,14 +255,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureRenderComponentTest_3::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureRender_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Render Component 3";
 		};
 	}
-	r2tm::DoFunctionT TextureRenderComponentTest_3::GetDoFunction() const
+	r2tm::DoFunctionT TextureRender_3::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -322,14 +322,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT CustomTextureComponentTest::GetTitleFunction() const
+	r2tm::TitleFunctionT CustomTexture::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Custom Texture Component";
 		};
 	}
-	r2tm::DoFunctionT CustomTextureComponentTest::GetDoFunction() const
+	r2tm::DoFunctionT CustomTexture::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -390,14 +390,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT LabelSComponentTest::GetTitleFunction() const
+	r2tm::TitleFunctionT LabelS::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Label S Component";
 		};
 	}
-	r2tm::DoFunctionT LabelSComponentTest::GetDoFunction() const
+	r2tm::DoFunctionT LabelS::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -462,14 +462,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT LabelMComponentTest::GetTitleFunction() const
+	r2tm::TitleFunctionT LabelM::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Label M Component";
 		};
 	}
-	r2tm::DoFunctionT LabelMComponentTest::GetDoFunction() const
+	r2tm::DoFunctionT LabelM::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -534,14 +534,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureFrameRenderComponentTest_1::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureFrameRender_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameRender Component 1";
 		};
 	}
-	r2tm::DoFunctionT TextureFrameRenderComponentTest_1::GetDoFunction() const
+	r2tm::DoFunctionT TextureFrameRender_1::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -590,14 +590,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureFrameRenderComponentTest_2::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureFrameRender_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameRender Component 2";
 		};
 	}
-	r2tm::DoFunctionT TextureFrameRenderComponentTest_2::GetDoFunction() const
+	r2tm::DoFunctionT TextureFrameRender_2::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -669,14 +669,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureFrameAnimationComponentTest_1::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureFrameAnimation_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameAnimation Component 1";
 		};
 	}
-	r2tm::DoFunctionT TextureFrameAnimationComponentTest_1::GetDoFunction() const
+	r2tm::DoFunctionT TextureFrameAnimation_1::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -752,14 +752,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureFrameAnimationComponentTest_2::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureFrameAnimation_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameAnimation Component 2";
 		};
 	}
-	r2tm::DoFunctionT TextureFrameAnimationComponentTest_2::GetDoFunction() const
+	r2tm::DoFunctionT TextureFrameAnimation_2::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -835,14 +835,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT ActionProcessComponentTest::GetTitleFunction() const
+	r2tm::TitleFunctionT ActionProcess::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "ActionProcess Component";
 		};
 	}
-	r2tm::DoFunctionT ActionProcessComponentTest::GetDoFunction() const
+	r2tm::DoFunctionT ActionProcess::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
