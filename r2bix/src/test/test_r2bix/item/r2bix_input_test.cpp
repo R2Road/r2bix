@@ -124,7 +124,9 @@ namespace r2bix_input_test
 				std::cout << "[ ESC ] Exit" << r2tm::linefeed;
 				std::cout << "[MOUSE] Move" << r2tm::linefeed;
 
-				r2bix_input::MachineInputCollector machine_input_collector( 6, 10 );
+
+				r2::PointInt buffer_offset( 6, 10 );
+				r2bix_input::MachineInputCollector machine_input_collector( buffer_offset );
 				r2bix_input::ObservationKeys observation_keys( { 0x1B } ); // ESC
 				machine_input_collector.AddObservationKeys( observation_keys );
 
@@ -184,7 +186,9 @@ namespace r2bix_input_test
 						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
 						std::cout
 							<< machine_input_collector.GetCursorPoint().GetX() << " " << machine_input_collector.GetCursorPoint().GetY()
-							<< "\t" << ( machine_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n";
+							<< "\t" << ( machine_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n"
+							<< "Offset " << buffer_offset.GetX() << ", " << buffer_offset.GetY() << "\n"
+							;
 					}
 				}
 

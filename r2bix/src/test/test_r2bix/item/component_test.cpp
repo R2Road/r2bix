@@ -13,6 +13,7 @@
 #include "r2bix_component_TextureFrameRenderComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_TransformComponent.h"
+#include "r2bix_component_UIButtonComponent.h"
 #include "r2bix_render_Camera.h"
 #include "r2bix_render_Texture.h"
 #include "r2bix_render_TextureFrame.h"
@@ -126,14 +127,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureRenderComponentTest_1::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureRender_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Render Component 1";
 		};
 	}
-	r2tm::DoFunctionT TextureRenderComponentTest_1::GetDoFunction() const
+	r2tm::DoFunctionT TextureRender_1::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -178,14 +179,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureRenderComponentTest_2::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureRender_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Render Component 2";
 		};
 	}
-	r2tm::DoFunctionT TextureRenderComponentTest_2::GetDoFunction() const
+	r2tm::DoFunctionT TextureRender_2::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -254,14 +255,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureRenderComponentTest_3::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureRender_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Texture Render Component 3";
 		};
 	}
-	r2tm::DoFunctionT TextureRenderComponentTest_3::GetDoFunction() const
+	r2tm::DoFunctionT TextureRender_3::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -321,14 +322,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT CustomTextureComponentTest::GetTitleFunction() const
+	r2tm::TitleFunctionT CustomTexture::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Custom Texture Component";
 		};
 	}
-	r2tm::DoFunctionT CustomTextureComponentTest::GetDoFunction() const
+	r2tm::DoFunctionT CustomTexture::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -389,14 +390,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT LabelSComponentTest::GetTitleFunction() const
+	r2tm::TitleFunctionT LabelS::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Label S Component";
 		};
 	}
-	r2tm::DoFunctionT LabelSComponentTest::GetDoFunction() const
+	r2tm::DoFunctionT LabelS::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -461,14 +462,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT LabelMComponentTest::GetTitleFunction() const
+	r2tm::TitleFunctionT LabelM::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Label M Component";
 		};
 	}
-	r2tm::DoFunctionT LabelMComponentTest::GetDoFunction() const
+	r2tm::DoFunctionT LabelM::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -533,14 +534,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureFrameRenderComponentTest_1::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureFrameRender_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameRender Component 1";
 		};
 	}
-	r2tm::DoFunctionT TextureFrameRenderComponentTest_1::GetDoFunction() const
+	r2tm::DoFunctionT TextureFrameRender_1::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -589,14 +590,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureFrameRenderComponentTest_2::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureFrameRender_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameRender Component 2";
 		};
 	}
-	r2tm::DoFunctionT TextureFrameRenderComponentTest_2::GetDoFunction() const
+	r2tm::DoFunctionT TextureFrameRender_2::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -668,14 +669,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureFrameAnimationComponentTest_1::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureFrameAnimation_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameAnimation Component 1";
 		};
 	}
-	r2tm::DoFunctionT TextureFrameAnimationComponentTest_1::GetDoFunction() const
+	r2tm::DoFunctionT TextureFrameAnimation_1::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -751,14 +752,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT TextureFrameAnimationComponentTest_2::GetTitleFunction() const
+	r2tm::TitleFunctionT TextureFrameAnimation_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "TextureFrameAnimation Component 2";
 		};
 	}
-	r2tm::DoFunctionT TextureFrameAnimationComponentTest_2::GetDoFunction() const
+	r2tm::DoFunctionT TextureFrameAnimation_2::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -834,14 +835,14 @@ namespace component_test
 
 
 
-	r2tm::TitleFunctionT ActionProcessComponentTest::GetTitleFunction() const
+	r2tm::TitleFunctionT ActionProcess::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "ActionProcess Component";
 		};
 	}
-	r2tm::DoFunctionT ActionProcessComponentTest::GetDoFunction() const
+	r2tm::DoFunctionT ActionProcess::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
@@ -894,6 +895,78 @@ namespace component_test
 
 				PROCESS_MAIN( component->Update( 0.f ) );
 				EXPECT_FALSE( component->IsRunning() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT UIButton::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UI Button Component";
+		};
+	}
+	r2tm::DoFunctionT UIButton::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 18, 8 ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto ui_button = node->AddComponent<r2bix_component::UIButtonComponent>() );
+			EXPECT_NE( nullptr, ui_button );
+			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, custom_texture );
+			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, texture_render );
+
+			LS();
+
+			{
+				EXPECT_EQ( nullptr, ui_button->GetCustomTextureComponent() );
+				PROCESS_MAIN( ui_button->SetCustomTextureComponent( custom_texture ) );
+				EXPECT_EQ( custom_texture, ui_button->GetCustomTextureComponent() );
+
+				LF();
+
+				EXPECT_EQ( nullptr, ui_button->GetTextureRenderComponent() );
+				PROCESS_MAIN( ui_button->SetTextureRenderComponent( texture_render ) );
+				EXPECT_EQ( texture_render, ui_button->GetTextureRenderComponent() );
+
+				LF();
+
+				EXPECT_EQ( nullptr, texture_render->GetTexture() );
+				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
+				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
+
+				LF();
+
+				PROCESS_MAIN( ui_button->SetSize( 7, 5 ) );
+				EXPECT_EQ( 7, ui_button->GetWidth() );
+				EXPECT_EQ( 5, ui_button->GetHeight() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+
+				LF();
+
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			LS();

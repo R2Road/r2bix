@@ -18,73 +18,82 @@ namespace component_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class TextureRenderComponentTest_1 : public r2tm::iItem
+	class TextureRender_1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
-	class TextureRenderComponentTest_2 : public r2tm::iItem
+	class TextureRender_2 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
-	class TextureRenderComponentTest_3 : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
-	class CustomTextureComponentTest : public r2tm::iItem
+	class TextureRender_3 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class LabelSComponentTest : public r2tm::iItem
+	class CustomTexture : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class LabelMComponentTest : public r2tm::iItem
+	class LabelS : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class TextureFrameRenderComponentTest_1 : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-	class TextureFrameRenderComponentTest_2 : public r2tm::iItem
+	class LabelM : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class TextureFrameAnimationComponentTest_1 : public r2tm::iItem
+	class TextureFrameRender_1 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
-	class TextureFrameAnimationComponentTest_2 : public r2tm::iItem
+	class TextureFrameRender_2 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class ActionProcessComponentTest: public r2tm::iItem
+	class TextureFrameAnimation_1 : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+	class TextureFrameAnimation_2 : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
+	class ActionProcess: public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
+
+
+	class UIButton : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

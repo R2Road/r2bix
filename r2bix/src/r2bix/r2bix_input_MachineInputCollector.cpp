@@ -13,6 +13,17 @@ namespace r2bix_input
 		mObservationKeyList.fill( 0 );
 	}
 
+	MachineInputCollector::MachineInputCollector( const r2::PointInt offset ) :
+		mOffset( offset.GetX(), offset.GetY() )
+		, mObservationKeyList()
+		, mObservationKeyStates()
+		, mCursorPoint_Last()
+		, mCursorPoint()
+		, mbMouseMoved( false )
+	{
+		mObservationKeyList.fill( 0 );
+	}
+
 	void MachineInputCollector::Collect()
 	{
 		if( !HasWindowFocus() )
