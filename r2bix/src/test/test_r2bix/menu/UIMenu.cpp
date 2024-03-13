@@ -5,7 +5,7 @@
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
-//#include "r2bix/r2bix_component_UIPaannelComponent.h"
+#include "r2bix/r2bix_component_UIPannelComponent.h"
 #include "r2bix/r2bix_node_CustomTextureNode.h"
 #include "r2bix/r2bix_node_UIPannelNode.h"
 
@@ -62,7 +62,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					{
 						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
-						//node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 10, 5 );
+						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 10, 5 );
 						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 10 );
 					}
 
