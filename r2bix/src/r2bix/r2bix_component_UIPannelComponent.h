@@ -43,6 +43,7 @@ namespace r2bix_component
 			mTextureRenderComponent = texture_render_component;
 		}
 
+		void SetSize( const uint32_t width, const uint32_t height, const char fill_char );
 		void SetSize( const uint32_t width, const uint32_t height );
 
 

@@ -23,16 +23,20 @@ namespace r2bix_component
 
 
 
-	void UIPannelComponent::SetSize( const uint32_t width, const uint32_t height )
+	void UIPannelComponent::SetSize( const uint32_t width, const uint32_t height, const char fill_char )
 	{
 		if( mCustomTextureComponent )
 		{
-			mCustomTextureComponent->GetTexture()->Reset( width, height, '#' );
+			mCustomTextureComponent->GetTexture()->Reset( width, height, fill_char );
 		}
 
 		if( mTextureRenderComponent )
 		{
 			mTextureRenderComponent->ResetVisibleRect();
 		}
+	}
+	void UIPannelComponent::SetSize( const uint32_t width, const uint32_t height )
+	{
+		SetSize( width, height, '#' );
 	}
 }

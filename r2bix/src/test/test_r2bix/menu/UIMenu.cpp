@@ -58,12 +58,21 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					}
 
 					//
-					// Pannel
+					// Pannel 1
 					//
 					{
 						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
-						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 10, 5 );
+						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 10, 5, '1' );
 						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 10 );
+					}
+
+					//
+					// Pannel 2
+					//
+					{
+						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 10, 5, '2' );
+						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 13, 13 );
 					}
 
 					//
