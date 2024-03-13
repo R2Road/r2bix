@@ -5,9 +5,9 @@
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
-#include "r2bix/r2bix_component_UIButtonComponent.h"
+//#include "r2bix/r2bix_component_UIPaannelComponent.h"
 #include "r2bix/r2bix_node_CustomTextureNode.h"
-#include "r2bix/r2bix_node_UIButtonNode.h"
+#include "r2bix/r2bix_node_UIPannelNode.h"
 
 
 #include "test/test_r2bix/R2bixMenu.h"
@@ -58,11 +58,11 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					}
 
 					//
-					// Button
+					// Pannel
 					//
 					{
-						auto node = scene->AddChild<r2bix_node::UIButtonNode>();
-						node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 10, 5 );
+						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+						//node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 10, 5 );
 						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 10 );
 					}
 
