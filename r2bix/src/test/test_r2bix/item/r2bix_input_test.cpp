@@ -184,7 +184,9 @@ namespace r2bix_input_test
 						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
 						std::cout
 							<< machine_input_collector.GetCursorPoint().GetX() << " " << machine_input_collector.GetCursorPoint().GetY()
-							<< "\t" << ( machine_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n";
+							<< "\t" << ( machine_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n"
+							<< "Offset 6, 10" << "\n"
+							;
 					}
 				}
 
