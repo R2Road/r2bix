@@ -13,7 +13,7 @@ namespace r2bix_input
 
 	bool HasWindowFocus();
 
-	enum KeyCode : uint8_t
+	enum eKeyCode : uint8_t
 	{
 		VK_LBUTTON = 0x01,	// Left mouse button
 		VK_RBUTTON = 0x02,	// Right mouse button
