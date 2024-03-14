@@ -38,7 +38,11 @@ namespace r2bix_input
 		//
 		//
 		//
-		KeyCodeTypeT operator[]( const std::size_t key_index ) const
+		KeyCodeTypeT& operator[]( const std::size_t key_index )
+		{
+			return mContainer[key_index];
+		}
+		const KeyCodeTypeT& operator[]( const std::size_t key_index ) const
 		{
 			return mContainer[key_index];
 		}
