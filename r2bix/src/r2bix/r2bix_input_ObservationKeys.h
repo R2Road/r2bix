@@ -49,6 +49,15 @@ namespace r2bix_input
 		}
 
 
+		//
+		//
+		//
+		void Add( const KeyValueT key_value )
+		{
+			mContainer.push_back( key_value );
+		}
+
+
 	private:
 		ContainerT mContainer;
 	};
