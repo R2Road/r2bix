@@ -9,7 +9,8 @@ namespace r2bix_input
 	class ObservationKeys
 	{
 	public:
-		using ContainerT = std::vector<KeyCodeTypeT>;
+		using KeyValueT = KeyCodeTypeT;
+		using ContainerT = std::vector<KeyValueT>;
 		using ConstIteratorT= ContainerT::const_iterator;
 
 
