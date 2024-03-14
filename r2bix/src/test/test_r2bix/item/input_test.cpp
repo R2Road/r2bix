@@ -364,8 +364,9 @@ namespace input_test
 		{
 			LS();
 
-			std::cout << "[ESC] Exit" << r2tm::linefeed;
-			std::cout << "[A] ..." << r2tm::linefeed;
+			std::cout << "[  ESC  ] Exit" << r2tm::linefeed;
+			std::cout << "[L Click] ..." << r2tm::linefeed;
+			std::cout << "[R Click] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager manager( 0, 0 );
 			r2bix_input::KeyboardListener keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
