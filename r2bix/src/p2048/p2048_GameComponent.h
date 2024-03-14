@@ -3,7 +3,7 @@
 #include "r2bix_component_Component.h"
 #include "r2bix_component_ComponentStaticID.h"
 
-#include "r2bix_input_KeyboardInputListener.h"
+#include "r2bix_input_KeyboardListener.h"
 
 #include "p2048_GameProcessor.h"
 #include "p2048_Stage.h"
