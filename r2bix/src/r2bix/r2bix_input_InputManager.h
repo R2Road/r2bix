@@ -31,8 +31,8 @@ namespace r2bix_input
 		}
 		void AddMouseListener( r2bix_input::MouseListener* const listener );
 		void RemoveMouseListener( r2bix_input::MouseListener* const listener );
-		void AddInputListener( r2bix_input::KeyboardListener* const listener );
-		void RemoveInputListener( r2bix_input::KeyboardListener* const listener );
+		void AddKeyboardListener( r2bix_input::KeyboardListener* const listener );
+		void RemoveKeyboardListener( r2bix_input::KeyboardListener* const listener );
 
 
 

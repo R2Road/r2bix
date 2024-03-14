@@ -36,11 +36,11 @@ namespace p2048
 			, 0x09		// tab - history
 		} )
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddInputListener(&mKeyboardListener);
+		GetOwnerNode().GetDirector().GetInputManager().AddKeyboardListener(&mKeyboardListener);
 	}
 	GameComponent::~GameComponent()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().RemoveInputListener( &mKeyboardListener );
+		GetOwnerNode().GetDirector().GetInputManager().RemoveKeyboardListener( &mKeyboardListener );
 	}
 
 	void GameComponent::Update( const float delta_time )

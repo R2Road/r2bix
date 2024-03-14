@@ -221,7 +221,7 @@ namespace r2bix_input_test
 				, 0x41		// a
 			} );
 
-			input_manager.AddInputListener( &keyboard_listener );
+			input_manager.AddKeyboardListener( &keyboard_listener );
 
 			LS();
 
@@ -281,7 +281,7 @@ namespace r2bix_input_test
 					, 0x57		// w
 					} );
 
-				input_manager.AddInputListener( &keyboard_listener );
+				input_manager.AddKeyboardListener( &keyboard_listener );
 
 				LS();
 
@@ -371,7 +371,7 @@ namespace r2bix_input_test
 			r2bix_input::KeyboardListener keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
 			r2bix_input::MouseListener mouse_listener( false, true, true );
 
-			manager.AddInputListener( &keyboard_listener );
+			manager.AddKeyboardListener( &keyboard_listener );
 			manager.AddMouseListener( &mouse_listener );
 
 			LS();
