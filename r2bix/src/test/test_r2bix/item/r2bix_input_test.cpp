@@ -5,6 +5,7 @@
 #include "r2bix_input_InputManager.h"
 #include "r2bix_input_MachineInputCollector.h"
 #include "r2bix_input_KeyboardInputListener.h"
+#include "r2bix_input_MouseListener.h"
 
 #include "r2_RectInt.h"
 #include "r2_FPSTimer.h"
@@ -346,5 +347,71 @@ namespace r2bix_input_test
 
 				return r2tm::eDoLeaveAction::Pause;
 			};
+	}
+
+
+
+	r2tm::TitleFunctionT MouseListener_KeyStatus::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Mouse Listener : KeyStatus";
+		};
+	}
+	r2tm::DoFunctionT MouseListener_KeyStatus::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			std::cout << "[ESC] Exit" << r2tm::linefeed;
+			std::cout << "[A] ..." << r2tm::linefeed;
+
+			r2bix_input::InputManager manager( 0, 0 );
+			r2bix_input::KeyboardInputListener keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
+			r2bix_input::MouseListener mouse_listener( false, true, true );
+
+			manager.AddInputListener( &keyboard_listener );
+			manager.AddMouseListener( &mouse_listener );
+
+			LS();
+
+			{
+				auto last_input_status_0 = mouse_listener.Get( 0 );
+				auto last_input_status_1 = mouse_listener.Get( 1 );
+				while( 1 )
+				{
+					manager.Update();
+
+					//
+					// ESC
+					//
+					if( keyboard_listener.IsPushed( 0 ) )
+					{
+						break;
+					}
+
+					//
+					// Left Click
+					//
+					if( last_input_status_0 != mouse_listener.Get( 0 ) )
+					{
+						last_input_status_0 = mouse_listener.Get( 0 );
+						std::cout << "key 0 status : " << static_cast< int >( last_input_status_0 ) << r2tm::linefeed;
+					}
+
+					//
+					// Right Click
+					//
+					if( last_input_status_1 != mouse_listener.Get( 1 ) )
+					{
+						last_input_status_1 = mouse_listener.Get( 1 );
+						std::cout << "key 1 status : " << static_cast< int >( last_input_status_1 ) << r2tm::linefeed;
+					}
+				}
+			}
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
 	}
 }

@@ -42,6 +42,12 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 		ret->AddItem( 's', r2bix_input_test::KeyboardInputListener_Play() );
 
 
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'z', r2bix_input_test::MouseListener_KeyStatus() );
+
+
 		ret->AddSplit();
 
 

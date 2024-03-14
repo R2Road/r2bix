@@ -20,7 +20,7 @@ namespace r2bix_input
 
 
 		MouseListener();
-		MouseListener( std::initializer_list<uint8_t> list );
+		MouseListener( const bool position_use, const bool left_click, const bool right_click );
 
 
 
@@ -59,6 +59,7 @@ namespace r2bix_input
 
 
 	private:
+		bool mbMousePositionUse;
 		ObservationKeys mObservationKeys;
 		std::vector<eKeyStatus> mKeyStatusContainer;
 	};

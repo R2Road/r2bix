@@ -52,6 +52,15 @@ namespace r2bix_input
 		//
 		//
 		//
+		std::size_t Size() const
+		{
+			return mContainer.size();
+		}
+
+
+		//
+		//
+		//
 		void Add( const KeyValueT key_value )
 		{
 			mContainer.push_back( key_value );

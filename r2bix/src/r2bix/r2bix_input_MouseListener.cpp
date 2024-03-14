@@ -3,13 +3,26 @@
 namespace r2bix_input
 {
 	MouseListener::MouseListener() :
-		  mObservationKeys()
+		  mbMousePositionUse( false)
+		, mObservationKeys()
 		, mKeyStatusContainer()
 	{}
-	MouseListener::MouseListener( std::initializer_list<uint8_t> list ) :
-		mObservationKeys( list )
-		, mKeyStatusContainer( list.size(), eKeyStatus::None )
-	{}
+	MouseListener::MouseListener( const bool position_use, const bool left_click, const bool right_click ) :
+		  mbMousePositionUse( position_use )
+		, mObservationKeys()
+		, mKeyStatusContainer()
+	{
+		if( left_click )
+		{
+			mObservationKeys.Add( r2bix_input::eKeyCode::VK_LBUTTON );
+		}
+		if( right_click )
+		{
+			mObservationKeys.Add( r2bix_input::eKeyCode::VK_RBUTTON );
+		}
+
+		mKeyStatusContainer.resize( mObservationKeys.Size(), eKeyStatus::None );
+	}
 
 	void MouseListener::Update( const std::bitset<255>& observation_key_states )
 	{
