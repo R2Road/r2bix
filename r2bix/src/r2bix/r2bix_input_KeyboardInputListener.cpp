@@ -2,6 +2,10 @@
 
 namespace r2bix_input
 {
+	KeyboardInputListener::KeyboardInputListener() :
+		  mObservationKeys()
+		, mKeyStatusContainer()
+	{}
 	KeyboardInputListener::KeyboardInputListener( std::initializer_list<uint8_t> list ) :
 		mObservationKeys( list )
 		, mKeyStatusContainer( list.size(), eKeyStatus::None )

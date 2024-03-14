@@ -16,6 +16,8 @@ namespace r2bix_input
 		//
 		//
 		//
+		ObservationKeys() : mContainer()
+		{}
 		ObservationKeys( std::initializer_list<uint8_t> list ) : mContainer( list )
 		{}
 
