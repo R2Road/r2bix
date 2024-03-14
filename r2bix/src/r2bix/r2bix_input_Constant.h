@@ -1,6 +1,8 @@
 #pragma once
 
+#include <bitset>
 #include <stdint.h>
+
 #include "r2/r2_PointInt.h"
 
 namespace r2bix_input
@@ -10,6 +12,8 @@ namespace r2bix_input
 
 	using CursorPoint = r2::PointInt;
 	CursorPoint GetCursorPoint();
+
+	using ObservationKeyStatesT = std::bitset<255>;
 
 	bool HasWindowFocus();
 

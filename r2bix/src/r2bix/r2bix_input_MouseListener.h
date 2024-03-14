@@ -1,7 +1,5 @@
 #pragma once
 
-#include <bitset>
-
 #include "r2bix_input_ObservationKeys.h"
 
 namespace r2bix_input
@@ -54,7 +52,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		void Update( const std::bitset<255>& observation_key_states );
+		void Update( const ObservationKeyStatesT& observation_key_states );
 
 
 

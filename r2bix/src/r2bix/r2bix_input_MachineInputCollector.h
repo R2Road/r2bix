@@ -1,7 +1,6 @@
 #pragma once
 
 #include <array>
-#include <bitset>
 
 #include "r2bix_input_Constant.h"
 #include "r2bix_input_ObservationKeys.h"
@@ -19,7 +18,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		const std::bitset<255>& GetObservationKeyStates() const
+		const ObservationKeyStatesT& GetObservationKeyStates() const
 		{
 			return mObservationKeyStates;
 		}
@@ -71,7 +70,7 @@ namespace r2bix_input
 		CursorPoint mOffset;
 
 		std::array<KeyCodeTypeT, 255> mObservationKeyList;
-		std::bitset<255> mObservationKeyStates;
+		ObservationKeyStatesT mObservationKeyStates;
 
 		CursorPoint mCursorPoint_Last;
 		CursorPoint mCursorPoint;

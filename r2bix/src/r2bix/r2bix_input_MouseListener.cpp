@@ -24,7 +24,7 @@ namespace r2bix_input
 		mKeyStatusContainer.resize( mObservationKeys.Size(), eKeyStatus::None );
 	}
 
-	void MouseListener::Update( const std::bitset<255>& observation_key_states )
+	void MouseListener::Update( const ObservationKeyStatesT& observation_key_states )
 	{
 		for( std::size_t i = 0u, end = mKeyStatusContainer.size(); end > i; ++i )
 		{

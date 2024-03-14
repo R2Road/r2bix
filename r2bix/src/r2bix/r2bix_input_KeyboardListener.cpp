@@ -11,7 +11,7 @@ namespace r2bix_input
 		, mKeyStatusContainer( list.size(), eKeyStatus::None )
 	{}
 
-	void KeyboardListener::Update( const std::bitset<255>& observation_key_states )
+	void KeyboardListener::Update( const ObservationKeyStatesT& observation_key_states )
 	{
 		for( std::size_t i = 0u, end = mKeyStatusContainer.size(); end > i; ++i )
 		{
