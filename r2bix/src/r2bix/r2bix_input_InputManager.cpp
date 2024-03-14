@@ -1,12 +1,14 @@
 #include "r2bix_input_InputManager.h"
 
 #include "r2bix_input_KeyboardInputListener.h"
+#include "r2bix_input_MouseListener.h"
 
 namespace r2bix_input
 {
 	InputManager::InputManager( const short offset_x, const short offset_y ) :
 		  mMachineInputCollector( offset_x, offset_y )
 		, mKeyboardInputListener( nullptr )
+		, mMouseListener( nullptr )
 	{}
 
 	void InputManager::Update()
@@ -19,6 +21,10 @@ namespace r2bix_input
 		//
 		// 키 상태 업데이트
 		//
+		if( mMouseListener )
+		{
+			mKeyboardInputListener->Update( mMachineInputCollector.GetObservationKeyStates() );
+		}
 		if( mKeyboardInputListener )
 		{
 			mKeyboardInputListener->Update( mMachineInputCollector.GetObservationKeyStates() );
@@ -27,6 +33,30 @@ namespace r2bix_input
 
 
 
+	void InputManager::AddMouseListener( r2bix_input::MouseListener* const listener )
+	{
+		RemoveMouseListener( listener );
+
+		mMouseListener = listener;
+
+		mMachineInputCollector.AddObservationKeys( listener->GetObservationKeys() );
+	}
+	void InputManager::RemoveMouseListener( r2bix_input::MouseListener* const listener )
+	{
+		if( nullptr == listener )
+		{
+			return;
+		}
+
+		if( listener != mMouseListener )
+		{
+			return;
+		}
+
+		mMachineInputCollector.RemoveObservationKeys( mMouseListener->GetObservationKeys() );
+
+		mMouseListener = nullptr;
+	}
 	void InputManager::AddInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
 	{
 		RemoveInputListener( mKeyboardInputListener );
