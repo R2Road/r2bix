@@ -26,7 +26,7 @@ namespace p2048
 		, mYouWinNode( nullptr )
 		, mGameOverNode( nullptr )
 
-		, mKeyboardInputListener( {
+		, mKeyboardListener( {
 			0x1B		// esc
 			, 0x41		// a - left
 			, 0x44		// d - right
@@ -36,11 +36,11 @@ namespace p2048
 			, 0x09		// tab - history
 		} )
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddInputListener(&mKeyboardInputListener);
+		GetOwnerNode().GetDirector().GetInputManager().AddInputListener(&mKeyboardListener);
 	}
 	GameComponent::~GameComponent()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().RemoveInputListener( &mKeyboardInputListener );
+		GetOwnerNode().GetDirector().GetInputManager().RemoveInputListener( &mKeyboardListener );
 	}
 
 	void GameComponent::Update( const float delta_time )
@@ -85,19 +85,19 @@ namespace p2048
 		{
 			// Input Process, Game End Check
 			r2::Direction4Sequential::eState input_direction = r2::Direction4Sequential::eState::NONE;
-			if( mKeyboardInputListener.IsPushed( 1 ) ) // A
+			if( mKeyboardListener.IsPushed( 1 ) ) // A
 			{
 				input_direction = r2::Direction4Sequential::eState::Left;
 			}
-			else if( mKeyboardInputListener.IsPushed( 2 ) ) // D
+			else if( mKeyboardListener.IsPushed( 2 ) ) // D
 			{
 				input_direction = r2::Direction4Sequential::eState::Right;
 			}
-			else if( mKeyboardInputListener.IsPushed( 3 ) ) // S
+			else if( mKeyboardListener.IsPushed( 3 ) ) // S
 			{
 				input_direction = r2::Direction4Sequential::eState::Up;
 			}
-			else if( mKeyboardInputListener.IsPushed( 4 ) ) // W
+			else if( mKeyboardListener.IsPushed( 4 ) ) // W
 			{
 				input_direction = r2::Direction4Sequential::eState::Down;
 			}
@@ -134,20 +134,20 @@ namespace p2048
 			break;
 		}
 
-		if( mKeyboardInputListener.IsPushed( 6 ) )
+		if( mKeyboardListener.IsPushed( 6 ) )
 		{
 			mStageViewComponent4History->GetOwnerNode().SetVisible( true );
 		}
-		else if( mKeyboardInputListener.IsRelease( 6 ) )
+		else if( mKeyboardListener.IsRelease( 6 ) )
 		{
 			mStageViewComponent4History->GetOwnerNode().SetVisible( false );
 		}
 
-		if( mKeyboardInputListener.IsPushed( 5 ) )
+		if( mKeyboardListener.IsPushed( 5 ) )
 		{
 			mStep = eStep::GameReset;
 		}
-		else if( mKeyboardInputListener.IsRelease( 0 ) )
+		else if( mKeyboardListener.IsRelease( 0 ) )
 		{
 			r2bix_utility::ClearCInputBuffer();
 			GetOwnerNode().GetDirector().RequestAbort();

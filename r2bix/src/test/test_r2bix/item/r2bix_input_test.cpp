@@ -203,7 +203,7 @@ namespace r2bix_input_test
 	{
 		return []()->const char*
 		{
-			return "Keyboard Input Listener : KeyStatus";
+			return "Keyboard Listener : KeyStatus";
 		};
 	}
 	r2tm::DoFunctionT KeyboardInputListener_KeyStatus::GetDoFunction() const
@@ -216,17 +216,17 @@ namespace r2bix_input_test
 			std::cout << "[A] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager input_manager( 0, 0 );
-			r2bix_input::KeyboardInputListener keyboard_input_listener( {
+			r2bix_input::KeyboardListener keyboard_listener( {
 				0x1B		// esc
 				, 0x41		// a
 			} );
 
-			input_manager.AddInputListener( &keyboard_input_listener );
+			input_manager.AddInputListener( &keyboard_listener );
 
 			LS();
 
 			{
-				auto last_input_status = keyboard_input_listener.Get( 1 );
+				auto last_input_status = keyboard_listener.Get( 1 );
 				while( 1 )
 				{
 					input_manager.Update();
@@ -234,7 +234,7 @@ namespace r2bix_input_test
 					//
 					// ESC
 					//
-					if( keyboard_input_listener.IsPushed( 0 ) )
+					if( keyboard_listener.IsPushed( 0 ) )
 					{
 						break;
 					}
@@ -242,9 +242,9 @@ namespace r2bix_input_test
 					//
 					// A
 					//
-					if( last_input_status != keyboard_input_listener.Get( 1 ) )
+					if( last_input_status != keyboard_listener.Get( 1 ) )
 					{
-						last_input_status = keyboard_input_listener.Get( 1 );
+						last_input_status = keyboard_listener.Get( 1 );
 						std::cout << "status : " << static_cast<int>( last_input_status ) << r2tm::linefeed;
 					}
 				}
@@ -260,7 +260,7 @@ namespace r2bix_input_test
 	{
 		return []()->const char*
 			{
-				return "Keyboard Input Listener : Play";
+				return "Keyboard Listener : Play";
 			};
 	}
 	r2tm::DoFunctionT KeyboardInputListener_Play::GetDoFunction() const
@@ -273,7 +273,7 @@ namespace r2bix_input_test
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
 				r2bix_input::InputManager input_manager( 0, 0 );
-				r2bix_input::KeyboardInputListener keyboard_input_listener( {
+				r2bix_input::KeyboardListener keyboard_listener( {
 					0x1B		// esc
 					, 0x41		// a
 					, 0x44		// d
@@ -281,7 +281,7 @@ namespace r2bix_input_test
 					, 0x57		// w
 					} );
 
-				input_manager.AddInputListener( &keyboard_input_listener );
+				input_manager.AddInputListener( &keyboard_listener );
 
 				LS();
 
@@ -301,7 +301,7 @@ namespace r2bix_input_test
 						//
 						// ESC
 						//
-						if( keyboard_input_listener.IsPushed( 0 ) )
+						if( keyboard_listener.IsPushed( 0 ) )
 						{
 							break;
 						}
@@ -310,19 +310,19 @@ namespace r2bix_input_test
 						{
 							temp_pos = pos;
 
-							if( keyboard_input_listener.HasInput( 1 ) )
+							if( keyboard_listener.HasInput( 1 ) )
 							{
 								--temp_pos.x;
 							}
-							if( keyboard_input_listener.HasInput( 2 ) )
+							if( keyboard_listener.HasInput( 2 ) )
 							{
 								++temp_pos.x;
 							}
-							if( keyboard_input_listener.HasInput( 4 ) )
+							if( keyboard_listener.HasInput( 4 ) )
 							{
 								--temp_pos.y;
 							}
-							if( keyboard_input_listener.HasInput( 3 ) )
+							if( keyboard_listener.HasInput( 3 ) )
 							{
 								++temp_pos.y;
 							}
@@ -368,7 +368,7 @@ namespace r2bix_input_test
 			std::cout << "[A] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager manager( 0, 0 );
-			r2bix_input::KeyboardInputListener keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
+			r2bix_input::KeyboardListener keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
 			r2bix_input::MouseListener mouse_listener( false, true, true );
 
 			manager.AddInputListener( &keyboard_listener );

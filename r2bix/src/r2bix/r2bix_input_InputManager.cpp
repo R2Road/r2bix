@@ -7,7 +7,7 @@ namespace r2bix_input
 {
 	InputManager::InputManager( const short offset_x, const short offset_y ) :
 		  mMachineInputCollector( offset_x, offset_y )
-		, mKeyboardInputListener( nullptr )
+		, mKeyboardListener( nullptr )
 		, mMouseListener( nullptr )
 	{}
 
@@ -25,9 +25,9 @@ namespace r2bix_input
 		{
 			mMouseListener->Update( mMachineInputCollector.GetObservationKeyStates() );
 		}
-		if( mKeyboardInputListener )
+		if( mKeyboardListener )
 		{
-			mKeyboardInputListener->Update( mMachineInputCollector.GetObservationKeyStates() );
+			mKeyboardListener->Update( mMachineInputCollector.GetObservationKeyStates() );
 		}
 	}
 
@@ -57,28 +57,28 @@ namespace r2bix_input
 
 		mMouseListener = nullptr;
 	}
-	void InputManager::AddInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
+	void InputManager::AddInputListener( r2bix_input::KeyboardListener* const listener )
 	{
-		RemoveInputListener( mKeyboardInputListener );
+		RemoveInputListener( mKeyboardListener );
 
-		mKeyboardInputListener = keyboard_input_listener;
+		mKeyboardListener = listener;
 
-		mMachineInputCollector.AddObservationKeys( mKeyboardInputListener->GetObservationKeys() );
+		mMachineInputCollector.AddObservationKeys( mKeyboardListener->GetObservationKeys() );
 	}
-	void InputManager::RemoveInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener )
+	void InputManager::RemoveInputListener( r2bix_input::KeyboardListener* const listener )
 	{
-		if( nullptr == keyboard_input_listener )
+		if( nullptr == listener )
 		{
 			return;
 		}
 
-		if( keyboard_input_listener != mKeyboardInputListener )
+		if( listener != mKeyboardListener )
 		{
 			return;
 		}
 
-		mMachineInputCollector.RemoveObservationKeys( mKeyboardInputListener->GetObservationKeys() );
+		mMachineInputCollector.RemoveObservationKeys( mKeyboardListener->GetObservationKeys() );
 
-		mKeyboardInputListener = nullptr;
+		mKeyboardListener = nullptr;
 	}
 }
