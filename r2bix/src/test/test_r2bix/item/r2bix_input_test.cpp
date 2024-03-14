@@ -406,7 +406,7 @@ namespace r2bix_input_test
 					if( last_input_status_1 != mouse_listener.Get( 1 ) )
 					{
 						last_input_status_1 = mouse_listener.Get( 1 );
-						std::cout << "key 1 status : " << static_cast< int >( last_input_status_1 ) << r2tm::linefeed;
+						std::cout << "\t\t\tkey 1 status : " << static_cast< int >( last_input_status_1 ) << r2tm::linefeed;
 					}
 				}
 			}
