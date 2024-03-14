@@ -127,7 +127,7 @@
     <ClCompile Include="src\test\test_r2bix\item\texture_table_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\texture_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\visible_resource_research.cpp" />
-    <ClCompile Include="src\test\test_r2bix\item\r2bix_input_test.cpp" />
+    <ClCompile Include="src\test\test_r2bix\item\input_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\ActionMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\CameraMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\ColorMenu.cpp" />
@@ -321,7 +321,7 @@
     <ClInclude Include="src\test\test_r2bix\item\texture_table_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\texture_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\visible_resource_research.h" />
-    <ClInclude Include="src\test\test_r2bix\item\r2bix_input_test.h" />
+    <ClInclude Include="src\test\test_r2bix\item\input_test.h" />
     <ClInclude Include="src\test\test_r2bix\menu\ActionMenu.h" />
     <ClInclude Include="src\test\test_r2bix\menu\CameraMenu.h" />
     <ClInclude Include="src\test\test_r2bix\menu\ColorMenu.h" />

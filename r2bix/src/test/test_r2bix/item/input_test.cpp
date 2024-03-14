@@ -1,4 +1,4 @@
-#include "r2bix_input_test.h"
+#include "input_test.h"
 
 #include <algorithm>
 

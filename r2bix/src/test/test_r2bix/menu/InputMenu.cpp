@@ -3,7 +3,7 @@
 #include "r2tm/r2tm_Director.h"
 
 #include "test/test_r2bix/item/key_code_viewer.h"
-#include "test/test_r2bix/item/r2bix_input_test.h"
+#include "test/test_r2bix/item/input_test.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
