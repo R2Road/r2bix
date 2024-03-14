@@ -12,7 +12,7 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowUtility.h"
 
-namespace r2bix_input_test
+namespace input_test
 {
 	r2tm::TitleFunctionT MachineeInputCollector_Keyboard::GetTitleFunction() const
 	{
