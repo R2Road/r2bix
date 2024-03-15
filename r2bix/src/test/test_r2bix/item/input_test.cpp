@@ -415,4 +415,68 @@ namespace input_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT MouseListener_Cursor::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Mouse Listener : Cursor";
+		};
+	}
+	r2tm::DoFunctionT MouseListener_Cursor::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			std::cout << "[ ESC  ] Exit" << r2tm::linefeed;
+			std::cout << "[Cursor] ..." << r2tm::linefeed;
+
+			r2bix_input::InputManager manager( 0, 0 );
+			r2bix_input::KeyboardListener keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
+			r2bix_input::MouseListener mouse_listener( true, false, false );
+
+			manager.AddKeyboardListener( &keyboard_listener );
+			manager.AddMouseListener( &mouse_listener );
+
+			LS();
+
+			{
+				while( 1 )
+				{
+					manager.Update();
+
+					//
+					// ESC
+					//
+					if( keyboard_listener.IsPushed( 0 ) )
+					{
+						break;
+					}
+
+					//
+					// Cursor Move
+					//
+					if( mouse_listener.GetCursorPoint_Last() != mouse_listener.GetCursorPoint_Current() )
+					{
+						r2tm::WindowUtility::MoveCursorPoint( 0, 10 );
+						std::cout << "                                     ";
+
+						r2tm::WindowUtility::MoveCursorPoint( 0, 10 );
+						std::cout
+							<< "X : "
+							<< static_cast< int >( mouse_listener.GetCursorPoint_Current().GetX() )
+							<< "\tY : "
+							<< static_cast< int >( mouse_listener.GetCursorPoint_Current().GetY() )
+							<< "         "
+							<< r2tm::linefeed;
+					}
+				}
+			}
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

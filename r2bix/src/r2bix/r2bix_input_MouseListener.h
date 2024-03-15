@@ -47,18 +47,31 @@ namespace r2bix_input
 			return ( eKeyStatus::None < mKeyStatusContainer[key_index] );
 		}
 
+		CursorPoint GetCursorPoint_Current() const
+		{
+			return mCursorPoint_Current;
+		}
+		CursorPoint GetCursorPoint_Last() const
+		{
+			return mCursorPoint_Last;
+		}
 
 
+
 		//
 		//
 		//
-		void Update( const ObservationKeyStatesT& observation_key_states );
+		void Update( const ObservationKeyStatesT& observation_key_states, const r2bix_input::CursorPoint cursor_point );
 
 
 
 	private:
 		bool mbMousePositionUse;
+		r2bix_input::CursorPoint mCursorPoint_Current;
+		r2bix_input::CursorPoint mCursorPoint_Last;
+
 		ObservationKeys mObservationKeys;
 		std::vector<eKeyStatus> mKeyStatusContainer;
+
 	};
 }

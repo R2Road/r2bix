@@ -46,6 +46,7 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 
 
 		ret->AddItem( 'z', input_test::MouseListener_KeyStatus() );
+		ret->AddItem( 'x', input_test::MouseListener_Cursor() );
 
 
 		ret->AddSplit();

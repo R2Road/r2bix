@@ -23,7 +23,7 @@ namespace r2bix_input
 		//
 		if( mMouseListener )
 		{
-			mMouseListener->Update( mMachineInputCollector.GetObservationKeyStates() );
+			mMouseListener->Update( mMachineInputCollector.GetObservationKeyStates(), mMachineInputCollector.GetCursorPoint() );
 		}
 		if( mKeyboardListener )
 		{
