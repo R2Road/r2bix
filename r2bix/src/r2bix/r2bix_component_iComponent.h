@@ -28,7 +28,9 @@ namespace r2bix_component
 	class iComponent
 	{
 	protected:
-		iComponent( r2bix_node::Node& owner_node ) : mOwnerNode( owner_node )
+		iComponent( r2bix_node::Node& owner_node ) :
+			  mOwnerNode( owner_node )
+			, mbActivate( false )
 		{}
 	public:
 		virtual ~iComponent()
@@ -46,6 +48,11 @@ namespace r2bix_component
 
 		virtual int GetStaticID() const = 0;
 
+		bool IsActivate() const
+		{
+			return mbActivate;
+		}
+
 
 
 		//
@@ -55,6 +62,13 @@ namespace r2bix_component
 		{
 			return true;
 		}
+		//
+		// 
+		//
+		virtual void Activate()
+		{}
+		virtual void Deactivate()
+		{}
 		virtual void Update( const float /*delta_time*/ )
 		{}
 		virtual void Render( const r2bix_render::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
@@ -63,5 +77,6 @@ namespace r2bix_component
 
 	protected:
 		r2bix_node::Node& mOwnerNode;
+		bool mbActivate;
 	};
 }

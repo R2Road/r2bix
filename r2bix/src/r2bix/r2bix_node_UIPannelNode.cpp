@@ -29,6 +29,23 @@ namespace r2bix_node
 			ui_pannel_component->SetCustomTextureComponent( custome_texture_component );
 			ui_pannel_component->SetTextureRenderComponent( texture_render_component );
 
+
+			//
+			// È°¼ºÈ­
+			//
+			if( true )
+			{
+				custome_texture_component->Activate();
+			}
+			if( true )
+			{
+				texture_render_component->Activate();
+			}
+			if( true )
+			{
+				ui_pannel_component->Activate();
+			}
+
 		}
 
 		return ret;
