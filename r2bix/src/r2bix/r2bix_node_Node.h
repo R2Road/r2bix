@@ -1,12 +1,3 @@
-#pragma once
-
-#include <list>
-#include <memory>
-#include <type_traits>
-
-#include "r2_PointInt.h"
-#include "r2bix_component_TransformComponent.h"
-
 //
 // # 2022.02.28 by R2Road
 //
@@ -15,6 +6,15 @@
 // 노드와 컴포넌트를 조합하여 특정 기능을 가진 표준 노드를 제작한다.
 // 사용자 정의 노드의 제작은 가급적 없도록 노력하자.
 //
+
+#pragma once
+
+#include <list>
+#include <memory>
+#include <type_traits>
+
+#include "r2_PointInt.h"
+#include "r2bix_component_TransformComponent.h"
 
 namespace r2bix
 {
@@ -53,6 +53,9 @@ namespace r2bix_node
 		// 생성시 1회 불리는 자기 초기화 함수
 		//
 		virtual bool Init();
+		//
+		// 보유 컴포넌트, 자식 노드의 Update 호출.
+		//
 		virtual void Update( const float delta_time );
 		virtual void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset );
 
