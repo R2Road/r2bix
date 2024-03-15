@@ -30,11 +30,14 @@ namespace r2bix_component
 	protected:
 		iComponent( r2bix_node::Node& owner_node ) : mOwnerNode( owner_node )
 		{}
-
 	public:
 		virtual ~iComponent()
 		{}
 
+
+		//
+		//
+		//
 	public:
 		r2bix_node::Node& GetOwnerNode() const
 		{
@@ -42,6 +45,8 @@ namespace r2bix_component
 		}
 
 		virtual int GetStaticID() const = 0;
+
+
 
 		//
 		// 생성시 1회 불리는 자기 초기화 함수
@@ -54,6 +59,7 @@ namespace r2bix_component
 		{}
 		virtual void Render( const r2bix_render::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
 		{}
+
 
 	protected:
 		r2bix_node::Node& mOwnerNode;
