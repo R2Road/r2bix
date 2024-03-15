@@ -14,10 +14,10 @@ namespace r2bix_component
 		using MyT = T;
 		using MyUp = std::unique_ptr<MyT>;
 
+
 	protected:
 		Component( r2bix_node::Node& owner_node ) : r2bix_component::iComponent( owner_node )
 		{}
-
 	private:
 		static MyUp Create( r2bix_node::Node& owner_node )
 		{
@@ -29,6 +29,7 @@ namespace r2bix_component
 
 			return ret;
 		}
+
 
 	public:
 		int GetStaticID() const override
