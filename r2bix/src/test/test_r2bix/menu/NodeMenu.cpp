@@ -48,6 +48,7 @@ r2tm::WriteFunctionT NodeMenu::GetWriteFunction() const
 
 
 		ret->AddItem( 'a', node_test::UIButton() );
+		ret->AddItem( 's', node_test::UIPannel() );
 
 
 
