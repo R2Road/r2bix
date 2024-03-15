@@ -41,12 +41,12 @@ namespace r2bix_component
 		//
 		//
 	public:
+		virtual int GetStaticID() const = 0;
+
 		r2bix_node::Node& GetOwnerNode() const
 		{
 			return mOwnerNode;
 		}
-
-		virtual int GetStaticID() const = 0;
 
 		bool IsActivate() const
 		{
