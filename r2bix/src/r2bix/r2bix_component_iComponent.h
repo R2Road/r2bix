@@ -36,6 +36,9 @@ namespace r2bix_component
 
 		virtual int GetStaticID() const = 0;
 
+		//
+		// 생성시 1회 불리는 자기 초기화 함수
+		//
 		virtual bool Init()
 		{
 			return true;

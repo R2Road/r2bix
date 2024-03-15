@@ -49,6 +49,9 @@ namespace r2bix_node
 	static std::unique_ptr<Node> Create( r2bix::Director& director );
 
 	public:
+		//
+		// 생성시 1회 불리는 자기 초기화 함수
+		//
 		virtual bool Init();
 		virtual void Update( const float delta_time );
 		virtual void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset );
