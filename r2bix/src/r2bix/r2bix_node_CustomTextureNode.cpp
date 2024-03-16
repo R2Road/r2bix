@@ -13,15 +13,34 @@ namespace r2bix_node
 		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
-			//
-			//
-			//
-			{
-				auto custome_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
-				auto texture_render_component = ret->AddComponent<r2bix_component::TextureRenderComponent>();
 
-				texture_render_component->SetTexture( custome_texture_component->GetTexture() );
+			//
+			// 생성
+			//
+			auto custome_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
+			auto texture_render_component = ret->AddComponent<r2bix_component::TextureRenderComponent>();
+
+
+
+			//
+			// 설정
+			//
+			texture_render_component->SetTexture( custome_texture_component->GetTexture() );
+
+
+
+			//
+			// 활성화
+			//
+			if( true )
+			{
+				custome_texture_component->Activate();
 			}
+			if( true )
+			{
+				texture_render_component->Activate();
+			}
+
 		}
 
 		return ret;

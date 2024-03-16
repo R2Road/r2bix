@@ -16,7 +16,7 @@ namespace r2bix_node
 			//
 			// 생성
 			//
-			auto custome_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
+			auto custom_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
 			auto texture_render_component = ret->AddComponent<r2bix_component::TextureRenderComponent>();
 			auto ui_pannel_component = ret->AddComponent<r2bix_component::UIPannelComponent>();
 
@@ -24,9 +24,9 @@ namespace r2bix_node
 			//
 			// 설정
 			//
-			texture_render_component->SetTexture( custome_texture_component->GetTexture() );
+			texture_render_component->SetTexture( custom_texture_component->GetTexture() );
 
-			ui_pannel_component->SetCustomTextureComponent( custome_texture_component );
+			ui_pannel_component->SetCustomTextureComponent( custom_texture_component );
 			ui_pannel_component->SetTextureRenderComponent( texture_render_component );
 
 
@@ -35,7 +35,7 @@ namespace r2bix_node
 			//
 			if( true )
 			{
-				custome_texture_component->Activate();
+				custom_texture_component->Activate();
 			}
 			if( true )
 			{

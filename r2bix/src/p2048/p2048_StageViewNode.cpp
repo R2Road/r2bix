@@ -19,12 +19,21 @@ namespace p2048
 		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
-			auto stage_view_component = ret->AddComponent<p2048::StageViewComponent>();
 
 			//
-			// Background
+			// 생성
+			//
+			p2048::StageViewComponent* stage_view_component = ret->AddComponent<p2048::StageViewComponent>();
+
+
+
+			//
+			// 설정
 			//
 			{
+				//
+				// Background
+				//
 				auto node = ret->AddChild<r2bix_node::CustomTextureNode>( std::numeric_limits<int>::min() );
 				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 				node->mTransformComponent->SetPosition( -1, -1 );
@@ -38,14 +47,24 @@ namespace p2048
 				{
 					node->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
 				}
+
+				//
+				// Debug
+				//
+				if( p2048::Config::GetNodeConfig().pivot )
+				{
+					ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
+				}
 			}
 
+
+
 			//
-			// Debug
+			// 활성화
 			//
-			if( p2048::Config::GetNodeConfig().pivot )
+			if( true )
 			{
-				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
+				stage_view_component->Activate();
 			}
 		}
 
