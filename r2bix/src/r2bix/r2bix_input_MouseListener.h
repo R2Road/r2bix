@@ -4,7 +4,7 @@
 
 namespace r2bix_input
 {
-	class MouseListener
+	class Listener4Mouse
 	{
 	public:
 		enum class eKeyStatus
@@ -17,8 +17,8 @@ namespace r2bix_input
 
 
 
-		MouseListener();
-		MouseListener( const bool position_use, const bool left_click, const bool right_click );
+		Listener4Mouse();
+		Listener4Mouse( const bool position_use, const bool left_click, const bool right_click );
 
 
 

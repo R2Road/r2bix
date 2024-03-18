@@ -370,7 +370,7 @@ namespace input_test
 
 			r2bix_input::InputManager manager( 0, 0 );
 			r2bix_input::KeyboardListener keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
-			r2bix_input::MouseListener mouse_listener( false, true, true );
+			r2bix_input::Listener4Mouse mouse_listener( false, true, true );
 
 			manager.AddKeyboardListener( &keyboard_listener );
 			manager.AddMouseListener( &mouse_listener );
@@ -436,7 +436,7 @@ namespace input_test
 
 			r2bix_input::InputManager manager( 0, 0 );
 			r2bix_input::KeyboardListener keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
-			r2bix_input::MouseListener mouse_listener( true, false, false );
+			r2bix_input::Listener4Mouse mouse_listener( true, false, false );
 
 			manager.AddKeyboardListener( &keyboard_listener );
 			manager.AddMouseListener( &mouse_listener );

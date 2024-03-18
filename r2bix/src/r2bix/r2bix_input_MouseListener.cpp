@@ -2,14 +2,14 @@
 
 namespace r2bix_input
 {
-	MouseListener::MouseListener() :
+	Listener4Mouse::Listener4Mouse() :
 		  mbMousePositionUse( false)
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
 		, mObservationKeys()
 		, mKeyStatusContainer()
 	{}
-	MouseListener::MouseListener( const bool position_use, const bool left_click, const bool right_click ) :
+	Listener4Mouse::Listener4Mouse( const bool position_use, const bool left_click, const bool right_click ) :
 		  mbMousePositionUse( position_use )
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
@@ -28,7 +28,7 @@ namespace r2bix_input
 		mKeyStatusContainer.resize( mObservationKeys.Size(), eKeyStatus::None );
 	}
 
-	void MouseListener::Update( const ObservationKeyStatesT& observation_key_states, const r2bix_input::CursorPoint cursor_point )
+	void Listener4Mouse::Update( const ObservationKeyStatesT& observation_key_states, const r2bix_input::CursorPoint cursor_point )
 	{
 		if( mbMousePositionUse )
 		{

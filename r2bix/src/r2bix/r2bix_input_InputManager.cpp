@@ -33,7 +33,7 @@ namespace r2bix_input
 
 
 
-	void InputManager::AddMouseListener( r2bix_input::MouseListener* const listener )
+	void InputManager::AddMouseListener( r2bix_input::Listener4Mouse* const listener )
 	{
 		RemoveMouseListener( listener );
 
@@ -41,7 +41,7 @@ namespace r2bix_input
 
 		mMachineInputCollector.AddObservationKeys( listener->GetObservationKeys() );
 	}
-	void InputManager::RemoveMouseListener( r2bix_input::MouseListener* const listener )
+	void InputManager::RemoveMouseListener( r2bix_input::Listener4Mouse* const listener )
 	{
 		if( nullptr == listener )
 		{
