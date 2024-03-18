@@ -1,5 +1,7 @@
 #pragma once
 
+#include <list>
+
 #include "r2bix_input_MachineInputCollector.h"
 
 namespace r2bix_input
@@ -26,8 +28,8 @@ namespace r2bix_input
 		//
 		void ClearListener()
 		{
-			mKeyboardListener = nullptr;
-			mMouseListener = nullptr;
+			mKeyboardListener.clear();
+			mMouseListener.clear();
 		}
 		void AddMouseListener( r2bix_input::Listener4Mouse* const listener );
 		void RemoveMouseListener( r2bix_input::Listener4Mouse* const listener );
@@ -39,7 +41,7 @@ namespace r2bix_input
 	public:
 		MachineInputCollector mMachineInputCollector;
 
-		Listener4Keyboard* mKeyboardListener;
-		Listener4Mouse* mMouseListener;
+		std::list<Listener4Keyboard*> mKeyboardListener;
+		std::list<Listener4Mouse*> mMouseListener;
 	};
 }
