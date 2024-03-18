@@ -542,6 +542,15 @@ namespace input_test
 				EXPECT_EQ( ( *m.GetListenerContainer4Mouse().begin() ), &l_3 );
 				EXPECT_EQ( ( *( ++m.GetListenerContainer4Mouse().begin() ) ), &l_1 );
 				EXPECT_EQ( ( *( ++++m.GetListenerContainer4Mouse().begin() ) ), &l_2 );
+
+				LF();
+
+				OUTPUT_COMMENT( "Z ORder" );
+				for( const auto l : m.GetListenerContainer4Mouse() )
+				{
+					std::cout << l->GetOrder() << " ";
+				}
+				LF();
 			}
 
 			LS();
@@ -566,6 +575,15 @@ namespace input_test
 				EXPECT_EQ( ( *m.GetListenerContainer4Keyboard().begin() ), &l_3 );
 				EXPECT_EQ( ( *( ++m.GetListenerContainer4Keyboard().begin() ) ), &l_1);
 				EXPECT_EQ( ( *( ++++m.GetListenerContainer4Keyboard().begin() ) ), &l_2);
+
+				LF();
+
+				OUTPUT_COMMENT( "Z ORder" );
+				for( const auto l : m.GetListenerContainer4Keyboard() )
+				{
+					std::cout << l->GetOrder() << " ";
+				}
+				LF();
 			}
 
 			LS();
