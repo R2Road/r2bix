@@ -9,6 +9,7 @@
 
 #include "r2_RectInt.h"
 #include "r2_FPSTimer.h"
+#include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowUtility.h"
 
@@ -481,6 +482,81 @@ namespace input_test
 					}
 				}
 			}
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT InputManager_Order::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "InputManager : Order";
+		};
+	}
+	r2tm::DoFunctionT InputManager_Order::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_NOTE( "높은 Order 값을 가지면 목록의 앞으로 온다.");
+
+			LS();
+
+			DECLARATION_MAIN( r2bix_input::InputManager m( 0, 0 ) );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Mouse" );
+
+				LF();
+
+				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_1( 2, false, false, false ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_2( 1, false, false, false ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_3( 3, false, false, false ) );
+
+				LF();
+
+				PROCESS_MAIN( m.AddListener4Mouse( &l_1 ) );
+				PROCESS_MAIN( m.AddListener4Mouse( &l_2 ) );
+				PROCESS_MAIN( m.AddListener4Mouse( &l_3 ) );
+
+				LF();
+
+				EXPECT_EQ( ( *m.GetListenerContainer4Mouse().begin() ), &l_3 );
+				EXPECT_EQ( ( *( ++m.GetListenerContainer4Mouse().begin() ) ), &l_1 );
+				EXPECT_EQ( ( *( ++++m.GetListenerContainer4Mouse().begin() ) ), &l_2 );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Keyboard" );
+
+				LF();
+
+				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_1( 2, {} ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_2( 1, {} ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_3( 3, {} ) );
+
+				LF();
+
+				PROCESS_MAIN( m.AddListener4Keyboard( &l_1 ) );
+				PROCESS_MAIN( m.AddListener4Keyboard( &l_2 ) );
+				PROCESS_MAIN( m.AddListener4Keyboard( &l_3 ) );
+
+				LF();
+
+				EXPECT_EQ( ( *m.GetListenerContainer4Keyboard().begin() ), &l_3 );
+				EXPECT_EQ( ( *( ++m.GetListenerContainer4Keyboard().begin() ) ), &l_1);
+				EXPECT_EQ( ( *( ++++m.GetListenerContainer4Keyboard().begin() ) ), &l_2);
+			}
+
+			LS();
 
 			return r2tm::eDoLeaveAction::Pause;
 		};

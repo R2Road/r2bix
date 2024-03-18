@@ -64,11 +64,11 @@ namespace r2bix_input
 
 			if( mListenerContainer4Mouse.end() == pivot_itr )
 			{
-				mListenerContainer4Mouse.insert( pivot_itr, listener );
+				mListenerContainer4Mouse.push_back( listener );
 			}
 			else
 			{
-				mListenerContainer4Mouse.push_back( listener );
+				mListenerContainer4Mouse.insert( pivot_itr, listener );
 			}
 		}
 
@@ -140,11 +140,11 @@ namespace r2bix_input
 
 			if( mListenerContainer4Keyboard.end() == pivot_itr )
 			{
-				mListenerContainer4Keyboard.insert( pivot_itr, listener );
+				mListenerContainer4Keyboard.push_back( listener );
 			}
 			else
 			{
-				mListenerContainer4Keyboard.push_back( listener );
+				mListenerContainer4Keyboard.insert( pivot_itr, listener );
 			}
 		}
 

@@ -40,13 +40,14 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 
 		ret->AddItem( 'a', input_test::KeyboardInputListener_KeyStatus() );
 		ret->AddItem( 's', input_test::KeyboardInputListener_Play() );
+		ret->AddItem( 'd', input_test::MouseListener_KeyStatus() );
+		ret->AddItem( 'f', input_test::MouseListener_Cursor() );
 
 
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'z', input_test::MouseListener_KeyStatus() );
-		ret->AddItem( 'x', input_test::MouseListener_Cursor() );
+		ret->AddItem( 'z', input_test::InputManager_Order() );
 
 
 		ret->AddSplit();
