@@ -443,7 +443,17 @@ namespace input_test
 
 			r2bix_input::InputManager manager( 0, 0 );
 			r2bix_input::Listener4Keyboard keyboard_listener( 0, { r2bix_input::eKeyCode::VK_ESCAPE } );
+
+			r2bix_input::CursorPoint c;
+			bool bMoved = false;
 			r2bix_input::Listener4Mouse mouse_listener( 0, true, false, false );
+			mouse_listener.SetCursorMovedCallback( [&c, &bMoved]( const r2bix_input::CursorPoint cursor_point )->bool{
+
+				c = cursor_point;
+				bMoved = true;
+
+				return true;
+			} );
 
 			manager.AddListener4Keyboard( &keyboard_listener );
 			manager.AddListener4Mouse( &mouse_listener );
@@ -466,17 +476,19 @@ namespace input_test
 					//
 					// Cursor Move
 					//
-					if( mouse_listener.GetCursorPoint_Last() != mouse_listener.GetCursorPoint_Current() )
+					if( bMoved )
 					{
+						bMoved = false;
+
 						r2tm::WindowUtility::MoveCursorPoint( 0, 10 );
 						std::cout << "                                     ";
 
 						r2tm::WindowUtility::MoveCursorPoint( 0, 10 );
 						std::cout
 							<< "X : "
-							<< static_cast< int >( mouse_listener.GetCursorPoint_Current().GetX() )
+							<< static_cast< int >( c.GetX() )
 							<< "\tY : "
-							<< static_cast< int >( mouse_listener.GetCursorPoint_Current().GetY() )
+							<< static_cast< int >( c.GetY() )
 							<< "         "
 							<< r2tm::linefeed;
 					}

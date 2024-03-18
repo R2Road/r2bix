@@ -1,5 +1,7 @@
 #pragma once
 
+#include <functional>
+
 #include "r2bix_input_ObservationKeys.h"
 
 namespace r2bix_input
@@ -14,6 +16,8 @@ namespace r2bix_input
 			Pressed,
 			Release,
 		};
+
+		using CursorMovedCallbackT = std::function<bool( CursorPoint )>;
 
 
 
@@ -66,6 +70,16 @@ namespace r2bix_input
 		//
 		//
 		//
+		void SetCursorMovedCallback( const CursorMovedCallbackT& cursor_moved_callback )
+		{
+			mCursorMovedCallback = cursor_moved_callback;
+		}
+
+
+
+		//
+		//
+		//
 		void UpdateCursor( const r2bix_input::CursorPoint cursor_point );
 		void Update( const ObservationKeyStatesT& observation_key_states );
 
@@ -81,5 +95,6 @@ namespace r2bix_input
 		ObservationKeys mObservationKeys;
 		std::vector<eKeyStatus> mKeyStatusContainer;
 
+		CursorMovedCallbackT mCursorMovedCallback;
 	};
 }

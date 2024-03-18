@@ -9,6 +9,8 @@ namespace r2bix_input
 		, mCursorPoint_Last()
 		, mObservationKeys()
 		, mKeyStatusContainer()
+
+		, mCursorMovedCallback()
 	{}
 	Listener4Mouse::Listener4Mouse( const int order, const bool position_use, const bool left_click, const bool right_click ) :
 		  mOrder( order )
@@ -36,6 +38,14 @@ namespace r2bix_input
 		{
 			mCursorPoint_Last = mCursorPoint_Current;
 			mCursorPoint_Current = cursor_point;
+
+			if( mCursorPoint_Last != mCursorPoint_Current )
+			{
+				if( mCursorMovedCallback )
+				{
+					mCursorMovedCallback( cursor_point );
+				}
+			}
 		}
 	}
 	void Listener4Mouse::Update( const ObservationKeyStatesT& observation_key_states )
