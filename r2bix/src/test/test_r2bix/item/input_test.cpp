@@ -5,7 +5,7 @@
 #include "r2bix_input_InputManager.h"
 #include "r2bix_input_MachineInputCollector.h"
 #include "r2bix_input_KeyboardListener.h"
-#include "r2bix_input_MouseListener.h"
+#include "r2bix_input_Listener4Mouse.h"
 
 #include "r2_RectInt.h"
 #include "r2_FPSTimer.h"

@@ -1,4 +1,4 @@
-#include "r2bix_input_MouseListener.h"
+#include "r2bix_input_Listener4Mouse.h"
 
 namespace r2bix_input
 {

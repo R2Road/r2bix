@@ -479,7 +479,7 @@
     <ClCompile Include="src\r2bix\r2bix_input_KeyboardListener.cpp">
       <Filter>r2bix\input</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_input_MouseListener.cpp">
+    <ClCompile Include="src\r2bix\r2bix_input_Listener4Mouse.cpp">
       <Filter>r2bix\input</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_node_UIPannelNode.cpp">
@@ -1055,7 +1055,7 @@
     <ClInclude Include="src\r2bix\r2bix_input_KeyboardListener.h">
       <Filter>r2bix\input</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_input_MouseListener.h">
+    <ClInclude Include="src\r2bix\r2bix_input_Listener4Mouse.h">
       <Filter>r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_node_UIPannelNode.h">
