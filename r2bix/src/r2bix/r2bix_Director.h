@@ -18,13 +18,28 @@ namespace r2bix
 	public:
 		Director( const r2bix_director::Config& director_config );
 
+
+
+		//
+		//
+		//
 		void Setup( r2bix_node::SceneNodeUp node );
 
+
+
+		//
+		//
+		//
 		void Run();
 	private:
 		void onUpdate( const float delta_time );
 		void onRender();
 
+
+
+		//
+		//
+		//
 	public:
 		void Terminate();
 
@@ -38,6 +53,8 @@ namespace r2bix
 			return mScreenBufferSIze;
 		}
 
+
+
 		//
 		//
 		//
@@ -48,6 +65,8 @@ namespace r2bix
 		void ClearScreen();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
 
+
+
 		//
 		// Input
 		//
@@ -55,6 +74,8 @@ namespace r2bix
 		{
 			return mInputManager;
 		}
+
+
 
 	private:
 		r2bix_director::ScreenBufferManager mScreenBufferManager;

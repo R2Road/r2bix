@@ -18,6 +18,8 @@ namespace r2bix
 		, mNextSceneNode()
 	{}
 
+
+
 	void Director::Setup( r2bix_node::SceneNodeUp node )
 	{
 		if( mCurrentSceneNode )
@@ -29,6 +31,8 @@ namespace r2bix
 			mCurrentSceneNode = std::move( node );
 		}
 	}
+
+
 
 	void Director::Run()
 	{
@@ -58,6 +62,8 @@ namespace r2bix
 		mScreenBufferManager.InitCursor();
 		mScreenBufferManager.Swap();
 	}
+
+
 
 	void Director::Terminate()
 	{
