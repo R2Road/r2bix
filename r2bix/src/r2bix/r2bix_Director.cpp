@@ -38,6 +38,7 @@ namespace r2bix
 		{
 			if( mNextSceneNode )
 			{
+				mCurrentSceneNode->Terminate();
 				mCurrentSceneNode = std::move( mNextSceneNode );
 			}
 
