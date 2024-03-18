@@ -2,13 +2,14 @@
 
 #include <memory>
 
-#include "r2bix_director_ScreenBufferManager.h"
-#include "r2bix_input_InputManager.h"
-#include "r2bix_node_SceneNode.h"
 #include "r2_SizeInt.h"
 
 #include "r2bix_director_Config.h"
 #include "r2bix_director_Scheduler.h"
+#include "r2bix_director_ScreenBufferManager.h"
+#include "r2bix_input_InputManager.h"
+#include "r2bix_node_SceneNode.h"
+
 
 namespace r2bix
 {
