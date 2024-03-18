@@ -35,7 +35,7 @@ namespace r2bix_input
 
 
 
-	void InputManager::AddMouseListener( r2bix_input::Listener4Mouse* const listener )
+	void InputManager::AddListener4Mouse( r2bix_input::Listener4Mouse* const listener )
 	{
 		//
 		// 반복 등록 확인
@@ -77,7 +77,7 @@ namespace r2bix_input
 		//
 		mMachineInputCollector.AddObservationKeys( listener->GetObservationKeys() );
 	}
-	void InputManager::RemoveMouseListener( r2bix_input::Listener4Mouse* const listener )
+	void InputManager::RemoveListener4Mouse( r2bix_input::Listener4Mouse* const listener )
 	{
 		if( nullptr == listener )
 		{
@@ -111,7 +111,7 @@ namespace r2bix_input
 		mMachineInputCollector.RemoveObservationKeys( listener->GetObservationKeys() );
 	}
 
-	void InputManager::AddKeyboardListener( r2bix_input::Listener4Keyboard* const listener )
+	void InputManager::AddListener4Keyboard( r2bix_input::Listener4Keyboard* const listener )
 	{
 		//
 		// 반복 등록 확인
@@ -153,7 +153,7 @@ namespace r2bix_input
 		//
 		mMachineInputCollector.AddObservationKeys( listener->GetObservationKeys() );
 	}
-	void InputManager::RemoveKeyboardListener( r2bix_input::Listener4Keyboard* const listener )
+	void InputManager::RemoveListener4Keyboard( r2bix_input::Listener4Keyboard* const listener )
 	{
 		if( nullptr == listener )
 		{

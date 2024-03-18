@@ -44,11 +44,11 @@ namespace p2048
 
 	void GameComponent::ActivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddKeyboardListener( &mKeyboardListener );
+		GetOwnerNode().GetDirector().GetInputManager().AddListener4Keyboard( &mKeyboardListener );
 	}
 	void GameComponent::DeactivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().RemoveKeyboardListener( &mKeyboardListener );
+		GetOwnerNode().GetDirector().GetInputManager().RemoveListener4Keyboard( &mKeyboardListener );
 	}
 
 
