@@ -80,6 +80,11 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					director.Run();
 
+					//
+					// Terminate
+					//
+					director.Terminate();
+
 					return r2tm::eDoLeaveAction::None;
 				}
 			);
