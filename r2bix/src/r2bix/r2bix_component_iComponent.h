@@ -37,6 +37,7 @@ namespace r2bix_component
 		{}
 
 
+
 		//
 		//
 		//
@@ -62,6 +63,9 @@ namespace r2bix_component
 		{
 			return true;
 		}
+
+
+
 		//
 		// 
 		//
@@ -91,6 +95,8 @@ namespace r2bix_component
 		virtual void DeactivateProcess()
 		{}
 
+
+
 		//
 		//
 		//
@@ -112,8 +118,10 @@ namespace r2bix_component
 	public:
 		virtual void Update( const float /*delta_time*/ )
 		{}
+
 		virtual void Render( const r2bix_render::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
 		{}
+
 
 
 	protected:
