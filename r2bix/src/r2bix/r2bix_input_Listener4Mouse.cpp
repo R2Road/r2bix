@@ -3,14 +3,16 @@
 namespace r2bix_input
 {
 	Listener4Mouse::Listener4Mouse() :
-		  mbMousePositionUse( false)
+		  mOrder( 0 )
+		, mbMousePositionUse( false)
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
 		, mObservationKeys()
 		, mKeyStatusContainer()
 	{}
-	Listener4Mouse::Listener4Mouse( const bool position_use, const bool left_click, const bool right_click ) :
-		  mbMousePositionUse( position_use )
+	Listener4Mouse::Listener4Mouse( const int order, const bool position_use, const bool left_click, const bool right_click ) :
+		  mOrder( order )
+		, mbMousePositionUse( position_use )
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
 		, mObservationKeys()

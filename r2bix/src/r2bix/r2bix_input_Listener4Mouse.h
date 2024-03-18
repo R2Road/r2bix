@@ -18,13 +18,18 @@ namespace r2bix_input
 
 
 		Listener4Mouse();
-		Listener4Mouse( const bool position_use, const bool left_click, const bool right_click );
+		Listener4Mouse( const int order, const bool position_use, const bool left_click, const bool right_click );
 
 
 
 		//
 		// Getter
 		//
+		int GetOrder() const
+		{
+			return mOrder;
+		}
+
 		const ObservationKeys& GetObservationKeys() const
 		{
 			return mObservationKeys;
@@ -66,6 +71,8 @@ namespace r2bix_input
 
 
 	private:
+		const int mOrder;
+
 		bool mbMousePositionUse;
 		r2bix_input::CursorPoint mCursorPoint_Current;
 		r2bix_input::CursorPoint mCursorPoint_Last;
