@@ -9,8 +9,8 @@ namespace r2bix_input
 {
 	InputManager::InputManager( const short offset_x, const short offset_y ) :
 		  mMachineInputCollector( offset_x, offset_y )
-		, mMouseListener()
-		, mKeyboardListener()
+		, mListenerContainer4Mouse()
+		, mListenerContainer4Keyboard()
 	{}
 
 	void InputManager::Update()
@@ -23,13 +23,13 @@ namespace r2bix_input
 		//
 		// 키 상태 업데이트
 		//
-		if( !mMouseListener.empty() )
+		if( !mListenerContainer4Mouse.empty() )
 		{
-			( *mMouseListener.begin() )->Update(mMachineInputCollector.GetObservationKeyStates(), mMachineInputCollector.GetCursorPoint());
+			( *mListenerContainer4Mouse.begin() )->Update(mMachineInputCollector.GetObservationKeyStates(), mMachineInputCollector.GetCursorPoint());
 		}
-		if( !mKeyboardListener.empty() )
+		if( !mListenerContainer4Keyboard.empty() )
 		{
-			( *mKeyboardListener.begin() )->Update(mMachineInputCollector.GetObservationKeyStates());
+			( *mListenerContainer4Keyboard.begin() )->Update(mMachineInputCollector.GetObservationKeyStates());
 		}
 	}
 
@@ -41,8 +41,8 @@ namespace r2bix_input
 		// 반복 등록 확인
 		//
 		{
-			auto target_itr = std::find( mMouseListener.begin(), mMouseListener.end(), listener );
-			if( target_itr != mMouseListener.end() )
+			auto target_itr = std::find( mListenerContainer4Mouse.begin(), mListenerContainer4Mouse.end(), listener );
+			if( target_itr != mListenerContainer4Mouse.end() )
 			{
 				R2ASSERT( false, "이미 등록된 M리스너의 등록을 요청한다." );
 				return;
@@ -53,7 +53,7 @@ namespace r2bix_input
 		// Add
 		//
 		{
-			auto pivot_itr = std::find_if( mMouseListener.begin(), mMouseListener.end(), [listener]( const r2bix_input::Listener4Mouse* const l ){
+			auto pivot_itr = std::find_if( mListenerContainer4Mouse.begin(), mListenerContainer4Mouse.end(), [listener]( const r2bix_input::Listener4Mouse* const l ){
 				if( l->GetOrder() <= listener->GetOrder() )
 				{
 					return true;
@@ -62,13 +62,13 @@ namespace r2bix_input
 				return false;
 			} );
 
-			if( mMouseListener.end() == pivot_itr )
+			if( mListenerContainer4Mouse.end() == pivot_itr )
 			{
-				mMouseListener.insert( pivot_itr, listener );
+				mListenerContainer4Mouse.insert( pivot_itr, listener );
 			}
 			else
 			{
-				mMouseListener.push_back( listener );
+				mListenerContainer4Mouse.push_back( listener );
 			}
 		}
 
@@ -85,7 +85,7 @@ namespace r2bix_input
 			return;
 		}
 
-		if( mMouseListener.empty() )
+		if( mListenerContainer4Mouse.empty() )
 		{
 			R2ASSERT( false, "등록된 M리스너가 없는데 삭제를 요청한다." );
 			return;
@@ -95,14 +95,14 @@ namespace r2bix_input
 		// Remove
 		//
 		{
-			auto target_itr = std::find( mMouseListener.begin(), mMouseListener.end(), listener );
-			if( target_itr == mMouseListener.end() )
+			auto target_itr = std::find( mListenerContainer4Mouse.begin(), mListenerContainer4Mouse.end(), listener );
+			if( target_itr == mListenerContainer4Mouse.end() )
 			{
 				R2ASSERT( false, "등록된적 없는 M리스너의 삭제를 요청한다." );
 				return;
 			}
 
-			mMouseListener.erase( target_itr );
+			mListenerContainer4Mouse.erase( target_itr );
 		}
 
 		//
@@ -117,8 +117,8 @@ namespace r2bix_input
 		// 반복 등록 확인
 		//
 		{
-			auto target_itr = std::find( mKeyboardListener.begin(), mKeyboardListener.end(), listener );
-			if( target_itr != mKeyboardListener.end() )
+			auto target_itr = std::find( mListenerContainer4Keyboard.begin(), mListenerContainer4Keyboard.end(), listener );
+			if( target_itr != mListenerContainer4Keyboard.end() )
 			{
 				R2ASSERT( false, "이미 등록된 K리스너의 등록을 요청한다." );
 				return;
@@ -129,7 +129,7 @@ namespace r2bix_input
 		// Add
 		//
 		{
-			auto pivot_itr = std::find_if( mKeyboardListener.begin(), mKeyboardListener.end(), [listener]( const r2bix_input::Listener4Keyboard* const l ){
+			auto pivot_itr = std::find_if( mListenerContainer4Keyboard.begin(), mListenerContainer4Keyboard.end(), [listener]( const r2bix_input::Listener4Keyboard* const l ){
 				if( l->GetOrder() <= listener->GetOrder() )
 				{
 					return true;
@@ -138,13 +138,13 @@ namespace r2bix_input
 				return false;
 			} );
 
-			if( mKeyboardListener.end() == pivot_itr )
+			if( mListenerContainer4Keyboard.end() == pivot_itr )
 			{
-				mKeyboardListener.insert( pivot_itr, listener );
+				mListenerContainer4Keyboard.insert( pivot_itr, listener );
 			}
 			else
 			{
-				mKeyboardListener.push_back( listener );
+				mListenerContainer4Keyboard.push_back( listener );
 			}
 		}
 
@@ -161,7 +161,7 @@ namespace r2bix_input
 			return;
 		}
 
-		if( mKeyboardListener.empty() )
+		if( mListenerContainer4Keyboard.empty() )
 		{
 			R2ASSERT( false, "등록된 K리스너가 없는데 삭제를 요청한다." );
 			return;
@@ -171,14 +171,14 @@ namespace r2bix_input
 		// Remove
 		//
 		{
-			auto target_itr = std::find( mKeyboardListener.begin(), mKeyboardListener.end(), listener );
-			if( target_itr == mKeyboardListener.end() )
+			auto target_itr = std::find( mListenerContainer4Keyboard.begin(), mListenerContainer4Keyboard.end(), listener );
+			if( target_itr == mListenerContainer4Keyboard.end() )
 			{
 				R2ASSERT( false, "등록된적 없는 K리스너의 삭제를 요청한다." );
 				return;
 			}
 
-			mKeyboardListener.erase( target_itr );
+			mListenerContainer4Keyboard.erase( target_itr );
 		}
 
 		//
