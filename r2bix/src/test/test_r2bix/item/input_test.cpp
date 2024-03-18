@@ -216,10 +216,13 @@ namespace input_test
 			std::cout << "[A] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager input_manager( 0, 0 );
-			r2bix_input::Listener4Keyboard keyboard_listener( {
-				0x1B		// esc
-				, 0x41		// a
-			} );
+			r2bix_input::Listener4Keyboard keyboard_listener(
+				0
+				, {
+					  0x1B		// esc
+					, 0x41		// a
+				}
+			);
 
 			input_manager.AddKeyboardListener( &keyboard_listener );
 
@@ -273,13 +276,16 @@ namespace input_test
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
 				r2bix_input::InputManager input_manager( 0, 0 );
-				r2bix_input::Listener4Keyboard keyboard_listener( {
-					0x1B		// esc
-					, 0x41		// a
-					, 0x44		// d
-					, 0x53		// s
-					, 0x57		// w
-					} );
+				r2bix_input::Listener4Keyboard keyboard_listener(
+					0
+					, {
+						  0x1B		// esc
+						, 0x41		// a
+						, 0x44		// d
+						, 0x53		// s
+						, 0x57		// w
+					}
+				);
 
 				input_manager.AddKeyboardListener( &keyboard_listener );
 
@@ -369,7 +375,7 @@ namespace input_test
 			std::cout << "[R Click] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager manager( 0, 0 );
-			r2bix_input::Listener4Keyboard keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
+			r2bix_input::Listener4Keyboard keyboard_listener( 0, { r2bix_input::eKeyCode::VK_ESCAPE } );
 			r2bix_input::Listener4Mouse mouse_listener( 0, false, true, true );
 
 			manager.AddKeyboardListener( &keyboard_listener );
@@ -435,7 +441,7 @@ namespace input_test
 			std::cout << "[Cursor] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager manager( 0, 0 );
-			r2bix_input::Listener4Keyboard keyboard_listener( { r2bix_input::eKeyCode::VK_ESCAPE } );
+			r2bix_input::Listener4Keyboard keyboard_listener( 0, { r2bix_input::eKeyCode::VK_ESCAPE } );
 			r2bix_input::Listener4Mouse mouse_listener( 0, true, false, false );
 
 			manager.AddKeyboardListener( &keyboard_listener );

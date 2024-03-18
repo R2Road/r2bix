@@ -3,11 +3,13 @@
 namespace r2bix_input
 {
 	Listener4Keyboard::Listener4Keyboard() :
-		  mObservationKeys()
+		  mOrder( 0 )
+		, mObservationKeys()
 		, mKeyStatusContainer()
 	{}
-	Listener4Keyboard::Listener4Keyboard( std::initializer_list<uint8_t> list ) :
-		mObservationKeys( list )
+	Listener4Keyboard::Listener4Keyboard( const int order, std::initializer_list<uint8_t> list ) :
+		  mOrder( order )
+		, mObservationKeys( list )
 		, mKeyStatusContainer( list.size(), eKeyStatus::None )
 	{}
 

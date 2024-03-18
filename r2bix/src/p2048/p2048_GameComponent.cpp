@@ -26,15 +26,18 @@ namespace p2048
 		, mYouWinNode( nullptr )
 		, mGameOverNode( nullptr )
 
-		, mKeyboardListener( {
-			0x1B		// esc
-			, 0x41		// a - left
-			, 0x44		// d - right
-			, 0x53		// s - down
-			, 0x57		// w - up
-			, 0x52		// r - reset
-			, 0x09		// tab - history
-		} )
+		, mKeyboardListener(
+			0
+			, {
+				  0x1B		// esc
+				, 0x41		// a - left
+				, 0x44		// d - right
+				, 0x53		// s - down
+				, 0x57		// w - up
+				, 0x52		// r - reset
+				, 0x09		// tab - history
+			}
+		)
 	{}
 
 

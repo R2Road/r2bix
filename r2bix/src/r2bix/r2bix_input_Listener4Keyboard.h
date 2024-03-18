@@ -18,13 +18,18 @@ namespace r2bix_input
 
 
 		Listener4Keyboard();
-		Listener4Keyboard( std::initializer_list<uint8_t> list );
+		Listener4Keyboard( const int order, std::initializer_list<uint8_t> list );
 
 
 
 		//
 		// Getter
 		//
+		int GetOrder() const
+		{
+			return mOrder;
+		}
+
 		const ObservationKeys& GetObservationKeys() const
 		{
 			return mObservationKeys;
@@ -57,6 +62,8 @@ namespace r2bix_input
 
 
 	private:
+		const int mOrder;
+
 		ObservationKeys mObservationKeys;
 		std::vector<eKeyStatus> mKeyStatusContainer;
 	};
