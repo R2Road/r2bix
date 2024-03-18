@@ -12,6 +12,11 @@ namespace r2bix_input
 	class InputManager
 	{
 	public:
+		using ListenerContainer4Mouse = std::list<Listener4Mouse*>;
+		using ListenerContainer4Keyboard = std::list<Listener4Keyboard*>;
+
+
+
 		InputManager( const short offset_x, const short offset_y );
 
 
@@ -41,7 +46,7 @@ namespace r2bix_input
 	public:
 		MachineInputCollector mMachineInputCollector;
 
-		std::list<Listener4Keyboard*> mKeyboardListener;
-		std::list<Listener4Mouse*> mMouseListener;
+		ListenerContainer4Keyboard mKeyboardListener;
+		ListenerContainer4Mouse mMouseListener;
 	};
 }
