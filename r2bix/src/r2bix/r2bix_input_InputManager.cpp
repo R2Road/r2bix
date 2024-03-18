@@ -1,6 +1,6 @@
 #include "r2bix_input_InputManager.h"
 
-#include "r2bix_input_KeyboardListener.h"
+#include "r2bix_input_Listener4Keyboard.h"
 #include "r2bix_input_Listener4Mouse.h"
 
 namespace r2bix_input
