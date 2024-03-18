@@ -48,7 +48,7 @@ namespace r2bix_input
 			}
 		}
 	}
-	void Listener4Mouse::Update( const ObservationKeyStatesT& observation_key_states )
+	void Listener4Mouse::UpdateKey( const ObservationKeyStatesT& observation_key_states )
 	{
 		for( std::size_t i = 0u, end = mKeyStatusContainer.size(); end > i; ++i )
 		{
