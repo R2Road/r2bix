@@ -2,16 +2,16 @@
 
 namespace r2bix_input
 {
-	KeyboardListener::KeyboardListener() :
+	Listener4Keyboard::Listener4Keyboard() :
 		  mObservationKeys()
 		, mKeyStatusContainer()
 	{}
-	KeyboardListener::KeyboardListener( std::initializer_list<uint8_t> list ) :
+	Listener4Keyboard::Listener4Keyboard( std::initializer_list<uint8_t> list ) :
 		mObservationKeys( list )
 		, mKeyStatusContainer( list.size(), eKeyStatus::None )
 	{}
 
-	void KeyboardListener::Update( const ObservationKeyStatesT& observation_key_states )
+	void Listener4Keyboard::Update( const ObservationKeyStatesT& observation_key_states )
 	{
 		for( std::size_t i = 0u, end = mKeyStatusContainer.size(); end > i; ++i )
 		{

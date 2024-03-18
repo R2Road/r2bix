@@ -4,7 +4,7 @@
 
 namespace r2bix_input
 {
-	class KeyboardListener;
+	class Listener4Keyboard;
 	class Listener4Mouse;
 
 	class InputManager
@@ -31,15 +31,15 @@ namespace r2bix_input
 		}
 		void AddMouseListener( r2bix_input::Listener4Mouse* const listener );
 		void RemoveMouseListener( r2bix_input::Listener4Mouse* const listener );
-		void AddKeyboardListener( r2bix_input::KeyboardListener* const listener );
-		void RemoveKeyboardListener( r2bix_input::KeyboardListener* const listener );
+		void AddKeyboardListener( r2bix_input::Listener4Keyboard* const listener );
+		void RemoveKeyboardListener( r2bix_input::Listener4Keyboard* const listener );
 
 
 
 	public:
 		MachineInputCollector mMachineInputCollector;
 
-		KeyboardListener* mKeyboardListener;
+		Listener4Keyboard* mKeyboardListener;
 		Listener4Mouse* mMouseListener;
 	};
 }

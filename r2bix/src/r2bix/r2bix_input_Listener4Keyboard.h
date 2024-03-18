@@ -4,7 +4,7 @@
 
 namespace r2bix_input
 {
-	class KeyboardListener
+	class Listener4Keyboard
 	{
 	public:
 		enum class eKeyStatus
@@ -17,8 +17,8 @@ namespace r2bix_input
 
 
 
-		KeyboardListener();
-		KeyboardListener( std::initializer_list<uint8_t> list );
+		Listener4Keyboard();
+		Listener4Keyboard( std::initializer_list<uint8_t> list );
 
 
 
