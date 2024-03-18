@@ -66,7 +66,8 @@ namespace r2bix_input
 		//
 		//
 		//
-		void Update( const ObservationKeyStatesT& observation_key_states, const r2bix_input::CursorPoint cursor_point );
+		void UpdateCursor( const r2bix_input::CursorPoint cursor_point );
+		void Update( const ObservationKeyStatesT& observation_key_states );
 
 
 

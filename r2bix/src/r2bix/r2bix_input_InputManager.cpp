@@ -25,7 +25,9 @@ namespace r2bix_input
 		//
 		if( !mListenerContainer4Mouse.empty() )
 		{
-			( *mListenerContainer4Mouse.begin() )->Update(mMachineInputCollector.GetObservationKeyStates(), mMachineInputCollector.GetCursorPoint());
+			( *mListenerContainer4Mouse.begin() )->UpdateCursor( mMachineInputCollector.GetCursorPoint() );
+
+			( *mListenerContainer4Mouse.begin() )->Update(mMachineInputCollector.GetObservationKeyStates());
 		}
 		if( !mListenerContainer4Keyboard.empty() )
 		{
