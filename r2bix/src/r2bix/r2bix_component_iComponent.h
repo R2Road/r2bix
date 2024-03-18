@@ -65,6 +65,7 @@ namespace r2bix_component
 		//
 		// 
 		//
+	public:
 		void Activate()
 		{
 			if( false == mbActivate )
@@ -73,8 +74,11 @@ namespace r2bix_component
 				ActivateProcess();
 			}
 		}
+	protected:
 		virtual void ActivateProcess()
 		{}
+
+	public:
 		void Deactivate()
 		{
 			if( true == mbActivate )
@@ -83,16 +87,20 @@ namespace r2bix_component
 				DeactivateProcess();
 			}
 		}
+	protected:
 		virtual void DeactivateProcess()
 		{}
 
 		//
 		//
 		//
+	public:
 		void Terminate()
 		{
+			Deactivate();
 			TerminateProcess();
 		}
+	protected:
 		virtual void TerminateProcess()
 		{}
 
@@ -101,6 +109,7 @@ namespace r2bix_component
 		//
 		//
 		//
+	public:
 		virtual void Update( const float /*delta_time*/ )
 		{}
 		virtual void Render( const r2bix_render::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
