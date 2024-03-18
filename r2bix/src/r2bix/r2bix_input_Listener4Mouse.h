@@ -18,7 +18,7 @@ namespace r2bix_input
 
 
 		Listener4Mouse();
-		Listener4Mouse( const int order, const bool position_use, const bool left_click, const bool right_click );
+		explicit Listener4Mouse( const int order, const bool position_use, const bool left_click, const bool right_click );
 
 
 

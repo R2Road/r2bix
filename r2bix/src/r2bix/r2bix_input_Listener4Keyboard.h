@@ -18,7 +18,7 @@ namespace r2bix_input
 
 
 		Listener4Keyboard();
-		Listener4Keyboard( const int order, std::initializer_list<uint8_t> list );
+		explicit Listener4Keyboard( const int order, std::initializer_list<uint8_t> list );
 
 
 
