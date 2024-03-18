@@ -33,11 +33,13 @@ namespace r2bix_input
 		//
 		void ClearListener()
 		{
-			mKeyboardListener.clear();
 			mMouseListener.clear();
+			mKeyboardListener.clear();
 		}
+
 		void AddMouseListener( r2bix_input::Listener4Mouse* const listener );
 		void RemoveMouseListener( r2bix_input::Listener4Mouse* const listener );
+
 		void AddKeyboardListener( r2bix_input::Listener4Keyboard* const listener );
 		void RemoveKeyboardListener( r2bix_input::Listener4Keyboard* const listener );
 
@@ -46,7 +48,7 @@ namespace r2bix_input
 	public:
 		MachineInputCollector mMachineInputCollector;
 
-		ListenerContainer4Keyboard mKeyboardListener;
 		ListenerContainer4Mouse mMouseListener;
+		ListenerContainer4Keyboard mKeyboardListener;
 	};
 }
