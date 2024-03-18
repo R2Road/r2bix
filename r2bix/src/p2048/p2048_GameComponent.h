@@ -30,8 +30,21 @@ namespace p2048
 
 	public:
 		GameComponent( r2bix_node::Node& owner_node );
-		~GameComponent();
 
+
+
+		//
+		//
+		//
+	private:
+		void ActivateProcess() override;
+		void DeactivateProcess() override;
+
+
+
+		//
+		//
+		//
 	public:
 		void Update( const float delta_time ) override;
 

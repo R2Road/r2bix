@@ -35,13 +35,20 @@ namespace p2048
 			, 0x52		// r - reset
 			, 0x09		// tab - history
 		} )
+	{}
+
+
+
+	void GameComponent::ActivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddKeyboardListener(&mKeyboardListener);
+		GetOwnerNode().GetDirector().GetInputManager().AddKeyboardListener( &mKeyboardListener );
 	}
-	GameComponent::~GameComponent()
+	void GameComponent::DeactivateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().RemoveKeyboardListener( &mKeyboardListener );
 	}
+
+
 
 	void GameComponent::Update( const float delta_time )
 	{
