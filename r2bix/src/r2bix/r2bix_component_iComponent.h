@@ -65,10 +65,27 @@ namespace r2bix_component
 		//
 		// 
 		//
-		virtual void Activate()
+		void Activate()
+		{
+			if( false == mbActivate )
+			{
+				mbActivate = true;
+				ActivateProcess();
+			}
+		}
+		virtual void ActivateProcess()
 		{}
-		virtual void Deactivate()
+		void Deactivate()
+		{
+			if( true == mbActivate )
+			{
+				mbActivate = false;
+				DeactivateProcess();
+			}
+		}
+		virtual void DeactivateProcess()
 		{}
+
 		virtual void Update( const float /*delta_time*/ )
 		{}
 		virtual void Render( const r2bix_render::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
