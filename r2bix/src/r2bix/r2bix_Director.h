@@ -26,6 +26,10 @@ namespace r2bix
 		void onRender();
 
 	public:
+		void Terminate();
+
+
+
 		//
 		//
 		//

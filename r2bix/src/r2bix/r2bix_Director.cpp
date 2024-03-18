@@ -58,6 +58,14 @@ namespace r2bix
 		mScreenBufferManager.Swap();
 	}
 
+	void Director::Terminate()
+	{
+		if( mCurrentSceneNode )
+		{
+			mCurrentSceneNode->Terminate();
+		}
+	}
+
 
 
 	void Director::ClearScreen()
