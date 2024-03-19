@@ -79,16 +79,16 @@ namespace r2bix_input
 
 
 
-	void MachineInputCollector::AddObservationKeys( const ObservationKeys& observation_keys )
+	void MachineInputCollector::AddObservationKeys( const ObservationKeyContainer& observation_key_container )
 	{
-		for( const auto k : observation_keys )
+		for( const auto k : observation_key_container )
 		{
 			++mObservationKeyList[k];
 		}
 	}
-	void MachineInputCollector::RemoveObservationKeys( const ObservationKeys& observation_keys )
+	void MachineInputCollector::RemoveObservationKeys( const ObservationKeyContainer& observation_key_container )
 	{
-		for( const auto k : observation_keys )
+		for( const auto k : observation_key_container )
 		{
 			--mObservationKeyList[k];
 		}

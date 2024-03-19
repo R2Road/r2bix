@@ -4,12 +4,12 @@ namespace r2bix_input
 {
 	Listener4Keyboard::Listener4Keyboard() :
 		  mOrder( 0 )
-		, mObservationKeys()
+		, mObservationKeyContainer()
 		, mKeyStatusContainer()
 	{}
 	Listener4Keyboard::Listener4Keyboard( const int order, std::initializer_list<uint8_t> list ) :
 		  mOrder( order )
-		, mObservationKeys( list )
+		, mObservationKeyContainer( list )
 		, mKeyStatusContainer( list.size(), eKeyStatus::None )
 	{}
 
@@ -17,7 +17,7 @@ namespace r2bix_input
 	{
 		for( std::size_t i = 0u, end = mKeyStatusContainer.size(); end > i; ++i )
 		{
-			if( observation_key_states.test( mObservationKeys[i]) )
+			if( observation_key_states.test( mObservationKeyContainer[i]) )
 			{
 				switch( mKeyStatusContainer[i] )
 				{

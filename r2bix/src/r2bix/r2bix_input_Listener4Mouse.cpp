@@ -9,7 +9,7 @@ namespace r2bix_input
 		, mbMousePositionUse( false)
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
-		, mObservationKeys()
+		, mObservationKeyContainer()
 		, mKeyStatusContainer()
 
 		, mCursorMovedCallback()
@@ -20,7 +20,7 @@ namespace r2bix_input
 		, mbMousePositionUse()
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
-		, mObservationKeys()
+		, mObservationKeyContainer()
 		, mKeyStatusContainer()
 
 		, mCursorMovedCallback()
@@ -37,7 +37,7 @@ namespace r2bix_input
 			return;
 		}
 
-		mObservationKeys.Add( key_code );
+		mObservationKeyContainer.Add( key_code );
 		mKeyStatusContainer.push_back( eKeyStatus::None );
 
 		mCallback4KeyStatusChanged = callback;

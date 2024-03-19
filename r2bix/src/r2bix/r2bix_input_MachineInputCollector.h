@@ -51,8 +51,8 @@ namespace r2bix_input
 		//
 		//
 		//
-		void AddObservationKeys( const ObservationKeys& observation_keys );
-		void RemoveObservationKeys( const ObservationKeys& observation_keys );
+		void AddObservationKeys( const ObservationKeyContainer& observation_key_container );
+		void RemoveObservationKeys( const ObservationKeyContainer& observation_key_container );
 
 
 

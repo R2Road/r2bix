@@ -27,9 +27,9 @@ namespace r2bix_input
 			return mOrder;
 		}
 
-		const ObservationKeys& GetObservationKeys() const
+		const ObservationKeyContainer& GetObservationKeyContainer() const
 		{
-			return mObservationKeys;
+			return mObservationKeyContainer;
 		}
 		const std::vector<eKeyStatus>& GetKeyStatusContainer() const
 		{
@@ -99,7 +99,7 @@ namespace r2bix_input
 		r2bix_input::CursorPoint mCursorPoint_Current;
 		r2bix_input::CursorPoint mCursorPoint_Last;
 
-		ObservationKeys mObservationKeys;
+		ObservationKeyContainer mObservationKeyContainer;
 		std::vector<eKeyStatus> mKeyStatusContainer;
 
 		CursorMovedCallbackT mCursorMovedCallback;

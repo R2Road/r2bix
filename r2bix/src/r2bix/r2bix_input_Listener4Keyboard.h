@@ -20,9 +20,9 @@ namespace r2bix_input
 			return mOrder;
 		}
 
-		const ObservationKeys& GetObservationKeys() const
+		const ObservationKeyContainer& GetObservationKeyContainer() const
 		{
-			return mObservationKeys;
+			return mObservationKeyContainer;
 		}
 
 		eKeyStatus Get( const std::size_t key_index ) const
@@ -54,7 +54,7 @@ namespace r2bix_input
 	private:
 		const int mOrder;
 
-		ObservationKeys mObservationKeys;
+		ObservationKeyContainer mObservationKeyContainer;
 		std::vector<eKeyStatus> mKeyStatusContainer;
 	};
 }

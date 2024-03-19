@@ -6,7 +6,7 @@
 
 namespace r2bix_input
 {
-	class ObservationKeys
+	class ObservationKeyContainer
 	{
 	public:
 		using KeyValueT = KeyCodeTypeT;
@@ -17,9 +17,9 @@ namespace r2bix_input
 		//
 		//
 		//
-		ObservationKeys() : mContainer()
+		ObservationKeyContainer() : mContainer()
 		{}
-		ObservationKeys( std::initializer_list<uint8_t> list ) : mContainer( list )
+		ObservationKeyContainer( std::initializer_list<uint8_t> list ) : mContainer( list )
 		{}
 
 

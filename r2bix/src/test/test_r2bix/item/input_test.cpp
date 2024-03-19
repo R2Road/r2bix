@@ -32,7 +32,7 @@ namespace input_test
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
 				r2bix_input::MachineInputCollector machine_input_collector( 0, 0 );
-				r2bix_input::ObservationKeys observation_keys( {
+				r2bix_input::ObservationKeyContainer observation_key_container( {
 					0x1B		// esc
 					, 0x41		// a
 					, 0x44		// d
@@ -40,7 +40,7 @@ namespace input_test
 					, 0x57		// w
 					} );
 
-				machine_input_collector.AddObservationKeys( observation_keys );
+				machine_input_collector.AddObservationKeys( observation_key_container );
 
 				LS();
 
@@ -129,8 +129,8 @@ namespace input_test
 
 				r2::PointInt buffer_offset( 6, 10 );
 				r2bix_input::MachineInputCollector machine_input_collector( buffer_offset );
-				r2bix_input::ObservationKeys observation_keys( { 0x1B } ); // ESC
-				machine_input_collector.AddObservationKeys( observation_keys );
+				r2bix_input::ObservationKeyContainer observation_key_container( { 0x1B } ); // ESC
+				machine_input_collector.AddObservationKeys( observation_key_container );
 
 				LS();
 

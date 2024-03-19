@@ -37,7 +37,7 @@ namespace r2bix_input
 			//
 			{
 				int i = 0;
-				for( const r2bix_input::KeyCodeTypeT k : target_listener->GetObservationKeys() )
+				for( const r2bix_input::KeyCodeTypeT k : target_listener->GetObservationKeyContainer() )
 				{
 					target_listener->UpdateKey( i, mMachineInputCollector.HasInput( k ) );
 
@@ -96,7 +96,7 @@ namespace r2bix_input
 		//
 		// Regist Key
 		//
-		mMachineInputCollector.AddObservationKeys( listener->GetObservationKeys() );
+		mMachineInputCollector.AddObservationKeys( listener->GetObservationKeyContainer() );
 	}
 	void InputManager::RemoveListener4Mouse( r2bix_input::Listener4Mouse* const listener )
 	{
@@ -129,7 +129,7 @@ namespace r2bix_input
 		//
 		// Unregist Key
 		//
-		mMachineInputCollector.RemoveObservationKeys( listener->GetObservationKeys() );
+		mMachineInputCollector.RemoveObservationKeys( listener->GetObservationKeyContainer() );
 	}
 
 	void InputManager::AddListener4Keyboard( r2bix_input::Listener4Keyboard* const listener )
@@ -172,7 +172,7 @@ namespace r2bix_input
 		//
 		// Regist Key
 		//
-		mMachineInputCollector.AddObservationKeys( listener->GetObservationKeys() );
+		mMachineInputCollector.AddObservationKeys( listener->GetObservationKeyContainer() );
 	}
 	void InputManager::RemoveListener4Keyboard( r2bix_input::Listener4Keyboard* const listener )
 	{
@@ -205,6 +205,6 @@ namespace r2bix_input
 		//
 		// Unregist Key
 		//
-		mMachineInputCollector.RemoveObservationKeys( listener->GetObservationKeys() );
+		mMachineInputCollector.RemoveObservationKeys( listener->GetObservationKeyContainer() );
 	}
 }
