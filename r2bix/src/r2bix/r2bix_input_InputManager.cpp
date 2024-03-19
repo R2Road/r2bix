@@ -21,14 +21,20 @@ namespace r2bix_input
 		mMachineInputCollector.Collect();
 
 		//
-		// 키 상태 업데이트
+		// 업데이트
 		//
 		if( !mListenerContainer4Mouse.empty() )
 		{
 			auto target_listener = *mListenerContainer4Mouse.begin();
 
+			//
+			// Mouse Cursor Update
+			//
 			target_listener->UpdateCursor( mMachineInputCollector.GetCursorPoint() );
 
+			//
+			// Mouse Key Update
+			//
 			for( std::size_t i = 0u, end = target_listener->GetKeyStatusContainer().size(); end > i; ++i )
 			{
 				if( mMachineInputCollector.GetObservationKeyStates().test( target_listener->GetObservationKeys()[i] ) )
@@ -43,6 +49,9 @@ namespace r2bix_input
 		}
 		if( !mListenerContainer4Keyboard.empty() )
 		{
+			//
+			// Keyboard Key Update
+			//
 			( *mListenerContainer4Keyboard.begin() )->Update(mMachineInputCollector.GetObservationKeyStates());
 		}
 	}
