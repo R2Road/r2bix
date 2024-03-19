@@ -181,7 +181,7 @@ namespace r2bix_director
 			back_buffer_handle = mBufferHandle4Second;
 		}
 
-		const COORD write_offset_coord = { 2, 1 };
+		const COORD write_offset_coord = { mScreenBufferOffset.GetX(), mScreenBufferOffset.GetY() };
 		COORD current_write_coord;
 		DWORD out_result;
 
