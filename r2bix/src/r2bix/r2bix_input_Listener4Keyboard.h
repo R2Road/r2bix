@@ -7,16 +7,6 @@ namespace r2bix_input
 	class Listener4Keyboard
 	{
 	public:
-		enum class eKeyStatus
-		{
-			None,
-			Push,
-			Pressed,
-			Release,
-		};
-
-
-
 		Listener4Keyboard();
 		explicit Listener4Keyboard( const int order, std::initializer_list<uint8_t> list );
 

@@ -378,8 +378,8 @@ namespace input_test
 			r2bix_input::InputManager manager( 0, 0 );
 			r2bix_input::Listener4Keyboard keyboard_listener( 0, { r2bix_input::eKeyCode::VK_ESCAPE } );
 			r2bix_input::Listener4Mouse mouse_listener( 0 );
-			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_LBUTTON, []( r2bix_input::Listener4Mouse::eKeyStatus )->bool{ return false; } );
-			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_RBUTTON, []( r2bix_input::Listener4Mouse::eKeyStatus )->bool{ return false; } );
+			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_LBUTTON, []( r2bix_input::eKeyStatus )->bool{ return false; } );
+			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_RBUTTON, []( r2bix_input::eKeyStatus )->bool{ return false; } );
 
 			manager.AddListener4Keyboard( &keyboard_listener );
 			manager.AddListener4Mouse( &mouse_listener );

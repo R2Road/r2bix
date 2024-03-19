@@ -17,6 +17,14 @@ namespace r2bix_input
 
 	bool HasWindowFocus();
 
+	enum class eKeyStatus
+	{
+		None,
+		Push,
+		Pressed,
+		Release,
+	};
+
 	enum eKeyCode : uint8_t
 	{
 		VK_LBUTTON = 0x01,	// Left mouse button

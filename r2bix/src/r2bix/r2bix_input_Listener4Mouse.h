@@ -9,14 +9,6 @@ namespace r2bix_input
 	class Listener4Mouse
 	{
 	public:
-		enum class eKeyStatus
-		{
-			None,
-			Push,
-			Pressed,
-			Release,
-		};
-
 		using CursorMovedCallbackT = std::function<bool( CursorPoint )>;
 		using Callback4KeyStatusChangedT = std::function<bool( eKeyStatus )>;
 
