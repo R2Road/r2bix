@@ -217,37 +217,44 @@ namespace input_test
 			std::cout << "[A] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager input_manager( 0, 0 );
+
+			bool bPlay = true;
 			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
-			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_A, []( r2bix_input::eKeyStatus )->bool { return false; } );
+			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStatus )->bool
+			{
+				bPlay = false;
+				return false;
+			} );
+
+			bool bAChanged = false;
+			r2bix_input::eKeyStatus as = r2bix_input::eKeyStatus::None;
+			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_A, [&bAChanged, &as]( r2bix_input::eKeyStatus s )->bool
+			{
+				bAChanged = true;
+				as = s;
+				return false;
+			} );
 
 			input_manager.AddListener4Keyboard( &keyboard_listener );
 
 			LS();
 
 			{
-				auto last_input_status = keyboard_listener.Get( 1 );
-				while( 1 )
+				do
 				{
-					input_manager.Update();
 
-					//
-					// ESC
-					//
-					if( keyboard_listener.IsPushed( 0 ) )
-					{
-						break;
-					}
+					input_manager.Update();
 
 					//
 					// A
 					//
-					if( last_input_status != keyboard_listener.Get( 1 ) )
+					if( bAChanged )
 					{
-						last_input_status = keyboard_listener.Get( 1 );
-						std::cout << "status : " << static_cast<int>( last_input_status ) << r2tm::linefeed;
+						bAChanged = false;
+						std::cout << "status : " << static_cast<int>( as ) << r2tm::linefeed;
 					}
-				}
+
+				} while( bPlay );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
@@ -273,12 +280,36 @@ namespace input_test
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
 				r2bix_input::InputManager input_manager( 0, 0 );
+
+				bool bPlay = true;
 				r2bix_input::Listener4Keyboard keyboard_listener;
-				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
-				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_A, []( r2bix_input::eKeyStatus )->bool { return false; } );
-				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_D, []( r2bix_input::eKeyStatus )->bool { return false; } );
-				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_S, []( r2bix_input::eKeyStatus )->bool { return false; } );
-				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_W, []( r2bix_input::eKeyStatus )->bool { return false; } );
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStatus )->bool
+				{
+					bPlay = false;
+					return false;
+				} );
+
+				r2tm::WindowUtility::CursorPoint new_pos{ 20, 20 };
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_A, [&new_pos]( r2bix_input::eKeyStatus )->bool
+				{
+					--new_pos.x;
+					return false;
+				} );
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_D, [&new_pos]( r2bix_input::eKeyStatus )->bool
+				{
+					++new_pos.x;
+					return false;
+				} );
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_S, [&new_pos]( r2bix_input::eKeyStatus )->bool
+				{
+					++new_pos.y;
+					return false;
+				} );
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_W, [&new_pos]( r2bix_input::eKeyStatus )->bool
+				{
+					--new_pos.y;
+					return false;
+				} );
 
 				input_manager.AddListener4Keyboard( &keyboard_listener );
 
@@ -287,61 +318,36 @@ namespace input_test
 				{
 					r2::FPSTimer fps_timer( 60u );
 					r2::RectInt stage_area( 6, 10, 50, 30 );
-					r2tm::WindowUtility::CursorPoint pos{ 20, 20 };
-					r2tm::WindowUtility::CursorPoint temp_pos{ 20, 20 };
 
+					r2tm::WindowUtility::CursorPoint pos{ 20, 20 };
 					r2tm::WindowUtility::MoveCursorPoint( pos );
 					std::cout << '@';
 
-					while( 1 )
+					do
 					{
-						input_manager.Update();
-
-						//
-						// ESC
-						//
-						if( keyboard_listener.IsPushed( 0 ) )
-						{
-							break;
-						}
 
 						if( fps_timer.Update() )
 						{
-							temp_pos = pos;
+							input_manager.Update();
 
-							if( keyboard_listener.HasInput( 1 ) )
+							if( !stage_area.IsIn( new_pos.x, new_pos.y ) )
 							{
-								--temp_pos.x;
-							}
-							if( keyboard_listener.HasInput( 2 ) )
-							{
-								++temp_pos.x;
-							}
-							if( keyboard_listener.HasInput( 4 ) )
-							{
-								--temp_pos.y;
-							}
-							if( keyboard_listener.HasInput( 3 ) )
-							{
-								++temp_pos.y;
-							}
-							if( !stage_area.IsIn( temp_pos.x, temp_pos.y ) )
-							{
-								temp_pos.x = std::clamp( temp_pos.x, static_cast< short >( stage_area.GetMinX() ), static_cast< short >( stage_area.GetMaxX() ) );
-								temp_pos.y = std::clamp( temp_pos.y, static_cast< short >( stage_area.GetMinY() ), static_cast< short >( stage_area.GetMaxY() ) );
+								new_pos.x = std::clamp( new_pos.x, static_cast< short >( stage_area.GetMinX() ), static_cast< short >( stage_area.GetMaxX() ) );
+								new_pos.y = std::clamp( new_pos.y, static_cast< short >( stage_area.GetMinY() ), static_cast< short >( stage_area.GetMaxY() ) );
 							}
 
-							if( temp_pos.x != pos.x || temp_pos.y != pos.y )
+							if( new_pos.x != pos.x || new_pos.y != pos.y )
 							{
 								r2tm::WindowUtility::MoveCursorPoint( pos );
 								std::cout << ' ';
-								r2tm::WindowUtility::MoveCursorPoint( temp_pos );
+								r2tm::WindowUtility::MoveCursorPoint( new_pos );
 								std::cout << '@';
 
-								pos = temp_pos;
+								pos = new_pos;
 							}
 						}
-					}
+
+					} while( bPlay );
 				}
 
 				return r2tm::eDoLeaveAction::Pause;
@@ -369,8 +375,14 @@ namespace input_test
 			std::cout << "[R Click] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager manager( 0, 0 );
+
+			bool bPlay = true;
 			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
+			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStatus )->bool
+			{
+				bPlay = false;
+				return false;
+			} );
 
 			bool bLChanged = false;
 			bool bMChanged = false;
@@ -404,17 +416,9 @@ namespace input_test
 			LS();
 
 			{
-				while( 1 )
+				do
 				{
 					manager.Update();
-
-					//
-					// ESC
-					//
-					if( keyboard_listener.IsPushed( 0 ) )
-					{
-						break;
-					}
 
 					//
 					// Left Click
@@ -442,7 +446,7 @@ namespace input_test
 						bRChanged = false;
 						std::cout << "\t\t\t\t\t\tkey 3 status : " << static_cast< int >( sr ) << r2tm::linefeed;
 					}
-				}
+				} while( bPlay );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
@@ -469,8 +473,13 @@ namespace input_test
 
 			r2bix_input::InputManager manager( 0, 0 );
 
+			bool bPlay = true;
 			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
+			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStatus )->bool
+			{
+				bPlay = false;
+				return false;
+			} );
 
 			r2bix_input::CursorPoint c;
 			bool bMoved = false;
@@ -489,17 +498,9 @@ namespace input_test
 			LS();
 
 			{
-				while( 1 )
+				do
 				{
 					manager.Update();
-
-					//
-					// ESC
-					//
-					if( keyboard_listener.IsPushed( 0 ) )
-					{
-						break;
-					}
 
 					//
 					// Cursor Move
@@ -520,7 +521,7 @@ namespace input_test
 							<< "         "
 							<< r2tm::linefeed;
 					}
-				}
+				} while( bPlay );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
