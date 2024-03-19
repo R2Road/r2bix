@@ -35,15 +35,20 @@ namespace r2bix_input
 			//
 			// Mouse Key Update
 			//
-			for( int i = 0u, end = static_cast<int>( target_listener->GetKeyStatusContainer().size() ); end > i; ++i )
 			{
-				if( mMachineInputCollector.HasInput( target_listener->GetObservationKeys()[i] ) )
+				int i = 0;
+				for( const r2bix_input::KeyCodeTypeT k : target_listener->GetObservationKeys() )
 				{
-					target_listener->UpdateKey( i, true );
-				}
-				else
-				{
-					target_listener->UpdateKey( i, false );
+					if( mMachineInputCollector.HasInput( k ) )
+					{
+						target_listener->UpdateKey( i, true );
+					}
+					else
+					{
+						target_listener->UpdateKey( i, false );
+					}
+
+					++i;
 				}
 			}
 		}
