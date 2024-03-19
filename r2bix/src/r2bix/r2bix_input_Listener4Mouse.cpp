@@ -11,6 +11,7 @@ namespace r2bix_input
 		, mKeyStatusContainer()
 
 		, mCursorMovedCallback()
+		, mCallback4KeyStatusChanged()
 	{}
 	Listener4Mouse::Listener4Mouse( const int order, const bool position_use, const bool left_click, const bool right_click ) :
 		  mOrder( order )
@@ -19,6 +20,9 @@ namespace r2bix_input
 		, mCursorPoint_Last()
 		, mObservationKeys()
 		, mKeyStatusContainer()
+
+		, mCursorMovedCallback()
+		, mCallback4KeyStatusChanged()
 	{
 		if( left_click )
 		{
