@@ -22,6 +22,8 @@ namespace r2bix_component
 		void ActivateProcess() override;
 		void DeactivateProcess() override;
 
+		void Update( const float delta_time ) override final;
+
 
 
 		//

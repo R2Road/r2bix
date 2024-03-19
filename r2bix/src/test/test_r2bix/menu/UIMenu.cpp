@@ -35,7 +35,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 				, []()->const char* { return "UI Test Scene"; }
 				, []()->r2tm::eDoLeaveAction
 				{
-					r2bix::Director director( { 51, 51, r2bix_director::Config::eScheduleType::Sleep, 30, 60, 0, 0 } );
+					r2bix::Director director( { 51, 51, r2bix_director::Config::eScheduleType::Sleep, 30, 60, 2, 1 } );
 
 					//
 					// Scene
@@ -53,7 +53,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					{
 						auto node = scene->AddChild<r2bix_node::CustomTextureNode>();
-						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, ' ', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
+						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
 						node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 					}
 
@@ -62,8 +62,8 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					{
 						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
-						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 10, 5, '1' );
-						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 10 );
+						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 4, 4, '1' );
+						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 1, 1 );
 					}
 
 					//
@@ -71,8 +71,17 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					{
 						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
-						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 10, 5, '2' );
-						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 13, 13 );
+						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 4, 4, '2' );
+						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
+					}
+
+					//
+					// Pannel 3
+					//
+					{
+						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 4, 4, '3' );
+						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 4, 5 );
 					}
 
 					//

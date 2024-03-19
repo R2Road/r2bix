@@ -14,7 +14,21 @@ namespace r2bix_component
 		, mTextureRenderComponent( nullptr )
 		, mListener4Mouse()
 	{
-		mListener4Mouse.SetCursorMovedCallback( []( r2bix_input::CursorPoint )->bool {return false; } );
+		mListener4Mouse.SetCursorMovedCallback( [this]( const r2bix_input::CursorPoint cursor_point )->bool
+		{
+			const r2::RectInt r( mOwnerNode.mTransformComponent->GetPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
+
+			if( r.IsIn( cursor_point ) )
+			{
+				mCustomTextureComponent->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+			}
+			else
+			{
+				mCustomTextureComponent->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+			}
+
+			return r.IsIn( cursor_point );
+		} );
 	}
 
 
@@ -26,6 +40,11 @@ namespace r2bix_component
 	void UIPannelComponent::DeactivateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener4Mouse );
+	}
+
+	void UIPannelComponent::Update( const float delta_time )
+	{
+
 	}
 
 
