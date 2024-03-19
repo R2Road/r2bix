@@ -32,7 +32,6 @@ namespace r2bix_input
 			// Key : Keyboard, Mouse
 			//
 			{
-				int key_value = 0;
 				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
 				{
 					mObservationKeyStates[i] = false;
