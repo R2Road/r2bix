@@ -54,21 +54,20 @@ namespace r2bix_input
 
 
 
-	void Listener4Mouse::UpdateCursor( const r2bix_input::CursorPoint cursor_point )
+	bool Listener4Mouse::UpdateCursor( const r2bix_input::CursorPoint cursor_point )
 	{
 		if( mbMousePositionUse )
 		{
 			mCursorPoint_Last = mCursorPoint_Current;
 			mCursorPoint_Current = cursor_point;
 
-			if( mCursorPoint_Last != mCursorPoint_Current )
+			if( mCursorMovedCallback )
 			{
-				if( mCursorMovedCallback )
-				{
-					mCursorMovedCallback( cursor_point );
-				}
+				return mCursorMovedCallback( cursor_point );
 			}
 		}
+
+		return false;
 	}
 	void Listener4Mouse::UpdateKey( const int key_index, const bool key_flag )
 	{

@@ -1,5 +1,7 @@
 #include "r2bix_input_InputManager.h"
 
+#include <numeric>
+
 #include "r2_Assert.h"
 
 #include "r2bix_input_Listener4Keyboard.h"
@@ -25,16 +27,39 @@ namespace r2bix_input
 		//
 		if( !mListenerContainer4Mouse.empty() )
 		{
-			auto target_listener = *mListenerContainer4Mouse.begin();
 
 			//
 			// Mouse Cursor Update
+			// > UpdateCursor 함수가 true 를 반환하면 이후 호출은 더미 Cursor값을 준다.
 			//
-			target_listener->UpdateCursor( mMachineInputCollector.GetCursorPoint() );
+			{
+				if( mMachineInputCollector.IsMouseMoved() )
+				{
+					bool bKeepGoing = true;
+					int i = 0;
+					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
+					{
+						if( bKeepGoing )
+						{
+							if( l->UpdateCursor( mMachineInputCollector.GetCursorPoint() ) )
+							{
+								bKeepGoing = false;
+							}
+						}
+						else
+						{
+							l->UpdateCursor( CursorPoint{ std::numeric_limits<int>::min(), std::numeric_limits<int>::min() } );
+						}
+
+						++i;
+					}
+				}
+			}
 
 			//
 			// Mouse Key Update
 			//
+			auto target_listener = *mListenerContainer4Mouse.begin();
 			{
 				int i = 0;
 				for( const r2bix_input::ObservationKey o : target_listener->GetObservationKeyContainer() )

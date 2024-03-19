@@ -73,7 +73,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		void UpdateCursor( const r2bix_input::CursorPoint cursor_point );
+		bool UpdateCursor( const r2bix_input::CursorPoint cursor_point );
 		void UpdateKey( const int key_index, const bool key_flag );
 
 
