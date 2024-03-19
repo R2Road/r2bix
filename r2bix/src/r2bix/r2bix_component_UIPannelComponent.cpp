@@ -21,11 +21,11 @@ namespace r2bix_component
 
 	void UIPannelComponent::ActivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddListener4Mouse( &mListener4Mouse );
+		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener4Mouse );
 	}
 	void UIPannelComponent::DeactivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddListener4Mouse( &mListener4Mouse );
+		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener4Mouse );
 	}
 
 

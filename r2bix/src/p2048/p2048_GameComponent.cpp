@@ -41,11 +41,11 @@ namespace p2048
 
 	void GameComponent::ActivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddListener4Keyboard( &mKeyboardListener );
+		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mKeyboardListener );
 	}
 	void GameComponent::DeactivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().RemoveListener4Keyboard( &mKeyboardListener );
+		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mKeyboardListener );
 	}
 
 

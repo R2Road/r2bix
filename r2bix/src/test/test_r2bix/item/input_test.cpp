@@ -235,7 +235,7 @@ namespace input_test
 				return false;
 			} );
 
-			input_manager.AddListener4Keyboard( &keyboard_listener );
+			input_manager.AddListener( &keyboard_listener );
 
 			LS();
 
@@ -311,7 +311,7 @@ namespace input_test
 					return false;
 				} );
 
-				input_manager.AddListener4Keyboard( &keyboard_listener );
+				input_manager.AddListener( &keyboard_listener );
 
 				LS();
 
@@ -410,8 +410,8 @@ namespace input_test
 				return false;
 			} );
 
-			manager.AddListener4Keyboard( &keyboard_listener );
-			manager.AddListener4Mouse( &mouse_listener );
+			manager.AddListener( &keyboard_listener );
+			manager.AddListener( &mouse_listener );
 
 			LS();
 
@@ -492,8 +492,8 @@ namespace input_test
 				return true;
 			} );
 
-			manager.AddListener4Keyboard( &keyboard_listener );
-			manager.AddListener4Mouse( &mouse_listener );
+			manager.AddListener( &keyboard_listener );
+			manager.AddListener( &mouse_listener );
 
 			LS();
 
@@ -562,9 +562,9 @@ namespace input_test
 
 				LF();
 
-				PROCESS_MAIN( m.AddListener4Mouse( &l_1 ) );
-				PROCESS_MAIN( m.AddListener4Mouse( &l_2 ) );
-				PROCESS_MAIN( m.AddListener4Mouse( &l_3 ) );
+				PROCESS_MAIN( m.AddListener( &l_1 ) );
+				PROCESS_MAIN( m.AddListener( &l_2 ) );
+				PROCESS_MAIN( m.AddListener( &l_3 ) );
 
 				LF();
 
@@ -595,9 +595,9 @@ namespace input_test
 
 				LF();
 
-				PROCESS_MAIN( m.AddListener4Keyboard( &l_1 ) );
-				PROCESS_MAIN( m.AddListener4Keyboard( &l_2 ) );
-				PROCESS_MAIN( m.AddListener4Keyboard( &l_3 ) );
+				PROCESS_MAIN( m.AddListener( &l_1 ) );
+				PROCESS_MAIN( m.AddListener( &l_2 ) );
+				PROCESS_MAIN( m.AddListener( &l_3 ) );
 
 				LF();
 

@@ -37,11 +37,11 @@ namespace r2bix_input
 			mListenerContainer4Keyboard.clear();
 		}
 
-		void AddListener4Mouse( r2bix_input::Listener4Mouse* const listener );
-		void RemoveListener4Mouse( r2bix_input::Listener4Mouse* const listener );
+		void AddListener( r2bix_input::Listener4Mouse* const listener );
+		void RemoveListener( r2bix_input::Listener4Mouse* const listener );
 
-		void AddListener4Keyboard( r2bix_input::Listener4Keyboard* const listener );
-		void RemoveListener4Keyboard( r2bix_input::Listener4Keyboard* const listener );
+		void AddListener( r2bix_input::Listener4Keyboard* const listener );
+		void RemoveListener( r2bix_input::Listener4Keyboard* const listener );
 
 		const ListenerContainer4Mouse& GetListenerContainer4Mouse() const
 		{
