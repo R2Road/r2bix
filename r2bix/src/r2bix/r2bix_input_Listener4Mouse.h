@@ -23,7 +23,7 @@ namespace r2bix_input
 
 
 		Listener4Mouse();
-		explicit Listener4Mouse( const int order, const bool position_use, const bool left_click, const bool right_click );
+		explicit Listener4Mouse( const int order );
 
 
 
@@ -77,12 +77,18 @@ namespace r2bix_input
 		//
 		void SetCursorMovedCallback( const CursorMovedCallbackT& cursor_moved_callback )
 		{
+			if( cursor_moved_callback )
+			{
+				mbMousePositionUse = true;
+			}
+			else
+			{
+				mbMousePositionUse = false;
+			}
+
 			mCursorMovedCallback = cursor_moved_callback;
 		}
-		void SetKeyStatusChangedCallback( const Callback4KeyStatusChangedT& callback )
-		{
-			mCallback4KeyStatusChanged = callback;
-		}
+		void SetKeyStatusChangedCallback( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback );
 
 
 

@@ -377,7 +377,9 @@ namespace input_test
 
 			r2bix_input::InputManager manager( 0, 0 );
 			r2bix_input::Listener4Keyboard keyboard_listener( 0, { r2bix_input::eKeyCode::VK_ESCAPE } );
-			r2bix_input::Listener4Mouse mouse_listener( 0, false, true, true );
+			r2bix_input::Listener4Mouse mouse_listener( 0 );
+			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_LBUTTON, []( r2bix_input::Listener4Mouse::eKeyStatus )->bool{ return false; } );
+			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_RBUTTON, []( r2bix_input::Listener4Mouse::eKeyStatus )->bool{ return false; } );
 
 			manager.AddListener4Keyboard( &keyboard_listener );
 			manager.AddListener4Mouse( &mouse_listener );
@@ -446,7 +448,7 @@ namespace input_test
 
 			r2bix_input::CursorPoint c;
 			bool bMoved = false;
-			r2bix_input::Listener4Mouse mouse_listener( 0, true, false, false );
+			r2bix_input::Listener4Mouse mouse_listener( 0 );
 			mouse_listener.SetCursorMovedCallback( [&c, &bMoved]( const r2bix_input::CursorPoint cursor_point )->bool{
 
 				c = cursor_point;
@@ -527,9 +529,9 @@ namespace input_test
 
 				LF();
 
-				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_1( 2, false, false, false ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_2( 1, false, false, false ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_3( 3, false, false, false ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_1( 2 ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_2( 1 ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_3( 3 ) );
 
 				LF();
 

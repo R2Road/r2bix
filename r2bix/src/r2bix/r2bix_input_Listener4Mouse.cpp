@@ -1,5 +1,7 @@
 #include "r2bix_input_Listener4Mouse.h"
 
+#include "r2_Assert.h"
+
 namespace r2bix_input
 {
 	Listener4Mouse::Listener4Mouse() :
@@ -13,9 +15,9 @@ namespace r2bix_input
 		, mCursorMovedCallback()
 		, mCallback4KeyStatusChanged()
 	{}
-	Listener4Mouse::Listener4Mouse( const int order, const bool position_use, const bool left_click, const bool right_click ) :
-		  mOrder( order )
-		, mbMousePositionUse( position_use )
+	Listener4Mouse::Listener4Mouse( const int order ) :
+		mOrder( order )
+		, mbMousePositionUse()
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
 		, mObservationKeys()
@@ -23,18 +25,25 @@ namespace r2bix_input
 
 		, mCursorMovedCallback()
 		, mCallback4KeyStatusChanged()
+	{}
+
+
+
+	void Listener4Mouse::SetKeyStatusChangedCallback( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback )
 	{
-		if( left_click )
+		if( key_code != r2bix_input::eKeyCode::VK_LBUTTON && key_code != r2bix_input::eKeyCode::VK_RBUTTON )
 		{
-			mObservationKeys.Add( r2bix_input::eKeyCode::VK_LBUTTON );
-		}
-		if( right_click )
-		{
-			mObservationKeys.Add( r2bix_input::eKeyCode::VK_RBUTTON );
+			R2ASSERT( false, "Listener4Mouse : 허용되지 않는 키를 등록한다." );
+			return;
 		}
 
-		mKeyStatusContainer.resize( mObservationKeys.Size(), eKeyStatus::None );
+		mObservationKeys.Add( key_code );
+		mKeyStatusContainer.push_back( eKeyStatus::None );
+
+		mCallback4KeyStatusChanged = callback;
 	}
+
+
 
 	void Listener4Mouse::UpdateCursor( const r2bix_input::CursorPoint cursor_point )
 	{
