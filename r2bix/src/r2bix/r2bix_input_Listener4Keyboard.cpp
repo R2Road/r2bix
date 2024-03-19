@@ -5,10 +5,12 @@ namespace r2bix_input
 	Listener4Keyboard::Listener4Keyboard() :
 		  mOrder( 0 )
 		, mObservationKeyContainer()
+		, mContainer4KeyStatusChangedCallback()
 	{}
 	Listener4Keyboard::Listener4Keyboard( const int order, std::initializer_list<uint8_t> list ) :
 		  mOrder( order )
 		, mObservationKeyContainer( list )
+		, mContainer4KeyStatusChangedCallback()
 	{}
 
 	void Listener4Keyboard::UpdateKey( const int key_index, const bool key_flag )

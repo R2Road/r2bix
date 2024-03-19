@@ -7,6 +7,11 @@ namespace r2bix_input
 	class Listener4Keyboard
 	{
 	public:
+		using Callback4KeyStatusChangedT = std::function<bool( eKeyStatus )>;
+		using Container4KeyStatusChangedCallbackT = std::vector<Callback4KeyStatusChangedT>;
+
+
+
 		Listener4Keyboard();
 		explicit Listener4Keyboard( const int order, std::initializer_list<uint8_t> list );
 
@@ -55,5 +60,6 @@ namespace r2bix_input
 		const int mOrder;
 
 		ObservationKeyContainer mObservationKeyContainer;
+		Container4KeyStatusChangedCallbackT mContainer4KeyStatusChangedCallback;
 	};
 }
