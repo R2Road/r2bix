@@ -11,7 +11,7 @@ namespace r2bix_input
 		, mObservationKeyContainer( list )
 	{}
 
-	void Listener4Keyboard::Update( const int key_index, const bool key_flag )
+	void Listener4Keyboard::UpdateKey( const int key_index, const bool key_flag )
 	{
 		if( key_flag )
 		{

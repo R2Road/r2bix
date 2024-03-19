@@ -47,7 +47,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		void Update( const int key_index, const bool key_flag );
+		void UpdateKey( const int key_index, const bool key_flag );
 
 
 
