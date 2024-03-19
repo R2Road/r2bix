@@ -11,47 +11,41 @@ namespace r2bix_input
 		, mObservationKeyContainer( list )
 	{}
 
-	void Listener4Keyboard::Update( const ObservationKeyStatesT& observation_key_states )
+	void Listener4Keyboard::Update( const int key_index, const bool key_flag )
 	{
-		int i = 0;
-		for( const r2bix_input::ObservationKey o : mObservationKeyContainer )
+		if( key_flag )
 		{
-			if( observation_key_states.test( mObservationKeyContainer[i].key_code ) )
+			switch( mObservationKeyContainer[key_index].key_status )
 			{
-				switch( mObservationKeyContainer[i].key_status )
-				{
-				case eKeyStatus::None:
-					mObservationKeyContainer[i].key_status = eKeyStatus::Push;
-					break;
+			case eKeyStatus::None:
+				mObservationKeyContainer[key_index].key_status = eKeyStatus::Push;
+				break;
 
-				case eKeyStatus::Push:
-					mObservationKeyContainer[i].key_status = eKeyStatus::Pressed;
-					break;
+			case eKeyStatus::Push:
+				mObservationKeyContainer[key_index].key_status = eKeyStatus::Pressed;
+				break;
 
-					//case eKeyStatus::Pressed:
-					//	break;
+				//case eKeyStatus::Pressed:
+				//	break;
 
-				}
 			}
-			else
+		}
+		else
+		{
+			switch( mObservationKeyContainer[key_index].key_status )
 			{
-				switch( mObservationKeyContainer[i].key_status )
-				{
-					//case eKeyStatus::None:
-					//	break;
+				//case eKeyStatus::None:
+				//	break;
 
-				case eKeyStatus::Push:
-				case eKeyStatus::Pressed:
-					mObservationKeyContainer[i].key_status = eKeyStatus::Release;
-					break;
+			case eKeyStatus::Push:
+			case eKeyStatus::Pressed:
+				mObservationKeyContainer[key_index].key_status = eKeyStatus::Release;
+				break;
 
-				case eKeyStatus::Release:
-					mObservationKeyContainer[i].key_status = eKeyStatus::None;
-					break;
-				}
+			case eKeyStatus::Release:
+				mObservationKeyContainer[key_index].key_status = eKeyStatus::None;
+				break;
 			}
-
-			++i;
 		}
 	}
 }

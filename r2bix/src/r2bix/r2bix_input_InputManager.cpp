@@ -47,10 +47,18 @@ namespace r2bix_input
 		}
 		if( !mListenerContainer4Keyboard.empty() )
 		{
+			auto target_listener = *mListenerContainer4Keyboard.begin();
+
 			//
 			// Keyboard Key Update
 			//
-			( *mListenerContainer4Keyboard.begin() )->Update(mMachineInputCollector.GetObservationKeyStates());
+			int i = 0;
+			for( const r2bix_input::ObservationKey o : target_listener->GetObservationKeyContainer() )
+			{
+				target_listener->Update( i, mMachineInputCollector.HasInput( o.key_code ) );
+
+				++i;
+			}
 		}
 	}
 
