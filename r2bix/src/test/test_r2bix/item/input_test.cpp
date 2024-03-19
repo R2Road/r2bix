@@ -373,19 +373,28 @@ namespace input_test
 
 			std::cout << "[  ESC  ] Exit" << r2tm::linefeed;
 			std::cout << "[L Click] ..." << r2tm::linefeed;
+			std::cout << "[M Click] ..." << r2tm::linefeed;
 			std::cout << "[R Click] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager manager( 0, 0 );
 			r2bix_input::Listener4Keyboard keyboard_listener( 0, { r2bix_input::eKeyCode::VK_ESCAPE } );
 
 			bool bLChanged = false;
+			bool bMChanged = false;
 			bool bRChanged = false;
 			r2bix_input::eKeyStatus sl;
+			r2bix_input::eKeyStatus sm;
 			r2bix_input::eKeyStatus sr;
 			r2bix_input::Listener4Mouse mouse_listener( 0 );
 			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_LBUTTON, [&bLChanged, &sl]( const r2bix_input::eKeyStatus s )->bool{
 				bLChanged = true;
 				sl = s;
+
+				return false;
+			} );
+			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_MBUTTON, [&bMChanged, &sm]( const r2bix_input::eKeyStatus s )->bool{
+				bMChanged = true;
+				sm = s;
 
 				return false;
 			} );
@@ -424,12 +433,21 @@ namespace input_test
 					}
 
 					//
+					// Middle Click
+					//
+					if( bMChanged )
+					{
+						bMChanged = false;
+						std::cout << "\t\t\tkey 2 status : " << static_cast< int >( sm ) << r2tm::linefeed;
+					}
+
+					//
 					// Right Click
 					//
 					if( bRChanged )
 					{
 						bRChanged = false;
-						std::cout << "\t\t\tkey 1 status : " << static_cast< int >( sr ) << r2tm::linefeed;
+						std::cout << "\t\t\t\t\t\tkey 3 status : " << static_cast< int >( sr ) << r2tm::linefeed;
 					}
 				}
 			}
