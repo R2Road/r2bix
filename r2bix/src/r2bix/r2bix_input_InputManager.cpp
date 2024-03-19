@@ -39,14 +39,7 @@ namespace r2bix_input
 				int i = 0;
 				for( const r2bix_input::KeyCodeTypeT k : target_listener->GetObservationKeys() )
 				{
-					if( mMachineInputCollector.HasInput( k ) )
-					{
-						target_listener->UpdateKey( i, true );
-					}
-					else
-					{
-						target_listener->UpdateKey( i, false );
-					}
+					target_listener->UpdateKey( i, mMachineInputCollector.HasInput( k ) );
 
 					++i;
 				}
