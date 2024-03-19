@@ -29,7 +29,17 @@ namespace r2bix_input
 
 			target_listener->UpdateCursor( mMachineInputCollector.GetCursorPoint() );
 
-			target_listener->UpdateKey(mMachineInputCollector.GetObservationKeyStates());
+			for( std::size_t i = 0u, end = target_listener->GetKeyStatusContainer().size(); end > i; ++i )
+			{
+				if( mMachineInputCollector.GetObservationKeyStates().test( target_listener->GetObservationKeys()[i] ) )
+				{
+					target_listener->UpdateKey( i, true );
+				}
+				else
+				{
+					target_listener->UpdateKey( i, false );
+				}
+			}
 		}
 		if( !mListenerContainer4Keyboard.empty() )
 		{

@@ -48,43 +48,40 @@ namespace r2bix_input
 			}
 		}
 	}
-	void Listener4Mouse::UpdateKey( const ObservationKeyStatesT& observation_key_states )
+	void Listener4Mouse::UpdateKey( const int key_index, const bool key_flag )
 	{
-		for( std::size_t i = 0u, end = mKeyStatusContainer.size(); end > i; ++i )
+		if( key_flag )
 		{
-			if( observation_key_states.test( mObservationKeys[i]) )
+			switch( mKeyStatusContainer[key_index] )
 			{
-				switch( mKeyStatusContainer[i] )
-				{
-				case eKeyStatus::None:
-					mKeyStatusContainer[i] = eKeyStatus::Push;
-					break;
+			case eKeyStatus::None:
+				mKeyStatusContainer[key_index] = eKeyStatus::Push;
+				break;
 
-				case eKeyStatus::Push:
-					mKeyStatusContainer[i] = eKeyStatus::Pressed;
-					break;
+			case eKeyStatus::Push:
+				mKeyStatusContainer[key_index] = eKeyStatus::Pressed;
+				break;
 
-				//case eKeyStatus::Pressed:
-				//	break;
+			//case eKeyStatus::Pressed:
+			//	break;
 
-				}
 			}
-			else
+		}
+		else
+		{
+			switch( mKeyStatusContainer[key_index] )
 			{
-				switch( mKeyStatusContainer[i] )
-				{
-				//case eKeyStatus::None:
-				//	break;
+			//case eKeyStatus::None:
+			//	break;
 
-				case eKeyStatus::Push:
-				case eKeyStatus::Pressed:
-					mKeyStatusContainer[i] = eKeyStatus::Release;
-					break;
+			case eKeyStatus::Push:
+			case eKeyStatus::Pressed:
+				mKeyStatusContainer[key_index] = eKeyStatus::Release;
+				break;
 
-				case eKeyStatus::Release:
-					mKeyStatusContainer[i] = eKeyStatus::None;
-					break;
-				}
+			case eKeyStatus::Release:
+				mKeyStatusContainer[key_index] = eKeyStatus::None;
+				break;
 			}
 		}
 	}

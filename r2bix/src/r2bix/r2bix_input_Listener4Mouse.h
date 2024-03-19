@@ -38,6 +38,10 @@ namespace r2bix_input
 		{
 			return mObservationKeys;
 		}
+		const std::vector<eKeyStatus>& GetKeyStatusContainer() const
+		{
+			return mKeyStatusContainer;
+		}
 
 		eKeyStatus Get( const std::size_t key_index ) const
 		{
@@ -81,7 +85,7 @@ namespace r2bix_input
 		//
 		//
 		void UpdateCursor( const r2bix_input::CursorPoint cursor_point );
-		void UpdateKey( const ObservationKeyStatesT& observation_key_states );
+		void UpdateKey( const int key_index, const bool key_flag );
 
 
 
