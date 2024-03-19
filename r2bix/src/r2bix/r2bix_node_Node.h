@@ -50,12 +50,17 @@ namespace r2bix_node
 		using ComponentContainerT = std::list<r2bix_component::ComponentUp>;
 		using ChildContainerT = std::list<NodeUp>;
 
-		Node( r2bix::Director& director );
 
+
+		Node( r2bix::Director& director );
 	public:
 		virtual ~Node() {}
 
+
+
 	static std::unique_ptr<Node> Create( r2bix::Director& director );
+
+
 
 	public:
 		//
@@ -83,6 +88,8 @@ namespace r2bix_node
 		{
 			mbVisible = visible;
 		}
+
+
 
 		//
 		//
@@ -116,6 +123,8 @@ namespace r2bix_node
 
 			return ret;
 		}
+
+
 
 		//
 		//
@@ -190,6 +199,8 @@ namespace r2bix_node
 
 			return ret;
 		}
+
+
 
 	protected:
 		r2bix::Director& mDirector;
