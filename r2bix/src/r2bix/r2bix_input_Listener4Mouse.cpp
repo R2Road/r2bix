@@ -10,7 +10,6 @@ namespace r2bix_input
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
 		, mObservationKeyContainer()
-		, mKeyStatusContainer()
 
 		, mCursorMovedCallback()
 		, mCallback4KeyStatusChanged()
@@ -21,7 +20,6 @@ namespace r2bix_input
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
 		, mObservationKeyContainer()
-		, mKeyStatusContainer()
 
 		, mCursorMovedCallback()
 		, mCallback4KeyStatusChanged()
@@ -38,7 +36,6 @@ namespace r2bix_input
 		}
 
 		mObservationKeyContainer.Add( key_code );
-		mKeyStatusContainer.push_back( eKeyStatus::None );
 
 		mCallback4KeyStatusChanged = callback;
 	}
@@ -65,14 +62,14 @@ namespace r2bix_input
 	{
 		if( key_flag )
 		{
-			switch( mKeyStatusContainer[key_index] )
+			switch( mObservationKeyContainer[key_index].key_status )
 			{
 			case eKeyStatus::None:
-				mKeyStatusContainer[key_index] = eKeyStatus::Push;
+				mObservationKeyContainer[key_index].key_status = eKeyStatus::Push;
 				break;
 
 			case eKeyStatus::Push:
-				mKeyStatusContainer[key_index] = eKeyStatus::Pressed;
+				mObservationKeyContainer[key_index].key_status = eKeyStatus::Pressed;
 				break;
 
 			//case eKeyStatus::Pressed:
@@ -82,18 +79,18 @@ namespace r2bix_input
 		}
 		else
 		{
-			switch( mKeyStatusContainer[key_index] )
+			switch( mObservationKeyContainer[key_index].key_status )
 			{
 			//case eKeyStatus::None:
 			//	break;
 
 			case eKeyStatus::Push:
 			case eKeyStatus::Pressed:
-				mKeyStatusContainer[key_index] = eKeyStatus::Release;
+				mObservationKeyContainer[key_index].key_status = eKeyStatus::Release;
 				break;
 
 			case eKeyStatus::Release:
-				mKeyStatusContainer[key_index] = eKeyStatus::None;
+				mObservationKeyContainer[key_index].key_status = eKeyStatus::None;
 				break;
 			}
 		}

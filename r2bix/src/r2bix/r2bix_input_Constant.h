@@ -221,4 +221,10 @@ namespace r2bix_input
 		VK_PA1 = 0xFD,	// PA1 key
 		VK_OEM_CLEAR = 0xFE,	// Clear key
 	};
+
+	struct ObservationKey
+	{
+		KeyCodeTypeT key_code = 0;
+		eKeyStatus key_status = eKeyStatus::None;
+	};
 }

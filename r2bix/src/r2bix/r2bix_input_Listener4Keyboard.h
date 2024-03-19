@@ -27,19 +27,19 @@ namespace r2bix_input
 
 		eKeyStatus Get( const std::size_t key_index ) const
 		{
-			return mKeyStatusContainer[key_index];
+			return mObservationKeyContainer[key_index].key_status;
 		}
 		bool IsPushed( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::Push == mKeyStatusContainer[key_index] );
+			return ( eKeyStatus::Push == mObservationKeyContainer[key_index].key_status );
 		}
 		bool IsRelease( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::Release == mKeyStatusContainer[key_index] );
+			return ( eKeyStatus::Release == mObservationKeyContainer[key_index].key_status );
 		}
 		bool HasInput( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::None < mKeyStatusContainer[key_index] );
+			return ( eKeyStatus::None < mObservationKeyContainer[key_index].key_status );
 		}
 
 
@@ -55,6 +55,5 @@ namespace r2bix_input
 		const int mOrder;
 
 		ObservationKeyContainer mObservationKeyContainer;
-		std::vector<eKeyStatus> mKeyStatusContainer;
 	};
 }

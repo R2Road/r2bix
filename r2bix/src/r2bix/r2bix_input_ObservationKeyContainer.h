@@ -10,7 +10,7 @@ namespace r2bix_input
 	{
 	public:
 		using KeyValueT = KeyCodeTypeT;
-		using ContainerT = std::vector<KeyValueT>;
+		using ContainerT = std::vector<ObservationKey>;
 		using ConstIteratorT= ContainerT::const_iterator;
 
 
@@ -19,8 +19,13 @@ namespace r2bix_input
 		//
 		ObservationKeyContainer() : mContainer()
 		{}
-		ObservationKeyContainer( std::initializer_list<uint8_t> list ) : mContainer( list )
-		{}
+		ObservationKeyContainer( std::initializer_list<uint8_t> list )
+		{
+			for( const auto key_code : list )
+			{
+				mContainer.push_back( { key_code } );
+			}
+		}
 
 
 		//
@@ -39,11 +44,11 @@ namespace r2bix_input
 		//
 		//
 		//
-		KeyCodeTypeT& operator[]( const std::size_t key_index )
+		ObservationKey& operator[]( const std::size_t key_index )
 		{
 			return mContainer[key_index];
 		}
-		const KeyCodeTypeT& operator[]( const std::size_t key_index ) const
+		const ObservationKey& operator[]( const std::size_t key_index ) const
 		{
 			return mContainer[key_index];
 		}
@@ -63,7 +68,7 @@ namespace r2bix_input
 		//
 		void Add( const KeyValueT key_value )
 		{
-			mContainer.push_back( key_value );
+			mContainer.push_back( { key_value } );
 		}
 
 

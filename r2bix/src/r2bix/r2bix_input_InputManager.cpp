@@ -37,9 +37,9 @@ namespace r2bix_input
 			//
 			{
 				int i = 0;
-				for( const r2bix_input::KeyCodeTypeT k : target_listener->GetObservationKeyContainer() )
+				for( const r2bix_input::ObservationKey o : target_listener->GetObservationKeyContainer() )
 				{
-					target_listener->UpdateKey( i, mMachineInputCollector.HasInput( k ) );
+					target_listener->UpdateKey( i, mMachineInputCollector.HasInput( o.key_code ) );
 
 					++i;
 				}

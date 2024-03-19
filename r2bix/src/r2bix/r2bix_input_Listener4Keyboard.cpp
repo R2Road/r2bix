@@ -5,52 +5,53 @@ namespace r2bix_input
 	Listener4Keyboard::Listener4Keyboard() :
 		  mOrder( 0 )
 		, mObservationKeyContainer()
-		, mKeyStatusContainer()
 	{}
 	Listener4Keyboard::Listener4Keyboard( const int order, std::initializer_list<uint8_t> list ) :
 		  mOrder( order )
 		, mObservationKeyContainer( list )
-		, mKeyStatusContainer( list.size(), eKeyStatus::None )
 	{}
 
 	void Listener4Keyboard::Update( const ObservationKeyStatesT& observation_key_states )
 	{
-		for( std::size_t i = 0u, end = mKeyStatusContainer.size(); end > i; ++i )
+		int i = 0;
+		for( const r2bix_input::ObservationKey o : mObservationKeyContainer )
 		{
-			if( observation_key_states.test( mObservationKeyContainer[i]) )
+			if( observation_key_states.test( mObservationKeyContainer[i].key_code ) )
 			{
-				switch( mKeyStatusContainer[i] )
+				switch( mObservationKeyContainer[i].key_status )
 				{
 				case eKeyStatus::None:
-					mKeyStatusContainer[i] = eKeyStatus::Push;
+					mObservationKeyContainer[i].key_status = eKeyStatus::Push;
 					break;
 
 				case eKeyStatus::Push:
-					mKeyStatusContainer[i] = eKeyStatus::Pressed;
+					mObservationKeyContainer[i].key_status = eKeyStatus::Pressed;
 					break;
 
-				//case eKeyStatus::Pressed:
-				//	break;
+					//case eKeyStatus::Pressed:
+					//	break;
 
 				}
 			}
 			else
 			{
-				switch( mKeyStatusContainer[i] )
+				switch( mObservationKeyContainer[i].key_status )
 				{
-				//case eKeyStatus::None:
-				//	break;
+					//case eKeyStatus::None:
+					//	break;
 
 				case eKeyStatus::Push:
 				case eKeyStatus::Pressed:
-					mKeyStatusContainer[i] = eKeyStatus::Release;
+					mObservationKeyContainer[i].key_status = eKeyStatus::Release;
 					break;
 
 				case eKeyStatus::Release:
-					mKeyStatusContainer[i] = eKeyStatus::None;
+					mObservationKeyContainer[i].key_status = eKeyStatus::None;
 					break;
 				}
 			}
+
+			++i;
 		}
 	}
 }
