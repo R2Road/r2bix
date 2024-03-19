@@ -66,6 +66,7 @@
     <ClCompile Include="src\r2bix\r2bix_animation_constant.cpp" />
     <ClCompile Include="src\r2bix\r2bix_ColorMaskOption.cpp" />
     <ClCompile Include="src\r2bix\r2bix_ColorValue.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_component_InputComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_UIButtonComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_UIPannelComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_director_CoutBufferRedirector.cpp" />
@@ -255,6 +256,7 @@
     <ClInclude Include="src\r2bix\r2bix_component_Component.h" />
     <ClInclude Include="src\r2bix\r2bix_component_ComponentStaticID.h" />
     <ClInclude Include="src\r2bix\r2bix_ColorValue.h" />
+    <ClInclude Include="src\r2bix\r2bix_component_InputComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_UIButtonComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_UIPannelComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_director_CoutBufferRedirector.h" />

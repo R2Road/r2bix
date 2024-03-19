@@ -4,6 +4,7 @@
 
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
+#include "r2bix/r2bix_component_InputComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
 #include "r2bix/r2bix_component_UIPannelComponent.h"
 #include "r2bix/r2bix_node_CustomTextureNode.h"
@@ -46,6 +47,15 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						scene = temp.get();
 
 						director.Setup( std::move( temp ) );
+
+						auto input_component = scene->AddComponent<r2bix_component::InputComponent>();
+						input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
+						{
+							director.RequestAbort();
+							return false;
+						} );
+
+						input_component->Activate();
 					}
 
 					//
