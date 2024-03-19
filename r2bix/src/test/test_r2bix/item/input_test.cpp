@@ -217,13 +217,9 @@ namespace input_test
 			std::cout << "[A] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager input_manager( 0, 0 );
-			r2bix_input::Listener4Keyboard keyboard_listener(
-				0
-				, {
-					  0x1B		// esc
-					, 0x41		// a
-				}
-			);
+			r2bix_input::Listener4Keyboard keyboard_listener;
+			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
+			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_A, []( r2bix_input::eKeyStatus )->bool { return false; } );
 
 			input_manager.AddListener4Keyboard( &keyboard_listener );
 
@@ -277,16 +273,12 @@ namespace input_test
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
 				r2bix_input::InputManager input_manager( 0, 0 );
-				r2bix_input::Listener4Keyboard keyboard_listener(
-					0
-					, {
-						  0x1B		// esc
-						, 0x41		// a
-						, 0x44		// d
-						, 0x53		// s
-						, 0x57		// w
-					}
-				);
+				r2bix_input::Listener4Keyboard keyboard_listener;
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_A, []( r2bix_input::eKeyStatus )->bool { return false; } );
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_D, []( r2bix_input::eKeyStatus )->bool { return false; } );
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_S, []( r2bix_input::eKeyStatus )->bool { return false; } );
+				keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_W, []( r2bix_input::eKeyStatus )->bool { return false; } );
 
 				input_manager.AddListener4Keyboard( &keyboard_listener );
 
@@ -377,7 +369,8 @@ namespace input_test
 			std::cout << "[R Click] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager manager( 0, 0 );
-			r2bix_input::Listener4Keyboard keyboard_listener( 0, { r2bix_input::eKeyCode::VK_ESCAPE } );
+			r2bix_input::Listener4Keyboard keyboard_listener;
+			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
 
 			bool bLChanged = false;
 			bool bMChanged = false;
@@ -475,7 +468,9 @@ namespace input_test
 			std::cout << "[Cursor] ..." << r2tm::linefeed;
 
 			r2bix_input::InputManager manager( 0, 0 );
-			r2bix_input::Listener4Keyboard keyboard_listener( 0, { r2bix_input::eKeyCode::VK_ESCAPE } );
+
+			r2bix_input::Listener4Keyboard keyboard_listener;
+			keyboard_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
 
 			r2bix_input::CursorPoint c;
 			bool bMoved = false;
@@ -593,9 +588,9 @@ namespace input_test
 
 				LF();
 
-				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_1( 2, {} ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_2( 1, {} ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_3( 3, {} ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_1( 2 ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_2( 1 ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_3( 3 ) );
 
 				LF();
 

@@ -15,7 +15,7 @@ namespace r2bix_input
 
 
 		Listener4Keyboard();
-		explicit Listener4Keyboard( const int order, std::initializer_list<uint8_t> list );
+		explicit Listener4Keyboard( const int order );
 
 
 
@@ -48,6 +48,13 @@ namespace r2bix_input
 		{
 			return ( eKeyStatus::None < mObservationKeyContainer[key_index].key_status );
 		}
+
+
+
+		//
+		//
+		//
+		void SetKeyStatusChangedCallback( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback );
 
 
 

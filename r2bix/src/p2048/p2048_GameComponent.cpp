@@ -26,19 +26,16 @@ namespace p2048
 		, mYouWinNode( nullptr )
 		, mGameOverNode( nullptr )
 
-		, mKeyboardListener(
-			0
-			, {
-				  0x1B		// esc
-				, 0x41		// a - left
-				, 0x44		// d - right
-				, 0x53		// s - down
-				, 0x57		// w - up
-				, 0x52		// r - reset
-				, 0x09		// tab - history
-			}
-		)
-	{}
+		, mKeyboardListener( 0 )
+	{
+		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_A, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_D, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_S, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_W, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_R, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_TAB, []( r2bix_input::eKeyStatus )->bool { return false; } );
+	}
 
 
 
