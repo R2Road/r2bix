@@ -127,7 +127,7 @@ namespace input_test
 				std::cout << "[MOUSE] Move" << r2tm::linefeed;
 
 
-				r2::PointInt buffer_offset( 6, 10 );
+				r2::PointInt buffer_offset( 1, 2 );
 				r2bix_input::MachineInputCollector machine_input_collector( buffer_offset );
 				r2bix_input::ObservationKeyContainer observation_key_container( { 0x1B } ); // ESC
 				machine_input_collector.AddObservationKeys( observation_key_container );
