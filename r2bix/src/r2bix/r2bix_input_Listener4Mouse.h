@@ -2,7 +2,7 @@
 
 #include <functional>
 
-#include "r2bix_input_ObservationKeys.h"
+#include "r2bix_input_ObservationKeyContainer.h"
 
 namespace r2bix_input
 {

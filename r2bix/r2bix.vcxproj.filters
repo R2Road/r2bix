@@ -1034,7 +1034,7 @@
     <ClInclude Include="src\test\test_r2bix\menu\UIMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_input_ObservationKeys.h">
+    <ClInclude Include="src\r2bix\r2bix_input_ObservationKeyContainer.h">
       <Filter>r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_input_InputManager.h">

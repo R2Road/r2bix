@@ -3,7 +3,7 @@
 #include <array>
 
 #include "r2bix_input_Constant.h"
-#include "r2bix_input_ObservationKeys.h"
+#include "r2bix_input_ObservationKeyContainer.h"
 
 namespace r2bix_input
 {

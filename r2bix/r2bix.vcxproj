@@ -264,7 +264,7 @@
     <ClInclude Include="src\r2bix\r2bix_component_iComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_input_InputManager.h" />
     <ClInclude Include="src\r2bix\r2bix_input_Listener4Mouse.h" />
-    <ClInclude Include="src\r2bix\r2bix_input_ObservationKeys.h" />
+    <ClInclude Include="src\r2bix\r2bix_input_ObservationKeyContainer.h" />
     <ClInclude Include="src\r2bix\r2bix_node_Node.h" />
     <ClInclude Include="src\r2bix\r2bix_director_ScreenBufferManager.h" />
     <ClInclude Include="src\r2bix\r2bix_node_UIButtonNode.h" />
