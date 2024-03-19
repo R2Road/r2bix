@@ -10,7 +10,9 @@ namespace r2bix_input
 	{
 	public:
 		using CursorMovedCallbackT = std::function<bool( CursorPoint )>;
+
 		using Callback4KeyStatusChangedT = std::function<bool( eKeyStatus )>;
+		using Container4KeyStatusChangedCallbackT = std::vector<Callback4KeyStatusChangedT>;
 
 
 
@@ -98,6 +100,6 @@ namespace r2bix_input
 		ObservationKeyContainer mObservationKeyContainer;
 
 		CursorMovedCallbackT mCursorMovedCallback;
-		Callback4KeyStatusChangedT mCallback4KeyStatusChanged;
+		Container4KeyStatusChangedCallbackT mContainer4KeyStatusChangedCallback;
 	};
 }

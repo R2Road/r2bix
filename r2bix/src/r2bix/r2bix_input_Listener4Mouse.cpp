@@ -12,7 +12,7 @@ namespace r2bix_input
 		, mObservationKeyContainer()
 
 		, mCursorMovedCallback()
-		, mCallback4KeyStatusChanged()
+		, mContainer4KeyStatusChangedCallback()
 	{}
 	Listener4Mouse::Listener4Mouse( const int order ) :
 		mOrder( order )
@@ -22,7 +22,7 @@ namespace r2bix_input
 		, mObservationKeyContainer()
 
 		, mCursorMovedCallback()
-		, mCallback4KeyStatusChanged()
+		, mContainer4KeyStatusChangedCallback()
 	{}
 
 
@@ -36,8 +36,7 @@ namespace r2bix_input
 		}
 
 		mObservationKeyContainer.Add( key_code );
-
-		mCallback4KeyStatusChanged = callback;
+		mContainer4KeyStatusChangedCallback.push_back( callback );
 	}
 
 
@@ -66,10 +65,12 @@ namespace r2bix_input
 			{
 			case eKeyStatus::None:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Push;
+				mContainer4KeyStatusChangedCallback[key_index]( mObservationKeyContainer[key_index].key_status );
 				break;
 
 			case eKeyStatus::Push:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Pressed;
+				mContainer4KeyStatusChangedCallback[key_index]( mObservationKeyContainer[key_index].key_status );
 				break;
 
 			//case eKeyStatus::Pressed:
@@ -87,10 +88,12 @@ namespace r2bix_input
 			case eKeyStatus::Push:
 			case eKeyStatus::Pressed:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Release;
+				mContainer4KeyStatusChangedCallback[key_index]( mObservationKeyContainer[key_index].key_status );
 				break;
 
 			case eKeyStatus::Release:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::None;
+				mContainer4KeyStatusChangedCallback[key_index]( mObservationKeyContainer[key_index].key_status );
 				break;
 			}
 		}

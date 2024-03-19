@@ -377,9 +377,24 @@ namespace input_test
 
 			r2bix_input::InputManager manager( 0, 0 );
 			r2bix_input::Listener4Keyboard keyboard_listener( 0, { r2bix_input::eKeyCode::VK_ESCAPE } );
+
+			bool bLChanged = false;
+			bool bRChanged = false;
+			r2bix_input::eKeyStatus sl;
+			r2bix_input::eKeyStatus sr;
 			r2bix_input::Listener4Mouse mouse_listener( 0 );
-			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_LBUTTON, []( r2bix_input::eKeyStatus )->bool{ return false; } );
-			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_RBUTTON, []( r2bix_input::eKeyStatus )->bool{ return false; } );
+			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_LBUTTON, [&bLChanged, &sl]( const r2bix_input::eKeyStatus s )->bool{
+				bLChanged = true;
+				sl = s;
+
+				return false;
+			} );
+			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_RBUTTON, [&bRChanged, &sr]( const r2bix_input::eKeyStatus s )->bool{
+				bRChanged = true;
+				sr = s;
+
+				return false;
+			} );
 
 			manager.AddListener4Keyboard( &keyboard_listener );
 			manager.AddListener4Mouse( &mouse_listener );
@@ -387,8 +402,6 @@ namespace input_test
 			LS();
 
 			{
-				auto last_input_status_0 = mouse_listener.Get( 0 );
-				auto last_input_status_1 = mouse_listener.Get( 1 );
 				while( 1 )
 				{
 					manager.Update();
@@ -404,19 +417,19 @@ namespace input_test
 					//
 					// Left Click
 					//
-					if( last_input_status_0 != mouse_listener.Get( 0 ) )
+					if( bLChanged )
 					{
-						last_input_status_0 = mouse_listener.Get( 0 );
-						std::cout << "key 0 status : " << static_cast< int >( last_input_status_0 ) << r2tm::linefeed;
+						bLChanged = false;
+						std::cout << "key 0 status : " << static_cast< int >( sl ) << r2tm::linefeed;
 					}
 
 					//
 					// Right Click
 					//
-					if( last_input_status_1 != mouse_listener.Get( 1 ) )
+					if( bRChanged )
 					{
-						last_input_status_1 = mouse_listener.Get( 1 );
-						std::cout << "\t\t\tkey 1 status : " << static_cast< int >( last_input_status_1 ) << r2tm::linefeed;
+						bRChanged = false;
+						std::cout << "\t\t\tkey 1 status : " << static_cast< int >( sr ) << r2tm::linefeed;
 					}
 				}
 			}
