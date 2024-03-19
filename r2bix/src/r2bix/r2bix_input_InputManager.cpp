@@ -35,7 +35,7 @@ namespace r2bix_input
 			//
 			// Mouse Key Update
 			//
-			for( std::size_t i = 0u, end = target_listener->GetKeyStatusContainer().size(); end > i; ++i )
+			for( int i = 0u, end = static_cast<int>( target_listener->GetKeyStatusContainer().size() ); end > i; ++i )
 			{
 				if( mMachineInputCollector.GetObservationKeyStates().test( target_listener->GetObservationKeys()[i] ) )
 				{
