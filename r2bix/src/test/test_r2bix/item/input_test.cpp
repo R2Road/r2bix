@@ -385,7 +385,7 @@ namespace input_test
 			r2bix_input::eKeyStatus sl;
 			r2bix_input::eKeyStatus sm;
 			r2bix_input::eKeyStatus sr;
-			r2bix_input::Listener4Mouse mouse_listener( 0 );
+			r2bix_input::Listener4Mouse mouse_listener;
 			mouse_listener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_LBUTTON, [&bLChanged, &sl]( const r2bix_input::eKeyStatus s )->bool{
 				bLChanged = true;
 				sl = s;
@@ -479,7 +479,7 @@ namespace input_test
 
 			r2bix_input::CursorPoint c;
 			bool bMoved = false;
-			r2bix_input::Listener4Mouse mouse_listener( 0 );
+			r2bix_input::Listener4Mouse mouse_listener;
 			mouse_listener.SetCursorMovedCallback( [&c, &bMoved]( const r2bix_input::CursorPoint cursor_point )->bool{
 
 				c = cursor_point;
