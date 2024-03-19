@@ -35,7 +35,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 				, []()->const char* { return "UI Test Scene"; }
 				, []()->r2tm::eDoLeaveAction
 				{
-					r2bix::Director director( { 50, 50, r2bix_director::Config::eScheduleType::Sleep, 30, 60, 2, 1 } );
+					r2bix::Director director( { 51, 51, r2bix_director::Config::eScheduleType::Sleep, 30, 60, 0, 0 } );
 
 					//
 					// Scene
