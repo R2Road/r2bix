@@ -65,19 +65,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		void SetCursorMovedCallback( const CursorMovedCallbackT& cursor_moved_callback )
-		{
-			if( cursor_moved_callback )
-			{
-				mbMousePositionUse = true;
-			}
-			else
-			{
-				mbMousePositionUse = false;
-			}
-
-			mCursorMovedCallback = cursor_moved_callback;
-		}
+		void SetCursorMovedCallback( const CursorMovedCallbackT& cursor_moved_callback );
 		void SetKeyStatusChangedCallback( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback );
 
 

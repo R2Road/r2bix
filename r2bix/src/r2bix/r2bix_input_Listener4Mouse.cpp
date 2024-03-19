@@ -27,6 +27,19 @@ namespace r2bix_input
 
 
 
+	void Listener4Mouse::SetCursorMovedCallback( const CursorMovedCallbackT& cursor_moved_callback )
+	{
+		if( cursor_moved_callback )
+		{
+			mbMousePositionUse = true;
+		}
+		else
+		{
+			mbMousePositionUse = false;
+		}
+
+		mCursorMovedCallback = cursor_moved_callback;
+	}
 	void Listener4Mouse::SetKeyStatusChangedCallback( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback )
 	{
 		if( key_code != r2bix_input::eKeyCode::VK_LBUTTON && key_code != r2bix_input::eKeyCode::VK_RBUTTON && key_code != r2bix_input::eKeyCode::VK_MBUTTON )
