@@ -39,7 +39,7 @@ namespace r2bix_component
 	}
 	void UIPannelComponent::DeactivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener4Mouse );
+		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mListener4Mouse );
 	}
 
 	void UIPannelComponent::Update( const float delta_time )
