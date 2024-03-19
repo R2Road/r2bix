@@ -64,6 +64,12 @@ namespace r2bix_input
 
 
 
+	void InputManager::ClearListener()
+	{
+		mListenerContainer4Mouse.clear();
+		mListenerContainer4Keyboard.clear();
+	}
+
 	void InputManager::AddListener( r2bix_input::Listener4Mouse* const listener )
 	{
 		//
