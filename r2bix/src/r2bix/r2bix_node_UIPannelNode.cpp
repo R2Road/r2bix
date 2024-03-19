@@ -1,13 +1,13 @@
-#include "r2bix_node_UIButtonNode.h"
+#include "r2bix_node_UIPannelNode.h"
 
 #include "r2bix_Director.h"
 #include "r2bix_component_CustomTextureComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
-#include "r2bix_component_UIButtonComponent.h"
+#include "r2bix_component_UIPannelComponent.h"
 
 namespace r2bix_node
 {
-	r2bix_node::NodeUp UIButtonNode::Create( r2bix::Director& director )
+	r2bix_node::NodeUp UIPannelNode::Create( r2bix::Director& director )
 	{
 		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
@@ -18,18 +18,17 @@ namespace r2bix_node
 			//
 			auto custom_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
 			auto texture_render_component = ret->AddComponent<r2bix_component::TextureRenderComponent>();
-			auto ui_button_component = ret->AddComponent<r2bix_component::UIButtonComponent>();
-
+			auto ui_pannel_component = ret->AddComponent<r2bix_component::UIPannelComponent>();
 
 
 			//
 			// ¼³Á¤
 			//
 			texture_render_component->SetTexture( custom_texture_component->GetTexture() );
+			texture_render_component->SetPivotPoint( 0.f, 0.f );
 
-			ui_button_component->SetCustomTextureComponent( custom_texture_component );
-			ui_button_component->SetTextureRenderComponent( texture_render_component );
-
+			ui_pannel_component->SetCustomTextureComponent( custom_texture_component );
+			ui_pannel_component->SetTextureRenderComponent( texture_render_component );
 
 
 			//
@@ -45,7 +44,7 @@ namespace r2bix_node
 			}
 			if( true )
 			{
-				ui_button_component->Activate();
+				ui_pannel_component->Activate();
 			}
 
 		}

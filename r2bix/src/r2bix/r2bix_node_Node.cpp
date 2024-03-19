@@ -63,4 +63,17 @@ namespace r2bix_node
 			c->Render( camera, render_target, offset );
 		}
 	}
+
+	void Node::Terminate()
+	{
+		for( auto& c : mComponentContainer )
+		{
+			c->Terminate();
+		}
+
+		for( auto& c : mChildContainer )
+		{
+			c->Terminate();
+		}
+	}
 }

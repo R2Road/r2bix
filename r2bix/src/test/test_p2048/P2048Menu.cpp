@@ -80,6 +80,11 @@ r2tm::WriteFunctionT P2048Menu::GetWriteFunction() const
 				//
 				director.Run();
 
+				//
+				// Terminate
+				//
+				director.Terminate();
+
 				return r2tm::eDoLeaveAction::None;
 			}
 		);

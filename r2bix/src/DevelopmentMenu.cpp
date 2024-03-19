@@ -90,6 +90,11 @@ r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 				//
 				director.Run();
 
+				//
+				// Terminate
+				//
+				director.Terminate();
+
 				return r2tm::eDoLeaveAction::None;
 			}
 		);
@@ -108,6 +113,11 @@ r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 				// Process
 				//
 				director.Run();
+
+				//
+				// Terminate
+				//
+				director.Terminate();
 
 				return r2tm::eDoLeaveAction::None;
 			}

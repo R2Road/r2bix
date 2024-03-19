@@ -241,6 +241,13 @@ namespace p2048
 
 				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() * 0.5f, director.GetScreenBufferSize().GetHeight() * 0.5f );
 			}
+
+
+
+			//
+			// È°¼ºÈ­
+			//
+			game_component->Activate();
 		}
 
 		return ret;

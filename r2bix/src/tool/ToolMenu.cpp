@@ -44,6 +44,11 @@ r2tm::WriteFunctionT ToolMenu::GetWriteFunction() const
 				//
 				director.Run();
 
+				//
+				// Terminate
+				//
+				director.Terminate();
+
 				return r2tm::eDoLeaveAction::None;
 			}
 		);

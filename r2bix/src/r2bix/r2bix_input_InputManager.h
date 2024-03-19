@@ -1,14 +1,22 @@
 #pragma once
 
+#include <list>
+
 #include "r2bix_input_MachineInputCollector.h"
 
 namespace r2bix_input
 {
-	class KeyboardInputListener;
+	class Listener4Keyboard;
+	class Listener4Mouse;
 
 	class InputManager
 	{
 	public:
+		using ListenerContainer4Mouse = std::list<Listener4Mouse*>;
+		using ListenerContainer4Keyboard = std::list<Listener4Keyboard*>;
+
+
+
 		InputManager( const short offset_x, const short offset_y );
 
 
@@ -23,18 +31,29 @@ namespace r2bix_input
 		//
 		//
 		//
-		void ClearListener()
+		void ClearListener();
+
+		void AddListener( r2bix_input::Listener4Mouse* const listener );
+		void RemoveListener( r2bix_input::Listener4Mouse* const listener );
+
+		void AddListener( r2bix_input::Listener4Keyboard* const listener );
+		void RemoveListener( r2bix_input::Listener4Keyboard* const listener );
+
+		const ListenerContainer4Mouse& GetListenerContainer4Mouse() const
 		{
-			mKeyboardInputListener = nullptr;
+			return mListenerContainer4Mouse;
 		}
-		void AddInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener );
-		void RemoveInputListener( r2bix_input::KeyboardInputListener* const keyboard_input_listener );
+		const ListenerContainer4Keyboard& GetListenerContainer4Keyboard() const
+		{
+			return mListenerContainer4Keyboard;
+		}
 
 
 
 	public:
 		MachineInputCollector mMachineInputCollector;
 
-		KeyboardInputListener* mKeyboardInputListener;
+		ListenerContainer4Mouse mListenerContainer4Mouse;
+		ListenerContainer4Keyboard mListenerContainer4Keyboard;
 	};
 }

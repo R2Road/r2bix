@@ -48,36 +48,40 @@ namespace component_test
 		{
 			LS();
 
+			OUTPUT_NOTE( "ComponentStaticID는 Type 당 1개 할당된다." );
+
+			LS();
+
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto transform_1 = r2bix_component::TransformComponent::Create( *node ) );
-			DECLARATION_MAIN( auto transform_2 = r2bix_component::TransformComponent::Create( *node ) );
-			DECLARATION_MAIN( auto tex_render_1 = r2bix_component::TextureRenderComponent::Create( *node ) );
-			DECLARATION_MAIN( auto tex_render_2 = r2bix_component::TextureRenderComponent::Create( *node ) );
+			DECLARATION_MAIN( auto transform_1 = r2bix_component::ComponentStaticID<r2bix_component::TransformComponent>::Get() );
+			DECLARATION_MAIN( auto transform_2 = r2bix_component::ComponentStaticID<r2bix_component::TransformComponent>::Get() );
+			DECLARATION_MAIN( auto tex_render_1 = r2bix_component::ComponentStaticID<r2bix_component::TextureRenderComponent>::Get() );
+			DECLARATION_MAIN( auto tex_render_2 = r2bix_component::ComponentStaticID<r2bix_component::TextureRenderComponent>::Get() );
 
 			LS();
 
 			{
-				EXPECT_EQ( transform_1->GetStaticID(), transform_2->GetStaticID() );
-				EXPECT_EQ( transform_1->GetStaticID(), r2bix_component::ComponentStaticID<r2bix_component::TransformComponent>::Get() );
+				EXPECT_EQ( transform_1, transform_2 );
+				EXPECT_EQ( transform_1, r2bix_component::ComponentStaticID<r2bix_component::TransformComponent>::Get() );
 
 				std::cout << r2tm::linefeed2;
 
-				EXPECT_EQ( tex_render_1->GetStaticID(), tex_render_2->GetStaticID() );
-				EXPECT_EQ( tex_render_1->GetStaticID(), r2bix_component::ComponentStaticID<r2bix_component::TextureRenderComponent>::Get() );
-				EXPECT_NE( tex_render_1->GetStaticID(), transform_1->GetStaticID() );
+				EXPECT_EQ( tex_render_1, tex_render_2 );
+				EXPECT_EQ( tex_render_1, r2bix_component::ComponentStaticID<r2bix_component::TextureRenderComponent>::Get() );
+				EXPECT_NE( tex_render_1, transform_1 );
 			}
 
 			LS();
 
 			{
-				std::cout << "transform_1->GetStaticID();" << " : " << transform_1->GetStaticID() << r2tm::linefeed;
-				std::cout << "transform_2->GetStaticID();" << " : " << transform_2->GetStaticID() << r2tm::linefeed;
-				std::cout << "tex_render_1->GetStaticID();" << " : " << tex_render_1->GetStaticID() << r2tm::linefeed;
-				std::cout << "tex_render_2->GetStaticID();" << " : " << tex_render_2->GetStaticID() << r2tm::linefeed;
+				OUTPUT_VALUE( transform_1 );
+				OUTPUT_VALUE( transform_2 );
+				OUTPUT_VALUE( tex_render_1 );
+				OUTPUT_VALUE( tex_render_2 );
 			}
 
 			LS();

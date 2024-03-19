@@ -32,7 +32,6 @@ namespace r2bix_input
 			// Key : Keyboard, Mouse
 			//
 			{
-				int key_value = 0;
 				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
 				{
 					mObservationKeyStates[i] = false;
@@ -80,18 +79,18 @@ namespace r2bix_input
 
 
 
-	void MachineInputCollector::AddObservationKeys( const ObservationKeys& observation_keys )
+	void MachineInputCollector::AddObservationKeys( const ObservationKeyContainer& observation_key_container )
 	{
-		for( const auto k : observation_keys )
+		for( const auto k : observation_key_container )
 		{
-			++mObservationKeyList[k];
+			++mObservationKeyList[k.key_code];
 		}
 	}
-	void MachineInputCollector::RemoveObservationKeys( const ObservationKeys& observation_keys )
+	void MachineInputCollector::RemoveObservationKeys( const ObservationKeyContainer& observation_key_container )
 	{
-		for( const auto k : observation_keys )
+		for( const auto k : observation_key_container )
 		{
-			--mObservationKeyList[k];
+			--mObservationKeyList[k.key_code];
 		}
 	}
 }

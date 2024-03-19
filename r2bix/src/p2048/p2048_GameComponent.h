@@ -3,7 +3,7 @@
 #include "r2bix_component_Component.h"
 #include "r2bix_component_ComponentStaticID.h"
 
-#include "r2bix_input_KeyboardInputListener.h"
+#include "r2bix_input_Listener4Keyboard.h"
 
 #include "p2048_GameProcessor.h"
 #include "p2048_Stage.h"
@@ -30,8 +30,21 @@ namespace p2048
 
 	public:
 		GameComponent( r2bix_node::Node& owner_node );
-		~GameComponent();
 
+
+
+		//
+		//
+		//
+	private:
+		void ActivateProcess() override;
+		void DeactivateProcess() override;
+
+
+
+		//
+		//
+		//
 	public:
 		void Update( const float delta_time ) override;
 
@@ -62,6 +75,6 @@ namespace p2048
 		r2bix_node::Node* mYouWinNode;
 		r2bix_node::Node* mGameOverNode;
 
-		r2bix_input::KeyboardInputListener mKeyboardInputListener;
+		r2bix_input::Listener4Keyboard mKeyboardListener;
 	};
 }

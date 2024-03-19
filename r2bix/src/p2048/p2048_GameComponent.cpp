@@ -26,22 +26,29 @@ namespace p2048
 		, mYouWinNode( nullptr )
 		, mGameOverNode( nullptr )
 
-		, mKeyboardInputListener( {
-			0x1B		// esc
-			, 0x41		// a - left
-			, 0x44		// d - right
-			, 0x53		// s - down
-			, 0x57		// w - up
-			, 0x52		// r - reset
-			, 0x09		// tab - history
-		} )
+		, mKeyboardListener( 0 )
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddInputListener(&mKeyboardInputListener);
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_A, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_D, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_S, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_W, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_R, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_TAB, []( r2bix_input::eKeyStatus )->bool { return false; } );
 	}
-	GameComponent::~GameComponent()
+
+
+
+	void GameComponent::ActivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().RemoveInputListener( &mKeyboardInputListener );
+		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mKeyboardListener );
 	}
+	void GameComponent::DeactivateProcess()
+	{
+		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mKeyboardListener );
+	}
+
+
 
 	void GameComponent::Update( const float delta_time )
 	{
@@ -85,19 +92,19 @@ namespace p2048
 		{
 			// Input Process, Game End Check
 			r2::Direction4Sequential::eState input_direction = r2::Direction4Sequential::eState::NONE;
-			if( mKeyboardInputListener.IsPushed( 1 ) ) // A
+			if( mKeyboardListener.IsPushed( 1 ) ) // A
 			{
 				input_direction = r2::Direction4Sequential::eState::Left;
 			}
-			else if( mKeyboardInputListener.IsPushed( 2 ) ) // D
+			else if( mKeyboardListener.IsPushed( 2 ) ) // D
 			{
 				input_direction = r2::Direction4Sequential::eState::Right;
 			}
-			else if( mKeyboardInputListener.IsPushed( 3 ) ) // S
+			else if( mKeyboardListener.IsPushed( 3 ) ) // S
 			{
 				input_direction = r2::Direction4Sequential::eState::Up;
 			}
-			else if( mKeyboardInputListener.IsPushed( 4 ) ) // W
+			else if( mKeyboardListener.IsPushed( 4 ) ) // W
 			{
 				input_direction = r2::Direction4Sequential::eState::Down;
 			}
@@ -134,20 +141,20 @@ namespace p2048
 			break;
 		}
 
-		if( mKeyboardInputListener.IsPushed( 6 ) )
+		if( mKeyboardListener.IsPushed( 6 ) )
 		{
 			mStageViewComponent4History->GetOwnerNode().SetVisible( true );
 		}
-		else if( mKeyboardInputListener.IsRelease( 6 ) )
+		else if( mKeyboardListener.IsRelease( 6 ) )
 		{
 			mStageViewComponent4History->GetOwnerNode().SetVisible( false );
 		}
 
-		if( mKeyboardInputListener.IsPushed( 5 ) )
+		if( mKeyboardListener.IsPushed( 5 ) )
 		{
 			mStep = eStep::GameReset;
 		}
-		else if( mKeyboardInputListener.IsRelease( 0 ) )
+		else if( mKeyboardListener.IsRelease( 0 ) )
 		{
 			r2bix_utility::ClearCInputBuffer();
 			GetOwnerNode().GetDirector().RequestAbort();

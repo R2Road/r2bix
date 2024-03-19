@@ -2,6 +2,7 @@
 
 #include <utility> // std::move
 
+#include "r2_Assert.h"
 #include "r2bix_node_SceneNode.h"
 
 namespace r2bix
@@ -16,7 +17,12 @@ namespace r2bix
 
 		, mCurrentSceneNode()
 		, mNextSceneNode()
-	{}
+	{
+		R2ASSERT( ( director_config.ScreenBufferSize_Width & 1 ), "Director 스크린 버퍼 크기 홀수로 넣어라." );
+		R2ASSERT( ( director_config.ScreenBufferSize_Height & 1 ), "Director 스크린 버퍼 크기 홀수로 넣어라." );
+	}
+
+
 
 	void Director::Setup( r2bix_node::SceneNodeUp node )
 	{
@@ -30,6 +36,8 @@ namespace r2bix
 		}
 	}
 
+
+
 	void Director::Run()
 	{
 		ClearScreen();
@@ -38,6 +46,7 @@ namespace r2bix
 		{
 			if( mNextSceneNode )
 			{
+				mCurrentSceneNode->Terminate();
 				mCurrentSceneNode = std::move( mNextSceneNode );
 			}
 
@@ -56,6 +65,16 @@ namespace r2bix
 
 		mScreenBufferManager.InitCursor();
 		mScreenBufferManager.Swap();
+	}
+
+
+
+	void Director::Terminate()
+	{
+		if( mCurrentSceneNode )
+		{
+			mCurrentSceneNode->Terminate();
+		}
 	}
 
 

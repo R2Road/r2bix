@@ -2,13 +2,14 @@
 
 #include <memory>
 
-#include "r2bix_director_ScreenBufferManager.h"
-#include "r2bix_input_InputManager.h"
-#include "r2bix_node_SceneNode.h"
 #include "r2_SizeInt.h"
 
 #include "r2bix_director_Config.h"
 #include "r2bix_director_Scheduler.h"
+#include "r2bix_director_ScreenBufferManager.h"
+#include "r2bix_input_InputManager.h"
+#include "r2bix_node_SceneNode.h"
+
 
 namespace r2bix
 {
@@ -17,14 +18,33 @@ namespace r2bix
 	public:
 		Director( const r2bix_director::Config& director_config );
 
+
+
+		//
+		//
+		//
 		void Setup( r2bix_node::SceneNodeUp node );
 
+
+
+		//
+		//
+		//
 		void Run();
 	private:
 		void onUpdate( const float delta_time );
 		void onRender();
 
+
+
+		//
+		//
+		//
 	public:
+		void Terminate();
+
+
+
 		//
 		//
 		//
@@ -32,6 +52,8 @@ namespace r2bix
 		{
 			return mScreenBufferSIze;
 		}
+
+
 
 		//
 		//
@@ -43,6 +65,8 @@ namespace r2bix
 		void ClearScreen();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
 
+
+
 		//
 		// Input
 		//
@@ -50,6 +74,8 @@ namespace r2bix
 		{
 			return mInputManager;
 		}
+
+
 
 	private:
 		r2bix_director::ScreenBufferManager mScreenBufferManager;

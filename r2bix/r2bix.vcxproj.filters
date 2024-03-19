@@ -269,9 +269,6 @@
     <ClCompile Include="src\r2bix\r2bix_Director.cpp">
       <Filter>r2bix\director</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_input_KeyboardInputListener.cpp">
-      <Filter>r2bix\input</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_input_MachineInputCollector.cpp">
       <Filter>r2bix\input</Filter>
     </ClCompile>
@@ -470,14 +467,29 @@
     <ClCompile Include="src\r2bix\r2bix_input_InputManager.cpp">
       <Filter>r2bix\input</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\r2bix_input_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_component_UIButtonComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_node_UIButtonNode.cpp">
       <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_UIPannelComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_input_Listener4Keyboard.cpp">
+      <Filter>r2bix\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_input_Listener4Mouse.cpp">
+      <Filter>r2bix\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_UIPannelNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\input_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_InputComponent.cpp">
+      <Filter>r2bix\component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -655,9 +667,6 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_Director.h">
       <Filter>r2bix\director</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_input_KeyboardInputListener.h">
-      <Filter>r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_input_MachineInputCollector.h">
       <Filter>r2bix\input</Filter>
@@ -1028,7 +1037,7 @@
     <ClInclude Include="src\test\test_r2bix\menu\UIMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_input_ObservationKeys.h">
+    <ClInclude Include="src\r2bix\r2bix_input_ObservationKeyContainer.h">
       <Filter>r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_input_InputManager.h">
@@ -1037,14 +1046,29 @@
     <ClInclude Include="external\r2\r2_SingletonWithStaticFunction.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\r2bix_input_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_UIButtonComponent.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_node_UIButtonNode.h">
       <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_UIPannelComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_input_Listener4Keyboard.h">
+      <Filter>r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_input_Listener4Mouse.h">
+      <Filter>r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_UIPannelNode.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\input_test.h">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_InputComponent.h">
+      <Filter>r2bix\component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,7 +10,28 @@ namespace r2bix_node
 		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
-			ret->AddComponent<r2bix_component::TextureFrameRenderComponent>();
+
+			//
+			// 생성
+			//
+			r2bix_component::TextureFrameRenderComponent* texture_framerender_component = ret->AddComponent<r2bix_component::TextureFrameRenderComponent>();
+
+
+
+			//
+			// 설정
+			//
+
+
+
+			//
+			// 활성화
+			//
+			if( true )
+			{
+				texture_framerender_component->Activate();
+			}
+
 		}
 
 		return ret;

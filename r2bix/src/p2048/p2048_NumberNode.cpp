@@ -22,40 +22,62 @@ namespace p2048
 		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
-			auto number_component = ret->AddComponent<p2048::NumberComponent>();
 
 			//
-			// Frame
+			// 생성
+			//
+			p2048::NumberComponent* number_component = ret->AddComponent<p2048::NumberComponent>();
+
+
+
+			//
+			// 설정
 			//
 			{
-				auto node = ret->AddChild<r2bix_node::CustomTextureNode>( std::numeric_limits<int>::min() );
-				node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 8u, 3u, ' ' );
-				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetTexture(
-					node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()
-				);
+				//
+				// Frame
+				//
+				{
+					auto node = ret->AddChild<r2bix_node::CustomTextureNode>( std::numeric_limits<int>::min() );
+					node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 8u, 3u, ' ' );
+					node->GetComponent<r2bix_component::TextureRenderComponent>()->SetTexture(
+						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()
+					);
 
-				number_component->SetCustomTextureComponent( node->GetComponent<r2bix_component::CustomTextureComponent>() );
+					number_component->SetCustomTextureComponent( node->GetComponent<r2bix_component::CustomTextureComponent>() );
+				}
+
+				//
+				// Label
+				//
+				{
+					auto node = ret->AddChild<r2bix_node::LabelSNode>();
+					node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 2, 0 );
+					node->GetComponent<r2bix_component::LabelSComponent>()->SetColor( r2bix::eForegroundColor::FG_White | r2bix::eBackgroundColor::BG_Black );
+
+					number_component->SetLabelComponent( node->GetComponent<r2bix_component::LabelSComponent>() );
+				}
+
+				//
+				// Debug
+				//
+				if( p2048::Config::GetNodeConfig().pivot )
+				{
+					ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
+				}
 			}
 
+
+
 			//
-			// Label
+			// 활성화
 			//
+			if( true )
 			{
-				auto node = ret->AddChild<r2bix_node::LabelSNode>();
-				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 2, 0 );
-				node->GetComponent<r2bix_component::LabelSComponent>()->SetColor( r2bix::eForegroundColor::FG_White | r2bix::eBackgroundColor::BG_Black );
-
-				number_component->SetLabelComponent( node->GetComponent<r2bix_component::LabelSComponent>() );
+				number_component->Activate();
 			}
 
-			//
-			// Debug
-			//
-			if( p2048::Config::GetNodeConfig().pivot )
-			{
-				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
-			}
 		}
 
 		return ret;
