@@ -37,7 +37,7 @@ namespace r2bix_input
 			//
 			for( int i = 0u, end = static_cast<int>( target_listener->GetKeyStatusContainer().size() ); end > i; ++i )
 			{
-				if( mMachineInputCollector.GetObservationKeyStates().test( target_listener->GetObservationKeys()[i] ) )
+				if( mMachineInputCollector.HasInput( target_listener->GetObservationKeys()[i] ) )
 				{
 					target_listener->UpdateKey( i, true );
 				}
