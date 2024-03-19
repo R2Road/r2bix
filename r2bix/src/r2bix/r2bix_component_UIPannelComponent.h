@@ -1,6 +1,7 @@
 #pragma once
 
 #include "r2bix_component_Component.h"
+#include "r2bix_input_Listener4Mouse.h"
 
 namespace r2bix_component
 {
@@ -17,6 +18,16 @@ namespace r2bix_component
 		//
 		//
 		//
+	private:
+		void ActivateProcess() override;
+		void DeactivateProcess() override;
+
+
+
+		//
+		//
+		//
+	public:
 		CustomTextureComponent* const GetCustomTextureComponent() const
 		{
 			return mCustomTextureComponent;
@@ -51,5 +62,7 @@ namespace r2bix_component
 	private:
 		CustomTextureComponent* mCustomTextureComponent;
 		TextureRenderComponent* mTextureRenderComponent;
+
+		r2bix_input::Listener4Mouse mListener4Mouse;
 	};
 }
