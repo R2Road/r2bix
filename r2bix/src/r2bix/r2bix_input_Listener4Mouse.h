@@ -65,8 +65,8 @@ namespace r2bix_input
 		//
 		//
 		//
-		void SetCursorMovedCallback( const CursorMovedCallbackT& cursor_moved_callback );
-		void SetKeyStatusChangedCallback( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback );
+		void SetCallback4CursorMoved( const CursorMovedCallbackT& cursor_moved_callback );
+		void SetCallback4KeyStatusChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback );
 
 
 

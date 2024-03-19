@@ -14,7 +14,7 @@ namespace r2bix_component
 		, mTextureRenderComponent( nullptr )
 		, mListener4Mouse()
 	{
-		mListener4Mouse.SetCursorMovedCallback( [this]( const r2bix_input::CursorPoint cursor_point )->bool
+		mListener4Mouse.SetCallback4CursorMoved( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
 			const r2::RectInt r( mOwnerNode.mTransformComponent->GetPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
 

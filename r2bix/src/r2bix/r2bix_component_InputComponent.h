@@ -29,16 +29,16 @@ namespace r2bix_component
 		//
 		void SetMouseCursorCallback( const r2bix_input::Listener4Mouse::CursorMovedCallbackT& callback )
 		{
-			mListener4Mouse.SetCursorMovedCallback( callback );
+			mListener4Mouse.SetCallback4CursorMoved( callback );
 		}
 		void SetMouseCallback( const r2bix_input::eKeyCode key_code, const r2bix_input::Listener4Mouse::Callback4KeyStatusChangedT& callback )
 		{
-			mListener4Mouse.SetKeyStatusChangedCallback( key_code, callback );
+			mListener4Mouse.SetCallback4KeyStatusChanged( key_code, callback );
 		}
 
 		void SetKeyboardCallback( const r2bix_input::eKeyCode key_code, const r2bix_input::Listener4Keyboard::Callback4KeyStatusChangedT& callback )
 		{
-			mListener4Keyboard.SetKeyStatusChangedCallback( key_code, callback );
+			mListener4Keyboard.SetCallback4KeyStatusChanged( key_code, callback );
 		}
 
 

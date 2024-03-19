@@ -28,13 +28,13 @@ namespace p2048
 
 		, mKeyboardListener( 0 )
 	{
-		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
-		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_A, []( r2bix_input::eKeyStatus )->bool { return false; } );
-		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_D, []( r2bix_input::eKeyStatus )->bool { return false; } );
-		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_S, []( r2bix_input::eKeyStatus )->bool { return false; } );
-		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_W, []( r2bix_input::eKeyStatus )->bool { return false; } );
-		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_R, []( r2bix_input::eKeyStatus )->bool { return false; } );
-		mKeyboardListener.SetKeyStatusChangedCallback( r2bix_input::eKeyCode::VK_TAB, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_A, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_D, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_S, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_W, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_R, []( r2bix_input::eKeyStatus )->bool { return false; } );
+		mKeyboardListener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_TAB, []( r2bix_input::eKeyStatus )->bool { return false; } );
 	}
 
 
