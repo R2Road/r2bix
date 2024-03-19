@@ -21,13 +21,13 @@ namespace r2bix_component
 			if( r.IsIn( cursor_point ) )
 			{
 				mCustomTextureComponent->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+				return true;
 			}
 			else
 			{
 				mCustomTextureComponent->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+				return false;
 			}
-
-			return r.IsIn( cursor_point );
 		} );
 	}
 
