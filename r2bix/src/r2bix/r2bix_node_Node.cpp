@@ -6,6 +6,8 @@ namespace r2bix_node
 		mDirector( director )
 		, mbVisible( true )
 		, mComponentContainer()
+
+		, mParentNode( nullptr )
 		, mChildContainer()
 
 		, mTransformComponent( nullptr )

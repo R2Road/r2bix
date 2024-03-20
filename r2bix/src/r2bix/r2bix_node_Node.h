@@ -137,6 +137,12 @@ namespace r2bix_node
 		{
 			return mChildContainer;
 		}
+
+		void SetParentNode( Node* parent_node )
+		{
+			mParentNode = parent_node;
+		}
+
 		template<typename NodeT>
 		Node* AddChild()
 		{
@@ -147,7 +153,15 @@ namespace r2bix_node
 		{
 			static_assert( std::is_base_of<r2bix_node::Node, NodeT>() );
 
+			//
+			// 생성
+			//
 			auto child_node = NodeT::Create( mDirector );
+
+			//
+			// 기본 설정
+			//
+			child_node->SetParentNode( this );
 			child_node->mTransformComponent->SetZ( z_order );
 
 			auto ret = child_node.get();
@@ -206,6 +220,8 @@ namespace r2bix_node
 		r2bix::Director& mDirector;
 		bool mbVisible;
 		ComponentContainerT mComponentContainer;
+
+		Node* mParentNode;
 		ChildContainerT mChildContainer;
 	public:
 		r2bix_component::TransformComponent* mTransformComponent;
