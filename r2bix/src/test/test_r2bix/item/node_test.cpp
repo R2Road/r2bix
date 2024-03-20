@@ -495,21 +495,51 @@ namespace node_test
 				// Pannel 1
 				{
 					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '1' );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [node]()
+					{
+						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+					} );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [node]()
+					{
+						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+					} );
+
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 1, 1 );
 				}
 
 				// Pannel 2
 				{
 					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '2' );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [node]()
+					{
+						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+					} );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [node]()
+					{
+						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+					} );
+
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 5 );
 				}
 
 				// Pannel 3
 				{
 					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '3' );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [node]()
+					{
+						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+					} );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [node]()
+					{
+						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+					} );
+
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
 				}
 			}

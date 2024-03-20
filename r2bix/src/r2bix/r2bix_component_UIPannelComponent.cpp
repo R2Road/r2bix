@@ -13,21 +13,30 @@ namespace r2bix_component
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 		, mListener4Mouse()
+		, mMouseOverCallback()
+		, mMouseLeaveCallback()
 	{
 		mListener4Mouse.SetCallback4CursorMoved( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
 			const r2::RectInt r( mOwnerNode.mTransformComponent->GetPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
 
-			if( r.IsIn( cursor_point ) )
+			bool ret = r.IsIn( cursor_point );
+			if( ret )
 			{
-				mCustomTextureComponent->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
-				return true;
+				if( mMouseOverCallback )
+				{
+					mMouseOverCallback();
+				}
 			}
 			else
 			{
-				mCustomTextureComponent->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
-				return false;
+				if( mMouseLeaveCallback )
+				{
+					mMouseLeaveCallback();
+				}
 			}
+
+			return ret;
 		} );
 	}
 

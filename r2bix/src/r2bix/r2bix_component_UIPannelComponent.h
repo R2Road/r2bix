@@ -11,6 +11,11 @@ namespace r2bix_component
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
+		using MouseOverCallbackT = std::function<void()>;
+		using MouseLeaveCallbackT = std::function<void()>;
+
+
+
 		UIPannelComponent( r2bix_node::Node& owner_node );
 
 
@@ -64,6 +69,15 @@ namespace r2bix_component
 		void SetSize( const uint32_t width, const uint32_t height, const char fill_char );
 		void SetSize( const uint32_t width, const uint32_t height );
 
+		void SetMouseOverCallback( const MouseOverCallbackT& callback )
+		{
+			mMouseOverCallback = callback;
+		}
+		void SetMouseLeaveCallback( const MouseLeaveCallbackT& callback )
+		{
+			mMouseLeaveCallback = callback;
+		}
+
 
 
 	private:
@@ -71,5 +85,7 @@ namespace r2bix_component
 		TextureRenderComponent* mTextureRenderComponent;
 
 		r2bix_input::Listener4Mouse mListener4Mouse;
+		MouseOverCallbackT mMouseOverCallback;
+		MouseLeaveCallbackT mMouseLeaveCallback;
 	};
 }
