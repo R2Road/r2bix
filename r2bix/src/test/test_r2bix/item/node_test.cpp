@@ -166,39 +166,6 @@ namespace node_test
 
 
 
-	r2tm::TitleFunctionT Scene::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Scene";
-		};
-	}
-	r2tm::DoFunctionT Scene::GetDoFunction() const
-	{
-		return []()->r2tm::eDoLeaveAction
-		{
-			LS();
-
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-
-			LS();
-
-			DECLARATION_MAIN( const auto dummy_node = r2bix_node::SceneNode::Create( dummy_director ) );
-
-			LS();
-
-			{
-				EXPECT_TRUE( dummy_node->GetComponent<r2bix_component::TransformComponent>() );
-			}
-
-			LS();
-
-			return r2tm::eDoLeaveAction::Pause;
-		};
-	}
-
-
-
 	r2tm::TitleFunctionT LabelS::GetTitleFunction() const
 	{
 		return []()->const char*

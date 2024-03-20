@@ -34,7 +34,6 @@ r2tm::WriteFunctionT NodeMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( 'q', node_test::Scene() );
 		ret->AddItem( 'w', node_test::LabelS() );
 		ret->AddItem( 'e', node_test::LabelM() );
 		ret->AddItem( 'r', node_test::Sprite() );
