@@ -1010,12 +1010,24 @@ namespace component_test
 
 			{
 				EXPECT_TRUE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Activate 호출로 Input Listener 등록" );
 
 				LF();
 
 				PROCESS_MAIN( c->Activate() );
 				EXPECT_FALSE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
 				EXPECT_EQ( *dummy_director.GetInputManager().GetListenerContainer4Mouse().begin(), c->GetListener4Mouse() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Deactivate 호출로 Input Listener 해제" );
 
 				LF();
 
