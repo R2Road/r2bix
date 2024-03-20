@@ -75,30 +75,26 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					}
 
 					//
-					// Pannel 1
+					// Pannel Node Test
 					//
 					{
-						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
-						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '1' );
-						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 1, 1 );
-					}
+						//
+						// Pannel 1
+						//
+						{
+							auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+							node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '1' );
+							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 1, 1 );
+						}
 
-					//
-					// Pannel 2
-					//
-					{
-						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
-						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '2' );
-						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 5 );
-					}
-
-					//
-					// Pannel 3
-					//
-					{
-						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
-						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '3' );
-						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
+						//
+						// Pannel 2
+						//
+						{
+							auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+							node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '2' );
+							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
+						}
 					}
 
 					//

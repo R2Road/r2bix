@@ -36,6 +36,11 @@ namespace r2bix_component
 			return mTextureRenderComponent;
 		}
 
+		UIPannelComponent* const GetUIPannelComponent() const
+		{
+			return mUIPannelComponent;
+		}
+
 		int GetWidth() const;
 		int GetHeight() const;
 
