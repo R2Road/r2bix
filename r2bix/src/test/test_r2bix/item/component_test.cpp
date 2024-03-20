@@ -1004,8 +1004,8 @@ namespace component_test
 
 			LS();
 
-			DECLARATION_MAIN( auto ui_pannel = node->AddComponent<r2bix_component::UIPannelComponent>() );
-			EXPECT_NE( nullptr, ui_pannel );
+			DECLARATION_MAIN( auto c = node->AddComponent<r2bix_component::UIPannelComponent>() );
+			EXPECT_NE( nullptr, c );
 
 			LS();
 
@@ -1014,9 +1014,9 @@ namespace component_test
 
 				LF();
 
-				PROCESS_MAIN( ui_pannel->Activate() );
+				PROCESS_MAIN( c->Activate() );
 				EXPECT_FALSE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
-				EXPECT_EQ( *dummy_director.GetInputManager().GetListenerContainer4Mouse().begin(), ui_pannel->GetListener4Mouse() );
+				EXPECT_EQ( *dummy_director.GetInputManager().GetListenerContainer4Mouse().begin(), c->GetListener4Mouse() );
 			}
 
 			LS();
