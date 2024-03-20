@@ -917,7 +917,7 @@ namespace component_test
 	{
 		return []()->const char*
 		{
-			return "UI UIPannel Component";
+			return "UIPannel Component";
 		};
 	}
 	r2tm::DoFunctionT UIPannel::GetDoFunction() const
@@ -989,7 +989,7 @@ namespace component_test
 	{
 		return []()->const char*
 		{
-			return "UI Button Component";
+			return "UIButton Component";
 		};
 	}
 	r2tm::DoFunctionT UIButton::GetDoFunction() const
