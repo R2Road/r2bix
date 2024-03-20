@@ -380,70 +380,6 @@ namespace node_test
 
 
 
-	r2tm::TitleFunctionT UIButton::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "UIButton";
-		};
-	}
-	r2tm::DoFunctionT UIButton::GetDoFunction() const
-	{
-		return []()->r2tm::eDoLeaveAction
-		{
-			LS();
-
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-
-			LS();
-
-			DECLARATION_MAIN( auto node = r2bix_node::UIButtonNode::Create( dummy_director ) );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIButtonComponent>() );
-
-			LS();
-
-			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-				r2bix_helper::Printer4Texture::DrawTexture( render_target );
-			}
-
-			LS();
-
-			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 3, 3 ) );
-
-				LF();
-
-				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-				r2bix_helper::Printer4Texture::DrawTexture( render_target );
-			}
-
-			LS();
-
-			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 5, 4 ) );
-
-				LF();
-
-				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-				r2bix_helper::Printer4Texture::DrawTexture( render_target );
-			}
-
-			LS();
-
-			return r2tm::eDoLeaveAction::Pause;
-		};
-	}
-
-
-
 	r2tm::TitleFunctionT UIPannel::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -492,6 +428,70 @@ namespace node_test
 
 			{
 				PROCESS_MAIN( node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 5, 4 ) );
+
+				LF();
+
+				render_target.FillCharacterAll( '=' );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT UIButton::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIButton";
+		};
+	}
+	r2tm::DoFunctionT UIButton::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto node = r2bix_node::UIButtonNode::Create( dummy_director ) );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIButtonComponent>() );
+
+			LS();
+
+			{
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 3, 3 ) );
+
+				LF();
+
+				render_target.FillCharacterAll( '=' );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 5, 4 ) );
 
 				LF();
 

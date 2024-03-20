@@ -64,14 +64,14 @@ namespace node_test
 
 
 
-	class UIButton : public r2tm::iItem
+	class UIPannel : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class UIPannel : public r2tm::iItem
+	class UIButton : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
