@@ -26,9 +26,9 @@
 
 namespace p2048
 {
-	r2bix_node::SceneNodeUp GameScene::Create( r2bix::Director& director )
+	r2bix_node::NodeUp GameScene::Create( r2bix::Director& director )
 	{
-		auto ret( r2bix_node::SceneNode::Create( director ) );
+		auto ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
 			//

@@ -26,14 +26,14 @@
 
 namespace p2048
 {
-	TitleScene::TitleScene( r2bix::Director& director ) : r2bix_node::SceneNode( director )
+	TitleScene::TitleScene( r2bix::Director& director ) : r2bix_node::Node( director )
 		, mLabelNode( nullptr )
 		, mSpriteNode( nullptr )
 	{}
 
-	r2bix_node::SceneNodeUp TitleScene::Create( r2bix::Director& director )
+	r2bix_node::NodeUp TitleScene::Create( r2bix::Director& director )
 	{
-		r2bix_node::SceneNodeUp ret( new ( std::nothrow ) TitleScene( director ) );
+		r2bix_node::NodeUp ret( new ( std::nothrow ) TitleScene( director ) );
 		if( !ret->Init() )
 		{
 			assert( false );
@@ -262,6 +262,6 @@ namespace p2048
 			}
 		}
 
-		r2bix_node::SceneNode::Update( delta_time );
+		r2bix_node::Node::Update( delta_time );
 	}
 }

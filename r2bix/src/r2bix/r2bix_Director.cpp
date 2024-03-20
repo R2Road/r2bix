@@ -3,7 +3,6 @@
 #include <utility> // std::move
 
 #include "r2_Assert.h"
-#include "r2bix_node_SceneNode.h"
 
 namespace r2bix
 {
@@ -32,7 +31,7 @@ namespace r2bix
 
 
 
-	void Director::Setup( r2bix_node::SceneNodeUp node )
+	void Director::Setup( r2bix_node::NodeUp node )
 	{
 		if( mCurrentSceneNode )
 		{

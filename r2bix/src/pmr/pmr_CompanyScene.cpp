@@ -9,12 +9,12 @@
 
 namespace pmr
 {
-	CompanyScene::CompanyScene( r2bix::Director& director ) : r2bix_node::SceneNode( director )
+	CompanyScene::CompanyScene( r2bix::Director& director ) : r2bix_node::Node( director )
 	{}
 
-	r2bix_node::SceneNodeUp CompanyScene::Create( r2bix::Director& director )
+	r2bix_node::NodeUp CompanyScene::Create( r2bix::Director& director )
 	{
-		r2bix_node::SceneNodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
+		r2bix_node::NodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
 		if( !ret || !ret->Init() )
 		{
 			ret.reset();
@@ -48,6 +48,6 @@ namespace pmr
 			}
 		}
 
-		r2bix_node::SceneNode::Update( delta_time );
+		r2bix_node::Node::Update( delta_time );
 	}
 }

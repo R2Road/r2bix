@@ -19,13 +19,13 @@
 
 namespace p2048
 {
-	CompanyScene::CompanyScene( r2bix::Director& director ) : r2bix_node::SceneNode( director )
+	CompanyScene::CompanyScene( r2bix::Director& director ) : r2bix_node::Node( director )
 		, mChangeSceneTimer( 2.f, true )
 	{}
 
-	r2bix_node::SceneNodeUp CompanyScene::Create( r2bix::Director& director )
+	r2bix_node::NodeUp CompanyScene::Create( r2bix::Director& director )
 	{
-		r2bix_node::SceneNodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
+		r2bix_node::NodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
 		if( !ret->Init() )
 		{
 			assert( false );
@@ -96,6 +96,6 @@ namespace p2048
 			}
 		}
 
-		r2bix_node::SceneNode::Update( delta_time );
+		r2bix_node::Node::Update( delta_time );
 	}
 }

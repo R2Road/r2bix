@@ -320,9 +320,6 @@
     <ClCompile Include="src\r2bix\r2bix_node_PivotNode.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_node_SceneNode.cpp">
-      <Filter>r2bix\node</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_node_SpriteAnimationNode.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
@@ -726,9 +723,6 @@
       <Filter>r2bix\node</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_node_PivotNode.h">
-      <Filter>r2bix\node</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_node_SceneNode.h">
       <Filter>r2bix\node</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_node_SpriteAnimationNode.h">

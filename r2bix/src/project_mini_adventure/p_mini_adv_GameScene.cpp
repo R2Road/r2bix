@@ -9,12 +9,12 @@
 
 namespace p_mini_adv
 {
-	GameScene::GameScene( r2bix::Director& director ) : r2bix_node::SceneNode( director )
+	GameScene::GameScene( r2bix::Director& director ) : r2bix_node::Node( director )
 	{}
 
-	r2bix_node::SceneNodeUp GameScene::Create( r2bix::Director& director )
+	r2bix_node::NodeUp GameScene::Create( r2bix::Director& director )
 	{
-		r2bix_node::SceneNodeUp ret( new ( std::nothrow ) GameScene( director ) );
+		r2bix_node::NodeUp ret( new ( std::nothrow ) GameScene( director ) );
 		if( !ret || !ret->Init() )
 		{
 			ret.reset();
@@ -53,6 +53,6 @@ namespace p_mini_adv
 			}
 		}
 
-		r2bix_node::SceneNode::Update( delta_time );
+		r2bix_node::Node::Update( delta_time );
 	}
 }

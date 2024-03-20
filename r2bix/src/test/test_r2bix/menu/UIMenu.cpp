@@ -42,9 +42,9 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					// Scene
 					//
-					r2bix_node::SceneNode* scene;
+					r2bix_node::Node* scene;
 					{
-						auto temp = r2bix_node::SceneNode::Create( director );
+						auto temp = r2bix_node::Node::Create( director );
 						scene = temp.get();
 
 						director.Setup( std::move( temp ) );

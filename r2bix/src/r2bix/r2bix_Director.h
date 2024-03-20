@@ -8,7 +8,7 @@
 #include "r2bix_director_Scheduler.h"
 #include "r2bix_director_ScreenBufferManager.h"
 #include "r2bix_input_InputManager.h"
-#include "r2bix_node_SceneNode.h"
+#include "r2bix_node_Node.h"
 #include "r2bix_render_Camera.h"
 #include "r2bix_render_Texture.h"
 
@@ -25,7 +25,7 @@ namespace r2bix
 		//
 		//
 		//
-		void Setup( r2bix_node::SceneNodeUp node );
+		void Setup( r2bix_node::NodeUp node );
 
 
 
@@ -90,7 +90,7 @@ namespace r2bix
 
 		r2bix_input::InputManager mInputManager;
 
-		r2bix_node::SceneNodeUp mCurrentSceneNode;
-		r2bix_node::SceneNodeUp mNextSceneNode;
+		r2bix_node::NodeUp mCurrentSceneNode;
+		r2bix_node::NodeUp mNextSceneNode;
 	};
 }

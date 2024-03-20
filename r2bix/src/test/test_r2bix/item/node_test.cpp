@@ -14,7 +14,6 @@
 #include "r2bix_node_CustomTextureNode.h"
 #include "r2bix_node_LabelSNode.h"
 #include "r2bix_node_LabelMNode.h"
-#include "r2bix_node_SceneNode.h"
 #include "r2bix_node_SpriteAnimationNode.h"
 #include "r2bix_node_SpriteNode.h"
 #include "r2bix_node_UIButtonNode.h"

@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace r2bix_node
 {
-	using SceneNodeUp = std::unique_ptr<class SceneNode>;
+	using NodeUp = std::unique_ptr<class Node>;
 }
 
 namespace tool_texture_viewer
@@ -20,6 +20,6 @@ namespace tool_texture_viewer
 		ViewerScene() = delete;
 
 	public:
-		static r2bix_node::SceneNodeUp Create( r2bix::Director& director );
+		static r2bix_node::NodeUp Create( r2bix::Director& director );
 	};
 }

@@ -11,12 +11,12 @@
 
 namespace p2048
 {
-	EntryScene::EntryScene( r2bix::Director& director ) : r2bix_node::SceneNode( director )
+	EntryScene::EntryScene( r2bix::Director& director ) : r2bix_node::Node( director )
 	{}
 
-	r2bix_node::SceneNodeUp EntryScene::Create( r2bix::Director& director )
+	r2bix_node::NodeUp EntryScene::Create( r2bix::Director& director )
 	{
-		r2bix_node::SceneNodeUp ret( new ( std::nothrow ) EntryScene( director ) );
+		r2bix_node::NodeUp ret( new ( std::nothrow ) EntryScene( director ) );
 		if( !ret->Init() )
 		{
 			assert( false );
@@ -39,6 +39,6 @@ namespace p2048
 		//
 		mDirector.Setup( p2048::CompanyScene::Create( mDirector ) );
 
-		r2bix_node::SceneNode::Update( delta_time );
+		r2bix_node::Node::Update( delta_time );
 	}
 }
