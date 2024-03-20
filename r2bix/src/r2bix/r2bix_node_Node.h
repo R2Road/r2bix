@@ -67,8 +67,15 @@ namespace r2bix_node
 		// 생성시 1회 불리는 자기 초기화 함수
 		//
 		virtual bool Init();
+
 		//
-		// 보유 컴포넌트, 자식 노드의 Update 호출.
+		// Add Child, Remove Child 되면 호출
+		//
+		void Enter();
+		void Exit();
+
+		//
+		// 보유 컴포넌트, 자식 노드의 Update, Render 호출.
 		//
 		virtual void Update( const float delta_time );
 		virtual void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset );
@@ -210,6 +217,11 @@ namespace r2bix_node
 			{
 				mChildContainer.insert( cur, std::move( child_node ) );
 			}
+
+			//
+			// Enter The Hierarchy
+			//
+			ret->Enter();
 
 			return ret;
 		}

@@ -34,6 +34,21 @@ namespace r2bix_node
 		return true;
 	}
 
+	void Node::Enter()
+	{
+		for( auto& c : mComponentContainer )
+		{
+			c->Enter();
+		}
+	}
+	void Node::Exit()
+	{
+		for( auto& c : mComponentContainer )
+		{
+			c->Exit();
+		}
+	}
+
 	void Node::Update( const float delta_time )
 	{
 		for( auto& c : mComponentContainer )

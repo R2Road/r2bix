@@ -98,6 +98,29 @@ namespace r2bix_component
 
 
 		//
+		// 소유한 Node 가 AddChild, RemoveChild 되면 호출
+		//
+	public:
+		void Enter()
+		{
+			EnterProcess();
+		}
+	protected:
+		virtual void EnterProcess()
+		{}
+
+	public:
+		void Exit()
+		{
+			ExitProcess();
+		}
+	protected:
+		virtual void ExitProcess()
+		{}
+
+
+
+		//
 		//
 		//
 	public:
