@@ -63,7 +63,8 @@ r2tm::WriteFunctionT ComponentMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 		ret->AddLineFeed();
 
-		ret->AddItem( 'z', component_test::UIButton() );
+		ret->AddItem( 'z', component_test::UIPannel() );
+		ret->AddItem( 'x', component_test::UIButton() );
 
 
 
