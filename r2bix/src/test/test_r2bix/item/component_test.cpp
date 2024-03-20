@@ -985,6 +985,48 @@ namespace component_test
 
 
 
+	r2tm::TitleFunctionT UIPannel_InputListener_Regist::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIPannel Component : InputListener Regist";
+		};
+	}
+	r2tm::DoFunctionT UIPannel_InputListener_Regist::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto ui_pannel = node->AddComponent<r2bix_component::UIPannelComponent>() );
+			EXPECT_NE( nullptr, ui_pannel );
+
+			LS();
+
+			{
+				EXPECT_TRUE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
+
+				LF();
+
+				PROCESS_MAIN( ui_pannel->Activate() );
+				EXPECT_FALSE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
+				EXPECT_EQ( *dummy_director.GetInputManager().GetListenerContainer4Mouse().begin(), ui_pannel->GetListener4Mouse() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT UIButton::GetTitleFunction() const
 	{
 		return []()->const char*

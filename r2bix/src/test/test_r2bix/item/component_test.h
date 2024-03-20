@@ -100,6 +100,13 @@ namespace component_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
+	class UIPannel_InputListener_Regist : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class UIButton : public r2tm::iItem
 	{
 	public:
