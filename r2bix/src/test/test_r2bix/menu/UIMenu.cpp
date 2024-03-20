@@ -7,9 +7,11 @@
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
 #include "r2bix/r2bix_component_InputComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
+#include "r2bix/r2bix_component_UIButtonComponent.h"
 #include "r2bix/r2bix_component_UIPannelComponent.h"
 
 #include "r2bix/r2bix_node_CustomTextureNode.h"
+#include "r2bix/r2bix_node_UIButtonNode.h"
 #include "r2bix/r2bix_node_UIPannelNode.h"
 
 #include "r2bix/r2bix_utility_InputUtil.h"
@@ -97,6 +99,46 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						auto node = scene->AddChild<r2bix_node::UIPannelNode>();
 						node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '3' );
 						node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
+					}
+
+					//
+					// Button Node Test
+					//
+					{
+						//
+						// Button 1 : Failed Test
+						//
+						{
+							auto node = scene->AddChild<r2bix_node::UIButtonNode>();
+							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
+							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 30, 3 );
+						}
+
+						//
+						// Button 2 : Failed Test
+						//
+						{
+							auto node_1 = scene->AddChild<r2bix_node::Node>();
+
+							auto node_2 = node_1->AddChild<r2bix_node::Node>();
+
+							auto node = node_2->AddChild<r2bix_node::UIButtonNode>();
+							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
+							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 30, 13 );
+						}
+
+						//
+						// Button 3 : Success Test
+						//
+						{
+							auto node_1 = scene->AddChild<r2bix_node::UIPannelNode>();
+
+							auto node_2 = node_1->AddChild<r2bix_node::Node>();
+
+							auto node = node_2->AddChild<r2bix_node::UIButtonNode>();
+							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
+							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 30, 23 );
+						}
 					}
 
 					//

@@ -149,6 +149,10 @@ namespace r2bix_node
 		{
 			mParentNode = parent_node;
 		}
+		Node* GetParentNode() const
+		{
+			return mParentNode;
+		}
 
 		template<typename NodeT>
 		Node* AddChild()

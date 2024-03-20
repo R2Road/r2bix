@@ -6,6 +6,7 @@ namespace r2bix_component
 {
 	class CustomTextureComponent;
 	class TextureRenderComponent;
+	class UIPannelComponent;
 
 	class UIButtonComponent : public r2bix_component::Component<UIButtonComponent>
 	{
@@ -13,10 +14,19 @@ namespace r2bix_component
 		UIButtonComponent( r2bix_node::Node& owner_node );
 
 
+		//
+		// Override
+		//
+	private:
+		void EnterProcess() override;
+		void ExitProcess() override;
+
+
 
 		//
 		//
 		//
+	public:
 		CustomTextureComponent* const GetCustomTextureComponent() const
 		{
 			return mCustomTextureComponent;
@@ -50,5 +60,7 @@ namespace r2bix_component
 	private:
 		CustomTextureComponent* mCustomTextureComponent;
 		TextureRenderComponent* mTextureRenderComponent;
+
+		UIPannelComponent* mUIPannelComponent;
 	};
 }
