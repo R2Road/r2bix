@@ -9,6 +9,8 @@
 #include "r2bix_director_ScreenBufferManager.h"
 #include "r2bix_input_InputManager.h"
 #include "r2bix_node_SceneNode.h"
+#include "r2bix_render_Camera.h"
+#include "r2bix_render_Texture.h"
 
 
 namespace r2bix
@@ -82,6 +84,9 @@ namespace r2bix
 		r2bix_director::Scheduler mScheduler;
 		bool mbAbort;
 		r2::SizeInt mScreenBufferSIze;
+
+		r2bix_render::Camera mCamera;
+		r2bix_render::Texture mRenderTarget;
 
 		r2bix_input::InputManager mInputManager;
 

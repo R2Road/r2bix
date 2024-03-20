@@ -13,6 +13,14 @@ namespace r2bix
 		, mbAbort( false )
 		, mScreenBufferSIze( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height )
 
+		, mCamera(
+			  director_config.ScreenBufferSize_Width / 2
+			, director_config.ScreenBufferSize_Height / 2
+			, director_config.ScreenBufferSize_Width
+			, director_config.ScreenBufferSize_Height
+		)
+		, mRenderTarget( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height, '@' )
+
 		, mInputManager( director_config.ScreenBufferOffset_X, director_config.ScreenBufferOffset_Y )
 
 		, mCurrentSceneNode()
@@ -61,8 +69,22 @@ namespace r2bix
 	}
 	void Director::onRender()
 	{
-		mCurrentSceneNode->Render();
+		//
+		// Render 2 Render-Target
+		//
+		mRenderTarget.FillCharacterAll( ' ' );
+		mRenderTarget.FillColorAll( r2bix::DefaultColorValue );
 
+		mCurrentSceneNode->Render( &mCamera, &mRenderTarget, r2::PointInt::GetZERO() );
+
+		//
+		// Write 2 Back-Buffer
+		//
+		Write2BackBuffer( &mRenderTarget );
+
+		//
+		// Swap
+		//
 		mScreenBufferManager.InitCursor();
 		mScreenBufferManager.Swap();
 	}

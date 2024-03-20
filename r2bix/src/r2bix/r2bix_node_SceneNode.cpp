@@ -6,13 +6,6 @@
 namespace r2bix_node
 {
 	SceneNode::SceneNode( r2bix::Director& director ) : r2bix_node::Node( director )
-		, mCamera(
-			  director.GetScreenBufferSize().GetWidth() / 2
-			, director.GetScreenBufferSize().GetHeight() / 2
-			, director.GetScreenBufferSize().GetWidth()
-			, director.GetScreenBufferSize().GetHeight()
-		)
-		, mRenderTarget( director.GetScreenBufferSize().GetWidth(), director.GetScreenBufferSize().GetHeight(), '@' )
 	{}
 
 	SceneNodeUp SceneNode::Create( r2bix::Director& director )
@@ -24,15 +17,5 @@ namespace r2bix_node
 		}
 
 		return ret;
-	}
-
-	void SceneNode::Render()
-	{
-		mRenderTarget.FillCharacterAll( ' ' );
-		mRenderTarget.FillColorAll( r2bix::DefaultColorValue );
-
-		r2bix_node::Node::Render( &mCamera, &mRenderTarget, mTransformComponent->GetPosition() );
-
-		mDirector.Write2BackBuffer( &mRenderTarget );
 	}
 }
