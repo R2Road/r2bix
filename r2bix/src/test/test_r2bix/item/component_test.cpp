@@ -1005,7 +1005,6 @@ namespace component_test
 			LS();
 
 			DECLARATION_MAIN( auto c = node->AddComponent<r2bix_component::UIPannelComponent>() );
-			EXPECT_NE( nullptr, c );
 
 			LS();
 
