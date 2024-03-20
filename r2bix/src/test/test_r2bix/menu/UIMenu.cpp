@@ -3,14 +3,16 @@
 #include "r2tm/r2tm_Director.h"
 
 #include "r2bix/r2bix_Director.h"
+
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
 #include "r2bix/r2bix_component_InputComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
 #include "r2bix/r2bix_component_UIPannelComponent.h"
+
 #include "r2bix/r2bix_node_CustomTextureNode.h"
 #include "r2bix/r2bix_node_UIPannelNode.h"
-#include "r2bix/r2bix_utility_InputUtil.h"
 
+#include "r2bix/r2bix_utility_InputUtil.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
