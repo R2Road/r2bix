@@ -82,6 +82,11 @@ namespace r2bix_component
 			mMouseLeaveCallback = callback;
 		}
 
+		bool IsMouseOver() const
+		{
+			return mbMouseOver;
+		}
+
 
 
 	private:
@@ -91,5 +96,7 @@ namespace r2bix_component
 		r2bix_input::Listener4Mouse mListener4Mouse;
 		MouseOverCallbackT mMouseOverCallback;
 		MouseLeaveCallbackT mMouseLeaveCallback;
+
+		bool mbMouseOver;
 	};
 }
