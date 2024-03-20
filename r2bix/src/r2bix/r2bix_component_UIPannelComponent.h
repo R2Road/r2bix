@@ -47,6 +47,10 @@ namespace r2bix_component
 		int GetWidth() const;
 		int GetHeight() const;
 
+		r2bix_input::Listener4Mouse* const GetListener4Mouse()
+		{
+			return &mListener4Mouse;
+		}
 		const r2bix_input::Listener4Mouse* const GetListener4Mouse() const
 		{
 			return &mListener4Mouse;

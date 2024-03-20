@@ -1043,6 +1043,71 @@ namespace component_test
 
 
 
+	r2tm::TitleFunctionT UIPannel_Cursor_Response::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIPannel Component : Cursor Response";
+		};
+	}
+	r2tm::DoFunctionT UIPannel_Cursor_Response::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto u = node->AddComponent<r2bix_component::UIPannelComponent>() );
+			DECLARATION_MAIN( auto t = node->AddComponent<r2bix_component::CustomTextureComponent>() );
+			DECLARATION_MAIN( auto r = node->AddComponent<r2bix_component::TextureRenderComponent>() );
+
+			LS();
+
+			{
+				PROCESS_MAIN( u->SetCustomTextureComponent( t ) );
+				PROCESS_MAIN( u->SetTextureRenderComponent( r ) );
+				PROCESS_MAIN( r->SetTexture( t->GetTexture() ) );
+				PROCESS_MAIN( u->SetSize( 10, 10 ) );
+				PROCESS_MAIN( u->Activate() );
+			}
+
+			LS();
+
+			{
+				DECLARATION_MAIN( bool bOver = false; );
+
+				LF();
+
+				OUTPUT_SUBJECT( "Mouse Over, Leave Callback ¼³Á¤" );
+
+				LF();
+
+				PROCESS_MAIN( u->SetMouseOverCallback( [&bOver]() { bOver = true; } ) );
+				PROCESS_MAIN( u->SetMouseLeaveCallback( [&bOver]() { bOver = false; } ) );
+
+				LF();
+
+				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 0, 0 } ) );
+				EXPECT_TRUE( bOver );
+				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 10, 10 } ) );
+				EXPECT_FALSE( bOver );
+				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 9, 9 } ) );
+				EXPECT_TRUE( bOver );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT UIButton::GetTitleFunction() const
 	{
 		return []()->const char*
