@@ -1017,6 +1017,11 @@ namespace component_test
 				PROCESS_MAIN( c->Activate() );
 				EXPECT_FALSE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
 				EXPECT_EQ( *dummy_director.GetInputManager().GetListenerContainer4Mouse().begin(), c->GetListener4Mouse() );
+
+				LF();
+
+				PROCESS_MAIN( c->Deactivate() );
+				EXPECT_TRUE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
 			}
 
 			LS();
