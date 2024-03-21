@@ -64,11 +64,11 @@ namespace r2bix_component
 
 
 
-	void UIButtonComponent::SetSize( const uint32_t width, const uint32_t height )
+	void UIButtonComponent::SetSize( const uint32_t width, const uint32_t height, const char fill )
 	{
 		if( mCustomTextureComponent )
 		{
-			mCustomTextureComponent->GetTexture()->Reset( width, height, '#' );
+			mCustomTextureComponent->GetTexture()->Reset( width, height, fill );
 		}
 
 		if( mTextureRenderComponent )

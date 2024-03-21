@@ -592,7 +592,7 @@ namespace node_test
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 3, 3 ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 3, 3, '1'));
 
 				LF();
 
@@ -604,7 +604,7 @@ namespace node_test
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 5, 4 ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 5, 4, '2' ) );
 
 				LF();
 

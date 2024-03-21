@@ -85,8 +85,8 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						//
 						{
 							auto node = scene->AddChild<r2bix_node::UIButtonNode>();
-							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
-							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 30, 3 );
+							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '1' );
+							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 3 );
 						}
 
 						//
@@ -98,8 +98,8 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							auto node_2 = node_1->AddChild<r2bix_node::Node>();
 
 							auto node = node_2->AddChild<r2bix_node::UIButtonNode>();
-							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
-							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 30, 13 );
+							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '2' );
+							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 16, 6 );
 						}
 
 						//
@@ -111,8 +111,21 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							auto node_2 = node_1->AddChild<r2bix_node::Node>();
 
 							auto node = node_2->AddChild<r2bix_node::UIButtonNode>();
-							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
-							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 30, 23 );
+							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '3' );
+							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 22, 9 );
+						}
+
+						//
+						// Button 3 : Success Test
+						//
+						{
+							auto node_1 = scene->AddChild<r2bix_node::UIPannelNode>();
+
+							auto node_2 = node_1->AddChild<r2bix_node::Node>();
+
+							auto node = node_2->AddChild<r2bix_node::UIButtonNode>();
+							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '3' );
+							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 22, 9 );
 						}
 					}
 
