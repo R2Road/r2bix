@@ -28,6 +28,10 @@ namespace r2bix_component
 				{
 					mMouseOverCallback();
 				}
+
+				//
+				// Input Event 전파
+				//
 			}
 			else
 			{
@@ -35,6 +39,10 @@ namespace r2bix_component
 				{
 					mMouseLeaveCallback();
 				}
+
+				//
+				// Input Event 전파
+				//
 			}
 
 			return mbMouseOver;

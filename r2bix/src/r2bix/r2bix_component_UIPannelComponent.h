@@ -44,9 +44,31 @@ namespace r2bix_component
 			return mTextureRenderComponent;
 		}
 
+		void SetCustomTextureComponent( CustomTextureComponent* const custom_texture_component )
+		{
+			mCustomTextureComponent = custom_texture_component;
+		}
+		void SetTextureRenderComponent( TextureRenderComponent* const texture_render_component )
+		{
+			mTextureRenderComponent = texture_render_component;
+		}
+
+
+
+		//
+		//
+		//
 		int GetWidth() const;
 		int GetHeight() const;
 
+		void SetSize( const uint32_t width, const uint32_t height, const char fill_char );
+		void SetSize( const uint32_t width, const uint32_t height );
+
+
+
+		//
+		//
+		//
 		r2bix_input::Listener4Mouse* const GetListener4Mouse()
 		{
 			return &mListener4Mouse;
@@ -55,24 +77,12 @@ namespace r2bix_component
 		{
 			return &mListener4Mouse;
 		}
-
+		
 		
 
 		//
-		// Setter
 		//
-		void SetCustomTextureComponent( CustomTextureComponent* const custom_texture_component )
-		{
-			mCustomTextureComponent = custom_texture_component;
-		}
-		void SetTextureRenderComponent(	TextureRenderComponent* const texture_render_component )
-		{
-			mTextureRenderComponent = texture_render_component;
-		}
-
-		void SetSize( const uint32_t width, const uint32_t height, const char fill_char );
-		void SetSize( const uint32_t width, const uint32_t height );
-
+		//
 		void SetMouseOverCallback( const MouseOverCallbackT& callback )
 		{
 			mMouseOverCallback = callback;
@@ -82,6 +92,11 @@ namespace r2bix_component
 			mMouseLeaveCallback = callback;
 		}
 
+
+
+		//
+		//
+		//
 		bool IsMouseOver() const
 		{
 			return mbMouseOver;
