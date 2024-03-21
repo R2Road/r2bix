@@ -488,6 +488,12 @@
     <ClCompile Include="src\r2bix\r2bix_component_InputComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_RectNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_RectComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -1062,6 +1068,12 @@
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_InputComponent.h">
+      <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_RectNode.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_RectComponent.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
   </ItemGroup>

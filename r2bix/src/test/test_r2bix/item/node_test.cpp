@@ -6,6 +6,7 @@
 #include "r2bix_component_InputComponent.h"
 #include "r2bix_component_LabelSComponent.h"
 #include "r2bix_component_LabelMComponent.h"
+#include "r2bix_component_RectComponent.h"
 #include "r2bix_component_TextureFrameAnimationComponent.h"
 #include "r2bix_component_TextureFrameRenderComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
@@ -16,6 +17,7 @@
 #include "r2bix_node_LabelSNode.h"
 #include "r2bix_node_LabelMNode.h"
 #include "r2bix_node_PivotNode.h"
+#include "r2bix_node_RectNode.h"
 #include "r2bix_node_SpriteAnimationNode.h"
 #include "r2bix_node_SpriteNode.h"
 #include "r2bix_node_UIButtonNode.h"
@@ -655,6 +657,73 @@ namespace node_test
 			LS();
 
 			{
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+
+
+
+	r2tm::TitleFunctionT Rect::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Rect";
+		};
+	}
+	r2tm::DoFunctionT Rect::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto node = r2bix_node::RectNode::Create( dummy_director ) );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::RectComponent>() );
+
+			LS();
+
+			{
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->SetSize( 3, 3 ) );
+
+				LF();
+
+				render_target.FillCharacterAll( '=' );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->SetSize( 5, 4, 'x' ));
+
+				LF();
+
+				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}

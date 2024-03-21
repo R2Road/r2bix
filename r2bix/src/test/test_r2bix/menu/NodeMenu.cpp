@@ -57,6 +57,7 @@ r2tm::WriteFunctionT NodeMenu::GetWriteFunction() const
 
 
 		ret->AddItem( 'z', node_test::Pivot() );
+		ret->AddItem( 'x', node_test::Rect() );
 
 
 
