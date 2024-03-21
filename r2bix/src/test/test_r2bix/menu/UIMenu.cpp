@@ -81,7 +81,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					{
 						//
-						// Button 1 : Failed Test
+						// Button 1 : Listener Add Failed Test
 						//
 						{
 							auto btn_node = scene->AddChild<r2bix_node::UIButtonNode>();
@@ -90,7 +90,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						}
 
 						//
-						// Button 2 : Failed Test
+						// Button 2 : Listener Add Failed Test
 						//
 						{
 							auto node_1 = scene->AddChild<r2bix_node::Node>();
@@ -103,7 +103,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						}
 
 						//
-						// Button 3 : Success Test
+						// Button 3 : Listener Add Success Test + Pannel Size 0
 						//
 						{
 							auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
@@ -114,16 +114,26 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						}
 
 						//
-						// Button 3 : Success Test
+						// Button 4 : Listener Add Success Test + Valid Pannel Size
 						//
 						{
 							auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
+							pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 28, 12 );
+							pn_node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 15, 7 );
+							{
+								auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
+								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+								rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize(
+									  pn_node->GetComponent<r2bix_component::UIPannelComponent>()->GetWidth()
+									, pn_node->GetComponent<r2bix_component::UIPannelComponent>()->GetHeight()
+								);
+							}
 
 							auto empty_node = pn_node->AddChild<r2bix_node::Node>();
 
 							auto btn_node = empty_node->AddChild<r2bix_node::UIButtonNode>();
 							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '4' );
-							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 28, 12 );
+							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 3 );
 						}
 					}
 
