@@ -13,37 +13,52 @@ namespace r2bix_component
 		, mListener4Mouse()
 		, mMouseOverCallback()
 		, mMouseLeaveCallback()
-		, mbMouseOver( false )
+		, mState( eState::None )
 	{
 		mListener4Mouse.SetCallback4CursorMoved( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
 			const r2::RectInt r( mOwnerNode.mTransformComponent->GetPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
 
-			mbMouseOver = r.IsIn( cursor_point );
-			if( mbMouseOver )
+
+			switch( mState )
 			{
-				if( mMouseOverCallback )
+			case eState::None:
+				if( r.IsIn( cursor_point ) )
 				{
-					mMouseOverCallback();
-				}
+					mState = eState::MouseOver;
 
-				//
-				// Input Event 전파
-				//
-			}
-			else
-			{
-				if( mMouseLeaveCallback )
+					if( mMouseOverCallback )
+					{
+						mMouseOverCallback();
+					}
+				}
+				break;
+
+			case eState::MouseOver:
+				if( r.IsIn( cursor_point ) )
 				{
-					mMouseLeaveCallback();
+					/*if( mMouseMoveCallback )
+					{
+						mMouseMoveCallback();
+					}*/
 				}
+				else
+				{
+					mState = eState::MouseLeave;
 
-				//
-				// Input Event 전파
-				//
+					if( mMouseLeaveCallback )
+					{
+						mMouseLeaveCallback();
+					}
+				}
+				break;
+
+			case eState::MouseLeave:
+				mState = eState::None;
+				break;
 			}
 
-			return mbMouseOver;
+			return ( eState::MouseOver == mState );
 		} );
 	}
 

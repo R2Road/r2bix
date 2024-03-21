@@ -1057,13 +1057,25 @@ namespace component_test
 
 				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 0, 0 } ) );
 				EXPECT_TRUE( bOver );
-				EXPECT_TRUE( u->IsMouseOver() );
+				EXPECT_EQ( r2bix_component::UIPannelComponent::eState::MouseOver, u->GetState() );
+
+				LF();
+
 				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 10, 10 } ) );
 				EXPECT_FALSE( bOver );
-				EXPECT_FALSE( u->IsMouseOver() );
+				EXPECT_EQ( r2bix_component::UIPannelComponent::eState::MouseLeave, u->GetState() );
+
+				LF();
+
+				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 10, 10 } ) );
+				EXPECT_FALSE( bOver );
+				EXPECT_EQ( r2bix_component::UIPannelComponent::eState::None, u->GetState() );
+
+				LF();
+
 				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 9, 9 } ) );
 				EXPECT_TRUE( bOver );
-				EXPECT_TRUE( u->IsMouseOver() );
+				EXPECT_EQ( r2bix_component::UIPannelComponent::eState::MouseOver, u->GetState() );
 			}
 
 			LS();

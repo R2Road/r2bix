@@ -10,6 +10,15 @@ namespace r2bix_component
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
+		enum eState
+		{
+			None,
+
+			MouseOver,
+			MouseMove, // required mouse over
+			MouseLeave,
+		};
+
 		using MouseOverCallbackT = std::function<void()>;
 		using MouseLeaveCallbackT = std::function<void()>;
 
@@ -81,9 +90,9 @@ namespace r2bix_component
 		//
 		//
 		//
-		bool IsMouseOver() const
+		eState GetState() const
 		{
-			return mbMouseOver;
+			return mState;
 		}
 
 
@@ -95,6 +104,6 @@ namespace r2bix_component
 		MouseOverCallbackT mMouseOverCallback;
 		MouseLeaveCallbackT mMouseLeaveCallback;
 
-		bool mbMouseOver;
+		eState mState;
 	};
 }
