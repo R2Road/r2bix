@@ -936,45 +936,13 @@ namespace component_test
 
 			DECLARATION_MAIN( auto ui_pannel = node->AddComponent<r2bix_component::UIPannelComponent>() );
 			EXPECT_NE( nullptr, ui_pannel );
-			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
-			EXPECT_NE( nullptr, custom_texture );
-			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
-			EXPECT_NE( nullptr, texture_render );
 
 			LS();
 
 			{
-				EXPECT_EQ( nullptr, ui_pannel->GetCustomTextureComponent() );
-				PROCESS_MAIN( ui_pannel->SetCustomTextureComponent( custom_texture ) );
-				EXPECT_EQ( custom_texture, ui_pannel->GetCustomTextureComponent() );
-
-				LF();
-
-				EXPECT_EQ( nullptr, ui_pannel->GetTextureRenderComponent() );
-				PROCESS_MAIN( ui_pannel->SetTextureRenderComponent( texture_render ) );
-				EXPECT_EQ( texture_render, ui_pannel->GetTextureRenderComponent() );
-
-				LF();
-
-				EXPECT_EQ( nullptr, texture_render->GetTexture() );
-				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
-				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
-
-				LF();
-
-				PROCESS_MAIN( ui_pannel->SetSize( 7, 5, 'x' ));
+				PROCESS_MAIN( ui_pannel->SetSize( 7, 5 ));
 				EXPECT_EQ( 7, ui_pannel->GetWidth() );
 				EXPECT_EQ( 5, ui_pannel->GetHeight() );
-			}
-
-			LS();
-
-			{
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
-
-				LF();
-
-				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
 			LS();
@@ -1063,15 +1031,10 @@ namespace component_test
 			LS();
 
 			DECLARATION_MAIN( auto u = node->AddComponent<r2bix_component::UIPannelComponent>() );
-			DECLARATION_MAIN( auto t = node->AddComponent<r2bix_component::CustomTextureComponent>() );
-			DECLARATION_MAIN( auto r = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 
 			LS();
 
 			{
-				PROCESS_MAIN( u->SetCustomTextureComponent( t ) );
-				PROCESS_MAIN( u->SetTextureRenderComponent( r ) );
-				PROCESS_MAIN( r->SetTexture( t->GetTexture() ) );
 				PROCESS_MAIN( u->SetSize( 10, 10 ) );
 				PROCESS_MAIN( u->Activate() );
 			}

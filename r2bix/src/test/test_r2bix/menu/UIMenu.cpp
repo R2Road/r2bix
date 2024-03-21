@@ -6,11 +6,13 @@
 
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
 #include "r2bix/r2bix_component_InputComponent.h"
+#include "r2bix/r2bix_component_RectComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
 #include "r2bix/r2bix_component_UIButtonComponent.h"
 #include "r2bix/r2bix_component_UIPannelComponent.h"
 
 #include "r2bix/r2bix_node_CustomTextureNode.h"
+#include "r2bix/r2bix_node_RectNode.h"
 #include "r2bix/r2bix_node_UIButtonNode.h"
 #include "r2bix/r2bix_node_UIPannelNode.h"
 
@@ -84,14 +86,19 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						{
 							auto node = scene->AddChild<r2bix_node::UIPannelNode>();
 
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '1' );
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [node]()
+							// Debug Area View
+							auto rect_node = node->AddChild<r2bix_node::RectNode>();
+							rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+							rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, 'x' );
+
+							node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
+							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
 							{
-								node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+								rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 							} );
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [node]()
+							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
 							{
-								node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+								rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 							} );
 
 							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 1, 1 );
@@ -103,14 +110,19 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						{
 							auto node = scene->AddChild<r2bix_node::UIPannelNode>();
 
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '2' );
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [node]()
+							// Debug Area View
+							auto rect_node = node->AddChild<r2bix_node::RectNode>();
+							rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+							rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, 'x' );
+
+							node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
+							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
 							{
-								node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+								rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 							} );
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [node]()
+							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
 							{
-								node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+								rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 							} );
 
 							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );

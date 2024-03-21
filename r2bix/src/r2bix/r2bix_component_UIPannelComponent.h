@@ -1,13 +1,12 @@
 #pragma once
 
+#include "r2_SizeInt.h"
+
 #include "r2bix_component_Component.h"
 #include "r2bix_input_Listener4Mouse.h"
 
 namespace r2bix_component
 {
-	class CustomTextureComponent;
-	class TextureRenderComponent;
-
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
@@ -35,34 +34,19 @@ namespace r2bix_component
 		//
 		//
 	public:
-		CustomTextureComponent* const GetCustomTextureComponent() const
+		int GetWidth() const
 		{
-			return mCustomTextureComponent;
+			return mSize.GetWidth();
 		}
-		TextureRenderComponent* const GetTextureRenderComponent() const
+		int GetHeight() const
 		{
-			return mTextureRenderComponent;
-		}
-
-		void SetCustomTextureComponent( CustomTextureComponent* const custom_texture_component )
-		{
-			mCustomTextureComponent = custom_texture_component;
-		}
-		void SetTextureRenderComponent( TextureRenderComponent* const texture_render_component )
-		{
-			mTextureRenderComponent = texture_render_component;
+			return mSize.GetHeight();
 		}
 
-
-
-		//
-		//
-		//
-		int GetWidth() const;
-		int GetHeight() const;
-
-		void SetSize( const uint32_t width, const uint32_t height, const char fill_char );
-		void SetSize( const uint32_t width, const uint32_t height );
+		void SetSize( const uint32_t width, const uint32_t height )
+		{
+			mSize.Set( width, height );
+		}
 
 
 
@@ -105,8 +89,7 @@ namespace r2bix_component
 
 
 	private:
-		CustomTextureComponent* mCustomTextureComponent;
-		TextureRenderComponent* mTextureRenderComponent;
+		r2::SizeInt mSize;
 
 		r2bix_input::Listener4Mouse mListener4Mouse;
 		MouseOverCallbackT mMouseOverCallback;

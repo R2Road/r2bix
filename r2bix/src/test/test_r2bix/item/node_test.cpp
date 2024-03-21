@@ -405,40 +405,7 @@ namespace node_test
 
 			DECLARATION_MAIN( auto node = r2bix_node::UIPannelNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIPannelComponent>() );
-
-			LS();
-
-			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-				r2bix_helper::Printer4Texture::DrawTexture( render_target );
-			}
-
-			LS();
-
-			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 3, 3 ) );
-
-				LF();
-
-				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-				r2bix_helper::Printer4Texture::DrawTexture( render_target );
-			}
-
-			LS();
-
-			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 5, 4 ) );
-
-				LF();
-
-				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
-				r2bix_helper::Printer4Texture::DrawTexture( render_target );
-			}
 
 			LS();
 
@@ -499,14 +466,19 @@ namespace node_test
 				{
 					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
 
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '1' );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [node]()
+					// Debug Area View
+					auto rect_node = node->AddChild<r2bix_node::RectNode>();
+					rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, '1' );
+
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
 					{
-						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 					} );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
 					{
-						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 					} );
 
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 1, 1 );
@@ -516,14 +488,19 @@ namespace node_test
 				{
 					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
 
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '2' );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [node]()
+					// Debug Area View
+					auto rect_node = node->AddChild<r2bix_node::RectNode>();
+					rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, '2' );
+
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
 					{
-						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 					} );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
 					{
-						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 					} );
 
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 5 );
@@ -533,14 +510,19 @@ namespace node_test
 				{
 					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
 
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4, '3' );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [node]()
+					// Debug Area View
+					auto rect_node = node->AddChild<r2bix_node::RectNode>();
+					rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, '3' );
+
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
 					{
-						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 					} );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
 					{
-						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 					} );
 
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
