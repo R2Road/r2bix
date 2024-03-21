@@ -35,8 +35,15 @@ namespace r2bix_component
 				break;
 
 			case eState::MouseOver:
+			case eState::MouseMove:
 				if( r.IsIn( cursor_point ) )
 				{
+					//
+					// Input Manager 에서 커서가 이동했을 때 Callback을 호출하므로 커서 위치가 변했는지 확인 안해도 된다.
+					//
+
+					mState = eState::MouseMove;
+
 					/*if( mMouseMoveCallback )
 					{
 						mMouseMoveCallback();
