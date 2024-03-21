@@ -84,9 +84,9 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						// Button 1 : Failed Test
 						//
 						{
-							auto node = scene->AddChild<r2bix_node::UIButtonNode>();
-							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '1' );
-							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 3 );
+							auto btn_node = scene->AddChild<r2bix_node::UIButtonNode>();
+							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '1' );
+							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 3 );
 						}
 
 						//
@@ -97,35 +97,33 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 
 							auto node_2 = node_1->AddChild<r2bix_node::Node>();
 
-							auto node = node_2->AddChild<r2bix_node::UIButtonNode>();
-							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '2' );
-							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 16, 6 );
+							auto btn_node = node_2->AddChild<r2bix_node::UIButtonNode>();
+							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '2' );
+							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 16, 6 );
 						}
 
 						//
 						// Button 3 : Success Test
 						//
 						{
-							auto node_1 = scene->AddChild<r2bix_node::UIPannelNode>();
+							auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
 
-							auto node_2 = node_1->AddChild<r2bix_node::Node>();
-
-							auto node = node_2->AddChild<r2bix_node::UIButtonNode>();
-							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '3' );
-							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 22, 9 );
+							auto btn_node = pn_node->AddChild<r2bix_node::UIButtonNode>();
+							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '3' );
+							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 22, 9 );
 						}
 
 						//
 						// Button 3 : Success Test
 						//
 						{
-							auto node_1 = scene->AddChild<r2bix_node::UIPannelNode>();
+							auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
 
-							auto node_2 = node_1->AddChild<r2bix_node::Node>();
+							auto empty_node = pn_node->AddChild<r2bix_node::Node>();
 
-							auto node = node_2->AddChild<r2bix_node::UIButtonNode>();
-							node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '3' );
-							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 22, 9 );
+							auto btn_node = empty_node->AddChild<r2bix_node::UIButtonNode>();
+							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '4' );
+							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 28, 12 );
 						}
 					}
 
