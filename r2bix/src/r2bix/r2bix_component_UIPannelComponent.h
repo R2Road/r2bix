@@ -79,6 +79,10 @@ namespace r2bix_component
 		{
 			mMouseOverCallback = callback;
 		}
+		void SetMouseMoveCallback( const MouseResponseCallbackT& callback )
+		{
+			mMouseMoveCallback = callback;
+		}
 		void SetMouseLeaveCallback( const MouseResponseCallbackT& callback )
 		{
 			mMouseLeaveCallback = callback;
@@ -101,6 +105,7 @@ namespace r2bix_component
 
 		r2bix_input::Listener4Mouse mListener4Mouse;
 		MouseResponseCallbackT mMouseOverCallback;
+		MouseResponseCallbackT mMouseMoveCallback;
 		MouseResponseCallbackT mMouseLeaveCallback;
 
 		eState mState;

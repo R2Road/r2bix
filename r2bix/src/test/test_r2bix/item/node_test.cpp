@@ -476,6 +476,10 @@ namespace node_test
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 					} );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseMoveCallback( [rect_node]()
+					{
+						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
+					} );
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
@@ -498,6 +502,10 @@ namespace node_test
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 					} );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseMoveCallback( [rect_node]()
+					{
+						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
+					} );
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
@@ -519,6 +527,10 @@ namespace node_test
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+					} );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseMoveCallback( [rect_node]()
+					{
+						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
 					} );
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
 					{

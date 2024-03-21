@@ -12,6 +12,7 @@ namespace r2bix_component
 	UIPannelComponent::UIPannelComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIPannelComponent>( owner_node )
 		, mListener4Mouse()
 		, mMouseOverCallback()
+		, mMouseMoveCallback()
 		, mMouseLeaveCallback()
 		, mState( eState::None )
 	{
@@ -44,10 +45,10 @@ namespace r2bix_component
 
 					mState = eState::MouseMove;
 
-					/*if( mMouseMoveCallback )
+					if( mMouseMoveCallback )
 					{
 						mMouseMoveCallback();
-					}*/
+					}
 				}
 				else
 				{
