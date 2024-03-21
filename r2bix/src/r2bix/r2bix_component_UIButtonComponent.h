@@ -1,6 +1,7 @@
 #pragma once
 
 #include "r2bix_component_Component.h"
+#include "r2bix_input_UIInputListener.h"
 
 namespace r2bix_component
 {
@@ -67,5 +68,6 @@ namespace r2bix_component
 		TextureRenderComponent* mTextureRenderComponent;
 
 		UIPannelComponent* mUIPannelComponent;
+		r2bix_input::UIInputListener mUIInputListener;
 	};
 }

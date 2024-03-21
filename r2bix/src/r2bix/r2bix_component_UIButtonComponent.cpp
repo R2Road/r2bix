@@ -12,6 +12,7 @@ namespace r2bix_component
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 		, mUIPannelComponent( nullptr )
+		, mUIInputListener()
 	{}
 
 
@@ -34,20 +35,22 @@ namespace r2bix_component
 			parent_node = parent_node->GetParentNode();
 		}
 
+		//
+		// Regist UI Input Listener
+		//
 		if( mUIPannelComponent )
 		{
-			//
-			// Regist UI Input Listener
-			//
+			mUIPannelComponent->AddListener( &mUIInputListener );
 		}
 	}
 	void UIButtonComponent::ExitProcess()
 	{
+		//
+		// Unregist UI Input Listener
+		//
 		if( mUIPannelComponent )
 		{
-			//
-			// Unregist UI Input Listener
-			//
+			mUIPannelComponent->RemoveListener( &mUIInputListener );
 		}
 	}
 

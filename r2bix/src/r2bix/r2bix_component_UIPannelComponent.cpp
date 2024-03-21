@@ -1,9 +1,13 @@
 #include "r2bix_component_UIPannelComponent.h"
 
+#include "r2_Assert.h"
+
 #include "r2bix_Director.h"
 
 #include "r2bix_component_CustomTextureComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
+
+#include "r2bix_input_UIInputListener.h"
 
 #include "r2bix_node_Node.h"
 
@@ -15,6 +19,7 @@ namespace r2bix_component
 		, mMouseMoveCallback()
 		, mMouseLeaveCallback()
 		, mState( eState::None )
+		, mListenerContainer()
 	{
 		mListener4Mouse.SetCallback4CursorMoved( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
@@ -84,5 +89,73 @@ namespace r2bix_component
 	void UIPannelComponent::Update( const float delta_time )
 	{
 
+	}
+
+
+
+	void UIPannelComponent::AddListener( r2bix_input::UIInputListener* const listener )
+	{
+		//
+		// 반복 등록 확인
+		//
+		{
+			auto target_itr = std::find( mListenerContainer.begin(), mListenerContainer.end(), listener );
+			if( target_itr != mListenerContainer.end() )
+			{
+				R2ASSERT( false, "이미 등록된 리스너의 등록을 요청한다." );
+				return;
+			}
+		}
+
+		//
+		// Add
+		//
+		{
+			auto pivot_itr = std::find_if( mListenerContainer.begin(), mListenerContainer.end(), [listener]( const r2bix_input::UIInputListener* const l ){
+				if( l->GetOrder() <= listener->GetOrder() )
+				{
+					return true;
+				}
+
+				return false;
+			} );
+
+			if( mListenerContainer.end() == pivot_itr )
+			{
+				mListenerContainer.push_back( listener );
+			}
+			else
+			{
+				mListenerContainer.insert( pivot_itr, listener );
+			}
+		}
+	}
+	void UIPannelComponent::RemoveListener( r2bix_input::UIInputListener* const listener )
+	{
+		if( nullptr == listener )
+		{
+			R2ASSERT( false, "삭제 요청된 리스너가 nullptr 이다." );
+			return;
+		}
+
+		if( mListenerContainer.empty() )
+		{
+			R2ASSERT( false, "등록된 리스너가 없는데 삭제를 요청한다." );
+			return;
+		}
+
+		//
+		// Remove
+		//
+		{
+			auto target_itr = std::find( mListenerContainer.begin(), mListenerContainer.end(), listener );
+			if( target_itr == mListenerContainer.end() )
+			{
+				R2ASSERT( false, "등록된적 없는 리스너의 삭제를 요청한다." );
+				return;
+			}
+
+			mListenerContainer.erase( target_itr );
+		}
 	}
 }

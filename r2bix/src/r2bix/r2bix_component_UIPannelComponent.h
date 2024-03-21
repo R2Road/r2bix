@@ -5,6 +5,11 @@
 #include "r2bix_component_Component.h"
 #include "r2bix_input_Listener4Mouse.h"
 
+namespace r2bix_input
+{
+	class UIInputListener;
+}
+
 namespace r2bix_component
 {
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
@@ -20,6 +25,7 @@ namespace r2bix_component
 		};
 
 		using MouseResponseCallbackT = std::function<void()>;
+		using ListenerContainer = std::list<r2bix_input::UIInputListener*>;
 
 
 
@@ -100,6 +106,14 @@ namespace r2bix_component
 
 
 
+		//
+		// UI Input Listener
+		//
+		void AddListener( r2bix_input::UIInputListener* const listener );
+		void RemoveListener( r2bix_input::UIInputListener* const listener );
+
+
+
 	private:
 		r2::SizeInt mSize;
 
@@ -109,5 +123,7 @@ namespace r2bix_component
 		MouseResponseCallbackT mMouseLeaveCallback;
 
 		eState mState;
+
+		ListenerContainer mListenerContainer;
 	};
 }
