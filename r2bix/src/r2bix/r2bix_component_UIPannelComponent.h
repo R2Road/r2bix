@@ -19,8 +19,7 @@ namespace r2bix_component
 			MouseLeave,
 		};
 
-		using MouseOverCallbackT = std::function<void()>;
-		using MouseLeaveCallbackT = std::function<void()>;
+		using MouseResponseCallbackT = std::function<void()>;
 
 
 
@@ -76,11 +75,11 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetMouseOverCallback( const MouseOverCallbackT& callback )
+		void SetMouseOverCallback( const MouseResponseCallbackT& callback )
 		{
 			mMouseOverCallback = callback;
 		}
-		void SetMouseLeaveCallback( const MouseLeaveCallbackT& callback )
+		void SetMouseLeaveCallback( const MouseResponseCallbackT& callback )
 		{
 			mMouseLeaveCallback = callback;
 		}
@@ -101,8 +100,8 @@ namespace r2bix_component
 		r2::SizeInt mSize;
 
 		r2bix_input::Listener4Mouse mListener4Mouse;
-		MouseOverCallbackT mMouseOverCallback;
-		MouseLeaveCallbackT mMouseLeaveCallback;
+		MouseResponseCallbackT mMouseOverCallback;
+		MouseResponseCallbackT mMouseLeaveCallback;
 
 		eState mState;
 	};
