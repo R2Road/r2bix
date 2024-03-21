@@ -66,7 +66,7 @@ namespace r2bix_component
 				break;
 			}
 
-			return ( eState::MouseOver == mState );
+			return ( eState::MouseOver == mState || eState::MouseMove == mState );
 		} );
 	}
 
