@@ -52,6 +52,14 @@ r2tm::WriteFunctionT NodeMenu::GetWriteFunction() const
 
 
 
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'z', node_test::Pivot() );
+
+
+
 		ret->AddSplit();
 
 
