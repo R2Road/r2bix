@@ -384,14 +384,14 @@ namespace node_test
 
 
 
-	r2tm::TitleFunctionT UIPannel::GetTitleFunction() const
+	r2tm::TitleFunctionT UIPannel_ComponentCheck::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "UIPannel";
+			return "UIPannel : Component Check";
 		};
 	}
-	r2tm::DoFunctionT UIPannel::GetDoFunction() const
+	r2tm::DoFunctionT UIPannel_ComponentCheck::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

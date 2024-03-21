@@ -64,7 +64,7 @@ namespace node_test
 
 
 
-	class UIPannel : public r2tm::iItem
+	class UIPannel_ComponentCheck : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
