@@ -77,59 +77,6 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					}
 
 					//
-					// Pannel Node Test
-					//
-					{
-						//
-						// Pannel 1
-						//
-						{
-							auto node = scene->AddChild<r2bix_node::UIPannelNode>();
-
-							// Debug Area View
-							auto rect_node = node->AddChild<r2bix_node::RectNode>();
-							rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-							rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, 'x' );
-
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
-							{
-								rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
-							} );
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
-							{
-								rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
-							} );
-
-							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 1, 1 );
-						}
-
-						//
-						// Pannel 2
-						//
-						{
-							auto node = scene->AddChild<r2bix_node::UIPannelNode>();
-
-							// Debug Area View
-							auto rect_node = node->AddChild<r2bix_node::RectNode>();
-							rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-							rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, 'x' );
-
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
-							{
-								rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
-							} );
-							node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
-							{
-								rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
-							} );
-
-							node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
-						}
-					}
-
-					//
 					// Button Node Test
 					//
 					{
