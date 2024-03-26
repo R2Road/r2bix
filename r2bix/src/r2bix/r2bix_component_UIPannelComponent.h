@@ -93,7 +93,7 @@ namespace r2bix_component
 		//
 		r2bix_ui::eCursorStatus GetState() const
 		{
-			return mState;
+			return mCursorState;
 		}
 
 
@@ -115,7 +115,7 @@ namespace r2bix_component
 		CursorResponseCallbackT mCursorMoveCallback;
 		CursorResponseCallbackT mCursorLeaveCallback;
 
-		r2bix_ui::eCursorStatus mState;
+		r2bix_ui::eCursorStatus mCursorState;
 
 		ListenerContainer mListenerContainer;
 	};
