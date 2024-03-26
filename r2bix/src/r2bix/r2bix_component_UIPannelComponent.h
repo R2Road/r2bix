@@ -15,7 +15,7 @@ namespace r2bix_component
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
-		enum eState
+		enum eCursorStatus
 		{
 			None,
 
@@ -99,7 +99,7 @@ namespace r2bix_component
 		//
 		//
 		//
-		eState GetState() const
+		eCursorStatus GetState() const
 		{
 			return mState;
 		}
@@ -122,7 +122,7 @@ namespace r2bix_component
 		CursorResponseCallbackT mCursorMoveCallback;
 		CursorResponseCallbackT mCursorLeaveCallback;
 
-		eState mState;
+		eCursorStatus mState;
 
 		ListenerContainer mListenerContainer;
 	};
