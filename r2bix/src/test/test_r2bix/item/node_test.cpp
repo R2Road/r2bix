@@ -468,8 +468,7 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-					rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, '1' );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '1' );
 
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
@@ -494,8 +493,7 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-					rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, '2' );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '2' );
 
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
@@ -520,8 +518,7 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-					rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize( 8, 4, '3' );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '3' );
 
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()

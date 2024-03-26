@@ -1,5 +1,7 @@
 #pragma once
 
+#include "r2_Vector2.h"
+
 #include "r2bix_component_Component.h"
 
 namespace r2bix_component
@@ -44,6 +46,7 @@ namespace r2bix_component
 		int GetWidth() const;
 		int GetHeight() const;
 
+		void Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char fill_char );
 		void SetSize( const uint32_t width, const uint32_t height, const char fill_char );
 		void SetSize( const uint32_t width, const uint32_t height );
 
