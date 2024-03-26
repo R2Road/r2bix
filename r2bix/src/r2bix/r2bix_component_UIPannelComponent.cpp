@@ -37,6 +37,8 @@ namespace r2bix_component
 					{
 						mCursorOverCallback();
 					}
+
+					OnCursorResponse();
 				}
 				break;
 
@@ -54,6 +56,8 @@ namespace r2bix_component
 					{
 						mCursorMoveCallback();
 					}
+
+					OnCursorResponse();
 				}
 				else
 				{
@@ -63,6 +67,8 @@ namespace r2bix_component
 					{
 						mCursorLeaveCallback();
 					}
+
+					OnCursorResponse();
 				}
 				break;
 
@@ -156,6 +162,13 @@ namespace r2bix_component
 			}
 
 			mListenerContainer.erase( target_itr );
+		}
+	}
+	void UIPannelComponent::OnCursorResponse()
+	{
+		for( auto l : mListenerContainer )
+		{
+			// do something
 		}
 	}
 }

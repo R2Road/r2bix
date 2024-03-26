@@ -103,6 +103,7 @@ namespace r2bix_component
 		//
 		void AddListener( r2bix_input::UIInputListener* const listener );
 		void RemoveListener( r2bix_input::UIInputListener* const listener );
+		void OnCursorResponse();
 
 
 
