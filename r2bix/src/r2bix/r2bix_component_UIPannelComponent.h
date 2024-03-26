@@ -17,7 +17,7 @@ namespace r2bix_component
 	{
 	public:
 		using CursorResponseCallbackT = std::function<void( r2bix_ui::eCursorStatus )>;
-		using ListenerContainer = std::list<r2bix_input::UIInputListener*>;
+		using UIInputListenerContainer = std::list<r2bix_input::UIInputListener*>;
 
 
 
@@ -107,6 +107,6 @@ namespace r2bix_component
 
 		r2bix_ui::eCursorStatus mCursorState;
 
-		ListenerContainer mListenerContainer;
+		UIInputListenerContainer mUIInputListenerContainer;
 	};
 }

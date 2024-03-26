@@ -17,7 +17,7 @@ namespace r2bix_component
 		, mListener4Mouse()
 		, mCursorResponseCallback()
 		, mCursorState( r2bix_ui::eCursorStatus::None )
-		, mListenerContainer()
+		, mUIInputListenerContainer()
 	{
 		mListener4Mouse.SetCallback4CursorMoved( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
@@ -103,8 +103,8 @@ namespace r2bix_component
 		// 반복 등록 확인
 		//
 		{
-			auto target_itr = std::find( mListenerContainer.begin(), mListenerContainer.end(), listener );
-			if( target_itr != mListenerContainer.end() )
+			auto target_itr = std::find( mUIInputListenerContainer.begin(), mUIInputListenerContainer.end(), listener );
+			if( target_itr != mUIInputListenerContainer.end() )
 			{
 				R2ASSERT( false, "이미 등록된 리스너의 등록을 요청한다." );
 				return;
@@ -115,7 +115,7 @@ namespace r2bix_component
 		// Add
 		//
 		{
-			auto pivot_itr = std::find_if( mListenerContainer.begin(), mListenerContainer.end(), [listener]( const r2bix_input::UIInputListener* const l ){
+			auto pivot_itr = std::find_if( mUIInputListenerContainer.begin(), mUIInputListenerContainer.end(), [listener]( const r2bix_input::UIInputListener* const l ){
 				if( l->GetOrder() <= listener->GetOrder() )
 				{
 					return true;
@@ -124,13 +124,13 @@ namespace r2bix_component
 				return false;
 			} );
 
-			if( mListenerContainer.end() == pivot_itr )
+			if( mUIInputListenerContainer.end() == pivot_itr )
 			{
-				mListenerContainer.push_back( listener );
+				mUIInputListenerContainer.push_back( listener );
 			}
 			else
 			{
-				mListenerContainer.insert( pivot_itr, listener );
+				mUIInputListenerContainer.insert( pivot_itr, listener );
 			}
 		}
 	}
@@ -142,7 +142,7 @@ namespace r2bix_component
 			return;
 		}
 
-		if( mListenerContainer.empty() )
+		if( mUIInputListenerContainer.empty() )
 		{
 			R2ASSERT( false, "등록된 리스너가 없는데 삭제를 요청한다." );
 			return;
@@ -152,19 +152,19 @@ namespace r2bix_component
 		// Remove
 		//
 		{
-			auto target_itr = std::find( mListenerContainer.begin(), mListenerContainer.end(), listener );
-			if( target_itr == mListenerContainer.end() )
+			auto target_itr = std::find( mUIInputListenerContainer.begin(), mUIInputListenerContainer.end(), listener );
+			if( target_itr == mUIInputListenerContainer.end() )
 			{
 				R2ASSERT( false, "등록된적 없는 리스너의 삭제를 요청한다." );
 				return;
 			}
 
-			mListenerContainer.erase( target_itr );
+			mUIInputListenerContainer.erase( target_itr );
 		}
 	}
 	void UIPannelComponent::OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state )
 	{
-		for( auto l : mListenerContainer )
+		for( auto l : mUIInputListenerContainer )
 		{
 			l->OnCursorResponse( cursor_state );
 		}
