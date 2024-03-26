@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "r2bix_input_Constant.h"
+#include "r2bix_ui_Constant.h"
 
 namespace r2bix_input
 {
@@ -13,7 +14,7 @@ namespace r2bix_input
 		using KeyValueT = KeyCodeTypeT;
 		using KeyContainerT = std::vector<KeyValueT>;
 
-		using CursorResponseCallbackT = std::function<bool()>;
+		using CursorResponseCallbackT = std::function<bool( r2bix_ui::eCursorStatus )>;
 		using Callback4KeyResponseT = std::function<bool( eKeyStatus )>;
 		using Container4KeyStatusChangedCallbackT = std::vector<Callback4KeyResponseT>;
 
@@ -45,7 +46,7 @@ namespace r2bix_input
 		void SetCallback4CursorResponse( const CursorResponseCallbackT& callback );
 		void SetCallback4KeyResponse( const r2bix_input::eKeyCode key_code, const Callback4KeyResponseT& callback );
 
-		void OnCursorResponse();
+		void OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state );
 
 
 

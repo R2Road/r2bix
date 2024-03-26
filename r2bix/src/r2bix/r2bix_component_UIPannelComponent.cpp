@@ -38,7 +38,7 @@ namespace r2bix_component
 						mCursorOverCallback();
 					}
 
-					OnCursorResponse();
+					OnCursorResponse( mCursorState );
 				}
 				break;
 
@@ -57,7 +57,7 @@ namespace r2bix_component
 						mCursorMoveCallback();
 					}
 
-					OnCursorResponse();
+					OnCursorResponse( mCursorState );
 				}
 				else
 				{
@@ -68,7 +68,7 @@ namespace r2bix_component
 						mCursorLeaveCallback();
 					}
 
-					OnCursorResponse();
+					OnCursorResponse( mCursorState );
 				}
 				break;
 
@@ -164,11 +164,11 @@ namespace r2bix_component
 			mListenerContainer.erase( target_itr );
 		}
 	}
-	void UIPannelComponent::OnCursorResponse()
+	void UIPannelComponent::OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state )
 	{
 		for( auto l : mListenerContainer )
 		{
-			l->OnCursorResponse();
+			l->OnCursorResponse( cursor_state );
 		}
 	}
 }
