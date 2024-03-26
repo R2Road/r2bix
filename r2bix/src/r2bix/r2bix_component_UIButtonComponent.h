@@ -1,12 +1,12 @@
 #pragma once
 
+#include "r2_SizeInt.h"
+
 #include "r2bix_component_Component.h"
 #include "r2bix_input_UIInputListener.h"
 
 namespace r2bix_component
 {
-	class CustomTextureComponent;
-	class TextureRenderComponent;
 	class UIPannelComponent;
 
 	class UIButtonComponent : public r2bix_component::Component<UIButtonComponent>
@@ -28,20 +28,6 @@ namespace r2bix_component
 		//
 		//
 	public:
-		CustomTextureComponent* const GetCustomTextureComponent() const
-		{
-			return mCustomTextureComponent;
-		}
-		TextureRenderComponent* const GetTextureRenderComponent() const
-		{
-			return mTextureRenderComponent;
-		}
-
-		UIPannelComponent* const GetUIPannelComponent() const
-		{
-			return mUIPannelComponent;
-		}
-
 		int GetWidth() const
 		{
 			return mSize.GetWidth();
@@ -51,29 +37,12 @@ namespace r2bix_component
 			return mSize.GetHeight();
 		}
 
-		
-
-		//
-		// Setter
-		//
-		void SetCustomTextureComponent( CustomTextureComponent* const custom_texture_component )
-		{
-			mCustomTextureComponent = custom_texture_component;
-		}
-		void SetTextureRenderComponent(	TextureRenderComponent* const texture_render_component )
-		{
-			mTextureRenderComponent = texture_render_component;
-		}
-
 		void SetSize( const uint32_t width, const uint32_t height, const char fill );
 
 
 
 	private:
 		r2::SizeInt mSize;
-
-		CustomTextureComponent* mCustomTextureComponent;
-		TextureRenderComponent* mTextureRenderComponent;
 
 		UIPannelComponent* mUIPannelComponent;
 		r2bix_input::UIInputListener mUIInputListener;

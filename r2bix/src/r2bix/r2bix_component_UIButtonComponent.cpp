@@ -2,16 +2,12 @@
 
 #include "r2bix_Director.h"
 
-#include "r2bix_component_CustomTextureComponent.h"
-#include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_UIPannelComponent.h"
 
 namespace r2bix_component
 {
 	UIButtonComponent::UIButtonComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIButtonComponent>( owner_node )
 		, mSize()
-		, mCustomTextureComponent( nullptr )
-		, mTextureRenderComponent( nullptr )
 		, mUIPannelComponent( nullptr )
 		, mUIInputListener()
 	{}
@@ -60,15 +56,5 @@ namespace r2bix_component
 	void UIButtonComponent::SetSize( const uint32_t width, const uint32_t height, const char fill )
 	{
 		mSize.Set( width, height );
-
-		if( mCustomTextureComponent )
-		{
-			mCustomTextureComponent->GetTexture()->Reset( width, height, fill );
-		}
-
-		if( mTextureRenderComponent )
-		{
-			mTextureRenderComponent->ResetVisibleRect();
-		}
 	}
 }
