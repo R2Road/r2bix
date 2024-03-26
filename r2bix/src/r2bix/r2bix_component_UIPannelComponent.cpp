@@ -15,9 +15,9 @@ namespace r2bix_component
 {
 	UIPannelComponent::UIPannelComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIPannelComponent>( owner_node )
 		, mListener4Mouse()
-		, mMouseOverCallback()
-		, mMouseMoveCallback()
-		, mMouseLeaveCallback()
+		, mCursorOverCallback()
+		, mCursorMoveCallback()
+		, mCursorLeaveCallback()
 		, mState( eState::None )
 		, mListenerContainer()
 	{
@@ -31,47 +31,47 @@ namespace r2bix_component
 			case eState::None:
 				if( r.IsIn( cursor_point ) )
 				{
-					mState = eState::MouseOver;
+					mState = eState::CursorOver;
 
-					if( mMouseOverCallback )
+					if( mCursorOverCallback )
 					{
-						mMouseOverCallback();
+						mCursorOverCallback();
 					}
 				}
 				break;
 
-			case eState::MouseOver:
-			case eState::MouseMove:
+			case eState::CursorOver:
+			case eState::CursorMove:
 				if( r.IsIn( cursor_point ) )
 				{
 					//
 					// Input Manager 에서 커서가 이동했을 때 Callback을 호출하므로 커서 위치가 변했는지 확인 안해도 된다.
 					//
 
-					mState = eState::MouseMove;
+					mState = eState::CursorMove;
 
-					if( mMouseMoveCallback )
+					if( mCursorMoveCallback )
 					{
-						mMouseMoveCallback();
+						mCursorMoveCallback();
 					}
 				}
 				else
 				{
-					mState = eState::MouseLeave;
+					mState = eState::CursorLeave;
 
-					if( mMouseLeaveCallback )
+					if( mCursorLeaveCallback )
 					{
-						mMouseLeaveCallback();
+						mCursorLeaveCallback();
 					}
 				}
 				break;
 
-			case eState::MouseLeave:
+			case eState::CursorLeave:
 				mState = eState::None;
 				break;
 			}
 
-			return ( eState::MouseOver == mState || eState::MouseMove == mState );
+			return ( eState::CursorOver == mState || eState::CursorMove == mState );
 		} );
 	}
 

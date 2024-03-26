@@ -19,12 +19,12 @@ namespace r2bix_component
 		{
 			None,
 
-			MouseOver,
-			MouseMove, // required mouse over
-			MouseLeave,
+			CursorOver,
+			CursorMove, // required mouse over
+			CursorLeave,
 		};
 
-		using MouseResponseCallbackT = std::function<void()>;
+		using CursorResponseCallbackT = std::function<void()>;
 		using ListenerContainer = std::list<r2bix_input::UIInputListener*>;
 
 
@@ -81,17 +81,17 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetMouseOverCallback( const MouseResponseCallbackT& callback )
+		void SetCursorOverCallback( const CursorResponseCallbackT& callback )
 		{
-			mMouseOverCallback = callback;
+			mCursorOverCallback = callback;
 		}
-		void SetMouseMoveCallback( const MouseResponseCallbackT& callback )
+		void SetCursorMoveCallback( const CursorResponseCallbackT& callback )
 		{
-			mMouseMoveCallback = callback;
+			mCursorMoveCallback = callback;
 		}
-		void SetMouseLeaveCallback( const MouseResponseCallbackT& callback )
+		void SetCursorLeaveCallback( const CursorResponseCallbackT& callback )
 		{
-			mMouseLeaveCallback = callback;
+			mCursorLeaveCallback = callback;
 		}
 
 
@@ -118,9 +118,9 @@ namespace r2bix_component
 		r2::SizeInt mSize;
 
 		r2bix_input::Listener4Mouse mListener4Mouse;
-		MouseResponseCallbackT mMouseOverCallback;
-		MouseResponseCallbackT mMouseMoveCallback;
-		MouseResponseCallbackT mMouseLeaveCallback;
+		CursorResponseCallbackT mCursorOverCallback;
+		CursorResponseCallbackT mCursorMoveCallback;
+		CursorResponseCallbackT mCursorLeaveCallback;
 
 		eState mState;
 

@@ -471,15 +471,15 @@ namespace node_test
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '1' );
 
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCursorOverCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 					} );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseMoveCallback( [rect_node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCursorMoveCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
 					} );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCursorLeaveCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 					} );
@@ -496,15 +496,15 @@ namespace node_test
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '2' );
 
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCursorOverCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 					} );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseMoveCallback( [rect_node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCursorMoveCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
 					} );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCursorLeaveCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 					} );
@@ -521,15 +521,15 @@ namespace node_test
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '3' );
 
 					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseOverCallback( [rect_node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCursorOverCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 					} );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseMoveCallback( [rect_node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCursorMoveCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
 					} );
-					node->GetComponent<r2bix_component::UIPannelComponent>()->SetMouseLeaveCallback( [rect_node]()
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCursorLeaveCallback( [rect_node]()
 					{
 						rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 					} );
