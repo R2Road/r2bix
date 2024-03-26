@@ -42,8 +42,14 @@ namespace r2bix_component
 			return mUIPannelComponent;
 		}
 
-		int GetWidth() const;
-		int GetHeight() const;
+		int GetWidth() const
+		{
+			return mSize.GetWidth();
+		}
+		int GetHeight() const
+		{
+			return mSize.GetHeight();
+		}
 
 		
 
@@ -64,6 +70,8 @@ namespace r2bix_component
 
 
 	private:
+		r2::SizeInt mSize;
+
 		CustomTextureComponent* mCustomTextureComponent;
 		TextureRenderComponent* mTextureRenderComponent;
 
