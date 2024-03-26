@@ -35,7 +35,7 @@ namespace r2bix_component
 
 					if( mCursorOverCallback )
 					{
-						mCursorOverCallback();
+						mCursorOverCallback( mCursorState );
 					}
 
 					OnCursorResponse( mCursorState );
@@ -54,7 +54,7 @@ namespace r2bix_component
 
 					if( mCursorMoveCallback )
 					{
-						mCursorMoveCallback();
+						mCursorMoveCallback( mCursorState );
 					}
 
 					OnCursorResponse( mCursorState );
@@ -65,7 +65,7 @@ namespace r2bix_component
 
 					if( mCursorLeaveCallback )
 					{
-						mCursorLeaveCallback();
+						mCursorLeaveCallback( mCursorState );
 					}
 
 					OnCursorResponse( mCursorState );

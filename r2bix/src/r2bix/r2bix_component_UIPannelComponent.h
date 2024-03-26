@@ -16,7 +16,7 @@ namespace r2bix_component
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
-		using CursorResponseCallbackT = std::function<void()>;
+		using CursorResponseCallbackT = std::function<void( r2bix_ui::eCursorStatus )>;
 		using ListenerContainer = std::list<r2bix_input::UIInputListener*>;
 
 
