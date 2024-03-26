@@ -77,14 +77,6 @@ namespace r2bix_component
 		{
 			mCursorOverCallback = callback;
 		}
-		void SetCursorMoveCallback( const CursorResponseCallbackT& callback )
-		{
-			mCursorMoveCallback = callback;
-		}
-		void SetCursorLeaveCallback( const CursorResponseCallbackT& callback )
-		{
-			mCursorLeaveCallback = callback;
-		}
 
 
 
@@ -112,8 +104,6 @@ namespace r2bix_component
 
 		r2bix_input::Listener4Mouse mListener4Mouse;
 		CursorResponseCallbackT mCursorOverCallback;
-		CursorResponseCallbackT mCursorMoveCallback;
-		CursorResponseCallbackT mCursorLeaveCallback;
 
 		r2bix_ui::eCursorStatus mCursorState;
 
