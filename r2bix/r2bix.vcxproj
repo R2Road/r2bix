@@ -105,6 +105,7 @@
     <ClCompile Include="src\r2bix\r2bix_render_Camera.cpp" />
     <ClCompile Include="src\r2bix\r2bix_render_Texture.cpp" />
     <ClCompile Include="src\r2bix\r2bix_render_TextureFrame.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_ui_Constant.cpp" />
     <ClCompile Include="src\r2bix\r2bix_utility_PathUtil.cpp" />
     <ClCompile Include="src\r2bix\r2bix_utility_InputUtil.cpp" />
     <ClCompile Include="src\r2bix_helper\r2bix_helper_Printer4Texture.cpp" />
@@ -279,6 +280,7 @@
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureTableBase.h" />
+    <ClInclude Include="src\r2bix\r2bix_ui_Constant.h" />
     <ClInclude Include="src\r2bix\r2bix_VersionInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_director_Scheduler.h" />
     <ClInclude Include="src\r2bix\r2bix_component_ActionProcessComponent.h" />

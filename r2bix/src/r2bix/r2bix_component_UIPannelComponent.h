@@ -4,6 +4,7 @@
 
 #include "r2bix_component_Component.h"
 #include "r2bix_input_Listener4Mouse.h"
+#include "r2bix_ui_Constant.h"
 
 namespace r2bix_input
 {
@@ -15,15 +16,6 @@ namespace r2bix_component
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
-		enum eCursorStatus
-		{
-			None,
-
-			CursorOver,
-			CursorMove, // required mouse over
-			CursorLeave,
-		};
-
 		using CursorResponseCallbackT = std::function<void()>;
 		using ListenerContainer = std::list<r2bix_input::UIInputListener*>;
 
@@ -99,7 +91,7 @@ namespace r2bix_component
 		//
 		//
 		//
-		eCursorStatus GetState() const
+		r2bix_ui::eCursorStatus GetState() const
 		{
 			return mState;
 		}
@@ -122,7 +114,7 @@ namespace r2bix_component
 		CursorResponseCallbackT mCursorMoveCallback;
 		CursorResponseCallbackT mCursorLeaveCallback;
 
-		eCursorStatus mState;
+		r2bix_ui::eCursorStatus mState;
 
 		ListenerContainer mListenerContainer;
 	};

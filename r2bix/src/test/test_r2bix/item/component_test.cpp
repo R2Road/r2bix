@@ -1011,6 +1011,12 @@ namespace component_test
 
 
 
+	std::ostream& operator<<( std::ostream& o, const r2bix_ui::eCursorStatus& v )
+	{
+		o << static_cast< int >( v );
+		return o;
+	}
+
 	r2tm::TitleFunctionT UIPannel_Cursor_Response::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -1057,31 +1063,31 @@ namespace component_test
 
 				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 0, 0 } ) );
 				EXPECT_TRUE( bOver );
-				EXPECT_EQ( r2bix_component::UIPannelComponent::eCursorStatus::CursorOver, u->GetState() );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorOver, u->GetState() );
 
 				LF();
 
 				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 1, 1 } ) );
 				EXPECT_TRUE( bOver );
-				EXPECT_EQ( r2bix_component::UIPannelComponent::eCursorStatus::CursorMove, u->GetState() );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorMove, u->GetState() );
 
 				LF();
 
 				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 10, 10 } ) );
 				EXPECT_FALSE( bOver );
-				EXPECT_EQ( r2bix_component::UIPannelComponent::eCursorStatus::CursorLeave, u->GetState() );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorLeave, u->GetState() );
 
 				LF();
 
 				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 10, 10 } ) );
 				EXPECT_FALSE( bOver );
-				EXPECT_EQ( r2bix_component::UIPannelComponent::eCursorStatus::None, u->GetState() );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::None, u->GetState() );
 
 				LF();
 
 				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 9, 9 } ) );
 				EXPECT_TRUE( bOver );
-				EXPECT_EQ( r2bix_component::UIPannelComponent::eCursorStatus::CursorOver, u->GetState() );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorOver, u->GetState() );
 			}
 
 			LS();
