@@ -37,4 +37,12 @@ namespace r2bix_input
 		mObservationKeyContainer.push_back( key_code );
 		mContainer4KeyStatusChangedCallback.push_back( callback );
 	}
+
+	void UIInputListener::OnCursorResponse()
+	{
+		if( mbCursorResponse )
+		{
+			mCursorResponseCallback();
+		}
+	}
 }

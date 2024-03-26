@@ -168,7 +168,7 @@ namespace r2bix_component
 	{
 		for( auto l : mListenerContainer )
 		{
-			// do something
+			l->OnCursorResponse();
 		}
 	}
 }
