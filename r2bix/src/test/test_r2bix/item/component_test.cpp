@@ -1056,7 +1056,7 @@ namespace component_test
 
 				LF();
 
-				PROCESS_MAIN( u->SetCursorOverCallback( [&bOver]( r2bix_ui::eCursorStatus s )
+				PROCESS_MAIN( u->SetCursorResponseCallback( [&bOver]( r2bix_ui::eCursorStatus s )
 				{
 					switch( s )
 					{

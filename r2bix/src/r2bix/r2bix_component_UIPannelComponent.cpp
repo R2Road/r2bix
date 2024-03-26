@@ -15,7 +15,7 @@ namespace r2bix_component
 {
 	UIPannelComponent::UIPannelComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIPannelComponent>( owner_node )
 		, mListener4Mouse()
-		, mCursorOverCallback()
+		, mCursorResponseCallback()
 		, mCursorState( r2bix_ui::eCursorStatus::None )
 		, mListenerContainer()
 	{
@@ -31,9 +31,9 @@ namespace r2bix_component
 				{
 					mCursorState = r2bix_ui::eCursorStatus::CursorOver;
 
-					if( mCursorOverCallback )
+					if( mCursorResponseCallback )
 					{
-						mCursorOverCallback( mCursorState );
+						mCursorResponseCallback( mCursorState );
 					}
 
 					OnCursorResponse( mCursorState );
@@ -50,9 +50,9 @@ namespace r2bix_component
 
 					mCursorState = r2bix_ui::eCursorStatus::CursorMove;
 
-					if( mCursorOverCallback )
+					if( mCursorResponseCallback )
 					{
-						mCursorOverCallback( mCursorState );
+						mCursorResponseCallback( mCursorState );
 					}
 
 					OnCursorResponse( mCursorState );
@@ -61,9 +61,9 @@ namespace r2bix_component
 				{
 					mCursorState = r2bix_ui::eCursorStatus::CursorLeave;
 
-					if( mCursorOverCallback )
+					if( mCursorResponseCallback )
 					{
-						mCursorOverCallback( mCursorState );
+						mCursorResponseCallback( mCursorState );
 					}
 
 					OnCursorResponse( mCursorState );
