@@ -2,6 +2,7 @@
 
 #include <vector>
 
+#include "r2_Assert.h"
 #include "r2bix_input_Constant.h"
 
 namespace r2bix_input
@@ -68,6 +69,15 @@ namespace r2bix_input
 		//
 		void Add( const KeyValueT key_value )
 		{
+			for( const auto& k : mContainer )
+			{
+				if( k.key_code == key_value )
+				{
+					R2ASSERT( false, "ObservationKeyContainer::Add 동일한 키를 반복 등록 시도" );
+					return;
+				}
+			}
+
 			mContainer.push_back( { key_value } );
 		}
 
