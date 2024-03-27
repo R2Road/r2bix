@@ -26,23 +26,24 @@ namespace r2bix_input
 
 
 		//
-		// Getter
+		//
 		//
 		int GetOrder() const
 		{
 			return mOrder;
 		}
 
+
+
+
+		//
+		//
+		//
 		const KeyContainerT& GetObservationKeyContainer() const
 		{
 			return mObservationKeyContainer;
 		}
 
-
-
-		//
-		//
-		//
 		void SetCallback4CursorResponse( const CursorResponseCallbackT& callback );
 		void SetCallback4KeyResponse( const r2bix_input::eKeyCode key_code, const Callback4KeyResponseT& callback );
 
