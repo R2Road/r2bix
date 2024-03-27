@@ -36,7 +36,7 @@ namespace r2bix_component
 						mCursorResponseCallback( mCursorState );
 					}
 
-					OnCursorResponse( mCursorState );
+					OnCursorResponse( cursor_point );
 				}
 				break;
 
@@ -55,7 +55,7 @@ namespace r2bix_component
 						mCursorResponseCallback( mCursorState );
 					}
 
-					OnCursorResponse( mCursorState );
+					OnCursorResponse( cursor_point );
 				}
 				else
 				{
@@ -66,7 +66,7 @@ namespace r2bix_component
 						mCursorResponseCallback( mCursorState );
 					}
 
-					OnCursorResponse( mCursorState );
+					OnCursorResponse( cursor_point );
 				}
 				break;
 
@@ -162,11 +162,11 @@ namespace r2bix_component
 			mUIInputListenerContainer.erase( target_itr );
 		}
 	}
-	void UIPannelComponent::OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state )
+	void UIPannelComponent::OnCursorResponse( const r2bix_input::CursorPoint cursor_point )
 	{
 		for( auto l : mUIInputListenerContainer )
 		{
-			if( l->OnCursorResponse( cursor_state ) )
+			if( l->OnCursorResponse( cursor_point ) )
 			{
 				break;
 			}

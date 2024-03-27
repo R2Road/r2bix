@@ -44,11 +44,11 @@ namespace r2bix_input
 		mObservationKeyContainer.push_back( key_code );
 	}
 
-	bool UIInputListener::OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state )
+	bool UIInputListener::OnCursorResponse( const r2bix_input::CursorPoint cursor_point )
 	{
 		if( mbCursorResponse )
 		{
-			return mCursorResponseCallback( cursor_state );
+			return mCursorResponseCallback( cursor_point );
 		}
 
 		return false;

@@ -10,8 +10,8 @@ namespace r2bix_component
 	class UIButtonComponent : public r2bix_component::Component<UIButtonComponent>
 	{
 	public:
-		using Callback4CursorResponseT = r2bix_input::UIInputListener::Callback4CursorResponseT;
-		using Callback4KeyResponseT = r2bix_input::UIInputListener::Callback4KeyResponseT;
+		using Callback4CursorStatusChangedT = std::function<bool( r2bix_ui::eCursorStatus )>;
+		using Callback4KeyStatusChangedT = std::function<bool( r2bix_input::eKeyStatus )>;
 
 
 
@@ -50,8 +50,8 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetCallback4CursorResponse( const Callback4CursorResponseT& callback );
-		void SetCallback4KeyResponse( const Callback4KeyResponseT& callback );
+		void SetCallback4CursorResponse( const Callback4CursorStatusChangedT& callback );
+		void SetCallback4KeyResponse( const Callback4KeyStatusChangedT& callback );
 
 		void AddObservationKey( const r2bix_input::eKeyCode key_code );
 
@@ -60,5 +60,10 @@ namespace r2bix_component
 	private:
 		UIPannelComponent* mUIPannelComponent;
 		r2bix_input::UIInputListener mUIInputListener;
+
+		r2bix_ui::eCursorStatus mCursorState;
+
+		Callback4CursorStatusChangedT mCallback4CursorStatusChanged;
+		Callback4KeyStatusChangedT mCallback4KeyStatusChanged;
 	};
 }

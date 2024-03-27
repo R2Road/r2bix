@@ -16,7 +16,7 @@ namespace r2bix_input
 		using KeyValueT = KeyCodeTypeT;
 		using ObservationKeyContainerT = std::vector<KeyValueT>;
 
-		using Callback4CursorResponseT = std::function<bool( r2bix_ui::eCursorStatus )>;
+		using Callback4CursorResponseT = std::function<bool( r2bix_input::CursorPoint )>;
 		using Callback4KeyResponseT = std::function<bool( eKeyStatus )>;
 
 
@@ -68,7 +68,7 @@ namespace r2bix_input
 
 		void AddObservationKey( const r2bix_input::eKeyCode key_code );
 
-		bool OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state );
+		bool OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
 
 
 
