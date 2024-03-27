@@ -17,7 +17,7 @@ namespace r2bix_component
 	{
 		mUIInputListener.SetCallback4CursorResponse( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
-			const r2::RectInt r( mOwnerNode.mTransformComponent->GetPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
+			const r2::RectInt r( mOwnerNode.mTransformComponent->GetWorldPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
 
 
 			switch( mCursorState )
