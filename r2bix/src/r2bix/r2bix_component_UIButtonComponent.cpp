@@ -23,6 +23,7 @@ namespace r2bix_component
 			switch( mCursorState )
 			{
 			case r2bix_ui::eCursorStatus::None:
+			case r2bix_ui::eCursorStatus::CursorLeave:
 				if( r.IsIn( cursor_point ) )
 				{
 					mCursorState = r2bix_ui::eCursorStatus::CursorOver;
@@ -64,10 +65,6 @@ namespace r2bix_component
 
 					//OnCursorResponse( mCursorState );
 				}
-				break;
-
-			case r2bix_ui::eCursorStatus::CursorLeave:
-				mCursorState = r2bix_ui::eCursorStatus::None;
 				break;
 			}
 
