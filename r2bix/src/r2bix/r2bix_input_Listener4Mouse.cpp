@@ -11,7 +11,7 @@ namespace r2bix_input
 		, mCursorPoint_Last()
 		, mObservationKeyContainer()
 
-		, mCursorMovedCallback()
+		, mCallback4CursorMoved()
 		, mContainer4KeyStatusChangedCallback()
 	{}
 	Listener4Mouse::Listener4Mouse( const int order ) :
@@ -21,13 +21,13 @@ namespace r2bix_input
 		, mCursorPoint_Last()
 		, mObservationKeyContainer()
 
-		, mCursorMovedCallback()
+		, mCallback4CursorMoved()
 		, mContainer4KeyStatusChangedCallback()
 	{}
 
 
 
-	void Listener4Mouse::SetCallback4CursorMoved( const CursorMovedCallbackT& callback )
+	void Listener4Mouse::SetCallback4CursorMoved( const Callback4CursorMovedT& callback )
 	{
 		if( callback )
 		{
@@ -38,7 +38,7 @@ namespace r2bix_input
 			mbMousePositionUse = false;
 		}
 
-		mCursorMovedCallback = callback;
+		mCallback4CursorMoved = callback;
 	}
 	void Listener4Mouse::SetCallback4KeyStatusChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback )
 	{
@@ -61,9 +61,9 @@ namespace r2bix_input
 			mCursorPoint_Last = mCursorPoint_Current;
 			mCursorPoint_Current = cursor_point;
 
-			if( mCursorMovedCallback )
+			if( mCallback4CursorMoved )
 			{
-				return mCursorMovedCallback( cursor_point );
+				return mCallback4CursorMoved( cursor_point );
 			}
 		}
 

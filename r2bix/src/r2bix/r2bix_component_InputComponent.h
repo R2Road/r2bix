@@ -27,7 +27,7 @@ namespace r2bix_component
 		//
 		// Mouse
 		//
-		void SetMouseCursorCallback( const r2bix_input::Listener4Mouse::CursorMovedCallbackT& callback )
+		void SetMouseCursorCallback( const r2bix_input::Listener4Mouse::Callback4CursorMovedT& callback )
 		{
 			mListener4Mouse.SetCallback4CursorMoved( callback );
 		}
