@@ -80,12 +80,18 @@ namespace r2bix_input
 			{
 			case eKeyStatus::None:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Push;
-				mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+				if( mCallback4KeyStatusChanged )
+				{
+					mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+				}
 				break;
 
 			case eKeyStatus::Push:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Pressed;
-				mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+				if( mCallback4KeyStatusChanged )
+				{
+					mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+				}
 				break;
 
 			//case eKeyStatus::Pressed:
@@ -103,12 +109,18 @@ namespace r2bix_input
 			case eKeyStatus::Push:
 			case eKeyStatus::Pressed:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Release;
-				mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+				if( mCallback4KeyStatusChanged )
+				{
+					mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+				}
 				break;
 
 			case eKeyStatus::Release:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::None;
-				mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+				if( mCallback4KeyStatusChanged )
+				{
+					mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+				}
 				break;
 			}
 		}
