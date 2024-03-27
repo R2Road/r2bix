@@ -84,9 +84,8 @@ namespace r2bix_input
 		r2bix_input::CursorPoint mCursorPoint_Current;
 		r2bix_input::CursorPoint mCursorPoint_Last;
 
-		ObservationKeyContainer mObservationKeyContainer;
-
 		Callback4CursorMovedT mCallback4CursorMoved;
 		Callback4KeyStatusChangedT mCallback4KeyStatusChanged;
+		ObservationKeyContainer mObservationKeyContainer;
 	};
 }

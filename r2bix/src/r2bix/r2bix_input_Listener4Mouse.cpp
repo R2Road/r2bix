@@ -9,20 +9,20 @@ namespace r2bix_input
 		, mbMousePositionUse( false)
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
-		, mObservationKeyContainer()
 
 		, mCallback4CursorMoved()
 		, mCallback4KeyStatusChanged()
+		, mObservationKeyContainer()
 	{}
 	Listener4Mouse::Listener4Mouse( const int order ) :
 		mOrder( order )
 		, mbMousePositionUse()
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
-		, mObservationKeyContainer()
 
 		, mCallback4CursorMoved()
 		, mCallback4KeyStatusChanged()
+		, mObservationKeyContainer()
 	{}
 
 
