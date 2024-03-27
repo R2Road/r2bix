@@ -1,7 +1,5 @@
 #pragma once
 
-#include "r2_SizeInt.h"
-
 #include "r2bix_component_Component.h"
 #include "r2bix_input_UIInputListener.h"
 
@@ -35,11 +33,11 @@ namespace r2bix_component
 	public:
 		int GetWidth() const
 		{
-			return mSize.GetWidth();
+			return mUIInputListener.GetWidth();
 		}
 		int GetHeight() const
 		{
-			return mSize.GetHeight();
+			return mUIInputListener.GetHeight();
 		}
 
 		void SetSize( const uint32_t width, const uint32_t height );
@@ -55,8 +53,6 @@ namespace r2bix_component
 
 
 	private:
-		r2::SizeInt mSize;
-
 		UIPannelComponent* mUIPannelComponent;
 		r2bix_input::UIInputListener mUIInputListener;
 	};

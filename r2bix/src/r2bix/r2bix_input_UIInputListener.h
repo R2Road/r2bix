@@ -3,6 +3,8 @@
 #include <functional>
 #include <vector>
 
+#include "r2_SizeInt.h"
+
 #include "r2bix_input_Constant.h"
 #include "r2bix_ui_Constant.h"
 
@@ -35,6 +37,24 @@ namespace r2bix_input
 
 
 
+		//
+		//
+		//
+		int GetWidth() const
+		{
+			return mSize.GetWidth();
+		}
+		int GetHeight() const
+		{
+			return mSize.GetHeight();
+		}
+
+		void SetSize( const uint32_t width, const uint32_t height )
+		{
+			mSize.Set( width, height );
+		}
+
+
 
 		//
 		//
@@ -53,6 +73,8 @@ namespace r2bix_input
 
 	private:
 		const int mOrder;
+
+		r2::SizeInt mSize;
 
 		bool mbCursorResponse;
 		KeyContainerT mObservationKeyContainer;

@@ -4,6 +4,7 @@ namespace r2bix_input
 {
 	UIInputListener::UIInputListener() :
 		  mOrder( 0 )
+		, mSize()
 		, mbCursorResponse( false)
 		, mObservationKeyContainer()
 		, mCursorResponseCallback()
@@ -11,6 +12,7 @@ namespace r2bix_input
 	{}
 	UIInputListener::UIInputListener( const int order ) :
 		  mOrder( order )
+		, mSize()
 		, mbCursorResponse( false )
 		, mObservationKeyContainer()
 		, mCursorResponseCallback()

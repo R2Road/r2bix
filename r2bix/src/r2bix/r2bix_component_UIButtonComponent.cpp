@@ -7,7 +7,6 @@
 namespace r2bix_component
 {
 	UIButtonComponent::UIButtonComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIButtonComponent>( owner_node )
-		, mSize()
 		, mUIPannelComponent( nullptr )
 		, mUIInputListener()
 	{}
@@ -55,7 +54,7 @@ namespace r2bix_component
 
 	void UIButtonComponent::SetSize( const uint32_t width, const uint32_t height )
 	{
-		mSize.Set( width, height );
+		mUIInputListener.SetSize( width, height );
 	}
 
 
