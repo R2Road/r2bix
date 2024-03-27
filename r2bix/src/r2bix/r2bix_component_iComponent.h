@@ -72,7 +72,31 @@ namespace r2bix_component
 
 
 		//
-		// 
+		// 소유한 Node 가 AddChild, RemoveChild 되면 호출
+		//
+	public:
+		void Enter()
+		{
+			EnterProcess();
+		}
+	protected:
+		virtual void EnterProcess()
+		{}
+
+	public:
+		void Exit()
+		{
+			ExitProcess();
+		}
+	protected:
+		virtual void ExitProcess()
+		{}
+
+
+
+		//
+		// Node, Component 가 생성 완료된 이후에
+		// 데이터 설정 단계에서 Activate Flag에 따라 호출
 		//
 	public:
 		void Activate()
@@ -98,29 +122,6 @@ namespace r2bix_component
 		}
 	protected:
 		virtual void DeactivateProcess()
-		{}
-
-
-
-		//
-		// 소유한 Node 가 AddChild, RemoveChild 되면 호출
-		//
-	public:
-		void Enter()
-		{
-			EnterProcess();
-		}
-	protected:
-		virtual void EnterProcess()
-		{}
-
-	public:
-		void Exit()
-		{
-			ExitProcess();
-		}
-	protected:
-		virtual void ExitProcess()
 		{}
 
 
