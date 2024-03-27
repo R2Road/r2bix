@@ -56,8 +56,13 @@ namespace r2bix_component
 	{
 		mUIInputListener.SetCallback4CursorResponse( callback );
 	}
-	void UIButtonComponent::SetCallback4KeyResponse( const r2bix_input::eKeyCode key_code, const Callback4KeyResponseT& callback )
+	void UIButtonComponent::SetCallback4KeyResponse( const Callback4KeyResponseT& callback )
 	{
-		mUIInputListener.SetCallback4KeyResponse( key_code, callback );
+		mUIInputListener.SetCallback4KeyResponse( callback );
+	}
+
+	void UIButtonComponent::AddObservationKey( const r2bix_input::eKeyCode key_code )
+	{
+		mUIInputListener.AddObservationKey( key_code );
 	}
 }

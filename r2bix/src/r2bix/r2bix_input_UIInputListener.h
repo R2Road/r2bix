@@ -18,7 +18,6 @@ namespace r2bix_input
 
 		using Callback4CursorResponseT = std::function<bool( r2bix_ui::eCursorStatus )>;
 		using Callback4KeyResponseT = std::function<bool( eKeyStatus )>;
-		using Container4KeyStatusChangedCallbackT = std::vector<Callback4KeyResponseT>;
 
 
 
@@ -65,7 +64,9 @@ namespace r2bix_input
 		}
 
 		void SetCallback4CursorResponse( const Callback4CursorResponseT& callback );
-		void SetCallback4KeyResponse( const r2bix_input::eKeyCode key_code, const Callback4KeyResponseT& callback );
+		void SetCallback4KeyResponse( const Callback4KeyResponseT& callback );
+
+		void AddObservationKey( const r2bix_input::eKeyCode key_code );
 
 		bool OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state );
 
@@ -79,7 +80,9 @@ namespace r2bix_input
 		bool mbCursorResponse;
 		KeyContainerT mObservationKeyContainer;
 
+
+
 		Callback4CursorResponseT mCursorResponseCallback;
-		Container4KeyStatusChangedCallbackT mContainer4KeyStatusChangedCallback;
+		Callback4KeyResponseT mCallback4KeyResponse;
 	};
 }

@@ -8,7 +8,7 @@ namespace r2bix_input
 		, mbCursorResponse( false)
 		, mObservationKeyContainer()
 		, mCursorResponseCallback()
-		, mContainer4KeyStatusChangedCallback()
+		, mCallback4KeyResponse()
 	{}
 	UIInputListener::UIInputListener( const int order ) :
 		  mOrder( order )
@@ -16,7 +16,7 @@ namespace r2bix_input
 		, mbCursorResponse( false )
 		, mObservationKeyContainer()
 		, mCursorResponseCallback()
-		, mContainer4KeyStatusChangedCallback()
+		, mCallback4KeyResponse()
 	{}
 
 
@@ -34,10 +34,14 @@ namespace r2bix_input
 
 		mCursorResponseCallback = callback;
 	}
-	void UIInputListener::SetCallback4KeyResponse( const r2bix_input::eKeyCode key_code, const Callback4KeyResponseT& callback )
+	void UIInputListener::SetCallback4KeyResponse( const Callback4KeyResponseT& callback )
+	{
+		mCallback4KeyResponse = callback;
+	}
+
+	void UIInputListener::AddObservationKey( const r2bix_input::eKeyCode key_code )
 	{
 		mObservationKeyContainer.push_back( key_code );
-		mContainer4KeyStatusChangedCallback.push_back( callback );
 	}
 
 	bool UIInputListener::OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state )
