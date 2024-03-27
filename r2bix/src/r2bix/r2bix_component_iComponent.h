@@ -59,7 +59,12 @@ namespace r2bix_component
 		//
 		// 생성시 1회 불리는 자기 초기화 함수
 		//
-		virtual bool Init()
+		bool Init()
+		{
+			return InitProcess();
+		}
+	protected:
+		virtual bool InitProcess()
 		{
 			return true;
 		}
