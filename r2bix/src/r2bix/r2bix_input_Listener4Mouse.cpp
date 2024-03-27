@@ -12,7 +12,7 @@ namespace r2bix_input
 		, mObservationKeyContainer()
 
 		, mCallback4CursorMoved()
-		, mContainer4KeyStatusChangedCallback()
+		, mCallback4KeyStatusChanged()
 	{}
 	Listener4Mouse::Listener4Mouse( const int order ) :
 		mOrder( order )
@@ -22,7 +22,7 @@ namespace r2bix_input
 		, mObservationKeyContainer()
 
 		, mCallback4CursorMoved()
-		, mContainer4KeyStatusChangedCallback()
+		, mCallback4KeyStatusChanged()
 	{}
 
 
@@ -40,7 +40,11 @@ namespace r2bix_input
 
 		mCallback4CursorMoved = callback;
 	}
-	void Listener4Mouse::SetCallback4KeyStatusChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback )
+	void Listener4Mouse::SetCallback4KeyStatusChanged( const Callback4KeyStatusChangedT& callback )
+	{
+		mCallback4KeyStatusChanged = callback;
+	}
+	void Listener4Mouse::AddObservationKey( const r2bix_input::eKeyCode key_code )
 	{
 		if( key_code != r2bix_input::eKeyCode::VK_LBUTTON && key_code != r2bix_input::eKeyCode::VK_RBUTTON && key_code != r2bix_input::eKeyCode::VK_MBUTTON )
 		{
@@ -49,7 +53,6 @@ namespace r2bix_input
 		}
 
 		mObservationKeyContainer.Add( key_code );
-		mContainer4KeyStatusChangedCallback.push_back( callback );
 	}
 
 
@@ -77,12 +80,12 @@ namespace r2bix_input
 			{
 			case eKeyStatus::None:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Push;
-				mContainer4KeyStatusChangedCallback[key_index]( mObservationKeyContainer[key_index].key_status );
+				mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
 				break;
 
 			case eKeyStatus::Push:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Pressed;
-				mContainer4KeyStatusChangedCallback[key_index]( mObservationKeyContainer[key_index].key_status );
+				mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
 				break;
 
 			//case eKeyStatus::Pressed:
@@ -100,12 +103,12 @@ namespace r2bix_input
 			case eKeyStatus::Push:
 			case eKeyStatus::Pressed:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Release;
-				mContainer4KeyStatusChangedCallback[key_index]( mObservationKeyContainer[key_index].key_status );
+				mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
 				break;
 
 			case eKeyStatus::Release:
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::None;
-				mContainer4KeyStatusChangedCallback[key_index]( mObservationKeyContainer[key_index].key_status );
+				mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
 				break;
 			}
 		}
