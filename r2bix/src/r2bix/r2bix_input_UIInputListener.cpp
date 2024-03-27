@@ -21,7 +21,7 @@ namespace r2bix_input
 
 
 
-	void UIInputListener::SetCallback4CursorResponse( const CursorResponseCallbackT& callback )
+	void UIInputListener::SetCallback4CursorResponse( const Callback4CursorResponseT& callback )
 	{
 		if( callback )
 		{

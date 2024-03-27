@@ -52,7 +52,7 @@ namespace r2bix_component
 
 
 
-	void UIButtonComponent::SetCallback4CursorResponse( const CursorResponseCallbackT& callback )
+	void UIButtonComponent::SetCallback4CursorResponse( const Callback4CursorResponseT& callback )
 	{
 		mUIInputListener.SetCallback4CursorResponse( callback );
 	}

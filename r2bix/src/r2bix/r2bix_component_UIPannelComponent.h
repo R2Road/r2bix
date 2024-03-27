@@ -16,7 +16,7 @@ namespace r2bix_component
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
-		using CursorResponseCallbackT = std::function<void( r2bix_ui::eCursorStatus )>;
+		using Callback4CursorResponseT = std::function<void( r2bix_ui::eCursorStatus )>;
 		using UIInputListenerContainer = std::list<r2bix_input::UIInputListener*>;
 
 
@@ -73,7 +73,7 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetCursorResponseCallback( const CursorResponseCallbackT& callback )
+		void SetCursorResponseCallback( const Callback4CursorResponseT& callback )
 		{
 			mCursorResponseCallback = callback;
 		}
@@ -103,7 +103,7 @@ namespace r2bix_component
 		r2::SizeInt mSize;
 
 		r2bix_input::Listener4Mouse mListener4Mouse;
-		CursorResponseCallbackT mCursorResponseCallback;
+		Callback4CursorResponseT mCursorResponseCallback;
 
 		r2bix_ui::eCursorStatus mCursorState;
 

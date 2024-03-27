@@ -10,7 +10,7 @@ namespace r2bix_component
 	class UIButtonComponent : public r2bix_component::Component<UIButtonComponent>
 	{
 	public:
-		using CursorResponseCallbackT = r2bix_input::UIInputListener::CursorResponseCallbackT;
+		using Callback4CursorResponseT = r2bix_input::UIInputListener::Callback4CursorResponseT;
 		using Callback4KeyResponseT = r2bix_input::UIInputListener::Callback4KeyResponseT;
 
 
@@ -50,7 +50,7 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetCallback4CursorResponse( const CursorResponseCallbackT& callback );
+		void SetCallback4CursorResponse( const Callback4CursorResponseT& callback );
 		void SetCallback4KeyResponse( const r2bix_input::eKeyCode key_code, const Callback4KeyResponseT& callback );
 
 
