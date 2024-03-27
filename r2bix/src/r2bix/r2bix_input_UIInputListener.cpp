@@ -40,11 +40,13 @@ namespace r2bix_input
 		mContainer4KeyStatusChangedCallback.push_back( callback );
 	}
 
-	void UIInputListener::OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state )
+	bool UIInputListener::OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state )
 	{
 		if( mbCursorResponse )
 		{
-			mCursorResponseCallback( cursor_state );
+			return mCursorResponseCallback( cursor_state );
 		}
+
+		return false;
 	}
 }

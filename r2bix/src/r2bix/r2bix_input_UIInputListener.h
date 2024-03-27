@@ -67,7 +67,7 @@ namespace r2bix_input
 		void SetCallback4CursorResponse( const Callback4CursorResponseT& callback );
 		void SetCallback4KeyResponse( const r2bix_input::eKeyCode key_code, const Callback4KeyResponseT& callback );
 
-		void OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state );
+		bool OnCursorResponse( const r2bix_ui::eCursorStatus cursor_state );
 
 
 

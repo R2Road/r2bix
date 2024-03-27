@@ -166,7 +166,10 @@ namespace r2bix_component
 	{
 		for( auto l : mUIInputListenerContainer )
 		{
-			l->OnCursorResponse( cursor_state );
+			if( l->OnCursorResponse( cursor_state ) )
+			{
+				break;
+			}
 		}
 	}
 }
