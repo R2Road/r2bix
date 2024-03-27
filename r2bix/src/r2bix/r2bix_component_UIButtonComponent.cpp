@@ -52,13 +52,6 @@ namespace r2bix_component
 
 
 
-	void UIButtonComponent::SetSize( const uint32_t width, const uint32_t height )
-	{
-		mUIInputListener.SetSize( width, height );
-	}
-
-
-
 	void UIButtonComponent::SetCallback4CursorResponse( const CursorResponseCallbackT& callback )
 	{
 		mUIInputListener.SetCallback4CursorResponse( callback );

@@ -40,7 +40,10 @@ namespace r2bix_component
 			return mUIInputListener.GetHeight();
 		}
 
-		void SetSize( const uint32_t width, const uint32_t height );
+		void SetSize( const uint32_t width, const uint32_t height )
+		{
+			mUIInputListener.SetSize( width, height );
+		}
 
 
 
