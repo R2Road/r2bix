@@ -79,6 +79,17 @@ namespace r2bix_component
 			return ( r2bix_ui::eCursorStatus::CursorOver == mCursorState || r2bix_ui::eCursorStatus::CursorMove == mCursorState );
 		} );
 
+		//
+		// UIInputListener에 맞춰서 등록/취소 처리를 하면 너무 복잡해진다.
+		// 일단 우겨 넣는걸로 하자.
+		//
+		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_LBUTTON );
+		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_MBUTTON );
+		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
+		mListener4Mouse.SetCallback4KeyStatusChanged( []( const int key_index, const r2bix_input::eKeyStatus key_status )->bool
+		{
+		} );
+
 		return true;
 	}
 
