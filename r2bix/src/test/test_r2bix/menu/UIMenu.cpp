@@ -132,8 +132,31 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							auto empty_node = pn_node->AddChild<r2bix_node::Node>();
 
 							auto btn_node = empty_node->AddChild<r2bix_node::UIButtonNode>();
-							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
 							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 3 );
+							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
+							{
+								auto rect_node = btn_node->AddChild<r2bix_node::RectNode>();
+								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+								rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize(
+									btn_node->GetComponent<r2bix_component::UIButtonComponent>()->GetWidth()
+									, btn_node->GetComponent<r2bix_component::UIButtonComponent>()->GetHeight()
+								);
+
+								btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )->bool
+								{
+									switch( s )
+									{
+									case r2bix_ui::eCursorStatus::CursorOver:
+										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+										break;
+									case r2bix_ui::eCursorStatus::CursorLeave:
+										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+										break;
+									}
+
+									return false;
+								});
+							}
 						}
 					}
 

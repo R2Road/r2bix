@@ -57,4 +57,15 @@ namespace r2bix_component
 	{
 		mSize.Set( width, height );
 	}
+
+
+
+	void UIButtonComponent::SetCallback4CursorResponse( const CursorResponseCallbackT& callback )
+	{
+		mUIInputListener.SetCallback4CursorResponse( callback );
+	}
+	void UIButtonComponent::SetCallback4KeyResponse( const r2bix_input::eKeyCode key_code, const Callback4KeyResponseT& callback )
+	{
+		mUIInputListener.SetCallback4KeyResponse( key_code, callback );
+	}
 }
