@@ -23,7 +23,6 @@ namespace r2bix_component
 		{
 			const r2::RectInt r( mOwnerNode.mTransformComponent->GetWorldPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
 
-
 			switch( mCursorState )
 			{
 			case r2bix_ui::eCursorStatus::None:
