@@ -18,6 +18,11 @@ namespace r2bix_component
 		, mCursorResponseCallback()
 		, mCursorState( r2bix_ui::eCursorStatus::None )
 		, mUIInputListenerContainer()
+	{}
+
+
+
+	bool UIPannelComponent::InitProcess()
 	{
 		mListener4Mouse.SetCallback4CursorMoved( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
@@ -73,9 +78,9 @@ namespace r2bix_component
 
 			return ( r2bix_ui::eCursorStatus::CursorOver == mCursorState || r2bix_ui::eCursorStatus::CursorMove == mCursorState );
 		} );
+
+		return true;
 	}
-
-
 
 	void UIPannelComponent::ActivateProcess()
 	{
@@ -128,6 +133,8 @@ namespace r2bix_component
 			{
 				mUIInputListenerContainer.insert( pivot_itr, listener );
 			}
+
+			mListener4Mouse;
 		}
 	}
 	void UIPannelComponent::RemoveListener( r2bix_input::UIInputListener* const listener )
