@@ -1,3 +1,7 @@
+//
+// UIButtonComponent는 Mouse 입력에만 반응한다.
+//
+
 #pragma once
 
 #include "r2bix_component_Component.h"
