@@ -6,8 +6,8 @@ namespace r2bix_ui
 	{
 		None,
 
+		CursorLeave,
 		CursorOver,
 		CursorMove, // required cursor over
-		CursorLeave,
 	};
 }
