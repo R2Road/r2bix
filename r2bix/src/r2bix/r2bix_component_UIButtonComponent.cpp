@@ -14,11 +14,15 @@ namespace r2bix_component
 
 		, mCallback4CursorStatusChanged()
 		, mCallback4KeyStatusChanged()
+	{}
+
+
+
+	bool UIButtonComponent::InitProcess()
 	{
 		mUIInputListener.SetCallback4CursorResponse( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
 			const r2::RectInt r( mOwnerNode.mTransformComponent->GetWorldPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
-
 
 			switch( mCursorState )
 			{
@@ -70,10 +74,9 @@ namespace r2bix_component
 
 			return ( r2bix_ui::eCursorStatus::CursorOver == mCursorState || r2bix_ui::eCursorStatus::CursorMove == mCursorState );
 		} );
+
+		return true;
 	}
-
-
-
 	void UIButtonComponent::EnterProcess()
 	{
 		r2bix_node::Node* parent_node = GetOwnerNode().GetParentNode();
