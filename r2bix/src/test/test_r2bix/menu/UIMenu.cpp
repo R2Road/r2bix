@@ -85,7 +85,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						//
 						{
 							auto btn_node = scene->AddChild<r2bix_node::UIButtonNode>();
-							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '1' );
+							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
 							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 3 );
 						}
 
@@ -98,7 +98,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							auto node_2 = node_1->AddChild<r2bix_node::Node>();
 
 							auto btn_node = node_2->AddChild<r2bix_node::UIButtonNode>();
-							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '2' );
+							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
 							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 16, 6 );
 						}
 
@@ -109,7 +109,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
 
 							auto btn_node = pn_node->AddChild<r2bix_node::UIButtonNode>();
-							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '3' );
+							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
 							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 22, 9 );
 						}
 
@@ -132,7 +132,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							auto empty_node = pn_node->AddChild<r2bix_node::Node>();
 
 							auto btn_node = empty_node->AddChild<r2bix_node::UIButtonNode>();
-							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5, '4' );
+							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
 							btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 3 );
 						}
 					}

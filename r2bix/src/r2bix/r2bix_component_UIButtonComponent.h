@@ -37,7 +37,7 @@ namespace r2bix_component
 			return mSize.GetHeight();
 		}
 
-		void SetSize( const uint32_t width, const uint32_t height, const char fill );
+		void SetSize( const uint32_t width, const uint32_t height );
 
 
 

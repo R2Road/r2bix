@@ -53,7 +53,7 @@ namespace r2bix_component
 
 
 
-	void UIButtonComponent::SetSize( const uint32_t width, const uint32_t height, const char fill )
+	void UIButtonComponent::SetSize( const uint32_t width, const uint32_t height )
 	{
 		mSize.Set( width, height );
 	}

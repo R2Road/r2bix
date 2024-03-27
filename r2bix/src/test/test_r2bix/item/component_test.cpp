@@ -1135,7 +1135,7 @@ namespace component_test
 			LS();
 
 			{
-				PROCESS_MAIN( ui_button->SetSize( 7, 5, '-'));
+				PROCESS_MAIN( ui_button->SetSize( 7, 5 ) );
 				EXPECT_EQ( 7, ui_button->GetWidth() );
 				EXPECT_EQ( 5, ui_button->GetHeight() );
 			}
