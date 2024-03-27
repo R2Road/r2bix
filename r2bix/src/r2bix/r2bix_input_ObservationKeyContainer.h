@@ -10,7 +10,7 @@ namespace r2bix_input
 	class ObservationKeyContainer
 	{
 	public:
-		using KeyValueT = KeyCodeTypeT;
+		using KeyCodeT = KeyCodeTypeT;
 		using ContainerT = std::vector<ObservationKey>;
 		using ConstIteratorT= ContainerT::const_iterator;
 
@@ -67,18 +67,18 @@ namespace r2bix_input
 		//
 		//
 		//
-		void Add( const KeyValueT key_value )
+		void Add( const KeyCodeT key_code )
 		{
 			for( const auto& k : mContainer )
 			{
-				if( k.key_code == key_value )
+				if( k.key_code == key_code )
 				{
 					R2ASSERT( false, "ObservationKeyContainer::Add 동일한 키를 반복 등록 시도" );
 					return;
 				}
 			}
 
-			mContainer.push_back( { key_value } );
+			mContainer.push_back( { key_code } );
 		}
 
 
