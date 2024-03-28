@@ -3,6 +3,7 @@
 #include "r2bix_Director.h"
 #include "r2bix_component_CustomTextureComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
+#include "r2bix_component_UIControlComponent.h"
 #include "r2bix_component_UIPannelComponent.h"
 
 namespace r2bix_node
@@ -17,6 +18,7 @@ namespace r2bix_node
 			// »ý¼º
 			//
 			auto ui_pannel_component = ret->AddComponent<r2bix_component::UIPannelComponent>();
+			auto ui_control_component = ret->AddComponent<r2bix_component::UIControlComponent>();
 
 
 			//
@@ -30,6 +32,10 @@ namespace r2bix_node
 			if( true )
 			{
 				ui_pannel_component->Activate();
+			}
+			if( true )
+			{
+				ui_control_component->Activate();
 			}
 
 		}

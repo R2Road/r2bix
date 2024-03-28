@@ -17,7 +17,7 @@ namespace r2bix_ui
 		using ObservationKeyContainerT = std::vector<KeyValueT>;
 
 		using Callback4CursorResponseT = std::function<bool( r2bix_input::CursorPoint )>;
-		using Callback4KeyResponseT = std::function<bool( eKeyStatus )>;
+		using Callback4KeyResponseT = std::function<bool( const int, r2bix_input::eKeyStatus )>;
 
 
 

@@ -12,6 +12,7 @@
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_TransformComponent.h"
 #include "r2bix_component_UIButtonComponent.h"
+#include "r2bix_component_UIControlComponent.h"
 #include "r2bix_component_UIPannelComponent.h"
 #include "r2bix_node_CustomTextureNode.h"
 #include "r2bix_node_LabelSNode.h"
@@ -404,8 +405,9 @@ namespace node_test
 			LS();
 
 			DECLARATION_MAIN( auto node = r2bix_node::UIPannelNode::Create( dummy_director ) );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIPannelComponent>() );
+			EXPECT_TRUE( nullptr != node->GetComponent<r2bix_component::TransformComponent>() );
+			EXPECT_TRUE( nullptr != node->GetComponent<r2bix_component::UIPannelComponent>() );
+			EXPECT_TRUE( nullptr != node->GetComponent<r2bix_component::UIControlComponent>() );
 
 			LS();
 
