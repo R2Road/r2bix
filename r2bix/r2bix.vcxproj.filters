@@ -497,10 +497,10 @@
     <ClCompile Include="src\r2bix\r2bix_component_RectComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_input_UIInputListener.cpp">
-      <Filter>r2bix\input</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_ui_Constant.cpp">
+      <Filter>r2bix\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_ui_UIInputListener.cpp">
       <Filter>r2bix\ui</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1085,10 +1085,10 @@
     <ClInclude Include="src\r2bix\r2bix_component_RectComponent.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_input_UIInputListener.h">
-      <Filter>r2bix\input</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_ui_Constant.h">
+      <Filter>r2bix\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_ui_UIInputListener.h">
       <Filter>r2bix\ui</Filter>
     </ClInclude>
   </ItemGroup>

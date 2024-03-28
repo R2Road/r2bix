@@ -75,7 +75,7 @@
     <ClCompile Include="src\r2bix\r2bix_Director.cpp" />
     <ClCompile Include="src\r2bix\r2bix_input_InputManager.cpp" />
     <ClCompile Include="src\r2bix\r2bix_input_Listener4Mouse.cpp" />
-    <ClCompile Include="src\r2bix\r2bix_input_UIInputListener.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_ui_UIInputListener.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_Node.cpp" />
     <ClCompile Include="src\r2bix\r2bix_director_ScreenBufferManager.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_RectNode.cpp" />
@@ -271,7 +271,7 @@
     <ClInclude Include="src\r2bix\r2bix_input_InputManager.h" />
     <ClInclude Include="src\r2bix\r2bix_input_Listener4Mouse.h" />
     <ClInclude Include="src\r2bix\r2bix_input_ObservationKeyContainer.h" />
-    <ClInclude Include="src\r2bix\r2bix_input_UIInputListener.h" />
+    <ClInclude Include="src\r2bix\r2bix_ui_UIInputListener.h" />
     <ClInclude Include="src\r2bix\r2bix_node_Node.h" />
     <ClInclude Include="src\r2bix\r2bix_director_ScreenBufferManager.h" />
     <ClInclude Include="src\r2bix\r2bix_node_RectNode.h" />
