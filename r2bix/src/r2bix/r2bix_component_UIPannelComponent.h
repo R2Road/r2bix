@@ -6,7 +6,7 @@
 #include "r2bix_input_Listener4Mouse.h"
 #include "r2bix_ui_Constant.h"
 
-namespace r2bix_input
+namespace r2bix_ui
 {
 	class UIInputListener;
 }
@@ -19,7 +19,7 @@ namespace r2bix_component
 		using Callback4CursorResponseT = std::function<void( r2bix_ui::eCursorStatus )>;
 		using Callback4KeyResponseT = std::function<bool( int, r2bix_ui::eKeyStatus )>;
 
-		using UIInputListenerContainer = std::list<r2bix_input::UIInputListener*>;
+		using UIInputListenerContainer = std::list<r2bix_ui::UIInputListener*>;
 
 
 
@@ -98,8 +98,8 @@ namespace r2bix_component
 		//
 		// UI Input Listener
 		//
-		void AddListener( r2bix_input::UIInputListener* const listener );
-		void RemoveListener( r2bix_input::UIInputListener* const listener );
+		void AddListener( r2bix_ui::UIInputListener* const listener );
+		void RemoveListener( r2bix_ui::UIInputListener* const listener );
 		void OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
 
 

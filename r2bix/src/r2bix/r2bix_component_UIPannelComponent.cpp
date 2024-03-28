@@ -164,7 +164,7 @@ namespace r2bix_component
 
 
 
-	void UIPannelComponent::AddListener( r2bix_input::UIInputListener* const listener )
+	void UIPannelComponent::AddListener( r2bix_ui::UIInputListener* const listener )
 	{
 		//
 		// 반복 등록 확인
@@ -182,7 +182,7 @@ namespace r2bix_component
 		// Add
 		//
 		{
-			auto pivot_itr = std::find_if( mUIInputListenerContainer.begin(), mUIInputListenerContainer.end(), [listener]( const r2bix_input::UIInputListener* const l ){
+			auto pivot_itr = std::find_if( mUIInputListenerContainer.begin(), mUIInputListenerContainer.end(), [listener]( const r2bix_ui::UIInputListener* const l ){
 				if( l->GetOrder() <= listener->GetOrder() )
 				{
 					return true;
@@ -203,7 +203,7 @@ namespace r2bix_component
 			mListener4Mouse;
 		}
 	}
-	void UIPannelComponent::RemoveListener( r2bix_input::UIInputListener* const listener )
+	void UIPannelComponent::RemoveListener( r2bix_ui::UIInputListener* const listener )
 	{
 		if( nullptr == listener )
 		{

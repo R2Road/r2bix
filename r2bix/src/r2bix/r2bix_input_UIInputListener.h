@@ -8,12 +8,12 @@
 #include "r2bix_input_Constant.h"
 #include "r2bix_ui_Constant.h"
 
-namespace r2bix_input
+namespace r2bix_ui
 {
 	class UIInputListener
 	{
 	public:
-		using KeyValueT = KeyCodeTypeT;
+		using KeyValueT = r2bix_input::KeyCodeTypeT;
 		using ObservationKeyContainerT = std::vector<KeyValueT>;
 
 		using Callback4CursorResponseT = std::function<bool( r2bix_input::CursorPoint )>;

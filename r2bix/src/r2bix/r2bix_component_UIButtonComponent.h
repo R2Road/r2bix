@@ -64,7 +64,7 @@ namespace r2bix_component
 
 	private:
 		UIPannelComponent* mUIPannelComponent;
-		r2bix_input::UIInputListener mUIInputListener;
+		r2bix_ui::UIInputListener mUIInputListener;
 
 		r2bix_ui::eCursorStatus mCursorState;
 

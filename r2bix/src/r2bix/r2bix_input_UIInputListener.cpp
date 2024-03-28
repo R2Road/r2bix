@@ -1,6 +1,6 @@
 #include "r2bix_input_UIInputListener.h"
 
-namespace r2bix_input
+namespace r2bix_ui
 {
 	UIInputListener::UIInputListener() :
 		  mOrder( 0 )
