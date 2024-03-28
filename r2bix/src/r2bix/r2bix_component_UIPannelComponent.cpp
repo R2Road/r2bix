@@ -16,6 +16,7 @@ namespace r2bix_component
 	UIPannelComponent::UIPannelComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIPannelComponent>( owner_node )
 		, mListener4Mouse()
 		, mCursorResponseCallback()
+		, mCallback4KeyResponse()
 		, mCursorState( r2bix_ui::eCursorStatus::None )
 		, mUIInputListenerContainer()
 	{}
@@ -86,8 +87,20 @@ namespace r2bix_component
 		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_LBUTTON );
 		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_MBUTTON );
 		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
-		mListener4Mouse.SetCallback4KeyStatusChanged( []( const int key_index, const r2bix_input::eKeyStatus key_status )->bool
+		mListener4Mouse.SetCallback4KeyStatusChanged( [this]( const int key_index, const r2bix_input::eKeyStatus key_status )->bool
 		{
+			switch( mCursorState )
+			{
+			case r2bix_ui::eCursorStatus::CursorOver:
+			case r2bix_ui::eCursorStatus::CursorMove:
+				if( mCallback4KeyResponse )
+				{
+					mCallback4KeyResponse( key_index, key_status );
+				}
+				return true;
+			}
+
+			return false;
 		} );
 
 		return true;

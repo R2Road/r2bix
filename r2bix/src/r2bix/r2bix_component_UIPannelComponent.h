@@ -17,6 +17,8 @@ namespace r2bix_component
 	{
 	public:
 		using Callback4CursorResponseT = std::function<void( r2bix_ui::eCursorStatus )>;
+		using Callback4KeyResponseT = std::function<bool( int, r2bix_input::eKeyStatus )>;
+
 		using UIInputListenerContainer = std::list<r2bix_input::UIInputListener*>;
 
 
@@ -72,19 +74,23 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetCursorResponseCallback( const Callback4CursorResponseT& callback )
+		r2bix_ui::eCursorStatus GetState() const
 		{
-			mCursorResponseCallback = callback;
+			return mCursorState;
 		}
 
 
 
 		//
+		// Callback
 		//
-		//
-		r2bix_ui::eCursorStatus GetState() const
+		void SetCursorResponseCallback( const Callback4CursorResponseT& callback )
 		{
-			return mCursorState;
+			mCursorResponseCallback = callback;
+		}
+		void SetCallback4KeyResponse( const Callback4KeyResponseT& callback )
+		{
+			mCallback4KeyResponse = callback;
 		}
 
 
@@ -103,6 +109,7 @@ namespace r2bix_component
 
 		r2bix_input::Listener4Mouse mListener4Mouse;
 		Callback4CursorResponseT mCursorResponseCallback;
+		Callback4KeyResponseT mCallback4KeyResponse;
 
 		r2bix_ui::eCursorStatus mCursorState;
 

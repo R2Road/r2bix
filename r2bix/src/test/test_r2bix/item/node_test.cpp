@@ -545,6 +545,36 @@ namespace node_test
 
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
 				}
+
+				// Pannel 4
+				{
+					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+
+					// Debug Area View
+					auto rect_node = node->AddChild<r2bix_node::RectNode>();
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '3' );
+
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 8, 4 );
+					node->GetComponent<r2bix_component::UIPannelComponent>()->SetCallback4KeyResponse( [rect_node]( const int i, const r2bix_input::eKeyStatus s )->bool
+					{
+						switch( s )
+						{
+						case r2bix_input::eKeyStatus::Push:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+							break;
+						case r2bix_input::eKeyStatus::Pressed:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
+							break;
+						case r2bix_input::eKeyStatus::Release:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+							break;
+						}
+
+						return true;
+					} );
+
+					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 20, 3 );
+				}
 			}
 
 			//
