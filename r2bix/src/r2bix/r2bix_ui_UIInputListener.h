@@ -69,6 +69,7 @@ namespace r2bix_ui
 		void AddObservationKey( const r2bix_input::eKeyCode key_code );
 
 		bool OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
+		bool OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status );
 
 
 

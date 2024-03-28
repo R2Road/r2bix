@@ -86,6 +86,7 @@ namespace r2bix_component
 		//
 		//
 		bool OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
+		bool OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status );
 
 
 

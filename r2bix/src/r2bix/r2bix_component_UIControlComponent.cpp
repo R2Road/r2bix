@@ -188,4 +188,8 @@ namespace r2bix_component
 	{
 		return mUIInputListener.OnCursorResponse( cursor_point );
 	}
+	bool UIControlComponent::OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status )
+	{
+		return mUIInputListener.OnKeyResponse( key_index, key_status );
+	}
 }

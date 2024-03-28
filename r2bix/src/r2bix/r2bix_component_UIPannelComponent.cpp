@@ -33,6 +33,9 @@ namespace r2bix_component
 				break;
 			}
 
+			//
+			// Input Manager에서 유효한 Listener 처리를 중단하게 한다.
+			//
 			return (
 					r2bix_ui::eCursorStatus::CursorOver == mUIControlComponent->GetState()
 				||	r2bix_ui::eCursorStatus::CursorMove == mUIControlComponent->GetState()
@@ -48,9 +51,17 @@ namespace r2bix_component
 		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
 		mListener4Mouse.SetCallback4KeyStatusChanged( [this]( const int key_index, const r2bix_input::eKeyStatus key_status )->bool
 		{
-			
+			if( !mUIControlComponent->OnKeyResponse( key_index, key_status ) )
+			{
+				return false;
+			}
 
-			return false;
+			OnKeyResponse( key_index, key_status );
+
+			//
+			// Input Manager에서 유효한 Listener 처리를 중단하게 한다.
+			//
+			return true;
 		} );
 
 		return true;
@@ -139,6 +150,16 @@ namespace r2bix_component
 		for( auto l : mUIInputListenerContainer )
 		{
 			if( l->OnCursorResponse( cursor_point ) )
+			{
+				break;
+			}
+		}
+	}
+	void UIPannelComponent::OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status )
+	{
+		for( auto l : mUIInputListenerContainer )
+		{
+			if( l->OnKeyResponse( key_index, key_status ) )
 			{
 				break;
 			}

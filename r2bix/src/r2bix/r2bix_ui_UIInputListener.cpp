@@ -53,4 +53,13 @@ namespace r2bix_ui
 
 		return false;
 	}
+	bool UIInputListener::OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status )
+	{
+		if( mCallback4KeyResponse )
+		{
+			return mCallback4KeyResponse( key_index, key_status );
+		}
+
+		return false;
+	}
 }

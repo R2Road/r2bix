@@ -69,6 +69,7 @@ namespace r2bix_component
 		void AddListener( r2bix_ui::UIInputListener* const listener );
 		void RemoveListener( r2bix_ui::UIInputListener* const listener );
 		void OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
+		void OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status );
 
 
 
