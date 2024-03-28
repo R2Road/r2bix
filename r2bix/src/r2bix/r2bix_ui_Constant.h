@@ -10,4 +10,14 @@ namespace r2bix_ui
 		CursorOver,
 		CursorMove, // required cursor over
 	};
+
+	enum class eKeyStatus
+	{
+		None,
+
+		Push,
+		Pressed,
+		Release, // required cursor over
+		Cancel,
+	};
 }

@@ -17,7 +17,10 @@ namespace r2bix_component
 		, mListener4Mouse()
 		, mCursorResponseCallback()
 		, mCallback4KeyResponse()
+
 		, mCursorState( r2bix_ui::eCursorStatus::None )
+		, mKeyStatus( r2bix_ui::eKeyStatus::None)
+
 		, mUIInputListenerContainer()
 	{}
 
@@ -91,13 +94,57 @@ namespace r2bix_component
 		{
 			switch( mCursorState )
 			{
+			case r2bix_ui::eCursorStatus::None:
+			case r2bix_ui::eCursorStatus::CursorLeave:
+				if( r2bix_ui::eKeyStatus::Push == mKeyStatus || r2bix_ui::eKeyStatus::Pressed == mKeyStatus )
+				{
+					mKeyStatus = r2bix_ui::eKeyStatus::Cancel;
+				}
+				else
+				{
+					mKeyStatus = r2bix_ui::eKeyStatus::None;
+				}
+				break;
+
 			case r2bix_ui::eCursorStatus::CursorOver:
 			case r2bix_ui::eCursorStatus::CursorMove:
-				if( mCallback4KeyResponse )
 				{
-					mCallback4KeyResponse( key_index, key_status );
+					switch( key_status )
+					{
+					case r2bix_input::eKeyStatus::None:
+						mKeyStatus = r2bix_ui::eKeyStatus::None;
+						break;
+					case r2bix_input::eKeyStatus::Push:
+						if( r2bix_ui::eKeyStatus::None == mKeyStatus || r2bix_ui::eKeyStatus::Release == mKeyStatus || r2bix_ui::eKeyStatus::Cancel == mKeyStatus )
+						{
+							mKeyStatus = r2bix_ui::eKeyStatus::Push;
+						}
+						break;
+					case r2bix_input::eKeyStatus::Pressed:
+						if( r2bix_ui::eKeyStatus::Push == mKeyStatus )
+						{
+							mKeyStatus = r2bix_ui::eKeyStatus::Pressed;
+						}
+						break;
+					case r2bix_input::eKeyStatus::Release:
+						if( r2bix_ui::eKeyStatus::Push == mKeyStatus || r2bix_ui::eKeyStatus::Pressed == mKeyStatus )
+						{
+							mKeyStatus = r2bix_ui::eKeyStatus::Release;
+						}
+						break;
+					}
 				}
-				return true;
+				break;
+			}
+
+			if( r2bix_ui::eKeyStatus::None == mKeyStatus )
+			{
+				return false;
+			}
+			
+			if( mCallback4KeyResponse )
+			{
+				return mCallback4KeyResponse( key_index, mKeyStatus );
 			}
 
 			return false;
