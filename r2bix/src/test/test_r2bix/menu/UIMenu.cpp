@@ -150,6 +150,9 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 									case r2bix_ui::eCursorStatus::CursorOver:
 										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 										break;
+									case r2bix_ui::eCursorStatus::CursorMove:
+										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
+										break;
 									case r2bix_ui::eCursorStatus::CursorLeave:
 										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 										break;

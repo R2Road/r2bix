@@ -24,10 +24,19 @@ namespace r2bix_component
 		{
 			mUIControlComponent->OnCursorResponse( cursor_point );
 
+			switch( mUIControlComponent->GetState() )
+			{
+			case r2bix_ui::eCursorStatus::CursorLeave:
+			case r2bix_ui::eCursorStatus::CursorOver:
+			case r2bix_ui::eCursorStatus::CursorMove:
+				OnCursorResponse( cursor_point );
+				break;
+			}
+
 			return (
 					r2bix_ui::eCursorStatus::CursorOver == mUIControlComponent->GetState()
 				||	r2bix_ui::eCursorStatus::CursorMove == mUIControlComponent->GetState()
-				);
+			);
 		} );
 
 		//
