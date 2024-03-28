@@ -9,6 +9,7 @@
 #include "r2bix/r2bix_component_RectComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
 #include "r2bix/r2bix_component_UIButtonComponent.h"
+#include "r2bix/r2bix_component_UIControlComponent.h"
 #include "r2bix/r2bix_component_UIPannelComponent.h"
 
 #include "r2bix/r2bix_node_CustomTextureNode.h"
@@ -119,13 +120,13 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						{
 							auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
 							pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 28, 12 );
-							pn_node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 15, 7 );
+							pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 15, 7 );
 							{
 								auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
 								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 								rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize(
-									  pn_node->GetComponent<r2bix_component::UIPannelComponent>()->GetWidth()
-									, pn_node->GetComponent<r2bix_component::UIPannelComponent>()->GetHeight()
+									  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
+									, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
 								);
 							}
 

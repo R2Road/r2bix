@@ -82,6 +82,13 @@ namespace r2bix_component
 
 
 
+		//
+		//
+		//
+		bool OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
+
+
+
 	private:
 		r2::SizeInt mSize;
 

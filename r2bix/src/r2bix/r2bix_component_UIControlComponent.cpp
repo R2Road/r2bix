@@ -183,4 +183,9 @@ namespace r2bix_component
 			mUIPannelComponent->RemoveListener( &mUIInputListener );
 		}
 	}
+
+	bool UIControlComponent::OnCursorResponse( const r2bix_input::CursorPoint cursor_point )
+	{
+		return mUIInputListener.OnCursorResponse( cursor_point );
+	}
 }

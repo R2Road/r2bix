@@ -14,6 +14,7 @@
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_TransformComponent.h"
 #include "r2bix_component_UIButtonComponent.h"
+#include "r2bix_component_UIControlComponent.h"
 #include "r2bix_component_UIPannelComponent.h"
 #include "r2bix_render_Camera.h"
 #include "r2bix_render_Texture.h"
@@ -934,15 +935,15 @@ namespace component_test
 
 			LS();
 
-			DECLARATION_MAIN( auto ui_pannel = node->AddComponent<r2bix_component::UIPannelComponent>() );
-			EXPECT_NE( nullptr, ui_pannel );
+			DECLARATION_MAIN( auto c = node->AddComponent<r2bix_component::UIControlComponent>() );
+			EXPECT_NE( nullptr, c );
 
 			LS();
 
 			{
-				PROCESS_MAIN( ui_pannel->SetSize( 7, 5 ));
-				EXPECT_EQ( 7, ui_pannel->GetWidth() );
-				EXPECT_EQ( 5, ui_pannel->GetHeight() );
+				PROCESS_MAIN( c->SetSize( 7, 5 ));
+				EXPECT_EQ( 7, c->GetWidth() );
+				EXPECT_EQ( 5, c->GetHeight() );
 			}
 
 			LS();
@@ -1036,7 +1037,7 @@ namespace component_test
 
 			LS();
 
-			DECLARATION_MAIN( auto u = node->AddComponent<r2bix_component::UIPannelComponent>() );
+			DECLARATION_MAIN( auto u = node->AddComponent<r2bix_component::UIControlComponent>() );
 
 			LS();
 
@@ -1056,7 +1057,7 @@ namespace component_test
 
 				LF();
 
-				PROCESS_MAIN( u->SetCursorResponseCallback( [&bOver]( r2bix_ui::eCursorStatus s )
+				PROCESS_MAIN( u->SetCallback4CursorResponse( [&bOver]( r2bix_ui::eCursorStatus s )
 				{
 					switch( s )
 					{
@@ -1071,31 +1072,31 @@ namespace component_test
 
 				LF();
 
-				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 0, 0 } ) );
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 0, 0 } ) );
 				EXPECT_TRUE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorOver, u->GetState() );
 
 				LF();
 
-				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 1, 1 } ) );
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 1, 1 } ) );
 				EXPECT_TRUE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorMove, u->GetState() );
 
 				LF();
 
-				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 10, 10 } ) );
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 10, 10 } ) );
 				EXPECT_FALSE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorLeave, u->GetState() );
 
 				LF();
 
-				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 10, 10 } ) );
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 10, 10 } ) );
 				EXPECT_FALSE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::None, u->GetState() );
 
 				LF();
 
-				PROCESS_MAIN( u->GetListener4Mouse()->UpdateCursor( r2bix_input::CursorPoint{ 9, 9 } ) );
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 9, 9 } ) );
 				EXPECT_TRUE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorOver, u->GetState() );
 			}
