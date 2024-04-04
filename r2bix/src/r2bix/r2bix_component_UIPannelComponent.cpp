@@ -21,8 +21,14 @@ namespace r2bix_component
 	{
 		mListener4Mouse.SetCallback4CursorMoved( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
+			//
+			// UIControlComponent 의 기능을 활용해 유효 영역을 확인 한다.
+			//
 			mMyUIControlComponent->OnCursorResponse( cursor_point );
 
+			//
+			// 등록된 UIControlComponent 처리
+			//
 			switch( mMyUIControlComponent->GetState() )
 			{
 			case r2bix_ui::eCursorStatus::CursorLeave:
@@ -33,12 +39,13 @@ namespace r2bix_component
 			}
 
 			//
-			// Input Manager에서 유효한 Listener 처리를 중단하게 한다.
+			// 현재 PannelComponent가 유효한 처리를 완료했다면
+			// Input Manager에서 다른 PannelComponent의 처리를 하지 않게 한다.
 			//
 			return (
-					r2bix_ui::eCursorStatus::CursorOver == mMyUIControlComponent->GetState()
-				||	r2bix_ui::eCursorStatus::CursorMove == mMyUIControlComponent->GetState()
-			);
+				r2bix_ui::eCursorStatus::CursorOver == mMyUIControlComponent->GetState()
+				|| r2bix_ui::eCursorStatus::CursorMove == mMyUIControlComponent->GetState()
+				);
 		} );
 
 		//
