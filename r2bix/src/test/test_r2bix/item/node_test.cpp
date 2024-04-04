@@ -620,6 +620,7 @@ namespace node_test
 			DECLARATION_MAIN( auto node = r2bix_node::UIButtonNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIButtonComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIControlComponent>() );
 
 			LS();
 

@@ -1131,14 +1131,35 @@ namespace component_test
 			LS();
 
 			DECLARATION_MAIN( auto ui_button = node->AddComponent<r2bix_component::UIButtonComponent>() );
-			EXPECT_NE( nullptr, ui_button );
+			EXPECT_TRUE( nullptr != ui_button );
+			DECLARATION_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
+			EXPECT_TRUE( nullptr != ui_control );
+
+			LS();
+
+			{
+				EXPECT_EQ( nullptr, ui_button->GetMyUIControlComponent() );
+
+				LF();
+
+				PROCESS_MAIN( ui_button->SetMyUIControlComponent( ui_control ) );
+				EXPECT_EQ( ui_control, ui_button->GetMyUIControlComponent() );
+			}
 
 			LS();
 
 			{
 				PROCESS_MAIN( ui_button->SetSize( 7, 5 ) );
+
+				LF();
+
 				EXPECT_EQ( 7, ui_button->GetWidth() );
 				EXPECT_EQ( 5, ui_button->GetHeight() );
+
+				LF();
+
+				EXPECT_EQ( 7, ui_control->GetWidth() );
+				EXPECT_EQ( 5, ui_control->GetHeight() );
 			}
 
 			LS();
