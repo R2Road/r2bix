@@ -24,7 +24,7 @@ namespace r2bix_node
 			//
 			// ¼³Á¤
 			//
-			ui_pannel_component->SetUIControlComponent( ui_control_component );
+			ui_pannel_component->SetMyUIControlComponent( ui_control_component );
 
 
 

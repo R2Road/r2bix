@@ -46,13 +46,13 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetUIControlComponent( UIControlComponent* const ui_control_component )
+		void SetMyUIControlComponent( UIControlComponent* const ui_control_component )
 		{
-			mUIControlComponent = ui_control_component;
+			mMyUIControlComponent = ui_control_component;
 		}
-		UIControlComponent* const GetUIControlComponent() const
+		UIControlComponent* const GetMyUIControlComponent() const
 		{
-			return mUIControlComponent;
+			return mMyUIControlComponent;
 		}
 
 
@@ -72,6 +72,6 @@ namespace r2bix_component
 		r2bix_input::Listener4Mouse mListener4Mouse;
 		UIControlComponentContainer mUIControlComponentContainer;
 
-		UIControlComponent* mUIControlComponent;
+		UIControlComponent* mMyUIControlComponent;
 	};
 }

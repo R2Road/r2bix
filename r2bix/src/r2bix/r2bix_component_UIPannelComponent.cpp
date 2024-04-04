@@ -13,7 +13,7 @@ namespace r2bix_component
 		, mListener4Mouse()
 		, mUIControlComponentContainer()
 
-		, mUIControlComponent( nullptr )
+		, mMyUIControlComponent( nullptr )
 	{}
 
 
@@ -22,9 +22,9 @@ namespace r2bix_component
 	{
 		mListener4Mouse.SetCallback4CursorMoved( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
-			mUIControlComponent->OnCursorResponse( cursor_point );
+			mMyUIControlComponent->OnCursorResponse( cursor_point );
 
-			switch( mUIControlComponent->GetState() )
+			switch( mMyUIControlComponent->GetState() )
 			{
 			case r2bix_ui::eCursorStatus::CursorLeave:
 			case r2bix_ui::eCursorStatus::CursorOver:
@@ -37,8 +37,8 @@ namespace r2bix_component
 			// Input Manager에서 유효한 Listener 처리를 중단하게 한다.
 			//
 			return (
-					r2bix_ui::eCursorStatus::CursorOver == mUIControlComponent->GetState()
-				||	r2bix_ui::eCursorStatus::CursorMove == mUIControlComponent->GetState()
+					r2bix_ui::eCursorStatus::CursorOver == mMyUIControlComponent->GetState()
+				||	r2bix_ui::eCursorStatus::CursorMove == mMyUIControlComponent->GetState()
 			);
 		} );
 
@@ -51,7 +51,7 @@ namespace r2bix_component
 		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
 		mListener4Mouse.SetCallback4KeyStatusChanged( [this]( const int key_index, const r2bix_input::eKeyStatus key_status )->bool
 		{
-			if( !mUIControlComponent->OnKeyResponse( key_index, key_status ) )
+			if( !mMyUIControlComponent->OnKeyResponse( key_index, key_status ) )
 			{
 				return false;
 			}
