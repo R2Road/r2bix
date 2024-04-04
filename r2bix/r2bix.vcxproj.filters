@@ -500,9 +500,6 @@
     <ClCompile Include="src\r2bix\r2bix_ui_Constant.cpp">
       <Filter>r2bix\ui</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_ui_UIInputListener.cpp">
-      <Filter>r2bix\ui</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_component_UIControlComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
@@ -1089,9 +1086,6 @@
       <Filter>r2bix\component</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_ui_Constant.h">
-      <Filter>r2bix\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_ui_UIInputListener.h">
       <Filter>r2bix\ui</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_UIControlComponent.h">

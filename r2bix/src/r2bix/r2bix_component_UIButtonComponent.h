@@ -4,11 +4,15 @@
 
 #pragma once
 
+#include <functional>
+
 #include "r2bix_component_Component.h"
-#include "r2bix_ui_UIInputListener.h"
+#include "r2bix_input_Constant.h"
+#include "r2bix_ui_Constant.h"
 
 namespace r2bix_component
 {
+	class UIControlComponent;
 	class UIPannelComponent;
 
 	class UIButtonComponent : public r2bix_component::Component<UIButtonComponent>
@@ -26,7 +30,6 @@ namespace r2bix_component
 		// Override
 		//
 	private:
-		bool InitProcess() override;
 		void EnterProcess() override;
 		void ExitProcess() override;
 
@@ -36,18 +39,23 @@ namespace r2bix_component
 		//
 		//
 	public:
-		int GetWidth() const
-		{
-			return mUIInputListener.GetWidth();
-		}
-		int GetHeight() const
-		{
-			return mUIInputListener.GetHeight();
-		}
+		int GetWidth() const;
+		int GetHeight() const;
 
-		void SetSize( const uint32_t width, const uint32_t height )
+		void SetSize( const uint32_t width, const uint32_t height );
+
+
+
+		//
+		//
+		//
+		void SetMyUIControlComponent( UIControlComponent* const ui_control_component )
 		{
-			mUIInputListener.SetSize( width, height );
+			mMyUIControlComponent = ui_control_component;
+		}
+		UIControlComponent* const GetMyUIControlComponent() const
+		{
+			return mMyUIControlComponent;
 		}
 
 
@@ -64,7 +72,7 @@ namespace r2bix_component
 
 	private:
 		UIPannelComponent* mUIPannelComponent;
-		r2bix_ui::UIInputListener mUIInputListener;
+		UIControlComponent* mMyUIControlComponent;
 
 		r2bix_ui::eCursorStatus mCursorState;
 

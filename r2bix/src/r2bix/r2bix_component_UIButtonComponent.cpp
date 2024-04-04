@@ -2,13 +2,14 @@
 
 #include "r2bix_Director.h"
 
+#include "r2bix_component_UIControlComponent.h"
 #include "r2bix_component_UIPannelComponent.h"
 
 namespace r2bix_component
 {
 	UIButtonComponent::UIButtonComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIButtonComponent>( owner_node )
 		, mUIPannelComponent( nullptr )
-		, mUIInputListener()
+		, mMyUIControlComponent( nullptr )
 
 		, mCursorState( r2bix_ui::eCursorStatus::None )
 
@@ -18,65 +19,6 @@ namespace r2bix_component
 
 
 
-	bool UIButtonComponent::InitProcess()
-	{
-		mUIInputListener.SetCallback4CursorResponse( [this]( const r2bix_input::CursorPoint cursor_point )->bool
-		{
-			const r2::RectInt r( mOwnerNode.mTransformComponent->GetWorldPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
-
-			switch( mCursorState )
-			{
-			case r2bix_ui::eCursorStatus::None:
-			case r2bix_ui::eCursorStatus::CursorLeave:
-				if( r.IsIn( cursor_point ) )
-				{
-					mCursorState = r2bix_ui::eCursorStatus::CursorOver;
-
-					if( mCallback4CursorStatusChanged )
-					{
-						mCallback4CursorStatusChanged( mCursorState );
-					}
-
-					//OnCursorResponse( mCursorState );
-				}
-				break;
-
-			case r2bix_ui::eCursorStatus::CursorOver:
-			case r2bix_ui::eCursorStatus::CursorMove:
-				if( r.IsIn( cursor_point ) )
-				{
-					//
-					// Input Manager 에서 커서가 이동했을 때 Callback을 호출하므로 커서 위치가 변했는지 확인 안해도 된다.
-					//
-
-					mCursorState = r2bix_ui::eCursorStatus::CursorMove;
-
-					if( mCallback4CursorStatusChanged )
-					{
-						mCallback4CursorStatusChanged( mCursorState );
-					}
-
-					//OnCursorResponse( mCursorState );
-				}
-				else
-				{
-					mCursorState = r2bix_ui::eCursorStatus::CursorLeave;
-
-					if( mCallback4CursorStatusChanged )
-					{
-						mCallback4CursorStatusChanged( mCursorState );
-					}
-
-					//OnCursorResponse( mCursorState );
-				}
-				break;
-			}
-
-			return ( r2bix_ui::eCursorStatus::CursorOver == mCursorState || r2bix_ui::eCursorStatus::CursorMove == mCursorState );
-		} );
-
-		return true;
-	}
 	void UIButtonComponent::EnterProcess()
 	{
 		r2bix_node::Node* parent_node = GetOwnerNode().GetParentNode();
@@ -102,6 +44,14 @@ namespace r2bix_component
 		{
 			//mUIPannelComponent->AddListener( &mUIInputListener );
 		}
+
+		//
+		//
+		//
+		mMyUIControlComponent->SetCallback4CursorResponse( [this]( const r2bix_ui::eCursorStatus s )->bool
+		{
+			return mCallback4CursorStatusChanged( s );
+		} );
 	}
 	void UIButtonComponent::ExitProcess()
 	{
@@ -112,6 +62,22 @@ namespace r2bix_component
 		{
 			//mUIPannelComponent->RemoveListener( &mUIInputListener );
 		}
+	}
+
+
+
+	int UIButtonComponent::GetWidth() const
+	{
+		return mMyUIControlComponent->GetWidth();
+	}
+	int UIButtonComponent::GetHeight() const
+	{
+		return mMyUIControlComponent->GetHeight();
+	}
+
+	void UIButtonComponent::SetSize( const uint32_t width, const uint32_t height )
+	{
+		mMyUIControlComponent->SetSize( width, height );
 	}
 
 
@@ -127,6 +93,6 @@ namespace r2bix_component
 
 	void UIButtonComponent::AddObservationKey( const r2bix_input::eKeyCode key_code )
 	{
-		mUIInputListener.AddObservationKey( key_code );
+		//mUIInputListener->AddObservationKey( key_code );
 	}
 }
