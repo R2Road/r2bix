@@ -11,7 +11,7 @@ namespace r2bix_component
 {
 	UIPannelComponent::UIPannelComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIPannelComponent>( owner_node )
 		, mListener4Mouse()
-		, mUIInputListenerContainer()
+		, mUIControlComponentContainer()
 
 		, mUIControlComponent( nullptr )
 	{}
@@ -78,14 +78,14 @@ namespace r2bix_component
 
 
 
-	void UIPannelComponent::AddListener( r2bix_ui::UIInputListener* const listener )
+	void UIPannelComponent::AddListener( r2bix_component::UIControlComponent* const listener )
 	{
 		//
 		// 반복 등록 확인
 		//
 		{
-			auto target_itr = std::find( mUIInputListenerContainer.begin(), mUIInputListenerContainer.end(), listener );
-			if( target_itr != mUIInputListenerContainer.end() )
+			auto target_itr = std::find( mUIControlComponentContainer.begin(), mUIControlComponentContainer.end(), listener );
+			if( target_itr != mUIControlComponentContainer.end() )
 			{
 				R2ASSERT( false, "이미 등록된 리스너의 등록을 요청한다." );
 				return;
@@ -96,8 +96,8 @@ namespace r2bix_component
 		// Add
 		//
 		{
-			auto pivot_itr = std::find_if( mUIInputListenerContainer.begin(), mUIInputListenerContainer.end(), [listener]( const r2bix_ui::UIInputListener* const l ){
-				if( l->GetOrder() <= listener->GetOrder() )
+			auto pivot_itr = std::find_if( mUIControlComponentContainer.begin(), mUIControlComponentContainer.end(), [listener]( const r2bix_component::UIControlComponent* const c ){
+				if( c->GetOrder() <= listener->GetOrder() )
 				{
 					return true;
 				}
@@ -105,19 +105,19 @@ namespace r2bix_component
 				return false;
 			} );
 
-			if( mUIInputListenerContainer.end() == pivot_itr )
+			if( mUIControlComponentContainer.end() == pivot_itr )
 			{
-				mUIInputListenerContainer.push_back( listener );
+				mUIControlComponentContainer.push_back( listener );
 			}
 			else
 			{
-				mUIInputListenerContainer.insert( pivot_itr, listener );
+				mUIControlComponentContainer.insert( pivot_itr, listener );
 			}
 
 			mListener4Mouse;
 		}
 	}
-	void UIPannelComponent::RemoveListener( r2bix_ui::UIInputListener* const listener )
+	void UIPannelComponent::RemoveListener( r2bix_component::UIControlComponent* const listener )
 	{
 		if( nullptr == listener )
 		{
@@ -125,7 +125,7 @@ namespace r2bix_component
 			return;
 		}
 
-		if( mUIInputListenerContainer.empty() )
+		if( mUIControlComponentContainer.empty() )
 		{
 			R2ASSERT( false, "등록된 리스너가 없는데 삭제를 요청한다." );
 			return;
@@ -135,19 +135,19 @@ namespace r2bix_component
 		// Remove
 		//
 		{
-			auto target_itr = std::find( mUIInputListenerContainer.begin(), mUIInputListenerContainer.end(), listener );
-			if( target_itr == mUIInputListenerContainer.end() )
+			auto target_itr = std::find( mUIControlComponentContainer.begin(), mUIControlComponentContainer.end(), listener );
+			if( target_itr == mUIControlComponentContainer.end() )
 			{
 				R2ASSERT( false, "등록된적 없는 리스너의 삭제를 요청한다." );
 				return;
 			}
 
-			mUIInputListenerContainer.erase( target_itr );
+			mUIControlComponentContainer.erase( target_itr );
 		}
 	}
 	void UIPannelComponent::OnCursorResponse( const r2bix_input::CursorPoint cursor_point )
 	{
-		for( auto l : mUIInputListenerContainer )
+		for( auto l : mUIControlComponentContainer )
 		{
 			if( l->OnCursorResponse( cursor_point ) )
 			{
@@ -157,7 +157,7 @@ namespace r2bix_component
 	}
 	void UIPannelComponent::OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status )
 	{
-		for( auto l : mUIInputListenerContainer )
+		for( auto l : mUIControlComponentContainer )
 		{
 			if( l->OnKeyResponse( key_index, key_status ) )
 			{

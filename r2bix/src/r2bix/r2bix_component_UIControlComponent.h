@@ -1,14 +1,12 @@
 #pragma once
 
+#include <functional>
+
 #include "r2_SizeInt.h"
 
 #include "r2bix_component_Component.h"
-#include "r2bix_ui_UIInputListener.h"
-
-namespace r2bix_ui
-{
-	class UIInputListener;
-}
+#include "r2bix_input_Constant.h"
+#include "r2bix_ui_Constant.h"
 
 namespace r2bix_component
 {
@@ -20,8 +18,6 @@ namespace r2bix_component
 		using Callback4CursorResponseT = std::function<void( r2bix_ui::eCursorStatus )>;
 		using Callback4KeyResponseT = std::function<bool( int, r2bix_ui::eKeyStatus )>;
 
-		using UIInputListenerContainer = std::list<r2bix_ui::UIInputListener*>;
-
 
 
 		UIControlComponent( r2bix_node::Node& owner_node );
@@ -32,7 +28,6 @@ namespace r2bix_component
 		//
 		//
 	private:
-		bool InitProcess() override;
 		void EnterProcess() override;
 		void ExitProcess() override;
 
@@ -111,8 +106,6 @@ namespace r2bix_component
 
 		Callback4CursorResponseT mCallback4CursorResponse;
 		Callback4KeyResponseT mCallback4KeyResponse;
-
-		r2bix_ui::UIInputListener mUIInputListener;
 
 		UIPannelComponent* mUIPannelComponent;
 	};

@@ -3,11 +3,6 @@
 #include "r2bix_component_Component.h"
 #include "r2bix_input_Listener4Mouse.h"
 
-namespace r2bix_ui
-{
-	class UIInputListener;
-}
-
 namespace r2bix_component
 {
 	class UIControlComponent;
@@ -15,7 +10,7 @@ namespace r2bix_component
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
-		using UIInputListenerContainer = std::list<r2bix_ui::UIInputListener*>;
+		using UIControlComponentContainer = std::list<r2bix_component::UIControlComponent*>;
 
 
 
@@ -66,8 +61,8 @@ namespace r2bix_component
 		//
 		// UI Input Listener
 		//
-		void AddListener( r2bix_ui::UIInputListener* const listener );
-		void RemoveListener( r2bix_ui::UIInputListener* const listener );
+		void AddListener( r2bix_component::UIControlComponent* const listener );
+		void RemoveListener( r2bix_component::UIControlComponent* const listener );
 		void OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
 		void OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status );
 
@@ -75,7 +70,7 @@ namespace r2bix_component
 
 	private:
 		r2bix_input::Listener4Mouse mListener4Mouse;
-		UIInputListenerContainer mUIInputListenerContainer;
+		UIControlComponentContainer mUIControlComponentContainer;
 
 		UIControlComponent* mUIControlComponent;
 	};

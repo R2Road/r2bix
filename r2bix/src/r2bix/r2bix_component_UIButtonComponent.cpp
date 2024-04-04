@@ -100,7 +100,7 @@ namespace r2bix_component
 		//
 		if( mUIPannelComponent )
 		{
-			mUIPannelComponent->AddListener( &mUIInputListener );
+			//mUIPannelComponent->AddListener( &mUIInputListener );
 		}
 	}
 	void UIButtonComponent::ExitProcess()
@@ -110,7 +110,7 @@ namespace r2bix_component
 		//
 		if( mUIPannelComponent )
 		{
-			mUIPannelComponent->RemoveListener( &mUIInputListener );
+			//mUIPannelComponent->RemoveListener( &mUIInputListener );
 		}
 	}
 
