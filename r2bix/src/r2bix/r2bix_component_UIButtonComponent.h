@@ -31,7 +31,6 @@ namespace r2bix_component
 		//
 	private:
 		void EnterProcess() override;
-		void ExitProcess() override;
 
 
 
@@ -71,10 +70,7 @@ namespace r2bix_component
 
 
 	private:
-		UIPannelComponent* mUIPannelComponent;
 		UIControlComponent* mMyUIControlComponent;
-
-		r2bix_ui::eCursorStatus mCursorState;
 
 		Callback4CursorStatusChangedT mCallback4CursorStatusChanged;
 		Callback4KeyStatusChangedT mCallback4KeyStatusChanged;

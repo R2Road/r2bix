@@ -3,16 +3,11 @@
 #include "r2bix_Director.h"
 
 #include "r2bix_component_UIControlComponent.h"
-#include "r2bix_component_UIPannelComponent.h"
 
 namespace r2bix_component
 {
 	UIButtonComponent::UIButtonComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIButtonComponent>( owner_node )
-		, mUIPannelComponent( nullptr )
 		, mMyUIControlComponent( nullptr )
-
-		, mCursorState( r2bix_ui::eCursorStatus::None )
-
 		, mCallback4CursorStatusChanged()
 		, mCallback4KeyStatusChanged()
 	{}
@@ -21,30 +16,6 @@ namespace r2bix_component
 
 	void UIButtonComponent::EnterProcess()
 	{
-		r2bix_node::Node* parent_node = GetOwnerNode().GetParentNode();
-
-		//
-		// Find UIPannelComponent
-		//
-		while( parent_node )
-		{
-			mUIPannelComponent = parent_node->GetComponent<UIPannelComponent>();
-			if( mUIPannelComponent )
-			{
-				break;
-			}
-
-			parent_node = parent_node->GetParentNode();
-		}
-
-		//
-		// Regist UI Input Listener
-		//
-		if( mUIPannelComponent )
-		{
-			//mUIPannelComponent->AddListener( &mUIInputListener );
-		}
-
 		//
 		//
 		//
@@ -52,16 +23,6 @@ namespace r2bix_component
 		{
 			return mCallback4CursorStatusChanged( s );
 		} );
-	}
-	void UIButtonComponent::ExitProcess()
-	{
-		//
-		// Unregist UI Input Listener
-		//
-		if( mUIPannelComponent )
-		{
-			//mUIPannelComponent->RemoveListener( &mUIInputListener );
-		}
 	}
 
 
