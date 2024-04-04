@@ -5,7 +5,6 @@
 #include "r2bix_Director.h"
 
 #include "r2bix_component_UIControlComponent.h"
-#include "r2bix_ui_UIInputListener.h"
 
 namespace r2bix_component
 {
