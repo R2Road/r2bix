@@ -65,8 +65,6 @@ namespace r2bix_component
 		void SetCallback4CursorResponse( const Callback4CursorStatusChangedT& callback );
 		void SetCallback4KeyResponse( const Callback4KeyStatusChangedT& callback );
 
-		void AddObservationKey( const r2bix_input::eKeyCode key_code );
-
 
 
 	private:

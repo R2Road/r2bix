@@ -51,9 +51,4 @@ namespace r2bix_component
 	{
 		mCallback4KeyStatusChanged = callback;
 	}
-
-	void UIButtonComponent::AddObservationKey( const r2bix_input::eKeyCode key_code )
-	{
-		//mUIInputListener->AddObservationKey( key_code );
-	}
 }
