@@ -21,6 +21,7 @@ namespace r2bix_node
 			auto ui_control_component = ret->AddComponent<r2bix_component::UIControlComponent>();
 
 
+
 			//
 			// ¼³Á¤
 			//

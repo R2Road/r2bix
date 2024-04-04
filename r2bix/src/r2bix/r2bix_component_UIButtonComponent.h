@@ -13,7 +13,6 @@
 namespace r2bix_component
 {
 	class UIControlComponent;
-	class UIPannelComponent;
 
 	class UIButtonComponent : public r2bix_component::Component<UIButtonComponent>
 	{
@@ -24,6 +23,7 @@ namespace r2bix_component
 
 
 		UIButtonComponent( r2bix_node::Node& owner_node );
+
 
 
 		//
