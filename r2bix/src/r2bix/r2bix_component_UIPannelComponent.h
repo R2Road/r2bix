@@ -70,8 +70,9 @@ namespace r2bix_component
 
 	private:
 		r2bix_input::Listener4Mouse mListener4Mouse;
+		UIControlComponent* mMyUIControlComponent;
+
 		UIControlComponentContainer mUIControlComponentContainer;
 
-		UIControlComponent* mMyUIControlComponent;
 	};
 }

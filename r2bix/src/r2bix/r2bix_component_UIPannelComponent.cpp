@@ -11,9 +11,8 @@ namespace r2bix_component
 {
 	UIPannelComponent::UIPannelComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIPannelComponent>( owner_node )
 		, mListener4Mouse()
-		, mUIControlComponentContainer()
-
 		, mMyUIControlComponent( nullptr )
+		, mUIControlComponentContainer()
 	{}
 
 
