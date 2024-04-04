@@ -42,6 +42,17 @@ namespace r2bix_component
 		//
 		//
 	public:
+		int GetOrder() const
+		{
+			return mOrder;
+		}
+		void SetOrder( const int order )
+		{
+			mOrder = order;
+		}
+
+
+
 		int GetWidth() const
 		{
 			return mSize.GetWidth();
@@ -91,6 +102,8 @@ namespace r2bix_component
 
 
 	private:
+		int mOrder;
+
 		r2::SizeInt mSize;
 
 		r2bix_ui::eCursorStatus mCursorState;
