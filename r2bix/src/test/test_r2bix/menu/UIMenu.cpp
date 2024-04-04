@@ -127,6 +127,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 								rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize(
 									  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 									, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
+									, 'P'
 								);
 							}
 

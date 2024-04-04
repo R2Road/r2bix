@@ -31,6 +31,9 @@ namespace r2bix_component
 			switch( mMyUIControlComponent->GetState() )
 			{
 			case r2bix_ui::eCursorStatus::CursorLeave:
+				OnCursorResponse( r2bix_input::CursorPoint( std::numeric_limits<int>::min(), std::numeric_limits<int>::min() ) );
+				break;
+
 			case r2bix_ui::eCursorStatus::CursorOver:
 			case r2bix_ui::eCursorStatus::CursorMove:
 				OnCursorResponse( cursor_point );
