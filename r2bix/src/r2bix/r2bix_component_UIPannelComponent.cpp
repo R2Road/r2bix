@@ -77,13 +77,13 @@ namespace r2bix_component
 
 
 
-	void UIPannelComponent::AddListener( r2bix_component::UIControlComponent* const listener )
+	void UIPannelComponent::AddUIControl( r2bix_component::UIControlComponent* const control )
 	{
 		//
 		// 반복 등록 확인
 		//
 		{
-			auto target_itr = std::find( mUIControlComponentContainer.begin(), mUIControlComponentContainer.end(), listener );
+			auto target_itr = std::find( mUIControlComponentContainer.begin(), mUIControlComponentContainer.end(), control );
 			if( target_itr != mUIControlComponentContainer.end() )
 			{
 				R2ASSERT( false, "이미 등록된 리스너의 등록을 요청한다." );
@@ -95,8 +95,8 @@ namespace r2bix_component
 		// Add
 		//
 		{
-			auto pivot_itr = std::find_if( mUIControlComponentContainer.begin(), mUIControlComponentContainer.end(), [listener]( const r2bix_component::UIControlComponent* const c ){
-				if( c->GetOrder() <= listener->GetOrder() )
+			auto pivot_itr = std::find_if( mUIControlComponentContainer.begin(), mUIControlComponentContainer.end(), [control]( const r2bix_component::UIControlComponent* const c ){
+				if( c->GetOrder() <= control->GetOrder() )
 				{
 					return true;
 				}
@@ -106,19 +106,19 @@ namespace r2bix_component
 
 			if( mUIControlComponentContainer.end() == pivot_itr )
 			{
-				mUIControlComponentContainer.push_back( listener );
+				mUIControlComponentContainer.push_back( control );
 			}
 			else
 			{
-				mUIControlComponentContainer.insert( pivot_itr, listener );
+				mUIControlComponentContainer.insert( pivot_itr, control );
 			}
 
 			mListener4Mouse;
 		}
 	}
-	void UIPannelComponent::RemoveListener( r2bix_component::UIControlComponent* const listener )
+	void UIPannelComponent::RemoveUIControl( r2bix_component::UIControlComponent* const control )
 	{
-		if( nullptr == listener )
+		if( nullptr == control )
 		{
 			R2ASSERT( false, "삭제 요청된 리스너가 nullptr 이다." );
 			return;
@@ -134,7 +134,7 @@ namespace r2bix_component
 		// Remove
 		//
 		{
-			auto target_itr = std::find( mUIControlComponentContainer.begin(), mUIControlComponentContainer.end(), listener );
+			auto target_itr = std::find( mUIControlComponentContainer.begin(), mUIControlComponentContainer.end(), control );
 			if( target_itr == mUIControlComponentContainer.end() )
 			{
 				R2ASSERT( false, "등록된적 없는 리스너의 삭제를 요청한다." );

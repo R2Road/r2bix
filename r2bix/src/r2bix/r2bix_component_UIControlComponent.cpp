@@ -49,7 +49,7 @@ namespace r2bix_component
 		//
 		if( mUIPannelComponent )
 		{
-			mUIPannelComponent->AddListener( this );
+			mUIPannelComponent->AddUIControl( this );
 		}
 	}
 	void UIControlComponent::ExitProcess()
@@ -59,7 +59,7 @@ namespace r2bix_component
 		//
 		if( mUIPannelComponent )
 		{
-			mUIPannelComponent->RemoveListener( this );
+			mUIPannelComponent->RemoveUIControl( this );
 		}
 	}
 
