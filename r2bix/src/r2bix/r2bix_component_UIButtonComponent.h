@@ -18,7 +18,7 @@ namespace r2bix_component
 	{
 	public:
 		using Callback4CursorStatusChangedT = std::function<bool( r2bix_ui::eCursorStatus )>;
-		using Callback4KeyStatusChangedT = std::function<bool( r2bix_ui::eKeyStatus )>;
+		using Callback4KeyStatusChangedT = std::function<bool( int, r2bix_ui::eKeyStatus )>;
 
 
 

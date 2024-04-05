@@ -50,10 +50,7 @@ namespace r2bix_component
 		{
 			return mMyUIControlComponent;
 		}
-		void SetMyUIControlComponent( UIControlComponent* const ui_control_component )
-		{
-			mMyUIControlComponent = ui_control_component;
-		}
+		void SetMyUIControlComponent( UIControlComponent* const ui_control_component );
 
 
 

@@ -86,6 +86,18 @@ namespace r2bix_component
 
 
 
+	void UIPannelComponent::SetMyUIControlComponent( UIControlComponent* const ui_control_component )
+	{
+		mMyUIControlComponent = ui_control_component;
+
+		if( mMyUIControlComponent )
+		{
+			mMyUIControlComponent->SetCallback4KeyResponse( []( int, r2bix_ui::eKeyStatus )->bool { return true; } );
+		}
+	}
+
+
+
 	int UIPannelComponent::GetWidth() const
 	{
 		return mMyUIControlComponent->GetWidth();

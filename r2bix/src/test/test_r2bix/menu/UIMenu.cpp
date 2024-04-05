@@ -160,7 +160,25 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 									}
 
 									return false;
-								});
+								} );
+
+								btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetCallback4KeyResponse( [rect_node]( int, r2bix_ui::eKeyStatus s )->bool
+								{
+									switch( s )
+									{
+									case r2bix_ui::eKeyStatus::Push:
+										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightAqua );
+										break;
+									case r2bix_ui::eKeyStatus::Pressed:
+										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightYellow );
+										break;
+									case r2bix_ui::eKeyStatus::Release:
+										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightPurple );
+										break;
+									}
+
+									return false;
+								} );
 							}
 						}
 					}

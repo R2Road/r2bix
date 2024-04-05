@@ -23,6 +23,11 @@ namespace r2bix_component
 		{
 			return mCallback4CursorStatusChanged( s );
 		} );
+
+		mMyUIControlComponent->SetCallback4KeyResponse( [this]( const int key_index, const r2bix_ui::eKeyStatus s )->bool
+		{
+			return mCallback4KeyStatusChanged( key_index, s );
+		} );
 	}
 
 
