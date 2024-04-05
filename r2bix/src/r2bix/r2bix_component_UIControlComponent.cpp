@@ -80,6 +80,10 @@ namespace r2bix_component
 					mCallback4CursorResponse( mCursorState );
 				}
 			}
+			else
+			{
+				mCursorState = r2bix_ui::eCursorStatus::None;
+			}
 			break;
 
 		case r2bix_ui::eCursorStatus::CursorOver:
