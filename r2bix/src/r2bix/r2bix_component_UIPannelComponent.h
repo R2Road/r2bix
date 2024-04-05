@@ -5,12 +5,15 @@
 
 namespace r2bix_component
 {
-	class CustomTextureComponent;
-	class TextureRenderComponent;
+	class UIControlComponent;
 
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
+		using UIControlComponentContainer = std::list<r2bix_component::UIControlComponent*>;
+
+
+
 		UIPannelComponent( r2bix_node::Node& owner_node );
 
 
@@ -19,10 +22,9 @@ namespace r2bix_component
 		//
 		//
 	private:
+		bool InitProcess() override;
 		void ActivateProcess() override;
 		void DeactivateProcess() override;
-
-		void Update( const float delta_time ) override final;
 
 
 
@@ -30,41 +32,54 @@ namespace r2bix_component
 		//
 		//
 	public:
-		CustomTextureComponent* const GetCustomTextureComponent() const
+		r2bix_input::Listener4Mouse* const GetListener4Mouse()
 		{
-			return mCustomTextureComponent;
+			return &mListener4Mouse;
 		}
-		TextureRenderComponent* const GetTextureRenderComponent() const
+		const r2bix_input::Listener4Mouse* const GetListener4Mouse() const
 		{
-			return mTextureRenderComponent;
+			return &mListener4Mouse;
 		}
 
+
+
+		//
+		//
+		//
+		UIControlComponent* const GetMyUIControlComponent() const
+		{
+			return mMyUIControlComponent;
+		}
+		void SetMyUIControlComponent( UIControlComponent* const ui_control_component );
+
+
+
+		//
+		//
+		//
 		int GetWidth() const;
 		int GetHeight() const;
 
-		
-
-		//
-		// Setter
-		//
-		void SetCustomTextureComponent( CustomTextureComponent* const custom_texture_component )
-		{
-			mCustomTextureComponent = custom_texture_component;
-		}
-		void SetTextureRenderComponent(	TextureRenderComponent* const texture_render_component )
-		{
-			mTextureRenderComponent = texture_render_component;
-		}
-
-		void SetSize( const uint32_t width, const uint32_t height, const char fill_char );
 		void SetSize( const uint32_t width, const uint32_t height );
 
 
 
+		//
+		// UI Input Listener
+		//
+		void AddUIControl( r2bix_component::UIControlComponent* const control );
+		void RemoveUIControl( r2bix_component::UIControlComponent* const control );
 	private:
-		CustomTextureComponent* mCustomTextureComponent;
-		TextureRenderComponent* mTextureRenderComponent;
+		void OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
+		void OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status );
 
+
+
+	private:
 		r2bix_input::Listener4Mouse mListener4Mouse;
+		UIControlComponent* mMyUIControlComponent;
+
+		UIControlComponentContainer mUIControlComponentContainer;
+
 	};
 }

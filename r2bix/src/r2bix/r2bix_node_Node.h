@@ -67,8 +67,15 @@ namespace r2bix_node
 		// 생성시 1회 불리는 자기 초기화 함수
 		//
 		virtual bool Init();
+
 		//
-		// 보유 컴포넌트, 자식 노드의 Update 호출.
+		// Add Child, Remove Child 되면 호출
+		//
+		void Enter();
+		void Exit();
+
+		//
+		// 보유 컴포넌트, 자식 노드의 Update, Render 호출.
 		//
 		virtual void Update( const float delta_time );
 		virtual void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset );
@@ -137,6 +144,16 @@ namespace r2bix_node
 		{
 			return mChildContainer;
 		}
+
+		void SetParentNode( Node* parent_node )
+		{
+			mParentNode = parent_node;
+		}
+		Node* GetParentNode() const
+		{
+			return mParentNode;
+		}
+
 		template<typename NodeT>
 		Node* AddChild()
 		{
@@ -147,7 +164,15 @@ namespace r2bix_node
 		{
 			static_assert( std::is_base_of<r2bix_node::Node, NodeT>() );
 
+			//
+			// 생성
+			//
 			auto child_node = NodeT::Create( mDirector );
+
+			//
+			// 기본 설정
+			//
+			child_node->SetParentNode( this );
 			child_node->mTransformComponent->SetZ( z_order );
 
 			auto ret = child_node.get();
@@ -197,6 +222,11 @@ namespace r2bix_node
 				mChildContainer.insert( cur, std::move( child_node ) );
 			}
 
+			//
+			// Enter The Hierarchy
+			//
+			ret->Enter();
+
 			return ret;
 		}
 
@@ -206,6 +236,8 @@ namespace r2bix_node
 		r2bix::Director& mDirector;
 		bool mbVisible;
 		ComponentContainerT mComponentContainer;
+
+		Node* mParentNode;
 		ChildContainerT mChildContainer;
 	public:
 		r2bix_component::TransformComponent* mTransformComponent;

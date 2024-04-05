@@ -391,21 +391,26 @@ namespace input_test
 			r2bix_input::eKeyStatus sm;
 			r2bix_input::eKeyStatus sr;
 			r2bix_input::Listener4Mouse mouse_listener;
-			mouse_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_LBUTTON, [&bLChanged, &sl]( const r2bix_input::eKeyStatus s )->bool{
-				bLChanged = true;
-				sl = s;
-
-				return false;
-			} );
-			mouse_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_MBUTTON, [&bMChanged, &sm]( const r2bix_input::eKeyStatus s )->bool{
-				bMChanged = true;
-				sm = s;
-
-				return false;
-			} );
-			mouse_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_RBUTTON, [&bRChanged, &sr]( const r2bix_input::eKeyStatus s )->bool{
-				bRChanged = true;
-				sr = s;
+			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_LBUTTON );
+			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_MBUTTON );
+			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
+			mouse_listener.SetCallback4KeyStatusChanged( [&bLChanged, &sl, &bMChanged, &sm, &bRChanged, &sr]( const int key_index, const r2bix_input::eKeyStatus s )->bool
+			{
+				switch( key_index )
+				{
+				case 0:
+					bLChanged = true;
+					sl = s;
+					break;
+				case 1:
+					bMChanged = true;
+					sm = s;
+					break;
+				case 2:
+					bRChanged = true;
+					sr = s;
+					break;
+				}
 
 				return false;
 			} );

@@ -6,6 +6,8 @@ namespace r2bix_node
 		mDirector( director )
 		, mbVisible( true )
 		, mComponentContainer()
+
+		, mParentNode( nullptr )
 		, mChildContainer()
 
 		, mTransformComponent( nullptr )
@@ -30,6 +32,21 @@ namespace r2bix_node
 		mTransformComponent = AddComponent<r2bix_component::TransformComponent>();
 
 		return true;
+	}
+
+	void Node::Enter()
+	{
+		for( auto& c : mComponentContainer )
+		{
+			c->Enter();
+		}
+	}
+	void Node::Exit()
+	{
+		for( auto& c : mComponentContainer )
+		{
+			c->Exit();
+		}
 	}
 
 	void Node::Update( const float delta_time )

@@ -9,10 +9,8 @@ namespace r2bix_input
 	class Listener4Mouse
 	{
 	public:
-		using CursorMovedCallbackT = std::function<bool( CursorPoint )>;
-
-		using Callback4KeyStatusChangedT = std::function<bool( eKeyStatus )>;
-		using Container4KeyStatusChangedCallbackT = std::vector<Callback4KeyStatusChangedT>;
+		using Callback4CursorMovedT = std::function<bool( CursorPoint )>;
+		using Callback4KeyStatusChangedT = std::function<bool( int, eKeyStatus )>;
 
 
 
@@ -65,8 +63,9 @@ namespace r2bix_input
 		//
 		//
 		//
-		void SetCallback4CursorMoved( const CursorMovedCallbackT& cursor_moved_callback );
-		void SetCallback4KeyStatusChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback );
+		void SetCallback4CursorMoved( const Callback4CursorMovedT& callback );
+		void SetCallback4KeyStatusChanged( const Callback4KeyStatusChangedT& callback );
+		void AddObservationKey( const r2bix_input::eKeyCode key_code );
 
 
 
@@ -85,9 +84,8 @@ namespace r2bix_input
 		r2bix_input::CursorPoint mCursorPoint_Current;
 		r2bix_input::CursorPoint mCursorPoint_Last;
 
+		Callback4CursorMovedT mCallback4CursorMoved;
+		Callback4KeyStatusChangedT mCallback4KeyStatusChanged;
 		ObservationKeyContainer mObservationKeyContainer;
-
-		CursorMovedCallbackT mCursorMovedCallback;
-		Container4KeyStatusChangedCallbackT mContainer4KeyStatusChangedCallback;
 	};
 }

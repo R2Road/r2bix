@@ -14,6 +14,8 @@
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_TransformComponent.h"
 #include "r2bix_component_UIButtonComponent.h"
+#include "r2bix_component_UIControlComponent.h"
+#include "r2bix_component_UIPannelComponent.h"
 #include "r2bix_render_Camera.h"
 #include "r2bix_render_Texture.h"
 #include "r2bix_render_TextureFrame.h"
@@ -909,11 +911,230 @@ namespace component_test
 
 
 
+
+
+
+	r2tm::TitleFunctionT UIPannel::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIPannel Component";
+		};
+	}
+	r2tm::DoFunctionT UIPannel::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 18, 8 ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto ui_pannel = node->AddComponent<r2bix_component::UIPannelComponent>() );
+			EXPECT_TRUE( nullptr != ui_pannel );
+			DECLARATION_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
+			EXPECT_NE( nullptr, ui_control );
+
+			LS();
+
+			{
+				EXPECT_EQ( nullptr, ui_pannel->GetMyUIControlComponent() );
+
+				LF();
+
+				PROCESS_MAIN( ui_pannel->SetMyUIControlComponent( ui_control ) );
+				EXPECT_EQ( ui_control, ui_pannel->GetMyUIControlComponent() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( ui_pannel->SetSize( 7, 5 ) );
+
+				LF();
+
+				EXPECT_EQ( 7, ui_pannel->GetWidth() );
+				EXPECT_EQ( 5, ui_pannel->GetHeight() );
+
+				LF();
+
+				EXPECT_EQ( 7, ui_control->GetWidth() );
+				EXPECT_EQ( 5, ui_control->GetHeight() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT UIPannel_InputListener_Regist::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIPannel Component : InputListener Regist";
+		};
+	}
+	r2tm::DoFunctionT UIPannel_InputListener_Regist::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto c = node->AddComponent<r2bix_component::UIPannelComponent>() );
+
+			LS();
+
+			{
+				EXPECT_TRUE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Activate 호출로 Input Listener 등록" );
+
+				LF();
+
+				PROCESS_MAIN( c->Activate() );
+				EXPECT_FALSE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
+				EXPECT_EQ( *dummy_director.GetInputManager().GetListenerContainer4Mouse().begin(), c->GetListener4Mouse() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Deactivate 호출로 Input Listener 해제" );
+
+				LF();
+
+				PROCESS_MAIN( c->Deactivate() );
+				EXPECT_TRUE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	std::ostream& operator<<( std::ostream& o, const r2bix_ui::eCursorStatus& v )
+	{
+		o << static_cast< int >( v );
+		return o;
+	}
+
+	r2tm::TitleFunctionT UIPannel_Cursor_Response::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIPannel Component : Cursor Response";
+		};
+	}
+	r2tm::DoFunctionT UIPannel_Cursor_Response::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto u = node->AddComponent<r2bix_component::UIControlComponent>() );
+
+			LS();
+
+			{
+				PROCESS_MAIN( u->SetSize( 10, 10 ) );
+				PROCESS_MAIN( u->Activate() );
+			}
+
+			LS();
+
+			{
+				DECLARATION_MAIN( bool bOver = false; );
+
+				LF();
+
+				OUTPUT_SUBJECT( "Mouse Over, Leave Callback 설정" );
+
+				LF();
+
+				PROCESS_MAIN( u->SetCallback4CursorResponse( [&bOver]( r2bix_ui::eCursorStatus s )
+				{
+					switch( s )
+					{
+					case r2bix_ui::eCursorStatus::CursorOver:
+						bOver = true;
+						break;
+					case r2bix_ui::eCursorStatus::CursorLeave:
+						bOver = false;
+						break;
+					}
+				} ) );
+
+				LF();
+
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 0, 0 } ) );
+				EXPECT_TRUE( bOver );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorOver, u->GetState() );
+
+				LF();
+
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 1, 1 } ) );
+				EXPECT_TRUE( bOver );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorMove, u->GetState() );
+
+				LF();
+
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 10, 10 } ) );
+				EXPECT_FALSE( bOver );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorLeave, u->GetState() );
+
+				LF();
+
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 10, 10 } ) );
+				EXPECT_FALSE( bOver );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::None, u->GetState() );
+
+				LF();
+
+				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 9, 9 } ) );
+				EXPECT_TRUE( bOver );
+				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorOver, u->GetState() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT UIButton::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "UI Button Component";
+			return "UIButton Component";
 		};
 	}
 	r2tm::DoFunctionT UIButton::GetDoFunction() const
@@ -931,46 +1152,35 @@ namespace component_test
 			LS();
 
 			DECLARATION_MAIN( auto ui_button = node->AddComponent<r2bix_component::UIButtonComponent>() );
-			EXPECT_NE( nullptr, ui_button );
-			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
-			EXPECT_NE( nullptr, custom_texture );
-			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
-			EXPECT_NE( nullptr, texture_render );
+			EXPECT_TRUE( nullptr != ui_button );
+			DECLARATION_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
+			EXPECT_TRUE( nullptr != ui_control );
 
 			LS();
 
 			{
-				EXPECT_EQ( nullptr, ui_button->GetCustomTextureComponent() );
-				PROCESS_MAIN( ui_button->SetCustomTextureComponent( custom_texture ) );
-				EXPECT_EQ( custom_texture, ui_button->GetCustomTextureComponent() );
+				EXPECT_EQ( nullptr, ui_button->GetMyUIControlComponent() );
 
 				LF();
 
-				EXPECT_EQ( nullptr, ui_button->GetTextureRenderComponent() );
-				PROCESS_MAIN( ui_button->SetTextureRenderComponent( texture_render ) );
-				EXPECT_EQ( texture_render, ui_button->GetTextureRenderComponent() );
-
-				LF();
-
-				EXPECT_EQ( nullptr, texture_render->GetTexture() );
-				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
-				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
-
-				LF();
-
-				PROCESS_MAIN( ui_button->SetSize( 7, 5 ) );
-				EXPECT_EQ( 7, ui_button->GetWidth() );
-				EXPECT_EQ( 5, ui_button->GetHeight() );
+				PROCESS_MAIN( ui_button->SetMyUIControlComponent( ui_control ) );
+				EXPECT_EQ( ui_control, ui_button->GetMyUIControlComponent() );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROCESS_MAIN( ui_button->SetSize( 7, 5 ) );
 
 				LF();
 
-				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+				EXPECT_EQ( 7, ui_button->GetWidth() );
+				EXPECT_EQ( 5, ui_button->GetHeight() );
+
+				LF();
+
+				EXPECT_EQ( 7, ui_control->GetWidth() );
+				EXPECT_EQ( 5, ui_control->GetHeight() );
 			}
 
 			LS();

@@ -31,6 +31,10 @@ namespace r2bix_component
 			return mZOrder;
 		}
 
+		r2::PointInt GetWorldPosition() const;
+
+
+
 		//
 		// Setter
 		//

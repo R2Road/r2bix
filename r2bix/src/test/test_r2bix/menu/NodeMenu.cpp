@@ -46,8 +46,18 @@ r2tm::WriteFunctionT NodeMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( 'a', node_test::UIButton() );
-		ret->AddItem( 's', node_test::UIPannel() );
+		ret->AddItem( 'a', node_test::UIPannel_ComponentCheck() );
+		ret->AddItem( 's', node_test::UIPannel_CursorResponse() );
+		ret->AddItem( 'd', node_test::UIButton() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'z', node_test::Pivot() );
+		ret->AddItem( 'x', node_test::Rect() );
 
 
 

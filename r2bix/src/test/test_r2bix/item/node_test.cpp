@@ -3,17 +3,22 @@
 #include "r2bix_Director.h"
 #include "r2bix_node_Node.h"
 #include "r2bix_component_CustomTextureComponent.h"
+#include "r2bix_component_InputComponent.h"
 #include "r2bix_component_LabelSComponent.h"
 #include "r2bix_component_LabelMComponent.h"
+#include "r2bix_component_RectComponent.h"
 #include "r2bix_component_TextureFrameAnimationComponent.h"
 #include "r2bix_component_TextureFrameRenderComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_TransformComponent.h"
 #include "r2bix_component_UIButtonComponent.h"
+#include "r2bix_component_UIControlComponent.h"
 #include "r2bix_component_UIPannelComponent.h"
 #include "r2bix_node_CustomTextureNode.h"
 #include "r2bix_node_LabelSNode.h"
 #include "r2bix_node_LabelMNode.h"
+#include "r2bix_node_PivotNode.h"
+#include "r2bix_node_RectNode.h"
 #include "r2bix_node_SpriteAnimationNode.h"
 #include "r2bix_node_SpriteNode.h"
 #include "r2bix_node_UIButtonNode.h"
@@ -380,6 +385,219 @@ namespace node_test
 
 
 
+	r2tm::TitleFunctionT UIPannel_ComponentCheck::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIPannel : Component Check";
+		};
+	}
+	r2tm::DoFunctionT UIPannel_ComponentCheck::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto node = r2bix_node::UIPannelNode::Create( dummy_director ) );
+			EXPECT_TRUE( nullptr != node->GetComponent<r2bix_component::TransformComponent>() );
+			EXPECT_TRUE( nullptr != node->GetComponent<r2bix_component::UIPannelComponent>() );
+			EXPECT_TRUE( nullptr != node->GetComponent<r2bix_component::UIControlComponent>() );
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT UIPannel_CursorResponse::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIPannel : Cursor Response";
+		};
+	}
+	r2tm::DoFunctionT UIPannel_CursorResponse::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			r2bix::Director director( { 51, 51, r2bix_director::Config::eScheduleType::Sleep, 30, 60, 2, 1 } );
+
+			//
+			// Scene
+			//
+			r2bix_node::Node* scene;
+			{
+				auto temp = r2bix_node::Node::Create( director );
+				scene = temp.get();
+
+				director.Setup( std::move( temp ) );
+
+				auto input_component = scene->AddComponent<r2bix_component::InputComponent>();
+				input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
+				{
+					director.RequestAbort();
+
+					return false;
+				} );
+
+				input_component->Activate();
+			}
+
+			//
+			// Background
+			//
+			{
+				auto node = scene->AddChild<r2bix_node::CustomTextureNode>();
+				node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
+				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+			}
+
+			//
+			// Pannel
+			//
+			{
+				// Pannel 1
+				{
+					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+
+					// Debug Area View
+					auto rect_node = node->AddChild<r2bix_node::RectNode>();
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '1' );
+
+					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
+					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )
+					{
+						switch( s )
+						{
+						case r2bix_ui::eCursorStatus::CursorOver:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+							break;
+						case r2bix_ui::eCursorStatus::CursorMove:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
+							break;
+						case r2bix_ui::eCursorStatus::CursorLeave:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+							break;
+						}
+					} );
+
+					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 1, 1 );
+				}
+
+				// Pannel 2
+				{
+					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+
+					// Debug Area View
+					auto rect_node = node->AddChild<r2bix_node::RectNode>();
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '2' );
+
+					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
+					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )
+					{
+						switch( s )
+						{
+						case r2bix_ui::eCursorStatus::CursorOver:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+							break;
+						case r2bix_ui::eCursorStatus::CursorMove:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
+							break;
+						case r2bix_ui::eCursorStatus::CursorLeave:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+							break;
+						}
+					} );
+
+					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 5 );
+				}
+
+				// Pannel 3
+				{
+					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+
+					// Debug Area View
+					auto rect_node = node->AddChild<r2bix_node::RectNode>();
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '3' );
+
+					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
+					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )
+					{
+						switch( s )
+						{
+						case r2bix_ui::eCursorStatus::CursorOver:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+							break;
+						case r2bix_ui::eCursorStatus::CursorMove:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
+							break;
+						case r2bix_ui::eCursorStatus::CursorLeave:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+							break;
+						}
+					} );
+
+					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
+				}
+
+				// Pannel 4
+				{
+					auto node = scene->AddChild<r2bix_node::UIPannelNode>();
+
+					// Debug Area View
+					auto rect_node = node->AddChild<r2bix_node::RectNode>();
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '3' );
+
+					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
+					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4KeyResponse( [rect_node]( const int, const r2bix_ui::eKeyStatus s )->bool
+					{
+						switch( s )
+						{
+						case r2bix_ui::eKeyStatus::Push:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+							break;
+						case r2bix_ui::eKeyStatus::Pressed:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
+							break;
+						case r2bix_ui::eKeyStatus::Release:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+							break;
+						case r2bix_ui::eKeyStatus::Cancel:
+							rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightAqua );
+							break;
+						}
+
+						return true;
+					} );
+
+					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 20, 3 );
+				}
+			}
+
+			//
+			// Process
+			//
+			director.Run();
+
+			//
+			// Terminate
+			//
+			director.Terminate();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT UIButton::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -401,9 +619,8 @@ namespace node_test
 
 			DECLARATION_MAIN( auto node = r2bix_node::UIButtonNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIButtonComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIControlComponent>() );
 
 			LS();
 
@@ -444,14 +661,17 @@ namespace node_test
 
 
 
-	r2tm::TitleFunctionT UIPannel::GetTitleFunction() const
+
+
+
+	r2tm::TitleFunctionT Pivot::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "UIPannel";
+			return "Pivot";
 		};
 	}
-	r2tm::DoFunctionT UIPannel::GetDoFunction() const
+	r2tm::DoFunctionT Pivot::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -463,11 +683,53 @@ namespace node_test
 
 			LS();
 
-			DECLARATION_MAIN( auto node = r2bix_node::UIPannelNode::Create( dummy_director ) );
+			DECLARATION_MAIN( auto node = r2bix_node::PivotNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
-			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIPannelComponent>() );
+
+			LS();
+
+			{
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				r2bix_helper::Printer4Texture::DrawTexture( render_target );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+
+
+
+	r2tm::TitleFunctionT Rect::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Rect";
+		};
+	}
+	r2tm::DoFunctionT Rect::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto node = r2bix_node::RectNode::Create( dummy_director ) );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
+			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::RectComponent>() );
 
 			LS();
 
@@ -479,7 +741,7 @@ namespace node_test
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 3, 3 ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->SetSize( 3, 3 ) );
 
 				LF();
 
@@ -491,7 +753,7 @@ namespace node_test
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 5, 4 ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->SetSize( 5, 4, 'x' ));
 
 				LF();
 

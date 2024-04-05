@@ -64,6 +64,20 @@ namespace node_test
 
 
 
+	class UIPannel_ComponentCheck : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
+	class UIPannel_CursorResponse : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class UIButton : public r2tm::iItem
 	{
 	public:
@@ -71,7 +85,16 @@ namespace node_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class UIPannel : public r2tm::iItem
+
+
+	class Pivot : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
+	class Rect : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
