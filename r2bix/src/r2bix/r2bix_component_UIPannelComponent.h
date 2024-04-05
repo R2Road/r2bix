@@ -46,13 +46,13 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetMyUIControlComponent( UIControlComponent* const ui_control_component )
-		{
-			mMyUIControlComponent = ui_control_component;
-		}
 		UIControlComponent* const GetMyUIControlComponent() const
 		{
 			return mMyUIControlComponent;
+		}
+		void SetMyUIControlComponent( UIControlComponent* const ui_control_component )
+		{
+			mMyUIControlComponent = ui_control_component;
 		}
 
 
