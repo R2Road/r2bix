@@ -86,6 +86,21 @@ namespace r2bix_component
 
 
 
+	int UIPannelComponent::GetWidth() const
+	{
+		return mMyUIControlComponent->GetWidth();
+	}
+	int UIPannelComponent::GetHeight() const
+	{
+		return mMyUIControlComponent->GetHeight();
+	}
+	void UIPannelComponent::SetSize( const uint32_t width, const uint32_t height )
+	{
+		mMyUIControlComponent->SetSize( width, height );
+	}
+
+
+
 	void UIPannelComponent::AddUIControl( r2bix_component::UIControlComponent* const control )
 	{
 		//

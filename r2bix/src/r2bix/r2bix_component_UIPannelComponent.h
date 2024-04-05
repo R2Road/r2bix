@@ -57,6 +57,15 @@ namespace r2bix_component
 
 
 
+		//
+		//
+		//
+		int GetWidth() const;
+		int GetHeight() const;
+
+		void SetSize( const uint32_t width, const uint32_t height );
+
+
 
 		//
 		// UI Input Listener

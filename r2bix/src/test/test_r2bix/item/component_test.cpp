@@ -935,15 +935,36 @@ namespace component_test
 
 			LS();
 
-			DECLARATION_MAIN( auto c = node->AddComponent<r2bix_component::UIControlComponent>() );
-			EXPECT_NE( nullptr, c );
+			DECLARATION_MAIN( auto ui_pannel = node->AddComponent<r2bix_component::UIPannelComponent>() );
+			EXPECT_TRUE( nullptr != ui_pannel );
+			DECLARATION_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
+			EXPECT_NE( nullptr, ui_control );
 
 			LS();
 
 			{
-				PROCESS_MAIN( c->SetSize( 7, 5 ));
-				EXPECT_EQ( 7, c->GetWidth() );
-				EXPECT_EQ( 5, c->GetHeight() );
+				EXPECT_EQ( nullptr, ui_pannel->GetMyUIControlComponent() );
+
+				LF();
+
+				PROCESS_MAIN( ui_pannel->SetMyUIControlComponent( ui_control ) );
+				EXPECT_EQ( ui_control, ui_pannel->GetMyUIControlComponent() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( ui_pannel->SetSize( 7, 5 ) );
+
+				LF();
+
+				EXPECT_EQ( 7, ui_pannel->GetWidth() );
+				EXPECT_EQ( 5, ui_pannel->GetHeight() );
+
+				LF();
+
+				EXPECT_EQ( 7, ui_control->GetWidth() );
+				EXPECT_EQ( 5, ui_control->GetHeight() );
 			}
 
 			LS();
