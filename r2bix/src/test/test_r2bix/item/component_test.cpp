@@ -914,6 +914,12 @@ namespace component_test
 
 
 
+	std::ostream& operator<<( std::ostream& o, const r2bix_ui::eCursorStatus& v )
+	{
+		o << static_cast< int >( v );
+		return o;
+	}
+
 	r2tm::TitleFunctionT UIControl::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -950,12 +956,23 @@ namespace component_test
 			LS();
 
 			{
+				EXPECT_EQ( 0, ui_control->GetWidth() );
+				EXPECT_EQ( 0, ui_control->GetHeight() );
+
+				LF();
+
 				PROCESS_MAIN( ui_control->SetSize( 7, 5 ) );
 
 				LF();
 
 				EXPECT_EQ( 7, ui_control->GetWidth() );
 				EXPECT_EQ( 5, ui_control->GetHeight() );
+			}
+
+			LS();
+
+			{
+				EXPECT_EQ( r2bix_ui::eCursorStatus::None, ui_control->GetState() );
 			}
 
 			LS();
@@ -1084,12 +1101,6 @@ namespace component_test
 	}
 
 
-
-	std::ostream& operator<<( std::ostream& o, const r2bix_ui::eCursorStatus& v )
-	{
-		o << static_cast< int >( v );
-		return o;
-	}
 
 	r2tm::TitleFunctionT UIPannel_Cursor_Response::GetTitleFunction() const
 	{
