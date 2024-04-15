@@ -914,6 +914,58 @@ namespace component_test
 
 
 
+	r2tm::TitleFunctionT UIControl::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UIControl Component";
+		};
+	}
+	r2tm::DoFunctionT UIControl::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+
+			LS();
+
+			DECLARATION_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
+			EXPECT_TRUE( nullptr != ui_control );
+
+			LS();
+
+			{
+				EXPECT_EQ( 0, ui_control->GetOrder() );
+
+				LF();
+
+				PROCESS_MAIN( ui_control->SetOrder( 10 ) );
+				EXPECT_EQ( 10, ui_control->GetOrder() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( ui_control->SetSize( 7, 5 ) );
+
+				LF();
+
+				EXPECT_EQ( 7, ui_control->GetWidth() );
+				EXPECT_EQ( 5, ui_control->GetHeight() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT UIPannel::GetTitleFunction() const
 	{
 		return []()->const char*

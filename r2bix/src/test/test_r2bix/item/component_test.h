@@ -93,6 +93,13 @@ namespace component_test
 
 
 
+	class UIControl : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class UIPannel : public r2tm::iItem
 	{
 	public:
