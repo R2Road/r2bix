@@ -18,8 +18,8 @@ namespace r2bix_component
 		, mCursorState( r2bix_ui::eCursorStatus::None )
 		, mKeyStatus( r2bix_ui::eKeyStatus::None)
 
-		, mCallback4CursorResponse()
-		, mCallback4KeyResponse()
+		, mCallback4CursorResponse( []( r2bix_ui::eCursorStatus ) {} )
+		, mCallback4KeyResponse( []( int, r2bix_ui::eKeyStatus )->bool { return false; } )
 
 		, mUIPannelComponent( nullptr )
 	{}

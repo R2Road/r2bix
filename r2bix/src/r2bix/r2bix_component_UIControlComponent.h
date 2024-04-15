@@ -81,9 +81,18 @@ namespace r2bix_component
 		{
 			mCallback4CursorResponse = callback;
 		}
+		const Callback4CursorResponseT& GetCallback4CursorResponse() const
+		{
+			return mCallback4CursorResponse;
+		}
+
 		void SetCallback4KeyResponse( const Callback4KeyResponseT& callback )
 		{
 			mCallback4KeyResponse = callback;
+		}
+		const Callback4KeyResponseT& GetCallback4KeyResponse() const
+		{
+			return mCallback4KeyResponse;
 		}
 
 

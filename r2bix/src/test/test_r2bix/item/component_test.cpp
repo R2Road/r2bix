@@ -977,6 +977,13 @@ namespace component_test
 
 			LS();
 
+			{
+				EXPECT_TRUE( nullptr != ui_control->GetCallback4CursorResponse() );
+				EXPECT_TRUE( nullptr != ui_control->GetCallback4KeyResponse() );
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
