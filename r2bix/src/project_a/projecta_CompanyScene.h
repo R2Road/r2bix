@@ -17,7 +17,5 @@ namespace projecta
 
 	private:
 		bool Init() override;
-	public:
-		void Update( const float delta_time ) override;
 	};
 }

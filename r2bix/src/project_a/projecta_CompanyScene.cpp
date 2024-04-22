@@ -1,11 +1,11 @@
 #include "projecta_CompanyScene.h"
 
-#include <conio.h>
-
 #include "r2bix_Director.h"
+#include "r2bix_component_InputComponent.h"
 #include "r2bix_component_LabelSComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_node_LabelSNode.h"
+#include "r2bix_utility_InputUtil.h"
 
 namespace projecta
 {
@@ -35,19 +35,25 @@ namespace projecta
 			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( CompanyScene::GetTitle() );
 		}
 
-		return true;
-	}
-	void CompanyScene::Update( const float delta_time )
-	{
-		if( _kbhit() )
 		{
-			auto input = _getch();
-			if( 27 == input )
-			{
-				mDirector.RequestAbort();
-			}
+			auto component = AddComponent<r2bix_component::InputComponent>();
+			component->SetKeyboardCallback(
+					r2bix_input::eKeyCode::VK_ESCAPE
+				,	[this]( r2bix_input::eKeyStatus s )->bool
+				{
+					if( r2bix_input::eKeyStatus::Release == s )
+					{
+						r2bix_utility::ClearCInputBuffer();
+						mDirector.RequestAbort();
+						return true;
+					}
+
+					return false;
+				}
+			);
+			component->Activate();
 		}
 
-		r2bix_node::Node::Update( delta_time );
+		return true;
 	}
 }
