@@ -30,11 +30,21 @@ namespace projecta
 			return false;
 		}
 
+		//
+		//
+		//
 		{
 			auto node = AddChild<r2bix_node::LabelSNode>();
 			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( CompanyScene::GetTitle() );
+			node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
+				  mDirector.GetScreenBufferSize().GetWidth() * 0.5f
+				, mDirector.GetScreenBufferSize().GetHeight() * 0.5f
+			);
 		}
 
+		//
+		// Exit
+		//
 		{
 			auto component = AddComponent<r2bix_component::InputComponent>();
 			component->SetKeyboardCallback(
