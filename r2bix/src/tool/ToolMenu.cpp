@@ -4,6 +4,7 @@
 #include "r2tm/r2tm_Director.h"
 #include "r2tm/r2tm_ostream.h"
 
+#include "texture_editor/tool_texture_editor_EntryScene.h"
 #include "texture_viewer/tool_texture_viewer_EntryScene.h"
 
 #include "DevelopmentMenu.h"
@@ -30,6 +31,34 @@ r2tm::WriteFunctionT ToolMenu::GetWriteFunction() const
 	{
 		ret->AddItem(
 			'a'
+			, []()->const char* { return tool_texture_editor::EntryScene::GetTitle(); }
+			, []()->r2tm::eDoLeaveAction
+			{
+				//
+				// Setup
+				//
+				r2bix::Director director( {} );
+				director.Setup( tool_texture_editor::EntryScene::Create( director ) );
+
+				//
+				// Process
+				//
+				director.Run();
+
+				//
+				// Terminate
+				//
+				director.Terminate();
+
+				return r2tm::eDoLeaveAction::None;
+			}
+		);
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+		ret->AddItem(
+			's'
 			, []()->const char* { return tool_texture_viewer::EntryScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
 			{

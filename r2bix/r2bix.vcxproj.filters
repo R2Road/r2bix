@@ -115,6 +115,9 @@
     <Filter Include="test\projectA">
       <UniqueIdentifier>{e6fb3952-e352-4884-9a1a-18aa69b31692}</UniqueIdentifier>
     </Filter>
+    <Filter Include="tool\texture_editor">
+      <UniqueIdentifier>{031ff44a-6e73-487c-8b71-bf7cd0e98242}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -514,6 +517,9 @@
     </ClCompile>
     <ClCompile Include="src\project_a\projecta_CompanyScene.cpp">
       <Filter>project\projectA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tool\texture_editor\tool_texture_editor_EntryScene.cpp">
+      <Filter>tool\texture_editor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1111,6 +1117,9 @@
     </ClInclude>
     <ClInclude Include="src\project_a\projecta_VersionInfo.h">
       <Filter>project\projectA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tool\texture_editor\tool_texture_editor_EntryScene.h">
+      <Filter>tool\texture_editor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
