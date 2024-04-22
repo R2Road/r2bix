@@ -109,6 +109,12 @@
     <Filter Include="r2bix\ui">
       <UniqueIdentifier>{f36022e8-7dc3-4c30-be02-96bda08235b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project\projectA">
+      <UniqueIdentifier>{1ee5e6a8-ae23-4abc-81be-b079bdb759f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\projectA">
+      <UniqueIdentifier>{e6fb3952-e352-4884-9a1a-18aa69b31692}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -502,6 +508,12 @@
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_component_UIControlComponent.cpp">
       <Filter>r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\project_a\ProjectAMenu.cpp">
+      <Filter>test\projectA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\project_a\projecta_CompanyScene.cpp">
+      <Filter>project\projectA</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1090,6 +1102,15 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_UIControlComponent.h">
       <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\project_a\ProjectAMenu.h">
+      <Filter>test\projectA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\project_a\projecta_CompanyScene.h">
+      <Filter>project\projectA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\project_a\projecta_VersionInfo.h">
+      <Filter>project\projectA</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

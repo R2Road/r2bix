@@ -51,6 +51,7 @@
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp" />
+    <ClCompile Include="src\project_a\projecta_CompanyScene.cpp" />
     <ClCompile Include="src\project_mini_adventure\p_mini_adv_CompanyScene.cpp" />
     <ClCompile Include="src\project_mini_adventure\p_mini_adv_GameScene.cpp" />
     <ClCompile Include="src\psnake\psnake_CompanyScene.cpp" />
@@ -109,6 +110,7 @@
     <ClCompile Include="src\r2bix\r2bix_utility_PathUtil.cpp" />
     <ClCompile Include="src\r2bix\r2bix_utility_InputUtil.cpp" />
     <ClCompile Include="src\r2bix_helper\r2bix_helper_Printer4Texture.cpp" />
+    <ClCompile Include="src\test\project_a\ProjectAMenu.cpp" />
     <ClCompile Include="src\test\test_miniaudio\item\miniaudio_test.cpp" />
     <ClCompile Include="src\test\test_miniaudio\MiniAudioMenu.cpp" />
     <ClCompile Include="src\test\test_p2048\P2048Menu.cpp" />
@@ -238,6 +240,8 @@
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h" />
     <ClInclude Include="src\p2048\p2048table_TextureTable.h" />
     <ClInclude Include="src\pmr\pmr_CompanyScene.h" />
+    <ClInclude Include="src\project_a\projecta_CompanyScene.h" />
+    <ClInclude Include="src\project_a\projecta_VersionInfo.h" />
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_CompanyScene.h" />
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_GameScene.h" />
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_VersionInfo.h" />
@@ -307,6 +311,7 @@
     <ClInclude Include="src\r2bix\r2bix_utility_PathUtil.h" />
     <ClInclude Include="src\r2bix\r2bix_utility_InputUtil.h" />
     <ClInclude Include="src\r2bix_helper\r2bix_helper_Printer4Texture.h" />
+    <ClInclude Include="src\test\project_a\ProjectAMenu.h" />
     <ClInclude Include="src\test\test_miniaudio\item\miniaudio_test.h" />
     <ClInclude Include="src\test\test_miniaudio\MiniAudioMenu.h" />
     <ClInclude Include="src\test\test_p2048\P2048Menu.h" />

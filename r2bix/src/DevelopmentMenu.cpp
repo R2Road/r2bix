@@ -9,6 +9,7 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_VersionInfo.h"
 
+#include "test/project_a/ProjectAMenu.h"
 #include "test/test_miniaudio/MiniAudioMenu.h"
 #include "test/test_p2048/P2048Menu.h"
 #include "test/test_psnake/PSnakeMenu.h"
@@ -64,7 +65,7 @@ r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 
 
 
-		ret->AddMenu( 'a', PSnakeMenu() );
+		ret->AddMenu( 'a', ProjectAMenu() );
 
 
 
@@ -73,9 +74,10 @@ r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 
 		
 
-		ret->AddMenu( 's', P2048Menu() );
+		ret->AddMenu( 'z', PSnakeMenu() );
+		ret->AddMenu( 'x', P2048Menu() );
 		ret->AddItem(
-			'z'
+			'c'
 			, []()->const char* { return p_mini_adv::CompanyScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
 			{
@@ -99,7 +101,7 @@ r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 			}
 		);
 		ret->AddItem(
-			'c'
+			'v'
 			, []()->const char* { return pmr::CompanyScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
 			{

@@ -1,24 +1,24 @@
-#include "PSnakeMenu.h"
+#include "ProjectAMenu.h"
 
 #include "r2bix_Director.h"
 
 #include "r2tm/r2tm_Director.h"
 #include "r2tm/r2tm_ostream.h"
 
-#include "psnake/psnake_VersionInfo.h"
-#include "psnake/psnake_CompanyScene.h"
+#include "project_a/projecta_VersionInfo.h"
+#include "project_a/projecta_CompanyScene.h"
 
 #include "DevelopmentMenu.h"
 
 
-r2tm::TitleFunctionT PSnakeMenu::GetTitleFunction() const
+r2tm::TitleFunctionT ProjectAMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "PSnake Menu( To do )";
+		return "ProjectA Menu( In Progress )";
 	};
 }
-r2tm::DescriptionFunctionT PSnakeMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT ProjectAMenu::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
@@ -27,7 +27,7 @@ r2tm::DescriptionFunctionT PSnakeMenu::GetDescriptionFunction() const
 			"\n"	"> ...";
 	};
 }
-r2tm::WriteFunctionT PSnakeMenu::GetWriteFunction() const
+r2tm::WriteFunctionT ProjectAMenu::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* ret )
 	{
@@ -40,14 +40,14 @@ r2tm::WriteFunctionT PSnakeMenu::GetWriteFunction() const
 
 		ret->AddItem(
 			32
-			, []()->const char* { return psnake::CompanyScene::GetTitle(); }
+			, []()->const char* { return projecta::CompanyScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
 			{
 				//
 				// Setup
 				//
 				r2bix::Director director( {} );
-				director.Setup( psnake::CompanyScene::Create( director ) );
+				director.Setup( projecta::CompanyScene::Create( director ) );
 
 				//
 				// Process
