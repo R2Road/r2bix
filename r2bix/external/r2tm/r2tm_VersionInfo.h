@@ -26,7 +26,7 @@ namespace r2tm
 		const char VersionNumber_1 = '1';
 		const char VersionNumber_2 = '0';
 		const char VersionNumber_3 = '7';
-		const char VersionNumber_4 = '5';
+		const char VersionNumber_4 = '6';
 
 		const char String4Version[16] = { 'r', '2', 't', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '\0' };
 
@@ -40,6 +40,7 @@ namespace r2tm
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY, OUTPUT_SOURCE_BEGIN, OUTPUT_SOURCE_END"
 			"\n"	"[o] " "update    inspector  : Add - OUTPUT_SOURCE_READY_N_BEGIN"
 			"\n"	"[o] " "update    inspector  : DECLARATION_MAIN, DECLARATION_SUB - 문자 출력을 먼저 하고 코드 실행"
+			"\n"	"[o] " "update    inspector  : EXPECT_FALSE, EXPECT_NE - 눈에 잘 보이는 색상으로 변경"
 			"\n"	"[ ] " "..."
 		;
 
