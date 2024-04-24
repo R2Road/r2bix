@@ -15,6 +15,7 @@ namespace r2bix_director
 	{
 	private:
 		using HandleT = void*;
+		enum { BUFFER_COUNT = 2 };
 
 	public:
 		ScreenBufferManager();
@@ -36,13 +37,10 @@ namespace r2bix_director
 		HandleT mBufferHandleOriginal;
 		std::streambuf* mCoutOriginalStreamBuffer;
 
-		HandleT mBufferHandle4First;
-		CoutBufferRedirector mCoutBufferRedirector4First;
+		HandleT mBufferHandleList[BUFFER_COUNT];
+		CoutBufferRedirector mCoutBufferRedirectorList[BUFFER_COUNT];
 
-		HandleT mBufferHandle4Second;
-		CoutBufferRedirector mCoutBufferRedirector4Second;
-
-		bool mbFirst;
+		int mCurrentBufferIndex;
 
 		r2::Point<short> mScreenBufferOffset;
 	};

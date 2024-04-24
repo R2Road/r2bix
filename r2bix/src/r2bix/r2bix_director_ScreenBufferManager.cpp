@@ -19,13 +19,10 @@ namespace r2bix_director
 		  mBufferHandleOriginal( INVALID_HANDLE_VALUE )
 		, mCoutOriginalStreamBuffer( nullptr )
 
-		, mBufferHandle4First( INVALID_HANDLE_VALUE )
-		, mCoutBufferRedirector4First( nullptr )
+		, mBufferHandleList()
+		, mCoutBufferRedirectorList()
 
-		, mBufferHandle4Second( INVALID_HANDLE_VALUE )
-		, mCoutBufferRedirector4Second( nullptr )
-
-		, mbFirst( true )
+		, mCurrentBufferIndex( 0 )
 
 		, mScreenBufferOffset()
 	{
@@ -36,13 +33,10 @@ namespace r2bix_director
 		  mBufferHandleOriginal( INVALID_HANDLE_VALUE )
 		, mCoutOriginalStreamBuffer( nullptr )
 
-		, mBufferHandle4First( INVALID_HANDLE_VALUE )
-		, mCoutBufferRedirector4First( nullptr )
+		, mBufferHandleList()
+		, mCoutBufferRedirectorList()
 
-		, mBufferHandle4Second( INVALID_HANDLE_VALUE )
-		, mCoutBufferRedirector4Second( nullptr )
-
-		, mbFirst( true )
+		, mCurrentBufferIndex( 0 )
 
 		, mScreenBufferOffset( x, y )
 	{
@@ -65,28 +59,28 @@ namespace r2bix_director
 		mCoutOriginalStreamBuffer = std::cout.rdbuf();
 
 
-		mBufferHandle4First = GetStdHandle( STD_OUTPUT_HANDLE );
-		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
-		mCoutBufferRedirector4First = CoutBufferRedirector( mBufferHandle4First );
+		mBufferHandleList[0] = GetStdHandle( STD_OUTPUT_HANDLE );
+		assert( INVALID_HANDLE_VALUE != mBufferHandleList[0] );
+		mCoutBufferRedirectorList[0] = CoutBufferRedirector(mBufferHandleList[0]);
 
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};
-		if( !GetConsoleScreenBufferInfo( mBufferHandle4First, &csbi ) )
+		if( !GetConsoleScreenBufferInfo( mBufferHandleList[0], &csbi ) )
 		{
 			assert( false && "Failed : GetConsoleScreenBufferInfo" );
 		}
 
 
-		mBufferHandle4Second = CreateConsoleScreenBuffer(
+		mBufferHandleList[1] = CreateConsoleScreenBuffer(
 			GENERIC_READ | GENERIC_WRITE
 			, 0//FILE_SHARE_WRITE | FILE_SHARE_READ
 			, nullptr
 			, CONSOLE_TEXTMODE_BUFFER
 			, nullptr
 		);
-		assert( INVALID_HANDLE_VALUE != mBufferHandle4First );
-		mCoutBufferRedirector4Second = CoutBufferRedirector( mBufferHandle4Second );
+		assert( INVALID_HANDLE_VALUE != mBufferHandleList[1] );
+		mCoutBufferRedirectorList[1] = CoutBufferRedirector(mBufferHandleList[1]);
 
-		if( !SetConsoleScreenBufferSize( mBufferHandle4Second, csbi.dwSize ) )
+		if( !SetConsoleScreenBufferSize( mBufferHandleList[1], csbi.dwSize ) )
 		{
 			assert( false && "Failed : SetConsoleScreenBufferSize" );
 		}
@@ -103,47 +97,41 @@ namespace r2bix_director
 	{
 		setCursorVisibility( true );
 
+		//
+		// Rollback
+		//
 		if( INVALID_HANDLE_VALUE != mBufferHandleOriginal )
 		{
 			SetConsoleActiveScreenBuffer( mBufferHandleOriginal );
 			std::cout.rdbuf( mCoutOriginalStreamBuffer );
 		}
 
-		if( INVALID_HANDLE_VALUE != mBufferHandle4Second )
+		//
+		// Close Handle List
+		//
+		for( int i = 1; BUFFER_COUNT > i; ++i )
 		{
-			CloseHandle( mBufferHandle4Second );
+			CloseHandle( mBufferHandleList[i] );
 		}
 	}
 	void ScreenBufferManager::setCursorVisibility( const bool visible )
 	{
-		CONSOLE_CURSOR_INFO     cursorInfo;
+		CONSOLE_CURSOR_INFO cursorInfo;
 
-		if( INVALID_HANDLE_VALUE != mBufferHandle4First )
+		for( int i = 0; BUFFER_COUNT > i; ++i )
 		{
-			GetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
-			cursorInfo.bVisible = visible;
-			SetConsoleCursorInfo( mBufferHandle4First, &cursorInfo );
-		}
-
-		if( INVALID_HANDLE_VALUE != mBufferHandle4Second )
-		{
-			GetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
-			cursorInfo.bVisible = visible;
-			SetConsoleCursorInfo( mBufferHandle4Second, &cursorInfo );
+			if( INVALID_HANDLE_VALUE != mBufferHandleList[i] )
+			{
+				GetConsoleCursorInfo( mBufferHandleList[i], &cursorInfo );
+				cursorInfo.bVisible = visible;
+				SetConsoleCursorInfo( mBufferHandleList[i], &cursorInfo );
+			}
 		}
 	}
 
 	void ScreenBufferManager::InitCursor()
 	{
-		void* current_buffer_handle = nullptr;
-		if( mbFirst )
-		{
-			current_buffer_handle = mBufferHandle4First;
-		}
-		else
-		{
-			current_buffer_handle = mBufferHandle4Second;
-		}
+		void* current_buffer_handle = mBufferHandleList[mCurrentBufferIndex];
 
 		const COORD top_left = { 0, 0 };
 		SetConsoleCursorPosition( current_buffer_handle, top_left );
@@ -151,15 +139,7 @@ namespace r2bix_director
 
 	void ScreenBufferManager::ClearCurrentBuffer()
 	{
-		void* current_buffer_handle = nullptr;
-		if( mbFirst )
-		{
-			current_buffer_handle = mBufferHandle4First;
-		}
-		else
-		{
-			current_buffer_handle = mBufferHandle4Second;
-		}
+		void* current_buffer_handle = mBufferHandleList[mCurrentBufferIndex];
 
 		const COORD top_left = { mScreenBufferOffset.GetX(), mScreenBufferOffset.GetY() };
 		CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info{};
@@ -174,15 +154,13 @@ namespace r2bix_director
 
 	void ScreenBufferManager::Write2BackBuffer( const r2bix_render::Texture* const texture )
 	{
-		void* back_buffer_handle = nullptr;
-		if( !mbFirst )
+		int next_buffer_index = mCurrentBufferIndex + 1;
+		if( BUFFER_COUNT <= next_buffer_index )
 		{
-			back_buffer_handle = mBufferHandle4First;
+			next_buffer_index = 0;
 		}
-		else
-		{
-			back_buffer_handle = mBufferHandle4Second;
-		}
+
+		void* const next_buffer_handle = mBufferHandleList[next_buffer_index];
 
 		const COORD write_offset_coord = { mScreenBufferOffset.GetX(), mScreenBufferOffset.GetY() };
 		COORD current_write_coord;
@@ -190,7 +168,7 @@ namespace r2bix_director
 
 		std::string_view output_line;
 		const r2bix::ColorValue* color_line;
-		for( SHORT y = 0, end_y = static_cast<SHORT>( texture->GetHeight() ); end_y > y; ++y )
+		for( SHORT y = 0, end_y = static_cast< SHORT >( texture->GetHeight() ); end_y > y; ++y )
 		{
 			current_write_coord = write_offset_coord;
 			current_write_coord.Y += y;
@@ -198,30 +176,32 @@ namespace r2bix_director
 			//
 			// Character
 			//
-			output_line = texture->GetCharacterLine( static_cast<uint32_t>( y ) );
-			WriteConsoleOutputCharacterA( back_buffer_handle, output_line.data(), static_cast<DWORD>( output_line.length() ), current_write_coord, &out_result );
+			output_line = texture->GetCharacterLine( static_cast< uint32_t >( y ) );
+			WriteConsoleOutputCharacterA( next_buffer_handle, output_line.data(), static_cast< DWORD >( output_line.length() ), current_write_coord, &out_result );
 
 			//
 			// Color
 			//
-			color_line = texture->GetColorLine( static_cast<uint32_t>( y ) );
-			WriteConsoleOutputAttribute( back_buffer_handle, (WORD*)( color_line ), static_cast<DWORD>( output_line.length() ), current_write_coord, &out_result );
+			color_line = texture->GetColorLine( static_cast< uint32_t >( y ) );
+			WriteConsoleOutputAttribute( next_buffer_handle, ( WORD* )( color_line ), static_cast< DWORD >( output_line.length() ), current_write_coord, &out_result );
 		}
 	}
 
 	void ScreenBufferManager::Swap()
 	{
-		mbFirst = !mbFirst;
+		//
+		// Update Index
+		//
+		++mCurrentBufferIndex;
+		if( BUFFER_COUNT <= mCurrentBufferIndex )
+		{
+			mCurrentBufferIndex = 0;
+		}
 
-		if( mbFirst )
-		{
-			SetConsoleActiveScreenBuffer( mBufferHandle4First );
-			std::cout.rdbuf( &mCoutBufferRedirector4First );
-		}
-		else
-		{
-			SetConsoleActiveScreenBuffer( mBufferHandle4Second );
-			std::cout.rdbuf( &mCoutBufferRedirector4Second );
-		}
+		//
+		// Swap
+		//
+		SetConsoleActiveScreenBuffer( mBufferHandleList[mCurrentBufferIndex] );
+		std::cout.rdbuf( &mCoutBufferRedirectorList[mCurrentBufferIndex] );
 	}
 }
