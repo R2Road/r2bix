@@ -2,6 +2,8 @@
 
 #include <conio.h>
 
+#include "r2/r2_FPSTimer.h"
+
 #include "r2bix_director_ScreenBufferManager.h"
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
@@ -27,16 +29,20 @@ namespace console_screen_buffer_manager_test
 
 			{
 				std::cout << r2tm::tab << "[ESC] End" << r2tm::linefeed;
-				std::cout << r2tm::tab << "[Any Key] screen_buffer_manager.Swap();" << r2tm::linefeed;
 			}
 
 			LS();
 
 			{
+				r2::FPSTimer timer( 10 );
+
 				int key_code = -1;
 				do
 				{
-					screen_buffer_manager.Swap();
+					if( timer.Update() )
+					{
+						screen_buffer_manager.Swap();
+					}
 
 					if( _kbhit() )
 					{
