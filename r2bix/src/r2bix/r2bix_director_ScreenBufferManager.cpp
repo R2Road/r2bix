@@ -55,34 +55,36 @@ namespace r2bix_director
 		// SetConsoleActiveScreenBuffer에 INVALID_HANDLE_VALUE 가 들어가면 아무 작동도 하지 않는다.
 		//
 
+		//
+		// Backup
+		//
 		mBufferHandleOriginal = GetStdHandle( STD_OUTPUT_HANDLE );
 		mCoutOriginalStreamBuffer = std::cout.rdbuf();
 
 
-		mBufferHandleList[0] = GetStdHandle( STD_OUTPUT_HANDLE );
-		assert( INVALID_HANDLE_VALUE != mBufferHandleList[0] );
-		mCoutBufferRedirectorList[0] = CoutBufferRedirector(mBufferHandleList[0]);
-
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};
-		if( !GetConsoleScreenBufferInfo( mBufferHandleList[0], &csbi ) )
+		if( !GetConsoleScreenBufferInfo( mBufferHandleOriginal, &csbi ) )
 		{
 			assert( false && "Failed : GetConsoleScreenBufferInfo" );
 		}
 
 
-		mBufferHandleList[1] = CreateConsoleScreenBuffer(
-			GENERIC_READ | GENERIC_WRITE
-			, 0//FILE_SHARE_WRITE | FILE_SHARE_READ
-			, nullptr
-			, CONSOLE_TEXTMODE_BUFFER
-			, nullptr
-		);
-		assert( INVALID_HANDLE_VALUE != mBufferHandleList[1] );
-		mCoutBufferRedirectorList[1] = CoutBufferRedirector(mBufferHandleList[1]);
-
-		if( !SetConsoleScreenBufferSize( mBufferHandleList[1], csbi.dwSize ) )
+		for( int i = 0; BUFFER_COUNT > i; ++i )
 		{
-			assert( false && "Failed : SetConsoleScreenBufferSize" );
+			mBufferHandleList[i] = CreateConsoleScreenBuffer(
+				GENERIC_READ | GENERIC_WRITE
+				, 0//FILE_SHARE_WRITE | FILE_SHARE_READ
+				, nullptr
+				, CONSOLE_TEXTMODE_BUFFER
+				, nullptr
+			);
+			assert( INVALID_HANDLE_VALUE != mBufferHandleList[i] );
+			mCoutBufferRedirectorList[i] = CoutBufferRedirector( mBufferHandleList[i] );
+
+			if( !SetConsoleScreenBufferSize( mBufferHandleList[i], csbi.dwSize ) )
+			{
+				assert( false && "Failed : SetConsoleScreenBufferSize" );
+			}
 		}
 
 		//
@@ -109,7 +111,7 @@ namespace r2bix_director
 		//
 		// Close Handle List
 		//
-		for( int i = 1; BUFFER_COUNT > i; ++i )
+		for( int i = 0; BUFFER_COUNT > i; ++i )
 		{
 			CloseHandle( mBufferHandleList[i] );
 		}
