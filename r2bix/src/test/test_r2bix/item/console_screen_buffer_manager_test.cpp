@@ -36,15 +36,14 @@ namespace console_screen_buffer_manager_test
 				int key_code = -1;
 				do
 				{
-					key_code = _getch();
-					if( 27 == key_code )
-					{
-						break;
-					}
-
 					screen_buffer_manager.Swap();
 
-				} while( true );
+					if( _kbhit() )
+					{
+						key_code = _getch();
+					}
+
+				} while( 27 != key_code );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
