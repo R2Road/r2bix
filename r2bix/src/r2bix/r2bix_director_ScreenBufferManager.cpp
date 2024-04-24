@@ -16,7 +16,8 @@
 namespace r2bix_director
 {
 	ScreenBufferManager::ScreenBufferManager() :
-		mCoutOriginalStreamBuffer( nullptr )
+		  mBufferHandleOriginal( INVALID_HANDLE_VALUE )
+		, mCoutOriginalStreamBuffer( nullptr )
 
 		, mBufferHandle4First( INVALID_HANDLE_VALUE )
 		, mCoutBufferRedirector4First( nullptr )
@@ -32,7 +33,8 @@ namespace r2bix_director
 	}
 
 	ScreenBufferManager::ScreenBufferManager( const short x, const short y ) :
-		mCoutOriginalStreamBuffer( nullptr )
+		  mBufferHandleOriginal( INVALID_HANDLE_VALUE )
+		, mCoutOriginalStreamBuffer( nullptr )
 
 		, mBufferHandle4First( INVALID_HANDLE_VALUE )
 		, mCoutBufferRedirector4First( nullptr )
@@ -59,6 +61,7 @@ namespace r2bix_director
 		// SetConsoleActiveScreenBuffer에 INVALID_HANDLE_VALUE 가 들어가면 아무 작동도 하지 않는다.
 		//
 
+		mBufferHandleOriginal = GetStdHandle( STD_OUTPUT_HANDLE );
 		mCoutOriginalStreamBuffer = std::cout.rdbuf();
 
 
@@ -100,9 +103,9 @@ namespace r2bix_director
 	{
 		setCursorVisibility( true );
 
-		if( INVALID_HANDLE_VALUE != mBufferHandle4First )
+		if( INVALID_HANDLE_VALUE != mBufferHandleOriginal )
 		{
-			SetConsoleActiveScreenBuffer( mBufferHandle4First );
+			SetConsoleActiveScreenBuffer( mBufferHandleOriginal );
 			std::cout.rdbuf( mCoutOriginalStreamBuffer );
 		}
 

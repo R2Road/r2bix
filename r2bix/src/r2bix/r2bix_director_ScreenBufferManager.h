@@ -33,6 +33,7 @@ namespace r2bix_director
 		void Swap();
 
 	private:
+		HandleT mBufferHandleOriginal;
 		std::streambuf* mCoutOriginalStreamBuffer;
 
 		HandleT mBufferHandle4First;
