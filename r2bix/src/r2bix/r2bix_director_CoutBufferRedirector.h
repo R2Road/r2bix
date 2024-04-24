@@ -16,6 +16,7 @@ namespace r2bix_director
 		using HandleT = void*;
 
 	public:
+		CoutBufferRedirector();
 		CoutBufferRedirector( HandleT handle );
 
 	protected:
