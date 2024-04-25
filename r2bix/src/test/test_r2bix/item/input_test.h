@@ -46,7 +46,7 @@ namespace input_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class InputManager_Order : public r2tm::iItem
+	class InputManager_Order2 : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

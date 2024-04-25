@@ -535,14 +535,14 @@ namespace input_test
 
 
 
-	r2tm::TitleFunctionT InputManager_Order::GetTitleFunction() const
+	r2tm::TitleFunctionT InputManager_Order2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "InputManager : Order";
+			return "InputManager : Order 2";
 		};
 	}
-	r2tm::DoFunctionT InputManager_Order::GetDoFunction() const
+	r2tm::DoFunctionT InputManager_Order2::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
