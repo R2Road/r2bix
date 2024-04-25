@@ -28,7 +28,13 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 	{
 		ret->AddItem( '1', console_screen_buffer_test::Basic() );
 		ret->AddItem( '2', console_screen_buffer_manager_test::Basic() );
-		ret->AddItem( '3', director_scheduler_test::Declaration() );
+
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 'q', director_scheduler_test::Declaration() );
 
 
 		ret->AddSplit();
