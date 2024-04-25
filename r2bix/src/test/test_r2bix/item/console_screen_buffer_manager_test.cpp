@@ -9,7 +9,7 @@
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
-namespace console_screen_buffer_manager_test
+namespace screen_buffer_manager_test
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
