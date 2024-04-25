@@ -30,7 +30,7 @@ namespace r2bix_render
 		, mColors()
 		, mCharDisuses()
 	{
-		Reset( width, height, 32 );
+		Reset( width, height );
 	}
 	Texture::Texture( const uint32_t width, const uint32_t height, const char fill_char ) :
 		mGridIndexConverter( 1, 1 )
@@ -140,6 +140,10 @@ namespace r2bix_render
 		//
 		mCharDisuses.clear();
 		mCharDisuses.resize( mChars.size(), false );
+	}
+	void Texture::Reset( const uint32_t width, const uint32_t height )
+	{
+		Reset( width, height, 32, r2bix::DefaultColorValue );
 	}
 	void Texture::Reset( const uint32_t width, const uint32_t height, const char fill_char )
 	{
