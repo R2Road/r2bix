@@ -67,10 +67,33 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 				director.Setup( std::move( temp ) );
 
 				auto input_component = root_node->AddComponent<r2bix_component::InputComponent>();
+
+				//
+				// ESC
+				//
 				input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
 				{
 					director.RequestAbort();
 					r2bix_utility::ClearCInputBuffer();
+
+					return true;
+				} );
+
+				//
+				// A
+				//
+				input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_A, [&director]( r2bix_input::eKeyStatus )->bool
+				{
+					director.StartInputMode();
+
+					return true;
+				} );
+				//
+				// S
+				//
+				input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_S, [&director]( r2bix_input::eKeyStatus )->bool
+				{
+					director.EndInputMode();
 
 					return true;
 				} );

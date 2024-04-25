@@ -20,6 +20,8 @@ namespace r2bix
 		)
 		, mRenderTarget( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height, '@' )
 
+		, mRenderMode( eRenderMode::Normal )
+
 		, mInputManager( director_config.ScreenBufferOffset_X, director_config.ScreenBufferOffset_Y )
 
 		, mCurrentSceneNode()
@@ -76,16 +78,19 @@ namespace r2bix
 
 		mCurrentSceneNode->Render( &mCamera, &mRenderTarget, r2::PointInt::GetZERO() );
 
-		//
-		// Write 2 Back-Buffer
-		//
-		Write2BackBuffer( &mRenderTarget );
+		if( eRenderMode::Normal == mRenderMode )
+		{
+			//
+			// Write 2 Back-Buffer
+			//
+			Write2BackBuffer( &mRenderTarget );
 
-		//
-		// Swap
-		//
-		mScreenBufferManager.InitCursor();
-		mScreenBufferManager.Swap();
+			//
+			// Swap
+			//
+			mScreenBufferManager.InitCursor();
+			mScreenBufferManager.Swap();
+		}
 	}
 
 
@@ -108,5 +113,17 @@ namespace r2bix
 	void Director::Write2BackBuffer( const r2bix_render::Texture* const texture )
 	{
 		mScreenBufferManager.Write2BackBuffer( texture );
+	}
+
+	void Director::StartInputMode()
+	{
+		mRenderMode = eRenderMode::Input;
+		mScreenBufferManager.ShowOriginalBuffer();
+	}
+
+	void Director::EndInputMode()
+	{
+		mRenderMode = eRenderMode::Normal;
+		mScreenBufferManager.CloseOriginalBuffer();
 	}
 }
