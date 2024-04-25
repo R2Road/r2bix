@@ -24,7 +24,7 @@ namespace screen_buffer_manager_test
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_director::ScreenBufferManager screen_buffer_manager );
+			DECLARATION_MAIN( r2bix_director::ScreenBufferManager s );
 
 			LS();
 
@@ -34,16 +34,16 @@ namespace screen_buffer_manager_test
 				LF();
 
 				PROCESS_MAIN( t.Reset( "Screen Buffer 1" ) );
-				PROCESS_MAIN( screen_buffer_manager.Write2BackBuffer( &t ) );
+				PROCESS_MAIN( s.Write2BackBuffer( &t ) );
 
 				LF();
 
-				PROCESS_MAIN( screen_buffer_manager.Swap() );
+				PROCESS_MAIN( s.Swap() );
 
 				LF();
 
 				PROCESS_MAIN( t.Reset( "                   Screen Buffer 2" ) );
-				PROCESS_MAIN( screen_buffer_manager.Write2BackBuffer( &t ) );
+				PROCESS_MAIN( s.Write2BackBuffer( &t ) );
 			}
 
 			LS();
@@ -62,7 +62,7 @@ namespace screen_buffer_manager_test
 				{
 					if( timer.Update() )
 					{
-						screen_buffer_manager.Swap();
+						s.Swap();
 					}
 
 					if( _kbhit() )
@@ -92,7 +92,7 @@ namespace screen_buffer_manager_test
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_director::ScreenBufferManager screen_buffer_manager );
+			DECLARATION_MAIN( r2bix_director::ScreenBufferManager s );
 
 			LS();
 
@@ -102,16 +102,16 @@ namespace screen_buffer_manager_test
 				LF();
 
 				PROCESS_MAIN( t.Reset( "Screen Buffer 1" ) );
-				PROCESS_MAIN( screen_buffer_manager.Write2BackBuffer( &t ) );
+				PROCESS_MAIN( s.Write2BackBuffer( &t ) );
 
 				LF();
 
-				PROCESS_MAIN( screen_buffer_manager.Swap() );
+				PROCESS_MAIN( s.Swap() );
 
 				LF();
 
 				PROCESS_MAIN( t.Reset( "                   Screen Buffer 2" ) );
-				PROCESS_MAIN( screen_buffer_manager.Write2BackBuffer( &t ) );
+				PROCESS_MAIN( s.Write2BackBuffer( &t ) );
 			}
 
 			LS();
@@ -131,7 +131,7 @@ namespace screen_buffer_manager_test
 				{
 					if( timer.Update() )
 					{
-						screen_buffer_manager.Swap();
+						s.Swap();
 					}
 
 					if( _kbhit() )
@@ -140,7 +140,7 @@ namespace screen_buffer_manager_test
 
 						if( 'a' == key_code )
 						{
-							screen_buffer_manager.ShowOriginalBuffer();
+							s.ShowOriginalBuffer();
 						}
 					}
 
