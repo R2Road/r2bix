@@ -11,14 +11,14 @@
 
 namespace screen_buffer_manager_test
 {
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Swap::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Console Screen Buffer Manager : Basic";
+			return "Screen Buffer Manager : Swap";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Swap::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

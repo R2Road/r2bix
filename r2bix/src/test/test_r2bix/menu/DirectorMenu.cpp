@@ -27,7 +27,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', console_screen_buffer_test::Basic() );
-		ret->AddItem( '2', screen_buffer_manager_test::Basic() );
+		ret->AddItem( '2', screen_buffer_manager_test::Swap() );
 		ret->AddItem( '3', screen_buffer_manager_test::OriginalBuffer() );
 
 

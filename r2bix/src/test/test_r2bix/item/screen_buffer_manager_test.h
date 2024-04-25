@@ -4,7 +4,7 @@
 
 namespace screen_buffer_manager_test
 {
-	class Basic : public r2tm::iItem
+	class Swap : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
