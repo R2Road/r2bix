@@ -71,6 +71,34 @@ namespace texture_test
 
 
 
+	r2tm::TitleFunctionT FillStringAll::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Texture : Fill String All";
+		};
+	}
+	r2tm::DoFunctionT FillStringAll::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( r2bix_render::Texture texture( 31, 21 ) );
+			PROCESS_MAIN( texture.FillStringAll( "fill string all~!" ));
+
+			LS();
+
+			r2bix_helper::Printer4Texture::DrawTextureCharacter( texture );
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT FillColorAll::GetTitleFunction() const
 	{
 		return []()->const char*

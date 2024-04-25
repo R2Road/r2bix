@@ -184,6 +184,25 @@ namespace r2bix_render
 		mChars[target_linear_index] = c;
 	}
 
+	void Texture::FillStringAll( const char* const str )
+	{
+		const std::string_view sv = str;
+		auto current_c = sv.begin();
+		for( int y = 0, y_end = GetHeight(); y_end > y; ++y )
+		{
+			for( int x = 0, x_end = GetWidth(); x_end > x; ++x )
+			{
+				FillCharacter( x, y, *current_c );
+
+				++current_c;
+				if( sv.end() == current_c )
+				{
+					current_c = sv.begin();
+				}
+			}
+		}
+	}
+
 	void Texture::FillColorAll( const r2bix::ColorValue color_value )
 	{
 		std::fill( mColors.begin(), mColors.end(), color_value );

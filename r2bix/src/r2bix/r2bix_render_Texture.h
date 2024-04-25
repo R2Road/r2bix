@@ -81,6 +81,7 @@ namespace r2bix_render
 		//
 		void FillCharacterAll( const char c ) override;
 		void FillCharacter( const uint32_t x, const uint32_t y, const char c ) override;
+		void FillStringAll( const char* const str ) override;
 		void FillColorAll( const r2bix::ColorValue color_value ) override;
 		void FillColor( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value ) override;
 		void FillColorWithMask( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value, const r2bix::ColorMaskOption color_mask_option ) override;
