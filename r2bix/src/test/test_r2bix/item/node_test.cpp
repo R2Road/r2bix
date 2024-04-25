@@ -554,9 +554,9 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '4' );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 15, 6, " Key Test" );
 
-					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
+					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 15, 6 );
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4KeyResponse( [rect_node]( const int, const r2bix_ui::eKeyStatus s )->bool
 					{
 						switch( s )

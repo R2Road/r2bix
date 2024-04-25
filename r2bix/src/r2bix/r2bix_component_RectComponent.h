@@ -47,7 +47,9 @@ namespace r2bix_component
 		int GetHeight() const;
 
 		void Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char fill_char );
+		void Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char* fill_str );
 		void Set( const uint32_t width, const uint32_t height, const char fill_char );
+		void Set( const uint32_t width, const uint32_t height, const char* fill_str );
 		void Set( const uint32_t width, const uint32_t height );
 
 
