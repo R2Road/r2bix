@@ -535,6 +535,99 @@ namespace input_test
 
 
 
+	r2tm::TitleFunctionT InputManager_Order1::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "InputManager : Order 1";
+		};
+	}
+	r2tm::DoFunctionT InputManager_Order1::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_NOTE( "같은 Order 값이면 늦게 추가된 리스너가 목록의 앞으로 온다." );
+
+			LS();
+
+			DECLARATION_MAIN( r2bix_input::InputManager m( 0, 0 ) );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Mouse" );
+
+				LF();
+
+				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_1( 1 ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_2( 1 ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_3( 1 ) );
+
+				LF();
+
+				PROCESS_MAIN( m.AddListener( &l_1 ) );
+				PROCESS_MAIN( m.AddListener( &l_2 ) );
+				PROCESS_MAIN( m.AddListener( &l_3 ) );
+
+				LF();
+
+				EXPECT_EQ( ( *m.GetListenerContainer4Mouse().begin() ), &l_3 );
+				EXPECT_EQ( ( *( ++m.GetListenerContainer4Mouse().begin() ) ), &l_2 );
+				EXPECT_EQ( ( *( ++++m.GetListenerContainer4Mouse().begin() ) ), &l_1 );
+
+				LF();
+
+				OUTPUT_COMMENT( "Z ORder" );
+				for( const auto l : m.GetListenerContainer4Mouse() )
+				{
+					std::cout << l->GetOrder() << " ";
+				}
+				LF();
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Keyboard" );
+
+				LF();
+
+				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_1( 1 ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_2( 1 ) );
+				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_3( 1 ) );
+
+				LF();
+
+				PROCESS_MAIN( m.AddListener( &l_1 ) );
+				PROCESS_MAIN( m.AddListener( &l_2 ) );
+				PROCESS_MAIN( m.AddListener( &l_3 ) );
+
+				LF();
+
+				EXPECT_EQ( ( *m.GetListenerContainer4Keyboard().begin() ), &l_3 );
+				EXPECT_EQ( ( *( ++m.GetListenerContainer4Keyboard().begin() ) ), &l_2 );
+				EXPECT_EQ( ( *( ++++m.GetListenerContainer4Keyboard().begin() ) ), &l_1 );
+
+				LF();
+
+				OUTPUT_COMMENT( "Z ORder" );
+				for( const auto l : m.GetListenerContainer4Keyboard() )
+				{
+					std::cout << l->GetOrder() << " ";
+				}
+				LF();
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT InputManager_Order2::GetTitleFunction() const
 	{
 		return []()->const char*

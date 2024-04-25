@@ -47,7 +47,8 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 
 
-		ret->AddItem( 'z', input_test::InputManager_Order2() );
+		ret->AddItem( 'z', input_test::InputManager_Order1() );
+		ret->AddItem( 'x', input_test::InputManager_Order2() );
 
 
 		ret->AddSplit();
