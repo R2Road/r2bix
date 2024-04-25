@@ -36,7 +36,7 @@ namespace r2bix_component
 			mTextureRenderComponent->ResetVisibleRect();
 		}
 	}
-	void RectComponent::SetSize( const uint32_t width, const uint32_t height, const char fill_char )
+	void RectComponent::Set( const uint32_t width, const uint32_t height, const char fill_char )
 	{
 		if( mCustomTextureComponent )
 		{
@@ -48,8 +48,8 @@ namespace r2bix_component
 			mTextureRenderComponent->ResetVisibleRect();
 		}
 	}
-	void RectComponent::SetSize( const uint32_t width, const uint32_t height )
+	void RectComponent::Set( const uint32_t width, const uint32_t height )
 	{
-		SetSize( width, height, '#' );
+		Set( width, height, '#' );
 	}
 }

@@ -124,7 +124,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							{
 								auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
 								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-								rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize(
+								rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
 									  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 									, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
 									, 'P'
@@ -139,7 +139,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							{
 								auto rect_node = btn_node->AddChild<r2bix_node::RectNode>();
 								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-								rect_node->GetComponent<r2bix_component::RectComponent>()->SetSize(
+								rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
 									btn_node->GetComponent<r2bix_component::UIButtonComponent>()->GetWidth()
 									, btn_node->GetComponent<r2bix_component::UIButtonComponent>()->GetHeight()
 								);

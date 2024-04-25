@@ -554,7 +554,7 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '3' );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '4' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4KeyResponse( [rect_node]( const int, const r2bix_ui::eKeyStatus s )->bool
@@ -741,7 +741,7 @@ namespace node_test
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->SetSize( 3, 3 ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->Set( 3, 3 ) );
 
 				LF();
 
@@ -753,7 +753,7 @@ namespace node_test
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->SetSize( 5, 4, 'x' ));
+				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->Set( 5, 4, 'x' ));
 
 				LF();
 
