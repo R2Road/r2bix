@@ -5,17 +5,17 @@
 
 namespace r2bix_component
 {
-	InputComponent::InputComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<InputComponent>( owner_node )
+	InputMouseComponent::InputMouseComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<InputMouseComponent>( owner_node )
 		, mListener4Mouse()
 	{}
 
 
 
-	void InputComponent::ActivateProcess()
+	void InputMouseComponent::ActivateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener4Mouse );
 	}
-	void InputComponent::DeactivateProcess()
+	void InputMouseComponent::DeactivateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mListener4Mouse );
 	}

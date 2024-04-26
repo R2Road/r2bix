@@ -6,10 +6,10 @@
 
 namespace r2bix_component
 {
-	class InputComponent : public r2bix_component::Component<InputComponent>
+	class InputMouseComponent : public r2bix_component::Component<InputMouseComponent>
 	{
 	public:
-		InputComponent( r2bix_node::Node& owner_node );
+		InputMouseComponent( r2bix_node::Node& owner_node );
 
 
 
