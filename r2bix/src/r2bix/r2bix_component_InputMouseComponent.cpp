@@ -1,4 +1,4 @@
-#include "r2bix_component_InputComponent.h"
+#include "r2bix_component_InputMouseComponent.h"
 
 #include "r2bix_Director.h"
 #include "r2bix_node_Node.h"
