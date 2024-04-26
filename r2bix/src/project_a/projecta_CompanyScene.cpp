@@ -1,7 +1,7 @@
 #include "projecta_CompanyScene.h"
 
 #include "r2bix_Director.h"
-#include "r2bix_component_InputComponent.h"
+#include "r2bix_component_InputKeyboardComponent.h"
 #include "r2bix_component_LabelSComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_node_LabelSNode.h"
@@ -46,8 +46,8 @@ namespace projecta
 		// Exit
 		//
 		{
-			auto component = AddComponent<r2bix_component::InputComponent>();
-			component->SetKeyboardCallback(
+			auto component = AddComponent<r2bix_component::InputKeyboardComponent>();
+			component->SetCallback(
 					r2bix_input::eKeyCode::VK_ESCAPE
 				,	[this]( r2bix_input::eKeyStatus s )->bool
 				{

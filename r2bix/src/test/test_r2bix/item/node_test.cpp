@@ -3,7 +3,7 @@
 #include "r2bix_Director.h"
 #include "r2bix_node_Node.h"
 #include "r2bix_component_CustomTextureComponent.h"
-#include "r2bix_component_InputComponent.h"
+#include "r2bix_component_InputKeyboardComponent.h"
 #include "r2bix_component_LabelSComponent.h"
 #include "r2bix_component_LabelMComponent.h"
 #include "r2bix_component_RectComponent.h"
@@ -440,8 +440,8 @@ namespace node_test
 
 				director.Setup( std::move( temp ) );
 
-				auto input_component = scene->AddComponent<r2bix_component::InputComponent>();
-				input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
+				auto input_component = scene->AddComponent<r2bix_component::InputKeyboardComponent>();
+				input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
 				{
 					director.RequestAbort();
 
@@ -684,8 +684,8 @@ namespace node_test
 
 				director.Setup( std::move( temp ) );
 
-				auto input_component = scene->AddComponent<r2bix_component::InputComponent>();
-				input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
+				auto input_component = scene->AddComponent<r2bix_component::InputKeyboardComponent>();
+				input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
 				{
 					director.RequestAbort();
 

@@ -5,7 +5,7 @@
 #include "r2bix/r2bix_Director.h"
 
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
-#include "r2bix/r2bix_component_InputComponent.h"
+#include "r2bix/r2bix_component_InputKeyboardComponent.h"
 #include "r2bix/r2bix_component_RectComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
 #include "r2bix/r2bix_component_UIButtonComponent.h"
@@ -56,8 +56,8 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 
 						director.Setup( std::move( temp ) );
 
-						auto input_component = scene->AddComponent<r2bix_component::InputComponent>();
-						input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
+						auto input_component = scene->AddComponent<r2bix_component::InputKeyboardComponent>();
+						input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
 						{
 							director.RequestAbort();
 							r2bix_utility::ClearCInputBuffer();

@@ -10,7 +10,7 @@
 
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
-#include "r2bix/r2bix_component_InputComponent.h"
+#include "r2bix/r2bix_component_InputKeyboardComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
 #include "r2bix/r2bix_node_CustomTextureNode.h"
 #include "r2bix/r2bix_utility_InputUtil.h"
@@ -66,12 +66,12 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 
 				director.Setup( std::move( temp ) );
 
-				auto input_component = root_node->AddComponent<r2bix_component::InputComponent>();
+				auto input_component = root_node->AddComponent<r2bix_component::InputKeyboardComponent>();
 
 				//
 				// ESC
 				//
-				input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
+				input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
 				{
 					director.RequestAbort();
 					r2bix_utility::ClearCInputBuffer();
@@ -82,7 +82,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 				//
 				// A
 				//
-				input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_A, [&director]( r2bix_input::eKeyStatus )->bool
+				input_component->SetCallback( r2bix_input::eKeyCode::VK_A, [&director]( r2bix_input::eKeyStatus )->bool
 				{
 					director.StartInputMode();
 
@@ -91,7 +91,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 				//
 				// S
 				//
-				input_component->SetKeyboardCallback( r2bix_input::eKeyCode::VK_S, [&director]( r2bix_input::eKeyStatus )->bool
+				input_component->SetCallback( r2bix_input::eKeyCode::VK_S, [&director]( r2bix_input::eKeyStatus )->bool
 				{
 					director.EndInputMode();
 
