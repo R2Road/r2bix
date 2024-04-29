@@ -4,6 +4,8 @@
 
 #include "r2bix_Director.h"
 
+#include "r2bix_component_CustomTextureComponent.h"
+#include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_UIControlComponent.h"
 
 namespace r2bix_component
@@ -28,13 +30,24 @@ namespace r2bix_component
 
 	void UITextFieldComponent::SetCustomTextureComponent( r2bix_component::CustomTextureComponent* const custom_texture_component )
 	{
-		if( nullptr == mCustomTextureComponent )
+		if( nullptr == custom_texture_component )
 		{
-			R2ASSERT( nullptr != mCustomTextureComponent, "" );
+			R2ASSERT( nullptr != custom_texture_component, "" );
 			return;
 		}
 
 		mCustomTextureComponent = custom_texture_component;
+	}
+
+	void UITextFieldComponent::SetTextureRenderComponent( r2bix_component::TextureRenderComponent* const texture_render_component )
+	{
+		if( nullptr == texture_render_component )
+		{
+			R2ASSERT( nullptr != texture_render_component, "" );
+			return;
+		}
+
+		mTextureRenderComponent = texture_render_component;
 	}
 
 
@@ -46,5 +59,14 @@ namespace r2bix_component
 	void UITextFieldComponent::SetLength( const int length )
 	{
 		mUIControlComponent->SetSize( length, 1 );
+		mCustomTextureComponent->GetTexture()->Reset( length, 1 );
+		mTextureRenderComponent->ResetVisibleRect();
+	}
+
+
+
+	void UITextFieldComponent::SetText( const char* str )
+	{
+		mCustomTextureComponent->GetTexture()->FillString( str );
 	}
 }

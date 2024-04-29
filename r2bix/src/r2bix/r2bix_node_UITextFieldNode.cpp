@@ -31,6 +31,7 @@ namespace r2bix_node
 			//
 			ui_text_field_component->SetUIControlComponent( ui_control_component );
 			ui_text_field_component->SetCustomTextureComponent( custom_texture_component );
+			ui_text_field_component->SetTextureRenderComponent( texture_render_component );
 
 			texture_render_component->SetTexture( custom_texture_component->GetTexture() );
 

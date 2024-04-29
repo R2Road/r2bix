@@ -99,6 +99,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							}
 						}
 
+
 						//
 						// Text Field
 						//
@@ -106,12 +107,14 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							auto tf_node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
 							tf_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 3 );
 							tf_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetLength( 20 );
+							tf_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetText( "ui    text    field~~!");
 							{
 								auto rect_node = tf_node->AddChild<r2bix_node::RectNode>();
+								rect_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -1, -1 );
 								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 								rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
-									  tf_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
-									, tf_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
+									  2
+									, 2
 								);
 
 								tf_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )->bool
