@@ -73,6 +73,7 @@
     <ClCompile Include="src\r2bix\r2bix_component_UIButtonComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_UIControlComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_UIPannelComponent.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_component_UITextFieldComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_director_CoutBufferRedirector.cpp" />
     <ClCompile Include="src\r2bix\r2bix_DebugConfig.cpp" />
     <ClCompile Include="src\r2bix\r2bix_Director.cpp" />
@@ -83,6 +84,7 @@
     <ClCompile Include="src\r2bix\r2bix_node_RectNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_UIButtonNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_UIPannelNode.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_node_UITextFieldNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureTableBase.cpp" />
@@ -271,6 +273,7 @@
     <ClInclude Include="src\r2bix\r2bix_component_UIButtonComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_UIControlComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_UIPannelComponent.h" />
+    <ClInclude Include="src\r2bix\r2bix_component_UITextFieldComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_director_CoutBufferRedirector.h" />
     <ClInclude Include="src\r2bix\r2bix_DebugConfig.h" />
     <ClInclude Include="src\r2bix\r2bix_Director.h" />
@@ -284,6 +287,7 @@
     <ClInclude Include="src\r2bix\r2bix_node_RectNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_UIButtonNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_UIPannelNode.h" />
+    <ClInclude Include="src\r2bix\r2bix_node_UITextFieldNode.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureTableBase.h" />

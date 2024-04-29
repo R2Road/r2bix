@@ -521,6 +521,12 @@
     <ClCompile Include="src\tool\texture_editor\tool_texture_editor_EntryScene.cpp">
       <Filter>tool\texture_editor</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_node_UITextFieldNode.cpp">
+      <Filter>r2bix\node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_UITextFieldComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_component_InputKeyboardComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
@@ -1123,6 +1129,12 @@
     </ClInclude>
     <ClInclude Include="src\tool\texture_editor\tool_texture_editor_EntryScene.h">
       <Filter>tool\texture_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_node_UITextFieldNode.h">
+      <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_UITextFieldComponent.h">
+      <Filter>r2bix\component</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_InputKeyboardComponent.h">
       <Filter>r2bix\component</Filter>
