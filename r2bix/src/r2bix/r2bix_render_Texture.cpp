@@ -207,6 +207,12 @@ namespace r2bix_render
 		}
 	}
 
+	void Texture::FillString( const char* const str )
+	{
+		const std::string_view sv = str;
+		memcpy_s( &mChars[0], mChars.size(), sv.data(), std::min( sv.size(), mChars.size() ) );
+	}
+
 	void Texture::FillColorAll( const r2bix::ColorValue color_value )
 	{
 		std::fill( mColors.begin(), mColors.end(), color_value );

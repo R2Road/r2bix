@@ -30,11 +30,12 @@ r2tm::WriteFunctionT TextureMenu::GetWriteFunction() const
 		ret->AddItem( '1', texture_test::FillCharacterAll() );
 		ret->AddItem( '2', texture_test::FillCharacter() );
 		ret->AddItem( '3', texture_test::FillStringAll() );
-		ret->AddItem( '4', texture_test::FillColorAll() );
-		ret->AddItem( '5', texture_test::FillColor() );
-		ret->AddItem( '6', texture_test::FillColorWithMask() );
-		ret->AddItem( '7', texture_test::BlendColor() );
-		ret->AddItem( '8', texture_test::FillCharacterDisuse() );
+		ret->AddItem( '4', texture_test::FillString() );
+		ret->AddItem( '5', texture_test::FillColorAll() );
+		ret->AddItem( '6', texture_test::FillColor() );
+		ret->AddItem( '7', texture_test::FillColorWithMask() );
+		ret->AddItem( '8', texture_test::BlendColor() );
+		ret->AddItem( '9', texture_test::FillCharacterDisuse() );
 
 
 		ret->AddLineFeed();
