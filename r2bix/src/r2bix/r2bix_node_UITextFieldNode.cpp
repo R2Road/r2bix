@@ -2,8 +2,11 @@
 
 #include "r2bix_Director.h"
 
+#include "r2bix_component_CustomTextureComponent.h"
 #include "r2bix_component_UIControlComponent.h"
 #include "r2bix_component_UITextFieldComponent.h"
+#include "r2bix_component_TextureRenderComponent.h"
+
 
 namespace r2bix_node
 {
@@ -18,6 +21,8 @@ namespace r2bix_node
 			//
 			auto ui_text_field_component = ret->AddComponent<r2bix_component::UITextFieldComponent>();
 			auto ui_control_component = ret->AddComponent<r2bix_component::UIControlComponent>();
+			r2bix_component::TextureRenderComponent* texture_render_component = ret->AddComponent<r2bix_component::TextureRenderComponent>();
+			r2bix_component::CustomTextureComponent* custom_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
 
 
 
@@ -25,6 +30,9 @@ namespace r2bix_node
 			// ¼³Á¤
 			//
 			ui_text_field_component->SetUIControlComponent( ui_control_component );
+			ui_text_field_component->SetCustomTextureComponent( custom_texture_component );
+
+			texture_render_component->SetTexture( custom_texture_component->GetTexture() );
 
 
 

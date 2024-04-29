@@ -8,6 +8,7 @@
 
 namespace r2bix_component
 {
+	class CustomTextureComponent;
 	class UIControlComponent;
 
 	class UITextFieldComponent : public r2bix_component::Component<UITextFieldComponent>
@@ -18,6 +19,7 @@ namespace r2bix_component
 
 
 		void SetUIControlComponent( r2bix_component::UIControlComponent* const ui_control_component );
+		void SetCustomTextureComponent( r2bix_component::CustomTextureComponent* const custom_texture_component );
 
 		int GetLength() const;
 		void SetLength( const int length );
@@ -26,5 +28,6 @@ namespace r2bix_component
 
 	private:
 		r2bix_component::UIControlComponent* mUIControlComponent;
+		r2bix_component::CustomTextureComponent* mCustomTextureComponent;
 	};
 }
