@@ -19,8 +19,8 @@ namespace r2bix_node
 			//
 			// »ý¼º
 			//
-			auto ui_text_field_component = ret->AddComponent<r2bix_component::UITextFieldComponent>();
-			auto ui_control_component = ret->AddComponent<r2bix_component::UIControlComponent>();
+			r2bix_component::UITextFieldComponent* ui_text_field_component = ret->AddComponent<r2bix_component::UITextFieldComponent>();
+			r2bix_component::UIControlComponent* ui_control_component = ret->AddComponent<r2bix_component::UIControlComponent>();
 			r2bix_component::TextureRenderComponent* texture_render_component = ret->AddComponent<r2bix_component::TextureRenderComponent>();
 			r2bix_component::CustomTextureComponent* custom_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
 
@@ -42,6 +42,18 @@ namespace r2bix_node
 			if( true )
 			{
 				ui_text_field_component->Activate();
+			}
+			if( true )
+			{
+				ui_control_component->Activate();
+			}
+			if( true )
+			{
+				texture_render_component->Activate();
+			}
+			if( true )
+			{
+				custom_texture_component->Activate();
 			}
 
 		}
