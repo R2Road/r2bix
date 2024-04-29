@@ -4,6 +4,8 @@
 
 #include "r2bix_Director.h"
 
+#include "r2bix_component_UIControlComponent.h"
+
 namespace r2bix_component
 {
 	UITextFieldComponent::UITextFieldComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UITextFieldComponent>( owner_node )
@@ -21,5 +23,16 @@ namespace r2bix_component
 		}
 
 		mUIControlComponent = ui_control_component;
+	}
+
+
+
+	int UITextFieldComponent::GetLength() const
+	{
+		return mUIControlComponent->GetWidth();
+	}
+	void UITextFieldComponent::SetLength( const int length )
+	{
+		mUIControlComponent->SetSize( length, 1 );
 	}
 }

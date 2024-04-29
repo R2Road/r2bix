@@ -86,7 +86,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						//
 						auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
 						{
-							pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 28, 12 );
+							pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 18, 12 );
 							pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 15, 7 );
 							{
 								auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
@@ -105,10 +105,14 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						{
 							auto tf_node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
 							tf_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 3 );
+							tf_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetLength( 20 );
 							{
 								auto rect_node = tf_node->AddChild<r2bix_node::RectNode>();
 								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-								rect_node->GetComponent<r2bix_component::RectComponent>()->Set( 4, 4 );
+								rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
+									  tf_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
+									, tf_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
+								);
 
 								tf_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )->bool
 								{

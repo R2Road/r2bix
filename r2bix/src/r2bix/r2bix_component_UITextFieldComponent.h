@@ -19,6 +19,9 @@ namespace r2bix_component
 
 		void SetUIControlComponent( r2bix_component::UIControlComponent* const ui_control_component );
 
+		int GetLength() const;
+		void SetLength( const int length );
+
 
 
 	private:
