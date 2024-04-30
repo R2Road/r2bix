@@ -109,44 +109,38 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetLength( 20 );
 							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetText( "ui    text    field~~!");
 							{
-								auto rect_node = text_field_node->AddChild<r2bix_node::RectNode>();
-								rect_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -1, -1 );
-								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-								rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
-									  2
-									, 2
-								);
+								auto custom_texture_component = text_field_node->GetComponent<r2bix_component::CustomTextureComponent>();
 
-								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )->bool
+								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [custom_texture_component]( r2bix_ui::eCursorStatus s )->bool
 								{
 									switch( s )
 									{
 									case r2bix_ui::eCursorStatus::CursorOver:
-										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
+										custom_texture_component->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Red );
 										break;
 									case r2bix_ui::eCursorStatus::CursorMove:
-										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
+										custom_texture_component->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_Green );
 										break;
 									case r2bix_ui::eCursorStatus::CursorLeave:
-										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
+										custom_texture_component->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_White );
 										break;
 									}
 
 									return false;
 								} );
 
-								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4KeyResponse( [rect_node]( int, r2bix_ui::eKeyStatus s )->bool
+								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4KeyResponse( [custom_texture_component]( int, r2bix_ui::eKeyStatus s )->bool
 								{
 									switch( s )
 									{
 									case r2bix_ui::eKeyStatus::Push:
-										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightAqua );
+										custom_texture_component->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightAqua );
 										break;
 									case r2bix_ui::eKeyStatus::Pressed:
-										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightYellow );
+										custom_texture_component->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightYellow );
 										break;
 									case r2bix_ui::eKeyStatus::Release:
-										rect_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightPurple );
+										custom_texture_component->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightPurple );
 										break;
 									}
 
