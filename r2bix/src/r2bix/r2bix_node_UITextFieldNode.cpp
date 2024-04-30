@@ -33,6 +33,7 @@ namespace r2bix_node
 			ui_text_field_component->SetCustomTextureComponent( custom_texture_component );
 			ui_text_field_component->SetTextureRenderComponent( texture_render_component );
 
+			texture_render_component->SetPivotPoint( 0.f, 0.f );
 			texture_render_component->SetTexture( custom_texture_component->GetTexture() );
 
 
