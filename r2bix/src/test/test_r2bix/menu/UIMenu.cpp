@@ -104,12 +104,12 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						// Text Field
 						//
 						{
-							auto tf_node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
-							tf_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 3 );
-							tf_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetLength( 20 );
-							tf_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetText( "ui    text    field~~!");
+							auto text_field_node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
+							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 3 );
+							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetLength( 20 );
+							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetText( "ui    text    field~~!");
 							{
-								auto rect_node = tf_node->AddChild<r2bix_node::RectNode>();
+								auto rect_node = text_field_node->AddChild<r2bix_node::RectNode>();
 								rect_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -1, -1 );
 								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 								rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
@@ -117,7 +117,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 									, 2
 								);
 
-								tf_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )->bool
+								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )->bool
 								{
 									switch( s )
 									{
@@ -135,7 +135,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 									return false;
 								} );
 
-								tf_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4KeyResponse( [rect_node]( int, r2bix_ui::eKeyStatus s )->bool
+								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4KeyResponse( [rect_node]( int, r2bix_ui::eKeyStatus s )->bool
 								{
 									switch( s )
 									{
