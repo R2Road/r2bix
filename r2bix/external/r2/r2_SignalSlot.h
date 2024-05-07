@@ -4,8 +4,8 @@
 // - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
 // - 0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2024.05.06 PM.04.23
-// # Version			: 1.0.0
+// # Last Update		: 2024.05.07 PM.04.59
+// # Version			: 1.0.1
 //
 
 //
@@ -44,6 +44,9 @@ namespace r2
 
 
 	public:
+		Slot() : mSignal( nullptr ), mCallback( []( ARGS_T ... ) { return RETURN_T(); } )
+		{}
+
 		explicit Slot( const CallbackT& call_back ) : mSignal( nullptr ), mCallback(call_back) {}
 		~Slot()
 		{
@@ -57,6 +60,14 @@ namespace r2
 				return ( o->*c )( args ... );
 			}
 		) {}
+
+
+	private:
+		// none copy
+		Slot( const Slot& ) = delete;
+		Slot( Slot&& ) = delete;
+		Slot& operator=( const Slot& ) = delete;
+		Slot& operator=( Slot&& ) = delete;
 
 
 	private:
@@ -75,6 +86,12 @@ namespace r2
 			mSignal->Disconnect( this );
 
 			// mSignal 의 초기화는 Signal::Disconnect 안에서 해준다.
+		}
+
+
+		void SetCallback( const CallbackT call_back )
+		{
+			mCallback = call_back;
 		}
 
 
