@@ -38,8 +38,8 @@ namespace r2
 	{
 	public:
 		friend class Signal<RETURN_T, ARGS_T ...>;
-		using SignalT = Signal<RETURN_T, ARGS_T ...>;
 
+		using SignalT = Signal<RETURN_T, ARGS_T ...>;
 		using CallbackT = std::function<RETURN_T( ARGS_T ... )>;
 
 
@@ -92,6 +92,20 @@ namespace r2
 		void SetCallback( const CallbackT call_back )
 		{
 			mCallback = call_back;
+		}
+		template<typename OWNER_T>
+		void SetCallback( OWNER_T* o, RETURN_T( OWNER_T::* c )( ARGS_T ... ) )
+		{
+			mCallback = [o, c]( ARGS_T ... args )
+			{
+				return ( o->*c )( args ... );
+			};
+		}
+
+
+		RETURN_T Do( ARGS_T ... args )
+		{
+			return mCallback( args ... );
 		}
 
 
