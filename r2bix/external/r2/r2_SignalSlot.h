@@ -44,37 +44,40 @@ namespace r2
 
 
 	public:
-		Slot() : mSignal( nullptr ), mCallback( []( ARGS_T ... ) { return RETURN_T(); } )
-		{}
-
-		explicit Slot( const CallbackT& call_back ) : mSignal( nullptr ), mCallback(call_back) {}
-		~Slot()
+		Slot() : mSignal( nullptr ), mCallback()
 		{
-			R2ASSERT( nullptr == mSignal, "Slot : Hey Call Disconnect()" );
+			ClearCallback();
 		}
-
+		explicit Slot( const CallbackT& call_back ) : mSignal( nullptr ), mCallback( call_back )
+		{}
 		template<typename OWNER_T>
 		explicit Slot( OWNER_T* o, RETURN_T( OWNER_T::* c )( ARGS_T ... ) ) : mSignal( nullptr ), mCallback(
 			[o, c]( ARGS_T ... args )
 			{
 				return ( o->*c )( args ... );
-			}
-		) {}
+			} )
+		{}
+
+		~Slot()
+		{
+			R2ASSERT( nullptr == mSignal, "Slot : Hey Call Disconnect()" );
+		}
 
 
+		//
+		// None Copy
+		//
 	private:
-		// none copy
 		Slot( const Slot& ) = delete;
 		Slot( Slot&& ) = delete;
 		Slot& operator=( const Slot& ) = delete;
 		Slot& operator=( Slot&& ) = delete;
 
 
-	private:
-		void Connect( SignalT* const signal )
-		{
-			mSignal = signal;
-		}
+		//
+		// Disconnect
+		//  > mSignal의 할당, 초기화는 Signal::Disconnect 안에서 해준다.
+		//
 	public:
 		void Disconnect()
 		{
@@ -84,11 +87,12 @@ namespace r2
 			}
 
 			mSignal->Disconnect( this );
-
-			// mSignal 의 초기화는 Signal::Disconnect 안에서 해준다.
 		}
 
 
+		//
+		// Callback
+		//
 		void SetCallback( const CallbackT call_back )
 		{
 			mCallback = call_back;
@@ -102,8 +106,16 @@ namespace r2
 			};
 		}
 
+		void ClearCallback()
+		{
+			mCallback = []( ARGS_T ... ) { return RETURN_T(); };
+		}
 
-		RETURN_T Do( ARGS_T ... args )
+
+		//
+		//
+		//
+		inline RETURN_T Do( ARGS_T ... args )
 		{
 			return mCallback( args ... );
 		}
@@ -134,6 +146,9 @@ namespace r2
 		}
 
 
+		//
+		// Iteration
+		//
 		ConstIteratorT begin() const
 		{
 			return mSlotList.cbegin();
@@ -144,6 +159,9 @@ namespace r2
 		}
 
 
+		//
+		// Connection
+		//
 		void Connect( SlotT* const slot )
 		{
 			if( mSlotList.end() != get( slot ) )
@@ -151,7 +169,7 @@ namespace r2
 				return;
 			}
 
-			slot->Connect( this );
+			slot->mSignal = this;
 			mSlotList.push_back( slot );
 		}
 		void Disconnect( SlotT* const slot )

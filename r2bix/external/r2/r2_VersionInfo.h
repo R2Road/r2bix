@@ -24,7 +24,7 @@ namespace r2
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '1';
 		const char VersionNumber_3 = '0';
-		const char VersionNumber_4 = '4';
+		const char VersionNumber_4 = '5';
 
 		const char* const String4VersionRule =
 					"### Version Rule ###"
@@ -46,6 +46,7 @@ namespace r2
 			"\n"	"[o] " "Add Class      : r2 - RectIterator"
 			"\n"	"[o] " "Update Class   : r2 - Point - Add Support Type - short, unsigned short"
 			"\n"	"[o] " "Add Class      : r2 - Signal, Slot"
+			"\n"	"[o] " "Add Class      : r2 - TaskQueue"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
