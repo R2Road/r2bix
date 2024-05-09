@@ -14,9 +14,14 @@ namespace r2bix_director
 	public:
 		DefarredTaskQueue();
 
+		
+
+		void Swap();
+
 
 
 	private:
 		r2::TaskQueue mQueueList[TaskQueueCount];
+		int mCurrentQueueIndex;
 	};
 }
