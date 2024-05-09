@@ -62,4 +62,56 @@ namespace director_defarred_task_queue_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Add::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Director : DefarredTaskQueue : Add";
+		};
+	}
+	r2tm::DoFunctionT Add::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( r2bix_director::DefarredTaskQueue q );
+
+			LS();
+
+			{
+				EXPECT_TRUE( q.Empty() );
+				EXPECT_EQ( 0, q.Size() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( q.Add( [](){} ) );
+
+				LF();
+
+				EXPECT_FALSE( q.Empty() );
+				EXPECT_EQ( 1, q.Size() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( q.Add( [](){} ) );
+
+				LF();
+
+				EXPECT_FALSE( q.Empty() );
+				EXPECT_EQ( 2, q.Size() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

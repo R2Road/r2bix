@@ -46,4 +46,10 @@ namespace r2bix_director
 			mCurrentQueueIndex = 0;
 		}
 	}
+
+
+	void DefarredTaskQueue::Add( const TaskT& task )
+	{
+		mQueueList[mCurrentQueueIndex].Add( task );
+	}
 }

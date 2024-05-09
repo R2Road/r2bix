@@ -9,6 +9,8 @@ namespace r2bix_director
 	private:
 		enum { TaskQueueCount = 2 };
 		using ContainerT = r2::TaskQueue;
+		using TaskT = typename r2::TaskQueue::Task;
+		using SizeT = typename r2::TaskQueue::SizeT;
 
 
 
@@ -20,6 +22,22 @@ namespace r2bix_director
 		void Process();
 	private:
 		void Swap();
+
+
+
+	public:
+		void Add( const TaskT& task );
+
+
+
+		SizeT Size() const
+		{
+			return mQueueList[mCurrentQueueIndex].Size();
+		}
+		bool Empty() const
+		{
+			return mQueueList[mCurrentQueueIndex].Empty();
+		}
 
 
 
