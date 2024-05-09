@@ -47,6 +47,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 		ret->AddItem( 'w', director_defarred_task_queue_test::Declaration() );
 		ret->AddItem( 'e', director_defarred_task_queue_test::Size() );
 		ret->AddItem( 'r', director_defarred_task_queue_test::Add() );
+		ret->AddItem( 't', director_defarred_task_queue_test::Process() );
 
 
 		ret->AddLineFeed();

@@ -114,4 +114,70 @@ namespace director_defarred_task_queue_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Process::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Director : DefarredTaskQueue : Process";
+		};
+	}
+	r2tm::DoFunctionT Process::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( r2bix_director::DefarredTaskQueue q );
+			DECLARATION_MAIN( int i = 0; );
+
+			LS();
+
+			{
+				PROCESS_MAIN( q.Add( [&i](){ ++i; } ) );
+				PROCESS_MAIN( q.Add( [&i](){ ++++i; } ) );
+
+				LF();
+
+				EXPECT_FALSE( q.Empty() );
+				EXPECT_EQ( 2, q.Size() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Process는 쌓인 Task를 모두 호출 하고 삭제한다." );
+
+				LF();
+
+				PROCESS_MAIN( q.Process() );
+
+				LF();
+
+				EXPECT_EQ( 3, i );
+			}
+
+			LS();
+
+			{
+				OUTPUT_COMMENT( "Process()가 불리면 Q가 Swap 된다." );
+				OUTPUT_COMMENT( "위에서 처리를 담당한 Q의 확인은 Process를 한번 더 부르고 확인 한다." );
+
+				LF();
+
+				PROCESS_MAIN( q.Process() );
+
+				LF();
+
+				EXPECT_TRUE( q.Empty() );
+				EXPECT_EQ( 0, q.Size() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
