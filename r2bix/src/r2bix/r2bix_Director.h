@@ -91,6 +91,13 @@ namespace r2bix
 
 
 
+		//
+		//
+		//
+		void AddDefarredTask( const r2bix_director::DefarredTaskQueue::TaskT& task );
+
+
+
 	private:
 		r2bix_director::ScreenBufferManager mScreenBufferManager;
 		r2bix_director::Scheduler mScheduler;

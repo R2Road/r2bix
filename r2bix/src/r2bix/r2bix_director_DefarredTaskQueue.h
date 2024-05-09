@@ -9,6 +9,7 @@ namespace r2bix_director
 	private:
 		enum { TaskQueueCount = 2 };
 		using ContainerT = r2::TaskQueue;
+	public:
 		using TaskT = typename r2::TaskQueue::Task;
 		using SizeT = typename r2::TaskQueue::SizeT;
 

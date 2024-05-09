@@ -128,4 +128,11 @@ namespace r2bix
 		mRenderMode = eRenderMode::Normal;
 		mScreenBufferManager.CloseOriginalBuffer();
 	}
+
+
+
+	void Director::AddDefarredTask( const r2bix_director::DefarredTaskQueue::TaskT& task )
+	{
+		mDefarredTaskQueue.Add( task );
+	}
 }
