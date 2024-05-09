@@ -18,6 +18,7 @@ namespace r2bix_director
 		
 
 		void Process();
+	private:
 		void Swap();
 
 
