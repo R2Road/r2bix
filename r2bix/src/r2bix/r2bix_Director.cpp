@@ -62,6 +62,8 @@ namespace r2bix
 			}
 
 			mScheduler.Do();
+
+			mDefarredTaskQueue.Process();
 		}
 	}
 	void Director::onUpdate( const float delta_time )
