@@ -16,6 +16,7 @@ namespace r2bix_director
 
 		
 
+		void Process();
 		void Swap();
 
 
