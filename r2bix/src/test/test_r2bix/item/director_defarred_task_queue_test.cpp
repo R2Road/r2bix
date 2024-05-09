@@ -29,4 +29,37 @@ namespace director_defarred_task_queue_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Size::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Director : DefarredTaskQueue : Size";
+		};
+	}
+	r2tm::DoFunctionT Size::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( r2bix_director::DefarredTaskQueue q );
+
+			LS();
+
+			{
+				OUTPUT_SIZE( q );
+
+				LF();
+
+				OUTPUT_BINARIES( &q, 1 );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
