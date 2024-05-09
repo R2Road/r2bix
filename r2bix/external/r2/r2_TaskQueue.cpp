@@ -12,7 +12,7 @@ namespace r2
 		mContainer.push_back( task );
 	}
 
-	void TaskQueue::Update()
+	void TaskQueue::Process()
 	{
 		for( const auto& task : mContainer )
 		{

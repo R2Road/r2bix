@@ -4,8 +4,8 @@
 // - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
 // - 0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2024.05.08 PM.03.38
-// # Version			: 1.0.0
+// # Last Update		: 2024.05.09 AM.11.42
+// # Version			: 1.0.1
 //
 
 #pragma once
@@ -42,7 +42,7 @@ namespace r2
 
 
 
-		void Update();
+		void Process();
 
 
 
