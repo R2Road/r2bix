@@ -533,6 +533,12 @@
     <ClCompile Include="external\r2\r2_PointInt.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_director_DefarredTaskQueue.cpp">
+      <Filter>r2bix\director</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\item\director_defarred_task_queue_test.cpp">
+      <Filter>test\test_r2bix\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -1147,6 +1153,12 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_Point.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_director_DefarredTaskQueue.h">
+      <Filter>r2bix\director</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\item\director_defarred_task_queue_test.h">
+      <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
