@@ -12,6 +12,11 @@ namespace r2bix_director
 		// 보유한 모든 Task가 제거 될 때 까지 처리를 반복한다.
 		//
 
+		if( Empty() )
+		{
+			return;
+		}
+
 		r2::TaskQueue* target_queue = nullptr;
 
 		do
