@@ -8,6 +8,7 @@ namespace r2bix_director
 	{
 	private:
 		enum { TaskQueueCount = 2 };
+		using ContainerT = r2::TaskQueue;
 
 
 
@@ -22,7 +23,7 @@ namespace r2bix_director
 
 
 	private:
-		r2::TaskQueue mQueueList[TaskQueueCount];
+		ContainerT mQueueList[TaskQueueCount];
 		int mCurrentQueueIndex;
 	};
 }
