@@ -180,4 +180,81 @@ namespace director_defarred_task_queue_test
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT TaskBringsTask::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Director : DefarredTaskQueue : Task Brings Task";
+		};
+	}
+	r2tm::DoFunctionT TaskBringsTask::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "Task 처리 과정에서 Task가 추가된 경우" );
+
+			LS();
+
+			DECLARATION_MAIN( r2bix_director::DefarredTaskQueue q );
+			DECLARATION_MAIN( int i = 0 );
+
+			LS();
+
+			{
+				PROCESS_MAIN( q.Add( [&q, &i]()
+				{
+					++i;
+					q.Add( [&q, &i]()
+					{
+						++++++i;
+					} );
+				} ) );
+
+				LF();
+
+				EXPECT_FALSE( q.Empty() );
+				EXPECT_EQ( 1, q.Size() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_COMMENT( "Process()는 Q Swap 이후에" );
+				OUTPUT_COMMENT( "다음 Q에 Task가 남아있다면 즉시 다음 Q를 처리한다." );
+
+				LF();
+
+				PROCESS_MAIN( q.Process() );
+
+				LF();
+
+				EXPECT_EQ( 4, i );
+
+				LF();
+
+				EXPECT_TRUE( q.Empty() );
+				EXPECT_EQ( 0, q.Size() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( q.Process() );
+
+				LF();
+
+				EXPECT_TRUE( q.Empty() );
+				EXPECT_EQ( 0, q.Size() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
