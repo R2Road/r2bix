@@ -2,4 +2,6 @@
 
 namespace r2bix_director
 {
+	DefarredTaskQueue::DefarredTaskQueue() : mQueueList()
+	{}
 }
