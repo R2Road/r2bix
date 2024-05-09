@@ -5,6 +5,7 @@
 #include "r2_SizeInt.h"
 
 #include "r2bix_director_Config.h"
+#include "r2bix_director_DefarredTaskQueue.h"
 #include "r2bix_director_Scheduler.h"
 #include "r2bix_director_ScreenBufferManager.h"
 #include "r2bix_input_InputManager.h"
@@ -105,5 +106,7 @@ namespace r2bix
 
 		r2bix_node::NodeUp mCurrentSceneNode;
 		r2bix_node::NodeUp mNextSceneNode;
+
+		r2bix_director::DefarredTaskQueue mDefarredTaskQueue;
 	};
 }
