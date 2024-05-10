@@ -4,8 +4,8 @@
 // - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
 // - 0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2024.05.10 PM.03.30
-// # Version			: 1.0.2
+// # Last Update		: 2024.05.10 PM.04.10
+// # Version			: 1.0.3
 //
 
 //
@@ -176,6 +176,16 @@ namespace r2
 	public:
 		void Connect( SlotT* const slot )
 		{
+			if( nullptr == slot )
+			{
+				return;
+			}
+
+			if( mSlotList.end() != get( slot ) )
+			{
+				return;
+			}
+
 			if( mbEmit )
 			{
 				mDefarredConnectContainer.push_back( slot );
@@ -188,11 +198,6 @@ namespace r2
 	private:
 		void connectProcess( SlotT* const slot )
 		{
-			if( mSlotList.end() != get( slot ) )
-			{
-				return;
-			}
-
 			slot->mSignal = this;
 			mSlotList.push_back( slot );
 		}
@@ -200,6 +205,18 @@ namespace r2
 	public:
 		void Disconnect( SlotT* const slot )
 		{
+			if( nullptr == slot )
+			{
+				return;
+			}
+
+			if( mSlotList.end() == get( slot ) )
+			{
+				return;
+			}
+
+			slot->mSignal = nullptr;
+
 			if( mbEmit )
 			{
 				mDefarredDisconnectContainer.push_back( slot );
@@ -212,14 +229,7 @@ namespace r2
 	private:
 		void disconnectProcess( SlotT* const slot )
 		{
-			IteratorT itor = get( slot );
-			if( mSlotList.end() == itor )
-			{
-				return;
-			}
-
-			( *itor )->mSignal = nullptr;
-			mSlotList.erase( itor );
+			mSlotList.remove( slot );
 		}
 		IteratorT get( const SlotT* const slot )
 		{
