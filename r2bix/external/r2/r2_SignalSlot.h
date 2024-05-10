@@ -4,8 +4,8 @@
 // - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
 // - 0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2024.05.07 PM.04.59
-// # Version			: 1.0.1
+// # Last Update		: 2024.05.10 PM.03.30
+// # Version			: 1.0.2
 //
 
 //
@@ -23,6 +23,7 @@
 #pragma once
 
 #include <functional>
+#include <list>
 
 #include "r2_Assert.h"
 
@@ -41,6 +42,7 @@ namespace r2
 
 		using SignalT = Signal<RETURN_T, ARGS_T ...>;
 		using CallbackT = std::function<RETURN_T( ARGS_T ... )>;
+
 
 
 	public:
@@ -64,6 +66,7 @@ namespace r2
 		}
 
 
+
 		//
 		// None Copy
 		//
@@ -72,6 +75,7 @@ namespace r2
 		Slot( Slot&& ) = delete;
 		Slot& operator=( const Slot& ) = delete;
 		Slot& operator=( Slot&& ) = delete;
+
 
 
 		//
@@ -88,6 +92,7 @@ namespace r2
 
 			mSignal->Disconnect( this );
 		}
+
 
 
 		//
@@ -112,6 +117,7 @@ namespace r2
 		}
 
 
+
 		//
 		//
 		//
@@ -119,6 +125,7 @@ namespace r2
 		{
 			return mCallback( args ... );
 		}
+
 
 
 	private:
@@ -136,14 +143,17 @@ namespace r2
 		using ContainerT = std::list<SlotT*>;
 		using IteratorT = typename ContainerT::iterator;
 		using ConstIteratorT = typename ContainerT::const_iterator;
+		using SizeT = typename ContainerT::size_type;
 
 
-		Signal() : mSlotList()
+
+		Signal() : mSlotList(), mbEmit( false ), mDefarredConnectContainer(), mDefarredDisconnectContainer()
 		{}
 		~Signal()
 		{
 			DisconnectAll();
 		}
+
 
 
 		//
@@ -159,10 +169,24 @@ namespace r2
 		}
 
 
+
 		//
 		// Connection
 		//
+	public:
 		void Connect( SlotT* const slot )
+		{
+			if( mbEmit )
+			{
+				mDefarredConnectContainer.push_back( slot );
+			}
+			else
+			{
+				connectProcess( slot );
+			}
+		}
+	private:
+		void connectProcess( SlotT* const slot )
 		{
 			if( mSlotList.end() != get( slot ) )
 			{
@@ -172,7 +196,21 @@ namespace r2
 			slot->mSignal = this;
 			mSlotList.push_back( slot );
 		}
+
+	public:
 		void Disconnect( SlotT* const slot )
+		{
+			if( mbEmit )
+			{
+				mDefarredDisconnectContainer.push_back( slot );
+			}
+			else
+			{
+				disconnectProcess( slot );
+			}
+		}
+	private:
+		void disconnectProcess( SlotT* const slot )
 		{
 			IteratorT itor = get( slot );
 			if( mSlotList.end() == itor )
@@ -183,15 +221,6 @@ namespace r2
 			( *itor )->mSignal = nullptr;
 			mSlotList.erase( itor );
 		}
-		void DisconnectAll()
-		{
-			for( auto& slot : mSlotList )
-			{
-				slot->mSignal = nullptr;
-			}
-			mSlotList.clear();
-		}
-	private:
 		IteratorT get( const SlotT* const slot )
 		{
 			for( auto cur = mSlotList.begin(), end = mSlotList.end(); end != cur; ++cur )
@@ -205,24 +234,56 @@ namespace r2
 			return mSlotList.end();
 		}
 
-
 	public:
+		void DisconnectAll()
+		{
+			for( auto& slot : mSlotList )
+			{
+				slot->mSignal = nullptr;
+			}
+			mSlotList.clear();
+		}
+
+
+
 		void Emit( ARGS_T ... args )
 		{
+			mbEmit = true;
+
 			for( auto& slot : mSlotList )
 			{
 				slot->mCallback( args... );
 			}
+
+			mbEmit = false;
+
+			//
+			// Defarred Connection
+			//
+			for( const auto slot : mDefarredConnectContainer )
+			{
+				connectProcess( slot );
+			}
+			for( const auto slot : mDefarredDisconnectContainer )
+			{
+				disconnectProcess( slot );
+			}
 		}
 
 
-		std::size_t Count() const
+
+		SizeT Count() const
 		{
 			return mSlotList.size();
 		}
 
 
+
 	private:
 		ContainerT mSlotList;
+
+		bool mbEmit;
+		ContainerT mDefarredConnectContainer;
+		ContainerT mDefarredDisconnectContainer;
 	};
 }
