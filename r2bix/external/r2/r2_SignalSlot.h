@@ -4,8 +4,8 @@
 // - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
 // - 0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2024.05.10 PM.04.10
-// # Version			: 1.0.3
+// # Last Update		: 2024.05.13 AM.08.53
+// # Version			: 1.0.4
 //
 
 //
@@ -24,8 +24,6 @@
 
 #include <functional>
 #include <list>
-
-#include "r2_Assert.h"
 
 namespace r2
 {
@@ -62,7 +60,7 @@ namespace r2
 
 		~Slot()
 		{
-			R2ASSERT( nullptr == mSignal, "Slot : Hey Call Disconnect()" );
+			Disconnect();
 		}
 
 
