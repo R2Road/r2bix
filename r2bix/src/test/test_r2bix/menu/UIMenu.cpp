@@ -153,8 +153,6 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							}
 						}
 					}
-					slot_cursor_response.Disconnect();
-					slot_key_response.Disconnect();
 
 					//
 					// Process
