@@ -90,10 +90,14 @@ namespace r2bix_component
 	{
 		mMyUIControlComponent = ui_control_component;
 
-		if( mMyUIControlComponent )
-		{
-			mMyUIControlComponent->SetCallback4KeyResponse( []( int, r2bix_ui::eKeyStatus )->bool { return true; } );
-		}
+		//
+		// 키 입력이 다른 곳으로 넘어가지 않도록 막는 코드.
+		// > 일단 비활성화( Signal/Slot 작업중 2024.05.13 )
+		//
+		//if( mMyUIControlComponent )
+		//{
+		//	mMyUIControlComponent->SetCallback4KeyResponse( []( int, r2bix_ui::eKeyStatus )->bool { return true; } );
+		//}
 	}
 
 

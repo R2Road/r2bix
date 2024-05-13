@@ -18,8 +18,8 @@ namespace r2bix_component
 		, mCursorState( r2bix_ui::eCursorStatus::None )
 		, mKeyStatus( r2bix_ui::eKeyStatus::None)
 
-		, mCallback4CursorResponse( []( r2bix_ui::eCursorStatus ) {} )
-		, mCallback4KeyResponse( []( int, r2bix_ui::eKeyStatus )->bool { return false; } )
+		, mSignal4CursorResponse()
+		, mSignal4KeyResponse()
 
 		, mUIPannelComponent( nullptr )
 	{}
@@ -75,10 +75,7 @@ namespace r2bix_component
 			{
 				mCursorState = r2bix_ui::eCursorStatus::CursorOver;
 
-				if( mCallback4CursorResponse )
-				{
-					mCallback4CursorResponse( mCursorState );
-				}
+				mSignal4CursorResponse.Emit( mCursorState );
 			}
 			else
 			{
@@ -96,19 +93,13 @@ namespace r2bix_component
 
 				mCursorState = r2bix_ui::eCursorStatus::CursorMove;
 
-				if( mCallback4CursorResponse )
-				{
-					mCallback4CursorResponse( mCursorState );
-				}
+				mSignal4CursorResponse.Emit( mCursorState );
 			}
 			else
 			{
 				mCursorState = r2bix_ui::eCursorStatus::CursorLeave;
 
-				if( mCallback4CursorResponse )
-				{
-					mCallback4CursorResponse( mCursorState );
-				}
+				mSignal4CursorResponse.Emit( mCursorState );
 			}
 			break;
 		}
@@ -167,11 +158,8 @@ namespace r2bix_component
 			return false;
 		}
 
-		if( mCallback4KeyResponse )
-		{
-			return mCallback4KeyResponse( key_index, mKeyStatus );
-		}
+		mSignal4KeyResponse.Emit( key_index, mKeyStatus );
 
-		return false;
+		return true;
 	}
 }

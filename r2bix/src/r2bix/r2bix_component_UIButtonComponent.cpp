@@ -8,8 +8,8 @@ namespace r2bix_component
 {
 	UIButtonComponent::UIButtonComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIButtonComponent>( owner_node )
 		, mMyUIControlComponent( nullptr )
-		, mCallback4CursorStatusChanged()
-		, mCallback4KeyStatusChanged()
+		, mSlot4CursorStatusChanged()
+		, mSlot4KeyStatusChanged()
 	{}
 
 
@@ -17,17 +17,10 @@ namespace r2bix_component
 	void UIButtonComponent::EnterProcess()
 	{
 		//
+		// 
 		//
-		//
-		mMyUIControlComponent->SetCallback4CursorResponse( [this]( const r2bix_ui::eCursorStatus s )->bool
-		{
-			return mCallback4CursorStatusChanged( s );
-		} );
-
-		mMyUIControlComponent->SetCallback4KeyResponse( [this]( const int key_index, const r2bix_ui::eKeyStatus s )->bool
-		{
-			return mCallback4KeyStatusChanged( key_index, s );
-		} );
+		mMyUIControlComponent->ConnectSlot4CursorResponse( &mSlot4CursorStatusChanged );
+		mMyUIControlComponent->ConnectSlot4KeyResponse( &mSlot4KeyStatusChanged );
 	}
 
 
@@ -50,10 +43,10 @@ namespace r2bix_component
 
 	void UIButtonComponent::SetCallback4CursorResponse( const Callback4CursorStatusChangedT& callback )
 	{
-		mCallback4CursorStatusChanged = callback;
+		mSlot4CursorStatusChanged.SetCallback( callback );
 	}
 	void UIButtonComponent::SetCallback4KeyResponse( const Callback4KeyStatusChangedT& callback )
 	{
-		mCallback4KeyStatusChanged = callback;
+		mSlot4KeyStatusChanged.SetCallback( callback );
 	}
 }

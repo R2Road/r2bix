@@ -978,8 +978,8 @@ namespace component_test
 			LS();
 
 			{
-				EXPECT_TRUE( nullptr != ui_control->GetCallback4CursorResponse() );
-				EXPECT_TRUE( nullptr != ui_control->GetCallback4KeyResponse() );
+				EXPECT_EQ( 0, ui_control->GetSlotCount4CursorResponse() );
+				EXPECT_EQ( 0, ui_control->GetSlotCount4KeyResponse() );
 			}
 
 			LS();
@@ -1139,6 +1139,7 @@ namespace component_test
 
 			LS();
 
+			DECLARATION_MAIN( r2bix_component::UIControlComponent::Slot4CursorResponseT slot );
 			{
 				DECLARATION_MAIN( bool bOver = false; );
 
@@ -1148,7 +1149,7 @@ namespace component_test
 
 				LF();
 
-				PROCESS_MAIN( u->SetCallback4CursorResponse( [&bOver]( r2bix_ui::eCursorStatus s )
+				PROCESS_MAIN( slot.SetCallback( [&bOver]( r2bix_ui::eCursorStatus s )
 				{
 					switch( s )
 					{
@@ -1160,6 +1161,7 @@ namespace component_test
 						break;
 					}
 				} ) );
+				PROCESS_MAIN( u->ConnectSlot4CursorResponse( &slot ) );
 
 				LF();
 

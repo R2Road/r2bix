@@ -463,6 +463,10 @@ namespace node_test
 			//
 			// Pannel
 			//
+			r2bix_component::UIControlComponent::Slot4CursorResponseT slot_cursor_response_1;
+			r2bix_component::UIControlComponent::Slot4CursorResponseT slot_cursor_response_2;
+			r2bix_component::UIControlComponent::Slot4CursorResponseT slot_cursor_response_3;
+			r2bix_component::UIControlComponent::Slot4KeyResponseT slot_key_response_4;
 			{
 				// Pannel 1
 				{
@@ -473,7 +477,7 @@ namespace node_test
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '1' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
-					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )
+					slot_cursor_response_1.SetCallback( [rect_node]( r2bix_ui::eCursorStatus s )
 					{
 						switch( s )
 						{
@@ -488,6 +492,7 @@ namespace node_test
 							break;
 						}
 					} );
+					node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4CursorResponse( &slot_cursor_response_1 );
 
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 1, 1 );
 				}
@@ -501,7 +506,7 @@ namespace node_test
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '2' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
-					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )
+					slot_cursor_response_2.SetCallback( [rect_node]( r2bix_ui::eCursorStatus s )
 					{
 						switch( s )
 						{
@@ -516,6 +521,7 @@ namespace node_test
 							break;
 						}
 					} );
+					node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4CursorResponse( &slot_cursor_response_2 );
 
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 5 );
 				}
@@ -529,7 +535,7 @@ namespace node_test
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 8, 4, '3' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
-					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )
+					slot_cursor_response_3.SetCallback( [rect_node]( r2bix_ui::eCursorStatus s )
 					{
 						switch( s )
 						{
@@ -544,6 +550,7 @@ namespace node_test
 							break;
 						}
 					} );
+					node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4CursorResponse( &slot_cursor_response_3 );
 
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 3, 3 );
 				}
@@ -557,7 +564,7 @@ namespace node_test
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.f, 0.f }, 15, 6, " Key Test" );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 15, 6 );
-					node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4KeyResponse( [rect_node]( const int, const r2bix_ui::eKeyStatus s )->bool
+					slot_key_response_4.SetCallback( [rect_node]( const int, const r2bix_ui::eKeyStatus s )->bool
 					{
 						switch( s )
 						{
@@ -577,6 +584,7 @@ namespace node_test
 
 						return true;
 					} );
+					node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4KeyResponse( &slot_key_response_4 );
 
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 20, 3 );
 				}

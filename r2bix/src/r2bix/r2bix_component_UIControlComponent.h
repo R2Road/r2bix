@@ -2,6 +2,7 @@
 
 #include <functional>
 
+#include "r2_SignalSlot.h"
 #include "r2_SizeInt.h"
 
 #include "r2bix_component_Component.h"
@@ -15,8 +16,14 @@ namespace r2bix_component
 	class UIControlComponent : public r2bix_component::Component<UIControlComponent>
 	{
 	public:
-		using Callback4CursorResponseT = std::function<void( r2bix_ui::eCursorStatus )>;
-		using Callback4KeyResponseT = std::function<bool( int, r2bix_ui::eKeyStatus )>;
+		using Signal4CursorResponseT = r2::Signal<void, r2bix_ui::eCursorStatus>;
+		using Signal4KeyResponseT = r2::Signal<bool, int, r2bix_ui::eKeyStatus>;
+
+		using Slot4CursorResponseT = typename Signal4CursorResponseT::SlotT;
+		using Slot4KeyResponseT = typename Signal4KeyResponseT::SlotT;
+
+		using SlotCount4CursorResponseT = typename Signal4CursorResponseT::SizeT;
+		using SlotCount4KeyResponseT = typename Signal4KeyResponseT::SizeT;
 
 
 
@@ -75,25 +82,27 @@ namespace r2bix_component
 
 
 		//
-		// Callback
+		// Signal/Slot
 		//
-		void SetCallback4CursorResponse( const Callback4CursorResponseT& callback )
+		void ConnectSlot4CursorResponse( Slot4CursorResponseT* slot )
 		{
-			mCallback4CursorResponse = callback;
+			mSignal4CursorResponse.Connect( slot );
 		}
-		const Callback4CursorResponseT& GetCallback4CursorResponse() const
+		void ConnectSlot4KeyResponse( Slot4KeyResponseT* slot )
 		{
-			return mCallback4CursorResponse;
+			mSignal4KeyResponse.Connect( slot );
 		}
 
-		void SetCallback4KeyResponse( const Callback4KeyResponseT& callback )
+		SlotCount4CursorResponseT GetSlotCount4CursorResponse() const
 		{
-			mCallback4KeyResponse = callback;
+			return mSignal4CursorResponse.Count();
 		}
-		const Callback4KeyResponseT& GetCallback4KeyResponse() const
+		SlotCount4KeyResponseT GetSlotCount4KeyResponse() const
 		{
-			return mCallback4KeyResponse;
+			return mSignal4KeyResponse.Count();
 		}
+
+
 
 
 
@@ -113,8 +122,8 @@ namespace r2bix_component
 		r2bix_ui::eCursorStatus mCursorState;
 		r2bix_ui::eKeyStatus mKeyStatus;
 
-		Callback4CursorResponseT mCallback4CursorResponse;
-		Callback4KeyResponseT mCallback4KeyResponse;
+		Signal4CursorResponseT mSignal4CursorResponse;
+		Signal4KeyResponseT mSignal4KeyResponse;
 
 		UIPannelComponent* mUIPannelComponent;
 	};

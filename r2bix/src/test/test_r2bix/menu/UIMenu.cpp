@@ -80,6 +80,8 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					// Test
 					//
+					r2bix_component::UIControlComponent::Slot4CursorResponseT slot_cursor_response;
+					r2bix_component::UIControlComponent::Slot4KeyResponseT slot_key_response;
 					{
 						//
 						// Pannel
@@ -111,7 +113,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							{
 								auto custom_texture_component = text_field_node->GetComponent<r2bix_component::CustomTextureComponent>();
 
-								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4CursorResponse( [custom_texture_component]( r2bix_ui::eCursorStatus s )->bool
+								slot_cursor_response.SetCallback( [custom_texture_component]( r2bix_ui::eCursorStatus s )->bool
 								{
 									switch( s )
 									{
@@ -128,8 +130,9 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 
 									return false;
 								} );
+								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4CursorResponse( &slot_cursor_response );
 
-								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->SetCallback4KeyResponse( [custom_texture_component]( int, r2bix_ui::eKeyStatus s )->bool
+								slot_key_response.SetCallback( [custom_texture_component]( int, r2bix_ui::eKeyStatus s )->bool
 								{
 									switch( s )
 									{
@@ -146,9 +149,12 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 
 									return false;
 								} );
+								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4KeyResponse( &slot_key_response );
 							}
 						}
 					}
+					slot_cursor_response.Disconnect();
+					slot_key_response.Disconnect();
 
 					//
 					// Process
