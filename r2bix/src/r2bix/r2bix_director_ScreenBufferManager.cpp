@@ -127,7 +127,7 @@ namespace r2bix_director
 		}
 	}
 
-	void ScreenBufferManager::InitCursor()
+	void ScreenBufferManager::SetCursorPosition_0_0()
 	{
 		SetCursorPosition( 0, 0 );
 	}
