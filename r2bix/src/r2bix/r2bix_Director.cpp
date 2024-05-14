@@ -92,7 +92,7 @@ namespace r2bix
 			//
 			// Swap
 			//
-			mScreenBufferManager.SetCursorPosition_0_0();
+			mScreenBufferManager.SetCursorPosition( 0, 0 );
 			mScreenBufferManager.Swap();
 		}
 	}

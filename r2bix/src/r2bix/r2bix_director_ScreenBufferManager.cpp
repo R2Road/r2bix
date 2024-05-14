@@ -144,11 +144,6 @@ namespace r2bix_director
 		SetConsoleCursorPosition( handle, COORD{ x, y } );
 	}
 
-	void ScreenBufferManager::SetCursorPosition_0_0()
-	{
-		SetCursorPosition( 0, 0 );
-	}
-
 
 
 	void ScreenBufferManager::ClearBufferColor( const short x, const short y, const int length )
