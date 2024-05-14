@@ -119,13 +119,13 @@ namespace r2bix
 		mScreenBufferManager.Write2BackBuffer( texture );
 	}
 
-	void Director::StartInputMode()
+	void Director::StartTextInputMode()
 	{
-		mRenderMode = eRenderMode::Input;
+		mRenderMode = eRenderMode::TextInput;
 		mScreenBufferManager.ShowOriginalBuffer();
 	}
 
-	void Director::EndInputMode()
+	void Director::EndTextInputMode()
 	{
 		mRenderMode = eRenderMode::Normal;
 		mScreenBufferManager.CloseOriginalBuffer();

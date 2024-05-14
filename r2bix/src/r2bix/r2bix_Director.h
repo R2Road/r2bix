@@ -22,7 +22,7 @@ namespace r2bix
 		enum eRenderMode
 		{
 			Normal,
-			Input,
+			TextInput,
 		};
 
 
@@ -76,8 +76,8 @@ namespace r2bix
 		}
 		void ClearScreen();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
-		void StartInputMode();
-		void EndInputMode();
+		void StartTextInputMode();
+		void EndTextInputMode();
 
 
 
