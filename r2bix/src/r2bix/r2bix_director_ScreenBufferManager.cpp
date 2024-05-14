@@ -247,6 +247,11 @@ namespace r2bix_director
 			std::cout.rdbuf( mCoutOriginalStreamBuffer );
 
 			//
+			// Clear
+			//
+			clearBufferProcess( mBufferHandleOriginal );
+
+			//
 			// Fill
 			//
 			write2BufferProcess( mBufferHandleOriginal, texture );
