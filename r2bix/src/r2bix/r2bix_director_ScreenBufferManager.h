@@ -33,6 +33,10 @@ namespace r2bix_director
 
 	public:
 		void SetCursorPosition( const short x, const short y );
+	private:
+		void setCursorPositionProcess( HandleT handle, const short x, const short y );
+
+	public:
 		void SetCursorPosition_0_0();
 
 		void ClearBufferColor( const short x, const short y, const int length );

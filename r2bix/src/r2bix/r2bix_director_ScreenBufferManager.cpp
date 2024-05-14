@@ -137,10 +137,13 @@ namespace r2bix_director
 
 	void ScreenBufferManager::SetCursorPosition( const short x, const short y )
 	{
-		void* current_buffer_handle = mBufferHandleList[mCurrentBufferIndex];
-
-		SetConsoleCursorPosition( current_buffer_handle, COORD{ x, y } );
+		setCursorPositionProcess( mBufferHandleList[mCurrentBufferIndex], x, y );
 	}
+	void ScreenBufferManager::setCursorPositionProcess( HandleT handle, const short x, const short y )
+	{
+		SetConsoleCursorPosition( handle, COORD{ x, y } );
+	}
+
 	void ScreenBufferManager::SetCursorPosition_0_0()
 	{
 		SetCursorPosition( 0, 0 );
@@ -244,7 +247,7 @@ namespace r2bix_director
 			//
 			// Cursor Position
 			//
-			SetConsoleCursorPosition( mBufferHandleOriginal, COORD{ x, y } );
+			setCursorPositionProcess( mBufferHandleOriginal, x, y );
 
 			//
 			// Clear Buffer Color
