@@ -164,15 +164,14 @@ namespace r2bix_director
 	}
 	void ScreenBufferManager::clearBufferProcess( HandleT handle )
 	{
-		const COORD top_left = { mScreenBufferOffset.GetX(), mScreenBufferOffset.GetY() };
 		CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info{};
 		DWORD out_result;
 		GetConsoleScreenBufferInfo( handle, &cs_buffer_info );
 		const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;
 
-		FillConsoleOutputCharacter( handle, TEXT( ' ' ), length, top_left, &out_result );
+		FillConsoleOutputCharacter( handle, TEXT( ' ' ), length, { 0, 0 }, &out_result );
 
-		SetConsoleCursorPosition( handle, top_left );
+		SetConsoleCursorPosition( handle, { 0, 0 } );
 	}
 
 
