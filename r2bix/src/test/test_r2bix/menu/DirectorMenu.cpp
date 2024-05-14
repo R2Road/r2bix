@@ -88,9 +88,12 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 				//
 				// A
 				//
-				input_component->SetCallback( r2bix_input::eKeyCode::VK_A, [&director]( r2bix_input::eKeyStatus )->bool
+				input_component->SetCallback( r2bix_input::eKeyCode::VK_A, [&director]( r2bix_input::eKeyStatus s )->bool
 				{
-					director.StartTextInputMode();
+					if( r2bix_input::eKeyStatus::Push == s )
+					{
+						director.StartTextInputMode( 10, 10 );
+					}
 
 					return true;
 				} );

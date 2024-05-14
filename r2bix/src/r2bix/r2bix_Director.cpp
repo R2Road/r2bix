@@ -119,12 +119,13 @@ namespace r2bix
 		mScreenBufferManager.Write2BackBuffer( texture );
 	}
 
-	void Director::StartTextInputMode()
+	void Director::StartTextInputMode( const short cursor_x, const short cursor_y )
 	{
 		mRenderMode = eRenderMode::TextInput;
 		mScreenBufferManager.ShowOriginalBuffer();
 
 		mScreenBufferManager.SetCursorVisibility( true );
+		mScreenBufferManager.SetCursorPosition( cursor_x, cursor_y );
 	}
 
 	void Director::EndTextInputMode()
@@ -133,6 +134,7 @@ namespace r2bix
 		mScreenBufferManager.CloseOriginalBuffer();
 
 		mScreenBufferManager.SetCursorVisibility( false );
+		mScreenBufferManager.SetCursorPosition_0_0();
 	}
 
 
