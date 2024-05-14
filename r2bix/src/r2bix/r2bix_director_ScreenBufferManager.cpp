@@ -160,18 +160,22 @@ namespace r2bix_director
 
 	void ScreenBufferManager::ClearCurrentBuffer()
 	{
-		void* current_buffer_handle = mBufferHandleList[mCurrentBufferIndex];
-
+		clearBufferProcess( mBufferHandleList[mCurrentBufferIndex] );
+	}
+	void ScreenBufferManager::clearBufferProcess( HandleT handle )
+	{
 		const COORD top_left = { mScreenBufferOffset.GetX(), mScreenBufferOffset.GetY() };
 		CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info{};
 		DWORD out_result;
-		GetConsoleScreenBufferInfo( current_buffer_handle, &cs_buffer_info );
+		GetConsoleScreenBufferInfo( handle, &cs_buffer_info );
 		const DWORD length = cs_buffer_info.dwSize.X * cs_buffer_info.dwSize.Y;
 
-		FillConsoleOutputCharacter( current_buffer_handle, TEXT( ' ' ), length, top_left, &out_result );
+		FillConsoleOutputCharacter( handle, TEXT( ' ' ), length, top_left, &out_result );
 
-		SetConsoleCursorPosition( current_buffer_handle, top_left );
+		SetConsoleCursorPosition( handle, top_left );
 	}
+
+
 
 	void ScreenBufferManager::Write2BackBuffer( const r2bix_render::Texture* const texture )
 	{
