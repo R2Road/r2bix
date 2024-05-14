@@ -125,6 +125,7 @@ namespace r2bix
 
 		mScreenBufferManager.SetCursorVisibility( true );
 		mScreenBufferManager.SetCursorPosition( cursor_x, cursor_y );
+		mScreenBufferManager.ClearBufferColor( cursor_x, cursor_y, text_length );
 	}
 
 	void Director::EndTextInputMode()

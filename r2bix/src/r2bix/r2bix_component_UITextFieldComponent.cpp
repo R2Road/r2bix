@@ -23,7 +23,7 @@ namespace r2bix_component
 				//
 				// Start Input Mode
 				//
-				GetOwnerNode().GetDirector().StartTextInputMode( 10, 10 );
+				GetOwnerNode().GetDirector().StartTextInputMode( 10, 10, GetLength() );
 			}
 
 			return true;

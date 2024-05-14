@@ -91,7 +91,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 				{
 					if( r2bix_input::eKeyStatus::Push == s )
 					{
-						director.StartTextInputMode( 10, 10 );
+						director.StartTextInputMode( 10, 10, 5 );
 					}
 
 					return true;

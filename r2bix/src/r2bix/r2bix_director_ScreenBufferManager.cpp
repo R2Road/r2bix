@@ -142,6 +142,16 @@ namespace r2bix_director
 		SetCursorPosition( 0, 0 );
 	}
 
+
+
+	void ScreenBufferManager::ClearBufferColor( const short x, const short y, const int length )
+	{
+		DWORD out_result;
+		FillConsoleOutputAttribute( mBufferHandleList[mCurrentBufferIndex], 7, length, { x, y }, &out_result );
+	}
+
+
+
 	void ScreenBufferManager::ClearCurrentBuffer()
 	{
 		void* current_buffer_handle = mBufferHandleList[mCurrentBufferIndex];
