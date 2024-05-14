@@ -219,4 +219,41 @@ namespace r2bix_director
 		SetConsoleActiveScreenBuffer( mBufferHandleList[mCurrentBufferIndex] );
 		std::cout.rdbuf( &mCoutBufferRedirectorList[mCurrentBufferIndex] );
 	}
+
+
+
+	void ScreenBufferManager::OpenTextInputBuffer( const short x, const short y, const int length )
+	{
+		if( INVALID_HANDLE_VALUE != mBufferHandleOriginal )
+		{
+			//
+			// Buffer Setup
+			//
+			SetConsoleActiveScreenBuffer( mBufferHandleOriginal );
+			std::cout.rdbuf( mCoutOriginalStreamBuffer );
+
+			//
+			// Cursor Visibility
+			//
+			CONSOLE_CURSOR_INFO cursorInfo;
+			GetConsoleCursorInfo( mBufferHandleOriginal, &cursorInfo );
+			cursorInfo.bVisible = true;
+			SetConsoleCursorInfo( mBufferHandleOriginal, &cursorInfo );
+
+			//
+			// Cursor Position
+			//
+			SetConsoleCursorPosition( mBufferHandleOriginal, COORD{ x, y } );
+
+			//
+			// Clear Buffer Color
+			//
+			DWORD out_result;
+			FillConsoleOutputAttribute( mBufferHandleOriginal, 7, length, { x, y }, &out_result );
+		}
+	}
+	void ScreenBufferManager::CloseTextInputBuffer()
+	{
+		Swap();
+	}
 }

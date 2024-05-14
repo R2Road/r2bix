@@ -123,17 +123,14 @@ namespace r2bix
 	{
 		mRenderMode = eRenderMode::TextInput;
 
-		mScreenBufferManager.SetCursorVisibility( true );
-		mScreenBufferManager.SetCursorPosition( cursor_x, cursor_y );
-		mScreenBufferManager.ClearBufferColor( cursor_x, cursor_y, text_length );
+		mScreenBufferManager.OpenTextInputBuffer( cursor_x, cursor_y, text_length );
 	}
 
 	void Director::EndTextInputMode()
 	{
 		mRenderMode = eRenderMode::Normal;
 
-		mScreenBufferManager.SetCursorVisibility( false );
-		mScreenBufferManager.SetCursorPosition_0_0();
+		mScreenBufferManager.CloseTextInputBuffer();
 	}
 
 
