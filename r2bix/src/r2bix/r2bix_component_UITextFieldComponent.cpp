@@ -14,6 +14,7 @@ namespace r2bix_component
 		, mUIControlComponent( nullptr )
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
+		, mSlot4KeyResponse()
 	{}
 
 
@@ -27,6 +28,8 @@ namespace r2bix_component
 		}
 
 		mUIControlComponent = ui_control_component;
+
+		mUIControlComponent->ConnectSlot4KeyResponse( &mSlot4KeyResponse );
 	}
 
 	void UITextFieldComponent::SetCustomTextureComponent( r2bix_component::CustomTextureComponent* const custom_texture_component )
