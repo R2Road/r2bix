@@ -232,7 +232,7 @@ namespace r2bix_director
 
 
 
-	void ScreenBufferManager::OpenTextInputBuffer( const short x, const short y, const int length )
+	void ScreenBufferManager::OpenTextInputBuffer( const short x, const short y, const int length, const r2bix_render::Texture* const texture )
 	{
 		if( INVALID_HANDLE_VALUE != mBufferHandleOriginal )
 		{
@@ -241,6 +241,11 @@ namespace r2bix_director
 			//
 			SetConsoleActiveScreenBuffer( mBufferHandleOriginal );
 			std::cout.rdbuf( mCoutOriginalStreamBuffer );
+
+			//
+			// Fill
+			//
+			write2BufferProcess( mBufferHandleOriginal, texture );
 
 			//
 			// Cursor Visibility
