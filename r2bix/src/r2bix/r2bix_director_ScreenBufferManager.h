@@ -28,6 +28,10 @@ namespace r2bix_director
 
 	public:
 		void SetCursorVisibility( const bool visible );
+	private:
+		void setCursorVisibilityProcess( HandleT handle, const bool visible );
+
+	public:
 		void SetCursorPosition( const short x, const short y );
 		void SetCursorPosition_0_0();
 

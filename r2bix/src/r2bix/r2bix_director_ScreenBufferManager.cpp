@@ -118,17 +118,21 @@ namespace r2bix_director
 	}
 	void ScreenBufferManager::SetCursorVisibility( const bool visible )
 	{
-		CONSOLE_CURSOR_INFO cursorInfo;
-
 		for( int i = 0; BUFFER_COUNT > i; ++i )
 		{
 			if( INVALID_HANDLE_VALUE != mBufferHandleList[i] )
 			{
-				GetConsoleCursorInfo( mBufferHandleList[i], &cursorInfo );
-				cursorInfo.bVisible = visible;
-				SetConsoleCursorInfo( mBufferHandleList[i], &cursorInfo );
+				setCursorVisibilityProcess( mBufferHandleList[i], visible );
 			}
 		}
+	}
+	void ScreenBufferManager::setCursorVisibilityProcess( HandleT handle, const bool visible )
+	{
+		CONSOLE_CURSOR_INFO cursorInfo;
+
+		GetConsoleCursorInfo( handle, &cursorInfo );
+		cursorInfo.bVisible = visible;
+		SetConsoleCursorInfo( handle, &cursorInfo );
 	}
 
 	void ScreenBufferManager::SetCursorPosition( const short x, const short y )
@@ -235,10 +239,7 @@ namespace r2bix_director
 			//
 			// Cursor Visibility
 			//
-			CONSOLE_CURSOR_INFO cursorInfo;
-			GetConsoleCursorInfo( mBufferHandleOriginal, &cursorInfo );
-			cursorInfo.bVisible = true;
-			SetConsoleCursorInfo( mBufferHandleOriginal, &cursorInfo );
+			setCursorVisibilityProcess( mBufferHandleOriginal, true );
 
 			//
 			// Cursor Position
