@@ -28,8 +28,8 @@ namespace r2bix_director
 
 	public:
 		void SetCursorVisibility( const bool visible );
-		void SetCursorPosition_0_0();
 		void SetCursorPosition( const short x, const short y );
+		void SetCursorPosition_0_0();
 		void ClearCurrentBuffer();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
 		void Swap();

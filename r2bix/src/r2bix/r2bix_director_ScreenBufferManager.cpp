@@ -127,15 +127,15 @@ namespace r2bix_director
 		}
 	}
 
-	void ScreenBufferManager::SetCursorPosition_0_0()
-	{
-		SetCursorPosition( 0, 0 );
-	}
 	void ScreenBufferManager::SetCursorPosition( const short x, const short y )
 	{
 		void* current_buffer_handle = mBufferHandleList[mCurrentBufferIndex];
 
 		SetConsoleCursorPosition( current_buffer_handle, COORD{ x, y } );
+	}
+	void ScreenBufferManager::SetCursorPosition_0_0()
+	{
+		SetCursorPosition( 0, 0 );
 	}
 
 	void ScreenBufferManager::ClearCurrentBuffer()
