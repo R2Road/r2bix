@@ -122,7 +122,6 @@ namespace r2bix
 	void Director::StartTextInputMode( const short cursor_x, const short cursor_y )
 	{
 		mRenderMode = eRenderMode::TextInput;
-		mScreenBufferManager.ShowOriginalBuffer();
 
 		mScreenBufferManager.SetCursorVisibility( true );
 		mScreenBufferManager.SetCursorPosition( cursor_x, cursor_y );
@@ -131,7 +130,6 @@ namespace r2bix
 	void Director::EndTextInputMode()
 	{
 		mRenderMode = eRenderMode::Normal;
-		mScreenBufferManager.CloseOriginalBuffer();
 
 		mScreenBufferManager.SetCursorVisibility( false );
 		mScreenBufferManager.SetCursorPosition_0_0();
