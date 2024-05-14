@@ -15,7 +15,19 @@ namespace r2bix_component
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 		, mSlot4KeyResponse()
-	{}
+	{
+		mSlot4KeyResponse.SetCallback( [this]( const int k, const r2bix_ui::eKeyStatus s )->bool
+		{
+			if( 0 == k && r2bix_ui::eKeyStatus::Push == s )
+			{
+				//
+				// Input Mode ÀüÈ¯
+				//
+			}
+
+			return true;
+		} );
+	}
 
 
 
