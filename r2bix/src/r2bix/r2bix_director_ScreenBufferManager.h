@@ -25,9 +25,9 @@ namespace r2bix_director
 	private:
 		void init();
 		void release();
-		void setCursorVisibility( const bool visible );
 
 	public:
+		void SetCursorVisibility( const bool visible );
 		void InitCursor();
 		void ClearCurrentBuffer();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );

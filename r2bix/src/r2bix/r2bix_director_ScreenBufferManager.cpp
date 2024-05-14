@@ -91,13 +91,13 @@ namespace r2bix_director
 		// Cursor
 		//
 		{
-			setCursorVisibility( false );
+			SetCursorVisibility( false );
 		}
 	}
 
 	void ScreenBufferManager::release()
 	{
-		setCursorVisibility( true );
+		SetCursorVisibility( true );
 
 		//
 		// Rollback
@@ -112,7 +112,7 @@ namespace r2bix_director
 			CloseHandle( mBufferHandleList[i] );
 		}
 	}
-	void ScreenBufferManager::setCursorVisibility( const bool visible )
+	void ScreenBufferManager::SetCursorVisibility( const bool visible )
 	{
 		CONSOLE_CURSOR_INFO cursorInfo;
 
