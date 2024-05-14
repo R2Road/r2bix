@@ -102,7 +102,11 @@ namespace r2bix_director
 		//
 		// Rollback
 		//
-		ShowOriginalBuffer();
+		if( INVALID_HANDLE_VALUE != mBufferHandleOriginal )
+		{
+			SetConsoleActiveScreenBuffer( mBufferHandleOriginal );
+			std::cout.rdbuf( mCoutOriginalStreamBuffer );
+		}
 
 		//
 		// Close Handle List
