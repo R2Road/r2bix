@@ -52,6 +52,10 @@ namespace r2bix_director
 	public:
 		void ClearCurrentBuffer();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
+	private:
+		void write2BufferProcess( HandleT handle, const r2bix_render::Texture* const texture );
+
+	public:
 		void Swap();
 
 		void OpenTextInputBuffer( const short x, const short y, const int length );

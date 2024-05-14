@@ -181,8 +181,10 @@ namespace r2bix_director
 			next_buffer_index = 0;
 		}
 
-		void* const next_buffer_handle = mBufferHandleList[next_buffer_index];
-
+		write2BufferProcess( mBufferHandleList[next_buffer_index], texture );
+	}
+	void ScreenBufferManager::write2BufferProcess( HandleT handle, const r2bix_render::Texture* const texture )
+	{
 		const COORD write_offset_coord = { mScreenBufferOffset.GetX(), mScreenBufferOffset.GetY() };
 		COORD current_write_coord;
 		DWORD out_result;
@@ -198,15 +200,17 @@ namespace r2bix_director
 			// Character
 			//
 			output_line = texture->GetCharacterLine( static_cast< uint32_t >( y ) );
-			WriteConsoleOutputCharacterA( next_buffer_handle, output_line.data(), static_cast< DWORD >( output_line.length() ), current_write_coord, &out_result );
+			WriteConsoleOutputCharacterA( handle, output_line.data(), static_cast< DWORD >( output_line.length() ), current_write_coord, &out_result );
 
 			//
 			// Color
 			//
 			color_line = texture->GetColorLine( static_cast< uint32_t >( y ) );
-			WriteConsoleOutputAttribute( next_buffer_handle, ( WORD* )( color_line ), static_cast< DWORD >( output_line.length() ), current_write_coord, &out_result );
+			WriteConsoleOutputAttribute( handle, ( WORD* )( color_line ), static_cast< DWORD >( output_line.length() ), current_write_coord, &out_result );
 		}
 	}
+
+
 
 	void ScreenBufferManager::Swap()
 	{
