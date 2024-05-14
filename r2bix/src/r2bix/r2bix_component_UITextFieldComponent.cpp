@@ -21,8 +21,9 @@ namespace r2bix_component
 			if( 0 == k && r2bix_ui::eKeyStatus::Push == s )
 			{
 				//
-				// Input Mode ÀüÈ¯
+				// Start Input Mode
 				//
+				GetOwnerNode().GetDirector().StartTextInputMode( 10, 10 );
 			}
 
 			return true;
