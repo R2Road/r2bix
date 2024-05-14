@@ -34,9 +34,6 @@ namespace r2bix_director
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
 		void Swap();
 
-		void ShowOriginalBuffer();
-		void CloseOriginalBuffer();
-
 	private:
 		HandleT mBufferHandleOriginal;
 		std::streambuf* mCoutOriginalStreamBuffer;
