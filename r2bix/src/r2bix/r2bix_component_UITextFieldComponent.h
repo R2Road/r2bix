@@ -19,10 +19,18 @@ namespace r2bix_component
 
 
 
+		//
+		//
+		//
 		void SetUIControlComponent( r2bix_component::UIControlComponent* const ui_control_component );
 		void SetCustomTextureComponent( r2bix_component::CustomTextureComponent* const custom_texture_component );
 		void SetTextureRenderComponent( r2bix_component::TextureRenderComponent* const texture_render_component );
 
+
+
+		//
+		//
+		//
 		int GetLength() const;
 		void SetLength( const int length );
 
