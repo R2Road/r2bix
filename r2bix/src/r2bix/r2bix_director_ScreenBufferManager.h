@@ -17,14 +17,20 @@ namespace r2bix_director
 		using HandleT = void*;
 		enum { BUFFER_COUNT = 2 };
 
+
+
 	public:
 		ScreenBufferManager();
 		ScreenBufferManager( const short x, const short y );
 		~ScreenBufferManager();
 
+
+
 	private:
 		void init();
 		void release();
+
+
 
 	public:
 		void SetCursorVisibility( const bool visible );
@@ -43,6 +49,8 @@ namespace r2bix_director
 	private:
 		void clearBufferColorProcess( HandleT handle, const short x, const short y, const int length );
 
+
+
 	public:
 		void ClearCurrentBuffer();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
@@ -50,6 +58,8 @@ namespace r2bix_director
 
 		void OpenTextInputBuffer( const short x, const short y, const int length );
 		void CloseTextInputBuffer();
+
+
 
 	private:
 		HandleT mBufferHandleOriginal;
