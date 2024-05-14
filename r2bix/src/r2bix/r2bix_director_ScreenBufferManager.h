@@ -40,7 +40,10 @@ namespace r2bix_director
 		void SetCursorPosition_0_0();
 
 		void ClearBufferColor( const short x, const short y, const int length );
+	private:
+		void clearBufferColorProcess( HandleT handle, const short x, const short y, const int length );
 
+	public:
 		void ClearCurrentBuffer();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
 		void Swap();
