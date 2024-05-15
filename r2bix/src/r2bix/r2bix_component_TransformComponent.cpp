@@ -1,5 +1,7 @@
 #include "r2bix_component_TransformComponent.h"
 
+#include "r2bix_Director.h"
+
 #include "r2bix_node_Node.h"
 
 namespace r2bix_component
@@ -26,5 +28,15 @@ namespace r2bix_component
 		}
 
 		return world_position;
+	}
+	r2::PointInt TransformComponent::GetScreenPosition() const
+	{
+		const r2::Point<short> offset = GetOwnerNode().GetDirector().GetScreenBufferOffset();
+		r2::PointInt screen_position = GetWorldPosition();
+
+		screen_position.SetX( screen_position.GetX() + offset.GetX() );
+		screen_position.SetY( screen_position.GetY() + offset.GetY() );
+
+		return screen_position;
 	}
 }

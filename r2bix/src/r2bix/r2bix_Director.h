@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "r2_SizeInt.h"
+#include "r2_Point.h"
 
 #include "r2bix_director_Config.h"
 #include "r2bix_director_DefarredTaskQueue.h"
@@ -54,6 +55,10 @@ namespace r2bix
 		r2::SizeInt GetScreenBufferSize() const
 		{
 			return mScreenBufferSIze;
+		}
+		r2::Point<short> GetScreenBufferOffset() const
+		{
+			return mScreenBufferManager.GetScreenBufferOffset();
 		}
 
 

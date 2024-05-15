@@ -32,6 +32,7 @@ namespace r2bix_component
 		}
 
 		r2::PointInt GetWorldPosition() const;
+		r2::PointInt GetScreenPosition() const;
 
 
 

@@ -68,6 +68,16 @@ namespace r2bix_director
 
 
 
+		//
+		//
+		//
+		r2::Point<short> GetScreenBufferOffset() const
+		{
+			return mScreenBufferOffset;
+		}
+
+
+
 	private:
 		HandleT mBufferHandleOriginal;
 		std::streambuf* mCoutOriginalStreamBuffer;

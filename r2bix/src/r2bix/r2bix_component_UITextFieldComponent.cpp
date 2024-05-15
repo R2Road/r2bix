@@ -20,10 +20,12 @@ namespace r2bix_component
 		{
 			if( 2 == k && r2bix_ui::eKeyStatus::Push == s )
 			{
+				const auto screen_position = GetOwnerNode().mTransformComponent->GetScreenPosition();
+
 				//
 				// Start Input Mode
 				//
-				SetText( GetOwnerNode().GetDirector().StartTextInputMode( 10, 10, GetLength() ).c_str() );
+				SetText( GetOwnerNode().GetDirector().StartTextInputMode( screen_position.GetX(), screen_position.GetY(), GetLength() ).c_str() );
 			}
 
 			return true;
