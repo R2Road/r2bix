@@ -18,12 +18,12 @@ namespace r2bix_component
 	{
 		mSlot4KeyResponse.SetCallback( [this]( const int k, const r2bix_ui::eKeyStatus s )->bool
 		{
-			if( 0 == k && r2bix_ui::eKeyStatus::Push == s )
+			if( 2 == k && r2bix_ui::eKeyStatus::Push == s )
 			{
 				//
 				// Start Input Mode
 				//
-				GetOwnerNode().GetDirector().StartTextInputMode( 10, 10, GetLength() );
+				SetText( GetOwnerNode().GetDirector().StartTextInputMode( 10, 10, GetLength() ).c_str() );
 			}
 
 			return true;
@@ -84,6 +84,7 @@ namespace r2bix_component
 
 	void UITextFieldComponent::SetText( const char* str )
 	{
+		mCustomTextureComponent->GetTexture()->FillCharacterAll( ' ' );
 		mCustomTextureComponent->GetTexture()->FillString( str );
 	}
 }
