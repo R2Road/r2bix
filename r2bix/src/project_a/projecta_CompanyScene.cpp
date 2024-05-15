@@ -37,8 +37,8 @@ namespace projecta
 			auto node = AddChild<r2bix_node::LabelSNode>();
 			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( CompanyScene::GetTitle() );
 			node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
-				  mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.5f
+				  mDirector.GetScreenSize().GetWidth() * 0.5f
+				, mDirector.GetScreenSize().GetHeight() * 0.5f
 			);
 		}
 

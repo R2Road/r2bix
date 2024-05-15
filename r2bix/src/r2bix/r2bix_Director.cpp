@@ -10,15 +10,15 @@ namespace r2bix
 		mScreenBufferManager( director_config.ScreenBufferOffset_X, director_config.ScreenBufferOffset_Y )
 		, mScheduler( director_config, std::bind( &Director::onUpdate, this, std::placeholders::_1 ), std::bind( &Director::onRender, this ) )
 		, mbAbort( false )
-		, mScreenBufferSIze( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height )
+		, mScreenSIze( director_config.ScreenSize_Width, director_config.ScreenSize_Height )
 
 		, mCamera(
-			  director_config.ScreenBufferSize_Width / 2
-			, director_config.ScreenBufferSize_Height / 2
-			, director_config.ScreenBufferSize_Width
-			, director_config.ScreenBufferSize_Height
+			  director_config.ScreenSize_Width / 2
+			, director_config.ScreenSize_Height / 2
+			, director_config.ScreenSize_Width
+			, director_config.ScreenSize_Height
 		)
-		, mRenderTarget( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height, '@' )
+		, mRenderTarget( director_config.ScreenSize_Width, director_config.ScreenSize_Height, '@' )
 
 		, mInputManager( director_config.ScreenBufferOffset_X, director_config.ScreenBufferOffset_Y )
 
@@ -27,8 +27,8 @@ namespace r2bix
 
 		, mDefarredTaskQueue()
 	{
-		R2ASSERT( ( director_config.ScreenBufferSize_Width & 1 ), "Director 스크린 버퍼 크기 홀수로 넣어라." );
-		R2ASSERT( ( director_config.ScreenBufferSize_Height & 1 ), "Director 스크린 버퍼 크기 홀수로 넣어라." );
+		R2ASSERT( ( director_config.ScreenSize_Width & 1 ), "Director 스크린 버퍼 크기 홀수로 넣어라." );
+		R2ASSERT( ( director_config.ScreenSize_Height & 1 ), "Director 스크린 버퍼 크기 홀수로 넣어라." );
 	}
 
 

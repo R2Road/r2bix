@@ -35,8 +35,8 @@ namespace p_mini_adv
 			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( GameScene::GetTitle() );
 
 			node->mTransformComponent->SetPosition(
-				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.5f
+				mDirector.GetScreenSize().GetWidth() * 0.5f
+				, mDirector.GetScreenSize().GetHeight() * 0.5f
 			);
 		}
 

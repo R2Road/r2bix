@@ -6,8 +6,8 @@ namespace r2bix_director
 {
 	struct Config
 	{
-		const int32_t ScreenBufferSize_Width = 107;
-		const int32_t ScreenBufferSize_Height = 53;
+		const int32_t ScreenSize_Width = 107;
+		const int32_t ScreenSize_Height = 53;
 
 		enum class eScheduleType
 		{

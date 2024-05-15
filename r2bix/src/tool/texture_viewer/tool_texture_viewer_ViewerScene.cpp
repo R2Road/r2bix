@@ -17,8 +17,8 @@ namespace tool_texture_viewer
 			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Texture Viewer" );
 
 			node->mTransformComponent->SetPosition(
-				director.GetScreenBufferSize().GetWidth() * 0.5f
-				, director.GetScreenBufferSize().GetHeight() * 0.5f
+				director.GetScreenSize().GetWidth() * 0.5f
+				, director.GetScreenSize().GetHeight() * 0.5f
 			);
 		}
 

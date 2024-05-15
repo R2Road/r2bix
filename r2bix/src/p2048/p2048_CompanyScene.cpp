@@ -50,8 +50,8 @@ namespace p2048
 			label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "R2Road Studio" );
 
 			label_node->mTransformComponent->SetPosition(
-				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.62f
+				mDirector.GetScreenSize().GetWidth() * 0.5f
+				, mDirector.GetScreenSize().GetHeight() * 0.62f
 			);
 		}
 
@@ -67,8 +67,8 @@ namespace p2048
 			sprite_animation_node->GetComponent<r2bix_component::TextureFrameAnimationComponent>()->RunAnimation_Repeat( r2bix_animation::eIndex::Run_1 );
 
 			sprite_animation_node->mTransformComponent->SetPosition(
-				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.42f
+				mDirector.GetScreenSize().GetWidth() * 0.5f
+				, mDirector.GetScreenSize().GetHeight() * 0.42f
 			);
 		}
 

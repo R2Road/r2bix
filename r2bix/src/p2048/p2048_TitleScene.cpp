@@ -62,8 +62,8 @@ namespace p2048
 				mSpriteNode->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( frame );
 
 				mSpriteNode->mTransformComponent->SetPosition(
-					mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-					, mDirector.GetScreenBufferSize().GetHeight() * 0.38f
+					mDirector.GetScreenSize().GetWidth() * 0.5f
+					, mDirector.GetScreenSize().GetHeight() * 0.38f
 				);
 			}
 
@@ -220,8 +220,8 @@ namespace p2048
 			mLabelNode->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Press Any Key" );
 
 			mLabelNode->mTransformComponent->SetPosition(
-				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.65f
+				mDirector.GetScreenSize().GetWidth() * 0.5f
+				, mDirector.GetScreenSize().GetHeight() * 0.65f
 			);
 
 			auto action_process_component = mLabelNode->AddComponent<r2bix_component::ActionProcessComponent>();

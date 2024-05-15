@@ -52,8 +52,8 @@ namespace p2048
 				stage_view_component->Setup( game_component->GetStage() );
 
 				stage_view_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
-					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component->GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component->GetHeight() * 0.5f )
+					( director.GetScreenSize().GetWidth() * 0.5f ) - ( stage_view_component->GetWidth() * 0.5f )
+					, ( director.GetScreenSize().GetHeight() * 0.5f ) - ( stage_view_component->GetHeight() * 0.5f )
 				);
 
 				//
@@ -72,8 +72,8 @@ namespace p2048
 				stage_view_component_4debug->Setup( game_component->GetStage() );
 
 				stage_view_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
-					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component_4debug->GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component_4debug->GetHeight() * 0.5f )
+					( director.GetScreenSize().GetWidth() * 0.5f ) - ( stage_view_component_4debug->GetWidth() * 0.5f )
+					, ( director.GetScreenSize().GetHeight() * 0.5f ) - ( stage_view_component_4debug->GetHeight() * 0.5f )
 				);
 
 				//
@@ -161,8 +161,8 @@ namespace p2048
 				auto you_win_node = ret->AddChild<r2bix_node::SpriteNode>( 2 );
 				you_win_node->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "you_win_0" ) );
 				you_win_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
-					( director.GetScreenBufferSize().GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
+					( director.GetScreenSize().GetWidth() * 0.5f )
+					, ( director.GetScreenSize().GetHeight() * 0.5f )
 				);
 				you_win_node->SetVisible( false );
 
@@ -197,8 +197,8 @@ namespace p2048
 				auto game_over_node = ret->AddChild<r2bix_node::SpriteNode>( 2 );
 				game_over_node->GetComponent<r2bix_component::TextureFrameRenderComponent>()->SetTextureFrame( p2048table::TextureTable::GetInstance().GetTextureFrame( "game_over_0" ) );
 				game_over_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
-					( director.GetScreenBufferSize().GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
+					( director.GetScreenSize().GetWidth() * 0.5f )
+					, ( director.GetScreenSize().GetHeight() * 0.5f )
 				);
 				game_over_node->SetVisible( false );
 
@@ -235,11 +235,11 @@ namespace p2048
 				//
 				//
 				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() );
-				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() - 1, 0 );
-				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() - 1, director.GetScreenBufferSize().GetHeight() - 1 );
-				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( 0, director.GetScreenBufferSize().GetHeight() - 1 );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenSize().GetWidth() - 1, 0 );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenSize().GetWidth() - 1, director.GetScreenSize().GetHeight() - 1 );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( 0, director.GetScreenSize().GetHeight() - 1 );
 
-				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() * 0.5f, director.GetScreenBufferSize().GetHeight() * 0.5f );
+				ret->AddChild<r2bix_node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenSize().GetWidth() * 0.5f, director.GetScreenSize().GetHeight() * 0.5f );
 			}
 
 

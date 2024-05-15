@@ -37,8 +37,8 @@ namespace p_mini_adv
 			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( VersionInfo.String4Summury );
 
 			node->mTransformComponent->SetPosition(
-				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.3f
+				mDirector.GetScreenSize().GetWidth() * 0.5f
+				, mDirector.GetScreenSize().GetHeight() * 0.3f
 			);
 		}
 
@@ -47,8 +47,8 @@ namespace p_mini_adv
 			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( VersionInfo.String4Road2Version_0_0_1 );
 
 			node->mTransformComponent->SetPosition(
-				mDirector.GetScreenBufferSize().GetWidth() * 0.5f
-				, mDirector.GetScreenBufferSize().GetHeight() * 0.6f
+				mDirector.GetScreenSize().GetWidth() * 0.5f
+				, mDirector.GetScreenSize().GetHeight() * 0.6f
 			);
 		}
 

@@ -52,9 +52,9 @@ namespace r2bix
 		//
 		//
 		//
-		r2::SizeInt GetScreenBufferSize() const
+		r2::SizeInt GetScreenSize() const
 		{
-			return mScreenBufferSIze;
+			return mScreenSIze;
 		}
 		r2::Point<short> GetScreenBufferOffset() const
 		{
@@ -97,7 +97,7 @@ namespace r2bix
 		r2bix_director::ScreenBufferManager mScreenBufferManager;
 		r2bix_director::Scheduler mScheduler;
 		bool mbAbort;
-		r2::SizeInt mScreenBufferSIze;
+		r2::SizeInt mScreenSIze;
 
 		r2bix_render::Camera mCamera;
 		r2bix_render::Texture mRenderTarget;
