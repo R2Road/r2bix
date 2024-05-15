@@ -119,11 +119,11 @@ namespace r2bix
 		mScreenBufferManager.Write2BackBuffer( texture );
 	}
 
-	void Director::StartTextInputMode( const short cursor_x, const short cursor_y, const int text_length )
+	std::string Director::StartTextInputMode( const short cursor_x, const short cursor_y, const int text_length )
 	{
 		mRenderMode = eRenderMode::TextInput;
 
-		mScreenBufferManager.OpenTextInputBuffer( cursor_x, cursor_y, text_length, &mRenderTarget );
+		return mScreenBufferManager.OpenTextInputBuffer( cursor_x, cursor_y, text_length, &mRenderTarget );
 	}
 
 	void Director::EndTextInputMode()

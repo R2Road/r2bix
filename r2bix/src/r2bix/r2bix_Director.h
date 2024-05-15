@@ -76,7 +76,7 @@ namespace r2bix
 		}
 		void ClearScreen();
 		void Write2BackBuffer( const r2bix_render::Texture* const texture );
-		void StartTextInputMode( const short cursor_x, const short cursor_y, const int text_length );
+		std::string StartTextInputMode( const short cursor_x, const short cursor_y, const int text_length );
 		void EndTextInputMode();
 
 

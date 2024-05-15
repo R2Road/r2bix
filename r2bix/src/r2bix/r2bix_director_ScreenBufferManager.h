@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "r2/r2_Point.h"
 
 #include "r2bix_director_CoutBufferRedirector.h"
@@ -62,7 +64,7 @@ namespace r2bix_director
 	public:
 		void Swap();
 
-		void OpenTextInputBuffer( const short x, const short y, const int length, const r2bix_render::Texture* const texture );
+		std::string OpenTextInputBuffer(const short x, const short y, const int length, const r2bix_render::Texture* const texture);
 		void CloseTextInputBuffer();
 
 

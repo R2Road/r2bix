@@ -12,8 +12,10 @@
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
 #include "r2bix/r2bix_component_InputKeyboardComponent.h"
+#include "r2bix/r2bix_component_LabelSComponent.h"
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
 #include "r2bix/r2bix_node_CustomTextureNode.h"
+#include "r2bix/r2bix_node_LabelSNode.h"
 #include "r2bix/r2bix_utility_InputUtil.h"
 
 r2tm::TitleFunctionT DirectorMenu::GetTitleFunction() const
@@ -71,6 +73,17 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 
 				director.Setup( std::move( temp ) );
 
+
+
+				auto label_node = root_node->AddChild<r2bix_node::LabelSNode>( 10 );
+				{
+					label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 2, 2 );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Label Node" );
+					label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+				}
+
+
+
 				auto input_component = root_node->AddComponent<r2bix_component::InputKeyboardComponent>();
 
 				//
@@ -87,11 +100,13 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 				//
 				// A
 				//
-				input_component->SetCallback( r2bix_input::eKeyCode::VK_A, [&director]( r2bix_input::eKeyStatus s )->bool
+				input_component->SetCallback( r2bix_input::eKeyCode::VK_A, [&director, label_node]( r2bix_input::eKeyStatus s )->bool
 				{
 					if( r2bix_input::eKeyStatus::Push == s )
 					{
-						director.StartTextInputMode( 10, 10, 5 );
+						std::string str = director.StartTextInputMode( 10, 10, 5 );
+						
+						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( str );
 					}
 
 					return true;

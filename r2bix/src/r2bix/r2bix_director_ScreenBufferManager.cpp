@@ -235,8 +235,10 @@ namespace r2bix_director
 
 
 
-	void ScreenBufferManager::OpenTextInputBuffer( const short x, const short y, const int length, const r2bix_render::Texture* const texture )
+	std::string ScreenBufferManager::OpenTextInputBuffer( const short x, const short y, const int length, const r2bix_render::Texture* const texture )
 	{
+		std::string s;
+
 		if( INVALID_HANDLE_VALUE != mBufferHandleOriginal )
 		{
 			//
@@ -269,7 +271,11 @@ namespace r2bix_director
 			// Clear Buffer Color
 			//
 			clearBufferColorProcess( mBufferHandleOriginal, x, y, length );
+
+			std::cin >> s;
 		}
+
+		return s;
 	}
 	void ScreenBufferManager::CloseTextInputBuffer()
 	{
