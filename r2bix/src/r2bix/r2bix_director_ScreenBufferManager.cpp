@@ -272,6 +272,9 @@ namespace r2bix_director
 			//
 			clearBufferColorProcess( mBufferHandleOriginal, x, y, length, 7 );
 
+			//
+			// Input
+			//
 			std::cin >> s;
 
 			//
