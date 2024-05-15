@@ -63,7 +63,11 @@ namespace r2bix_director
 	public:
 		void Swap();
 
-		std::string OpenTextInputBuffer( const short offset_x, const short offset_y, const short input_x, const short input_y, const int length, const r2bix_render::Texture* const texture );
+		std::string OpenTextInputBuffer(
+			  const short offset_x, const short offset_y
+			, const short input_x, const short input_y, const int length
+			, const r2bix_render::Texture* const texture
+		);
 
 
 
