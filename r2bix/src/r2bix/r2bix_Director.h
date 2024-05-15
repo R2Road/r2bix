@@ -56,9 +56,9 @@ namespace r2bix
 		{
 			return mScreenSIze;
 		}
-		r2::Point<short> GetScreenBufferOffset() const
+		r2::Point<short> GetScreenOffset() const
 		{
-			return mScreenBufferManager.GetScreenBufferOffset();
+			return mScreenBufferManager.GetScreenOffset();
 		}
 
 

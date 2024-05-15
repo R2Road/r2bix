@@ -24,7 +24,7 @@ namespace r2bix_director
 
 		, mCurrentBufferIndex( 0 )
 
-		, mScreenBufferOffset()
+		, mScreenOffset()
 	{
 		init();
 	}
@@ -38,7 +38,7 @@ namespace r2bix_director
 
 		, mCurrentBufferIndex( 0 )
 
-		, mScreenBufferOffset( x, y )
+		, mScreenOffset( x, y )
 	{
 		init();
 	}
@@ -188,7 +188,7 @@ namespace r2bix_director
 	}
 	void ScreenBufferManager::write2BufferProcess( HandleT handle, const r2bix_render::Texture* const texture )
 	{
-		const COORD write_offset_coord = { mScreenBufferOffset.GetX(), mScreenBufferOffset.GetY() };
+		const COORD write_offset_coord = { mScreenOffset.GetX(), mScreenOffset.GetY() };
 		COORD current_write_coord;
 		DWORD out_result;
 

@@ -71,9 +71,9 @@ namespace r2bix_director
 		//
 		//
 		//
-		r2::Point<short> GetScreenBufferOffset() const
+		r2::Point<short> GetScreenOffset() const
 		{
-			return mScreenBufferOffset;
+			return mScreenOffset;
 		}
 
 
@@ -87,6 +87,6 @@ namespace r2bix_director
 
 		int mCurrentBufferIndex;
 
-		r2::Point<short> mScreenBufferOffset;
+		r2::Point<short> mScreenOffset;
 	};
 }

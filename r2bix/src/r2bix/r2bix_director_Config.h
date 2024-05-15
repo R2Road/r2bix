@@ -19,7 +19,7 @@ namespace r2bix_director
 		const int32_t UpdateFramePerSeconds = 30u;
 		const int32_t RenderFramePerSeconds = 30u;
 
-		const int16_t ScreenBufferOffset_X = 0;
-		const int16_t ScreenBufferOffset_Y = 0;
+		const int16_t ScreenOffset_X = 0;
+		const int16_t ScreenOffset_Y = 0;
 	};
 }

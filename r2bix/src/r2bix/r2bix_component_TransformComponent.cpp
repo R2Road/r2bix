@@ -31,11 +31,11 @@ namespace r2bix_component
 	}
 	r2::PointInt TransformComponent::GetScreenPosition() const
 	{
-		const r2::Point<short> offset = GetOwnerNode().GetDirector().GetScreenBufferOffset();
+		const r2::Point<short> screen_offset = GetOwnerNode().GetDirector().GetScreenOffset();
 		r2::PointInt screen_position = GetWorldPosition();
 
-		screen_position.SetX( screen_position.GetX() + offset.GetX() );
-		screen_position.SetY( screen_position.GetY() + offset.GetY() );
+		screen_position.SetX( screen_position.GetX() + screen_offset.GetX() );
+		screen_position.SetY( screen_position.GetY() + screen_offset.GetY() );
 
 		return screen_position;
 	}
