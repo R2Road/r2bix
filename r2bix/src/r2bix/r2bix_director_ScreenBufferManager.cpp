@@ -148,12 +148,12 @@ namespace r2bix_director
 
 	void ScreenBufferManager::ClearBufferColor( const short x, const short y, const int length )
 	{
-		clearBufferColorProcess( mBufferHandleList[mCurrentBufferIndex], x, y, length );
+		clearBufferColorProcess( mBufferHandleList[mCurrentBufferIndex], x, y, length, 7 );
 	}
-	void ScreenBufferManager::clearBufferColorProcess( HandleT handle, const short x, const short y, const int length )
+	void ScreenBufferManager::clearBufferColorProcess( HandleT handle, const short x, const short y, const int length, const unsigned short color )
 	{
 		DWORD out_result;
-		FillConsoleOutputAttribute( handle, 7, length, { x, y }, &out_result );
+		FillConsoleOutputAttribute( handle, color, length, { x, y }, &out_result );
 	}
 
 
@@ -270,7 +270,7 @@ namespace r2bix_director
 			//
 			// Clear Buffer Color
 			//
-			clearBufferColorProcess( mBufferHandleOriginal, x, y, length );
+			clearBufferColorProcess( mBufferHandleOriginal, x, y, length, 7 );
 
 			std::cin >> s;
 

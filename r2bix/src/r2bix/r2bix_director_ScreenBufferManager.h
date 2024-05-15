@@ -47,7 +47,7 @@ namespace r2bix_director
 	public:
 		void ClearBufferColor( const short x, const short y, const int length );
 	private:
-		void clearBufferColorProcess( HandleT handle, const short x, const short y, const int length );
+		void clearBufferColorProcess( HandleT handle, const short x, const short y, const int length, const unsigned short color );
 
 
 
