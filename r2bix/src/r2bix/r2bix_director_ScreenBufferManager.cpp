@@ -219,7 +219,7 @@ namespace r2bix_director
 
 
 
-	std::string ScreenBufferManager::OpenTextInputBuffer( const short offset_x, const short offset_y, const short x, const short y, const int length, const r2bix_render::Texture* const texture )
+	std::string ScreenBufferManager::OpenTextInputBuffer( const short offset_x, const short offset_y, const short input_x, const short input_y, const int length, const r2bix_render::Texture* const texture )
 	{
 		std::string s;
 
@@ -249,12 +249,12 @@ namespace r2bix_director
 			//
 			// Cursor Position
 			//
-			setCursorPositionProcess( mBufferHandleOriginal, x, y );
+			setCursorPositionProcess( mBufferHandleOriginal, input_x, input_y );
 
 			//
 			// Clear Buffer Color
 			//
-			clearBufferColorProcess( mBufferHandleOriginal, x, y, length, 7 );
+			clearBufferColorProcess( mBufferHandleOriginal, input_x, input_y, length, 7 );
 
 			//
 			// Input
