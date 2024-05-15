@@ -63,11 +63,12 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 		{
 			r2bix::Director director( { 51, 51, r2bix_director::Config::eScheduleType::Sleep, 30, 60, 2, 1 } );
 
-			//
-			// Scene
-			//
+			
 			r2bix_node::Node* root_node;
 			{
+				//
+				// Scene
+				//
 				auto temp = r2bix_node::Node::Create( director );
 				root_node = temp.get();
 
@@ -75,7 +76,21 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 
 
 
-				auto label_node = root_node->AddChild<r2bix_node::LabelSNode>( 10 );
+				//
+				// Background
+				//
+				{
+					auto node = root_node->AddChild<r2bix_node::CustomTextureNode>();
+					node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
+					node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+				}
+
+
+
+				//
+				// Label
+				//
+				auto label_node = root_node->AddChild<r2bix_node::LabelSNode>();
 				{
 					label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 2, 2 );
 					label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Label Node" );
@@ -84,53 +99,48 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 
 
 
+				//
+				// Input
+				//
 				auto input_component = root_node->AddComponent<r2bix_component::InputKeyboardComponent>();
-
-				//
-				// ESC
-				//
-				input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
 				{
-					director.RequestAbort();
-					r2bix_utility::ClearCInputBuffer();
-
-					return true;
-				} );
-
-				//
-				// A
-				//
-				input_component->SetCallback( r2bix_input::eKeyCode::VK_A, [&director, label_node]( r2bix_input::eKeyStatus s )->bool
-				{
-					if( r2bix_input::eKeyStatus::Push == s )
+					//
+					// ESC
+					//
+					input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
 					{
-						std::string str = director.StartTextInputMode( 10, 10, 5 );
-						
-						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( str );
-					}
+						director.RequestAbort();
+						r2bix_utility::ClearCInputBuffer();
 
-					return true;
-				} );
-				//
-				// S
-				//
-				input_component->SetCallback( r2bix_input::eKeyCode::VK_S, [&director]( r2bix_input::eKeyStatus )->bool
-				{
-					director.EndTextInputMode();
+						return true;
+					} );
 
-					return true;
-				} );
+					//
+					// A
+					//
+					input_component->SetCallback( r2bix_input::eKeyCode::VK_A, [&director, label_node]( r2bix_input::eKeyStatus s )->bool
+					{
+						if( r2bix_input::eKeyStatus::Push == s )
+						{
+							std::string str = director.StartTextInputMode( 10, 10, 5 );
 
-				input_component->Activate();
-			}
+							label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( str );
+						}
 
-			//
-			// Background
-			//
-			{
-				auto node = root_node->AddChild<r2bix_node::CustomTextureNode>();
-				node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
-				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+						return true;
+					} );
+					//
+					// S
+					//
+					input_component->SetCallback( r2bix_input::eKeyCode::VK_S, [&director]( r2bix_input::eKeyStatus )->bool
+					{
+						director.EndTextInputMode();
+
+						return true;
+					} );
+
+					input_component->Activate();
+				}
 			}
 
 			//
