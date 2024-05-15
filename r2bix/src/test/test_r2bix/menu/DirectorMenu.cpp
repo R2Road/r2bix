@@ -125,16 +125,9 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 							std::string str = director.StartTextInputMode( 10, 10, 5 );
 
 							label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( str );
-						}
 
-						return true;
-					} );
-					//
-					// S
-					//
-					input_component->SetCallback( r2bix_input::eKeyCode::VK_S, [&director]( r2bix_input::eKeyStatus )->bool
-					{
-						director.EndTextInputMode();
+							director.EndTextInputMode();
+						}
 
 						return true;
 					} );
