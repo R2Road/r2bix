@@ -18,15 +18,6 @@ namespace r2bix
 {
 	class Director
 	{
-	private:
-		enum eRenderMode
-		{
-			Normal,
-			TextInput,
-		};
-
-
-
 	public:
 		Director( const r2bix_director::Config& director_config );
 
@@ -106,8 +97,6 @@ namespace r2bix
 
 		r2bix_render::Camera mCamera;
 		r2bix_render::Texture mRenderTarget;
-
-		eRenderMode mRenderMode;
 
 		r2bix_input::InputManager mInputManager;
 

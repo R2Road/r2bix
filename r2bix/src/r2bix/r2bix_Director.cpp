@@ -20,8 +20,6 @@ namespace r2bix
 		)
 		, mRenderTarget( director_config.ScreenBufferSize_Width, director_config.ScreenBufferSize_Height, '@' )
 
-		, mRenderMode( eRenderMode::Normal )
-
 		, mInputManager( director_config.ScreenBufferOffset_X, director_config.ScreenBufferOffset_Y )
 
 		, mCurrentSceneNode()
@@ -82,19 +80,16 @@ namespace r2bix
 
 		mCurrentSceneNode->Render( &mCamera, &mRenderTarget, r2::PointInt::GetZERO() );
 
-		if( eRenderMode::Normal == mRenderMode )
-		{
-			//
-			// Write 2 Back-Buffer
-			//
-			Write2BackBuffer( &mRenderTarget );
+		//
+		// Write 2 Back-Buffer
+		//
+		Write2BackBuffer( &mRenderTarget );
 
-			//
-			// Swap
-			//
-			mScreenBufferManager.SetCursorPosition( 0, 0 );
-			mScreenBufferManager.Swap();
-		}
+		//
+		// Swap
+		//
+		mScreenBufferManager.SetCursorPosition( 0, 0 );
+		mScreenBufferManager.Swap();
 	}
 
 
@@ -121,15 +116,11 @@ namespace r2bix
 
 	std::string Director::StartTextInputMode( const short cursor_x, const short cursor_y, const int text_length )
 	{
-		mRenderMode = eRenderMode::TextInput;
-
 		return mScreenBufferManager.OpenTextInputBuffer( cursor_x, cursor_y, text_length, &mRenderTarget );
 	}
 
 	void Director::EndTextInputMode()
 	{
-		mRenderMode = eRenderMode::Normal;
-
 		mScreenBufferManager.CloseTextInputBuffer();
 	}
 
