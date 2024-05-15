@@ -273,12 +273,13 @@ namespace r2bix_director
 			clearBufferColorProcess( mBufferHandleOriginal, x, y, length );
 
 			std::cin >> s;
+
+			//
+			// Rollback
+			//
+			Swap();
 		}
 
 		return s;
-	}
-	void ScreenBufferManager::CloseTextInputBuffer()
-	{
-		Swap();
 	}
 }

@@ -119,11 +119,6 @@ namespace r2bix
 		return mScreenBufferManager.OpenTextInputBuffer( cursor_x, cursor_y, text_length, &mRenderTarget );
 	}
 
-	void Director::EndTextInputMode()
-	{
-		mScreenBufferManager.CloseTextInputBuffer();
-	}
-
 
 
 	void Director::AddDefarredTask( const r2bix_director::DefarredTaskQueue::TaskT& task )
