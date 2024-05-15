@@ -258,7 +258,7 @@ namespace r2bix_director
 			//
 			// Clear Buffer Color
 			//
-			clearBufferColorProcess( mBufferHandleOriginal, input_x, input_y, length, 7 );
+			clearBufferColorProcess( mBufferHandleOriginal, input_x, input_y, length, 10 | 0 ); // FG_LightGreen | BG_Black
 
 			//
 			// Input
