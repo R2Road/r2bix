@@ -34,7 +34,7 @@ namespace screen_buffer_manager_test
 				LF();
 
 				PROCESS_MAIN( t.Reset( "Screen Buffer 1" ) );
-				PROCESS_MAIN( s.Write2BackBuffer( &t ) );
+				PROCESS_MAIN( s.Write2BackBuffer( 0, 0, &t) );
 
 				LF();
 
@@ -43,7 +43,7 @@ namespace screen_buffer_manager_test
 				LF();
 
 				PROCESS_MAIN( t.Reset( "                   Screen Buffer 2" ) );
-				PROCESS_MAIN( s.Write2BackBuffer( &t ) );
+				PROCESS_MAIN( s.Write2BackBuffer( 0, 0, &t ) );
 			}
 
 			LS();

@@ -23,22 +23,6 @@ namespace r2bix_director
 		, mCoutBufferRedirectorList()
 
 		, mCurrentBufferIndex( 0 )
-
-		, mScreenOffset()
-	{
-		init();
-	}
-
-	ScreenBufferManager::ScreenBufferManager( const short x, const short y ) :
-		  mBufferHandleOriginal( INVALID_HANDLE_VALUE )
-		, mCoutOriginalStreamBuffer( nullptr )
-
-		, mBufferHandleList()
-		, mCoutBufferRedirectorList()
-
-		, mCurrentBufferIndex( 0 )
-
-		, mScreenOffset( x, y )
 	{
 		init();
 	}
@@ -176,7 +160,7 @@ namespace r2bix_director
 
 
 
-	void ScreenBufferManager::Write2BackBuffer( const r2bix_render::Texture* const texture )
+	void ScreenBufferManager::Write2BackBuffer( const short offset_x, const short offset_y, const r2bix_render::Texture* const texture )
 	{
 		int next_buffer_index = mCurrentBufferIndex + 1;
 		if( BUFFER_COUNT <= next_buffer_index )
@@ -184,11 +168,11 @@ namespace r2bix_director
 			next_buffer_index = 0;
 		}
 
-		write2BufferProcess( mBufferHandleList[next_buffer_index], texture );
+		write2BufferProcess( mBufferHandleList[next_buffer_index], offset_x, offset_y, texture );
 	}
-	void ScreenBufferManager::write2BufferProcess( HandleT handle, const r2bix_render::Texture* const texture )
+	void ScreenBufferManager::write2BufferProcess( HandleT handle, const short offset_x, const short offset_y, const r2bix_render::Texture* const texture )
 	{
-		const COORD write_offset_coord = { mScreenOffset.GetX(), mScreenOffset.GetY() };
+		const COORD write_offset_coord = { offset_x, offset_y };
 		COORD current_write_coord;
 		DWORD out_result;
 
@@ -235,7 +219,7 @@ namespace r2bix_director
 
 
 
-	std::string ScreenBufferManager::OpenTextInputBuffer( const short x, const short y, const int length, const r2bix_render::Texture* const texture )
+	std::string ScreenBufferManager::OpenTextInputBuffer( const short offset_x, const short offset_y, const short x, const short y, const int length, const r2bix_render::Texture* const texture )
 	{
 		std::string s;
 
@@ -255,7 +239,7 @@ namespace r2bix_director
 			//
 			// Fill
 			//
-			write2BufferProcess( mBufferHandleOriginal, texture );
+			write2BufferProcess( mBufferHandleOriginal, offset_x, offset_y, texture );
 
 			//
 			// Cursor Visibility

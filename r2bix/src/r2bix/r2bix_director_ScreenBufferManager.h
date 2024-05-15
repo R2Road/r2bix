@@ -23,7 +23,6 @@ namespace r2bix_director
 
 	public:
 		ScreenBufferManager();
-		ScreenBufferManager( const short x, const short y );
 		~ScreenBufferManager();
 
 
@@ -57,24 +56,14 @@ namespace r2bix_director
 		void clearBufferProcess( HandleT handle );
 
 	public:
-		void Write2BackBuffer( const r2bix_render::Texture* const texture );
+		void Write2BackBuffer( const short offset_x, const short offset_y, const r2bix_render::Texture* const texture );
 	private:
-		void write2BufferProcess( HandleT handle, const r2bix_render::Texture* const texture );
+		void write2BufferProcess( HandleT handle, const short offset_x, const short offset_y, const r2bix_render::Texture* const texture );
 
 	public:
 		void Swap();
 
-		std::string OpenTextInputBuffer(const short x, const short y, const int length, const r2bix_render::Texture* const texture);
-
-
-
-		//
-		//
-		//
-		r2::Point<short> GetScreenOffset() const
-		{
-			return mScreenOffset;
-		}
+		std::string OpenTextInputBuffer( const short offset_x, const short offset_y, const short x, const short y, const int length, const r2bix_render::Texture* const texture );
 
 
 
@@ -86,7 +75,5 @@ namespace r2bix_director
 		CoutBufferRedirector mCoutBufferRedirectorList[BUFFER_COUNT];
 
 		int mCurrentBufferIndex;
-
-		r2::Point<short> mScreenOffset;
 	};
 }

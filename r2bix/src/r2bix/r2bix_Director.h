@@ -58,7 +58,7 @@ namespace r2bix
 		}
 		r2::Point<short> GetScreenOffset() const
 		{
-			return mScreenBufferManager.GetScreenOffset();
+			return mScreenOffset;
 		}
 
 
@@ -98,6 +98,7 @@ namespace r2bix
 		r2bix_director::Scheduler mScheduler;
 		bool mbAbort;
 		r2::SizeInt mScreenSIze;
+		r2::Point<short> mScreenOffset;
 
 		r2bix_render::Camera mCamera;
 		r2bix_render::Texture mRenderTarget;

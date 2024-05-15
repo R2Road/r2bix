@@ -7,10 +7,11 @@
 namespace r2bix
 {
 	Director::Director( const r2bix_director::Config& director_config ) :
-		mScreenBufferManager( director_config.ScreenOffset_X, director_config.ScreenOffset_Y )
+		  mScreenBufferManager()
 		, mScheduler( director_config, std::bind( &Director::onUpdate, this, std::placeholders::_1 ), std::bind( &Director::onRender, this ) )
 		, mbAbort( false )
 		, mScreenSIze( director_config.ScreenSize_Width, director_config.ScreenSize_Height )
+		, mScreenOffset( director_config.ScreenOffset_X, director_config.ScreenOffset_Y )
 
 		, mCamera(
 			  director_config.ScreenSize_Width / 2
@@ -111,12 +112,12 @@ namespace r2bix
 
 	void Director::Write2BackBuffer( const r2bix_render::Texture* const texture )
 	{
-		mScreenBufferManager.Write2BackBuffer( texture );
+		mScreenBufferManager.Write2BackBuffer( mScreenOffset.GetX(), mScreenOffset.GetY(), texture );
 	}
 
 	std::string Director::StartTextInputMode( const short cursor_x, const short cursor_y, const int text_length )
 	{
-		return mScreenBufferManager.OpenTextInputBuffer( cursor_x, cursor_y, text_length, &mRenderTarget );
+		return mScreenBufferManager.OpenTextInputBuffer( mScreenOffset.GetX(), mScreenOffset.GetY(), cursor_x, cursor_y, text_length, &mRenderTarget );
 	}
 
 
