@@ -25,7 +25,11 @@ namespace r2bix_component
 				//
 				// Start Input Mode
 				//
-				SetText( GetOwnerNode().GetDirector().StartTextInputMode( screen_position.GetX(), screen_position.GetY(), GetLength() ).c_str() );
+				SetText( GetOwnerNode().GetDirector().StartTextInputMode(
+					  static_cast<short>( screen_position.GetX() )
+					, static_cast<short>( screen_position.GetY() )
+					, GetLength() ).c_str()
+				);
 			}
 
 			return true;
