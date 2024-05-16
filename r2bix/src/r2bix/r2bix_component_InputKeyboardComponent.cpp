@@ -11,11 +11,11 @@ namespace r2bix_component
 
 
 
-	void InputKeyboardComponent::ActivateProcess()
+	void InputKeyboardComponent::activateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener );
 	}
-	void InputKeyboardComponent::DeactivateProcess()
+	void InputKeyboardComponent::deactivateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mListener );
 	}

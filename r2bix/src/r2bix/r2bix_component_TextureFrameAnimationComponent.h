@@ -40,7 +40,7 @@ namespace r2bix_component
 		//
 		//
 		//
-		void UpdateProcess( const float delta_time ) override;
+		void updateProcess( const float delta_time ) override;
 
 		//
 		//

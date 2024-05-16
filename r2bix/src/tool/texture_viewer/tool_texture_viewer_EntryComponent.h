@@ -10,6 +10,6 @@ namespace tool_texture_viewer
 		EntryComponent( r2bix_node::Node& owner_node );
 
 	public:
-		void UpdateProcess( const float delta_time ) override;
+		void updateProcess( const float delta_time ) override;
 	};
 }

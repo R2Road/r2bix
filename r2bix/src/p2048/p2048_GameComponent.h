@@ -37,8 +37,8 @@ namespace p2048
 		//
 		//
 	private:
-		void ActivateProcess() override;
-		void DeactivateProcess() override;
+		void activateProcess() override;
+		void deactivateProcess() override;
 
 
 
@@ -46,7 +46,7 @@ namespace p2048
 		//
 		//
 	public:
-		void UpdateProcess( const float delta_time ) override;
+		void updateProcess( const float delta_time ) override;
 
 		const Stage& GetStage() const { return mStage; }
 

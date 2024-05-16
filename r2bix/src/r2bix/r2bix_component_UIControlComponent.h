@@ -35,8 +35,8 @@ namespace r2bix_component
 		//
 		//
 	private:
-		void EnterProcess() override;
-		void ExitProcess() override;
+		void enterProcess() override;
+		void exitProcess() override;
 
 
 

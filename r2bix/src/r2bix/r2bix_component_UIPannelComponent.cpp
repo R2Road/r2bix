@@ -16,7 +16,7 @@ namespace r2bix_component
 
 
 
-	bool UIPannelComponent::InitProcess()
+	bool UIPannelComponent::initProcess()
 	{
 		mListener4Mouse.SetCallback4CursorMoved( [this]( const r2bix_input::CursorPoint cursor_point )->bool
 		{
@@ -75,11 +75,11 @@ namespace r2bix_component
 		return true;
 	}
 
-	void UIPannelComponent::ActivateProcess()
+	void UIPannelComponent::activateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener4Mouse );
 	}
-	void UIPannelComponent::DeactivateProcess()
+	void UIPannelComponent::deactivateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mListener4Mouse );
 	}

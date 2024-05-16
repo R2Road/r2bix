@@ -39,18 +39,18 @@ namespace p2048
 
 
 
-	void GameComponent::ActivateProcess()
+	void GameComponent::activateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mKeyboardListener );
 	}
-	void GameComponent::DeactivateProcess()
+	void GameComponent::deactivateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mKeyboardListener );
 	}
 
 
 
-	void GameComponent::UpdateProcess( const float delta_time )
+	void GameComponent::updateProcess( const float delta_time )
 	{
 		switch( mStep )
 		{
@@ -160,7 +160,7 @@ namespace p2048
 			GetOwnerNode().GetDirector().RequestAbort();
 		}
 
-		r2bix_component::iComponent::UpdateProcess( delta_time );
+		r2bix_component::iComponent::updateProcess( delta_time );
 	}
 
 	bool GameComponent::MoveNumber( const r2::Direction4Sequential::eState move_direction )

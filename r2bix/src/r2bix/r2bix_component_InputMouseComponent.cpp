@@ -11,11 +11,11 @@ namespace r2bix_component
 
 
 
-	void InputMouseComponent::ActivateProcess()
+	void InputMouseComponent::activateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener4Mouse );
 	}
-	void InputMouseComponent::DeactivateProcess()
+	void InputMouseComponent::deactivateProcess()
 	{
 		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mListener4Mouse );
 	}

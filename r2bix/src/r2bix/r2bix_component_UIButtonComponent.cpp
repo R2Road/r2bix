@@ -14,7 +14,7 @@ namespace r2bix_component
 
 
 
-	void UIButtonComponent::EnterProcess()
+	void UIButtonComponent::enterProcess()
 	{
 		//
 		// 

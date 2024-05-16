@@ -18,7 +18,7 @@ namespace p2048
 		//
 		// Override
 		//
-		void UpdateProcess( const float ) override
+		void updateProcess( const float ) override
 		{
 			//
 			// Load Resources

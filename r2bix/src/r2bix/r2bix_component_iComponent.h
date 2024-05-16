@@ -61,10 +61,10 @@ namespace r2bix_component
 		//
 		bool Init()
 		{
-			return InitProcess();
+			return initProcess();
 		}
 	protected:
-		virtual bool InitProcess()
+		virtual bool initProcess()
 		{
 			return true;
 		}
@@ -77,19 +77,19 @@ namespace r2bix_component
 	public:
 		void Enter()
 		{
-			EnterProcess();
+			enterProcess();
 		}
 	protected:
-		virtual void EnterProcess()
+		virtual void enterProcess()
 		{}
 
 	public:
 		void Exit()
 		{
-			ExitProcess();
+			exitProcess();
 		}
 	protected:
-		virtual void ExitProcess()
+		virtual void exitProcess()
 		{}
 
 
@@ -104,11 +104,11 @@ namespace r2bix_component
 			if( false == mbActivate )
 			{
 				mbActivate = true;
-				ActivateProcess();
+				activateProcess();
 			}
 		}
 	protected:
-		virtual void ActivateProcess()
+		virtual void activateProcess()
 		{}
 
 	public:
@@ -117,11 +117,11 @@ namespace r2bix_component
 			if( true == mbActivate )
 			{
 				mbActivate = false;
-				DeactivateProcess();
+				deactivateProcess();
 			}
 		}
 	protected:
-		virtual void DeactivateProcess()
+		virtual void deactivateProcess()
 		{}
 
 
@@ -133,10 +133,10 @@ namespace r2bix_component
 		void Terminate()
 		{
 			Deactivate();
-			TerminateProcess();
+			terminateProcess();
 		}
 	protected:
-		virtual void TerminateProcess()
+		virtual void terminateProcess()
 		{}
 
 
@@ -147,10 +147,10 @@ namespace r2bix_component
 	public:
 		void Update( const float delta_time )
 		{
-			UpdateProcess( delta_time );
+			updateProcess( delta_time );
 		}
 	protected:
-		virtual void UpdateProcess( const float /*delta_time*/ )
+		virtual void updateProcess( const float /*delta_time*/ )
 		{}
 
 	public:

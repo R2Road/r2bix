@@ -33,7 +33,7 @@ namespace r2bix_component
 		// Override
 		//
 	private:
-		void EnterProcess() override;
+		void enterProcess() override;
 
 
 

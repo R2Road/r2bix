@@ -26,7 +26,7 @@ namespace r2bix_component
 		//
 		// Override
 		//
-		void UpdateProcess( const float delta_time ) override;
+		void updateProcess( const float delta_time ) override;
 
 	private:
 		r2bix_action::ActionUp mAction;

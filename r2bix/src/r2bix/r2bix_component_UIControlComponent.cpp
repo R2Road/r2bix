@@ -26,7 +26,7 @@ namespace r2bix_component
 
 
 
-	void UIControlComponent::EnterProcess()
+	void UIControlComponent::enterProcess()
 	{
 		r2bix_node::Node* parent_node = GetOwnerNode().GetParentNode();
 
@@ -52,7 +52,7 @@ namespace r2bix_component
 			mUIPannelComponent->AddUIControl( this );
 		}
 	}
-	void UIControlComponent::ExitProcess()
+	void UIControlComponent::exitProcess()
 	{
 		//
 		// Unregist UI Input Listener

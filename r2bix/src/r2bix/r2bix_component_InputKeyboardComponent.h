@@ -17,8 +17,8 @@ namespace r2bix_component
 		// Override
 		//
 	private:
-		void ActivateProcess() override;
-		void DeactivateProcess() override;
+		void activateProcess() override;
+		void deactivateProcess() override;
 
 
 
