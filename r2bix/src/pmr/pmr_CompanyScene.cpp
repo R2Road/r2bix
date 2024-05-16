@@ -3,51 +3,52 @@
 #include <conio.h>
 
 #include "r2bix_Director.h"
-#include "r2bix_component_LabelSComponent.h"
-#include "r2bix_component_TextureRenderComponent.h"
+
 #include "r2bix_node_LabelSNode.h"
+
+#include "r2bix_component_InputKeyboardComponent.h"
+#include "r2bix_component_LabelSComponent.h"
+
+#include "r2bix_utility_InputUtil.h"
 
 namespace pmr
 {
-	CompanyScene::CompanyScene( r2bix::Director& director ) : r2bix_node::Node( director )
-	{}
-
 	r2bix_node::NodeUp CompanyScene::Create( r2bix::Director& director )
 	{
-		r2bix_node::NodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
-		if( !ret || !ret->Init() )
+		r2bix_node::NodeUp ret( r2bix_node::Node::Create( director ) );
+		if( ret )
 		{
-			ret.reset();
-		}
-
-		return ret;
-	}
-
-	bool CompanyScene::Init()
-	{
-		if( !r2bix_node::Node::Init() )
-		{
-			return false;
-		}
-
-		{
-			auto node = AddChild<r2bix_node::LabelSNode>();
-			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( CompanyScene::GetTitle() );
-		}
-
-		return true;
-	}
-	void CompanyScene::Update( const float delta_time )
-	{
-		if( _kbhit() )
-		{
-			auto input = _getch();
-			if( 27 == input )
+			//
+			//
+			//
 			{
-				mDirector.RequestAbort();
+				auto node = ret->AddChild<r2bix_node::LabelSNode>();
+				node->GetComponent<r2bix_component::LabelSComponent>()->SetString( CompanyScene::GetTitle() );
+			}
+
+			//
+			// Exit
+			//
+			{
+				auto component = ret->AddComponent<r2bix_component::InputKeyboardComponent>();
+				component->SetCallback(
+					  r2bix_input::eKeyCode::VK_ESCAPE
+					, [&director]( r2bix_input::eKeyStatus s )->bool
+					{
+						if( r2bix_input::eKeyStatus::Push == s )
+						{
+							r2bix_utility::ClearCInputBuffer();
+							director.RequestAbort();
+							return true;
+						}
+
+						return false;
+					}
+				);
+				component->Activate();
 			}
 		}
 
-		r2bix_node::Node::Update( delta_time );
+		return ret;
 	}
 }
