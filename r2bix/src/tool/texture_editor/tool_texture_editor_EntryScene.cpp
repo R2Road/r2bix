@@ -7,6 +7,8 @@
 #include "r2bix_node_LabelSNode.h"
 #include "r2bix_utility_InputUtil.h"
 
+#include "tool_texture_editor_FileMakeNSelectScene.h"
+
 namespace tool_texture_editor
 {
 	r2bix_node::NodeUp EntryScene::Create( r2bix::Director& director )
@@ -31,6 +33,7 @@ namespace tool_texture_editor
 			//
 			{
 				auto component = ret->AddComponent<r2bix_component::InputKeyboardComponent>();
+
 				component->SetCallback(
 					  r2bix_input::eKeyCode::VK_ESCAPE
 					, [&director]( r2bix_input::eKeyStatus s )->bool
@@ -45,6 +48,21 @@ namespace tool_texture_editor
 						return false;
 					}
 				);
+
+				component->SetCallback(
+					  r2bix_input::eKeyCode::VK_SPACE
+					, [&director]( r2bix_input::eKeyStatus s )->bool
+					{
+						if( r2bix_input::eKeyStatus::Release == s )
+						{
+							director.Setup( tool_texture_editor::FileMakeNSelectScene::Create( director ) );
+							return true;
+						}
+
+						return false;
+					}
+				);
+
 				component->Activate();
 			}
 		}
