@@ -47,15 +47,17 @@ namespace r2bix_node
 	using NodeUp = std::unique_ptr<class Node>;
 	class Node
 	{
-	protected:
+	private:
 		using ComponentContainerT = std::list<r2bix_component::ComponentUp>;
+	public:
 		using ChildContainerT = std::list<NodeUp>;
 
 
 
+	private:
 		Node( r2bix::Director& director );
 	public:
-		virtual ~Node() {}
+		~Node() {}
 
 
 
