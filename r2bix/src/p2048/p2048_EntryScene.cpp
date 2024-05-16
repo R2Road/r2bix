@@ -1,44 +1,48 @@
 #include "p2048_EntryScene.h"
 
-#include <cassert>
-#include <conio.h>
-#include <utility> // std::move
-
 #include "r2bix_Director.h"
+
 #include "p2048_CompanyScene.h"
+
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
 
 namespace p2048
 {
-	EntryScene::EntryScene( r2bix::Director& director ) : r2bix_node::Node( director )
-	{}
+	class EntrySceneComponent : public r2bix_component::Component<EntrySceneComponent>
+	{
+	public:
+		EntrySceneComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<EntrySceneComponent>( owner_node ) {}
+
+
+		//
+		// Override
+		//
+		void Update( const float ) override
+		{
+			//
+			// Load Resources
+			//
+			{
+				p2048table::TextureTable::GetInstance().Load();
+				p2048table::TextureFrameAnimationTable::GetInstance().Load();
+			}
+
+			//
+			// Move 2 Company Scene
+			//
+			GetOwnerNode().GetDirector().Setup( p2048::CompanyScene::Create( GetOwnerNode().GetDirector() ) );
+		}
+	};
 
 	r2bix_node::NodeUp EntryScene::Create( r2bix::Director& director )
 	{
-		r2bix_node::NodeUp ret( new ( std::nothrow ) EntryScene( director ) );
-		if( !ret->Init() )
+		r2bix_node::NodeUp ret( r2bix_node::Node::Create( director ) );
+		if( ret )
 		{
-			assert( false );
+			ret->AddComponent<EntrySceneComponent>();
 		}
-
+		
 		return ret;
-	}
-	void EntryScene::Update( const float delta_time )
-	{
-		//
-		// Load Resources
-		//
-		{
-			p2048table::TextureTable::GetInstance().Load();
-			p2048table::TextureFrameAnimationTable::GetInstance().Load();
-		}
-
-		//
-		// Move 2 Company Scene
-		//
-		mDirector.Setup( p2048::CompanyScene::Create( mDirector ) );
-
-		r2bix_node::Node::Update( delta_time );
 	}
 }
