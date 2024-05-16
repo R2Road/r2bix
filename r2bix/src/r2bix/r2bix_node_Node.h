@@ -167,8 +167,6 @@ namespace r2bix_node
 		template<typename NodeT>
 		Node* AddChild( const int32_t z_order )
 		{
-			static_assert( std::is_base_of<r2bix_node::Node, NodeT>() );
-
 			//
 			// »ý¼º
 			//
