@@ -152,7 +152,7 @@ namespace texture_test
 
 			LS();
 
-			PROCESS_MAIN( r2bixhelper::STDPrinter4Texture::DrawTextureColor( texture ) );
+			PROCESS_MAIN( r2bix_helper::STDPrinter4Texture::DrawTextureColor( texture ) );
 
 			LS();
 
@@ -193,7 +193,7 @@ namespace texture_test
 
 			LS();
 
-			PROCESS_MAIN( r2bixhelper::STDPrinter4Texture::DrawTextureColor( texture ) );
+			PROCESS_MAIN( r2bix_helper::STDPrinter4Texture::DrawTextureColor( texture ) );
 
 			LS();
 
@@ -242,7 +242,7 @@ namespace texture_test
 
 			LS();
 
-			PROCESS_MAIN( r2bixhelper::STDPrinter4Texture::DrawTextureColor( texture ) );
+			PROCESS_MAIN( r2bix_helper::STDPrinter4Texture::DrawTextureColor( texture ) );
 
 			LS();
 
@@ -281,7 +281,7 @@ namespace texture_test
 
 			LS();
 
-			PROCESS_MAIN( r2bixhelper::STDPrinter4Texture::DrawTextureColor( texture ) );
+			PROCESS_MAIN( r2bix_helper::STDPrinter4Texture::DrawTextureColor( texture ) );
 
 			LS();
 
@@ -321,7 +321,7 @@ namespace texture_test
 
 			LS();
 
-			PROCESS_MAIN( r2bixhelper::STDPrinter4Texture::DrawTextureDisuse( texture ) );
+			PROCESS_MAIN( r2bix_helper::STDPrinter4Texture::DrawTextureDisuse( texture ) );
 
 			LS();
 

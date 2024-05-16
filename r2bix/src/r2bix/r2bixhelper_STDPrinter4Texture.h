@@ -11,7 +11,7 @@ namespace r2bix_render
 	class Texture;
 }
 
-namespace r2bixhelper
+namespace r2bix_helper
 {
 	class STDPrinter4Texture
 	{
