@@ -172,7 +172,7 @@ namespace r2bix_node
 			//
 			// 생성
 			//
-			auto child_node = NodeT::Create( mDirector );
+			NodeUp child_node = NodeT::Create( mDirector );
 
 			//
 			// 기본 설정
@@ -180,7 +180,7 @@ namespace r2bix_node
 			child_node->SetParentNode( this );
 			child_node->mTransformComponent->SetZ( z_order );
 
-			auto ret = child_node.get();
+			Node* ret = child_node.get();
 
 			//
 			// Find Insert Pivot
