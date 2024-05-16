@@ -86,6 +86,14 @@ namespace p2048
 			}
 
 			//
+			//
+			//
+			{
+				auto component = ret->AddComponent<CompanySceneComponent>();
+				component->Activate();
+			}
+
+			//
 			// Input
 			//
 			{
