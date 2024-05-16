@@ -130,21 +130,12 @@ namespace render_test
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			r2bix_render::Camera camera( 20, 25, 20, 10 );
-			r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' );
-
-			r2bix::Director dummy_director( {} );
-			RenderTestNode render_test_node( dummy_director, r2::PointInt{ 12, 26 }, r2::SizeInt{ 9, 9 }, r2::PointInt{ -4, -2 } );
-
 			LS();
 
-			{
-				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "r2bix_render::Camera camera( { 20, 25 }, { 20, 10 } );" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), ' ' );" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "r2bix::Director dummy_director;" << r2tm::linefeed;
-				std::cout << r2tm::tab2 << "RenderTestNode render_test_node( dummy_director, { 12, 26 }, { 9, 9 }, { -4, -2 } );" << r2tm::linefeed;
-			}
+			DECLARATION_MAIN( r2bix_render::Camera camera( 20, 25, 20, 10 ) );
+			DECLARATION_MAIN( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECLARATION_MAIN( r2bix::Director director( {} ) );
+			DECLARATION_MAIN( RenderTestNode node( director, r2::PointInt{ 12, 26 }, r2::SizeInt{ 9, 9 }, r2::PointInt{ -4, -2 } ) );
 
 			LS();
 
@@ -163,15 +154,15 @@ namespace render_test
 				}
 
 				{
-					auto current_rect = render_test_node.mRect;
-					current_rect.SetOrigin( current_rect.GetOrigin() + render_test_node.mPosition );
+					auto current_rect = node.mRect;
+					current_rect.SetOrigin( current_rect.GetOrigin() + node.mPosition );
 
 					for( int y = 0; current_rect.GetHeight() > y; ++y )
 					{
 						for( int x = 0; current_rect.GetWidth() > x; ++x )
 						{
 							r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
-							std::cout << render_test_node.mTexture.GetCharacter( x, y );
+							std::cout << node.mTexture.GetCharacter( x, y );
 						}
 					}
 				}
@@ -179,7 +170,7 @@ namespace render_test
 				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
 
-				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( render_test_node.mPosition.GetX() ), static_cast<short>( render_test_node.mPosition.GetY() ) } );
+				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( node.mPosition.GetX() ), static_cast<short>( node.mPosition.GetY() ) } );
 				std::cout << '+';
 
 				r2tm::WindowUtility::MoveCursorPoint( { 0, 50 } );
@@ -194,7 +185,7 @@ namespace render_test
 
 				std::cout << r2tm::tab << "+ Show Render Target" << r2tm::linefeed2;
 
-				render_test_node.Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node.Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				int current_x = 0;
 				for( const auto& p : render_target )
