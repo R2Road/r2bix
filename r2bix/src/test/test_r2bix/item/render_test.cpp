@@ -11,21 +11,29 @@
 
 namespace render_test
 {
-	class RenderTestNode : r2bix_node::Node
+	class RenderTestComponent : public r2bix_component::Component<RenderTestComponent>
 	{
 	public:
-		RenderTestNode( r2bix::Director& director, const r2::PointInt& position, const r2::SizeInt size, const r2::PointInt rect_offset ) : r2bix_node::Node( director )
-			, mPosition( position )
-			, mTexture( size.GetWidth(), size.GetHeight() )
-			, mRect( rect_offset.GetX(), rect_offset.GetY(), mTexture.GetWidth() - 1, mTexture.GetHeight() - 1 )
+		RenderTestComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<RenderTestComponent>( owner_node )
+			, mPosition()
+			, mTexture( 1, 1 )
+			, mRect()
+		{}
+
+		void Set( const r2::PointInt& position, const r2::SizeInt size, const r2::PointInt rect_offset )
 		{
+			mPosition = position;
+
+			mTexture.Reset( size.GetWidth(), size.GetHeight() );
 			for( int y = 0; mTexture.GetHeight() > y; ++y )
 			{
 				for( int x = 0; mTexture.GetWidth() > x; ++x )
 				{
-					mTexture.FillCharacter( x, y, static_cast<char>( 48 + x ) );
+					mTexture.FillCharacter( x, y, static_cast< char >( 48 + x ) );
 				}
 			}
+
+			mRect.Set( rect_offset.GetX(), rect_offset.GetY(), mTexture.GetWidth() - 1, mTexture.GetHeight() - 1 );
 		}
 
 		void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt /*offset*/ ) override
@@ -135,7 +143,9 @@ namespace render_test
 			DECLARATION_MAIN( r2bix_render::Camera camera( 20, 25, 20, 10 ) );
 			DECLARATION_MAIN( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_MAIN( r2bix::Director director( {} ) );
-			DECLARATION_MAIN( RenderTestNode node( director, r2::PointInt{ 12, 26 }, r2::SizeInt{ 9, 9 }, r2::PointInt{ -4, -2 } ) );
+			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( director ) );
+			DECLARATION_MAIN( auto component = node->AddComponent<RenderTestComponent>() );
+			PROCESS_MAIN( component->Set( r2::PointInt{ 12, 26 }, r2::SizeInt{ 9, 9 }, r2::PointInt{ -4, -2 } ) );
 
 			LS();
 
@@ -156,15 +166,15 @@ namespace render_test
 				}
 
 				{
-					auto current_rect = node.mRect;
-					current_rect.SetOrigin( current_rect.GetOrigin() + node.mPosition );
+					auto current_rect = component->mRect;
+					current_rect.SetOrigin( current_rect.GetOrigin() + component->mPosition );
 
 					for( int y = 0; current_rect.GetHeight() > y; ++y )
 					{
 						for( int x = 0; current_rect.GetWidth() > x; ++x )
 						{
 							r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
-							std::cout << node.mTexture.GetCharacter( x, y );
+							std::cout << component->mTexture.GetCharacter( x, y );
 						}
 					}
 				}
@@ -172,7 +182,7 @@ namespace render_test
 				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
 
-				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( node.mPosition.GetX() ), static_cast<short>( node.mPosition.GetY() ) } );
+				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( component->mPosition.GetX() ), static_cast<short>( component->mPosition.GetY() ) } );
 				std::cout << '+';
 
 				r2tm::WindowUtility::MoveCursorPoint( { 0, 50 } );
@@ -183,13 +193,13 @@ namespace render_test
 			system( "pause" );
 
 			{
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( { 0, 11 } );
+				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( { 0, 12 } );
 
 				OUTPUT_SUBJECT( "Show Render Target" );
 
 				LF();
 
-				node.Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				int current_x = 0;
 				for( const auto& p : render_target )
