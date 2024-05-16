@@ -11,6 +11,31 @@
 
 namespace tool_texture_editor
 {
+	class EntrySceneComponent : public r2bix_component::Component<EntrySceneComponent>
+	{
+	public:
+		EntrySceneComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<EntrySceneComponent>( owner_node ) {}
+
+
+		//
+		// Override
+		//
+		void updateProcess( const float ) override
+		{
+			//
+			// Load Resources
+			//
+			{
+				// Do Something
+			}
+
+			//
+			//
+			//
+			GetOwnerNode().GetDirector().Setup( tool_texture_editor::FileMakeNSelectScene::Create( GetOwnerNode().GetDirector() ) );
+		}
+	};
+
 	r2bix_node::NodeUp EntryScene::Create( r2bix::Director& director )
 	{
 		r2bix_node::NodeUp ret( r2bix_node::Node::Create( director ) );
@@ -29,41 +54,10 @@ namespace tool_texture_editor
 			}
 
 			//
-			// Exit
+			//
 			//
 			{
-				auto component = ret->AddComponent<r2bix_component::InputKeyboardComponent>();
-
-				component->SetCallback(
-					  r2bix_input::eKeyCode::VK_ESCAPE
-					, [&director]( r2bix_input::eKeyStatus s )->bool
-					{
-						if( r2bix_input::eKeyStatus::Release == s )
-						{
-							r2bix_utility::ClearCInputBuffer();
-							director.RequestAbort();
-							return true;
-						}
-
-						return false;
-					}
-				);
-
-				component->SetCallback(
-					  r2bix_input::eKeyCode::VK_SPACE
-					, [&director]( r2bix_input::eKeyStatus s )->bool
-					{
-						if( r2bix_input::eKeyStatus::Release == s )
-						{
-							director.Setup( tool_texture_editor::FileMakeNSelectScene::Create( director ) );
-							return true;
-						}
-
-						return false;
-					}
-				);
-
-				component->Activate();
+				ret->AddComponent<EntrySceneComponent>();
 			}
 		}
 
