@@ -140,7 +140,9 @@ namespace render_test
 			LS();
 
 			{
-				std::cout << r2tm::tab << "+ Show : RenderTestNode, Camera Rect( #, X )" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Show : RenderTestNode, Camera Rect( #, X )" );
+
+				LF();
 
 				{
 					for( int y = camera.GetRect().GetMinY(); camera.GetRect().GetMaxY() >= y; ++y )
@@ -181,9 +183,11 @@ namespace render_test
 			system( "pause" );
 
 			{
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( { 0, 13 } );
+				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( { 0, 11 } );
 
-				std::cout << r2tm::tab << "+ Show Render Target" << r2tm::linefeed2;
+				OUTPUT_SUBJECT( "Show Render Target" );
+
+				LF();
 
 				node.Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
