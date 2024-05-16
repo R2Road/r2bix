@@ -4,7 +4,7 @@
 
 namespace p2048
 {
-	class GameScene : public r2bix_node::Node
+	class GameScene
 	{
 	private:
 		GameScene() = delete;
