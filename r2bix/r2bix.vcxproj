@@ -256,7 +256,7 @@
     <ClInclude Include="src\project_mini_adventure\p_mini_adv_VersionInfo.h" />
     <ClInclude Include="src\psnake\psnake_CompanyScene.h" />
     <ClInclude Include="src\psnake\psnake_VersionInfo.h" />
-    <ClInclude Include="src\r2bix\r2bixhelper_STDPrinter4Texture.h" />
+    <ClInclude Include="src\r2bix\r2bix_helper_STDPrinter4Texture.h" />
     <ClInclude Include="src\r2bix\r2bix_action_AnimationRequestAction.h" />
     <ClInclude Include="src\r2bix\r2bix_action_BlinkAction.h" />
     <ClInclude Include="src\r2bix\r2bix_action_CallbackAction.h" />
