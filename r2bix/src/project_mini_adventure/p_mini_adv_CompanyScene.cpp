@@ -1,70 +1,66 @@
 #include "p_mini_adv_CompanyScene.h"
 
-#include <conio.h>
-
 #include "r2bix_Director.h"
+
+#include "r2bix_component_InputKeyboardComponent.h"
 #include "r2bix_component_LabelSComponent.h"
-#include "r2bix_component_TextureRenderComponent.h"
+
 #include "r2bix_node_LabelSNode.h"
+
+#include "r2bix_utility_InputUtil.h"
 
 #include "p_mini_adv_VersionInfo.h"
 
 namespace p_mini_adv
 {
-	CompanyScene::CompanyScene( r2bix::Director& director ) : r2bix_node::Node( director )
-	{}
-
 	r2bix_node::NodeUp CompanyScene::Create( r2bix::Director& director )
 	{
-		r2bix_node::NodeUp ret( new ( std::nothrow ) CompanyScene( director ) );
-		if( !ret || !ret->Init() )
+		r2bix_node::NodeUp ret( r2bix_node::Node::Create( director ) );
+		if( ret )
 		{
-			ret.reset();
-		}
-
-		return ret;
-	}
-
-	bool CompanyScene::Init()
-	{
-		if( !r2bix_node::Node::Init() )
-		{
-			return false;
-		}
-
-		{
-			auto node = AddChild<r2bix_node::LabelSNode>();
-			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( VersionInfo.String4Summury );
-
-			node->mTransformComponent->SetPosition(
-				mDirector.GetScreenSize().GetWidth() * 0.5f
-				, mDirector.GetScreenSize().GetHeight() * 0.3f
-			);
-		}
-
-		{
-			auto node = AddChild<r2bix_node::LabelSNode>();
-			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( VersionInfo.String4Road2Version_0_0_1 );
-
-			node->mTransformComponent->SetPosition(
-				mDirector.GetScreenSize().GetWidth() * 0.5f
-				, mDirector.GetScreenSize().GetHeight() * 0.6f
-			);
-		}
-
-		return true;
-	}
-	void CompanyScene::Update( const float delta_time )
-	{
-		if( _kbhit() )
-		{
-			auto input = _getch();
-			if( 27 == input )
 			{
-				mDirector.RequestAbort();
+				auto node = ret->AddChild<r2bix_node::LabelSNode>();
+				node->GetComponent<r2bix_component::LabelSComponent>()->SetString( VersionInfo.String4Summury );
+
+				node->mTransformComponent->SetPosition(
+					  director.GetScreenSize().GetWidth() * 0.5f
+					, director.GetScreenSize().GetHeight() * 0.3f
+				);
+			}
+
+			{
+				auto node = ret->AddChild<r2bix_node::LabelSNode>();
+				node->GetComponent<r2bix_component::LabelSComponent>()->SetString( VersionInfo.String4Road2Version_0_0_1 );
+
+				node->mTransformComponent->SetPosition(
+					  director.GetScreenSize().GetWidth() * 0.5f
+					, director.GetScreenSize().GetHeight() * 0.6f
+				);
+			}
+
+			//
+			// Exit
+			//
+			{
+				auto component = ret->AddComponent<r2bix_component::InputKeyboardComponent>();
+				component->SetCallback(
+					  r2bix_input::eKeyCode::VK_ESCAPE
+					, [&director]( r2bix_input::eKeyStatus s )->bool
+					{
+						if( r2bix_input::eKeyStatus::Release == s )
+						{
+							r2bix_utility::ClearCInputBuffer();
+							director.RequestAbort();
+							return true;
+						}
+
+						return false;
+					}
+				);
+				component->Activate();
 			}
 		}
 
-		r2bix_node::Node::Update( delta_time );
+		return ret;
 	}
 }
