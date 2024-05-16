@@ -50,7 +50,7 @@ namespace p2048
 
 
 
-	void GameComponent::Update( const float delta_time )
+	void GameComponent::UpdateProcess( const float delta_time )
 	{
 		switch( mStep )
 		{
@@ -160,7 +160,7 @@ namespace p2048
 			GetOwnerNode().GetDirector().RequestAbort();
 		}
 
-		r2bix_component::iComponent::Update( delta_time );
+		r2bix_component::iComponent::UpdateProcess( delta_time );
 	}
 
 	bool GameComponent::MoveNumber( const r2::Direction4Sequential::eState move_direction )

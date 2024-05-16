@@ -34,7 +34,7 @@ namespace p2048
 		//
 		// Override
 		//
-		void Update( const float delta_time ) override
+		void UpdateProcess( const float delta_time ) override
 		{
 			if( !mChangeSceneTimer.Update( delta_time ) )
 			{

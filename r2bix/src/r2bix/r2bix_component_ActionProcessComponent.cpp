@@ -17,7 +17,7 @@ namespace r2bix_component
 		}
 	}
 
-	void ActionProcessComponent::Update( const float delta_time )
+	void ActionProcessComponent::UpdateProcess( const float delta_time )
 	{
 		if( !mbStart )
 		{

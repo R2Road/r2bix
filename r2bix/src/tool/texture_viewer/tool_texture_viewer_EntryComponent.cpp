@@ -10,7 +10,7 @@ namespace tool_texture_viewer
 	EntryComponent::EntryComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<EntryComponent>( owner_node )
 	{}
 
-	void EntryComponent::Update( const float delta_time )
+	void EntryComponent::UpdateProcess( const float delta_time )
 	{
 		//
 		// Load Resources
@@ -25,6 +25,6 @@ namespace tool_texture_viewer
 		//
 		GetOwnerNode().GetDirector().Setup( ViewerScene::Create( GetOwnerNode().GetDirector() ) );
 
-		r2bix_component::iComponent::Update( delta_time );
+		r2bix_component::iComponent::UpdateProcess( delta_time );
 	}
 }

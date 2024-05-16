@@ -145,9 +145,15 @@ namespace r2bix_component
 		//
 		//
 	public:
-		virtual void Update( const float /*delta_time*/ )
+		void Update( const float delta_time )
+		{
+			UpdateProcess( delta_time );
+		}
+	protected:
+		virtual void UpdateProcess( const float /*delta_time*/ )
 		{}
 
+	public:
 		virtual void Render( const r2bix_render::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
 		{}
 

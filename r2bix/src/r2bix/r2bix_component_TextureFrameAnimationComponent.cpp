@@ -13,7 +13,7 @@ namespace r2bix_component
 		, mCurrentAnimationFrameIndex( 0u )
 	{}
 
-	void TextureFrameAnimationComponent::Update( const float delta_time )
+	void TextureFrameAnimationComponent::UpdateProcess( const float delta_time )
 	{
 		if( mAnimationPackage.end() == mCurrentAnimation )
 		{

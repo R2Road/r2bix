@@ -46,7 +46,7 @@ namespace p2048
 		//
 		//
 	public:
-		void Update( const float delta_time ) override;
+		void UpdateProcess( const float delta_time ) override;
 
 		const Stage& GetStage() const { return mStage; }
 
