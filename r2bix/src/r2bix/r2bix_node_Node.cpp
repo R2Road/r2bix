@@ -3,7 +3,9 @@
 namespace r2bix_node
 {
 	Node::Node( r2bix::Director& director ) :
-		mDirector( director )
+		  mName()
+
+		, mDirector( director )
 		, mbVisible( true )
 		, mComponentContainer()
 

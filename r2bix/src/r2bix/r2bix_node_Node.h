@@ -20,6 +20,7 @@
 
 #include <list>
 #include <memory>
+#include <string>
 #include <type_traits>
 
 #include "r2_PointInt.h"
@@ -89,6 +90,10 @@ namespace r2bix_node
 		//
 		//
 		//
+		const std::string& GetName() const
+		{
+			return mName;
+		}
 		r2bix::Director& GetDirector() const { return mDirector; }
 		bool IsVisible() const { return mbVisible; }
 		void SetVisible( const bool visible )
@@ -233,6 +238,8 @@ namespace r2bix_node
 
 
 	protected:
+		std::string mName;
+
 		r2bix::Director& mDirector;
 		bool mbVisible;
 		ComponentContainerT mComponentContainer;
