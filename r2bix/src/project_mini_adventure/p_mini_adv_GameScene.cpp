@@ -1,58 +1,54 @@
 #include "p_mini_adv_GameScene.h"
 
-#include <conio.h>
-
 #include "r2bix_Director.h"
+
+#include "r2bix_component_InputKeyboardComponent.h"
 #include "r2bix_component_LabelSComponent.h"
-#include "r2bix_component_TextureRenderComponent.h"
+
 #include "r2bix_node_LabelSNode.h"
+
+#include "r2bix_utility_InputUtil.h"
 
 namespace p_mini_adv
 {
-	GameScene::GameScene( r2bix::Director& director ) : r2bix_node::Node( director )
-	{}
-
 	r2bix_node::NodeUp GameScene::Create( r2bix::Director& director )
 	{
-		r2bix_node::NodeUp ret( new ( std::nothrow ) GameScene( director ) );
-		if( !ret || !ret->Init() )
+		r2bix_node::NodeUp ret( r2bix_node::Node::Create( director ) );
+		if( ret )
 		{
-			ret.reset();
-		}
-
-		return ret;
-	}
-
-	bool GameScene::Init()
-	{
-		if( !r2bix_node::Node::Init() )
-		{
-			return false;
-		}
-
-		{
-			auto node = AddChild<r2bix_node::LabelSNode>();
-			node->GetComponent<r2bix_component::LabelSComponent>()->SetString( GameScene::GetTitle() );
-
-			node->mTransformComponent->SetPosition(
-				mDirector.GetScreenSize().GetWidth() * 0.5f
-				, mDirector.GetScreenSize().GetHeight() * 0.5f
-			);
-		}
-
-		return true;
-	}
-	void GameScene::Update( const float delta_time )
-	{
-		if( _kbhit() )
-		{
-			auto input = _getch();
-			if( 27 == input )
 			{
-				mDirector.RequestAbort();
+				auto node = ret->AddChild<r2bix_node::LabelSNode>();
+				node->GetComponent<r2bix_component::LabelSComponent>()->SetString( GameScene::GetTitle() );
+
+				node->mTransformComponent->SetPosition(
+					  director.GetScreenSize().GetWidth() * 0.5f
+					, director.GetScreenSize().GetHeight() * 0.5f
+				);
+			}
+
+			//
+			// Exit
+			//
+			{
+				auto component = ret->AddComponent<r2bix_component::InputKeyboardComponent>();
+				component->SetCallback(
+					  r2bix_input::eKeyCode::VK_ESCAPE
+					, [&director]( r2bix_input::eKeyStatus s )->bool
+					{
+						if( r2bix_input::eKeyStatus::Push == s )
+						{
+							r2bix_utility::ClearCInputBuffer();
+							director.RequestAbort();
+							return true;
+						}
+
+						return false;
+					}
+				);
+				component->Activate();
 			}
 		}
 
-		r2bix_node::Node::Update( delta_time );
+		return ret;
 	}
 }
