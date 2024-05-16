@@ -133,6 +133,7 @@ namespace p2048
 						return false;
 					}
 				);
+
 				component->Activate();
 			}
 		}
