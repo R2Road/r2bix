@@ -9,9 +9,6 @@
 
 namespace tool_texture_editor
 {
-	EntryScene::EntryScene( r2bix::Director& director ) : r2bix_node::Node( director )
-	{}
-
 	r2bix_node::NodeUp EntryScene::Create( r2bix::Director& director )
 	{
 		r2bix_node::NodeUp ret( r2bix_node::Node::Create( director ) );
