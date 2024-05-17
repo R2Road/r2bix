@@ -640,7 +640,7 @@ namespace node_test
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 3, 3 ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 3, 3 ) );
 
 				LF();
 
@@ -652,7 +652,7 @@ namespace node_test
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 5, 4 ) );
+				PROCESS_MAIN( node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 5, 4 ) );
 
 				LF();
 
@@ -721,7 +721,7 @@ namespace node_test
 				//
 				{
 					auto btn_node = scene->AddChild<r2bix_node::UIButtonNode>();
-					btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
+					btn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 11, 5 );
 					btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 3 );
 				}
 
@@ -734,7 +734,7 @@ namespace node_test
 					auto node_2 = node_1->AddChild<r2bix_node::Node>();
 
 					auto btn_node = node_2->AddChild<r2bix_node::UIButtonNode>();
-					btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
+					btn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 11, 5 );
 					btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 16, 6 );
 				}
 
@@ -745,7 +745,7 @@ namespace node_test
 					auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
 
 					auto btn_node = pn_node->AddChild<r2bix_node::UIButtonNode>();
-					btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
+					btn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 11, 5 );
 					btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 22, 9 );
 				}
 
@@ -770,13 +770,13 @@ namespace node_test
 
 					auto btn_node = empty_node->AddChild<r2bix_node::UIButtonNode>();
 					btn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 3 );
-					btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetSize( 11, 5 );
+					btn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 11, 5 );
 					{
 						auto rect_node = btn_node->AddChild<r2bix_node::RectNode>();
 						rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
-							btn_node->GetComponent<r2bix_component::UIButtonComponent>()->GetWidth()
-							, btn_node->GetComponent<r2bix_component::UIButtonComponent>()->GetHeight()
+							btn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
+							, btn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
 						);
 
 						btn_node->GetComponent<r2bix_component::UIButtonComponent>()->SetCallback4CursorResponse( [rect_node]( r2bix_ui::eCursorStatus s )->bool

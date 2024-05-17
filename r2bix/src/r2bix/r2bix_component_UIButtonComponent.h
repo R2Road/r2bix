@@ -41,16 +41,6 @@ namespace r2bix_component
 		//
 		//
 	public:
-		int GetWidth() const;
-		int GetHeight() const;
-
-		void SetSize( const uint32_t width, const uint32_t height );
-
-
-
-		//
-		//
-		//
 		void SetMyUIControlComponent( UIControlComponent* const ui_control_component )
 		{
 			mMyUIControlComponent = ui_control_component;
