@@ -6,8 +6,6 @@
 
 #include "r2bix_node_LabelSNode.h"
 
-#include "r2bix_utility_InputUtil.h"
-
 #include "tool_texture_editor_FileMakeNSelectScene.h"
 
 namespace tool_texture_editor

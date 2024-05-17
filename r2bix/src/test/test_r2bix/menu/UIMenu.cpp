@@ -17,8 +17,6 @@
 #include "r2bix/r2bix_node_UIPannelNode.h"
 #include "r2bix/r2bix_node_UITextFieldNode.h"
 
-#include "r2bix/r2bix_utility_InputUtil.h"
-
 #include "test/test_r2bix/R2bixMenu.h"
 
 r2tm::TitleFunctionT UIMenu::GetTitleFunction() const
@@ -60,7 +58,6 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
 						{
 							director.RequestAbort();
-							r2bix_utility::ClearCInputBuffer();
 
 							return false;
 						} );

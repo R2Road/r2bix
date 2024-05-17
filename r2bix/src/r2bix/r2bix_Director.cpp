@@ -4,6 +4,8 @@
 
 #include "r2_Assert.h"
 
+#include "r2bix_utility_InputUtil.h"
+
 namespace r2bix
 {
 	Director::Director( const r2bix_director::Config& director_config ) :
@@ -64,6 +66,8 @@ namespace r2bix
 
 			mDefarredTaskQueue.Process();
 		}
+
+		r2bix_utility::ClearCInputBuffer();
 	}
 	void Director::onUpdate( const float delta_time )
 	{

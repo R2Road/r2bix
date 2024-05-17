@@ -1,11 +1,13 @@
 #include "p2048_GameComponent.h"
 
 #include "r2utility_StringBuilder.h"
+
 #include "r2bix_Director.h"
-#include "r2bix_node_Node.h"
+
 #include "r2bix_component_ActionProcessComponent.h"
 #include "r2bix_component_LabelSComponent.h"
-#include "r2bix_utility_InputUtil.h"
+
+#include "r2bix_node_Node.h"
 
 #include "p2048_Config.h"
 #include "p2048_StageViewComponent.h"
@@ -156,7 +158,6 @@ namespace p2048
 		}
 		else if( mKeyboardListener.IsRelease( 0 ) )
 		{
-			r2bix_utility::ClearCInputBuffer();
 			GetOwnerNode().GetDirector().RequestAbort();
 		}
 

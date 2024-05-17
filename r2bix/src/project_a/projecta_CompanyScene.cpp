@@ -1,11 +1,12 @@
 #include "projecta_CompanyScene.h"
 
 #include "r2bix_Director.h"
+
 #include "r2bix_component_InputKeyboardComponent.h"
 #include "r2bix_component_LabelSComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"
+
 #include "r2bix_node_LabelSNode.h"
-#include "r2bix_utility_InputUtil.h"
 
 namespace projecta
 {
@@ -37,7 +38,6 @@ namespace projecta
 					{
 						if( r2bix_input::eKeyStatus::Release == s )
 						{
-							r2bix_utility::ClearCInputBuffer();
 							director.RequestAbort();
 							return true;
 						}

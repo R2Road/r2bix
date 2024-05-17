@@ -110,7 +110,6 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 					input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
 					{
 						director.RequestAbort();
-						r2bix_utility::ClearCInputBuffer();
 
 						return true;
 					} );

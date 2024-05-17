@@ -14,8 +14,6 @@
 #include "r2bix_node_LabelSNode.h"
 #include "r2bix_node_SpriteAnimationNode.h"
 
-#include "r2bix_utility_InputUtil.h"
-
 #include "p2048_TitleScene.h"
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
@@ -108,7 +106,6 @@ namespace p2048
 					{
 						if( r2bix_input::eKeyStatus::Push == s )
 						{
-							r2bix_utility::ClearCInputBuffer();
 							director.RequestAbort();
 							return true;
 						}

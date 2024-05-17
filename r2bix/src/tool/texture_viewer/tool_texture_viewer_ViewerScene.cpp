@@ -7,8 +7,6 @@
 
 #include "r2bix_node_LabelSNode.h"
 
-#include "r2bix_utility_InputUtil.h"
-
 namespace tool_texture_viewer
 {
 	r2bix_node::NodeUp ViewerScene::Create( r2bix::Director& director )
@@ -27,7 +25,6 @@ namespace tool_texture_viewer
 					{
 						if( r2bix_input::eKeyStatus::Release == s )
 						{
-							r2bix_utility::ClearCInputBuffer();
 							director.RequestAbort();
 							return true;
 						}

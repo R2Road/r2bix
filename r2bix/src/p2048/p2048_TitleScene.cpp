@@ -15,8 +15,6 @@
 #include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_TransformComponent.h"
 
-#include "r2bix_utility_InputUtil.h"
-
 #include "r2bix_node_LabelSNode.h"
 #include "r2bix_node_SpriteNode.h"
 
@@ -249,7 +247,6 @@ namespace p2048
 					{
 						if( r2bix_input::eKeyStatus::Push == s )
 						{
-							r2bix_utility::ClearCInputBuffer();
 							director.RequestAbort();
 							return true;
 						}

@@ -7,8 +7,6 @@
 
 #include "r2bix_node_LabelSNode.h"
 
-#include "r2bix_utility_InputUtil.h"
-
 namespace p_mini_adv
 {
 	r2bix_node::NodeUp GameScene::Create( r2bix::Director& director )
@@ -37,7 +35,6 @@ namespace p_mini_adv
 					{
 						if( r2bix_input::eKeyStatus::Push == s )
 						{
-							r2bix_utility::ClearCInputBuffer();
 							director.RequestAbort();
 							return true;
 						}
