@@ -545,6 +545,9 @@
     <ClCompile Include="src\r2bix\r2bix_node_UISimpleButtonNode.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_component_UISimpleButtonComponent.cpp">
+      <Filter>r2bix\component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -1169,6 +1172,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_node_UISimpleButtonNode.h">
       <Filter>r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_component_UISimpleButtonComponent.h">
+      <Filter>r2bix\component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

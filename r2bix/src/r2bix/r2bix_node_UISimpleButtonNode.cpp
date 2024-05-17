@@ -4,8 +4,8 @@
 
 #include "r2bix_component_CustomTextureComponent.h"
 
-#include "r2bix_component_UIButtonComponent.h"
 #include "r2bix_component_UIControlComponent.h"
+#include "r2bix_component_UISimpleButtonComponent.h"
 
 #include "r2bix_component_TextureRenderComponent.h"
 
@@ -20,7 +20,7 @@ namespace r2bix_node
 			//
 			// 생성
 			//
-			auto ui_button_component = ret->AddComponent<r2bix_component::UIButtonComponent>();
+			auto ui_simple_button_component = ret->AddComponent<r2bix_component::UISimpleButtonComponent>();
 			auto ui_control_component = ret->AddComponent<r2bix_component::UIControlComponent>();
 			auto custome_texture_component = ret->AddComponent<r2bix_component::CustomTextureComponent>();
 			auto texture_render_component = ret->AddComponent<r2bix_component::TextureRenderComponent>();
@@ -30,7 +30,8 @@ namespace r2bix_node
 			//
 			// 설정
 			//
-			ui_button_component->SetMyUIControlComponent( ui_control_component );
+			ui_simple_button_component->SetMyUIControlComponent( ui_control_component );
+			ui_simple_button_component->SetMyCustomTextureComponent( custome_texture_component );
 
 			texture_render_component->SetTexture( custome_texture_component->GetTexture() );
 
@@ -41,7 +42,7 @@ namespace r2bix_node
 			//
 			if( true )
 			{
-				ui_button_component->Activate();
+				ui_simple_button_component->Activate();
 			}
 			if( true )
 			{

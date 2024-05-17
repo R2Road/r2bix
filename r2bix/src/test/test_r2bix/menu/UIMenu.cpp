@@ -10,11 +10,13 @@
 #include "r2bix/r2bix_component_TextureRenderComponent.h"
 #include "r2bix/r2bix_component_UIControlComponent.h"
 #include "r2bix/r2bix_component_UIPannelComponent.h"
+#include "r2bix/r2bix_component_UISimpleButtonComponent.h"
 #include "r2bix/r2bix_component_UITextFieldComponent.h"
 
 #include "r2bix/r2bix_node_CustomTextureNode.h"
 #include "r2bix/r2bix_node_RectNode.h"
 #include "r2bix/r2bix_node_UIPannelNode.h"
+#include "r2bix/r2bix_node_UISimpleButtonNode.h"
 #include "r2bix/r2bix_node_UITextFieldNode.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
@@ -85,8 +87,8 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						//
 						auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
 						{
-							pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 18, 12 );
-							pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 15, 7 );
+							pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 12 );
+							pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 23, 15 );
 							{
 								auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
 								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
@@ -104,7 +106,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						//
 						{
 							auto text_field_node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
-							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 3 );
+							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 15, 3 );
 							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetLength( 20 );
 							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetText( "ui    text    field~~!");
 							{
@@ -149,6 +151,19 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4KeyResponse( &slot_key_response );
 							}
 						}
+
+
+						//
+						// Text Field
+						//
+						{
+							auto simple_button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
+							simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 8 );
+							simple_button_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 10, 3 );
+							simple_button_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 10, 3, '0' );
+							simple_button_node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect();
+						}
+							
 					}
 
 					//

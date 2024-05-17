@@ -74,6 +74,7 @@
     <ClCompile Include="src\r2bix\r2bix_component_UIButtonComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_UIControlComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_UIPannelComponent.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_component_UISimpleButtonComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_UITextFieldComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_director_CoutBufferRedirector.cpp" />
     <ClCompile Include="src\r2bix\r2bix_DebugConfig.cpp" />
@@ -279,6 +280,7 @@
     <ClInclude Include="src\r2bix\r2bix_component_UIButtonComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_UIControlComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_UIPannelComponent.h" />
+    <ClInclude Include="src\r2bix\r2bix_component_UISimpleButtonComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_UITextFieldComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_director_CoutBufferRedirector.h" />
     <ClInclude Include="src\r2bix\r2bix_DebugConfig.h" />
