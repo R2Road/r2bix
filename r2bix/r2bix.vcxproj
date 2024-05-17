@@ -86,6 +86,7 @@
     <ClCompile Include="src\r2bix\r2bix_node_RectNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_UIButtonNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_UIPannelNode.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_node_UISimpleButtonNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_UITextFieldNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.cpp" />
@@ -293,6 +294,7 @@
     <ClInclude Include="src\r2bix\r2bix_node_RectNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_UIButtonNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_UIPannelNode.h" />
+    <ClInclude Include="src\r2bix\r2bix_node_UISimpleButtonNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_UITextFieldNode.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.h" />
