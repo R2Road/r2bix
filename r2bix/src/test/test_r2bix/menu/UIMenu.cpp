@@ -87,13 +87,13 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						//
 						auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
 						{
-							pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 10, 12 );
+							pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 15, 12 );
 							pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 23, 15 );
 							{
 								auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
-								rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 								rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
-									  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
+									  r2::Vector2{ 0.5f, 0.5f }
+									, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 									, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
 									, "Pannel "
 								);
@@ -106,7 +106,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						//
 						{
 							auto text_field_node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
-							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 15, 3 );
+							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, -3 );
 							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetLength( 20 );
 							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetText( "ui    text    field~~!");
 							{
@@ -158,7 +158,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						//
 						{
 							auto simple_button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
-							simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 7, 8 );
+							simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -3, 4 );
 							simple_button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetSize( 10, 3, '0' );
 							simple_button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetPivotPoint( 0.f, 0.f );
 						}

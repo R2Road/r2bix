@@ -65,11 +65,7 @@ namespace r2bix_component
 			return mResponseRect.GetHeight();
 		}
 
-		void SetSize( const uint32_t width, const uint32_t height )
-		{
-			mResponseRect.SetSize( width, height );
-		}
-
+		void SetSize( const uint32_t width, const uint32_t height );
 		void SetPivotPoint( const float x, const float y );
 		
 		

@@ -13,7 +13,7 @@ namespace r2bix_component
 	UIControlComponent::UIControlComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIControlComponent>( owner_node )
 		, mOrder( 0 )
 
-		, mPivotVector()
+		, mPivotVector( 0.5f, 0.5f )
 		, mResponseRect()
 
 		, mCursorState( r2bix_ui::eCursorStatus::None )
@@ -65,6 +65,16 @@ namespace r2bix_component
 	}
 
 
+
+	void UIControlComponent::SetSize( const uint32_t width, const uint32_t height )
+	{
+		mResponseRect.SetSize( width, height );
+
+		mResponseRect.SetOrigin(
+			  -mResponseRect.GetSize().GetWidth() * mPivotVector.x
+			, -mResponseRect.GetSize().GetHeight() * mPivotVector.y
+		);
+	}
 
 	void UIControlComponent::SetPivotPoint( const float x, const float y )
 	{
