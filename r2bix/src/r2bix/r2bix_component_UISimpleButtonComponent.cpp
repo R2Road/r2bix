@@ -74,4 +74,11 @@ namespace r2bix_component
 	{
 		mSlot4KeyStatusChanged.SetCallback( callback );
 	}
+
+
+
+	void UISimpleButtonComponent::SetPivotPoint( const float x, const float y )
+	{
+		mMyTextureRenderComponent->SetPivotPoint( x, y );
+	}
 }

@@ -80,6 +80,13 @@ namespace r2bix_component
 
 
 
+		//
+		//
+		//
+		void SetPivotPoint( const float x, const float y );
+
+
+
 	private:
 		UIControlComponent* mMyUIControlComponent;
 		CustomTextureComponent* mMyCustomTextureComponent;
