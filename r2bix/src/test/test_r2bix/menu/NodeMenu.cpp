@@ -50,6 +50,7 @@ r2tm::WriteFunctionT NodeMenu::GetWriteFunction() const
 		ret->AddItem( 's', node_test::UIPannel_CursorResponse() );
 		ret->AddItem( 'd', node_test::UIButton() );
 		ret->AddItem( 'f', node_test::UIButton_CursorResponse() );
+		ret->AddItem( 'g', node_test::UISimpleButton_CursorResponse() );
 
 
 

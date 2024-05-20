@@ -14,6 +14,7 @@
 #include "r2bix_component_UIButtonComponent.h"
 #include "r2bix_component_UIControlComponent.h"
 #include "r2bix_component_UIPannelComponent.h"
+#include "r2bix_component_UISimpleButtonComponent.h"
 #include "r2bix_node_CustomTextureNode.h"
 #include "r2bix_node_LabelSNode.h"
 #include "r2bix_node_LabelMNode.h"
@@ -23,6 +24,7 @@
 #include "r2bix_node_SpriteNode.h"
 #include "r2bix_node_UIButtonNode.h"
 #include "r2bix_node_UIPannelNode.h"
+#include "r2bix_node_UISimpleButtonNode.h"
 #include "r2bix_helper/r2bix_helper_Printer4Texture.h"
 
 #include "r2tm/r2tm_Inspector.h"
@@ -815,6 +817,97 @@ namespace node_test
 							return false;
 						} );
 					}
+				}
+			}
+
+			//
+			// Process
+			//
+			director.Run();
+
+			//
+			// Terminate
+			//
+			director.Terminate();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT UISimpleButton_CursorResponse::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "UISimpleButton : Cursor Response";
+		};
+	}
+	r2tm::DoFunctionT UISimpleButton_CursorResponse::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			r2bix::Director director( { 51, 51, r2bix_director::Config::eScheduleType::Sleep, 30, 60, 2, 1 } );
+
+			//
+			// Scene
+			//
+			r2bix_node::Node* scene;
+			{
+				auto temp = r2bix_node::Node::Create( director );
+				scene = temp.get();
+
+				director.Setup( std::move( temp ) );
+
+				auto input_component = scene->AddComponent<r2bix_component::InputKeyboardComponent>();
+				input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
+				{
+					director.RequestAbort();
+
+					return false;
+				} );
+
+				input_component->Activate();
+			}
+
+			//
+			// Background
+			//
+			{
+				auto node = scene->AddChild<r2bix_node::CustomTextureNode>();
+				node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
+				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+			}
+
+			//
+			//
+			//
+			{
+				//
+				// Pannel
+				//
+				auto pn_node = scene->AddChild<r2bix_node::UIPannelNode>();
+				{
+					pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 15, 12 );
+					pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 23, 15 );
+					{
+						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
+						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
+							r2::Vector2{ 0.5f, 0.5f }
+							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
+							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
+							, "Pannel "
+						);
+					}
+				}
+
+				//
+				// Simple Button
+				//
+				{
+					auto simple_button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
+					simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -3, 4 );
+					simple_button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.f, 0.f, 10, 3, ' ' );
 				}
 			}
 

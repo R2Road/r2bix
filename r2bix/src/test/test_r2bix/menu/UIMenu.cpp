@@ -150,18 +150,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 								} );
 								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4KeyResponse( &slot_key_response );
 							}
-						}
-
-
-						//
-						// Text Field
-						//
-						{
-							auto simple_button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
-							simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -3, 4 );
-							simple_button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.f, 0.f, 10, 3, ' ' );
-						}
-							
+						}							
 					}
 
 					//
