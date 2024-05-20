@@ -2,8 +2,8 @@
 
 #include <functional>
 
+#include "r2_RectInt.h"
 #include "r2_SignalSlot.h"
-#include "r2_SizeInt.h"
 
 #include "r2bix_component_Component.h"
 #include "r2bix_input_Constant.h"
@@ -57,16 +57,16 @@ namespace r2bix_component
 
 		int GetWidth() const
 		{
-			return mSize.GetWidth();
+			return mResponseRect.GetWidth();
 		}
 		int GetHeight() const
 		{
-			return mSize.GetHeight();
+			return mResponseRect.GetHeight();
 		}
 
 		void SetSize( const uint32_t width, const uint32_t height )
 		{
-			mSize.Set( width, height );
+			mResponseRect.SetSize( width, height );
 		}
 		
 		
@@ -117,7 +117,7 @@ namespace r2bix_component
 	private:
 		int mOrder;
 
-		r2::SizeInt mSize;
+		r2::RectInt mResponseRect;
 
 		r2bix_ui::eCursorStatus mCursorState;
 		r2bix_ui::eKeyStatus mKeyStatus;

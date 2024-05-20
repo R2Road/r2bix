@@ -13,7 +13,7 @@ namespace r2bix_component
 	UIControlComponent::UIControlComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIControlComponent>( owner_node )
 		, mOrder( 0 )
 
-		, mSize()
+		, mResponseRect()
 
 		, mCursorState( r2bix_ui::eCursorStatus::None )
 		, mKeyStatus( r2bix_ui::eKeyStatus::None)
