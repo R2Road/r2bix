@@ -93,4 +93,12 @@ namespace r2bix_component
 		mCustomTextureComponent->GetTexture()->FillCharacterAll( ' ' );
 		mCustomTextureComponent->GetTexture()->FillString( str );
 	}
+
+
+
+	void UITextFieldComponent::Set( const int length, const char* str )
+	{
+		SetLength( length );
+		SetText( str );
+	}
 }

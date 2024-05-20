@@ -39,6 +39,8 @@ namespace r2bix_component
 
 		void SetText( const char* str );
 
+		void Set( const int length, const char* str );
+
 
 
 	private:
