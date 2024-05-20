@@ -75,6 +75,14 @@ namespace r2bix_component
 
 
 
+	void UITextFieldComponent::SetPivotPoint( const float x, const float y )
+	{
+		mUIControlComponent->SetPivotPoint( x, y );
+		mTextureRenderComponent->SetPivotPoint( x, y );
+	}
+
+
+
 	int UITextFieldComponent::GetLength() const
 	{
 		return mUIControlComponent->GetWidth();
