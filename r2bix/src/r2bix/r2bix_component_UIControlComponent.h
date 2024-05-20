@@ -67,9 +67,12 @@ namespace r2bix_component
 
 		void SetSize( const uint32_t width, const uint32_t height );
 		void SetPivotPoint( const float x, const float y );
+	private:
+		void resetResponseRect();
 		
 		
 
+	public:
 		//
 		//
 		//

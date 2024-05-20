@@ -72,10 +72,7 @@ namespace r2bix_component
 
 		mResponseRect.SetSize( width - 1, height - 1 );
 
-		mResponseRect.SetOrigin(
-			  -mResponseRect.GetWidth() * mPivotVector.x
-			, -mResponseRect.GetHeight() * mPivotVector.y
-		);
+		resetResponseRect();
 	}
 
 	void UIControlComponent::SetPivotPoint( const float x, const float y )
@@ -83,9 +80,14 @@ namespace r2bix_component
 		mPivotVector.x = x;
 		mPivotVector.y = y;
 
+		resetResponseRect();
+	}
+
+	void UIControlComponent::resetResponseRect()
+	{
 		mResponseRect.SetOrigin(
-			  -mResponseRect.GetWidth() * x
-			, -mResponseRect.GetHeight() * y
+			  -mResponseRect.GetWidth() * mPivotVector.x
+			, -mResponseRect.GetHeight() * mPivotVector.y
 		);
 	}
 
