@@ -32,6 +32,7 @@ namespace r2bix_node
 			//
 			ui_simple_button_component->SetMyUIControlComponent( ui_control_component );
 			ui_simple_button_component->SetMyCustomTextureComponent( custome_texture_component );
+			ui_simple_button_component->SetMyTextureRenderComponent( texture_render_component );
 
 			texture_render_component->SetTexture( custome_texture_component->GetTexture() );
 

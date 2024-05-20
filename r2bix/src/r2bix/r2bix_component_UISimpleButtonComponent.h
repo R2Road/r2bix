@@ -14,6 +14,7 @@ namespace r2bix_component
 {
 	class CustomTextureComponent;
 	class UIControlComponent;
+	class TextureRenderComponent;
 
 	class UISimpleButtonComponent : public r2bix_component::Component<UISimpleButtonComponent>
 	{
@@ -60,6 +61,15 @@ namespace r2bix_component
 			return mMyCustomTextureComponent;
 		}
 
+		void SetMyTextureRenderComponent( TextureRenderComponent* const component )
+		{
+			mMyTextureRenderComponent = component;
+		}
+		TextureRenderComponent* const GetMyTextureRenderComponent() const
+		{
+			return mMyTextureRenderComponent;
+		}
+
 
 
 		//
@@ -73,6 +83,7 @@ namespace r2bix_component
 	private:
 		UIControlComponent* mMyUIControlComponent;
 		CustomTextureComponent* mMyCustomTextureComponent;
+		TextureRenderComponent* mMyTextureRenderComponent;
 
 		Slot4CursorStatusChangedT mSlot4CursorStatusChanged_ViewProcess;
 		Slot4KeyStatusChangedT mSlot4KeyStatusChanged_ViewProcess;

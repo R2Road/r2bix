@@ -3,6 +3,7 @@
 #include "r2bix_Director.h"
 
 #include "r2bix_component_CustomTextureComponent.h"
+#include "r2bix_component_TextureRenderComponent.h"
 #include "r2bix_component_UIControlComponent.h"
 
 namespace r2bix_component
@@ -10,8 +11,11 @@ namespace r2bix_component
 	UISimpleButtonComponent::UISimpleButtonComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UISimpleButtonComponent>( owner_node )
 		, mMyUIControlComponent( nullptr )
 		, mMyCustomTextureComponent( nullptr )
+		, mMyTextureRenderComponent( nullptr )
+
 		, mSlot4CursorStatusChanged_ViewProcess()
 		, mSlot4KeyStatusChanged_ViewProcess()
+
 		, mSlot4CursorStatusChanged()
 		, mSlot4KeyStatusChanged()
 	{
