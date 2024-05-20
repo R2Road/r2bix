@@ -79,6 +79,7 @@ namespace r2bix_component
 
 	void UISimpleButtonComponent::SetPivotPoint( const float x, const float y )
 	{
+		mMyUIControlComponent->SetPivotPoint( x, y );
 		mMyTextureRenderComponent->SetPivotPoint( x, y );
 	}
 }

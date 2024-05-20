@@ -68,6 +68,8 @@ namespace r2bix_component
 		{
 			mResponseRect.SetSize( width, height );
 		}
+
+		void SetPivotPoint( const float x, const float y );
 		
 		
 

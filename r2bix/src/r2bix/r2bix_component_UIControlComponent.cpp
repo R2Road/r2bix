@@ -63,9 +63,24 @@ namespace r2bix_component
 		}
 	}
 
+
+
+	void UIControlComponent::SetPivotPoint( const float x, const float y )
+	{
+		mResponseRect.SetOrigin(
+			  -mResponseRect.GetSize().GetWidth() * x
+			, -mResponseRect.GetSize().GetHeight() * y
+		);
+	}
+
+
+
 	bool UIControlComponent::OnCursorResponse( const r2bix_input::CursorPoint cursor_point )
 	{
-		const r2::RectInt r( mOwnerNode.mTransformComponent->GetWorldPosition(), r2::SizeInt( GetWidth() - 1, GetHeight() - 1 ) );
+		const r2::RectInt r(
+			  mOwnerNode.mTransformComponent->GetWorldPosition() + mResponseRect.GetOrigin()
+			, r2::SizeInt( mResponseRect.GetSize().GetWidth() - 1, mResponseRect.GetSize().GetHeight() - 1 )
+		);
 
 		switch( mCursorState )
 		{

@@ -161,8 +161,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 8 );
 							simple_button_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 10, 3 );
 							simple_button_node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 10, 3, '0' );
-							simple_button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetPivotPoint( 0.f, 0.f );
-							simple_button_node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect();
+							simple_button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetPivotPoint( 0.5f, 0.5f );
 						}
 							
 					}
