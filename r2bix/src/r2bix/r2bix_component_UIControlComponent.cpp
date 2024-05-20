@@ -14,7 +14,7 @@ namespace r2bix_component
 		, mOrder( 0 )
 
 		, mPivotVector( 0.5f, 0.5f )
-		, mResponseRect()
+		, mResponseRect( 0, 0, 1, 1 )
 
 		, mCursorState( r2bix_ui::eCursorStatus::None )
 		, mKeyStatus( r2bix_ui::eKeyStatus::None)
@@ -68,11 +68,13 @@ namespace r2bix_component
 
 	void UIControlComponent::SetSize( const uint32_t width, const uint32_t height )
 	{
-		mResponseRect.SetSize( width, height );
+		R2ASSERT( width >= 1 && height >= 1, "" );
+
+		mResponseRect.SetSize( width - 1, height - 1 );
 
 		mResponseRect.SetOrigin(
-			  -mResponseRect.GetSize().GetWidth() * mPivotVector.x
-			, -mResponseRect.GetSize().GetHeight() * mPivotVector.y
+			  -mResponseRect.GetWidth() * mPivotVector.x
+			, -mResponseRect.GetHeight() * mPivotVector.y
 		);
 	}
 
@@ -82,8 +84,8 @@ namespace r2bix_component
 		mPivotVector.y = y;
 
 		mResponseRect.SetOrigin(
-			  -mResponseRect.GetSize().GetWidth() * x
-			, -mResponseRect.GetSize().GetHeight() * y
+			  -mResponseRect.GetWidth() * x
+			, -mResponseRect.GetHeight() * y
 		);
 	}
 
@@ -93,7 +95,7 @@ namespace r2bix_component
 	{
 		const r2::RectInt r(
 			  mOwnerNode.mTransformComponent->GetWorldPosition() + mResponseRect.GetOrigin()
-			, r2::SizeInt( mResponseRect.GetSize().GetWidth() - 1, mResponseRect.GetSize().GetHeight() - 1 )
+			, r2::SizeInt( mResponseRect.GetSize().GetWidth(), mResponseRect.GetSize().GetHeight() )
 		);
 
 		switch( mCursorState )
