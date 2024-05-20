@@ -37,31 +37,61 @@ namespace r2bix_render
 		//
 		// Iteration
 		//
-		ConstIteratorT begin() const { return mChars.begin(); }
-		ConstIteratorT end() const { return mChars.end(); }
+		ConstIteratorT begin() const
+		{
+			return mChars.begin();
+		}
+		ConstIteratorT end() const
+		{
+			return mChars.end();
+		}
 
 
 
 		//
 		// Getter
 		//
-		int GetWidth() const { return mGridIndexConverter.GetWidth(); }
-		int GetHeight() const { return mGridIndexConverter.GetHeight(); }
+		int GetWidth() const
+		{
+			return mGridIndexConverter.GetWidth();
+		}
+		int GetHeight() const
+		{
+			return mGridIndexConverter.GetHeight();
+		}
 
-		int GetXEnd() const { return mGridIndexConverter.GetWidth() - 1; }
-		int GetYEnd() const { return mGridIndexConverter.GetHeight() - 1; }
+		int GetXEnd() const
+		{
+			return mGridIndexConverter.GetWidth() - 1;
+		}
+		int GetYEnd() const
+		{
+			return mGridIndexConverter.GetHeight() - 1;
+		}
 
-		int GetLength() const { return static_cast<int>( mChars.size() ); }
+		int GetLength() const
+		{
+			return static_cast<int>( mChars.size() );
+		}
 
-		const ContainerT& GetCharacterContainer() const { return mChars; }
+		const ContainerT& GetCharacterContainer() const
+		{
+			return mChars;
+		}
 		ValueT GetCharacter( const uint32_t x, const uint32_t y ) const;
 		std::string_view GetCharacterLine( const uint32_t y ) const;
 
-		const ColorContainerT& GetColorContainer() const { return mColors; }
+		const ColorContainerT& GetColorContainer() const
+		{
+			return mColors;
+		}
 		r2bix::ColorValue GetColor( const uint32_t x, const uint32_t y ) const;
 		const r2bix::ColorValue* GetColorLine( const uint32_t y ) const;
 
-		const DisuseContainerT& GetCharacterDisuseContainer() const { return mCharDisuses; }
+		const DisuseContainerT& GetCharacterDisuseContainer() const
+		{
+			return mCharDisuses;
+		}
 		bool GetCharacterDisuse( const uint32_t x, const uint32_t y ) const;
 
 
@@ -88,7 +118,10 @@ namespace r2bix_render
 		void FillColor( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value ) override;
 		void FillColorWithMask( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value, const r2bix::ColorMaskOption color_mask_option ) override;
 		void BlendColor( const uint32_t x, const uint32_t y, const r2bix::ColorValue color_value ) override;
-		r2::RectInt GetRect() const override { return r2::RectInt( 0, 0, GetWidth(), GetHeight() ); };
+		r2::RectInt GetRect() const override
+		{
+			return r2::RectInt( 0, 0, GetWidth(), GetHeight() );
+		};
 
 
 
@@ -96,7 +129,6 @@ namespace r2bix_render
 		//
 		//
 		void FillCharacterDisuse( const uint32_t x, const uint32_t y, const bool disuse );
-
 
 
 
