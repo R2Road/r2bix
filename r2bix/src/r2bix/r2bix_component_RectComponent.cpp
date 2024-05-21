@@ -23,6 +23,19 @@ namespace r2bix_component
 
 
 
+	void RectComponent::Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char fill_char, const short fill_color )
+	{
+		if( mCustomTextureComponent )
+		{
+			mCustomTextureComponent->GetTexture()->Reset( width, height, fill_char, fill_color );
+		}
+
+		if( mTextureRenderComponent )
+		{
+			mTextureRenderComponent->SetPivotPoint( pivot.x, pivot.y );
+			mTextureRenderComponent->ResetVisibleRect();
+		}
+	}
 	void RectComponent::Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char fill_char )
 	{
 		if( mCustomTextureComponent )

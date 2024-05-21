@@ -1,5 +1,6 @@
 #include "tool_texture_editor_FileMakeNSelectScene.h"
 
+#include "r2bix_ColorValue.h"
 #include "r2bix_Director.h"
 
 #include "r2bix_component_HollowRectComponent.h"
@@ -39,7 +40,7 @@ namespace tool_texture_editor
 
 
 			//
-			//
+			// Main Menu
 			//
 			{
 				//
@@ -55,7 +56,8 @@ namespace tool_texture_editor
 							r2::Vector2{ 0.f, 0.f }
 							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
-							, "Pannel "
+							, ' '
+							, r2bix::eBackgroundColor::BG_Gray
 						);
 					}
 				}
