@@ -93,4 +93,9 @@ namespace r2bix_component
 		SetSize( width, height, c );
 		SetPivotPoint( pivot_x, pivot_y );
 	}
+	void UISimpleButtonComponent::Set( const float pivot_x, const float pivot_y, const int width, const int height )
+	{
+		SetSize( width, height, ' ' );
+		SetPivotPoint( pivot_x, pivot_y );
+	}
 }
