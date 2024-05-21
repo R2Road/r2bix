@@ -65,13 +65,13 @@ namespace tool_texture_editor
 				{
 					auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 3 );
-					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.f, 0.f, 40, 3, '=' );
+					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.f, 0.f, 40, 3, ' ' );
 				}
 
 				{
 					auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 9 );
-					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.f, 0.f, 40, 3, '=' );
+					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.f, 0.f, 40, 3, ' ' );
 				}
 			}
 
