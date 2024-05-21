@@ -10,12 +10,14 @@
 #include "r2bix_component_TransformComponent.h"
 #include "r2bix_component_UIControlComponent.h"
 #include "r2bix_component_UISimpleButtonComponent.h"
+#include "r2bix_component_UITextFieldComponent.h"
 
 #include "r2bix_node_HollowRectNode.h"
 #include "r2bix_node_LabelSNode.h"
 #include "r2bix_node_RectNode.h"
 #include "r2bix_node_UIPannelNode.h"
 #include "r2bix_node_UISimpleButtonNode.h"
+#include "r2bix_node_UITextFieldNode.h"
 
 namespace tool_texture_editor
 {
@@ -112,6 +114,66 @@ namespace tool_texture_editor
 				}
 			}
 
+
+
+			//
+			// New
+			//
+			{
+				//
+				// Pannel
+				//
+				auto pn_node = ret->AddChild<r2bix_node::UIPannelNode>();
+				{
+					pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 28, 12 );
+					pn_node->GetComponent<r2bix_component::UIControlComponent>()->Set( 0.f, 0.f, 50, 15 );
+					{
+						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
+						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
+							r2::Vector2{ 0.f, 0.f }
+							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
+							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
+							, ' '
+							, r2bix::eBackgroundColor::BG_Gray
+						);
+					}
+				}
+
+				//
+				// Text Field
+				//
+				{
+					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
+					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 25, 3 );
+					node->GetComponent<r2bix_component::UITextFieldComponent>()->Set( 20, "new_file~~~~~~~~~~~!" );
+				}
+
+				//
+				// Button
+				//
+				{
+					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
+					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 15, 8 );
+					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.5f, 0.5f, 10, 3 );
+					{
+						auto label_node = node->AddChild<r2bix_node::LabelSNode>();
+						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Generate" );
+					}
+				}
+
+				//
+				// Cancel
+				//
+				{
+					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
+					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 35, 8 );
+					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.5f, 0.5f, 10, 3 );
+					{
+						auto label_node = node->AddChild<r2bix_node::LabelSNode>();
+						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Cancel" );
+					}
+				}
+			}
 		}
 
 		return ret;
