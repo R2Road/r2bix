@@ -20,7 +20,10 @@ namespace r2bix_component
 		{
 			if( 2 == k && r2bix_ui::eKeyStatus::Push == s )
 			{
-				const auto screen_position = GetOwnerNode().mTransformComponent->GetScreenPosition();
+				const auto screen_position = (
+					  GetOwnerNode().mTransformComponent->GetScreenPosition()
+					- r2::PointInt( mUIControlComponent->GetPivotPoint().x * mUIControlComponent->GetWidth(), 0 )
+				);
 
 				//
 				// Start Input Mode

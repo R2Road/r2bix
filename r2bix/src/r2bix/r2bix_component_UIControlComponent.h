@@ -64,6 +64,10 @@ namespace r2bix_component
 		{
 			return mResponseRect.GetHeight();
 		}
+		r2::Vector2 GetPivotPoint() const
+		{
+			return mPivotVector;
+		}
 
 		void SetSize( const uint32_t width, const uint32_t height );
 		void SetPivotPoint( const float x, const float y );
