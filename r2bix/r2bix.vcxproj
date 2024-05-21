@@ -68,6 +68,7 @@
     <ClCompile Include="src\r2bix\r2bix_animation_constant.cpp" />
     <ClCompile Include="src\r2bix\r2bix_ColorMaskOption.cpp" />
     <ClCompile Include="src\r2bix\r2bix_ColorValue.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_component_HollowRectComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_InputMouseComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_InputKeyboardComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_RectComponent.cpp" />
@@ -82,6 +83,7 @@
     <ClCompile Include="src\r2bix\r2bix_director_DefarredTaskQueue.cpp" />
     <ClCompile Include="src\r2bix\r2bix_input_InputManager.cpp" />
     <ClCompile Include="src\r2bix\r2bix_input_Listener4Mouse.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_node_HollowRectNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_Node.cpp" />
     <ClCompile Include="src\r2bix\r2bix_director_ScreenBufferManager.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_RectNode.cpp" />
@@ -274,6 +276,7 @@
     <ClInclude Include="src\r2bix\r2bix_component_Component.h" />
     <ClInclude Include="src\r2bix\r2bix_component_ComponentStaticID.h" />
     <ClInclude Include="src\r2bix\r2bix_ColorValue.h" />
+    <ClInclude Include="src\r2bix\r2bix_component_HollowRectComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_InputMouseComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_InputKeyboardComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_RectComponent.h" />
@@ -291,6 +294,7 @@
     <ClInclude Include="src\r2bix\r2bix_input_InputManager.h" />
     <ClInclude Include="src\r2bix\r2bix_input_Listener4Mouse.h" />
     <ClInclude Include="src\r2bix\r2bix_input_ObservationKeyContainer.h" />
+    <ClInclude Include="src\r2bix\r2bix_node_HollowRectNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_Node.h" />
     <ClInclude Include="src\r2bix\r2bix_director_ScreenBufferManager.h" />
     <ClInclude Include="src\r2bix\r2bix_node_RectNode.h" />
