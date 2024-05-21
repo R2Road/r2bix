@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace r2bix_node
 {
-	class SpriteAnimationNode : public r2bix_node::Node
+	class SpriteAnimationNode
 	{
 	private:
 		SpriteAnimationNode() = delete;

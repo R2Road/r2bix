@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace r2bix_node
 {
-	class LabelSNode : public r2bix_node::Node
+	class LabelSNode
 	{
 	private:
 		LabelSNode() = delete;

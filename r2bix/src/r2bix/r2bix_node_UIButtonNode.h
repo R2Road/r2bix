@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace r2bix_node
 {
-	class UIButtonNode : public r2bix_node::Node
+	class UIButtonNode
 	{
 	private:
 		UIButtonNode() = delete;

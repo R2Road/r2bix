@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace r2bix_node
 {
-	class PivotNode : public r2bix_node::Node
+	class PivotNode
 	{
 	private:
 		PivotNode() = delete;

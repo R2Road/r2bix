@@ -4,7 +4,7 @@
 
 namespace pmr
 {
-	class CompanyScene : public r2bix_node::Node
+	class CompanyScene
 	{
 	private:
 		CompanyScene() = delete;

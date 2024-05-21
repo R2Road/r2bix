@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace r2bix_node
 {
-	class RectNode : public r2bix_node::Node
+	class RectNode
 	{
 	private:
 		RectNode() = delete;

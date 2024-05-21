@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace p2048
 {
-	class StageViewNode : public r2bix_node::Node
+	class StageViewNode
 	{
 	private:
 		StageViewNode() = delete;

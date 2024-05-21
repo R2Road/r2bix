@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace r2bix_node
 {
-	class UITextFieldNode : public r2bix_node::Node
+	class UITextFieldNode
 	{
 	private:
 		UITextFieldNode() = delete;

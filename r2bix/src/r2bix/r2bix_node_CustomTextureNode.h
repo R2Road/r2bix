@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace r2bix_node
 {
-	class CustomTextureNode : public r2bix_node::Node
+	class CustomTextureNode
 	{
 	private:
 		CustomTextureNode() = delete;

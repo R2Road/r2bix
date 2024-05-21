@@ -9,7 +9,7 @@ namespace r2bix
 
 namespace p2048
 {
-	class NumberNode : public r2bix_node::Node
+	class NumberNode
 	{
 	private:
 		NumberNode() = delete;
