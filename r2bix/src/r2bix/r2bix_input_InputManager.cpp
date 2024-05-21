@@ -39,6 +39,12 @@ namespace r2bix_input
 					int i = 0;
 					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
 					{
+						if( !l->IsActivated() )
+						{
+							l->UpdateCursor( CursorPoint{ std::numeric_limits<int>::min(), std::numeric_limits<int>::min() } );
+							continue;
+						}
+
 						if( bKeepGoing )
 						{
 							if( l->UpdateCursor( mMachineInputCollector.GetCursorPoint() ) )

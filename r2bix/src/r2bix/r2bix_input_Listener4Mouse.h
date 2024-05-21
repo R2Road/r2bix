@@ -27,6 +27,11 @@ namespace r2bix_input
 			return mOrder;
 		}
 
+		bool IsActivated() const
+		{
+			return mbActivate;
+		}
+
 		const ObservationKeyContainer& GetObservationKeyContainer() const
 		{
 			return mObservationKeyContainer;
@@ -63,6 +68,16 @@ namespace r2bix_input
 		//
 		//
 		//
+		void SetActivate( const bool activate )
+		{
+			mbActivate = activate;
+		}
+
+
+
+		//
+		//
+		//
 		void SetCallback4CursorMoved( const Callback4CursorMovedT& callback );
 		void SetCallback4KeyStatusChanged( const Callback4KeyStatusChangedT& callback );
 		void AddObservationKey( const r2bix_input::eKeyCode key_code );
@@ -79,6 +94,8 @@ namespace r2bix_input
 
 	private:
 		const int mOrder;
+
+		bool mbActivate;
 
 		bool mbMousePositionUse;
 		r2bix_input::CursorPoint mCursorPoint_Current;

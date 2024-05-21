@@ -6,6 +6,8 @@ namespace r2bix_input
 {
 	Listener4Mouse::Listener4Mouse() :
 		  mOrder( 0 )
+		, mbActivate( true )
+
 		, mbMousePositionUse( false)
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
@@ -16,6 +18,8 @@ namespace r2bix_input
 	{}
 	Listener4Mouse::Listener4Mouse( const int order ) :
 		mOrder( order )
+		, mbActivate( true )
+
 		, mbMousePositionUse()
 		, mCursorPoint_Current()
 		, mCursorPoint_Last()
