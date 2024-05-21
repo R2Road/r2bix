@@ -7,10 +7,12 @@
 #include "r2bix_component_RectComponent.h"
 #include "r2bix_component_TransformComponent.h"
 #include "r2bix_component_UIControlComponent.h"
+#include "r2bix_component_UISimpleButtonComponent.h"
 
 #include "r2bix_node_HollowRectNode.h"
 #include "r2bix_node_RectNode.h"
 #include "r2bix_node_UIPannelNode.h"
+#include "r2bix_node_UISimpleButtonNode.h"
 
 namespace tool_texture_editor
 {
@@ -55,6 +57,21 @@ namespace tool_texture_editor
 							, "Pannel "
 						);
 					}
+				}
+
+				//
+				// Button
+				//
+				{
+					auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
+					button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 3 );
+					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.f, 0.f, 40, 3, '=' );
+				}
+
+				{
+					auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
+					button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 9 );
+					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.f, 0.f, 40, 3, '=' );
 				}
 			}
 
