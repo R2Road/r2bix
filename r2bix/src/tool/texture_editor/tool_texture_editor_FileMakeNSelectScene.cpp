@@ -138,6 +138,7 @@ namespace tool_texture_editor
 						);
 					}
 				}
+				pn_node->SetVisible( false );
 
 				//
 				// Text Field
