@@ -2,9 +2,10 @@
 
 #include "r2bix_Director.h"
 
+#include "r2bix_component_HollowRectComponent.h"
 #include "r2bix_component_InputKeyboardComponent.h"
 
-#include "r2bix_node_LabelSNode.h"
+#include "r2bix_node_HollowRectNode.h"
 
 namespace tool_texture_editor
 {
@@ -13,6 +14,21 @@ namespace tool_texture_editor
 		r2bix_node::NodeUp ret( r2bix_node::Node::Create( director ) );
 		if( ret )
 		{
+			//
+			// Background
+			//
+			{
+				auto node = ret->AddChild<r2bix_node::HollowRectNode>();
+				node->GetComponent<r2bix_component::HollowRectComponent>()->Set(
+					  r2::Vector2{ 0.f, 0.f }
+					, director.GetScreenSize().GetWidth()
+					, director.GetScreenSize().GetHeight()
+					, '#'
+					, ' '
+				);
+			}
+
+			// 
 			//
 			// Exit
 			//
