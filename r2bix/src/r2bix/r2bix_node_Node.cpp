@@ -6,7 +6,10 @@ namespace r2bix_node
 		  mName()
 
 		, mDirector( director )
+
 		, mbVisible( true )
+		, mSignal4VisibleFlagChange()
+
 		, mComponentContainer()
 
 		, mParentNode( nullptr )

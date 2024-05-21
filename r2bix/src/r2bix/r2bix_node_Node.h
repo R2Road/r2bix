@@ -24,6 +24,8 @@
 #include <type_traits>
 
 #include "r2_PointInt.h"
+#include "r2_SignalSlot.h"
+
 #include "r2bix_component_TransformComponent.h"
 
 namespace r2bix
@@ -51,6 +53,9 @@ namespace r2bix_node
 		using ComponentContainerT = std::list<r2bix_component::ComponentUp>;
 	public:
 		using ChildContainerT = std::list<NodeUp>;
+
+		using Signal4VisibleFlagChange = r2::Signal<void, bool>;
+		using Slot4VisibleFlagChange = typename Signal4VisibleFlagChange::SlotT;
 
 
 
@@ -100,7 +105,22 @@ namespace r2bix_node
 		bool IsVisible() const { return mbVisible; }
 		void SetVisible( const bool visible )
 		{
+			const bool need_emit = ( mbVisible != visible );
+
 			mbVisible = visible;
+
+			if( need_emit )
+			{
+				mSignal4VisibleFlagChange.Emit( visible );
+			}
+		}
+		void ConnectSlot4VisibleFlagChange( Slot4VisibleFlagChange* slot )
+		{
+			mSignal4VisibleFlagChange.Connect( slot );
+		}
+		void DisconnectSlot4VisibleFlagChange( Slot4VisibleFlagChange* slot )
+		{
+			mSignal4VisibleFlagChange.Disconnect( slot );
 		}
 
 
@@ -241,7 +261,10 @@ namespace r2bix_node
 		std::string mName;
 
 		r2bix::Director& mDirector;
+
 		bool mbVisible;
+		Signal4VisibleFlagChange mSignal4VisibleFlagChange;
+
 		ComponentContainerT mComponentContainer;
 
 		Node* mParentNode;
