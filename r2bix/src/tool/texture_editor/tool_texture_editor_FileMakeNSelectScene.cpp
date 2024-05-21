@@ -86,7 +86,7 @@ namespace tool_texture_editor
 					  r2bix_input::eKeyCode::VK_ESCAPE
 					, [&director]( r2bix_input::eKeyStatus s )->bool
 					{
-						if( r2bix_input::eKeyStatus::Release == s )
+						if( r2bix_input::eKeyStatus::Push == s )
 						{
 							director.RequestAbort();
 							return true;
