@@ -12,6 +12,7 @@ namespace r2bix_component
 		, mListener4Mouse()
 		, mMyUIControlComponent( nullptr )
 		, mUIControlComponentContainer()
+		, mSlot4VisibleFlagChanged()
 	{}
 
 
@@ -71,6 +72,15 @@ namespace r2bix_component
 			//
 			return true;
 		} );
+
+		//
+		//
+		//
+		mSlot4VisibleFlagChanged.SetCallback( [this]( bool b )
+		{
+			mListener4Mouse.SetActivate( b );
+		} );
+		mOwnerNode.ConnectSlot4VisibleFlagChange( &mSlot4VisibleFlagChanged );
 
 		return true;
 	}

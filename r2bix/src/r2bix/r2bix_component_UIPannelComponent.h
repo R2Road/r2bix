@@ -1,5 +1,7 @@
 #pragma once
 
+#include "r2_SignalSlot.h"
+
 #include "r2bix_component_Component.h"
 #include "r2bix_input_Listener4Mouse.h"
 
@@ -10,6 +12,8 @@ namespace r2bix_component
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
+		using Slot4VisibleFlagChanged = r2::Slot<void, bool>;
+
 		using UIControlComponentContainer = std::list<r2bix_component::UIControlComponent*>;
 
 
@@ -81,5 +85,6 @@ namespace r2bix_component
 
 		UIControlComponentContainer mUIControlComponentContainer;
 
+		Slot4VisibleFlagChanged mSlot4VisibleFlagChanged;
 	};
 }
