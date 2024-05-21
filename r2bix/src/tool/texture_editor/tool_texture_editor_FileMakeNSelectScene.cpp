@@ -72,7 +72,7 @@ namespace tool_texture_editor
 					{
 						auto label_node = button_node->AddChild<r2bix_node::LabelSNode>();
 						label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 20, 1 );
-						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "New" );
+						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "N E W" );
 					}
 				}
 
@@ -83,7 +83,7 @@ namespace tool_texture_editor
 					{
 						auto label_node = button_node->AddChild<r2bix_node::LabelSNode>();
 						label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 20, 1 );
-						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Load" );
+						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "O P E N" );
 					}
 				}
 			}
