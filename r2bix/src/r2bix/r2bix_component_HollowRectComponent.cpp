@@ -23,7 +23,7 @@ namespace r2bix_component
 
 
 
-	void HollowRectComponent::Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char rect_char, const char hollow_char )
+	void HollowRectComponent::Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char rect_char, const short rect_color, const char hollow_char, const short hollow_color )
 	{
 		if( !mCustomTextureComponent )
 		{
@@ -35,10 +35,17 @@ namespace r2bix_component
 			return;
 		}
 
-		fillTexture( width, height, rect_char, hollow_char );
+		fillTexture( width, height, rect_char, rect_color, hollow_char, hollow_color );
 
 		mTextureRenderComponent->SetPivotPoint( pivot.x, pivot.y );
 		mTextureRenderComponent->ResetVisibleRect();
+	}
+	void HollowRectComponent::Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char rect_char, const char hollow_char )
+	{
+		//
+		// FG_White( 7 ) | BG_Black( 0 ) == 7
+		//
+		Set( pivot, width, height, rect_char, 7, hollow_char, 7 );
 	}
 	void HollowRectComponent::Set( const uint32_t width, const uint32_t height, const char rect_char, const char hollow_char )
 	{
@@ -52,7 +59,10 @@ namespace r2bix_component
 			return;
 		}
 
-		fillTexture( width, height, rect_char, hollow_char );
+		//
+		// FG_White( 7 ) | BG_Black( 0 ) == 7
+		//
+		fillTexture( width, height, rect_char, 7, hollow_char, 7 );
 
 		mTextureRenderComponent->ResetVisibleRect();
 	}
@@ -61,15 +71,16 @@ namespace r2bix_component
 		Set( width, height, '#', ' ' );
 	}
 
-	void HollowRectComponent::fillTexture( const uint32_t width, const uint32_t height, const char rect_char, const char hollow_char )
+	void HollowRectComponent::fillTexture( const uint32_t width, const uint32_t height, const char rect_char, const short rect_color, const char hollow_char, const short hollow_color )
 	{
-		mCustomTextureComponent->GetTexture()->Reset( width, height, rect_char );
+		mCustomTextureComponent->GetTexture()->Reset( width, height, rect_char, rect_color );
 
 		for( uint32_t y = 1, endy = height - 1; endy > y; ++y )
 		{
 			for( uint32_t x = 1, endx = width - 1; endx > x; ++x )
 			{
 				mCustomTextureComponent->GetTexture()->FillCharacter( x, y, hollow_char );
+				mCustomTextureComponent->GetTexture()->FillColor( x, y, hollow_color );
 			}
 		}
 	}
