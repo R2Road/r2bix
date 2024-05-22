@@ -124,6 +124,7 @@ namespace tool_texture_editor
 				// Pannel
 				//
 				auto pn_node = ret->AddChild<r2bix_node::UIPannelNode>();
+				pn_node->SetName( "new" );
 				{
 					pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 28, 12 );
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->Set( 0.f, 0.f, 50, 15 );

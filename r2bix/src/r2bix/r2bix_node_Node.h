@@ -101,6 +101,11 @@ namespace r2bix_node
 		{
 			return mName;
 		}
+		void SetName( const char* name )
+		{
+			mName = name;
+		}
+
 		r2bix::Director& GetDirector() const { return mDirector; }
 		bool IsVisible() const { return mbVisible; }
 		void SetVisible( const bool visible )
