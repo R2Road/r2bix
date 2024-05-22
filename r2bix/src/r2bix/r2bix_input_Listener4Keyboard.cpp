@@ -33,7 +33,7 @@ namespace r2bix_input
 
 
 
-	void Listener4Keyboard::UpdateKey( r2bix_input::KeyCodeTypeT key_code, const bool key_flag )
+	bool Listener4Keyboard::UpdateKey( r2bix_input::KeyCodeTypeT key_code, const bool key_flag )
 	{
 		auto& observation_key = mObservationKeyContainer.GetByKeycode( key_code );
 
@@ -42,8 +42,11 @@ namespace r2bix_input
 		//
 		if( 0 == observation_key.key_code )
 		{
-			return;
+			return false;
 		}
+
+
+		bool ret = false;
 
 		//
 		//
@@ -54,12 +57,12 @@ namespace r2bix_input
 			{
 			case eKeyStatus::None:
 				observation_key.key_status = eKeyStatus::Push;
-				mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
+				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
 				break;
 
 			case eKeyStatus::Push:
 				observation_key.key_status = eKeyStatus::Pressed;
-				mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
+				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
 				break;
 
 				//case eKeyStatus::Pressed:
@@ -77,14 +80,16 @@ namespace r2bix_input
 			case eKeyStatus::Push:
 			case eKeyStatus::Pressed:
 				observation_key.key_status = eKeyStatus::Release;
-				mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
+				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
 				break;
 
 			case eKeyStatus::Release:
 				observation_key.key_status = eKeyStatus::None;
-				mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
+				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
 				break;
 			}
 		}
+
+		return ret;
 	}
 }

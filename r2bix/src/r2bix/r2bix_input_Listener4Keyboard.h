@@ -76,7 +76,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		void UpdateKey( const r2bix_input::KeyCodeTypeT key_code, const bool key_flag );
+		bool UpdateKey( const r2bix_input::KeyCodeTypeT key_code, const bool key_flag );
 
 
 

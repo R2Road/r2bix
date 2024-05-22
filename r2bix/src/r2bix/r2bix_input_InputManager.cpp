@@ -119,17 +119,36 @@ namespace r2bix_input
 		//
 		if( !mListenerContainer4Keyboard.empty() )
 		{
-			auto target_listener = *mListenerContainer4Keyboard.begin();
-
-			//
-			// Keyboard Key Update
-			//
-			int i = 0;
-			for( const r2bix_input::ObservationKey o : target_listener->GetObservationKeyContainer() )
+			for( int k = 0; 256 > k; ++k )
 			{
-				target_listener->UpdateKey( o.key_code, mMachineInputCollector.HasInput( o.key_code ) );
+				if( !mMachineInputCollector.IsObservationKey( k ) )
+				{
+					continue;
+				}
 
-				++i;
+				bool processed = false;
+				for( r2bix_input::Listener4Keyboard* l : mListenerContainer4Keyboard )
+				{
+					if( !l->IsActivated() )
+					{
+						continue;
+					}
+
+					if( !processed )
+					{
+						if( !l->UpdateKey( k, mMachineInputCollector.HasInput( k ) ) )
+						{
+							processed = true;
+							continue;
+						}
+					}
+					else
+					{
+						l->UpdateKey( k, false );
+					}
+
+					break;
+				}
 			}
 		}
 	}
