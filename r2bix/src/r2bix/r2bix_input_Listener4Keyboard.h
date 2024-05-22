@@ -27,6 +27,11 @@ namespace r2bix_input
 			return mOrder;
 		}
 
+		bool IsActivated() const
+		{
+			return mbActivate;
+		}
+
 		const ObservationKeyContainer& GetObservationKeyContainer() const
 		{
 			return mObservationKeyContainer;
@@ -54,6 +59,16 @@ namespace r2bix_input
 		//
 		//
 		//
+		void SetActivate( const bool activate )
+		{
+			mbActivate = activate;
+		}
+
+
+
+		//
+		//
+		//
 		void SetCallback4KeyStatusChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback );
 
 
@@ -67,6 +82,8 @@ namespace r2bix_input
 
 	private:
 		const int mOrder;
+
+		bool mbActivate;
 
 		ObservationKeyContainer mObservationKeyContainer;
 		Container4KeyStatusChangedCallbackT mContainer4KeyStatusChangedCallback;

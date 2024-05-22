@@ -6,11 +6,13 @@ namespace r2bix_input
 {
 	Listener4Keyboard::Listener4Keyboard() :
 		  mOrder( 0 )
+		, mbActivate( true )
 		, mObservationKeyContainer()
 		, mContainer4KeyStatusChangedCallback()
 	{}
 	Listener4Keyboard::Listener4Keyboard( const int order ) :
 		  mOrder( order )
+		, mbActivate( true )
 		, mObservationKeyContainer()
 		, mContainer4KeyStatusChangedCallback()
 	{}
