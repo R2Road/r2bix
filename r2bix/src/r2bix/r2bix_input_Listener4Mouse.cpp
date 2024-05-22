@@ -76,8 +76,10 @@ namespace r2bix_input
 
 		return false;
 	}
-	void Listener4Mouse::UpdateKey( const int key_index, const bool key_flag )
+	bool Listener4Mouse::UpdateKey( const int key_index, const bool key_flag )
 	{
+		bool ret = false;
+
 		if( key_flag )
 		{
 			switch( mObservationKeyContainer[key_index].key_status )
@@ -86,7 +88,7 @@ namespace r2bix_input
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Push;
 				if( mCallback4KeyStatusChanged )
 				{
-					mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
 				}
 				break;
 
@@ -94,7 +96,7 @@ namespace r2bix_input
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Pressed;
 				if( mCallback4KeyStatusChanged )
 				{
-					mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
 				}
 				break;
 
@@ -115,7 +117,7 @@ namespace r2bix_input
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::Release;
 				if( mCallback4KeyStatusChanged )
 				{
-					mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
 				}
 				break;
 
@@ -123,10 +125,12 @@ namespace r2bix_input
 				mObservationKeyContainer[key_index].key_status = eKeyStatus::None;
 				if( mCallback4KeyStatusChanged )
 				{
-					mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
 				}
 				break;
 			}
 		}
+
+		return ret;
 	}
 }
