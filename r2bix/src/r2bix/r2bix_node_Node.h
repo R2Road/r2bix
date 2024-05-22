@@ -106,8 +106,15 @@ namespace r2bix_node
 			mName = name;
 		}
 
-		r2bix::Director& GetDirector() const { return mDirector; }
-		bool IsVisible() const { return mbVisible; }
+		r2bix::Director& GetDirector() const
+		{
+			return mDirector;
+		}
+
+		bool IsVisible() const
+		{
+			return mbVisible;
+		}
 		void SetVisible( const bool visible )
 		{
 			const bool need_emit = ( mbVisible != visible );
