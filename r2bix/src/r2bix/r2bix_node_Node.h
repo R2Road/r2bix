@@ -176,6 +176,7 @@ namespace r2bix_node
 		{
 			return mChildContainer;
 		}
+		Node* GetChildByName( const std::string_view name ) const;
 
 		void SetParentNode( Node* parent_node )
 		{

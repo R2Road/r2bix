@@ -98,4 +98,19 @@ namespace r2bix_node
 			c->Terminate();
 		}
 	}
+
+
+
+	Node* Node::GetChildByName( const std::string_view name ) const
+	{
+		for( auto& c : mChildContainer )
+		{
+			if( name == c->GetName() )
+			{
+				return c.get();
+			}
+		}
+
+		return nullptr;
+	}
 }

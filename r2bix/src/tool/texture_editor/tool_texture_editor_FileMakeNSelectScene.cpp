@@ -100,6 +100,24 @@ namespace tool_texture_editor
 						label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 20, 1 );
 						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "N E W" );
 					}
+
+					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetCallback4KeyResponse(
+						[root = ret.get()]( int i , r2bix_ui::eKeyStatus s )->bool
+						{
+							if( 0 == i && r2bix_ui::eKeyStatus::Push == s )
+							{
+								auto node = root->GetChildByName( "new" );
+								if( node )
+								{
+									node->SetVisible( true );
+								}
+
+								return true;
+							}
+							
+							return true;
+						}
+					);
 				}
 
 				{
@@ -174,6 +192,24 @@ namespace tool_texture_editor
 						auto label_node = node->AddChild<r2bix_node::LabelSNode>();
 						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Cancel" );
 					}
+
+					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetCallback4KeyResponse(
+						[root = ret.get()]( int i, r2bix_ui::eKeyStatus s )->bool
+						{
+							if( 0 == i && r2bix_ui::eKeyStatus::Push == s )
+							{
+								auto node = root->GetChildByName( "new" );
+								if( node )
+								{
+									node->SetVisible( false );
+								}
+
+								return true;
+							}
+
+							return true;
+						}
+					);
 				}
 			}
 		}
