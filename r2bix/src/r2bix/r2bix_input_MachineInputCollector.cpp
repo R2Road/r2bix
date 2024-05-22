@@ -67,6 +67,20 @@ namespace r2bix_input
 			}
 
 			//
+			// Mouse Key Swap
+			//
+			{
+				if( IsMouseKeyReversed() )
+				{
+					const bool lbutton_state = mObservationKeyStates[VK_LBUTTON];
+					const bool rbutton_state = mObservationKeyStates[VK_RBUTTON];
+
+					mObservationKeyStates[VK_LBUTTON] = rbutton_state;
+					mObservationKeyStates[VK_RBUTTON] = lbutton_state;
+				}
+			}
+
+			//
 			// Mouse Position
 			//
 			{

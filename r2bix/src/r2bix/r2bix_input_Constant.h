@@ -13,6 +13,10 @@ namespace r2bix_input
 	using CursorPoint = r2::PointInt;
 	CursorPoint GetCursorPoint();
 
+	bool IsMouseKeyReversed();
+
+
+
 	using ObservationKeyStatesT = std::bitset<255>;
 
 	bool HasWindowFocus();

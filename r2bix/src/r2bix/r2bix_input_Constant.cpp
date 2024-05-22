@@ -47,6 +47,11 @@ namespace r2bix_input
 		return ret;
 	}
 
+	bool IsMouseKeyReversed()
+	{
+		return ( 0 != GetSystemMetrics( SM_SWAPBUTTON ) );
+	}
+
 	bool HasWindowFocus()
 	{
 		return GetConsoleWindow() == GetForegroundWindow();
