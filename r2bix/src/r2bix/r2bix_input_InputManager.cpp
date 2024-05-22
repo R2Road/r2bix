@@ -65,14 +65,23 @@ namespace r2bix_input
 			//
 			// Mouse Key Update
 			//
-			auto target_listener = *mListenerContainer4Mouse.begin();
 			{
-				int i = 0;
-				for( const r2bix_input::ObservationKey o : target_listener->GetObservationKeyContainer() )
+				for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
 				{
-					target_listener->UpdateKey( i, mMachineInputCollector.HasInput( o.key_code ) );
+					if( !l->IsActivated() )
+					{
+						continue;
+					}
 
-					++i;
+					int i = 0;
+					for( const r2bix_input::ObservationKey o : l->GetObservationKeyContainer() )
+					{
+						l->UpdateKey( i, mMachineInputCollector.HasInput( o.key_code ) );
+
+						++i;
+					}
+
+					break;
 				}
 			}
 		}
