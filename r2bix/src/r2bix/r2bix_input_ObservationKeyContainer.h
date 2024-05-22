@@ -96,6 +96,20 @@ namespace r2bix_input
 			return false;
 		}
 
+		ValueT& GetByKeycode( const r2bix_input::KeyCodeTypeT key_code )
+		{
+			for( auto& o : mContainer )
+			{
+				if( o.key_code == key_code )
+				{
+					return o;
+				}
+			}
+
+			static ValueT dummy;
+			return dummy;
+		}
+
 
 	private:
 		ContainerT mContainer;
