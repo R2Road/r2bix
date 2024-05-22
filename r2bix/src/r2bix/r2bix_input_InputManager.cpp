@@ -119,9 +119,9 @@ namespace r2bix_input
 		//
 		if( !mListenerContainer4Keyboard.empty() )
 		{
-			for( int k = 0; 256 > k; ++k )
+			for( int key_code = 0; 256 > key_code; ++key_code )
 			{
-				if( !mMachineInputCollector.IsObservationKey( k ) )
+				if( !mMachineInputCollector.IsObservationKey( key_code ) )
 				{
 					continue;
 				}
@@ -136,7 +136,7 @@ namespace r2bix_input
 
 					if( !processed )
 					{
-						if( !l->UpdateKey( k, mMachineInputCollector.HasInput( k ) ) )
+						if( !l->UpdateKey( key_code, mMachineInputCollector.HasInput( key_code ) ) )
 						{
 							processed = true;
 							continue;
@@ -144,7 +144,7 @@ namespace r2bix_input
 					}
 					else
 					{
-						l->UpdateKey( k, false );
+						l->UpdateKey( key_code, false );
 					}
 
 					break;
