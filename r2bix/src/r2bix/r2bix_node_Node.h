@@ -61,16 +61,14 @@ namespace r2bix_node
 
 	private:
 		Node( r2bix::Director& director );
-	public:
-		~Node() {}
-
-
-
-	static std::unique_ptr<Node> Create( r2bix::Director& director );
 
 
 
 	public:
+		static std::unique_ptr<Node> Create( r2bix::Director& director );
+
+
+
 		//
 		// 생성시 1회 불리는 자기 초기화 함수
 		//
