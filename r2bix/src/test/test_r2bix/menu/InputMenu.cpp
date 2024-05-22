@@ -25,14 +25,8 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', key_code_viewer::Basic() );
-
-
-		ret->AddLineFeed();
-
-
-		ret->AddItem( 'q', input_test::MachineeInputCollector_Keyboard() );
-		ret->AddItem( 'w', input_test::MachineInputCollector_Mouse() );
+		ret->AddItem( '1', input_test::MachineeInputCollector_Keyboard() );
+		ret->AddItem( '2', input_test::MachineInputCollector_Mouse() );
 
 
 		ret->AddLineFeed();
@@ -49,6 +43,13 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 
 		ret->AddItem( 'z', input_test::InputManager_Order1() );
 		ret->AddItem( 'x', input_test::InputManager_Order2() );
+
+
+		ret->AddLineFeed();
+		ret->AddLineFeed();
+
+
+		ret->AddItem( 32, key_code_viewer::Basic() );
 
 
 		ret->AddSplit();
