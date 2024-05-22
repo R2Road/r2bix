@@ -224,6 +224,7 @@ namespace r2bix_input
 
 	struct ObservationKey
 	{
+		uint8_t key_index = 0;
 		KeyCodeTypeT key_code = 0;
 		eKeyStatus key_status = eKeyStatus::None;
 	};

@@ -11,7 +11,9 @@ namespace r2bix_input
 	{
 	public:
 		using KeyCodeT = KeyCodeTypeT;
-		using ContainerT = std::vector<ObservationKey>;
+
+		using ValueT = ObservationKey;
+		using ContainerT = std::vector<ValueT>;
 		using ConstIteratorT= ContainerT::const_iterator;
 
 
@@ -78,7 +80,7 @@ namespace r2bix_input
 				}
 			}
 
-			mContainer.push_back( { key_code } );
+			mContainer.push_back( ValueT{ static_cast<uint8_t>( mContainer.size() ), key_code } );
 		}
 
 		bool IsObservationKey( const r2bix_input::KeyCodeTypeT key_code ) const
