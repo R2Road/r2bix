@@ -73,7 +73,7 @@ namespace r2bix_input
 	private:
 		CursorPoint mOffset;
 
-		std::array<KeyCodeTypeT, 255> mObservationKeyList;
+		std::array<char, 255> mObservationKeyList;
 		ObservationKeyStatesT mObservationKeyStates;
 
 		CursorPoint mCursorPoint_Last;
