@@ -36,6 +36,10 @@ namespace r2bix_input
 		{
 			return mObservationKeyContainer;
 		}
+		bool IsObservationKey( const r2bix_input::KeyCodeTypeT key_code ) const
+		{
+			return mObservationKeyContainer.IsObservationKey( key_code );
+		}
 
 		eKeyStatus Get( const std::size_t key_index ) const
 		{

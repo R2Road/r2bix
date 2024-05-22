@@ -59,6 +59,10 @@ namespace r2bix_input
 		//
 		//
 		//
+		bool IsObservationKey( const KeyCodeTypeT key_value ) const
+		{
+			return 0 < mObservationKeyList[key_value];
+		}
 		bool HasInput( const KeyCodeTypeT key_value ) const
 		{
 			return mObservationKeyStates.test( key_value );

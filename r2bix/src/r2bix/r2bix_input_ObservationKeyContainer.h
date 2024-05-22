@@ -81,6 +81,19 @@ namespace r2bix_input
 			mContainer.push_back( { key_code } );
 		}
 
+		bool IsObservationKey( const r2bix_input::KeyCodeTypeT key_code ) const
+		{
+			for( const auto& o : mContainer )
+			{
+				if( o.key_code == key_code )
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+
 
 	private:
 		ContainerT mContainer;

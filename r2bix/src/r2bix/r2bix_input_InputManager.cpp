@@ -66,22 +66,50 @@ namespace r2bix_input
 			// Mouse Key Update
 			//
 			{
-				for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
+				static const r2bix_input::KeyCodeTypeT mouse_keys[3] = {
+					  r2bix_input::eKeyCode::VK_LBUTTON
+					, r2bix_input::eKeyCode::VK_MBUTTON
+					, r2bix_input::eKeyCode::VK_RBUTTON
+				};
+
+				int i = -1;
+				for( const auto& k : mouse_keys )
 				{
-					if( !l->IsActivated() )
+					++i;
+
+					if( !mMachineInputCollector.IsObservationKey( k ) )
 					{
 						continue;
 					}
 
-					int i = 0;
-					for( const r2bix_input::ObservationKey o : l->GetObservationKeyContainer() )
+					bool processed = false;
+					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
 					{
-						l->UpdateKey( i, mMachineInputCollector.HasInput( o.key_code ) );
+						if( !l->IsActivated() )
+						{
+							continue;
+						}
 
-						++i;
+						if( !l->IsObservationKey( k ) )
+						{
+							continue;
+						}
+
+						if( !processed )
+						{
+							if( !l->UpdateKey( i, mMachineInputCollector.HasInput( k ) ) )
+							{
+								processed = true;
+								continue;
+							}
+						}
+						else
+						{
+							l->UpdateKey( i, false );
+						}
+
+						break;
 					}
-
-					break;
 				}
 			}
 		}
