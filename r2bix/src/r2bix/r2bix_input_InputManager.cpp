@@ -23,7 +23,7 @@ namespace r2bix_input
 		mMachineInputCollector.Collect();
 
 		//
-		// 업데이트
+		// 업데이트 : Mouse
 		//
 		if( !mListenerContainer4Mouse.empty() )
 		{
@@ -85,6 +85,10 @@ namespace r2bix_input
 				}
 			}
 		}
+
+		//
+		// 업데이트 : Keyboard
+		//
 		if( !mListenerContainer4Keyboard.empty() )
 		{
 			auto target_listener = *mListenerContainer4Keyboard.begin();
