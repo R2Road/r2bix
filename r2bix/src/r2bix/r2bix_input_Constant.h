@@ -17,7 +17,7 @@ namespace r2bix_input
 
 	bool HasWindowFocus();
 
-	enum class eKeyStatus
+	enum class eKeyStatus : uint8_t
 	{
 		None,
 		Push,
