@@ -200,6 +200,37 @@ namespace input_test
 
 
 
+	r2tm::TitleFunctionT ObservationKey::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "ObservationKey";
+		};
+	}
+	r2tm::DoFunctionT ObservationKey::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( r2bix_input::ObservationKey o );
+
+			LF();
+
+			OUTPUT_SIZE( o );
+
+			LF();
+
+			OUTPUT_BINARY( o );
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT KeyboardInputListener_KeyStatus::GetTitleFunction() const
 	{
 		return []()->const char*
