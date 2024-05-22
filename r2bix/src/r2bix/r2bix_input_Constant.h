@@ -220,6 +220,14 @@ namespace r2bix_input
 		VK_NONAME = 0xFC,	// Reserved
 		VK_PA1 = 0xFD,	// PA1 key
 		VK_OEM_CLEAR = 0xFE,	// Clear key
+
+
+		START = VK_LBUTTON,
+
+		//
+		// 이 값을 255 이하로 유지해야 Loop를 도는 경우 문제가 없다.( type의 한계값을 넘어서지 않도록 신경 써라 )
+		//
+		END = VK_OEM_CLEAR,
 	};
 
 	struct ObservationKey

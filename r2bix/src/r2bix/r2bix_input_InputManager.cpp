@@ -119,7 +119,11 @@ namespace r2bix_input
 		//
 		if( !mListenerContainer4Keyboard.empty() )
 		{
-			for( int key_code = 0; 256 > key_code; ++key_code )
+			for(
+				r2bix_input::KeyCodeTypeT key_code = r2bix_input::eKeyCode::START, end_code = r2bix_input::eKeyCode::END;
+				end_code >= key_code;
+				++key_code
+			)
 			{
 				if( !mMachineInputCollector.IsObservationKey( key_code ) )
 				{
