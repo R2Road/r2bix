@@ -158,6 +158,40 @@ namespace component_test
 
 
 
+	r2tm::TitleFunctionT Transform_Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Transform Component : Basic";
+		};
+	}
+	r2tm::DoFunctionT Transform_Basic::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_NOTE( "Node 는 생성 과정에서 Transform Component를 생성 한다." );
+
+			LS();
+
+			DECLARATION_MAIN( r2bix::Director dummy_director( {} ) );
+			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
+
+			LS();
+
+			{
+				EXPECT_TRUE( node->GetComponent<r2bix_component::TransformComponent>() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT TextureRender_1::GetTitleFunction() const
 	{
 		return []()->const char*

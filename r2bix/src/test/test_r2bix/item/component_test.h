@@ -18,6 +18,17 @@ namespace component_test
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
+
+
+	class Transform_Basic : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
+
+
 	class TextureRender_1 : public r2tm::iItem
 	{
 	public:
