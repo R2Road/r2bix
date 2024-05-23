@@ -24,9 +24,11 @@ namespace r2bix_input
 		{}
 		ObservationKeyContainer( std::initializer_list<uint8_t> list )
 		{
+			uint8_t i = 0;
 			for( const auto key_code : list )
 			{
-				mContainer.push_back( { key_code } );
+				mContainer.push_back( { i, key_code } );
+				++i;
 			}
 		}
 
