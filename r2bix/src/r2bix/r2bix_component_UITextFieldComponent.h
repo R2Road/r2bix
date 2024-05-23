@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <string>
+
 #include "r2_SignalSlot.h"
 
 #include "r2bix_component_Component.h"
@@ -39,6 +41,10 @@ namespace r2bix_component
 		int GetLength() const;
 		void SetLength( const int length );
 
+		const std::string& GetText() const
+		{
+			return mText;
+		}
 		void SetText( const char* str );
 
 		void Set( const int length, const char* str );
@@ -51,5 +57,7 @@ namespace r2bix_component
 		r2bix_component::TextureRenderComponent* mTextureRenderComponent;
 
 		r2::Slot<bool, int, r2bix_ui::eKeyStatus> mSlot4KeyResponse;
+
+		std::string mText;
 	};
 }

@@ -15,6 +15,7 @@ namespace r2bix_component
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 		, mSlot4KeyResponse()
+		, mText()
 	{
 		mSlot4KeyResponse.SetCallback( [this]( const int k, const r2bix_ui::eKeyStatus s )->bool
 		{
@@ -101,6 +102,8 @@ namespace r2bix_component
 
 	void UITextFieldComponent::SetText( const char* str )
 	{
+		mText = str;
+
 		mCustomTextureComponent->GetTexture()->FillCharacterAll( ' ' );
 		mCustomTextureComponent->GetTexture()->FillString( str );
 	}

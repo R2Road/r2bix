@@ -111,6 +111,16 @@ namespace r2bix_node
 			}
 		}
 
+		Node* ret = nullptr;
+		for( auto& c : mChildContainer )
+		{
+			ret = c->GetChildByName( name );
+			if( ret )
+			{
+				return ret;
+			}
+		}
+
 		return nullptr;
 	}
 }

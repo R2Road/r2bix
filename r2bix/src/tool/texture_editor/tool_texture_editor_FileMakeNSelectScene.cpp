@@ -164,12 +164,13 @@ namespace tool_texture_editor
 				//
 				{
 					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
+					node->SetName( "file_name" );
 					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 25, 3 );
 					node->GetComponent<r2bix_component::UITextFieldComponent>()->Set( 20, "new_file~~~~~~~~~~~!" );
 				}
 
 				//
-				// Button
+				// Generate
 				//
 				{
 					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
@@ -179,6 +180,29 @@ namespace tool_texture_editor
 						auto label_node = node->AddChild<r2bix_node::LabelSNode>();
 						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Generate" );
 					}
+
+					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetCallback4KeyResponse(
+						[root = ret.get()]( int i, r2bix_ui::eKeyStatus s )->bool
+						{
+							if( 0 == i && r2bix_ui::eKeyStatus::Push == s )
+							{
+								auto node = root->GetChildByName( "file_name" );
+								if( node )
+								{
+									if( !node->GetComponent<r2bix_component::UITextFieldComponent>()->GetText().empty() )
+									{
+										//
+										// Scene ÀüÈ¯
+										//
+									}
+								}
+
+								return true;
+							}
+
+							return true;
+						}
+					);
 				}
 
 				//
