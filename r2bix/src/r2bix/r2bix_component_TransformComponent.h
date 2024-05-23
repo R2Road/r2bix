@@ -11,6 +11,8 @@ namespace r2bix_component
 	public:
 		TransformComponent( r2bix_node::Node& owner_node );
 
+
+
 		//
 		// Getter
 		//
@@ -63,6 +65,8 @@ namespace r2bix_component
 		{
 			mZOrder = new_z_order;
 		}
+
+
 
 	private:
 		r2::PointInt mPosition;
