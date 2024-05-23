@@ -192,6 +192,70 @@ namespace component_test
 
 
 
+	r2tm::TitleFunctionT Transform_PivotPoint::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Transform Component : PivotPoint";
+		};
+	}
+	r2tm::DoFunctionT Transform_PivotPoint::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_NOTE( "PivotPoint를 변경하면 Callback이 작동한다." );
+
+			LS();
+
+			DECLARATION_MAIN( r2bix::Director dummy_director( {} ) );
+			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
+
+			LS();
+
+			DECLARATION_MAIN( bool b = false );
+			DECLARATION_MAIN( r2bix_component::TransformComponent::Slot4PivotPointChanged s );
+			PROCESS_MAIN( s.SetCallback( [&b]( float x, float y )
+			{
+				OUTPUT_VALUE( x );
+				OUTPUT_VALUE( y );
+
+				b = true;
+			} ) );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Slot 설정" );
+
+				LF();
+
+				PROCESS_MAIN( node->mTransformComponent->ConnectSlot4PivotPointChanged( &s ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Slot 설정" );
+
+				LF();
+
+				PROCESS_MAIN( node->mTransformComponent->SetPivotPoint( 1.f, 2.f ) );
+
+				LF();
+
+				EXPECT_TRUE( b );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT TextureRender_1::GetTitleFunction() const
 	{
 		return []()->const char*

@@ -3,6 +3,7 @@
 #include "r2bix_component_Component.h"
 
 #include "r2_PointInt.h"
+#include "r2_SignalSlot.h"
 #include "r2_Vector2.h"
 
 namespace r2bix_component
@@ -10,6 +11,11 @@ namespace r2bix_component
 	class TransformComponent : public r2bix_component::Component<TransformComponent>
 	{
 	public:
+		using Signal4PivotPointChanged = r2::Signal<void, float, float>;
+		using Slot4PivotPointChanged = typename Signal4PivotPointChanged::SlotT;
+
+
+
 		TransformComponent( r2bix_node::Node& owner_node );
 
 
@@ -71,6 +77,13 @@ namespace r2bix_component
 		{
 			mPivotPoint.x = x;
 			mPivotPoint.y = y;
+
+			mSignal4PivotPointChanged.Emit( x, y );
+		}
+
+		void ConnectSlot4PivotPointChanged( Slot4PivotPointChanged* slot )
+		{
+			mSignal4PivotPointChanged.Connect( slot );
 		}
 
 
@@ -78,6 +91,8 @@ namespace r2bix_component
 	private:
 		r2::PointInt mPosition;
 		int32_t mZOrder;
+
 		r2::Vector2 mPivotPoint;
+		Signal4PivotPointChanged mSignal4PivotPointChanged;
 	};
 }

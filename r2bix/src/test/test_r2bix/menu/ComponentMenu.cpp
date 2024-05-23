@@ -28,6 +28,7 @@ r2tm::WriteFunctionT ComponentMenu::GetWriteFunction() const
 		ret->AddItem( '1', component_test::ComponentID() );
 		ret->AddItem( '2', component_test::Component_Add_Get() );
 		ret->AddItem( '3', component_test::Transform_Basic() );
+		ret->AddItem( '4', component_test::Transform_PivotPoint() );
 
 
 		ret->AddLineFeed();
