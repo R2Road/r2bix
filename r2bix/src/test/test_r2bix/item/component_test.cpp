@@ -181,7 +181,27 @@ namespace component_test
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "TransformComponent를 직접 생성할 필요 없다." );
+
+				LF();
+
 				EXPECT_TRUE( node->GetComponent<r2bix_component::TransformComponent>() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Node는 TransformComponent를 Public 멤버로 가지고 있다." );
+
+				LF();
+
+				EXPECT_TRUE( node->mTransformComponent );
+			}
+
+			LS();
+
+			{
+				EXPECT_EQ( node->mTransformComponent, node->GetComponent<r2bix_component::TransformComponent>() );
 			}
 
 			LS();
