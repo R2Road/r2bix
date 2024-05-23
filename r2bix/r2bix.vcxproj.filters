@@ -554,6 +554,9 @@
     <ClCompile Include="src\r2bix\r2bix_component_HollowRectComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
+    <ClCompile Include="src\tool\texture_editor\tool_texture_editor_EditorScene.cpp">
+      <Filter>tool\texture_editor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -1187,6 +1190,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_HollowRectComponent.h">
       <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tool\texture_editor\tool_texture_editor_EditorScene.h">
+      <Filter>tool\texture_editor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
