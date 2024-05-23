@@ -9,6 +9,7 @@ namespace r2bix_component
 	TransformComponent::TransformComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TransformComponent>( owner_node )
 		, mPosition()
 		, mZOrder( 0 )
+		, mPivotPoint( 0.5f, 0.5f )
 	{}
 
 	r2::PointInt TransformComponent::GetWorldPosition() const

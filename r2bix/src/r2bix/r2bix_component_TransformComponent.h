@@ -3,6 +3,7 @@
 #include "r2bix_component_Component.h"
 
 #include "r2_PointInt.h"
+#include "r2_Vector2.h"
 
 namespace r2bix_component
 {
@@ -66,10 +67,17 @@ namespace r2bix_component
 			mZOrder = new_z_order;
 		}
 
+		void SetPivotPoint( const float x, const float y )
+		{
+			mPivotPoint.x = x;
+			mPivotPoint.y = y;
+		}
+
 
 
 	private:
 		r2::PointInt mPosition;
 		int32_t mZOrder;
+		r2::Vector2 mPivotPoint;
 	};
 }
