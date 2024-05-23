@@ -107,18 +107,43 @@ namespace component_test
 		{
 			LS();
 
+			OUTPUT_NOTE( "같은 Type의 Component를 2개 갖지 못한다." );
+
+			LS();
+
 			DECLARATION_MAIN( r2bix::Director dummy_director( {} ) );
 			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
 			{
-				EXPECT_EQ( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
+				EXPECT_FALSE( node->GetComponent<r2bix_component::TextureRenderComponent>() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Component 추가" );
 
 				LF();
 
 				EXPECT_TRUE( node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "중복 추가 시도" );
+
+				LF();
+
 				EXPECT_FALSE( node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Get" );
 
 				LF();
 
