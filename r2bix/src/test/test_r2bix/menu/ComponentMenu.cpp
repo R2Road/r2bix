@@ -27,9 +27,12 @@ r2tm::WriteFunctionT ComponentMenu::GetWriteFunction() const
 	{
 		ret->AddItem( '1', component_test::ComponentID() );
 		ret->AddItem( '2', component_test::Component_Add_Get() );
+		ret->AddItem( '3', component_test::Transform_Basic() );
+
 
 		ret->AddLineFeed();
 		ret->AddLineFeed();
+
 
 		ret->AddItem( 'q', component_test::TextureRender_1() );
 		ret->AddItem( 'w', component_test::TextureRender_2() );
@@ -44,8 +47,12 @@ r2tm::WriteFunctionT ComponentMenu::GetWriteFunction() const
 		ret->AddItem( 't', component_test::LabelS() );
 		ret->AddItem( 'y', component_test::LabelM() );
 
+
+
 		ret->AddLineFeed();
 		ret->AddLineFeed();
+
+
 
 		ret->AddItem( 'a', component_test::TextureFrameRender_1() );
 		ret->AddItem( 's', component_test::TextureFrameRender_2() );
@@ -55,13 +62,21 @@ r2tm::WriteFunctionT ComponentMenu::GetWriteFunction() const
 		ret->AddItem( 'd', component_test::TextureFrameAnimation_1() );
 		ret->AddItem( 'f', component_test::TextureFrameAnimation_2() );
 
+
+
 		ret->AddLineFeed();
 		ret->AddLineFeed();
+
+
 
 		ret->AddItem( 'g', component_test::ActionProcess() );
 
+
+
 		ret->AddLineFeed();
 		ret->AddLineFeed();
+
+
 
 		ret->AddItem( 'z', component_test::UIControl() );
 		ret->AddItem( 'x', component_test::UIPannel() );
@@ -71,8 +86,8 @@ r2tm::WriteFunctionT ComponentMenu::GetWriteFunction() const
 
 
 
-
 		ret->AddSplit();
+
 
 
 		ret->AddMenu( 27, R2bixMenu() );
