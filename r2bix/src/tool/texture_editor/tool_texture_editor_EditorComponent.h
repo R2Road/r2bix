@@ -16,10 +16,9 @@ namespace tool_texture_editor
 		//
 		//
 		//
-		void SetFileName( const std::string_view str )
-		{
-			mFileName = str;
-		}
+		void SetFileName( const std::string_view str );
+
+
 
 	private:
 		std::string mFileName;

@@ -4,8 +4,10 @@
 
 #include "r2bix_component_HollowRectComponent.h"
 #include "r2bix_component_InputKeyboardComponent.h"
+#include "r2bix_component_LabelSComponent.h"
 
 #include "r2bix_node_HollowRectNode.h"
+#include "r2bix_node_LabelSNode.h"
 
 #include "tool_texture_editor_EditorComponent.h"
 
@@ -51,6 +53,20 @@ namespace tool_texture_editor
 					}
 				);
 				component->Activate();
+			}
+
+
+
+			//
+			// File Name View
+			//
+			{
+				auto node = ret->AddChild<r2bix_node::LabelSNode>();
+				node->SetName( "file_name_view" );
+				node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
+					director.GetScreenSize().GetWidth() - 1
+					, director.GetScreenSize().GetHeight() - 1
+				);
 			}
 
 
