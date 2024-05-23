@@ -19,6 +19,7 @@
 #include "r2bix_node_UISimpleButtonNode.h"
 #include "r2bix_node_UITextFieldNode.h"
 
+#include "tool_texture_editor_EditorComponent.h"
 #include "tool_texture_editor_EditorScene.h"
 
 namespace tool_texture_editor
@@ -193,7 +194,12 @@ namespace tool_texture_editor
 								{
 									if( !node->GetComponent<r2bix_component::UITextFieldComponent>()->GetText().empty() )
 									{
-										root->GetDirector().Setup( tool_texture_editor::EditorScene::Create( root->GetDirector() ) );
+										auto next_scene = tool_texture_editor::EditorScene::Create( root->GetDirector() );
+										next_scene->GetComponent< tool_texture_editor::EditorComponent>()->SetFileName(
+											node->GetComponent<r2bix_component::UITextFieldComponent>()->GetText()
+										);
+
+										root->GetDirector().Setup( std::move( next_scene ) );
 									}
 								}
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "r2bix_component_Component.h"
 
 namespace tool_texture_editor
@@ -8,5 +10,18 @@ namespace tool_texture_editor
 	{
 	public:
 		EditorComponent( r2bix_node::Node& owner_node );
+
+
+
+		//
+		//
+		//
+		void SetFileName( const std::string_view str )
+		{
+			mFileName = str;
+		}
+
+	private:
+		std::string mFileName;
 	};
 }
