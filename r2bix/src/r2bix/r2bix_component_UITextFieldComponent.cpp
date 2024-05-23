@@ -19,7 +19,7 @@ namespace r2bix_component
 	{
 		mSlot4KeyResponse.SetCallback( [this]( const int k, const r2bix_ui::eKeyStatus s )->bool
 		{
-			if( 2 == k && r2bix_ui::eKeyStatus::Push == s )
+			if( 0 == k && r2bix_ui::eKeyStatus::Push == s )
 			{
 				const auto screen_position = (
 					  GetOwnerNode().mTransformComponent->GetScreenPosition()
