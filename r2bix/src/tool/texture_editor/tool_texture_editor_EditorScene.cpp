@@ -7,6 +7,8 @@
 
 #include "r2bix_node_HollowRectNode.h"
 
+#include "tool_texture_editor_EditorComponent.h"
+
 #include "tool_texture_editor_FileMakeNSelectScene.h"
 
 namespace tool_texture_editor
@@ -50,6 +52,14 @@ namespace tool_texture_editor
 				);
 				component->Activate();
 			}
+
+
+
+			//
+			//
+			//
+			auto editor_component = ret->AddComponent<tool_texture_editor::EditorComponent>();
+			editor_component->Activate();
 		}
 
 		return ret;
