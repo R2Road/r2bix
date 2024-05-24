@@ -46,8 +46,7 @@ namespace r2bix_component
 		int GetWidth() const;
 		int GetHeight() const;
 
-		void Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char rect_char, const short rect_color, const char hollow_char, const short hollow_color );
-		void Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char rect_char, const char hollow_char );
+		void Set( const uint32_t width, const uint32_t height, const char rect_char, const short rect_color, const char hollow_char, const short hollow_color );
 		void Set( const uint32_t width, const uint32_t height, const char rect_char, const char hollow_char );
 		void Set( const uint32_t width, const uint32_t height );
 	private:

@@ -26,9 +26,9 @@ namespace tool_texture_editor
 			//
 			{
 				auto node = ret->AddChild<r2bix_node::HollowRectNode>();
+				node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
 				node->GetComponent<r2bix_component::HollowRectComponent>()->Set(
-					  r2::Vector2{ 0.f, 0.f }
-					, director.GetScreenSize().GetWidth()
+					  director.GetScreenSize().GetWidth()
 					, director.GetScreenSize().GetHeight()
 					, '#'
 					, ' '

@@ -23,7 +23,7 @@ namespace r2bix_component
 
 
 
-	void HollowRectComponent::Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char rect_char, const short rect_color, const char hollow_char, const short hollow_color )
+	void HollowRectComponent::Set( const uint32_t width, const uint32_t height, const char rect_char, const short rect_color, const char hollow_char, const short hollow_color )
 	{
 		if( !mCustomTextureComponent )
 		{
@@ -37,15 +37,7 @@ namespace r2bix_component
 
 		fillTexture( width, height, rect_char, rect_color, hollow_char, hollow_color );
 
-		mTextureRenderComponent->SetPivotPoint( pivot.x, pivot.y );
 		mTextureRenderComponent->ResetVisibleRect();
-	}
-	void HollowRectComponent::Set( const r2::Vector2& pivot, const uint32_t width, const uint32_t height, const char rect_char, const char hollow_char )
-	{
-		//
-		// FG_White( 7 ) | BG_Black( 0 ) == 7
-		//
-		Set( pivot, width, height, rect_char, 7, hollow_char, 7 );
 	}
 	void HollowRectComponent::Set( const uint32_t width, const uint32_t height, const char rect_char, const char hollow_char )
 	{
