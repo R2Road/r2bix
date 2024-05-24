@@ -10,7 +10,7 @@ namespace r2bix_component
 		, mPosition()
 		, mZOrder( 0 )
 		, mPivotPoint( 0.5f, 0.5f )
-		, mSignal4PivotPointChanged()
+		, mSignal4PivotChanged()
 	{}
 
 	r2::PointInt TransformComponent::GetWorldPosition() const
