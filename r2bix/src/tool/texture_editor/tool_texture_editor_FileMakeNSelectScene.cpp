@@ -180,7 +180,7 @@ namespace tool_texture_editor
 				{
 					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					node->mTransformComponent->SetPosition( 15, 8 );
-					node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+					node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3 );
 					{
 						auto label_node = node->AddChild<r2bix_node::LabelSNode>();
@@ -220,7 +220,7 @@ namespace tool_texture_editor
 				{
 					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					node->mTransformComponent->SetPosition( 35, 8 );
-					node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+					node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3 );
 					{
 						auto label_node = node->AddChild<r2bix_node::LabelSNode>();
