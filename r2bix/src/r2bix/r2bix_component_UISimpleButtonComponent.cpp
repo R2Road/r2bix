@@ -77,25 +77,14 @@ namespace r2bix_component
 
 
 
-	void UISimpleButtonComponent::SetSize( const int width, const int height, const char c )
+	void UISimpleButtonComponent::Set( const int width, const int height, const char c )
 	{
 		mMyUIControlComponent->SetSize( width, height );
 		mMyCustomTextureComponent->GetTexture()->Reset( width, height, c, r2bix::eBackgroundColor::BG_White );
 		mMyTextureRenderComponent->ResetVisibleRect();
 	}
-	void UISimpleButtonComponent::SetPivotPoint( const float x, const float y )
+	void UISimpleButtonComponent::Set( const int width, const int height )
 	{
-		mMyUIControlComponent->SetPivotPoint( x, y );
-		mMyTextureRenderComponent->SetPivotPoint( x, y );
-	}
-	void UISimpleButtonComponent::Set( const float pivot_x, const float pivot_y, const int width, const int height, const char c )
-	{
-		SetSize( width, height, c );
-		SetPivotPoint( pivot_x, pivot_y );
-	}
-	void UISimpleButtonComponent::Set( const float pivot_x, const float pivot_y, const int width, const int height )
-	{
-		SetSize( width, height, ' ' );
-		SetPivotPoint( pivot_x, pivot_y );
+		Set( width, height, ' ' );
 	}
 }

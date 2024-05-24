@@ -14,6 +14,12 @@ namespace r2bix_component
 		, mOrder( 0 )
 
 		, mPivotVector( 0.5f, 0.5f )
+		, mSlot4PivotChanged( [this]( float x, float y ) {
+			mPivotVector.x = x;
+			mPivotVector.y = y;
+
+			resetResponseRect();
+		} )
 		, mResponseRect( 0, 0, 1, 1 )
 
 		, mCursorState( r2bix_ui::eCursorStatus::None )
@@ -26,6 +32,13 @@ namespace r2bix_component
 	{}
 
 
+
+	bool UIControlComponent::initProcess()
+	{
+		GetOwnerNode().mTransformComponent->ConnectSlot4PivotPointChanged( &mSlot4PivotChanged );
+
+		return true;
+	}
 
 	void UIControlComponent::enterProcess()
 	{
@@ -74,15 +87,6 @@ namespace r2bix_component
 
 		resetResponseRect();
 	}
-
-	void UIControlComponent::SetPivotPoint( const float x, const float y )
-	{
-		mPivotVector.x = x;
-		mPivotVector.y = y;
-
-		resetResponseRect();
-	}
-
 	void UIControlComponent::Set( const float x, const float y, const uint32_t width, const uint32_t height )
 	{
 		R2ASSERT( width >= 1 && height >= 1, "" );

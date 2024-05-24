@@ -83,10 +83,8 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetSize( const int width, const int height, const char c );
-		void SetPivotPoint( const float x, const float y );
-		void Set( const float pivot_x, const float pivot_y, const int width, const int height, const char c );
-		void Set( const float pivot_x, const float pivot_y, const int width, const int height );
+		void Set( const int width, const int height, const char c );
+		void Set( const int width, const int height );
 
 
 

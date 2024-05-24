@@ -913,7 +913,8 @@ namespace node_test
 				{
 					auto simple_button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -3, 4 );
-					simple_button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 0.f, 0.f, 10, 3, ' ' );
+					simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPivotPoint( 0.f, 0.f );
+					simple_button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3, ' ' );
 				}
 			}
 

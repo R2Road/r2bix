@@ -36,8 +36,6 @@ namespace r2bix_component
 		//
 		//
 		//
-		void SetPivotPoint( const float x, const float y );
-
 		int GetLength() const;
 		void SetLength( const int length );
 

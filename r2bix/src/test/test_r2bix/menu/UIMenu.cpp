@@ -107,8 +107,8 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						{
 							auto text_field_node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
 							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, -3 );
+							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPivotPoint( 1.f, 1.f );
 							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->Set( 20, "ui    text    field~~!");
-							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->SetPivotPoint( 1.f, 0.f );
 							{
 								auto custom_texture_component = text_field_node->GetComponent<r2bix_component::CustomTextureComponent>();
 

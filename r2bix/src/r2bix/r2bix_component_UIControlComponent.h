@@ -17,6 +17,8 @@ namespace r2bix_component
 	class UIControlComponent : public r2bix_component::Component<UIControlComponent>
 	{
 	public:
+		using Slot4PivotChanged = r2::Slot<void, float, float>;
+
 		using Signal4CursorResponseT = r2::Signal<void, r2bix_ui::eCursorStatus>;
 		using Signal4KeyResponseT = r2::Signal<bool, int, r2bix_ui::eKeyStatus>;
 
@@ -33,9 +35,10 @@ namespace r2bix_component
 
 
 		//
-		//
+		// Override
 		//
 	private:
+		bool initProcess() override;
 		void enterProcess() override;
 		void exitProcess() override;
 
@@ -70,7 +73,6 @@ namespace r2bix_component
 		}
 
 		void SetSize( const uint32_t width, const uint32_t height );
-		void SetPivotPoint( const float x, const float y );
 		void Set( const float x, const float y, const uint32_t width, const uint32_t height );
 	private:
 		void resetResponseRect();
@@ -125,6 +127,7 @@ namespace r2bix_component
 		int mOrder;
 
 		r2::Vector2 mPivotVector;
+		Slot4PivotChanged mSlot4PivotChanged;
 		r2::RectInt mResponseRect;
 
 		r2bix_ui::eCursorStatus mCursorState;
