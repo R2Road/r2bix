@@ -1,11 +1,11 @@
 #pragma once
 
-#include "r2bix_component_Component.h"
+#include "r2_RectInt.h"
+#include "r2_Vector2.h"
 
 #include "r2bix_ColorMaskOption.h"
 
-#include "r2_RectInt.h"
-#include "r2_Vector2.h"
+#include "r2bix_component_Component.h"
 
 namespace r2bix_render
 {
@@ -19,10 +19,14 @@ namespace r2bix_component
 	public:
 		TextureFrameRenderComponent( r2bix_node::Node& owner_node );
 
+
+
 		//
 		// Override
 		//
 		void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset ) override;
+
+
 
 		//
 		// Getter
@@ -47,6 +51,8 @@ namespace r2bix_component
 		}
 	private:
 		void resetVisibleRect();
+
+
 
 	private:
 		r2::Vector2 mPivotVector;

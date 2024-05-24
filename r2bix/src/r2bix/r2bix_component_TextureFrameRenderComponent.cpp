@@ -1,8 +1,11 @@
 #include "r2bix_component_TextureFrameRenderComponent.h"
 
-#include "r2bix_node_Node.h"
 #include "r2bix_DebugConfig.h"
+
 #include "r2bix_component_TransformComponent.h"
+
+#include "r2bix_node_Node.h"
+
 #include "r2bix_render_Camera.h"
 #include "r2bix_render_TextureFrame.h"
 
@@ -14,6 +17,8 @@ namespace r2bix_component
 		, mTextureFrame( nullptr )
 		, mColorMaskOption( r2bix::eColorMaskFlag::CMF_Foreground | r2bix::eColorMaskFlag::CMF_Background )
 	{}
+
+
 
 	void TextureFrameRenderComponent::Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
@@ -87,6 +92,8 @@ namespace r2bix_component
 		}
 	}
 
+
+
 	void TextureFrameRenderComponent::SetPivotPoint( const float x, const float y )
 	{
 		mPivotVector.x = x;
@@ -94,12 +101,14 @@ namespace r2bix_component
 
 		resetVisibleRect();
 	}
+
 	void TextureFrameRenderComponent::SetTextureFrame( const r2bix_render::TextureFrame* const texture_frame )
 	{
 		mTextureFrame = texture_frame;
 
 		resetVisibleRect();
 	}
+
 	void TextureFrameRenderComponent::resetVisibleRect()
 	{
 		if( !mTextureFrame )
