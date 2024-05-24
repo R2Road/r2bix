@@ -3,10 +3,20 @@
 #include "r2bix_node_Node.h"
 
 #include "r2bix_component_LabelSComponent.h"
+#include "r2bix_component_UIControlComponent.h"
 
 namespace tool_texture_editor
 {
 	EditorComponent::EditorComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<EditorComponent>( owner_node )
+		, mFileName()
+		, mSlot4KeyResponse( []( int, r2bix_ui::eKeyStatus )->bool
+		{
+			//
+			// Do Something
+			//
+
+			return true;
+		} )
 	{}
 
 
@@ -20,5 +30,12 @@ namespace tool_texture_editor
 		{
 			file_name_view_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( str );
 		}
+	}
+
+
+
+	void EditorComponent::SetCanvas( r2bix_node::Node* canvas_node )
+	{
+		canvas_node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4KeyResponse( &mSlot4KeyResponse );
 	}
 }
