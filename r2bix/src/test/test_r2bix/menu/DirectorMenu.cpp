@@ -81,7 +81,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 				//
 				{
 					auto node = root_node->AddChild<r2bix_node::CustomTextureNode>();
-					node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+					node->mTransformComponent->SetPivot( 0.f, 0.f );
 					node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
 				}
 
@@ -93,7 +93,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 				auto label_node = root_node->AddChild<r2bix_node::LabelSNode>();
 				{
 					label_node->mTransformComponent->SetPosition( 2, 2 );
-					label_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+					label_node->mTransformComponent->SetPivot( 0.f, 0.f );
 					label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Label Node" );
 				}
 

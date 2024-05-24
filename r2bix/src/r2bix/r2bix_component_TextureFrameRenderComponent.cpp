@@ -100,7 +100,7 @@ namespace r2bix_component
 
 
 
-	void TextureFrameRenderComponent::SetPivotPoint( const float x, const float y )
+	void TextureFrameRenderComponent::SetPivot( const float x, const float y )
 	{
 		mPivotVector.x = x;
 		mPivotVector.y = y;

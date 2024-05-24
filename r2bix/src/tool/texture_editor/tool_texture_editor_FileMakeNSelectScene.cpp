@@ -35,7 +35,7 @@ namespace tool_texture_editor
 			//
 			{
 				auto node = ret->AddChild<r2bix_node::HollowRectNode>();
-				node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+				node->mTransformComponent->SetPivot( 0.f, 0.f );
 				node->GetComponent<r2bix_component::HollowRectComponent>()->Set(
 					  director.GetScreenSize().GetWidth()
 					, director.GetScreenSize().GetHeight()
@@ -78,11 +78,11 @@ namespace tool_texture_editor
 				auto pn_node = ret->AddChild<r2bix_node::UIPannelNode>();
 				{
 					pn_node->mTransformComponent->SetPosition( 28, 12 );
-					pn_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+					pn_node->mTransformComponent->SetPivot( 0.f, 0.f );
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 50, 15 );
 					{
 						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
-						rect_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+						rect_node->mTransformComponent->SetPivot( 0.f, 0.f );
 						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
 							  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
@@ -98,7 +98,7 @@ namespace tool_texture_editor
 				{
 					auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					button_node->mTransformComponent->SetPosition( 5, 3 );
-					button_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+					button_node->mTransformComponent->SetPivot( 0.f, 0.f );
 					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 40, 3 );
 					{
 						auto label_node = button_node->AddChild<r2bix_node::LabelSNode>();
@@ -128,7 +128,7 @@ namespace tool_texture_editor
 				{
 					auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					button_node->mTransformComponent->SetPosition( 5, 9 );
-					button_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+					button_node->mTransformComponent->SetPivot( 0.f, 0.f );
 					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 40, 3 );
 					{
 						auto label_node = button_node->AddChild<r2bix_node::LabelSNode>();
@@ -151,11 +151,11 @@ namespace tool_texture_editor
 				pn_node->SetName( "new" );
 				{
 					pn_node->mTransformComponent->SetPosition( 28, 12 );
-					pn_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+					pn_node->mTransformComponent->SetPivot( 0.f, 0.f );
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 50, 15 );
 					{
 						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
-						rect_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+						rect_node->mTransformComponent->SetPivot( 0.f, 0.f );
 						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
 							  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
@@ -182,7 +182,7 @@ namespace tool_texture_editor
 				{
 					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					node->mTransformComponent->SetPosition( 15, 8 );
-					node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3 );
 					{
 						auto label_node = node->AddChild<r2bix_node::LabelSNode>();
@@ -222,7 +222,7 @@ namespace tool_texture_editor
 				{
 					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					node->mTransformComponent->SetPosition( 35, 8 );
-					node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3 );
 					{
 						auto label_node = node->AddChild<r2bix_node::LabelSNode>();

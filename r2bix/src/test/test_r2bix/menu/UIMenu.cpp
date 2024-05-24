@@ -72,7 +72,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					{
 						auto node = scene->AddChild<r2bix_node::CustomTextureNode>();
-						node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
+						node->mTransformComponent->SetPivot( 0.f, 0.f );
 						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 51, 51, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
 					}
 
@@ -91,7 +91,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 							pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 23, 15 );
 							{
 								auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
-								rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+								rect_node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 								rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
 									  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 									, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
@@ -107,7 +107,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						{
 							auto text_field_node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
 							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, -3 );
-							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPivotPoint( 1.f, 1.f );
+							text_field_node->GetComponent<r2bix_component::TransformComponent>()->SetPivot( 1.f, 1.f );
 							text_field_node->GetComponent<r2bix_component::UITextFieldComponent>()->Set( 20, "ui    text    field~~!");
 							{
 								auto custom_texture_component = text_field_node->GetComponent<r2bix_component::CustomTextureComponent>();

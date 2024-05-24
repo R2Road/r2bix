@@ -91,12 +91,12 @@ namespace p2048
 			{
 				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
 				label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Max : " );
-				label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 1.f, 0.f );
 				label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_label_x, 9 );
 
 				auto max_number_label_node = ret->AddChild<r2bix_node::LabelSNode>( 1 );
 				max_number_label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "0" );
-				max_number_label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				max_number_label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 1.f, 0.f );
 				max_number_label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_number_x, 9 );
 
 				//
@@ -111,12 +111,12 @@ namespace p2048
 			{
 				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
 				label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Score : " );
-				label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 1.f, 0.f );
 				label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_label_x, 10 );
 
 				auto total_score_label_node = ret->AddChild<r2bix_node::LabelSNode>( 1 );
 				total_score_label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "0" );
-				total_score_label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				total_score_label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 1.f, 0.f );
 				total_score_label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_number_x, 10 );
 
 				//
@@ -131,12 +131,12 @@ namespace p2048
 			{
 				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
 				label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Recent : " );
-				label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 1.f, 0.f );
 				label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_label_x, 11 );
 
 				auto total_score_label_node = ret->AddChild<r2bix_node::LabelSNode>( 1 );
 				total_score_label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "0" );
-				total_score_label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
+				total_score_label_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 1.f, 0.f );
 				total_score_label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( score_number_x, 11 );
 
 				//

@@ -461,7 +461,7 @@ namespace node_test
 			{
 				auto node = scene->AddChild<r2bix_node::CustomTextureNode>();
 				node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
-				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 0.f, 0.f );
 			}
 
 			//
@@ -478,7 +478,7 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					rect_node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( 8, 4, '1' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
@@ -508,7 +508,7 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					rect_node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( 8, 4, '2' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
@@ -538,7 +538,7 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					rect_node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( 8, 4, '3' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
@@ -568,7 +568,7 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					rect_node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( 15, 6, " Key Test" );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 15, 6 );
@@ -717,7 +717,7 @@ namespace node_test
 			{
 				auto node = scene->AddChild<r2bix_node::CustomTextureNode>();
 				node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
-				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 0.f, 0.f );
 			}
 
 			//
@@ -766,7 +766,7 @@ namespace node_test
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 15, 7 );
 					{
 						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
-						rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+						rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 0.f, 0.f );
 						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
 							pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
@@ -781,7 +781,7 @@ namespace node_test
 					btn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 11, 5 );
 					{
 						auto rect_node = btn_node->AddChild<r2bix_node::RectNode>();
-						rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+						rect_node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 0.f, 0.f );
 						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
 							btn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 							, btn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
@@ -882,7 +882,7 @@ namespace node_test
 			{
 				auto node = scene->AddChild<r2bix_node::CustomTextureNode>();
 				node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 50, 50, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
-				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+				node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivot( 0.f, 0.f );
 			}
 
 			//
@@ -898,7 +898,7 @@ namespace node_test
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 23, 15 );
 					{
 						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
-						rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+						rect_node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
 							  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
@@ -913,7 +913,7 @@ namespace node_test
 				{
 					auto simple_button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
 					simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -3, 4 );
-					simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPivotPoint( 0.f, 0.f );
+					simple_button_node->GetComponent<r2bix_component::TransformComponent>()->SetPivot( 0.f, 0.f );
 					simple_button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3, ' ' );
 				}
 			}

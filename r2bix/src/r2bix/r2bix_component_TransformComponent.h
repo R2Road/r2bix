@@ -73,7 +73,7 @@ namespace r2bix_component
 			mZOrder = new_z_order;
 		}
 
-		void SetPivotPoint( const float x, const float y )
+		void SetPivot( const float x, const float y )
 		{
 			mPivotPoint.x = x;
 			mPivotPoint.y = y;

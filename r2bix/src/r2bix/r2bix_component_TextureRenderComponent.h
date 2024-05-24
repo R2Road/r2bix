@@ -50,7 +50,7 @@ namespace r2bix_component
 		//
 		// Setter
 		//
-		void SetPivotPoint( const float x, const float y );
+		void SetPivot( const float x, const float y );
 		void SetTexture( const r2bix_render::Texture* const texture );
 		void ResetVisibleRect();
 		void SetVisibleRectForced( const int x, const int y, const int width, const int height )

@@ -261,7 +261,7 @@ namespace component_test
 
 				LF();
 
-				PROCESS_MAIN( node->mTransformComponent->SetPivotPoint( 1.f, 2.f ) );
+				PROCESS_MAIN( node->mTransformComponent->SetPivot( 1.f, 2.f ) );
 
 				LF();
 
@@ -307,7 +307,7 @@ namespace component_test
 
 				LF();
 
-				PROCESS_MAIN( component->SetPivotPoint( 0.5f, 0.5f ) );
+				PROCESS_MAIN( component->SetPivot( 0.5f, 0.5f ) );
 			}
 
 			LS();
@@ -364,7 +364,7 @@ namespace component_test
 			LS();
 
 			{
-				PROCESS_MAIN( component->SetPivotPoint( 0.f, 0.f ) );
+				PROCESS_MAIN( component->SetPivot( 0.f, 0.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
@@ -376,7 +376,7 @@ namespace component_test
 
 			{
 				render_target.FillCharacterAll( '=' );
-				PROCESS_MAIN( component->SetPivotPoint( 0.5f, 0.5f ) );
+				PROCESS_MAIN( component->SetPivot( 0.5f, 0.5f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
@@ -388,7 +388,7 @@ namespace component_test
 
 			{
 				render_target.FillCharacterAll( '=' );
-				PROCESS_MAIN( component->SetPivotPoint( 1.f, 1.f ) );
+				PROCESS_MAIN( component->SetPivot( 1.f, 1.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
@@ -789,7 +789,7 @@ namespace component_test
 			LS();
 
 			{
-				PROCESS_MAIN( component->SetPivotPoint( 0.f, 0.f ) );
+				PROCESS_MAIN( component->SetPivot( 0.f, 0.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
@@ -800,7 +800,7 @@ namespace component_test
 			LS();
 
 			{
-				PROCESS_MAIN( component->SetPivotPoint( 1.f, 1.f ) );
+				PROCESS_MAIN( component->SetPivot( 1.f, 1.f ) );
 
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
