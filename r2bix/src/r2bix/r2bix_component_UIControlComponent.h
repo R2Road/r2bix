@@ -73,7 +73,6 @@ namespace r2bix_component
 		}
 
 		void SetSize( const uint32_t width, const uint32_t height );
-		void Set( const float x, const float y, const uint32_t width, const uint32_t height );
 	private:
 		void resetResponseRect();
 		

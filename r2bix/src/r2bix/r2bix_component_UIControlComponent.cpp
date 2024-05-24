@@ -87,17 +87,6 @@ namespace r2bix_component
 
 		resetResponseRect();
 	}
-	void UIControlComponent::Set( const float x, const float y, const uint32_t width, const uint32_t height )
-	{
-		R2ASSERT( width >= 1 && height >= 1, "" );
-
-		mResponseRect.SetSize( width - 1, height - 1 );
-
-		mPivotVector.x = x;
-		mPivotVector.y = y;
-
-		resetResponseRect();
-	}
 
 	void UIControlComponent::resetResponseRect()
 	{
