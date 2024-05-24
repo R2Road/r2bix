@@ -68,6 +68,11 @@ namespace tool_texture_editor
 				);
 				node->mTransformComponent->SetPivot( 1.f, 1.f );
 			}
+			//
+			//
+			//
+			auto editor_component = ret->AddComponent<tool_texture_editor::EditorComponent>();
+			editor_component->Activate();
 
 
 
@@ -85,14 +90,6 @@ namespace tool_texture_editor
 					texture_view_node->GetComponent<r2bix_component::RectComponent>()->Set( 20, 10, ' ', r2bix::eBackgroundColor::BG_Green );
 				}
 			}
-
-
-
-			//
-			//
-			//
-			auto editor_component = ret->AddComponent<tool_texture_editor::EditorComponent>();
-			editor_component->Activate();
 		}
 
 		return ret;
