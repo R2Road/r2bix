@@ -77,7 +77,7 @@ namespace tool_texture_editor
 				//
 				auto pn_node = ret->AddChild<r2bix_node::UIPannelNode>();
 				{
-					pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 28, 12 );
+					pn_node->mTransformComponent->SetPosition( 28, 12 );
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->Set( 0.f, 0.f, 50, 15 );
 					{
 						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
@@ -96,12 +96,12 @@ namespace tool_texture_editor
 				//
 				{
 					auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
-					button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 3 );
-					button_node->GetComponent<r2bix_component::TransformComponent>()->SetPivotPoint( 0.f, 0.f );
+					button_node->mTransformComponent->SetPosition( 5, 3 );
+					button_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
 					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 40, 3 );
 					{
 						auto label_node = button_node->AddChild<r2bix_node::LabelSNode>();
-						label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 20, 1 );
+						label_node->mTransformComponent->SetPosition( 20, 1 );
 						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "N E W" );
 					}
 
@@ -126,12 +126,12 @@ namespace tool_texture_editor
 
 				{
 					auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
-					button_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 5, 9 );
-					button_node->GetComponent<r2bix_component::TransformComponent>()->SetPivotPoint( 0.f, 0.f );
+					button_node->mTransformComponent->SetPosition( 5, 9 );
+					button_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
 					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 40, 3 );
 					{
 						auto label_node = button_node->AddChild<r2bix_node::LabelSNode>();
-						label_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 20, 1 );
+						label_node->mTransformComponent->SetPosition( 20, 1 );
 						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "O P E N" );
 					}
 				}
@@ -149,7 +149,7 @@ namespace tool_texture_editor
 				auto pn_node = ret->AddChild<r2bix_node::UIPannelNode>();
 				pn_node->SetName( "new" );
 				{
-					pn_node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 28, 12 );
+					pn_node->mTransformComponent->SetPosition( 28, 12 );
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->Set( 0.f, 0.f, 50, 15 );
 					{
 						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
@@ -170,7 +170,7 @@ namespace tool_texture_editor
 				{
 					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
 					node->SetName( "file_name" );
-					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 25, 3 );
+					node->mTransformComponent->SetPosition( 25, 3 );
 					node->GetComponent<r2bix_component::UITextFieldComponent>()->Set( 20, "new_file~~~~~~~~~~~!" );
 				}
 
@@ -179,8 +179,8 @@ namespace tool_texture_editor
 				//
 				{
 					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
-					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 15, 8 );
-					node->GetComponent<r2bix_component::TransformComponent>()->SetPivotPoint( 0.f, 0.f );
+					node->mTransformComponent->SetPosition( 15, 8 );
+					node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3 );
 					{
 						auto label_node = node->AddChild<r2bix_node::LabelSNode>();
@@ -219,8 +219,8 @@ namespace tool_texture_editor
 				//
 				{
 					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
-					node->GetComponent<r2bix_component::TransformComponent>()->SetPosition( 35, 8 );
-					node->GetComponent<r2bix_component::TransformComponent>()->SetPivotPoint( 0.f, 0.f );
+					node->mTransformComponent->SetPosition( 35, 8 );
+					node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3 );
 					{
 						auto label_node = node->AddChild<r2bix_node::LabelSNode>();
