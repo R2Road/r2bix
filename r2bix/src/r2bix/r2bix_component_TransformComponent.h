@@ -81,7 +81,7 @@ namespace r2bix_component
 			mSignal4PivotChanged.Emit( x, y );
 		}
 
-		void ConnectSlot4PivotPointChanged( Slot4PivotPointChanged* slot )
+		void ConnectSlot4PivotChanged( Slot4PivotPointChanged* slot )
 		{
 			mSignal4PivotChanged.Connect( slot );
 		}

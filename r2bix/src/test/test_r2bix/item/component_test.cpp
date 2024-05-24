@@ -251,7 +251,7 @@ namespace component_test
 
 				LF();
 
-				PROCESS_MAIN( node->mTransformComponent->ConnectSlot4PivotPointChanged( &s ) );
+				PROCESS_MAIN( node->mTransformComponent->ConnectSlot4PivotChanged( &s ) );
 			}
 
 			LS();

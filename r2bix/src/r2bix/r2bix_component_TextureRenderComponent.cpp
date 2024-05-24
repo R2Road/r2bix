@@ -24,7 +24,7 @@ namespace r2bix_component
 
 	bool TextureRenderComponent::initProcess()
 	{
-		GetOwnerNode().mTransformComponent->ConnectSlot4PivotPointChanged( &mSlot4PivotChanged );
+		GetOwnerNode().mTransformComponent->ConnectSlot4PivotChanged( &mSlot4PivotChanged );
 
 		return true;
 	}
