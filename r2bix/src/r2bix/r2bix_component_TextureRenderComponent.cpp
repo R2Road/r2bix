@@ -9,13 +9,17 @@
 namespace r2bix_component
 {
 	TextureRenderComponent::TextureRenderComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureRenderComponent>( owner_node )
-		, mSlot4PivotChanged( [this]( float x, float y ){ ResetVisibleRect(); } )
+		, mSlot4PivotChanged( [this]( float x, float y )
+		{
+			mPivotVector.x = x;
+			mPivotVector.y = y;
+			ResetVisibleRect();
+		} )
 		, mPivotVector( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTexture( nullptr )
 		, mColorMaskOption( r2bix::eColorMaskFlag::CMF_Foreground | r2bix::eColorMaskFlag::CMF_Background )
 	{}
-
 
 
 	bool TextureRenderComponent::initProcess()

@@ -64,9 +64,10 @@ namespace tool_texture_editor
 				auto node = ret->AddChild<r2bix_node::LabelSNode>();
 				node->SetName( "file_name_view" );
 				node->GetComponent<r2bix_component::TransformComponent>()->SetPosition(
-					director.GetScreenSize().GetWidth() - 1
-					, director.GetScreenSize().GetHeight() - 1
+					  director.GetScreenSize().GetWidth()
+					, director.GetScreenSize().GetHeight()
 				);
+				node->mTransformComponent->SetPivotPoint( 1.f, 1.f );
 			}
 
 
