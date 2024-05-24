@@ -98,6 +98,8 @@ namespace r2bix_component
 		}
 	}
 
+
+
 	void TextureRenderComponent::SetPivotPoint( const float x, const float y )
 	{
 		mPivotVector.x = x;
@@ -105,12 +107,14 @@ namespace r2bix_component
 
 		ResetVisibleRect();
 	}
+
 	void TextureRenderComponent::SetTexture( const r2bix_render::Texture* const texture )
 	{
 		mTexture = texture;
 
 		ResetVisibleRect();
 	}
+
 	void TextureRenderComponent::ResetVisibleRect()
 	{
 		if( !mTexture )

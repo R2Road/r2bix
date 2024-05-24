@@ -23,11 +23,15 @@ namespace r2bix_component
 
 		TextureRenderComponent( r2bix_node::Node& owner_node );
 
+
+
 		//
 		// Override
 		//
 		bool initProcess() override;
 		void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset ) override;
+
+
 
 		//
 		// Getter
@@ -40,6 +44,8 @@ namespace r2bix_component
 		{
 			return mVisibleRect;
 		}
+
+
 
 		//
 		// Setter
@@ -55,6 +61,8 @@ namespace r2bix_component
 		{
 			mVisibleRect.MoveOrigin( move_x, move_y );
 		}
+
+
 
 	private:
 		Slot4PivotChangedT mSlot4PivotChanged;
