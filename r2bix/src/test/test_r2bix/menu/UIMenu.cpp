@@ -72,8 +72,8 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 					//
 					{
 						auto node = scene->AddChild<r2bix_node::CustomTextureNode>();
+						node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
 						node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 51, 51, '#', r2bix::ColorValue( r2bix::eBackgroundColor::BG_Gray ) );
-						node->GetComponent<r2bix_component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
 					}
 
 					//
