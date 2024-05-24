@@ -5,9 +5,11 @@
 #include "r2bix_component_HollowRectComponent.h"
 #include "r2bix_component_InputKeyboardComponent.h"
 #include "r2bix_component_LabelSComponent.h"
+#include "r2bix_component_RectComponent.h"
 
 #include "r2bix_node_HollowRectNode.h"
 #include "r2bix_node_LabelSNode.h"
+#include "r2bix_node_RectNode.h"
 
 #include "tool_texture_editor_EditorComponent.h"
 
@@ -68,6 +70,23 @@ namespace tool_texture_editor
 					, director.GetScreenSize().GetHeight()
 				);
 				node->mTransformComponent->SetPivot( 1.f, 1.f );
+			}
+
+
+
+			//
+			// Canvas
+			//
+			{
+				auto root_node = ret->AddChild<r2bix_node::Node>();
+				root_node->mTransformComponent->SetPosition(
+					  director.GetScreenSize().GetWidth() * 0.5f
+					, director.GetScreenSize().GetHeight() * 0.5f
+				);
+				{
+					auto texture_view_node = root_node->AddChild<r2bix_node::RectNode>();
+					texture_view_node->GetComponent<r2bix_component::RectComponent>()->Set( 20, 10, ' ', r2bix::eBackgroundColor::BG_Green );
+				}
 			}
 
 
