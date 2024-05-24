@@ -1,6 +1,7 @@
 #pragma once
 
 #include "r2_RectInt.h"
+#include "r2_SignalSlot.h"
 #include "r2_Vector2.h"
 
 #include "r2bix_ColorMaskOption.h"
@@ -17,6 +18,10 @@ namespace r2bix_component
 	class TextureFrameRenderComponent : public r2bix_component::Component<TextureFrameRenderComponent>
 	{
 	public:
+		using Slot4PivotChangedT = r2::Slot<void, float, float>;
+
+
+
 		TextureFrameRenderComponent( r2bix_node::Node& owner_node );
 
 
@@ -55,6 +60,7 @@ namespace r2bix_component
 
 
 	private:
+		Slot4PivotChangedT mSlot4PivotChanged;
 		r2::Vector2 mPivotVector;
 		r2::RectInt mVisibleRect;
 		const r2bix_render::TextureFrame* mTextureFrame;
