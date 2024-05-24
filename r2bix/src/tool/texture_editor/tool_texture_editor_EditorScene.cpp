@@ -27,13 +27,13 @@ namespace tool_texture_editor
 			// Background
 			//
 			{
-				auto node = ret->AddChild<r2bix_node::HollowRectNode>();
+				auto node = ret->AddChild<r2bix_node::RectNode>();
 				node->mTransformComponent->SetPivot( 0.f, 0.f );
-				node->GetComponent<r2bix_component::HollowRectComponent>()->Set(
+				node->GetComponent<r2bix_component::RectComponent>()->Set(
 					  director.GetScreenSize().GetWidth()
 					, director.GetScreenSize().GetHeight()
-					, '#'
 					, ' '
+					, r2bix::eBackgroundColor::BG_Gray
 				);
 			}
 			//
@@ -56,9 +56,6 @@ namespace tool_texture_editor
 				);
 				component->Activate();
 			}
-
-
-
 			//
 			// File Name View
 			//
