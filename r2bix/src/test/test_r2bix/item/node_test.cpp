@@ -478,7 +478,8 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.5f, 0.5f }, 8, 4, '1' );
+					rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( 8, 4, '1' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
 					slot_cursor_response_1.SetCallback( [rect_node]( r2bix_ui::eCursorStatus s )
@@ -507,7 +508,8 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.5f, 0.5f }, 8, 4, '2' );
+					rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( 8, 4, '2' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
 					slot_cursor_response_2.SetCallback( [rect_node]( r2bix_ui::eCursorStatus s )
@@ -536,7 +538,8 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.5f, 0.5f }, 8, 4, '3' );
+					rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( 8, 4, '3' );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 8, 4 );
 					slot_cursor_response_3.SetCallback( [rect_node]( r2bix_ui::eCursorStatus s )
@@ -565,7 +568,8 @@ namespace node_test
 
 					// Debug Area View
 					auto rect_node = node->AddChild<r2bix_node::RectNode>();
-					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( r2::Vector2{ 0.5f, 0.5f }, 15, 6, " Key Test" );
+					rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
+					rect_node->GetComponent<r2bix_component::RectComponent>()->Set( 15, 6, " Key Test" );
 
 					node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 15, 6 );
 					slot_key_response_4.SetCallback( [rect_node]( const int, const r2bix_ui::eKeyStatus s )->bool
@@ -894,9 +898,9 @@ namespace node_test
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 23, 15 );
 					{
 						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
+						rect_node->mTransformComponent->SetPivotPoint( 0.5f, 0.5f );
 						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
-							r2::Vector2{ 0.5f, 0.5f }
-							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
+							  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
 							, "Pannel "
 						);

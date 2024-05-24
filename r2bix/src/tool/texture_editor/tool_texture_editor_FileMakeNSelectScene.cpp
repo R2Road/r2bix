@@ -81,9 +81,9 @@ namespace tool_texture_editor
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->Set( 0.f, 0.f, 50, 15 );
 					{
 						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
+						rect_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
 						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
-							r2::Vector2{ 0.f, 0.f }
-							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
+							  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
 							, ' '
 							, r2bix::eBackgroundColor::BG_Gray
@@ -151,9 +151,9 @@ namespace tool_texture_editor
 					pn_node->GetComponent<r2bix_component::UIControlComponent>()->Set( 0.f, 0.f, 50, 15 );
 					{
 						auto rect_node = pn_node->AddChild<r2bix_node::RectNode>();
+						rect_node->mTransformComponent->SetPivotPoint( 0.f, 0.f );
 						rect_node->GetComponent<r2bix_component::RectComponent>()->Set(
-							r2::Vector2{ 0.f, 0.f }
-							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
+							  pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetWidth()
 							, pn_node->GetComponent<r2bix_component::UIControlComponent>()->GetHeight()
 							, ' '
 							, r2bix::eBackgroundColor::BG_Gray
