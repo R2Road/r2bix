@@ -5,6 +5,7 @@
 #include "r2bix_ColorMaskOption.h"
 
 #include "r2_RectInt.h"
+#include "r2_SignalSlot.h"
 #include "r2_Vector2.h"
 
 namespace r2bix_render
@@ -17,11 +18,15 @@ namespace r2bix_component
 	class TextureRenderComponent : public r2bix_component::Component<TextureRenderComponent>
 	{
 	public:
+		using Slot4PivotChangedT = r2::Slot<void, float, float>;
+
+
 		TextureRenderComponent( r2bix_node::Node& owner_node );
 
 		//
 		// Override
 		//
+		bool initProcess() override;
 		void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset ) override;
 
 		//
@@ -52,6 +57,7 @@ namespace r2bix_component
 		}
 
 	private:
+		Slot4PivotChangedT mSlot4PivotChanged;
 		r2::Vector2 mPivotVector;
 		r2::RectInt mVisibleRect;
 		const r2bix_render::Texture* mTexture;

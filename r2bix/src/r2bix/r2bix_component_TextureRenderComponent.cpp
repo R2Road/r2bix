@@ -9,11 +9,21 @@
 namespace r2bix_component
 {
 	TextureRenderComponent::TextureRenderComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureRenderComponent>( owner_node )
+		, mSlot4PivotChanged( [this]( float x, float y ){ ResetVisibleRect(); } )
 		, mPivotVector( 0.5f, 0.5f )
 		, mVisibleRect()
 		, mTexture( nullptr )
 		, mColorMaskOption( r2bix::eColorMaskFlag::CMF_Foreground | r2bix::eColorMaskFlag::CMF_Background )
 	{}
+
+
+
+	bool TextureRenderComponent::initProcess()
+	{
+		GetOwnerNode().mTransformComponent->ConnectSlot4PivotPointChanged( &mSlot4PivotChanged );
+
+		return true;
+	}
 
 	void TextureRenderComponent::Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
