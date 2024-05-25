@@ -15,19 +15,17 @@ namespace r2bix_component
 
 	r2::PointInt TransformComponent::GetWorldPosition() const
 	{
-		r2::PointInt world_position = GetPosition();
+		r2::PointInt world_position;
+		r2bix_node::Node* current_node = &GetOwnerNode();
 
-		r2bix_node::Node* parent_node = GetOwnerNode().GetParentNode();
-
-		//
-		// Calculate World Position
-		//
-		while( parent_node )
+		do
 		{
-			world_position += parent_node->GetComponent<TransformComponent>()->GetPosition();
 
-			parent_node = parent_node->GetParentNode();
-		}
+			world_position += current_node->GetComponent<TransformComponent>()->GetPosition();
+
+			current_node = current_node->GetParentNode();
+
+		} while( current_node );
 
 		return world_position;
 	}
