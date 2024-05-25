@@ -94,6 +94,7 @@ namespace tool_texture_editor
 				canvas_node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( canvas_width, canvas_height );
 				{
 					auto texture_view_node = canvas_node->AddChild<r2bix_node::RectNode>();
+					texture_view_node->SetName( "texture" );
 					texture_view_node->mTransformComponent->SetPivot( 0.f, 0.f );
 					texture_view_node->GetComponent<r2bix_component::RectComponent>()->Set( canvas_width, canvas_height, ' ', r2bix::eBackgroundColor::BG_Green );
 				}

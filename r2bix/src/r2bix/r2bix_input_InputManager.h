@@ -50,6 +50,16 @@ namespace r2bix_input
 
 
 
+		//
+		//
+		//
+		CursorPoint GetCursorPoint() const
+		{
+			return mMachineInputCollector.GetCursorPoint();
+		}
+
+
+
 	public:
 		MachineInputCollector mMachineInputCollector;
 

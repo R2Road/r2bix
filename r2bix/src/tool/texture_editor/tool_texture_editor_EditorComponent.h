@@ -38,5 +38,7 @@ namespace tool_texture_editor
 	private:
 		std::string mFileName;
 		Slot4KeyResponseT mSlot4KeyResponse;
+
+		r2bix_node::Node* mCanvasNode;
 	};
 }
