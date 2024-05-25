@@ -21,7 +21,7 @@ namespace r2bix_component
 		do
 		{
 
-			world_position += current_node->GetComponent<TransformComponent>()->GetPosition();
+			world_position += current_node->mTransformComponent->GetPosition();
 
 			current_node = current_node->GetParentNode();
 
