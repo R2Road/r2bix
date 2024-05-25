@@ -5,7 +5,7 @@
 
 namespace r2bix_component
 {
-	InputKeyboardComponent::InputKeyboardComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<InputKeyboardComponent>( owner_node )
+	InputKeyboardComponent::InputKeyboardComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<InputKeyboardComponent>( director, owner_node )
 		, mListener()
 	{}
 

@@ -7,9 +7,9 @@
 
 namespace tool_texture_editor
 {
-	EditorComponent::EditorComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<EditorComponent>( owner_node )
+	EditorComponent::EditorComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<EditorComponent>( director, owner_node )
 		, mFileName()
-		, mSlot4KeyResponse( []( int, r2bix_ui::eKeyStatus )->bool
+		, mSlot4KeyResponse( [this]( int, r2bix_ui::eKeyStatus )->bool
 		{
 			//
 			// Do Something

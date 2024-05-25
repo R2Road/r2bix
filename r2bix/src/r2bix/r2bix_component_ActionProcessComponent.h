@@ -10,7 +10,7 @@ namespace r2bix_component
 	class ActionProcessComponent : public r2bix_component::Component<ActionProcessComponent>
 	{
 	public:
-		ActionProcessComponent( r2bix_node::Node& owner_node );
+		ActionProcessComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 		//
 		//

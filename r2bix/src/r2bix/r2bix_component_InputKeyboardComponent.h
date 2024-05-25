@@ -9,7 +9,7 @@ namespace r2bix_component
 	class InputKeyboardComponent : public r2bix_component::Component<InputKeyboardComponent>
 	{
 	public:
-		InputKeyboardComponent( r2bix_node::Node& owner_node );
+		InputKeyboardComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

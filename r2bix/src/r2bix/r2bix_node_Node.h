@@ -161,7 +161,7 @@ namespace r2bix_node
 				return nullptr;
 			}
 
-			auto component = ComponentT::Create( *this );
+			auto component = ComponentT::Create( mDirector, *this );
 			auto ret = component.get();
 			mComponentContainer.push_back( std::move( component ) );
 

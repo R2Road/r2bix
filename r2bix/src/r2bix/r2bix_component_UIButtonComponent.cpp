@@ -6,7 +6,7 @@
 
 namespace r2bix_component
 {
-	UIButtonComponent::UIButtonComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIButtonComponent>( owner_node )
+	UIButtonComponent::UIButtonComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<UIButtonComponent>( director, owner_node )
 		, mMyUIControlComponent( nullptr )
 		, mSlot4CursorStatusChanged()
 		, mSlot4KeyStatusChanged()

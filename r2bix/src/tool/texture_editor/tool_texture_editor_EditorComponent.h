@@ -17,7 +17,7 @@ namespace tool_texture_editor
 
 
 
-		EditorComponent( r2bix_node::Node& owner_node );
+		EditorComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

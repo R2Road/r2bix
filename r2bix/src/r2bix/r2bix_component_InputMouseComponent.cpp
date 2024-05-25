@@ -5,7 +5,7 @@
 
 namespace r2bix_component
 {
-	InputMouseComponent::InputMouseComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<InputMouseComponent>( owner_node )
+	InputMouseComponent::InputMouseComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<InputMouseComponent>( director, owner_node )
 		, mListener4Mouse()
 	{}
 

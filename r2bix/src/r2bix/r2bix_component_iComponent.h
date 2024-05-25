@@ -11,6 +11,11 @@
 
 #include "r2_PointInt.h"
 
+namespace r2bix
+{
+	class Director;
+}
+
 namespace r2bix_render
 {
 	class Camera;
@@ -28,8 +33,9 @@ namespace r2bix_component
 	class iComponent
 	{
 	protected:
-		iComponent( r2bix_node::Node& owner_node ) :
-			  mOwnerNode( owner_node )
+		iComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) :
+			  mDirector( director )
+			, mOwnerNode( owner_node )
 			, mbActivate( false )
 		{}
 	public:
@@ -47,6 +53,11 @@ namespace r2bix_component
 		r2bix_node::Node& GetOwnerNode() const
 		{
 			return mOwnerNode;
+		}
+
+		r2bix::Director& GetDirector() const
+		{
+			return mDirector;
 		}
 
 		bool IsActivate() const
@@ -160,6 +171,7 @@ namespace r2bix_component
 
 
 	protected:
+		r2bix::Director& mDirector;
 		r2bix_node::Node& mOwnerNode;
 		bool mbActivate;
 	};

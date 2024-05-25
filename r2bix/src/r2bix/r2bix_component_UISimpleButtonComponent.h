@@ -27,7 +27,7 @@ namespace r2bix_component
 
 
 
-		UISimpleButtonComponent( r2bix_node::Node& owner_node );
+		UISimpleButtonComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

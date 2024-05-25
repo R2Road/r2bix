@@ -21,7 +21,7 @@ namespace r2bix_component
 		using Slot4PivotChangedT = r2::Slot<void, float, float>;
 
 
-		TextureRenderComponent( r2bix_node::Node& owner_node );
+		TextureRenderComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

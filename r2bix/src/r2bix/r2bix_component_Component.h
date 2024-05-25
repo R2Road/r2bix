@@ -16,12 +16,12 @@ namespace r2bix_component
 
 
 	protected:
-		Component( r2bix_node::Node& owner_node ) : r2bix_component::iComponent( owner_node )
+		Component( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::iComponent( director, owner_node )
 		{}
 	private:
-		static MyUp Create( r2bix_node::Node& owner_node )
+		static MyUp Create( r2bix::Director& director, r2bix_node::Node& owner_node )
 		{
-			MyUp ret( new ( std::nothrow ) MyT( owner_node ) );
+			MyUp ret( new ( std::nothrow ) MyT( director, owner_node ) );
 			if( !ret || !ret->Init() )
 			{
 				ret.reset();

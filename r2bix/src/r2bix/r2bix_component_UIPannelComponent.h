@@ -18,7 +18,7 @@ namespace r2bix_component
 
 
 
-		UIPannelComponent( r2bix_node::Node& owner_node );
+		UIPannelComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

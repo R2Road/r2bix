@@ -4,7 +4,7 @@
 
 namespace r2bix_component
 {
-	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureFrameAnimationComponent>( owner_node )
+	TextureFrameAnimationComponent::TextureFrameAnimationComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureFrameAnimationComponent>( director, owner_node )
 		, mTextureFrameRenderComponent( nullptr )
 
 		, mbRepeat( false )

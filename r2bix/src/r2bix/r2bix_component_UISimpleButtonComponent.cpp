@@ -8,7 +8,7 @@
 
 namespace r2bix_component
 {
-	UISimpleButtonComponent::UISimpleButtonComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UISimpleButtonComponent>( owner_node )
+	UISimpleButtonComponent::UISimpleButtonComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<UISimpleButtonComponent>( director, owner_node )
 		, mMyUIControlComponent( nullptr )
 		, mMyCustomTextureComponent( nullptr )
 		, mMyTextureRenderComponent( nullptr )

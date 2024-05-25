@@ -8,7 +8,7 @@
 
 namespace r2bix_component
 {
-	TextureRenderComponent::TextureRenderComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureRenderComponent>( owner_node )
+	TextureRenderComponent::TextureRenderComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<TextureRenderComponent>( director, owner_node )
 		, mSlot4PivotChanged( [this]( float x, float y )
 		{
 			mPivotVector.x = x;

@@ -9,7 +9,7 @@ namespace r2bix_component
 	class CustomTextureComponent : public r2bix_component::Component<CustomTextureComponent>
 	{
 	public:
-		CustomTextureComponent( r2bix_node::Node& owner_node );
+		CustomTextureComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 		//
 		// Getter

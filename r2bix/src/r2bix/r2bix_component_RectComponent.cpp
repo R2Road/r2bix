@@ -5,7 +5,7 @@
 
 namespace r2bix_component
 {
-	RectComponent::RectComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<RectComponent>( owner_node )
+	RectComponent::RectComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<RectComponent>( director, owner_node )
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 	{}

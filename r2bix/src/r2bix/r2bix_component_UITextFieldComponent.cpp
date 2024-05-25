@@ -10,7 +10,7 @@
 
 namespace r2bix_component
 {
-	UITextFieldComponent::UITextFieldComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UITextFieldComponent>( owner_node )
+	UITextFieldComponent::UITextFieldComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<UITextFieldComponent>( director, owner_node )
 		, mUIControlComponent( nullptr )
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )

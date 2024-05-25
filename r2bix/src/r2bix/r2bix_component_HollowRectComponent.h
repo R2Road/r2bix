@@ -12,7 +12,7 @@ namespace r2bix_component
 	class HollowRectComponent : public r2bix_component::Component<HollowRectComponent>
 	{
 	public:
-		HollowRectComponent( r2bix_node::Node& owner_node );
+		HollowRectComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

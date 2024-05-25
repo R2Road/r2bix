@@ -9,7 +9,7 @@ namespace r2bix_component
 	class InputMouseComponent : public r2bix_component::Component<InputMouseComponent>
 	{
 	public:
-		InputMouseComponent( r2bix_node::Node& owner_node );
+		InputMouseComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

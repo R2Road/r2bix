@@ -5,7 +5,7 @@
 
 namespace r2bix_component
 {
-	HollowRectComponent::HollowRectComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<HollowRectComponent>( owner_node )
+	HollowRectComponent::HollowRectComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<HollowRectComponent>( director, owner_node )
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 	{}

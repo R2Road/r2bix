@@ -24,7 +24,7 @@ namespace p2048
 	class CompanySceneComponent : public r2bix_component::Component<CompanySceneComponent>
 	{
 	public:
-		CompanySceneComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<CompanySceneComponent>( owner_node )
+		CompanySceneComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<CompanySceneComponent>( director, owner_node )
 			, mChangeSceneTimer( 2.f, true )
 		{}
 

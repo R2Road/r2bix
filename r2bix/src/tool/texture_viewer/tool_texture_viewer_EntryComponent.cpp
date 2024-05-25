@@ -7,7 +7,7 @@
 
 namespace tool_texture_viewer
 {
-	EntryComponent::EntryComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<EntryComponent>( owner_node )
+	EntryComponent::EntryComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<EntryComponent>( director, owner_node )
 	{}
 
 	void EntryComponent::updateProcess( const float delta_time )

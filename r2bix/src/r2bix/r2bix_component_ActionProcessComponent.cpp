@@ -2,7 +2,7 @@
 
 namespace r2bix_component
 {
-	ActionProcessComponent::ActionProcessComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<ActionProcessComponent>( owner_node )
+	ActionProcessComponent::ActionProcessComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<ActionProcessComponent>( director, owner_node )
 		, mAction()
 		, mbStart( false )
 	{}

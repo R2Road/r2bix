@@ -14,7 +14,7 @@
 
 namespace p2048
 {
-	GameComponent::GameComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<GameComponent>( owner_node )
+	GameComponent::GameComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<GameComponent>( director, owner_node )
 		, mStep( eStep::GameReady )
 		, mStage( 4u, 4u )
 		, mGameProcessor( &mStage )

@@ -5,7 +5,7 @@
 
 namespace r2bix_component
 {
-	LabelMComponent::LabelMComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<LabelMComponent>( owner_node )
+	LabelMComponent::LabelMComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<LabelMComponent>( director, owner_node )
 		, mCustomTextureComponent( nullptr )
 		, mTextureRenderComponent( nullptr )
 		, mColorValue( r2bix::eForegroundColor::FG_White | r2bix::eBackgroundColor::BG_Black )

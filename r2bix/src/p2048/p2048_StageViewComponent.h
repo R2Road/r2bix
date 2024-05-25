@@ -13,7 +13,7 @@ namespace p2048
 	class StageViewComponent : public r2bix_component::Component<StageViewComponent>
 	{
 	public:
-		StageViewComponent( r2bix_node::Node& owner_node );
+		StageViewComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 		void Setup( const p2048::Stage& stage );
 		void SetBackgroundNode( r2bix_node::Node* const background_node )

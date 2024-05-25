@@ -12,7 +12,7 @@ namespace p2048
 	class EntrySceneComponent : public r2bix_component::Component<EntrySceneComponent>
 	{
 	public:
-		EntrySceneComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<EntrySceneComponent>( owner_node ) {}
+		EntrySceneComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<EntrySceneComponent>( director, owner_node ) {}
 
 
 		//

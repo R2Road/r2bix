@@ -6,7 +6,7 @@
 
 namespace r2bix_component
 {
-	TransformComponent::TransformComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<TransformComponent>( owner_node )
+	TransformComponent::TransformComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<TransformComponent>( director, owner_node )
 		, mPosition()
 		, mZOrder( 0 )
 		, mPivotPoint( 0.5f, 0.5f )

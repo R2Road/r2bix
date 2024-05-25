@@ -14,7 +14,7 @@ namespace render_test
 	class RenderTestComponent : public r2bix_component::Component<RenderTestComponent>
 	{
 	public:
-		RenderTestComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<RenderTestComponent>( owner_node )
+		RenderTestComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<RenderTestComponent>( director, owner_node )
 			, mPosition()
 			, mTexture( 1, 1 )
 			, mRect()

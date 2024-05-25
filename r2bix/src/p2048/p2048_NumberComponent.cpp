@@ -5,7 +5,7 @@
 
 namespace p2048
 {
-	NumberComponent::NumberComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<NumberComponent>( owner_node )
+	NumberComponent::NumberComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<NumberComponent>( director, owner_node )
 		, mLabelComponent( nullptr )
 		, mCustomTextureComponent( nullptr )
 	{}

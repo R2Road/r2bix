@@ -12,7 +12,7 @@ namespace r2bix_component
 	class RectComponent : public r2bix_component::Component<RectComponent>
 	{
 	public:
-		RectComponent( r2bix_node::Node& owner_node );
+		RectComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

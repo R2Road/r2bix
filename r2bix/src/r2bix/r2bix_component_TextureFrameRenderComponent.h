@@ -22,7 +22,7 @@ namespace r2bix_component
 
 
 
-		TextureFrameRenderComponent( r2bix_node::Node& owner_node );
+		TextureFrameRenderComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

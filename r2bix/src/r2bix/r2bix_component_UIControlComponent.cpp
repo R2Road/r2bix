@@ -10,7 +10,7 @@
 
 namespace r2bix_component
 {
-	UIControlComponent::UIControlComponent( r2bix_node::Node& owner_node ) : r2bix_component::Component<UIControlComponent>( owner_node )
+	UIControlComponent::UIControlComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<UIControlComponent>( director, owner_node )
 		, mOrder( 0 )
 
 		, mPivotVector( 0.5f, 0.5f )

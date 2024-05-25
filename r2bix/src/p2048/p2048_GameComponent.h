@@ -29,7 +29,7 @@ namespace p2048
 		};
 
 	public:
-		GameComponent( r2bix_node::Node& owner_node );
+		GameComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

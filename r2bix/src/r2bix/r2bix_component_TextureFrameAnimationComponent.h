@@ -35,7 +35,7 @@ namespace r2bix_component
 		using AnimationPackageT = std::vector<Animation>;
 
 	public:
-		TextureFrameAnimationComponent( r2bix_node::Node& owner_node );
+		TextureFrameAnimationComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 		//
 		//

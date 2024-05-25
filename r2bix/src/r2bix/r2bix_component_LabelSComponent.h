@@ -15,7 +15,7 @@ namespace r2bix_component
 	class LabelSComponent : public r2bix_component::Component<LabelSComponent>
 	{
 	public:
-		LabelSComponent( r2bix_node::Node& owner_node );
+		LabelSComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 		//
 		//

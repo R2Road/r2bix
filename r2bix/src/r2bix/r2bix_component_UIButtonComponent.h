@@ -25,7 +25,7 @@ namespace r2bix_component
 
 
 
-		UIButtonComponent( r2bix_node::Node& owner_node );
+		UIButtonComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

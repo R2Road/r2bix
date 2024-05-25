@@ -30,7 +30,7 @@ namespace r2bix_component
 
 
 
-		UIControlComponent( r2bix_node::Node& owner_node );
+		UIControlComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

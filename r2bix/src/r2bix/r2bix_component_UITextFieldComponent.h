@@ -20,7 +20,7 @@ namespace r2bix_component
 	class UITextFieldComponent : public r2bix_component::Component<UITextFieldComponent>
 	{
 	public:
-		UITextFieldComponent( r2bix_node::Node& owner_node );
+		UITextFieldComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 

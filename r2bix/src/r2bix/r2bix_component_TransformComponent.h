@@ -16,7 +16,7 @@ namespace r2bix_component
 
 
 
-		TransformComponent( r2bix_node::Node& owner_node );
+		TransformComponent( r2bix::Director& director, r2bix_node::Node& owner_node );
 
 
 
