@@ -33,6 +33,8 @@ namespace tool_texture_editor
 		//
 		//
 		void SetCanvas( r2bix_node::Node* canvas_node );
+	private:
+		void fillTextureOnCurrentCursor();
 
 
 
