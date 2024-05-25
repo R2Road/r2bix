@@ -87,11 +87,11 @@ namespace r2bix_component
 
 	void UIPannelComponent::activateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener4Mouse );
+		GetDirector().GetInputManager().AddListener( &mListener4Mouse );
 	}
 	void UIPannelComponent::deactivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mListener4Mouse );
+		GetDirector().GetInputManager().RemoveListener( &mListener4Mouse );
 	}
 
 

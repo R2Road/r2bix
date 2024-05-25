@@ -23,7 +23,7 @@ namespace tool_texture_viewer
 		//
 		// Move 2 Company Scene
 		//
-		GetOwnerNode().GetDirector().Setup( ViewerScene::Create( GetOwnerNode().GetDirector() ) );
+		GetDirector().Setup( ViewerScene::Create( GetDirector() ) );
 
 		r2bix_component::iComponent::updateProcess( delta_time );
 	}

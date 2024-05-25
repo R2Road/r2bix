@@ -31,7 +31,7 @@ namespace tool_texture_editor
 			//
 			//
 			//
-			GetOwnerNode().GetDirector().Setup( tool_texture_editor::FileMakeNSelectScene::Create( GetOwnerNode().GetDirector() ) );
+			GetDirector().Setup( tool_texture_editor::FileMakeNSelectScene::Create( GetDirector() ) );
 		}
 	};
 

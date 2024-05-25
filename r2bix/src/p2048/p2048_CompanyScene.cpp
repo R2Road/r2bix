@@ -36,7 +36,7 @@ namespace p2048
 		{
 			if( !mChangeSceneTimer.Update( delta_time ) )
 			{
-				GetOwnerNode().GetDirector().Setup( p2048::TitleScene::Create( GetOwnerNode().GetDirector() ) );
+				GetDirector().Setup( p2048::TitleScene::Create( GetDirector() ) );
 			}
 		}
 

@@ -13,10 +13,10 @@ namespace r2bix_component
 
 	void InputKeyboardComponent::activateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mListener );
+		GetDirector().GetInputManager().AddListener( &mListener );
 	}
 	void InputKeyboardComponent::deactivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mListener );
+		GetDirector().GetInputManager().RemoveListener( &mListener );
 	}
 }

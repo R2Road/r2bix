@@ -43,11 +43,11 @@ namespace p2048
 
 	void GameComponent::activateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().AddListener( &mKeyboardListener );
+		GetDirector().GetInputManager().AddListener( &mKeyboardListener );
 	}
 	void GameComponent::deactivateProcess()
 	{
-		GetOwnerNode().GetDirector().GetInputManager().RemoveListener( &mKeyboardListener );
+		GetDirector().GetInputManager().RemoveListener( &mKeyboardListener );
 	}
 
 
@@ -158,7 +158,7 @@ namespace p2048
 		}
 		else if( mKeyboardListener.IsRelease( 0 ) )
 		{
-			GetOwnerNode().GetDirector().RequestAbort();
+			GetDirector().RequestAbort();
 		}
 
 		r2bix_component::iComponent::updateProcess( delta_time );

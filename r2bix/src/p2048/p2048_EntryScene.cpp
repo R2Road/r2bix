@@ -31,7 +31,7 @@ namespace p2048
 			//
 			// Move 2 Company Scene
 			//
-			GetOwnerNode().GetDirector().Setup( p2048::CompanyScene::Create( GetOwnerNode().GetDirector() ) );
+			GetDirector().Setup( p2048::CompanyScene::Create( GetDirector() ) );
 		}
 	};
 
