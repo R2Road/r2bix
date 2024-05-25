@@ -82,8 +82,8 @@ namespace tool_texture_editor
 			// Canvas
 			//
 			{
-				const uint32_t canvas_width = 20;
-				const uint32_t canvas_height = 10;
+				const uint32_t canvas_width = 80;
+				const uint32_t canvas_height = 40;
 
 				auto canvas_node = ret->AddChild<r2bix_node::UIPannelNode>();
 				canvas_node->mTransformComponent->SetPosition(
