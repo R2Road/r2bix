@@ -82,15 +82,20 @@ namespace tool_texture_editor
 			// Canvas
 			//
 			{
+				const uint32_t canvas_width = 20;
+				const uint32_t canvas_height = 10;
+
 				auto canvas_node = ret->AddChild<r2bix_node::UIPannelNode>();
 				canvas_node->mTransformComponent->SetPosition(
-					  director.GetScreenSize().GetWidth() * 0.5f
-					, director.GetScreenSize().GetHeight() * 0.5f
+					  ( director.GetScreenSize().GetWidth() * 0.5f ) - ( canvas_width * 0.5f )
+					, ( director.GetScreenSize().GetHeight() * 0.5f ) - ( canvas_height * 0.5f )
 				);
-				canvas_node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( 20, 10 );
+				canvas_node->mTransformComponent->SetPivot( 0.f, 0.f );
+				canvas_node->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( canvas_width, canvas_height );
 				{
 					auto texture_view_node = canvas_node->AddChild<r2bix_node::RectNode>();
-					texture_view_node->GetComponent<r2bix_component::RectComponent>()->Set( 20, 10, ' ', r2bix::eBackgroundColor::BG_Green );
+					texture_view_node->mTransformComponent->SetPivot( 0.f, 0.f );
+					texture_view_node->GetComponent<r2bix_component::RectComponent>()->Set( canvas_width, canvas_height, ' ', r2bix::eBackgroundColor::BG_Green );
 				}
 
 				//
