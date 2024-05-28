@@ -264,6 +264,10 @@ namespace r2bix_director
 			// Input
 			//
 			std::cin >> s;
+			if( length < s.length() )
+			{
+				s.resize( length );
+			}
 
 			//
 			// Rollback
