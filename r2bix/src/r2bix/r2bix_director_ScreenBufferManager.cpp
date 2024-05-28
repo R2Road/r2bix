@@ -2,7 +2,6 @@
 
 #include <cassert>
 #include <iostream>
-#include <iomanip>
 #include <Windows.h>
 
 //
@@ -264,7 +263,7 @@ namespace r2bix_director
 			//
 			// Input
 			//
-			std::cin >> std::setw( length ) >> s;
+			std::cin >> s;
 
 			//
 			// Rollback
