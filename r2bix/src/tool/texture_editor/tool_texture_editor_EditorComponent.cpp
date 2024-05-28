@@ -8,6 +8,7 @@
 
 #include "r2bix_component_CustomTextureComponent.h"
 #include "r2bix_component_LabelSComponent.h"
+#include "r2bix_component_RectComponent.h"
 #include "r2bix_component_UIControlComponent.h"
 
 namespace tool_texture_editor
@@ -64,6 +65,12 @@ namespace tool_texture_editor
 		if( file_name_view_node )
 		{
 			file_name_view_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( str );
+		}
+
+		auto texture_node = GetOwnerNode().GetChildByName( "texture" );
+		if( texture_node )
+		{
+			texture_node->GetComponent<r2bix_component::RectComponent>()->Set( width, height, ' ' );
 		}
 	}
 
