@@ -45,4 +45,25 @@ namespace r2bix_component
 			mCustomTextureComponent->GetTexture()->FillColorAll( mColorValue );
 		}
 	}
+	void LabelSComponent::Set( const std::string_view str, const r2bix::ColorValue color_value )
+	{
+		if( mText == str && color_value == mColorValue )
+		{
+			return;
+		}
+
+		mText = str;
+		mColorValue = color_value;
+
+		if( mCustomTextureComponent )
+		{
+			mCustomTextureComponent->GetTexture()->Reset( static_cast< uint32_t >( str.size() ), str );
+			mCustomTextureComponent->GetTexture()->FillColorAll( mColorValue );
+		}
+
+		if( mTextureRenderComponent )
+		{
+			mTextureRenderComponent->ResetVisibleRect();
+		}
+	}
 }

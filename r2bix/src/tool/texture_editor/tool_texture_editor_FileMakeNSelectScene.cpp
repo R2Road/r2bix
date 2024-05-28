@@ -173,7 +173,7 @@ namespace tool_texture_editor
 					auto label_node = pn_node->AddChild<r2bix_node::LabelSNode>();
 					label_node->mTransformComponent->SetPosition( 17, 3 );
 					label_node->mTransformComponent->SetPivot( 1.f, 0.f );
-					label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Name :" );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->Set( "Name :", r2bix::eBackgroundColor::BG_Gray | r2bix::eBackgroundColor::BG_Black );
 
 					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
 					node->SetName( "file_name" );
@@ -189,7 +189,7 @@ namespace tool_texture_editor
 					auto label_node = pn_node->AddChild<r2bix_node::LabelSNode>();
 					label_node->mTransformComponent->SetPosition( 17, 5 );
 					label_node->mTransformComponent->SetPivot( 1.f, 0.f );
-					label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Width :" );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->Set( "Width :", r2bix::eBackgroundColor::BG_Gray | r2bix::eBackgroundColor::BG_Black );
 
 					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
 					node->SetName( "file_width" );
@@ -205,7 +205,7 @@ namespace tool_texture_editor
 					auto label_node = pn_node->AddChild<r2bix_node::LabelSNode>();
 					label_node->mTransformComponent->SetPosition( 17, 7 );
 					label_node->mTransformComponent->SetPivot( 1.f, 0.f );
-					label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Height :" );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->Set( "Height :", r2bix::eBackgroundColor::BG_Gray | r2bix::eBackgroundColor::BG_Black );
 
 					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
 					node->SetName( "file_h" );

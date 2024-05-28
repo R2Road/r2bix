@@ -38,6 +38,7 @@ namespace r2bix_component
 		}
 		void SetString( const std::string_view str );
 		void SetColor( const r2bix::ColorValue color_value );
+		void Set( const std::string_view str, const r2bix::ColorValue color_value );
 
 	private:
 		std::string mText;
