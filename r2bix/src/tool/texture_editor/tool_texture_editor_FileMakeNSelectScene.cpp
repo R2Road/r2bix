@@ -167,13 +167,51 @@ namespace tool_texture_editor
 				pn_node->SetVisible( false );
 
 				//
-				// Text Field
+				// File Name
 				//
 				{
+					auto label_node = pn_node->AddChild<r2bix_node::LabelSNode>();
+					label_node->mTransformComponent->SetPosition( 17, 3 );
+					label_node->mTransformComponent->SetPivot( 1.f, 0.f );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Name :" );
+
 					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
 					node->SetName( "file_name" );
-					node->mTransformComponent->SetPosition( 25, 3 );
+					node->mTransformComponent->SetPosition( 19, 3 );
+					node->mTransformComponent->SetPivot( 0.f, 0.f );
 					node->GetComponent<r2bix_component::UITextFieldComponent>()->Set( 20, "new_file~~~~~~~~~~~!" );
+				}
+
+				//
+				// Width
+				//
+				{
+					auto label_node = pn_node->AddChild<r2bix_node::LabelSNode>();
+					label_node->mTransformComponent->SetPosition( 17, 5 );
+					label_node->mTransformComponent->SetPivot( 1.f, 0.f );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Width :" );
+
+					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
+					node->SetName( "file_width" );
+					node->mTransformComponent->SetPosition( 19, 5 );
+					node->mTransformComponent->SetPivot( 0.f, 0.f );
+					node->GetComponent<r2bix_component::UITextFieldComponent>()->Set( 3, "80" );
+				}
+
+				//
+				// Height
+				//
+				{
+					auto label_node = pn_node->AddChild<r2bix_node::LabelSNode>();
+					label_node->mTransformComponent->SetPosition( 17, 7 );
+					label_node->mTransformComponent->SetPivot( 1.f, 0.f );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Height :" );
+
+					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
+					node->SetName( "file_h" );
+					node->mTransformComponent->SetPosition( 19, 7 );
+					node->mTransformComponent->SetPivot( 0.f, 0.f );
+					node->GetComponent<r2bix_component::UITextFieldComponent>()->Set( 3, "40" );
 				}
 
 				//
@@ -181,7 +219,7 @@ namespace tool_texture_editor
 				//
 				{
 					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
-					node->mTransformComponent->SetPosition( 15, 8 );
+					node->mTransformComponent->SetPosition( 15, 10 );
 					node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3 );
 					{
@@ -221,7 +259,7 @@ namespace tool_texture_editor
 				//
 				{
 					auto node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
-					node->mTransformComponent->SetPosition( 35, 8 );
+					node->mTransformComponent->SetPosition( 35, 10 );
 					node->mTransformComponent->SetPivot( 0.5f, 0.5f );
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 10, 3 );
 					{
