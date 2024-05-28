@@ -208,7 +208,7 @@ namespace tool_texture_editor
 					label_node->GetComponent<r2bix_component::LabelSComponent>()->Set( "Height :", r2bix::eBackgroundColor::BG_Gray | r2bix::eBackgroundColor::BG_Black );
 
 					auto node = pn_node->AddChild<r2bix_node::UITextFieldNode>();
-					node->SetName( "file_h" );
+					node->SetName( "file_height" );
 					node->mTransformComponent->SetPosition( 19, 7 );
 					node->mTransformComponent->SetPivot( 0.f, 0.f );
 					node->GetComponent<r2bix_component::UITextFieldComponent>()->Set( 3, "40" );
@@ -232,17 +232,36 @@ namespace tool_texture_editor
 						{
 							if( 0 == i && r2bix_ui::eKeyStatus::Push == s )
 							{
-								auto node = root->GetChildByName( "file_name" );
-								if( node )
+								auto file_name_node = root->GetChildByName( "file_name" );
+								auto file_width_node = root->GetChildByName( "file_width" );
+								auto file_height_node = root->GetChildByName( "file_height" );
+								if( file_name_node && file_width_node && file_height_node )
 								{
-									if( !node->GetComponent<r2bix_component::UITextFieldComponent>()->GetText().empty() )
+									if( !file_name_node->GetComponent<r2bix_component::UITextFieldComponent>()->GetText().empty() )
 									{
-										auto next_scene = tool_texture_editor::EditorScene::Create( root->GetDirector() );
-										next_scene->GetComponent< tool_texture_editor::EditorComponent>()->SetFileName(
-											node->GetComponent<r2bix_component::UITextFieldComponent>()->GetText()
-										);
+										int file_width = 0;
+										int file_height = 0;
 
-										root->GetDirector().Setup( std::move( next_scene ) );
+										try
+										{
+											file_width = std::stoi( file_width_node->GetComponent<r2bix_component::UITextFieldComponent>()->GetText() );
+											file_height = std::stoi( file_height_node->GetComponent<r2bix_component::UITextFieldComponent>()->GetText() );
+										}
+										catch( std::invalid_argument const& )
+										{}
+										catch( std::out_of_range const& )
+										{}
+
+										if( 0 < file_width && 0 < file_height )
+										{
+											auto next_scene = tool_texture_editor::EditorScene::Create( root->GetDirector() );
+
+											next_scene->GetComponent< tool_texture_editor::EditorComponent>()->SetFileInformation(
+												  file_name_node->GetComponent<r2bix_component::UITextFieldComponent>()->GetText()
+												, file_width, file_height
+											);
+											root->GetDirector().Setup( std::move( next_scene ) );
+										}
 									}
 								}
 

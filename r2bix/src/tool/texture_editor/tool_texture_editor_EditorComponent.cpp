@@ -1,5 +1,7 @@
 #include "tool_texture_editor_EditorComponent.h"
 
+#include "r2_Assert.h"
+
 #include "r2bix_Director.h"
 
 #include "r2bix_node_Node.h"
@@ -12,6 +14,9 @@ namespace tool_texture_editor
 {
 	EditorComponent::EditorComponent( r2bix::Director& director, r2bix_node::Node& owner_node ) : r2bix_component::Component<EditorComponent>( director, owner_node )
 		, mFileName()
+		, mFileWidth( 20 )
+		, mFileHeight( 10 )
+
 		, mSlot4CursorResponse( [this]( r2bix_ui::eCursorStatus s )
 		{
 			switch( s )
@@ -45,9 +50,15 @@ namespace tool_texture_editor
 
 
 
-	void EditorComponent::SetFileName( const std::string_view str )
+	void EditorComponent::SetFileInformation( const std::string_view str, const int width, const int height )
 	{
+		R2ASSERT( !str.empty(), "EditorComponent::SetFileName : File Name Empty" );
+		R2ASSERT( 0 < width, "EditorComponent::SetFileName : Invalid File Width" );
+		R2ASSERT( 0 < height, "EditorComponent::SetFileName : Invalid File Height" );
+
 		mFileName = str;
+		mFileWidth = width;
+		mFileHeight = height;
 
 		auto file_name_view_node = GetOwnerNode().GetChildByName( "file_name_view" );
 		if( file_name_view_node )

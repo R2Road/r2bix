@@ -25,7 +25,7 @@ namespace tool_texture_editor
 		//
 		//
 		//
-		void SetFileName( const std::string_view str );
+		void SetFileInformation( const std::string_view str, const int width, const int height );
 
 
 
@@ -40,6 +40,9 @@ namespace tool_texture_editor
 
 	private:
 		std::string mFileName;
+		int mFileWidth;
+		int mFileHeight;
+
 		Slot4CursorResponseT mSlot4CursorResponse;
 		Slot4KeyResponseT mSlot4KeyResponse;
 
