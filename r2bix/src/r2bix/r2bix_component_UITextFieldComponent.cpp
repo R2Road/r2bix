@@ -94,7 +94,7 @@ namespace r2bix_component
 
 	void UITextFieldComponent::SetText( const char* str )
 	{
-		mText = str;
+		mText.assign( str, mUIControlComponent->GetWidth() );
 
 		mCustomTextureComponent->GetTexture()->FillCharacterAll( ' ' );
 		mCustomTextureComponent->GetTexture()->FillString( str );
