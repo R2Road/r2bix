@@ -118,9 +118,13 @@ namespace r2bix_render
 	}
 	void Texture::Reset( const uint32_t width, const std::string_view str )
 	{
+		Reset( width, str, r2bix::DefaultColorValue );
+	}
+	void Texture::Reset( const uint32_t width, const std::string_view str, const r2bix::ColorValue color_value )
+	{
 		assert( 0u < width && 0u < str.length() );
 
-		mGridIndexConverter = r2::GridIndexConverter<int, int>( width, static_cast<int>( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) );
+		mGridIndexConverter = r2::GridIndexConverter<int, int>( width, static_cast< int >( str.length() < 0 ? 1 : ( str.length() / width ) + ( str.length() % width < 1 ? 0 : 1 ) ) );
 
 		//
 		// Chars
@@ -133,7 +137,7 @@ namespace r2bix_render
 		// Color
 		//
 		mColors.clear();
-		mColors.resize( mChars.size(), r2bix::DefaultColorValue );
+		mColors.resize( mChars.size(), color_value );
 
 		//
 		// Disuse
@@ -141,6 +145,7 @@ namespace r2bix_render
 		mCharDisuses.clear();
 		mCharDisuses.resize( mChars.size(), false );
 	}
+
 	void Texture::Reset( const uint32_t width, const uint32_t height )
 	{
 		Reset( width, height, 32, r2bix::DefaultColorValue );

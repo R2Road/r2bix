@@ -22,8 +22,7 @@ namespace r2bix_component
 
 		if( mCustomTextureComponent )
 		{
-			mCustomTextureComponent->GetTexture()->Reset( static_cast<uint32_t>( str.size() ), str );
-			mCustomTextureComponent->GetTexture()->FillColorAll( mColorValue );
+			mCustomTextureComponent->GetTexture()->Reset( static_cast<uint32_t>( str.size() ), str, mColorValue );
 		}
 
 		if( mTextureRenderComponent )
@@ -57,8 +56,7 @@ namespace r2bix_component
 
 		if( mCustomTextureComponent )
 		{
-			mCustomTextureComponent->GetTexture()->Reset( static_cast< uint32_t >( str.size() ), str );
-			mCustomTextureComponent->GetTexture()->FillColorAll( mColorValue );
+			mCustomTextureComponent->GetTexture()->Reset( static_cast< uint32_t >( str.size() ), str, mColorValue );
 		}
 
 		if( mTextureRenderComponent )
