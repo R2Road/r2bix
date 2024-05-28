@@ -86,6 +86,7 @@ namespace tool_texture_editor
 				const uint32_t canvas_height = 40;
 
 				auto canvas_node = ret->AddChild<r2bix_node::UIPannelNode>();
+				canvas_node->SetName( "canvas" );
 				canvas_node->mTransformComponent->SetPosition(
 					  ( director.GetScreenSize().GetWidth() * 0.5f ) - ( canvas_width * 0.5f )
 					, ( director.GetScreenSize().GetHeight() * 0.5f ) - ( canvas_height * 0.5f )

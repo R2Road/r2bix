@@ -10,6 +10,7 @@
 #include "r2bix_component_LabelSComponent.h"
 #include "r2bix_component_RectComponent.h"
 #include "r2bix_component_UIControlComponent.h"
+#include "r2bix_component_UIPannelComponent.h"
 
 namespace tool_texture_editor
 {
@@ -61,12 +62,28 @@ namespace tool_texture_editor
 		mFileWidth = width;
 		mFileHeight = height;
 
+		//
+		//
+		//
+		mCanvasNode->mTransformComponent->SetPosition(
+			  ( GetDirector().GetScreenSize().GetWidth() * 0.5f ) - ( width * 0.5f )
+			, ( GetDirector().GetScreenSize().GetHeight() * 0.5f ) - ( height * 0.5f )
+		);
+		mCanvasNode->mTransformComponent->SetPivot( 0.f, 0.f );
+		mCanvasNode->GetComponent<r2bix_component::UIPannelComponent>()->SetSize( width, height );
+
+		//
+		//
+		//
 		auto file_name_view_node = GetOwnerNode().GetChildByName( "file_name_view" );
 		if( file_name_view_node )
 		{
 			file_name_view_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( str );
 		}
 
+		//
+		//
+		//
 		auto texture_node = GetOwnerNode().GetChildByName( "texture" );
 		if( texture_node )
 		{
