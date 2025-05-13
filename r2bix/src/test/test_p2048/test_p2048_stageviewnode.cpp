@@ -6,7 +6,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "p2048/p2048_Stage.h"
 #include "p2048/p2048_StageViewComponent.h"

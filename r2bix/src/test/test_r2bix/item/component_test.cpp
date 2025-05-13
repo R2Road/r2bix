@@ -23,7 +23,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "test/test_r2bix/TextureFrameAnimationTable4Test.h"
 #include "test/test_r2bix/TextureTable4Test.h"
@@ -868,10 +868,10 @@ namespace component_test
 			LS();
 
 			{
-				const auto current_cursor_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto current_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 				while( true )
 				{
-					r2tm::WindowUtility::MoveCursorPoint( current_cursor_point );
+					r2tm::WindowsUtility::MoveCursorPoint( current_cursor_point );
 
 					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
@@ -951,10 +951,10 @@ namespace component_test
 			LS();
 
 			{
-				const auto current_cursor_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto current_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 				while( true )
 				{
-					r2tm::WindowUtility::MoveCursorPoint( current_cursor_point );
+					r2tm::WindowsUtility::MoveCursorPoint( current_cursor_point );
 
 					PROCESS_MAIN( node->Update( 0.003f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );

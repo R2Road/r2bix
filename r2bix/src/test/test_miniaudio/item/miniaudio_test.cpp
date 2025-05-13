@@ -12,7 +12,7 @@
 // # Miniaudio REF : https://miniaud.io/docs/manual/index.html
 
 #include "r2bix_utility_PathUtil.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 namespace miniaudio_test
 {
@@ -160,13 +160,13 @@ namespace miniaudio_test
 			LS();
 
 			{
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				float current_volume = 1.f;
 
 				bool bRun = true;
 				do
 				{
-					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2tm::linefeed;
 					std::cout << "[1, 2] Volume Change " << r2tm::linefeed;
@@ -185,7 +185,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 6 );
+						r2tm::WindowsUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 6 );
 						break;
 
 					default:
@@ -300,11 +300,11 @@ namespace miniaudio_test
 
 				DECLARATION_MAIN( int64_t engine_time = 0ll );
 
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				const auto system_start_time_point = std::chrono::system_clock::now();
 				do
 				{
-					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_coord );
 
 					PROCESS_MAIN( engine_time = ma_engine_get_time( &engine ) );
 					printf( "Engine Time : %20lld \n", engine_time );
@@ -435,7 +435,7 @@ namespace miniaudio_test
 				std::cout << "[3] Stop" << r2tm::linefeed;
 				std::cout << "[ESC] End " << r2tm::linefeed2;
 
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				int input = 0;
 				do
 				{
@@ -455,7 +455,7 @@ namespace miniaudio_test
 					}
 
 					input = _getch();
-					r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_coord );
 
 				} while( 27 != input );
 			}
@@ -596,13 +596,13 @@ namespace miniaudio_test
 			LS();
 
 			{
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				float current_volume = ma_sound_get_volume( &sound );
 
 				bool bRun = true;
 				do
 				{
-					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2tm::linefeed;
 					std::cout << "[1, 2] Volume Change " << r2tm::linefeed;
@@ -621,7 +621,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 6 );
+						r2tm::WindowsUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 6 );
 						break;
 
 					default:
@@ -691,11 +691,11 @@ namespace miniaudio_test
 
 				LF();
 
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
-					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_coord );
 
 					PROCESS_MAIN( engine_time = ma_engine_get_time( &engine ) );
 					printf( "Engine Time : %20lld \n", engine_time );
@@ -719,7 +719,7 @@ namespace miniaudio_test
 
 						case 27: // ESC
 							bRun = false;
-							r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 5 );
+							r2tm::WindowsUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 5 );
 							break;
 						}
 					}
@@ -782,7 +782,7 @@ namespace miniaudio_test
 			std::cout << "[ESC] End " << r2tm::linefeed2;
 
 			{
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				int input = 0;
 				do
 				{
@@ -800,11 +800,11 @@ namespace miniaudio_test
 					}
 
 					input = _getch();
-					r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_coord );
 
 				} while( 27 != input );
 
-				r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 7 );
+				r2tm::WindowsUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 7 );
 			}
 
 			LS();
@@ -918,13 +918,13 @@ namespace miniaudio_test
 			LS();
 
 			{
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				float current_volume = 1.f;
 
 				bool bRun = true;
 				do
 				{
-					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Volume : " << std::setw( 10 ) << current_volume << r2tm::linefeed;
 					std::cout << "[1, 2] Volume Change " << r2tm::linefeed;
@@ -943,7 +943,7 @@ namespace miniaudio_test
 
 					case 27: // ESC
 						bRun = false;
-						r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 6 );
+						r2tm::WindowsUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 6 );
 						break;
 
 					default:
@@ -1024,11 +1024,11 @@ namespace miniaudio_test
 				std::cout << "[Any Key] End " << r2tm::linefeed2;
 
 				DECLARATION_MAIN( ma_int64 group_time = 0ll );
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
-					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_coord );
 
 					PROCESS_MAIN( group_time = ma_sound_get_time_in_pcm_frames( &sound_group ) );
 					printf( "Groupd Time : %20lld \n", group_time );
@@ -1046,7 +1046,7 @@ namespace miniaudio_test
 
 						case 27: // ESC
 							bRun = false;
-							r2tm::WindowUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 2 );
+							r2tm::WindowsUtility::MoveCursorPoint( pivot_coord.x, pivot_coord.y + 2 );
 							break;
 
 						default:

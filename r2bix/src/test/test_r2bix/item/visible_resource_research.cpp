@@ -4,7 +4,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "r2bix_render_Texture.h"
 
@@ -28,10 +28,10 @@ namespace visible_resource_research
 			LS();
 
 			{
-				DECLARATION_MAIN( r2tm::WindowUtility::CursorPoint pos );
+				DECLARATION_MAIN( r2tm::WindowsUtility::CursorPoint pos );
 				PROCESS_MAIN( pos.x = 15 );
 				PROCESS_MAIN( pos.y = 15 );
-				PROCESS_MAIN( r2tm::WindowUtility::MoveCursorPoint( pos ) );
+				PROCESS_MAIN( r2tm::WindowsUtility::MoveCursorPoint( pos ) );
 
 				int count = 0;
 				for( const char element : visible_resource )
@@ -43,7 +43,7 @@ namespace visible_resource_research
 					{
 						count = 0;
 						pos.y += 1;
-						r2tm::WindowUtility::MoveCursorPoint( pos );
+						r2tm::WindowsUtility::MoveCursorPoint( pos );
 					}
 				}
 			}

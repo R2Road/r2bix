@@ -4,7 +4,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "r2_PointInt.h"
 #include "r2_RectInt.h"
@@ -117,9 +117,9 @@ namespace camera_test
 
 				std::cout << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3 << r2tm::linefeed3;
 
-				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+				r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
-				r2tm::WindowUtility::MoveCursorPoint( { 0, 50 } );
+				r2tm::WindowsUtility::MoveCursorPoint( { 0, 50 } );
 			}
 
 
@@ -160,16 +160,16 @@ namespace camera_test
 				{
 					for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
 					{
-						r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( x ), static_cast<short>( y ) } );
+						r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( x ), static_cast<short>( y ) } );
 						std::cout << '#';
 					}
 				}
 				
-				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+				r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
 			}
 
-			r2tm::WindowUtility::MoveCursorPoint( { 0, 50 } );
+			r2tm::WindowsUtility::MoveCursorPoint( { 0, 50 } );
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
@@ -200,12 +200,12 @@ namespace camera_test
 
 			LS();
 
-			const auto current_cursor_point = r2tm::WindowUtility::GetCursorPoint();
+			const auto current_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 			int step = 0;
 			int input = 0;
 			do
 			{
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( current_cursor_point );
+				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( current_cursor_point );
 
 				if( 0 == step )
 				{
@@ -223,16 +223,16 @@ namespace camera_test
 					{
 						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
 						{
-							r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( x ), static_cast<short>( y ) } );
+							r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( x ), static_cast<short>( y ) } );
 							std::cout << '#';
 						}
 					}
 
-					r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+					r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 					std::cout << 'X';
 				}
 
-				r2tm::WindowUtility::MoveCursorPoint( { 0, 40 } );
+				r2tm::WindowsUtility::MoveCursorPoint( { 0, 40 } );
 				input = _getch();
 
 			} while( 27 != input );

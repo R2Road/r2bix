@@ -422,24 +422,6 @@
     <ClCompile Include="src\test\test_r2bix\item\key_code_viewer.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_Director.cpp">
-      <Filter>external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_MenuProcessor.cpp">
-      <Filter>external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_PrintBinary.cpp">
-      <Filter>external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_PrintFile.cpp">
-      <Filter>external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_StopWatch.cpp">
-      <Filter>external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_WindowUtility.cpp">
-      <Filter>external\r2tm</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\UIMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
@@ -559,6 +541,27 @@
     </ClCompile>
     <ClCompile Include="src\tool\texture_editor\tool_texture_editor_EditorComponent.cpp">
       <Filter>tool\texture_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_CacheCleaner.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_Director.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_MenuProcessor.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_PrintBinary.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_PrintFile.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_StopWatch.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_WindowsUtility.cpp">
+      <Filter>external\r2tm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -959,45 +962,6 @@
     <ClInclude Include="src\test\test_r2bix\item\key_code_viewer.h">
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_ColorModifier.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_Director.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_iItem.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_iMenu.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_Inspector.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_MenuConstant.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_MenuProcessor.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_ostream.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_PrintBinary.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_PrintFile.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_StopWatch.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_VersionInfo.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_WindowUtility.h">
-      <Filter>external\r2tm</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\UIMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
@@ -1199,6 +1163,51 @@
     </ClInclude>
     <ClInclude Include="src\tool\texture_editor\tool_texture_editor_EditorComponent.h">
       <Filter>tool\texture_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_CacheCleaner.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_Color.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_ColorModifier.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_Director.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_iItem.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_iMenu.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_Inspector.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_MenuConstant.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_MenuProcessor.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_ostream.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_PrintBinary.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_PrintFile.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_StopWatch.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_VersionInfo.h">
+      <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_WindowsUtility.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

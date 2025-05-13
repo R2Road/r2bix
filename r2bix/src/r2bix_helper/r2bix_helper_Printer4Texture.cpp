@@ -2,8 +2,8 @@
 
 #include <iomanip>
 
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_Color.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 #include "r2bix_render_TextureFrame.h"
 
 namespace r2bix_helper
@@ -64,47 +64,47 @@ namespace r2bix_helper
 
 	void Printer4Texture::DrawTexture( const r2bix_render::Texture& texture )
 	{
-		const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+		const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 
 		for( int y = 0; y < texture.GetHeight(); ++y )
 		{
 			for( int x = 0; x < texture.GetWidth(); ++x )
 			{
-				r2tm::WindowUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetCharacter( x, y ) );
-				r2tm::WindowUtility::FillColor( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetColor( x, y ) );
+				r2tm::WindowsUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetCharacter( x, y ) );
+				r2tm::WindowsUtility::FillColor( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetColor( x, y ) );
 			}
 		}
 
-		r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
+		r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
 	}
 	void Printer4Texture::DrawTextureCharacter( const r2bix_render::Texture& texture )
 	{
-		const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+		const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 
 		for( int y = 0; y < texture.GetHeight(); ++y )
 		{
 			for( int x = 0; x < texture.GetWidth(); ++x )
 			{
-				r2tm::WindowUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetCharacter( x, y ) );
+				r2tm::WindowsUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, texture.GetCharacter( x, y ) );
 			}
 		}
 
-		r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
+		r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + texture.GetHeight() ) } );
 	}
 
 	void Printer4Texture::DrawTextureFrame( const r2bix_render::TextureFrame& frame )
 	{
-		const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
+		const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
 
 		for( int y = 0; y < frame.GetHeight(); ++y )
 		{
 			for( int x = 0; x < frame.GetWidth(); ++x )
 			{
-				r2tm::WindowUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, frame.GetCharacter( x, y ) );
-				r2tm::WindowUtility::FillColor( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, frame.GetColor( x, y ) );
+				r2tm::WindowsUtility::FillCharacter( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, frame.GetCharacter( x, y ) );
+				r2tm::WindowsUtility::FillColor( { static_cast<short>( pivot_point.x + x ), static_cast<short>( pivot_point.y + y ) }, frame.GetColor( x, y ) );
 			}
 		}
 
-		r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + frame.GetHeight() ) } );
+		r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( pivot_point.x ), static_cast<short>( pivot_point.y + frame.GetHeight() ) } );
 	}
 }

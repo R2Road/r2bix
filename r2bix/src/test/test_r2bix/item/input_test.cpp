@@ -11,7 +11,7 @@
 #include "r2_FPSTimer.h"
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 namespace input_test
 {
@@ -47,10 +47,10 @@ namespace input_test
 				{
 					r2::FPSTimer fps_timer( 60u );
 					r2::RectInt stage_area( 6, 10, 50, 30 );
-					r2tm::WindowUtility::CursorPoint pos{ 20, 20 };
-					r2tm::WindowUtility::CursorPoint temp_pos{ 20, 20 };
+					r2tm::WindowsUtility::CursorPoint pos{ 20, 20 };
+					r2tm::WindowsUtility::CursorPoint temp_pos{ 20, 20 };
 
-					r2tm::WindowUtility::MoveCursorPoint( pos );
+					r2tm::WindowsUtility::MoveCursorPoint( pos );
 					std::cout << '@';
 
 					while( 1 )
@@ -93,9 +93,9 @@ namespace input_test
 
 							if( temp_pos.x != pos.x || temp_pos.y != pos.y )
 							{
-								r2tm::WindowUtility::MoveCursorPoint( pos );
+								r2tm::WindowsUtility::MoveCursorPoint( pos );
 								std::cout << ' ';
-								r2tm::WindowUtility::MoveCursorPoint( temp_pos );
+								r2tm::WindowsUtility::MoveCursorPoint( temp_pos );
 								std::cout << '@';
 
 								pos = temp_pos;
@@ -140,7 +140,7 @@ namespace input_test
 					r2bix_input::CursorPoint pos;
 					r2bix_input::CursorPoint temp_pos;
 
-					r2tm::WindowUtility::MoveCursorPoint( ( short )pos.GetX(), ( short )pos.GetY() );
+					r2tm::WindowsUtility::MoveCursorPoint( ( short )pos.GetX(), ( short )pos.GetY() );
 					std::cout << '@';
 
 					while( 1 )
@@ -166,9 +166,9 @@ namespace input_test
 
 							if( temp_pos != pos )
 							{
-								r2tm::WindowUtility::MoveCursorPoint( ( short )pos.GetX(), ( short )pos.GetY() );
+								r2tm::WindowsUtility::MoveCursorPoint( ( short )pos.GetX(), ( short )pos.GetY() );
 								std::cout << ' ';
-								r2tm::WindowUtility::MoveCursorPoint( ( short )temp_pos.GetX(), ( short )temp_pos.GetY() );
+								r2tm::WindowsUtility::MoveCursorPoint( ( short )temp_pos.GetX(), ( short )temp_pos.GetY() );
 								std::cout << '@';
 
 								pos = temp_pos;
@@ -183,9 +183,9 @@ namespace input_test
 						//  > 한 프레임에 폰트 가로 세로 이상의 움직임을 꾸준히 보여야 On 으로 유지된다는 것이다.
 						// 기능적으로는 문제 없다.
 						//
-						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
+						r2tm::WindowsUtility::MoveCursorPoint( 0, 8 );
 						std::cout << "      ";
-						r2tm::WindowUtility::MoveCursorPoint( 0, 8 );
+						r2tm::WindowsUtility::MoveCursorPoint( 0, 8 );
 						std::cout
 							<< machine_input_collector.GetCursorPoint().GetX() << " " << machine_input_collector.GetCursorPoint().GetY()
 							<< "\t" << ( machine_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n"
@@ -320,7 +320,7 @@ namespace input_test
 					return false;
 				} );
 
-				r2tm::WindowUtility::CursorPoint new_pos{ 20, 20 };
+				r2tm::WindowsUtility::CursorPoint new_pos{ 20, 20 };
 				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_A, [&new_pos]( r2bix_input::eKeyStatus )->bool
 				{
 					--new_pos.x;
@@ -350,8 +350,8 @@ namespace input_test
 					r2::FPSTimer fps_timer( 60u );
 					r2::RectInt stage_area( 6, 10, 50, 30 );
 
-					r2tm::WindowUtility::CursorPoint pos{ 20, 20 };
-					r2tm::WindowUtility::MoveCursorPoint( pos );
+					r2tm::WindowsUtility::CursorPoint pos{ 20, 20 };
+					r2tm::WindowsUtility::MoveCursorPoint( pos );
 					std::cout << '@';
 
 					do
@@ -369,9 +369,9 @@ namespace input_test
 
 							if( new_pos.x != pos.x || new_pos.y != pos.y )
 							{
-								r2tm::WindowUtility::MoveCursorPoint( pos );
+								r2tm::WindowsUtility::MoveCursorPoint( pos );
 								std::cout << ' ';
-								r2tm::WindowUtility::MoveCursorPoint( new_pos );
+								r2tm::WindowsUtility::MoveCursorPoint( new_pos );
 								std::cout << '@';
 
 								pos = new_pos;
@@ -545,10 +545,10 @@ namespace input_test
 					{
 						bMoved = false;
 
-						r2tm::WindowUtility::MoveCursorPoint( 0, 10 );
+						r2tm::WindowsUtility::MoveCursorPoint( 0, 10 );
 						std::cout << "                                     ";
 
-						r2tm::WindowUtility::MoveCursorPoint( 0, 10 );
+						r2tm::WindowsUtility::MoveCursorPoint( 0, 10 );
 						std::cout
 							<< "X : "
 							<< static_cast< int >( c.GetX() )

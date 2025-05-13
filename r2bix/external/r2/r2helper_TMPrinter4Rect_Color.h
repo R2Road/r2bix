@@ -3,7 +3,7 @@
 #include "r2_NoneCopyable.h"
 #include "r2_Rect.h"
 
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 namespace r2helper
 {
@@ -14,7 +14,7 @@ namespace r2helper
 
 	public:
 		template<typename T>
-		inline static void Print( r2tm::WindowUtility::CursorPoint pivot, const short offset_x, const short offset_y, uint16_t space_h, uint16_t space_v, const r2::Rect<T>& rect, const char c, const short color )
+		inline static void Print( r2tm::WindowsUtility::CursorPoint pivot, const short offset_x, const short offset_y, uint16_t space_h, uint16_t space_v, const r2::Rect<T>& rect, const char c, const short color )
 		{
 			//
 			//
@@ -35,7 +35,7 @@ namespace r2helper
 			{
 				for( T x = rect.GetMinX(), ex = rect.GetMaxX(); ex >= x; ++x )
 				{
-					r2tm::WindowUtility::FillCharacter(
+					r2tm::WindowsUtility::FillCharacter(
 						{
 								static_cast<short>( pivot.x + ( x * space_h ) )
 							,	static_cast<short>( pivot.y + ( y * space_v ) )
@@ -43,7 +43,7 @@ namespace r2helper
 						, c
 					);
 
-					r2tm::WindowUtility::FillColor(
+					r2tm::WindowsUtility::FillColor(
 						{
 								static_cast<short>( pivot.x + ( x * space_h ) )
 							,	static_cast<short>( pivot.y + ( y * space_v ) )
@@ -56,7 +56,7 @@ namespace r2helper
 			//
 			// Move Cursor
 			//
-			r2tm::WindowUtility::MoveCursorPoint( {
+			r2tm::WindowsUtility::MoveCursorPoint( {
 					0
 				,	static_cast<short>( pivot.y + ( rect.GetMaxY() * space_v ) + 1 )
 			} );
@@ -65,8 +65,8 @@ namespace r2helper
 		template<typename T>
 		inline static void Print( const short offset_x, const short offset_y, uint16_t space_h, uint16_t space_v, const r2::Rect<T>& rect, const char c )
 		{
-			const auto pivot_point = r2tm::WindowUtility::GetCursorPoint();
-			Print( pivot_point, offset_x, offset_y, space_h, space_v, rect, c, r2tm::WindowUtility::eColor::FG_Gray );
+			const auto pivot_point = r2tm::WindowsUtility::GetCursorPoint();
+			Print( pivot_point, offset_x, offset_y, space_h, space_v, rect, c, r2tm::WindowsUtility::eColor::FG_Gray );
 		}
 
 		template<typename T>
@@ -82,23 +82,23 @@ namespace r2helper
 		}
 
 		template<typename T>
-		inline static void Print( const r2tm::WindowUtility::CursorPoint& cursor_point, const short offset_x, const short offset_y, const r2::Rect<T>& rect, const char c )
+		inline static void Print( const r2tm::WindowsUtility::CursorPoint& cursor_point, const short offset_x, const short offset_y, const r2::Rect<T>& rect, const char c )
 		{
-			Print( cursor_point, offset_x, offset_y, 2, 1, rect, c, r2tm::WindowUtility::eColor::FG_Gray );
+			Print( cursor_point, offset_x, offset_y, 2, 1, rect, c, r2tm::WindowsUtility::eColor::FG_Gray );
 		}
 		template<typename T>
-		inline static void Print( const r2tm::WindowUtility::CursorPoint& cursor_point, const r2::Rect<T>& rect, const char c )
+		inline static void Print( const r2tm::WindowsUtility::CursorPoint& cursor_point, const r2::Rect<T>& rect, const char c )
 		{
-			Print( cursor_point, 0, 0, 2, 1, rect, c, r2tm::WindowUtility::eColor::FG_Gray );
+			Print( cursor_point, 0, 0, 2, 1, rect, c, r2tm::WindowsUtility::eColor::FG_Gray );
 		}
 		template<typename T>
-		inline static void Print( const r2tm::WindowUtility::CursorPoint& cursor_point, const r2::Rect<T>& rect, const char c, const short color )
+		inline static void Print( const r2tm::WindowsUtility::CursorPoint& cursor_point, const r2::Rect<T>& rect, const char c, const short color )
 		{
 			Print( cursor_point, 0, 0, 2, 1, rect, c, color );
 		}
 
 		template<typename T>
-		inline static void Print( const r2tm::WindowUtility::CursorPoint& cursor_point, const typename r2::Size<T>& size, const char c, const short color )
+		inline static void Print( const r2tm::WindowsUtility::CursorPoint& cursor_point, const typename r2::Size<T>& size, const char c, const short color )
 		{
 			Print( cursor_point, 0, 0, 2, 1, r2::Rect<T>{ 0, 0, size.GetWidth() - 1, size.GetHeight() - 1 }, c, color );
 		}

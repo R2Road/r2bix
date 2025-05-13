@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "r2bix_Director.h"
 #include "r2bix_node_Node.h"
@@ -159,7 +159,7 @@ namespace render_test
 					{
 						for( int x = camera.GetRect().GetMinX(); camera.GetRect().GetMaxX() >= x; ++x )
 						{
-							r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( x ), static_cast<short>( y ) } );
+							r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( x ), static_cast<short>( y ) } );
 							std::cout << '#';
 						}
 					}
@@ -173,19 +173,19 @@ namespace render_test
 					{
 						for( int x = 0; current_rect.GetWidth() > x; ++x )
 						{
-							r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
+							r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( current_rect.GetMinX() + x ), static_cast<short>( current_rect.GetMinY() + y ) } );
 							std::cout << component->mTexture.GetCharacter( x, y );
 						}
 					}
 				}
 
-				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
+				r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( camera.GetX() ), static_cast<short>( camera.GetY() ) } );
 				std::cout << 'X';
 
-				r2tm::WindowUtility::MoveCursorPoint( { static_cast<short>( component->mPosition.GetX() ), static_cast<short>( component->mPosition.GetY() ) } );
+				r2tm::WindowsUtility::MoveCursorPoint( { static_cast<short>( component->mPosition.GetX() ), static_cast<short>( component->mPosition.GetY() ) } );
 				std::cout << '+';
 
-				r2tm::WindowUtility::MoveCursorPoint( { 0, 50 } );
+				r2tm::WindowsUtility::MoveCursorPoint( { 0, 50 } );
 			}
 
 			LS();
@@ -193,7 +193,7 @@ namespace render_test
 			system( "pause" );
 
 			{
-				r2tm::WindowUtility::MoveCursorPointWithClearBuffer( { 0, 12 } );
+				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( { 0, 12 } );
 
 				OUTPUT_SUBJECT( "Show Render Target" );
 
@@ -215,7 +215,7 @@ namespace render_test
 					}
 				}
 
-				r2tm::WindowUtility::MoveCursorPoint( { 0, 50 } );
+				r2tm::WindowsUtility::MoveCursorPoint( { 0, 50 } );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;

@@ -24,7 +24,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "test/test_r2bix/TextureFrameAnimationTable4Test.h"
 #include "test/test_r2bix/TextureTable4Test.h"
@@ -510,10 +510,10 @@ namespace action_test
 
 				LF();
 
-				const auto cursor_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 				while( true )
 				{
-					r2tm::WindowUtility::MoveCursorPoint( cursor_point );
+					r2tm::WindowsUtility::MoveCursorPoint( cursor_point );
 
 					PROCESS_MAIN( component->Update( 0.0005f ) );
 					std::cout << "X : " << node->mTransformComponent->GetPositionX() << "   Y : " << node->mTransformComponent->GetPositionY() << r2tm::linefeed;
@@ -601,10 +601,10 @@ namespace action_test
 
 				LF();
 
-				const auto cursor_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 				while( true )
 				{
-					r2tm::WindowUtility::MoveCursorPoint( cursor_point );
+					r2tm::WindowsUtility::MoveCursorPoint( cursor_point );
 
 					PROCESS_MAIN( component->Update( 0.0001f ) );
 					std::cout << "Visible : " << node->IsVisible() << r2tm::linefeed;
@@ -740,10 +740,10 @@ namespace action_test
 
 				LF();
 
-				const auto cursor_point = r2tm::WindowUtility::GetCursorPoint();
+				const auto cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 				while( true )
 				{
-					r2tm::WindowUtility::MoveCursorPoint( cursor_point );
+					r2tm::WindowsUtility::MoveCursorPoint( cursor_point );
 
 					PROCESS_MAIN( node->Update( 0.001f ) );
 					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );

@@ -7,7 +7,7 @@
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowUtility.h"
+#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "p2048/p2048_GameProcessor.h"
 #include "p2048/p2048_Stage.h"
@@ -62,11 +62,11 @@ namespace test_p2048_gameprocessor
 
 				LF();
 
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
-					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Press [W, A, S, D]" << r2tm::linefeed2;
 
@@ -185,11 +185,11 @@ namespace test_p2048_gameprocessor
 
 
 			{
-				const auto pivot_coord = r2tm::WindowUtility::GetCursorPoint();
+				const auto pivot_coord = r2tm::WindowsUtility::GetCursorPoint();
 				bool bRun = true;
 				do
 				{
-					r2tm::WindowUtility::MoveCursorPoint( pivot_coord );
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_coord );
 
 					std::cout << "Press [W, A, S, D]" << r2tm::linefeed2;
 
