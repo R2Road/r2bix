@@ -22,17 +22,17 @@ r2tm::DescriptionFunctionT ColorMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT ColorMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', color_value_test::Basic() );
-		ret->AddItem( '2', color_value_test::ColorMaskOption_Generate() );
-		ret->AddItem( '3', color_value_test::ColorMaskOption_On_Off() );
-		ret->AddItem( '4', color_value_test::ColorMaskOption_Mask() );
+		mp->AddItem( '1', color_value_test::Basic() );
+		mp->AddItem( '2', color_value_test::ColorMaskOption_Generate() );
+		mp->AddItem( '3', color_value_test::ColorMaskOption_On_Off() );
+		mp->AddItem( '4', color_value_test::ColorMaskOption_Mask() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, R2bixMenu() );
 	};
 }

@@ -22,52 +22,52 @@ r2tm::DescriptionFunctionT NodeMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT NodeMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', node_test::Basic() );
-		ret->AddItem( '2', node_test::Child_Count() );
-		ret->AddItem( '3', node_test::Child_Sequence() );
+		mp->AddItem( '1', node_test::Basic() );
+		mp->AddItem( '2', node_test::Child_Count() );
+		mp->AddItem( '3', node_test::Child_Sequence() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'w', node_test::LabelS() );
-		ret->AddItem( 'e', node_test::LabelM() );
-		ret->AddItem( 'r', node_test::Sprite() );
-		ret->AddItem( 't', node_test::SpriteAnimation() );
-		ret->AddItem( 'y', node_test::CustomeTexture() );
+		mp->AddItem( 'w', node_test::LabelS() );
+		mp->AddItem( 'e', node_test::LabelM() );
+		mp->AddItem( 'r', node_test::Sprite() );
+		mp->AddItem( 't', node_test::SpriteAnimation() );
+		mp->AddItem( 'y', node_test::CustomeTexture() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', node_test::UIPannel_ComponentCheck() );
-		ret->AddItem( 's', node_test::UIPannel_CursorResponse() );
-		ret->AddItem( 'd', node_test::UIButton() );
-		ret->AddItem( 'f', node_test::UIButton_CursorResponse() );
-		ret->AddItem( 'g', node_test::UISimpleButton_CursorResponse() );
+		mp->AddItem( 'a', node_test::UIPannel_ComponentCheck() );
+		mp->AddItem( 's', node_test::UIPannel_CursorResponse() );
+		mp->AddItem( 'd', node_test::UIButton() );
+		mp->AddItem( 'f', node_test::UIButton_CursorResponse() );
+		mp->AddItem( 'g', node_test::UISimpleButton_CursorResponse() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'z', node_test::Pivot() );
-		ret->AddItem( 'x', node_test::Rect() );
-		ret->AddItem( 'c', node_test::HollowRect() );
+		mp->AddItem( 'z', node_test::Pivot() );
+		mp->AddItem( 'x', node_test::Rect() );
+		mp->AddItem( 'c', node_test::HollowRect() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, R2bixMenu() );
 	};
 }

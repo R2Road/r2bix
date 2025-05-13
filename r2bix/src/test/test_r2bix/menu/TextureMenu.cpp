@@ -25,51 +25,51 @@ r2tm::DescriptionFunctionT TextureMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT TextureMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', texture_test::FillCharacterAll() );
-		ret->AddItem( '2', texture_test::FillCharacter() );
-		ret->AddItem( '3', texture_test::FillStringAll() );
-		ret->AddItem( '4', texture_test::FillString() );
-		ret->AddItem( '5', texture_test::FillColorAll() );
-		ret->AddItem( '6', texture_test::FillColor() );
-		ret->AddItem( '7', texture_test::FillColorWithMask() );
-		ret->AddItem( '8', texture_test::BlendColor() );
-		ret->AddItem( '9', texture_test::FillCharacterDisuse() );
+		mp->AddItem( '1', texture_test::FillCharacterAll() );
+		mp->AddItem( '2', texture_test::FillCharacter() );
+		mp->AddItem( '3', texture_test::FillStringAll() );
+		mp->AddItem( '4', texture_test::FillString() );
+		mp->AddItem( '5', texture_test::FillColorAll() );
+		mp->AddItem( '6', texture_test::FillColor() );
+		mp->AddItem( '7', texture_test::FillColorWithMask() );
+		mp->AddItem( '8', texture_test::BlendColor() );
+		mp->AddItem( '9', texture_test::FillCharacterDisuse() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', texture_test::InitWithChars_1() );
-		ret->AddItem( 'w', texture_test::InitWithChars_2() );
-		ret->AddItem( 'e', texture_test::InitWithChars_3() );
-		ret->AddItem( 'r', texture_test::InitWithChars_4() );
+		mp->AddItem( 'q', texture_test::InitWithChars_1() );
+		mp->AddItem( 'w', texture_test::InitWithChars_2() );
+		mp->AddItem( 'e', texture_test::InitWithChars_3() );
+		mp->AddItem( 'r', texture_test::InitWithChars_4() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', texture_frame_test::Basic() );
-		ret->AddItem( 's', texture_frame_test::VisibleRect_1() );
-		ret->AddItem( 'd', texture_frame_test::VisibleRect_2() );
+		mp->AddItem( 'a', texture_frame_test::Basic() );
+		mp->AddItem( 's', texture_frame_test::VisibleRect_1() );
+		mp->AddItem( 'd', texture_frame_test::VisibleRect_2() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'z', texture_table_test::TextureTable_1() );
-		ret->AddItem( 'x', texture_table_test::TextureTable_2() );
-		ret->AddItem( 'c', texture_table_test::TextureTable_3() );
+		mp->AddItem( 'z', texture_table_test::TextureTable_1() );
+		mp->AddItem( 'x', texture_table_test::TextureTable_2() );
+		mp->AddItem( 'c', texture_table_test::TextureTable_3() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, R2bixMenu() );
 	};
 }

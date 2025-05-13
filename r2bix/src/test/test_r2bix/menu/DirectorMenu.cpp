@@ -34,29 +34,29 @@ r2tm::DescriptionFunctionT DirectorMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', console_screen_buffer_test::Basic() );
-		ret->AddItem( '2', screen_buffer_manager_test::Swap() );
+		mp->AddItem( '1', console_screen_buffer_test::Basic() );
+		mp->AddItem( '2', screen_buffer_manager_test::Swap() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', director_scheduler_test::Declaration() );
-		ret->AddItem( 'w', director_defarred_task_queue_test::Declaration() );
-		ret->AddItem( 'e', director_defarred_task_queue_test::Size() );
-		ret->AddItem( 'r', director_defarred_task_queue_test::Add() );
-		ret->AddItem( 't', director_defarred_task_queue_test::Process() );
-		ret->AddItem( 'y', director_defarred_task_queue_test::TaskBringsTask() );
+		mp->AddItem( 'q', director_scheduler_test::Declaration() );
+		mp->AddItem( 'w', director_defarred_task_queue_test::Declaration() );
+		mp->AddItem( 'e', director_defarred_task_queue_test::Size() );
+		mp->AddItem( 'r', director_defarred_task_queue_test::Add() );
+		mp->AddItem( 't', director_defarred_task_queue_test::Process() );
+		mp->AddItem( 'y', director_defarred_task_queue_test::TaskBringsTask() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem(
+		mp->AddItem(
 			  32
 			, []()->const char* { return "Director Test Scene"; }
 			, []()->r2tm::eDoLeaveAction
@@ -147,9 +147,9 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 		} );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, R2bixMenu() );
 	};
 }

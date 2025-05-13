@@ -25,17 +25,17 @@ r2tm::DescriptionFunctionT CameraMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT CameraMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', camera_test::Declaration() );
-		ret->AddItem( '2', camera_test::CameraPosition() );
-		ret->AddItem( '3', camera_test::CameraRect() );
-		ret->AddItem( '4', camera_test::CameraMove() );
+		mp->AddItem( '1', camera_test::Declaration() );
+		mp->AddItem( '2', camera_test::CameraPosition() );
+		mp->AddItem( '3', camera_test::CameraRect() );
+		mp->AddItem( '4', camera_test::CameraMove() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, R2bixMenu() );
 	};
 }

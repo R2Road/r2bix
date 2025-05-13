@@ -29,16 +29,16 @@ r2tm::DescriptionFunctionT PSnakeMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT PSnakeMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		//ret->AddItem( '1', test_p2048_stage::Generate::GetInstance() );
+		//mp->AddItem( '1', test_p2048_stage::Generate::GetInstance() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddItem(
+		mp->AddItem(
 			32
 			, []()->const char* { return psnake::CompanyScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
@@ -65,10 +65,10 @@ r2tm::WriteFunctionT PSnakeMenu::GetWriteFunction() const
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, DevelopmentMenu() );
 	};
 }

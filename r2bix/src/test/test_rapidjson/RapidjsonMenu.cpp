@@ -24,16 +24,16 @@ r2tm::DescriptionFunctionT RapidjsonMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT RapidjsonMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', rapidjson_test::Basic() );
+		mp->AddItem( '1', rapidjson_test::Basic() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, DevelopmentMenu() );
 	};
 }

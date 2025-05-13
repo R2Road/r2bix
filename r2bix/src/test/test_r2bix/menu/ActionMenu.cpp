@@ -22,25 +22,25 @@ r2tm::DescriptionFunctionT ActionMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT ActionMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', action_test::TickActionTest() );
-		ret->AddItem( '2', action_test::DelayActionTest() );
-		ret->AddItem( '3', action_test::SequenceActionTest() );
-		ret->AddItem( '4', action_test::MoveByActionTest() );
-		ret->AddItem( '5', action_test::MoveToActionTest() );
+		mp->AddItem( '1', action_test::TickActionTest() );
+		mp->AddItem( '2', action_test::DelayActionTest() );
+		mp->AddItem( '3', action_test::SequenceActionTest() );
+		mp->AddItem( '4', action_test::MoveByActionTest() );
+		mp->AddItem( '5', action_test::MoveToActionTest() );
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
-		ret->AddItem( 'q', action_test::RepeatActionTest() );
-		ret->AddItem( 'w', action_test::BlinkActionTest() );
-		ret->AddItem( 'e', action_test::CallbackActionTest() );
-		ret->AddItem( 'r', action_test::AnimationRequestActionTest() );
-
-
-		ret->AddSplit();
+		mp->AddItem( 'q', action_test::RepeatActionTest() );
+		mp->AddItem( 'w', action_test::BlinkActionTest() );
+		mp->AddItem( 'e', action_test::CallbackActionTest() );
+		mp->AddItem( 'r', action_test::AnimationRequestActionTest() );
 
 
-		ret->AddMenu( 27, R2bixMenu() );
+		mp->AddSplit();
+
+
+		mp->AddMenu( 27, R2bixMenu() );
 	};
 }

@@ -43,40 +43,40 @@ r2tm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddMenu( '1', R2bixMenu() );
-		ret->AddMenu( '2', MiniAudioMenu() );
-		ret->AddMenu( '3', RapidjsonMenu() );
+		mp->AddMenu( '1', R2bixMenu() );
+		mp->AddMenu( '2', MiniAudioMenu() );
+		mp->AddMenu( '3', RapidjsonMenu() );
 
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'q', ToolMenu() );
+		mp->AddMenu( 'q', ToolMenu() );
 
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'a', ProjectAMenu() );
+		mp->AddMenu( 'a', ProjectAMenu() );
 
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 		
 
-		ret->AddMenu( 'z', PSnakeMenu() );
-		ret->AddMenu( 'x', P2048Menu() );
-		ret->AddItem(
+		mp->AddMenu( 'z', PSnakeMenu() );
+		mp->AddMenu( 'x', P2048Menu() );
+		mp->AddItem(
 			'c'
 			, []()->const char* { return p_mini_adv::CompanyScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
@@ -100,7 +100,7 @@ r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 				return r2tm::eDoLeaveAction::None;
 			}
 		);
-		ret->AddItem(
+		mp->AddItem(
 			'v'
 			, []()->const char* { return pmr::CompanyScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
@@ -127,11 +127,11 @@ r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 
 
 		
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddItem(
+		mp->AddItem(
 			27
 			, []()->const char* { return "Exit"; }
 			, []()->r2tm::eDoLeaveAction

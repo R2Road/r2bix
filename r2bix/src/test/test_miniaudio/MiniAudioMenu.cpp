@@ -24,43 +24,43 @@ r2tm::DescriptionFunctionT MiniAudioMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT MiniAudioMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', miniaudio_test::Engine_Init() );
-		ret->AddItem( '2', miniaudio_test::Engine_Config() );
-		ret->AddItem( '3', miniaudio_test::Engine_Volume() );
-		ret->AddItem( '4', miniaudio_test::Engine_PlaySound() );
-		ret->AddItem( '5', miniaudio_test::Engine_Time() );
+		mp->AddItem( '1', miniaudio_test::Engine_Init() );
+		mp->AddItem( '2', miniaudio_test::Engine_Config() );
+		mp->AddItem( '3', miniaudio_test::Engine_Volume() );
+		mp->AddItem( '4', miniaudio_test::Engine_PlaySound() );
+		mp->AddItem( '5', miniaudio_test::Engine_Time() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'q', miniaudio_test::Sound_Init_Load() );
-		ret->AddItem( 'w', miniaudio_test::Sound_Play() );
-		ret->AddItem( 'e', miniaudio_test::Sound_Duplicate() );
-		ret->AddItem( 'r', miniaudio_test::Sound_Volume() );
-		ret->AddItem( 't', miniaudio_test::Sound_Time() );
-		ret->AddItem( 'y', miniaudio_test::Sound_FadeIn() );
+		mp->AddItem( 'q', miniaudio_test::Sound_Init_Load() );
+		mp->AddItem( 'w', miniaudio_test::Sound_Play() );
+		mp->AddItem( 'e', miniaudio_test::Sound_Duplicate() );
+		mp->AddItem( 'r', miniaudio_test::Sound_Volume() );
+		mp->AddItem( 't', miniaudio_test::Sound_Time() );
+		mp->AddItem( 'y', miniaudio_test::Sound_FadeIn() );
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddItem( 'a', miniaudio_test::Group_Init() );
-		ret->AddItem( 's', miniaudio_test::Group_Volume() );
-		ret->AddItem( 'd', miniaudio_test::Group_Time() );
+		mp->AddItem( 'a', miniaudio_test::Group_Init() );
+		mp->AddItem( 's', miniaudio_test::Group_Volume() );
+		mp->AddItem( 'd', miniaudio_test::Group_Time() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, DevelopmentMenu() );
 	};
 }

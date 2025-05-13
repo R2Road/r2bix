@@ -23,44 +23,44 @@ r2tm::DescriptionFunctionT InputMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', input_test::MachineeInputCollector_Keyboard() );
-		ret->AddItem( '2', input_test::MachineInputCollector_Mouse() );
+		mp->AddItem( '1', input_test::MachineeInputCollector_Keyboard() );
+		mp->AddItem( '2', input_test::MachineInputCollector_Mouse() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'q', input_test::ObservationKey() );
+		mp->AddItem( 'q', input_test::ObservationKey() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'a', input_test::KeyboardInputListener_KeyStatus() );
-		ret->AddItem( 's', input_test::KeyboardInputListener_Play() );
-		ret->AddItem( 'd', input_test::MouseListener_KeyStatus() );
-		ret->AddItem( 'f', input_test::MouseListener_Cursor() );
+		mp->AddItem( 'a', input_test::KeyboardInputListener_KeyStatus() );
+		mp->AddItem( 's', input_test::KeyboardInputListener_Play() );
+		mp->AddItem( 'd', input_test::MouseListener_KeyStatus() );
+		mp->AddItem( 'f', input_test::MouseListener_Cursor() );
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 'z', input_test::InputManager_Order1() );
-		ret->AddItem( 'x', input_test::InputManager_Order2() );
+		mp->AddItem( 'z', input_test::InputManager_Order1() );
+		mp->AddItem( 'x', input_test::InputManager_Order2() );
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
-		ret->AddItem( 32, key_code_viewer::Basic() );
+		mp->AddItem( 32, key_code_viewer::Basic() );
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
-		ret->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, R2bixMenu() );
 	};
 }

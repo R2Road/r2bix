@@ -37,9 +37,9 @@ r2tm::DescriptionFunctionT UIMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-			ret->AddItem(
+			mp->AddItem(
 				32
 				, []()->const char* { return "UI Test Scene"; }
 				, []()->r2tm::eDoLeaveAction
@@ -169,10 +169,10 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, R2bixMenu() );
 	};
 }

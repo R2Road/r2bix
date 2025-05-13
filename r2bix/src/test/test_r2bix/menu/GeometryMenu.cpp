@@ -21,16 +21,16 @@ r2tm::DescriptionFunctionT GeometryMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT GeometryMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		//ret->AddMenu<Vector2Menu>( '1' );
+		//mp->AddMenu<Vector2Menu>( '1' );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, R2bixMenu() );
 	};
 }

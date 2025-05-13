@@ -27,9 +27,9 @@ r2tm::DescriptionFunctionT ToolMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT ToolMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem(
+		mp->AddItem(
 			'a'
 			, []()->const char* { return tool_texture_editor::EntryScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
@@ -54,10 +54,10 @@ r2tm::WriteFunctionT ToolMenu::GetWriteFunction() const
 			}
 		);
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
-		ret->AddItem(
+		mp->AddItem(
 			's'
 			, []()->const char* { return tool_texture_viewer::EntryScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
@@ -84,14 +84,14 @@ r2tm::WriteFunctionT ToolMenu::GetWriteFunction() const
 
 
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, DevelopmentMenu() );
 	};
 }

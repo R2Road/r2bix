@@ -37,50 +37,50 @@ r2tm::DescriptionFunctionT R2bixMenu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddMenu( '1', DirectorMenu() );
-		ret->AddMenu( '2', InputMenu() );
-		ret->AddMenu( '3', ColorMenu() );
+		mp->AddMenu( '1', DirectorMenu() );
+		mp->AddMenu( '2', InputMenu() );
+		mp->AddMenu( '3', ColorMenu() );
 
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'q', TextureMenu() );
-		ret->AddMenu( 'w', CameraMenu() );
-		ret->AddItem( 'e', render_test::Basic() );
-		ret->AddMenu( 'r', ComponentMenu() );
-		ret->AddMenu( 't', ActionMenu() );
-		ret->AddMenu( 'y', NodeMenu() );
+		mp->AddMenu( 'q', TextureMenu() );
+		mp->AddMenu( 'w', CameraMenu() );
+		mp->AddItem( 'e', render_test::Basic() );
+		mp->AddMenu( 'r', ComponentMenu() );
+		mp->AddMenu( 't', ActionMenu() );
+		mp->AddMenu( 'y', NodeMenu() );
 
 
 
-		ret->AddLineFeed();
-		ret->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
-		ret->AddMenu( 'a', GeometryMenu() );
-		ret->AddMenu( 's', UIMenu() );
+		mp->AddMenu( 'a', GeometryMenu() );
+		mp->AddMenu( 's', UIMenu() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddItem( 'z', visible_resource_research::DrawWithPosition() );
+		mp->AddItem( 'z', visible_resource_research::DrawWithPosition() );
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, DevelopmentMenu() );
 	};
 }

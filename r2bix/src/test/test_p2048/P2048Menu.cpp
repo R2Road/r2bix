@@ -31,40 +31,40 @@ r2tm::DescriptionFunctionT P2048Menu::GetDescriptionFunction() const
 }
 r2tm::WriteFunctionT P2048Menu::GetWriteFunction() const
 {
-	return []( r2tm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* mp )
 	{
-		ret->AddItem( '1', test_p2048_stage::Generate() );
-		ret->AddItem( '2', test_p2048_stage::Add_Remove_ClearAll() );
-		ret->AddItem( '3', test_p2048_stage::IsIn() );
-		ret->AddItem( '4', test_p2048_stage::NumberCount_EmptyCount_IsFull() );
-		ret->AddItem( '5', test_p2048_stage::Lock() );
-		ret->AddItem( '6', test_p2048_stage::Newcomer() );
+		mp->AddItem( '1', test_p2048_stage::Generate() );
+		mp->AddItem( '2', test_p2048_stage::Add_Remove_ClearAll() );
+		mp->AddItem( '3', test_p2048_stage::IsIn() );
+		mp->AddItem( '4', test_p2048_stage::NumberCount_EmptyCount_IsFull() );
+		mp->AddItem( '5', test_p2048_stage::Lock() );
+		mp->AddItem( '6', test_p2048_stage::Newcomer() );
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
-		ret->AddItem( 'q', test_p2048_gameprocessor::MoveReadyTest() );
-		ret->AddItem( 'w', test_p2048_gameprocessor::MoveTest() );
-		ret->AddItem( 'e', test_p2048_gameprocessor::MergeTest() );
-		ret->AddItem( 'r', test_p2048_gameprocessor::MovableCheck() );
+		mp->AddItem( 'q', test_p2048_gameprocessor::MoveReadyTest() );
+		mp->AddItem( 'w', test_p2048_gameprocessor::MoveTest() );
+		mp->AddItem( 'e', test_p2048_gameprocessor::MergeTest() );
+		mp->AddItem( 'r', test_p2048_gameprocessor::MovableCheck() );
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
-		ret->AddItem( 'a', test_p2048_numbernode::Generate() );
-		ret->AddItem( 's', test_p2048_numbernode::SetNumber() );
+		mp->AddItem( 'a', test_p2048_numbernode::Generate() );
+		mp->AddItem( 's', test_p2048_numbernode::SetNumber() );
 
-		ret->AddLineFeed();
+		mp->AddLineFeed();
 
-		ret->AddItem( 'z', test_p2048_stageviewnode::Generate() );
-		ret->AddItem( 'x', test_p2048_stageviewnode::Setup_Render() );
-		ret->AddItem( 'c', test_p2048_stageviewnode::UpdateView() );
-
-
-
-		ret->AddSplit();
+		mp->AddItem( 'z', test_p2048_stageviewnode::Generate() );
+		mp->AddItem( 'x', test_p2048_stageviewnode::Setup_Render() );
+		mp->AddItem( 'c', test_p2048_stageviewnode::UpdateView() );
 
 
 
-		ret->AddItem(
+		mp->AddSplit();
+
+
+
+		mp->AddItem(
 			32
 			, []()->const char* { return p2048::EntryScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
@@ -91,10 +91,10 @@ r2tm::WriteFunctionT P2048Menu::GetWriteFunction() const
 
 
 
-		ret->AddSplit();
+		mp->AddSplit();
 
 
 
-		ret->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, DevelopmentMenu() );
 	};
 }
