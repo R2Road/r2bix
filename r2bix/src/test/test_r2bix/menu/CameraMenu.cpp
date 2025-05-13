@@ -1,6 +1,6 @@
 #include "CameraMenu.h"
 
-#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test/test_r2bix/item/camera_test.h"
 

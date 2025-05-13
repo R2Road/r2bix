@@ -1,8 +1,7 @@
 #include "ToolMenu.h"
 
 #include "r2bix_Director.h"
-#include "r2tm/r2tm_Director.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_MenuProcessor.h"
 
 #include "texture_editor/tool_texture_editor_EntryScene.h"
 #include "texture_viewer/tool_texture_viewer_EntryScene.h"

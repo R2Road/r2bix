@@ -1,7 +1,7 @@
 #include "P2048Menu.h"
 
 #include "r2bix_Director.h"
-#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test_p2048_gameprocessor.h"
 #include "test_p2048_numbernode.h"

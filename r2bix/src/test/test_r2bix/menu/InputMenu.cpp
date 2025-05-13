@@ -1,6 +1,6 @@
 #include "InputMenu.h"
 
-#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test/test_r2bix/item/key_code_viewer.h"
 #include "test/test_r2bix/item/input_test.h"

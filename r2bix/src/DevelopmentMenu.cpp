@@ -5,8 +5,7 @@
 #include "r2_VersionInfo.h"
 #include "r2bix_Director.h"
 #include "r2bix_VersionInfo.h"
-#include "r2tm/r2tm_Director.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_MenuProcessor.h"
 #include "r2tm/r2tm_VersionInfo.h"
 
 #include "test/project_a/ProjectAMenu.h"

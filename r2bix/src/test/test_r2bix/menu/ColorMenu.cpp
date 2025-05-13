@@ -1,6 +1,6 @@
 #include "ColorMenu.h"
 
-#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
