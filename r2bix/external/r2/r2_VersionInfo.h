@@ -23,8 +23,8 @@ namespace r2
 
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '1';
-		const char VersionNumber_3 = '3';
-		const char VersionNumber_4 = '0';
+		const char VersionNumber_3 = '7';
+		const char VersionNumber_4 = '6';
 		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
@@ -44,11 +44,24 @@ namespace r2
 		const char* const String4Road2Version_0_2_0_0_0 =
 					"### Road 2 Version 0.2.0.0.0 ###"
 			"\n"
-			"\n"	"[o] " "Add Method     : r2 - Point - PlusX, PlusY, MinusX, MinusY"
-			"\n"	"[o] " "Add Class      : r2 - RectIterator"
-			"\n"	"[o] " "Update Class   : r2 - Point - Add Support Type - short, unsigned short"
-			"\n"	"[o] " "Add Class      : r2 - Signal, Slot"
-			"\n"	"[o] " "Add Class      : r2 - TaskQueue"
+			"\n"	"[o] " "Add Method     : r2::Point : PlusX, PlusY, MinusX, MinusY"
+			"\n"	"[o] " "Add Class      : r2::RectIterator"
+			"\n"	"[o] " "Update Class   : r2::Point : Add Support Type - short, unsigned short"
+			"\n"	"[o] " "Add Class      : r2::Signal, Slot"
+			"\n"	"[o] " "Add Class      : r2::TaskQueue"
+			"\n"	"[o] " "Add Class      : r2::Value"
+			"\n"	"[o] " "Update Class   : r2::Value : Add Method - IsChanged"
+			"\n"	"[o] " "Update Class   : r2::Value : Add Method - Minus"
+			"\n"	"[o] " "Update Class   : r2::Value : Rename Method - Add > Plus"
+			"\n"	"[o] " "Add Class      : r2::ValueAccumulator"
+			"\n"	"[o] " "Update Class   : r2::Value : Remove Config - None Copy"
+			"\n"	"[o] " "Update Class   : r2::ValueAccumulator : User Define Type 사용 가능"
+			"\n"	"[o] " "Update Class   : r2::Signal, Slot : std::function 처럼 인자 부분에 () 넣게 변경"
+			"\n"	"[o] " "ETC            : MS Code Analysis 켜고 워닝 제거"
+			"\n"	"[o] " "Update Class   : r2::Value : Rename Function - Clear > Init"
+			"\n"	"[o] " "Update Class   : r2::Value : Add Function - Clean"
+			"\n"	"[o] " "Update Class   : r2::Value : 값 누적 처리"
+			"\n"	"[o] " "ETC            : MS Code Analysis 끄기"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"

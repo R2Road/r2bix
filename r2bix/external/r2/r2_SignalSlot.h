@@ -4,8 +4,8 @@
 // - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
 // - 0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2024.05.13 AM.08.53
-// # Version			: 1.0.3
+// # Last Update		: 2025.05.25 PM.11.20
+// # Version			: 1.1.0
 //
 
 //
@@ -31,14 +31,17 @@ namespace r2
 	class Signal;
 
 
+	template<typename RETURN_T, typename ... ARGS_T>
+	class Slot;
+
 
 	template<typename RETURN_T, typename ... ARGS_T>
-	class Slot
+	class Slot<RETURN_T( ARGS_T... )>
 	{
 	public:
-		friend class Signal<RETURN_T, ARGS_T ...>;
+		friend class Signal<RETURN_T( ARGS_T ... )>;
 
-		using SignalT = Signal<RETURN_T, ARGS_T ...>;
+		using SignalT = Signal<RETURN_T( ARGS_T ... )>;
 		using CallbackT = std::function<RETURN_T( ARGS_T ... )>;
 
 
@@ -134,10 +137,10 @@ namespace r2
 
 
 	template<typename RETURN_T, typename ... ARGS_T>
-	class Signal
+	class Signal<RETURN_T( ARGS_T... )>
 	{
 	public:
-		using SlotT = Slot<RETURN_T, ARGS_T ...>;
+		using SlotT = Slot<RETURN_T( ARGS_T ... )>;
 		using ContainerT = std::list<SlotT*>;
 		using IteratorT = typename ContainerT::iterator;
 		using ConstIteratorT = typename ContainerT::const_iterator;

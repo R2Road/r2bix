@@ -1,11 +1,12 @@
 //
 // # Version Rule
-// - 1.0.0 : 사용 가능
-// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
-// - 0.0.1 : 자잘한 변화
+// - 1.0.0.0 : 사용 가능
+// - 0.1.0.0 : 기능 추가/삭제
+// - 0.0.1.0 : 기능 개선/변경
+// - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2023.04.12 PM.04.50
-// # Version			: 1.2.0
+// # Last Update		: 2025.05.20 PM.02.25
+// # Version			: 1.3.0.0
 //
 
 #pragma once
@@ -66,6 +67,16 @@ namespace r2
 		const ValueT& GetLast() const
 		{
 			return mLast;
+		}
+
+
+
+		//
+		//
+		//
+		bool IsChanged() const
+		{
+			return ( mLast != mCurrent );
 		}
 
 

@@ -19,7 +19,7 @@ namespace r2
 		using ValueT = Value_T;
 		using MyT = Node4Grid<CoordinateT, ValueT>;
 
-		ValueT MyValue;
+		ValueT MyValue = {};
 
 		CoordinateT x = 0;
 		CoordinateT y = 0;

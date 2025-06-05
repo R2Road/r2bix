@@ -18,7 +18,7 @@ namespace r2
 		using ValueT = T;
 		using MyT = Node4List<ValueT>;
 
-		ValueT MyValue;
+		ValueT MyValue = {};
 		MyT* pPrev = nullptr;
 		MyT* pNext = nullptr;
 	};

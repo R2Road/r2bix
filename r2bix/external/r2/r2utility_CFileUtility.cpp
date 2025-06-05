@@ -75,7 +75,10 @@ namespace r2utility
 			fprintf( fp, file_string );
 		}
 
-		fclose( fp );
+		if( nullptr != fp )
+		{
+			fclose( fp );
+		}
 	}
 	bool CFileUtility::Remove( const char* utf8_path )
 	{
