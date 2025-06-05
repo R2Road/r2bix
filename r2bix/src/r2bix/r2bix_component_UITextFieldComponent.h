@@ -54,7 +54,7 @@ namespace r2bix_component
 		r2bix_component::CustomTextureComponent* mCustomTextureComponent;
 		r2bix_component::TextureRenderComponent* mTextureRenderComponent;
 
-		r2::Slot<bool, int, r2bix_ui::eKeyStatus> mSlot4KeyResponse;
+		r2::Slot<bool( int, r2bix_ui::eKeyStatus )> mSlot4KeyResponse;
 
 		std::string mText;
 	};

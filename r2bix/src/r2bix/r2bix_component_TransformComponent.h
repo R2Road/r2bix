@@ -11,7 +11,7 @@ namespace r2bix_component
 	class TransformComponent : public r2bix_component::Component<TransformComponent>
 	{
 	public:
-		using Signal4PivotChanged = r2::Signal<void, float, float>;
+		using Signal4PivotChanged = r2::Signal<void( float, float )>;
 		using Slot4PivotPointChanged = typename Signal4PivotChanged::SlotT;
 
 

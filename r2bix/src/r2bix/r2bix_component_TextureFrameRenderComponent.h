@@ -18,7 +18,7 @@ namespace r2bix_component
 	class TextureFrameRenderComponent : public r2bix_component::Component<TextureFrameRenderComponent>
 	{
 	public:
-		using Slot4PivotChangedT = r2::Slot<void, float, float>;
+		using Slot4PivotChangedT = r2::Slot<void( float, float )>;
 
 
 

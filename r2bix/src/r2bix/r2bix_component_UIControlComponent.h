@@ -17,10 +17,10 @@ namespace r2bix_component
 	class UIControlComponent : public r2bix_component::Component<UIControlComponent>
 	{
 	public:
-		using Slot4PivotChanged = r2::Slot<void, float, float>;
+		using Slot4PivotChanged = r2::Slot<void( float, float )>;
 
-		using Signal4CursorResponseT = r2::Signal<void, r2bix_ui::eCursorStatus>;
-		using Signal4KeyResponseT = r2::Signal<bool, int, r2bix_ui::eKeyStatus>;
+		using Signal4CursorResponseT = r2::Signal<void( r2bix_ui::eCursorStatus )>;
+		using Signal4KeyResponseT = r2::Signal<bool( int, r2bix_ui::eKeyStatus )>;
 
 		using Slot4CursorResponseT = typename Signal4CursorResponseT::SlotT;
 		using Slot4KeyResponseT = typename Signal4KeyResponseT::SlotT;

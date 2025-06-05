@@ -12,7 +12,7 @@ namespace r2bix_component
 	class UIPannelComponent : public r2bix_component::Component<UIPannelComponent>
 	{
 	public:
-		using Slot4VisibleFlagChanged = r2::Slot<void, bool>;
+		using Slot4VisibleFlagChanged = r2::Slot<void( bool )>;
 
 		using UIControlComponentContainer = std::list<r2bix_component::UIControlComponent*>;
 

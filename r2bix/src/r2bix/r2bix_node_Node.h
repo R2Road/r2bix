@@ -54,7 +54,7 @@ namespace r2bix_node
 	public:
 		using ChildContainerT = std::list<NodeUp>;
 
-		using Signal4VisibleFlagChange = r2::Signal<void, bool>;
+		using Signal4VisibleFlagChange = r2::Signal<void( bool )>;
 		using Slot4VisibleFlagChange = typename Signal4VisibleFlagChange::SlotT;
 
 
