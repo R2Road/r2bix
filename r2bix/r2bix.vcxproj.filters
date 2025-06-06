@@ -73,12 +73,6 @@
     <Filter Include="r2bix\geometry">
       <UniqueIdentifier>{650070f7-4b76-4353-babe-b159e7e04889}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test\test_rapidjson">
-      <UniqueIdentifier>{58037e01-3315-46c3-a67a-14f9b47ac040}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test\test_rapidjson\item">
-      <UniqueIdentifier>{832f8b55-dc87-47d3-86a7-6329e9842e01}</UniqueIdentifier>
-    </Filter>
     <Filter Include="external\rapidjson">
       <UniqueIdentifier>{91305047-c6be-4e61-adeb-9cdedc80260f}</UniqueIdentifier>
     </Filter>
@@ -400,12 +394,6 @@
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\GeometryMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_rapidjson\RapidjsonMenu.cpp">
-      <Filter>test\test_rapidjson</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_rapidjson\item\rapidjson_test.cpp">
-      <Filter>test\test_rapidjson\item</Filter>
     </ClCompile>
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_EntryScene.cpp">
       <Filter>tool\texture_viewer</Filter>
@@ -952,12 +940,6 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\GeometryMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_rapidjson\RapidjsonMenu.h">
-      <Filter>test\test_rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_rapidjson\item\rapidjson_test.h">
-      <Filter>test\test_rapidjson\item</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\allocators.h">
       <Filter>external\rapidjson</Filter>

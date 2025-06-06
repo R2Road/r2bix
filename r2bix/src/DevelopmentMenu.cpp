@@ -13,7 +13,6 @@
 #include "test/test_p2048/P2048Menu.h"
 #include "test/test_psnake/PSnakeMenu.h"
 #include "test/test_r2bix/R2bixMenu.h"
-#include "test/test_rapidjson/RapidjsonMenu.h"
 
 #include "tool/ToolMenu.h"
 
@@ -46,7 +45,6 @@ r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 	{
 		mp->AddMenu( '1', R2bixMenu() );
 		mp->AddMenu( '2', MiniAudioMenu() );
-		mp->AddMenu( '3', RapidjsonMenu() );
 
 
 
