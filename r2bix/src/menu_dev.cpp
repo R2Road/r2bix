@@ -9,7 +9,6 @@
 #include "r2tm/r2tm_VersionInfo.h"
 
 #include "test/project_a/ProjectAMenu.h"
-#include "test/test_miniaudio/MiniAudioMenu.h"
 #include "test/test_p2048/P2048Menu.h"
 #include "test/test_psnake/PSnakeMenu.h"
 #include "test/test_r2bix/R2bixMenu.h"
@@ -44,7 +43,7 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddMenu( '1', R2bixMenu() );
-		mp->AddMenu( '2', MiniAudioMenu() );
+	
 
 
 
