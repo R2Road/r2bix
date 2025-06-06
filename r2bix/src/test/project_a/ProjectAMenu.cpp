@@ -7,7 +7,7 @@
 #include "project_a/projecta_VersionInfo.h"
 #include "project_a/projecta_CompanyScene.h"
 
-#include "DevelopmentMenu.h"
+#include "menu_dev.h"
 
 
 r2tm::TitleFunctionT ProjectAMenu::GetTitleFunction() const
@@ -68,6 +68,6 @@ r2tm::WriteFunctionT ProjectAMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, Menu_Dev() );
 	};
 }

@@ -8,7 +8,7 @@
 #include "test_p2048_stage.h"
 #include "test_p2048_stageviewnode.h"
 
-#include "DevelopmentMenu.h"
+#include "menu_dev.h"
 
 #include "p2048/p2048_EntryScene.h"
 
@@ -95,6 +95,6 @@ r2tm::WriteFunctionT P2048Menu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, Menu_Dev() );
 	};
 }

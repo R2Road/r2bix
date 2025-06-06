@@ -7,7 +7,7 @@
 #include "psnake/psnake_VersionInfo.h"
 #include "psnake/psnake_CompanyScene.h"
 
-#include "DevelopmentMenu.h"
+#include "menu_dev.h"
 
 
 r2tm::TitleFunctionT PSnakeMenu::GetTitleFunction() const
@@ -68,6 +68,6 @@ r2tm::WriteFunctionT PSnakeMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, Menu_Dev() );
 	};
 }

@@ -62,7 +62,7 @@
     <ClCompile Include="external\r2\r2_SizeUChar.cpp" />
     <ClCompile Include="external\r2\r2_TaskQueue.cpp" />
     <ClCompile Include="external\r2\r2_TimerFloat.cpp" />
-    <ClCompile Include="src\DevelopmentMenu.cpp" />
+    <ClCompile Include="src\menu_dev.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp" />
     <ClCompile Include="src\p2048\p2048_GameComponent.cpp" />
@@ -349,7 +349,7 @@
     <ClInclude Include="external\rapidjson\stringbuffer.h" />
     <ClInclude Include="external\rapidjson\uri.h" />
     <ClInclude Include="external\rapidjson\writer.h" />
-    <ClInclude Include="src\DevelopmentMenu.h" />
+    <ClInclude Include="src\menu_dev.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\p2048\p2048_Config.h" />
     <ClInclude Include="src\p2048\p2048_EntryScene.h" />

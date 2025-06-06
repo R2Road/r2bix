@@ -8,7 +8,7 @@
 #include "r2tm/r2tm_Director.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-#include "DevelopmentMenu.h"
+#include "menu_dev.h"
 
 int main()
 {
@@ -41,7 +41,7 @@ int main()
 	// Setup
 	//
 	r2tm::Director director;
-	director.Setup( DevelopmentMenu() );
+	director.Setup( Menu_Dev() );
 
 	//
 	// Process

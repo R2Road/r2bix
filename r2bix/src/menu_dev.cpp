@@ -1,4 +1,4 @@
-#include "DevelopmentMenu.h"
+#include "Menu_Dev.h"
 
 #include <string>
 
@@ -19,12 +19,12 @@
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
 
-r2tm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Dev::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		static const std::string ret =
-				std::string( "Development Menu" )
+				std::string( "Development" )
 			+	" : <" + r2bix::VersionInfo.String4Version + ">"
 			+	", <" + r2tm::VersionInfo.String4Version + ">"
 			+	", <" + r2::VersionInfo.String4Version + ">"
@@ -32,14 +32,14 @@ r2tm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
 		return ret.c_str();
 	};
 }
-r2tm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Dev::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
 		return r2bix::VersionInfo.String4Road2NextVersion;
 	};
 }
-r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{

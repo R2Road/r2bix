@@ -6,7 +6,7 @@
 #include "texture_editor/tool_texture_editor_EntryScene.h"
 #include "texture_viewer/tool_texture_viewer_EntryScene.h"
 
-#include "DevelopmentMenu.h"
+#include "menu_dev.h"
 
 r2tm::TitleFunctionT ToolMenu::GetTitleFunction() const
 {
@@ -91,6 +91,6 @@ r2tm::WriteFunctionT ToolMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, Menu_Dev() );
 	};
 }

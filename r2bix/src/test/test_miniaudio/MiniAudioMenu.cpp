@@ -4,7 +4,7 @@
 
 #include "item/miniaudio_test.h"
 
-#include "DevelopmentMenu.h"
+#include "menu_dev.h"
 
 r2tm::TitleFunctionT MiniAudioMenu::GetTitleFunction() const
 {
@@ -61,6 +61,6 @@ r2tm::WriteFunctionT MiniAudioMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, Menu_Dev() );
 	};
 }

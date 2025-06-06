@@ -175,7 +175,7 @@
     <ClCompile Include="src\test\test_r2bix\TextureTable4Test.cpp">
       <Filter>test\test_r2bix</Filter>
     </ClCompile>
-    <ClCompile Include="src\DevelopmentMenu.cpp" />
+    <ClCompile Include="src\menu_dev.cpp" />
     <ClCompile Include="src\test\test_miniaudio\item\miniaudio_test.cpp">
       <Filter>test\test_miniaudio\item</Filter>
     </ClCompile>
@@ -688,7 +688,7 @@
     <ClInclude Include="src\test\test_r2bix\TextureTable4Test.h">
       <Filter>test\test_r2bix</Filter>
     </ClInclude>
-    <ClInclude Include="src\DevelopmentMenu.h" />
+    <ClInclude Include="src\menu_dev.h" />
     <ClInclude Include="src\test\test_miniaudio\item\miniaudio_test.h">
       <Filter>test\test_miniaudio\item</Filter>
     </ClInclude>

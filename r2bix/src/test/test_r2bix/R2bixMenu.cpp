@@ -17,7 +17,7 @@
 
 #include "item/visible_resource_research.h"
 
-#include "DevelopmentMenu.h"
+#include "menu_dev.h"
 
 r2tm::TitleFunctionT R2bixMenu::GetTitleFunction() const
 {
@@ -81,6 +81,6 @@ r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, DevelopmentMenu() );
+		mp->AddMenu( 27, Menu_Dev() );
 	};
 }
