@@ -12,25 +12,30 @@ namespace r2bix
 	static struct
 	{
 
-		const char VersionNumber_1 = '0';
-		const char VersionNumber_2 = '0';
-		const char VersionNumber_3 = '2';
-		const char VersionNumber_4 = '1';
-
-
-		const char String4Version[17] = { 'r', '2', 'b', 'i', 'x', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '\0' };
-
-
-		const char* const String4Road2Version_0_0_3_0 =
+		const char* const String4VersionRule =
 					"### Version Rule ###"
 			"\n"
-			"\n"	"> " "1.0.0.0"  " : "  "완성?"
-			"\n"	"> " "0.1.0.0"  " : "  "10개의 Road 마다 1씩 증가"
-			"\n"	"> " "0.0.1.0"  " : "  "Road 를 완주"
-			"\n"	"> " "0.0.0.1"  " : "  "[ ] 완료, 자잘한 수정"
-			"\n"
-			"\n"
-			"\n"	"### Road 2 Version 0.0.3.0 ###"
+			"\n"	"> " "1.0.0.0.0"  " : "  "완성?"
+			"\n"	"> " "0.1.0.0.0"  " : "  "Road 완료"
+			"\n"	"> " "0.0.1.0.0"  " : "  "Road 작업 목록 1개 완료"
+			"\n"	"> " "0.0.0.1.0"  " : "  "버그 수정.기존 기능 개선"
+			"\n"	"> " "0.0.0.0.1"  " : "  "사용자가 변경 사항을 몰라도 되는 변화"
+		;
+
+
+
+		const char VersionNumber_1 = '0';
+		const char VersionNumber_2 = '2';
+		const char VersionNumber_3 = '1';
+		const char VersionNumber_4 = '0';
+		const char VersionNumber_5 = '0';
+
+		const char String4Version[19] = { 'r', '2', 'b', 'i', 'x', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '.', VersionNumber_5, '\0' };
+
+
+
+		const char* const String4Road2Version_0_3_0_0_0 =
+					"### Road 2 Version 0.3.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "Json"
 			"\n"	"[~] " "Input"
@@ -86,7 +91,7 @@ namespace r2bix
 
 
 
-		const char* const String4Road2NextVersion = String4Road2Version_0_0_3_0;
+		const char* const String4Road2NextVersion = String4Road2Version_0_3_0_0_0;
 
 	} VersionInfo;
 }

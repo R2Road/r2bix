@@ -35,7 +35,16 @@ r2tm::DescriptionFunctionT Menu_Dev::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
-		return r2bix::VersionInfo.String4Road2NextVersion;
+		static const std::string ret =
+			std::string()
+
+			+ r2bix::VersionInfo.String4VersionRule
+			+ "\n"
+			  "\n"
+			  "\n"
+			+ r2bix::VersionInfo.String4Road2NextVersion
+		;
+		return ret.c_str();
 	};
 }
 r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
