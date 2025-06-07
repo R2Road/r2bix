@@ -43,6 +43,8 @@ namespace r2bix
 			"\n"	"\t"	"> "	"Input"
 			"\n"	"\t"	"\t"	"[~] " "Keyboard"
 			"\n"	"\t"	"\t"	"[~] " "Mouse"
+			"\n"	"\t"	"> "	"Node"
+			"\n"	"\t"	"\t"	"[~] " "Add Method : Remove"
 			"\n"	"+ " "Preset Node"
 			"\n"	"\t"	"> "	"UI"
 			"\n"	"\t"	"\t"	"[o] " "Add : UIButtonNode"
