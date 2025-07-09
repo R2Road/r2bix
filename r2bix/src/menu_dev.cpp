@@ -54,7 +54,7 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddMenu( '1', R2bixMenu() );
-	
+		mp->AddMenu( '2', ToolMenu() );
 
 
 
@@ -63,16 +63,7 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 'q', ToolMenu() );
-
-
-
-		mp->AddLineFeed();
-		mp->AddLineFeed();
-
-
-
-		mp->AddMenu( 'a', ProjectAMenu() );
+		mp->AddMenu( 'q', ProjectAMenu() );
 
 
 
@@ -81,10 +72,10 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 
 		
 
-		mp->AddMenu( 'z', PSnakeMenu() );
-		mp->AddMenu( 'x', P2048Menu() );
+		mp->AddMenu( 'a', PSnakeMenu() );
+		mp->AddMenu( 's', P2048Menu() );
 		mp->AddItem(
-			'c'
+			'd'
 			, []()->const char* { return p_mini_adv::CompanyScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
 			{
@@ -108,7 +99,7 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 			}
 		);
 		mp->AddItem(
-			'v'
+			'f'
 			, []()->const char* { return pmr::CompanyScene::GetTitle(); }
 			, []()->r2tm::eDoLeaveAction
 			{
