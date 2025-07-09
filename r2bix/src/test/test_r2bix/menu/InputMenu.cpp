@@ -2,7 +2,6 @@
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "test/test_r2bix/item/key_code_viewer.h"
 #include "test/test_r2bix/item/input_test.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
@@ -49,13 +48,6 @@ r2tm::WriteFunctionT InputMenu::GetWriteFunction() const
 
 		mp->AddItem( 'z', input_test::InputManager_Order1() );
 		mp->AddItem( 'x', input_test::InputManager_Order2() );
-
-
-		mp->AddLineFeed();
-		mp->AddLineFeed();
-
-
-		mp->AddItem( 32, key_code_viewer::Basic() );
 
 
 		mp->AddSplit();

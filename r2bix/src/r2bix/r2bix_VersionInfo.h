@@ -40,6 +40,7 @@ namespace r2bix
 			"\n"	"+ " "System"
 			"\n"	"\t"	"> "	"Director"
 			"\n"	"\t"	"\t"	"[o] " "Add : Deffard Task Queue"
+			"\n"	"\t"	"\t"	"[~] " "Add : Root Node"
 			"\n"	"\t"	"> "	"Input"
 			"\n"	"\t"	"\t"	"[~] " "Keyboard"
 			"\n"	"\t"	"\t"	"[~] " "Mouse"

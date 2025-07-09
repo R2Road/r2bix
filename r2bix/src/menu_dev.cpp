@@ -18,6 +18,8 @@
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
 
+#include "view/key_view.h"
+
 r2tm::TitleFunctionT Menu_Dev::GetTitleFunction() const
 {
 	return []()->const char*
@@ -129,6 +131,15 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 				return r2tm::eDoLeaveAction::None;
 			}
 		);
+
+
+
+		mp->AddLineFeed();
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 32, key_code_viewer::Basic() );
 
 
 		
