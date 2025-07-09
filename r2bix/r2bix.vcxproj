@@ -219,6 +219,7 @@
     <ClInclude Include="external\r2\r2helper_STDPrinter4Size.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Vector2.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Vector3.h" />
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Vector4.h" />
     <ClInclude Include="external\r2\r2helper_TMPrinter4GridBasedOnArray.h" />
     <ClInclude Include="external\r2\r2helper_TMPrinter4GridBasedOnArray_CharOX.h" />
     <ClInclude Include="external\r2\r2helper_TMPrinter4GridBasedOnVector.h" />
@@ -264,6 +265,7 @@
     <ClInclude Include="external\r2\r2_Direction8Sequential.h" />
     <ClInclude Include="external\r2\r2_Direction8SequentialState.h" />
     <ClInclude Include="external\r2\r2_DummyInitialValue.h" />
+    <ClInclude Include="external\r2\r2_Epsilon.h" />
     <ClInclude Include="external\r2\r2_FPSTimer.h" />
     <ClInclude Include="external\r2\r2_GridBasedOnArray.h" />
     <ClInclude Include="external\r2\r2_GridBasedOnVector.h" />
@@ -278,6 +280,7 @@
     <ClInclude Include="external\r2\r2_ListBasedOnGrid.h" />
     <ClInclude Include="external\r2\r2_ListBasedOnVector.h" />
     <ClInclude Include="external\r2\r2_Log.h" />
+    <ClInclude Include="external\r2\r2_Math.h" />
     <ClInclude Include="external\r2\r2_Matrix4.h" />
     <ClInclude Include="external\r2\r2_Node4Grid.h" />
     <ClInclude Include="external\r2\r2_Node4GridIterator.h" />
@@ -316,6 +319,7 @@
     <ClInclude Include="external\r2\r2_TaskQueue.h" />
     <ClInclude Include="external\r2\r2_Timer.h" />
     <ClInclude Include="external\r2\r2_TimerFloat.h" />
+    <ClInclude Include="external\r2\r2_Transform.h" />
     <ClInclude Include="external\r2\r2_TypeTraits.h" />
     <ClInclude Include="external\r2\r2_UniqueIndex.h" />
     <ClInclude Include="external\r2\r2_UniqueIndexGenerator.h" />
@@ -325,6 +329,7 @@
     <ClInclude Include="external\r2\r2_ValueWithHistory1AndDirty.h" />
     <ClInclude Include="external\r2\r2_Vector2.h" />
     <ClInclude Include="external\r2\r2_Vector3.h" />
+    <ClInclude Include="external\r2\r2_Vector4.h" />
     <ClInclude Include="external\r2\r2_VersionInfo.h" />
     <ClInclude Include="external\rapidjson\allocators.h" />
     <ClInclude Include="external\rapidjson\cursorstreamwrapper.h" />

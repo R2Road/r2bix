@@ -16,22 +16,40 @@ namespace r2helper
 	public:
 		inline static void Print( const r2::Matrix4& v )
 		{
+			static const int w = 10;
+
 			std::cout
+				<< std::left
+
 				<< "\t" "Matrix4"
 
 				<< "\n\t\t"
-				<< "11 : " << v._11 << "   " << "12 : " << v._12 << "   " << "13 : " << v._13 << "   " << "14 : " << v._14
+				<< "11 : " << std::setw( w ) << v._11 << "   "
+				<< "12 : " << std::setw( w ) << v._12 << "   "
+				<< "13 : " << std::setw( w ) << v._13 << "   "
+				<< "14 : " << std::setw( w ) << v._14
 
 				<< "\n\t\t"
-				<< "21 : " << v._21 << "   " << "22 : " << v._22 << "   " << "23 : " << v._23 << "   " << "24 : " << v._24
+				<< "21 : " << std::setw( w ) << v._21 << "   "
+				<< "22 : " << std::setw( w ) << v._22 << "   "
+				<< "23 : " << std::setw( w ) << v._23 << "   "
+				<< "24 : " << std::setw( w ) << v._24
 
 				<< "\n\t\t"
-				<< "31 : " << v._31 << "   " << "32 : " << v._32 << "   " << "33 : " << v._33 << "   " << "34 : " << v._34
+				<< "31 : " << std::setw( w ) << v._31 << "   "
+				<< "32 : " << std::setw( w ) << v._32 << "   "
+				<< "33 : " << std::setw( w ) << v._33 << "   "
+				<< "34 : " << std::setw( w ) << v._34
 
 				<< "\n\t\t"
-				<< "41 : " << v._41 << "   " << "42 : " << v._42 << "   " << "43 : " << v._43 << "   " << "44 : " << v._44
+				<< "41 : " << std::setw( w ) << v._41 << "   "
+				<< "42 : " << std::setw( w ) << v._42 << "   "
+				<< "43 : " << std::setw( w ) << v._43 << "   "
+				<< "44 : " << std::setw( w ) << v._44
 
 				<< "\n"
+
+				<< std::right
 			;
 		}
 	};
@@ -39,23 +57,42 @@ namespace r2helper
 
 inline std::ostream& operator<<( std::ostream& o, const r2::Matrix4& v )
 {
+	static const int w = 10;
+
 	return o
+		<< std::left
+
 		<< "\t"
-		<< v._11 << "   " << v._12 << "   " << v._13 << "   " << v._14
+
+		<< std::setw( w ) << v._11 << "   "
+		<< std::setw( w ) << v._12 << "   "
+		<< std::setw( w ) << v._13 << "   "
+		<< std::setw( w ) << v._14
 
 		<< "\n\t"
 
 		<< "\t"
-		<< v._21 << "   " << v._22 << "   " << v._23 << "   " << v._24
+		<< std::setw( w ) << v._21 << "   "
+		<< std::setw( w ) << v._22 << "   "
+		<< std::setw( w ) << v._23 << "   "
+		<< std::setw( w ) << v._24
 
 		<< "\n\t"
 
 		<< "\t"
-		<< v._31 << "   " << v._32 << "   " << v._33 << "   " << v._34
+		<< std::setw( w ) << v._31 << "   "
+		<< std::setw( w ) << v._32 << "   "
+		<< std::setw( w ) << v._33 << "   "
+		<< std::setw( w ) << v._34
 
 		<< "\n\t"
 
 		<< "\t"
-		<< v._41 << "   " << v._42 << "   " << v._43 << "   " << v._44
+		<< std::setw( w ) << v._41 << "   "
+		<< std::setw( w ) << v._42 << "   "
+		<< std::setw( w ) << v._43 << "   "
+		<< std::setw( w ) << v._44
+
+		<< std::right
 	;
 }

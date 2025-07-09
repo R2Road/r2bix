@@ -22,9 +22,9 @@ namespace r2
 
 
 		const char VersionNumber_1 = '0';
-		const char VersionNumber_2 = '1';
-		const char VersionNumber_3 = '7';
-		const char VersionNumber_4 = '6';
+		const char VersionNumber_2 = '2';
+		const char VersionNumber_3 = '0';
+		const char VersionNumber_4 = '1';
 		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
@@ -41,8 +41,24 @@ namespace r2
 
 
 
+
+		const char* const String4Road2Version_0_3_0_0_0 =
+			"### Road 2 Version 0.3.0.0.0 ###"
+			"\n"
+			"\n"	"[ ] " "Add Method     : ..."
+			"\n"
+			"\n"	"----------------------------------"
+			"\n"
+			"\n"	"[ ] " "Vector2"
+			"\n"	"[ ] " "Vector3"
+			"\n"
+			"\n"	"----------------------------------"
+			"\n"
+			"\n"	"[ ] " "Crypto Machine"
+		;
+
 		const char* const String4Road2Version_0_2_0_0_0 =
-					"### Road 2 Version 0.2.0.0.0 ###"
+			"### Road 2 Version 0.2.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "Add Method     : r2::Point : PlusX, PlusY, MinusX, MinusY"
 			"\n"	"[o] " "Add Class      : r2::RectIterator"
@@ -65,13 +81,9 @@ namespace r2
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
-			"\n"	"[ ] " "Vector2"
-			"\n"	"[ ] " "Vector3"
-			"\n"	"[ ] " "Matrix4"
-			"\n"
-			"\n"	"----------------------------------"
-			"\n"
-			"\n"	"[ ] " "Crypto Machine"
+			"\n"	"[o] " "Vector4"
+			"\n"	"[o] " "Matrix4"
+			"\n"	"[o] " "Transform"
 		;
 
 		const char* const String4Road2Version_0_1_0_0 =
@@ -210,7 +222,7 @@ namespace r2
 
 
 
-		const char* const String4Road2NextVersion = String4Road2Version_0_2_0_0_0;
+		const char* const String4Road2NextVersion = String4Road2Version_0_3_0_0_0;
 
 	} VersionInfo;
 }

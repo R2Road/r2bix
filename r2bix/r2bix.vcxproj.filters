@@ -1497,5 +1497,20 @@
     <ClInclude Include="external\r2\r2utility_TypeNameGenerator.h">
       <Filter>external\r2</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2\r2_Epsilon.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Math.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Transform.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Vector4.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Vector4.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
