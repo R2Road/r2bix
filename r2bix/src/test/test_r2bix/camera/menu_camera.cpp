@@ -6,14 +6,14 @@
 
 #include "test/test_r2bix/R2bixMenu.h"
 
-r2tm::TitleFunctionT CameraMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Camera::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Camera";
 	};
 }
-r2tm::DescriptionFunctionT CameraMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Camera::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
@@ -23,7 +23,7 @@ r2tm::DescriptionFunctionT CameraMenu::GetDescriptionFunction() const
 			"\n"	"> 뭐 하려고 하지마.";
 	};
 }
-r2tm::WriteFunctionT CameraMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Camera::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
