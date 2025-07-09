@@ -4,7 +4,7 @@
 
 #include "action/menu_action.h"
 #include "camera/menu_camera.h"
-#include "menu/ColorMenu.h"
+#include "color/menu_color.h"
 #include "menu/ComponentMenu.h"
 #include "director/menu_director.h"
 #include "input/menu_input.h"

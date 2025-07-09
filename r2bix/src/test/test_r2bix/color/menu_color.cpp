@@ -1,10 +1,10 @@
-#include "ColorMenu.h"
+#include "menu_color.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
-#include "test/test_r2bix/item/color_value_test.h"
+#include "test_color_value.h"
 
 r2tm::TitleFunctionT ColorMenu::GetTitleFunction() const
 {

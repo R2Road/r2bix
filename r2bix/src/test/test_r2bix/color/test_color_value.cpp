@@ -1,4 +1,4 @@
-#include "color_value_test.h"
+#include "test_color_value.h"
 
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_Inspector.h"
