@@ -24,18 +24,18 @@ r2tm::WriteFunctionT Menu_Action::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', action_test::TickActionTest() );
-		mp->AddItem( '2', action_test::DelayActionTest() );
-		mp->AddItem( '3', action_test::SequenceActionTest() );
-		mp->AddItem( '4', action_test::MoveByActionTest() );
-		mp->AddItem( '5', action_test::MoveToActionTest() );
+		mp->AddItem( '1', test_action::TickActionTest() );
+		mp->AddItem( '2', test_action::DelayActionTest() );
+		mp->AddItem( '3', test_action::SequenceActionTest() );
+		mp->AddItem( '4', test_action::MoveByActionTest() );
+		mp->AddItem( '5', test_action::MoveToActionTest() );
 
 		mp->AddLineFeed();
 
-		mp->AddItem( 'q', action_test::RepeatActionTest() );
-		mp->AddItem( 'w', action_test::BlinkActionTest() );
-		mp->AddItem( 'e', action_test::CallbackActionTest() );
-		mp->AddItem( 'r', action_test::AnimationRequestActionTest() );
+		mp->AddItem( 'q', test_action::RepeatActionTest() );
+		mp->AddItem( 'w', test_action::BlinkActionTest() );
+		mp->AddItem( 'e', test_action::CallbackActionTest() );
+		mp->AddItem( 'r', test_action::AnimationRequestActionTest() );
 
 
 		mp->AddSplit();

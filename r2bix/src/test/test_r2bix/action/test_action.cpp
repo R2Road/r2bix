@@ -31,7 +31,7 @@
 
 
 
-namespace action_test
+namespace test_action
 {
 	std::ostream& operator<<( std::ostream& o, const r2::PointInt& p )
 	{

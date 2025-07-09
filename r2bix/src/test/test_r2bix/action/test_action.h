@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace action_test
+namespace test_action
 {
 	class TickActionTest : public r2tm::iItem
 	{
