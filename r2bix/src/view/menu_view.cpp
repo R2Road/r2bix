@@ -26,7 +26,7 @@ r2tm::WriteFunctionT Menu_View::GetWriteFunction() const
 	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', key_view::Do());
-		mp->AddItem( '2', console_screen_buffer_test::Basic() );
+		mp->AddItem( '2', terminal_info_view::Basic() );
 
 
 		

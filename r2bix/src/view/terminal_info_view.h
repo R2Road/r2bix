@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace console_screen_buffer_test
+namespace terminal_info_view
 {
 	class Basic : public r2tm::iItem
 	{

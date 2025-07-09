@@ -5,13 +5,13 @@
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
-namespace console_screen_buffer_test
+namespace terminal_info_view
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Console Screen Buffer Info";
+			return "Terminal Info View";
 		};
 	}
 	r2tm::DoFunctionT Basic::GetDoFunction() const
