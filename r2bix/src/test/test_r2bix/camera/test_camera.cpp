@@ -1,4 +1,4 @@
-#include "camera_test.h"
+#include "test_camera.h"
 
 #include <conio.h>
 

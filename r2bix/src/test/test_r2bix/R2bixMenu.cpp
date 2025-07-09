@@ -3,7 +3,7 @@
 #include "r2tm/r2tm_MenuProcessor.h"
 
 #include "menu/ActionMenu.h"
-#include "menu/CameraMenu.h"
+#include "camera/menu_camera.h"
 #include "menu/ColorMenu.h"
 #include "menu/ComponentMenu.h"
 #include "director/menu_director.h"

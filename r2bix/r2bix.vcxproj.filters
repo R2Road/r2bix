@@ -118,6 +118,9 @@
     <Filter Include="test\test_r2bix\texture">
       <UniqueIdentifier>{46d08307-eb1b-4137-a70e-75be0cb0bafb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\test_r2bix\camera">
+      <UniqueIdentifier>{09895fbb-5433-4e1c-addf-8b6e8859229d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -125,9 +128,6 @@
       <Filter>project\project_mini_rogue</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\action_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\camera_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\component_test.cpp">
@@ -143,9 +143,6 @@
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\ActionMenu.cpp">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\menu\CameraMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\ComponentMenu.cpp">
@@ -632,15 +629,18 @@
     <ClCompile Include="src\test\test_r2bix\texture\test_texture_table.cpp">
       <Filter>test\test_r2bix\texture</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\camera\menu_camera.cpp">
+      <Filter>test\test_r2bix\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\camera\test_camera.cpp">
+      <Filter>test\test_r2bix\camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
       <Filter>project\project_mini_rogue</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\action_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\camera_test.h">
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\component_test.h">
@@ -656,9 +656,6 @@
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\ActionMenu.h">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\menu\CameraMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\ComponentMenu.h">
@@ -1537,6 +1534,12 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\texture\test_texture_table.h">
       <Filter>test\test_r2bix\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\camera\menu_camera.h">
+      <Filter>test\test_r2bix\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\camera\test_camera.h">
+      <Filter>test\test_r2bix\camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
