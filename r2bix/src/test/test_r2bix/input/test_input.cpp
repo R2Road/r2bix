@@ -13,7 +13,7 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-namespace input_test
+namespace test_input
 {
 	r2tm::TitleFunctionT MachineeInputCollector_Keyboard::GetTitleFunction() const
 	{

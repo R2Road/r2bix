@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace input_test
+namespace test_input
 {
 	class MachineeInputCollector_Keyboard : public r2tm::iItem
 	{

@@ -24,30 +24,30 @@ r2tm::WriteFunctionT Menu_Input::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', input_test::MachineeInputCollector_Keyboard() );
-		mp->AddItem( '2', input_test::MachineInputCollector_Mouse() );
+		mp->AddItem( '1', test_input::MachineeInputCollector_Keyboard() );
+		mp->AddItem( '2', test_input::MachineInputCollector_Mouse() );
 
 
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'q', input_test::ObservationKey() );
+		mp->AddItem( 'q', test_input::ObservationKey() );
 
 
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'a', input_test::KeyboardInputListener_KeyStatus() );
-		mp->AddItem( 's', input_test::KeyboardInputListener_Play() );
-		mp->AddItem( 'd', input_test::MouseListener_KeyStatus() );
-		mp->AddItem( 'f', input_test::MouseListener_Cursor() );
+		mp->AddItem( 'a', test_input::KeyboardInputListener_KeyStatus() );
+		mp->AddItem( 's', test_input::KeyboardInputListener_Play() );
+		mp->AddItem( 'd', test_input::MouseListener_KeyStatus() );
+		mp->AddItem( 'f', test_input::MouseListener_Cursor() );
 
 
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'z', input_test::InputManager_Order1() );
-		mp->AddItem( 'x', input_test::InputManager_Order2() );
+		mp->AddItem( 'z', test_input::InputManager_Order1() );
+		mp->AddItem( 'x', test_input::InputManager_Order2() );
 
 
 		mp->AddSplit();
