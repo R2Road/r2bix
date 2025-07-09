@@ -115,6 +115,9 @@
     <Filter Include="helper">
       <UniqueIdentifier>{2493c103-dd4f-4e59-ac20-610b16b79e60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\test_r2bix\texture">
+      <UniqueIdentifier>{46d08307-eb1b-4137-a70e-75be0cb0bafb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -136,15 +139,6 @@
     <ClCompile Include="src\test\test_r2bix\item\render_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\texture_frame_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\texture_table_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\texture_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\visible_resource_research.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
@@ -158,9 +152,6 @@
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\NodeMenu.cpp">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\menu\TextureMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.cpp">
@@ -629,6 +620,18 @@
     <ClCompile Include="src\helper\r2bix_helper_Printer4Texture.cpp">
       <Filter>helper</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\texture\menu_texture.cpp">
+      <Filter>test\test_r2bix\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\texture\test_texture.cpp">
+      <Filter>test\test_r2bix\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\texture\test_texture_frame.cpp">
+      <Filter>test\test_r2bix\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\texture\test_texture_table.cpp">
+      <Filter>test\test_r2bix\texture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -649,15 +652,6 @@
     <ClInclude Include="src\test\test_r2bix\item\render_test.h">
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\texture_frame_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\texture_table_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\texture_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\visible_resource_research.h">
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
@@ -671,9 +665,6 @@
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\NodeMenu.h">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\menu\TextureMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.h">
@@ -1534,6 +1525,18 @@
     </ClInclude>
     <ClInclude Include="src\helper\r2bix_helper_STDPrinter4Texture.h">
       <Filter>helper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\texture\menu_texture.h">
+      <Filter>test\test_r2bix\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\texture\test_texture.h">
+      <Filter>test\test_r2bix\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\texture\test_texture_frame.h">
+      <Filter>test\test_r2bix\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\texture\test_texture_table.h">
+      <Filter>test\test_r2bix\texture</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

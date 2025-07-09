@@ -1,4 +1,4 @@
-#include "texture_test.h"
+#include "test_texture.h"
 
 #include <string>
 

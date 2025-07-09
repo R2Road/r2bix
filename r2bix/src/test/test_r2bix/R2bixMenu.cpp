@@ -10,8 +10,8 @@
 #include "input/menu_input.h"
 #include "menu/GeometryMenu.h"
 #include "menu/NodeMenu.h"
-#include "menu/TextureMenu.h"
 #include "menu/UIMenu.h"
+#include "texture/menu_texture.h"
 
 #include "item/render_test.h"
 

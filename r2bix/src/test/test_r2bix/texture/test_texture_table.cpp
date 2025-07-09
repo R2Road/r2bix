@@ -1,4 +1,4 @@
-#include "texture_table_test.h"
+#include "test_texture_table.h"
 
 #include "helper/r2bix_helper_Printer4Texture.h"
 

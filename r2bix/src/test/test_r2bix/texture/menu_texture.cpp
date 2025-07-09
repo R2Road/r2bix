@@ -1,12 +1,12 @@
-#include "TextureMenu.h"
+#include "menu_texture.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "test/test_r2bix/item/texture_test.h"
-#include "test/test_r2bix/item/texture_frame_test.h"
-#include "test/test_r2bix/item/texture_table_test.h"
+#include "test_texture.h"
+#include "test_texture_frame.h"
+#include "test_texture_table.h"
 
-#include "test/test_r2bix/R2bixMenu.h"
+#include "../R2bixMenu.h"
 
 r2tm::TitleFunctionT TextureMenu::GetTitleFunction() const
 {
