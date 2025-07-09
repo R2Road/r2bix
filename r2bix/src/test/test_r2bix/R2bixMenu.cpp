@@ -31,8 +31,12 @@ r2tm::DescriptionFunctionT R2bixMenu::GetDescriptionFunction() const
 	return []()->const char*
 	{
 		return
-					"> Inprogress : ..."
-			"\n"	"> ...";
+					"### 현재 작업 ###"
+			"\n"
+			"\n"	"+ " "System"
+			"\n"	"\t"	"> "	"Director"
+			"\n"	"\t"	"\t"	"[~] " "Add : Root Node"
+		;
 	};
 }
 r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
