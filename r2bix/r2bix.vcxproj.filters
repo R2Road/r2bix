@@ -614,6 +614,9 @@
     <ClCompile Include="external\r2\r2utility_StringUtility.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_Input.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -1511,6 +1514,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2helper_STDPrinter4Vector4.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_Input.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
