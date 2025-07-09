@@ -8,7 +8,7 @@
 #include "helper/r2bix_helper_Printer4Texture.h"
 
 
-namespace color_value_test
+namespace test_color_value
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{

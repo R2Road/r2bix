@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace color_value_test
+namespace test_color_value
 {
 	class Basic : public r2tm::iItem
 	{

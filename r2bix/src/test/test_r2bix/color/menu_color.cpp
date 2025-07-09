@@ -24,10 +24,10 @@ r2tm::WriteFunctionT Menu_Color::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', color_value_test::Basic() );
-		mp->AddItem( '2', color_value_test::ColorMaskOption_Generate() );
-		mp->AddItem( '3', color_value_test::ColorMaskOption_On_Off() );
-		mp->AddItem( '4', color_value_test::ColorMaskOption_Mask() );
+		mp->AddItem( '1', test_color_value::Basic() );
+		mp->AddItem( '2', test_color_value::ColorMaskOption_Generate() );
+		mp->AddItem( '3', test_color_value::ColorMaskOption_On_Off() );
+		mp->AddItem( '4', test_color_value::ColorMaskOption_Mask() );
 
 
 		mp->AddSplit();
