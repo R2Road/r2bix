@@ -189,6 +189,7 @@
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.cpp" />
     <ClCompile Include="src\tool\ToolMenu.cpp" />
     <ClCompile Include="src\view\key_view.cpp" />
+    <ClCompile Include="src\view\menu_view.cpp" />
     <ClCompile Include="src\view\terminal_info_view.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -492,6 +493,7 @@
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.h" />
     <ClInclude Include="src\tool\ToolMenu.h" />
     <ClInclude Include="src\view\key_view.h" />
+    <ClInclude Include="src\view\menu_view.h" />
     <ClInclude Include="src\view\terminal_info_view.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

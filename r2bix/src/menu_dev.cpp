@@ -18,8 +18,7 @@
 #include "pmr/pmr_CompanyScene.h"
 #include "project_mini_adventure/p_mini_adv_CompanyScene.h"
 
-#include "view/key_view.h"
-#include "view/terminal_info_view.h"
+#include "view/menu_view.h"
 
 r2tm::TitleFunctionT Menu_Dev::GetTitleFunction() const
 {
@@ -140,8 +139,7 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 
 
 
-		mp->AddItem( 32, key_view::Do() );
-		mp->AddItem( 'm', console_screen_buffer_test::Basic() );
+		mp->AddMenu( 32, Menu_View() );
 
 
 		
