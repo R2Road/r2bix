@@ -12,7 +12,7 @@
 #include "r2bix_render_Texture.h"
 
 
-namespace camera_test
+namespace test_camera
 {
 	std::ostream& operator<<( std::ostream& o, const r2::PointInt& p )
 	{

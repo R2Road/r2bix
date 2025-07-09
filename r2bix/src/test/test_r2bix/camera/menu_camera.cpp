@@ -27,10 +27,10 @@ r2tm::WriteFunctionT Menu_Camera::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', camera_test::Declaration() );
-		mp->AddItem( '2', camera_test::CameraPosition() );
-		mp->AddItem( '3', camera_test::CameraRect() );
-		mp->AddItem( '4', camera_test::CameraMove() );
+		mp->AddItem( '1', test_camera::Declaration() );
+		mp->AddItem( '2', test_camera::CameraPosition() );
+		mp->AddItem( '3', test_camera::CameraRect() );
+		mp->AddItem( '4', test_camera::CameraMove() );
 
 
 		mp->AddSplit();

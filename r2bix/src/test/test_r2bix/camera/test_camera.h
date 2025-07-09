@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace camera_test
+namespace test_camera
 {
 	class Declaration : public r2tm::iItem
 	{
