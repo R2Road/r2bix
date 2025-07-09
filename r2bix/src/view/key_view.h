@@ -4,7 +4,7 @@
 
 namespace key_view
 {
-	class Basic : public r2tm::iItem
+	class Do : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

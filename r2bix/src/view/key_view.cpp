@@ -6,14 +6,14 @@
 
 namespace key_view
 {
-	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	r2tm::TitleFunctionT Do::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Key View";
 		};
 	}
-	r2tm::DoFunctionT Basic::GetDoFunction() const
+	r2tm::DoFunctionT Do::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

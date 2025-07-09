@@ -139,7 +139,7 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 
 
 
-		mp->AddItem( 32, key_view::Basic() );
+		mp->AddItem( 32, key_view::Do() );
 
 
 		
