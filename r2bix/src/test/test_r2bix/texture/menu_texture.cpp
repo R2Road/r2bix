@@ -26,34 +26,24 @@ r2tm::WriteFunctionT Menu_Texture::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', texture_test::FillCharacterAll() );
-		mp->AddItem( '2', texture_test::FillCharacter() );
-		mp->AddItem( '3', texture_test::FillStringAll() );
-		mp->AddItem( '4', texture_test::FillString() );
-		mp->AddItem( '5', texture_test::FillColorAll() );
-		mp->AddItem( '6', texture_test::FillColor() );
-		mp->AddItem( '7', texture_test::FillColorWithMask() );
-		mp->AddItem( '8', texture_test::BlendColor() );
-		mp->AddItem( '9', texture_test::FillCharacterDisuse() );
+		mp->AddItem( '1', test_texture::FillCharacterAll() );
+		mp->AddItem( '2', test_texture::FillCharacter() );
+		mp->AddItem( '3', test_texture::FillStringAll() );
+		mp->AddItem( '4', test_texture::FillString() );
+		mp->AddItem( '5', test_texture::FillColorAll() );
+		mp->AddItem( '6', test_texture::FillColor() );
+		mp->AddItem( '7', test_texture::FillColorWithMask() );
+		mp->AddItem( '8', test_texture::BlendColor() );
+		mp->AddItem( '9', test_texture::FillCharacterDisuse() );
 
 
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'q', texture_test::InitWithChars_1() );
-		mp->AddItem( 'w', texture_test::InitWithChars_2() );
-		mp->AddItem( 'e', texture_test::InitWithChars_3() );
-		mp->AddItem( 'r', texture_test::InitWithChars_4() );
-
-
-		mp->AddLineFeed();
-		mp->AddLineFeed();
-		mp->AddLineFeed();
-
-
-		mp->AddItem( 'a', texture_frame_test::Basic() );
-		mp->AddItem( 's', texture_frame_test::VisibleRect_1() );
-		mp->AddItem( 'd', texture_frame_test::VisibleRect_2() );
+		mp->AddItem( 'q', test_texture::InitWithChars_1() );
+		mp->AddItem( 'w', test_texture::InitWithChars_2() );
+		mp->AddItem( 'e', test_texture::InitWithChars_3() );
+		mp->AddItem( 'r', test_texture::InitWithChars_4() );
 
 
 		mp->AddLineFeed();
@@ -61,9 +51,19 @@ r2tm::WriteFunctionT Menu_Texture::GetWriteFunction() const
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'z', texture_table_test::TextureTable_1() );
-		mp->AddItem( 'x', texture_table_test::TextureTable_2() );
-		mp->AddItem( 'c', texture_table_test::TextureTable_3() );
+		mp->AddItem( 'a', test_texture_frame::Basic() );
+		mp->AddItem( 's', test_texture_frame::VisibleRect_1() );
+		mp->AddItem( 'd', test_texture_frame::VisibleRect_2() );
+
+
+		mp->AddLineFeed();
+		mp->AddLineFeed();
+		mp->AddLineFeed();
+
+
+		mp->AddItem( 'z', test_texture_table::TextureTable_1() );
+		mp->AddItem( 'x', test_texture_table::TextureTable_2() );
+		mp->AddItem( 'c', test_texture_table::TextureTable_3() );
 
 
 		mp->AddSplit();

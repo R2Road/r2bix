@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace texture_frame_test
+namespace test_texture_frame
 {
 	class Basic : public r2tm::iItem
 	{

@@ -7,7 +7,7 @@
 
 #include "test/test_r2bix/TextureTable4Test.h"
 
-namespace texture_table_test
+namespace test_texture_table
 {
 	r2tm::TitleFunctionT TextureTable_1::GetTitleFunction() const
 	{

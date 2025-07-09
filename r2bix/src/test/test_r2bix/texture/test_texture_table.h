@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace texture_table_test
+namespace test_texture_table
 {
 	class TextureTable_1 : public r2tm::iItem
 	{

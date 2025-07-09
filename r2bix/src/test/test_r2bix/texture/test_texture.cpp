@@ -10,7 +10,7 @@
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
-namespace texture_test
+namespace test_texture
 {
 	r2tm::TitleFunctionT FillCharacterAll::GetTitleFunction() const
 	{

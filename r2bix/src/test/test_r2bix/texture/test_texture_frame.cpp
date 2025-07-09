@@ -29,7 +29,7 @@ namespace
 	}
 }
 
-namespace texture_frame_test
+namespace test_texture_frame
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
