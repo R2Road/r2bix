@@ -153,6 +153,8 @@
     <ClCompile Include="src\test\test_p2048\test_p2048_stage.cpp" />
     <ClCompile Include="src\test\test_p2048\test_p2048_stageviewnode.cpp" />
     <ClCompile Include="src\test\test_psnake\PSnakeMenu.cpp" />
+    <ClCompile Include="src\test\test_r2bix\action\menu_action.cpp" />
+    <ClCompile Include="src\test\test_r2bix\action\test_action.cpp" />
     <ClCompile Include="src\test\test_r2bix\camera\menu_camera.cpp" />
     <ClCompile Include="src\test\test_r2bix\camera\test_camera.cpp" />
     <ClCompile Include="src\test\test_r2bix\director\menu_director.cpp" />
@@ -161,13 +163,11 @@
     <ClCompile Include="src\test\test_r2bix\director\test_director__screen_buffer_manager.cpp" />
     <ClCompile Include="src\test\test_r2bix\input\menu_input.cpp" />
     <ClCompile Include="src\test\test_r2bix\input\test_input.cpp" />
-    <ClCompile Include="src\test\test_r2bix\item\action_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\color_value_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\component_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\node_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\render_test.cpp" />
     <ClCompile Include="src\test\test_r2bix\item\visible_resource_research.cpp" />
-    <ClCompile Include="src\test\test_r2bix\menu\ActionMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\ColorMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\ComponentMenu.cpp" />
     <ClCompile Include="src\test\test_r2bix\menu\GeometryMenu.cpp" />
@@ -457,6 +457,8 @@
     <ClInclude Include="src\test\test_p2048\test_p2048_stage.h" />
     <ClInclude Include="src\test\test_p2048\test_p2048_stageviewnode.h" />
     <ClInclude Include="src\test\test_psnake\PSnakeMenu.h" />
+    <ClInclude Include="src\test\test_r2bix\action\menu_action.h" />
+    <ClInclude Include="src\test\test_r2bix\action\test_action.h" />
     <ClInclude Include="src\test\test_r2bix\camera\menu_camera.h" />
     <ClInclude Include="src\test\test_r2bix\camera\test_camera.h" />
     <ClInclude Include="src\test\test_r2bix\director\menu_director.h" />
@@ -465,13 +467,11 @@
     <ClInclude Include="src\test\test_r2bix\director\test_director__screen_buffer_manager.h" />
     <ClInclude Include="src\test\test_r2bix\input\menu_input.h" />
     <ClInclude Include="src\test\test_r2bix\input\test_input.h" />
-    <ClInclude Include="src\test\test_r2bix\item\action_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\color_value_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\component_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\node_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\render_test.h" />
     <ClInclude Include="src\test\test_r2bix\item\visible_resource_research.h" />
-    <ClInclude Include="src\test\test_r2bix\menu\ActionMenu.h" />
     <ClInclude Include="src\test\test_r2bix\menu\ColorMenu.h" />
     <ClInclude Include="src\test\test_r2bix\menu\ComponentMenu.h" />
     <ClInclude Include="src\test\test_r2bix\menu\GeometryMenu.h" />

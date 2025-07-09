@@ -121,14 +121,14 @@
     <Filter Include="test\test_r2bix\camera">
       <UniqueIdentifier>{09895fbb-5433-4e1c-addf-8b6e8859229d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\test_r2bix\action">
+      <UniqueIdentifier>{f2a823ad-159f-4c07-bb4b-febf6bbad345}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp">
       <Filter>project\project_mini_rogue</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\action_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\component_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
@@ -141,9 +141,6 @@
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\visible_resource_research.cpp">
       <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\menu\ActionMenu.cpp">
-      <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\ComponentMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
@@ -635,13 +632,16 @@
     <ClCompile Include="src\test\test_r2bix\camera\test_camera.cpp">
       <Filter>test\test_r2bix\camera</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\action\menu_action.cpp">
+      <Filter>test\test_r2bix\action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\action\test_action.cpp">
+      <Filter>test\test_r2bix\action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
       <Filter>project\project_mini_rogue</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\action_test.h">
-      <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\component_test.h">
       <Filter>test\test_r2bix\item</Filter>
@@ -654,9 +654,6 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\visible_resource_research.h">
       <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\menu\ActionMenu.h">
-      <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\ComponentMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
@@ -1540,6 +1537,12 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\camera\test_camera.h">
       <Filter>test\test_r2bix\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\action\menu_action.h">
+      <Filter>test\test_r2bix\action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\action\test_action.h">
+      <Filter>test\test_r2bix\action</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
