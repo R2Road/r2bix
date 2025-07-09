@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iMenu.h"
 
-class ActionMenu : public r2tm::iMenu
+class Menu_Action : public r2tm::iMenu
 {
 public:
 	r2tm::TitleFunctionT GetTitleFunction() const override;

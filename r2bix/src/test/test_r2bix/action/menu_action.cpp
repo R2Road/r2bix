@@ -6,21 +6,21 @@
 
 #include "test_action.h"
 
-r2tm::TitleFunctionT ActionMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Action::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Action";
 	};
 }
-r2tm::DescriptionFunctionT ActionMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Action::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
 		return "";
 	};
 }
-r2tm::WriteFunctionT ActionMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Action::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
