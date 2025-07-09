@@ -6,21 +6,21 @@
 
 #include "test_color_value.h"
 
-r2tm::TitleFunctionT ColorMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Color::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Color";
 	};
 }
-r2tm::DescriptionFunctionT ColorMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Color::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
 		return "";
 	};
 }
-r2tm::WriteFunctionT ColorMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Color::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{

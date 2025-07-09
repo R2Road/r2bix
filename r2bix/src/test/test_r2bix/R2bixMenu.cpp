@@ -45,7 +45,7 @@ r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
 	{
 		mp->AddMenu( '1', DirectorMenu() );
 		mp->AddMenu( '2', Menu_Input() );
-		mp->AddMenu( '3', ColorMenu() );
+		mp->AddMenu( '3', Menu_Color() );
 
 
 
