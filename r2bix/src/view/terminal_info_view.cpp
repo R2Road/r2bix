@@ -1,4 +1,4 @@
-#include "console_screen_buffer_test.h"
+#include "terminal_info_view.h"
 
 #include <Windows.h>
 
