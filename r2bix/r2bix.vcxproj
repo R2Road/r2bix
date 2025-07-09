@@ -63,6 +63,7 @@
     <ClCompile Include="external\r2\r2_SizeUChar.cpp" />
     <ClCompile Include="external\r2\r2_TaskQueue.cpp" />
     <ClCompile Include="external\r2\r2_TimerFloat.cpp" />
+    <ClCompile Include="src\helper\r2bix_helper_Printer4Texture.cpp" />
     <ClCompile Include="src\menu_dev.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp" />
@@ -145,7 +146,6 @@
     <ClCompile Include="src\r2bix\r2bix_ui_Constant.cpp" />
     <ClCompile Include="src\r2bix\r2bix_utility_PathUtil.cpp" />
     <ClCompile Include="src\r2bix\r2bix_utility_InputUtil.cpp" />
-    <ClCompile Include="src\r2bix_helper\r2bix_helper_Printer4Texture.cpp" />
     <ClCompile Include="src\test\project_a\ProjectAMenu.cpp" />
     <ClCompile Include="src\test\test_p2048\P2048Menu.cpp" />
     <ClCompile Include="src\test\test_p2048\test_p2048_gameprocessor.cpp" />
@@ -355,6 +355,8 @@
     <ClInclude Include="external\rapidjson\stringbuffer.h" />
     <ClInclude Include="external\rapidjson\uri.h" />
     <ClInclude Include="external\rapidjson\writer.h" />
+    <ClInclude Include="src\helper\r2bix_helper_Printer4Texture.h" />
+    <ClInclude Include="src\helper\r2bix_helper_STDPrinter4Texture.h" />
     <ClInclude Include="src\menu_dev.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\p2048\p2048_Config.h" />
@@ -448,8 +450,6 @@
     <ClInclude Include="src\r2bix\r2bix_render_TextureFrame.h" />
     <ClInclude Include="src\r2bix\r2bix_utility_PathUtil.h" />
     <ClInclude Include="src\r2bix\r2bix_utility_InputUtil.h" />
-    <ClInclude Include="src\r2bix_helper\r2bix_helper_Printer4Texture.h" />
-    <ClInclude Include="src\r2bix_helper\r2bix_helper_STDPrinter4Texture.h" />
     <ClInclude Include="src\test\project_a\ProjectAMenu.h" />
     <ClInclude Include="src\test\test_p2048\P2048Menu.h" />
     <ClInclude Include="src\test\test_p2048\test_p2048_gameprocessor.h" />

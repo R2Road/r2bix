@@ -27,7 +27,7 @@
 #include "r2bix_node_UIButtonNode.h"
 #include "r2bix_node_UIPannelNode.h"
 #include "r2bix_node_UISimpleButtonNode.h"
-#include "r2bix_helper/r2bix_helper_Printer4Texture.h"
+#include "helper/r2bix_helper_Printer4Texture.h"
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
