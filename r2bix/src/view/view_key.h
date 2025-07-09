@@ -2,9 +2,9 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace terminal_info_view
+namespace view_key
 {
-	class Basic : public r2tm::iItem
+	class Do : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

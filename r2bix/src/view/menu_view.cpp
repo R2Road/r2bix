@@ -2,8 +2,8 @@
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "view/key_view.h"
-#include "view/terminal_info_view.h"
+#include "view/view_key.h"
+#include "view/view_terminal_info.h"
 
 #include "../menu_dev.h"
 
@@ -25,8 +25,8 @@ r2tm::WriteFunctionT Menu_View::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', key_view::Do());
-		mp->AddItem( '2', terminal_info_view::Basic() );
+		mp->AddItem( '1', view_key::Do());
+		mp->AddItem( '2', view_terminal_info::Basic() );
 
 
 		

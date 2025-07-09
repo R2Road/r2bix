@@ -1,11 +1,11 @@
-#include "key_view.h"
+#include "view_key.h"
 
 #include "r2tm/r2tm_ColorModifier.h"
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-namespace key_view
+namespace view_key
 {
 	r2tm::TitleFunctionT Do::GetTitleFunction() const
 	{

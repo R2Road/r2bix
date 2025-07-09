@@ -1,11 +1,11 @@
-#include "terminal_info_view.h"
+#include "view_terminal_info.h"
 
 #include <Windows.h>
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
-namespace terminal_info_view
+namespace view_terminal_info
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{

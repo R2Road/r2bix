@@ -602,10 +602,10 @@
     <ClCompile Include="src\view\menu_view.cpp">
       <Filter>view</Filter>
     </ClCompile>
-    <ClCompile Include="src\view\key_view.cpp">
+    <ClCompile Include="src\view\view_key.cpp">
       <Filter>view</Filter>
     </ClCompile>
-    <ClCompile Include="src\view\terminal_info_view.cpp">
+    <ClCompile Include="src\view\view_terminal_info.cpp">
       <Filter>view</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\director\menu_director.cpp">
@@ -1505,10 +1505,10 @@
     <ClInclude Include="src\view\menu_view.h">
       <Filter>view</Filter>
     </ClInclude>
-    <ClInclude Include="src\view\key_view.h">
+    <ClInclude Include="src\view\view_key.h">
       <Filter>view</Filter>
     </ClInclude>
-    <ClInclude Include="src\view\terminal_info_view.h">
+    <ClInclude Include="src\view\view_terminal_info.h">
       <Filter>view</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\director\menu_director.h">
