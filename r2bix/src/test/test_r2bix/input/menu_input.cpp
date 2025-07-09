@@ -1,10 +1,10 @@
-#include "InputMenu.h"
+#include "menu_input.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "test/test_r2bix/item/input_test.h"
+#include "test_input.h"
 
-#include "test/test_r2bix/R2bixMenu.h"
+#include "../R2bixMenu.h"
 
 r2tm::TitleFunctionT InputMenu::GetTitleFunction() const
 {

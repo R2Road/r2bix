@@ -112,6 +112,9 @@
     <Filter Include="test\test_r2bix\director">
       <UniqueIdentifier>{40805b48-317e-4b65-b938-c9543be6085f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\test_r2bix\input">
+      <UniqueIdentifier>{2ea2d664-622e-4d12-9ce7-b95c2211aa4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -152,9 +155,6 @@
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\ComponentMenu.cpp">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\menu\InputMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\NodeMenu.cpp">
@@ -413,9 +413,6 @@
     <ClCompile Include="src\r2bix\r2bix_node_UIPannelNode.cpp">
       <Filter>r2bix\node</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\input_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_component_InputMouseComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
@@ -626,6 +623,12 @@
     <ClCompile Include="src\test\test_r2bix\director\test_director__screen_buffer_manager.cpp">
       <Filter>test\test_r2bix\director</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\input\menu_input.cpp">
+      <Filter>test\test_r2bix\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\input\test_input.cpp">
+      <Filter>test\test_r2bix\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -665,9 +668,6 @@
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\ComponentMenu.h">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\menu\InputMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\NodeMenu.h">
@@ -1024,9 +1024,6 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_node_UIPannelNode.h">
       <Filter>r2bix\node</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\input_test.h">
-      <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_InputMouseComponent.h">
       <Filter>r2bix\component</Filter>
@@ -1529,6 +1526,12 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\director\test_director__screen_buffer_manager.h">
       <Filter>test\test_r2bix\director</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\input\menu_input.h">
+      <Filter>test\test_r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\input\test_input.h">
+      <Filter>test\test_r2bix\input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
