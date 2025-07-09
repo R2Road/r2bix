@@ -6,7 +6,7 @@
 #include "menu/CameraMenu.h"
 #include "menu/ColorMenu.h"
 #include "menu/ComponentMenu.h"
-#include "menu/DirectorMenu.h"
+#include "director/menu_director.h"
 #include "menu/GeometryMenu.h"
 #include "menu/InputMenu.h"
 #include "menu/NodeMenu.h"

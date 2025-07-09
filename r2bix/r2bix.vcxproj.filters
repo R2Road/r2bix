@@ -106,6 +106,12 @@
     <Filter Include="tool\texture_editor">
       <UniqueIdentifier>{031ff44a-6e73-487c-8b71-bf7cd0e98242}</UniqueIdentifier>
     </Filter>
+    <Filter Include="view">
+      <UniqueIdentifier>{e31c5ad4-acc4-4119-aba9-fcde16956309}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\test_r2bix\director">
+      <UniqueIdentifier>{40805b48-317e-4b65-b938-c9543be6085f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -119,12 +125,6 @@
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\component_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\screen_buffer_manager_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\console_screen_buffer_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\node_test.cpp">
@@ -245,14 +245,8 @@
     <ClCompile Include="src\test\test_psnake\PSnakeMenu.cpp">
       <Filter>test\test_psnake</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\menu\DirectorMenu.cpp">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_director_Scheduler.cpp">
       <Filter>r2bix\director</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\director_scheduler_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_director_CoutBufferRedirector.cpp">
       <Filter>r2bix\director</Filter>
@@ -395,9 +389,6 @@
     <ClCompile Include="src\r2bix_helper\r2bix_helper_Printer4Texture.cpp">
       <Filter>r2bix_helper</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\key_code_viewer.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu\UIMenu.cpp">
       <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
@@ -460,9 +451,6 @@
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_director_DefarredTaskQueue.cpp">
       <Filter>r2bix\director</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\director_defarred_task_queue_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\tool\texture_editor\tool_texture_editor_FileMakeNSelectScene.cpp">
       <Filter>tool\texture_editor</Filter>
@@ -617,6 +605,27 @@
     <ClCompile Include="external\r2tm\r2tm_Input.cpp">
       <Filter>external\r2tm</Filter>
     </ClCompile>
+    <ClCompile Include="src\view\menu_view.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="src\view\key_view.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="src\view\terminal_info_view.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\director\menu_director.cpp">
+      <Filter>test\test_r2bix\director</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\director\test_director__defarred_task_queue.cpp">
+      <Filter>test\test_r2bix\director</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\director\test_director__scheduler.cpp">
+      <Filter>test\test_r2bix\director</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\director\test_director__screen_buffer_manager.cpp">
+      <Filter>test\test_r2bix\director</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -629,12 +638,6 @@
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\component_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\screen_buffer_manager_test.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\console_screen_buffer_test.h">
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\node_test.h">
@@ -764,17 +767,11 @@
     <ClInclude Include="src\test\test_psnake\PSnakeMenu.h">
       <Filter>test\test_psnake</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\menu\DirectorMenu.h">
-      <Filter>test\test_r2bix\menu</Filter>
-    </ClInclude>
     <ClInclude Include="src\psnake\psnake_VersionInfo.h">
       <Filter>project\project_snake</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_director_Scheduler.h">
       <Filter>r2bix\director</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\director_scheduler_test.h">
-      <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_director_Config.h">
       <Filter>r2bix\director</Filter>
@@ -1001,9 +998,6 @@
     <ClInclude Include="src\r2bix_helper\r2bix_helper_Printer4Texture.h">
       <Filter>r2bix_helper</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\key_code_viewer.h">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu\UIMenu.h">
       <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
@@ -1072,9 +1066,6 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_director_DefarredTaskQueue.h">
       <Filter>r2bix\director</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\director_defarred_task_queue_test.h">
-      <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix_helper\r2bix_helper_STDPrinter4Texture.h" />
     <ClInclude Include="src\tool\texture_editor\tool_texture_editor_FileMakeNSelectScene.h">
@@ -1517,6 +1508,27 @@
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_Input.h">
       <Filter>external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\view\menu_view.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="src\view\key_view.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="src\view\terminal_info_view.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\director\menu_director.h">
+      <Filter>test\test_r2bix\director</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\director\test_director__defarred_task_queue.h">
+      <Filter>test\test_r2bix\director</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\director\test_director__scheduler.h">
+      <Filter>test\test_r2bix\director</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\director\test_director__screen_buffer_manager.h">
+      <Filter>test\test_r2bix\director</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

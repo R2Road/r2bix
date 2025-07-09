@@ -1,4 +1,4 @@
-#include "screen_buffer_manager_test.h"
+#include "test_director__screen_buffer_manager.h"
 
 #include <conio.h>
 

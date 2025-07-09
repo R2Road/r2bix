@@ -1,12 +1,12 @@
-#include "DirectorMenu.h"
+#include "menu_director.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test/test_r2bix/R2bixMenu.h"
 
-#include "../item/screen_buffer_manager_test.h"
-#include "../item/director_defarred_task_queue_test.h"
-#include "../item/director_scheduler_test.h"
+#include "test_director__screen_buffer_manager.h"
+#include "test_director__defarred_task_queue.h"
+#include "test_director__scheduler.h"
 
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"

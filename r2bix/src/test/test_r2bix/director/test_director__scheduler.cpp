@@ -1,4 +1,4 @@
-#include "director_scheduler_test.h"
+#include "test_director__scheduler.h"
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
