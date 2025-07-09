@@ -8,21 +8,21 @@
 
 #include "../R2bixMenu.h"
 
-r2tm::TitleFunctionT TextureMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Texture::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Texture, Texture Frame, Texture Table Menu";
 	};
 }
-r2tm::DescriptionFunctionT TextureMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Texture::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
 		return "";
 	};
 }
-r2tm::WriteFunctionT TextureMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Texture::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
