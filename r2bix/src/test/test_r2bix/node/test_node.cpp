@@ -32,7 +32,7 @@
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"
 
-namespace node_test
+namespace test_node
 {
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{

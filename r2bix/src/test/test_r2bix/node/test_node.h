@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace node_test
+namespace test_node
 {
 	class Basic : public r2tm::iItem
 	{
