@@ -57,7 +57,7 @@ r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
 		mp->AddMenu( 'q', Menu_Texture() );
 		mp->AddMenu( 'w', Menu_Camera() );
 		mp->AddItem( 'e', render_test::Basic() );
-		mp->AddMenu( 'r', ComponentMenu() );
+		mp->AddMenu( 'r', Menu_Component() );
 		mp->AddMenu( 't', Menu_Action() );
 		mp->AddMenu( 'y', Menu_Node() );
 

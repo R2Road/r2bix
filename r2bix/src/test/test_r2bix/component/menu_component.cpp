@@ -6,21 +6,21 @@
 
 #include "test_component.h"
 
-r2tm::TitleFunctionT ComponentMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Component::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Component";
 	};
 }
-r2tm::DescriptionFunctionT ComponentMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Component::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
 		return "";
 	};
 }
-r2tm::WriteFunctionT ComponentMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Component::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
