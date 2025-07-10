@@ -16,12 +16,12 @@ namespace test_camera
 {
 	std::ostream& operator<<( std::ostream& o, const r2::PointInt& p )
 	{
-		o << "x : " << p.GetX() << "      " "y : " << p.GetY() << r2tm::linefeed;
+		o << "x : " << p.GetX() << "      " "y : " << p.GetY();
 		return o;
 	}
 	std::ostream& operator<<( std::ostream& o, const r2::Size<int>& s )
 	{
-		o << "s : " << s.GetWidth() << "      " "h : " << s.GetHeight() << r2tm::linefeed;
+		o << "s : " << s.GetWidth() << "      " "h : " << s.GetHeight();
 		return o;
 	}
 
@@ -45,8 +45,6 @@ namespace test_camera
 			LS();
 
 			{
-				EXPECT_EQ( position.GetX(), camera.GetX() );
-				EXPECT_EQ( position.GetY(), camera.GetY() );
 				EXPECT_EQ( position, camera.GetPoint() );
 				EXPECT_EQ( size.GetWidth(), camera.GetWidth() );
 				EXPECT_EQ( size.GetHeight(), camera.GetHeight() );
@@ -67,24 +65,13 @@ namespace test_camera
 			LS();
 
 			{
-				OUTPUT_VALUE( camera.GetX() );
-				OUTPUT_VALUE( camera.GetY() );
-				OUTPUT_VALUE( camera.GetWidth() );
-				OUTPUT_VALUE( camera.GetHeight() );
+				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetOrigin() );
+				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetSize() );
 
 				LF();
 
-				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetOrigin().GetX() );
-				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetOrigin().GetY() );
-				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetSize().GetWidth() );
-				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetSize().GetHeight() );
-
-				LF();
-
-				OUTPUT_VALUE( camera.GetRect().GetOrigin().GetX() );
-				OUTPUT_VALUE( camera.GetRect().GetOrigin().GetY() );
-				OUTPUT_VALUE( camera.GetRect().GetSize().GetWidth() );
-				OUTPUT_VALUE( camera.GetRect().GetSize().GetHeight() );
+				OUTPUT_VALUE( camera.GetRect().GetOrigin() );
+				OUTPUT_VALUE( camera.GetRect().GetSize() );
 			}
 
 			LS();
