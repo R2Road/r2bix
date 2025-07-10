@@ -35,7 +35,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', screen_buffer_manager_test::Swap() );
+		mp->AddItem( '1', test_director__screen_buffer_manager::Swap() );
 
 
 		mp->AddLineFeed();

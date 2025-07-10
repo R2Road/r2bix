@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace screen_buffer_manager_test
+namespace test_director__screen_buffer_manager
 {
 	class Swap : public r2tm::iItem
 	{
