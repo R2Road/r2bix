@@ -1,9 +1,70 @@
 #pragma once
 
+#include <iomanip>
 #include <ostream>
 
 #include "r2_NoneCopyable.h"
 #include "r2_Point.h"
+
+template<typename T>
+inline std::ostream& operator<<( std::ostream& o, const r2::Point<T>& v )
+{
+	static const int w = 5;
+
+	return o
+		<< std::left
+
+		<< "\t"
+
+		<< "x : " << std::setw( w ) << v.GetX()
+
+		<< "   "
+
+		<< "y : " << std::setw( w ) << v.GetY()
+
+		<< std::right
+	;
+}
+
+template<>
+inline std::ostream& operator<<( std::ostream& o, const r2::Point<char>& v )
+{
+	static const int w = 5;
+
+	return o
+		<< std::left
+
+		<< "\t"
+
+		<< "x : " << std::setw( w ) << static_cast<int>( v.GetX() )
+
+		<< "   "
+
+		<< "y : " << std::setw( w ) << static_cast<int>( v.GetY() )
+
+		<< std::right
+	;
+}
+
+template<>
+inline std::ostream& operator<<( std::ostream& o, const r2::Point<unsigned char>& v )
+{
+	static const int w = 5;
+
+	return o
+		<< std::left
+
+		<< "\t"
+
+		<< "x : " << std::setw( w ) << static_cast<int>( v.GetX() )
+
+		<< "   "
+
+		<< "y : " << std::setw( w ) << static_cast<int>( v.GetY() )
+
+		<< std::right
+	;
+}
 
 namespace r2helper
 {
@@ -19,57 +80,9 @@ namespace r2helper
 			std::cout
 				<< "\t" "Point"
 
-				<< "      "
-				   "x : " << v.GetX()
-				<< "      "
-				   "y : " << v.GetY()
-
-				<< "\n";
-		}
-
-		template<>
-		inline static void Print( const r2::Point<char>& v )
-		{
-			std::cout
-				<< "\t" "Point"
-
-				<< "      "
-				   "x : " << static_cast<int>( v.GetX() )
-				<< "      "
-				   "y : " << static_cast<int>( v.GetY() )
-
-				<< "\n";
-		}
-		template<>
-		inline static void Print( const r2::Point<unsigned char>& v )
-		{
-			std::cout
-				<< "\t" "Point"
-
-				<< "      "
-				   "x : " << static_cast<int>( v.GetX() )
-				<< "      "
-				   "y : " << static_cast<int>( v.GetY() )
+				<< v
 
 				<< "\n";
 		}
 	};
-}
-
-template<typename T>
-inline std::ostream& operator<<( std::ostream& o, const r2::Point<T>& v )
-{
-	return o << v.GetX() << "  " << v.GetY();
-}
-
-template<>
-inline std::ostream& operator<<( std::ostream& o, const r2::Point<char>& v )
-{
-	return o << static_cast<int>( v.GetX() ) << "  " << static_cast<int>( v.GetY() );
-}
-
-template<>
-inline std::ostream& operator<<( std::ostream& o, const r2::Point<unsigned char>& v )
-{
-	return o << static_cast<int>( v.GetX() ) << "  " << static_cast<int>( v.GetY() );
 }

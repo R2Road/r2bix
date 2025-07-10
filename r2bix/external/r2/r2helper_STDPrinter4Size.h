@@ -1,9 +1,70 @@
 #pragma once
 
+#include <iomanip>
 #include <ostream>
 
 #include "r2_NoneCopyable.h"
 #include "r2_Size.h"
+
+template<typename T>
+inline std::ostream& operator<<( std::ostream& o, const r2::Size<T>& v )
+{
+	static const int w = 5;
+
+	return o
+		<< std::left
+
+		<< "\t"
+
+		<< "w : " << std::setw( w ) << v.GetWidth()
+
+		<< "   "
+
+		<< "h : " << std::setw( w ) << v.GetHeight()
+
+		<< std::right
+	;
+}
+
+template<>
+inline std::ostream& operator<<( std::ostream& o, const r2::Size<char>& v )
+{
+	static const int w = 5;
+
+	return o
+		<< std::left
+
+		<< "\t"
+
+		<< "w : " << std::setw( w ) << static_cast<int>( v.GetWidth() )
+
+		<< "   "
+
+		<< "h : " << std::setw( w ) << static_cast< int >( v.GetHeight() )
+
+		<< std::right
+	;
+}
+
+template<>
+inline std::ostream& operator<<( std::ostream& o, const r2::Size<unsigned char>& v )
+{
+	static const int w = 5;
+
+	return o
+		<< std::left
+
+		<< "\t"
+
+		<< "w : " << std::setw( w ) << static_cast<int>( v.GetWidth() )
+
+		<< "   "
+
+		<< "h : " << std::setw( w ) << static_cast< int >( v.GetHeight() )
+
+		<< std::right
+	;
+}
 
 namespace r2helper
 {
@@ -19,57 +80,9 @@ namespace r2helper
 			std::cout
 				<< "\t" "Size"
 
-				<< "      "
-				   "w : " << v.GetWidth()
-				<< "      "
-				   "h : " << v.GetHeight()
-
-				<< "\n";
-		}
-
-		template<>
-		inline static void Print( const r2::Size<char>& v )
-		{
-			std::cout
-				<< "\t" "Size"
-
-				<< "      "
-				   "w : " << static_cast<int>( v.GetWidth() )
-				<< "      "
-				   "h : " << static_cast<int>( v.GetHeight() )
-
-				<< "\n";
-		}
-		template<>
-		inline static void Print( const r2::Size<unsigned char>& v )
-		{
-			std::cout
-				<< "\t" "Size"
-
-				<< "      "
-				   "w : " << static_cast<int>( v.GetWidth() )
-				<< "      "
-				   "h : " << static_cast<int>( v.GetHeight() )
+				<< v
 
 				<< "\n";
 		}
 	};
-}
-
-template<typename T>
-inline std::ostream& operator<<( std::ostream& o, const r2::Size<T>& v )
-{
-	return o << v.GetWidth() << "  " << v.GetHeight();
-}
-
-template<>
-inline std::ostream& operator<<( std::ostream& o, const r2::Size<char>& v )
-{
-	return o << static_cast<int>( v.GetWidth() ) << "  " << static_cast<int>( v.GetHeight() );
-}
-
-template<>
-inline std::ostream& operator<<( std::ostream& o, const r2::Size<unsigned char>& v )
-{
-	return o << static_cast<int>( v.GetWidth() ) << "  " << static_cast<int>( v.GetHeight() );
 }

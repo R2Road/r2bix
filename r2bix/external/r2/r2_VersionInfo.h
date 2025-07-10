@@ -24,7 +24,7 @@ namespace r2
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '2';
 		const char VersionNumber_3 = '0';
-		const char VersionNumber_4 = '1';
+		const char VersionNumber_4 = '3';
 		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
@@ -45,7 +45,9 @@ namespace r2
 		const char* const String4Road2Version_0_3_0_0_0 =
 			"### Road 2 Version 0.3.0.0.0 ###"
 			"\n"
-			"\n"	"[ ] " "Add Method     : ..."
+
+			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Point : 출력 방식 개선"
+			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Size : 출력 방식 개선"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
