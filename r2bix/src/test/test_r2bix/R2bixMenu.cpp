@@ -8,7 +8,7 @@
 #include "component/menu_component.h"
 #include "director/menu_director.h"
 #include "input/menu_input.h"
-#include "menu/GeometryMenu.h"
+#include "geometry/menu_geometry.h"
 #include "node/menu_node.h"
 #include "ui/menu_ui.h"
 #include "texture/menu_texture.h"

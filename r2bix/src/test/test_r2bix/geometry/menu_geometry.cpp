@@ -1,8 +1,8 @@
-#include "GeometryMenu.h"
+#include "menu_geometry.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "test/test_r2bix/R2bixMenu.h"
+#include "../R2bixMenu.h"
 
 r2tm::TitleFunctionT GeometryMenu::GetTitleFunction() const
 {
