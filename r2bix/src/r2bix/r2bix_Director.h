@@ -111,7 +111,7 @@ namespace r2bix
 		r2bix_input::InputManager mInputManager;
 
 		r2bix_node::NodeUp mRootNode;
-		r2bix_node::NodeUp mCurrentSceneNode;
+		r2bix_node::Node* mCurrentSceneNode;
 		r2bix_node::NodeUp mNextSceneNode;
 
 		r2bix_director::DefarredTaskQueue mDefarredTaskQueue;

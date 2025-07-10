@@ -26,7 +26,7 @@ namespace r2bix
 		, mInputManager( director_config.ScreenOffset_X, director_config.ScreenOffset_Y )
 
 		, mRootNode( r2bix_node::Node::Create( *this ) )
-		, mCurrentSceneNode()
+		, mCurrentSceneNode( nullptr )
 		, mNextSceneNode()
 
 		, mDefarredTaskQueue()
@@ -45,7 +45,8 @@ namespace r2bix
 		}
 		else
 		{
-			mCurrentSceneNode = std::move( node );
+			mCurrentSceneNode = node.get();
+			mRootNode->AddChild( std::move( node ) );
 		}
 	}
 
@@ -59,8 +60,10 @@ namespace r2bix
 		{
 			if( mNextSceneNode )
 			{
-				mCurrentSceneNode->Terminate();
-				mCurrentSceneNode = std::move( mNextSceneNode );
+				mRootNode->ClearAllChild();
+
+				mCurrentSceneNode = mNextSceneNode.get();
+				mRootNode->AddChild( std::move( mNextSceneNode ) );
 			}
 
 			mScheduler.Do();
@@ -74,7 +77,7 @@ namespace r2bix
 	{
 		mInputManager.Update();
 
-		mCurrentSceneNode->Update( delta_time );
+		mRootNode->Update( delta_time );
 	}
 	void Director::onRender()
 	{
@@ -84,7 +87,7 @@ namespace r2bix
 		mRenderTarget.FillCharacterAll( ' ' );
 		mRenderTarget.FillColorAll( r2bix::DefaultColorValue );
 
-		mCurrentSceneNode->Render( &mCamera, &mRenderTarget, r2::PointInt::GetZERO() );
+		mRootNode->Render( &mCamera, &mRenderTarget, r2::PointInt::GetZERO() );
 
 		//
 		// Write 2 Back-Buffer
@@ -102,10 +105,7 @@ namespace r2bix
 
 	void Director::Terminate()
 	{
-		if( mCurrentSceneNode )
-		{
-			mCurrentSceneNode->Terminate();
-		}
+		mRootNode->Terminate();
 	}
 
 
