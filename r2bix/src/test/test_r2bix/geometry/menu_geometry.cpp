@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "../R2bixMenu.h"
+#include "../menu_r2bix.h"
 
 r2tm::TitleFunctionT GeometryMenu::GetTitleFunction() const
 {

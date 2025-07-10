@@ -19,7 +19,7 @@
 #include "r2bix/r2bix_node_UISimpleButtonNode.h"
 #include "r2bix/r2bix_node_UITextFieldNode.h"
 
-#include "../R2bixMenu.h"
+#include "../menu_r2bix.h"
 
 r2tm::TitleFunctionT UIMenu::GetTitleFunction() const
 {

@@ -6,7 +6,7 @@
 #include "test_texture_frame.h"
 #include "test_texture_table.h"
 
-#include "../R2bixMenu.h"
+#include "../menu_r2bix.h"
 
 r2tm::TitleFunctionT Menu_Texture::GetTitleFunction() const
 {

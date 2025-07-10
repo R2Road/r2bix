@@ -4,7 +4,7 @@
 
 #include "test_camera.h"
 
-#include "test/test_r2bix/R2bixMenu.h"
+#include "test/test_r2bix/menu_r2bix.h"
 
 r2tm::TitleFunctionT Menu_Camera::GetTitleFunction() const
 {

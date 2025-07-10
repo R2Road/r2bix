@@ -4,7 +4,7 @@
 
 #include "test_input.h"
 
-#include "../R2bixMenu.h"
+#include "../menu_r2bix.h"
 
 r2tm::TitleFunctionT Menu_Input::GetTitleFunction() const
 {

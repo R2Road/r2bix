@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "test/test_r2bix/R2bixMenu.h"
+#include "test/test_r2bix/menu_r2bix.h"
 
 #include "test_color_value.h"
 

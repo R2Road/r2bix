@@ -11,7 +11,7 @@
 #include "test/project_a/ProjectAMenu.h"
 #include "test/test_p2048/P2048Menu.h"
 #include "test/test_psnake/PSnakeMenu.h"
-#include "test/test_r2bix/R2bixMenu.h"
+#include "test/test_r2bix/menu_r2bix.h"
 
 #include "tool/ToolMenu.h"
 
