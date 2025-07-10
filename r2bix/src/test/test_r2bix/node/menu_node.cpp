@@ -3,6 +3,7 @@
 #include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test_node.h"
+#include "test_node___child.h"
 
 #include "../menu_r2bix.h"
 
@@ -25,8 +26,8 @@ r2tm::WriteFunctionT Menu_Node::GetWriteFunction() const
 	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', test_node::Basic() );
-		mp->AddItem( '2', test_node::Child_Count() );
-		mp->AddItem( '3', test_node::Child_Sequence() );
+		mp->AddItem( '2', test_node___child::Child_Count() );
+		mp->AddItem( '3', test_node___child::Child_Sequence() );
 
 
 

@@ -11,20 +11,6 @@ namespace test_node
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Child_Count : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
-	class Child_Sequence : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
 
 
 	class LabelS : public r2tm::iItem
