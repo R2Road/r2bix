@@ -2,11 +2,11 @@
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "test/test_r2bix/menu_r2bix.h"
+#include "../menu_r2bix.h"
 
-#include "test_director__screen_buffer_manager.h"
 #include "test_director__defarred_task_queue.h"
 #include "test_director__scheduler.h"
+#include "test_director__screen_buffer_manager.h"
 
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
