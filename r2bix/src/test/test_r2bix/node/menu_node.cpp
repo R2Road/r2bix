@@ -1,10 +1,10 @@
-#include "NodeMenu.h"
+#include "menu_node.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "test/test_r2bix/item/node_test.h"
+#include "test_node.h"
 
-#include "test/test_r2bix/R2bixMenu.h"
+#include "../R2bixMenu.h"
 
 r2tm::TitleFunctionT NodeMenu::GetTitleFunction() const
 {

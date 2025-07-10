@@ -9,7 +9,7 @@
 #include "director/menu_director.h"
 #include "input/menu_input.h"
 #include "menu/GeometryMenu.h"
-#include "menu/NodeMenu.h"
+#include "node/menu_node.h"
 #include "menu/UIMenu.h"
 #include "texture/menu_texture.h"
 
