@@ -6,21 +6,21 @@
 
 #include "../R2bixMenu.h"
 
-r2tm::TitleFunctionT NodeMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Node::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Node";
 	};
 }
-r2tm::DescriptionFunctionT NodeMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Node::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
 		return "";
 	};
 }
-r2tm::WriteFunctionT NodeMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Node::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
