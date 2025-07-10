@@ -7,6 +7,8 @@
 #include "r2tm/r2tm_WindowsUtility.h"
 
 #include "r2_PointInt.h"
+#include "r2helper_STDPrinter4Point.h"
+#include "r2helper_STDPrinter4Size.h"
 #include "r2_RectInt.h"
 #include "r2bix_render_Camera.h"
 #include "r2bix_render_Texture.h"
@@ -14,17 +16,6 @@
 
 namespace test_camera
 {
-	std::ostream& operator<<( std::ostream& o, const r2::PointInt& p )
-	{
-		o << "x : " << p.GetX() << "      " "y : " << p.GetY();
-		return o;
-	}
-	std::ostream& operator<<( std::ostream& o, const r2::Size<int>& s )
-	{
-		o << "s : " << s.GetWidth() << "      " "h : " << s.GetHeight();
-		return o;
-	}
-
 	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
