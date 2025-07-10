@@ -24,43 +24,28 @@ r2tm::WriteFunctionT Menu_Component::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', component_test::ComponentID() );
-		mp->AddItem( '2', component_test::Component_Add_Get() );
-		mp->AddItem( '3', component_test::Transform_Basic() );
-		mp->AddItem( '4', component_test::Transform_PivotPoint() );
+		mp->AddItem( '1', test_component::ComponentID() );
+		mp->AddItem( '2', test_component::Component_Add_Get() );
+		mp->AddItem( '3', test_component::Transform_Basic() );
+		mp->AddItem( '4', test_component::Transform_PivotPoint() );
 
 
 		mp->AddLineFeed();
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'q', component_test::TextureRender_1() );
-		mp->AddItem( 'w', component_test::TextureRender_2() );
-		mp->AddItem( 'e', component_test::TextureRender_3() );
+		mp->AddItem( 'q', test_component::TextureRender_1() );
+		mp->AddItem( 'w', test_component::TextureRender_2() );
+		mp->AddItem( 'e', test_component::TextureRender_3() );
 
 		mp->AddLineFeed();
 
-		mp->AddItem( 'r', component_test::CustomTexture() );
+		mp->AddItem( 'r', test_component::CustomTexture() );
 
 		mp->AddLineFeed();
 
-		mp->AddItem( 't', component_test::LabelS() );
-		mp->AddItem( 'y', component_test::LabelM() );
-
-
-
-		mp->AddLineFeed();
-		mp->AddLineFeed();
-
-
-
-		mp->AddItem( 'a', component_test::TextureFrameRender_1() );
-		mp->AddItem( 's', component_test::TextureFrameRender_2() );
-
-		mp->AddLineFeed();
-
-		mp->AddItem( 'd', component_test::TextureFrameAnimation_1() );
-		mp->AddItem( 'f', component_test::TextureFrameAnimation_2() );
+		mp->AddItem( 't', test_component::LabelS() );
+		mp->AddItem( 'y', test_component::LabelM() );
 
 
 
@@ -69,7 +54,13 @@ r2tm::WriteFunctionT Menu_Component::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'g', component_test::ActionProcess() );
+		mp->AddItem( 'a', test_component::TextureFrameRender_1() );
+		mp->AddItem( 's', test_component::TextureFrameRender_2() );
+
+		mp->AddLineFeed();
+
+		mp->AddItem( 'd', test_component::TextureFrameAnimation_1() );
+		mp->AddItem( 'f', test_component::TextureFrameAnimation_2() );
 
 
 
@@ -78,11 +69,20 @@ r2tm::WriteFunctionT Menu_Component::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'z', component_test::UIControl() );
-		mp->AddItem( 'x', component_test::UIPannel() );
-		mp->AddItem( 'c', component_test::UIPannel_InputListener_Regist() );
-		mp->AddItem( 'v', component_test::UIPannel_Cursor_Response() );
-		mp->AddItem( 'b', component_test::UIButton() );
+		mp->AddItem( 'g', test_component::ActionProcess() );
+
+
+
+		mp->AddLineFeed();
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'z', test_component::UIControl() );
+		mp->AddItem( 'x', test_component::UIPannel() );
+		mp->AddItem( 'c', test_component::UIPannel_InputListener_Regist() );
+		mp->AddItem( 'v', test_component::UIPannel_Cursor_Response() );
+		mp->AddItem( 'b', test_component::UIButton() );
 
 
 

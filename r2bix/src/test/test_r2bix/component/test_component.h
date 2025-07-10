@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace component_test
+namespace test_component
 {
 	class ComponentID : public r2tm::iItem
 	{

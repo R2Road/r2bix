@@ -29,7 +29,7 @@
 #include "test/test_r2bix/TextureTable4Test.h"
 
 
-namespace component_test
+namespace test_component
 {
 	std::ostream& operator<<( std::ostream& o, const r2bix_animation::eIndex& i )
 	{
