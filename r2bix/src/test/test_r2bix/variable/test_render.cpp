@@ -9,7 +9,7 @@
 #include "r2bix_render_Camera.h"
 #include "r2bix_render_Texture.h"
 
-namespace render_test
+namespace test_render
 {
 	class RenderTestComponent : public r2bix_component::Component<RenderTestComponent>
 	{

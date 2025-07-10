@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace visible_resource_research
+namespace research_visible_resource
 {
 	class DrawWithPosition : public r2tm::iItem
 	{

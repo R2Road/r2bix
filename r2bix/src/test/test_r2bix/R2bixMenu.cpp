@@ -55,7 +55,7 @@ r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
 
 		mp->AddMenu( 'q', Menu_Texture() );
 		mp->AddMenu( 'w', Menu_Camera() );
-		mp->AddItem( 'e', render_test::Basic() );
+		mp->AddItem( 'e', test_render::Basic() );
 		mp->AddMenu( 'r', Menu_Component() );
 		mp->AddMenu( 't', Menu_Action() );
 		mp->AddMenu( 'y', Menu_Node() );
@@ -76,7 +76,7 @@ r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
 
 
 
-		mp->AddItem( 'z', visible_resource_research::DrawWithPosition() );
+		mp->AddItem( 'z', research_visible_resource::DrawWithPosition() );
 
 
 

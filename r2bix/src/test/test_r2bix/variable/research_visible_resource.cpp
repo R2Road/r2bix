@@ -8,7 +8,7 @@
 
 #include "r2bix_render_Texture.h"
 
-namespace visible_resource_research
+namespace research_visible_resource
 {
 	r2tm::TitleFunctionT DrawWithPosition::GetTitleFunction() const
 	{
