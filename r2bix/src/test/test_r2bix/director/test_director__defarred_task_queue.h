@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_iItem.h"
 
-namespace director_defarred_task_queue_test
+namespace test_director__defarred_task_queue
 {
 	class Declaration : public r2tm::iItem
 	{

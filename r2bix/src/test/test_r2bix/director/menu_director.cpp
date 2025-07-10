@@ -43,11 +43,11 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 
 
 		mp->AddItem( 'q', test_director__scheduler::Declaration() );
-		mp->AddItem( 'w', director_defarred_task_queue_test::Declaration() );
-		mp->AddItem( 'e', director_defarred_task_queue_test::Size() );
-		mp->AddItem( 'r', director_defarred_task_queue_test::Add() );
-		mp->AddItem( 't', director_defarred_task_queue_test::Process() );
-		mp->AddItem( 'y', director_defarred_task_queue_test::TaskBringsTask() );
+		mp->AddItem( 'w', test_director__defarred_task_queue::Declaration() );
+		mp->AddItem( 'e', test_director__defarred_task_queue::Size() );
+		mp->AddItem( 'r', test_director__defarred_task_queue::Add() );
+		mp->AddItem( 't', test_director__defarred_task_queue::Process() );
+		mp->AddItem( 'y', test_director__defarred_task_queue::TaskBringsTask() );
 
 
 		mp->AddLineFeed();

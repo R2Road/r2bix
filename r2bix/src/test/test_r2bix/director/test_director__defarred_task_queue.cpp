@@ -5,7 +5,7 @@
 
 #include "r2bix_director_DefarredTaskQueue.h"
 
-namespace director_defarred_task_queue_test
+namespace test_director__defarred_task_queue
 {
 	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
