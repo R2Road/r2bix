@@ -13,9 +13,8 @@
 #include "ui/menu_ui.h"
 #include "texture/menu_texture.h"
 
-#include "item/render_test.h"
-
-#include "item/visible_resource_research.h"
+#include "variable/test_render.h"
+#include "variable/research_visible_resource.h"
 
 #include "menu_dev.h"
 

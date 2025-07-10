@@ -168,8 +168,6 @@
     <ClCompile Include="src\test\test_r2bix\geometry\menu_geometry.cpp" />
     <ClCompile Include="src\test\test_r2bix\input\menu_input.cpp" />
     <ClCompile Include="src\test\test_r2bix\input\test_input.cpp" />
-    <ClCompile Include="src\test\test_r2bix\item\render_test.cpp" />
-    <ClCompile Include="src\test\test_r2bix\item\visible_resource_research.cpp" />
     <ClCompile Include="src\test\test_r2bix\node\menu_node.cpp" />
     <ClCompile Include="src\test\test_r2bix\node\test_node.cpp" />
     <ClCompile Include="src\test\test_r2bix\R2bixMenu.cpp" />
@@ -180,6 +178,8 @@
     <ClCompile Include="src\test\test_r2bix\texture\test_texture_frame.cpp" />
     <ClCompile Include="src\test\test_r2bix\texture\test_texture_table.cpp" />
     <ClCompile Include="src\test\test_r2bix\ui\menu_ui.cpp" />
+    <ClCompile Include="src\test\test_r2bix\variable\research_visible_resource.cpp" />
+    <ClCompile Include="src\test\test_r2bix\variable\test_render.cpp" />
     <ClCompile Include="src\tool\texture_editor\tool_texture_editor_EditorComponent.cpp" />
     <ClCompile Include="src\tool\texture_editor\tool_texture_editor_EditorScene.cpp" />
     <ClCompile Include="src\tool\texture_editor\tool_texture_editor_EntryScene.cpp" />
@@ -472,8 +472,6 @@
     <ClInclude Include="src\test\test_r2bix\geometry\menu_geometry.h" />
     <ClInclude Include="src\test\test_r2bix\input\menu_input.h" />
     <ClInclude Include="src\test\test_r2bix\input\test_input.h" />
-    <ClInclude Include="src\test\test_r2bix\item\render_test.h" />
-    <ClInclude Include="src\test\test_r2bix\item\visible_resource_research.h" />
     <ClInclude Include="src\test\test_r2bix\node\menu_node.h" />
     <ClInclude Include="src\test\test_r2bix\node\test_node.h" />
     <ClInclude Include="src\test\test_r2bix\R2bixMenu.h" />
@@ -484,6 +482,8 @@
     <ClInclude Include="src\test\test_r2bix\texture\test_texture_frame.h" />
     <ClInclude Include="src\test\test_r2bix\texture\test_texture_table.h" />
     <ClInclude Include="src\test\test_r2bix\ui\menu_ui.h" />
+    <ClInclude Include="src\test\test_r2bix\variable\research_visible_resource.h" />
+    <ClInclude Include="src\test\test_r2bix\variable\test_render.h" />
     <ClInclude Include="src\tool\texture_editor\tool_texture_editor_EditorComponent.h" />
     <ClInclude Include="src\tool\texture_editor\tool_texture_editor_EditorScene.h" />
     <ClInclude Include="src\tool\texture_editor\tool_texture_editor_EntryScene.h" />

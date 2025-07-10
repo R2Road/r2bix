@@ -1,4 +1,4 @@
-#include "render_test.h"
+#include "test_render.h"
 
 #include "r2tm/r2tm_Inspector.h"
 #include "r2tm/r2tm_ostream.h"

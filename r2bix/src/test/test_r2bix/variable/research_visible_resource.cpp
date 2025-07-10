@@ -1,4 +1,4 @@
-#include "visible_resource_research.h"
+#include "research_visible_resource.h"
 
 #include <conio.h> // _kbhit(), _getch()
 
