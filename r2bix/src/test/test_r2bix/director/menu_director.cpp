@@ -4,6 +4,7 @@
 
 #include "../menu_r2bix.h"
 
+#include "test_director.h"
 #include "test_director__defarred_task_queue.h"
 #include "test_director__scheduler.h"
 #include "test_director__screen_buffer_manager.h"
@@ -36,7 +37,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddItem( '1', test_director__screen_buffer_manager::Swap() );
-
+		mp->AddItem( '2', test_director::Size() );
 
 		mp->AddLineFeed();
 		mp->AddLineFeed();
