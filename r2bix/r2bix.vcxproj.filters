@@ -130,23 +130,20 @@
     <Filter Include="test\test_r2bix\node">
       <UniqueIdentifier>{93a9c2d4-b73d-4d2d-a9d7-43a236f3bd49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\test_r2bix\component">
+      <UniqueIdentifier>{120658a8-7506-429d-b49d-5e15779bcf51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pmr\pmr_CompanyScene.cpp">
       <Filter>project\project_mini_rogue</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\item\component_test.cpp">
-      <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\render_test.cpp">
       <Filter>test\test_r2bix\item</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\item\visible_resource_research.cpp">
       <Filter>test\test_r2bix\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_r2bix\menu\ComponentMenu.cpp">
-      <Filter>test\test_r2bix\menu</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.cpp">
       <Filter>test\test_r2bix</Filter>
@@ -644,22 +641,22 @@
     <ClCompile Include="src\test\test_r2bix\node\test_node.cpp">
       <Filter>test\test_r2bix\node</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\component\menu_component.cpp">
+      <Filter>test\test_r2bix\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\component\test_component.cpp">
+      <Filter>test\test_r2bix\component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
       <Filter>project\project_mini_rogue</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\item\component_test.h">
-      <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\render_test.h">
       <Filter>test\test_r2bix\item</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\item\visible_resource_research.h">
       <Filter>test\test_r2bix\item</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_r2bix\menu\ComponentMenu.h">
-      <Filter>test\test_r2bix\menu</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.h">
       <Filter>test\test_r2bix</Filter>
@@ -1549,6 +1546,12 @@
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\node\test_node.h">
       <Filter>test\test_r2bix\node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\component\menu_component.h">
+      <Filter>test\test_r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\component\test_component.h">
+      <Filter>test\test_r2bix\component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

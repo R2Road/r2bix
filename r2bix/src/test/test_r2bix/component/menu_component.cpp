@@ -1,10 +1,10 @@
-#include "ComponentMenu.h"
+#include "menu_component.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
-#include "test/test_r2bix/R2bixMenu.h"
+#include "../R2bixMenu.h"
 
-#include "test/test_r2bix/item/component_test.h"
+#include "test_component.h"
 
 r2tm::TitleFunctionT ComponentMenu::GetTitleFunction() const
 {

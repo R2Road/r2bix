@@ -1,4 +1,4 @@
-#include "component_test.h"
+#include "test_component.h"
 
 #include <conio.h>
 
