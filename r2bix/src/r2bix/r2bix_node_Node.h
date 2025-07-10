@@ -277,6 +277,8 @@ namespace r2bix_node
 			return AddChild( std::move( child_node ), 0 );
 		}
 
+		void ClearAllChild();
+
 
 
 	protected:

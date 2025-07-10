@@ -93,10 +93,7 @@ namespace r2bix_node
 			c->Terminate();
 		}
 
-		for( auto& c : mChildContainer )
-		{
-			c->Terminate();
-		}
+		ClearAllChild();
 	}
 
 
@@ -122,5 +119,15 @@ namespace r2bix_node
 		}
 
 		return nullptr;
+	}
+
+
+
+	void Node::ClearAllChild()
+	{
+		for( auto& c : mChildContainer )
+		{
+			c->Terminate();
+		}
 	}
 }

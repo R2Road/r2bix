@@ -28,6 +28,7 @@ r2tm::WriteFunctionT Menu_Node::GetWriteFunction() const
 		mp->AddItem( '1', test_node::Basic() );
 		mp->AddItem( '2', test_node___child::Child_Count() );
 		mp->AddItem( '3', test_node___child::Child_Sequence() );
+		mp->AddItem( '4', test_node___child::ClearAllChild() );
 
 
 

@@ -112,4 +112,60 @@ namespace test_node___child
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT ClearAllChild::GetTitleFunction() const
+	{
+		return []()->const char*
+			{
+				return "Clear All Child";
+			};
+	}
+	r2tm::DoFunctionT ClearAllChild::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+			{
+				LS();
+
+				DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+
+				LS();
+
+				DECLARATION_MAIN( const auto node = r2bix_node::Node::Create( dummy_director ) );
+
+				LS();
+
+				{
+					OUTPUT_SUBJECT( "테스트 환경 설정" );
+
+					LF();
+
+					PROCESS_MAIN( node->AddChild<r2bix_node::Node>() );
+					PROCESS_MAIN( node->AddChild<r2bix_node::Node>() );
+				}
+
+				LS();
+
+				{
+					OUTPUT_SUBJECT( "ClearAllChild" );
+
+					LF();
+
+					EXPECT_EQ( 2, node->GetChildCount() );
+
+					LF();
+
+					PROCESS_MAIN( node->ClearAllChild() );
+
+					LF();
+
+					EXPECT_EQ( 0, node->GetChildCount() );
+				}
+
+				LS();
+
+				return r2tm::eDoLeaveAction::Pause;
+			};
+	}
 }
