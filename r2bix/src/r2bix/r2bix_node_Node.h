@@ -272,6 +272,10 @@ namespace r2bix_node
 
 			return ret;
 		}
+		Node* AddChild( NodeUp&& child_node )
+		{
+			return AddChild( std::move( child_node ), 0 );
+		}
 
 
 
