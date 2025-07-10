@@ -129,5 +129,7 @@ namespace r2bix_node
 		{
 			c->Terminate();
 		}
+
+		mChildContainer.clear();
 	}
 }
