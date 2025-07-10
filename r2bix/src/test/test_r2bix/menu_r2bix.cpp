@@ -7,14 +7,14 @@
 #include "color/menu_color.h"
 #include "component/menu_component.h"
 #include "director/menu_director.h"
-#include "input/menu_input.h"
 #include "geometry/menu_geometry.h"
+#include "input/menu_input.h"
 #include "node/menu_node.h"
-#include "ui/menu_ui.h"
 #include "texture/menu_texture.h"
+#include "ui/menu_ui.h"
 
-#include "variable/test_render.h"
 #include "variable/research_visible_resource.h"
+#include "variable/test_render.h"
 
 #include "menu_dev.h"
 
