@@ -6,7 +6,7 @@
 #include "r2bix_director_Config.h"
 #include "r2bix_director_Scheduler.h"
 
-namespace director_scheduler_test
+namespace test_director__scheduler
 {
 	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
