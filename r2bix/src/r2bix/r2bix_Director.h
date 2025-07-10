@@ -20,7 +20,7 @@ namespace r2bix
 	class Director
 	{
 	public:
-		Director( const r2bix_director::Config& director_config );
+		explicit Director( const r2bix_director::Config& director_config );
 
 
 
