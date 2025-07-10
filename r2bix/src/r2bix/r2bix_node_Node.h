@@ -206,6 +206,13 @@ namespace r2bix_node
 			NodeUp child_node = NodeT::Create( mDirector );
 
 			//
+			// 추가
+			//
+			return AddChild( std::move( child_node ), z_order );
+		}
+		Node* AddChild( NodeUp&& child_node, const int32_t z_order )
+		{
+			//
 			// 기본 설정
 			//
 			child_node->SetParentNode( this );
