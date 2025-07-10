@@ -1,4 +1,4 @@
-#include "UIMenu.h"
+#include "menu_ui.h"
 
 #include "r2tm/r2tm_MenuProcessor.h"
 
@@ -19,7 +19,7 @@
 #include "r2bix/r2bix_node_UISimpleButtonNode.h"
 #include "r2bix/r2bix_node_UITextFieldNode.h"
 
-#include "test/test_r2bix/R2bixMenu.h"
+#include "../R2bixMenu.h"
 
 r2tm::TitleFunctionT UIMenu::GetTitleFunction() const
 {

@@ -10,7 +10,7 @@
 #include "input/menu_input.h"
 #include "menu/GeometryMenu.h"
 #include "node/menu_node.h"
-#include "menu/UIMenu.h"
+#include "ui/menu_ui.h"
 #include "texture/menu_texture.h"
 
 #include "item/render_test.h"
