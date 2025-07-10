@@ -39,15 +39,7 @@ namespace r2bix
 
 	void Director::Setup( r2bix_node::NodeUp node )
 	{
-		if( mCurrentSceneNode )
-		{
-			mNextSceneNode = std::move( node );
-		}
-		else
-		{
-			mCurrentSceneNode = node.get();
-			mRootNode->AddChild( std::move( node ) );
-		}
+		mNextSceneNode = std::move( node );
 	}
 
 
