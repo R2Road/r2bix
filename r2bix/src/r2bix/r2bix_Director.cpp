@@ -25,6 +25,7 @@ namespace r2bix
 
 		, mInputManager( director_config.ScreenOffset_X, director_config.ScreenOffset_Y )
 
+		, mRootNode( r2bix_node::Node::Create( *this ) )
 		, mCurrentSceneNode()
 		, mNextSceneNode()
 

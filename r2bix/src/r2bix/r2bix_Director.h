@@ -61,6 +61,11 @@ namespace r2bix
 			return mScreenOffset;
 		}
 
+		r2bix_node::Node& GetRootNode() const
+		{
+			return ( *mRootNode );
+		}
+
 
 
 		//
@@ -105,6 +110,7 @@ namespace r2bix
 
 		r2bix_input::InputManager mInputManager;
 
+		r2bix_node::NodeUp mRootNode;
 		r2bix_node::NodeUp mCurrentSceneNode;
 		r2bix_node::NodeUp mNextSceneNode;
 

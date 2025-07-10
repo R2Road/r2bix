@@ -37,6 +37,10 @@ namespace test_director
 
 					EXPECT_EQ( c.ScreenOffset_X, d.GetScreenOffset().GetX() );
 					EXPECT_EQ( c.ScreenOffset_Y, d.GetScreenOffset().GetY() );
+
+					LF();
+
+					EXPECT_EQ( &d, &d.GetRootNode().GetDirector() );
 				}
 
 				LS();
