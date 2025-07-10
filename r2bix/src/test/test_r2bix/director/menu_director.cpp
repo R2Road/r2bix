@@ -148,6 +148,6 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, Menu_R2bix() );
 	};
 }

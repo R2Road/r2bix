@@ -33,6 +33,6 @@ r2tm::WriteFunctionT Menu_Color::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, Menu_R2bix() );
 	};
 }

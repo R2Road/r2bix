@@ -18,14 +18,14 @@
 
 #include "menu_dev.h"
 
-r2tm::TitleFunctionT R2bixMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_R2bix::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "R2bix";
 	};
 }
-r2tm::DescriptionFunctionT R2bixMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_R2bix::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
@@ -38,7 +38,7 @@ r2tm::DescriptionFunctionT R2bixMenu::GetDescriptionFunction() const
 		;
 	};
 }
-r2tm::WriteFunctionT R2bixMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_R2bix::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{

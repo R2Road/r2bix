@@ -68,6 +68,6 @@ r2tm::WriteFunctionT Menu_Node::GetWriteFunction() const
 
 
 
-		mp->AddMenu( 27, R2bixMenu() );
+		mp->AddMenu( 27, Menu_R2bix() );
 	};
 }
