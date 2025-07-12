@@ -26,7 +26,7 @@ namespace r2bix
 
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '2';
-		const char VersionNumber_3 = '1';
+		const char VersionNumber_3 = '2';
 		const char VersionNumber_4 = '0';
 		const char VersionNumber_5 = '0';
 
@@ -40,7 +40,7 @@ namespace r2bix
 			"\n"	"+ " "System"
 			"\n"	"\t"	"> "	"Director"
 			"\n"	"\t"	"\t"	"[o] " "Add : Deffard Task Queue"
-			"\n"	"\t"	"\t"	"[~] " "Add : Root Node"
+			"\n"	"\t"	"\t"	"[o] " "Add : Root Node"
 			"\n"	"\t"	"> "	"Input"
 			"\n"	"\t"	"\t"	"[~] " "Keyboard"
 			"\n"	"\t"	"\t"	"[~] " "Mouse"
