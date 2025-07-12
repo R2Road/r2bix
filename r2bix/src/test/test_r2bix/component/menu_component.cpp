@@ -5,6 +5,7 @@
 #include "../menu_r2bix.h"
 
 #include "test_component.h"
+#include "test_component___static_mesh.h"
 
 r2tm::TitleFunctionT Menu_Component::GetTitleFunction() const
 {
@@ -83,6 +84,15 @@ r2tm::WriteFunctionT Menu_Component::GetWriteFunction() const
 		mp->AddItem( 'c', test_component::UIPannel_InputListener_Regist() );
 		mp->AddItem( 'v', test_component::UIPannel_Cursor_Response() );
 		mp->AddItem( 'b', test_component::UIButton() );
+
+
+
+		mp->AddLineFeed();
+		mp->AddLineFeed();
+
+
+
+		mp->AddItem( 'n', test_component___static_mesh::Basic() );
 
 
 
