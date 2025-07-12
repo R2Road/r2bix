@@ -25,8 +25,8 @@ namespace r2bix
 
 
 		const char VersionNumber_1 = '0';
-		const char VersionNumber_2 = '2';
-		const char VersionNumber_3 = '2';
+		const char VersionNumber_2 = '3';
+		const char VersionNumber_3 = '0';
 		const char VersionNumber_4 = '0';
 		const char VersionNumber_5 = '0';
 
@@ -34,39 +34,31 @@ namespace r2bix
 
 
 
-		const char* const String4Road2Version_0_3_0_0_0 =
-					"### Road 2 Version 0.3.0.0.0 ###"
+		const char* const String4Road2Version_0_4_0_0_0 =
+			"### Road 2 Version 0.4.0.0.0 ###"
 			"\n"
 			"\n"	"+ " "System"
 			"\n"	"\t"	"> "	"Director"
-			"\n"	"\t"	"\t"	"[o] " "Add : Deffard Task Queue"
-			"\n"	"\t"	"\t"	"[o] " "Add : Root Node"
+			"\n"	"\t"	"\t"	"[ ] " "..."
 			"\n"	"\t"	"> "	"Input"
-			"\n"	"\t"	"\t"	"[~] " "Keyboard"
-			"\n"	"\t"	"\t"	"[~] " "Mouse"
+			"\n"	"\t"	"\t"	"[ ] " "Keyboard"
+			"\n"	"\t"	"\t"	"[ ] " "Mouse"
 			"\n"	"\t"	"> "	"Node"
-			"\n"	"\t"	"\t"	"[~] " "Add Method : Remove"
+			"\n"	"\t"	"\t"	"[ ] " "Add Method : Remove"
 			"\n"	"\t"	"> "	"Node3D"
 			"\n"	"\t"	"\t"	"[ ] " "Add Class : Node3D"
 			"\n"	"\t"	"\t"	"[ ] " "Add Class : Static Mesh Component"
 			"\n"	"\t"	"\t"	"[ ] " "Add Class : Mesh Render Component"
 			"\n"	"+ " "Preset Node"
 			"\n"	"\t"	"> "	"UI"
-			"\n"	"\t"	"\t"	"[o] " "Add : UIButtonNode"
-			"\n"	"\t"	"\t"	"[o] " "Add : UIPannelNode"
-			"\n"	"\t"	"\t"	"[o] " "Add : UITextFieldNode"
-			"\n"	"\t"	"\t"	"[o] " "Add : UISimpleButtonNode"
 			"\n"	"\t"	"> "	"Node"
-			"\n"	"\t"	"\t"	"[o] " "Add : RectNode"
-			"\n"	"\t"	"\t"	"[o] " "Add : HollowRectNode"
 			"\n"	"+ " "Tool"
 			"\n"	"\t"	"> "	"Texture Editor"
-			"\n"	"\t"	"\t"	"[~] " "Add"
+			"\n"	"\t"	"\t"	"[ ] " "Add"
 			"\n"	"\t"	"> "	"Texture Viewer"
 			"\n"	"\t"	"\t"	"[ ] " "Add"
 			"\n"	"+ " "ETC"
-			"\n"	"\t"	"> "	"Json"
-			"\n"	"\t"	"\t"	"[o] " "Import : RapidJson"
+			"\n"	"\t"	"> "	"..."
 
 			//"\n\n"	"------------------------------------------" "\n"
 
@@ -78,6 +70,27 @@ namespace r2bix
 			//"\n"	"[ ] " "Script"
 			//"\n"	"[ ] " "Korean"
 			//"\n"	"[ ] " "Audio : Pre Load"
+		;
+
+		const char* const String4Road2Version_0_3_0_0_0 =
+					"### Road 2 Version 0.3.0.0.0 ###"
+			"\n"
+			"\n"	"+ " "System"
+			"\n"	"\t"	"> "	"Director"
+			"\n"	"\t"	"\t"	"[o] " "Add : Deffard Task Queue"
+			"\n"	"\t"	"\t"	"[o] " "Add : Root Node"
+			"\n"	"+ " "Preset Node"
+			"\n"	"\t"	"> "	"UI"
+			"\n"	"\t"	"\t"	"[o] " "Add : UIButtonNode"
+			"\n"	"\t"	"\t"	"[o] " "Add : UIPannelNode"
+			"\n"	"\t"	"\t"	"[o] " "Add : UITextFieldNode"
+			"\n"	"\t"	"\t"	"[o] " "Add : UISimpleButtonNode"
+			"\n"	"\t"	"> "	"Node"
+			"\n"	"\t"	"\t"	"[o] " "Add : RectNode"
+			"\n"	"\t"	"\t"	"[o] " "Add : HollowRectNode"
+			"\n"	"+ " "ETC"
+			"\n"	"\t"	"> "	"Json"
+			"\n"	"\t"	"\t"	"[o] " "Import : RapidJson"
 		;
 
 		const char* const String4Road2Version_0_0_2_0 =
@@ -105,7 +118,7 @@ namespace r2bix
 
 
 
-		const char* const String4Road2NextVersion = String4Road2Version_0_3_0_0_0;
+		const char* const String4Road2NextVersion = String4Road2Version_0_4_0_0_0;
 
 	} VersionInfo;
 }
