@@ -99,6 +99,7 @@
     <ClCompile Include="src\r2bix\r2bix_component_HollowRectComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_InputMouseComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_InputKeyboardComponent.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_component_MeshRendererComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_RectComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_StaticMeshComponent.cpp" />
     <ClCompile Include="src\r2bix\r2bix_component_UIButtonComponent.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="src\test\test_r2bix\color\test_color_value.cpp" />
     <ClCompile Include="src\test\test_r2bix\component\menu_component.cpp" />
     <ClCompile Include="src\test\test_r2bix\component\test_component.cpp" />
+    <ClCompile Include="src\test\test_r2bix\component\test_component___mesh_renderer.cpp" />
     <ClCompile Include="src\test\test_r2bix\component\test_component___static_mesh.cpp" />
     <ClCompile Include="src\test\test_r2bix\director\menu_director.cpp" />
     <ClCompile Include="src\test\test_r2bix\director\test_director.cpp" />
@@ -402,6 +404,7 @@
     <ClInclude Include="src\r2bix\r2bix_component_HollowRectComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_InputMouseComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_InputKeyboardComponent.h" />
+    <ClInclude Include="src\r2bix\r2bix_component_MeshRendererComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_RectComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_StaticMeshComponent.h" />
     <ClInclude Include="src\r2bix\r2bix_component_UIButtonComponent.h" />
@@ -470,6 +473,7 @@
     <ClInclude Include="src\test\test_r2bix\color\test_color_value.h" />
     <ClInclude Include="src\test\test_r2bix\component\menu_component.h" />
     <ClInclude Include="src\test\test_r2bix\component\test_component.h" />
+    <ClInclude Include="src\test\test_r2bix\component\test_component___mesh_renderer.h" />
     <ClInclude Include="src\test\test_r2bix\component\test_component___static_mesh.h" />
     <ClInclude Include="src\test\test_r2bix\director\menu_director.h" />
     <ClInclude Include="src\test\test_r2bix\director\test_director.h" />
