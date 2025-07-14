@@ -82,6 +82,21 @@ namespace test_camera_3d
 
 				LS();
 
+				{
+					EXPECT_EQ( V( 0, 1, 0 ), cam.GetUp() );
+
+					SS();
+
+					DECLARATION_MAIN( const V v( 100, 0, 0 ) );
+					PROCESS_MAIN( cam.SetUp( v ) );
+
+					LF();
+
+					EXPECT_EQ( V( 1, 0, 0 ), cam.GetUp() );
+				}
+
+				LS();
+
 				return r2tm::eDoLeaveAction::Pause;
 			};
 	}
