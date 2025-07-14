@@ -6,6 +6,7 @@
 
 #include "r2bix_render_Camera3D.h"
 
+#include "r2helper_STDPrinter4Vector3.h"
 
 namespace test_camera_3d
 {
@@ -44,5 +45,44 @@ namespace test_camera_3d
 
 			return r2tm::eDoLeaveAction::Pause;
 		};
+	}
+
+
+
+	r2tm::TitleFunctionT Basic::GetTitleFunction() const
+	{
+		return []()->const char*
+			{
+				return "Camera3D : Basic";
+			};
+	}
+	r2tm::DoFunctionT Basic::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+			{
+				LS();
+
+				DECLARATION_MAIN( using V = r2bix_render::Camera3D::Vec3 );
+				DECLARATION_MAIN( r2bix_render::Camera3D cam );
+
+				LS();
+
+				{
+					EXPECT_EQ( V( 0, 0, 0 ), cam.GetPosition() );
+
+					SS();
+
+					DECLARATION_MAIN( const V v( 10, 20, 30 ) );
+					PROCESS_MAIN( cam.SetPosition( v ) );
+
+					LF();
+
+					EXPECT_EQ( v, cam.GetPosition() );
+				}
+
+				LS();
+
+				return r2tm::eDoLeaveAction::Pause;
+			};
 	}
 }
