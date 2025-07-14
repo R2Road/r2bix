@@ -32,9 +32,16 @@ r2tm::DescriptionFunctionT Menu_R2bix::GetDescriptionFunction() const
 		return
 					"### 현재 작업 ###"
 			"\n"
+
+			"\n"	"+ " "기존 2D 기능은 그대로 두고 새 코드로 대체 한다."
+
+			"\n"
+
 			"\n"	"+ " "System"
-			"\n"	"\t"	"> "	"Director"
-			"\n"	"\t"	"\t"	"[~] " "Add : Root Node"
+			"\n"	"\t"	"> "	"Renderer"
+			"\n"	"\t"	"\t"	"[o] " "Add : Static Mesh Component"
+			"\n"	"\t"	"\t"	"[~] " "Add : Camera3D"
+			"\n"	"\t"	"\t"	"[ ] " "Add : Static Mesh Renderer"
 		;
 	};
 }
