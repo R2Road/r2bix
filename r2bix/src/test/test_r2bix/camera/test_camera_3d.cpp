@@ -68,6 +68,10 @@ namespace test_camera_3d
 				LS();
 
 				{
+					OUTPUT_SUBJECT( "Position" );
+
+					LF();
+
 					EXPECT_EQ( V( 0, 0, 0 ), cam.GetPosition() );
 
 					SS();
@@ -83,6 +87,10 @@ namespace test_camera_3d
 				LS();
 
 				{
+					OUTPUT_SUBJECT( "Up" );
+
+					LF();
+
 					EXPECT_EQ( V( 0, 1, 0 ), cam.GetUp() );
 
 					SS();
