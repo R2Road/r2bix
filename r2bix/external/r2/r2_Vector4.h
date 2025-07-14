@@ -86,19 +86,6 @@ namespace r2
 
 
 
-	inline float dot( const Vector4& v1, const Vector4& v2 )
-	{
-		return ( v1.x * v2.x ) + ( v1.y * v2.y ) + ( v1.z * v2.z ) + ( v1.w * v2.w );
-	}
-	inline Vector4 cross( const Vector4& v1, const Vector4& v2 )
-	{
-		return Vector4{
-			  ( v1.y * v2.z ) - ( v1.z * v2.y )
-			, ( v1.z * v2.x ) - ( v1.x * v2.z )
-			, ( v1.x * v2.y ) - ( v1.y * v2.x )
-			, 0.f
-		};
-	}
 	inline float length( const Vector4& v )
 	{
 		return std::sqrt( ( v.x * v.x ) + ( v.y * v.y ) + ( v.z * v.z ) );
@@ -121,5 +108,18 @@ namespace r2
 				, v.w
 			}
 		);
+	}
+	inline float dot( const Vector4& v1, const Vector4& v2 )
+	{
+		return ( v1.x * v2.x ) + ( v1.y * v2.y ) + ( v1.z * v2.z ) + ( v1.w * v2.w );
+	}
+	inline Vector4 cross( const Vector4& v1, const Vector4& v2 )
+	{
+		return Vector4{
+			  ( v1.y * v2.z ) - ( v1.z * v2.y )
+			, ( v1.z * v2.x ) - ( v1.x * v2.z )
+			, ( v1.x * v2.y ) - ( v1.y * v2.x )
+			, 0.f
+		};
 	}
 }

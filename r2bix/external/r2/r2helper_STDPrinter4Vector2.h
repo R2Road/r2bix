@@ -1,9 +1,27 @@
 #pragma once
 
+#include <iomanip>
 #include <ostream>
 
 #include "r2_NoneCopyable.h"
 #include "r2_Vector2.h"
+
+inline std::ostream& operator<<( std::ostream& o, const r2::Vector2& v )
+{
+	static const int w = 10;
+
+	return o
+		<< std::left
+
+		<< "\t"
+
+		<< "   "
+		"x : " << std::setw( w ) << v.x
+		<< "   "
+		"y : " << std::setw( w ) << v.y
+
+		<< std::right;
+}
 
 namespace r2helper
 {
@@ -15,20 +33,18 @@ namespace r2helper
 	public:
 		inline static void Print( const r2::Vector2& v )
 		{
+			static const int w = 10;
+
 			std::cout
+				<< std::left
+
 				<< "\t" "Vector2"
 
-				<< "      "
-				   "x : " << v.x
-				<< "      "
-				   "y : " << v.y
+				<< v
 
-				<< "\n";
+				<< "\n"
+
+				<< std::right;
 		}
 	};
-}
-
-inline std::ostream& operator<<( std::ostream& o, const r2::Vector2& v )
-{
-	return o << v.x << "   " << v.y;
 }
