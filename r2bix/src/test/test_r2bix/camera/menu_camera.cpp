@@ -3,6 +3,7 @@
 #include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test_camera.h"
+#include "test_camera_3d.h"
 
 #include "test/test_r2bix/menu_r2bix.h"
 
@@ -31,6 +32,12 @@ r2tm::WriteFunctionT Menu_Camera::GetWriteFunction() const
 		mp->AddItem( '2', test_camera::CameraPosition() );
 		mp->AddItem( '3', test_camera::CameraRect() );
 		mp->AddItem( '4', test_camera::CameraMove() );
+
+
+		mp->AddLineFeed();
+
+
+		mp->AddItem( 'q', test_camera_3d::Declaration() );
 
 
 		mp->AddSplit();

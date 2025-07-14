@@ -121,6 +121,7 @@
     <ClCompile Include="src\r2bix\r2bix_node_UIPannelNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_UISimpleButtonNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_UITextFieldNode.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_render_Camera3D.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.cpp" />
     <ClCompile Include="src\r2bix\r2bix_table_TextureTableBase.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="src\test\test_r2bix\action\test_action.cpp" />
     <ClCompile Include="src\test\test_r2bix\camera\menu_camera.cpp" />
     <ClCompile Include="src\test\test_r2bix\camera\test_camera.cpp" />
+    <ClCompile Include="src\test\test_r2bix\camera\test_camera_3d.cpp" />
     <ClCompile Include="src\test\test_r2bix\color\menu_color.cpp" />
     <ClCompile Include="src\test\test_r2bix\color\test_color_value.cpp" />
     <ClCompile Include="src\test\test_r2bix\component\menu_component.cpp" />
@@ -429,6 +431,7 @@
     <ClInclude Include="src\r2bix\r2bix_node_UIPannelNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_UISimpleButtonNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_UITextFieldNode.h" />
+    <ClInclude Include="src\r2bix\r2bix_render_Camera3D.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\r2bix\r2bix_table_TextureTableBase.h" />
@@ -469,6 +472,7 @@
     <ClInclude Include="src\test\test_r2bix\action\test_action.h" />
     <ClInclude Include="src\test\test_r2bix\camera\menu_camera.h" />
     <ClInclude Include="src\test\test_r2bix\camera\test_camera.h" />
+    <ClInclude Include="src\test\test_r2bix\camera\test_camera_3d.h" />
     <ClInclude Include="src\test\test_r2bix\color\menu_color.h" />
     <ClInclude Include="src\test\test_r2bix\color\test_color_value.h" />
     <ClInclude Include="src\test\test_r2bix\component\menu_component.h" />

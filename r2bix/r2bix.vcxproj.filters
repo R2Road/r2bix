@@ -668,6 +668,12 @@
     <ClCompile Include="src\r2bix\r2bix_component_MeshRendererComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_render_Camera3D.cpp">
+      <Filter>r2bix\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test_r2bix\camera\test_camera_3d.cpp">
+      <Filter>test\test_r2bix\camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pmr\pmr_CompanyScene.h">
@@ -1591,6 +1597,12 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_MeshRendererComponent.h">
       <Filter>r2bix\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_render_Camera3D.h">
+      <Filter>r2bix\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test_r2bix\camera\test_camera_3d.h">
+      <Filter>test\test_r2bix\camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
