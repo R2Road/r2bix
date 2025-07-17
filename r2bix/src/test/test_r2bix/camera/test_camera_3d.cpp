@@ -105,6 +105,25 @@ namespace test_camera_3d
 
 			LS();
 
+			{
+				OUTPUT_SUBJECT( "Look" );
+
+				LF();
+
+				EXPECT_EQ( V( 0, 0, -1 ), cam.GetLook() );
+
+				SS();
+
+				DECLARATION_MAIN( const V v( 0, 0, -100 ) );
+				PROCESS_MAIN( cam.SetLook( v ) );
+
+				LF();
+
+				EXPECT_EQ( v, cam.GetLook() );
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}

@@ -22,6 +22,10 @@ namespace r2bix
 		{
 			return mUp;
 		}
+		Vec3 GetLook() const
+		{
+			return mLook;
+		}
 
 		void SetPosition( const Vec3 new_position )
 		{
@@ -30,6 +34,10 @@ namespace r2bix
 		void SetUp( const Vec3 new_up )
 		{
 			mUp = r2::normalize( new_up );
+		}
+		void SetLook( const Vec3 new_look )
+		{
+			mLook = new_look;
 		}
 
 		//
@@ -43,5 +51,6 @@ namespace r2bix
 	private:
 		Vec3 mPosition;
 		Vec3 mUp;
+		Vec3 mLook;
 	};
 }
