@@ -1625,5 +1625,11 @@
     <ClInclude Include="src\r2bix\r2bix_Camera3D.h">
       <Filter>r2bix\camera</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Degree.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Radian.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,11 +5,13 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.07.15 PM.03.50
+// # Last Update		: 2025.07.17 PM.11.40
 // # Version			: 1.0.0.0
 //
 
 #pragma once
+
+#include "r2_Epsilon.h"
 
 namespace r2
 {
@@ -21,9 +23,40 @@ namespace r2
 		explicit Degree( const float new_value ) : mValue( new_value )
 		{}
 
-		Degree operator*( const float value ) const
+		bool operator==( const Degree degree )
 		{
-			return Degree( mValue * value );
+			return r2::epsilon_equal( mValue, degree.mValue );
+		}
+		bool operator!=( const Degree degree )
+		{
+			return !( *this == degree );
+		}
+
+		Degree operator+( const Degree degree )
+		{
+			return Degree( mValue + degree.mValue );
+		}
+		void operator+=( const Degree degree )
+		{
+			mValue += degree.mValue;
+		}
+
+		Degree operator-( const Degree degree )
+		{
+			return Degree( mValue - degree.mValue );
+		}
+		void operator-=( const Degree degree )
+		{
+			mValue -= degree.mValue;
+		}
+
+		Degree operator*( const float scalar ) const
+		{
+			return Degree( mValue * scalar );
+		}
+		void operator*=( const float scalar )
+		{
+			mValue *= scalar;
 		}
 
 		float Get() const

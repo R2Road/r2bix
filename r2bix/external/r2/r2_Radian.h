@@ -5,11 +5,13 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.07.15 PM.04.05
+// # Last Update		: 2025.07.17 PM.11.40
 // # Version			: 1.0.0.0
 //
 
 #pragma once
+
+#include "r2_Epsilon.h"
 
 namespace r2
 {
@@ -20,6 +22,42 @@ namespace r2
 		{}
 		explicit Radian( const float new_value ) : mValue( new_value )
 		{}
+
+		bool operator==( const Radian radian )
+		{
+			return r2::epsilon_equal( mValue, radian.mValue );
+		}
+		bool operator!=( const Radian radian )
+		{
+			return !( *this == radian );
+		}
+
+		Radian operator+( const Radian radian )
+		{
+			return Radian( mValue + radian.mValue );
+		}
+		void operator+=( const Radian radian )
+		{
+			mValue += radian.mValue;
+		}
+
+		Radian operator-( const Radian radian )
+		{
+			return Radian( mValue - radian.mValue );
+		}
+		void operator-=( const Radian radian )
+		{
+			mValue -= radian.mValue;
+		}
+
+		Radian operator*( const float scalar ) const
+		{
+			return Radian( mValue * scalar );
+		}
+		void operator*=( const float scalar )
+		{
+			mValue *= scalar;
+		}
 
 		float Get() const
 		{

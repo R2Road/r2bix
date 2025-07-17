@@ -218,6 +218,7 @@
     <ClInclude Include="external\r2tm\r2tm_StopWatch.h" />
     <ClInclude Include="external\r2tm\r2tm_VersionInfo.h" />
     <ClInclude Include="external\r2tm\r2tm_WindowsUtility.h" />
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Degree.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Direction4Sequential.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Direction8Bitwise.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Direction8BitwiseLimited.h" />
@@ -226,6 +227,7 @@
     <ClInclude Include="external\r2\r2helper_STDPrinter4PivotAndSize.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Point.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Quaternion.h" />
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Radian.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Range.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Rect.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Size.h" />
