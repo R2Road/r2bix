@@ -136,6 +136,9 @@
     <Filter Include="test\test_r2bix\variable">
       <UniqueIdentifier>{ad1df904-b64d-41ca-a907-6962189f53d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="r2bix\camera">
+      <UniqueIdentifier>{8a57421b-bb85-4a7c-99e1-1e15ccb17afd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -322,9 +325,6 @@
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.cpp">
       <Filter>r2bix\table</Filter>
-    </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_render_Camera.cpp">
-      <Filter>r2bix\render</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_render_Texture.cpp">
       <Filter>r2bix\render</Filter>
@@ -560,9 +560,6 @@
     <ClCompile Include="src\r2bix\r2bix_component_MeshRendererComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_render_Camera3D.cpp">
-      <Filter>r2bix\render</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\camera\test_camera_3d.cpp">
       <Filter>test\test_r2bix\camera</Filter>
     </ClCompile>
@@ -673,6 +670,12 @@
     </ClCompile>
     <ClCompile Include="external\r2\r2_SizeUChar.cpp">
       <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_render_Camera.cpp">
+      <Filter>r2bix\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2bix\r2bix_render_Camera3D.cpp">
+      <Filter>r2bix\camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -889,9 +892,6 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_table_TextureFrameAnimationInfo.h">
       <Filter>r2bix\table</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_render_Camera.h">
-      <Filter>r2bix\render</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_render_iRenderTarget.h">
       <Filter>r2bix\render</Filter>
@@ -1225,9 +1225,6 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_MeshRendererComponent.h">
       <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_render_Camera3D.h">
-      <Filter>r2bix\render</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_r2bix\camera\test_camera_3d.h">
       <Filter>test\test_r2bix\camera</Filter>
@@ -1621,6 +1618,12 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_SizeUChar.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_render_Camera.h">
+      <Filter>r2bix\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2bix\r2bix_render_Camera3D.h">
+      <Filter>r2bix\camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
