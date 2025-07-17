@@ -39,6 +39,7 @@ r2tm::WriteFunctionT Menu_Camera::GetWriteFunction() const
 
 		mp->AddItem( 'q', test_camera_3d::Declaration() );
 		mp->AddItem( 'w', test_camera_3d::Basic() );
+		mp->AddItem( 'e', test_camera_3d::Move() );
 
 
 		mp->AddSplit();

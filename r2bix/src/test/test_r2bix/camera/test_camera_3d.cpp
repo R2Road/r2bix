@@ -108,4 +108,62 @@ namespace test_camera_3d
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Move::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera3D : Move";
+		};
+	}
+	r2tm::DoFunctionT Move::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( using V = r2bix::Camera3D::Vec3 );
+			DECLARATION_MAIN( r2bix::Camera3D cam );
+
+			LF();
+
+			DECLARATION_MAIN( const V v( 10, 20, 30 ) );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Move" );
+
+				LF();
+
+				EXPECT_EQ( V( 0, 0, 0 ), cam.GetPosition() );
+
+				SS();
+
+				{
+					PROCESS_MAIN( cam.Move( v ) );
+
+					LF();
+
+					EXPECT_EQ( v, cam.GetPosition() );
+				}
+
+				SS();
+				
+				{
+					PROCESS_MAIN( cam.Move( v ) );
+
+					LF();
+
+					EXPECT_EQ( v + v, cam.GetPosition() );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

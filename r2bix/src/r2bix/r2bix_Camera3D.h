@@ -32,6 +32,14 @@ namespace r2bix
 			mUp = r2::normalize( new_up );
 		}
 
+		//
+		//
+		//
+		void Move( const Vec3 move_amount )
+		{
+			mPosition += move_amount;
+		}
+
 	private:
 		Vec3 mPosition;
 		Vec3 mUp;
