@@ -59,53 +59,53 @@ namespace test_camera_3d
 	r2tm::DoFunctionT Basic::GetDoFunction() const
 	{
 		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( using V = r2bix::Camera3D::Vec3 );
+			DECLARATION_MAIN( r2bix::Camera3D cam );
+
+			LS();
+
 			{
-				LS();
+				OUTPUT_SUBJECT( "Position" );
 
-				DECLARATION_MAIN( using V = r2bix::Camera3D::Vec3 );
-				DECLARATION_MAIN( r2bix::Camera3D cam );
+				LF();
 
-				LS();
+				EXPECT_EQ( V( 0, 0, 0 ), cam.GetPosition() );
 
-				{
-					OUTPUT_SUBJECT( "Position" );
+				SS();
 
-					LF();
+				DECLARATION_MAIN( const V v( 10, 20, 30 ) );
+				PROCESS_MAIN( cam.SetPosition( v ) );
 
-					EXPECT_EQ( V( 0, 0, 0 ), cam.GetPosition() );
+				LF();
 
-					SS();
+				EXPECT_EQ( v, cam.GetPosition() );
+			}
 
-					DECLARATION_MAIN( const V v( 10, 20, 30 ) );
-					PROCESS_MAIN( cam.SetPosition( v ) );
+			LS();
 
-					LF();
+			{
+				OUTPUT_SUBJECT( "Up" );
 
-					EXPECT_EQ( v, cam.GetPosition() );
-				}
+				LF();
 
-				LS();
+				EXPECT_EQ( V( 0, 1, 0 ), cam.GetUp() );
 
-				{
-					OUTPUT_SUBJECT( "Up" );
+				SS();
 
-					LF();
+				DECLARATION_MAIN( const V v( 100, 0, 0 ) );
+				PROCESS_MAIN( cam.SetUp( v ) );
 
-					EXPECT_EQ( V( 0, 1, 0 ), cam.GetUp() );
+				LF();
 
-					SS();
+				EXPECT_EQ( V( 1, 0, 0 ), cam.GetUp() );
+			}
 
-					DECLARATION_MAIN( const V v( 100, 0, 0 ) );
-					PROCESS_MAIN( cam.SetUp( v ) );
+			LS();
 
-					LF();
-
-					EXPECT_EQ( V( 1, 0, 0 ), cam.GetUp() );
-				}
-
-				LS();
-
-				return r2tm::eDoLeaveAction::Pause;
-			};
+			return r2tm::eDoLeaveAction::Pause;
+		};
 	}
 }
