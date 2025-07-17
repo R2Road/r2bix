@@ -1,6 +1,6 @@
 #include "r2bix_Camera3D.h"
 
-namespace r2bix_render
+namespace r2bix
 {
 	Camera3D::Camera3D() :
 		  mPosition()

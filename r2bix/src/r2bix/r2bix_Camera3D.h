@@ -2,7 +2,7 @@
 
 #include "r2_Vector3.h"
 
-namespace r2bix_render
+namespace r2bix
 {
 	class Camera3D
 	{

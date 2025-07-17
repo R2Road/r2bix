@@ -28,7 +28,7 @@ namespace test_camera_3d
 
 				SS();
 
-				DECLARATION_MAIN( r2bix_render::Camera3D cam );
+				DECLARATION_MAIN( r2bix::Camera3D cam );
 
 				SS();
 
@@ -62,8 +62,8 @@ namespace test_camera_3d
 			{
 				LS();
 
-				DECLARATION_MAIN( using V = r2bix_render::Camera3D::Vec3 );
-				DECLARATION_MAIN( r2bix_render::Camera3D cam );
+				DECLARATION_MAIN( using V = r2bix::Camera3D::Vec3 );
+				DECLARATION_MAIN( r2bix::Camera3D cam );
 
 				LS();
 
