@@ -101,6 +101,10 @@ namespace test_camera_3d
 				LF();
 
 				EXPECT_EQ( V( 1, 0, 0 ), cam.GetUp() );
+
+				LF();
+
+				OUTPUT_NOTE( "normalize Àû¿ë" );
 			}
 
 			LS();
