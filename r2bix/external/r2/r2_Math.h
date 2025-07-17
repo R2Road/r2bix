@@ -24,19 +24,22 @@ const float R_2PI = R_PI * 2;
 const float R_PI_2 = static_cast<float>( M_PI_2 );
 const float R_PI_4 = static_cast<float>( M_PI_4 );
 
+#include "r2_Degree.h"
+#include "r2_Radian.h"
+
 namespace r2
 {
 
-	inline float deg2rad( const float degree )
+	inline Radian deg2rad( const Degree degree )
 	{
 		static const float t = R_PI / 180.f;
-		return ( degree * t );
+		return Radian( degree.Get() * t );
 	}
 
-	inline float rad2deg( const float radian )
+	inline Degree rad2deg( const Radian radian )
 	{
 		static const float t = 180.f / R_PI;
-		return ( radian * t );
+		return Degree( radian.Get() * t );
 	}
 
 }

@@ -225,6 +225,7 @@
     <ClInclude Include="external\r2\r2helper_STDPrinter4Matrix4.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4PivotAndSize.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Point.h" />
+    <ClInclude Include="external\r2\r2helper_STDPrinter4Quaternion.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Range.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Rect.h" />
     <ClInclude Include="external\r2\r2helper_STDPrinter4Size.h" />
@@ -264,6 +265,7 @@
     <ClInclude Include="external\r2\r2_CountLimiterInt.h" />
     <ClInclude Include="external\r2\r2_Debug.h" />
     <ClInclude Include="external\r2\r2_DebugProcess.h" />
+    <ClInclude Include="external\r2\r2_Degree.h" />
     <ClInclude Include="external\r2\r2_Direction4BitwiseLimited.h" />
     <ClInclude Include="external\r2\r2_Direction4BitwiseLimitedState.h" />
     <ClInclude Include="external\r2\r2_Direction4BitwiseState.h" />
@@ -306,7 +308,9 @@
     <ClInclude Include="external\r2\r2_PointChar.h" />
     <ClInclude Include="external\r2\r2_PointInt.h" />
     <ClInclude Include="external\r2\r2_PointUint.h" />
+    <ClInclude Include="external\r2\r2_Quaternion.h" />
     <ClInclude Include="external\r2\r2_Queue.h" />
+    <ClInclude Include="external\r2\r2_Radian.h" />
     <ClInclude Include="external\r2\r2_Random.h" />
     <ClInclude Include="external\r2\r2_Range.h" />
     <ClInclude Include="external\r2\r2_RangeChar.h" />
@@ -334,6 +338,8 @@
     <ClInclude Include="external\r2\r2_TypeTraits.h" />
     <ClInclude Include="external\r2\r2_UniqueIndex.h" />
     <ClInclude Include="external\r2\r2_UniqueIndexGenerator.h" />
+    <ClInclude Include="external\r2\r2_Value.h" />
+    <ClInclude Include="external\r2\r2_ValueAccumulator.h" />
     <ClInclude Include="external\r2\r2_ValueWithDirty.h" />
     <ClInclude Include="external\r2\r2_ValueWithHistory1.h" />
     <ClInclude Include="external\r2\r2_ValueWithHistory1AndCallback.h" />

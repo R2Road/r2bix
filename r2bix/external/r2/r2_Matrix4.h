@@ -13,6 +13,8 @@
 
 // REF : https://learn.microsoft.com/en-us/windows/win32/api/directxmath/ns-directxmath-xmmatrix?source=recommendations
 
+#include "r2_Quaternion.h"
+
 namespace r2
 {
 	struct Matrix4
@@ -33,6 +35,13 @@ namespace r2
 			, _21( __21 ), _22( __22 ), _23( __23 ), _24( __24 )
 			, _31( __31 ), _32( __32 ), _33( __33 ), _34( __34 )
 			, _41( __41 ), _42( __42 ), _43( __43 ), _44( __44 )
+		{}
+
+		explicit Matrix4( const r2::Quaternion q ) :
+			  _11( 1 - ( 2 *  q.y * q.y ) - ( 2 * q.z * q.z ) )  , _12( ( 2 * q.x * q.y ) - ( 2 * q.z * q.w ) )      , _13( ( 2 * q.x * q.z ) + ( 2 * q.y * q.w ) )      , _14( 0 )
+			, _21( ( 2 * q.x * q.y ) + ( 2 * q.z * q.w ) )       , _22( 1 - ( 2 * q.x * q.x ) - ( 2 * q.z * q.z ) )  , _23( ( 2 * q.y * q.z ) - ( 2 * q.x * q.w )  )     , _24( 0 )
+			, _31( ( 2 * q.x * q.z ) - ( 2 * q.y * q.w ) )       , _32( ( 2 * q.y * q.z ) + ( 2 * q.x * q.w )  )     , _33( 1 - ( 2 * q.x * q.x ) - ( 2 * q.y * q.y ) )  , _34( 0 )
+			, _41( 0 )                                           , _42( 0 )                                          , _43( 0 )                                          , _44( 1 )
 		{}
 
 		float _11;
@@ -255,7 +264,7 @@ namespace r2
 	// 오른손 좌표계
 	// > 축 기준 반시계 방향 회전이 기본
 	//
-	inline Matrix4 BuildMatrix4_RotationX( const float degree )
+	inline Matrix4 BuildMatrix4_RotationX( const r2::Degree degree )
 	{
 		//
 		//  -,  -,  -,  -
@@ -264,20 +273,20 @@ namespace r2
 		//  -,  -,  -,  -
 		//
 
-		const float radian = r2::deg2rad( degree );
+		const Radian radian = r2::deg2rad( degree );
 
 		Matrix4 ret;
 
 		// diagonal
-		ret._22 = std::cos( radian );
-		ret._33 = std::cos( radian );
+		ret._22 = std::cos( radian.Get() );
+		ret._33 = std::cos( radian.Get() );
 
-		ret._23 = -std::sin( radian );
-		ret._32 = std::sin( radian );
+		ret._23 = -std::sin( radian.Get() );
+		ret._32 = std::sin( radian.Get() );
 
 		return ret;
 	}
-	inline Matrix4 BuildMatrix4_RotationY( const float degree )
+	inline Matrix4 BuildMatrix4_RotationY( const r2::Degree degree )
 	{
 		//
 		//  c,  -,  s,  -
@@ -286,20 +295,20 @@ namespace r2
 		//  -,  -,  -,  -
 		//
 
-		const float radian = r2::deg2rad( degree );
+		const Radian radian = r2::deg2rad( degree );
 
 		Matrix4 ret;
 
 		// diagonal
-		ret._11 = std::cos( radian );
-		ret._33 = std::cos( radian );
+		ret._11 = std::cos( radian.Get() );
+		ret._33 = std::cos( radian.Get() );
 
-		ret._13 = std::sin( radian );
-		ret._31 = -std::sin( radian );
+		ret._13 = std::sin( radian.Get() );
+		ret._31 = -std::sin( radian.Get() );
 
 		return ret;
 	}
-	inline Matrix4 BuildMatrix4_RotationZ( const float degree )
+	inline Matrix4 BuildMatrix4_RotationZ( const r2::Degree degree )
 	{
 		//
 		//  c, -s,  -,  -
@@ -308,16 +317,16 @@ namespace r2
 		//  -,  -,  -,  -
 		//
 
-		const float radian = r2::deg2rad( degree );
+		const Radian radian = r2::deg2rad( degree );
 
 		Matrix4 ret;
 
 		// diagonal
-		ret._11 = std::cos( radian );
-		ret._22 = std::cos( radian );
+		ret._11 = std::cos( radian.Get() );
+		ret._22 = std::cos( radian.Get() );
 
-		ret._12 = -std::sin( radian );
-		ret._21 = std::sin( radian );
+		ret._12 = -std::sin( radian.Get() );
+		ret._21 = std::sin( radian.Get() );
 
 		return ret;
 	}

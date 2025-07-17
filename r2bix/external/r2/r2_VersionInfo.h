@@ -23,7 +23,7 @@ namespace r2
 
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '2';
-		const char VersionNumber_3 = '1';
+		const char VersionNumber_3 = '2';
 		const char VersionNumber_4 = '0';
 		const char VersionNumber_5 = '0';
 
@@ -52,6 +52,7 @@ namespace r2
 			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Vector3 : 출력 방식 개선"
 			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Vector2 : 출력 방식 개선"
 			"\n"	"[o] " "Update struct  : Vector3 : 함수 추가 : length, normalize, dot, cross"
+			"\n"	"[o] " "Add Struct     : Quaternion"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"

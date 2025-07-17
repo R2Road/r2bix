@@ -35,8 +35,6 @@ namespace r2helper
 	public:
 		inline static void Print( const r2::Vector3& v )
 		{
-			static const int w = 10;
-
 			std::cout
 				<< std::left
 

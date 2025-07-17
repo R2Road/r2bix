@@ -33,12 +33,20 @@ namespace r2
 		float z = 0.f;
 		float w = 0.f;
 	};
+	const Vector4 VEC4_X( 1.f, 0.f, 0.f, 1.f );
+	const Vector4 VEC4_Y( 0.f, 1.f, 0.f, 1.f );
+	const Vector4 VEC4_Z( 0.f, 0.f, 1.f, 1.f );
 
 
 
 	inline bool operator==( const Vector4& v1, const Vector4& v2 )
 	{
-		return ( v1.x == v2.x ) && ( v1.y == v2.y ) && ( v1.z == v2.z ) && ( v1.w == v2.w );
+		return (
+			   r2::epsilon_equal( v1.x, v2.x )
+			&& r2::epsilon_equal( v1.y, v2.y )
+			&& r2::epsilon_equal( v1.z, v2.z )
+			&& r2::epsilon_equal( v1.w, v2.w )
+		);
 	}
 	inline bool operator!=( const Vector4& v1, const Vector4& v2 )
 	{

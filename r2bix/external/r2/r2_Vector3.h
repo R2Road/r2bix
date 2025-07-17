@@ -27,6 +27,9 @@ namespace r2
 		float y = 0.f;
 		float z = 0.f;
 	};
+	const Vector3 VEC3_X( 1.f, 0.f, 0.f );
+	const Vector3 VEC3_Y( 0.f, 1.f, 0.f );
+	const Vector3 VEC3_Z( 0.f, 0.f, 1.f );
 
 
 
