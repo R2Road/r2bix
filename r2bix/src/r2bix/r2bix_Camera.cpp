@@ -1,6 +1,6 @@
 #include "r2bix_Camera.h"
 
-namespace r2bix_render
+namespace r2bix
 {
 	Camera::Camera(
 		const PointT::ValueT& x, const PointT::ValueT& y

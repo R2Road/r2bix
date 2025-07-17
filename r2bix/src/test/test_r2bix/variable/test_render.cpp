@@ -36,7 +36,7 @@ namespace test_render
 			mRect.Set( rect_offset.GetX(), rect_offset.GetY(), mTexture.GetWidth() - 1, mTexture.GetHeight() - 1 );
 		}
 
-		void Render( const r2bix_render::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt /*offset*/ ) override
+		void Render( const r2bix::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt /*offset*/ ) override
 		{
 			std::cout << "world space : my pos : " << mPosition.GetX() << "   " << mPosition.GetY() << r2tm::linefeed;
 			std::cout << "world space : camera pos : " << camera->GetPoint().GetX() << "   " << camera->GetPoint().GetY() << r2tm::linefeed2;
@@ -140,7 +140,7 @@ namespace test_render
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_render::Camera camera( 20, 25, 20, 10 ) );
+			DECLARATION_MAIN( r2bix::Camera camera( 20, 25, 20, 10 ) );
 			DECLARATION_MAIN( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_MAIN( r2bix::Director director( {} ) );
 			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( director ) );

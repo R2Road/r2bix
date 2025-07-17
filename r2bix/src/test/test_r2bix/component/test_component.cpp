@@ -289,7 +289,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -341,7 +341,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -417,7 +417,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 13, 7 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 13, 7 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -484,7 +484,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 7 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 7 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -552,7 +552,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -624,7 +624,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 18, 8 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 18, 8 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -696,7 +696,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
 			LF();
@@ -752,7 +752,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 6 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -834,7 +834,7 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 10 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 10 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -917,7 +917,7 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 20, 25, 14, 10 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 10 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -1000,7 +1000,7 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 14, 10 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 14, 10 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -1146,7 +1146,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 18, 8 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 18, 8 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
@@ -1358,7 +1358,7 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 18, 8 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 18, 8 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );

@@ -105,7 +105,7 @@ namespace r2bix
 		r2::SizeInt mScreenSIze;
 		r2::Point<short> mScreenOffset;
 
-		r2bix_render::Camera mCamera;
+		r2bix::Camera mCamera;
 		r2bix_render::Texture mRenderTarget;
 
 		r2bix_input::InputManager mInputManager;

@@ -227,7 +227,7 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
@@ -295,7 +295,7 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
@@ -520,7 +520,7 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
@@ -843,7 +843,7 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
@@ -885,7 +885,7 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 
@@ -949,7 +949,7 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix_render::Camera camera( 0, 0, 13, 5 ) );
+			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
 			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
 

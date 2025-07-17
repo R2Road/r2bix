@@ -2,7 +2,7 @@
 
 #include "r2_RectInt.h"
 
-namespace r2bix_render
+namespace r2bix
 {
 	class Camera
 	{

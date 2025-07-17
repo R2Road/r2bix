@@ -31,7 +31,7 @@ namespace test_camera
 
 			DECLARATION_MAIN( const r2::Point<int> position( 20, 30 ) );
 			DECLARATION_MAIN( const r2::Size<int> size( 10, 50 ) );
-			DECLARATION_MAIN( r2bix_render::Camera camera( position, size ) );
+			DECLARATION_MAIN( r2bix::Camera camera( position, size ) );
 
 			LS();
 
@@ -86,7 +86,7 @@ namespace test_camera
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_render::Camera camera( 20, 30, 20, 10 ) );
+			DECLARATION_MAIN( r2bix::Camera camera( 20, 30, 20, 10 ) );
 
 			LS();
 
@@ -122,11 +122,11 @@ namespace test_camera
 		{
 			LS();
 
-			r2bix_render::Camera camera( 20, 30, 20, 10 );
+			r2bix::Camera camera( 20, 30, 20, 10 );
 
 			{
 				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
-				std::cout << r2tm::tab2 << "r2bix_render::Camera camera( { 20, 30 }, { 20, 10 } );" << r2tm::linefeed;
+				std::cout << r2tm::tab2 << "r2bix::Camera camera( { 20, 30 }, { 20, 10 } );" << r2tm::linefeed;
 			}
 
 			LS();
@@ -168,7 +168,7 @@ namespace test_camera
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_render::Camera camera( 20, 30, 19, 9 ) );
+			DECLARATION_MAIN( r2bix::Camera camera( 20, 30, 19, 9 ) );
 
 			LS();
 

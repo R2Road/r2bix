@@ -13,12 +13,12 @@
 
 namespace r2bix
 {
+	class Camera;
 	class Director;
 }
 
 namespace r2bix_render
 {
-	class Camera;
 	class iRenderTarget;
 }
 
@@ -165,7 +165,7 @@ namespace r2bix_component
 		{}
 
 	public:
-		virtual void Render( const r2bix_render::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
+		virtual void Render( const r2bix::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
 		{}
 
 
