@@ -29,7 +29,7 @@ namespace r2bix_render
 		}
 		void SetUp( const Vec3 new_up )
 		{
-			mUp = new_up;
+			mUp = r2::normalize( new_up );
 		}
 
 	private:
