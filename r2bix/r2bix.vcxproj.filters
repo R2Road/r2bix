@@ -671,7 +671,7 @@
     <ClCompile Include="external\r2\r2_SizeUChar.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_render_Camera.cpp">
+    <ClCompile Include="src\r2bix\r2bix_Camera.cpp">
       <Filter>r2bix\camera</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_render_Camera3D.cpp">
@@ -1619,7 +1619,7 @@
     <ClInclude Include="external\r2\r2_SizeUChar.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_render_Camera.h">
+    <ClInclude Include="src\r2bix\r2bix_Camera.h">
       <Filter>r2bix\camera</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_render_Camera3D.h">

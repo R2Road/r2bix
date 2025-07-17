@@ -3,7 +3,7 @@
 #include "r2bix_node_Node.h"
 #include "r2bix_DebugConfig.h"
 #include "r2bix_component_TransformComponent.h"
-#include "r2bix_render_Camera.h"
+#include "r2bix_Camera.h"
 #include "r2bix_render_Texture.h"
 
 namespace r2bix_component

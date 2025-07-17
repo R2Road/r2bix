@@ -11,7 +11,7 @@
 #include "r2bix_director_ScreenBufferManager.h"
 #include "r2bix_input_InputManager.h"
 #include "r2bix_node_Node.h"
-#include "r2bix_render_Camera.h"
+#include "r2bix_Camera.h"
 #include "r2bix_render_Texture.h"
 
 

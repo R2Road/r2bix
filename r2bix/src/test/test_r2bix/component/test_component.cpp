@@ -16,7 +16,7 @@
 #include "r2bix_component_UIButtonComponent.h"
 #include "r2bix_component_UIControlComponent.h"
 #include "r2bix_component_UIPannelComponent.h"
-#include "r2bix_render_Camera.h"
+#include "r2bix_Camera.h"
 #include "r2bix_render_Texture.h"
 #include "r2bix_render_TextureFrame.h"
 #include "helper/r2bix_helper_Printer4Texture.h"

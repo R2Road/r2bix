@@ -143,7 +143,7 @@
     <ClCompile Include="src\r2bix\r2bix_node_PivotNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_SpriteAnimationNode.cpp" />
     <ClCompile Include="src\r2bix\r2bix_node_SpriteNode.cpp" />
-    <ClCompile Include="src\r2bix\r2bix_render_Camera.cpp" />
+    <ClCompile Include="src\r2bix\r2bix_Camera.cpp" />
     <ClCompile Include="src\r2bix\r2bix_render_Texture.cpp" />
     <ClCompile Include="src\r2bix\r2bix_render_TextureFrame.cpp" />
     <ClCompile Include="src\r2bix\r2bix_ui_Constant.cpp" />
@@ -461,7 +461,7 @@
     <ClInclude Include="src\r2bix\r2bix_node_PivotNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_SpriteAnimationNode.h" />
     <ClInclude Include="src\r2bix\r2bix_node_SpriteNode.h" />
-    <ClInclude Include="src\r2bix\r2bix_render_Camera.h" />
+    <ClInclude Include="src\r2bix\r2bix_Camera.h" />
     <ClInclude Include="src\r2bix\r2bix_render_iRenderTarget.h" />
     <ClInclude Include="src\r2bix\r2bix_render_Texture.h" />
     <ClInclude Include="src\r2bix\r2bix_render_TextureFrame.h" />

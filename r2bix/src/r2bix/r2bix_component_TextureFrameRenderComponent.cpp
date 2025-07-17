@@ -6,7 +6,7 @@
 
 #include "r2bix_node_Node.h"
 
-#include "r2bix_render_Camera.h"
+#include "r2bix_Camera.h"
 #include "r2bix_render_TextureFrame.h"
 
 namespace r2bix_component
