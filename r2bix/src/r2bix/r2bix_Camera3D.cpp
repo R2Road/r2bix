@@ -1,4 +1,4 @@
-#include "r2bix_render_Camera3D.h"
+#include "r2bix_Camera3D.h"
 
 namespace r2bix_render
 {

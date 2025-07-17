@@ -4,7 +4,7 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-#include "r2bix_render_Camera3D.h"
+#include "r2bix_Camera3D.h"
 
 #include "r2helper_STDPrinter4Vector3.h"
 

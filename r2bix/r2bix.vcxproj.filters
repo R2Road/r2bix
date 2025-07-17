@@ -674,7 +674,7 @@
     <ClCompile Include="src\r2bix\r2bix_Camera.cpp">
       <Filter>r2bix\camera</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2bix_render_Camera3D.cpp">
+    <ClCompile Include="src\r2bix\r2bix_Camera3D.cpp">
       <Filter>r2bix\camera</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1622,7 +1622,7 @@
     <ClInclude Include="src\r2bix\r2bix_Camera.h">
       <Filter>r2bix\camera</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2bix_render_Camera3D.h">
+    <ClInclude Include="src\r2bix\r2bix_Camera3D.h">
       <Filter>r2bix\camera</Filter>
     </ClInclude>
   </ItemGroup>
