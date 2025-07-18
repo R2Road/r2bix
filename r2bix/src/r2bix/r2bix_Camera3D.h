@@ -53,38 +53,38 @@ namespace r2bix
 		{
 			mLook = new_look;
 		}
-		void SetRotationX( const Radian rotation_x )
+		void SetRotationX( const Radian rotation_to )
 		{
-			mRotationX = rotation_x;
+			mRotationX = rotation_to;
 		}
-		void SetRotationY( const Radian rotation_y )
+		void SetRotationY( const Radian rotation_to )
 		{
-			mRotationY = rotation_y;
+			mRotationY = rotation_to;
 		}
-		void SetRotationZ( const Radian rotation_z )
+		void SetRotationZ( const Radian rotation_to )
 		{
-			mRotationZ = rotation_z;
-		}
-
-		//
-		//
-		//
-		void Move( const Vec3 move_amount )
-		{
-			mPosition += move_amount;
+			mRotationZ = rotation_to;
 		}
 
-		void RotationX( const Radian rotation_amount )
+		//
+		//
+		//
+		void Move( const Vec3 move_by )
 		{
-			mRotationX += rotation_amount;
+			mPosition += move_by;
 		}
-		void RotationY( const Radian rotation_amount )
+
+		void RotationX( const Radian rotation_by )
 		{
-			mRotationY += rotation_amount;
+			mRotationX += rotation_by;
 		}
-		void RotationZ( const Radian rotation_amount )
+		void RotationY( const Radian rotation_by )
 		{
-			mRotationZ += rotation_amount;
+			mRotationY += rotation_by;
+		}
+		void RotationZ( const Radian rotation_by )
+		{
+			mRotationZ += rotation_by;
 		}
 
 	private:
