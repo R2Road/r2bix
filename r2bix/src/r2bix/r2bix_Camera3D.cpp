@@ -6,5 +6,8 @@ namespace r2bix
 		  mPosition()
 		, mUp( 0, 1, 0 )
 		, mLook( 0, 0, -1 )
+		, mRotationX()
+		, mRotationY()
+		, mRotationZ()
 	{}
 }

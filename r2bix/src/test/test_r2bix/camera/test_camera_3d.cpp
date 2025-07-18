@@ -6,6 +6,7 @@
 
 #include "r2bix_Camera3D.h"
 
+#include "r2helper_STDPrinter4Degree.h"
 #include "r2helper_STDPrinter4Vector3.h"
 
 namespace test_camera_3d
@@ -181,6 +182,90 @@ namespace test_camera_3d
 					LF();
 
 					EXPECT_EQ( v + v, cam.GetPosition() );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Rotation::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera3D : Rotation";
+		};
+	}
+	r2tm::DoFunctionT Rotation::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( r2bix::Camera3D cam );
+			DECLARATION_MAIN( const r2::Degree degree( 30.f ) );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "X" );
+
+				LF();
+
+				EXPECT_EQ( r2::Degree(), cam.GetRotationX() );
+
+				SS();
+
+				{
+					PROCESS_MAIN( cam.RotationX( degree ) );
+
+					LF();
+
+					EXPECT_EQ( degree, cam.GetRotationX() );
+				}
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Y" );
+
+				LF();
+
+				EXPECT_EQ( r2::Degree(), cam.GetRotationY() );
+
+				SS();
+
+				{
+					PROCESS_MAIN( cam.RotationY( degree ) );
+
+					LF();
+
+					EXPECT_EQ( degree, cam.GetRotationY() );
+				}
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Z" );
+
+				LF();
+
+				EXPECT_EQ( r2::Degree(), cam.GetRotationZ() );
+
+				SS();
+
+				{
+					PROCESS_MAIN( cam.RotationZ( degree ) );
+
+					LF();
+
+					EXPECT_EQ( degree, cam.GetRotationZ() );
 				}
 			}
 
