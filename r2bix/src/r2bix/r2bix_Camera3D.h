@@ -41,6 +41,9 @@ namespace r2bix
 			return mRotationZ;
 		}
 
+		//
+		//
+		//
 		void SetPosition( const Vec3 new_position )
 		{
 			mPosition = new_position;
@@ -66,9 +69,6 @@ namespace r2bix
 			mRotationZ = rotation_to;
 		}
 
-		//
-		//
-		//
 		void Move( const Vec3 move_by )
 		{
 			mPosition += move_by;
