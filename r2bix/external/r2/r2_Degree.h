@@ -5,7 +5,7 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.07.17 PM.11.40
+// # Last Update		: 2025.07.18 PM.05.00
 // # Version			: 1.0.0.0
 //
 
@@ -23,16 +23,16 @@ namespace r2
 		explicit Degree( const float new_value ) : mValue( new_value )
 		{}
 
-		bool operator==( const Degree degree )
+		bool operator==( const Degree degree ) const
 		{
 			return r2::epsilon_equal( mValue, degree.mValue );
 		}
-		bool operator!=( const Degree degree )
+		bool operator!=( const Degree degree ) const
 		{
 			return !( *this == degree );
 		}
 
-		Degree operator+( const Degree degree )
+		Degree operator+( const Degree degree ) const
 		{
 			return Degree( mValue + degree.mValue );
 		}
@@ -41,7 +41,7 @@ namespace r2
 			mValue += degree.mValue;
 		}
 
-		Degree operator-( const Degree degree )
+		Degree operator-( const Degree degree ) const
 		{
 			return Degree( mValue - degree.mValue );
 		}

@@ -5,7 +5,7 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.07.17 PM.11.40
+// # Last Update		: 2025.07.18 PM.05.00
 // # Version			: 1.0.0.0
 //
 
@@ -23,16 +23,16 @@ namespace r2
 		explicit Radian( const float new_value ) : mValue( new_value )
 		{}
 
-		bool operator==( const Radian radian )
+		bool operator==( const Radian radian ) const
 		{
 			return r2::epsilon_equal( mValue, radian.mValue );
 		}
-		bool operator!=( const Radian radian )
+		bool operator!=( const Radian radian ) const
 		{
 			return !( *this == radian );
 		}
 
-		Radian operator+( const Radian radian )
+		Radian operator+( const Radian radian ) const
 		{
 			return Radian( mValue + radian.mValue );
 		}
@@ -41,7 +41,7 @@ namespace r2
 			mValue += radian.mValue;
 		}
 
-		Radian operator-( const Radian radian )
+		Radian operator-( const Radian radian ) const
 		{
 			return Radian( mValue - radian.mValue );
 		}
