@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2_Degree.h"
+#include "r2_Radian.h"
 #include "r2_Vector3.h"
 
 namespace r2bix
@@ -8,7 +8,7 @@ namespace r2bix
 	class Camera3D
 	{
 	public:
-		using Degree = r2::Degree;
+		using Radian = r2::Radian;
 		using Vec3 = r2::Vector3;
 
 		Camera3D();
@@ -28,15 +28,15 @@ namespace r2bix
 		{
 			return mLook;
 		}
-		Degree GetRotationX() const
+		Radian GetRotationX() const
 		{
 			return mRotationX;
 		}
-		Degree GetRotationY() const
+		Radian GetRotationY() const
 		{
 			return mRotationY;
 		}
-		Degree GetRotationZ() const
+		Radian GetRotationZ() const
 		{
 			return mRotationZ;
 		}
@@ -53,15 +53,15 @@ namespace r2bix
 		{
 			mLook = new_look;
 		}
-		void SetRotationX( const Degree rotation_x )
+		void SetRotationX( const Radian rotation_x )
 		{
 			mRotationX = rotation_x;
 		}
-		void SetRotationY( const Degree rotation_y )
+		void SetRotationY( const Radian rotation_y )
 		{
 			mRotationY = rotation_y;
 		}
-		void SetRotationZ( const Degree rotation_z )
+		void SetRotationZ( const Radian rotation_z )
 		{
 			mRotationZ = rotation_z;
 		}
@@ -74,15 +74,15 @@ namespace r2bix
 			mPosition += move_amount;
 		}
 
-		void RotationX( const Degree rotation_amount )
+		void RotationX( const Radian rotation_amount )
 		{
 			mRotationX += rotation_amount;
 		}
-		void RotationY( const Degree rotation_amount )
+		void RotationY( const Radian rotation_amount )
 		{
 			mRotationY += rotation_amount;
 		}
-		void RotationZ( const Degree rotation_amount )
+		void RotationZ( const Radian rotation_amount )
 		{
 			mRotationZ += rotation_amount;
 		}
@@ -92,8 +92,8 @@ namespace r2bix
 		Vec3 mUp;
 		Vec3 mLook;
 
-		Degree mRotationX;
-		Degree mRotationY;
-		Degree mRotationZ;
+		Radian mRotationX;
+		Radian mRotationY;
+		Radian mRotationZ;
 	};
 }

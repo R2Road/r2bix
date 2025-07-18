@@ -4,9 +4,11 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
+#include "r2_Math.h"
+
 #include "r2bix_Camera3D.h"
 
-#include "r2helper_STDPrinter4Degree.h"
+#include "r2helper_STDPrinter4Radian.h"
 #include "r2helper_STDPrinter4Vector3.h"
 
 namespace test_camera_3d
@@ -207,7 +209,7 @@ namespace test_camera_3d
 			LS();
 
 			DECLARATION_MAIN( r2bix::Camera3D cam );
-			DECLARATION_MAIN( const r2::Degree degree( 30.f ) );
+			DECLARATION_MAIN( const r2::Radian radian( r2::deg2rad( r2::Degree( 30.f ) ) ) );
 
 			LS();
 
@@ -216,16 +218,16 @@ namespace test_camera_3d
 
 				LF();
 
-				EXPECT_EQ( r2::Degree(), cam.GetRotationX() );
+				EXPECT_EQ( r2::Radian(), cam.GetRotationX() );
 
 				SS();
 
 				{
-					PROCESS_MAIN( cam.RotationX( degree ) );
+					PROCESS_MAIN( cam.RotationX( radian ) );
 
 					LF();
 
-					EXPECT_EQ( degree, cam.GetRotationX() );
+					EXPECT_EQ( radian, cam.GetRotationX() );
 				}
 			}
 
@@ -236,16 +238,16 @@ namespace test_camera_3d
 
 				LF();
 
-				EXPECT_EQ( r2::Degree(), cam.GetRotationY() );
+				EXPECT_EQ( r2::Radian(), cam.GetRotationY() );
 
 				SS();
 
 				{
-					PROCESS_MAIN( cam.RotationY( degree ) );
+					PROCESS_MAIN( cam.RotationY( radian ) );
 
 					LF();
 
-					EXPECT_EQ( degree, cam.GetRotationY() );
+					EXPECT_EQ( radian, cam.GetRotationY() );
 				}
 			}
 
@@ -256,16 +258,16 @@ namespace test_camera_3d
 
 				LF();
 
-				EXPECT_EQ( r2::Degree(), cam.GetRotationZ() );
+				EXPECT_EQ( r2::Radian(), cam.GetRotationZ() );
 
 				SS();
 
 				{
-					PROCESS_MAIN( cam.RotationZ( degree ) );
+					PROCESS_MAIN( cam.RotationZ( radian ) );
 
 					LF();
 
-					EXPECT_EQ( degree, cam.GetRotationZ() );
+					EXPECT_EQ( radian, cam.GetRotationZ() );
 				}
 			}
 
