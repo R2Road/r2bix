@@ -90,21 +90,21 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Up" );
-
-				LF();
-
-				EXPECT_EQ( r2bix::Camera3D::WORLD_UP, cam.GetUp() );
-			}
-
-			LS();
-
-			{
 				OUTPUT_SUBJECT( "Front" );
 
 				LF();
 
 				EXPECT_EQ( r2bix::Camera3D::WORLD_FRONT, cam.GetFront() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Up" );
+
+				LF();
+
+				EXPECT_EQ( r2bix::Camera3D::WORLD_UP, cam.GetUp() );
 			}
 
 			LS();
