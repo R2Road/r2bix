@@ -24,7 +24,7 @@ namespace r2
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '2';
 		const char VersionNumber_3 = '6';
-		const char VersionNumber_4 = '1';
+		const char VersionNumber_4 = '2';
 		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
@@ -57,6 +57,7 @@ namespace r2
 			"\n"	"[o] " "Add Helper     : r2helper::STDPrinter4Radian"
 			"\n"	"[o] " "Add Class      : Degree"
 			"\n"	"[o] " "Add Class      : Radian"
+			"\n"	"[o] " "Update Struct  : Vector2, Vector3, Vector4 : 생성자에 constexpr 적용"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"

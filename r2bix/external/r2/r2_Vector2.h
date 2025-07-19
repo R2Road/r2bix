@@ -14,9 +14,9 @@ namespace r2
 {
 	struct Vector2
 	{
-		Vector2() : x( 0.f ), y( 0.f )
+		constexpr Vector2() : x( 0.f ), y( 0.f )
 		{}
-		explicit Vector2( const float new_x, const float new_y ) : x( new_x ), y( new_y )
+		explicit constexpr Vector2( const float new_x, const float new_y ) : x( new_x ), y( new_y )
 		{}
 
 		float x = 0.f;

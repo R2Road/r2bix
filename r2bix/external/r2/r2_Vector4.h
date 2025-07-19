@@ -19,9 +19,9 @@ namespace r2
 {
 	struct Vector4
 	{
-		Vector4() : x( 0.f ), y( 0.f ), z( 0.f ), w( 0.f )
+		constexpr Vector4() : x( 0.f ), y( 0.f ), z( 0.f ), w( 0.f )
 		{}
-		explicit Vector4( const float new_x, const float new_y, const float new_z, const float new_w ) :
+		explicit constexpr Vector4( const float new_x, const float new_y, const float new_z, const float new_w ) :
 			  x( new_x )
 			, y( new_y )
 			, z( new_z )

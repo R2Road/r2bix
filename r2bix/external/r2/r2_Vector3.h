@@ -18,9 +18,9 @@ namespace r2
 {
 	struct Vector3
 	{
-		Vector3() : x( 0.f ), y( 0.f ), z( 0.f )
+		constexpr Vector3() : x( 0.f ), y( 0.f ), z( 0.f )
 		{}
-		explicit Vector3( const float new_x, const float new_y, const float new_z ) : x( new_x ), y( new_y ), z( new_z )
+		explicit constexpr Vector3( const float new_x, const float new_y, const float new_z ) : x( new_x ), y( new_y ), z( new_z )
 		{}
 
 		float x = 0.f;
