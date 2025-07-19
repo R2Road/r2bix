@@ -94,7 +94,7 @@ namespace test_camera_3d
 
 				LF();
 
-				EXPECT_EQ( V( 0, 1, 0 ), cam.GetUp() );
+				EXPECT_EQ( r2bix::Camera3D::WORLD_UP, cam.GetUp() );
 
 				SS();
 
@@ -117,7 +117,7 @@ namespace test_camera_3d
 
 				LF();
 
-				EXPECT_EQ( V( 0, 0, -1 ), cam.GetFront() );
+				EXPECT_EQ( r2bix::Camera3D::WORLD_FRONT, cam.GetFront() );
 
 				SS();
 

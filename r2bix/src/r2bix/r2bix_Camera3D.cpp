@@ -8,7 +8,7 @@ namespace r2bix
 		, mRotationY()
 		, mRotationZ()
 
-		, mFront( 0, 0, -1 )
-		, mUp( 0, 1, 0 )
+		, mFront( WORLD_FRONT )
+		, mUp( WORLD_UP )
 	{}
 }
