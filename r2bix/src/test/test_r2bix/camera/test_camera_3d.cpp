@@ -131,6 +131,16 @@ namespace test_camera_3d
 
 			LS();
 
+			{
+				OUTPUT_SUBJECT( "Right" );
+
+				LF();
+
+				EXPECT_EQ( r2bix::Camera3D::WORLD_RIGHT, cam.GetRight() );
+			}
+
+			LS();
+
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}

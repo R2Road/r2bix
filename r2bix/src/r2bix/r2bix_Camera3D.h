@@ -13,6 +13,7 @@ namespace r2bix
 
 		static constexpr Vec3 WORLD_FRONT{ 0, 0, -1 };
 		static constexpr Vec3 WORLD_UP{ 0, 1, 0 };
+		static constexpr Vec3 WORLD_RIGHT{ 1, 0, 0 };
 
 
 
@@ -45,6 +46,10 @@ namespace r2bix
 		Vec3 GetUp() const
 		{
 			return mUp;
+		}
+		Vec3 GetRight() const
+		{
+			return mRight;
 		}
 
 		//
@@ -101,5 +106,6 @@ namespace r2bix
 
 		Vec3 mFront;
 		Vec3 mUp;
+		Vec3 mRight;
 	};
 }

@@ -10,5 +10,6 @@ namespace r2bix
 
 		, mFront( WORLD_FRONT )
 		, mUp( WORLD_UP )
+		, mRight( WORLD_RIGHT )
 	{}
 }
