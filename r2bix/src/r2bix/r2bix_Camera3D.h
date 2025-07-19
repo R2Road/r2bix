@@ -89,15 +89,6 @@ namespace r2bix
 			mRotationZ += rotation_by;
 		}
 
-		void SetFront( const Vec3 new_look )
-		{
-			mFront = new_look;
-		}
-		void SetUp( const Vec3 new_up )
-		{
-			mUp = r2::normalize( new_up );
-		}
-
 	private:
 		Vec3 mPosition;
 		Radian mRotationX;

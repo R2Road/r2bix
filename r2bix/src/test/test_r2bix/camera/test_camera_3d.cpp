@@ -95,19 +95,6 @@ namespace test_camera_3d
 				LF();
 
 				EXPECT_EQ( r2bix::Camera3D::WORLD_UP, cam.GetUp() );
-
-				SS();
-
-				DECLARATION_MAIN( const V v( 100, 0, 0 ) );
-				PROCESS_MAIN( cam.SetUp( v ) );
-
-				LF();
-
-				EXPECT_EQ( V( 1, 0, 0 ), cam.GetUp() );
-
-				LF();
-
-				OUTPUT_NOTE( "normalize Àû¿ë" );
 			}
 
 			LS();
@@ -118,15 +105,6 @@ namespace test_camera_3d
 				LF();
 
 				EXPECT_EQ( r2bix::Camera3D::WORLD_FRONT, cam.GetFront() );
-
-				SS();
-
-				DECLARATION_MAIN( const V v( 0, 0, -100 ) );
-				PROCESS_MAIN( cam.SetFront( v ) );
-
-				LF();
-
-				EXPECT_EQ( v, cam.GetFront() );
 			}
 
 			LS();
