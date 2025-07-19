@@ -113,20 +113,20 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Look" );
+				OUTPUT_SUBJECT( "Front" );
 
 				LF();
 
-				EXPECT_EQ( V( 0, 0, -1 ), cam.GetLook() );
+				EXPECT_EQ( V( 0, 0, -1 ), cam.GetFront() );
 
 				SS();
 
 				DECLARATION_MAIN( const V v( 0, 0, -100 ) );
-				PROCESS_MAIN( cam.SetLook( v ) );
+				PROCESS_MAIN( cam.SetFront( v ) );
 
 				LF();
 
-				EXPECT_EQ( v, cam.GetLook() );
+				EXPECT_EQ( v, cam.GetFront() );
 			}
 
 			LS();

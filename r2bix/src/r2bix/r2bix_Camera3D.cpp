@@ -8,7 +8,7 @@ namespace r2bix
 		, mRotationY()
 		, mRotationZ()
 
-		, mLook( 0, 0, -1 )
+		, mFront( 0, 0, -1 )
 		, mUp( 0, 1, 0 )
 	{}
 }

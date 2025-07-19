@@ -33,9 +33,9 @@ namespace r2bix
 			return mRotationZ;
 		}
 
-		Vec3 GetLook() const
+		Vec3 GetFront() const
 		{
-			return mLook;
+			return mFront;
 		}
 		Vec3 GetUp() const
 		{
@@ -79,9 +79,9 @@ namespace r2bix
 			mRotationZ += rotation_by;
 		}
 
-		void SetLook( const Vec3 new_look )
+		void SetFront( const Vec3 new_look )
 		{
-			mLook = new_look;
+			mFront = new_look;
 		}
 		void SetUp( const Vec3 new_up )
 		{
@@ -94,7 +94,7 @@ namespace r2bix
 		Radian mRotationY;
 		Radian mRotationZ;
 
-		Vec3 mLook;
+		Vec3 mFront;
 		Vec3 mUp;
 	};
 }
