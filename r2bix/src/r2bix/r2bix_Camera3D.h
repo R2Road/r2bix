@@ -20,14 +20,6 @@ namespace r2bix
 		{
 			return mPosition;
 		}
-		Vec3 GetUp() const
-		{
-			return mUp;
-		}
-		Vec3 GetLook() const
-		{
-			return mLook;
-		}
 		Radian GetRotationX() const
 		{
 			return mRotationX;
@@ -41,20 +33,21 @@ namespace r2bix
 			return mRotationZ;
 		}
 
+		Vec3 GetLook() const
+		{
+			return mLook;
+		}
+		Vec3 GetUp() const
+		{
+			return mUp;
+		}
+
 		//
 		//
 		//
 		void SetPosition( const Vec3 new_position )
 		{
 			mPosition = new_position;
-		}
-		void SetUp( const Vec3 new_up )
-		{
-			mUp = r2::normalize( new_up );
-		}
-		void SetLook( const Vec3 new_look )
-		{
-			mLook = new_look;
 		}
 		void SetRotationX( const Radian rotation_to )
 		{
@@ -73,7 +66,6 @@ namespace r2bix
 		{
 			mPosition += move_by;
 		}
-
 		void RotationX( const Radian rotation_by )
 		{
 			mRotationX += rotation_by;
@@ -87,13 +79,22 @@ namespace r2bix
 			mRotationZ += rotation_by;
 		}
 
+		void SetLook( const Vec3 new_look )
+		{
+			mLook = new_look;
+		}
+		void SetUp( const Vec3 new_up )
+		{
+			mUp = r2::normalize( new_up );
+		}
+
 	private:
 		Vec3 mPosition;
-		Vec3 mUp;
-		Vec3 mLook;
-
 		Radian mRotationX;
 		Radian mRotationY;
 		Radian mRotationZ;
+
+		Vec3 mLook;
+		Vec3 mUp;
 	};
 }
