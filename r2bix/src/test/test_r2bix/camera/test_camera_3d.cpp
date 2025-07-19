@@ -65,6 +65,14 @@ namespace test_camera_3d
 		{
 			LS();
 
+			{
+				OUTPUT_VALUE( r2bix::Camera3D::WORLD_FRONT );
+				OUTPUT_VALUE( r2bix::Camera3D::WORLD_UP );
+				OUTPUT_VALUE( r2bix::Camera3D::WORLD_RIGHT );
+			}
+
+			LS();
+
 			DECLARATION_MAIN( using V = r2bix::Camera3D::Vec3 );
 			DECLARATION_MAIN( r2bix::Camera3D cam );
 
