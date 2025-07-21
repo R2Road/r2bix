@@ -116,13 +116,15 @@ namespace r2
 
 
 
-	inline Quaternion operator*( const Quaternion& q, const Vector3& v )
+	inline Vector3 operator*( const Quaternion& q, const Vector3& v )
 	{
-		return ( q * Quaternion( v ) ) * inverse( q );
+		const Quaternion temp = ( q * Quaternion( v ) ) * inverse( q );
+		return Vector3( temp.x, temp.y, temp.z );
 	}
-	inline Quaternion operator*( const Quaternion& q, const Vector4& v )
+	inline Vector4 operator*( const Quaternion& q, const Vector4& v )
 	{
-		return ( q * Vector3( v.x, v.y, v.z ) );
+		const Vector3 temp = q * Vector3( v.x, v.y, v.z );
+		return Vector4( temp.x, temp.y, temp.z, 1 );
 	}
 
 

@@ -1,14 +1,17 @@
 //
 // # Version Rule
-// - 1.0.0 : 사용 가능
-// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
-// - 0.0.1 : 자잘한 변화
+// - 1.0.0.0 : 사용 가능
+// - 0.1.0.0 : 기능 추가/삭제
+// - 0.0.1.0 : 기능 개선/변경
+// - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2023.06.17 PM.02.12
-// # Version			: 1.0.0
+// # Last Update		: 2025.07.21 PM.04.30
+// # Version			: 1.1.0.0
 //
 
 #pragma once
+
+#include "r2_Epsilon.h"
 
 namespace r2
 {
@@ -25,7 +28,10 @@ namespace r2
 
 	inline bool operator==( const Vector2& v1, const Vector2& v2 )
 	{
-		return ( v1.x == v2.x ) && ( v1.y == v2.y );
+		return (
+			   r2::epsilon_equal( v1.x, v2.x )
+			&& r2::epsilon_equal( v1.y, v2.y )
+		);
 	}
 	inline bool operator!=( const Vector2& v1, const Vector2& v2 )
 	{
@@ -42,6 +48,10 @@ namespace r2
 		v1.y += v2.y;
 	}
 
+	inline Vector2 operator-( const Vector2& v1 )
+	{
+		return Vector2{ -v1.x, -v1.y };
+	}
 	inline Vector2 operator-( const Vector2& v1, const Vector2& v2 )
 	{
 		return Vector2{ v1.x - v2.x, v1.y - v2.y };

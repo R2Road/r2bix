@@ -5,8 +5,8 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.06.09 PM.04.00
-// # Version			: 1.0.0.0
+// # Last Update		: 2025.07.21 PM.04.30
+// # Version			: 1.1.0.0
 //
 
 #pragma once
@@ -65,6 +65,10 @@ namespace r2
 		v1.y += v2.y;
 		v1.z += v2.z;
 		v1.w += v2.w;
+	}
+	inline Vector4 operator-( const Vector4& v1 )
+	{
+		return Vector4{ -v1.x, -v1.y, -v1.z, -v1.w };
 	}
 	inline Vector4 operator-( const Vector4& v1, const Vector4& v2 )
 	{
