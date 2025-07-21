@@ -41,6 +41,10 @@ namespace r2
 			mValue += radian.mValue;
 		}
 
+		Radian operator-() const
+		{
+			return Radian( -mValue );
+		}
 		Radian operator-( const Radian radian ) const
 		{
 			return Radian( mValue - radian.mValue );

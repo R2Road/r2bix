@@ -41,6 +41,10 @@ namespace r2
 			mValue += degree.mValue;
 		}
 
+		Degree operator-() const
+		{
+			return Degree( -mValue );
+		}
 		Degree operator-( const Degree degree ) const
 		{
 			return Degree( mValue - degree.mValue );
