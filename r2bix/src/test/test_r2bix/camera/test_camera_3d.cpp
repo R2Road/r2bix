@@ -8,6 +8,7 @@
 
 #include "r2bix_Camera3D.h"
 
+#include "r2helper_STDPrinter4Quaternion.h"
 #include "r2helper_STDPrinter4Radian.h"
 #include "r2helper_STDPrinter4Vector3.h"
 
@@ -264,6 +265,93 @@ namespace test_camera_3d
 					LF();
 
 					EXPECT_EQ( radian, cam.GetRotationZ() );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Vectors::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera3D : Vectors";
+		};
+	}
+	r2tm::DoFunctionT Vectors::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( r2bix::Camera3D cam );
+			DECLARATION_MAIN( const r2::Radian radian( r2::deg2rad( r2::Degree( 90.f ) ) ) );
+
+			LS();
+
+			EXPECT_EQ( r2bix::Camera3D::WORLD_FRONT, cam.GetFront() );
+			EXPECT_EQ( r2bix::Camera3D::WORLD_RIGHT, cam.GetRight() );
+			EXPECT_EQ( r2bix::Camera3D::WORLD_UP, cam.GetUp() );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Y" );
+
+				LF();
+
+				{
+					PROCESS_MAIN( cam.RotationY( radian ) );
+					PROCESS_MAIN( cam.UpdateVectors() );
+
+					LF();
+
+					EXPECT_EQ( -r2::VEC3_X, cam.GetFront() );
+					EXPECT_EQ( -r2::VEC3_Z, cam.GetRight() );
+					EXPECT_EQ( r2bix::Camera3D::WORLD_UP, cam.GetUp() );
+				}
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Y + X" );
+
+				LF();
+
+				{
+					PROCESS_MAIN( cam.RotationX( radian ) );
+					PROCESS_MAIN( cam.UpdateVectors() );
+
+					LF();
+
+					EXPECT_EQ( r2::VEC3_Y, cam.GetFront() );
+					EXPECT_EQ( -r2::VEC3_Z, cam.GetRight() );
+					EXPECT_EQ( r2::VEC3_X, cam.GetUp() );
+				}
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Y + X + Z" );
+
+				LF();
+
+				{
+					PROCESS_MAIN( cam.RotationZ( radian ) );
+					PROCESS_MAIN( cam.UpdateVectors() );
+
+					LF();
+
+					EXPECT_EQ( r2::VEC3_Y, cam.GetFront() );
+					EXPECT_EQ( -r2::VEC3_X, cam.GetRight() );
+					EXPECT_EQ( -r2::VEC3_Z, cam.GetUp() );
 				}
 			}
 

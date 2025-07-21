@@ -89,6 +89,11 @@ namespace r2bix
 			mRotationZ += rotation_by;
 		}
 
+		//
+		//
+		//
+		void UpdateVectors();
+
 	private:
 		Vec3 mPosition;
 		Radian mRotationX;
