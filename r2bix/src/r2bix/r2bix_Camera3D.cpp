@@ -13,6 +13,8 @@ namespace r2bix
 		, mFront( WORLD_FRONT )
 		, mUp( WORLD_UP )
 		, mRight( WORLD_RIGHT )
+
+		, mRotation()
 	{}
 
 	void Camera3D::UpdateVectors()
@@ -21,10 +23,10 @@ namespace r2bix
 		const r2::Quaternion pitch( WORLD_RIGHT, mRotationX );
 		const r2::Quaternion roll( WORLD_FRONT, mRotationZ );
 
-		const r2::Quaternion rotation = ( ( yaw * pitch ) * roll );
+		mRotation = ( ( yaw * pitch ) * roll );
 
-		mFront = rotation * WORLD_FRONT;
-		mRight = rotation * WORLD_RIGHT;
+		mFront = mRotation * WORLD_FRONT;
+		mRight = mRotation * WORLD_RIGHT;
 		mUp = r2::cross( mRight, mFront );
 	}
 }

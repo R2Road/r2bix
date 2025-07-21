@@ -1,5 +1,6 @@
 #pragma once
 
+#include "r2_Quaternion.h"
 #include "r2_Radian.h"
 #include "r2_Vector3.h"
 
@@ -8,6 +9,7 @@ namespace r2bix
 	class Camera3D
 	{
 	public:
+		using Quat = r2::Quaternion;
 		using Radian = r2::Radian;
 		using Vec3 = r2::Vector3;
 
@@ -103,5 +105,7 @@ namespace r2bix
 		Vec3 mFront;
 		Vec3 mUp;
 		Vec3 mRight;
+
+		Quat mRotation;
 	};
 }
