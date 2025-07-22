@@ -360,4 +360,64 @@ namespace test_camera_3d
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT ViewTransform::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera3D : ViewTransform";
+		};
+	}
+	r2tm::DoFunctionT ViewTransform::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( r2bix::Camera3D cam );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "설정" );
+
+				LF();
+
+				PROCESS_MAIN( cam.SetPosition( r2bix::Camera3D::Vec3( 0, 0, 10 ) ) );
+				PROCESS_MAIN( cam.SetRotationY( r2::deg2rad( r2::Degree( -45.f ) ) ) );
+				PROCESS_MAIN( cam.UpdateVectors() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "적용" );
+
+				LF();
+
+				DECLARATION_MAIN( r2bix::Camera3D::Vec3 vs( 1, 0, 9 ) );
+				DECLARATION_MAIN( r2bix::Camera3D::Mat4 view_mat = cam.GetViewMatrix() );
+
+				LF();
+
+				PROCESS_MAIN( vs = view_mat * vs );
+
+				LF();
+
+				EXPECT_EP_EQ( 0, vs.x );
+				EXPECT_EP_EQ( 0, vs.y );
+				EXPECT_EP_EQ( -r2::length( r2::Vector3( 1, 0, 1 ) ), vs.z );
+
+				LF();
+
+				OUTPUT_VALUE( vs );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
