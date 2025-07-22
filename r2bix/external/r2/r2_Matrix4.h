@@ -192,6 +192,7 @@ namespace r2
 
 
 #include "r2_Math.h"
+#include "r2_Vector3.h"
 #include "r2_Vector4.h"
 
 //
@@ -219,6 +220,11 @@ namespace r2
 			, ( m._31 * v.x ) + ( m._32 * v.y ) + ( m._33 * v.z ) + ( m._34 * v.w )
 			, ( m._41 * v.x ) + ( m._42 * v.y ) + ( m._43 * v.z ) + ( m._44 * v.w )
 		};
+	}
+	inline Vector3 operator*( const Matrix4& m, const Vector3& v )
+	{
+		const Vector4 temp = m * Vector4( v.x, v.y, v.z, 1 );
+		return Vector3( temp.x, temp.y, temp.z );
 	}
 
 

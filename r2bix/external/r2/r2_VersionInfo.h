@@ -24,7 +24,7 @@ namespace r2
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '2';
 		const char VersionNumber_3 = '6';
-		const char VersionNumber_4 = '6';
+		const char VersionNumber_4 = '7';
 		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
@@ -62,6 +62,7 @@ namespace r2
 			"\n"	"[o] " "Update Struct  : Quaternion : operator*( Vector3 ), operator*( Vector4 ) 반환값 타입 변경"
 			"\n"	"[o] " "Update Struct  : Vector2, Vector3, Vector4 : 단항 operator- 추가"
 			"\n"	"[o] " "Update Struct  : Degree, Radian : 단항 operator- 추가"
+			"\n"	"[o] " "Update Struct  : Matrix4 : operator*( Vector3 ) 추가"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
