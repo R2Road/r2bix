@@ -6,7 +6,8 @@
 namespace r2bix
 {
 	Camera3D::Camera3D() :
-		  mPosition()
+		  mbDirty( false )
+		, mPosition()
 		, mRotationX()
 		, mRotationY()
 		, mRotationZ()
@@ -29,6 +30,8 @@ namespace r2bix
 		mFront = mRotation * WORLD_FRONT;
 		mRight = mRotation * WORLD_RIGHT;
 		mUp = r2::cross( mRight, mFront );
+
+		mbDirty = false;
 	}
 
 	Camera3D::Mat44 Camera3D::GetViewMatrix() const

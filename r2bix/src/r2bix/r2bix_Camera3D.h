@@ -63,35 +63,43 @@ namespace r2bix
 		void SetPosition( const Vec3 new_position )
 		{
 			mPosition = new_position;
+			mbDirty = true;
 		}
 		void SetRotationX( const Radian rotation_to )
 		{
 			mRotationX = rotation_to;
+			mbDirty = true;
 		}
 		void SetRotationY( const Radian rotation_to )
 		{
 			mRotationY = rotation_to;
+			mbDirty = true;
 		}
 		void SetRotationZ( const Radian rotation_to )
 		{
 			mRotationZ = rotation_to;
+			mbDirty = true;
 		}
 
 		void Move( const Vec3 move_by )
 		{
 			mPosition += move_by;
+			mbDirty = true;
 		}
 		void RotationX( const Radian rotation_by )
 		{
 			mRotationX += rotation_by;
+			mbDirty = true;
 		}
 		void RotationY( const Radian rotation_by )
 		{
 			mRotationY += rotation_by;
+			mbDirty = true;
 		}
 		void RotationZ( const Radian rotation_by )
 		{
 			mRotationZ += rotation_by;
+			mbDirty = true;
 		}
 
 		//
@@ -102,6 +110,8 @@ namespace r2bix
 		Mat44 GetViewMatrix() const;
 
 	private:
+		bool mbDirty;
+
 		Vec3 mPosition;
 		Radian mRotationX;
 		Radian mRotationY;
