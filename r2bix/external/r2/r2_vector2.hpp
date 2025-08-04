@@ -5,13 +5,15 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.07.21 PM.04.30
-// # Version			: 1.1.0.0
+// # Last Update		: 2025.08.04 PM.04.30
+// # Version			: 1.2.1.0
 //
 
 #pragma once
 
-#include "r2_Epsilon.h"
+#include <cmath>
+
+#include "r2_epsilon.hpp"
 
 namespace r2
 {
@@ -70,5 +72,35 @@ namespace r2
 	{
 		v1.x *= scalar;
 		v1.y *= scalar;
+	}
+
+
+
+	inline float length( const Vector2& v )
+	{
+		return std::sqrt( ( v.x * v.x ) + ( v.y * v.y ) );
+	}
+	inline Vector2 normalize( const Vector2& v )
+	{
+		const float l = r2::length( v );
+		return (
+			  r2::epsilon_equal( l, 0.f )
+			? Vector2{
+				  0.f
+				, 0.f
+			}
+			: Vector2{
+				  v.x / l
+				, v.y / l
+			}
+		);
+	}
+	inline float dot( const Vector2& v1, const Vector2& v2 )
+	{
+		return ( v1.x * v2.x ) + ( v1.y * v2.y );
+	}
+	inline float cross( const Vector2& v1, const Vector2& v2 )
+	{
+		return ( v1.x * v2.y ) - ( v1.y * v2.x );
 	}
 }

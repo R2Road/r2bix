@@ -11,27 +11,27 @@
 
 #pragma once
 
-#include "r2_Degree.h"
-#include "r2_Epsilon.h"
-#include "r2_Math.h"
-#include "r2_Radian.h"
-#include "r2_Vector3.h"
-#include "r2_Vector4.h"
+#include "r2_degree.hpp"
+#include "r2_epsilon.hpp"
+#include "r2_math.hpp"
+#include "r2_radian.hpp"
+#include "r2_vector3.hpp"
+#include "r2_vector4.hpp"
 
 namespace r2
 {
 	struct Quaternion
 	{
-		Quaternion() : w( 0.f ), x( 0.f ), y( 0.f ), z( 0.f )
+		constexpr Quaternion() : w( 0.f ), x( 0.f ), y( 0.f ), z( 0.f )
 		{}
-		explicit Quaternion( const float new_w, const float new_x, const float new_y, const float new_z ) :
+		explicit constexpr Quaternion( const float new_w, const float new_x, const float new_y, const float new_z ) :
 			  w( new_w )
 			, x( new_x )
 			, y( new_y )
 			, z( new_z )
 		{}
 
-		explicit Quaternion( const Vector3 v ) :
+		explicit constexpr Quaternion( const Vector3 v ) :
 			  w( 0 )
 			, x( v.x )
 			, y( v.y )
@@ -54,7 +54,7 @@ namespace r2
 			z = axis.z * std::sin( radian.Get() / 2.f );
 		}
 
-		explicit Quaternion( const Vector4 v ) :
+		explicit constexpr Quaternion( const Vector4 v ) :
 			  w( 0 )
 			, x( v.x )
 			, y( v.y )

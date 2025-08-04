@@ -13,7 +13,7 @@
 
 #include <cmath>
 
-#include "r2_Epsilon.h"
+#include "r2_epsilon.hpp"
 
 namespace r2
 {
@@ -33,9 +33,9 @@ namespace r2
 		float z = 0.f;
 		float w = 0.f;
 	};
-	const Vector4 VEC4_X( 1.f, 0.f, 0.f, 1.f );
-	const Vector4 VEC4_Y( 0.f, 1.f, 0.f, 1.f );
-	const Vector4 VEC4_Z( 0.f, 0.f, 1.f, 1.f );
+	constexpr Vector4 VEC4_X( 1.f, 0.f, 0.f, 1.f );
+	constexpr Vector4 VEC4_Y( 0.f, 1.f, 0.f, 1.f );
+	constexpr Vector4 VEC4_Z( 0.f, 0.f, 1.f, 1.f );
 
 
 

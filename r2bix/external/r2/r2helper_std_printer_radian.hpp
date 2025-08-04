@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "r2_NoneCopyable.h"
-#include "r2_Radian.h"
+#include "r2_radian.hpp"
 
 inline std::ostream& operator<<( std::ostream& o, const r2::Radian& radian )
 {
@@ -20,10 +20,10 @@ inline std::ostream& operator<<( std::ostream& o, const r2::Radian& radian )
 
 namespace r2helper
 {
-	class STDPrinter4Radian : private r2::NoneCopyable
+	class STDPrinter_Radian : private r2::NoneCopyable
 	{
 	private:
-		STDPrinter4Radian() = delete;
+		STDPrinter_Radian() = delete;
 
 	public:
 		inline static void Print( const r2::Radian& radian )

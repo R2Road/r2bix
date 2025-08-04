@@ -11,21 +11,24 @@
 
 #pragma once
 
-#include "r2_Matrix4.h"
+#include "r2_matrix44_transform_vector4.hpp"
 
 namespace r2
 {
-	inline Matrix4 BuildMatrix4_ViewTransform(
+	inline Matrix44 build_mat44_render_transform_view(
 		  const r2::Vector4 init_eye
 		, const r2::Vector4 init_center
 		, const r2::Vector4 init_up
 	)
 	{
+		// Z-Axis
 		const r2::Vector4 cam_forward = r2::normalize( init_eye - init_center );
+		// X-Axis
 		const r2::Vector4 cam_right = r2::normalize( r2::cross( init_up, cam_forward ) );
+		// Y-Axis
 		const r2::Vector4 cam_up = r2::cross( cam_forward, cam_right );
 
-		return Matrix4{
+		return Matrix44{
 			  cam_right.x		, cam_right.y		, cam_right.z		, -r2::dot( cam_right, init_eye )
 			, cam_up.x			, cam_up.y			, cam_up.z			, -r2::dot( cam_up, init_eye )
 			, cam_forward.x		, cam_forward.y		, cam_forward.z		, -r2::dot( cam_forward, init_eye )
@@ -33,7 +36,8 @@ namespace r2
 		};
 	}
 
-	inline Matrix4 BuildMatrix4_ProjectionTransform_OrthographicZ01(
+	// Z : 0 ~ +1
+	inline Matrix44 build_mat44_render_transform_projection_orthographic_z01(
 		  const float left
 		, const float right
 		, const float bottom
@@ -42,7 +46,7 @@ namespace r2
 		, const float far
 	)
 	{
-		return r2::Matrix4(
+		return r2::Matrix44(
 			  2 / ( right - left )	, 0.f					, 0.f				, -( right + left ) / ( right - left )
 			, 0.f					, 2 / ( top - bottom )	, 0.f				, -( top + bottom ) / ( top - bottom )
 			, 0.f					, 0.f					, 1 / ( far - near)	, -near / ( far - near)
@@ -50,14 +54,15 @@ namespace r2
 		);
 	}
 
-	inline Matrix4 BuildMatrix4_ViewportTransform_ZM1P1(
+	// Z : -1 ~ +1
+	inline Matrix44 build_mat44_render_transform_viewport_zm1p1(
 		  const int viewport_w
 		, const int viewport_h
 		, const float near
 		, const float far
 	)
 	{
-		return Matrix4{
+		return Matrix44{
 			viewport_w / 2.f	, 0.f				, 0.f					, viewport_w / 2.f
 			, 0.f				, viewport_h / 2.f	, 0.f					, viewport_h / 2.f
 			, 0.f				, 0.f				, ( far - near ) / 2.f	, ( near + far) / 2.f

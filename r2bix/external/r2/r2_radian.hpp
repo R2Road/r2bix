@@ -11,16 +11,16 @@
 
 #pragma once
 
-#include "r2_Epsilon.h"
+#include "r2_epsilon.hpp"
 
 namespace r2
 {
 	class Radian
 	{
 	public:
-		Radian() : mValue( 0.f )
+		constexpr Radian() : mValue( 0.f )
 		{}
-		explicit Radian( const float new_value ) : mValue( new_value )
+		constexpr explicit Radian( const float new_value ) : mValue( new_value )
 		{}
 
 		bool operator==( const Radian radian ) const
@@ -32,7 +32,7 @@ namespace r2
 			return !( *this == radian );
 		}
 
-		Radian operator+( const Radian radian ) const
+		constexpr Radian operator+( const Radian radian ) const
 		{
 			return Radian( mValue + radian.mValue );
 		}
@@ -41,11 +41,11 @@ namespace r2
 			mValue += radian.mValue;
 		}
 
-		Radian operator-() const
+		constexpr Radian operator-() const
 		{
 			return Radian( -mValue );
 		}
-		Radian operator-( const Radian radian ) const
+		constexpr Radian operator-( const Radian radian ) const
 		{
 			return Radian( mValue - radian.mValue );
 		}
@@ -54,7 +54,7 @@ namespace r2
 			mValue -= radian.mValue;
 		}
 
-		Radian operator*( const float scalar ) const
+		constexpr Radian operator*( const float scalar ) const
 		{
 			return Radian( mValue * scalar );
 		}
@@ -63,7 +63,16 @@ namespace r2
 			mValue *= scalar;
 		}
 
-		float Get() const
+		constexpr Radian operator/( const float scalar ) const
+		{
+			return Radian( mValue / scalar );
+		}
+		void operator/=( const float scalar )
+		{
+			mValue /= scalar;
+		}
+
+		constexpr float Get() const
 		{
 			return mValue;
 		}

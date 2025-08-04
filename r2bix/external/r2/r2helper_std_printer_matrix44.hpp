@@ -4,9 +4,9 @@
 #include <ostream>
 
 #include "r2_NoneCopyable.h"
-#include "r2_Matrix4.h"
+#include "r2_matrix44.hpp"
 
-inline std::ostream& operator<<( std::ostream& o, const r2::Matrix4& m )
+inline std::ostream& operator<<( std::ostream& o, const r2::Matrix44& m )
 {
 	static const int w = 15;
 
@@ -37,26 +37,24 @@ inline std::ostream& operator<<( std::ostream& o, const r2::Matrix4& m )
 		<< "43 : " << std::setw( w ) << m._43 << "   "
 		<< "44 : " << std::setw( w ) << m._44
 
-		<< "\n"
-
 		<< std::right
 	;
 }
 
 namespace r2helper
 {
-	class STDPrinter4Matrix4 : private r2::NoneCopyable
+	class STDPrinter_Matrix44 : private r2::NoneCopyable
 	{
 	private:
-		STDPrinter4Matrix4() = delete;
+		STDPrinter_Matrix44() = delete;
 
 	public:
-		inline static void Print( const r2::Matrix4& m )
+		inline static void Print( const r2::Matrix44& m )
 		{
 			std::cout
 				<< std::left
 
-				<< "\t" "Matrix4"
+				<< "\t" "Matrix44"
 
 				<< m
 

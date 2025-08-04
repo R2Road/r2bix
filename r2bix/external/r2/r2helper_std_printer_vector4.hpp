@@ -1,12 +1,12 @@
 #pragma once
 
 #include <iomanip>
-#include <iostream>
+#include <ostream>
 
 #include "r2_NoneCopyable.h"
-#include "r2_Quaternion.h"
+#include "r2_vector4.hpp"
 
-inline std::ostream& operator<<( std::ostream& o, const r2::Quaternion& v )
+inline std::ostream& operator<<( std::ostream& o, const r2::Vector4& v )
 {
 	static const int w = 10;
 
@@ -16,31 +16,31 @@ inline std::ostream& operator<<( std::ostream& o, const r2::Quaternion& v )
 		<< "\t"
 
 		<< "   "
-		"w : " << std::setw( w ) << v.w
-		<< "   "
 		"x : " << std::setw( w ) << v.x
 		<< "   "
 		"y : " << std::setw( w ) << v.y
 		<< "   "
 		"z : " << std::setw( w ) << v.z
+		<< "   "
+		"w : " << std::setw( w ) << v.w
 
 		<< std::right;
 }
 
 namespace r2helper
 {
-	class STDPrinter4Quaternion : private r2::NoneCopyable
+	class STDPrinter_Vector4 : private r2::NoneCopyable
 	{
 	private:
-		STDPrinter4Quaternion() = delete;
+		STDPrinter_Vector4() = delete;
 
 	public:
-		inline static void Print( const r2::Quaternion& v )
+		inline static void Print( const r2::Vector4& v )
 		{
 			std::cout
 				<< std::left
 
-				<< "\t" "Quaternion"
+				<< "\t" "Vector4"
 
 				<< v
 

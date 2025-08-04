@@ -22,8 +22,8 @@ namespace r2
 
 
 		const char VersionNumber_1 = '0';
-		const char VersionNumber_2 = '2';
-		const char VersionNumber_3 = '6';
+		const char VersionNumber_2 = '3';
+		const char VersionNumber_3 = '0';
 		const char VersionNumber_4 = '7';
 		const char VersionNumber_5 = '0';
 
@@ -42,15 +42,29 @@ namespace r2
 
 
 
+		const char* const String4Road2Version_0_4_0_0_0 =
+			"### Road 2 Version 0.4.0.0.0 ###"
+			"\n"
+
+			"\n"	"[o] " "Update Struct   : Matrix33 : add - transform vector3"
+			"\n"	"[o] " "Update Function : r2_epsilon : overload function - epsilon_equal( double )"
+			"\n"	"[o] " "Update Struct   : Matrix44 : add - operator*( scalar )"
+			"\n"	"[o] " "Update Struct   : Matrix44 : update - transform vector3"
+			"\n"
+			"\n"	"----------------------------------"
+			"\n"
+			"\n"	"[ ] " "Crypto Machine"
+		;
+
 		const char* const String4Road2Version_0_3_0_0_0 =
 			"### Road 2 Version 0.3.0.0.0 ###"
 			"\n"
 
 			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Point : 출력 방식 개선"
 			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Size : 출력 방식 개선"
-			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Vector4 : 출력 방식 개선"
-			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Vector3 : 출력 방식 개선"
-			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Vector2 : 출력 방식 개선"
+			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter_Vector4 : 출력 방식 개선"
+			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter_Vector3 : 출력 방식 개선"
+			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter_Vector2 : 출력 방식 개선"
 			"\n"	"[o] " "Update struct  : Vector3 : 함수 추가 : length, normalize, dot, cross"
 			"\n"	"[o] " "Add Struct     : Quaternion"
 			"\n"	"[o] " "Add Helper     : r2helper::STDPrinter4Degree"
@@ -62,11 +76,17 @@ namespace r2
 			"\n"	"[o] " "Update Struct  : Quaternion : operator*( Vector3 ), operator*( Vector4 ) 반환값 타입 변경"
 			"\n"	"[o] " "Update Struct  : Vector2, Vector3, Vector4 : 단항 operator- 추가"
 			"\n"	"[o] " "Update Struct  : Degree, Radian : 단항 operator- 추가"
-			"\n"	"[o] " "Update Struct  : Matrix4 : operator*( Vector3 ) 추가"
+			"\n"	"[o] " "Update Struct  : Matrix44 : operator*( Vector3 ) 추가"
+			"\n"	"[o] " "Update Struct  : Matrix44 : 함수 추가 : inverse"
+			"\n"	"[o] " "Update Struct  : Degree, Radian : constexpr 적용"
+			"\n"	"[o] " "Update Struct  : r2::epsilon_equal : constexpr 적용"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
-			"\n"	"[ ] " "Vector2"
+			"\n"	"[o] " "Add Struct     : Vector2"
+			"\n"	"[o] " "Add Struct     : Vector3"
+			"\n"	"[o] " "Add Struct     : Matrix22"
+			"\n"	"[o] " "Add Struct     : Matrix33"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
@@ -97,9 +117,9 @@ namespace r2
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
-			"\n"	"[o] " "Vector4"
-			"\n"	"[o] " "Matrix4"
-			"\n"	"[o] " "Transform"
+			"\n"	"[o] " "Add Struct     : Vector4"
+			"\n"	"[o] " "Add Struct     : Matrix44"
+			"\n"	"[o] " "Add Struct     : Transform"
 		;
 
 		const char* const String4Road2Version_0_1_0_0 =
@@ -131,8 +151,8 @@ namespace r2
 			"\n"	"[o] " "Add         : r2helper - STDPrinter4Point"
 			"\n"	"[o] " "Add         : r2helper - STDPrinter4Size"
 			"\n"	"[o] " "Add         : r2helper - STDPrinter4PivotAndSize"
-			"\n"	"[o] " "Add         : r2helper - STDPrinter4Vector2"
-			"\n"	"[o] " "Add         : r2helper - STDPrinter4Vector3"
+			"\n"	"[o] " "Add         : r2helper - STDPrinter_Vector2"
+			"\n"	"[o] " "Add         : r2helper - STDPrinter_Vector3"
 			"\n"	"[o] " "Add         : r2helper - STDPrinter4Range"
 			"\n"	"[o] " "Add         : r2utility - STDFileUtility"
 			"\n"	"[o] " "Add         : r2utility - CFileUtility"
@@ -238,7 +258,7 @@ namespace r2
 
 
 
-		const char* const String4Road2NextVersion = String4Road2Version_0_3_0_0_0;
+		const char* const String4Road2NextVersion = String4Road2Version_0_4_0_0_0;
 
 	} VersionInfo;
 }

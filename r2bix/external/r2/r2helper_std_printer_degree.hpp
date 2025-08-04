@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "r2_NoneCopyable.h"
-#include "r2_Degree.h"
+#include "r2_degree.hpp"
 
 inline std::ostream& operator<<( std::ostream& o, const r2::Degree& degree )
 {
@@ -20,10 +20,10 @@ inline std::ostream& operator<<( std::ostream& o, const r2::Degree& degree )
 
 namespace r2helper
 {
-	class STDPrinter4Degree : private r2::NoneCopyable
+	class STDPrinter_Degree : private r2::NoneCopyable
 	{
 	private:
-		STDPrinter4Degree() = delete;
+		STDPrinter_Degree() = delete;
 
 	public:
 		inline static void Print( const r2::Degree& degree )

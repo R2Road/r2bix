@@ -4,13 +4,13 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-#include "r2_Math.h"
-
 #include "r2bix_Camera3D.h"
 
-#include "r2helper_STDPrinter4Quaternion.h"
-#include "r2helper_STDPrinter4Radian.h"
-#include "r2helper_STDPrinter4Vector3.h"
+#include "r2_math.hpp"
+#include "r2_matrix44_transform_vector3.hpp"
+#include "r2helper_std_printer_quaternion.hpp"
+#include "r2helper_std_printer_radian.hpp"
+#include "r2helper_std_printer_vector3.hpp"
 
 namespace test_camera_3d
 {
@@ -398,7 +398,7 @@ namespace test_camera_3d
 				LF();
 
 				DECLARATION_MAIN( r2bix::Camera3D::Vec3 vs( 1, 0, 9 ) );
-				DECLARATION_MAIN( r2bix::Camera3D::Mat4 view_mat = cam.GetViewMatrix() );
+				DECLARATION_MAIN( r2bix::Camera3D::Mat44 view_mat = cam.GetViewMatrix() );
 
 				LF();
 

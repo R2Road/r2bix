@@ -11,16 +11,16 @@
 
 #pragma once
 
-#include "r2_Epsilon.h"
+#include "r2_epsilon.hpp"
 
 namespace r2
 {
 	class Degree
 	{
 	public:
-		Degree() : mValue( 0.f )
+		constexpr Degree() : mValue( 0.f )
 		{}
-		explicit Degree( const float new_value ) : mValue( new_value )
+		constexpr explicit Degree( const float new_value ) : mValue( new_value )
 		{}
 
 		bool operator==( const Degree degree ) const
@@ -32,7 +32,7 @@ namespace r2
 			return !( *this == degree );
 		}
 
-		Degree operator+( const Degree degree ) const
+		constexpr Degree operator+( const Degree degree ) const
 		{
 			return Degree( mValue + degree.mValue );
 		}
@@ -41,11 +41,11 @@ namespace r2
 			mValue += degree.mValue;
 		}
 
-		Degree operator-() const
+		constexpr Degree operator-() const
 		{
 			return Degree( -mValue );
 		}
-		Degree operator-( const Degree degree ) const
+		constexpr Degree operator-( const Degree degree ) const
 		{
 			return Degree( mValue - degree.mValue );
 		}
@@ -54,7 +54,7 @@ namespace r2
 			mValue -= degree.mValue;
 		}
 
-		Degree operator*( const float scalar ) const
+		constexpr Degree operator*( const float scalar ) const
 		{
 			return Degree( mValue * scalar );
 		}
@@ -63,7 +63,16 @@ namespace r2
 			mValue *= scalar;
 		}
 
-		float Get() const
+		constexpr Degree operator/( const float scalar ) const
+		{
+			return Degree( mValue / scalar );
+		}
+		void operator/=( const float scalar )
+		{
+			mValue /= scalar;
+		}
+
+		constexpr float Get() const
 		{
 			return mValue;
 		}

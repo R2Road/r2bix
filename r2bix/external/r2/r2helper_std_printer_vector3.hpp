@@ -4,7 +4,7 @@
 #include <ostream>
 
 #include "r2_NoneCopyable.h"
-#include "r2_Vector3.h"
+#include "r2_vector3.hpp"
 
 inline std::ostream& operator<<( std::ostream& o, const r2::Vector3& v )
 {
@@ -27,10 +27,10 @@ inline std::ostream& operator<<( std::ostream& o, const r2::Vector3& v )
 
 namespace r2helper
 {
-	class STDPrinter4Vector3 : private r2::NoneCopyable
+	class STDPrinter_Vector3 : private r2::NoneCopyable
 	{
 	private:
-		STDPrinter4Vector3() = delete;
+		STDPrinter_Vector3() = delete;
 
 	public:
 		inline static void Print( const r2::Vector3& v )
