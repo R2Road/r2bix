@@ -53,6 +53,57 @@ namespace test_camera_3d
 
 
 
+	r2tm::TitleFunctionT Constant::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera3D : Constant";
+		};
+	}
+	r2tm::DoFunctionT Constant::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				{
+					EXPECT_EQ( r2::Vector3( 0, 0, -1 ), r2bix::Camera3D::WORLD_FRONT );
+
+					LF();
+
+					OUTPUT_VALUE( r2bix::Camera3D::WORLD_FRONT );
+				}
+
+				SS();
+
+				{
+					EXPECT_EQ( r2::Vector3( 0, 1, 0 ), r2bix::Camera3D::WORLD_UP );
+
+					LF();
+
+					OUTPUT_VALUE( r2bix::Camera3D::WORLD_UP );
+				}
+
+				SS();
+
+				{
+					EXPECT_EQ( r2::Vector3( 1, 0, 0 ), r2bix::Camera3D::WORLD_RIGHT );
+
+					LF();
+
+					OUTPUT_VALUE( r2bix::Camera3D::WORLD_RIGHT );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Basic::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -64,14 +115,6 @@ namespace test_camera_3d
 	{
 		return[]()->r2tm::eDoLeaveAction
 		{
-			LS();
-
-			{
-				OUTPUT_VALUE( r2bix::Camera3D::WORLD_FRONT );
-				OUTPUT_VALUE( r2bix::Camera3D::WORLD_UP );
-				OUTPUT_VALUE( r2bix::Camera3D::WORLD_RIGHT );
-			}
-
 			LS();
 
 			DECLARATION_MAIN( using V = r2bix::Camera3D::Vec3 );
