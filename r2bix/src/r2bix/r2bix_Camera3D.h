@@ -7,6 +7,10 @@
 
 namespace r2bix
 {
+	constexpr r2::Vector3 WORLD_FRONT{ 0, 0, -1 };
+	constexpr r2::Vector3 WORLD_UP{ 0, 1, 0 };
+	constexpr r2::Vector3 WORLD_RIGHT{ 1, 0, 0 };
+
 	class Camera3D
 	{
 	public:
@@ -15,9 +19,6 @@ namespace r2bix
 		using Radian = r2::Radian;
 		using Vec3 = r2::Vector3;
 
-		static constexpr Vec3 WORLD_FRONT{ 0, 0, -1 };
-		static constexpr Vec3 WORLD_UP{ 0, 1, 0 };
-		static constexpr Vec3 WORLD_RIGHT{ 1, 0, 0 };
 
 
 

@@ -68,31 +68,31 @@ namespace test_camera_3d
 
 			{
 				{
-					EXPECT_EQ( r2::Vector3( 0, 0, -1 ), r2bix::Camera3D::WORLD_FRONT );
+					EXPECT_EQ( r2::Vector3( 0, 0, -1 ), r2bix::WORLD_FRONT );
 
 					LF();
 
-					OUTPUT_VALUE( r2bix::Camera3D::WORLD_FRONT );
+					OUTPUT_VALUE( r2bix::WORLD_FRONT );
 				}
 
 				SS();
 
 				{
-					EXPECT_EQ( r2::Vector3( 0, 1, 0 ), r2bix::Camera3D::WORLD_UP );
+					EXPECT_EQ( r2::Vector3( 0, 1, 0 ), r2bix::WORLD_UP );
 
 					LF();
 
-					OUTPUT_VALUE( r2bix::Camera3D::WORLD_UP );
+					OUTPUT_VALUE( r2bix::WORLD_UP );
 				}
 
 				SS();
 
 				{
-					EXPECT_EQ( r2::Vector3( 1, 0, 0 ), r2bix::Camera3D::WORLD_RIGHT );
+					EXPECT_EQ( r2::Vector3( 1, 0, 0 ), r2bix::WORLD_RIGHT );
 
 					LF();
 
-					OUTPUT_VALUE( r2bix::Camera3D::WORLD_RIGHT );
+					OUTPUT_VALUE( r2bix::WORLD_RIGHT );
 				}
 			}
 
@@ -146,7 +146,7 @@ namespace test_camera_3d
 
 				LF();
 
-				EXPECT_EQ( r2bix::Camera3D::WORLD_FRONT, cam.GetFront() );
+				EXPECT_EQ( r2bix::WORLD_FRONT, cam.GetFront() );
 			}
 
 			LS();
@@ -156,7 +156,7 @@ namespace test_camera_3d
 
 				LF();
 
-				EXPECT_EQ( r2bix::Camera3D::WORLD_UP, cam.GetUp() );
+				EXPECT_EQ( r2bix::WORLD_UP, cam.GetUp() );
 			}
 
 			LS();
@@ -166,7 +166,7 @@ namespace test_camera_3d
 
 				LF();
 
-				EXPECT_EQ( r2bix::Camera3D::WORLD_RIGHT, cam.GetRight() );
+				EXPECT_EQ( r2bix::WORLD_RIGHT, cam.GetRight() );
 			}
 
 			LS();
@@ -337,9 +337,9 @@ namespace test_camera_3d
 
 			LS();
 
-			EXPECT_EQ( r2bix::Camera3D::WORLD_FRONT, cam.GetFront() );
-			EXPECT_EQ( r2bix::Camera3D::WORLD_RIGHT, cam.GetRight() );
-			EXPECT_EQ( r2bix::Camera3D::WORLD_UP, cam.GetUp() );
+			EXPECT_EQ( r2bix::WORLD_FRONT, cam.GetFront() );
+			EXPECT_EQ( r2bix::WORLD_RIGHT, cam.GetRight() );
+			EXPECT_EQ( r2bix::WORLD_UP, cam.GetUp() );
 
 			LS();
 
@@ -356,7 +356,7 @@ namespace test_camera_3d
 
 					EXPECT_EQ( -r2::VEC3_X, cam.GetFront() );
 					EXPECT_EQ( -r2::VEC3_Z, cam.GetRight() );
-					EXPECT_EQ( r2bix::Camera3D::WORLD_UP, cam.GetUp() );
+					EXPECT_EQ( r2bix::WORLD_UP, cam.GetUp() );
 				}
 			}
 
