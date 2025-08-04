@@ -4,7 +4,7 @@
 
 #include "r2_RectInt.h"
 #include "r2_SignalSlot.h"
-#include "r2_Vector2.h"
+#include "r2_vector2.hpp"
 
 #include "r2bix_component_Component.h"
 #include "r2bix_input_Constant.h"

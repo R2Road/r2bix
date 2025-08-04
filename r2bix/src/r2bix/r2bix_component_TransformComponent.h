@@ -4,7 +4,7 @@
 
 #include "r2_PointInt.h"
 #include "r2_SignalSlot.h"
-#include "r2_Vector2.h"
+#include "r2_vector2.hpp"
 
 namespace r2bix_component
 {

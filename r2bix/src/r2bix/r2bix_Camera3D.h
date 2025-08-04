@@ -1,16 +1,16 @@
 #pragma once
 
-#include "r2_Matrix4.h"
-#include "r2_Quaternion.h"
-#include "r2_Radian.h"
-#include "r2_Vector3.h"
+#include "r2_matrix44.hpp"
+#include "r2_quaternion.hpp"
+#include "r2_radian.hpp"
+#include "r2_vector3.hpp"
 
 namespace r2bix
 {
 	class Camera3D
 	{
 	public:
-		using Mat4 = r2::Matrix4;
+		using Mat44 = r2::Matrix44;
 		using Quat = r2::Quaternion;
 		using Radian = r2::Radian;
 		using Vec3 = r2::Vector3;
@@ -98,7 +98,7 @@ namespace r2bix
 		//
 		void UpdateVectors();
 
-		Mat4 GetViewMatrix() const;
+		Mat44 GetViewMatrix() const;
 
 	private:
 		Vec3 mPosition;

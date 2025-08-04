@@ -8,7 +8,7 @@
 
 #include <vector>
 
-#include "r2_Vector3.h"
+#include "r2_vector3.hpp"
 
 #include "r2bix_component_Component.h"
 

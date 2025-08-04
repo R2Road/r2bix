@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2_Vector2.h"
+#include "r2_vector2.hpp"
 
 #include "r2bix_component_Component.h"
 
