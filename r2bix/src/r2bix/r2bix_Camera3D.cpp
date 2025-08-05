@@ -21,7 +21,7 @@ namespace r2bix
 
 	void Camera3D::UpdateVectors()
 	{
-		const r2::Quaternion yaw( r2::VEC3_Y, mRotationY );
+		const r2::Quaternion yaw( WORLD_UP, mRotationY );
 		const r2::Quaternion pitch( WORLD_RIGHT, mRotationX );
 		const r2::Quaternion roll( WORLD_FRONT, mRotationZ );
 
