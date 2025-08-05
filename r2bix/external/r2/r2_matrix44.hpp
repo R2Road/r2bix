@@ -13,8 +13,6 @@
 
 // REF : https://learn.microsoft.com/en-us/windows/win32/api/directxmath/ns-directxmath-xmmatrix?source=recommendations
 
-#include "r2_quaternion.hpp"
-
 namespace r2
 {
 	struct Matrix44
@@ -35,13 +33,6 @@ namespace r2
 			, _21( __21 ), _22( __22 ), _23( __23 ), _24( __24 )
 			, _31( __31 ), _32( __32 ), _33( __33 ), _34( __34 )
 			, _41( __41 ), _42( __42 ), _43( __43 ), _44( __44 )
-		{}
-
-		explicit Matrix44( const r2::Quaternion q ) :
-			  _11( 1 - ( 2 *  q.y * q.y ) - ( 2 * q.z * q.z ) )  , _12( ( 2 * q.x * q.y ) - ( 2 * q.z * q.w ) )      , _13( ( 2 * q.x * q.z ) + ( 2 * q.y * q.w ) )      , _14( 0 )
-			, _21( ( 2 * q.x * q.y ) + ( 2 * q.z * q.w ) )       , _22( 1 - ( 2 * q.x * q.x ) - ( 2 * q.z * q.z ) )  , _23( ( 2 * q.y * q.z ) - ( 2 * q.x * q.w )  )     , _24( 0 )
-			, _31( ( 2 * q.x * q.z ) - ( 2 * q.y * q.w ) )       , _32( ( 2 * q.y * q.z ) + ( 2 * q.x * q.w )  )     , _33( 1 - ( 2 * q.x * q.x ) - ( 2 * q.y * q.y ) )  , _34( 0 )
-			, _41( 0 )                                           , _42( 0 )                                          , _43( 0 )                                          , _44( 1 )
 		{}
 
 		float _11;

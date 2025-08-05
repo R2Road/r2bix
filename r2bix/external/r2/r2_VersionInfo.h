@@ -24,7 +24,7 @@ namespace r2
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '3';
 		const char VersionNumber_3 = '0';
-		const char VersionNumber_4 = '7';
+		const char VersionNumber_4 = '8';
 		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
@@ -50,6 +50,8 @@ namespace r2
 			"\n"	"[o] " "Update Function : r2_epsilon : overload function - epsilon_equal( double )"
 			"\n"	"[o] " "Update Struct   : Matrix44 : add - operator*( scalar )"
 			"\n"	"[o] " "Update Struct   : Matrix44 : update - transform vector3"
+			"\n"	"[o] " "Update Struct   : Matrix44 : update - transform vector4"
+			"\n"	"[o] " "Update Struct   : Matrix44 : quaternion을 Matrix44로 변환해주는 생성자 별도 함수로 분리"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"

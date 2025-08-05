@@ -12,6 +12,7 @@
 #pragma once
 
 #include "r2_matrix44_transform_vector3.hpp"
+#include "r2_vector4.hpp"
 
 namespace r2
 {

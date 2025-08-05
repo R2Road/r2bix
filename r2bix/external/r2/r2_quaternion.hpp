@@ -5,8 +5,8 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.07.14 PM.06.00
-// # Version			: 1.0.0.0
+// # Last Update		: 2025.08.05 PM.04.20
+// # Version			: 1.0.1.0
 //
 
 #pragma once
@@ -14,6 +14,7 @@
 #include "r2_degree.hpp"
 #include "r2_epsilon.hpp"
 #include "r2_math.hpp"
+#include "r2_matrix44.hpp"
 #include "r2_radian.hpp"
 #include "r2_vector3.hpp"
 #include "r2_vector4.hpp"
@@ -148,6 +149,18 @@ namespace r2
 			, q.x / l
 			, q.y / l
 			, q.z / l
+		);
+	}
+
+
+
+	inline Matrix44 quat2mat44( const r2::Quaternion& q )
+	{
+		return r2::Matrix44(
+			  ( 1 - ( 2 *  q.y * q.y ) - ( 2 * q.z * q.z ) )  , ( ( 2 * q.x * q.y ) - ( 2 * q.z * q.w ) )      , ( ( 2 * q.x * q.z ) + ( 2 * q.y * q.w ) )      , 0
+			, ( ( 2 * q.x * q.y ) + ( 2 * q.z * q.w ) )       , ( 1 - ( 2 * q.x * q.x ) - ( 2 * q.z * q.z ) )  , ( ( 2 * q.y * q.z ) - ( 2 * q.x * q.w )  )     , 0
+			, ( ( 2 * q.x * q.z ) - ( 2 * q.y * q.w ) )       , ( ( 2 * q.y * q.z ) + ( 2 * q.x * q.w )  )     , ( 1 - ( 2 * q.x * q.x ) - ( 2 * q.y * q.y ) )  , 0
+			, 0                                               , 0                                              , 0                                              , 1
 		);
 	}
 }
