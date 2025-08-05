@@ -40,7 +40,7 @@ namespace r2bix
 		// > 카메라 행렬의 구성 : 회전 > 이동
 		// > 카메라 행렬의 역행렬 구성 : 이동 > 회전
 
-		const Mat44 rotation_matrix( r2::inverse( mRotation ) );
+		const Mat44 rotation_matrix( r2::quat2mat44( r2::inverse( mRotation ) ) );
 		const Mat44 translate_matrix( r2::build_mat44_translate_vec3( -mPosition.x, -mPosition.y, -mPosition.z ) );
 
 		// 이동 > 회전
