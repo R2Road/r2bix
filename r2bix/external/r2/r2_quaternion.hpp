@@ -5,8 +5,8 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.08.05 PM.04.20
-// # Version			: 1.0.1.0
+// # Last Update		: 2025.08.05 PM.07.45
+// # Version			: 1.1.0.0
 //
 
 #pragma once
@@ -14,6 +14,7 @@
 #include "r2_degree.hpp"
 #include "r2_epsilon.hpp"
 #include "r2_math.hpp"
+#include "r2_matrix33.hpp"
 #include "r2_matrix44.hpp"
 #include "r2_radian.hpp"
 #include "r2_vector3.hpp"
@@ -154,13 +155,98 @@ namespace r2
 
 
 
+	inline Matrix33 quat2mat33( const r2::Quaternion& q )
+	{
+		// REF : https://github.com/g-truc/glm/blob/master/glm/gtc/quaternion.inl
+		// REF : mat3_cast
+
+		const float xx( q.x * q.x );
+		const float yy( q.y * q.y );
+		const float zz( q.z * q.z );
+		const float xz( q.x * q.z );
+		const float xy( q.x * q.y );
+		const float yz( q.y * q.z );
+		const float wx( q.w * q.x );
+		const float wy( q.w * q.y );
+		const float wz( q.w * q.z );
+
+		return r2::Matrix33(
+			  ( 1 - ( 2 *  yy ) - ( 2 * zz ) )  , ( ( 2 * xy ) - ( 2 * wz ) )      , ( ( 2 * xz ) + ( 2 * wy ) )
+			, ( ( 2 * xy ) + ( 2 * wz ) )       , ( 1 - ( 2 * xx ) - ( 2 * zz ) )  , ( ( 2 * yz ) - ( 2 * wx )  )
+			, ( ( 2 * xz ) - ( 2 * wy ) )       , ( ( 2 * yz ) + ( 2 * wx )  )     , ( 1 - ( 2 * xx ) - ( 2 * yy ) )
+		);
+	}
 	inline Matrix44 quat2mat44( const r2::Quaternion& q )
 	{
+		const Matrix33 temp = quat2mat33( q );
+
 		return r2::Matrix44(
-			  ( 1 - ( 2 *  q.y * q.y ) - ( 2 * q.z * q.z ) )  , ( ( 2 * q.x * q.y ) - ( 2 * q.z * q.w ) )      , ( ( 2 * q.x * q.z ) + ( 2 * q.y * q.w ) )      , 0
-			, ( ( 2 * q.x * q.y ) + ( 2 * q.z * q.w ) )       , ( 1 - ( 2 * q.x * q.x ) - ( 2 * q.z * q.z ) )  , ( ( 2 * q.y * q.z ) - ( 2 * q.x * q.w )  )     , 0
-			, ( ( 2 * q.x * q.z ) - ( 2 * q.y * q.w ) )       , ( ( 2 * q.y * q.z ) + ( 2 * q.x * q.w )  )     , ( 1 - ( 2 * q.x * q.x ) - ( 2 * q.y * q.y ) )  , 0
-			, 0                                               , 0                                              , 0                                              , 1
+			  temp._11, temp._12, temp._13,        0
+			, temp._21, temp._22, temp._23,        0
+			, temp._31, temp._32, temp._33,        0
+			,        0,        0,        0,        1
 		);
+	}
+
+
+
+	inline r2::Quaternion mat2quat( const r2::Matrix33& m )
+	{
+		// REF : https://github.com/g-truc/glm/blob/master/glm/gtc/quaternion.inl
+		// REF : quat_cast
+		// glm 의 코드는 열 우선이다. 여기서는 행 우선이기 때문에 각 성분 참조가 전치 되어 있다.
+
+		// 이 코드는 쿼터니언의 네 성분(x,y,z,w)의 제곱에 4를 곱하고 1을 뺀 값에 해당하는 값을 만든다.
+		// quat2mat33 함수의 각 성분 계산 코드 참조
+		float fourXSquaredMinus1 = m._11 - m._22 - m._33;
+		float fourYSquaredMinus1 = m._22 - m._11 - m._33;
+		float fourZSquaredMinus1 = m._33 - m._11 - m._22;
+		// 행렬의 대각합 : 가장 일반적으로 사용, 나머지 세 값은 쿼터니언의 축 성분(x,y,z) 중 하나가 지배적일 때 사용
+		float fourWSquaredMinus1 = m._11 + m._22 + m._33;
+
+		int biggest_index = 0;
+		float fourBiggestSquaredMinus1 = fourWSquaredMinus1;
+		if( fourXSquaredMinus1 > fourBiggestSquaredMinus1 )
+		{
+			fourBiggestSquaredMinus1 = fourXSquaredMinus1;
+			biggest_index = 1;
+		}
+		if( fourYSquaredMinus1 > fourBiggestSquaredMinus1 )
+		{
+			fourBiggestSquaredMinus1 = fourYSquaredMinus1;
+			biggest_index = 2;
+		}
+		if( fourZSquaredMinus1 > fourBiggestSquaredMinus1 )
+		{
+			fourBiggestSquaredMinus1 = fourZSquaredMinus1;
+			biggest_index = 3;
+		}
+
+		float biggest_value = sqrt( fourBiggestSquaredMinus1 + 1.f ) * 0.5f;
+
+		// 나머지 쿼터니언 성분들을 계산하는 데 사용되는 스케일링 팩터
+		float mult = ( 0.25f / biggest_value );
+
+		switch( biggest_index )
+		{
+		case 0:
+			return r2::Quaternion( biggest_value, ( m._32 - m._23 ) * mult, ( m._13 - m._31 ) * mult, ( m._21 - m._12 ) * mult );
+		case 1:
+			return r2::Quaternion( ( m._32 - m._23 ) * mult, biggest_value, ( m._21 + m._12 ) * mult, ( m._13 + m._31 ) * mult );
+		case 2:
+			return r2::Quaternion( ( m._13 - m._31 ) * mult, ( m._21 + m._12 ) * mult, biggest_value, ( m._32 + m._23 ) * mult );
+		case 3:
+			return r2::Quaternion( ( m._21 - m._12 ) * mult, ( m._13 + m._31 ) * mult, ( m._32 + m._23 ) * mult, biggest_value );
+		default:
+			return r2::Quaternion( 1, 0, 0, 0 );
+		}
+	}
+	inline r2::Quaternion mat2quat( const r2::Matrix44& m )
+	{
+		return mat2quat( r2::Matrix33(
+			  m._11, m._12, m._13
+			, m._21, m._22, m._23
+			, m._31, m._32, m._33
+		) );
 	}
 }

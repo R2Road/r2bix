@@ -5,7 +5,7 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.07.30 PM.02.00
+// # Last Update		: 2025.08.05 PM.06.40
 // # Version			: 1.0.0.0
 //
 
@@ -210,5 +210,20 @@ namespace r2
 			  scale_x, scale_y, scale_z
 			, r2::deg2rad( rotation_y ), deg2rad( rotation_x ), deg2rad( rotation_z )
 		);
+	}
+
+
+
+	inline Matrix33 build_mat33_lookat_vec3( const r2::Vector3& position, const r2::Vector3& target, const r2::Vector3& up )
+	{
+		const r2::Vector3 z_axis = r2::normalize( target - position );
+		const r2::Vector3 x_axis = r2::normalize( r2::cross( up, z_axis ) );
+		const r2::Vector3 y_axis = r2::cross( z_axis, x_axis );
+
+		return Matrix33{
+			  x_axis.x    , y_axis.x    , z_axis.x
+			, x_axis.y    , y_axis.y    , z_axis.y
+			, x_axis.z    , y_axis.z    , z_axis.z
+		};
 	}
 }

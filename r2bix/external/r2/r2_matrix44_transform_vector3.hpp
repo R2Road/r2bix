@@ -484,4 +484,20 @@ namespace r2
 			,            0.f,            0.f,            0.f,         1.f
 		);
 	}
+
+
+
+	inline Matrix44 build_mat44_lookat_vec3( const r2::Vector3& position, const r2::Vector3& target, const r2::Vector3& up )
+	{
+		const r2::Vector3 z_axis = r2::normalize( target - position );
+		const r2::Vector3 x_axis = r2::normalize( r2::cross( up, z_axis ) );
+		const r2::Vector3 y_axis = r2::cross( z_axis, x_axis );
+
+		return Matrix44{
+			  x_axis.x    , y_axis.x    , z_axis.x    , 0
+			, x_axis.y    , y_axis.y    , z_axis.y    , 0
+			, x_axis.z    , y_axis.z    , z_axis.z    , 0
+			, 0           , 0           , 0           , 1
+		};
+	}
 }
