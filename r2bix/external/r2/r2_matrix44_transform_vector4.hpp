@@ -96,13 +96,13 @@ namespace r2
 		return build_mat44_rotation_z_vec3( r2::deg2rad( degree ) );
 	}
 
-	inline Matrix44 build_mat44_rotation_vec4( const Radian rotation_y, const Radian rotation_x, const Radian rotation_z )
+	inline Matrix44 build_mat44_rotation_vec4( const Radian rotation_z, const Radian rotation_y, const Radian rotation_x )
 	{
-		return build_mat44_rotation_vec3( rotation_z, rotation_x, rotation_y );
+		return build_mat44_rotation_vec3( rotation_z, rotation_y, rotation_x );
 	}
-	inline Matrix44 build_mat44_rotation_vec4( const r2::Degree rotation_y, const r2::Degree rotation_x, const r2::Degree rotation_z )
+	inline Matrix44 build_mat44_rotation_vec4( const r2::Degree rotation_z, const r2::Degree rotation_y, const r2::Degree rotation_x )
 	{
-		return build_mat44_rotation_vec3( r2::deg2rad( rotation_y ), deg2rad( rotation_x ), deg2rad( rotation_z ) );
+		return build_mat44_rotation_vec3( r2::deg2rad( rotation_z ), r2::deg2rad( rotation_y ), r2::deg2rad( rotation_x ) );
 	}
 	inline Matrix44 inverse_mat44_rotation_vec4( const r2::Matrix44 m )
 	{
@@ -113,49 +113,49 @@ namespace r2
 
 	inline Matrix44 build_mat44_scale_rotation_translate_vec4(
 		  const float scale_x, const float scale_y, const float scale_z
-		, const r2::Radian rotation_y, const r2::Radian rotation_x, const r2::Radian rotation_z
+		, const r2::Radian rotation_z, const r2::Radian rotation_y, const r2::Radian rotation_x
 		, const float translate_x, const float translate_y, const float translate_z
 	)
 	{
 		return build_mat44_scale_rotation_translate_vec3(
 			  scale_x, scale_y, scale_z
-			, rotation_y, rotation_x, rotation_z
+			, rotation_z, rotation_y, rotation_x
 			, translate_x, translate_y, translate_z
 		);
 	}
 	inline Matrix44 build_mat44_scale_rotation_translate_vec4(
 		  const float scale_x, const float scale_y, const float scale_z
-		, const r2::Degree rotation_y, const r2::Degree rotation_x, const r2::Degree rotation_z
+		, const r2::Degree rotation_z, const r2::Degree rotation_y, const r2::Degree rotation_x
 		, const float translate_x, const float translate_y, const float translate_z
 	)
 	{
 		return build_mat44_scale_rotation_translate_vec3(
 			  scale_x, scale_y, scale_z
-			, r2::deg2rad( rotation_y ), r2::deg2rad( rotation_x ), r2::deg2rad( rotation_z )
+			, r2::deg2rad( rotation_z ), r2::deg2rad( rotation_y ), r2::deg2rad( rotation_x )
 			, translate_x, translate_y, translate_z
 		);
 	}
 	inline Matrix44 build_mat44_scale_rotation_translate_vec4(
 		  const r2::Vector4 scale
-		, const r2::Radian rotation_y, const r2::Radian rotation_x, const r2::Radian rotation_z
+		, const r2::Radian rotation_z, const r2::Radian rotation_y, const r2::Radian rotation_x
 		, const r2::Vector4 translate
 	)
 	{
 		return build_mat44_scale_rotation_translate_vec3(
 			  scale.x, scale.y, scale.z
-			, rotation_y, rotation_x, rotation_z
+			, rotation_z, rotation_y, rotation_x
 			, translate.x, translate.y, translate.z
 		);
 	}
 	inline Matrix44 build_mat44_scale_rotation_translate_vec4(
 		  const r2::Vector4 scale
-		, const r2::Degree rotation_y, const r2::Degree rotation_x, const r2::Degree rotation_z
+		, const r2::Degree rotation_z, const r2::Degree rotation_y, const r2::Degree rotation_x
 		, const r2::Vector4 translate
 	)
 	{
 		return build_mat44_scale_rotation_translate_vec3(
 			  scale.x, scale.y, scale.z
-			, r2::deg2rad( rotation_y ), r2::deg2rad( rotation_x ), r2::deg2rad( rotation_z )
+			, r2::deg2rad( rotation_z ), r2::deg2rad( rotation_y ), r2::deg2rad( rotation_x )
 			, translate.x, translate.y, translate.z
 		);
 	}

@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "r2_VersionInfo.h"
+#include "r2_version_info.hpp"
 #include "r2bix_Director.h"
 #include "r2bix_VersionInfo.h"
 #include "r2tm/r2tm_MenuProcessor.h"

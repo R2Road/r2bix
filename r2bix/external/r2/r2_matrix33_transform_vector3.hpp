@@ -134,25 +134,25 @@ namespace r2
 		return build_mat33_rotation_z_vec3( r2::deg2rad( degree ) );
 	}
 
-	inline Matrix33 build_mat33_rotation_vec3( const Radian rotation_y, const Radian rotation_x, const Radian rotation_z )
+	inline Matrix33 build_mat33_rotation_vec3( const r2::Radian rotation_z, const r2::Radian rotation_y, const r2::Radian rotation_x )
 	{
 		//
-		// Y > X > Z
+		// Z > Y > X
 		//    > 좌/우
 		//    > 위/아래 
 		//    > 기울임
 		// 
-		// m = z * y * x
+		// m = x * y * z
 		//
 		return (
-			  build_mat33_rotation_z_vec3( rotation_z )
-			* build_mat33_rotation_x_vec3( rotation_x )
+			  build_mat33_rotation_x_vec3( rotation_x )
 			* build_mat33_rotation_y_vec3( rotation_y )
+			* build_mat33_rotation_z_vec3( rotation_z )
 		);
 	}
-	inline Matrix33 build_mat33_rotation_vec3( const r2::Degree rotation_y, const r2::Degree rotation_x, const r2::Degree rotation_z )
+	inline Matrix33 build_mat33_rotation_vec3( const r2::Degree rotation_z, const r2::Degree rotation_y, const r2::Degree rotation_x )
 	{
-		return build_mat33_rotation_vec3( r2::deg2rad( rotation_y ), deg2rad( rotation_x ), deg2rad( rotation_z ) );
+		return build_mat33_rotation_vec3( r2::deg2rad( rotation_z ), r2::deg2rad( rotation_y ), r2::deg2rad( rotation_x ) );
 	}
 	inline Matrix33 inverse_mat33_rotation_vec3( const r2::Matrix33 m )
 	{
@@ -182,33 +182,33 @@ namespace r2
 
 	inline Matrix33 build_mat33_scale_rotation_vec3(
 		  const float scale_x, const float scale_y, const float scale_z
-		, const Radian rotation_y, const Radian rotation_x, const Radian rotation_z
+		, const Radian rotation_z, const Radian rotation_y, const Radian rotation_x
 	)
 	{
 		//
-		// S > Y > X > Z
+		// S > Z > Y > X >
 		//    > 크기
 		//    > 좌/우 회전
 		//    > 위/아래 회전
 		//    > 기울임 회전
 		// 
-		// m = z * y * x * s
+		// m = x * y * z * s
 		//
 		return (
-			  build_mat33_rotation_z_vec3( rotation_z )
-			* build_mat33_rotation_x_vec3( rotation_x )
+			  build_mat33_rotation_x_vec3( rotation_x )
 			* build_mat33_rotation_y_vec3( rotation_y )
+			* build_mat33_rotation_z_vec3( rotation_z )
 			* build_mat33_scale_vec3( scale_x, scale_y, scale_z )
 		);
 	}
 	inline Matrix33 build_mat33_scale_rotation_vec3(
 		  const float scale_x, const float scale_y, const float scale_z
-		, const r2::Degree rotation_y, const r2::Degree rotation_x, const r2::Degree rotation_z
+		, const r2::Degree rotation_z, const r2::Degree rotation_y, const r2::Degree rotation_x
 	)
 	{
 		return build_mat33_scale_rotation_vec3(
 			  scale_x, scale_y, scale_z
-			, r2::deg2rad( rotation_y ), deg2rad( rotation_x ), deg2rad( rotation_z )
+			, deg2rad( rotation_z ), r2::deg2rad( rotation_y ), deg2rad( rotation_x )
 		);
 	}
 

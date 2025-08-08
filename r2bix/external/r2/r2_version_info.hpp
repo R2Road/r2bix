@@ -24,7 +24,7 @@ namespace r2
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '3';
 		const char VersionNumber_3 = '1';
-		const char VersionNumber_4 = '1';
+		const char VersionNumber_4 = '2';
 		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
@@ -55,6 +55,7 @@ namespace r2
 			"\n"	"[o] " "Update Struct   : Matrix33 : add function - build_mat33_lookat_vec3"
 			"\n"	"[o] " "Update Struct   : Matrix44 : add function - build_mat44_lookat_vec3"
 			"\n"	"[o] " "Update Struct   : Quaternion : add function - mat2quat"
+			"\n"	"[o] " "Update Struct   : Matrix33, Matrix44 : 회전 순서 변경 : YXZ > ZYX"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"

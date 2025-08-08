@@ -358,7 +358,7 @@
     <ClInclude Include="external\r2\r2_vector2.hpp" />
     <ClInclude Include="external\r2\r2_vector3.hpp" />
     <ClInclude Include="external\r2\r2_vector4.hpp" />
-    <ClInclude Include="external\r2\r2_VersionInfo.h" />
+    <ClInclude Include="external\r2\r2_version_info.hpp" />
     <ClInclude Include="external\rapidjson\allocators.h" />
     <ClInclude Include="external\rapidjson\cursorstreamwrapper.h" />
     <ClInclude Include="external\rapidjson\document.h" />

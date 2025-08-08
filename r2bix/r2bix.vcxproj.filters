@@ -569,39 +569,6 @@
     <ClCompile Include="src\r2bix\r2bix_Camera3D.cpp">
       <Filter>r2bix\camera</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_CounterInt.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_CountLimiterInt.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4BitwiseLimited.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4BitwiseLimitedState.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4BitwiseState.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4SequentialState.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction8BitwiseLimited.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction8BitwiseLimitedState.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction8BitwiseState.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction8InGrid.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction8SequentialState.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_FPSTimer.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
@@ -675,6 +642,39 @@
       <Filter>external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2utility_StringUtility.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_CounterInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_CountLimiterInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction4BitwiseLimited.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction4BitwiseLimitedState.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction4BitwiseState.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction4SequentialState.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction8BitwiseLimited.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction8BitwiseLimitedState.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction8BitwiseState.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction8InGrid.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction8SequentialState.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1235,75 +1235,6 @@
     <ClInclude Include="src\r2bix\r2bix_Camera3D.h">
       <Filter>r2bix\camera</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Assert.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_BitSet.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_CaseIterationData.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_CaseIterationManager.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_CaseIterationManager4SingleCycle.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Counter.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_CounterInt.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_CountLimiter.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_CountLimiterInt.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Debug.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_DebugProcess.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_degree.hpp">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4BitwiseLimited.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4BitwiseLimitedState.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4BitwiseState.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4Sequential.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4SequentialState.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction8BitwiseLimited.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction8BitwiseLimitedState.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction8BitwiseState.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction8InGrid.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction8Sequential.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction8SequentialState.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_DummyInitialValue.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -1535,7 +1466,7 @@
     <ClInclude Include="external\r2\r2_vector4.hpp">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_VersionInfo.h">
+    <ClInclude Include="external\r2\r2_version_info.hpp">
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2helper_std_printer_degree.hpp">
@@ -1656,6 +1587,75 @@
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_ArrayIterator.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Assert.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_BitSet.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_CaseIterationData.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_CaseIterationManager.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_CaseIterationManager4SingleCycle.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Counter.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_CounterInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_CountLimiter.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_CountLimiterInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Debug.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_DebugProcess.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_degree.hpp">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4BitwiseLimited.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4BitwiseLimitedState.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4BitwiseState.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4Sequential.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4SequentialState.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8BitwiseLimited.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8BitwiseLimitedState.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8BitwiseState.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8InGrid.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8Sequential.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8SequentialState.h">
       <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
