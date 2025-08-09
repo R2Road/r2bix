@@ -21,17 +21,20 @@ namespace r2bix
 
 	void Camera3D::UpdateVectors()
 	{
-		const r2::Quaternion yaw( WORLD_UP, mRotationY );
-		const r2::Quaternion pitch( WORLD_RIGHT, mRotationX );
-		const r2::Quaternion roll( WORLD_FRONT, mRotationZ );
+		if( mbDirty )
+		{
+			const r2::Quaternion yaw( WORLD_UP, mRotationY );
+			const r2::Quaternion pitch( WORLD_RIGHT, mRotationX );
+			const r2::Quaternion roll( WORLD_FRONT, mRotationZ );
 
-		mRotation = ( ( yaw * pitch ) * roll );
+			mRotation = ( ( yaw * pitch ) * roll );
+
+			mbDirty = false;
+		}
 
 		mFront = mRotation * WORLD_FRONT;
 		mRight = mRotation * WORLD_RIGHT;
 		mUp = r2::cross( mRight, mFront );
-
-		mbDirty = false;
 	}
 	void Camera3D::LookAt( const Vec3 target )
 	{
@@ -40,12 +43,10 @@ namespace r2bix
 
 		// 행렬을 쿼터니언으로 변환.
 		mRotation = r2::mat2quat( cam_mat );
-
-		mFront = mRotation * WORLD_FRONT;
-		mRight = mRotation * WORLD_RIGHT;
-		mUp = r2::cross( mRight, mFront );
-
 		mbDirty = false;
+
+		// 방향 벡터 갱신
+		UpdateVectors();
 	}
 
 	Camera3D::Mat44 Camera3D::GetViewMatrix() const
