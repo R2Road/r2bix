@@ -43,9 +43,6 @@
     <Filter Include="external\r2">
       <UniqueIdentifier>{fcf9b28f-6f2a-4644-b365-01d919e85a1c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test\test_psnake">
-      <UniqueIdentifier>{90205c11-7a0a-47f5-a417-aa53424b3bb4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="r2bix\director">
       <UniqueIdentifier>{c183a091-f503-41cd-b02e-f50c91446e90}</UniqueIdentifier>
     </Filter>
@@ -58,41 +55,14 @@
     <Filter Include="tool\texture_viewer">
       <UniqueIdentifier>{a6f4f786-5859-4d25-84bc-397e6264a703}</UniqueIdentifier>
     </Filter>
-    <Filter Include="r2bix\geometry">
-      <UniqueIdentifier>{650070f7-4b76-4353-babe-b159e7e04889}</UniqueIdentifier>
-    </Filter>
     <Filter Include="external\rapidjson">
       <UniqueIdentifier>{91305047-c6be-4e61-adeb-9cdedc80260f}</UniqueIdentifier>
     </Filter>
     <Filter Include="external\r2tm">
       <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project">
-      <UniqueIdentifier>{a4d549d6-2148-45b0-be42-97b1e78e2e02}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\project_2048">
-      <UniqueIdentifier>{83829a05-c572-4c01-9999-4ab853a313d6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\project_mini_adventure">
-      <UniqueIdentifier>{9ffd138b-0e0d-418e-80c9-6de54a6db100}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\project_mini_rogue">
-      <UniqueIdentifier>{8ac33765-6b0b-4ce1-98f2-d0be2626b971}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\project_snake">
-      <UniqueIdentifier>{8f343807-44d6-4e06-9852-97a51204fd85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="r2bix\helper">
-      <UniqueIdentifier>{9572c2b8-6481-41d3-926d-d97379da1d87}</UniqueIdentifier>
-    </Filter>
     <Filter Include="r2bix\ui">
       <UniqueIdentifier>{f36022e8-7dc3-4c30-be02-96bda08235b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="project\projectA">
-      <UniqueIdentifier>{1ee5e6a8-ae23-4abc-81be-b079bdb759f4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test\projectA">
-      <UniqueIdentifier>{e6fb3952-e352-4884-9a1a-18aa69b31692}</UniqueIdentifier>
     </Filter>
     <Filter Include="tool\texture_editor">
       <UniqueIdentifier>{031ff44a-6e73-487c-8b71-bf7cd0e98242}</UniqueIdentifier>
@@ -139,12 +109,12 @@
     <Filter Include="r2bix\camera">
       <UniqueIdentifier>{8a57421b-bb85-4a7c-99e1-1e15ccb17afd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="project_2048">
+      <UniqueIdentifier>{83829a05-c572-4c01-9999-4ab853a313d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\pmr\pmr_CompanyScene.cpp">
-      <Filter>project\project_mini_rogue</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.cpp">
       <Filter>test\test_r2bix</Filter>
     </ClCompile>
@@ -153,43 +123,43 @@
     </ClCompile>
     <ClCompile Include="src\menu_dev.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_GameComponent.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_GameProcessor.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_GameScene.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_NumberComponent.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_NumberNode.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_Stage.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_StageViewComponent.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_StageViewNode.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048_TitleScene.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048table_TextureFrameAnimationTable.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048\p2048table_TextureTable.cpp">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_p2048\test_p2048_stage.cpp">
       <Filter>test\test_p2048</Filter>
@@ -203,23 +173,11 @@
     <ClCompile Include="src\test\test_p2048\test_p2048_numbernode.cpp">
       <Filter>test\test_p2048</Filter>
     </ClCompile>
-    <ClCompile Include="src\project_mini_adventure\p_mini_adv_GameScene.cpp">
-      <Filter>project\project_mini_adventure</Filter>
-    </ClCompile>
-    <ClCompile Include="src\project_mini_adventure\p_mini_adv_CompanyScene.cpp">
-      <Filter>project\project_mini_adventure</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\test_r2bix\menu_r2bix.cpp">
       <Filter>test\test_r2bix</Filter>
     </ClCompile>
     <ClCompile Include="src\test\test_p2048\P2048Menu.cpp">
       <Filter>test\test_p2048</Filter>
-    </ClCompile>
-    <ClCompile Include="src\psnake\psnake_CompanyScene.cpp">
-      <Filter>project\project_snake</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\test_psnake\PSnakeMenu.cpp">
-      <Filter>test\test_psnake</Filter>
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_director_Scheduler.cpp">
       <Filter>r2bix\director</Filter>
@@ -391,12 +349,6 @@
     </ClCompile>
     <ClCompile Include="src\r2bix\r2bix_component_UIControlComponent.cpp">
       <Filter>r2bix\component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\project_a\ProjectAMenu.cpp">
-      <Filter>test\projectA</Filter>
-    </ClCompile>
-    <ClCompile Include="src\project_a\projecta_CompanyScene.cpp">
-      <Filter>project\projectA</Filter>
     </ClCompile>
     <ClCompile Include="src\tool\texture_editor\tool_texture_editor_EntryScene.cpp">
       <Filter>tool\texture_editor</Filter>
@@ -679,9 +631,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\pmr\pmr_CompanyScene.h">
-      <Filter>project\project_mini_rogue</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.h">
       <Filter>test\test_r2bix</Filter>
     </ClInclude>
@@ -690,46 +639,46 @@
     </ClInclude>
     <ClInclude Include="src\menu_dev.h" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_Config.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_EntryScene.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_GameComponent.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_GameProcessor.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_GameScene.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_NumberComponent.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_NumberNode.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_Stage.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_StageViewComponent.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_StageViewNode.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048_TitleScene.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048table_TextureFrameAnimationTable.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048\p2048table_TextureTable.h">
-      <Filter>project\project_2048</Filter>
+      <Filter>project_2048</Filter>
     </ClInclude>
     <ClInclude Include="src\test\test_p2048\test_p2048_stage.h">
       <Filter>test\test_p2048</Filter>
@@ -743,15 +692,6 @@
     <ClInclude Include="src\test\test_p2048\test_p2048_numbernode.h">
       <Filter>test\test_p2048</Filter>
     </ClInclude>
-    <ClInclude Include="src\project_mini_adventure\p_mini_adv_VersionInfo.h">
-      <Filter>project\project_mini_adventure</Filter>
-    </ClInclude>
-    <ClInclude Include="src\project_mini_adventure\p_mini_adv_GameScene.h">
-      <Filter>project\project_mini_adventure</Filter>
-    </ClInclude>
-    <ClInclude Include="src\project_mini_adventure\p_mini_adv_CompanyScene.h">
-      <Filter>project\project_mini_adventure</Filter>
-    </ClInclude>
     <ClInclude Include="src\test\test_r2bix\menu_r2bix.h">
       <Filter>test\test_r2bix</Filter>
     </ClInclude>
@@ -760,15 +700,6 @@
     </ClInclude>
     <ClInclude Include="external\miniaudio\miniaudio.h">
       <Filter>external\miniaudio</Filter>
-    </ClInclude>
-    <ClInclude Include="src\psnake\psnake_CompanyScene.h">
-      <Filter>project\project_snake</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\test_psnake\PSnakeMenu.h">
-      <Filter>test\test_psnake</Filter>
-    </ClInclude>
-    <ClInclude Include="src\psnake\psnake_VersionInfo.h">
-      <Filter>project\project_snake</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_director_Scheduler.h">
       <Filter>r2bix\director</Filter>
@@ -1027,15 +958,6 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2bix_component_UIControlComponent.h">
       <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\test\project_a\ProjectAMenu.h">
-      <Filter>test\projectA</Filter>
-    </ClInclude>
-    <ClInclude Include="src\project_a\projecta_CompanyScene.h">
-      <Filter>project\projectA</Filter>
-    </ClInclude>
-    <ClInclude Include="src\project_a\projecta_VersionInfo.h">
-      <Filter>project\projectA</Filter>
     </ClInclude>
     <ClInclude Include="src\tool\texture_editor\tool_texture_editor_EntryScene.h">
       <Filter>tool\texture_editor</Filter>
