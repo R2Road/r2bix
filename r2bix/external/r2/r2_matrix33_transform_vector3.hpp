@@ -226,4 +226,22 @@ namespace r2
 			, x_axis.z    , y_axis.z    , z_axis.z
 		};
 	}
+
+
+
+	inline r2::Radian extract_mat33_euler_z_vec3( const r2::Matrix33& m )
+	{
+		// 왜 이게 맞는지 잘 모르겠어. 하지만 작동해. @_@
+		return r2::Radian( std::atan2( -m._12, m._11 ) );
+	}
+	inline r2::Radian extract_mat33_euler_y_vec3( const r2::Matrix33& m )
+	{
+		// 왜 이게 맞는지 잘 모르겠어. 하지만 작동해. @_@
+		return r2::Radian( std::asin( m._13 ) );
+	}
+	inline r2::Radian extract_mat33_euler_x_vec3( const r2::Matrix33& m )
+	{
+		// 왜 이게 맞는지 잘 모르겠어. 하지만 작동해. @_@
+		return r2::Radian( std::atan2( -m._23, m._33 ) );
+	}
 }

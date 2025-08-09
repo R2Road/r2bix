@@ -500,4 +500,31 @@ namespace r2
 			, 0           , 0           , 0           , 1
 		};
 	}
+
+
+
+	inline r2::Radian extract_mat44_euler_z_vec3( const r2::Matrix44& m )
+	{
+		return extract_mat33_euler_z_vec3( Matrix33(
+			  m._11, m._12, m._13
+			, m._21, m._22, m._23
+			, m._31, m._32, m._33
+		) );
+	}
+	inline r2::Radian extract_mat44_euler_y_vec3( const r2::Matrix44& m )
+	{
+		return extract_mat33_euler_y_vec3( Matrix33(
+			  m._11, m._12, m._13
+			, m._21, m._22, m._23
+			, m._31, m._32, m._33
+		) );
+	}
+	inline r2::Radian extract_mat44_euler_x_vec3( const r2::Matrix44& m )
+	{
+		return extract_mat33_euler_x_vec3( Matrix33(
+			  m._11, m._12, m._13
+			, m._21, m._22, m._23
+			, m._31, m._32, m._33
+		) );
+	}
 }

@@ -5,11 +5,13 @@
 // - 0.0.1.0 : 기능 개선/변경
 // - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2025.08.05 PM.07.45
-// # Version			: 1.1.0.0
+// # Last Update		: 2025.08.09 AM.06.15
+// # Version			: 1.2.1.0
 //
 
 #pragma once
+
+#include <algorithm>
 
 #include "r2_degree.hpp"
 #include "r2_epsilon.hpp"
@@ -41,19 +43,19 @@ namespace r2
 		{}
 		explicit Quaternion( const Vector3 axis, const Radian radian ) : w( 0.f ), x( 0.f ), y( 0.f ), z( 0.f )
 		{
-			w = std::cos( radian.Get() / 2.f );
-			x = axis.x * std::sin( radian.Get() / 2.f );
-			y = axis.y* std::sin( radian.Get() / 2.f );
-			z = axis.z* std::sin( radian.Get() / 2.f );
+			w = std::cos( radian.Get() * 0.5f );
+			x = axis.x * std::sin( radian.Get() * 0.5f );
+			y = axis.y * std::sin( radian.Get() * 0.5f );
+			z = axis.z * std::sin( radian.Get() * 0.5f );
 		}
 		explicit Quaternion( const Vector3 axis, const Degree degree ) : w( 0.f ), x( 0.f ), y( 0.f ), z( 0.f )
 		{
 			const Radian radian = r2::deg2rad( degree );
 
-			w = std::cos( radian.Get() / 2.f );
-			x = axis.x * std::sin( radian.Get() / 2.f );
-			y = axis.y * std::sin( radian.Get() / 2.f );
-			z = axis.z * std::sin( radian.Get() / 2.f );
+			w = std::cos( radian.Get() * 0.5f );
+			x = axis.x * std::sin( radian.Get() * 0.5f );
+			y = axis.y * std::sin( radian.Get() * 0.5f );
+			z = axis.z * std::sin( radian.Get() * 0.5f );
 		}
 
 		explicit constexpr Quaternion( const Vector4 v ) :
@@ -64,19 +66,36 @@ namespace r2
 		{}
 		explicit Quaternion( const Vector4 axis, const Radian radian ) : w( 0.f ), x( 0.f ), y( 0.f ), z( 0.f )
 		{
-			w = std::cos( radian.Get() / 2.f );
-			x = axis.x * std::sin( radian.Get() / 2.f );
-			y = axis.y * std::sin( radian.Get() / 2.f );
-			z = axis.z * std::sin( radian.Get() / 2.f );
+			w = std::cos( radian.Get() * 0.5f );
+			x = axis.x * std::sin( radian.Get() * 0.5f );
+			y = axis.y * std::sin( radian.Get() * 0.5f );
+			z = axis.z * std::sin( radian.Get() * 0.5f );
 		}
 		explicit Quaternion( const Vector4 axis, const Degree degree ) : w( 0.f ), x( 0.f ), y( 0.f ), z( 0.f )
 		{
 			const Radian radian = r2::deg2rad( degree );
 
-			w = std::cos( radian.Get() / 2.f );
-			x = axis.x * std::sin( radian.Get() / 2.f );
-			y = axis.y * std::sin( radian.Get() / 2.f );
-			z = axis.z * std::sin( radian.Get() / 2.f );
+			w = std::cos( radian.Get() * 0.5f );
+			x = axis.x * std::sin( radian.Get() * 0.5f );
+			y = axis.y * std::sin( radian.Get() * 0.5f );
+			z = axis.z * std::sin( radian.Get() * 0.5f );
+		}
+
+		explicit Quaternion( const Radian r_x, const Radian r_y, const Radian r_z ) : w( 0.f ), x( 0.f ), y( 0.f ), z( 0.f )
+		{
+			const float cr = std::cos( r_x.Get() * 0.5f );
+			const float sr = std::sin( r_x.Get() * 0.5f );
+			const float cp = std::cos( r_y.Get() * 0.5f );
+			const float sp = std::sin( r_y.Get() * 0.5f );
+			const float cy = std::cos( r_z.Get() * 0.5f );
+			const float sy = std::sin( r_z.Get() * 0.5f );
+
+			// 난 이거 제대로 이해 못했는데. 아무튼 작동한다.
+			// qx * qy * qz 를 전개해서 정리하면 아래의 공식이 나온단다.
+			w = cr * cp * cy - sr * sp * sy;
+			x = sr * cp * cy + cr * sp * sy;
+			y = cr * sp * cy - sr * cp * sy;
+			z = cr * cp * sy + sr * sp * cy;
 		}
 
 		float w;
@@ -126,7 +145,7 @@ namespace r2
 	inline Vector4 operator*( const Quaternion& q, const Vector4& v )
 	{
 		const Vector3 temp = q * Vector3( v.x, v.y, v.z );
-		return Vector4( temp.x, temp.y, temp.z, 1 );
+		return Vector4( temp.x, temp.y, temp.z, 1.f );
 	}
 
 
@@ -171,9 +190,9 @@ namespace r2
 		const float wz( q.w * q.z );
 
 		return r2::Matrix33(
-			  ( 1 - ( 2 *  yy ) - ( 2 * zz ) )  , ( ( 2 * xy ) - ( 2 * wz ) )      , ( ( 2 * xz ) + ( 2 * wy ) )
-			, ( ( 2 * xy ) + ( 2 * wz ) )       , ( 1 - ( 2 * xx ) - ( 2 * zz ) )  , ( ( 2 * yz ) - ( 2 * wx )  )
-			, ( ( 2 * xz ) - ( 2 * wy ) )       , ( ( 2 * yz ) + ( 2 * wx )  )     , ( 1 - ( 2 * xx ) - ( 2 * yy ) )
+			  ( 1.f - ( 2.f *  yy ) - ( 2.f * zz ) )  , ( ( 2.f * xy ) - ( 2.f * wz ) )      , ( ( 2.f * xz ) + ( 2.f * wy ) )
+			, ( ( 2.f * xy ) + ( 2.f * wz ) )         , ( 1.f - ( 2 * xx ) - ( 2.f * zz ) )  , ( ( 2.f * yz ) - ( 2.f * wx )  )
+			, ( ( 2.f * xz ) - ( 2.f * wy ) )         , ( ( 2.f * yz ) + ( 2.f * wx )  )     , ( 1.f - ( 2.f * xx ) - ( 2.f * yy ) )
 		);
 	}
 	inline Matrix44 quat2mat44( const r2::Quaternion& q )
@@ -248,5 +267,46 @@ namespace r2
 			, m._21, m._22, m._23
 			, m._31, m._32, m._33
 		) );
+	}
+
+
+
+	// yaw
+	inline r2::Radian extract_euler_z( const r2::Quaternion& q )
+	{
+		const float y = -( ( 2.f * q.x * q.y ) - ( 2.f * q.w * q.z ) );
+		const float x = ( 1.f - ( 2.f * q.y * q.y ) - ( 2.f * q.z * q.z ) );
+
+		return r2::Radian( std::atan2( y, x ) );
+	}
+	// pitch
+	inline r2::Radian extract_euler_y( const r2::Quaternion& q )
+	{
+		return r2::Radian( std::asin( ( ( 2.f * q.x * q.z ) + ( 2.f * q.w * q.y ) ) ) );
+	}
+	// roll
+	inline r2::Radian extract_euler_x( const r2::Quaternion& q )
+	{
+		// 여기의 x 계산식은 아래의 계산식과 결과가 다르다. 미묘하게 계산이 다르다.
+		//const float y = -2.f * ( q.y * q.z - q.w * q.x );
+		//const float x = 1.f - 2.f * ( q.x * q.x - q.y * q.y );
+
+		const float y = -( ( 2.f * q.y * q.z ) - ( 2.f * q.w * q.x ) );
+		const float x = ( 1.f - ( 2.f * q.x * q.x ) - ( 2.f * q.y * q.y ) );
+
+		if( r2::epsilon_equal( 0.f, x ) && r2::epsilon_equal( 0.f, y ) )
+		{
+			return r2::Radian();
+		}
+
+		return r2::Radian( std::atan2( y, x ) );
+	}
+	inline r2::Vector3 extract_euler_angles( const r2::Quaternion& q )
+	{
+		return r2::Vector3(
+			  extract_euler_x( q ).Get()
+			, extract_euler_y( q ).Get()
+			, extract_euler_z( q ).Get()
+		);
 	}
 }

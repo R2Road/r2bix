@@ -163,4 +163,19 @@ namespace r2
 	{
 		return inverse_mat44_scale_rotation_translate_vec3( m );
 	}
+
+
+
+	inline r2::Radian extract_mat44_euler_z_vec4( const r2::Matrix44& m )
+	{
+		return extract_mat44_euler_z_vec3( m );
+	}
+	inline r2::Radian extract_mat44_euler_y_vec4( const r2::Matrix44& m )
+	{
+		return extract_mat44_euler_y_vec3( m );
+	}
+	inline r2::Radian extract_mat44_euler_x_vec4( const r2::Matrix44& m )
+	{
+		return extract_mat44_euler_x_vec3( m );
+	}
 }
