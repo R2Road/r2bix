@@ -463,4 +463,72 @@ namespace test_camera_3d
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT LookAt::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera3D : LookAt";
+		};
+	}
+	r2tm::DoFunctionT LookAt::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUTPUT_SUBJECT( "카메라가 특정 위치를 바라보게 한다." );
+
+			LS();
+
+			DECLARATION_MAIN( r2bix::Camera3D cam );
+
+			LF();
+
+			DECLARATION_MAIN( constexpr r2bix::Camera3D::Vec3 v_position( 0, 0, 0 ) );
+			DECLARATION_MAIN( constexpr r2bix::Camera3D::Vec3 v_target( 10, 10, -10 ) );
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "LookAt" );
+
+				LF();
+
+				PROCESS_MAIN( cam.SetPosition( r2bix::Camera3D::Vec3( 0, 0, 0 ) ) );
+				PROCESS_MAIN( cam.LookAt( v_target ) );
+
+				LF();
+
+				EXPECT_EQ( v_position, cam.GetPosition() );
+				EXPECT_EQ( r2::normalize( v_target ), cam.GetFront() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "ViewMatrix 검사" );
+
+				LF();
+
+				DECLARATION_MAIN( const r2::Vector3 v3 = cam.GetViewMatrix() * v_target );
+
+				LF();
+
+				EXPECT_EQ( r2::Vector3( 0, 0, -r2::length( v_target ) ), v3);
+
+				LF();
+
+				OUTPUT_VALUE( cam.GetFront() );
+				OUTPUT_VALUE( cam.GetRight() );
+				OUTPUT_VALUE( cam.GetUp() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

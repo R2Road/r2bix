@@ -33,6 +33,20 @@ namespace r2bix
 
 		mbDirty = false;
 	}
+	void Camera3D::LookAt( const Vec3 target )
+	{
+		// 카메라가 target을 바라보게 만드는 행렬
+		const r2::Matrix33 cam_mat = r2::build_mat33_lookat_vec3( target, mPosition, WORLD_UP );
+
+		// 행렬을 쿼터니언으로 변환.
+		mRotation = r2::mat2quat( cam_mat );
+
+		mFront = mRotation * WORLD_FRONT;
+		mRight = mRotation * WORLD_RIGHT;
+		mUp = r2::cross( mRight, mFront );
+
+		mbDirty = false;
+	}
 
 	Camera3D::Mat44 Camera3D::GetViewMatrix() const
 	{

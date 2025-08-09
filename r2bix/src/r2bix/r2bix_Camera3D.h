@@ -106,6 +106,7 @@ namespace r2bix
 		//
 		//
 		void UpdateVectors();
+		void LookAt( const Vec3 target );
 
 		Mat44 GetViewMatrix() const;
 
