@@ -21,7 +21,6 @@ namespace r2bix
 
 
 
-
 		Camera3D();
 
 		//
@@ -31,6 +30,7 @@ namespace r2bix
 		{
 			return mPosition;
 		}
+
 		Radian GetRotationX() const
 		{
 			return mRotationX;
@@ -65,6 +65,12 @@ namespace r2bix
 			mPosition = new_position;
 			mbDirty = true;
 		}
+		void Move( const Vec3 move_by )
+		{
+			mPosition += move_by;
+			mbDirty = true;
+		}
+
 		void SetRotationX( const Radian rotation_to )
 		{
 			mRotationX = rotation_to;
@@ -78,12 +84,6 @@ namespace r2bix
 		void SetRotationZ( const Radian rotation_to )
 		{
 			mRotationZ = rotation_to;
-			mbDirty = true;
-		}
-
-		void Move( const Vec3 move_by )
-		{
-			mPosition += move_by;
 			mbDirty = true;
 		}
 		void RotationX( const Radian rotation_by )
@@ -109,6 +109,8 @@ namespace r2bix
 		void LookAt( const Vec3 target );
 
 		Mat44 GetViewMatrix() const;
+
+
 
 	private:
 		bool mbDirty;
