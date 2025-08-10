@@ -40,7 +40,7 @@ namespace tool_texture_viewer
 			//
 			{
 				auto node = ret->AddChild<r2bix_node::LabelSNode>();
-				node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Texture Viewer" );
+				node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Texture Viewer : 작업 예정" );
 
 				node->mTransformComponent->SetPosition(
 					  director.GetScreenSize().GetWidth() * 0.5f

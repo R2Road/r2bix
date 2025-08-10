@@ -20,7 +20,7 @@ namespace tool_texture_viewer
 		EntryScene() = delete;
 
 	public:
-		static const char* const GetTitle() { return "Texture Viewer"; }
+		static const char* const GetTitle() { return "Texture Viewer : 작업 예정"; }
 		static r2bix_node::NodeUp Create( r2bix::Director& director );
 	};
 }

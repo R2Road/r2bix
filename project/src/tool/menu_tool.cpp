@@ -57,7 +57,10 @@ r2tm::WriteFunctionT Menu_Tool::GetWriteFunction() const
 
 		mp->AddItem(
 			's'
-			, []()->const char* { return tool_texture_viewer::EntryScene::GetTitle(); }
+			, []()->const char*
+			{
+				return tool_texture_viewer::EntryScene::GetTitle();
+			}
 			, []()->r2tm::eDoLeaveAction
 			{
 				//
