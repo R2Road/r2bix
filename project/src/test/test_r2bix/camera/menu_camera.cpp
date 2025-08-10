@@ -45,6 +45,7 @@ r2tm::WriteFunctionT Menu_Camera::GetWriteFunction() const
 		mp->AddItem( 'y', test_camera_3d::Vectors() );
 		mp->AddItem( 'u', test_camera_3d::ViewTransform() );
 		mp->AddItem( 'i', test_camera_3d::LookAt() );
+		mp->AddItem( 32, test_camera_3d::Demo() );
 
 
 		mp->AddSplit();

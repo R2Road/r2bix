@@ -6,7 +6,9 @@
 
 #include "r2bix_Camera3D.h"
 
+#include "r2_FPSTimer.h"
 #include "r2_math.hpp"
+#include "r2_matrix44_render_transform.hpp"
 #include "r2_matrix44_transform_vector3.hpp"
 #include "r2helper_std_printer_quaternion.hpp"
 #include "r2helper_std_printer_radian.hpp"
@@ -524,6 +526,167 @@ namespace test_camera_3d
 				OUTPUT_VALUE( cam.GetFront() );
 				OUTPUT_VALUE( cam.GetRight() );
 				OUTPUT_VALUE( cam.GetUp() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Demo::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Camera3D : Demo";
+		};
+	}
+	r2tm::DoFunctionT Demo::GetDoFunction() const
+	{
+		return[]()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			const r2bix::Camera3D::Vec3 position( 0, 4, -10 );
+
+			DECLARATION_MAIN( r2bix::Camera3D cam );
+			PROCESS_MAIN( cam.SetPosition( position ) );
+			PROCESS_MAIN( cam.LookAt( r2bix::Camera3D::Vec3() ) );
+
+			LF();
+
+			const int v_size = 3;
+			const r2::Vector4 vs[v_size] = {
+				  r2::Vector4{  0, -4, 0, 1 }
+				, r2::Vector4{  6,  3, 0, 1 }
+				, r2::Vector4{ -6,  3, 0, 1 }
+			};
+			r2::Vector4 fixed_vs[v_size];
+
+
+			const int viewport_w = 50;
+			const int viewport_h = 30;
+
+			const float left = -viewport_w / 2;
+			const float right = viewport_w / 2;
+			const float bottom = -viewport_h / 2;
+			const float top = viewport_h / 2;
+			const float near = 0.1f;
+			const float far = 100.f;
+
+			const auto projection_mat44 = r2::build_mat44_render_transform_projection_orthographic_z01(
+				left
+				, right
+				, bottom
+				, top
+				, near
+				, far
+			);
+			const auto viewport_mat44 = r2::build_mat44_render_transform_viewport_zm1p1(
+				viewport_w
+				, viewport_h
+				, near
+				, far
+			);
+
+			LS();
+
+			OUTPUT_SUBJECT( "삼각형을 가운데 두고 카메라를 회전" );
+
+			LS();
+
+			{
+				const auto pivot = r2tm::WindowsUtility::GetCursorPoint();
+
+				r2::FPSTimer timer( 30 );
+				float accumulate_time = 0.f;
+				do
+				{
+					if( timer.Update() )
+					{
+						accumulate_time += ( timer.GetElapsedTime() * 0.5f );
+						accumulate_time -= ( int )accumulate_time;
+
+						r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot );
+
+						const auto cam_rotation_y_mat44 = r2::build_mat44_rotation_y_vec4( r2::Degree( 360 * accumulate_time ) );
+						const auto new_p = cam_rotation_y_mat44 * position;
+
+						cam.SetPosition( new_p );
+						cam.LookAt( r2bix::Camera3D::Vec3() );
+
+						const auto view_mat44 = cam.GetViewMatrix();
+
+						// Draw : vs
+						{
+							for( int i = 0; v_size > i; ++i )
+							{
+								// setup
+								auto& v = fixed_vs[i] = vs[i];
+
+								v = view_mat44 * v;
+
+								v = projection_mat44 * v;
+								v /= v.w;
+
+								v = viewport_mat44 * v;
+							}
+
+							r2::Vector4 v_start;
+							r2::Vector4 v_end;
+							r2::Vector4 v_dir;
+							for( int i = 0; v_size > i; ++i )
+							{
+								v_start = fixed_vs[i];
+								v_end = ( i + 1 == v_size ? fixed_vs[0] : fixed_vs[i + 1] );
+
+								v_dir = v_end - v_start;
+
+								int divider = int( std::abs( v_dir.x ) > std::abs( v_dir.y ) ? std::abs( v_dir.x ) : std::abs( v_dir.y ) );
+								v_dir.x /= divider;
+								v_dir.y /= divider;
+
+								for( int j = 0; divider > j; ++j )
+								{
+									auto v = v_start + ( v_dir * j );
+
+									r2tm::WindowsUtility::FillCharacter( pivot + r2tm::WindowsUtility::CursorPoint( ( short )v.x, ( short )v.y ), 'c' );
+								}
+							}
+						}
+
+						// Draw : Bottom
+						{
+							auto v = view_mat44 * r2::Vector4( 7, 0, 0, 1 );
+
+							v = projection_mat44 * v;
+							v /= v.w;
+
+							v = viewport_mat44 * v;
+
+							r2tm::WindowsUtility::FillCharacter( pivot + r2tm::WindowsUtility::CursorPoint( ( short )v.x, ( short )v.y ), 'b' );
+						}
+
+						// Draw : 0, 0
+						{
+							auto v = view_mat44 * r2::Vector4( 0, 0, 0, 1 );
+
+							v = projection_mat44 * v;
+							v /= v.w;
+
+							v = viewport_mat44 * v;
+
+							r2tm::WindowsUtility::FillString( pivot + r2tm::WindowsUtility::CursorPoint( ( short )v.x, ( short )v.y ), "0,0 ", 3, r2tm::WindowsUtility::eColor::FG_Green);
+						}
+
+						r2tm::WindowsUtility::MoveCursorPoint( r2tm::WindowsUtility::CursorPoint( 0, pivot.y + ( short )viewport_h ) );
+
+						LS();
+					}
+
+				} while( !KB_HIT );
 			}
 
 			LS();
