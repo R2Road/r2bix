@@ -188,7 +188,7 @@
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_EntryComponent.cpp" />
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_EntryScene.cpp" />
     <ClCompile Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.cpp" />
-    <ClCompile Include="src\tool\ToolMenu.cpp" />
+    <ClCompile Include="src\tool\menu_tool.cpp" />
     <ClCompile Include="src\view\view_key.cpp" />
     <ClCompile Include="src\view\menu_view.cpp" />
     <ClCompile Include="src\view\view_terminal_info.cpp" />
@@ -507,7 +507,7 @@
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_EntryComponent.h" />
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_EntryScene.h" />
     <ClInclude Include="src\tool\texture_viewer\tool_texture_viewer_ViewerScene.h" />
-    <ClInclude Include="src\tool\ToolMenu.h" />
+    <ClInclude Include="src\tool\menu_tool.hpp" />
     <ClInclude Include="src\view\view_key.h" />
     <ClInclude Include="src\view\menu_view.h" />
     <ClInclude Include="src\view\view_terminal_info.h" />

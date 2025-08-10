@@ -11,7 +11,7 @@
 #include "test/test_p2048/P2048Menu.h"
 #include "test/test_r2bix/menu_r2bix.h"
 
-#include "tool/ToolMenu.h"
+#include "tool/menu_tool.hpp"
 
 #include "view/menu_view.h"
 
