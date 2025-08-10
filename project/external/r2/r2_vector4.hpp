@@ -95,6 +95,17 @@ namespace r2
 		v1.z *= scalar;
 		v1.w *= scalar;
 	}
+	inline Vector4 operator/( const Vector4& v1, const float scalar )
+	{
+		return Vector4{ v1.x / scalar, v1.y / scalar, v1.z / scalar, v1.w / scalar };
+	}
+	inline void operator/=( Vector4& v1, const float scalar )
+	{
+		v1.x /= scalar;
+		v1.y /= scalar;
+		v1.z /= scalar;
+		v1.w /= scalar;
+	}
 
 
 

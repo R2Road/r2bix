@@ -24,8 +24,8 @@ namespace r2
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '3';
 		const char VersionNumber_3 = '1';
-		const char VersionNumber_4 = '4';
-		const char VersionNumber_5 = '2';
+		const char VersionNumber_4 = '5';
+		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
 					"### Version Rule ###"
@@ -59,6 +59,7 @@ namespace r2
 			"\n"	"[o] " "Update Struct   : Quaternion : 생성자 추가 - x, y, z 축 회전 값을 한번에 넣어서 이미 전개 정리된 공식을 사용해 쿼터니언 생성"
 			"\n"	"[o] " "Update Struct   : Matrix44, Matrix33 : 행렬에서 각 축별 회전 량 추출"
 			"\n"	"[o] " "Update Struct   : Quaternion : 행렬에서 각 축별 회전 량 추출"
+			"\n"	"[o] " "Update Struct   : Matrix44 : add operator : /, /="
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
