@@ -8,14 +8,14 @@
 
 #include "menu_dev.h"
 
-r2tm::TitleFunctionT ToolMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Tool::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Tool";
 	};
 }
-r2tm::DescriptionFunctionT ToolMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Tool::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
@@ -24,7 +24,7 @@ r2tm::DescriptionFunctionT ToolMenu::GetDescriptionFunction() const
 			"\n"	"> ...";
 	};
 }
-r2tm::WriteFunctionT ToolMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Tool::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
