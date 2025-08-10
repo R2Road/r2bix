@@ -20,8 +20,10 @@ r2tm::DescriptionFunctionT Menu_Tool::GetDescriptionFunction() const
 	return []()->const char*
 	{
 		return
-					"> Inprogress : ..."
-			"\n"	"> ...";
+			        "### 작업 상황 ###"
+			"\n"
+			"\n"    "[~] " "Texture Editor"
+			"\n"	"[ ] " "Texture Viewer";
 	};
 }
 r2tm::WriteFunctionT Menu_Tool::GetWriteFunction() const
@@ -52,9 +54,6 @@ r2tm::WriteFunctionT Menu_Tool::GetWriteFunction() const
 				return r2tm::eDoLeaveAction::None;
 			}
 		);
-
-		mp->AddLineFeed();
-		mp->AddLineFeed();
 
 		mp->AddItem(
 			's'
