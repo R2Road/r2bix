@@ -202,7 +202,7 @@ namespace p2048
 			{
 				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
 
-				label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Press Any Key" );
+				label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "Press Spacebar" );
 
 				label_node->mTransformComponent->SetPosition(
 					  director.GetScreenSize().GetWidth() * 0.5f
