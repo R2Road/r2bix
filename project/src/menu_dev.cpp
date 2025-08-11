@@ -15,6 +15,8 @@
 
 #include "view/menu_view.h"
 
+#include "menu_portfolio.hpp"
+
 r2tm::TitleFunctionT Menu_Dev::GetTitleFunction() const
 {
 	return []()->const char*
@@ -73,6 +75,6 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 
 
 
-		mp->AddExit( 27 );
+		mp->AddMenu( 27, Menu_Portfolio() );
 	};
 }

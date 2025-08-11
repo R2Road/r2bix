@@ -1,15 +1,9 @@
 #include "menu_portfolio.hpp"
 
-#include <string>
-
-#include "r2_version_info.hpp"
+#include "r2tm/r2tm_MenuProcessor.h"
 
 #include "r2bix_Director.h"
 #include "r2bix_utility_InputUtil.h"
-#include "r2bix_VersionInfo.h"
-
-#include "r2tm/r2tm_MenuProcessor.h"
-#include "r2tm/r2tm_VersionInfo.h"
 
 #include "p2048/p2048_EntryScene.h"
 #include "tool/texture_editor/tool_texture_editor_EntryScene.h"
@@ -21,13 +15,7 @@ r2tm::TitleFunctionT Menu_Portfolio::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		static const std::string ret =
-				std::string( "Portfolio" )
-			+	" : <" + r2bix::VersionInfo.String4Version + ">"
-			+	", <" + r2tm::VersionInfo.String4Version + ">"
-			+	", <" + r2::VersionInfo.String4Version + ">"
-		;
-		return ret.c_str();
+		return "Portfolio";
 	};
 }
 r2tm::DescriptionFunctionT Menu_Portfolio::GetDescriptionFunction() const
@@ -142,13 +130,12 @@ r2tm::WriteFunctionT Menu_Portfolio::GetWriteFunction() const
 
 
 
-		mp->AddMessage( "이 프로젝트의 본래 Root Menu로 이동합니다. 포트폴리오 메뉴로 돌아올 수 없습니다.", r2tm::eColor::FG_Yellow );
-		mp->AddMenu( 'z', Menu_Dev() );
+		mp->AddMessage( "이 프로젝트의 개발 메뉴로 이동합니다.", r2tm::eColor::FG_Yellow );
+		mp->AddMenu( 32, Menu_Dev() );
 
 
 
-		mp->AddLineFeed();
-		mp->AddLineFeed();
+		mp->AddSplit();
 
 
 
