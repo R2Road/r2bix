@@ -637,7 +637,7 @@
     <ClInclude Include="src\test\test_r2bix\TextureTable4Test.h">
       <Filter>test\test_r2bix</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu_dev.h" />
+    <ClInclude Include="src\menu_dev.hpp" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h">
       <Filter>project_2048</Filter>
     </ClInclude>

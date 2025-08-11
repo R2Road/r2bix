@@ -1,4 +1,4 @@
-#include "menu_dev.hpp"
+#include "menu_portfolio.hpp"
 
 #include <string>
 
@@ -15,7 +15,7 @@
 
 #include "view/menu_view.h"
 
-r2tm::TitleFunctionT Menu_Dev::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Portfolio::GetTitleFunction() const
 {
 	return []()->const char*
 	{
@@ -28,7 +28,7 @@ r2tm::TitleFunctionT Menu_Dev::GetTitleFunction() const
 		return ret.c_str();
 	};
 }
-r2tm::DescriptionFunctionT Menu_Dev::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Portfolio::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
@@ -44,7 +44,7 @@ r2tm::DescriptionFunctionT Menu_Dev::GetDescriptionFunction() const
 		return ret.c_str();
 	};
 }
-r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Portfolio::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{

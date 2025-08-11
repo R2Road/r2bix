@@ -5,7 +5,7 @@
 #include "view/view_key.h"
 #include "view/view_terminal_info.h"
 
-#include "../menu_dev.h"
+#include "../menu_dev.hpp"
 
 r2tm::TitleFunctionT Menu_View::GetTitleFunction() const
 {

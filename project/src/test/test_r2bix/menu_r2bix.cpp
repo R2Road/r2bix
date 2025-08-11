@@ -16,7 +16,7 @@
 #include "variable/research_visible_resource.h"
 #include "variable/test_render.h"
 
-#include "menu_dev.h"
+#include "menu_dev.hpp"
 
 r2tm::TitleFunctionT Menu_R2bix::GetTitleFunction() const
 {

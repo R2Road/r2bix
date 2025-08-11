@@ -6,7 +6,7 @@
 #include "texture_editor/tool_texture_editor_EntryScene.h"
 #include "texture_viewer/tool_texture_viewer_EntryScene.h"
 
-#include "menu_dev.h"
+#include "menu_dev.hpp"
 
 r2tm::TitleFunctionT Menu_Tool::GetTitleFunction() const
 {

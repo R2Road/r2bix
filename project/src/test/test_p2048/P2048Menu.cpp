@@ -8,7 +8,7 @@
 #include "test_p2048_stage.h"
 #include "test_p2048_stageviewnode.h"
 
-#include "menu_dev.h"
+#include "menu_dev.hpp"
 
 #include "p2048/p2048_EntryScene.h"
 

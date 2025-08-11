@@ -8,7 +8,7 @@
 #include "r2tm/r2tm_Director.h"
 #include "r2tm/r2tm_WindowsUtility.h"
 
-#include "menu_dev.h"
+#include "menu_dev.hpp"
 
 int main()
 {
