@@ -629,6 +629,7 @@
     <ClCompile Include="external\r2\r2_Direction8SequentialState.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="src\menu_portfolio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\test\test_r2bix\TextureFrameAnimationTable4Test.h">
@@ -1580,5 +1581,6 @@
     <ClInclude Include="external\r2\r2_Direction8SequentialState.h">
       <Filter>external\r2</Filter>
     </ClInclude>
+    <ClInclude Include="src\menu_portfolio.hpp" />
   </ItemGroup>
 </Project>

@@ -65,6 +65,7 @@
     <ClCompile Include="external\r2\r2_TimerFloat.cpp" />
     <ClCompile Include="src\helper\r2bix_helper_Printer4Texture.cpp" />
     <ClCompile Include="src\menu_dev.cpp" />
+    <ClCompile Include="src\menu_portfolio.cpp" />
     <ClCompile Include="src\p2048\p2048_CompanyScene.cpp" />
     <ClCompile Include="src\p2048\p2048_EntryScene.cpp" />
     <ClCompile Include="src\p2048\p2048_GameComponent.cpp" />
@@ -376,6 +377,7 @@
     <ClInclude Include="src\helper\r2bix_helper_Printer4Texture.h" />
     <ClInclude Include="src\helper\r2bix_helper_STDPrinter4Texture.h" />
     <ClInclude Include="src\menu_dev.hpp" />
+    <ClInclude Include="src\menu_portfolio.hpp" />
     <ClInclude Include="src\p2048\p2048_CompanyScene.h" />
     <ClInclude Include="src\p2048\p2048_Config.h" />
     <ClInclude Include="src\p2048\p2048_EntryScene.h" />
