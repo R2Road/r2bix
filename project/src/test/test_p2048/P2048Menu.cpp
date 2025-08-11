@@ -1,6 +1,8 @@
 #include "P2048Menu.h"
 
 #include "r2bix_Director.h"
+#include "r2bix_utility_InputUtil.h"
+
 #include "r2tm/r2tm_MenuProcessor.h"
 
 #include "test_p2048_gameprocessor.h"
@@ -84,6 +86,13 @@ r2tm::WriteFunctionT P2048Menu::GetWriteFunction() const
 				// Terminate
 				//
 				director.Terminate();
+
+				//
+				// Clear Input
+				// > 이 함수를 호출하지 않으면 _getch() 가 앞에 입력됐던 키에 반응 한다.
+				// > r2tm 환경으로 돌아갔을 때 미리 입력된 키가 작동한다.
+				//
+				r2bix_utility::ClearCInputBuffer();
 
 				return r2tm::eDoLeaveAction::None;
 			}
