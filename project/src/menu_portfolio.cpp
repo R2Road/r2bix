@@ -35,11 +35,13 @@ r2tm::DescriptionFunctionT Menu_Portfolio::GetDescriptionFunction() const
 	return []()->const char*
 	{
 		return (
-			     "주요 코드는 프로젝트의 r2bix 폴더 안에 있습니다."
+			     "  주요 코드는 프로젝트의 r2bix 폴더 안에 있습니다."
 			"\n"
-			"\n" "터미널 환경에서 게임을 만들기 위한 프레임 워크 입니다."
-			"\n" "더블버퍼링 기반의 조악한 2D 기능이 준비되어있습니다."
-			"\n" "현재 3D 와 UI 기능을 추가중입니다."
+			"\n" "  키보드 조작으로 지정된 기능이 실행됩니다."
+			"\n"
+			"\n" "  터미널 환경에서 게임을 만들기 위한 프레임 워크 입니다."
+			"\n" "  더블버퍼링 기반의 조악한 2D 기능이 준비되어있습니다."
+			"\n" "  현재 3D 와 UI 기능을 작업중입니다."
 		);
 	};
 }
@@ -47,9 +49,9 @@ r2tm::WriteFunctionT Menu_Portfolio::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddMessage( "2D 기능 테스트를 위해 만든 2048 게임 입니다.", r2tm::eColor::FG_Yellow );
+		mp->AddMessage( "2D 기능 테스트를 위한 2048 게임 입니다.", r2tm::eColor::FG_Yellow );
 		mp->AddMessage( "https://play2048.co/", r2tm::eColor::FG_Yellow );
-		mp->AddMessage( "위 사이트에서 플레이 해보고 기능을 유추해 제작했습니다.", r2tm::eColor::FG_Yellow );
+		mp->AddMessage( "위 사이트에서 플레이 하고 기능을 유추해 제작했습니다.", r2tm::eColor::FG_Yellow );
 		mp->AddItem(
 			'1'
 			, []()->const char* { return p2048::EntryScene::GetTitle(); }
@@ -130,7 +132,7 @@ r2tm::WriteFunctionT Menu_Portfolio::GetWriteFunction() const
 
 
 
-		mp->AddMessage( "작업중인 3D 기능의 카메라 기능 데모 입니다.", r2tm::eColor::FG_Yellow );
+		mp->AddMessage( "작업중인 3D 기능의 카메라 데모 입니다.", r2tm::eColor::FG_Yellow );
 		mp->AddItem( 'a', test_camera_3d::Demo() );
 
 
@@ -141,11 +143,12 @@ r2tm::WriteFunctionT Menu_Portfolio::GetWriteFunction() const
 
 
 		mp->AddMessage( "이 프로젝트의 본래 Root Menu로 이동합니다. 포트폴리오 메뉴로 돌아올 수 없습니다.", r2tm::eColor::FG_Yellow );
-		mp->AddMenu( 32, Menu_Dev() );
+		mp->AddMenu( 'z', Menu_Dev() );
 
 
-		
-		mp->AddSplit();
+
+		mp->AddLineFeed();
+		mp->AddLineFeed();
 
 
 
