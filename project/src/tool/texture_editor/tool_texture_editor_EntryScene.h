@@ -10,7 +10,7 @@ namespace tool_texture_editor
 		EntryScene() = delete;
 
 	public:
-		static const char* const GetTitle() { return "Texture Editor"; }
+		static const char* const GetTitle() { return "Tool : Texture Editor"; }
 		static r2bix_node::NodeUp Create( r2bix::Director& director );
 	};
 }

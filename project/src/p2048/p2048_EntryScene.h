@@ -10,7 +10,7 @@ namespace p2048
 		EntryScene() = delete;
 
 	public:
-		static const char* const GetTitle() { return "Game : 2048( ...Zzz )"; }
+		static const char* const GetTitle() { return "2D Game : 2048"; }
 		static r2bix_node::NodeUp Create( r2bix::Director& director );
 	};
 }

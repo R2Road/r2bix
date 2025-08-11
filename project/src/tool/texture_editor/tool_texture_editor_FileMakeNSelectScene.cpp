@@ -1,5 +1,7 @@
 #include "tool_texture_editor_FileMakeNSelectScene.h"
 
+#include <algorithm>
+
 #include "r2bix_ColorValue.h"
 #include "r2bix_Director.h"
 
@@ -47,19 +49,47 @@ namespace tool_texture_editor
 			// Exit
 			//
 			{
+				{
+					auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
+					label_node->mTransformComponent->SetPosition( 6, 3 );
+					label_node->mTransformComponent->SetPivot( 0.f, 0.f );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->Set( "ESC : Exit", r2bix::eBackgroundColor::BG_Gray | r2bix::eBackgroundColor::BG_Black );
+				}
+
+				{
+					auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
+					label_node->mTransformComponent->SetPosition( 6, 5 );
+					label_node->mTransformComponent->SetPivot( 0.f, 0.f );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->Set( "마우스와 키보드 사용", r2bix::eBackgroundColor::BG_Gray | r2bix::eBackgroundColor::BG_Black );
+				}
+
+				{
+					auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
+					label_node->mTransformComponent->SetPosition( 6, 7 );
+					label_node->mTransformComponent->SetPivot( 0.f, 0.f );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->Set( "Text Field 는 입력 + Enter 를 완료해야 입력 모드가 종료 됩니다.", r2bix::eBackgroundColor::BG_Gray | r2bix::eBackgroundColor::BG_Black );
+				}
+
+				{
+					auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
+					label_node->mTransformComponent->SetPosition( 6, 9 );
+					label_node->mTransformComponent->SetPivot( 0.f, 0.f );
+					label_node->GetComponent<r2bix_component::LabelSComponent>()->Set( "숫자 필드에 입력 제한 기능은 터미널 기능을 우회 사용중이라 아직 구현되지 못했습니다.", r2bix::eBackgroundColor::BG_Gray | r2bix::eBackgroundColor::BG_Black );
+				}
+
 				auto component = ret->AddComponent<r2bix_component::InputKeyboardComponent>();
 				component->SetCallback(
 					r2bix_input::eKeyCode::VK_ESCAPE
 					, [&director]( r2bix_input::eKeyStatus s )->bool
-				{
-					if( r2bix_input::eKeyStatus::Push == s )
 					{
-						director.RequestAbort();
-						return true;
-					}
+						if( r2bix_input::eKeyStatus::Push == s )
+						{
+							director.RequestAbort();
+							return true;
+						}
 
-					return false;
-				}
+						return false;
+					}
 				);
 				component->Activate();
 			}
@@ -125,17 +155,17 @@ namespace tool_texture_editor
 					);
 				}
 
-				{
-					auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
-					button_node->mTransformComponent->SetPosition( 5, 9 );
-					button_node->mTransformComponent->SetPivot( 0.f, 0.f );
-					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 40, 3 );
-					{
-						auto label_node = button_node->AddChild<r2bix_node::LabelSNode>();
-						label_node->mTransformComponent->SetPosition( 20, 1 );
-						label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "O P E N" );
-					}
-				}
+				//{
+				//	auto button_node = pn_node->AddChild<r2bix_node::UISimpleButtonNode>();
+				//	button_node->mTransformComponent->SetPosition( 5, 9 );
+				//	button_node->mTransformComponent->SetPivot( 0.f, 0.f );
+				//	button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->Set( 40, 3 );
+				//	{
+				//		auto label_node = button_node->AddChild<r2bix_node::LabelSNode>();
+				//		label_node->mTransformComponent->SetPosition( 20, 1 );
+				//		label_node->GetComponent<r2bix_component::LabelSComponent>()->SetString( "O P E N" );
+				//	}
+				//}
 			}
 
 
@@ -251,6 +281,9 @@ namespace tool_texture_editor
 										{}
 										catch( std::out_of_range const& )
 										{}
+
+										file_width = std::clamp( file_width, 1, 80 );
+										file_height = std::clamp( file_height, 1, 80 );
 
 										if( 0 < file_width && 0 < file_height )
 										{

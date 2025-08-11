@@ -38,6 +38,17 @@ namespace tool_texture_editor
 					, r2bix::eBackgroundColor::BG_Gray
 				);
 			}
+
+			//
+			//
+			//
+			{
+				auto label_node = ret->AddChild<r2bix_node::LabelSNode>();
+				label_node->mTransformComponent->SetPosition( 6, 3 );
+				label_node->mTransformComponent->SetPivot( 0.f, 0.f );
+				label_node->GetComponent<r2bix_component::LabelSComponent>()->Set( "검은 영역을 마우스로 클릭 합니다.", r2bix::eBackgroundColor::BG_Gray | r2bix::eBackgroundColor::BG_Black );
+			}
+
 			//
 			// Exit
 			//
