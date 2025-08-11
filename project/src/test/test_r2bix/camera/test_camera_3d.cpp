@@ -687,11 +687,16 @@ namespace test_camera_3d
 					}
 
 				} while( !KB_HIT );
+
+				//
+				// _getch() 를 부리지 않아. r2tm::eDoLeaveAction::None 사용시 메뉴에서 키가 작동한다.
+				//
+				WAIT_ANY_KEY;
 			}
 
 			LS();
 
-			return r2tm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 }
