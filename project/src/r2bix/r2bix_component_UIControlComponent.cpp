@@ -91,8 +91,8 @@ namespace r2bix_component
 	void UIControlComponent::resetResponseRect()
 	{
 		mResponseRect.SetOrigin(
-			  -mResponseRect.GetWidth() * mPivotVector.x
-			, -mResponseRect.GetHeight() * mPivotVector.y
+			  static_cast<int>( -mResponseRect.GetWidth() * mPivotVector.x )
+			, static_cast<int>( -mResponseRect.GetHeight() * mPivotVector.y )
 		);
 	}
 

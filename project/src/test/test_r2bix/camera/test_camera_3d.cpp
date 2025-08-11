@@ -650,7 +650,7 @@ namespace test_camera_3d
 
 								for( int j = 0; divider > j; ++j )
 								{
-									auto v = v_start + ( v_dir * j );
+									auto v = v_start + ( v_dir * static_cast<float>( j ) );
 
 									r2tm::WindowsUtility::FillCharacter( pivot + r2tm::WindowsUtility::CursorPoint( ( short )v.x, ( short )v.y ), 'c' );
 								}

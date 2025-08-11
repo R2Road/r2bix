@@ -23,7 +23,7 @@ namespace r2bix_component
 			{
 				const auto screen_position = (
 					  GetOwnerNode().mTransformComponent->GetScreenPosition()
-					- r2::PointInt( mUIControlComponent->GetPivotPoint().x * mUIControlComponent->GetWidth(), 0 )
+					- r2::PointInt( static_cast<int>( mUIControlComponent->GetPivotPoint().x * mUIControlComponent->GetWidth() ), 0 )
 				);
 
 				//
