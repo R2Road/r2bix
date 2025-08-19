@@ -1,6 +1,6 @@
 #include "menu_ui.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "r2bix/r2bix_Director.h"
 

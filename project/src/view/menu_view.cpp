@@ -1,6 +1,6 @@
 #include "Menu_View.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "view/view_key.h"
 #include "view/view_terminal_info.h"

@@ -1,6 +1,6 @@
 #include "menu_r2bix.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "action/menu_action.h"
 #include "camera/menu_camera.h"

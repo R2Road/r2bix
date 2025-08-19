@@ -1,7 +1,7 @@
 #include "menu_tool.hpp"
 
 #include "r2bix_Director.h"
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "texture_editor/tool_texture_editor_EntryScene.h"
 #include "texture_viewer/tool_texture_viewer_EntryScene.h"

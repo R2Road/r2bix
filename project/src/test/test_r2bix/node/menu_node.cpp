@@ -1,6 +1,6 @@
 #include "menu_node.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "test_node.h"
 #include "test_node___child.h"

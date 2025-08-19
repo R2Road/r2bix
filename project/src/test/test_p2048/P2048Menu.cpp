@@ -3,7 +3,7 @@
 #include "r2bix_Director.h"
 #include "r2bix_utility_InputUtil.h"
 
-#include "r2tm/r2tm_MenuProcessor.h"
+#include "r2tm/r2tm_menu_processor.hpp"
 
 #include "test_p2048_gameprocessor.h"
 #include "test_p2048_numbernode.h"
