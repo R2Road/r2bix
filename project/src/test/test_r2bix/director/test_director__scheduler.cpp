@@ -1,7 +1,7 @@
 #include "test_director__scheduler.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "r2bix_director_Config.h"
 #include "r2bix_director_Scheduler.h"
@@ -22,8 +22,8 @@ namespace test_director__scheduler
 			LS();
 
 			{
-				DECLARATION_MAIN( auto config( r2bix_director::Config{ 0, 0, r2bix_director::Config::eScheduleType::Infinite, 10, 20 } ) )
-				DECLARATION_MAIN( r2bix_director::Scheduler scheduler( config, [](float) {}, []() {} ) );
+				DECL_MAIN( auto config( r2bix_director::Config{ 0, 0, r2bix_director::Config::eScheduleType::Infinite, 10, 20 } ) )
+				DECL_MAIN( r2bix_director::Scheduler scheduler( config, [](float) {}, []() {} ) );
 			}
 
 			LS();

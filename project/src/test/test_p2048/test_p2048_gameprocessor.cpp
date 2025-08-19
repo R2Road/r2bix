@@ -5,9 +5,9 @@
 
 #include "r2bix_Director.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "p2048/p2048_GameProcessor.h"
 #include "p2048/p2048_Stage.h"
@@ -50,15 +50,15 @@ namespace test_p2048_gameprocessor
 		{
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
+			DECL_MAIN( p2048::Stage stage( 4, 4 ) );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( r2::Direction4Sequential move_dir );
-				DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-				DECLARATION_MAIN( r2::PointInt pivot_point_1 );
-				DECLARATION_MAIN( r2::PointInt pivot_point_2 );
+				DECL_MAIN( r2::Direction4Sequential move_dir );
+				DECL_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
+				DECL_MAIN( r2::PointInt pivot_point_1 );
+				DECL_MAIN( r2::PointInt pivot_point_2 );
 
 				LF();
 
@@ -73,16 +73,16 @@ namespace test_p2048_gameprocessor
 					switch( _getch() )
 					{
 					case 97: // L
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Left ) );
+						PROC_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Left ) );
 						break;
 					case 100: // R
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Right ) );
+						PROC_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Right ) );
 						break;
 					case 119: // U
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Down ) ); // swap D 4 ez look
+						PROC_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Down ) ); // swap D 4 ez look
 						break;
 					case 115: // D
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Up ) ); // swap U 4 ez look
+						PROC_MAIN( move_dir.SetState( r2::Direction4Sequential::eState::Up ) ); // swap U 4 ez look
 						break;
 
 					case 27: // ESC
@@ -98,24 +98,24 @@ namespace test_p2048_gameprocessor
 					if( bRun )
 					{
 						{
-							PROCESS_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetX(), center_point.GetY() * move_dir.GetY() ) );
-							PROCESS_MAIN( pivot_point_1.SetX( std::clamp( pivot_point_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
-							PROCESS_MAIN( pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
+							PROC_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetX(), center_point.GetY() * move_dir.GetY() ) );
+							PROC_MAIN( pivot_point_1.SetX( std::clamp( pivot_point_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
+							PROC_MAIN( pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
 						}
 
 						LF();
 
 						{
-							PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetY() ) ) );
+							PROC_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetY() ) ) );
 						}
 
 						LF();
 
 						stage.ClearAll();
-						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
-						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 2 ) );
-						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 7 ) );
-						PROCESS_MAIN( PrintStage( stage ) );
+						PROC_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
+						PROC_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 2 ) );
+						PROC_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 7 ) );
+						PROC_MAIN( PrintStage( stage ) );
 
 						LF();
 
@@ -134,14 +134,14 @@ namespace test_p2048_gameprocessor
 
 									if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
 									{
-										PROCESS_MAIN( stage.Add( x, y, loop_count ) );
+										PROC_MAIN( stage.Add( x, y, loop_count ) );
 									}
 								}
 							}
 
 							pivot_point_2 += reverse_dir;
 						}
-						PROCESS_MAIN( PrintStage( stage ) );
+						PROC_MAIN( PrintStage( stage ) );
 					}
 				} while( bRun );
 			}
@@ -167,18 +167,18 @@ namespace test_p2048_gameprocessor
 		{
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
-			DECLARATION_MAIN( p2048::GameProcessor game_processor( &stage ) );
+			DECL_MAIN( p2048::Stage stage( 4, 4 ) );
+			DECL_MAIN( p2048::GameProcessor game_processor( &stage ) );
 
 			LS();
 
 			{
-				PROCESS_MAIN( stage.Add( 0, 0, 1 ) );
-				PROCESS_MAIN( stage.Add( 0, 1, 2 ) );
-				PROCESS_MAIN( stage.Add( 3, 0, 3 ) );
-				PROCESS_MAIN( stage.Add( 0, 3, 4 ) );
-				PROCESS_MAIN( stage.Add( 3, 3, 8 ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROC_MAIN( stage.Add( 0, 0, 1 ) );
+				PROC_MAIN( stage.Add( 0, 1, 2 ) );
+				PROC_MAIN( stage.Add( 3, 0, 3 ) );
+				PROC_MAIN( stage.Add( 0, 3, 4 ) );
+				PROC_MAIN( stage.Add( 3, 3, 8 ) );
+				PROC_MAIN( PrintStage( stage ) );
 			}
 
 			LS();
@@ -197,16 +197,16 @@ namespace test_p2048_gameprocessor
 					switch( _getch() )
 					{
 					case 97: // L
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Left ).has_moved );
+						PROC_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Left ).has_moved );
 						break;
 					case 100: // R
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Right ).has_moved );
+						PROC_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Right ).has_moved );
 						break;
 					case 119: // U
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Down ).has_moved ); // swap D 4 ez look
+						PROC_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Down ).has_moved ); // swap D 4 ez look
 						break;
 					case 115: // D
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Up ).has_moved ); // swap U 4 ez look
+						PROC_MAIN( has_moved = game_processor.Move( r2::Direction4Sequential::eState::Up ).has_moved ); // swap U 4 ez look
 						break;
 
 					case 27: // ESC
@@ -219,7 +219,7 @@ namespace test_p2048_gameprocessor
 
 					LF();
 
-					PROCESS_MAIN( PrintStage( stage ) );
+					PROC_MAIN( PrintStage( stage ) );
 					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2tm::linefeed;
 
 				} while( bRun );
@@ -246,8 +246,8 @@ namespace test_p2048_gameprocessor
 		{
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 4, 1 ) );
-			DECLARATION_MAIN( p2048::GameProcessor game_processor( &stage ) );
+			DECL_MAIN( p2048::Stage stage( 4, 1 ) );
+			DECL_MAIN( p2048::GameProcessor game_processor( &stage ) );
 
 			LS();
 
@@ -255,14 +255,14 @@ namespace test_p2048_gameprocessor
 				stage.Add( 0, 0, 2 );
 				stage.Add( 1, 0, 1 );
 				stage.Add( 2, 0, 1 );
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROC_MAIN( PrintStage( stage ) );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				DECL_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
+				PROC_MAIN( PrintStage( stage ) );
 
 				LF();
 
@@ -277,8 +277,8 @@ namespace test_p2048_gameprocessor
 			LS();
 
 			{
-				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				DECL_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
+				PROC_MAIN( PrintStage( stage ) );
 
 				LF();
 
@@ -292,15 +292,15 @@ namespace test_p2048_gameprocessor
 			LS();
 
 			{
-				PROCESS_MAIN( stage.Add( 0, 0, 4 ) );
-				PROCESS_MAIN( stage.Add( 1, 0, 4 ) );
-				PROCESS_MAIN( stage.Add( 2, 0, 4 ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROC_MAIN( stage.Add( 0, 0, 4 ) );
+				PROC_MAIN( stage.Add( 1, 0, 4 ) );
+				PROC_MAIN( stage.Add( 2, 0, 4 ) );
+				PROC_MAIN( PrintStage( stage ) );
 
 				LF();
 
-				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				DECL_MAIN( const auto move_result = game_processor.Move( r2::Direction4Sequential::eState::Right ) );
+				PROC_MAIN( PrintStage( stage ) );
 
 				LF();
 
@@ -337,8 +337,8 @@ namespace test_p2048_gameprocessor
 
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
-			DECLARATION_MAIN( p2048::GameProcessor game_processor( &stage ) );
+			DECL_MAIN( p2048::Stage stage( 2, 2 ) );
+			DECL_MAIN( p2048::GameProcessor game_processor( &stage ) );
 
 			LS();
 

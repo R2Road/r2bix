@@ -1,8 +1,8 @@
 #include "test_render.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2bix_Director.h"
 #include "r2bix_node_Node.h"
@@ -140,12 +140,12 @@ namespace test_render
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix::Camera camera( 20, 25, 20, 10 ) );
-			DECLARATION_MAIN( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_MAIN( r2bix::Director director( {} ) );
-			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( director ) );
-			DECLARATION_MAIN( auto component = node->AddComponent<RenderTestComponent>() );
-			PROCESS_MAIN( component->Set( r2::PointInt{ 12, 26 }, r2::SizeInt{ 9, 9 }, r2::PointInt{ -4, -2 } ) );
+			DECL_MAIN( r2bix::Camera camera( 20, 25, 20, 10 ) );
+			DECL_MAIN( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_MAIN( r2bix::Director director( {} ) );
+			DECL_MAIN( auto node = r2bix_node::Node::Create( director ) );
+			DECL_MAIN( auto component = node->AddComponent<RenderTestComponent>() );
+			PROC_MAIN( component->Set( r2::PointInt{ 12, 26 }, r2::SizeInt{ 9, 9 }, r2::PointInt{ -4, -2 } ) );
 
 			LS();
 

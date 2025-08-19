@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2tm/r2tm_iItem.h"
+#include "r2tm/r2tm_interface_item.hpp"
 
 namespace research_visible_resource
 {

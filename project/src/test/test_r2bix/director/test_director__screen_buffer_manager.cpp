@@ -6,8 +6,8 @@
 
 #include "r2bix_director_ScreenBufferManager.h"
 #include "r2bix_render_Texture.h"
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace test_director__screen_buffer_manager
 {
@@ -24,26 +24,26 @@ namespace test_director__screen_buffer_manager
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_director::ScreenBufferManager s );
+			DECL_MAIN( r2bix_director::ScreenBufferManager s );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( r2bix_render::Texture t( " " ) );
+				DECL_MAIN( r2bix_render::Texture t( " " ) );
 
 				LF();
 
-				PROCESS_MAIN( t.Reset( "Screen Buffer 1" ) );
-				PROCESS_MAIN( s.Write2BackBuffer( 0, 0, &t) );
+				PROC_MAIN( t.Reset( "Screen Buffer 1" ) );
+				PROC_MAIN( s.Write2BackBuffer( 0, 0, &t) );
 
 				LF();
 
-				PROCESS_MAIN( s.Swap() );
+				PROC_MAIN( s.Swap() );
 
 				LF();
 
-				PROCESS_MAIN( t.Reset( "                   Screen Buffer 2" ) );
-				PROCESS_MAIN( s.Write2BackBuffer( 0, 0, &t ) );
+				PROC_MAIN( t.Reset( "                   Screen Buffer 2" ) );
+				PROC_MAIN( s.Write2BackBuffer( 0, 0, &t ) );
 			}
 
 			LS();

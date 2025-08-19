@@ -29,8 +29,8 @@
 #include "r2bix_node_UISimpleButtonNode.h"
 #include "helper/r2bix_helper_Printer4Texture.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace test_node
 {
@@ -47,11 +47,11 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( const auto dummy_node = r2bix_node::Node::Create( dummy_director ) );
+			DECL_MAIN( const auto dummy_node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
@@ -80,11 +80,11 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( const auto dummy_node = r2bix_node::LabelSNode::Create( dummy_director ) );
+			DECL_MAIN( const auto dummy_node = r2bix_node::LabelSNode::Create( dummy_director ) );
 
 			LS();
 
@@ -116,11 +116,11 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( const auto dummy_node = r2bix_node::LabelMNode::Create( dummy_director ) );
+			DECL_MAIN( const auto dummy_node = r2bix_node::LabelMNode::Create( dummy_director ) );
 
 			LS();
 
@@ -152,11 +152,11 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( const auto dummy_node = r2bix_node::SpriteNode::Create( dummy_director ) );
+			DECL_MAIN( const auto dummy_node = r2bix_node::SpriteNode::Create( dummy_director ) );
 
 			LS();
 
@@ -186,11 +186,11 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( const auto dummy_node = r2bix_node::SpriteAnimationNode::Create( dummy_director ) );
+			DECL_MAIN( const auto dummy_node = r2bix_node::SpriteAnimationNode::Create( dummy_director ) );
 
 			LS();
 
@@ -201,8 +201,8 @@ namespace test_node
 
 				LF();
 
-				DECLARATION_MAIN( auto frame = dummy_node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
-				DECLARATION_MAIN( auto animation = dummy_node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
+				DECL_MAIN( auto frame = dummy_node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
+				DECL_MAIN( auto animation = dummy_node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
 				EXPECT_EQ( frame, animation->GetTextureFrameRenderComponent() );
 			}
 
@@ -227,13 +227,13 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto node = r2bix_node::CustomTextureNode::Create( dummy_director ) );
+			DECL_MAIN( auto node = r2bix_node::CustomTextureNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
@@ -248,8 +248,8 @@ namespace test_node
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 3, 3, 'T' ) );
-				PROCESS_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
+				PROC_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 3, 3, 'T' ) );
+				PROC_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
 
 				LF();
 
@@ -261,8 +261,8 @@ namespace test_node
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 5, 5, 'S' ) );
-				PROCESS_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
+				PROC_MAIN( node->GetComponent<r2bix_component::CustomTextureComponent>()->GetTexture()->Reset( 5, 5, 'S' ) );
+				PROC_MAIN( node->GetComponent<r2bix_component::TextureRenderComponent>()->ResetVisibleRect() );
 
 				LF();
 
@@ -295,13 +295,13 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto node = r2bix_node::UIPannelNode::Create( dummy_director ) );
+			DECL_MAIN( auto node = r2bix_node::UIPannelNode::Create( dummy_director ) );
 			EXPECT_TRUE( nullptr != node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_TRUE( nullptr != node->GetComponent<r2bix_component::UIPannelComponent>() );
 			EXPECT_TRUE( nullptr != node->GetComponent<r2bix_component::UIControlComponent>() );
@@ -520,13 +520,13 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto node = r2bix_node::UIButtonNode::Create( dummy_director ) );
+			DECL_MAIN( auto node = r2bix_node::UIButtonNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIButtonComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::UIControlComponent>() );
@@ -541,7 +541,7 @@ namespace test_node
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 3, 3 ) );
+				PROC_MAIN( node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 3, 3 ) );
 
 				LF();
 
@@ -553,7 +553,7 @@ namespace test_node
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 5, 4 ) );
+				PROC_MAIN( node->GetComponent<r2bix_component::UIControlComponent>()->SetSize( 5, 4 ) );
 
 				LF();
 
@@ -843,13 +843,13 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto node = r2bix_node::PivotNode::Create( dummy_director ) );
+			DECL_MAIN( auto node = r2bix_node::PivotNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
@@ -885,13 +885,13 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto node = r2bix_node::RectNode::Create( dummy_director ) );
+			DECL_MAIN( auto node = r2bix_node::RectNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
@@ -907,7 +907,7 @@ namespace test_node
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->Set( 3, 3 ) );
+				PROC_MAIN( node->GetComponent<r2bix_component::RectComponent>()->Set( 3, 3 ) );
 
 				LF();
 
@@ -919,7 +919,7 @@ namespace test_node
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::RectComponent>()->Set( 5, 4, 'x' ));
+				PROC_MAIN( node->GetComponent<r2bix_component::RectComponent>()->Set( 5, 4, 'x' ));
 
 				LF();
 
@@ -949,13 +949,13 @@ namespace test_node
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 13, 5 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto node = r2bix_node::HollowRectNode::Create( dummy_director ) );
+			DECL_MAIN( auto node = r2bix_node::HollowRectNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TransformComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, node->GetComponent<r2bix_component::TextureRenderComponent>() );
@@ -971,7 +971,7 @@ namespace test_node
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::HollowRectComponent>()->Set( 3, 3 ) );
+				PROC_MAIN( node->GetComponent<r2bix_component::HollowRectComponent>()->Set( 3, 3 ) );
 
 				LF();
 
@@ -983,7 +983,7 @@ namespace test_node
 			LS();
 
 			{
-				PROCESS_MAIN( node->GetComponent<r2bix_component::HollowRectComponent>()->Set( 7, 5, 'x', '+' ) );
+				PROC_MAIN( node->GetComponent<r2bix_component::HollowRectComponent>()->Set( 7, 5, 'x', '+' ) );
 
 				LF();
 

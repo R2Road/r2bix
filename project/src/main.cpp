@@ -2,11 +2,11 @@
 	#include "vld/include/vld.h"
 #endif
 
+#include "r2tm/r2tm_director.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
+
 #include "r2bix_DebugConfig.h"
 #include "r2bix_VersionInfo.h"
-
-#include "r2tm/r2tm_Director.h"
-#include "r2tm/r2tm_WindowsUtility.h"
 
 #include "menu_dev.hpp"
 

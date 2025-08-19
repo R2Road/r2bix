@@ -2,9 +2,9 @@
 
 #include <conio.h>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2_PointInt.h"
 #include "r2helper_STDPrinter4Point.h"
@@ -29,9 +29,9 @@ namespace test_camera
 		{
 			LS();
 
-			DECLARATION_MAIN( const r2::Point<int> position( 20, 30 ) );
-			DECLARATION_MAIN( const r2::Size<int> size( 10, 50 ) );
-			DECLARATION_MAIN( r2bix::Camera camera( position, size ) );
+			DECL_MAIN( const r2::Point<int> position( 20, 30 ) );
+			DECL_MAIN( const r2::Size<int> size( 10, 50 ) );
+			DECL_MAIN( r2bix::Camera camera( position, size ) );
 
 			LS();
 
@@ -86,7 +86,7 @@ namespace test_camera
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix::Camera camera( 20, 30, 20, 10 ) );
+			DECL_MAIN( r2bix::Camera camera( 20, 30, 20, 10 ) );
 
 			LS();
 
@@ -168,7 +168,7 @@ namespace test_camera
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix::Camera camera( 20, 30, 19, 9 ) );
+			DECL_MAIN( r2bix::Camera camera( 20, 30, 19, 9 ) );
 
 			LS();
 

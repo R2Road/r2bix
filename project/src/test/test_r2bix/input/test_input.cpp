@@ -9,9 +9,9 @@
 
 #include "r2_RectInt.h"
 #include "r2_FPSTimer.h"
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 namespace test_input
 {
@@ -213,7 +213,7 @@ namespace test_input
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_input::ObservationKey o );
+			DECL_MAIN( r2bix_input::ObservationKey o );
 
 			LF();
 
@@ -583,7 +583,7 @@ namespace test_input
 
 			LS();
 
-			DECLARATION_MAIN( r2bix_input::InputManager m( 0, 0 ) );
+			DECL_MAIN( r2bix_input::InputManager m( 0, 0 ) );
 
 			LS();
 
@@ -592,15 +592,15 @@ namespace test_input
 
 				LF();
 
-				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_1( 1 ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_2( 1 ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_3( 1 ) );
+				DECL_MAIN( r2bix_input::Listener4Mouse l_1( 1 ) );
+				DECL_MAIN( r2bix_input::Listener4Mouse l_2( 1 ) );
+				DECL_MAIN( r2bix_input::Listener4Mouse l_3( 1 ) );
 
 				LF();
 
-				PROCESS_MAIN( m.AddListener( &l_1 ) );
-				PROCESS_MAIN( m.AddListener( &l_2 ) );
-				PROCESS_MAIN( m.AddListener( &l_3 ) );
+				PROC_MAIN( m.AddListener( &l_1 ) );
+				PROC_MAIN( m.AddListener( &l_2 ) );
+				PROC_MAIN( m.AddListener( &l_3 ) );
 
 				LF();
 
@@ -625,15 +625,15 @@ namespace test_input
 
 				LF();
 
-				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_1( 1 ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_2( 1 ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_3( 1 ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_1( 1 ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_2( 1 ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_3( 1 ) );
 
 				LF();
 
-				PROCESS_MAIN( m.AddListener( &l_1 ) );
-				PROCESS_MAIN( m.AddListener( &l_2 ) );
-				PROCESS_MAIN( m.AddListener( &l_3 ) );
+				PROC_MAIN( m.AddListener( &l_1 ) );
+				PROC_MAIN( m.AddListener( &l_2 ) );
+				PROC_MAIN( m.AddListener( &l_3 ) );
 
 				LF();
 
@@ -676,7 +676,7 @@ namespace test_input
 
 			LS();
 
-			DECLARATION_MAIN( r2bix_input::InputManager m( 0, 0 ) );
+			DECL_MAIN( r2bix_input::InputManager m( 0, 0 ) );
 
 			LS();
 
@@ -685,15 +685,15 @@ namespace test_input
 
 				LF();
 
-				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_1( 2 ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_2( 1 ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Mouse l_3( 3 ) );
+				DECL_MAIN( r2bix_input::Listener4Mouse l_1( 2 ) );
+				DECL_MAIN( r2bix_input::Listener4Mouse l_2( 1 ) );
+				DECL_MAIN( r2bix_input::Listener4Mouse l_3( 3 ) );
 
 				LF();
 
-				PROCESS_MAIN( m.AddListener( &l_1 ) );
-				PROCESS_MAIN( m.AddListener( &l_2 ) );
-				PROCESS_MAIN( m.AddListener( &l_3 ) );
+				PROC_MAIN( m.AddListener( &l_1 ) );
+				PROC_MAIN( m.AddListener( &l_2 ) );
+				PROC_MAIN( m.AddListener( &l_3 ) );
 
 				LF();
 
@@ -718,15 +718,15 @@ namespace test_input
 
 				LF();
 
-				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_1( 2 ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_2( 1 ) );
-				DECLARATION_MAIN( r2bix_input::Listener4Keyboard l_3( 3 ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_1( 2 ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_2( 1 ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_3( 3 ) );
 
 				LF();
 
-				PROCESS_MAIN( m.AddListener( &l_1 ) );
-				PROCESS_MAIN( m.AddListener( &l_2 ) );
-				PROCESS_MAIN( m.AddListener( &l_3 ) );
+				PROC_MAIN( m.AddListener( &l_1 ) );
+				PROC_MAIN( m.AddListener( &l_2 ) );
+				PROC_MAIN( m.AddListener( &l_3 ) );
 
 				LF();
 

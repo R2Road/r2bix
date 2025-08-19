@@ -2,8 +2,8 @@
 
 #include <Windows.h>
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 namespace view_terminal_info
 {
@@ -20,12 +20,12 @@ namespace view_terminal_info
 		{
 			LS();
 
-			DECLARATION_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
-			DECLARATION_MAIN( CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info );
+			DECL_MAIN( HANDLE hStdout = GetStdHandle( STD_OUTPUT_HANDLE ) );
+			DECL_MAIN( CONSOLE_SCREEN_BUFFER_INFO cs_buffer_info );
 
 			LS();
 
-			DECLARATION_MAIN( const auto result = GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info ) );
+			DECL_MAIN( const auto result = GetConsoleScreenBufferInfo( hStdout, &cs_buffer_info ) );
 			EXPECT_TRUE( result );
 
 			LS();

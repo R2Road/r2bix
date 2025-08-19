@@ -6,8 +6,8 @@
 #include "r2bix_component_StaticMeshComponent.h"
 #include "r2bix_component_MeshRendererComponent.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 
 namespace test_component___mesh_renderer
@@ -25,14 +25,14 @@ namespace test_component___mesh_renderer
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto s = node->AddComponent<r2bix_component::StaticMeshComponent>() );
+			DECL_MAIN( auto s = node->AddComponent<r2bix_component::StaticMeshComponent>() );
 			EXPECT_TRUE( nullptr != s );
-			DECLARATION_MAIN( auto r = node->AddComponent<r2bix_component::MeshRendererComponent>() );
+			DECL_MAIN( auto r = node->AddComponent<r2bix_component::MeshRendererComponent>() );
 			EXPECT_TRUE( nullptr != r );
 
 			LS();
@@ -42,7 +42,7 @@ namespace test_component___mesh_renderer
 
 				LF();
 
-				PROCESS_MAIN( r->SetStaticMesh( s ) );
+				PROC_MAIN( r->SetStaticMesh( s ) );
 				EXPECT_NE( nullptr, r->GetStaticMesh() );
 			}
 

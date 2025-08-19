@@ -5,8 +5,8 @@
 
 #include "r2bix_component_StaticMeshComponent.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "r2helper_std_printer_vector3.hpp"
 
@@ -26,12 +26,12 @@ namespace test_component___static_mesh
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto c = node->AddComponent<r2bix_component::StaticMeshComponent>() );
+			DECL_MAIN( auto c = node->AddComponent<r2bix_component::StaticMeshComponent>() );
 			EXPECT_TRUE( nullptr != c );
 
 			LS();
@@ -51,7 +51,7 @@ namespace test_component___static_mesh
 
 				LF();
 
-				PROCESS_MAIN( c->SetVertices( vs ) );
+				PROC_MAIN( c->SetVertices( vs ) );
 
 				LF();
 

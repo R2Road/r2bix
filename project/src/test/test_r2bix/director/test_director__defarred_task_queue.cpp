@@ -1,7 +1,7 @@
 #include "test_director__defarred_task_queue.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "r2bix_director_DefarredTaskQueue.h"
 
@@ -21,7 +21,7 @@ namespace test_director__defarred_task_queue
 			LS();
 
 			{
-				DECLARATION_MAIN( r2bix_director::DefarredTaskQueue q );
+				DECL_MAIN( r2bix_director::DefarredTaskQueue q );
 			}
 
 			LS();
@@ -45,7 +45,7 @@ namespace test_director__defarred_task_queue
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_director::DefarredTaskQueue q );
+			DECL_MAIN( r2bix_director::DefarredTaskQueue q );
 
 			LS();
 
@@ -78,7 +78,7 @@ namespace test_director__defarred_task_queue
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_director::DefarredTaskQueue q );
+			DECL_MAIN( r2bix_director::DefarredTaskQueue q );
 
 			LS();
 
@@ -90,7 +90,7 @@ namespace test_director__defarred_task_queue
 			LS();
 
 			{
-				PROCESS_MAIN( q.Add( [](){} ) );
+				PROC_MAIN( q.Add( [](){} ) );
 
 				LF();
 
@@ -101,7 +101,7 @@ namespace test_director__defarred_task_queue
 			LS();
 
 			{
-				PROCESS_MAIN( q.Add( [](){} ) );
+				PROC_MAIN( q.Add( [](){} ) );
 
 				LF();
 
@@ -130,14 +130,14 @@ namespace test_director__defarred_task_queue
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix_director::DefarredTaskQueue q );
-			DECLARATION_MAIN( int i = 0; );
+			DECL_MAIN( r2bix_director::DefarredTaskQueue q );
+			DECL_MAIN( int i = 0; );
 
 			LS();
 
 			{
-				PROCESS_MAIN( q.Add( [&i](){ ++i; } ) );
-				PROCESS_MAIN( q.Add( [&i](){ ++++i; } ) );
+				PROC_MAIN( q.Add( [&i](){ ++i; } ) );
+				PROC_MAIN( q.Add( [&i](){ ++++i; } ) );
 
 				LF();
 
@@ -152,7 +152,7 @@ namespace test_director__defarred_task_queue
 
 				LF();
 
-				PROCESS_MAIN( q.Process() );
+				PROC_MAIN( q.Process() );
 
 				LF();
 
@@ -167,7 +167,7 @@ namespace test_director__defarred_task_queue
 
 				LF();
 
-				PROCESS_MAIN( q.Process() );
+				PROC_MAIN( q.Process() );
 
 				LF();
 
@@ -200,13 +200,13 @@ namespace test_director__defarred_task_queue
 
 			LS();
 
-			DECLARATION_MAIN( r2bix_director::DefarredTaskQueue q );
-			DECLARATION_MAIN( int i = 0 );
+			DECL_MAIN( r2bix_director::DefarredTaskQueue q );
+			DECL_MAIN( int i = 0 );
 
 			LS();
 
 			{
-				PROCESS_MAIN( q.Add( [&q, &i]()
+				PROC_MAIN( q.Add( [&q, &i]()
 				{
 					++i;
 					q.Add( [&q, &i]()
@@ -229,7 +229,7 @@ namespace test_director__defarred_task_queue
 
 				LF();
 
-				PROCESS_MAIN( q.Process() );
+				PROC_MAIN( q.Process() );
 
 				LF();
 
@@ -244,7 +244,7 @@ namespace test_director__defarred_task_queue
 			LS();
 
 			{
-				PROCESS_MAIN( q.Process() );
+				PROC_MAIN( q.Process() );
 
 				LF();
 

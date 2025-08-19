@@ -3,7 +3,7 @@
 #include "r2_GridBasedOnVector.h"
 #include "r2_NoneCopyable.h"
 
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 namespace r2helper
 {

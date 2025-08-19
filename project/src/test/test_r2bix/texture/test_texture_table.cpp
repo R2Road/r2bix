@@ -2,8 +2,8 @@
 
 #include "helper/r2bix_helper_Printer4Texture.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "test/test_r2bix/TextureTable4Test.h"
 
@@ -22,19 +22,19 @@ namespace test_texture_table
 		{
 			LS();
 
-			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
+			PROC_MAIN( TextureTable4Test::GetInstance().Load() );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" ) );
+				DECL_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "blablabla" ) );
 				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" ) );
+				DECL_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" ) );
 				r2bix_helper::Printer4Texture::DrawTexture( *texture );
 			}
 
@@ -59,12 +59,12 @@ namespace test_texture_table
 		{
 			LS();
 
-			PROCESS_MAIN( TextureTable4Test::GetInstance().Load() );
+			PROC_MAIN( TextureTable4Test::GetInstance().Load() );
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" ) );
+				DECL_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "test_texture_001" ) );
 
 				LF();
 
@@ -74,7 +74,7 @@ namespace test_texture_table
 			LS();
 
 			{
-				DECLARATION_MAIN( auto frame = TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) );
+				DECL_MAIN( auto frame = TextureTable4Test::GetInstance().GetTextureFrame( "dguy_walk_1" ) );
 
 				LF();
 
@@ -109,7 +109,7 @@ namespace test_texture_table
 			LS();
 				
 			{
-				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
+				DECL_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
 
 				LF();
 
@@ -131,7 +131,7 @@ namespace test_texture_table
 			LS();
 
 			{
-				DECLARATION_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
+				DECL_MAIN( auto texture = TextureTable4Test::GetInstance().GetTexture( "TextureTable_3" ) );
 
 				LF();
 

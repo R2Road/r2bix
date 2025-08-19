@@ -2,8 +2,8 @@
 
 #include <iomanip>
 
-#include "r2tm/r2tm_Color.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_color.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 #include "r2bix_render_TextureFrame.h"
 
 namespace r2bix_helper

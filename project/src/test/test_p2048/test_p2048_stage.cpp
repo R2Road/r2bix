@@ -4,8 +4,8 @@
 #include <iomanip>
 
 #include "r2bix_Director.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_inspector.hpp"
 
 #include "p2048/p2048_Stage.h"
 
@@ -46,9 +46,9 @@ namespace test_p2048_stage
 		{
 			LS();
 
-			DECLARATION_MAIN( const uint32_t width = 4 );
-			DECLARATION_MAIN( const uint32_t height = 3 );
-			DECLARATION_MAIN( p2048::Stage stage( width, height ) );
+			DECL_MAIN( const uint32_t width = 4 );
+			DECL_MAIN( const uint32_t height = 3 );
+			DECL_MAIN( p2048::Stage stage( width, height ) );
 
 			LS();
 			{
@@ -59,7 +59,7 @@ namespace test_p2048_stage
 			LS();
 
 			{
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROC_MAIN( PrintStage( stage ) );
 			}
 
 			LS();
@@ -91,14 +91,14 @@ namespace test_p2048_stage
 		{
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 4, 3 ) );
+			DECL_MAIN( p2048::Stage stage( 4, 3 ) );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Add" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.Add( 2, 2, 64 ) );
+				PROC_MAIN( stage.Add( 2, 2, 64 ) );
 				EXPECT_EQ( 64, stage.GetNumber( 2, 2 ) );
 
 				PrintStage( stage );
@@ -109,7 +109,7 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ Remove" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.Remove( 2, 2 ) );
+				PROC_MAIN( stage.Remove( 2, 2 ) );
 				EXPECT_EQ( 0, stage.GetNumber( 2, 2 ) );
 
 				PrintStage( stage );
@@ -118,9 +118,9 @@ namespace test_p2048_stage
 			LS();
 
 			{
-				PROCESS_MAIN( stage.Add( 1, 1, 1 ) );
-				PROCESS_MAIN( stage.Add( 1, 2, 1 ) );
-				PROCESS_MAIN( stage.Add( 1, 3, 1 ) );
+				PROC_MAIN( stage.Add( 1, 1, 1 ) );
+				PROC_MAIN( stage.Add( 1, 2, 1 ) );
+				PROC_MAIN( stage.Add( 1, 3, 1 ) );
 
 				PrintStage( stage );
 			}
@@ -130,7 +130,7 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ Clear All" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.ClearAll() );
+				PROC_MAIN( stage.ClearAll() );
 				EXPECT_EQ( 0, stage.GetNumber( 1, 1 ) );
 				EXPECT_EQ( 0, stage.GetNumber( 1, 2 ) );
 				EXPECT_EQ( 0, stage.GetNumber( 1, 3 ) );
@@ -159,7 +159,7 @@ namespace test_p2048_stage
 		{
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
+			DECL_MAIN( p2048::Stage stage( 2, 2 ) );
 
 			LS();
 
@@ -206,7 +206,7 @@ namespace test_p2048_stage
 		{
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
+			DECL_MAIN( p2048::Stage stage( 2, 2 ) );
 			EXPECT_EQ( 0, stage.GetNumberSpaceCount() );
 
 			LS();
@@ -214,14 +214,14 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ Add New" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.Add( 0, 0, 7 ) );
+				PROC_MAIN( stage.Add( 0, 0, 7 ) );
 				EXPECT_EQ( 1, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 3, stage.GetEmptySpaceCount() );
 
 				LF();
 
-				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
-				PROCESS_MAIN( stage.Add( 1, 0, 7 ) );
+				PROC_MAIN( stage.Add( 0, 1, 7 ) );
+				PROC_MAIN( stage.Add( 1, 0, 7 ) );
 				EXPECT_EQ( 3, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
 			}
@@ -231,7 +231,7 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ Over Write" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
+				PROC_MAIN( stage.Add( 0, 1, 7 ) );
 				EXPECT_EQ( 3, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
 			}
@@ -241,7 +241,7 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ Remove" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.Remove( 0, 1 ) );
+				PROC_MAIN( stage.Remove( 0, 1 ) );
 				EXPECT_EQ( 2, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 2, stage.GetEmptySpaceCount() );
 			}
@@ -251,8 +251,8 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ Full" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
-				PROCESS_MAIN( stage.Add( 1, 1, 7 ) );
+				PROC_MAIN( stage.Add( 0, 1, 7 ) );
+				PROC_MAIN( stage.Add( 1, 1, 7 ) );
 				EXPECT_EQ( 4, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 0, stage.GetEmptySpaceCount() );
 
@@ -264,7 +264,7 @@ namespace test_p2048_stage
 			LS();
 
 			{
-				PROCESS_MAIN( stage.Remove( 0, 1 ) );
+				PROC_MAIN( stage.Remove( 0, 1 ) );
 				EXPECT_FALSE( stage.IsFull() );
 			}
 
@@ -289,14 +289,14 @@ namespace test_p2048_stage
 		{
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
+			DECL_MAIN( p2048::Stage stage( 2, 2 ) );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.Lock( 0, 0 ) );
+				PROC_MAIN( stage.Lock( 0, 0 ) );
 
 				LF();
 
@@ -307,9 +307,9 @@ namespace test_p2048_stage
 
 				LF();
 
-				PROCESS_MAIN( stage.Lock( 0, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 0 ) );
+				PROC_MAIN( stage.Lock( 0, 1 ) );
+				PROC_MAIN( stage.Lock( 1, 1 ) );
+				PROC_MAIN( stage.Lock( 1, 0 ) );
 
 				LF();
 
@@ -323,7 +323,7 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ ClearAllFlags" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.ClearAllFlags() );
+				PROC_MAIN( stage.ClearAllFlags() );
 
 				LF();
 
@@ -338,11 +338,11 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ ClearAll" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.Lock( 0, 0 ) );
-				PROCESS_MAIN( stage.Lock( 0, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 0 ) );
-				PROCESS_MAIN( stage.ClearAll() );
+				PROC_MAIN( stage.Lock( 0, 0 ) );
+				PROC_MAIN( stage.Lock( 0, 1 ) );
+				PROC_MAIN( stage.Lock( 1, 1 ) );
+				PROC_MAIN( stage.Lock( 1, 0 ) );
+				PROC_MAIN( stage.ClearAll() );
 
 				LF();
 
@@ -373,14 +373,14 @@ namespace test_p2048_stage
 		{
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 2, 2 ) );
+			DECL_MAIN( p2048::Stage stage( 2, 2 ) );
 
 			LS();
 
 			{
 				std::cout << r2tm::tab << "+ Lock" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.SetNewcomer( 0, 0 ) );
+				PROC_MAIN( stage.SetNewcomer( 0, 0 ) );
 
 				LF();
 
@@ -391,9 +391,9 @@ namespace test_p2048_stage
 
 				LF();
 
-				PROCESS_MAIN( stage.SetNewcomer( 0, 1 ) );
-				PROCESS_MAIN( stage.SetNewcomer( 1, 1 ) );
-				PROCESS_MAIN( stage.SetNewcomer( 1, 0 ) );
+				PROC_MAIN( stage.SetNewcomer( 0, 1 ) );
+				PROC_MAIN( stage.SetNewcomer( 1, 1 ) );
+				PROC_MAIN( stage.SetNewcomer( 1, 0 ) );
 
 				LF();
 
@@ -407,7 +407,7 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ ClearAllFlags" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.ClearAllFlags() );
+				PROC_MAIN( stage.ClearAllFlags() );
 
 				LF();
 
@@ -422,11 +422,11 @@ namespace test_p2048_stage
 			{
 				std::cout << r2tm::tab << "+ ClearAll" << r2tm::linefeed2;
 
-				PROCESS_MAIN( stage.Lock( 0, 0 ) );
-				PROCESS_MAIN( stage.Lock( 0, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 0 ) );
-				PROCESS_MAIN( stage.ClearAll() );
+				PROC_MAIN( stage.Lock( 0, 0 ) );
+				PROC_MAIN( stage.Lock( 0, 1 ) );
+				PROC_MAIN( stage.Lock( 1, 1 ) );
+				PROC_MAIN( stage.Lock( 1, 0 ) );
+				PROC_MAIN( stage.ClearAll() );
 
 				LF();
 

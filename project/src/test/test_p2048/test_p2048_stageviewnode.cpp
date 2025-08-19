@@ -4,9 +4,9 @@
 #include "r2bix_Camera.h"
 #include "helper/r2bix_helper_Printer4Texture.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "p2048/p2048_Stage.h"
 #include "p2048/p2048_StageViewComponent.h"
@@ -29,19 +29,19 @@ namespace test_p2048_stageviewnode
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 41, 21 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 41, 21 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto stage_view_node = p2048::StageViewNode::Create( dummy_director ) );
+			DECL_MAIN( auto stage_view_node = p2048::StageViewNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, stage_view_node->GetComponent<p2048::StageViewComponent>() );
 
 			LS();
 
 			{
-				PROCESS_MAIN( stage_view_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( stage_view_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -71,30 +71,30 @@ namespace test_p2048_stageviewnode
 
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 41, 21 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 41, 21 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
-			PROCESS_MAIN( stage.Add( 0, 0, 32 ) );
-			PROCESS_MAIN( stage.Add( 0, 1, 64 ) );
-			PROCESS_MAIN( stage.Add( 3, 0, 512 ) );
-			PROCESS_MAIN( stage.Add( 0, 3, 1024 ) );
-			PROCESS_MAIN( stage.Add( 3, 3, 2048 ) );
+			DECL_MAIN( p2048::Stage stage( 4, 4 ) );
+			PROC_MAIN( stage.Add( 0, 0, 32 ) );
+			PROC_MAIN( stage.Add( 0, 1, 64 ) );
+			PROC_MAIN( stage.Add( 3, 0, 512 ) );
+			PROC_MAIN( stage.Add( 0, 3, 1024 ) );
+			PROC_MAIN( stage.Add( 3, 3, 2048 ) );
 
 			LF();
 
-			DECLARATION_MAIN( auto svn = p2048::StageViewNode::Create( dummy_director ) );
-			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048::StageViewComponent>() );
-			PROCESS_MAIN( svc->Setup( stage ) );
-			PROCESS_MAIN( svn->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
+			DECL_MAIN( auto svn = p2048::StageViewNode::Create( dummy_director ) );
+			DECL_MAIN( auto svc = svn->GetComponent<p2048::StageViewComponent>() );
+			PROC_MAIN( svc->Setup( stage ) );
+			PROC_MAIN( svn->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
 			LS();
 
 			{
-				PROCESS_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -124,31 +124,31 @@ namespace test_p2048_stageviewnode
 
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 41, 21 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 41, 21 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LS();
 
-			DECLARATION_MAIN( p2048::Stage stage( 4, 4 ) );
-			PROCESS_MAIN( stage.Add( 0, 0, 32 ) );
-			PROCESS_MAIN( stage.Add( 0, 1, 64 ) );
-			PROCESS_MAIN( stage.Add( 3, 0, 512 ) );
-			PROCESS_MAIN( stage.Add( 0, 3, 1024 ) );
-			PROCESS_MAIN( stage.Add( 3, 3, 2048 ) );
+			DECL_MAIN( p2048::Stage stage( 4, 4 ) );
+			PROC_MAIN( stage.Add( 0, 0, 32 ) );
+			PROC_MAIN( stage.Add( 0, 1, 64 ) );
+			PROC_MAIN( stage.Add( 3, 0, 512 ) );
+			PROC_MAIN( stage.Add( 0, 3, 1024 ) );
+			PROC_MAIN( stage.Add( 3, 3, 2048 ) );
 
 			LF();
 
-			DECLARATION_MAIN( auto svn = p2048::StageViewNode::Create( dummy_director ) );
-			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048::StageViewComponent>() );
-			PROCESS_MAIN( svc->Setup( stage ) );
-			PROCESS_MAIN( svc->UpdateView() );
-			PROCESS_MAIN( svn->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
+			DECL_MAIN( auto svn = p2048::StageViewNode::Create( dummy_director ) );
+			DECL_MAIN( auto svc = svn->GetComponent<p2048::StageViewComponent>() );
+			PROC_MAIN( svc->Setup( stage ) );
+			PROC_MAIN( svc->UpdateView() );
+			PROC_MAIN( svn->GetComponent<r2bix_component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
 			LS();
 
 			{
-				PROCESS_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 

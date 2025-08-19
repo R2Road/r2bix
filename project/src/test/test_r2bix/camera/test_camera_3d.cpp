@@ -1,8 +1,8 @@
 #include "test_camera_3d.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2bix_Camera3D.h"
 
@@ -34,7 +34,7 @@ namespace test_camera_3d
 
 				SS();
 
-				DECLARATION_MAIN( r2bix::Camera3D cam );
+				DECL_MAIN( r2bix::Camera3D cam );
 
 				SS();
 
@@ -119,8 +119,8 @@ namespace test_camera_3d
 		{
 			LS();
 
-			DECLARATION_MAIN( using V = r2bix::Camera3D::Vec3 );
-			DECLARATION_MAIN( r2bix::Camera3D cam );
+			DECL_MAIN( using V = r2bix::Camera3D::Vec3 );
+			DECL_MAIN( r2bix::Camera3D cam );
 
 			LS();
 
@@ -133,8 +133,8 @@ namespace test_camera_3d
 
 				SS();
 
-				DECLARATION_MAIN( const V v( 10, 20, 30 ) );
-				PROCESS_MAIN( cam.SetPosition( v ) );
+				DECL_MAIN( const V v( 10, 20, 30 ) );
+				PROC_MAIN( cam.SetPosition( v ) );
 
 				LF();
 
@@ -192,12 +192,12 @@ namespace test_camera_3d
 		{
 			LS();
 
-			DECLARATION_MAIN( using V = r2bix::Camera3D::Vec3 );
-			DECLARATION_MAIN( r2bix::Camera3D cam );
+			DECL_MAIN( using V = r2bix::Camera3D::Vec3 );
+			DECL_MAIN( r2bix::Camera3D cam );
 
 			LF();
 
-			DECLARATION_MAIN( const V v( 10, 20, 30 ) );
+			DECL_MAIN( const V v( 10, 20, 30 ) );
 
 			LS();
 
@@ -211,7 +211,7 @@ namespace test_camera_3d
 				SS();
 
 				{
-					PROCESS_MAIN( cam.Move( v ) );
+					PROC_MAIN( cam.Move( v ) );
 
 					LF();
 
@@ -221,7 +221,7 @@ namespace test_camera_3d
 				SS();
 				
 				{
-					PROCESS_MAIN( cam.Move( v ) );
+					PROC_MAIN( cam.Move( v ) );
 
 					LF();
 
@@ -250,8 +250,8 @@ namespace test_camera_3d
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix::Camera3D cam );
-			DECLARATION_MAIN( const r2::Radian radian( r2::deg2rad( r2::Degree( 30.f ) ) ) );
+			DECL_MAIN( r2bix::Camera3D cam );
+			DECL_MAIN( const r2::Radian radian( r2::deg2rad( r2::Degree( 30.f ) ) ) );
 
 			LS();
 
@@ -265,7 +265,7 @@ namespace test_camera_3d
 				SS();
 
 				{
-					PROCESS_MAIN( cam.RotationX( radian ) );
+					PROC_MAIN( cam.RotationX( radian ) );
 
 					LF();
 
@@ -285,7 +285,7 @@ namespace test_camera_3d
 				SS();
 
 				{
-					PROCESS_MAIN( cam.RotationY( radian ) );
+					PROC_MAIN( cam.RotationY( radian ) );
 
 					LF();
 
@@ -305,7 +305,7 @@ namespace test_camera_3d
 				SS();
 
 				{
-					PROCESS_MAIN( cam.RotationZ( radian ) );
+					PROC_MAIN( cam.RotationZ( radian ) );
 
 					LF();
 
@@ -334,8 +334,8 @@ namespace test_camera_3d
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix::Camera3D cam );
-			DECLARATION_MAIN( const r2::Radian radian( r2::deg2rad( r2::Degree( 90.f ) ) ) );
+			DECL_MAIN( r2bix::Camera3D cam );
+			DECL_MAIN( const r2::Radian radian( r2::deg2rad( r2::Degree( 90.f ) ) ) );
 
 			LS();
 
@@ -351,8 +351,8 @@ namespace test_camera_3d
 				LF();
 
 				{
-					PROCESS_MAIN( cam.RotationY( radian ) );
-					PROCESS_MAIN( cam.UpdateVectors() );
+					PROC_MAIN( cam.RotationY( radian ) );
+					PROC_MAIN( cam.UpdateVectors() );
 
 					LF();
 
@@ -370,8 +370,8 @@ namespace test_camera_3d
 				LF();
 
 				{
-					PROCESS_MAIN( cam.RotationX( radian ) );
-					PROCESS_MAIN( cam.UpdateVectors() );
+					PROC_MAIN( cam.RotationX( radian ) );
+					PROC_MAIN( cam.UpdateVectors() );
 
 					LF();
 
@@ -389,8 +389,8 @@ namespace test_camera_3d
 				LF();
 
 				{
-					PROCESS_MAIN( cam.RotationZ( radian ) );
-					PROCESS_MAIN( cam.UpdateVectors() );
+					PROC_MAIN( cam.RotationZ( radian ) );
+					PROC_MAIN( cam.UpdateVectors() );
 
 					LF();
 
@@ -421,7 +421,7 @@ namespace test_camera_3d
 		{
 			LS();
 
-			DECLARATION_MAIN( r2bix::Camera3D cam );
+			DECL_MAIN( r2bix::Camera3D cam );
 
 			LS();
 
@@ -430,9 +430,9 @@ namespace test_camera_3d
 
 				LF();
 
-				PROCESS_MAIN( cam.SetPosition( r2bix::Camera3D::Vec3( 0, 0, 10 ) ) );
-				PROCESS_MAIN( cam.SetRotationY( r2::deg2rad( r2::Degree( -45.f ) ) ) );
-				PROCESS_MAIN( cam.UpdateVectors() );
+				PROC_MAIN( cam.SetPosition( r2bix::Camera3D::Vec3( 0, 0, 10 ) ) );
+				PROC_MAIN( cam.SetRotationY( r2::deg2rad( r2::Degree( -45.f ) ) ) );
+				PROC_MAIN( cam.UpdateVectors() );
 			}
 
 			LS();
@@ -442,12 +442,12 @@ namespace test_camera_3d
 
 				LF();
 
-				DECLARATION_MAIN( r2bix::Camera3D::Vec3 vs( 1, 0, 9 ) );
-				DECLARATION_MAIN( r2bix::Camera3D::Mat44 view_mat = cam.GetViewMatrix() );
+				DECL_MAIN( r2bix::Camera3D::Vec3 vs( 1, 0, 9 ) );
+				DECL_MAIN( r2bix::Camera3D::Mat44 view_mat = cam.GetViewMatrix() );
 
 				LF();
 
-				PROCESS_MAIN( vs = view_mat * vs );
+				PROC_MAIN( vs = view_mat * vs );
 
 				LF();
 
@@ -485,12 +485,12 @@ namespace test_camera_3d
 
 			LS();
 
-			DECLARATION_MAIN( r2bix::Camera3D cam );
+			DECL_MAIN( r2bix::Camera3D cam );
 
 			LF();
 
-			DECLARATION_MAIN( constexpr r2bix::Camera3D::Vec3 v_position( 0, 0, 0 ) );
-			DECLARATION_MAIN( constexpr r2bix::Camera3D::Vec3 v_target( 10, 10, -10 ) );
+			DECL_MAIN( constexpr r2bix::Camera3D::Vec3 v_position( 0, 0, 0 ) );
+			DECL_MAIN( constexpr r2bix::Camera3D::Vec3 v_target( 10, 10, -10 ) );
 
 			LS();
 
@@ -499,8 +499,8 @@ namespace test_camera_3d
 
 				LF();
 
-				PROCESS_MAIN( cam.SetPosition( r2bix::Camera3D::Vec3( 0, 0, 0 ) ) );
-				PROCESS_MAIN( cam.LookAt( v_target ) );
+				PROC_MAIN( cam.SetPosition( r2bix::Camera3D::Vec3( 0, 0, 0 ) ) );
+				PROC_MAIN( cam.LookAt( v_target ) );
 
 				LF();
 
@@ -515,7 +515,7 @@ namespace test_camera_3d
 
 				LF();
 
-				DECLARATION_MAIN( const r2::Vector3 v3 = cam.GetViewMatrix() * v_target );
+				DECL_MAIN( const r2::Vector3 v3 = cam.GetViewMatrix() * v_target );
 
 				LF();
 
@@ -551,9 +551,9 @@ namespace test_camera_3d
 
 			const r2bix::Camera3D::Vec3 position( 0, 4, -10 );
 
-			DECLARATION_MAIN( r2bix::Camera3D cam );
-			PROCESS_MAIN( cam.SetPosition( position ) );
-			PROCESS_MAIN( cam.LookAt( r2bix::Camera3D::Vec3() ) );
+			DECL_MAIN( r2bix::Camera3D cam );
+			PROC_MAIN( cam.SetPosition( position ) );
+			PROC_MAIN( cam.LookAt( r2bix::Camera3D::Vec3() ) );
 
 			LF();
 

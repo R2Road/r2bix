@@ -6,8 +6,8 @@
 
 #include "r2helper_STDPrinter4Rect.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
 
 #include "test/test_r2bix/TextureTable4Test.h"
 
@@ -44,7 +44,7 @@ namespace test_texture_frame
 		{
 			LS();
 
-			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
+			DECL_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 
 			LF();
 
@@ -52,7 +52,7 @@ namespace test_texture_frame
 
 			LS();
 
-			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
+			DECL_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
 			LF();
 
@@ -93,8 +93,8 @@ namespace test_texture_frame
 		{
 			LS();
 
-			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
-			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
+			DECL_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
+			DECL_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
 			LF();
 
@@ -124,8 +124,8 @@ namespace test_texture_frame
 
 				LF();
 
-				PROCESS_MAIN( frame.MoveVisibleOrigin( 2, 1 ) );
-				PROCESS_MAIN( frame.ChangeVisibleSize( -3, -1 ) );
+				PROC_MAIN( frame.MoveVisibleOrigin( 2, 1 ) );
+				PROC_MAIN( frame.ChangeVisibleSize( -3, -1 ) );
 
 				LF();
 
@@ -161,7 +161,7 @@ namespace test_texture_frame
 		{
 			LS();
 
-			DECLARATION_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
+			DECL_MAIN( const r2bix_render::Texture& texture = GetDummyTexture() );
 
 			LF();
 
@@ -186,7 +186,7 @@ namespace test_texture_frame
 
 			LS();
 
-			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
+			DECL_MAIN( r2bix_render::TextureFrame frame( &texture ) );
 
 			LF();
 
@@ -195,8 +195,8 @@ namespace test_texture_frame
 
 				LF();
 
-				PROCESS_MAIN( frame.MoveVisibleOrigin( -3, -3 ) );
-				PROCESS_MAIN( frame.ChangeVisibleSize( -1, -1 ) );
+				PROC_MAIN( frame.MoveVisibleOrigin( -3, -3 ) );
+				PROC_MAIN( frame.ChangeVisibleSize( -1, -1 ) );
 
 				LF();
 
@@ -214,7 +214,7 @@ namespace test_texture_frame
 			LS();
 
 			{
-				PROCESS_MAIN( frame.MoveVisibleOrigin( 6, 6 ) );
+				PROC_MAIN( frame.MoveVisibleOrigin( 6, 6 ) );
 
 				LF();
 

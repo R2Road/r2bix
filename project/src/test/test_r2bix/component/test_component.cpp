@@ -21,9 +21,9 @@
 #include "r2bix_render_TextureFrame.h"
 #include "helper/r2bix_helper_Printer4Texture.h"
 
-#include "r2tm/r2tm_Inspector.h"
-#include "r2tm/r2tm_ostream.h"
-#include "r2tm/r2tm_WindowsUtility.h"
+#include "r2tm/r2tm_inspector.hpp"
+#include "r2tm/r2tm_ostream.hpp"
+#include "r2tm/r2tm_windows_utility.hpp"
 
 #include "test/test_r2bix/TextureFrameAnimationTable4Test.h"
 #include "test/test_r2bix/TextureTable4Test.h"
@@ -54,15 +54,15 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto transform_1 = r2bix_component::ComponentStaticID<r2bix_component::TransformComponent>::Get() );
-			DECLARATION_MAIN( auto transform_2 = r2bix_component::ComponentStaticID<r2bix_component::TransformComponent>::Get() );
-			DECLARATION_MAIN( auto tex_render_1 = r2bix_component::ComponentStaticID<r2bix_component::TextureRenderComponent>::Get() );
-			DECLARATION_MAIN( auto tex_render_2 = r2bix_component::ComponentStaticID<r2bix_component::TextureRenderComponent>::Get() );
+			DECL_MAIN( auto transform_1 = r2bix_component::ComponentStaticID<r2bix_component::TransformComponent>::Get() );
+			DECL_MAIN( auto transform_2 = r2bix_component::ComponentStaticID<r2bix_component::TransformComponent>::Get() );
+			DECL_MAIN( auto tex_render_1 = r2bix_component::ComponentStaticID<r2bix_component::TextureRenderComponent>::Get() );
+			DECL_MAIN( auto tex_render_2 = r2bix_component::ComponentStaticID<r2bix_component::TextureRenderComponent>::Get() );
 
 			LS();
 
@@ -111,8 +111,8 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_MAIN( r2bix::Director dummy_director( {} ) );
-			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
+			DECL_MAIN( r2bix::Director dummy_director( {} ) );
+			DECL_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
@@ -175,8 +175,8 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_MAIN( r2bix::Director dummy_director( {} ) );
-			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
+			DECL_MAIN( r2bix::Director dummy_director( {} ) );
+			DECL_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
@@ -229,14 +229,14 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_MAIN( r2bix::Director dummy_director( {} ) );
-			DECLARATION_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
+			DECL_MAIN( r2bix::Director dummy_director( {} ) );
+			DECL_MAIN( auto node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
-			DECLARATION_MAIN( bool b = false );
-			DECLARATION_MAIN( r2bix_component::TransformComponent::Slot4PivotPointChanged s );
-			PROCESS_MAIN( s.SetCallback( [&b]( float x, float y )
+			DECL_MAIN( bool b = false );
+			DECL_MAIN( r2bix_component::TransformComponent::Slot4PivotPointChanged s );
+			PROC_MAIN( s.SetCallback( [&b]( float x, float y )
 			{
 				OUTPUT_VALUE( x );
 				OUTPUT_VALUE( y );
@@ -251,7 +251,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( node->mTransformComponent->ConnectSlot4PivotChanged( &s ) );
+				PROC_MAIN( node->mTransformComponent->ConnectSlot4PivotChanged( &s ) );
 			}
 
 			LS();
@@ -261,7 +261,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( node->mTransformComponent->SetPivot( 1.f, 2.f ) );
+				PROC_MAIN( node->mTransformComponent->SetPivot( 1.f, 2.f ) );
 
 				LF();
 
@@ -289,15 +289,15 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
+			DECL_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			DECL_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, component );
 
 			LS();
@@ -307,13 +307,13 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( component->SetPivot( 0.5f, 0.5f ) );
+				PROC_MAIN( component->SetPivot( 0.5f, 0.5f ) );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -341,30 +341,30 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
+			DECL_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			DECL_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, component );
 
 			LS();
 
-			DECLARATION_MAIN( r2bix_render::Texture texture( 3, 3, 'A' ) );
+			DECL_MAIN( r2bix_render::Texture texture( 3, 3, 'A' ) );
 			{
 				EXPECT_EQ( nullptr, component->GetTexture() );
-				PROCESS_MAIN( component->SetTexture( &texture ) );
+				PROC_MAIN( component->SetTexture( &texture ) );
 				EXPECT_EQ( &texture, component->GetTexture() );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( component->SetPivot( 0.f, 0.f ) );
+				PROC_MAIN( component->SetPivot( 0.f, 0.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
@@ -376,7 +376,7 @@ namespace test_component
 
 			{
 				render_target.FillCharacterAll( '=' );
-				PROCESS_MAIN( component->SetPivot( 0.5f, 0.5f ) );
+				PROC_MAIN( component->SetPivot( 0.5f, 0.5f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
@@ -388,7 +388,7 @@ namespace test_component
 
 			{
 				render_target.FillCharacterAll( '=' );
-				PROCESS_MAIN( component->SetPivot( 1.f, 1.f ) );
+				PROC_MAIN( component->SetPivot( 1.f, 1.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
@@ -417,17 +417,17 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 13, 7 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
+			DECL_SUB( r2bix::Camera camera( 20, 25, 13, 7 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
-			DECLARATION_MAIN( r2bix_render::Texture texture( 3, 3, "123" "abc" "zxc" ) );
-			PROCESS_MAIN( component->SetTexture( &texture ) );
+			DECL_MAIN( auto component = node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			DECL_MAIN( r2bix_render::Texture texture( 3, 3, "123" "abc" "zxc" ) );
+			PROC_MAIN( component->SetTexture( &texture ) );
 
 			LS();
 
@@ -442,7 +442,7 @@ namespace test_component
 			LS();
 
 			{
-				PROCESS_MAIN( component->SetVisibleRectForced( -4, -2, 1, 1 ) );
+				PROC_MAIN( component->SetVisibleRectForced( -4, -2, 1, 1 ) );
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
@@ -454,7 +454,7 @@ namespace test_component
 			LS();
 
 			{
-				PROCESS_MAIN( component->ResetVisibleRect() );
+				PROC_MAIN( component->ResetVisibleRect() );
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
@@ -484,16 +484,16 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 13, 7 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 13, 7 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
+			DECL_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, custom_texture );
-			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			DECL_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, texture_render );
 
 			LS();
@@ -504,15 +504,15 @@ namespace test_component
 				LF();
 
 				EXPECT_EQ( nullptr, texture_render->GetTexture() );
-				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
+				PROC_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
 				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( custom_texture->GetTexture()->FillCharacterAll( '?' ) );
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( custom_texture->GetTexture()->FillCharacterAll( '?' ) );
+				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -522,9 +522,9 @@ namespace test_component
 			LS();
 
 			{
-				PROCESS_MAIN( custom_texture->GetTexture()->Reset( "Bla Bla Bla" ) );
-				PROCESS_MAIN( texture_render->ResetVisibleRect() );
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( custom_texture->GetTexture()->Reset( "Bla Bla Bla" ) );
+				PROC_MAIN( texture_render->ResetVisibleRect() );
+				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -552,51 +552,51 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
+			DECL_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto label = node->AddComponent<r2bix_component::LabelSComponent>() );
+			DECL_MAIN( auto label = node->AddComponent<r2bix_component::LabelSComponent>() );
 			EXPECT_NE( nullptr, label );
-			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
+			DECL_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, custom_texture );
-			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			DECL_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, texture_render );
 
 			LS();
 
 			{
 				EXPECT_EQ( nullptr, label->GetCustomTextureComponent() );
-				PROCESS_MAIN( label->SetCustomTextureComponent( custom_texture ) );
+				PROC_MAIN( label->SetCustomTextureComponent( custom_texture ) );
 				EXPECT_EQ( custom_texture, label->GetCustomTextureComponent() );
 
 				LF();
 
 				EXPECT_EQ( nullptr, label->GetTextureRenderComponent() );
-				PROCESS_MAIN( label->SetTextureRenderComponent( texture_render ) );
+				PROC_MAIN( label->SetTextureRenderComponent( texture_render ) );
 				EXPECT_EQ( texture_render, label->GetTextureRenderComponent() );
 
 				LF();
 
 				EXPECT_EQ( nullptr, texture_render->GetTexture() );
-				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
+				PROC_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
 				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
 
 				LF();
 
-				DECLARATION_MAIN( const char* const dummy_text = "Bla\nBla\nBla" );
-				PROCESS_MAIN( label->SetString( dummy_text ) );
+				DECL_MAIN( const char* const dummy_text = "Bla\nBla\nBla" );
+				PROC_MAIN( label->SetString( dummy_text ) );
 				EXPECT_EQ( dummy_text, label->GetString() );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -624,51 +624,51 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 18, 8 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 18, 8 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto label = node->AddComponent<r2bix_component::LabelMComponent>() );
+			DECL_MAIN( auto label = node->AddComponent<r2bix_component::LabelMComponent>() );
 			EXPECT_NE( nullptr, label );
-			DECLARATION_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
+			DECL_MAIN( auto custom_texture = node->AddComponent<r2bix_component::CustomTextureComponent>() );
 			EXPECT_NE( nullptr, custom_texture );
-			DECLARATION_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
+			DECL_MAIN( auto texture_render = node->AddComponent<r2bix_component::TextureRenderComponent>() );
 			EXPECT_NE( nullptr, texture_render );
 
 			LS();
 
 			{
 				EXPECT_EQ( nullptr, label->GetCustomTextureComponent() );
-				PROCESS_MAIN( label->SetCustomTextureComponent( custom_texture ) );
+				PROC_MAIN( label->SetCustomTextureComponent( custom_texture ) );
 				EXPECT_EQ( custom_texture, label->GetCustomTextureComponent() );
 
 				LF();
 
 				EXPECT_EQ( nullptr, label->GetTextureRenderComponent() );
-				PROCESS_MAIN( label->SetTextureRenderComponent( texture_render ) );
+				PROC_MAIN( label->SetTextureRenderComponent( texture_render ) );
 				EXPECT_EQ( texture_render, label->GetTextureRenderComponent() );
 
 				LF();
 
 				EXPECT_EQ( nullptr, texture_render->GetTexture() );
-				PROCESS_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
+				PROC_MAIN( texture_render->SetTexture( custom_texture->GetTexture() ) );
 				EXPECT_EQ( custom_texture->GetTexture(), texture_render->GetTexture() );
 
 				LF();
 
-				DECLARATION_MAIN( const char* const dummy_text = "Bla\nBla\n\nBla" );
-				PROCESS_MAIN( label->SetString( dummy_text ) );
+				DECL_MAIN( const char* const dummy_text = "Bla\nBla\n\nBla" );
+				PROC_MAIN( label->SetString( dummy_text ) );
 				EXPECT_EQ( dummy_text, label->GetString() );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -696,22 +696,22 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 
 			LF();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
 			LF();
 
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 20, 25 ) );
 
 			LS();
 
 			EXPECT_EQ( nullptr, node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
-			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureFrameRenderComponent>() );
+			DECL_MAIN( auto component = node->AddComponent<r2bix_component::TextureFrameRenderComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_EQ( component, node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 
@@ -724,7 +724,7 @@ namespace test_component
 			LS();
 
 			{
-				PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -752,11 +752,11 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
+			DECL_SUB( r2bix::Camera camera( 20, 25, 14, 6 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
 			LS();
 
@@ -764,24 +764,24 @@ namespace test_component
 			
 			LF();
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::TextureFrameRenderComponent>() );
+			DECL_MAIN( auto component = node->AddComponent<r2bix_component::TextureFrameRenderComponent>() );
 			EXPECT_NE( nullptr, component );
 			EXPECT_EQ( component, node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
 
 			LS();
 
-			DECLARATION_MAIN( r2bix_render::Texture texture( 3, 3,
+			DECL_MAIN( r2bix_render::Texture texture( 3, 3,
 				"123"
 				"456"
 				"abc"
 			) );
-			DECLARATION_MAIN( r2bix_render::TextureFrame frame( &texture ) );
-			PROCESS_MAIN( frame.MoveVisibleOrigin( 1, 1 ) );
+			DECL_MAIN( r2bix_render::TextureFrame frame( &texture ) );
+			PROC_MAIN( frame.MoveVisibleOrigin( 1, 1 ) );
 
 			LS();
 
 			{
-				PROCESS_MAIN( component->SetTextureFrame( &frame ) );
+				PROC_MAIN( component->SetTextureFrame( &frame ) );
 				EXPECT_NE( nullptr, component->GetTextureFrame() );
 				EXPECT_EQ( &frame, component->GetTextureFrame() );
 			}
@@ -789,7 +789,7 @@ namespace test_component
 			LS();
 
 			{
-				PROCESS_MAIN( component->SetPivot( 0.f, 0.f ) );
+				PROC_MAIN( component->SetPivot( 0.f, 0.f ) );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
@@ -800,7 +800,7 @@ namespace test_component
 			LS();
 
 			{
-				PROCESS_MAIN( component->SetPivot( 1.f, 1.f ) );
+				PROC_MAIN( component->SetPivot( 1.f, 1.f ) );
 
 				render_target.FillCharacterAll( '=' );
 				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
@@ -834,11 +834,11 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 10 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
+			DECL_SUB( r2bix::Camera camera( 20, 25, 14, 10 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
 			LS();
 
@@ -847,20 +847,20 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_MAIN( auto tfrc = node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
-			DECLARATION_MAIN( auto tfac = node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
-			PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
+			DECL_MAIN( auto tfrc = node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
+			DECL_MAIN( auto tfac = node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
+			PROC_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
 			{
 				LF();
 
-				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
+				PROC_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Idle_1 ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Run_1 ) );
 				EXPECT_FALSE( tfac->HasAnimation( r2bix_animation::eIndex::Walk_1 ) );
 
 				LF();
 
-				PROCESS_MAIN( tfac->RunAnimation_Once( r2bix_animation::eIndex::Run_1 ) );
+				PROC_MAIN( tfac->RunAnimation_Once( r2bix_animation::eIndex::Run_1 ) );
 				EXPECT_FALSE( r2bix_animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
 				EXPECT_TRUE( r2bix_animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
 			}
@@ -873,8 +873,8 @@ namespace test_component
 				{
 					r2tm::WindowsUtility::MoveCursorPoint( current_cursor_point );
 
-					PROCESS_MAIN( node->Update( 0.003f ) );
-					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+					PROC_MAIN( node->Update( 0.003f ) );
+					PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2tm::linefeed;
 
 					LF();
@@ -889,7 +889,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( tfac->StopAnimation() );
+				PROC_MAIN( tfac->StopAnimation() );
 				EXPECT_EQ( r2bix_animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
 			}
 
@@ -917,11 +917,11 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 20, 25, 14, 10 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
+			DECL_SUB( r2bix::Camera camera( 20, 25, 14, 10 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 20, 26 ) );
 
 			LS();
 
@@ -930,20 +930,20 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_MAIN( auto tfrc = node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
-			DECLARATION_MAIN( auto tfac = node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
-			PROCESS_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
+			DECL_MAIN( auto tfrc = node->GetComponent<r2bix_component::TextureFrameRenderComponent>() );
+			DECL_MAIN( auto tfac = node->GetComponent<r2bix_component::TextureFrameAnimationComponent>() );
+			PROC_MAIN( tfac->SetTextureFrameRenderComponent( tfrc ) );
 			{
 				LF();
 
-				PROCESS_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
+				PROC_MAIN( tfac->LoadAnimation( TextureFrameAnimationTable4Test::GetInstance().Get( 1 ) ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Idle_1 ) );
 				EXPECT_TRUE( tfac->HasAnimation( r2bix_animation::eIndex::Run_1 ) );
 				EXPECT_FALSE( tfac->HasAnimation( r2bix_animation::eIndex::Walk_1 ) );
 
 				LF();
 
-				PROCESS_MAIN( tfac->RunAnimation_Repeat( r2bix_animation::eIndex::Run_1 ) );
+				PROC_MAIN( tfac->RunAnimation_Repeat( r2bix_animation::eIndex::Run_1 ) );
 				EXPECT_FALSE( r2bix_animation::eIndex::Idle_1 == tfac->GetCurrentAnimationIndex() );
 				EXPECT_TRUE( r2bix_animation::eIndex::Run_1 == tfac->GetCurrentAnimationIndex() );
 			}
@@ -956,8 +956,8 @@ namespace test_component
 				{
 					r2tm::WindowsUtility::MoveCursorPoint( current_cursor_point );
 
-					PROCESS_MAIN( node->Update( 0.003f ) );
-					PROCESS_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+					PROC_MAIN( node->Update( 0.003f ) );
+					PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2tm::linefeed;
 
 					LF();
@@ -972,7 +972,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( tfac->StopAnimation() );
+				PROC_MAIN( tfac->StopAnimation() );
 				EXPECT_EQ( r2bix_animation::eIndex::None, tfac->GetCurrentAnimationIndex() );
 			}
 
@@ -1000,15 +1000,15 @@ namespace test_component
 
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 14, 10 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 14, 10 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
+			DECL_MAIN( auto component = node->AddComponent<r2bix_component::ActionProcessComponent>() );
 			EXPECT_NE( nullptr, component );
 
 			LS();
@@ -1016,20 +1016,20 @@ namespace test_component
 			{
 				EXPECT_FALSE( component->HasAction() );
 				EXPECT_FALSE( component->IsRunning() );
-				PROCESS_MAIN( component->StartAction() );
+				PROC_MAIN( component->StartAction() );
 				EXPECT_FALSE( component->IsRunning() );
 			}
 
 			LS();
 
 			{
-				DECLARATION_MAIN( auto tick_action = r2bix_action::TickAction::Create() );
-				PROCESS_MAIN( tick_action->SetTickLimit( 1 ) );
+				DECL_MAIN( auto tick_action = r2bix_action::TickAction::Create() );
+				PROC_MAIN( tick_action->SetTickLimit( 1 ) );
 
 				LF();
 
 				EXPECT_FALSE( component->HasAction() );
-				PROCESS_MAIN( component->SetAction( std::move( tick_action ) ) );
+				PROC_MAIN( component->SetAction( std::move( tick_action ) ) );
 				EXPECT_TRUE( component->HasAction() );
 				EXPECT_FALSE( component->IsRunning() );
 			}
@@ -1037,12 +1037,12 @@ namespace test_component
 			LS();
 
 			{
-				PROCESS_MAIN( component->StartAction() );
+				PROC_MAIN( component->StartAction() );
 				EXPECT_TRUE( component->IsRunning() );
 
 				LF();
 
-				PROCESS_MAIN( component->Update( 0.f ) );
+				PROC_MAIN( component->Update( 0.f ) );
 				EXPECT_FALSE( component->IsRunning() );
 			}
 
@@ -1076,13 +1076,13 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
+			DECL_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
 			EXPECT_TRUE( nullptr != ui_control );
 
 			LS();
@@ -1092,7 +1092,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( ui_control->SetOrder( 10 ) );
+				PROC_MAIN( ui_control->SetOrder( 10 ) );
 				EXPECT_EQ( 10, ui_control->GetOrder() );
 			}
 
@@ -1104,7 +1104,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( ui_control->SetSize( 7, 5 ) );
+				PROC_MAIN( ui_control->SetSize( 7, 5 ) );
 
 				LF();
 
@@ -1146,17 +1146,17 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 18, 8 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 18, 8 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto ui_pannel = node->AddComponent<r2bix_component::UIPannelComponent>() );
+			DECL_MAIN( auto ui_pannel = node->AddComponent<r2bix_component::UIPannelComponent>() );
 			EXPECT_TRUE( nullptr != ui_pannel );
-			DECLARATION_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
+			DECL_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
 			EXPECT_NE( nullptr, ui_control );
 
 			LS();
@@ -1166,14 +1166,14 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( ui_pannel->SetMyUIControlComponent( ui_control ) );
+				PROC_MAIN( ui_pannel->SetMyUIControlComponent( ui_control ) );
 				EXPECT_EQ( ui_control, ui_pannel->GetMyUIControlComponent() );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( ui_pannel->SetSize( 7, 5 ) );
+				PROC_MAIN( ui_pannel->SetSize( 7, 5 ) );
 
 				LF();
 
@@ -1207,13 +1207,13 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto c = node->AddComponent<r2bix_component::UIPannelComponent>() );
+			DECL_MAIN( auto c = node->AddComponent<r2bix_component::UIPannelComponent>() );
 
 			LS();
 
@@ -1228,7 +1228,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( c->Activate() );
+				PROC_MAIN( c->Activate() );
 				EXPECT_FALSE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
 				EXPECT_EQ( *dummy_director.GetInputManager().GetListenerContainer4Mouse().begin(), c->GetListener4Mouse() );
 			}
@@ -1240,7 +1240,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( c->Deactivate() );
+				PROC_MAIN( c->Deactivate() );
 				EXPECT_TRUE( dummy_director.GetInputManager().GetListenerContainer4Mouse().empty() );
 			}
 
@@ -1265,26 +1265,26 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto u = node->AddComponent<r2bix_component::UIControlComponent>() );
+			DECL_MAIN( auto u = node->AddComponent<r2bix_component::UIControlComponent>() );
 
 			LS();
 
 			{
-				PROCESS_MAIN( u->SetSize( 10, 10 ) );
-				PROCESS_MAIN( u->Activate() );
+				PROC_MAIN( u->SetSize( 10, 10 ) );
+				PROC_MAIN( u->Activate() );
 			}
 
 			LS();
 
-			DECLARATION_MAIN( r2bix_component::UIControlComponent::Slot4CursorResponseT slot );
+			DECL_MAIN( r2bix_component::UIControlComponent::Slot4CursorResponseT slot );
 			{
-				DECLARATION_MAIN( bool bOver = false; );
+				DECL_MAIN( bool bOver = false; );
 
 				LF();
 
@@ -1292,7 +1292,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( slot.SetCallback( [&bOver]( r2bix_ui::eCursorStatus s )
+				PROC_MAIN( slot.SetCallback( [&bOver]( r2bix_ui::eCursorStatus s )
 				{
 					switch( s )
 					{
@@ -1304,35 +1304,35 @@ namespace test_component
 						break;
 					}
 				} ) );
-				PROCESS_MAIN( u->ConnectSlot4CursorResponse( &slot ) );
+				PROC_MAIN( u->ConnectSlot4CursorResponse( &slot ) );
 
 				LF();
 
-				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 0, 0 } ) );
+				PROC_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 0, 0 } ) );
 				EXPECT_TRUE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorOver, u->GetState() );
 
 				LF();
 
-				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 1, 1 } ) );
+				PROC_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 1, 1 } ) );
 				EXPECT_TRUE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorMove, u->GetState() );
 
 				LF();
 
-				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 10, 10 } ) );
+				PROC_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 10, 10 } ) );
 				EXPECT_FALSE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorLeave, u->GetState() );
 
 				LF();
 
-				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 10, 10 } ) );
+				PROC_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 10, 10 } ) );
 				EXPECT_FALSE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::None, u->GetState() );
 
 				LF();
 
-				PROCESS_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 9, 9 } ) );
+				PROC_MAIN( u->OnCursorResponse( r2bix_input::CursorPoint{ 9, 9 } ) );
 				EXPECT_TRUE( bOver );
 				EXPECT_EQ( r2bix_ui::eCursorStatus::CursorOver, u->GetState() );
 			}
@@ -1358,17 +1358,17 @@ namespace test_component
 		{
 			LS();
 
-			DECLARATION_SUB( r2bix::Camera camera( 0, 0, 18, 8 ) );
-			DECLARATION_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
-			DECLARATION_SUB( r2bix::Director dummy_director( {} ) );
-			DECLARATION_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
-			PROCESS_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
+			DECL_SUB( r2bix::Camera camera( 0, 0, 18, 8 ) );
+			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
+			DECL_SUB( r2bix::Director dummy_director( {} ) );
+			DECL_SUB( auto node = r2bix_node::Node::Create( dummy_director ) );
+			PROC_SUB( node->mTransformComponent->SetPosition( 0, 0 ) );
 
 			LS();
 
-			DECLARATION_MAIN( auto ui_button = node->AddComponent<r2bix_component::UIButtonComponent>() );
+			DECL_MAIN( auto ui_button = node->AddComponent<r2bix_component::UIButtonComponent>() );
 			EXPECT_TRUE( nullptr != ui_button );
-			DECLARATION_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
+			DECL_MAIN( auto ui_control = node->AddComponent<r2bix_component::UIControlComponent>() );
 			EXPECT_TRUE( nullptr != ui_control );
 
 			LS();
@@ -1378,7 +1378,7 @@ namespace test_component
 
 				LF();
 
-				PROCESS_MAIN( ui_button->SetMyUIControlComponent( ui_control ) );
+				PROC_MAIN( ui_button->SetMyUIControlComponent( ui_control ) );
 				EXPECT_EQ( ui_control, ui_button->GetMyUIControlComponent() );
 			}
 
