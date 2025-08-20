@@ -15,16 +15,17 @@ namespace r2
 		const char* const String4NameSpaceRule =
 					"## Name Space Rule ##"
 			"\n"
-			"\n"	"[   r2    ] 멤버 변수와 함수로 구성"
-			"\n"	"[r2utility] 함수로만 구성"
+			"\n"	"[   r2   ] 멤버 변수와 함수로 구성"
+			"\n"	"[ r2util ] 함수로만 구성"
+			"\n"	"[ r2ext  ] 상호 작용하는 두개 이상의 class를 다룬 코드 : 예) operator+( class A, class B )"
 		;
 
 
 
 		const char VersionNumber_1 = '0';
-		const char VersionNumber_2 = '3';
-		const char VersionNumber_3 = '1';
-		const char VersionNumber_4 = '5';
+		const char VersionNumber_2 = '4';
+		const char VersionNumber_3 = '0';
+		const char VersionNumber_4 = '0';
 		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
@@ -42,8 +43,19 @@ namespace r2
 
 
 
+		const char* const String4Road2Version_0_5_0_0_0 =
+			        "### Road 2 Version 0.5.0.0.0 ###"
+			"\n"
+
+			"\n"	"[ ] " "Update Struct   : ..."
+			"\n"
+			"\n"	"----------------------------------"
+			"\n"
+			"\n"	"[ ] " "Crypto Machine"
+		;
+
 		const char* const String4Road2Version_0_4_0_0_0 =
-			"### Road 2 Version 0.4.0.0.0 ###"
+			        "### Road 2 Version 0.4.0.0.0 ###"
 			"\n"
 
 			"\n"	"[o] " "Update Struct   : Matrix33 : add - transform vector3"
@@ -60,14 +72,11 @@ namespace r2
 			"\n"	"[o] " "Update Struct   : Matrix44, Matrix33 : 행렬에서 각 축별 회전 량 추출"
 			"\n"	"[o] " "Update Struct   : Quaternion : 행렬에서 각 축별 회전 량 추출"
 			"\n"	"[o] " "Update Struct   : Matrix44 : add operator : /, /="
-			"\n"
-			"\n"	"----------------------------------"
-			"\n"
-			"\n"	"[ ] " "Crypto Machine"
+			"\n"	"[o] " "헤더파일의 확장자를 h > hpp 로 변경, 파일명 규칙을 스네이크 방식으로 변경"
 		;
 
 		const char* const String4Road2Version_0_3_0_0_0 =
-			"### Road 2 Version 0.3.0.0.0 ###"
+			        "### Road 2 Version 0.3.0.0.0 ###"
 			"\n"
 
 			"\n"	"[o] " "Update Helper  : r2helper::STDPrinter4Point : 출력 방식 개선"
@@ -97,14 +106,10 @@ namespace r2
 			"\n"	"[o] " "Add Struct     : Vector3"
 			"\n"	"[o] " "Add Struct     : Matrix22"
 			"\n"	"[o] " "Add Struct     : Matrix33"
-			"\n"
-			"\n"	"----------------------------------"
-			"\n"
-			"\n"	"[ ] " "Crypto Machine"
 		;
 
 		const char* const String4Road2Version_0_2_0_0_0 =
-			"### Road 2 Version 0.2.0.0.0 ###"
+			        "### Road 2 Version 0.2.0.0.0 ###"
 			"\n"
 			"\n"	"[o] " "Add Method     : r2::Point : PlusX, PlusY, MinusX, MinusY"
 			"\n"	"[o] " "Add Class      : r2::RectIterator"
@@ -139,13 +144,13 @@ namespace r2
 			"\n"	"[o] " "GridIndexConverter 에 Template 을 적용하고, Parameter에 Coordinate Type, Linear Type 추가"
 			"\n"	"[o] " "Add            : r2helper - STDPrinter4Direction8BitwiseLimited"
 			"\n"	"[o] " "Add            : r2helper - STDPrinter4Direction8Sequential"
-			"\n"	"[o] " "Update         : r2 - CountLimiter"
-			"\n"	"[o] " "Add            : r2 - Counter"
+			"\n"	"[o] " "Update         : r2 - Counter_Limit"
+			"\n"	"[o] " "Add            : r2 - Counter_Infinite"
 			"\n"	"[o] " "Add            : r2helper - TMPrinter4RectGuide"
 			"\n"	"[o] " "Add            : r2helper - TMPrinter4RectGuide_Color"
 			"\n"	"[o] " "Update Method  : r2 - Rect - Distance"
 			"\n"	"[o] " "Add Method     : r2 - Rect - GetMax, GetMid"
-			"\n"	"[o] " "Add            : r2utility - Point2PointStraightLinePath"
+			"\n"	"[o] " "Add            : r2util - Point2PointStraightLinePath"
 			"\n"	"[o] " "Add Method     : r2 - Rect - Clamp"
 		;
 
@@ -164,8 +169,8 @@ namespace r2
 			"\n"	"[o] " "Add         : r2helper - STDPrinter_Vector2"
 			"\n"	"[o] " "Add         : r2helper - STDPrinter_Vector3"
 			"\n"	"[o] " "Add         : r2helper - STDPrinter4Range"
-			"\n"	"[o] " "Add         : r2utility - STDFileUtility"
-			"\n"	"[o] " "Add         : r2utility - CFileUtility"
+			"\n"	"[o] " "Add         : r2util - STD_File"
+			"\n"	"[o] " "Add         : r2util - C_File"
 		;
 
 		const char* const String4Road2Version_0_0_8_0 =
@@ -204,11 +209,11 @@ namespace r2
 		const char* const String4Road2Version_0_0_6_0 =
 					"### Road 2 Version 0.0.6.0 ###"
 			"\n"
-			"\n"	"[o] " "Node4GridConstIterator 추가"
-			"\n"	"[o] " "Node4GridConstReverseIterator 추가"
+			"\n"	"[o] " "GridNodeConstIterator 추가"
+			"\n"	"[o] " "GridNodeConstReverseIterator 추가"
 			"\n"	"[o] " "ListBasedOnGrid 에 Const Iterator 적용"
-			"\n"	"[o] " "Node4ListConstIterator 추가"
-			"\n"	"[o] " "Node4ListConstReverseIterator 추가"
+			"\n"	"[o] " "ListNodeConstIterator 추가"
+			"\n"	"[o] " "GridNodeConstReverseIterator 추가"
 			"\n"	"[o] " "ListBasedOnArray 에 Const Iterator 적용"
 			"\n"	"[o] " "ListBasedOnVector 에 Const Iterator 적용"
 			"\n"	"[o] " "LinkedQueueBasedOnArray 에 Const Iterator 적용"
@@ -268,7 +273,7 @@ namespace r2
 
 
 
-		const char* const String4Road2NextVersion = String4Road2Version_0_4_0_0_0;
+		const char* const String4Road2NextVersion = String4Road2Version_0_5_0_0_0;
 
 	} VersionInfo;
 }
