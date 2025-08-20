@@ -1,6 +1,6 @@
 #include "p2048_CompanyScene.h"
 
-#include "r2_TimerFloat.h"
+#include "r2_timer_float.hpp"
 
 #include "r2bix_Director.h"
 

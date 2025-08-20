@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2_RectInt.h"
+#include "r2_rect_int.hpp"
 
 namespace r2bix
 {

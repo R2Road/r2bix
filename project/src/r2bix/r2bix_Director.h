@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "r2_SizeInt.h"
-#include "r2_Point.h"
+#include "r2_size_int.hpp"
+#include "r2_point.hpp"
 
 #include "r2bix_director_Config.h"
 #include "r2bix_director_DefarredTaskQueue.h"

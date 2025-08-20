@@ -2,8 +2,8 @@
 
 #include "r2bix_action_iAction.h"
 
-#include "r2_PointInt.h"
-#include "r2_TimerFloat.h"
+#include "r2_point_int.hpp"
+#include "r2_timer_float.hpp"
 
 namespace r2bix_action
 {

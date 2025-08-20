@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "r2_SignalSlot.h"
+#include "r2_signal_slot.hpp"
 
 #include "r2bix_component_Component.h"
 

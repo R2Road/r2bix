@@ -22,7 +22,7 @@
 #include "p2048table_TextureFrameAnimationTable.h"
 #include "p2048table_TextureTable.h"
 
-#include "r2_Random.h"
+#include "r2_random.hpp"
 
 namespace p2048
 {

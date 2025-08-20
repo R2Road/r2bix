@@ -6,13 +6,13 @@
 
 #include "r2bix_Camera3D.h"
 
-#include "r2_FPSTimer.h"
+#include "r2_fps_timer.hpp"
 #include "r2_math.hpp"
 #include "r2_matrix44_render_transform.hpp"
 #include "r2_matrix44_transform_vector3.hpp"
-#include "r2helper_std_printer_quaternion.hpp"
-#include "r2helper_std_printer_radian.hpp"
-#include "r2helper_std_printer_vector3.hpp"
+#include "r2printer_std_quaternion.hpp"
+#include "r2printer_std_radian.hpp"
+#include "r2printer_std_vector3.hpp"
 
 namespace test_camera_3d
 {

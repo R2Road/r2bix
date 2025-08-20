@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "r2/r2_Point.h"
+#include "r2/r2_point.hpp"
 
 #include "r2bix_director_CoutBufferRedirector.h"
 

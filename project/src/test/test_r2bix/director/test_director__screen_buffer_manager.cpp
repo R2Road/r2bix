@@ -2,7 +2,7 @@
 
 #include <conio.h>
 
-#include "r2/r2_FPSTimer.h"
+#include "r2/r2_fps_timer.hpp"
 
 #include "r2bix_director_ScreenBufferManager.h"
 #include "r2bix_render_Texture.h"

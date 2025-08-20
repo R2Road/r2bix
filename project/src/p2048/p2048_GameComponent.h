@@ -8,7 +8,7 @@
 #include "p2048_GameProcessor.h"
 #include "p2048_Stage.h"
 
-#include "r2_Direction4Sequential.h"
+#include "r2_direction4_sequential.hpp"
 
 namespace p2048
 {

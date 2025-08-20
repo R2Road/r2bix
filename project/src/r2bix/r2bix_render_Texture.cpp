@@ -3,8 +3,8 @@
 #include <algorithm>
 #include <cassert>
 
-#include "r2utility_StringSize.h"
-#include "r2utility_StringDecomposition.h"
+#include "r2util_string_decomposition.hpp"
+#include "r2util_string_size.hpp"
 
 namespace r2bix_render
 {
@@ -101,8 +101,8 @@ namespace r2bix_render
 
 	void Texture::Reset( const std::string_view str )
 	{
-		const auto size = r2utility::StringSize::Calculate( str );
-		const auto str_list = r2utility::StringDecomposition::Do( "\n", str );
+		const auto size = r2util::StringSize::Calculate( str );
+		const auto str_list = r2util::StringDecomposition::Do( "\n", str );
 
 		Reset( static_cast<uint32_t>( size.width ), static_cast<uint32_t>( size.height ), ' ' );
 

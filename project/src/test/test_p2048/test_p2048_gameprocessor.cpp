@@ -12,7 +12,7 @@
 #include "p2048/p2048_GameProcessor.h"
 #include "p2048/p2048_Stage.h"
 
-#include "r2utility_Operator4Direction4SequentialWithPoint.h"
+#include "r2ext_direction4_sequential_with_point.hpp"
 
 namespace test_p2048_gameprocessor
 {

@@ -1,6 +1,6 @@
 #include "p2048_GameComponent.h"
 
-#include "r2utility_StringBuilder.h"
+#include "r2util_string_builder.hpp"
 
 #include "r2bix_Director.h"
 
@@ -61,9 +61,9 @@ namespace p2048
 			mGameProcessor.Reset();
 
 			mStageViewComponent->GetOwnerNode().SetVisible( false );
-			mMaxNumberLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
-			mTotalScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
-			mRecentScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
+			mMaxNumberLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2util::StringBuilder::Build( "0" ) );
+			mTotalScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2util::StringBuilder::Build( "0" ) );
+			mRecentScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2util::StringBuilder::Build( "0" ) );
 
 			mYouWinNode->SetVisible( false );
 			mGameOverNode->SetVisible( false );
@@ -177,15 +177,15 @@ namespace p2048
 			//
 			if( 0 < mGameProcessor.GetSum4Merged() )
 			{
-				mMaxNumberLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
+				mMaxNumberLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2util::StringBuilder::Build( "%d"
 					, mGameProcessor.GetMaxNumber()
 				) );
 
-				mTotalScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "%d"
+				mTotalScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2util::StringBuilder::Build( "%d"
 					, mGameProcessor.GetScore()
 				) );
 				
-				mRecentScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2utility::StringBuilder::Build( "+ %d"
+				mRecentScoreLabel->GetComponent<r2bix_component::LabelSComponent>()->SetString( r2util::StringBuilder::Build( "+ %d"
 					, mGameProcessor.GetSum4Merged()
 				) );
 			}

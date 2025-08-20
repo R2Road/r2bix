@@ -1,6 +1,6 @@
 #include "tool_texture_editor_EditorComponent.h"
 
-#include "r2_Assert.h"
+#include "r2_assert.hpp"
 
 #include "r2bix_Director.h"
 

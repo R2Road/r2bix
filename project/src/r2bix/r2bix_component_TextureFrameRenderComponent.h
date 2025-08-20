@@ -1,7 +1,7 @@
 #pragma once
 
-#include "r2_RectInt.h"
-#include "r2_SignalSlot.h"
+#include "r2_rect_int.hpp"
+#include "r2_signal_slot.hpp"
 #include "r2_vector2.hpp"
 
 #include "r2bix_ColorMaskOption.h"

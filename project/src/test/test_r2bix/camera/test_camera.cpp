@@ -6,10 +6,10 @@
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "r2_PointInt.h"
-#include "r2helper_STDPrinter4Point.h"
-#include "r2helper_STDPrinter4Size.h"
-#include "r2_RectInt.h"
+#include "r2_point_int.hpp"
+#include "r2printer_std_point.hpp"
+#include "r2printer_std_size.hpp"
+#include "r2_rect_int.hpp"
 #include "r2bix_Camera.h"
 #include "r2bix_render_Texture.h"
 

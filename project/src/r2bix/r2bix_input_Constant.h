@@ -3,7 +3,7 @@
 #include <bitset>
 #include <stdint.h>
 
-#include "r2/r2_PointInt.h"
+#include "r2/r2_point_int.hpp"
 
 namespace r2bix_input
 {

@@ -23,8 +23,8 @@
 #include <string>
 #include <type_traits>
 
-#include "r2_PointInt.h"
-#include "r2_SignalSlot.h"
+#include "r2_point_int.hpp"
+#include "r2_signal_slot.hpp"
 
 #include "r2bix_component_TransformComponent.h"
 

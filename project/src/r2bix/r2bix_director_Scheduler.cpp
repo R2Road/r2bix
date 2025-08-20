@@ -4,7 +4,7 @@
 #include <chrono>
 #include <thread>
 
-#include "r2_FPSTimer.h"
+#include "r2_fps_timer.hpp"
 #include "r2bix_director_Config.h"
 
 namespace r2bix_director

@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-#include "r2_PointInt.h"
+#include "r2_point_int.hpp"
 
 namespace p2048
 {

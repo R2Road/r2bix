@@ -8,7 +8,7 @@
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 
-#include "r2helper_std_printer_vector3.hpp"
+#include "r2printer_std_vector3.hpp"
 
 
 namespace test_component___static_mesh

@@ -1,6 +1,6 @@
 #include "p2048_StageViewComponent.h"
 
-#include "r2_Assert.h"
+#include "r2_assert.hpp"
 #include "r2bix_component_CustomTextureComponent.h"
 #include "r2bix_component_LabelSComponent.h"
 #include "r2bix_component_TextureRenderComponent.h"

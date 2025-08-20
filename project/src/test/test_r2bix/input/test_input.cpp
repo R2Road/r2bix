@@ -7,8 +7,8 @@
 #include "r2bix_input_Listener4Keyboard.h"
 #include "r2bix_input_Listener4Mouse.h"
 
-#include "r2_RectInt.h"
-#include "r2_FPSTimer.h"
+#include "r2_rect_int.hpp"
+#include "r2_fps_timer.hpp"
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
