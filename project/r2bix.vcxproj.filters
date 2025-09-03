@@ -34,15 +34,6 @@
     <Filter Include="test\test_p2048">
       <UniqueIdentifier>{881f9dfd-f1f0-4aa0-9571-76f84aea0942}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external">
-      <UniqueIdentifier>{99a45303-e98b-4377-b5e2-06cecfcc1849}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="external\miniaudio">
-      <UniqueIdentifier>{c7fe1776-2e09-4551-95e7-532b2099dbd7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="external\r2">
-      <UniqueIdentifier>{fcf9b28f-6f2a-4644-b365-01d919e85a1c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="r2bix\director">
       <UniqueIdentifier>{c183a091-f503-41cd-b02e-f50c91446e90}</UniqueIdentifier>
     </Filter>
@@ -54,12 +45,6 @@
     </Filter>
     <Filter Include="tool\texture_viewer">
       <UniqueIdentifier>{a6f4f786-5859-4d25-84bc-397e6264a703}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="external\rapidjson">
-      <UniqueIdentifier>{91305047-c6be-4e61-adeb-9cdedc80260f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="external\r2tm">
-      <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
     <Filter Include="r2bix\ui">
       <UniqueIdentifier>{f36022e8-7dc3-4c30-be02-96bda08235b8}</UniqueIdentifier>
@@ -111,6 +96,21 @@
     </Filter>
     <Filter Include="project_2048">
       <UniqueIdentifier>{83829a05-c572-4c01-9999-4ab853a313d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_external">
+      <UniqueIdentifier>{99a45303-e98b-4377-b5e2-06cecfcc1849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_external\miniaudio">
+      <UniqueIdentifier>{c7fe1776-2e09-4551-95e7-532b2099dbd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_external\r2">
+      <UniqueIdentifier>{fcf9b28f-6f2a-4644-b365-01d919e85a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_external\rapidjson">
+      <UniqueIdentifier>{91305047-c6be-4e61-adeb-9cdedc80260f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_external\r2tm">
+      <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -499,139 +499,139 @@
     </ClCompile>
     <ClCompile Include="source\menu_portfolio.cpp" />
     <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_director.cpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_input.cpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_menu_processor.cpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_print_binary.cpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_print_file.cpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_stop_watch.cpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_counter_infinite_int.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_counter_limit_int.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction4_bitwise_limited.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction4_bitwise_limited_state.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction4_bitwise_state.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction4_sequential_state.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction8_bitwise_limited.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction8_bitwise_limited_state.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction8_bitwise_state.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction8_in_grid.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction8_sequential_state.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_fps_timer.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_index_enumerator.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_log.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_pivot_and_size_int.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_point_char.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_point_int.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_point_uint.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_random.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_range_char.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_range_float.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_range_int.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_range_uint.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_rect_char.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_rect_int.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_size_char.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_size_int.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_size_uchar.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_task_queue.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_timer_float.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2util_c_file.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2util_std_file.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2util_string_builder.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2util_string_converter.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2util_string_decomposition.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2util_string_size.cpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_file.cpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -703,7 +703,7 @@
       <Filter>test\test_p2048</Filter>
     </ClInclude>
     <ClInclude Include="external\miniaudio\miniaudio.h">
-      <Filter>external\miniaudio</Filter>
+      <Filter>_external\miniaudio</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_director_Scheduler.h">
       <Filter>r2bix\director</Filter>
@@ -853,67 +853,67 @@
       <Filter>tool</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\allocators.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\cursorstreamwrapper.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\document.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\encodedstream.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\encodings.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\filereadstream.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\filewritestream.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\fwd.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\istreamwrapper.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\memorybuffer.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\memorystream.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\ostreamwrapper.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\pointer.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\prettywriter.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\rapidjson.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\reader.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\schema.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\stream.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\stringbuffer.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\uri.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="external\rapidjson\writer.h">
-      <Filter>external\rapidjson</Filter>
+      <Filter>_external\rapidjson</Filter>
     </ClInclude>
     <ClInclude Include="source\tool\texture_viewer\tool_texture_viewer_EntryScene.h">
       <Filter>tool\texture_viewer</Filter>
@@ -1115,478 +1115,478 @@
     </ClInclude>
     <ClInclude Include="source\menu_portfolio.hpp" />
     <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_color.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_color_modifier.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_director.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_input.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_inspector.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_interface_item.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_interface_menu.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_menu_constant.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_menu_processor.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_ostream.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_print_binary.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_print_file.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_stop_watch.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_version_info.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_array_iterator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_assert.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_bitset.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_case_iteration_data.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_case_iteration_manager.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_case_iteration_manager_single_cycle.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_counter_infinite.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_counter_infinite_int.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_counter_limit.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_counter_limit_int.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_counter_static.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_debug.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_debug_process.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_degree.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction4_bitwise_limited.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction4_bitwise_limited_state.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction4_bitwise_state.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction4_sequential.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction4_sequential_state.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction8_bitwise_limited.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction8_bitwise_limited_state.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction8_bitwise_state.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction8_in_grid.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction8_sequential.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_direction8_sequential_state.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_epsilon.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_fps_timer.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_grid_based_on_array.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_grid_based_on_vector.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_grid_index_converter.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_grid_node.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_grid_node_iterator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_index_enumerator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_index_generator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_linked_queue_based_on_array.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_linked_queue_based_on_grid.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_linked_queue_basedon_vector.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_list_based_on_array.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_list_based_on_grid.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_list_based_on_vector.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_list_node.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_list_node_allocator_based_on_array.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_list_node_allocator_based_on_vector.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_list_node_iterator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_log.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_math.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_matrix22.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_matrix22_transform_vector2.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_matrix33.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_matrix33_transform_vector2.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_matrix33_transform_vector3.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_matrix44.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_matrix44_render_transform.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_matrix44_transform_vector3.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_matrix44_transform_vector4.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_none_copyable.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_pivot_and_size.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_pivot_and_size_int.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_point.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_point_char.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_point_hash.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_point_int.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_point_uint.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_quaternion.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_queue.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_radian.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_random.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_range.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_range_char.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_range_float.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_range_int.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_range_uint.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_rect.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_rect_char.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_rect_int.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_rect_iterator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_remove_pointer.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_signal_slot.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_singleton_with_dynamic_variable.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_singleton_with_flag.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_singleton_with_static_method.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_size.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_size_char.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_size_int.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_size_uchar.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_task_queue.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_timer.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_timer_float.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_type_traits.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_unique_index.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_unique_index_generator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_value.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_value_accumulator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_value_initializer.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_value_with_dirty.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_value_with_history1.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_value_with_history1_and_callback.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_value_with_history1_and_dirty.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_vector2.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_vector3.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_vector4.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_version_info.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2ext_direction4_sequential_with_point.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_degree.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_direction4_sequential.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_direction8_bitwise_limited.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_direction8_bitwise_state.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_direction8_sequential.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_matrix22.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_matrix33.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_matrix44.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_pivot_and_size.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_point.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_quaternion.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_radian.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_range.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_rect.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_size.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_vector2.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_vector3.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_std_vector4.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_tm_grid_based_on_array.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_tm_grid_based_on_array_char_ox.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_tm_grid_based_on_vector.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_tm_grid_based_on_vector_char_ox.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_tm_list_based_on_grid_char.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_tm_rect.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_tm_rect_color.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_tm_rect_outline.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2printer_tm_rect_outline_color.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_c_file.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_point2point_straight_line_path.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_random_element_selector.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_random_element_selector_sequence_container.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_simple_name_generator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_std_file.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_string_builder.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_string_converter.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_string_decomposition.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_string_size.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2util_type_name_generator.hpp">
-      <Filter>external\r2</Filter>
+      <Filter>_external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2tm\r2tm_file.hpp">
-      <Filter>external\r2tm</Filter>
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
