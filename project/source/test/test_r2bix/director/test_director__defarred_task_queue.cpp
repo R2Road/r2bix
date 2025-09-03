@@ -50,11 +50,11 @@ namespace test_director__defarred_task_queue
 			LS();
 
 			{
-				OUTPUT_SIZE( q );
+				OUT_SIZE( q );
 
 				LF();
 
-				OUTPUT_BINARIES( &q, 1 );
+				OUT_BINARIES( &q, 1 );
 			}
 
 			LS();
@@ -148,7 +148,7 @@ namespace test_director__defarred_task_queue
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Process는 쌓인 Task를 모두 호출 하고 삭제한다." );
+				OUT_SUBJECT( "Process는 쌓인 Task를 모두 호출 하고 삭제한다." );
 
 				LF();
 
@@ -162,8 +162,8 @@ namespace test_director__defarred_task_queue
 			LS();
 
 			{
-				OUTPUT_COMMENT( "Process()가 불리면 Q가 Swap 된다." );
-				OUTPUT_COMMENT( "위에서 처리를 담당한 Q의 확인은 Process를 한번 더 부르고 확인 한다." );
+				OUT_COMMENT( "Process()가 불리면 Q가 Swap 된다." );
+				OUT_COMMENT( "위에서 처리를 담당한 Q의 확인은 Process를 한번 더 부르고 확인 한다." );
 
 				LF();
 
@@ -196,7 +196,7 @@ namespace test_director__defarred_task_queue
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "Task 처리 과정에서 Task가 추가된 경우" );
+			OUT_SUBJECT( "Task 처리 과정에서 Task가 추가된 경우" );
 
 			LS();
 
@@ -224,8 +224,8 @@ namespace test_director__defarred_task_queue
 			LS();
 
 			{
-				OUTPUT_COMMENT( "Process()는 Q Swap 이후에" );
-				OUTPUT_COMMENT( "다음 Q에 Task가 남아있다면 즉시 다음 Q를 처리한다." );
+				OUT_COMMENT( "Process()는 Q Swap 이후에" );
+				OUT_COMMENT( "다음 Q에 Task가 남아있다면 즉시 다음 Q를 처리한다." );
 
 				LF();
 

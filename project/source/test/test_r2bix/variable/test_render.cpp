@@ -150,7 +150,7 @@ namespace test_render
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Show : RenderTestNode, Camera Rect( #, X )" );
+				OUT_SUBJECT( "Show : RenderTestNode, Camera Rect( #, X )" );
 
 				LF();
 
@@ -195,7 +195,7 @@ namespace test_render
 			{
 				r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( { 0, 12 } );
 
-				OUTPUT_SUBJECT( "Show Render Target" );
+				OUT_SUBJECT( "Show Render Target" );
 
 				LF();
 

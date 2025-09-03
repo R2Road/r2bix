@@ -30,7 +30,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "기본 생성자" );
+				OUT_SUBJECT( "기본 생성자" );
 
 				SS();
 
@@ -39,11 +39,11 @@ namespace test_camera_3d
 				SS();
 
 				{
-					OUTPUT_SIZE( cam );
+					OUT_SIZE( cam );
 
 					LF();
 
-					OUTPUT_BINARY( cam );
+					OUT_BINARY( cam );
 				}
 			}
 
@@ -74,7 +74,7 @@ namespace test_camera_3d
 
 					LF();
 
-					OUTPUT_VALUE( r2bix::WORLD_FRONT );
+					OUT_VALUE( r2bix::WORLD_FRONT );
 				}
 
 				SS();
@@ -84,7 +84,7 @@ namespace test_camera_3d
 
 					LF();
 
-					OUTPUT_VALUE( r2bix::WORLD_UP );
+					OUT_VALUE( r2bix::WORLD_UP );
 				}
 
 				SS();
@@ -94,7 +94,7 @@ namespace test_camera_3d
 
 					LF();
 
-					OUTPUT_VALUE( r2bix::WORLD_RIGHT );
+					OUT_VALUE( r2bix::WORLD_RIGHT );
 				}
 			}
 
@@ -125,7 +125,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Position" );
+				OUT_SUBJECT( "Position" );
 
 				LF();
 
@@ -144,7 +144,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Front" );
+				OUT_SUBJECT( "Front" );
 
 				LF();
 
@@ -154,7 +154,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Up" );
+				OUT_SUBJECT( "Up" );
 
 				LF();
 
@@ -164,7 +164,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Right" );
+				OUT_SUBJECT( "Right" );
 
 				LF();
 
@@ -202,7 +202,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Move" );
+				OUT_SUBJECT( "Move" );
 
 				LF();
 
@@ -256,7 +256,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "X" );
+				OUT_SUBJECT( "X" );
 
 				LF();
 
@@ -276,7 +276,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Y" );
+				OUT_SUBJECT( "Y" );
 
 				LF();
 
@@ -296,7 +296,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Z" );
+				OUT_SUBJECT( "Z" );
 
 				LF();
 
@@ -346,7 +346,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Y" );
+				OUT_SUBJECT( "Y" );
 
 				LF();
 
@@ -365,7 +365,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Y + X" );
+				OUT_SUBJECT( "Y + X" );
 
 				LF();
 
@@ -384,7 +384,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Y + X + Z" );
+				OUT_SUBJECT( "Y + X + Z" );
 
 				LF();
 
@@ -426,7 +426,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "설정" );
+				OUT_SUBJECT( "설정" );
 
 				LF();
 
@@ -438,7 +438,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "적용" );
+				OUT_SUBJECT( "적용" );
 
 				LF();
 
@@ -457,7 +457,7 @@ namespace test_camera_3d
 
 				LF();
 
-				OUTPUT_VALUE( vs );
+				OUT_VALUE( vs );
 			}
 
 			LS();
@@ -481,7 +481,7 @@ namespace test_camera_3d
 		{
 			LS();
 
-			OUTPUT_SUBJECT( "카메라가 특정 위치를 바라보게 한다." );
+			OUT_SUBJECT( "카메라가 특정 위치를 바라보게 한다." );
 
 			LS();
 
@@ -495,7 +495,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "LookAt" );
+				OUT_SUBJECT( "LookAt" );
 
 				LF();
 
@@ -511,7 +511,7 @@ namespace test_camera_3d
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "ViewMatrix 검사" );
+				OUT_SUBJECT( "ViewMatrix 검사" );
 
 				LF();
 
@@ -523,9 +523,9 @@ namespace test_camera_3d
 
 				LF();
 
-				OUTPUT_VALUE( cam.GetFront() );
-				OUTPUT_VALUE( cam.GetRight() );
-				OUTPUT_VALUE( cam.GetUp() );
+				OUT_VALUE( cam.GetFront() );
+				OUT_VALUE( cam.GetRight() );
+				OUT_VALUE( cam.GetUp() );
 			}
 
 			LS();
@@ -593,7 +593,7 @@ namespace test_camera_3d
 
 			LS();
 
-			OUTPUT_SUBJECT( "삼각형을 가운데 두고 카메라를 회전" );
+			OUT_SUBJECT( "삼각형을 가운데 두고 카메라를 회전" );
 
 			LS();
 

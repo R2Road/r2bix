@@ -20,7 +20,7 @@ namespace test_director
 			{
 				LS();
 
-				OUTPUT_SUBJECT( "Config 를 인자로 받는 생성자." );
+				OUT_SUBJECT( "Config 를 인자로 받는 생성자." );
 
 				LS();
 
@@ -70,11 +70,11 @@ namespace test_director
 			LS();
 
 			{
-				OUTPUT_SIZE( d );
+				OUT_SIZE( d );
 
 				LF();
 
-				OUTPUT_BINARY( d );
+				OUT_BINARY( d );
 			}
 
 			LS();

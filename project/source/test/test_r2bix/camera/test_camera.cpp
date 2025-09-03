@@ -56,13 +56,13 @@ namespace test_camera
 			LS();
 
 			{
-				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetOrigin() );
-				OUTPUT_VALUE( camera.GetCameraSpaceRect().GetSize() );
+				OUT_VALUE( camera.GetCameraSpaceRect().GetOrigin() );
+				OUT_VALUE( camera.GetCameraSpaceRect().GetSize() );
 
 				LF();
 
-				OUTPUT_VALUE( camera.GetRect().GetOrigin() );
-				OUTPUT_VALUE( camera.GetRect().GetSize() );
+				OUT_VALUE( camera.GetRect().GetOrigin() );
+				OUT_VALUE( camera.GetRect().GetSize() );
 			}
 
 			LS();

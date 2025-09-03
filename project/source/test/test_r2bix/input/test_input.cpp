@@ -217,11 +217,11 @@ namespace test_input
 
 			LF();
 
-			OUTPUT_SIZE( o );
+			OUT_SIZE( o );
 
 			LF();
 
-			OUTPUT_BINARY( o );
+			OUT_BINARY( o );
 
 			LS();
 
@@ -579,7 +579,7 @@ namespace test_input
 		{
 			LS();
 
-			OUTPUT_NOTE( "같은 Order 값이면 늦게 추가된 리스너가 목록의 앞으로 온다." );
+			OUT_NOTE( "같은 Order 값이면 늦게 추가된 리스너가 목록의 앞으로 온다." );
 
 			LS();
 
@@ -588,7 +588,7 @@ namespace test_input
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Mouse" );
+				OUT_SUBJECT( "Mouse" );
 
 				LF();
 
@@ -610,7 +610,7 @@ namespace test_input
 
 				LF();
 
-				OUTPUT_COMMENT( "Z ORder" );
+				OUT_COMMENT( "Z ORder" );
 				for( const auto l : m.GetListenerContainer4Mouse() )
 				{
 					std::cout << l->GetOrder() << " ";
@@ -621,7 +621,7 @@ namespace test_input
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Keyboard" );
+				OUT_SUBJECT( "Keyboard" );
 
 				LF();
 
@@ -643,7 +643,7 @@ namespace test_input
 
 				LF();
 
-				OUTPUT_COMMENT( "Z ORder" );
+				OUT_COMMENT( "Z ORder" );
 				for( const auto l : m.GetListenerContainer4Keyboard() )
 				{
 					std::cout << l->GetOrder() << " ";
@@ -672,7 +672,7 @@ namespace test_input
 		{
 			LS();
 
-			OUTPUT_NOTE( "높은 Order 값을 가지면 목록의 앞으로 온다.");
+			OUT_NOTE( "높은 Order 값을 가지면 목록의 앞으로 온다.");
 
 			LS();
 
@@ -681,7 +681,7 @@ namespace test_input
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Mouse" );
+				OUT_SUBJECT( "Mouse" );
 
 				LF();
 
@@ -703,7 +703,7 @@ namespace test_input
 
 				LF();
 
-				OUTPUT_COMMENT( "Z ORder" );
+				OUT_COMMENT( "Z ORder" );
 				for( const auto l : m.GetListenerContainer4Mouse() )
 				{
 					std::cout << l->GetOrder() << " ";
@@ -714,7 +714,7 @@ namespace test_input
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Keyboard" );
+				OUT_SUBJECT( "Keyboard" );
 
 				LF();
 
@@ -736,7 +736,7 @@ namespace test_input
 
 				LF();
 
-				OUTPUT_COMMENT( "Z ORder" );
+				OUT_COMMENT( "Z ORder" );
 				for( const auto l : m.GetListenerContainer4Keyboard() )
 				{
 					std::cout << l->GetOrder() << " ";

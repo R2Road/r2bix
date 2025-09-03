@@ -137,7 +137,7 @@ namespace test_node___child
 				LS();
 
 				{
-					OUTPUT_SUBJECT( "테스트 환경 설정" );
+					OUT_SUBJECT( "테스트 환경 설정" );
 
 					LF();
 
@@ -148,7 +148,7 @@ namespace test_node___child
 				LS();
 
 				{
-					OUTPUT_SUBJECT( "ClearAllChild" );
+					OUT_SUBJECT( "ClearAllChild" );
 
 					LF();
 

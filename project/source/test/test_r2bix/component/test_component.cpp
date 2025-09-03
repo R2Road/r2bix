@@ -50,7 +50,7 @@ namespace test_component
 		{
 			LS();
 
-			OUTPUT_NOTE( "ComponentStaticID는 Type 당 1개 할당된다." );
+			OUT_NOTE( "ComponentStaticID는 Type 당 1개 할당된다." );
 
 			LS();
 
@@ -80,10 +80,10 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_VALUE( transform_1 );
-				OUTPUT_VALUE( transform_2 );
-				OUTPUT_VALUE( tex_render_1 );
-				OUTPUT_VALUE( tex_render_2 );
+				OUT_VALUE( transform_1 );
+				OUT_VALUE( transform_2 );
+				OUT_VALUE( tex_render_1 );
+				OUT_VALUE( tex_render_2 );
 			}
 
 			LS();
@@ -107,7 +107,7 @@ namespace test_component
 		{
 			LS();
 
-			OUTPUT_NOTE( "같은 Type의 Component를 2개 갖지 못한다." );
+			OUT_NOTE( "같은 Type의 Component를 2개 갖지 못한다." );
 
 			LS();
 
@@ -123,7 +123,7 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Component 추가" );
+				OUT_SUBJECT( "Component 추가" );
 
 				LF();
 
@@ -133,7 +133,7 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "중복 추가 시도" );
+				OUT_SUBJECT( "중복 추가 시도" );
 
 				LF();
 
@@ -143,7 +143,7 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Get" );
+				OUT_SUBJECT( "Get" );
 
 				LF();
 
@@ -171,7 +171,7 @@ namespace test_component
 		{
 			LS();
 
-			OUTPUT_NOTE( "Node 는 생성 과정에서 Transform Component를 생성 한다." );
+			OUT_NOTE( "Node 는 생성 과정에서 Transform Component를 생성 한다." );
 
 			LS();
 
@@ -181,7 +181,7 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "TransformComponent를 직접 생성할 필요 없다." );
+				OUT_SUBJECT( "TransformComponent를 직접 생성할 필요 없다." );
 
 				LF();
 
@@ -191,7 +191,7 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Node는 TransformComponent를 Public 멤버로 가지고 있다." );
+				OUT_SUBJECT( "Node는 TransformComponent를 Public 멤버로 가지고 있다." );
 
 				LF();
 
@@ -225,7 +225,7 @@ namespace test_component
 		{
 			LS();
 
-			OUTPUT_NOTE( "PivotPoint를 변경하면 Callback이 작동한다." );
+			OUT_NOTE( "PivotPoint를 변경하면 Callback이 작동한다." );
 
 			LS();
 
@@ -238,8 +238,8 @@ namespace test_component
 			DECL_MAIN( r2bix_component::TransformComponent::Slot4PivotPointChanged s );
 			PROC_MAIN( s.SetCallback( [&b]( float x, float y )
 			{
-				OUTPUT_VALUE( x );
-				OUTPUT_VALUE( y );
+				OUT_VALUE( x );
+				OUT_VALUE( y );
 
 				b = true;
 			} ) );
@@ -247,7 +247,7 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Slot 설정" );
+				OUT_SUBJECT( "Slot 설정" );
 
 				LF();
 
@@ -257,7 +257,7 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Slot 설정" );
+				OUT_SUBJECT( "Slot 설정" );
 
 				LF();
 
@@ -1224,7 +1224,7 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Activate 호출로 Input Listener 등록" );
+				OUT_SUBJECT( "Activate 호출로 Input Listener 등록" );
 
 				LF();
 
@@ -1236,7 +1236,7 @@ namespace test_component
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Deactivate 호출로 Input Listener 해제" );
+				OUT_SUBJECT( "Deactivate 호출로 Input Listener 해제" );
 
 				LF();
 
@@ -1288,7 +1288,7 @@ namespace test_component
 
 				LF();
 
-				OUTPUT_SUBJECT( "Mouse Over, Leave Callback 설정" );
+				OUT_SUBJECT( "Mouse Over, Leave Callback 설정" );
 
 				LF();
 

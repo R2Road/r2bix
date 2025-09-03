@@ -24,7 +24,7 @@ namespace test_color_value
 			LS();
 
 			{
-				OUTPUT_VALUE( r2bix::DefaultColorValue );
+				OUT_VALUE( r2bix::DefaultColorValue );
 
 				LF();
 
@@ -70,7 +70,7 @@ namespace test_color_value
 			{
 				DECL_MAIN( r2bix::ColorMaskOption op );
 				EXPECT_EQ( uint8_t( -1 ), op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 			}
 
 			LS();
@@ -78,7 +78,7 @@ namespace test_color_value
 			{
 				DECL_MAIN( r2bix::ColorMaskOption op( r2bix::eColorMaskFlag::CMF_Foreground | r2bix::eColorMaskFlag::CMF_Background ) );
 				EXPECT_EQ( uint8_t( -1 ), op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 			}
 
 			LS();
@@ -86,7 +86,7 @@ namespace test_color_value
 			{
 				DECL_MAIN( r2bix::ColorMaskOption op( r2bix::eColorMaskFlag::CMF_Foreground ) );
 				EXPECT_EQ( uint8_t( -1 ) >> 4, op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 			}
 
 			LS();
@@ -94,7 +94,7 @@ namespace test_color_value
 			{
 				DECL_MAIN( r2bix::ColorMaskOption op( r2bix::eColorMaskFlag::CMF_Background ) );
 				EXPECT_EQ( ( uint8_t( -1 ) >> 4 ) << 4, op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 			}
 
 			LS();
@@ -102,7 +102,7 @@ namespace test_color_value
 			{
 				DECL_MAIN( r2bix::ColorMaskOption op( 0 ) );
 				EXPECT_EQ( 0, op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 			}
 
 			LS();
@@ -136,13 +136,13 @@ namespace test_color_value
 
 				PROC_MAIN( op.On( r2bix::eColorMaskFlag::CMF_Foreground ) );
 				EXPECT_EQ( uint8_t( -1 ) >> 4, op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 
 				LF();
 
 				PROC_MAIN( op.Off( r2bix::eColorMaskFlag::CMF_Foreground ) );
 				EXPECT_EQ( 0, op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 			}
 
 			LS();
@@ -152,13 +152,13 @@ namespace test_color_value
 
 				PROC_MAIN( op.On( r2bix::eColorMaskFlag::CMF_Background ) );
 				EXPECT_EQ( uint8_t( -1 ) >> 4 << 4, op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 
 				LF();
 
 				PROC_MAIN( op.Off( r2bix::eColorMaskFlag::CMF_Background ) );
 				EXPECT_EQ( 0, op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 			}
 
 			LS();
@@ -169,14 +169,14 @@ namespace test_color_value
 				PROC_MAIN( op.On( r2bix::eColorMaskFlag::CMF_Foreground ) );
 				PROC_MAIN( op.On( r2bix::eColorMaskFlag::CMF_Background ) );
 				EXPECT_EQ( uint8_t( -1 ), op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 
 				LF();
 
 				PROC_MAIN( op.Off( r2bix::eColorMaskFlag::CMF_Foreground ) );
 				PROC_MAIN( op.Off( r2bix::eColorMaskFlag::CMF_Background ) );
 				EXPECT_EQ( 0, op.GetMask() );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 			}
 
 			LS();
@@ -201,15 +201,15 @@ namespace test_color_value
 			LS();
 
 			DECL_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
-			OUTPUT_BINARY( uint8_t( fore ) );
+			OUT_BINARY( uint8_t( fore ) );
 			DECL_MAIN( const auto back = r2bix::eBackgroundColor::BG_Gray );
-			OUTPUT_BINARY( uint8_t( back ) );
+			OUT_BINARY( uint8_t( back ) );
 
 			LS();
 
 			{
 				DECL_MAIN( const r2bix::ColorMaskOption op( r2bix::eColorMaskFlag::CMF_Foreground ) );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 
 				LF();
 
@@ -220,7 +220,7 @@ namespace test_color_value
 
 			{
 				DECL_MAIN( const r2bix::ColorMaskOption op( r2bix::eColorMaskFlag::CMF_Background ) );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 
 				LF();
 
@@ -231,7 +231,7 @@ namespace test_color_value
 
 			{
 				DECL_MAIN( const r2bix::ColorMaskOption op( r2bix::eColorMaskFlag::CMF_Foreground | r2bix::eColorMaskFlag::CMF_Background ) );
-				OUTPUT_BINARY( op.GetMask() );
+				OUT_BINARY( op.GetMask() );
 
 				LF();
 

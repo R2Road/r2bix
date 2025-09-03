@@ -44,10 +44,10 @@ namespace test_component___static_mesh
 			LS();
 
 			{
-				OUTPUT_SOURCE_READY_N_BEGIN;
+				OUT_SOURCE_READY_N_BEGIN;
 				using V = r2bix_component::StaticMeshComponent::VertexT;
 				const auto vs = { V( 0, 10, 0 ), V( 5, 0, 0 ), V( -5, 0, 0 ) };
-				OUTPUT_SOURCE_END;
+				OUT_SOURCE_END;
 
 				LF();
 

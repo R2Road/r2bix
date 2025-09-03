@@ -141,9 +141,9 @@ namespace test_texture
 			LS();
 
 			DECL_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
-			OUTPUT_VALUE( fore );
+			OUT_VALUE( fore );
 			DECL_MAIN( const auto back = r2bix::eBackgroundColor::BG_BrightWhite );
-			OUTPUT_VALUE( back );
+			OUT_VALUE( back );
 
 			LF();
 
@@ -222,16 +222,16 @@ namespace test_texture
 
 			DECL_SUB( const auto base_color = r2bix::eForegroundColor::FG_Aqua | r2bix::eBackgroundColor::BG_Aqua );
 			DECL_MAIN( const auto new_fore_color = r2bix::eForegroundColor::FG_Red );
-			OUTPUT_VALUE( new_fore_color );
+			OUT_VALUE( new_fore_color );
 			DECL_MAIN( const auto new_back_color = r2bix::eBackgroundColor::BG_Red );
-			OUTPUT_VALUE( new_back_color );
+			OUT_VALUE( new_back_color );
 
 			LF();
 
 			DECL_MAIN( const r2bix::ColorMaskOption only_foregound_cmo( r2bix::eColorMaskFlag::CMF_Foreground ) );
-			OUTPUT_BINARY( only_foregound_cmo.GetMask() );
+			OUT_BINARY( only_foregound_cmo.GetMask() );
 			DECL_MAIN( const r2bix::ColorMaskOption only_background_cmo( r2bix::eColorMaskFlag::CMF_Background ) );
-			OUTPUT_BINARY( only_background_cmo.GetMask() );
+			OUT_BINARY( only_background_cmo.GetMask() );
 
 			LF();
 
@@ -272,7 +272,7 @@ namespace test_texture
 			DECL_MAIN( const auto fore = r2bix::eForegroundColor::FG_Aqua );
 			DECL_MAIN( const auto back = r2bix::eBackgroundColor::BG_Aqua );
 			DECL_MAIN( const auto new_fore = r2bix::eForegroundColor::FG_Red );
-			OUTPUT_VALUE( new_fore );
+			OUT_VALUE( new_fore );
 
 			LF();
 
