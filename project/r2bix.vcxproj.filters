@@ -630,6 +630,9 @@
     <ClCompile Include="external\r2\r2util_string_size.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_file.cpp">
+      <Filter>external\r2tm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\test\test_r2bix\TextureFrameAnimationTable4Test.h">
@@ -1581,6 +1584,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2util_type_name_generator.hpp">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_file.hpp">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
