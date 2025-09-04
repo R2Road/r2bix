@@ -528,6 +528,9 @@
     <ClCompile Include="external\r2\r2_counter_limit_int.cpp">
       <Filter>_external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2\r2_direction4_bitwise.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
     <ClCompile Include="external\r2\r2_direction4_bitwise_limited.cpp">
       <Filter>_external\r2</Filter>
     </ClCompile>
@@ -538,6 +541,9 @@
       <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction4_sequential_state.cpp">
+      <Filter>_external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_direction8_bitwise.cpp">
       <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_direction8_bitwise_limited.cpp">
@@ -561,7 +567,7 @@
     <ClCompile Include="external\r2\r2_index_enumerator.cpp">
       <Filter>_external\r2</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_log.cpp">
+    <ClCompile Include="external\r2\r2_Log.cpp">
       <Filter>_external\r2</Filter>
     </ClCompile>
     <ClCompile Include="external\r2\r2_pivot_and_size_int.cpp">

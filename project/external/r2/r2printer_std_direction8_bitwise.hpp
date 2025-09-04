@@ -3,10 +3,10 @@
 #include <iomanip>
 #include <ostream>
 
-#include "r2_direction8_sequential.hpp"
 #include "r2_none_copyable.hpp"
+#include "r2_direction8_bitwise.hpp"
 
-inline std::ostream& operator<<( std::ostream& o, const r2::Direction8Sequential& v )
+inline std::ostream& operator<<( std::ostream& o, const r2::Direction8Bitwise& v )
 {
 	static const int w = 5;
 
@@ -29,23 +29,18 @@ inline std::ostream& operator<<( std::ostream& o, const r2::Direction8Sequential
 	;
 }
 
-inline std::ostream& operator<<( std::ostream& o, const r2::Direction8SequentialState::eState& v )
-{
-	return o << static_cast< int >( v );
-}
-
 namespace r2printer
 {
-	class STD_Direction8Sequential : private r2::NoneCopyable
+	class STD_Direction8Bitwise : private r2::NoneCopyable
 	{
 	private:
-		STD_Direction8Sequential() = delete;
+		STD_Direction8Bitwise() = delete;
 
 	public:
-		inline static void Print( const r2::Direction8Sequential& v )
+		inline static void Print( const r2::Direction8Bitwise& v )
 		{
 			std::cout
-				<< "\t"   "Direction8Sequential"
+				<< "\t" "Direction8Bitwise"
 
 				<< v
 
