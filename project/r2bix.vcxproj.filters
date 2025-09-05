@@ -130,6 +130,9 @@
     <Filter Include="_r2bix\3d\camera">
       <UniqueIdentifier>{8a57421b-bb85-4a7c-99e1-1e15ccb17afd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="test\3d">
+      <UniqueIdentifier>{1f2c0e16-2dc8-411a-8033-1f933526c67a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
@@ -455,7 +458,7 @@
     <ClCompile Include="source\test\2d\camera\test_camera_3d.cpp">
       <Filter>test\2d\camera</Filter>
     </ClCompile>
-    <ClCompile Include="source\r2bix\r2bix_Camera3D.cpp">
+    <ClCompile Include="source\r2bix\r2bix_camera_3d.cpp">
       <Filter>_r2bix\3d\camera</Filter>
     </ClCompile>
     <ClCompile Include="source\menu_portfolio.cpp" />
@@ -1074,7 +1077,7 @@
     <ClInclude Include="source\test\2d\camera\test_camera_3d.h">
       <Filter>test\2d\camera</Filter>
     </ClInclude>
-    <ClInclude Include="source\r2bix\r2bix_Camera3D.h">
+    <ClInclude Include="source\r2bix\r2bix_camera_3d.hpp">
       <Filter>_r2bix\3d\camera</Filter>
     </ClInclude>
     <ClInclude Include="source\menu_portfolio.hpp" />

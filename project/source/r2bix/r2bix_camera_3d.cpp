@@ -1,4 +1,4 @@
-#include "r2bix_Camera3D.h"
+#include "r2bix_camera_3d.hpp"
 
 #include "r2_quaternion.hpp"
 #include "r2_matrix44_transform_vector3.hpp"

@@ -4,7 +4,7 @@
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "r2bix_Camera3D.h"
+#include "r2bix_camera_3d.hpp"
 
 #include "r2_fps_timer.hpp"
 #include "r2_math.hpp"
