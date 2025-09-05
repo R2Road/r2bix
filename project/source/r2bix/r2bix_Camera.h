@@ -2,9 +2,11 @@
 
 #include "r2_rect_int.hpp"
 
+#include "r2bix_interface_camera.hpp"
+
 namespace r2bix
 {
-	class Camera
+	class Camera : public iCamera
 	{
 	public:
 		using RectT = r2::RectInt;

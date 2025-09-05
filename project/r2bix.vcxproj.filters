@@ -133,6 +133,9 @@
     <Filter Include="_r2bix\director">
       <UniqueIdentifier>{c183a091-f503-41cd-b02e-f50c91446e90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="_r2bix\camera">
+      <UniqueIdentifier>{d06af248-fb6b-48bc-bafe-32803a47d789}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
@@ -1632,6 +1635,9 @@
     </ClInclude>
     <ClInclude Include="source\project\2048\test\test_p2048_stageviewnode.h">
       <Filter>project\2048\test</Filter>
+    </ClInclude>
+    <ClInclude Include="source\r2bix\r2bix_interface_camera.hpp">
+      <Filter>_r2bix\camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,13 +5,15 @@
 #include "r2_radian.hpp"
 #include "r2_vector3.hpp"
 
+#include "r2bix_interface_camera.hpp"
+
 namespace r2bix
 {
 	constexpr r2::Vector3 WORLD_FRONT{ 0, 0, -1 };
 	constexpr r2::Vector3 WORLD_UP{ 0, 1, 0 };
 	constexpr r2::Vector3 WORLD_RIGHT{ 1, 0, 0 };
 
-	class Camera3D
+	class Camera3D : public iCamera
 	{
 	public:
 		using Mat44 = r2::Matrix44;
