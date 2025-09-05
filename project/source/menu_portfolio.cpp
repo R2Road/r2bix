@@ -5,9 +5,9 @@
 #include "r2bix_Director.h"
 #include "r2bix_utility_InputUtil.h"
 
-#include "p2048/p2048_EntryScene.h"
+#include "project/2048/game/p2048_EntryScene.h"
+#include "test/2d/camera/test_camera_3d.h"
 #include "tool/texture_editor/tool_texture_editor_EntryScene.h"
-#include "test/test_r2bix/camera/test_camera_3d.h"
 
 #include "menu_dev.hpp"
 

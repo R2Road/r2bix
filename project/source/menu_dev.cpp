@@ -9,8 +9,8 @@
 #include "r2bix_Director.h"
 #include "r2bix_VersionInfo.h"
 
-#include "test/test_p2048/P2048Menu.h"
-#include "test/test_r2bix/menu_r2bix.h"
+#include "project/2048/test/P2048Menu.h"
+#include "test/2d/menu_r2bix_2d.h"
 
 #include "tool/menu_tool.hpp"
 
