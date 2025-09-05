@@ -115,9 +115,6 @@
     <Filter Include="_r2bix\2d">
       <UniqueIdentifier>{a9e4f1c8-c9a3-4547-b643-1e6dae6e9ff3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_r2bix\2d\director">
-      <UniqueIdentifier>{c183a091-f503-41cd-b02e-f50c91446e90}</UniqueIdentifier>
-    </Filter>
     <Filter Include="_r2bix\2d\component">
       <UniqueIdentifier>{6a09edd5-e8d0-43fb-96fe-0494bd0fec79}</UniqueIdentifier>
     </Filter>
@@ -133,6 +130,9 @@
     <Filter Include="test\3d">
       <UniqueIdentifier>{1f2c0e16-2dc8-411a-8033-1f933526c67a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="_r2bix\director">
+      <UniqueIdentifier>{c183a091-f503-41cd-b02e-f50c91446e90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
@@ -147,16 +147,16 @@
       <Filter>test\2d</Filter>
     </ClCompile>
     <ClCompile Include="source\r2bix\r2bix_director_Scheduler.cpp">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClCompile>
     <ClCompile Include="source\r2bix\r2bix_director_CoutBufferRedirector.cpp">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClCompile>
     <ClCompile Include="source\r2bix\r2bix_director_ScreenBufferManager.cpp">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClCompile>
     <ClCompile Include="source\r2bix\r2bix_Director.cpp">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClCompile>
     <ClCompile Include="source\r2bix\r2bix_input_MachineInputCollector.cpp">
       <Filter>_r2bix\input</Filter>
@@ -330,7 +330,7 @@
       <Filter>_r2bix\2d\component</Filter>
     </ClCompile>
     <ClCompile Include="source\r2bix\r2bix_director_DefarredTaskQueue.cpp">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClCompile>
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_FileMakeNSelectScene.cpp">
       <Filter>tool\texture_editor</Filter>
@@ -676,19 +676,19 @@
       <Filter>_external\miniaudio</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_director_Scheduler.h">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_director_Config.h">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_director_CoutBufferRedirector.h">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_director_ScreenBufferManager.h">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_Director.h">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_input_MachineInputCollector.h">
       <Filter>_r2bix\input</Filter>
@@ -946,7 +946,7 @@
       <Filter>_r2bix\2d\component</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_director_DefarredTaskQueue.h">
-      <Filter>_r2bix\2d\director</Filter>
+      <Filter>_r2bix\director</Filter>
     </ClInclude>
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_FileMakeNSelectScene.h">
       <Filter>tool\texture_editor</Filter>
