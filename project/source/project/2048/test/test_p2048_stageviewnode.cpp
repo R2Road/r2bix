@@ -29,7 +29,7 @@ namespace test_p2048_stageviewnode
 		{
 			LS();
 
-			DECL_SUB( r2bix::Camera camera( 0, 0, 41, 21 ) );
+			DECL_SUB( r2bix::Camera_deprecated camera( 0, 0, 41, 21 ) );
 			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
 			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
@@ -71,7 +71,7 @@ namespace test_p2048_stageviewnode
 
 			LS();
 
-			DECL_SUB( r2bix::Camera camera( 0, 0, 41, 21 ) );
+			DECL_SUB( r2bix::Camera_deprecated camera( 0, 0, 41, 21 ) );
 			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
 			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
@@ -124,7 +124,7 @@ namespace test_p2048_stageviewnode
 
 			LS();
 
-			DECL_SUB( r2bix::Camera camera( 0, 0, 41, 21 ) );
+			DECL_SUB( r2bix::Camera_deprecated camera( 0, 0, 41, 21 ) );
 			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
 			DECL_SUB( r2bix::Director dummy_director( {} ) );
 

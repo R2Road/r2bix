@@ -6,7 +6,7 @@
 
 namespace r2bix
 {
-	class Camera : public iCamera
+	class Camera_deprecated : public iCamera
 	{
 	public:
 		using RectT = r2::RectInt;
@@ -15,11 +15,11 @@ namespace r2bix
 
 
 
-		explicit Camera(
+		explicit Camera_deprecated(
 			  const PointT::ValueT& x, const PointT::ValueT& y
 			, const SizeT::ValueT& width, const SizeT::ValueT& height
 		);
-		explicit Camera( const PointT& position, const SizeT& size );
+		explicit Camera_deprecated( const PointT& position, const SizeT& size );
 
 
 

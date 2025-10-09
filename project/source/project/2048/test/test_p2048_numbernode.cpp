@@ -26,7 +26,7 @@ namespace test_p2048_numbernode
 		{
 			LS();
 
-			DECL_SUB( r2bix::Camera camera( 0, 0, 21, 11 ) );
+			DECL_SUB( r2bix::Camera_deprecated camera( 0, 0, 21, 11 ) );
 			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECL_SUB( r2bix::Director dummy_director( {} ) );
 
@@ -66,7 +66,7 @@ namespace test_p2048_numbernode
 		{
 			LS();
 
-			DECL_SUB( r2bix::Camera camera( 0, 0, 11, 5 ) );
+			DECL_SUB( r2bix::Camera_deprecated camera( 0, 0, 11, 5 ) );
 			DECL_SUB( r2bix_render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECL_SUB( r2bix::Director dummy_director( {} ) );
 			DECL_MAIN( auto number_node = p2048::NumberNode::Create( dummy_director ) );

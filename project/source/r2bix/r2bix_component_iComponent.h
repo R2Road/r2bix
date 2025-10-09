@@ -13,7 +13,7 @@
 
 namespace r2bix
 {
-	class Camera;
+	class Camera_deprecated;
 	class Director;
 }
 
@@ -165,7 +165,7 @@ namespace r2bix_component
 		{}
 
 	public:
-		virtual void Render( const r2bix::Camera* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
+		virtual void Render( const r2bix::Camera_deprecated* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
 		{}
 
 

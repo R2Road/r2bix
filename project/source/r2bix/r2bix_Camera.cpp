@@ -2,7 +2,7 @@
 
 namespace r2bix
 {
-	Camera::Camera(
+	Camera_deprecated::Camera_deprecated(
 		const PointT::ValueT& x, const PointT::ValueT& y
 		, const SizeT::ValueT& width, const SizeT::ValueT& height
 	) :
@@ -12,7 +12,7 @@ namespace r2bix
 	{
 		buildRect( mPosition, { width - 1, height - 1 } );
 	}
-	Camera::Camera( const PointT& position, const SizeT& size ) :
+	Camera_deprecated::Camera_deprecated( const PointT& position, const SizeT& size ) :
 		mPosition( position )
 		, mCameraSpaceRect()
 		, mWorldSpaceRect()
@@ -22,13 +22,13 @@ namespace r2bix
 
 
 
-	void Camera::SetPoint( const PointT& point )
+	void Camera_deprecated::SetPoint( const PointT& point )
 	{
 		mPosition = point;
 
 		buildRect( mPosition, mWorldSpaceRect.GetSize() );
 	}
-	void Camera::SetPoint( const int x, const int y )
+	void Camera_deprecated::SetPoint( const int x, const int y )
 	{
 		mPosition.Set( x, y );
 
@@ -37,7 +37,7 @@ namespace r2bix
 
 
 
-	void Camera::buildRect( const PointT& position, const SizeT& size )
+	void Camera_deprecated::buildRect( const PointT& position, const SizeT& size )
 	{
 		const int half_width = size.GetWidth() / 2;
 		const int half_height = size.GetHeight() / 2;

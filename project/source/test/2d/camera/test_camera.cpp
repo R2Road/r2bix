@@ -31,7 +31,7 @@ namespace test_camera
 
 			DECL_MAIN( const r2::Point<int> position( 20, 30 ) );
 			DECL_MAIN( const r2::Size<int> size( 10, 50 ) );
-			DECL_MAIN( r2bix::Camera camera( position, size ) );
+			DECL_MAIN( r2bix::Camera_deprecated camera( position, size ) );
 
 			LS();
 
@@ -86,7 +86,7 @@ namespace test_camera
 		{
 			LS();
 
-			DECL_MAIN( r2bix::Camera camera( 20, 30, 20, 10 ) );
+			DECL_MAIN( r2bix::Camera_deprecated camera( 20, 30, 20, 10 ) );
 
 			LS();
 
@@ -122,7 +122,7 @@ namespace test_camera
 		{
 			LS();
 
-			r2bix::Camera camera( 20, 30, 20, 10 );
+			r2bix::Camera_deprecated camera( 20, 30, 20, 10 );
 
 			{
 				std::cout << r2tm::tab << "+ Declaration" << r2tm::linefeed2;
@@ -168,7 +168,7 @@ namespace test_camera
 		{
 			LS();
 
-			DECL_MAIN( r2bix::Camera camera( 20, 30, 19, 9 ) );
+			DECL_MAIN( r2bix::Camera_deprecated camera( 20, 30, 19, 9 ) );
 
 			LS();
 

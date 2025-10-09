@@ -40,7 +40,7 @@ namespace r2component
 
 namespace r2bix_render
 {
-	class Camera;
+	class Camera_deprecated;
 	class iRenderTarget;
 }
 
@@ -84,7 +84,7 @@ namespace r2bix_node
 		// 보유 컴포넌트, 자식 노드의 Update, Render 호출.
 		//
 		void Update( const float delta_time );
-		void Render( const r2bix::Camera* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset );
+		void Render( const r2bix::Camera_deprecated* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset );
 		//
 		//
 		//
