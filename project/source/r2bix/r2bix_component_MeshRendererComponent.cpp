@@ -6,7 +6,7 @@ namespace r2bix_component
 		, mStaticMeshComponent( nullptr )
 	{}
 
-	void MeshRendererComponent::Render( const r2bix::Camera_deprecated* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
+	void MeshRendererComponent::Render_deprecated( const r2bix::Camera_deprecated* const /*camera*/, r2bix_render::iRenderTarget* const /*render_target*/, r2::PointInt /*offset*/ )
 	{
 		// Do Something
 	}

@@ -36,7 +36,7 @@ namespace test_render
 			mRect.Set( rect_offset.GetX(), rect_offset.GetY(), mTexture.GetWidth() - 1, mTexture.GetHeight() - 1 );
 		}
 
-		void Render( const r2bix::Camera_deprecated* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt /*offset*/ ) override
+		void Render_deprecated( const r2bix::Camera_deprecated* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt /*offset*/ ) override
 		{
 			std::cout << "world space : my pos : " << mPosition.GetX() << "   " << mPosition.GetY() << r2tm::linefeed;
 			std::cout << "world space : camera pos : " << camera->GetPoint().GetX() << "   " << camera->GetPoint().GetY() << r2tm::linefeed2;
@@ -199,7 +199,7 @@ namespace test_render
 
 				LF();
 
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				int current_x = 0;
 				for( const auto& p : render_target )

@@ -41,7 +41,7 @@ namespace test_p2048_stageviewnode
 			LS();
 
 			{
-				PROC_MAIN( stage_view_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( stage_view_node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -94,7 +94,7 @@ namespace test_p2048_stageviewnode
 			LS();
 
 			{
-				PROC_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( svn->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -148,7 +148,7 @@ namespace test_p2048_stageviewnode
 			LS();
 
 			{
-				PROC_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( svn->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 

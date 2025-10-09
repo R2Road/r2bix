@@ -241,7 +241,7 @@ namespace test_node
 			LS();
 
 			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -254,7 +254,7 @@ namespace test_node
 				LF();
 
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -267,7 +267,7 @@ namespace test_node
 				LF();
 
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -534,7 +534,7 @@ namespace test_node
 			LS();
 
 			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -546,7 +546,7 @@ namespace test_node
 				LF();
 
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -558,7 +558,7 @@ namespace test_node
 				LF();
 
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -857,7 +857,7 @@ namespace test_node
 			LS();
 
 			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -900,7 +900,7 @@ namespace test_node
 			LS();
 
 			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -912,7 +912,7 @@ namespace test_node
 				LF();
 
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -924,7 +924,7 @@ namespace test_node
 				LF();
 
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -964,7 +964,7 @@ namespace test_node
 			LS();
 
 			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -976,7 +976,7 @@ namespace test_node
 				LF();
 
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 
@@ -988,7 +988,7 @@ namespace test_node
 				LF();
 
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 				r2bix_helper::Printer4Texture::DrawTexture( render_target );
 			}
 

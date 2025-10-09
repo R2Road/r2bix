@@ -313,7 +313,7 @@ namespace test_component
 			LS();
 
 			{
-				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -365,7 +365,7 @@ namespace test_component
 
 			{
 				PROC_MAIN( component->SetPivot( 0.f, 0.f ) );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
 
@@ -377,7 +377,7 @@ namespace test_component
 			{
 				render_target.FillCharacterAll( '=' );
 				PROC_MAIN( component->SetPivot( 0.5f, 0.5f ) );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
 
@@ -389,7 +389,7 @@ namespace test_component
 			{
 				render_target.FillCharacterAll( '=' );
 				PROC_MAIN( component->SetPivot( 1.f, 1.f ) );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
 
@@ -432,7 +432,7 @@ namespace test_component
 			LS();
 
 			{
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
 
@@ -444,7 +444,7 @@ namespace test_component
 			{
 				PROC_MAIN( component->SetVisibleRectForced( -4, -2, 1, 1 ) );
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
 
@@ -456,7 +456,7 @@ namespace test_component
 			{
 				PROC_MAIN( component->ResetVisibleRect() );
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
 
@@ -512,7 +512,7 @@ namespace test_component
 
 			{
 				PROC_MAIN( custom_texture->GetTexture()->FillCharacterAll( '?' ) );
-				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -524,7 +524,7 @@ namespace test_component
 			{
 				PROC_MAIN( custom_texture->GetTexture()->Reset( "Bla Bla Bla" ) );
 				PROC_MAIN( texture_render->ResetVisibleRect() );
-				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -596,7 +596,7 @@ namespace test_component
 			LS();
 
 			{
-				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -668,7 +668,7 @@ namespace test_component
 			LS();
 
 			{
-				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -724,7 +724,7 @@ namespace test_component
 			LS();
 
 			{
-				PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROC_MAIN( node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				LF();
 
@@ -790,7 +790,7 @@ namespace test_component
 
 			{
 				PROC_MAIN( component->SetPivot( 0.f, 0.f ) );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
 
@@ -803,7 +803,7 @@ namespace test_component
 				PROC_MAIN( component->SetPivot( 1.f, 1.f ) );
 
 				render_target.FillCharacterAll( '=' );
-				node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
+				node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() );
 
 				LF();
 
@@ -874,7 +874,7 @@ namespace test_component
 					r2tm::WindowsUtility::MoveCursorPoint( current_cursor_point );
 
 					PROC_MAIN( node->Update( 0.003f ) );
-					PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+					PROC_MAIN( node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2tm::linefeed;
 
 					LF();
@@ -957,7 +957,7 @@ namespace test_component
 					r2tm::WindowsUtility::MoveCursorPoint( current_cursor_point );
 
 					PROC_MAIN( node->Update( 0.003f ) );
-					PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+					PROC_MAIN( node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 					std::cout << "Animation Is Running : " << tfac->IsRunning() << r2tm::linefeed;
 
 					LF();

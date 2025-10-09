@@ -746,7 +746,7 @@ namespace test_action
 					r2tm::WindowsUtility::MoveCursorPoint( cursor_point );
 
 					PROC_MAIN( node->Update( 0.001f ) );
-					PROC_MAIN( node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+					PROC_MAIN( node->Render_deprecated( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 					std::cout << "Action Process Running : " << node->GetComponent<r2bix_component::ActionProcessComponent>()->IsRunning() << r2tm::linefeed;
 					std::cout << "Animation Running : " << node->GetComponent<r2bix_component::TextureFrameAnimationComponent>()->IsRunning() << r2tm::linefeed2;

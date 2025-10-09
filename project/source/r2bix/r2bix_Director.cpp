@@ -79,7 +79,7 @@ namespace r2bix
 		mRenderTarget.FillCharacterAll( ' ' );
 		mRenderTarget.FillColorAll( r2bix::DefaultColorValue );
 
-		mRootNode->Render( &mCamera, &mRenderTarget, r2::PointInt::GetZERO() );
+		mRootNode->Render_deprecated( &mCamera, &mRenderTarget, r2::PointInt::GetZERO() );
 
 		//
 		// Write 2 Back-Buffer

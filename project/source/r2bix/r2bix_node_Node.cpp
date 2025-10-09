@@ -67,7 +67,7 @@ namespace r2bix_node
 		}
 	}
 
-	void Node::Render( const r2bix::Camera_deprecated* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset )
+	void Node::Render_deprecated( const r2bix::Camera_deprecated* const camera, r2bix_render::iRenderTarget* const render_target, r2::PointInt offset )
 	{
 		if( !mbVisible )
 		{
@@ -76,13 +76,13 @@ namespace r2bix_node
 
 		for( auto& c : mComponentContainer )
 		{
-			c->Render( camera, render_target, offset );
+			c->Render_deprecated( camera, render_target, offset );
 		}
 
 		offset += mTransformComponent->GetPosition();
 		for( auto& c : mChildContainer )
 		{
-			c->Render( camera, render_target, offset );
+			c->Render_deprecated( camera, render_target, offset );
 		}
 	}
 
