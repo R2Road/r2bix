@@ -24,7 +24,7 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', test_input::MachineeInputCollector_Keyboard() );
+		mp->AddItem( '1', test_input::MachineInputCollector_Keyboard() );
 		mp->AddItem( '2', test_input::MachineInputCollector_Mouse() );
 
 

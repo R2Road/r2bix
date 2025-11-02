@@ -15,14 +15,14 @@
 
 namespace test_input
 {
-	r2tm::TitleFunctionT MachineeInputCollector_Keyboard::GetTitleFunction() const
+	r2tm::TitleFunctionT MachineInputCollector_Keyboard::GetTitleFunction() const
 	{
 		return []()->const char*
 			{
 				return "Machine Input Collector : Keyboard";
 			};
 	}
-	r2tm::DoFunctionT MachineeInputCollector_Keyboard::GetDoFunction() const
+	r2tm::DoFunctionT MachineInputCollector_Keyboard::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 			{

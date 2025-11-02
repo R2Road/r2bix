@@ -4,7 +4,7 @@
 
 namespace test_input
 {
-	class MachineeInputCollector_Keyboard : public r2tm::iItem
+	class MachineInputCollector_Keyboard : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
