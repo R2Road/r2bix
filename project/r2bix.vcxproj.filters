@@ -46,9 +46,6 @@
     <Filter Include="test\2d\director">
       <UniqueIdentifier>{40805b48-317e-4b65-b938-c9543be6085f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test\2d\input">
-      <UniqueIdentifier>{2ea2d664-622e-4d12-9ce7-b95c2211aa4f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test\2d\texture">
       <UniqueIdentifier>{46d08307-eb1b-4137-a70e-75be0cb0bafb}</UniqueIdentifier>
     </Filter>
@@ -135,6 +132,9 @@
     </Filter>
     <Filter Include="_r2bix\camera">
       <UniqueIdentifier>{d06af248-fb6b-48bc-bafe-32803a47d789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\input">
+      <UniqueIdentifier>{7192193c-9b24-4ffe-b88f-d52883ac3001}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -376,12 +376,6 @@
     </ClCompile>
     <ClCompile Include="source\test\2d\director\test_director__screen_buffer_manager.cpp">
       <Filter>test\2d\director</Filter>
-    </ClCompile>
-    <ClCompile Include="source\test\2d\input\menu_input.cpp">
-      <Filter>test\2d\input</Filter>
-    </ClCompile>
-    <ClCompile Include="source\test\2d\input\test_input.cpp">
-      <Filter>test\2d\input</Filter>
     </ClCompile>
     <ClCompile Include="source\helper\r2bix_helper_Printer4Texture.cpp">
       <Filter>helper</Filter>
@@ -662,6 +656,12 @@
     </ClCompile>
     <ClCompile Include="source\project\2048\test\test_p2048_stageviewnode.cpp">
       <Filter>project\2048\test</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\input\menu_r2bix_input.cpp">
+      <Filter>test\input</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\input\test_r2bix_input.cpp">
+      <Filter>test\input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -992,12 +992,6 @@
     </ClInclude>
     <ClInclude Include="source\test\2d\director\test_director__screen_buffer_manager.h">
       <Filter>test\2d\director</Filter>
-    </ClInclude>
-    <ClInclude Include="source\test\2d\input\menu_input.h">
-      <Filter>test\2d\input</Filter>
-    </ClInclude>
-    <ClInclude Include="source\test\2d\input\test_input.h">
-      <Filter>test\2d\input</Filter>
     </ClInclude>
     <ClInclude Include="source\helper\r2bix_helper_Printer4Texture.h">
       <Filter>helper</Filter>
@@ -1638,6 +1632,12 @@
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_interface_camera.hpp">
       <Filter>_r2bix\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\input\menu_r2bix_input.hpp">
+      <Filter>test\input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\input\test_r2bix_input.hpp">
+      <Filter>test\input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

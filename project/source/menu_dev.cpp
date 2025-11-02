@@ -11,6 +11,7 @@
 
 #include "project/2048/test/P2048Menu.h"
 #include "test/2d/menu_r2bix_2d.h"
+#include "test/input/menu_r2bix_input.hpp"
 
 #include "tool/menu_tool.hpp"
 
@@ -52,7 +53,8 @@ r2tm::WriteFunctionT Menu_Dev::GetWriteFunction() const
 	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddMenu( '1', Menu_R2bix() );
-		mp->AddMenu( '2', Menu_Tool() );
+		mp->AddMenu( '2', Menu_R2bix_Input() );
+		mp->AddMenu( '3', Menu_Tool() );
 
 
 

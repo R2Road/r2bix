@@ -1,4 +1,4 @@
-#include "test_input.h"
+#include "test_r2bix_input.hpp"
 
 #include <algorithm>
 
@@ -38,7 +38,7 @@ namespace test_input
 					, 0x44		// d
 					, 0x53		// s
 					, 0x57		// w
-					} );
+				} );
 
 				machine_input_collector.AddObservationKeys( observation_key_container );
 

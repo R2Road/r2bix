@@ -8,7 +8,6 @@
 #include "component/menu_component.h"
 #include "director/menu_director.h"
 #include "geometry/menu_geometry.h"
-#include "input/menu_input.h"
 #include "node/menu_node.h"
 #include "texture/menu_texture.h"
 #include "ui/menu_ui.h"
@@ -50,8 +49,7 @@ r2tm::WriteFunctionT Menu_R2bix::GetWriteFunction() const
 	return []( r2tm::MenuProcessor* mp )
 	{
 		mp->AddMenu( '1', DirectorMenu() );
-		mp->AddMenu( '2', Menu_Input() );
-		mp->AddMenu( '3', Menu_Color() );
+		mp->AddMenu( '2', Menu_Color() );
 
 
 

@@ -1,26 +1,26 @@
-#include "menu_input.h"
+#include "menu_r2bix_input.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "test_input.h"
+#include "test_r2bix_input.hpp"
 
-#include "../menu_r2bix_2d.h"
+#include "menu_dev.hpp"
 
-r2tm::TitleFunctionT Menu_Input::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_R2bix_Input::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "Input";
+		return "rxbix : Input";
 	};
 }
-r2tm::DescriptionFunctionT Menu_Input::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_R2bix_Input::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
 		return "";
 	};
 }
-r2tm::WriteFunctionT Menu_Input::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
@@ -53,6 +53,6 @@ r2tm::WriteFunctionT Menu_Input::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, Menu_R2bix() );
+		mp->AddMenu( 27, Menu_Dev() );
 	};
 }

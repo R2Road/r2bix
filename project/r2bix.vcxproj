@@ -170,8 +170,6 @@
     <ClCompile Include="source\test\2d\director\test_director__scheduler.cpp" />
     <ClCompile Include="source\test\2d\director\test_director__screen_buffer_manager.cpp" />
     <ClCompile Include="source\test\2d\geometry\menu_geometry.cpp" />
-    <ClCompile Include="source\test\2d\input\menu_input.cpp" />
-    <ClCompile Include="source\test\2d\input\test_input.cpp" />
     <ClCompile Include="source\test\2d\node\menu_node.cpp" />
     <ClCompile Include="source\test\2d\node\test_node.cpp" />
     <ClCompile Include="source\test\2d\menu_r2bix_2d.cpp" />
@@ -185,6 +183,8 @@
     <ClCompile Include="source\test\2d\ui\menu_ui.cpp" />
     <ClCompile Include="source\test\2d\variable\research_visible_resource.cpp" />
     <ClCompile Include="source\test\2d\variable\test_render.cpp" />
+    <ClCompile Include="source\test\input\menu_r2bix_input.cpp" />
+    <ClCompile Include="source\test\input\test_r2bix_input.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EditorComponent.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EditorScene.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EntryScene.cpp" />
@@ -498,8 +498,6 @@
     <ClInclude Include="source\test\2d\director\test_director__scheduler.h" />
     <ClInclude Include="source\test\2d\director\test_director__screen_buffer_manager.h" />
     <ClInclude Include="source\test\2d\geometry\menu_geometry.h" />
-    <ClInclude Include="source\test\2d\input\menu_input.h" />
-    <ClInclude Include="source\test\2d\input\test_input.h" />
     <ClInclude Include="source\test\2d\node\menu_node.h" />
     <ClInclude Include="source\test\2d\node\test_node.h" />
     <ClInclude Include="source\test\2d\menu_r2bix_2d.h" />
@@ -513,6 +511,8 @@
     <ClInclude Include="source\test\2d\ui\menu_ui.h" />
     <ClInclude Include="source\test\2d\variable\research_visible_resource.h" />
     <ClInclude Include="source\test\2d\variable\test_render.h" />
+    <ClInclude Include="source\test\input\menu_r2bix_input.hpp" />
+    <ClInclude Include="source\test\input\test_r2bix_input.hpp" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EditorComponent.h" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EditorScene.h" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EntryScene.h" />
