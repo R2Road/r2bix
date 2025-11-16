@@ -29,13 +29,14 @@ namespace r2bix_input
 		if( !HasWindowFocus() )
 		{
 			//
+			// # Window Focus 가 없다면 입력 상태 모두 초기화
+			//
+
+			//
 			// Key : Keyboard, Mouse
 			//
 			{
-				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
-				{
-					mObservationKeyStates[i] = false;
-				}
+				mObservationKeyStates.reset(); // 모두 false
 			}
 
 			//
