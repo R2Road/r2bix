@@ -185,6 +185,7 @@
     <ClCompile Include="source\test\2d\variable\test_render.cpp" />
     <ClCompile Include="source\test\input\menu_r2bix_input.cpp" />
     <ClCompile Include="source\test\input\test_r2bix_input.cpp" />
+    <ClCompile Include="source\test\input\test_input___machine_inpue_collector.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EditorComponent.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EditorScene.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EntryScene.cpp" />
@@ -513,6 +514,7 @@
     <ClInclude Include="source\test\2d\variable\test_render.h" />
     <ClInclude Include="source\test\input\menu_r2bix_input.hpp" />
     <ClInclude Include="source\test\input\test_r2bix_input.hpp" />
+    <ClInclude Include="source\test\input\test_input___machine_inpue_collector.hpp" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EditorComponent.h" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EditorScene.h" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EntryScene.h" />

@@ -4,21 +4,6 @@
 
 namespace test_input
 {
-	class MachineInputCollector_Keyboard : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
-	class MachineInputCollector_Mouse : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
-
 	class ObservationKey : public r2tm::iItem
 	{
 	public:

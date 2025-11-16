@@ -663,6 +663,9 @@
     <ClCompile Include="source\test\input\test_r2bix_input.cpp">
       <Filter>test\input</Filter>
     </ClCompile>
+    <ClCompile Include="source\test\input\test_input___machine_inpue_collector.cpp">
+      <Filter>test\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\test\2d\TextureFrameAnimationTable4Test.h">
@@ -1637,6 +1640,9 @@
       <Filter>test\input</Filter>
     </ClInclude>
     <ClInclude Include="source\test\input\test_r2bix_input.hpp">
+      <Filter>test\input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\input\test_input___machine_inpue_collector.hpp">
       <Filter>test\input</Filter>
     </ClInclude>
   </ItemGroup>

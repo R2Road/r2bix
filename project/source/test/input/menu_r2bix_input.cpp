@@ -2,6 +2,7 @@
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
+#include "test_input___machine_inpue_collector.hpp"
 #include "test_r2bix_input.hpp"
 
 #include "menu_dev.hpp"
@@ -24,8 +25,8 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', test_input::MachineInputCollector_Keyboard() );
-		mp->AddItem( '2', test_input::MachineInputCollector_Mouse() );
+		mp->AddItem( '1', test_input___machine_inpue_collector::MachineInputCollector_Keyboard() );
+		mp->AddItem( '2', test_input___machine_inpue_collector::MachineInputCollector_Mouse() );
 
 
 		mp->AddLineFeed();
