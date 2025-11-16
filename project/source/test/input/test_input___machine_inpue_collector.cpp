@@ -91,12 +91,11 @@ namespace test_input___machine_inpue_collector
 		{
 			LS();
 
-
-			DECL_MAIN( r2bix_input::MachineInputCollector c( 0, 0 ) );
-
-			LF();
-
 			{
+				DECL_MAIN( r2bix_input::MachineInputCollector c( 127 << 8, 255 << 8 ) );
+
+				LF();
+
 				OUT_SIZE( c );
 
 				LF();
