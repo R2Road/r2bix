@@ -70,7 +70,27 @@ namespace test_input___machine_inpue_collector
 				OUT_VALUE( c.GetOffset() );
 			}
 
+			LS();			
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT MachineInputCollector_Size_Binary::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Machine Input Collector : Size / Binary";
+		};
+	}
+	r2tm::DoFunctionT MachineInputCollector_Size_Binary::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
 			LS();
+
 
 			DECL_MAIN( r2bix_input::MachineInputCollector c( 0, 0 ) );
 
