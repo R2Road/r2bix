@@ -385,6 +385,7 @@
     <ClInclude Include="external\rapidjson\stringbuffer.h" />
     <ClInclude Include="external\rapidjson\uri.h" />
     <ClInclude Include="external\rapidjson\writer.h" />
+    <ClInclude Include="source\helper\r2bixprinter_cursor_point.hpp" />
     <ClInclude Include="source\helper\r2bix_helper_Printer4Texture.h" />
     <ClInclude Include="source\helper\r2bix_helper_STDPrinter4Texture.h" />
     <ClInclude Include="source\menu_dev.hpp" />

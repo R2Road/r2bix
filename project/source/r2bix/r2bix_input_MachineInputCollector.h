@@ -18,6 +18,19 @@ namespace r2bix_input
 		//
 		//
 		//
+		CursorPoint GetOffset() const
+		{
+			return mOffset;
+		}
+		CursorPoint::ValueT GetOffsetX() const
+		{
+			return mOffset.GetX();
+		}
+		CursorPoint::ValueT GetOffsetY() const
+		{
+			return mOffset.GetY();
+		}
+
 		const ObservationKeyStatesT& GetObservationKeyStates() const
 		{
 			return mObservationKeyStates;

@@ -10,8 +10,88 @@
 
 #include "r2bix_input_MachineInputCollector.h"
 
+#include "helper/r2bixprinter_cursor_point.hpp"
+
 namespace test_input___machine_inpue_collector
 {
+	r2tm::TitleFunctionT MachineInputCollector_Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Machine Input Collector : Declaration";
+		};
+	}
+	r2tm::DoFunctionT MachineInputCollector_Declaration::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECL_MAIN( r2bix_input::CursorPoint::ValueT x = 10 );
+			DECL_MAIN( r2bix_input::CursorPoint::ValueT y = 20 );
+
+			LS();
+
+			{
+				OUT_SUBJECT( "持失切 1" );
+
+				LF();
+
+				DECL_MAIN( r2bix_input::MachineInputCollector c( x, y ) );
+
+				LF();
+
+				EXPECT_EQ( x, c.GetOffsetX() );
+				EXPECT_EQ( y, c.GetOffsetY() );
+				EXPECT_EQ( r2bix_input::CursorPoint( x, y ), c.GetOffset() );
+
+				LF();
+
+				OUT_VALUE( c.GetOffset() );
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "持失切 2" );
+
+				LF();
+
+				DECL_MAIN( r2bix_input::MachineInputCollector c( r2bix_input::CursorPoint( x, y ) ) );
+
+				LF();
+
+				EXPECT_EQ( x, c.GetOffsetX() );
+				EXPECT_EQ( y, c.GetOffsetY() );
+				EXPECT_EQ( r2bix_input::CursorPoint( x, y ), c.GetOffset() );
+
+				LF();
+
+				OUT_VALUE( c.GetOffset() );
+			}
+
+			LS();
+
+			DECL_MAIN( r2bix_input::MachineInputCollector c( 0, 0 ) );
+
+			LF();
+
+			{
+				OUT_SIZE( c );
+
+				LF();
+
+				OUT_BINARY( c );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT MachineInputCollector_Keyboard::GetTitleFunction() const
 	{
 		return []()->const char*

@@ -1645,5 +1645,8 @@
     <ClInclude Include="source\test\input\test_input___machine_inpue_collector.hpp">
       <Filter>test\input</Filter>
     </ClInclude>
+    <ClInclude Include="source\helper\r2bixprinter_cursor_point.hpp">
+      <Filter>helper</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
