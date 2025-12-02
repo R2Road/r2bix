@@ -27,8 +27,8 @@ namespace test_input___machine_inpue_collector
 		{
 			LS();
 
-			DECL_MAIN( r2bix_input::CursorPoint::ValueT x = 10 );
-			DECL_MAIN( r2bix_input::CursorPoint::ValueT y = 20 );
+			DECL_MAIN( r2bix_input::CursorPoint::ValueT offset_x = 10 );
+			DECL_MAIN( r2bix_input::CursorPoint::ValueT offset_y = 20 );
 
 			LS();
 
@@ -37,13 +37,13 @@ namespace test_input___machine_inpue_collector
 
 				LF();
 
-				DECL_MAIN( r2bix_input::MachineInputCollector c( x, y ) );
+				DECL_MAIN( r2bix_input::MachineInputCollector c( offset_x, offset_y ) );
 
 				LF();
 
-				EXPECT_EQ( x, c.GetOffsetX() );
-				EXPECT_EQ( y, c.GetOffsetY() );
-				EXPECT_EQ( r2bix_input::CursorPoint( x, y ), c.GetOffset() );
+				EXPECT_EQ( offset_x, c.GetOffsetX() );
+				EXPECT_EQ( offset_y, c.GetOffsetY() );
+				EXPECT_EQ( r2bix_input::CursorPoint( offset_x, offset_y ), c.GetOffset() );
 
 				LF();
 
@@ -57,13 +57,13 @@ namespace test_input___machine_inpue_collector
 
 				LF();
 
-				DECL_MAIN( r2bix_input::MachineInputCollector c( r2bix_input::CursorPoint( x, y ) ) );
+				DECL_MAIN( r2bix_input::MachineInputCollector c( r2bix_input::CursorPoint( offset_x, offset_y ) ) );
 
 				LF();
 
-				EXPECT_EQ( x, c.GetOffsetX() );
-				EXPECT_EQ( y, c.GetOffsetY() );
-				EXPECT_EQ( r2bix_input::CursorPoint( x, y ), c.GetOffset() );
+				EXPECT_EQ( offset_x, c.GetOffsetX() );
+				EXPECT_EQ( offset_y, c.GetOffsetY() );
+				EXPECT_EQ( r2bix_input::CursorPoint( offset_x, offset_y ), c.GetOffset() );
 
 				LF();
 
