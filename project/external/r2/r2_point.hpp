@@ -1,11 +1,13 @@
 //
 // # Version Rule
-// - 1.0.0 : 사용 가능
-// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
-// - 0.0.1 : 자잘한 변화
+// - 1.0.0.0 : 사용 가능
+// - 0.1.0.0 : 기능 추가/삭제
+// - 0.0.1.0 : 기능 개선/변경
+// - 0.0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2023.08.04 PM.05.30
-// # Version			: 1.0.0
+// # Start		: 20??.??.?? ??.??.??
+// # Update		: 2025.12.04 AM.10.18
+// # Version	: 1.0.1.0
 //
 
 #pragma once
@@ -60,9 +62,9 @@ namespace r2
 		//
 		//
 		//
-		Point() : mX( 0 ), mY( 0 )
+		constexpr Point() : mX( 0 ), mY( 0 )
 		{}
-		explicit Point( const ValueT x, const ValueT y ) : mX( x ), mY( y )
+		explicit constexpr Point( const ValueT x, const ValueT y ) : mX( x ), mY( y )
 		{}
 
 

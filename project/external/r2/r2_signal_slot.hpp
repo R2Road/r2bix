@@ -24,6 +24,7 @@
 
 #include <functional>
 #include <list>
+#include <type_traits>
 
 namespace r2
 {
@@ -54,12 +55,10 @@ namespace r2
 		explicit Slot( const CallbackT& call_back ) : mSignal( nullptr ), mCallback( call_back )
 		{}
 		template<typename OWNER_T>
-		explicit Slot( OWNER_T* o, RETURN_T( OWNER_T::* c )( ARGS_T ... ) ) : mSignal( nullptr ), mCallback(
-			[o, c]( ARGS_T ... args )
-			{
-				return ( o->*c )( args ... );
-			} )
-		{}
+		explicit Slot( OWNER_T* o, RETURN_T( OWNER_T::* c )( ARGS_T ... ) ) : mSignal( nullptr ), mCallback()
+		{
+			SetCallback( o, c );
+		}
 
 		~Slot()
 		{
@@ -106,15 +105,32 @@ namespace r2
 		template<typename OWNER_T>
 		void SetCallback( OWNER_T* o, RETURN_T( OWNER_T::* c )( ARGS_T ... ) )
 		{
-			mCallback = [o, c]( ARGS_T ... args )
+			if constexpr( std::is_void_v<RETURN_T> )
 			{
-				return ( o->*c )( args ... );
-			};
+				mCallback = [o, c]( ARGS_T ... args )
+				{
+					( o->*c )( args ... );
+				};
+			}
+			else
+			{
+				mCallback = [o, c]( ARGS_T ... args )
+				{
+					return ( o->*c )( args ... );
+				};
+			}
 		}
 
 		void ClearCallback()
 		{
-			mCallback = []( ARGS_T ... ) { return RETURN_T(); };
+			if constexpr( std::is_void_v<RETURN_T> )
+			{
+				mCallback = []( ARGS_T ... ) {};
+			}
+			else
+			{
+				mCallback = []( ARGS_T ... ) { return RETURN_T(); };
+			}
 		}
 
 
@@ -124,7 +140,14 @@ namespace r2
 		//
 		inline RETURN_T Do( ARGS_T ... args )
 		{
-			return mCallback( args ... );
+			if constexpr( std::is_void_v<RETURN_T> )
+			{
+				mCallback( args ... );
+			}
+			else
+			{
+				return mCallback( args ... );
+			}
 		}
 
 

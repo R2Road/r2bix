@@ -24,9 +24,9 @@ namespace r2
 
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '4';
-		const char VersionNumber_3 = '3';
-		const char VersionNumber_4 = '6';
-		const char VersionNumber_5 = '2';
+		const char VersionNumber_3 = '4';
+		const char VersionNumber_4 = '2';
+		const char VersionNumber_5 = '0';
 
 		const char* const String4VersionRule =
 					"### Version Rule ###"
@@ -49,6 +49,7 @@ namespace r2
 
 			"\n"	"[o] " "Add Class       : Direction4Bitwise"
 			"\n"	"[o] " "Add Class       : Direction8Bitwise"
+			"\n"	"[o] " "Add Class       : PropertyValueV1"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
@@ -56,6 +57,10 @@ namespace r2
 			"\n"	"[o] " "Add Extension   : Direction4Bitwise With Point"
 			"\n"	"[o] " "Add Printer     : STD_Direction8Bitwise"
 			"\n"	"[o] " "Add Extension   : Direction8Bitwise With Point"
+			"\n"
+			"\n"	"----------------------------------"
+			"\n"
+			"\n"	"[o] " "Update Class    : Point - 생성자에 constexpr 추가"
 			"\n"
 			"\n"	"----------------------------------"
 			"\n"
