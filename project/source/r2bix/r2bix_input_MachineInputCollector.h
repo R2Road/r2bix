@@ -1,3 +1,8 @@
+//
+// # Summary
+// - 입력 처리를 위한 가장 아랫단의 클래스
+//
+
 #pragma once
 
 #include <array>
