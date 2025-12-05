@@ -25,10 +25,10 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddItem( '1', test_input___machine_inpue_collector::MachineInputCollector_Declaration() );
-		mp->AddItem( '2', test_input___machine_inpue_collector::MachineInputCollector_Size_Binary() );
-		mp->AddItem( '3', test_input___machine_inpue_collector::MachineInputCollector_Keyboard() );
-		mp->AddItem( '4', test_input___machine_inpue_collector::MachineInputCollector_Mouse() );
+		mp->AddItem( '1', test_input___machine_inpue_collector::Declaration() );
+		mp->AddItem( '2', test_input___machine_inpue_collector::Size_Binary() );
+		mp->AddItem( '3', test_input___machine_inpue_collector::Keyboard() );
+		mp->AddItem( '4', test_input___machine_inpue_collector::Mouse() );
 
 
 		mp->AddLineFeed();

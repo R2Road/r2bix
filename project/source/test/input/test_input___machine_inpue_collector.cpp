@@ -14,14 +14,14 @@
 
 namespace test_input___machine_inpue_collector
 {
-	r2tm::TitleFunctionT MachineInputCollector_Declaration::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Machine Input Collector : Declaration";
 		};
 	}
-	r2tm::DoFunctionT MachineInputCollector_Declaration::GetDoFunction() const
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -96,14 +96,14 @@ namespace test_input___machine_inpue_collector
 
 
 
-	r2tm::TitleFunctionT MachineInputCollector_Size_Binary::GetTitleFunction() const
+	r2tm::TitleFunctionT Size_Binary::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Machine Input Collector : Size / Binary";
 		};
 	}
-	r2tm::DoFunctionT MachineInputCollector_Size_Binary::GetDoFunction() const
+	r2tm::DoFunctionT Size_Binary::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -129,14 +129,14 @@ namespace test_input___machine_inpue_collector
 
 
 
-	r2tm::TitleFunctionT MachineInputCollector_Keyboard::GetTitleFunction() const
+	r2tm::TitleFunctionT Keyboard::GetTitleFunction() const
 	{
 		return []()->const char*
 			{
 				return "Machine Input Collector : Keyboard";
 			};
 	}
-	r2tm::DoFunctionT MachineInputCollector_Keyboard::GetDoFunction() const
+	r2tm::DoFunctionT Keyboard::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 			{
@@ -224,14 +224,14 @@ namespace test_input___machine_inpue_collector
 
 
 
-	r2tm::TitleFunctionT MachineInputCollector_Mouse::GetTitleFunction() const
+	r2tm::TitleFunctionT Mouse::GetTitleFunction() const
 	{
 		return []()->const char*
 			{
 				return "Machine Input Collector : Mouse";
 			};
 	}
-	r2tm::DoFunctionT MachineInputCollector_Mouse::GetDoFunction() const
+	r2tm::DoFunctionT Mouse::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 			{
