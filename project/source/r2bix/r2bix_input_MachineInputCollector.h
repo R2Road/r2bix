@@ -17,7 +17,7 @@ namespace r2bix_input
 	public:
 		MachineInputCollector();
 		explicit MachineInputCollector( const int offset_x, const int offset_y );
-		explicit MachineInputCollector( const CursorPoint offset );
+		explicit MachineInputCollector( const CursorPoint& offset );
 
 
 

@@ -24,7 +24,7 @@ namespace r2bix_input
 		mObservationKeyList.fill( 0 );
 	}
 
-	MachineInputCollector::MachineInputCollector( const CursorPoint offset ) :
+	MachineInputCollector::MachineInputCollector( const CursorPoint& offset ) :
 		mOffset( offset.GetX(), offset.GetY() )
 		, mObservationKeyList()
 		, mObservationKeyStates()
