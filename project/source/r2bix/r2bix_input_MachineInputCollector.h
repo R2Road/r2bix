@@ -10,6 +10,7 @@ namespace r2bix_input
 	class MachineInputCollector
 	{
 	public:
+		MachineInputCollector();
 		explicit MachineInputCollector( const int offset_x, const int offset_y );
 		explicit MachineInputCollector( const r2::PointInt offset );
 

@@ -2,6 +2,17 @@
 
 namespace r2bix_input
 {
+	MachineInputCollector::MachineInputCollector() :
+		  mOffset()
+		, mObservationKeyList( { 1, } )
+		, mObservationKeyStates()
+		, mCursorPoint_Last()
+		, mCursorPoint()
+		, mbMouseMoved( false )
+	{
+		mObservationKeyList.fill( 0 );
+	}
+
 	MachineInputCollector::MachineInputCollector( const int offset_x, const int offset_y ) :
 			mOffset( offset_x, offset_y )
 		,	mObservationKeyList()

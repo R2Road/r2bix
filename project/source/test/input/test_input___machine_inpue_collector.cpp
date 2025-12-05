@@ -27,16 +27,33 @@ namespace test_input___machine_inpue_collector
 		{
 			LS();
 
-			DECL_MAIN( r2bix_input::CursorPoint::ValueT offset_x = 10 );
-			DECL_MAIN( r2bix_input::CursorPoint::ValueT offset_y = 20 );
+			{
+				OUT_SUBJECT( "持失切 : 奄沙" );
+
+				LF();
+
+				DECL_MAIN( r2bix_input::MachineInputCollector c );
+
+				LF();
+
+				EXPECT_EQ( 0, c.GetOffsetX() );
+				EXPECT_EQ( 0, c.GetOffsetY() );
+				EXPECT_EQ( r2bix_input::CursorPoint(), c.GetOffset() );
+
+				LF();
+
+				OUT_VALUE( c.GetOffset() );
+			}
 
 			LS();
 
 			{
-				OUT_SUBJECT( "持失切 1" );
+				OUT_SUBJECT( "持失切 : offset x, y" );
 
 				LF();
 
+				DECL_MAIN( constexpr r2bix_input::CursorPoint::ValueT offset_x = 10 );
+				DECL_MAIN( constexpr r2bix_input::CursorPoint::ValueT offset_y = 20 );
 				DECL_MAIN( r2bix_input::MachineInputCollector c( offset_x, offset_y ) );
 
 				LF();
@@ -53,17 +70,18 @@ namespace test_input___machine_inpue_collector
 			LS();
 
 			{
-				OUT_SUBJECT( "持失切 2" );
+				OUT_SUBJECT( "持失切 : offset CursorPoint" );
 
 				LF();
 
-				DECL_MAIN( r2bix_input::MachineInputCollector c( r2bix_input::CursorPoint( offset_x, offset_y ) ) );
+				DECL_MAIN( constexpr r2bix_input::CursorPoint offset( 30, 40 ) );
+				DECL_MAIN( r2bix_input::MachineInputCollector c( offset ) );
 
 				LF();
 
-				EXPECT_EQ( offset_x, c.GetOffsetX() );
-				EXPECT_EQ( offset_y, c.GetOffsetY() );
-				EXPECT_EQ( r2bix_input::CursorPoint( offset_x, offset_y ), c.GetOffset() );
+				EXPECT_EQ( offset.GetX(), c.GetOffsetX());
+				EXPECT_EQ( offset.GetY(), c.GetOffsetY() );
+				EXPECT_EQ( offset, c.GetOffset() );
 
 				LF();
 
