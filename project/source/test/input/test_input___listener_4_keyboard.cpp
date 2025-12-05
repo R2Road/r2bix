@@ -147,6 +147,10 @@ namespace test_input___listener_4_keyboard
 			LS();
 
 			{
+				OUT_SUBJECT( "Add" );
+
+				LF();
+
 				{
 					PROC_MAIN( c.Add( r2bix_input::eKeyCode::VK_1 ) );
 
@@ -173,6 +177,29 @@ namespace test_input___listener_4_keyboard
 					LF();
 
 					EXPECT_EQ( 2, c.Size() );
+				}
+
+				SS();
+
+				{
+					PROC_MAIN( c.Add( r2bix_input::eKeyCode::VK_3 ) );
+
+					LF();
+
+					EXPECT_EQ( 3, c.Size() );
+				}
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "Iteration" );
+
+				LF();
+
+				for( const auto& k : c )
+				{
+					std::cout << (int)k.key_index << " : " << (int)k.key_code << r2tm::linefeed;
 				}
 			}
 
