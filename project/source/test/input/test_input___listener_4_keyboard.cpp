@@ -126,4 +126,59 @@ namespace test_input___listener_4_keyboard
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT ObservationKeyContainer_Add::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Observation Key Container : Add";
+		};
+	}
+	r2tm::DoFunctionT ObservationKeyContainer_Add::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECL_MAIN( r2bix_input::ObservationKeyContainer c );
+
+			LS();
+
+			{
+				{
+					PROC_MAIN( c.Add( r2bix_input::eKeyCode::VK_1 ) );
+
+					LF();
+
+					EXPECT_EQ( 1, c.Size() );
+				}
+
+				SS();
+
+				{
+					PROC_MAIN( c.Add( r2bix_input::eKeyCode::VK_2 ) );
+
+					LF();
+
+					EXPECT_EQ( 2, c.Size() );
+				}
+
+				SS();
+
+				{
+					PROC_MAIN( c.Add( r2bix_input::eKeyCode::VK_2 ) );
+
+					LF();
+
+					EXPECT_EQ( 2, c.Size() );
+				}
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
