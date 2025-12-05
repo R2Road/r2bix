@@ -47,4 +47,83 @@ namespace test_input___listener_4_keyboard
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT ObservationKeyContainer_Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Observation Key Container : Declaration";
+		};
+	}
+	r2tm::DoFunctionT ObservationKeyContainer_Declaration::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUT_SUBJECT( "생성자 : 기본" );
+
+				LF();
+
+				DECL_MAIN( r2bix_input::ObservationKeyContainer c );
+
+				LF();
+
+				OUT_SIZE( c );
+
+				LF();
+
+				OUT_BINARY( c );
+
+				LF();
+
+				EXPECT_EQ( 0, c.Size() );
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "생성자 : 키 리스트" );
+
+				LF();
+
+				DECL_MAIN( r2bix_input::ObservationKeyContainer c( { r2bix_input::eKeyCode::VK_1, r2bix_input::eKeyCode::VK_2 } ) );
+
+				LF();
+
+				OUT_SIZE( c );
+
+				LF();
+
+				OUT_BINARY( c );
+
+				LF();
+
+				EXPECT_EQ( 2, c.Size() );
+
+				LF();
+
+				EXPECT_EQ( 0, c[0].key_index );
+				EXPECT_TRUE( r2bix_input::eKeyCode::VK_1 == c[0].key_code );
+				EXPECT_TRUE( c.IsObservationKey( r2bix_input::eKeyCode::VK_1 ) );
+
+				LF();
+
+				EXPECT_EQ( 1, c[1].key_index );
+				EXPECT_TRUE( r2bix_input::eKeyCode::VK_2 == c[1].key_code );
+				EXPECT_TRUE( c.IsObservationKey( r2bix_input::eKeyCode::VK_2 ) );
+
+				LF();
+
+				EXPECT_FALSE( c.IsObservationKey( r2bix_input::eKeyCode::VK_3 ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

@@ -36,6 +36,7 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 
 
 		mp->AddItem( 'q', test_input___listener_4_keyboard::ObservationKey() );
+		mp->AddItem( 'w', test_input___listener_4_keyboard::ObservationKeyContainer_Declaration() );
 
 
 		mp->AddLineFeed();
