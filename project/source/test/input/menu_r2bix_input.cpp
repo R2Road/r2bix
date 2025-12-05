@@ -2,6 +2,7 @@
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
+#include "test_input___listener_4_keyboard.hpp"
 #include "test_input___machine_inpue_collector.hpp"
 #include "test_r2bix_input.hpp"
 
@@ -34,7 +35,7 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'q', test_input::ObservationKey() );
+		mp->AddItem( 'q', test_input___listener_4_keyboard::ObservationKey() );
 
 
 		mp->AddLineFeed();

@@ -14,37 +14,6 @@
 
 namespace test_input
 {
-	r2tm::TitleFunctionT ObservationKey::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "ObservationKey";
-		};
-	}
-	r2tm::DoFunctionT ObservationKey::GetDoFunction() const
-	{
-		return []()->r2tm::eDoLeaveAction
-		{
-			LS();
-
-			DECL_MAIN( r2bix_input::ObservationKey o );
-
-			LF();
-
-			OUT_SIZE( o );
-
-			LF();
-
-			OUT_BINARY( o );
-
-			LS();
-
-			return r2tm::eDoLeaveAction::Pause;
-		};
-	}
-
-
-
 	r2tm::TitleFunctionT KeyboardInputListener_KeyStatus::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -85,6 +54,7 @@ namespace test_input
 			LS();
 
 			{
+				long long frame = 0ll;
 				do
 				{
 
@@ -96,8 +66,10 @@ namespace test_input
 					if( bAChanged )
 					{
 						bAChanged = false;
-						std::cout << "status : " << static_cast<int>( as ) << r2tm::linefeed;
+						std::cout << "status : " << static_cast<int>( as ) << "    " << frame << r2tm::linefeed;
 					}
+
+					++frame;
 
 				} while( bPlay );
 			}
