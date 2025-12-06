@@ -16,8 +16,8 @@ namespace r2bix_input
 	bool IsMouseKeyReversed();
 
 
-
-	using ObservationKeyStatesT = std::bitset<255>;
+	constexpr std::size_t MAX_OBSERVATION_KEY_COUNT = 255;
+	using ObservationKeyStatesT = std::bitset<MAX_OBSERVATION_KEY_COUNT>;
 
 	bool HasWindowFocus();
 
