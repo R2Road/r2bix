@@ -15,7 +15,7 @@ namespace r2bix_input
 	class MachineInputCollector
 	{
 	private:
-		using ObservationKeySignalsT = std::array<char, MAX_OBSERVATION_KEY_COUNT>;
+		using ObservationKeyFlags = std::array<char, MAX_OBSERVATION_KEY_COUNT>;
 
 	public:
 		MachineInputCollector();
@@ -40,9 +40,9 @@ namespace r2bix_input
 			return mOffset.GetY();
 		}
 
-		const ObservationKeyFlagsT& GetObservationKeyFlags() const
+		const ObservationKeySignalsT& GetObservationKeySignals() const
 		{
-			return mObservationKeyFlags;
+			return mObservationKeySignals;
 		}
 		CursorPoint GetCursorPoint() const
 		{
@@ -83,11 +83,11 @@ namespace r2bix_input
 		//
 		bool IsObservationKey( const KeyCodeTypeT key_value ) const
 		{
-			return 0 < mObservationKeySignals[key_value];
+			return 0 < mObservationKeyFlags[key_value];
 		}
 		bool HasInput( const KeyCodeTypeT key_value ) const
 		{
-			return mObservationKeyFlags.test( key_value );
+			return mObservationKeySignals.test( key_value );
 		}
 
 
@@ -95,8 +95,8 @@ namespace r2bix_input
 	private:
 		CursorPoint mOffset;
 
-		ObservationKeyFlagsT mObservationKeyFlags;
 		ObservationKeySignalsT mObservationKeySignals;
+		ObservationKeyFlags mObservationKeyFlags;
 
 		CursorPoint mCursorPoint_Last;
 		CursorPoint mCursorPoint;

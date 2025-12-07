@@ -19,7 +19,7 @@ namespace r2bix_input
 
 
 	constexpr std::size_t MAX_OBSERVATION_KEY_COUNT = 255;
-	using ObservationKeyFlagsT = std::bitset<MAX_OBSERVATION_KEY_COUNT>;
+	using ObservationKeySignalsT = std::bitset<MAX_OBSERVATION_KEY_COUNT>;
 
 	bool HasWindowFocus();
 

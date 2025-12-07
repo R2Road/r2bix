@@ -4,35 +4,35 @@ namespace r2bix_input
 {
 	MachineInputCollector::MachineInputCollector() :
 		  mOffset()
-		, mObservationKeyFlags()
 		, mObservationKeySignals()
+		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
 	{
-		mObservationKeySignals.fill( 0 );
+		mObservationKeyFlags.fill( 0 );
 	}
 
 	MachineInputCollector::MachineInputCollector( const int offset_x, const int offset_y ) :
 		  mOffset( offset_x, offset_y )
-		, mObservationKeyFlags()
 		, mObservationKeySignals()
+		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
 	{
-		mObservationKeySignals.fill( 0 );
+		mObservationKeyFlags.fill( 0 );
 	}
 
 	MachineInputCollector::MachineInputCollector( const CursorPoint& offset ) :
 		  mOffset( offset.GetX(), offset.GetY() )
-		, mObservationKeyFlags()
 		, mObservationKeySignals()
+		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
 	{
-		mObservationKeySignals.fill( 0 );
+		mObservationKeyFlags.fill( 0 );
 	}
 
 	void MachineInputCollector::Collect()
@@ -47,7 +47,7 @@ namespace r2bix_input
 			// Key : Keyboard, Mouse
 			//
 			{
-				mObservationKeyFlags.reset(); // 모두 false
+				mObservationKeySignals.reset(); // 모두 false
 			}
 
 			//
@@ -65,16 +65,16 @@ namespace r2bix_input
 			//
 			{
 				int key_value = 0;
-				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeySignals.size() ); end > i; ++i )
+				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyFlags.size() ); end > i; ++i )
 				{
-					if( 0 == mObservationKeySignals[i] )
+					if( 0 == mObservationKeyFlags[i] )
 					{
 						continue;
 					}
 
 					key_value = GetKeyState( i );
 
-					mObservationKeyFlags[i] = key_value & 0x8000;
+					mObservationKeySignals[i] = key_value & 0x8000;
 				}
 			}
 
@@ -84,11 +84,11 @@ namespace r2bix_input
 			{
 				if( IsMouseKeyReversed() )
 				{
-					const bool lbutton_state = mObservationKeyFlags[VK_LBUTTON];
-					const bool rbutton_state = mObservationKeyFlags[VK_RBUTTON];
+					const bool lbutton_state = mObservationKeySignals[VK_LBUTTON];
+					const bool rbutton_state = mObservationKeySignals[VK_RBUTTON];
 
-					mObservationKeyFlags[VK_LBUTTON] = rbutton_state;
-					mObservationKeyFlags[VK_RBUTTON] = lbutton_state;
+					mObservationKeySignals[VK_LBUTTON] = rbutton_state;
+					mObservationKeySignals[VK_RBUTTON] = lbutton_state;
 				}
 			}
 
@@ -109,14 +109,14 @@ namespace r2bix_input
 	{
 		for( const auto k : observation_key_container )
 		{
-			++mObservationKeySignals[k.key_code];
+			++mObservationKeyFlags[k.key_code];
 		}
 	}
 	void MachineInputCollector::RemoveObservationKeys( const ObservationKeyContainer& observation_key_container )
 	{
 		for( const auto k : observation_key_container )
 		{
-			--mObservationKeySignals[k.key_code];
+			--mObservationKeyFlags[k.key_code];
 		}
 	}
 }
