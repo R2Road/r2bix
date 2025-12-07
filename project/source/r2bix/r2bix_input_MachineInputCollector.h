@@ -14,6 +14,9 @@ namespace r2bix_input
 {
 	class MachineInputCollector
 	{
+	private:
+		using ObservationKeySignalsT = std::array<char, MAX_OBSERVATION_KEY_COUNT>;
+
 	public:
 		MachineInputCollector();
 		explicit MachineInputCollector( const int offset_x, const int offset_y );
@@ -92,7 +95,7 @@ namespace r2bix_input
 	private:
 		CursorPoint mOffset;
 
-		std::array<char, MAX_OBSERVATION_KEY_COUNT> mObservationKeySignals;
+		ObservationKeySignalsT mObservationKeySignals;
 		ObservationKeyFlagsT mObservationKeyFlags;
 
 		CursorPoint mCursorPoint_Last;
