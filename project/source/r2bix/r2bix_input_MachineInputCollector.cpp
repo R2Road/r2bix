@@ -5,7 +5,7 @@ namespace r2bix_input
 	MachineInputCollector::MachineInputCollector() :
 		  mOffset()
 		, mObservationKeyList( { 1, } )
-		, mObservationKeyStates()
+		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
@@ -16,7 +16,7 @@ namespace r2bix_input
 	MachineInputCollector::MachineInputCollector( const int offset_x, const int offset_y ) :
 			mOffset( offset_x, offset_y )
 		,	mObservationKeyList()
-		,	mObservationKeyStates()
+		,	mObservationKeyFlags()
 		,	mCursorPoint_Last()
 		,	mCursorPoint()
 		,	mbMouseMoved( false )
@@ -27,7 +27,7 @@ namespace r2bix_input
 	MachineInputCollector::MachineInputCollector( const CursorPoint& offset ) :
 		  mOffset( offset.GetX(), offset.GetY() )
 		, mObservationKeyList()
-		, mObservationKeyStates()
+		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
@@ -47,7 +47,7 @@ namespace r2bix_input
 			// Key : Keyboard, Mouse
 			//
 			{
-				mObservationKeyStates.reset(); // 모두 false
+				mObservationKeyFlags.reset(); // 모두 false
 			}
 
 			//
@@ -74,7 +74,7 @@ namespace r2bix_input
 
 					key_value = GetKeyState( i );
 
-					mObservationKeyStates[i] = key_value & 0x8000;
+					mObservationKeyFlags[i] = key_value & 0x8000;
 				}
 			}
 
@@ -84,11 +84,11 @@ namespace r2bix_input
 			{
 				if( IsMouseKeyReversed() )
 				{
-					const bool lbutton_state = mObservationKeyStates[VK_LBUTTON];
-					const bool rbutton_state = mObservationKeyStates[VK_RBUTTON];
+					const bool lbutton_state = mObservationKeyFlags[VK_LBUTTON];
+					const bool rbutton_state = mObservationKeyFlags[VK_RBUTTON];
 
-					mObservationKeyStates[VK_LBUTTON] = rbutton_state;
-					mObservationKeyStates[VK_RBUTTON] = lbutton_state;
+					mObservationKeyFlags[VK_LBUTTON] = rbutton_state;
+					mObservationKeyFlags[VK_RBUTTON] = lbutton_state;
 				}
 			}
 

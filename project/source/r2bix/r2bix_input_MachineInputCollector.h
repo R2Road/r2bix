@@ -37,9 +37,9 @@ namespace r2bix_input
 			return mOffset.GetY();
 		}
 
-		const ObservationKeyStatesT& GetObservationKeyStates() const
+		const ObservationKeyFlagsT& GetObservationKeyFlags() const
 		{
-			return mObservationKeyStates;
+			return mObservationKeyFlags;
 		}
 		CursorPoint GetCursorPoint() const
 		{
@@ -84,7 +84,7 @@ namespace r2bix_input
 		}
 		bool HasInput( const KeyCodeTypeT key_value ) const
 		{
-			return mObservationKeyStates.test( key_value );
+			return mObservationKeyFlags.test( key_value );
 		}
 
 
@@ -93,7 +93,7 @@ namespace r2bix_input
 		CursorPoint mOffset;
 
 		std::array<char, MAX_OBSERVATION_KEY_COUNT> mObservationKeyList;
-		ObservationKeyStatesT mObservationKeyStates;
+		ObservationKeyFlagsT mObservationKeyFlags;
 
 		CursorPoint mCursorPoint_Last;
 		CursorPoint mCursorPoint;
