@@ -64,6 +64,9 @@ namespace r2bix_input
 			// Key : Keyboard, Mouse
 			//
 			{
+				static unsigned char key_states[256] = { 0 };
+				GetKeyStates( key_states );
+
 				int key_value = 0;
 				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyFlags.size() ); end > i; ++i )
 				{
@@ -72,9 +75,10 @@ namespace r2bix_input
 						continue;
 					}
 
-					key_value = GetKeyState( i );
+					key_value = key_states[i];
+					key_value >>= 7;
 
-					mObservationKeySignals[i] = key_value & 0x8000;
+					mObservationKeySignals[i] = ( key_value > 0 );
 				}
 			}
 

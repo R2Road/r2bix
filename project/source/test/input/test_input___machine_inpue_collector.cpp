@@ -4,16 +4,97 @@
 
 #include "r2_rect_int.hpp"
 #include "r2_fps_timer.hpp"
+
+#include "r2tm/r2tm_color_modifier.hpp"
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2bix_input_MachineInputCollector.h"
+#include "r2bix_input_Constant.h"
 
 #include "helper/r2bixprinter_cursor_point.hpp"
 
 namespace test_input___machine_inpue_collector
 {
+	r2tm::TitleFunctionT KeyboardStates::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Machine Input Collector : KeyboardStates";
+		};
+	}
+	r2tm::DoFunctionT KeyboardStates::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_STRING( "[ ESC ] Exit" );
+			OUT_STRING( "[Any Key] 아무키 누르면 누른키 표시" );
+			OUT_STRING( "[SPACE] 스페이스키 누르면 값 표시" );
+
+			LS();
+
+			OUT_NOTE( "1st 4bit : Toggle Info : 키 누를 때마다 변화 0001 > 0000 > 0001 > 0000 ...." );
+			OUT_NOTE( "2nd 4bit : Current Key State : 눌리면 1000" );
+
+			LS();
+
+			{
+				const auto pivot_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
+
+				unsigned char states[256] = {};
+				unsigned char key_value_4_debug = 0;
+
+				do
+				{
+					if( !r2bix_input::GetKeyStates( states ) )
+					{
+						continue;
+					}
+					
+					r2tm::WindowsUtility::MoveCursorPoint( pivot_cursor_point );
+
+					//
+					// View
+					//
+					for( int i = 0; i < 256; i++ )
+					{
+						if( states[i] & 0b10000000 )
+						{
+							std::cout << clm( r2tm::eColor::FG_LightGreen ) << 'O' << clm();
+						}
+						else
+						{
+							std::cout << clm( r2tm::eColor::FG_Gray ) << 'x' << clm();;
+						}
+
+						if( i % 64 == 63 )
+						{
+							LF();
+						}
+					}
+					LF();
+
+					OUT_BINARY( states[r2bix_input::eKeyCode::VK_SPACE] );
+
+					LF();
+
+					OUT_NOTE( "항상 0 로 나오는 부분은 VK_HANGUL" );
+					OUT_BINARY( states[r2bix_input::eKeyCode::VK_HANGUL] );
+
+				} while( 0 == ( states[r2bix_input::eKeyCode::VK_ESCAPE] & 0b10000000 ) );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*

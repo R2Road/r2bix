@@ -10,7 +10,7 @@ namespace r2bix_input
 	using KeyIndexTypeT = uint8_t;
 
 	using KeyCodeTypeT = uint8_t;
-	int GetKeyState( const KeyCodeTypeT key_code );
+	bool GetKeyStates( KeyCodeTypeT* const key_states );
 
 	using CursorPoint = r2::PointInt;
 	CursorPoint GetCursorPoint();
