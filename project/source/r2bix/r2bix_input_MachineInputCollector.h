@@ -95,8 +95,8 @@ namespace r2bix_input
 	private:
 		CursorPoint mOffset;
 
-		ObservationKeySignalsT mObservationKeySignals;
 		ObservationKeyFlagsT mObservationKeyFlags;
+		ObservationKeySignalsT mObservationKeySignals;
 
 		CursorPoint mCursorPoint_Last;
 		CursorPoint mCursorPoint;
