@@ -5,7 +5,7 @@ namespace r2bix_input
 	MachineInputCollector::MachineInputCollector() :
 		  mOffset()
 		, mObservationKeyFlags()
-		, mObservationKeySignals( { 1, } )
+		, mObservationKeySignals()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
