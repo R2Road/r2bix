@@ -4,35 +4,35 @@ namespace r2bix_input
 {
 	MachineInputCollector::MachineInputCollector() :
 		  mOffset()
-		, mObservationKeyList( { 1, } )
+		, mObservationKeySignals( { 1, } )
 		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
 	{
-		mObservationKeyList.fill( 0 );
+		mObservationKeySignals.fill( 0 );
 	}
 
 	MachineInputCollector::MachineInputCollector( const int offset_x, const int offset_y ) :
 			mOffset( offset_x, offset_y )
-		,	mObservationKeyList()
+		,	mObservationKeySignals()
 		,	mObservationKeyFlags()
 		,	mCursorPoint_Last()
 		,	mCursorPoint()
 		,	mbMouseMoved( false )
 	{
-		mObservationKeyList.fill( 0 );
+		mObservationKeySignals.fill( 0 );
 	}
 
 	MachineInputCollector::MachineInputCollector( const CursorPoint& offset ) :
 		  mOffset( offset.GetX(), offset.GetY() )
-		, mObservationKeyList()
+		, mObservationKeySignals()
 		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
 	{
-		mObservationKeyList.fill( 0 );
+		mObservationKeySignals.fill( 0 );
 	}
 
 	void MachineInputCollector::Collect()
@@ -65,9 +65,9 @@ namespace r2bix_input
 			//
 			{
 				int key_value = 0;
-				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyList.size() ); end > i; ++i )
+				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeySignals.size() ); end > i; ++i )
 				{
-					if( 0 == mObservationKeyList[i] )
+					if( 0 == mObservationKeySignals[i] )
 					{
 						continue;
 					}
@@ -109,14 +109,14 @@ namespace r2bix_input
 	{
 		for( const auto k : observation_key_container )
 		{
-			++mObservationKeyList[k.key_code];
+			++mObservationKeySignals[k.key_code];
 		}
 	}
 	void MachineInputCollector::RemoveObservationKeys( const ObservationKeyContainer& observation_key_container )
 	{
 		for( const auto k : observation_key_container )
 		{
-			--mObservationKeyList[k.key_code];
+			--mObservationKeySignals[k.key_code];
 		}
 	}
 }

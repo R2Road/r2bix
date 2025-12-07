@@ -80,7 +80,7 @@ namespace r2bix_input
 		//
 		bool IsObservationKey( const KeyCodeTypeT key_value ) const
 		{
-			return 0 < mObservationKeyList[key_value];
+			return 0 < mObservationKeySignals[key_value];
 		}
 		bool HasInput( const KeyCodeTypeT key_value ) const
 		{
@@ -92,7 +92,7 @@ namespace r2bix_input
 	private:
 		CursorPoint mOffset;
 
-		std::array<char, MAX_OBSERVATION_KEY_COUNT> mObservationKeyList;
+		std::array<char, MAX_OBSERVATION_KEY_COUNT> mObservationKeySignals;
 		ObservationKeyFlagsT mObservationKeyFlags;
 
 		CursorPoint mCursorPoint_Last;
