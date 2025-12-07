@@ -14,12 +14,12 @@ namespace r2bix_input
 	}
 
 	MachineInputCollector::MachineInputCollector( const int offset_x, const int offset_y ) :
-			mOffset( offset_x, offset_y )
-		,	mObservationKeyFlags()
-		,	mObservationKeySignals()
-		,	mCursorPoint_Last()
-		,	mCursorPoint()
-		,	mbMouseMoved( false )
+		  mOffset( offset_x, offset_y )
+		, mObservationKeyFlags()
+		, mObservationKeySignals()
+		, mCursorPoint_Last()
+		, mCursorPoint()
+		, mbMouseMoved( false )
 	{
 		mObservationKeySignals.fill( 0 );
 	}
