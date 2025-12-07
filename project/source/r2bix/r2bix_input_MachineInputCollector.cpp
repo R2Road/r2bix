@@ -4,8 +4,8 @@ namespace r2bix_input
 {
 	MachineInputCollector::MachineInputCollector() :
 		  mOffset()
-		, mObservationKeySignals( { 1, } )
 		, mObservationKeyFlags()
+		, mObservationKeySignals( { 1, } )
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
@@ -15,8 +15,8 @@ namespace r2bix_input
 
 	MachineInputCollector::MachineInputCollector( const int offset_x, const int offset_y ) :
 			mOffset( offset_x, offset_y )
-		,	mObservationKeySignals()
 		,	mObservationKeyFlags()
+		,	mObservationKeySignals()
 		,	mCursorPoint_Last()
 		,	mCursorPoint()
 		,	mbMouseMoved( false )
@@ -26,8 +26,8 @@ namespace r2bix_input
 
 	MachineInputCollector::MachineInputCollector( const CursorPoint& offset ) :
 		  mOffset( offset.GetX(), offset.GetY() )
-		, mObservationKeySignals()
 		, mObservationKeyFlags()
+		, mObservationKeySignals()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
