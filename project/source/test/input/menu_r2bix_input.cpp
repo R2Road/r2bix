@@ -5,6 +5,7 @@
 #include "test_input___listener_4_keyboard.hpp"
 #include "test_input___key_status_processor.hpp"
 #include "test_input___machine_inpue_collector.hpp"
+#include "test_input___observation_key_flags.hpp"
 #include "test_r2bix_input.hpp"
 
 #include "menu_dev.hpp"
@@ -32,26 +33,29 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 		mp->AddItem( '3', test_input___machine_inpue_collector::Size_Binary() );
 		mp->AddItem( '4', test_input___machine_inpue_collector::Keyboard() );
 		mp->AddItem( '5', test_input___machine_inpue_collector::Mouse() );
-		mp->AddItem( '6', test_input___key_status_processor::Declaration() );
-		mp->AddItem( '7', test_input___key_status_processor::Size_Binary() );
-		mp->AddItem( '8', test_input___key_status_processor::Update() );
 
 
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'q', test_input___listener_4_keyboard::ObservationKey() );
-		mp->AddItem( 'w', test_input___listener_4_keyboard::ObservationKeyContainer_Declaration() );
-		mp->AddItem( 'e', test_input___listener_4_keyboard::ObservationKeyContainer_Add() );
+		mp->AddItem( 'q', test_input___key_status_processor::Declaration() );
+		mp->AddItem( 'w', test_input___key_status_processor::Size_Binary() );
+		mp->AddItem( 'e', test_input___key_status_processor::Update() );
+		mp->AddItem( 'r', test_input___observation_key_flags::Declaration() );
+		mp->AddItem( 't', test_input___observation_key_flags::Size_Binary() );
+		mp->AddItem( 'y', test_input___observation_key_flags::Add_Remove() );
 
 
 		mp->AddLineFeed();
 
 
-		mp->AddItem( 'a', test_input::KeyboardInputListener_KeyStatus() );
-		mp->AddItem( 's', test_input::KeyboardInputListener_Play() );
-		mp->AddItem( 'd', test_input::MouseListener_KeyStatus() );
-		mp->AddItem( 'f', test_input::MouseListener_Cursor() );
+		mp->AddItem( 'a', test_input___listener_4_keyboard::ObservationKey() );
+		mp->AddItem( 's', test_input___listener_4_keyboard::ObservationKeyContainer_Declaration() );
+		mp->AddItem( 'd', test_input___listener_4_keyboard::ObservationKeyContainer_Add() );
+		mp->AddItem( 'f', test_input::KeyboardInputListener_KeyStatus() );
+		mp->AddItem( 'g', test_input::KeyboardInputListener_Play() );
+		mp->AddItem( 'h', test_input::MouseListener_KeyStatus() );
+		mp->AddItem( 'j', test_input::MouseListener_Cursor() );
 
 
 		mp->AddLineFeed();
