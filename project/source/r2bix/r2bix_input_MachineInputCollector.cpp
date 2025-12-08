@@ -67,18 +67,18 @@ namespace r2bix_input
 				static unsigned char key_states[256] = { 0 };
 				GetKeyStates( key_states );
 
-				int key_value = 0;
-				for( unsigned char i = 0x01, end = static_cast< unsigned char >( mObservationKeyFlags.size() ); end > i; ++i )
+				for(
+					unsigned char i = r2bix_input::eKeyCode::START, end = r2bix_input::eKeyCode::END;
+					end >= i;
+					++i
+				)
 				{
 					if( 0 == mObservationKeyFlags[i] )
 					{
 						continue;
 					}
 
-					key_value = key_states[i];
-					key_value >>= 7;
-
-					mObservationKeySignals[i] = ( key_value > 0 );
+					mObservationKeySignals[i] = ( key_states[i] & 0b10000000 );
 				}
 			}
 
