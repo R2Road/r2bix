@@ -669,6 +669,12 @@
     <ClCompile Include="source\test\input\test_input___listener_4_keyboard.cpp">
       <Filter>test\input</Filter>
     </ClCompile>
+    <ClCompile Include="source\test\input\test_input___key_status_processor.cpp">
+      <Filter>test\input</Filter>
+    </ClCompile>
+    <ClCompile Include="source\r2bix\r2bix_input_KeyStatusProcessor.cpp">
+      <Filter>_r2bix\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\test\2d\TextureFrameAnimationTable4Test.h">
@@ -1652,6 +1658,12 @@
       <Filter>helper</Filter>
     </ClInclude>
     <ClInclude Include="source\test\input\test_input___listener_4_keyboard.hpp">
+      <Filter>test\input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\r2bix\r2bix_input_KeyStatusProcessor.hpp">
+      <Filter>_r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\input\test_input___key_status_processor.hpp">
       <Filter>test\input</Filter>
     </ClInclude>
   </ItemGroup>

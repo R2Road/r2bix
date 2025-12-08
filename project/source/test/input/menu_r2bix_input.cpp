@@ -3,6 +3,7 @@
 #include "r2tm/r2tm_menu_processor.hpp"
 
 #include "test_input___listener_4_keyboard.hpp"
+#include "test_input___key_status_processor.hpp"
 #include "test_input___machine_inpue_collector.hpp"
 #include "test_r2bix_input.hpp"
 
@@ -31,6 +32,9 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 		mp->AddItem( '3', test_input___machine_inpue_collector::Size_Binary() );
 		mp->AddItem( '4', test_input___machine_inpue_collector::Keyboard() );
 		mp->AddItem( '5', test_input___machine_inpue_collector::Mouse() );
+		mp->AddItem( '6', test_input___key_status_processor::Declaration() );
+		mp->AddItem( '7', test_input___key_status_processor::Size_Binary() );
+		mp->AddItem( '8', test_input___key_status_processor::Update() );
 
 
 		mp->AddLineFeed();

@@ -116,6 +116,7 @@
     <ClCompile Include="source\r2bix\r2bix_Director.cpp" />
     <ClCompile Include="source\r2bix\r2bix_director_DefarredTaskQueue.cpp" />
     <ClCompile Include="source\r2bix\r2bix_input_InputManager.cpp" />
+    <ClCompile Include="source\r2bix\r2bix_input_KeyStatusProcessor.cpp" />
     <ClCompile Include="source\r2bix\r2bix_input_Listener4Mouse.cpp" />
     <ClCompile Include="source\r2bix\r2bix_node_HollowRectNode.cpp" />
     <ClCompile Include="source\r2bix\r2bix_node_Node.cpp" />
@@ -184,6 +185,7 @@
     <ClCompile Include="source\test\2d\variable\research_visible_resource.cpp" />
     <ClCompile Include="source\test\2d\variable\test_render.cpp" />
     <ClCompile Include="source\test\input\menu_r2bix_input.cpp" />
+    <ClCompile Include="source\test\input\test_input___key_status_processor.cpp" />
     <ClCompile Include="source\test\input\test_input___listener_4_keyboard.cpp" />
     <ClCompile Include="source\test\input\test_r2bix_input.cpp" />
     <ClCompile Include="source\test\input\test_input___machine_inpue_collector.cpp" />
@@ -443,6 +445,7 @@
     <ClInclude Include="source\r2bix\r2bix_component_iComponent.h" />
     <ClInclude Include="source\r2bix\r2bix_director_DefarredTaskQueue.h" />
     <ClInclude Include="source\r2bix\r2bix_input_InputManager.h" />
+    <ClInclude Include="source\r2bix\r2bix_input_KeyStatusProcessor.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_Listener4Mouse.h" />
     <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyContainer.h" />
     <ClInclude Include="source\r2bix\r2bix_interface_camera.hpp" />
@@ -515,6 +518,7 @@
     <ClInclude Include="source\test\2d\variable\research_visible_resource.h" />
     <ClInclude Include="source\test\2d\variable\test_render.h" />
     <ClInclude Include="source\test\input\menu_r2bix_input.hpp" />
+    <ClInclude Include="source\test\input\test_input___key_status_processor.hpp" />
     <ClInclude Include="source\test\input\test_input___listener_4_keyboard.hpp" />
     <ClInclude Include="source\test\input\test_r2bix_input.hpp" />
     <ClInclude Include="source\test\input\test_input___machine_inpue_collector.hpp" />
@@ -535,19 +539,19 @@
     <ProjectGuid>{2D908A8D-3690-4F7A-AFE1-E8CB5BD27BCB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>cppplayground</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -560,7 +564,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
