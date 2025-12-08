@@ -129,8 +129,6 @@ namespace test_input___key_status_processor
 
 			{
 				r2bix_input::MachineInputCollector machine_input_collector( 0, 0 );
-				machine_input_collector.AddObservationKeys( { r2bix_input::eKeyCode::VK_SPACE, r2bix_input::eKeyCode::VK_ESCAPE } );
-
 				r2bix_input::KeyStatusProcessor key_status_processor;
 
 				const r2tm::WindowsUtility::CursorPoint pivot_cursor_point = r2tm::WindowsUtility::GetCursorPoint();

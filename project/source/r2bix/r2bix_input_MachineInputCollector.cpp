@@ -5,35 +5,26 @@ namespace r2bix_input
 	MachineInputCollector::MachineInputCollector() :
 		  mOffset()
 		, mObservationKeySignals()
-		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
-	{
-		mObservationKeyFlags.fill( 0 );
-	}
+	{}
 
 	MachineInputCollector::MachineInputCollector( const int offset_x, const int offset_y ) :
 		  mOffset( offset_x, offset_y )
 		, mObservationKeySignals()
-		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
-	{
-		mObservationKeyFlags.fill( 0 );
-	}
+	{}
 
 	MachineInputCollector::MachineInputCollector( const CursorPoint& offset ) :
 		  mOffset( offset.GetX(), offset.GetY() )
 		, mObservationKeySignals()
-		, mObservationKeyFlags()
 		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
-	{
-		mObservationKeyFlags.fill( 0 );
-	}
+	{}
 
 	void MachineInputCollector::Collect()
 	{
@@ -73,11 +64,6 @@ namespace r2bix_input
 					++i
 				)
 				{
-					if( 0 == mObservationKeyFlags[i] )
-					{
-						continue;
-					}
-
 					mObservationKeySignals.set( i, key_states[i] & 0b10000000 );
 				}
 			}
@@ -104,23 +90,6 @@ namespace r2bix_input
 				mCursorPoint = ( r2bix_input::GetCursorPoint() - mOffset );
 				mbMouseMoved = ( mCursorPoint_Last != mCursorPoint );
 			}
-		}
-	}
-
-
-
-	void MachineInputCollector::AddObservationKeys( const ObservationKeyContainer& observation_key_container )
-	{
-		for( const auto k : observation_key_container )
-		{
-			++mObservationKeyFlags[k.key_code];
-		}
-	}
-	void MachineInputCollector::RemoveObservationKeys( const ObservationKeyContainer& observation_key_container )
-	{
-		for( const auto k : observation_key_container )
-		{
-			--mObservationKeyFlags[k.key_code];
 		}
 	}
 }

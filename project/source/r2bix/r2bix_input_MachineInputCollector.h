@@ -5,18 +5,12 @@
 
 #pragma once
 
-#include <array>
-
 #include "r2bix_input_Constant.h"
-#include "r2bix_input_ObservationKeyContainer.h"
 
 namespace r2bix_input
 {
 	class MachineInputCollector
 	{
-	private:
-		using ObservationKeyFlags = std::array<char, MAX_OBSERVATION_KEY_COUNT>;
-
 	public:
 		MachineInputCollector();
 		explicit MachineInputCollector( const int offset_x, const int offset_y );
@@ -60,7 +54,6 @@ namespace r2bix_input
 			//
 			return mbMouseMoved;
 		}
-		
 
 
 		//
@@ -69,34 +62,19 @@ namespace r2bix_input
 		void Collect();
 
 
-
 		//
 		//
 		//
-		void AddObservationKeys( const ObservationKeyContainer& observation_key_container );
-		void RemoveObservationKeys( const ObservationKeyContainer& observation_key_container );
-
-
-
-		//
-		//
-		//
-		bool IsObservationKey( const KeyCodeTypeT key_value ) const
-		{
-			return 0 < mObservationKeyFlags[key_value];
-		}
 		bool HasInput( const KeyCodeTypeT key_value ) const
 		{
 			return mObservationKeySignals.test( key_value );
 		}
 
 
-
 	private:
 		CursorPoint mOffset;
 
 		ObservationKeySignalsT mObservationKeySignals;
-		ObservationKeyFlags mObservationKeyFlags;
 
 		CursorPoint mCursorPoint_Last;
 		CursorPoint mCursorPoint;

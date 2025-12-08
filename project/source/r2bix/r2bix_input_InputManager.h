@@ -3,6 +3,7 @@
 #include <list>
 
 #include "r2bix_input_MachineInputCollector.h"
+#include "r2bix_input_ObservationKeyFlags.hpp"
 
 namespace r2bix_input
 {
@@ -62,6 +63,7 @@ namespace r2bix_input
 
 	public:
 		MachineInputCollector mMachineInputCollector;
+		ObservationKeyFlags mObservationKeyFlags;
 
 		ListenerContainer4Mouse mListenerContainer4Mouse;
 		ListenerContainer4Keyboard mListenerContainer4Keyboard;
