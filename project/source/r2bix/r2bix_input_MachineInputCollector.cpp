@@ -78,7 +78,7 @@ namespace r2bix_input
 						continue;
 					}
 
-					mObservationKeySignals[i] = ( key_states[i] & 0b10000000 );
+					mObservationKeySignals.set( i, key_states[i] & 0b10000000 );
 				}
 			}
 
