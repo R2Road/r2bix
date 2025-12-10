@@ -53,9 +53,29 @@ namespace test_input___key_status_processor
 
 				{
 					int i = 0;
-					for( const auto status : p )
+					for( const auto& info : p )
 					{
-						std::cout << static_cast< int >( status );
+						std::cout << static_cast< int >( info.status );
+
+						++i;
+						if( ( i % 32 ) == 0 )
+						{
+							LF();
+						}
+					}
+				}
+
+				LF2();
+
+				OUT_SUBJECT( "전체 Key Changed 출력" );
+
+				LF();
+
+				{
+					int i = 0;
+					for( const auto& info : p )
+					{
+						std::cout << static_cast< int >( info.changed );
 
 						++i;
 						if( ( i % 32 ) == 0 )
@@ -123,7 +143,7 @@ namespace test_input___key_status_processor
 			LS();
 
 			OUT_STRING( "[ ESC ] Exit" );
-			OUT_STRING( "[SPACE] Do" );
+			OUT_STRING( "[SPACE] 1" );
 
 			LS();
 
@@ -143,7 +163,7 @@ namespace test_input___key_status_processor
 					machine_input_collector.Collect();
 					key_status_processor.Update( machine_input_collector );
 
-					cur_key_status = (int)key_status_processor.GetStatus( r2bix_input::eKeyCode::VK_SPACE );
+					cur_key_status = (int)key_status_processor.GetStatus( r2bix_input::eKeyCode::VK_1 );
 
 					if( last_key_status != cur_key_status )
 					{

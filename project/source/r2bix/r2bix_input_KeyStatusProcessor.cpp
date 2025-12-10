@@ -5,9 +5,7 @@
 namespace r2bix_input
 {
 	KeyStatusProcessor::KeyStatusProcessor() : mContainer()
-	{
-		mContainer.fill( eKeyStatus::None );
-	}
+	{}
 
 	void KeyStatusProcessor::Update( const MachineInputCollector& machine_input_collector )
 	{
@@ -17,39 +15,52 @@ namespace r2bix_input
 			++cur_code
 		)
 		{
-			auto& cur_status = mContainer[cur_code];
+			auto& cur_info = mContainer[cur_code];
 
 			if( machine_input_collector.GetObservationKeySignals()[cur_code] )
 			{
-				switch( cur_status )
+				switch( cur_info.status )
 				{
 				case eKeyStatus::None:
-					cur_status = eKeyStatus::Push;
+					cur_info.status = eKeyStatus::Push;
+					cur_info.changed = true;
 					break;
 
 				case eKeyStatus::Push:
-					cur_status = eKeyStatus::Pressed;
+					cur_info.status = eKeyStatus::Pressed;
+					cur_info.changed = true;
 					break;
 
-				//case eKeyStatus::Pressed:
-					//	break;
+				case eKeyStatus::Pressed:
+					//cur_info.status = eKeyStatus::Pressed;
+					cur_info.changed = false;
+					break;
+
+				case eKeyStatus::Release:
+					cur_info.status = eKeyStatus::Push;
+					cur_info.changed = true;
+					break;
 
 				}
 			}
 			else
 			{
-				switch( cur_status )
+				switch( cur_info.status )
 				{
-				//case eKeyStatus::None:
-					//	break;
+				case eKeyStatus::None:
+					//cur_info.status = eKeyStatus::None;
+					cur_info.changed = false;
+					break;
 
 				case eKeyStatus::Push:
 				case eKeyStatus::Pressed:
-					cur_status = eKeyStatus::Release;
+					cur_info.status = eKeyStatus::Release;
+					cur_info.changed = true;
 					break;
 
 				case eKeyStatus::Release:
-					cur_status = eKeyStatus::None;
+					cur_info.status = eKeyStatus::None;
+					cur_info.changed = true;
 					break;
 				}
 			}
