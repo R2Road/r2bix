@@ -19,48 +19,41 @@ namespace r2bix_input
 
 			if( machine_input_collector.GetObservationKeySignals()[cur_code] )
 			{
-				switch( cur_info.status )
+				switch( cur_info.GetStatus() )
 				{
 				case eKeyStatus::None:
-					cur_info.status = eKeyStatus::Push;
-					cur_info.changed = true;
+					cur_info.Set( eKeyStatus::Push, true );
 					break;
 
 				case eKeyStatus::Push:
-					cur_info.status = eKeyStatus::Pressed;
-					cur_info.changed = true;
+					cur_info.Set( eKeyStatus::Pressed, true );
 					break;
 
 				case eKeyStatus::Pressed:
-					//cur_info.status = eKeyStatus::Pressed;
-					cur_info.changed = false;
+					cur_info.Set( eKeyStatus::Pressed, false );
 					break;
 
 				case eKeyStatus::Release:
-					cur_info.status = eKeyStatus::Push;
-					cur_info.changed = true;
+					cur_info.Set( eKeyStatus::Push, true );
 					break;
 
 				}
 			}
 			else
 			{
-				switch( cur_info.status )
+				switch( cur_info.GetStatus() )
 				{
 				case eKeyStatus::None:
-					//cur_info.status = eKeyStatus::None;
-					cur_info.changed = false;
+					cur_info.Set( eKeyStatus::None, false );
 					break;
 
 				case eKeyStatus::Push:
 				case eKeyStatus::Pressed:
-					cur_info.status = eKeyStatus::Release;
-					cur_info.changed = true;
+					cur_info.Set( eKeyStatus::Release, true );
 					break;
 
 				case eKeyStatus::Release:
-					cur_info.status = eKeyStatus::None;
-					cur_info.changed = true;
+					cur_info.Set( eKeyStatus::None, true );
 					break;
 				}
 			}

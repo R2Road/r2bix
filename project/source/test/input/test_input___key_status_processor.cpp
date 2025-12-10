@@ -55,7 +55,7 @@ namespace test_input___key_status_processor
 					int i = 0;
 					for( const auto& info : p )
 					{
-						std::cout << static_cast< int >( info.status );
+						std::cout << static_cast< int >( info.GetStatus() );
 
 						++i;
 						if( ( i % 32 ) == 0 )
@@ -75,7 +75,7 @@ namespace test_input___key_status_processor
 					int i = 0;
 					for( const auto& info : p )
 					{
-						std::cout << static_cast< int >( info.changed );
+						std::cout << static_cast< int >( info.GetChanged() );
 
 						++i;
 						if( ( i % 32 ) == 0 )
