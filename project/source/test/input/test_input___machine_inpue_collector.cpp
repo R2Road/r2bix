@@ -32,7 +32,7 @@ namespace test_input___machine_inpue_collector
 
 			OUT_STRING( "[ ESC ] Exit" );
 			OUT_STRING( "[Any Key] 아무키 누르면 누른키 표시" );
-			OUT_STRING( "[SPACE] 스페이스키 누르면 값 표시" );
+			OUT_STRING( "[  1  ] 1키의 현재 상태값 표시" );
 
 			LS();
 
@@ -45,7 +45,6 @@ namespace test_input___machine_inpue_collector
 				const auto pivot_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 
 				unsigned char states[256] = {};
-				unsigned char key_value_4_debug = 0;
 
 				do
 				{
@@ -77,7 +76,7 @@ namespace test_input___machine_inpue_collector
 					}
 					LF();
 
-					OUT_BINARY( states[r2bix_input::eKeyCode::VK_SPACE] );
+					OUT_BINARY( states[r2bix_input::eKeyCode::VK_1] );
 
 					LF();
 
