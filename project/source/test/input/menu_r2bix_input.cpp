@@ -50,8 +50,8 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 
 
 		mp->AddItem( 'a', test_input___listener_4_keyboard::ObservationKey() );
-		mp->AddItem( 's', test_input___listener_4_keyboard::ObservationKeyContainer_Declaration() );
-		mp->AddItem( 'd', test_input___listener_4_keyboard::ObservationKeyContainer_Add() );
+		mp->AddItem( 's', test_input___listener_4_keyboard::ObservationKeyList_Declaration() );
+		mp->AddItem( 'd', test_input___listener_4_keyboard::ObservationKeyList_Add() );
 		mp->AddItem( 'f', test_input::KeyboardInputListener_KeyStatus() );
 		mp->AddItem( 'g', test_input::KeyboardInputListener_Play() );
 		mp->AddItem( 'h', test_input::MouseListener_KeyStatus() );

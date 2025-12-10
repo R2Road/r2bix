@@ -14,7 +14,7 @@ namespace r2bix_input
 
 		, mCallback4CursorMoved()
 		, mCallback4KeyStatusChanged()
-		, mObservationKeyContainer()
+		, mObservationKeyList()
 	{}
 	Listener4Mouse::Listener4Mouse( const int order ) :
 		mOrder( order )
@@ -26,7 +26,7 @@ namespace r2bix_input
 
 		, mCallback4CursorMoved()
 		, mCallback4KeyStatusChanged()
-		, mObservationKeyContainer()
+		, mObservationKeyList()
 	{}
 
 
@@ -56,7 +56,7 @@ namespace r2bix_input
 			return;
 		}
 
-		mObservationKeyContainer.Add( key_code );
+		mObservationKeyList.Add( key_code );
 	}
 
 
@@ -82,21 +82,21 @@ namespace r2bix_input
 
 		if( key_flag )
 		{
-			switch( mObservationKeyContainer[key_index].key_status )
+			switch( mObservationKeyList[key_index].key_status )
 			{
 			case eKeyStatus::None:
-				mObservationKeyContainer[key_index].key_status = eKeyStatus::Push;
+				mObservationKeyList[key_index].key_status = eKeyStatus::Push;
 				if( mCallback4KeyStatusChanged )
 				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_status );
 				}
 				break;
 
 			case eKeyStatus::Push:
-				mObservationKeyContainer[key_index].key_status = eKeyStatus::Pressed;
+				mObservationKeyList[key_index].key_status = eKeyStatus::Pressed;
 				if( mCallback4KeyStatusChanged )
 				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_status );
 				}
 				break;
 
@@ -107,25 +107,25 @@ namespace r2bix_input
 		}
 		else
 		{
-			switch( mObservationKeyContainer[key_index].key_status )
+			switch( mObservationKeyList[key_index].key_status )
 			{
 			//case eKeyStatus::None:
 			//	break;
 
 			case eKeyStatus::Push:
 			case eKeyStatus::Pressed:
-				mObservationKeyContainer[key_index].key_status = eKeyStatus::Release;
+				mObservationKeyList[key_index].key_status = eKeyStatus::Release;
 				if( mCallback4KeyStatusChanged )
 				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_status );
 				}
 				break;
 
 			case eKeyStatus::Release:
-				mObservationKeyContainer[key_index].key_status = eKeyStatus::None;
+				mObservationKeyList[key_index].key_status = eKeyStatus::None;
 				if( mCallback4KeyStatusChanged )
 				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyContainer[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_status );
 				}
 				break;
 			}

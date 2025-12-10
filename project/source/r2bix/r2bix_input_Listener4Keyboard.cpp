@@ -7,13 +7,13 @@ namespace r2bix_input
 	Listener4Keyboard::Listener4Keyboard() :
 		  mOrder( 0 )
 		, mbActivate( true )
-		, mObservationKeyContainer()
+		, mObservationKeyList()
 		, mContainer4KeyStatusChangedCallback()
 	{}
 	Listener4Keyboard::Listener4Keyboard( const int order ) :
 		  mOrder( order )
 		, mbActivate( true )
-		, mObservationKeyContainer()
+		, mObservationKeyList()
 		, mContainer4KeyStatusChangedCallback()
 	{}
 
@@ -27,7 +27,7 @@ namespace r2bix_input
 			return;
 		}
 
-		mObservationKeyContainer.Add( key_code );
+		mObservationKeyList.Add( key_code );
 		mContainer4KeyStatusChangedCallback.push_back( callback );
 	}
 
@@ -35,7 +35,7 @@ namespace r2bix_input
 
 	bool Listener4Keyboard::UpdateKey( r2bix_input::KeyCodeTypeT key_code, const bool key_flag )
 	{
-		auto& observation_key = mObservationKeyContainer.GetByKeycode( key_code );
+		auto& observation_key = mObservationKeyList.GetByKeycode( key_code );
 
 		//
 		// Invalid ObservationKey

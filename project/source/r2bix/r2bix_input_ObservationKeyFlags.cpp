@@ -9,7 +9,7 @@ namespace r2bix_input
 	{
 		++mFlags[key_code];
 	}
-	void ObservationKeyFlags::Add( const r2bix_input::ObservationKeyContainer& key_list )
+	void ObservationKeyFlags::Add( const r2bix_input::ObservationKeyList& key_list )
 	{
 		for( const auto k : key_list )
 		{
@@ -21,7 +21,7 @@ namespace r2bix_input
 	{
 		--mFlags[key_code];
 	}
-	void ObservationKeyFlags::Remove( const r2bix_input::ObservationKeyContainer& key_list )
+	void ObservationKeyFlags::Remove( const r2bix_input::ObservationKeyList& key_list )
 	{
 		for( const auto k : key_list )
 		{

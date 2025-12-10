@@ -450,7 +450,7 @@
     <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyFlags.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_KeyStatusProcessor.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_Listener4Mouse.h" />
-    <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyContainer.h" />
+    <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyList.hpp" />
     <ClInclude Include="source\r2bix\r2bix_interface_camera.hpp" />
     <ClInclude Include="source\r2bix\r2bix_node_HollowRectNode.h" />
     <ClInclude Include="source\r2bix\r2bix_node_Node.h" />

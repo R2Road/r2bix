@@ -2,7 +2,7 @@
 
 #include <functional>
 
-#include "r2bix_input_ObservationKeyContainer.h"
+#include "r2bix_input_ObservationKeyList.hpp"
 
 namespace r2bix_input
 {
@@ -32,30 +32,30 @@ namespace r2bix_input
 			return mbActivate;
 		}
 
-		const ObservationKeyContainer& GetObservationKeyContainer() const
+		const ObservationKeyList& GetObservationKeyList() const
 		{
-			return mObservationKeyContainer;
+			return mObservationKeyList;
 		}
 		bool IsObservationKey( const r2bix_input::KeyCodeTypeT key_code ) const
 		{
-			return mObservationKeyContainer.IsObservationKey( key_code );
+			return mObservationKeyList.IsObservationKey( key_code );
 		}
 
 		eKeyStatus Get( const std::size_t key_index ) const
 		{
-			return mObservationKeyContainer[key_index].key_status;
+			return mObservationKeyList[key_index].key_status;
 		}
 		bool IsPushed( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::Push == mObservationKeyContainer[key_index].key_status );
+			return ( eKeyStatus::Push == mObservationKeyList[key_index].key_status );
 		}
 		bool IsRelease( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::Release == mObservationKeyContainer[key_index].key_status );
+			return ( eKeyStatus::Release == mObservationKeyList[key_index].key_status );
 		}
 		bool HasInput( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::None < mObservationKeyContainer[key_index].key_status );
+			return ( eKeyStatus::None < mObservationKeyList[key_index].key_status );
 		}
 
 		CursorPoint GetCursorPoint_Current() const
@@ -107,6 +107,6 @@ namespace r2bix_input
 
 		Callback4CursorMovedT mCallback4CursorMoved;
 		Callback4KeyStatusChangedT mCallback4KeyStatusChanged;
-		ObservationKeyContainer mObservationKeyContainer;
+		ObservationKeyList mObservationKeyList;
 	};
 }

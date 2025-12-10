@@ -8,7 +8,7 @@
 #include <array>
 
 #include "r2bix_input_Constant.h"
-#include "r2bix_input_ObservationKeyContainer.h"
+#include "r2bix_input_ObservationKeyList.hpp"
 
 namespace r2bix_input
 {
@@ -34,10 +34,10 @@ namespace r2bix_input
 		//
 		//
 		void Add( const r2bix_input::eKeyCode key_code );
-		void Add( const r2bix_input::ObservationKeyContainer& key_list );
+		void Add( const r2bix_input::ObservationKeyList& key_list );
 
 		void Remove( const r2bix_input::eKeyCode key_code );
-		void Remove( const r2bix_input::ObservationKeyContainer& key_list );
+		void Remove( const r2bix_input::ObservationKeyList& key_list );
 
 
 		//

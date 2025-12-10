@@ -7,7 +7,7 @@
 
 namespace r2bix_input
 {
-	class ObservationKeyContainer
+	class ObservationKeyList
 	{
 	public:
 		using KeyCodeT = KeyCodeTypeT;
@@ -20,9 +20,9 @@ namespace r2bix_input
 		//
 		//
 		//
-		ObservationKeyContainer() : mContainer()
+		ObservationKeyList() : mContainer()
 		{}
-		ObservationKeyContainer( std::initializer_list<uint8_t> list )
+		ObservationKeyList( std::initializer_list<uint8_t> list )
 		{
 			uint8_t i = 0;
 			for( const auto key_code : list )
@@ -77,7 +77,7 @@ namespace r2bix_input
 			{
 				if( k.key_code == key_code )
 				{
-					R2ASSERT( false, "ObservationKeyContainer::Add 동일한 키를 반복 등록 시도" );
+					R2ASSERT( false, "ObservationKeyList::Add 동일한 키를 반복 등록 시도" );
 					return;
 				}
 			}

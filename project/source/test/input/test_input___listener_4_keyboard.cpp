@@ -50,14 +50,14 @@ namespace test_input___listener_4_keyboard
 
 
 
-	r2tm::TitleFunctionT ObservationKeyContainer_Declaration::GetTitleFunction() const
+	r2tm::TitleFunctionT ObservationKeyList_Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Observation Key Container : Declaration";
+			return "Observation Key List : Declaration";
 		};
 	}
-	r2tm::DoFunctionT ObservationKeyContainer_Declaration::GetDoFunction() const
+	r2tm::DoFunctionT ObservationKeyList_Declaration::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -68,7 +68,7 @@ namespace test_input___listener_4_keyboard
 
 				LF();
 
-				DECL_MAIN( r2bix_input::ObservationKeyContainer c );
+				DECL_MAIN( r2bix_input::ObservationKeyList c );
 
 				LF();
 
@@ -90,7 +90,7 @@ namespace test_input___listener_4_keyboard
 
 				LF();
 
-				DECL_MAIN( r2bix_input::ObservationKeyContainer c( { r2bix_input::eKeyCode::VK_1, r2bix_input::eKeyCode::VK_2 } ) );
+				DECL_MAIN( r2bix_input::ObservationKeyList c( { r2bix_input::eKeyCode::VK_1, r2bix_input::eKeyCode::VK_2 } ) );
 
 				LF();
 
@@ -129,20 +129,20 @@ namespace test_input___listener_4_keyboard
 
 
 
-	r2tm::TitleFunctionT ObservationKeyContainer_Add::GetTitleFunction() const
+	r2tm::TitleFunctionT ObservationKeyList_Add::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Observation Key Container : Add";
+			return "Observation Key List : Add";
 		};
 	}
-	r2tm::DoFunctionT ObservationKeyContainer_Add::GetDoFunction() const
+	r2tm::DoFunctionT ObservationKeyList_Add::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
-			DECL_MAIN( r2bix_input::ObservationKeyContainer c );
+			DECL_MAIN( r2bix_input::ObservationKeyList c );
 
 			LS();
 

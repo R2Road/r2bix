@@ -915,7 +915,7 @@
     <ClInclude Include="source\tool\texture_viewer\tool_texture_viewer_ViewerScene.h">
       <Filter>tool\texture_viewer</Filter>
     </ClInclude>
-    <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyContainer.h">
+    <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyList.hpp">
       <Filter>_r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_input_InputManager.h">
