@@ -143,7 +143,7 @@ namespace test_input___key_status_processor
 			LS();
 
 			OUT_STRING( "[ ESC ] Exit" );
-			OUT_STRING( "[SPACE] 1" );
+			OUT_STRING( "[  1  ] Do" );
 
 			LS();
 
