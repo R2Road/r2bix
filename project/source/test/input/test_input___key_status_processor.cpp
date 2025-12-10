@@ -154,8 +154,6 @@ namespace test_input___key_status_processor
 				const r2tm::WindowsUtility::CursorPoint pivot_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 
 				r2::FPSTimer fps_timer( 60u );
-				int cur_key_status = -1;
-				int last_key_status = -1;
 				int cur_line_count = 0;
 
 				do
@@ -163,9 +161,7 @@ namespace test_input___key_status_processor
 					machine_input_collector.Collect();
 					key_status_processor.Update( machine_input_collector );
 
-					cur_key_status = (int)key_status_processor.GetStatus( r2bix_input::eKeyCode::VK_1 );
-
-					if( last_key_status != cur_key_status )
+					if( key_status_processor.GetChanged( r2bix_input::eKeyCode::VK_1 ) )
 					{
 						++cur_line_count;
 						if( 20 < cur_line_count )
@@ -174,8 +170,7 @@ namespace test_input___key_status_processor
 							r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
 						}
 
-						OUT_VALUE( cur_key_status );
-						last_key_status = cur_key_status;
+						OUT_VALUE( (int)key_status_processor.GetStatus( r2bix_input::eKeyCode::VK_1 ) );
 					}
 
 				} while( !key_status_processor.HasInput( r2bix_input::eKeyCode::VK_ESCAPE ) );

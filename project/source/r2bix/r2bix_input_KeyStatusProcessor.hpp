@@ -64,6 +64,10 @@ namespace r2bix_input
 		{
 			return mContainer[key_code].GetStatus();
 		}
+		bool GetChanged( const r2bix_input::eKeyCode key_code ) const
+		{
+			return mContainer[key_code].GetChanged();
+		}
 		bool IsPushed( const r2bix_input::eKeyCode key_code ) const
 		{
 			return ( eKeyStatus::Push == mContainer[key_code].GetStatus() );
