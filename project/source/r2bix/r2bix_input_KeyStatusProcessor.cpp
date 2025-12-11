@@ -19,41 +19,41 @@ namespace r2bix_input
 
 			if( machine_input_collector.GetObservationKeySignals()[cur_code] )
 			{
-				switch( cur_info.GetStatus() )
+				switch( cur_info.GetStep() )
 				{
-				case eKeyStatus::None:
-					cur_info.Set( eKeyStatus::Push, true );
+				case eKeyStep::None:
+					cur_info.Set( eKeyStep::Push, true );
 					break;
 
-				case eKeyStatus::Push:
-					cur_info.Set( eKeyStatus::Pressed, true );
+				case eKeyStep::Push:
+					cur_info.Set( eKeyStep::Pressed, true );
 					break;
 
-				case eKeyStatus::Pressed:
-					cur_info.Set( eKeyStatus::Pressed, false );
+				case eKeyStep::Pressed:
+					cur_info.Set( eKeyStep::Pressed, false );
 					break;
 
-				case eKeyStatus::Release:
-					cur_info.Set( eKeyStatus::Push, true );
+				case eKeyStep::Release:
+					cur_info.Set( eKeyStep::Push, true );
 					break;
 
 				}
 			}
 			else
 			{
-				switch( cur_info.GetStatus() )
+				switch( cur_info.GetStep() )
 				{
-				case eKeyStatus::None:
-					cur_info.Set( eKeyStatus::None, false );
+				case eKeyStep::None:
+					cur_info.Set( eKeyStep::None, false );
 					break;
 
-				case eKeyStatus::Push:
-				case eKeyStatus::Pressed:
-					cur_info.Set( eKeyStatus::Release, true );
+				case eKeyStep::Push:
+				case eKeyStep::Pressed:
+					cur_info.Set( eKeyStep::Release, true );
 					break;
 
-				case eKeyStatus::Release:
-					cur_info.Set( eKeyStatus::None, true );
+				case eKeyStep::Release:
+					cur_info.Set( eKeyStep::None, true );
 					break;
 				}
 			}

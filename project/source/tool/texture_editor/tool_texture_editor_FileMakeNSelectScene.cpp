@@ -80,9 +80,9 @@ namespace tool_texture_editor
 				auto component = ret->AddComponent<r2bix_component::InputKeyboardComponent>();
 				component->SetCallback(
 					r2bix_input::eKeyCode::VK_ESCAPE
-					, [&director]( r2bix_input::eKeyStatus s )->bool
+					, [&director]( r2bix_input::eKeyStep s )->bool
 					{
-						if( r2bix_input::eKeyStatus::Push == s )
+						if( r2bix_input::eKeyStep::Push == s )
 						{
 							director.RequestAbort();
 							return true;
@@ -137,9 +137,9 @@ namespace tool_texture_editor
 					}
 
 					button_node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetCallback4KeyResponse(
-						[root = ret.get()]( int i , r2bix_ui::eKeyStatus s )->bool
+						[root = ret.get()]( int i , r2bix_ui::eKeyStep s )->bool
 						{
-							if( 0 == i && r2bix_ui::eKeyStatus::Push == s )
+							if( 0 == i && r2bix_ui::eKeyStep::Push == s )
 							{
 								auto node = root->GetChildByName( "new" );
 								if( node )
@@ -258,9 +258,9 @@ namespace tool_texture_editor
 					}
 
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetCallback4KeyResponse(
-						[root = ret.get()]( int i, r2bix_ui::eKeyStatus s )->bool
+						[root = ret.get()]( int i, r2bix_ui::eKeyStep s )->bool
 						{
-							if( 0 == i && r2bix_ui::eKeyStatus::Push == s )
+							if( 0 == i && r2bix_ui::eKeyStep::Push == s )
 							{
 								auto file_name_node = root->GetChildByName( "file_name" );
 								auto file_width_node = root->GetChildByName( "file_width" );
@@ -320,9 +320,9 @@ namespace tool_texture_editor
 					}
 
 					node->GetComponent<r2bix_component::UISimpleButtonComponent>()->SetCallback4KeyResponse(
-						[root = ret.get()]( int i, r2bix_ui::eKeyStatus s )->bool
+						[root = ret.get()]( int i, r2bix_ui::eKeyStep s )->bool
 						{
-							if( 0 == i && r2bix_ui::eKeyStatus::Push == s )
+							if( 0 == i && r2bix_ui::eKeyStep::Push == s )
 							{
 								auto node = root->GetChildByName( "new" );
 								if( node )

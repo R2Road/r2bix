@@ -40,7 +40,7 @@ namespace test_input___key_status_processor
 
 				LF();
 
-				EXPECT_TRUE( r2bix_input::eKeyStatus::None == p.GetStatus( r2bix_input::eKeyCode::VK_0 ) );
+				EXPECT_TRUE( r2bix_input::eKeyStep::None == p.GetStep( r2bix_input::eKeyCode::VK_0 ) );
 				EXPECT_FALSE( p.IsPushed( r2bix_input::eKeyCode::VK_0 ) );
 				EXPECT_FALSE( p.IsRelease( r2bix_input::eKeyCode::VK_0 ) );
 				EXPECT_FALSE( p.HasInput( r2bix_input::eKeyCode::VK_0 ) );
@@ -55,7 +55,7 @@ namespace test_input___key_status_processor
 					int i = 0;
 					for( const auto& info : p )
 					{
-						std::cout << static_cast< int >( info.GetStatus() );
+						std::cout << static_cast< int >( info.GetStep() );
 
 						++i;
 						if( ( i % 32 ) == 0 )
@@ -174,7 +174,7 @@ namespace test_input___key_status_processor
 						last_changed = true;
 
 						std::cout
-							<< "status : " << ( ( int )key_status_processor.GetStatus(r2bix_input::eKeyCode::VK_1) )
+							<< "status : " << ( ( int )key_status_processor.GetStep(r2bix_input::eKeyCode::VK_1) )
 							<< "   "
 							<< "changed : " << ( ( int )key_status_processor.GetChanged( r2bix_input::eKeyCode::VK_1 ) )
 							<< r2tm::linefeed;
@@ -193,7 +193,7 @@ namespace test_input___key_status_processor
 							last_changed = false;
 
 							std::cout
-								<< "status : " << ( ( int )key_status_processor.GetStatus( r2bix_input::eKeyCode::VK_1 ) )
+								<< "status : " << ( ( int )key_status_processor.GetStep( r2bix_input::eKeyCode::VK_1 ) )
 								<< "   "
 								<< "changed : " << ( ( int )key_status_processor.GetChanged( r2bix_input::eKeyCode::VK_1 ) )
 								<< "    ---입력 없음"

@@ -32,9 +32,9 @@ namespace tool_texture_editor
 				break;
 			}
 		} )
-		, mSlot4KeyResponse( [this]( int, const r2bix_ui::eKeyStatus s )->bool
+		, mSlot4KeyResponse( [this]( int, const r2bix_ui::eKeyStep s )->bool
 		{
-			if( s == r2bix_ui::eKeyStatus::Push || s == r2bix_ui::eKeyStatus::Pressed )
+			if( s == r2bix_ui::eKeyStep::Push || s == r2bix_ui::eKeyStep::Pressed )
 			{
 				mbFill = true;
 				fillTextureOnCurrentCursor();

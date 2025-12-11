@@ -82,50 +82,50 @@ namespace r2bix_input
 
 		if( key_flag )
 		{
-			switch( mObservationKeyList[key_index].key_status )
+			switch( mObservationKeyList[key_index].key_step )
 			{
-			case eKeyStatus::None:
-				mObservationKeyList[key_index].key_status = eKeyStatus::Push;
+			case eKeyStep::None:
+				mObservationKeyList[key_index].key_step = eKeyStep::Push;
 				if( mCallback4KeyStatusChanged )
 				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_step );
 				}
 				break;
 
-			case eKeyStatus::Push:
-				mObservationKeyList[key_index].key_status = eKeyStatus::Pressed;
+			case eKeyStep::Push:
+				mObservationKeyList[key_index].key_step = eKeyStep::Pressed;
 				if( mCallback4KeyStatusChanged )
 				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_step );
 				}
 				break;
 
-			//case eKeyStatus::Pressed:
+			//case eKeyStep::Pressed:
 			//	break;
 
 			}
 		}
 		else
 		{
-			switch( mObservationKeyList[key_index].key_status )
+			switch( mObservationKeyList[key_index].key_step )
 			{
-			//case eKeyStatus::None:
+			//case eKeyStep::None:
 			//	break;
 
-			case eKeyStatus::Push:
-			case eKeyStatus::Pressed:
-				mObservationKeyList[key_index].key_status = eKeyStatus::Release;
+			case eKeyStep::Push:
+			case eKeyStep::Pressed:
+				mObservationKeyList[key_index].key_step = eKeyStep::Release;
 				if( mCallback4KeyStatusChanged )
 				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_step );
 				}
 				break;
 
-			case eKeyStatus::Release:
-				mObservationKeyList[key_index].key_status = eKeyStatus::None;
+			case eKeyStep::Release:
+				mObservationKeyList[key_index].key_step = eKeyStep::None;
 				if( mCallback4KeyStatusChanged )
 				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_status );
+					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_step );
 				}
 				break;
 			}

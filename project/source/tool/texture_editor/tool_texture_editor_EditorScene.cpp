@@ -56,9 +56,9 @@ namespace tool_texture_editor
 				auto component = ret->AddComponent<r2bix_component::InputKeyboardComponent>();
 				component->SetCallback(
 					  r2bix_input::eKeyCode::VK_ESCAPE
-					, [&director](r2bix_input::eKeyStatus s)->bool
+					, [&director](r2bix_input::eKeyStep s)->bool
 					{
-						if( r2bix_input::eKeyStatus::Push == s )
+						if( r2bix_input::eKeyStep::Push == s )
 						{
 							director.Setup( tool_texture_editor::FileMakeNSelectScene::Create( director ) );
 							return true;

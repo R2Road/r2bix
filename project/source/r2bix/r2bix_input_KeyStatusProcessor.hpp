@@ -16,14 +16,14 @@ namespace r2bix_input
 		class KeyStatusInfo
 		{
 		public:
-			void Set( const r2bix_input::eKeyStatus status, const bool changed )
+			void Set( const r2bix_input::eKeyStep key_step, const bool changed )
 			{
-				mInfo = static_cast<KeyStatusTypeT>( status ) | ( changed ? 0b10000000 : 0b00000000 );
+				mInfo = static_cast<KeyStepTypeT>( key_step ) | ( changed ? 0b10000000 : 0b00000000 );
 			}
 
-			inline r2bix_input::eKeyStatus GetStatus() const
+			inline r2bix_input::eKeyStep GetStep() const
 			{
-				return static_cast<r2bix_input::eKeyStatus>( mInfo & 0b00001111 );
+				return static_cast<r2bix_input::eKeyStep>( mInfo & 0b00001111 );
 			}
 			inline bool GetChanged() const
 			{
@@ -31,7 +31,7 @@ namespace r2bix_input
 			}
 
 		private:
-			r2bix_input::KeyStatusTypeT mInfo = 0;
+			r2bix_input::KeyStepTypeT mInfo = 0;
 		};
 		using ValueT = KeyStatusInfo;
 		using ContainerT = std::array<ValueT, MAX_OBSERVATION_KEY_COUNT>;
@@ -60,9 +60,9 @@ namespace r2bix_input
 		//
 		//
 		//
-		eKeyStatus GetStatus( const r2bix_input::eKeyCode key_code ) const
+		eKeyStep GetStep( const r2bix_input::eKeyCode key_code ) const
 		{
-			return mContainer[key_code].GetStatus();
+			return mContainer[key_code].GetStep();
 		}
 		bool GetChanged( const r2bix_input::eKeyCode key_code ) const
 		{
@@ -70,15 +70,15 @@ namespace r2bix_input
 		}
 		bool IsPushed( const r2bix_input::eKeyCode key_code ) const
 		{
-			return ( eKeyStatus::Push == mContainer[key_code].GetStatus() );
+			return ( eKeyStep::Push == mContainer[key_code].GetStep() );
 		}
 		bool IsRelease( const r2bix_input::eKeyCode key_code ) const
 		{
-			return ( eKeyStatus::Release == mContainer[key_code].GetStatus() );
+			return ( eKeyStep::Release == mContainer[key_code].GetStep() );
 		}
 		bool HasInput( const r2bix_input::eKeyCode key_code ) const
 		{
-			return ( eKeyStatus::None < mContainer[key_code].GetStatus() );
+			return ( eKeyStep::None < mContainer[key_code].GetStep() );
 		}
 
 

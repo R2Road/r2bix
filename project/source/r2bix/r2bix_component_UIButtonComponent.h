@@ -18,7 +18,7 @@ namespace r2bix_component
 	{
 	public:
 		using Slot4CursorStatusChangedT = r2::Slot<void( r2bix_ui::eCursorStatus )>;
-		using Slot4KeyStatusChangedT = r2::Slot<bool( int, r2bix_ui::eKeyStatus )>;
+		using Slot4KeyStatusChangedT = r2::Slot<bool( int, r2bix_ui::eKeyStep )>;
 
 		using Callback4CursorStatusChangedT = typename Slot4CursorStatusChangedT::CallbackT;
 		using Callback4KeyStatusChangedT = typename Slot4KeyStatusChangedT::CallbackT;

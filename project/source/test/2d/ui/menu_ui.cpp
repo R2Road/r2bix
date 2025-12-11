@@ -57,7 +57,7 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 						director.Setup( std::move( temp ) );
 
 						auto input_component = scene->AddComponent<r2bix_component::InputKeyboardComponent>();
-						input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
+						input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStep )->bool
 						{
 							director.RequestAbort();
 
@@ -131,17 +131,17 @@ r2tm::WriteFunctionT UIMenu::GetWriteFunction() const
 								} );
 								text_field_node->GetComponent<r2bix_component::UIControlComponent>()->ConnectSlot4CursorResponse( &slot_cursor_response );
 
-								slot_key_response.SetCallback( [custom_texture_component]( int, r2bix_ui::eKeyStatus s )->bool
+								slot_key_response.SetCallback( [custom_texture_component]( int, r2bix_ui::eKeyStep s )->bool
 								{
 									switch( s )
 									{
-									case r2bix_ui::eKeyStatus::Push:
+									case r2bix_ui::eKeyStep::Push:
 										custom_texture_component->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightAqua );
 										break;
-									case r2bix_ui::eKeyStatus::Pressed:
+									case r2bix_ui::eKeyStep::Pressed:
 										custom_texture_component->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightYellow );
 										break;
-									case r2bix_ui::eKeyStatus::Release:
+									case r2bix_ui::eKeyStep::Release:
 										custom_texture_component->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightPurple );
 										break;
 									}

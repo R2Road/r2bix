@@ -107,7 +107,7 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 					//
 					// ESC
 					//
-					input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStatus )->bool
+					input_component->SetCallback( r2bix_input::eKeyCode::VK_ESCAPE, [&director]( r2bix_input::eKeyStep )->bool
 					{
 						director.RequestAbort();
 
@@ -117,9 +117,9 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 					//
 					// A
 					//
-					input_component->SetCallback( r2bix_input::eKeyCode::VK_A, [&director, label_node]( r2bix_input::eKeyStatus s )->bool
+					input_component->SetCallback( r2bix_input::eKeyCode::VK_A, [&director, label_node]( r2bix_input::eKeyStep s )->bool
 					{
-						if( r2bix_input::eKeyStatus::Push == s )
+						if( r2bix_input::eKeyStep::Push == s )
 						{
 							std::string str = director.StartTextInputMode( 10, 10, 5 );
 

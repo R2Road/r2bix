@@ -23,7 +23,7 @@ namespace r2bix_component
 		, mResponseRect( 0, 0, 1, 1 )
 
 		, mCursorState( r2bix_ui::eCursorStatus::None )
-		, mKeyStatus( r2bix_ui::eKeyStatus::None)
+		, mKeyStep( r2bix_ui::eKeyStep::None)
 
 		, mSignal4CursorResponse()
 		, mSignal4KeyResponse()
@@ -144,46 +144,46 @@ namespace r2bix_component
 
 		return ( r2bix_ui::eCursorStatus::CursorOver == mCursorState || r2bix_ui::eCursorStatus::CursorMove == mCursorState );
 	}
-	bool UIControlComponent::OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status )
+	bool UIControlComponent::OnKeyResponse( const int key_index, const r2bix_input::eKeyStep key_step )
 	{
 		switch( mCursorState )
 		{
 		case r2bix_ui::eCursorStatus::None:
 		case r2bix_ui::eCursorStatus::CursorLeave:
-			if( r2bix_ui::eKeyStatus::Push == mKeyStatus || r2bix_ui::eKeyStatus::Pressed == mKeyStatus )
+			if( r2bix_ui::eKeyStep::Push == mKeyStep || r2bix_ui::eKeyStep::Pressed == mKeyStep )
 			{
-				mKeyStatus = r2bix_ui::eKeyStatus::Cancel;
+				mKeyStep = r2bix_ui::eKeyStep::Cancel;
 			}
 			else
 			{
-				mKeyStatus = r2bix_ui::eKeyStatus::None;
+				mKeyStep = r2bix_ui::eKeyStep::None;
 			}
 			break;
 
 		case r2bix_ui::eCursorStatus::CursorOver:
 		case r2bix_ui::eCursorStatus::CursorMove:
 		{
-			switch( key_status )
+			switch( key_step )
 			{
-			case r2bix_input::eKeyStatus::None:
-				mKeyStatus = r2bix_ui::eKeyStatus::None;
+			case r2bix_input::eKeyStep::None:
+				mKeyStep = r2bix_ui::eKeyStep::None;
 				break;
-			case r2bix_input::eKeyStatus::Push:
-				if( r2bix_ui::eKeyStatus::None == mKeyStatus || r2bix_ui::eKeyStatus::Release == mKeyStatus || r2bix_ui::eKeyStatus::Cancel == mKeyStatus )
+			case r2bix_input::eKeyStep::Push:
+				if( r2bix_ui::eKeyStep::None == mKeyStep || r2bix_ui::eKeyStep::Release == mKeyStep || r2bix_ui::eKeyStep::Cancel == mKeyStep )
 				{
-					mKeyStatus = r2bix_ui::eKeyStatus::Push;
+					mKeyStep = r2bix_ui::eKeyStep::Push;
 				}
 				break;
-			case r2bix_input::eKeyStatus::Pressed:
-				if( r2bix_ui::eKeyStatus::Push == mKeyStatus )
+			case r2bix_input::eKeyStep::Pressed:
+				if( r2bix_ui::eKeyStep::Push == mKeyStep )
 				{
-					mKeyStatus = r2bix_ui::eKeyStatus::Pressed;
+					mKeyStep = r2bix_ui::eKeyStep::Pressed;
 				}
 				break;
-			case r2bix_input::eKeyStatus::Release:
-				if( r2bix_ui::eKeyStatus::Push == mKeyStatus || r2bix_ui::eKeyStatus::Pressed == mKeyStatus )
+			case r2bix_input::eKeyStep::Release:
+				if( r2bix_ui::eKeyStep::Push == mKeyStep || r2bix_ui::eKeyStep::Pressed == mKeyStep )
 				{
-					mKeyStatus = r2bix_ui::eKeyStatus::Release;
+					mKeyStep = r2bix_ui::eKeyStep::Release;
 				}
 				break;
 			}
@@ -191,12 +191,12 @@ namespace r2bix_component
 		break;
 		}
 
-		if( r2bix_ui::eKeyStatus::None == mKeyStatus )
+		if( r2bix_ui::eKeyStep::None == mKeyStep )
 		{
 			return false;
 		}
 
-		mSignal4KeyResponse.Emit( key_index, mKeyStatus );
+		mSignal4KeyResponse.Emit( key_index, mKeyStep );
 
 		return true;
 	}

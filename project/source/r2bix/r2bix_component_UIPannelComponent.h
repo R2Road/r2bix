@@ -75,7 +75,7 @@ namespace r2bix_component
 		void RemoveUIControl( r2bix_component::UIControlComponent* const control );
 	private:
 		void OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
-		void OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status );
+		void OnKeyResponse( const int key_index, const r2bix_input::eKeyStep key_step );
 
 
 

@@ -10,7 +10,7 @@ namespace r2bix_input
 	{
 	public:
 		using Callback4CursorMovedT = std::function<bool( CursorPoint )>;
-		using Callback4KeyStatusChangedT = std::function<bool( int, eKeyStatus )>;
+		using Callback4KeyStatusChangedT = std::function<bool( int, eKeyStep )>;
 
 
 
@@ -41,21 +41,21 @@ namespace r2bix_input
 			return mObservationKeyList.IsObservationKey( key_code );
 		}
 
-		eKeyStatus Get( const std::size_t key_index ) const
+		eKeyStep Get( const std::size_t key_index ) const
 		{
-			return mObservationKeyList[key_index].key_status;
+			return mObservationKeyList[key_index].key_step;
 		}
 		bool IsPushed( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::Push == mObservationKeyList[key_index].key_status );
+			return ( eKeyStep::Push == mObservationKeyList[key_index].key_step );
 		}
 		bool IsRelease( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::Release == mObservationKeyList[key_index].key_status );
+			return ( eKeyStep::Release == mObservationKeyList[key_index].key_step );
 		}
 		bool HasInput( const std::size_t key_index ) const
 		{
-			return ( eKeyStatus::None < mObservationKeyList[key_index].key_status );
+			return ( eKeyStep::None < mObservationKeyList[key_index].key_step );
 		}
 
 		CursorPoint GetCursorPoint_Current() const

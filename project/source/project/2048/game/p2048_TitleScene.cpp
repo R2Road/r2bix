@@ -243,9 +243,9 @@ namespace p2048
 				//
 				component->SetCallback(
 					  r2bix_input::eKeyCode::VK_ESCAPE
-					, [&director]( r2bix_input::eKeyStatus s )->bool
+					, [&director]( r2bix_input::eKeyStep s )->bool
 					{
-						if( r2bix_input::eKeyStatus::Push == s )
+						if( r2bix_input::eKeyStep::Push == s )
 						{
 							director.RequestAbort();
 							return true;
@@ -260,9 +260,9 @@ namespace p2048
 				//
 				component->SetCallback(
 					  r2bix_input::eKeyCode::VK_SPACE
-					, [&director]( r2bix_input::eKeyStatus s )->bool
+					, [&director]( r2bix_input::eKeyStep s )->bool
 					{
-						if( r2bix_input::eKeyStatus::Push == s )
+						if( r2bix_input::eKeyStep::Push == s )
 						{
 							director.Setup( p2048::GameScene::Create( director ) );
 							return true;

@@ -9,7 +9,7 @@
 
 namespace test_input___observation_key_list
 {
-	inline std::ostream& operator<<( std::ostream& o, const r2bix_input::eKeyStatus s )
+	inline std::ostream& operator<<( std::ostream& o, const r2bix_input::eKeyStep s )
 	{
 		return o << ( int ) s;
 	}
@@ -40,7 +40,7 @@ namespace test_input___observation_key_list
 
 			EXPECT_EQ( 0, o.key_index);
 			EXPECT_EQ( 0, o.key_code );
-			EXPECT_EQ( r2bix_input::eKeyStatus::None, o.key_status );
+			EXPECT_EQ( r2bix_input::eKeyStep::None, o.key_step );
 
 			LS();
 

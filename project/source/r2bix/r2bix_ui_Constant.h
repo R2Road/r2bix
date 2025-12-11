@@ -11,7 +11,7 @@ namespace r2bix_ui
 		CursorMove, // required cursor over
 	};
 
-	enum class eKeyStatus
+	enum class eKeyStep
 	{
 		None,
 

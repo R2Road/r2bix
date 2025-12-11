@@ -34,15 +34,15 @@ namespace test_input
 
 			bool bPlay = true;
 			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStatus )->bool
+			keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
 			{
 				bPlay = false;
 				return false;
 			} );
 
 			bool bAChanged = false;
-			r2bix_input::eKeyStatus as = r2bix_input::eKeyStatus::None;
-			keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_A, [&bAChanged, &as]( r2bix_input::eKeyStatus s )->bool
+			r2bix_input::eKeyStep as = r2bix_input::eKeyStep::None;
+			keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_A, [&bAChanged, &as]( r2bix_input::eKeyStep s )->bool
 			{
 				bAChanged = true;
 				as = s;
@@ -100,29 +100,29 @@ namespace test_input
 
 				bool bPlay = true;
 				r2bix_input::Listener4Keyboard keyboard_listener;
-				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStatus )->bool
+				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
 				{
 					bPlay = false;
 					return false;
 				} );
 
 				r2tm::WindowsUtility::CursorPoint new_pos{ 20, 20 };
-				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_A, [&new_pos]( r2bix_input::eKeyStatus )->bool
+				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_A, [&new_pos]( r2bix_input::eKeyStep )->bool
 				{
 					--new_pos.x;
 					return false;
 				} );
-				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_D, [&new_pos]( r2bix_input::eKeyStatus )->bool
+				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_D, [&new_pos]( r2bix_input::eKeyStep )->bool
 				{
 					++new_pos.x;
 					return false;
 				} );
-				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_S, [&new_pos]( r2bix_input::eKeyStatus )->bool
+				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_S, [&new_pos]( r2bix_input::eKeyStep )->bool
 				{
 					++new_pos.y;
 					return false;
 				} );
-				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_W, [&new_pos]( r2bix_input::eKeyStatus )->bool
+				keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_W, [&new_pos]( r2bix_input::eKeyStep )->bool
 				{
 					--new_pos.y;
 					return false;
@@ -195,7 +195,7 @@ namespace test_input
 
 			bool bPlay = true;
 			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStatus )->bool
+			keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
 			{
 				bPlay = false;
 				return false;
@@ -204,14 +204,14 @@ namespace test_input
 			bool bLChanged = false;
 			bool bMChanged = false;
 			bool bRChanged = false;
-			r2bix_input::eKeyStatus sl;
-			r2bix_input::eKeyStatus sm;
-			r2bix_input::eKeyStatus sr;
+			r2bix_input::eKeyStep sl;
+			r2bix_input::eKeyStep sm;
+			r2bix_input::eKeyStep sr;
 			r2bix_input::Listener4Mouse mouse_listener;
 			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_LBUTTON );
 			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_MBUTTON );
 			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
-			mouse_listener.SetCallback4KeyStatusChanged( [&bLChanged, &sl, &bMChanged, &sm, &bRChanged, &sr]( const int key_index, const r2bix_input::eKeyStatus s )->bool
+			mouse_listener.SetCallback4KeyStatusChanged( [&bLChanged, &sl, &bMChanged, &sm, &bRChanged, &sr]( const int key_index, const r2bix_input::eKeyStep s )->bool
 			{
 				switch( key_index )
 				{
@@ -297,7 +297,7 @@ namespace test_input
 
 			bool bPlay = true;
 			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStatus )->bool
+			keyboard_listener.SetCallback4KeyStatusChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
 			{
 				bPlay = false;
 				return false;

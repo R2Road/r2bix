@@ -21,9 +21,9 @@ namespace tool_texture_viewer
 				auto component = ret->AddComponent<r2bix_component::InputKeyboardComponent>();
 				component->SetCallback(
 					r2bix_input::eKeyCode::VK_ESCAPE
-					, [&director]( r2bix_input::eKeyStatus s )->bool
+					, [&director]( r2bix_input::eKeyStep s )->bool
 					{
-						if( r2bix_input::eKeyStatus::Release == s )
+						if( r2bix_input::eKeyStep::Release == s )
 						{
 							director.RequestAbort();
 							return true;

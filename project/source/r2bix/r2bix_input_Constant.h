@@ -23,8 +23,8 @@ namespace r2bix_input
 
 	bool HasWindowFocus();
 
-	using KeyStatusTypeT = uint8_t;
-	enum class eKeyStatus : KeyStatusTypeT
+	using KeyStepTypeT = uint8_t;
+	enum class eKeyStep : KeyStepTypeT
 	{
 		None,
 		Push,
@@ -241,6 +241,6 @@ namespace r2bix_input
 	{
 		KeyIndexTypeT key_index = 0;
 		KeyCodeTypeT key_code = 0;
-		eKeyStatus key_status = eKeyStatus::None;
+		eKeyStep key_step = eKeyStep::None;
 	};
 }

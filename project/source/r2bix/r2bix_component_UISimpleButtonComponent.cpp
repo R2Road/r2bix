@@ -34,17 +34,17 @@ namespace r2bix_component
 			}
 		} );
 
-		mSlot4KeyStatusChanged_ViewProcess.SetCallback( [this]( int, r2bix_ui::eKeyStatus s )->bool
+		mSlot4KeyStatusChanged_ViewProcess.SetCallback( [this]( int, r2bix_ui::eKeyStep s )->bool
 		{
 			switch( s )
 			{
-			case r2bix_ui::eKeyStatus::Push:
+			case r2bix_ui::eKeyStep::Push:
 				mMyCustomTextureComponent->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightAqua );
 				break;
-			case r2bix_ui::eKeyStatus::Pressed:
+			case r2bix_ui::eKeyStep::Pressed:
 				mMyCustomTextureComponent->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightYellow );
 				break;
-			case r2bix_ui::eKeyStatus::Release:
+			case r2bix_ui::eKeyStep::Release:
 				mMyCustomTextureComponent->GetTexture()->FillColorAll( r2bix::eBackgroundColor::BG_LightPurple );
 				break;
 			}

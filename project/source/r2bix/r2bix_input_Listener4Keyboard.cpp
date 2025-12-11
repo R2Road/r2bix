@@ -53,39 +53,39 @@ namespace r2bix_input
 		//
 		if( key_flag )
 		{
-			switch( observation_key.key_status )
+			switch( observation_key.key_step )
 			{
-			case eKeyStatus::None:
-				observation_key.key_status = eKeyStatus::Push;
-				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
+			case eKeyStep::None:
+				observation_key.key_step = eKeyStep::Push;
+				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_step );
 				break;
 
-			case eKeyStatus::Push:
-				observation_key.key_status = eKeyStatus::Pressed;
-				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
+			case eKeyStep::Push:
+				observation_key.key_step = eKeyStep::Pressed;
+				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_step );
 				break;
 
-				//case eKeyStatus::Pressed:
+				//case eKeyStep::Pressed:
 				//	break;
 
 			}
 		}
 		else
 		{
-			switch( observation_key.key_status )
+			switch( observation_key.key_step )
 			{
-				//case eKeyStatus::None:
+				//case eKeyStep::None:
 				//	break;
 
-			case eKeyStatus::Push:
-			case eKeyStatus::Pressed:
-				observation_key.key_status = eKeyStatus::Release;
-				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
+			case eKeyStep::Push:
+			case eKeyStep::Pressed:
+				observation_key.key_step = eKeyStep::Release;
+				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_step );
 				break;
 
-			case eKeyStatus::Release:
-				observation_key.key_status = eKeyStatus::None;
-				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_status );
+			case eKeyStep::Release:
+				observation_key.key_step = eKeyStep::None;
+				ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( observation_key.key_step );
 				break;
 			}
 		}

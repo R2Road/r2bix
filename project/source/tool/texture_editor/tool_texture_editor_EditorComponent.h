@@ -14,7 +14,7 @@ namespace tool_texture_editor
 	{
 	public:
 		using Slot4CursorResponseT = r2::Slot<void( r2bix_ui::eCursorStatus )>;
-		using Slot4KeyResponseT = r2::Slot<bool( int, r2bix_ui::eKeyStatus )>;
+		using Slot4KeyResponseT = r2::Slot<bool( int, r2bix_ui::eKeyStep )>;
 
 
 

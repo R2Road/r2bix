@@ -20,7 +20,7 @@ namespace r2bix_component
 		using Slot4PivotChanged = r2::Slot<void( float, float )>;
 
 		using Signal4CursorResponseT = r2::Signal<void( r2bix_ui::eCursorStatus )>;
-		using Signal4KeyResponseT = r2::Signal<bool( int, r2bix_ui::eKeyStatus )>;
+		using Signal4KeyResponseT = r2::Signal<bool( int, r2bix_ui::eKeyStep )>;
 
 		using Slot4CursorResponseT = typename Signal4CursorResponseT::SlotT;
 		using Slot4KeyResponseT = typename Signal4KeyResponseT::SlotT;
@@ -118,7 +118,7 @@ namespace r2bix_component
 		//
 		//
 		bool OnCursorResponse( const r2bix_input::CursorPoint cursor_point );
-		bool OnKeyResponse( const int key_index, const r2bix_input::eKeyStatus key_status );
+		bool OnKeyResponse( const int key_index, const r2bix_input::eKeyStep key_step );
 
 
 
@@ -130,7 +130,7 @@ namespace r2bix_component
 		r2::RectInt mResponseRect;
 
 		r2bix_ui::eCursorStatus mCursorState;
-		r2bix_ui::eKeyStatus mKeyStatus;
+		r2bix_ui::eKeyStep mKeyStep;
 
 		Signal4CursorResponseT mSignal4CursorResponse;
 		Signal4KeyResponseT mSignal4KeyResponse;
