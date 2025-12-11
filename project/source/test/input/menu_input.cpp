@@ -6,6 +6,7 @@
 #include "test_input___key_status_processor.hpp"
 #include "test_input___machine_inpue_collector.hpp"
 #include "test_input___observation_key_flags.hpp"
+#include "test_input___observation_key_list.hpp"
 #include "test_r2bix_input.hpp"
 
 #include "menu_dev.hpp"
@@ -49,9 +50,9 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 
 
 		mp->AddMessage( "관측할 키 정보 수집/관리", r2tm::eColor::FG_Green );
-		mp->AddItem( 'q', test_input___listener_4_keyboard::ObservationKey() );
-		mp->AddItem( 'w', test_input___listener_4_keyboard::ObservationKeyList_Declaration() );
-		mp->AddItem( 'e', test_input___listener_4_keyboard::ObservationKeyList_Add() );
+		mp->AddItem( 'q', test_input___observation_key_list::ObservationKey() );
+		mp->AddItem( 'w', test_input___observation_key_list::ObservationKeyList_Declaration() );
+		mp->AddItem( 'e', test_input___observation_key_list::ObservationKeyList_Add() );
 		mp->AddItem( 'r', test_input___observation_key_flags::Declaration() );
 		mp->AddItem( 't', test_input___observation_key_flags::Size_Binary() );
 		mp->AddItem( 'y', test_input___observation_key_flags::Add_Remove() );

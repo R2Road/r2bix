@@ -189,6 +189,7 @@
     <ClCompile Include="source\test\input\test_input___observation_key_flags.cpp" />
     <ClCompile Include="source\test\input\test_input___key_status_processor.cpp" />
     <ClCompile Include="source\test\input\test_input___listener_4_keyboard.cpp" />
+    <ClCompile Include="source\test\input\test_input___observation_key_list.cpp" />
     <ClCompile Include="source\test\input\test_r2bix_input.cpp" />
     <ClCompile Include="source\test\input\test_input___machine_inpue_collector.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EditorComponent.cpp" />
@@ -524,6 +525,7 @@
     <ClInclude Include="source\test\input\test_input___observation_key_flags.hpp" />
     <ClInclude Include="source\test\input\test_input___key_status_processor.hpp" />
     <ClInclude Include="source\test\input\test_input___listener_4_keyboard.hpp" />
+    <ClInclude Include="source\test\input\test_input___observation_key_list.hpp" />
     <ClInclude Include="source\test\input\test_r2bix_input.hpp" />
     <ClInclude Include="source\test\input\test_input___machine_inpue_collector.hpp" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EditorComponent.h" />
