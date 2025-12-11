@@ -13,7 +13,7 @@ namespace r2bix_input
 	public:
 		using KeyCodeT = r2bix_input::KeyCodeTypeT;
 
-		class KeyStatusInfo
+		class KeyStatus
 		{
 		public:
 			void Set( const r2bix_input::eKeyStep key_step, const bool changed )
@@ -33,7 +33,7 @@ namespace r2bix_input
 		private:
 			r2bix_input::KeyStepTypeT mInfo = 0;
 		};
-		using ValueT = KeyStatusInfo;
+		using ValueT = KeyStatus;
 		using ContainerT = std::array<ValueT, MAX_OBSERVATION_KEY_COUNT>;
 		using ConstIteratorT = ContainerT::const_iterator;
 
