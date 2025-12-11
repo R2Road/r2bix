@@ -1,4 +1,4 @@
-#include "menu_r2bix_input.hpp"
+#include "menu_input.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 

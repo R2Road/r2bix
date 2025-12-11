@@ -657,7 +657,7 @@
     <ClCompile Include="source\project\2048\test\test_p2048_stageviewnode.cpp">
       <Filter>project\2048\test</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\input\menu_r2bix_input.cpp">
+    <ClCompile Include="source\test\input\menu_input.cpp">
       <Filter>test\input</Filter>
     </ClCompile>
     <ClCompile Include="source\test\input\test_r2bix_input.cpp">
@@ -1651,7 +1651,7 @@
     <ClInclude Include="source\r2bix\r2bix_interface_camera.hpp">
       <Filter>_r2bix\camera</Filter>
     </ClInclude>
-    <ClInclude Include="source\test\input\menu_r2bix_input.hpp">
+    <ClInclude Include="source\test\input\menu_input.hpp">
       <Filter>test\input</Filter>
     </ClInclude>
     <ClInclude Include="source\test\input\test_r2bix_input.hpp">

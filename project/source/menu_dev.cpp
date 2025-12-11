@@ -11,7 +11,7 @@
 
 #include "project/2048/test/P2048Menu.h"
 #include "test/2d/menu_r2bix_2d.h"
-#include "test/input/menu_r2bix_input.hpp"
+#include "test/input/menu_input.hpp"
 
 #include "tool/menu_tool.hpp"
 
