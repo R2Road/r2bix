@@ -17,7 +17,7 @@ namespace test_input___observation_key_list
 	{
 		return []()->const char*
 		{
-			return "ObservationKey";
+			return "Observation Key";
 		};
 	}
 	r2tm::DoFunctionT ObservationKey::GetDoFunction() const
@@ -50,14 +50,14 @@ namespace test_input___observation_key_list
 
 
 
-	r2tm::TitleFunctionT ObservationKeyList_Declaration::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Observation Key List : Declaration";
 		};
 	}
-	r2tm::DoFunctionT ObservationKeyList_Declaration::GetDoFunction() const
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -129,14 +129,14 @@ namespace test_input___observation_key_list
 
 
 
-	r2tm::TitleFunctionT ObservationKeyList_Add::GetTitleFunction() const
+	r2tm::TitleFunctionT Add::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Observation Key List : Add";
 		};
 	}
-	r2tm::DoFunctionT ObservationKeyList_Add::GetDoFunction() const
+	r2tm::DoFunctionT Add::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

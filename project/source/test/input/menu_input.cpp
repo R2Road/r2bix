@@ -51,8 +51,8 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 
 		mp->AddMessage( "관측할 키 정보 수집/관리", r2tm::eColor::FG_Green );
 		mp->AddItem( 'q', test_input___observation_key_list::ObservationKey() );
-		mp->AddItem( 'w', test_input___observation_key_list::ObservationKeyList_Declaration() );
-		mp->AddItem( 'e', test_input___observation_key_list::ObservationKeyList_Add() );
+		mp->AddItem( 'w', test_input___observation_key_list::Declaration() );
+		mp->AddItem( 'e', test_input___observation_key_list::Add() );
 		mp->AddItem( 'r', test_input___observation_key_flags::Declaration() );
 		mp->AddItem( 't', test_input___observation_key_flags::Size_Binary() );
 		mp->AddItem( 'y', test_input___observation_key_flags::Add_Remove() );

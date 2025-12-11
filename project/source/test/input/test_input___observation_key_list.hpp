@@ -11,14 +11,14 @@ namespace test_input___observation_key_list
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class ObservationKeyList_Declaration : public r2tm::iItem
+	class Declaration : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class ObservationKeyList_Add: public r2tm::iItem
+	class Add: public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
