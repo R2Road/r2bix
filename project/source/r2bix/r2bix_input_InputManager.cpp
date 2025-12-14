@@ -76,16 +76,16 @@ namespace r2bix_input
 				};
 
 				int i = -1;
-				for( const auto& k : mouse_keys )
+				for( const auto& key_code : mouse_keys )
 				{
 					++i;
 
-					if( !mObservationKeyFlags.IsObservationKey( k ) )
+					if( !mObservationKeyFlags.IsObservationKey( key_code ) )
 					{
 						continue;
 					}
 
-					if( !mKeyStatusProcessor.GetChanged( k ) )
+					if( !mKeyStatusProcessor.GetChanged( key_code ) )
 					{
 						continue;
 					}
@@ -98,14 +98,14 @@ namespace r2bix_input
 							continue;
 						}
 
-						if( !l->IsObservationKey( k ) )
+						if( !l->IsObservationKey( key_code ) )
 						{
 							continue;
 						}
 
 						if( !processed )
 						{
-							if( !l->UpdateKey( i, mMachineInputCollector.HasInput( k ) ) )
+							if( !l->UpdateKey( i, mMachineInputCollector.HasInput( key_code ) ) )
 							{
 								processed = true;
 								continue;
