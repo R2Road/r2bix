@@ -12,6 +12,7 @@ namespace r2bix_input
 	InputManager::InputManager( const short offset_x, const short offset_y ) :
 		  mMachineInputCollector( offset_x, offset_y )
 		, mObservationKeyFlags()
+		, mKeyStatusProcessor()
 		, mListenerContainer4Mouse()
 		, mListenerContainer4Keyboard()
 	{}
@@ -22,6 +23,7 @@ namespace r2bix_input
 		// 입력 수집
 		//
 		mMachineInputCollector.Collect();
+		mKeyStatusProcessor.Update( mMachineInputCollector );
 
 		//
 		// 업데이트 : Mouse
@@ -83,6 +85,11 @@ namespace r2bix_input
 						continue;
 					}
 
+					if( !mKeyStatusProcessor.GetChanged( k ) )
+					{
+						continue;
+					}
+
 					bool processed = false;
 					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
 					{
@@ -127,6 +134,11 @@ namespace r2bix_input
 			)
 			{
 				if( !mObservationKeyFlags.IsObservationKey( key_code ) )
+				{
+					continue;
+				}
+
+				if( !mKeyStatusProcessor.GetChanged( key_code ) )
 				{
 					continue;
 				}
