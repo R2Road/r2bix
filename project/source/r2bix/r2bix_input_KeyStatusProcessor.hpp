@@ -60,23 +60,23 @@ namespace r2bix_input
 		//
 		//
 		//
-		eKeyStep GetStep( const r2bix_input::eKeyCode key_code ) const
+		eKeyStep GetStep( const KeyCodeT key_code ) const
 		{
 			return mContainer[key_code].GetStep();
 		}
-		bool GetChanged( const r2bix_input::eKeyCode key_code ) const
+		bool GetChanged( const KeyCodeT key_code ) const
 		{
 			return mContainer[key_code].GetChanged();
 		}
-		bool IsPushed( const r2bix_input::eKeyCode key_code ) const
+		bool IsPushed( const KeyCodeT key_code ) const
 		{
 			return ( eKeyStep::Push == mContainer[key_code].GetStep() );
 		}
-		bool IsRelease( const r2bix_input::eKeyCode key_code ) const
+		bool IsRelease( const KeyCodeT key_code ) const
 		{
 			return ( eKeyStep::Release == mContainer[key_code].GetStep() );
 		}
-		bool HasInput( const r2bix_input::eKeyCode key_code ) const
+		bool HasInput( const KeyCodeT key_code ) const
 		{
 			return ( eKeyStep::None < mContainer[key_code].GetStep() );
 		}
