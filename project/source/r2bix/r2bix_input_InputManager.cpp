@@ -153,7 +153,7 @@ namespace r2bix_input
 
 					if( !processed )
 					{
-						if( !l->UpdateKey( key_code, mMachineInputCollector.HasInput( key_code ) ) )
+						if( !l->Listen( key_code, mKeyStatusProcessor.GetStep( key_code ) ) )
 						{
 							processed = true;
 							continue;
@@ -161,7 +161,7 @@ namespace r2bix_input
 					}
 					else
 					{
-						l->UpdateKey( key_code, false );
+						l->Listen( key_code, r2bix_input::eKeyStep::None );
 					}
 
 					break;

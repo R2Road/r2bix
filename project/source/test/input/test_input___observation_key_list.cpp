@@ -40,7 +40,6 @@ namespace test_input___observation_key_list
 
 			EXPECT_EQ( 0, o.key_index);
 			EXPECT_EQ( 0, o.key_code );
-			EXPECT_EQ( r2bix_input::eKeyStep::None, o.key_step );
 
 			LS();
 

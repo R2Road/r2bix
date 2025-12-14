@@ -26,6 +26,32 @@ namespace r2bix_input
 		//
 		//
 		//
+		inline eKeyStep GetStep( const r2bix_input::KeyCodeTypeT key_code ) const
+		{
+			return mKeyStatusProcessor.GetStep( key_code );
+		}
+		inline bool GetChanged( const r2bix_input::KeyCodeTypeT key_code ) const
+		{
+			return mKeyStatusProcessor.GetChanged( key_code );
+		}
+		inline bool IsPushed( const r2bix_input::KeyCodeTypeT key_code ) const
+		{
+			return mKeyStatusProcessor.IsPushed( key_code );
+		}
+		inline bool IsRelease( const r2bix_input::KeyCodeTypeT key_code ) const
+		{
+			return mKeyStatusProcessor.IsRelease( key_code );
+		}
+		inline bool HasInput( const r2bix_input::KeyCodeTypeT key_code ) const
+		{
+			return mKeyStatusProcessor.HasInput( key_code );
+		}
+
+
+
+		//
+		//
+		//
 		void Update();
 
 

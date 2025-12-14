@@ -94,19 +94,19 @@ namespace p2048
 		{
 			// Input Process, Game End Check
 			r2::Direction4Sequential::eState input_direction = r2::Direction4Sequential::eState::NONE;
-			if( mKeyboardListener.IsPushed( 1 ) ) // A
+			if( GetDirector().GetInputManager().IsPushed( r2bix_input::VK_A ) ) // A
 			{
 				input_direction = r2::Direction4Sequential::eState::Left;
 			}
-			else if( mKeyboardListener.IsPushed( 2 ) ) // D
+			else if( GetDirector().GetInputManager().IsPushed( r2bix_input::VK_D ) ) // D
 			{
 				input_direction = r2::Direction4Sequential::eState::Right;
 			}
-			else if( mKeyboardListener.IsPushed( 3 ) ) // S
+			else if( GetDirector().GetInputManager().IsPushed( r2bix_input::VK_S ) ) // S
 			{
 				input_direction = r2::Direction4Sequential::eState::Up;
 			}
-			else if( mKeyboardListener.IsPushed( 4 ) ) // W
+			else if( GetDirector().GetInputManager().IsPushed( r2bix_input::VK_W ) ) // W
 			{
 				input_direction = r2::Direction4Sequential::eState::Down;
 			}
@@ -143,20 +143,20 @@ namespace p2048
 			break;
 		}
 
-		if( mKeyboardListener.IsPushed( 6 ) )
+		if( GetDirector().GetInputManager().IsPushed( r2bix_input::VK_TAB ) )
 		{
 			mStageViewComponent4History->GetOwnerNode().SetVisible( true );
 		}
-		else if( mKeyboardListener.IsRelease( 6 ) )
+		else if( GetDirector().GetInputManager().IsRelease( r2bix_input::VK_TAB ) )
 		{
 			mStageViewComponent4History->GetOwnerNode().SetVisible( false );
 		}
 
-		if( mKeyboardListener.IsPushed( 5 ) )
+		if( GetDirector().GetInputManager().IsPushed( r2bix_input::VK_R ) )
 		{
 			mStep = eStep::GameReset;
 		}
-		else if( mKeyboardListener.IsRelease( 0 ) )
+		else if( GetDirector().GetInputManager().IsRelease( r2bix_input::VK_ESCAPE ) )
 		{
 			GetDirector().RequestAbort();
 		}

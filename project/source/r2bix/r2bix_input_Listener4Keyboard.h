@@ -37,23 +37,6 @@ namespace r2bix_input
 			return mObservationKeyList;
 		}
 
-		eKeyStep Get( const std::size_t key_index ) const
-		{
-			return mObservationKeyList[key_index].key_step;
-		}
-		bool IsPushed( const std::size_t key_index ) const
-		{
-			return ( eKeyStep::Push == mObservationKeyList[key_index].key_step );
-		}
-		bool IsRelease( const std::size_t key_index ) const
-		{
-			return ( eKeyStep::Release == mObservationKeyList[key_index].key_step );
-		}
-		bool HasInput( const std::size_t key_index ) const
-		{
-			return ( eKeyStep::None < mObservationKeyList[key_index].key_step );
-		}
-
 
 
 		//
@@ -76,7 +59,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		bool UpdateKey( const r2bix_input::KeyCodeTypeT key_code, const bool key_flag );
+		bool Listen( const r2bix_input::KeyCodeTypeT key_code, const r2bix_input::eKeyStep key_step );
 
 
 
