@@ -76,7 +76,7 @@ namespace r2bix_input
 				};
 
 				int i = -1;
-				for( const auto& key_code : mouse_keys )
+				for( const auto key_code : mouse_keys )
 				{
 					++i;
 
