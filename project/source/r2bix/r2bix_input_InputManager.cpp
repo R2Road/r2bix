@@ -98,11 +98,6 @@ namespace r2bix_input
 							continue;
 						}
 
-						if( !l->IsObservationKey( key_code ) )
-						{
-							continue;
-						}
-
 						if( !processed )
 						{
 							if( !l->UpdateKey( i, mMachineInputCollector.HasInput( key_code ) ) )
