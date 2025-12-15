@@ -30,9 +30,9 @@ namespace r2bix_component
 		{
 			mListener4Mouse.SetCallback4CursorMoved( callback );
 		}
-		void SetMouseCallback( const r2bix_input::Listener4Mouse::Callback4KeyStatusChangedT& callback )
+		void SetMouseCallback( const r2bix_input::Listener4Mouse::Callback4KeyStepChangedT& callback )
 		{
-			mListener4Mouse.SetCallback4KeyStatusChanged( callback );
+			mListener4Mouse.SetCallback4KeyStepChanged( callback );
 		}
 		void AddMouseObservationKey( const r2bix_input::eKeyCode key_code )
 		{

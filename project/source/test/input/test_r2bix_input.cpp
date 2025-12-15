@@ -211,7 +211,7 @@ namespace test_input
 			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_LBUTTON );
 			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_MBUTTON );
 			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
-			mouse_listener.SetCallback4KeyStatusChanged( [&bLChanged, &sl, &bMChanged, &sm, &bRChanged, &sr]( const int key_index, const r2bix_input::eKeyStep s )->bool
+			mouse_listener.SetCallback4KeyStepChanged( [&bLChanged, &sl, &bMChanged, &sm, &bRChanged, &sr]( const int key_index, const r2bix_input::eKeyStep s )->bool
 			{
 				switch( key_index )
 				{

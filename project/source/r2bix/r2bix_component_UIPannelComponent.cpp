@@ -58,7 +58,7 @@ namespace r2bix_component
 		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_LBUTTON );
 		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_MBUTTON );
 		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
-		mListener4Mouse.SetCallback4KeyStatusChanged( [this]( const int key_index, const r2bix_input::eKeyStep key_step )->bool
+		mListener4Mouse.SetCallback4KeyStepChanged( [this]( const int key_index, const r2bix_input::eKeyStep key_step )->bool
 		{
 			if( !mMyUIControlComponent->OnKeyResponse( key_index, key_step ) )
 			{
