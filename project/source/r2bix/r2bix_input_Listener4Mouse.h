@@ -37,23 +37,6 @@ namespace r2bix_input
 			return mObservationKeyList;
 		}
 
-		eKeyStep Get( const std::size_t key_index ) const
-		{
-			return mObservationKeyList[key_index].key_step;
-		}
-		bool IsPushed( const std::size_t key_index ) const
-		{
-			return ( eKeyStep::Push == mObservationKeyList[key_index].key_step );
-		}
-		bool IsRelease( const std::size_t key_index ) const
-		{
-			return ( eKeyStep::Release == mObservationKeyList[key_index].key_step );
-		}
-		bool HasInput( const std::size_t key_index ) const
-		{
-			return ( eKeyStep::None < mObservationKeyList[key_index].key_step );
-		}
-
 		CursorPoint GetCursorPoint_Current() const
 		{
 			return mCursorPoint_Current;
@@ -88,7 +71,7 @@ namespace r2bix_input
 		//
 		//
 		bool UpdateCursor( const r2bix_input::CursorPoint cursor_point );
-		bool UpdateKey( const int key_index, const bool key_flag );
+		bool Listen4Key( const int key_index, const r2bix_input::eKeyStep key_step );
 
 
 

@@ -76,59 +76,13 @@ namespace r2bix_input
 
 		return false;
 	}
-	bool Listener4Mouse::UpdateKey( const int key_index, const bool key_flag )
+	bool Listener4Mouse::Listen4Key( const int key_index, const r2bix_input::eKeyStep key_step )
 	{
 		bool ret = false;
 
-		if( key_flag )
+		if( mCallback4KeyStatusChanged )
 		{
-			switch( mObservationKeyList[key_index].key_step )
-			{
-			case eKeyStep::None:
-				mObservationKeyList[key_index].key_step = eKeyStep::Push;
-				if( mCallback4KeyStatusChanged )
-				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_step );
-				}
-				break;
-
-			case eKeyStep::Push:
-				mObservationKeyList[key_index].key_step = eKeyStep::Pressed;
-				if( mCallback4KeyStatusChanged )
-				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_step );
-				}
-				break;
-
-			//case eKeyStep::Pressed:
-			//	break;
-
-			}
-		}
-		else
-		{
-			switch( mObservationKeyList[key_index].key_step )
-			{
-			//case eKeyStep::None:
-			//	break;
-
-			case eKeyStep::Push:
-			case eKeyStep::Pressed:
-				mObservationKeyList[key_index].key_step = eKeyStep::Release;
-				if( mCallback4KeyStatusChanged )
-				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_step );
-				}
-				break;
-
-			case eKeyStep::Release:
-				mObservationKeyList[key_index].key_step = eKeyStep::None;
-				if( mCallback4KeyStatusChanged )
-				{
-					ret = mCallback4KeyStatusChanged( key_index, mObservationKeyList[key_index].key_step );
-				}
-				break;
-			}
+			ret = mCallback4KeyStatusChanged( key_index, key_step );
 		}
 
 		return ret;
