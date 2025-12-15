@@ -2,7 +2,6 @@
 
 #include <array>
 
-#include "r2bix_input_Constant.h"
 #include "r2bix_input_KeyStatus.hpp"
 
 namespace r2bix_input
