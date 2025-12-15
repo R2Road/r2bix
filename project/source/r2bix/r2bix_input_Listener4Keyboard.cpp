@@ -8,18 +8,18 @@ namespace r2bix_input
 		  mOrder( 0 )
 		, mbActivate( true )
 		, mObservationKeyList()
-		, mContainer4KeyStatusChangedCallback()
+		, mContainer4KeyStepChangedCallback()
 	{}
 	Listener4Keyboard::Listener4Keyboard( const int order ) :
 		  mOrder( order )
 		, mbActivate( true )
 		, mObservationKeyList()
-		, mContainer4KeyStatusChangedCallback()
+		, mContainer4KeyStepChangedCallback()
 	{}
 
 
 
-	void Listener4Keyboard::SetCallback4KeyStatusChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback )
+	void Listener4Keyboard::SetCallback4KeyStepChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStepChangedT& callback )
 	{
 		if( key_code == r2bix_input::eKeyCode::VK_LBUTTON || key_code == r2bix_input::eKeyCode::VK_RBUTTON || key_code == r2bix_input::eKeyCode::VK_MBUTTON )
 		{
@@ -28,7 +28,7 @@ namespace r2bix_input
 		}
 
 		mObservationKeyList.Add( key_code );
-		mContainer4KeyStatusChangedCallback.push_back( callback );
+		mContainer4KeyStepChangedCallback.push_back( callback );
 	}
 
 
@@ -47,7 +47,7 @@ namespace r2bix_input
 			return ret;
 		}
 
-		ret = mContainer4KeyStatusChangedCallback[observation_key.key_index]( key_step );
+		ret = mContainer4KeyStepChangedCallback[observation_key.key_index]( key_step );
 
 		return ret;
 	}

@@ -23,9 +23,9 @@ namespace r2bix_component
 
 
 	public:
-		void SetCallback( const r2bix_input::eKeyCode key_code, const r2bix_input::Listener4Keyboard::Callback4KeyStatusChangedT& callback )
+		void SetCallback( const r2bix_input::eKeyCode key_code, const r2bix_input::Listener4Keyboard::Callback4KeyStepChangedT& callback )
 		{
-			mListener.SetCallback4KeyStatusChanged( key_code, callback );
+			mListener.SetCallback4KeyStepChanged( key_code, callback );
 		}
 
 

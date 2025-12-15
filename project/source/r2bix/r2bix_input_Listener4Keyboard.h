@@ -9,8 +9,8 @@ namespace r2bix_input
 	class Listener4Keyboard
 	{
 	public:
-		using Callback4KeyStatusChangedT = std::function<bool( eKeyStep )>;
-		using Container4KeyStatusChangedCallbackT = std::vector<Callback4KeyStatusChangedT>;
+		using Callback4KeyStepChangedT = std::function<bool( eKeyStep )>;
+		using Container4KeyStepChangedCallbackT = std::vector<Callback4KeyStepChangedT>;
 
 
 
@@ -52,7 +52,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		void SetCallback4KeyStatusChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStatusChangedT& callback );
+		void SetCallback4KeyStepChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStepChangedT& callback );
 
 
 
@@ -69,6 +69,6 @@ namespace r2bix_input
 		bool mbActivate;
 
 		ObservationKeyList mObservationKeyList;
-		Container4KeyStatusChangedCallbackT mContainer4KeyStatusChangedCallback;
+		Container4KeyStepChangedCallbackT mContainer4KeyStepChangedCallback;
 	};
 }
