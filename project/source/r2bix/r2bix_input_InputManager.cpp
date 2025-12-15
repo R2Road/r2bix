@@ -33,7 +33,7 @@ namespace r2bix_input
 
 			//
 			// Mouse Cursor Update
-			// > UpdateCursor 함수가 true 를 반환하면 이후 호출은 더미 Cursor값을 준다.
+			// > Listen4Cursor 함수가 true 를 반환하면 이후 호출은 더미 Cursor값을 준다.
 			//
 			{
 				if( mMachineInputCollector.IsMouseMoved() )
@@ -44,20 +44,20 @@ namespace r2bix_input
 					{
 						if( !l->IsActivated() )
 						{
-							l->UpdateCursor( CursorPoint{ std::numeric_limits<int>::min(), std::numeric_limits<int>::min() } );
+							l->Listen4Cursor( CursorPoint{ std::numeric_limits<int>::min(), std::numeric_limits<int>::min() } );
 							continue;
 						}
 
 						if( bKeepGoing )
 						{
-							if( l->UpdateCursor( mMachineInputCollector.GetCursorPoint() ) )
+							if( l->Listen4Cursor( mMachineInputCollector.GetCursorPoint() ) )
 							{
 								bKeepGoing = false;
 							}
 						}
 						else
 						{
-							l->UpdateCursor( CursorPoint{ std::numeric_limits<int>::min(), std::numeric_limits<int>::min() } );
+							l->Listen4Cursor( CursorPoint{ std::numeric_limits<int>::min(), std::numeric_limits<int>::min() } );
 						}
 
 						++i;

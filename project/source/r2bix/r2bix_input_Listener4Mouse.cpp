@@ -44,7 +44,7 @@ namespace r2bix_input
 
 
 
-	bool Listener4Mouse::UpdateCursor( const r2bix_input::CursorPoint cursor_point )
+	bool Listener4Mouse::Listen4Cursor( const r2bix_input::CursorPoint cursor_point )
 	{
 		bool ret = false;
 

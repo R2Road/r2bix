@@ -61,7 +61,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		bool UpdateCursor( const r2bix_input::CursorPoint cursor_point );
+		bool Listen4Cursor( const r2bix_input::CursorPoint cursor_point );
 		bool Listen4Key( const int key_index, const r2bix_input::eKeyStep key_step );
 
 
