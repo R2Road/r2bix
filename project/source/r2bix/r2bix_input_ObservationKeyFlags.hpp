@@ -29,6 +29,11 @@ namespace r2bix_input
 			return mFlags;
 		}
 
+		bool Has( const KeyCodeTypeT key_value ) const
+		{
+			return 0 < mFlags[key_value];
+		}
+
 
 		//
 		//
@@ -38,15 +43,6 @@ namespace r2bix_input
 
 		void Remove( const r2bix_input::eKeyCode key_code );
 		void Remove( const r2bix_input::ObservationKeyList& key_list );
-
-
-		//
-		//
-		//
-		bool Has( const KeyCodeTypeT key_value ) const
-		{
-			return 0 < mFlags[key_value];
-		}
 
 
 	private:
