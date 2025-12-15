@@ -85,7 +85,7 @@ namespace r2bix_input
 			mContainer.push_back( ValueT{ static_cast<uint8_t>( mContainer.size() ), key_code } );
 		}
 
-		bool IsObservationKey( const r2bix_input::KeyCodeTypeT key_code ) const
+		bool Has( const r2bix_input::KeyCodeTypeT key_code ) const
 		{
 			for( const auto& o : mContainer )
 			{

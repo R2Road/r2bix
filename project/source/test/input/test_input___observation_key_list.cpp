@@ -107,17 +107,17 @@ namespace test_input___observation_key_list
 
 				EXPECT_EQ( 0, c[0].key_index );
 				EXPECT_TRUE( r2bix_input::eKeyCode::VK_1 == c[0].key_code );
-				EXPECT_TRUE( c.IsObservationKey( r2bix_input::eKeyCode::VK_1 ) );
+				EXPECT_TRUE( c.Has( r2bix_input::eKeyCode::VK_1 ) );
 
 				LF();
 
 				EXPECT_EQ( 1, c[1].key_index );
 				EXPECT_TRUE( r2bix_input::eKeyCode::VK_2 == c[1].key_code );
-				EXPECT_TRUE( c.IsObservationKey( r2bix_input::eKeyCode::VK_2 ) );
+				EXPECT_TRUE( c.Has( r2bix_input::eKeyCode::VK_2 ) );
 
 				LF();
 
-				EXPECT_FALSE( c.IsObservationKey( r2bix_input::eKeyCode::VK_3 ) );
+				EXPECT_FALSE( c.Has( r2bix_input::eKeyCode::VK_3 ) );
 			}
 
 			LS();
