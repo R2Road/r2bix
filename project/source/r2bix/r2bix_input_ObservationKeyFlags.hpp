@@ -43,7 +43,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		bool IsObservationKey( const KeyCodeTypeT key_value ) const
+		bool Has( const KeyCodeTypeT key_value ) const
 		{
 			return 0 < mFlags[key_value];
 		}

@@ -41,7 +41,7 @@ namespace test_input___observation_key_flags
 						++cur_code
 					)
 					{
-						std::cout << f.IsObservationKey( cur_code );
+						std::cout << f.Has( cur_code );
 
 						++i;
 						if( ( i % 32 ) == 0 )
@@ -113,7 +113,7 @@ namespace test_input___observation_key_flags
 			SS();
 
 			{
-				EXPECT_FALSE( f.IsObservationKey( r2bix_input::eKeyCode::VK_0 ) );
+				EXPECT_FALSE( f.Has( r2bix_input::eKeyCode::VK_0 ) );
 			}
 
 			SS();
@@ -124,12 +124,12 @@ namespace test_input___observation_key_flags
 				LF();
 
 				PROC_MAIN( f.Add( r2bix_input::eKeyCode::VK_0 ) );
-				EXPECT_TRUE( f.IsObservationKey( r2bix_input::eKeyCode::VK_0 ) );
+				EXPECT_TRUE( f.Has( r2bix_input::eKeyCode::VK_0 ) );
 
 				LF();
 
 				PROC_MAIN( f.Add( r2bix_input::eKeyCode::VK_0 ) );
-				EXPECT_TRUE( f.IsObservationKey( r2bix_input::eKeyCode::VK_0 ) );
+				EXPECT_TRUE( f.Has( r2bix_input::eKeyCode::VK_0 ) );
 			}
 
 			SS();
@@ -140,12 +140,12 @@ namespace test_input___observation_key_flags
 				LF();
 
 				PROC_MAIN( f.Remove( r2bix_input::eKeyCode::VK_0 ) );
-				EXPECT_TRUE( f.IsObservationKey( r2bix_input::eKeyCode::VK_0 ) );
+				EXPECT_TRUE( f.Has( r2bix_input::eKeyCode::VK_0 ) );
 
 				LF();
 
 				PROC_MAIN( f.Remove( r2bix_input::eKeyCode::VK_0 ) );
-				EXPECT_FALSE( f.IsObservationKey( r2bix_input::eKeyCode::VK_0 ) );
+				EXPECT_FALSE( f.Has( r2bix_input::eKeyCode::VK_0 ) );
 			}
 
 			LS();

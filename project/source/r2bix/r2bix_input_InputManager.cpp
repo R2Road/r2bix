@@ -80,7 +80,7 @@ namespace r2bix_input
 				{
 					++i;
 
-					if( !mObservationKeyFlags.IsObservationKey( key_code ) )
+					if( !mObservationKeyFlags.Has( key_code ) )
 					{
 						continue;
 					}
@@ -128,7 +128,7 @@ namespace r2bix_input
 				++key_code
 			)
 			{
-				if( !mObservationKeyFlags.IsObservationKey( key_code ) )
+				if( !mObservationKeyFlags.Has( key_code ) )
 				{
 					continue;
 				}
