@@ -37,15 +37,6 @@ namespace r2bix_input
 			return mObservationKeyList;
 		}
 
-		CursorPoint GetCursorPoint_Current() const
-		{
-			return mCursorPoint_Current;
-		}
-		CursorPoint GetCursorPoint_Last() const
-		{
-			return mCursorPoint_Last;
-		}
-
 
 
 		//
@@ -79,10 +70,6 @@ namespace r2bix_input
 		const int mOrder;
 
 		bool mbActivate;
-
-		bool mbMousePositionUse;
-		r2bix_input::CursorPoint mCursorPoint_Current;
-		r2bix_input::CursorPoint mCursorPoint_Last;
 
 		Callback4CursorMovedT mCallback4CursorMoved;
 		Callback4KeyStepChangedT mCallback4KeyStepChanged;
