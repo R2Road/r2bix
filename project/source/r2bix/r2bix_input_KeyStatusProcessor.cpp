@@ -17,46 +17,7 @@ namespace r2bix_input
 		{
 			auto& cur_info = mContainer[cur_code];
 
-			if( machine_input_collector.GetObservationKeySignals()[cur_code] )
-			{
-				switch( cur_info.GetStep() )
-				{
-				case eKeyStep::None:
-					cur_info.Set( eKeyStep::Push, true );
-					break;
-
-				case eKeyStep::Push:
-					cur_info.Set( eKeyStep::Pressed, true );
-					break;
-
-				case eKeyStep::Pressed:
-					cur_info.Set( eKeyStep::Pressed, false );
-					break;
-
-				case eKeyStep::Release:
-					cur_info.Set( eKeyStep::Push, true );
-					break;
-
-				}
-			}
-			else
-			{
-				switch( cur_info.GetStep() )
-				{
-				case eKeyStep::None:
-					cur_info.Set( eKeyStep::None, false );
-					break;
-
-				case eKeyStep::Push:
-				case eKeyStep::Pressed:
-					cur_info.Set( eKeyStep::Release, true );
-					break;
-
-				case eKeyStep::Release:
-					cur_info.Set( eKeyStep::None, true );
-					break;
-				}
-			}
+			cur_info.Update( machine_input_collector.HasInput( cur_code ) );
 		}
 	}
 }
