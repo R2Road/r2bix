@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "r2bix_input_Constant.h"
+#include "r2bix_input_Constant.hpp"
 
 namespace r2bix_input
 {

@@ -479,7 +479,7 @@
     <ClInclude Include="source\r2bix\r2bix_component_TextureFrameRenderComponent.h" />
     <ClInclude Include="source\r2bix\r2bix_component_TextureRenderComponent.h" />
     <ClInclude Include="source\r2bix\r2bix_component_TransformComponent.h" />
-    <ClInclude Include="source\r2bix\r2bix_input_Constant.h" />
+    <ClInclude Include="source\r2bix\r2bix_input_Constant.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_MachineInputSignals.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_Listener4Keyboard.hpp" />
     <ClInclude Include="source\r2bix\r2bix_node_CustomTextureNode.h" />

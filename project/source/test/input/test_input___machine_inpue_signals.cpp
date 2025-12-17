@@ -11,7 +11,7 @@
 #include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2bix_input_MachineInputSignals.hpp"
-#include "r2bix_input_Constant.h"
+#include "r2bix_input_Constant.hpp"
 
 #include "helper/r2bixprinter_cursor_point.hpp"
 

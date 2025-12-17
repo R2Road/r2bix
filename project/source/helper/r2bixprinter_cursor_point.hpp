@@ -5,7 +5,7 @@
 
 #include "r2_none_copyable.hpp"
 
-#include "r2bix_input_Constant.h"
+#include "r2bix_input_Constant.hpp"
 
 inline std::ostream& operator<<( std::ostream& o, const r2bix_input::CursorPoint& v )
 {

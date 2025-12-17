@@ -7,7 +7,7 @@
 #include "r2_vector2.hpp"
 
 #include "r2bix_component_Component.h"
-#include "r2bix_input_Constant.h"
+#include "r2bix_input_Constant.hpp"
 #include "r2bix_ui_Constant.h"
 
 namespace r2bix_component

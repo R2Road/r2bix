@@ -7,7 +7,7 @@
 
 #include <array>
 
-#include "r2bix_input_Constant.h"
+#include "r2bix_input_Constant.hpp"
 #include "r2bix_input_ObservationKeyList.hpp"
 
 namespace r2bix_input

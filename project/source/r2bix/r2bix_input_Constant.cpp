@@ -1,4 +1,4 @@
-#include "r2bix_input_Constant.h"
+#include "r2bix_input_Constant.hpp"
 
 #include <Windows.h>
 

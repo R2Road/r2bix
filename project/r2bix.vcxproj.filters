@@ -720,7 +720,7 @@
     <ClInclude Include="source\r2bix\r2bix_input_MachineInputSignals.hpp">
       <Filter>_r2bix\input</Filter>
     </ClInclude>
-    <ClInclude Include="source\r2bix\r2bix_input_Constant.h">
+    <ClInclude Include="source\r2bix\r2bix_input_Constant.hpp">
       <Filter>_r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_DebugConfig.h">
