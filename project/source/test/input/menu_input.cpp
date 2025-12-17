@@ -8,7 +8,7 @@
 #include "test_input___machine_inpue_signals.hpp"
 #include "test_input___observation_key_flags.hpp"
 #include "test_input___observation_key_list.hpp"
-#include "test_r2bix_input.hpp"
+#include "test_input___manager.hpp"
 
 #include "menu_dev.hpp"
 
@@ -80,9 +80,9 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 
 
 		mp->AddMessage( "Manager", r2tm::eColor::FG_Green );
-		mp->AddItem( 'z', test_input::InputManager_Order1() );
-		mp->AddItem( 'x', test_input::InputManager_Order2() );
-		mp->AddItem( 'c', test_input::InputManager_Order3() );
+		mp->AddItem( 'z', test_input___manager::InputManager_Order1() );
+		mp->AddItem( 'x', test_input___manager::InputManager_Order2() );
+		mp->AddItem( 'c', test_input___manager::InputManager_Order3() );
 
 
 		mp->AddSplit();

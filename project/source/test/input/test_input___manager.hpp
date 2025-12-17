@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace test_input
+namespace test_input___manager
 {
 	class InputManager_Order1 : public r2tm::iItem
 	{

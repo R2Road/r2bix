@@ -660,7 +660,7 @@
     <ClCompile Include="source\test\input\menu_input.cpp">
       <Filter>test\input</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\input\test_r2bix_input.cpp">
+    <ClCompile Include="source\test\input\test_input___manager.cpp">
       <Filter>test\input</Filter>
     </ClCompile>
     <ClCompile Include="source\test\input\test_input___machine_inpue_signals.cpp">
@@ -1660,7 +1660,7 @@
     <ClInclude Include="source\test\input\menu_input.hpp">
       <Filter>test\input</Filter>
     </ClInclude>
-    <ClInclude Include="source\test\input\test_r2bix_input.hpp">
+    <ClInclude Include="source\test\input\test_input___manager.hpp">
       <Filter>test\input</Filter>
     </ClInclude>
     <ClInclude Include="source\test\input\test_input___machine_inpue_signals.hpp">

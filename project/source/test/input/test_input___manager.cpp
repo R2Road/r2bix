@@ -1,4 +1,4 @@
-#include "test_r2bix_input.hpp"
+#include "test_input___manager.hpp"
 
 #include <algorithm>
 
@@ -13,7 +13,7 @@
 #include "r2bix_input_Listener4Keyboard.hpp"
 #include "r2bix_input_Listener4Mouse.hpp"
 
-namespace test_input
+namespace test_input___manager
 {
 	r2tm::TitleFunctionT InputManager_Order1::GetTitleFunction() const
 	{
