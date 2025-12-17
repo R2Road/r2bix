@@ -448,7 +448,7 @@
     <ClInclude Include="source\r2bix\r2bix_director_Config.h" />
     <ClInclude Include="source\r2bix\r2bix_component_iComponent.h" />
     <ClInclude Include="source\r2bix\r2bix_director_DefarredTaskQueue.h" />
-    <ClInclude Include="source\r2bix\r2bix_input_InputManager.h" />
+    <ClInclude Include="source\r2bix\r2bix_input_InputManager.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_KeyStatus.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_ObservationKey.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyFlags.hpp" />

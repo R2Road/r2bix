@@ -1,4 +1,4 @@
-#include "r2bix_input_InputManager.h"
+#include "r2bix_input_InputManager.hpp"
 
 #include <numeric>
 

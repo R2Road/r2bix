@@ -924,7 +924,7 @@
     <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyList.hpp">
       <Filter>_r2bix\input</Filter>
     </ClInclude>
-    <ClInclude Include="source\r2bix\r2bix_input_InputManager.h">
+    <ClInclude Include="source\r2bix\r2bix_input_InputManager.hpp">
       <Filter>_r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_component_UIButtonComponent.h">
