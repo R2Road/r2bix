@@ -140,18 +140,12 @@ namespace r2bix_input
 
 					if( !processed )
 					{
-						if( !l->Listen( key_code, mMachineInputSignals.HasInput( key_code ) ) )
-						{
-							processed = true;
-							continue;
-						}
+						processed = l->Listen( key_code, mMachineInputSignals.HasInput( key_code ) );
 					}
 					else
 					{
 						l->Listen( key_code, false );
 					}
-
-					break;
 				}
 			}
 		}

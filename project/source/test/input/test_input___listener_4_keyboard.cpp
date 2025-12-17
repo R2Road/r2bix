@@ -169,4 +169,70 @@ namespace test_input___listener_4_keyboard
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Order::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Keyboard Listener : Order";
+		};
+	}
+	r2tm::DoFunctionT Order::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			std::cout << "[ESC] Exit" << r2tm::linefeed;
+			std::cout << "[1] Check" << r2tm::linefeed;
+
+			bool bPlay = true;
+			r2bix_input::InputManager input_manager( 0, 0 );
+
+			r2bix_input::Listener4Keyboard l_0( 0 );
+			l_0.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
+			{
+				bPlay = false;
+				return false;
+			} );
+			l_0.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, []( r2bix_input::eKeyStep s )->bool
+			{
+				std::cout << "Order : 0 - Working - " << (int)s << r2tm::linefeed;
+				return false;
+			} );
+			input_manager.AddListener( &l_0 );
+
+			r2bix_input::Listener4Keyboard l_1( 1 );
+			l_1.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, []( r2bix_input::eKeyStep s )->bool
+			{
+				//std::cout << "Order : 1 - Working - " << ( int )s << r2tm::linefeed;
+				return true;
+			} );
+			input_manager.AddListener( &l_1 );
+
+			r2bix_input::Listener4Keyboard l_2( 2 );
+			l_2.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, []( r2bix_input::eKeyStep s )->bool
+			{
+				//std::cout << "Order : 2 - Working - " << ( int )s << r2tm::linefeed;
+				return false;
+			} );
+			input_manager.AddListener( &l_2 );
+
+
+			LS();
+
+			{
+				do
+				{
+
+					input_manager.Update();
+
+				} while( bPlay );
+			}
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }
