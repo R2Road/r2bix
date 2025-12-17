@@ -66,6 +66,39 @@ namespace test_input___listener_4_keyboard
 
 
 
+	r2tm::TitleFunctionT Size_Binary::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Keyboard Listener : Size / Binary";
+		};
+	}
+	r2tm::DoFunctionT Size_Binary::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				DECL_MAIN( r2bix_input::Listener4Keyboard l( 3, r2bix_input::eListenMode::Block ) );
+
+				LF();
+
+				OUT_SIZE( l );
+
+				LF();
+
+				OUT_BINARY( l );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT KeyStatus::GetTitleFunction() const
 	{
 		return []()->const char*
