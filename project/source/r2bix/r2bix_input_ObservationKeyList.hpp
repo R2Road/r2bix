@@ -62,6 +62,10 @@ namespace r2bix_input
 		//
 		//
 		//
+		bool Empty() const
+		{
+			return mContainer.empty();
+		}
 		std::size_t Size() const
 		{
 			return mContainer.size();

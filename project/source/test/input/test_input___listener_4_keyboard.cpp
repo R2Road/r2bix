@@ -13,6 +13,59 @@
 
 namespace test_input___listener_4_keyboard
 {
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Keyboard Listener : Declaration";
+		};
+	}
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUT_SUBJECT( "기본 생성자" );
+
+				LF();
+
+				DECL_MAIN( r2bix_input::Listener4Keyboard l );
+
+				LF();
+
+				EXPECT_EQ( 0, l.GetOrder() );
+				EXPECT_TRUE( r2bix_input::eListenMode::Pass == l.GetListenMode() );
+				EXPECT_TRUE( l.IsActivated() );
+				EXPECT_TRUE( l.GetObservationKeyList().Empty() );
+			}
+
+			LS();
+
+			{
+				OUT_SUBJECT( "Order와 ListenMode를 인자로 받는 생성자" );
+
+				LF();
+
+				DECL_MAIN( r2bix_input::Listener4Keyboard l( 3, r2bix_input::eListenMode::Block ) );
+
+				LF();
+
+				EXPECT_EQ( 3, l.GetOrder() );
+				EXPECT_TRUE( r2bix_input::eListenMode::Block == l.GetListenMode() );
+				EXPECT_TRUE( l.IsActivated() );
+				EXPECT_TRUE( l.GetObservationKeyList().Empty() );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT KeyStatus::GetTitleFunction() const
 	{
 		return []()->const char*
