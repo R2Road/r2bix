@@ -13,14 +13,14 @@
 
 namespace test_input___listener_4_keyboard
 {
-	r2tm::TitleFunctionT KeyboardInputListener_KeyStatus::GetTitleFunction() const
+	r2tm::TitleFunctionT KeyStatus::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Keyboard Listener : KeyStatus";
 		};
 	}
-	r2tm::DoFunctionT KeyboardInputListener_KeyStatus::GetDoFunction() const
+	r2tm::DoFunctionT KeyStatus::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -79,14 +79,14 @@ namespace test_input___listener_4_keyboard
 
 
 
-	r2tm::TitleFunctionT KeyboardInputListener_Play::GetTitleFunction() const
+	r2tm::TitleFunctionT Play::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Keyboard Listener : Play";
 		};
 	}
-	r2tm::DoFunctionT KeyboardInputListener_Play::GetDoFunction() const
+	r2tm::DoFunctionT Play::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
