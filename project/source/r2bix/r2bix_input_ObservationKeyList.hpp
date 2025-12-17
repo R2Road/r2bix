@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "r2_assert.hpp"
-#include "r2bix_input_Constant.h"
+#include "r2bix_input_ObservationKey.hpp"
 
 namespace r2bix_input
 {

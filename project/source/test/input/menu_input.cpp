@@ -22,7 +22,14 @@ r2tm::DescriptionFunctionT Menu_R2bix_Input::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
-		return "";
+		return
+			           "# key status processor 의 역활"
+			"\n > "    "update 단계에서 키 처리를 하는 간단한 프로그램/데모 제작"
+			"\n > "    "전역 단계에서 전체 key 상태를 관측하기 위한 도구"
+			"\n\n"
+			           "# listener 의 역활"
+			"\n > "    "key 처리에 focusing(선택/집중) 이 동반되는 경우 각 focus 별로 key 상태를 따로 관리하기 위한 도구"
+		;
 	};
 }
 r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const

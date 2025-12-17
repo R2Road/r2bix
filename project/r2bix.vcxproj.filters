@@ -1687,5 +1687,8 @@
     <ClInclude Include="source\r2bix\r2bix_input_KeyStatus.hpp">
       <Filter>_r2bix\input</Filter>
     </ClInclude>
+    <ClInclude Include="source\r2bix\r2bix_input_ObservationKey.hpp">
+      <Filter>_r2bix\input</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
