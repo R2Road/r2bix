@@ -392,10 +392,25 @@ namespace test_input
 		{
 			LS();
 
-			std::cout << "[ESC] Exit" << r2tm::linefeed;
-			std::cout << "[1] Check" << r2tm::linefeed;
+			{
+				OUT_NOTE( "Listener 3개 추가" );
+				OUT_NOTE( "각각 order 0, 1, 2" );
+				OUT_NOTE( "1번 Listener의 eListenMode 는 Block" );
 
-			bool bPlay = true;
+				LF();
+
+				OUT_NOTE( "숫자 1 키를 누르면 Listener가 2, 1 순으로 작동하고 0번은 무시 되어야 한다." );
+			}
+
+			LS();
+
+			{
+				OUT_STRING( "[ESC] Exit" );
+				OUT_STRING( "[1] Check" );
+			}
+
+			LS();
+
 			r2bix_input::InputManager input_manager( 0, 0 );
 
 			r2bix_input::Listener4Keyboard l_0( 0, r2bix_input::eListenMode::Pass );
@@ -420,15 +435,7 @@ namespace test_input
 				std::cout << "\t\t\t\t\t\t" << "Order 2 : " << ( int )s << r2tm::linefeed;
 				return false;
 			} );
-			l_2.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
-			{
-				bPlay = false;
-				return false;
-			} );
 			input_manager.AddListener( &l_2 );
-
-
-			LS();
 
 			{
 				do
@@ -436,7 +443,7 @@ namespace test_input
 
 					input_manager.Update();
 
-				} while( bPlay );
+				} while( !input_manager.HasInput( r2bix_input::eKeyCode::VK_ESCAPE ) );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
