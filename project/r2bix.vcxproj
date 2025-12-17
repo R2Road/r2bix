@@ -453,7 +453,7 @@
     <ClInclude Include="source\r2bix\r2bix_input_ObservationKey.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyFlags.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_KeyStatusProcessor.hpp" />
-    <ClInclude Include="source\r2bix\r2bix_input_Listener4Mouse.h" />
+    <ClInclude Include="source\r2bix\r2bix_input_Listener4Mouse.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_ObservationKeyList.hpp" />
     <ClInclude Include="source\r2bix\r2bix_interface_camera.hpp" />
     <ClInclude Include="source\r2bix\r2bix_node_HollowRectNode.h" />
@@ -481,7 +481,7 @@
     <ClInclude Include="source\r2bix\r2bix_component_TransformComponent.h" />
     <ClInclude Include="source\r2bix\r2bix_input_Constant.h" />
     <ClInclude Include="source\r2bix\r2bix_input_MachineInputSignals.hpp" />
-    <ClInclude Include="source\r2bix\r2bix_input_Listener4Keyboard.h" />
+    <ClInclude Include="source\r2bix\r2bix_input_Listener4Keyboard.hpp" />
     <ClInclude Include="source\r2bix\r2bix_node_CustomTextureNode.h" />
     <ClInclude Include="source\r2bix\r2bix_node_LabelMNode.h" />
     <ClInclude Include="source\r2bix\r2bix_node_LabelSNode.h" />

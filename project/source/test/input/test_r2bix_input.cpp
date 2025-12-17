@@ -10,8 +10,8 @@
 #include "r2tm/r2tm_windows_utility.hpp"
 
 #include "r2bix_input_InputManager.h"
-#include "r2bix_input_Listener4Keyboard.h"
-#include "r2bix_input_Listener4Mouse.h"
+#include "r2bix_input_Listener4Keyboard.hpp"
+#include "r2bix_input_Listener4Mouse.hpp"
 
 namespace test_input
 {

@@ -2,7 +2,7 @@
 
 #include "r2bix_component_Component.h"
 
-#include "r2bix_input_Listener4Keyboard.h"
+#include "r2bix_input_Listener4Keyboard.hpp"
 
 namespace r2bix_component
 {

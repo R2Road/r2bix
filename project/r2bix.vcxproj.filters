@@ -936,10 +936,10 @@
     <ClInclude Include="source\r2bix\r2bix_component_UIPannelComponent.h">
       <Filter>_r2bix\2d\component</Filter>
     </ClInclude>
-    <ClInclude Include="source\r2bix\r2bix_input_Listener4Keyboard.h">
+    <ClInclude Include="source\r2bix\r2bix_input_Listener4Keyboard.hpp">
       <Filter>_r2bix\input</Filter>
     </ClInclude>
-    <ClInclude Include="source\r2bix\r2bix_input_Listener4Mouse.h">
+    <ClInclude Include="source\r2bix\r2bix_input_Listener4Mouse.hpp">
       <Filter>_r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_node_UIPannelNode.h">

@@ -4,8 +4,8 @@
 
 #include "r2_assert.hpp"
 
-#include "r2bix_input_Listener4Keyboard.h"
-#include "r2bix_input_Listener4Mouse.h"
+#include "r2bix_input_Listener4Keyboard.hpp"
+#include "r2bix_input_Listener4Mouse.hpp"
 
 namespace r2bix_input
 {

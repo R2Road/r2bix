@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-#include "r2bix_input_Listener4Keyboard.h"
+#include "r2bix_input_Listener4Keyboard.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"
