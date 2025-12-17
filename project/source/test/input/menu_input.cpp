@@ -71,9 +71,8 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 		mp->AddMessage( "Listener", r2tm::eColor::FG_Green );
 		mp->AddItem( 'a', test_input___listener_4_keyboard::KeyStatus() );
 		mp->AddItem( 's', test_input___listener_4_keyboard::Play() );
-		mp->AddItem( 'd', test_input___listener_4_keyboard::Order() );
-		mp->AddItem( 'f', test_input::MouseListener_KeyStatus() );
-		mp->AddItem( 'g', test_input::MouseListener_Cursor() );
+		mp->AddItem( 'd', test_input::MouseListener_KeyStatus() );
+		mp->AddItem( 'f', test_input::MouseListener_Cursor() );
 
 
 		mp->AddLineFeed();
@@ -82,6 +81,7 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 		mp->AddMessage( "Manager", r2tm::eColor::FG_Green );
 		mp->AddItem( 'z', test_input::InputManager_Order1() );
 		mp->AddItem( 'x', test_input::InputManager_Order2() );
+		mp->AddItem( 'c', test_input::InputManager_Order3() );
 
 
 		mp->AddSplit();
