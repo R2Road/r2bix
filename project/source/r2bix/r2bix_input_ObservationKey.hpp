@@ -8,6 +8,5 @@ namespace r2bix_input
 	{
 		KeyIndexTypeT key_index = 0;
 		KeyCodeTypeT key_code = 0;
-		eKeyStep key_step = eKeyStep::None;
 	};
 }
