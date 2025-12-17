@@ -130,7 +130,7 @@ namespace r2bix_input
 					continue;
 				}
 
-				bool processed = false;
+				eListenMode listen_mode = eListenMode::Pass;
 				for( r2bix_input::Listener4Keyboard* l : mListenerContainer4Keyboard )
 				{
 					if( !l->IsActivated() )
@@ -138,9 +138,10 @@ namespace r2bix_input
 						continue;
 					}
 
-					if( !processed )
+					if( eListenMode::Pass == listen_mode )
 					{
-						processed = l->Listen( key_code, mMachineInputSignals.HasInput( key_code ) );
+						l->Listen( key_code, mMachineInputSignals.HasInput( key_code ) );
+						listen_mode = l->GetListenMode();
 					}
 					else
 					{

@@ -15,7 +15,7 @@ namespace r2bix_input
 
 
 		Listener4Keyboard();
-		explicit Listener4Keyboard( const int order );
+		explicit Listener4Keyboard( const int order, const eListenMode mode );
 
 
 
@@ -25,6 +25,10 @@ namespace r2bix_input
 		int GetOrder() const
 		{
 			return mOrder;
+		}
+		const eListenMode GetListenMode() const
+		{
+			return mMode;
 		}
 
 		bool IsActivated() const
@@ -59,12 +63,13 @@ namespace r2bix_input
 		//
 		//
 		//
-		bool Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag );
+		void Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag );
 
 
 
 	private:
 		const int mOrder;
+		const eListenMode mMode;
 
 		bool mbActivate;
 

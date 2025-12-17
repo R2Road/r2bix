@@ -6,12 +6,14 @@ namespace r2bix_input
 {
 	Listener4Keyboard::Listener4Keyboard() :
 		  mOrder( 0 )
+		, mMode( eListenMode::Pass )
 		, mbActivate( true )
 		, mObservationKeyList()
 		, mContainer4KeyStepChangedCallback()
 	{}
-	Listener4Keyboard::Listener4Keyboard( const int order ) :
+	Listener4Keyboard::Listener4Keyboard( const int order, const eListenMode mode ) :
 		  mOrder( order )
+		, mMode( mode )
 		, mbActivate( true )
 		, mObservationKeyList()
 		, mContainer4KeyStepChangedCallback()
@@ -33,10 +35,8 @@ namespace r2bix_input
 
 
 
-	bool Listener4Keyboard::Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag )
+	void Listener4Keyboard::Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag )
 	{
-		bool ret = false;
-
 		auto& observation_key = mObservationKeyList.GetByKeycode( key_code );
 
 		//
@@ -44,7 +44,7 @@ namespace r2bix_input
 		//
 		if( 0 == observation_key.key_code )
 		{
-			return ret;
+			return;
 		}
 
 		//
@@ -57,14 +57,12 @@ namespace r2bix_input
 		//
 		if( !observation_key.key_status.GetChanged() )
 		{
-			return ret;
+			return;
 		}
 
 		//
-		// Callback이 True를 반환하면 이후 처리는 중단된다.
+		// Callback
 		//
-		ret = mContainer4KeyStepChangedCallback[observation_key.key_index]( observation_key.key_status.GetStep() );
-
-		return ret;
+		mContainer4KeyStepChangedCallback[observation_key.key_index]( observation_key.key_status.GetStep() );
 	}
 }

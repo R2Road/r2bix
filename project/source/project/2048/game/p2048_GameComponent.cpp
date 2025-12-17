@@ -28,7 +28,7 @@ namespace p2048
 		, mYouWinNode( nullptr )
 		, mGameOverNode( nullptr )
 
-		, mKeyboardListener( 0 )
+		, mKeyboardListener( 0, r2bix_input::eListenMode::Block )
 	{
 		mKeyboardListener.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_ESCAPE, []( r2bix_input::eKeyStep )->bool { return false; } );
 		mKeyboardListener.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_A, []( r2bix_input::eKeyStep )->bool { return false; } );

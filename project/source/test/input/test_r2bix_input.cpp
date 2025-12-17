@@ -252,9 +252,9 @@ namespace test_input
 
 				LF();
 
-				DECL_MAIN( r2bix_input::Listener4Keyboard l_1( 1 ) );
-				DECL_MAIN( r2bix_input::Listener4Keyboard l_2( 1 ) );
-				DECL_MAIN( r2bix_input::Listener4Keyboard l_3( 1 ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_1( 1, r2bix_input::eListenMode::Pass ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_2( 1, r2bix_input::eListenMode::Pass ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_3( 1, r2bix_input::eListenMode::Pass ) );
 
 				LF();
 
@@ -345,9 +345,9 @@ namespace test_input
 
 				LF();
 
-				DECL_MAIN( r2bix_input::Listener4Keyboard l_1( 2 ) );
-				DECL_MAIN( r2bix_input::Listener4Keyboard l_2( 1 ) );
-				DECL_MAIN( r2bix_input::Listener4Keyboard l_3( 3 ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_1( 2, r2bix_input::eListenMode::Pass ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_2( 1, r2bix_input::eListenMode::Pass ) );
+				DECL_MAIN( r2bix_input::Listener4Keyboard l_3( 3, r2bix_input::eListenMode::Pass ) );
 
 				LF();
 

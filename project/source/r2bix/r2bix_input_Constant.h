@@ -236,4 +236,10 @@ namespace r2bix_input
 		//
 		END = VK_OEM_CLEAR,
 	};
+
+	enum class eListenMode : KeyStepTypeT
+	{
+		Pass,
+		Block,
+	};
 }
