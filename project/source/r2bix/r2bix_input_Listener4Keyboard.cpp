@@ -33,7 +33,7 @@ namespace r2bix_input
 
 
 
-	bool Listener4Keyboard::Listen( const r2bix_input::KeyCodeTypeT key_code, const r2bix_input::eKeyStep key_step )
+	bool Listener4Keyboard::Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag )
 	{
 		bool ret = false;
 
@@ -47,7 +47,23 @@ namespace r2bix_input
 			return ret;
 		}
 
-		ret = mContainer4KeyStepChangedCallback[observation_key.key_index]( key_step );
+		//
+		// Update KeyStep
+		//
+		observation_key.key_status.Update( key_signal_flag );
+
+		//
+		// Check KeyStep Changed
+		//
+		if( !observation_key.key_status.GetChanged() )
+		{
+			return ret;
+		}
+
+		//
+		// Callback이 True를 반환하면 이후 처리는 중단된다.
+		//
+		ret = mContainer4KeyStepChangedCallback[observation_key.key_index]( observation_key.key_status.GetStep() );
 
 		return ret;
 	}

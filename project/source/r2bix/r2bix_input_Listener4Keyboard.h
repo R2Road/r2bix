@@ -59,7 +59,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		bool Listen( const r2bix_input::KeyCodeTypeT key_code, const r2bix_input::eKeyStep key_step );
+		bool Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag );
 
 
 

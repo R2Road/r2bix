@@ -130,11 +130,6 @@ namespace r2bix_input
 					continue;
 				}
 
-				if( !mKeyStatusProcessor.GetChanged( key_code ) )
-				{
-					continue;
-				}
-
 				bool processed = false;
 				for( r2bix_input::Listener4Keyboard* l : mListenerContainer4Keyboard )
 				{
@@ -145,7 +140,7 @@ namespace r2bix_input
 
 					if( !processed )
 					{
-						if( !l->Listen( key_code, mKeyStatusProcessor.GetStep( key_code ) ) )
+						if( !l->Listen( key_code, mMachineInputSignals.HasInput( key_code ) ) )
 						{
 							processed = true;
 							continue;
@@ -153,7 +148,7 @@ namespace r2bix_input
 					}
 					else
 					{
-						l->Listen( key_code, r2bix_input::eKeyStep::None );
+						l->Listen( key_code, false );
 					}
 
 					break;
