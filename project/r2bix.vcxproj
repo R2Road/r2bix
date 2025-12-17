@@ -141,7 +141,7 @@
     <ClCompile Include="source\r2bix\r2bix_component_TextureRenderComponent.cpp" />
     <ClCompile Include="source\r2bix\r2bix_component_TransformComponent.cpp" />
     <ClCompile Include="source\r2bix\r2bix_input_Constant.cpp" />
-    <ClCompile Include="source\r2bix\r2bix_input_MachineInputCollector.cpp" />
+    <ClCompile Include="source\r2bix\r2bix_input_MachineInputSignals.cpp" />
     <ClCompile Include="source\r2bix\r2bix_input_Listener4Keyboard.cpp" />
     <ClCompile Include="source\r2bix\r2bix_node_CustomTextureNode.cpp" />
     <ClCompile Include="source\r2bix\r2bix_node_LabelMNode.cpp" />
@@ -191,7 +191,7 @@
     <ClCompile Include="source\test\input\test_input___listener_4_keyboard.cpp" />
     <ClCompile Include="source\test\input\test_input___observation_key_list.cpp" />
     <ClCompile Include="source\test\input\test_r2bix_input.cpp" />
-    <ClCompile Include="source\test\input\test_input___machine_inpue_collector.cpp" />
+    <ClCompile Include="source\test\input\test_input___machine_inpue_signals.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EditorComponent.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EditorScene.cpp" />
     <ClCompile Include="source\tool\texture_editor\tool_texture_editor_EntryScene.cpp" />
@@ -478,7 +478,7 @@
     <ClInclude Include="source\r2bix\r2bix_component_TextureRenderComponent.h" />
     <ClInclude Include="source\r2bix\r2bix_component_TransformComponent.h" />
     <ClInclude Include="source\r2bix\r2bix_input_Constant.h" />
-    <ClInclude Include="source\r2bix\r2bix_input_MachineInputCollector.h" />
+    <ClInclude Include="source\r2bix\r2bix_input_MachineInputSignals.hpp" />
     <ClInclude Include="source\r2bix\r2bix_input_Listener4Keyboard.h" />
     <ClInclude Include="source\r2bix\r2bix_node_CustomTextureNode.h" />
     <ClInclude Include="source\r2bix\r2bix_node_LabelMNode.h" />
@@ -528,7 +528,7 @@
     <ClInclude Include="source\test\input\test_input___listener_4_keyboard.hpp" />
     <ClInclude Include="source\test\input\test_input___observation_key_list.hpp" />
     <ClInclude Include="source\test\input\test_r2bix_input.hpp" />
-    <ClInclude Include="source\test\input\test_input___machine_inpue_collector.hpp" />
+    <ClInclude Include="source\test\input\test_input___machine_inpue_signals.hpp" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EditorComponent.h" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EditorScene.h" />
     <ClInclude Include="source\tool\texture_editor\tool_texture_editor_EntryScene.h" />

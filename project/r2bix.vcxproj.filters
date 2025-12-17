@@ -161,7 +161,7 @@
     <ClCompile Include="source\r2bix\r2bix_Director.cpp">
       <Filter>_r2bix\director</Filter>
     </ClCompile>
-    <ClCompile Include="source\r2bix\r2bix_input_MachineInputCollector.cpp">
+    <ClCompile Include="source\r2bix\r2bix_input_MachineInputSignals.cpp">
       <Filter>_r2bix\input</Filter>
     </ClCompile>
     <ClCompile Include="source\r2bix\r2bix_input_Constant.cpp">
@@ -663,7 +663,7 @@
     <ClCompile Include="source\test\input\test_r2bix_input.cpp">
       <Filter>test\input</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\input\test_input___machine_inpue_collector.cpp">
+    <ClCompile Include="source\test\input\test_input___machine_inpue_signals.cpp">
       <Filter>test\input</Filter>
     </ClCompile>
     <ClCompile Include="source\test\input\test_input___listener_4_keyboard.cpp">
@@ -714,7 +714,7 @@
     <ClInclude Include="source\r2bix\r2bix_Director.h">
       <Filter>_r2bix\director</Filter>
     </ClInclude>
-    <ClInclude Include="source\r2bix\r2bix_input_MachineInputCollector.h">
+    <ClInclude Include="source\r2bix\r2bix_input_MachineInputSignals.hpp">
       <Filter>_r2bix\input</Filter>
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_input_Constant.h">
@@ -1660,7 +1660,7 @@
     <ClInclude Include="source\test\input\test_r2bix_input.hpp">
       <Filter>test\input</Filter>
     </ClInclude>
-    <ClInclude Include="source\test\input\test_input___machine_inpue_collector.hpp">
+    <ClInclude Include="source\test\input\test_input___machine_inpue_signals.hpp">
       <Filter>test\input</Filter>
     </ClInclude>
     <ClInclude Include="source\helper\r2bixprinter_cursor_point.hpp">

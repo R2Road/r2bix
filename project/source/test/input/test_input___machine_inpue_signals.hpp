@@ -2,7 +2,7 @@
 
 #include "r2tm/r2tm_interface_item.hpp"
 
-namespace test_input___machine_inpue_collector
+namespace test_input___machine_inpue_signals
 {
 	class KeyboardStates : public r2tm::iItem
 	{

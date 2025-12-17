@@ -1,13 +1,13 @@
 #include "r2bix_input_KeyStatusProcessor.hpp"
 
-#include "r2bix_input_MachineInputCollector.h"
+#include "r2bix_input_MachineInputSignals.hpp"
 
 namespace r2bix_input
 {
 	KeyStatusProcessor::KeyStatusProcessor() : mContainer()
 	{}
 
-	void KeyStatusProcessor::Update( const MachineInputCollector& machine_input_collector )
+	void KeyStatusProcessor::Update( const MachineInputSignals& signals )
 	{
 		for(
 			r2bix_input::KeyCodeTypeT cur_code = r2bix_input::eKeyCode::START;
@@ -15,7 +15,7 @@ namespace r2bix_input
 			++cur_code
 		)
 		{
-			mContainer[cur_code].Update( machine_input_collector.HasInput( cur_code ) );
+			mContainer[cur_code].Update( signals.HasInput( cur_code ) );
 		}
 	}
 }

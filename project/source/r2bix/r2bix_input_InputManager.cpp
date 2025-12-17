@@ -10,7 +10,7 @@
 namespace r2bix_input
 {
 	InputManager::InputManager( const short offset_x, const short offset_y ) :
-		  mMachineInputCollector( offset_x, offset_y )
+		  mMachineInputSignals( offset_x, offset_y )
 		, mObservationKeyFlags()
 		, mKeyStatusProcessor()
 		, mListenerContainer4Mouse()
@@ -22,8 +22,8 @@ namespace r2bix_input
 		//
 		// 입력 수집
 		//
-		mMachineInputCollector.Collect();
-		mKeyStatusProcessor.Update( mMachineInputCollector );
+		mMachineInputSignals.Collect();
+		mKeyStatusProcessor.Update( mMachineInputSignals );
 
 		//
 		// 업데이트 : Mouse
@@ -36,7 +36,7 @@ namespace r2bix_input
 			// > Listen4Cursor 함수가 true 를 반환하면 이후 호출은 더미 Cursor값을 준다.
 			//
 			{
-				if( mMachineInputCollector.IsMouseMoved() )
+				if( mMachineInputSignals.IsMouseMoved() )
 				{
 					bool bKeepGoing = true;
 					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
@@ -49,7 +49,7 @@ namespace r2bix_input
 
 						if( bKeepGoing )
 						{
-							if( l->Listen4Cursor( mMachineInputCollector.GetCursorPoint() ) )
+							if( l->Listen4Cursor( mMachineInputSignals.GetCursorPoint() ) )
 							{
 								bKeepGoing = false;
 							}

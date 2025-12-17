@@ -6,7 +6,7 @@
 
 namespace r2bix_input
 {
-	class MachineInputCollector;
+	class MachineInputSignals;
 
 	class KeyStatusProcessor
 	{
@@ -65,7 +65,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		void Update( const MachineInputCollector& machine_input_collector );
+		void Update( const MachineInputSignals& signals );
 
 
 	private:

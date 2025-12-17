@@ -9,12 +9,12 @@
 
 namespace r2bix_input
 {
-	class MachineInputCollector
+	class MachineInputSignals
 	{
 	public:
-		MachineInputCollector();
-		explicit MachineInputCollector( const int offset_x, const int offset_y );
-		explicit MachineInputCollector( const CursorPoint& offset );
+		MachineInputSignals();
+		explicit MachineInputSignals( const int offset_x, const int offset_y );
+		explicit MachineInputSignals( const CursorPoint& offset );
 
 
 

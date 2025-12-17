@@ -1,4 +1,4 @@
-#include "test_input___machine_inpue_collector.hpp"
+#include "test_input___machine_inpue_signals.hpp"
 
 #include <algorithm>
 
@@ -10,18 +10,18 @@
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "r2bix_input_MachineInputCollector.h"
+#include "r2bix_input_MachineInputSignals.hpp"
 #include "r2bix_input_Constant.h"
 
 #include "helper/r2bixprinter_cursor_point.hpp"
 
-namespace test_input___machine_inpue_collector
+namespace test_input___machine_inpue_signals
 {
 	r2tm::TitleFunctionT KeyboardStates::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Machine Input Collector : KeyboardStates";
+			return "Machine Input Signals : KeyboardStates";
 		};
 	}
 	r2tm::DoFunctionT KeyboardStates::GetDoFunction() const
@@ -98,7 +98,7 @@ namespace test_input___machine_inpue_collector
 	{
 		return []()->const char*
 		{
-			return "Machine Input Collector : Declaration";
+			return "Machine Input Signals : Declaration";
 		};
 	}
 	r2tm::DoFunctionT Declaration::GetDoFunction() const
@@ -112,17 +112,17 @@ namespace test_input___machine_inpue_collector
 
 				LF();
 
-				DECL_MAIN( r2bix_input::MachineInputCollector c );
+				DECL_MAIN( r2bix_input::MachineInputSignals signals );
 
 				LF();
 
-				EXPECT_EQ( 0, c.GetOffsetX() );
-				EXPECT_EQ( 0, c.GetOffsetY() );
-				EXPECT_EQ( r2bix_input::CursorPoint(), c.GetOffset() );
+				EXPECT_EQ( 0, signals.GetOffsetX() );
+				EXPECT_EQ( 0, signals.GetOffsetY() );
+				EXPECT_EQ( r2bix_input::CursorPoint(), signals.GetOffset() );
 
 				LF();
 
-				OUT_VALUE( c.GetOffset() );
+				OUT_VALUE( signals.GetOffset() );
 			}
 
 			LS();
@@ -134,7 +134,7 @@ namespace test_input___machine_inpue_collector
 
 				DECL_MAIN( constexpr r2bix_input::CursorPoint::ValueT offset_x = 10 );
 				DECL_MAIN( constexpr r2bix_input::CursorPoint::ValueT offset_y = 20 );
-				DECL_MAIN( r2bix_input::MachineInputCollector c( offset_x, offset_y ) );
+				DECL_MAIN( r2bix_input::MachineInputSignals c( offset_x, offset_y ) );
 
 				LF();
 
@@ -155,7 +155,7 @@ namespace test_input___machine_inpue_collector
 				LF();
 
 				DECL_MAIN( constexpr r2bix_input::CursorPoint offset( 30, 40 ) );
-				DECL_MAIN( r2bix_input::MachineInputCollector c( offset ) );
+				DECL_MAIN( r2bix_input::MachineInputSignals c( offset ) );
 
 				LF();
 
@@ -180,7 +180,7 @@ namespace test_input___machine_inpue_collector
 	{
 		return []()->const char*
 		{
-			return "Machine Input Collector : Size / Binary";
+			return "Machine Input Signals : Size / Binary";
 		};
 	}
 	r2tm::DoFunctionT Size_Binary::GetDoFunction() const
@@ -190,15 +190,15 @@ namespace test_input___machine_inpue_collector
 			LS();
 
 			{
-				DECL_MAIN( r2bix_input::MachineInputCollector c( 127 << 8, 255 << 8 ) );
+				DECL_MAIN( r2bix_input::MachineInputSignals signals( 127 << 8, 255 << 8 ) );
 
 				LF();
 
-				OUT_SIZE( c );
+				OUT_SIZE( signals );
 
 				LF();
 
-				OUT_BINARY( c );
+				OUT_BINARY( signals );
 			}
 
 			LS();
@@ -213,7 +213,7 @@ namespace test_input___machine_inpue_collector
 	{
 		return []()->const char*
 			{
-				return "Machine Input Collector : Keyboard";
+				return "Machine Input Signals : Keyboard";
 			};
 	}
 	r2tm::DoFunctionT Keyboard::GetDoFunction() const
@@ -225,7 +225,7 @@ namespace test_input___machine_inpue_collector
 				std::cout << "[ESC] Exit" << r2tm::linefeed;
 				std::cout << "[WASD] Move" << r2tm::linefeed;
 
-				r2bix_input::MachineInputCollector machine_input_collector( 0, 0 );
+				r2bix_input::MachineInputSignals signals( 0, 0 );
 
 				LS();
 
@@ -240,12 +240,12 @@ namespace test_input___machine_inpue_collector
 
 					while( 1 )
 					{
-						machine_input_collector.Collect();
+						signals.Collect();
 
 						//
 						// ESC
 						//
-						if( machine_input_collector.HasInput( 0x1B ) )
+						if( signals.HasInput( 0x1B ) )
 						{
 							break;
 						}
@@ -254,19 +254,19 @@ namespace test_input___machine_inpue_collector
 						{
 							temp_pos = pos;
 
-							if( machine_input_collector.HasInput( 0x41 ) )
+							if( signals.HasInput( 0x41 ) )
 							{
 								--temp_pos.x;
 							}
-							if( machine_input_collector.HasInput( 0x44 ) )
+							if( signals.HasInput( 0x44 ) )
 							{
 								++temp_pos.x;
 							}
-							if( machine_input_collector.HasInput( 0x57 ) )
+							if( signals.HasInput( 0x57 ) )
 							{
 								--temp_pos.y;
 							}
-							if( machine_input_collector.HasInput( 0x53 ) )
+							if( signals.HasInput( 0x53 ) )
 							{
 								++temp_pos.y;
 							}
@@ -299,7 +299,7 @@ namespace test_input___machine_inpue_collector
 	{
 		return []()->const char*
 			{
-				return "Machine Input Collector : Mouse";
+				return "Machine Input Signals : Mouse";
 			};
 	}
 	r2tm::DoFunctionT Mouse::GetDoFunction() const
@@ -313,7 +313,7 @@ namespace test_input___machine_inpue_collector
 
 
 				r2::PointInt buffer_offset( 1, 2 );
-				r2bix_input::MachineInputCollector machine_input_collector( buffer_offset );
+				r2bix_input::MachineInputSignals signals( buffer_offset );
 
 				LS();
 
@@ -328,19 +328,19 @@ namespace test_input___machine_inpue_collector
 
 					while( 1 )
 					{
-						machine_input_collector.Collect();
+						signals.Collect();
 
 						//
 						// ESC
 						//
-						if( machine_input_collector.HasInput( 0x1B ) )
+						if( signals.HasInput( 0x1B ) )
 						{
 							break;
 						}
 
 						if( fps_timer.Update() )
 						{
-							temp_pos = machine_input_collector.GetCursorPoint();
+							temp_pos = signals.GetCursorPoint();
 
 							if( !stage_area.IsIn( temp_pos ) )
 							{
@@ -370,8 +370,8 @@ namespace test_input___machine_inpue_collector
 						std::cout << "      ";
 						r2tm::WindowsUtility::MoveCursorPoint( 0, 8 );
 						std::cout
-							<< machine_input_collector.GetCursorPoint().GetX() << " " << machine_input_collector.GetCursorPoint().GetY()
-							<< "\t" << ( machine_input_collector.IsMouseMoved() ? "Move" : "Stay" ) << "\n"
+							<< signals.GetCursorPoint().GetX() << " " << signals.GetCursorPoint().GetY()
+							<< "\t" << ( signals.IsMouseMoved() ? "Move" : "Stay" ) << "\n"
 							<< "Offset " << buffer_offset.GetX() << ", " << buffer_offset.GetY() << "\n"
 							;
 					}

@@ -12,7 +12,7 @@
 
 #include "r2bix_input_Constant.h"
 #include "r2bix_input_KeyStatusProcessor.hpp"
-#include "r2bix_input_MachineInputCollector.h"
+#include "r2bix_input_MachineInputSignals.hpp"
 
 #include "helper/r2bixprinter_cursor_point.hpp"
 
@@ -148,7 +148,7 @@ namespace test_input___key_status_processor
 			LS();
 
 			{
-				r2bix_input::MachineInputCollector machine_input_collector( 0, 0 );
+				r2bix_input::MachineInputSignals signals( 0, 0 );
 				r2bix_input::KeyStatusProcessor key_status_processor;
 
 				const r2tm::WindowsUtility::CursorPoint pivot_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
@@ -159,8 +159,8 @@ namespace test_input___key_status_processor
 
 				do
 				{
-					machine_input_collector.Collect();
-					key_status_processor.Update( machine_input_collector );
+					signals.Collect();
+					key_status_processor.Update( signals );
 
 					if( key_status_processor.GetChanged( r2bix_input::eKeyCode::VK_1 ) )
 					{

@@ -1,8 +1,8 @@
-#include "r2bix_input_MachineInputCollector.h"
+#include "r2bix_input_MachineInputSignals.hpp"
 
 namespace r2bix_input
 {
-	MachineInputCollector::MachineInputCollector() :
+	MachineInputSignals::MachineInputSignals() :
 		  mOffset()
 		, mObservationKeySignals()
 		, mCursorPoint_Last()
@@ -10,7 +10,7 @@ namespace r2bix_input
 		, mbMouseMoved( false )
 	{}
 
-	MachineInputCollector::MachineInputCollector( const int offset_x, const int offset_y ) :
+	MachineInputSignals::MachineInputSignals( const int offset_x, const int offset_y ) :
 		  mOffset( offset_x, offset_y )
 		, mObservationKeySignals()
 		, mCursorPoint_Last()
@@ -18,7 +18,7 @@ namespace r2bix_input
 		, mbMouseMoved( false )
 	{}
 
-	MachineInputCollector::MachineInputCollector( const CursorPoint& offset ) :
+	MachineInputSignals::MachineInputSignals( const CursorPoint& offset ) :
 		  mOffset( offset.GetX(), offset.GetY() )
 		, mObservationKeySignals()
 		, mCursorPoint_Last()
@@ -26,7 +26,7 @@ namespace r2bix_input
 		, mbMouseMoved( false )
 	{}
 
-	void MachineInputCollector::Collect()
+	void MachineInputSignals::Collect()
 	{
 		if( !HasWindowFocus() )
 		{

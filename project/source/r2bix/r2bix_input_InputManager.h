@@ -3,7 +3,7 @@
 #include <list>
 
 #include "r2bix_input_KeyStatusProcessor.hpp"
-#include "r2bix_input_MachineInputCollector.h"
+#include "r2bix_input_MachineInputSignals.hpp"
 #include "r2bix_input_ObservationKeyFlags.hpp"
 
 namespace r2bix_input
@@ -83,13 +83,13 @@ namespace r2bix_input
 		//
 		CursorPoint GetCursorPoint() const
 		{
-			return mMachineInputCollector.GetCursorPoint();
+			return mMachineInputSignals.GetCursorPoint();
 		}
 
 
 
 	public:
-		MachineInputCollector mMachineInputCollector;
+		MachineInputSignals mMachineInputSignals;
 		ObservationKeyFlags mObservationKeyFlags;
 		KeyStatusProcessor mKeyStatusProcessor;
 

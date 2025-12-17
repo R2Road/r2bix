@@ -4,7 +4,7 @@
 
 #include "test_input___listener_4_keyboard.hpp"
 #include "test_input___key_status_processor.hpp"
-#include "test_input___machine_inpue_collector.hpp"
+#include "test_input___machine_inpue_signals.hpp"
 #include "test_input___observation_key_flags.hpp"
 #include "test_input___observation_key_list.hpp"
 #include "test_r2bix_input.hpp"
@@ -29,12 +29,12 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
-		mp->AddMessage( "입력 신호( 0, 1 )를 받아온다.", r2tm::eColor::FG_Green );
-		mp->AddItem( '1', test_input___machine_inpue_collector::KeyboardStates() );
-		mp->AddItem( '2', test_input___machine_inpue_collector::Declaration() );
-		mp->AddItem( '3', test_input___machine_inpue_collector::Size_Binary() );
-		mp->AddItem( '4', test_input___machine_inpue_collector::Keyboard() );
-		mp->AddItem( '5', test_input___machine_inpue_collector::Mouse() );
+		mp->AddMessage( "입력 신호를 받아 단순하게( 0, 1 ) 가공", r2tm::eColor::FG_Green );
+		mp->AddItem( '1', test_input___machine_inpue_signals::KeyboardStates() );
+		mp->AddItem( '2', test_input___machine_inpue_signals::Declaration() );
+		mp->AddItem( '3', test_input___machine_inpue_signals::Size_Binary() );
+		mp->AddItem( '4', test_input___machine_inpue_signals::Keyboard() );
+		mp->AddItem( '5', test_input___machine_inpue_signals::Mouse() );
 
 
 		mp->AddLineFeed();
