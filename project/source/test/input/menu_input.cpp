@@ -69,8 +69,8 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 
 
 		mp->AddMessage( "Listener", r2tm::eColor::FG_Green );
-		mp->AddItem( 'a', test_input::KeyboardInputListener_KeyStatus() );
-		mp->AddItem( 's', test_input::KeyboardInputListener_Play() );
+		mp->AddItem( 'a', test_input___listener_4_keyboard::KeyboardInputListener_KeyStatus() );
+		mp->AddItem( 's', test_input___listener_4_keyboard::KeyboardInputListener_Play() );
 		mp->AddItem( 'd', test_input::MouseListener_KeyStatus() );
 		mp->AddItem( 'f', test_input::MouseListener_Cursor() );
 

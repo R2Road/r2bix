@@ -4,20 +4,6 @@
 
 namespace test_input
 {
-	class KeyboardInputListener_KeyStatus : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
-	class KeyboardInputListener_Play : public r2tm::iItem
-	{
-	public:
-		r2tm::TitleFunctionT GetTitleFunction() const override;
-		r2tm::DoFunctionT GetDoFunction() const override;
-	};
-
 	class MouseListener_KeyStatus : public r2tm::iItem
 	{
 	public:
