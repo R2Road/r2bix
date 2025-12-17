@@ -76,7 +76,6 @@ namespace r2bix_input
 
 		ObservationKeySignalsT mObservationKeySignals;
 
-		CursorPoint mCursorPoint_Last;
 		CursorPoint mCursorPoint;
 		bool mbMouseMoved;
 	};

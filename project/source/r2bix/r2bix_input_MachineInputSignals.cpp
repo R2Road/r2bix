@@ -5,7 +5,6 @@ namespace r2bix_input
 	MachineInputSignals::MachineInputSignals() :
 		  mOffset()
 		, mObservationKeySignals()
-		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
 	{}
@@ -13,7 +12,6 @@ namespace r2bix_input
 	MachineInputSignals::MachineInputSignals( const int offset_x, const int offset_y ) :
 		  mOffset( offset_x, offset_y )
 		, mObservationKeySignals()
-		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
 	{}
@@ -21,7 +19,6 @@ namespace r2bix_input
 	MachineInputSignals::MachineInputSignals( const CursorPoint& offset ) :
 		  mOffset( offset.GetX(), offset.GetY() )
 		, mObservationKeySignals()
-		, mCursorPoint_Last()
 		, mCursorPoint()
 		, mbMouseMoved( false )
 	{}
@@ -45,7 +42,6 @@ namespace r2bix_input
 			// Mouse Position
 			//
 			{
-				mCursorPoint_Last = mCursorPoint;
 				mbMouseMoved = false;
 			}
 		}
@@ -86,9 +82,9 @@ namespace r2bix_input
 			// Mouse Position
 			//
 			{
-				mCursorPoint_Last = mCursorPoint;
+				const CursorPoint last_cursor_point = mCursorPoint;
 				mCursorPoint = ( r2bix_input::GetCursorPoint() - mOffset );
-				mbMouseMoved = ( mCursorPoint_Last != mCursorPoint );
+				mbMouseMoved = ( last_cursor_point != mCursorPoint );
 			}
 		}
 	}
