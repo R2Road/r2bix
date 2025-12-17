@@ -15,14 +15,14 @@
 
 namespace test_input___manager
 {
-	r2tm::TitleFunctionT InputManager_Order1::GetTitleFunction() const
+	r2tm::TitleFunctionT Order_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "InputManager : Order 1";
 		};
 	}
-	r2tm::DoFunctionT InputManager_Order1::GetDoFunction() const
+	r2tm::DoFunctionT Order_1::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -108,14 +108,14 @@ namespace test_input___manager
 
 
 
-	r2tm::TitleFunctionT InputManager_Order2::GetTitleFunction() const
+	r2tm::TitleFunctionT Order_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "InputManager : Order 2";
 		};
 	}
-	r2tm::DoFunctionT InputManager_Order2::GetDoFunction() const
+	r2tm::DoFunctionT Order_2::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -201,14 +201,14 @@ namespace test_input___manager
 
 
 
-	r2tm::TitleFunctionT InputManager_Order3::GetTitleFunction() const
+	r2tm::TitleFunctionT Order_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "InputManager : Order 3";
 		};
 	}
-	r2tm::DoFunctionT InputManager_Order3::GetDoFunction() const
+	r2tm::DoFunctionT Order_3::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

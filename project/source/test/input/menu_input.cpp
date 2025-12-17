@@ -80,9 +80,9 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 
 
 		mp->AddMessage( "Manager", r2tm::eColor::FG_Green );
-		mp->AddItem( 'z', test_input___manager::InputManager_Order1() );
-		mp->AddItem( 'x', test_input___manager::InputManager_Order2() );
-		mp->AddItem( 'c', test_input___manager::InputManager_Order3() );
+		mp->AddItem( 'z', test_input___manager::Order_1() );
+		mp->AddItem( 'x', test_input___manager::Order_2() );
+		mp->AddItem( 'c', test_input___manager::Order_3() );
 
 
 		mp->AddSplit();
