@@ -3,6 +3,7 @@
 #include "r2tm/r2tm_menu_processor.hpp"
 
 #include "test_input___listener_4_keyboard.hpp"
+#include "test_input___listener_4_mouse.hpp"
 #include "test_input___key_status_processor.hpp"
 #include "test_input___machine_inpue_signals.hpp"
 #include "test_input___observation_key_flags.hpp"
@@ -71,8 +72,8 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 		mp->AddMessage( "Listener", r2tm::eColor::FG_Green );
 		mp->AddItem( 'a', test_input___listener_4_keyboard::KeyStatus() );
 		mp->AddItem( 's', test_input___listener_4_keyboard::Play() );
-		mp->AddItem( 'd', test_input::MouseListener_KeyStatus() );
-		mp->AddItem( 'f', test_input::MouseListener_Cursor() );
+		mp->AddItem( 'd', test_input___listener_4_mouse::KeyStatus() );
+		mp->AddItem( 'f', test_input___listener_4_mouse::Cursor() );
 
 
 		mp->AddLineFeed();

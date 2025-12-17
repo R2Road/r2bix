@@ -684,6 +684,9 @@
     <ClCompile Include="source\test\input\test_input___observation_key_list.cpp">
       <Filter>test\input</Filter>
     </ClCompile>
+    <ClCompile Include="source\test\input\test_input___listener_4_mouse.cpp">
+      <Filter>test\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\test\2d\TextureFrameAnimationTable4Test.h">
@@ -1689,6 +1692,9 @@
     </ClInclude>
     <ClInclude Include="source\r2bix\r2bix_input_ObservationKey.hpp">
       <Filter>_r2bix\input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\input\test_input___listener_4_mouse.hpp">
+      <Filter>test\input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
