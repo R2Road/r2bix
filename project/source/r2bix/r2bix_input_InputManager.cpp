@@ -38,7 +38,7 @@ namespace r2bix_input
 			{
 				if( mMachineInputSignals.IsMouseMoved() )
 				{
-					bool bKeepGoing = true;
+					eListenMode listen_mode = eListenMode::Pass;
 					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
 					{
 						if( !l->IsActivated() )
@@ -47,12 +47,10 @@ namespace r2bix_input
 							continue;
 						}
 
-						if( bKeepGoing )
+						if( eListenMode::Pass == listen_mode )
 						{
-							if( l->Listen4Cursor( mMachineInputSignals.GetCursorPoint() ) )
-							{
-								bKeepGoing = false;
-							}
+							l->Listen4Cursor( mMachineInputSignals.GetCursorPoint() );
+							listen_mode = l->GetListenMode();
 						}
 						else
 						{
@@ -82,12 +80,7 @@ namespace r2bix_input
 						continue;
 					}
 
-					if( !mKeyStatusProcessor.GetChanged( key_code ) )
-					{
-						continue;
-					}
-
-					bool processed = false;
+					eListenMode listen_mode = eListenMode::Pass;
 					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
 					{
 						if( !l->IsActivated() )
@@ -95,20 +88,15 @@ namespace r2bix_input
 							continue;
 						}
 
-						if( !processed )
+						if( eListenMode::Pass == listen_mode )
 						{
-							if( !l->Listen4Key( i, mKeyStatusProcessor.GetStep( key_code ) ) )
-							{
-								processed = true;
-								continue;
-							}
+							l->Listen4Key( i, mKeyStatusProcessor.GetStep( key_code ) );
+							listen_mode = l->GetListenMode();
 						}
 						else
 						{
 							l->Listen4Key( i, r2bix_input::eKeyStep::None );
 						}
-
-						break;
 					}
 				}
 			}

@@ -46,26 +46,18 @@ namespace r2bix_input
 
 
 
-	bool Listener4Mouse::Listen4Cursor( const r2bix_input::CursorPoint cursor_point )
+	void Listener4Mouse::Listen4Cursor( const r2bix_input::CursorPoint cursor_point )
 	{
-		bool ret = false;
-
 		if( mCallback4CursorMoved )
 		{
-			ret = mCallback4CursorMoved( cursor_point );
+			mCallback4CursorMoved( cursor_point );
 		}
-
-		return ret;
 	}
-	bool Listener4Mouse::Listen4Key( const int key_index, const r2bix_input::eKeyStep key_step )
+	void Listener4Mouse::Listen4Key( const int key_index, const r2bix_input::eKeyStep key_step )
 	{
-		bool ret = false;
-
 		if( mCallback4KeyStepChanged )
 		{
-			ret = mCallback4KeyStepChanged( key_index, key_step );
+			mCallback4KeyStepChanged( key_index, key_step );
 		}
-
-		return ret;
 	}
 }
