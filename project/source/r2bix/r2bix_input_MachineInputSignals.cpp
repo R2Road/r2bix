@@ -70,11 +70,10 @@ namespace r2bix_input
 			{
 				if( IsMouseKeyReversed() )
 				{
-					const bool lbutton_state = mObservationKeySignals[VK_LBUTTON];
 					const bool rbutton_state = mObservationKeySignals[VK_RBUTTON];
 
+					mObservationKeySignals[VK_RBUTTON] = mObservationKeySignals[VK_LBUTTON];
 					mObservationKeySignals[VK_LBUTTON] = rbutton_state;
-					mObservationKeySignals[VK_RBUTTON] = lbutton_state;
 				}
 			}
 
