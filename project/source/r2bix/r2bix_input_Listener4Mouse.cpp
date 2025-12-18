@@ -6,14 +6,16 @@ namespace r2bix_input
 {
 	Listener4Mouse::Listener4Mouse() :
 		  mOrder( 0 )
+		, mMode( eListenMode::Pass )
 		, mbActivate( true )
 
 		, mCallback4CursorMoved()
 		, mCallback4KeyStepChanged()
 		, mObservationKeyList()
 	{}
-	Listener4Mouse::Listener4Mouse( const int order ) :
+	Listener4Mouse::Listener4Mouse( const int order, const eListenMode mode ) :
 		  mOrder( order )
+		, mMode( mode )
 		, mbActivate( true )
 
 		, mCallback4CursorMoved()

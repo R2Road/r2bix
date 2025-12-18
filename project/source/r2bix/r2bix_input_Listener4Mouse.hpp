@@ -15,7 +15,7 @@ namespace r2bix_input
 
 
 		Listener4Mouse();
-		explicit Listener4Mouse( const int order );
+		explicit Listener4Mouse( const int order, const eListenMode mode );
 
 
 
@@ -25,6 +25,10 @@ namespace r2bix_input
 		int GetOrder() const
 		{
 			return mOrder;
+		}
+		const eListenMode GetListenMode() const
+		{
+			return mMode;
 		}
 
 		bool IsActivated() const
@@ -68,6 +72,7 @@ namespace r2bix_input
 
 	private:
 		const int mOrder;
+		const eListenMode mMode;
 
 		bool mbActivate;
 
