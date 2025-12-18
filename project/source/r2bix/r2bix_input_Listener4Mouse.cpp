@@ -8,19 +8,17 @@ namespace r2bix_input
 		  mOrder( 0 )
 		, mMode( eListenMode::Pass )
 		, mbActivate( true )
-
-		, mCallback4CursorMoved()
-		, mCallback4KeyStepChanged()
 		, mObservationKeyList()
+		, mCallback4CursorMoved()
+		, mContainer4KeyStepChangedCallback()
 	{}
 	Listener4Mouse::Listener4Mouse( const int order, const eListenMode mode ) :
 		  mOrder( order )
 		, mMode( mode )
 		, mbActivate( true )
-
-		, mCallback4CursorMoved()
-		, mCallback4KeyStepChanged()
 		, mObservationKeyList()
+		, mCallback4CursorMoved()
+		, mContainer4KeyStepChangedCallback()
 	{}
 
 
@@ -29,11 +27,7 @@ namespace r2bix_input
 	{
 		mCallback4CursorMoved = callback;
 	}
-	void Listener4Mouse::SetCallback4KeyStepChanged( const Callback4KeyStepChangedT& callback )
-	{
-		mCallback4KeyStepChanged = callback;
-	}
-	void Listener4Mouse::AddObservationKey( const r2bix_input::eKeyCode key_code )
+	void Listener4Mouse::SetCallback4KeyStepChanged( const r2bix_input::eKeyCode key_code, const Callback4KeyStepChangedT& callback )
 	{
 		if( key_code != r2bix_input::eKeyCode::VK_LBUTTON && key_code != r2bix_input::eKeyCode::VK_RBUTTON && key_code != r2bix_input::eKeyCode::VK_MBUTTON )
 		{
@@ -42,6 +36,7 @@ namespace r2bix_input
 		}
 
 		mObservationKeyList.Add( key_code );
+		mContainer4KeyStepChangedCallback.push_back( callback );
 	}
 
 
@@ -53,11 +48,34 @@ namespace r2bix_input
 			mCallback4CursorMoved( cursor_point );
 		}
 	}
-	void Listener4Mouse::Listen4Key( const int key_index, const r2bix_input::eKeyStep key_step )
+	void Listener4Mouse::Listen4Key( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag )
 	{
-		if( mCallback4KeyStepChanged )
+		auto& observation_key = mObservationKeyList.GetByKeycode( key_code );
+
+		//
+		// Invalid ObservationKey
+		//
+		if( 0 == observation_key.key_code )
 		{
-			mCallback4KeyStepChanged( key_index, key_step );
+			return;
 		}
+
+		//
+		// Update KeyStep
+		//
+		observation_key.key_status.Update( key_signal_flag );
+
+		//
+		// Check KeyStep Changed
+		//
+		if( !observation_key.key_status.GetChanged() )
+		{
+			return;
+		}
+
+		//
+		// Callback
+		//
+		mContainer4KeyStepChangedCallback[observation_key.key_index]( observation_key.key_status.GetStep() );
 	}
 }

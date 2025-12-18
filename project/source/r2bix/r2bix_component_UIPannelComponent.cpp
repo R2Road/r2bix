@@ -55,23 +55,57 @@ namespace r2bix_component
 		// UIInputListener에 맞춰서 등록/취소 처리를 하면 너무 복잡해진다.
 		// 일단 우겨 넣는걸로 하자.
 		//
-		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_LBUTTON );
-		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_MBUTTON );
-		mListener4Mouse.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
-		mListener4Mouse.SetCallback4KeyStepChanged( [this]( const int key_index, const r2bix_input::eKeyStep key_step )->bool
-		{
-			if( !mMyUIControlComponent->OnKeyResponse( key_index, key_step ) )
+		mListener4Mouse.SetCallback4KeyStepChanged(
+			  r2bix_input::eKeyCode::VK_LBUTTON
+			, [this]( const r2bix_input::eKeyStep key_step )->bool
 			{
-				return false;
+				if( !mMyUIControlComponent->OnKeyResponse( 0, key_step ) )
+				{
+					return false;
+				}
+
+				OnKeyResponse( 0, key_step );
+
+				//
+				// Input Manager에서 유효한 Listener 처리를 중단하게 한다.
+				//
+				return true;
 			}
+		);
+		mListener4Mouse.SetCallback4KeyStepChanged(
+			  r2bix_input::eKeyCode::VK_MBUTTON
+			, [this]( const r2bix_input::eKeyStep key_step )->bool
+			{
+				if( !mMyUIControlComponent->OnKeyResponse( 1, key_step ) )
+				{
+					return false;
+				}
 
-			OnKeyResponse( key_index, key_step );
+				OnKeyResponse( 1, key_step );
 
-			//
-			// Input Manager에서 유효한 Listener 처리를 중단하게 한다.
-			//
-			return true;
-		} );
+				//
+				// Input Manager에서 유효한 Listener 처리를 중단하게 한다.
+				//
+				return true;
+			}
+		);
+		mListener4Mouse.SetCallback4KeyStepChanged(
+			  r2bix_input::eKeyCode::VK_RBUTTON
+			, [this]( const r2bix_input::eKeyStep key_step )->bool
+			{
+				if( !mMyUIControlComponent->OnKeyResponse( 2, key_step ) )
+				{
+					return false;
+				}
+
+				OnKeyResponse( 2, key_step );
+
+				//
+				// Input Manager에서 유효한 Listener 처리를 중단하게 한다.
+				//
+				return true;
+			}
+		);
 
 		//
 		//

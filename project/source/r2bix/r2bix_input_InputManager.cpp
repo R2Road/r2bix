@@ -70,11 +70,8 @@ namespace r2bix_input
 					, r2bix_input::eKeyCode::VK_RBUTTON
 				};
 
-				int i = -1;
 				for( const auto key_code : mouse_keys )
 				{
-					++i;
-
 					if( !mObservationKeyFlags.Has( key_code ) )
 					{
 						continue;
@@ -90,12 +87,12 @@ namespace r2bix_input
 
 						if( eListenMode::Pass == listen_mode )
 						{
-							l->Listen4Key( i, mKeyStatusProcessor.GetStep( key_code ) );
+							l->Listen4Key( key_code, mMachineInputSignals.HasInput( key_code ) );
 							listen_mode = l->GetListenMode();
 						}
 						else
 						{
-							l->Listen4Key( i, r2bix_input::eKeyStep::None );
+							l->Listen4Key( key_code, false );
 						}
 					}
 				}

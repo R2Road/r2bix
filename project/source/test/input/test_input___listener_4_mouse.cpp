@@ -130,36 +130,31 @@ namespace test_input___listener_4_mouse
 				return false;
 			} );
 
-			bool bLChanged = false;
-			bool bMChanged = false;
-			bool bRChanged = false;
-			r2bix_input::eKeyStep sl;
-			r2bix_input::eKeyStep sm;
-			r2bix_input::eKeyStep sr;
 			r2bix_input::Listener4Mouse mouse_listener;
-			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_LBUTTON );
-			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_MBUTTON );
-			mouse_listener.AddObservationKey( r2bix_input::eKeyCode::VK_RBUTTON );
-			mouse_listener.SetCallback4KeyStepChanged( [&bLChanged, &sl, &bMChanged, &sm, &bRChanged, &sr]( const int key_index, const r2bix_input::eKeyStep s )->bool
-			{
-				switch( key_index )
+			mouse_listener.SetCallback4KeyStepChanged(
+				  r2bix_input::eKeyCode::VK_LBUTTON
+				, []( const r2bix_input::eKeyStep s )->bool
 				{
-				case 0:
-					bLChanged = true;
-					sl = s;
-					break;
-				case 1:
-					bMChanged = true;
-					sm = s;
-					break;
-				case 2:
-					bRChanged = true;
-					sr = s;
-					break;
+					std::cout << "L : " << static_cast<int>( s ) << r2tm::linefeed;
+					return false;
 				}
-
-				return false;
-			} );
+			);
+			mouse_listener.SetCallback4KeyStepChanged(
+				  r2bix_input::eKeyCode::VK_MBUTTON
+				, []( const r2bix_input::eKeyStep s )->bool
+				{
+					std::cout << "\t\t\t" << "M : " << static_cast<int>( s ) << r2tm::linefeed;
+					return false;
+				}
+			);
+			mouse_listener.SetCallback4KeyStepChanged(
+				  r2bix_input::eKeyCode::VK_RBUTTON
+				, []( const r2bix_input::eKeyStep s )->bool
+				{
+					std::cout << "\t\t\t\t\t\t" << "R : " << static_cast<int>( s ) << r2tm::linefeed;
+					return false;
+				}
+			);
 
 			manager.AddListener( &keyboard_listener );
 			manager.AddListener( &mouse_listener );
@@ -170,33 +165,7 @@ namespace test_input___listener_4_mouse
 				do
 				{
 					manager.Update();
-
-					//
-					// Left Click
-					//
-					if( bLChanged )
-					{
-						bLChanged = false;
-						std::cout << "key 0 status : " << static_cast< int >( sl ) << r2tm::linefeed;
-					}
-
-					//
-					// Middle Click
-					//
-					if( bMChanged )
-					{
-						bMChanged = false;
-						std::cout << "\t\t\tkey 2 status : " << static_cast< int >( sm ) << r2tm::linefeed;
-					}
-
-					//
-					// Right Click
-					//
-					if( bRChanged )
-					{
-						bRChanged = false;
-						std::cout << "\t\t\t\t\t\tkey 3 status : " << static_cast< int >( sr ) << r2tm::linefeed;
-					}
+					
 				} while( bPlay );
 			}
 
