@@ -74,8 +74,10 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 		mp->AddItem( 's', test_input___listener_4_keyboard::Size_Binary() );
 		mp->AddItem( 'd', test_input___listener_4_keyboard::KeyStatus() );
 		mp->AddItem( 'f', test_input___listener_4_keyboard::Play() );
-		mp->AddItem( 'g', test_input___listener_4_mouse::KeyStatus() );
-		mp->AddItem( 'h', test_input___listener_4_mouse::Cursor() );
+		mp->AddItem( 'g', test_input___listener_4_mouse::Declaration() );
+		mp->AddItem( 'h', test_input___listener_4_mouse::Size_Binary() );
+		mp->AddItem( 'j', test_input___listener_4_mouse::KeyStatus() );
+		mp->AddItem( 'k', test_input___listener_4_mouse::Cursor() );
 
 
 		mp->AddLineFeed();
