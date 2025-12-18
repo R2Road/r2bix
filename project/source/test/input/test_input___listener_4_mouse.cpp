@@ -114,10 +114,14 @@ namespace test_input___listener_4_mouse
 		{
 			LS();
 
-			std::cout << "[  ESC  ] Exit" << r2tm::linefeed;
-			std::cout << "[L Click] ..." << r2tm::linefeed;
-			std::cout << "[M Click] ..." << r2tm::linefeed;
-			std::cout << "[R Click] ..." << r2tm::linefeed;
+			{
+				OUT_STRING( "[  ESC  ] Exit" );
+				OUT_STRING( "[L Click] ..." );
+				OUT_STRING( "[M Click] ..." );
+				OUT_STRING( "[R Click] ..." );
+			}
+
+			LS();
 
 			r2bix_input::InputManager manager( 0, 0 );
 
@@ -149,8 +153,6 @@ namespace test_input___listener_4_mouse
 
 			manager.AddListener( &mouse_listener );
 
-			LS();
-
 			{
 				do
 				{
@@ -178,8 +180,12 @@ namespace test_input___listener_4_mouse
 		{
 			LS();
 
-			std::cout << "[ ESC  ] Exit" << r2tm::linefeed;
-			std::cout << "[Cursor] ..." << r2tm::linefeed;
+			{
+				OUT_STRING( "[ ESC  ] Exit" );
+				OUT_STRING( "[Cursor] ..." );
+			}
+
+			LS();
 
 			r2bix_input::InputManager manager( 0, 0 );
 
@@ -195,8 +201,6 @@ namespace test_input___listener_4_mouse
 			} );
 
 			manager.AddListener( &mouse_listener );
-
-			LS();
 
 			{
 				do
