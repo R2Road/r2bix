@@ -9,9 +9,8 @@
 #include "r2tm/r2tm_ostream.hpp"
 #include "r2tm/r2tm_windows_utility.hpp"
 
-#include "r2bix_input_InputManager.hpp"
-#include "r2bix_input_Listener4Keyboard.hpp"
 #include "r2bix_input_Listener4Mouse.hpp"
+#include "r2bix_input_InputManager.hpp"
 
 
 namespace test_input___listener_4_mouse
@@ -122,14 +121,6 @@ namespace test_input___listener_4_mouse
 
 			r2bix_input::InputManager manager( 0, 0 );
 
-			bool bPlay = true;
-			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
-			{
-				bPlay = false;
-				return false;
-			} );
-
 			r2bix_input::Listener4Mouse mouse_listener;
 			mouse_listener.SetCallback4KeyStepChanged(
 				  r2bix_input::eKeyCode::VK_LBUTTON
@@ -156,7 +147,6 @@ namespace test_input___listener_4_mouse
 				}
 			);
 
-			manager.AddListener( &keyboard_listener );
 			manager.AddListener( &mouse_listener );
 
 			LS();
@@ -166,7 +156,7 @@ namespace test_input___listener_4_mouse
 				{
 					manager.Update();
 					
-				} while( bPlay );
+				} while( !manager.mKeyStatusProcessor.HasInput( r2bix_input::eKeyCode::VK_ESCAPE ) );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
@@ -193,14 +183,6 @@ namespace test_input___listener_4_mouse
 
 			r2bix_input::InputManager manager( 0, 0 );
 
-			bool bPlay = true;
-			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
-			{
-				bPlay = false;
-				return false;
-			} );
-
 			r2bix_input::CursorPoint c;
 			bool bMoved = false;
 			r2bix_input::Listener4Mouse mouse_listener;
@@ -212,7 +194,6 @@ namespace test_input___listener_4_mouse
 				return true;
 			} );
 
-			manager.AddListener( &keyboard_listener );
 			manager.AddListener( &mouse_listener );
 
 			LS();
@@ -241,7 +222,7 @@ namespace test_input___listener_4_mouse
 							<< "         "
 							<< r2tm::linefeed;
 					}
-				} while( bPlay );
+				} while( !manager.mKeyStatusProcessor.HasInput( r2bix_input::eKeyCode::VK_ESCAPE ) );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
