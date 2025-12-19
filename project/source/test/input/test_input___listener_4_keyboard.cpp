@@ -117,13 +117,7 @@ namespace test_input___listener_4_keyboard
 
 			r2bix_input::InputManager input_manager( 0, 0 );
 
-			bool bPlay = true;
 			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
-			{
-				bPlay = false;
-				return false;
-			} );
 
 			bool bAChanged = false;
 			r2bix_input::eKeyStep as = r2bix_input::eKeyStep::None;
@@ -156,7 +150,7 @@ namespace test_input___listener_4_keyboard
 
 					++frame;
 
-				} while( bPlay );
+				} while( !input_manager.mKeyStatusProcessor.HasInput( r2bix_input::eKeyCode::VK_ESCAPE ) );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
@@ -183,13 +177,7 @@ namespace test_input___listener_4_keyboard
 
 			r2bix_input::InputManager input_manager( 0, 0 );
 
-			bool bPlay = true;
 			r2bix_input::Listener4Keyboard keyboard_listener;
-			keyboard_listener.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_ESCAPE, [&bPlay]( r2bix_input::eKeyStep )->bool
-			{
-				bPlay = false;
-				return false;
-			} );
 
 			r2tm::WindowsUtility::CursorPoint new_pos{ 20, 20 };
 			keyboard_listener.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_A, [&new_pos]( r2bix_input::eKeyStep )->bool
@@ -249,7 +237,7 @@ namespace test_input___listener_4_keyboard
 						}
 					}
 
-				} while( bPlay );
+				} while( !input_manager.mKeyStatusProcessor.HasInput( r2bix_input::eKeyCode::VK_ESCAPE ) );
 			}
 
 			return r2tm::eDoLeaveAction::Pause;
