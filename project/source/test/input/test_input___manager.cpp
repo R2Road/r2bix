@@ -236,25 +236,43 @@ namespace test_input___manager
 			r2bix_input::InputManager input_manager( 0, 0 );
 
 			r2bix_input::Listener4Keyboard l_0( 0, r2bix_input::eListenMode::Pass );
-			l_0.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, []( r2bix_input::eKeyStep s )->bool
+			l_0.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, [last_step = r2bix_input::eKeyStep::None]( r2bix_input::eKeyStep s ) mutable
 			{
-				std::cout << "Order 0 : " << ( int )s << r2tm::linefeed;
+				if( last_step != s )
+				{
+					std::cout << "Order 0 : " << ( int )s << r2tm::linefeed;
+				}
+
+				last_step = s;
+
 				return false;
 			} );
 			input_manager.AddListener( &l_0 );
 
 			r2bix_input::Listener4Keyboard l_1( 1, r2bix_input::eListenMode::Block );
-			l_1.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, []( r2bix_input::eKeyStep s )->bool
+			l_1.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, [last_step = r2bix_input::eKeyStep::None]( r2bix_input::eKeyStep s ) mutable
 			{
-				std::cout << "\t\t\t" << "Order 1 : " << ( int )s << r2tm::linefeed;
+				if( last_step != s )
+				{
+					std::cout << "\t\t\t" << "Order 1 : " << ( int )s << r2tm::linefeed;
+				}
+
+				last_step = s;
+
 				return true;
 			} );
 			input_manager.AddListener( &l_1 );
 
 			r2bix_input::Listener4Keyboard l_2( 2, r2bix_input::eListenMode::Pass );
-			l_2.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, []( r2bix_input::eKeyStep s )->bool
+			l_2.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, [last_step = r2bix_input::eKeyStep::None]( r2bix_input::eKeyStep s ) mutable
 			{
-				std::cout << "\t\t\t\t\t\t" << "Order 2 : " << ( int )s << r2tm::linefeed;
+				if( last_step != s )
+				{
+					std::cout << "\t\t\t\t\t\t" << "Order 2 : " << ( int )s << r2tm::linefeed;
+				}
+
+				last_step = s;
+
 				return false;
 			} );
 			input_manager.AddListener( &l_2 );
