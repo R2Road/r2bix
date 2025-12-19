@@ -153,43 +153,28 @@ namespace test_input___key_status_processor
 
 				const r2tm::WindowsUtility::CursorPoint pivot_cursor_point = r2tm::WindowsUtility::GetCursorPoint();
 
-				r2::FPSTimer fps_timer( 60u );
-				int cur_line_count = 0;
+				r2::FPSTimer fps_timer( 30u );
 				bool last_changed = false;
 
 				do
 				{
-					signals.Collect();
-					key_status_processor.Update( signals );
-
-					if( key_status_processor.GetChanged( r2bix_input::eKeyCode::VK_1 ) )
+					if( fps_timer.Update() )
 					{
-						++cur_line_count;
-						if( 36 < cur_line_count )
+						signals.Collect();
+						key_status_processor.Update( signals );
+
+						if( key_status_processor.GetChanged( r2bix_input::eKeyCode::VK_1 ) )
 						{
-							cur_line_count = 0;
-							r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
+							last_changed = true;
+
+							std::cout
+								<< "status : " << ( ( int )key_status_processor.GetStep( r2bix_input::eKeyCode::VK_1 ) )
+								<< "   "
+								<< "changed : " << ( ( int )key_status_processor.GetChanged( r2bix_input::eKeyCode::VK_1 ) )
+								<< r2tm::linefeed;
 						}
-
-						last_changed = true;
-
-						std::cout
-							<< "status : " << ( ( int )key_status_processor.GetStep(r2bix_input::eKeyCode::VK_1) )
-							<< "   "
-							<< "changed : " << ( ( int )key_status_processor.GetChanged( r2bix_input::eKeyCode::VK_1 ) )
-							<< r2tm::linefeed;
-					}
-					else
-					{
-						if( last_changed )
+						else if( last_changed )
 						{
-							++cur_line_count;
-							if( 36 < cur_line_count )
-							{
-								cur_line_count = 0;
-								r2tm::WindowsUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
-							}
-
 							last_changed = false;
 
 							std::cout
