@@ -9,7 +9,6 @@
 
 #include "r2bix_input_InputManager.hpp"
 #include "r2bix_input_Listener4Keyboard.hpp"
-#include "r2bix_input_Listener4Mouse.hpp"
 
 namespace test_input___listener_4_keyboard
 {
@@ -112,8 +111,12 @@ namespace test_input___listener_4_keyboard
 		{
 			LS();
 
-			std::cout << "[ESC] Exit" << r2tm::linefeed;
-			std::cout << "[A] ..." << r2tm::linefeed;
+			{
+				OUT_STRING( "[ESC] Exit" );
+				OUT_STRING( "[A] ..." );
+			}
+
+			LS();
 
 			r2bix_input::InputManager input_manager( 0, 0 );
 
@@ -134,8 +137,6 @@ namespace test_input___listener_4_keyboard
 			} );
 
 			input_manager.AddListener( &keyboard_listener );
-
-			LS();
 
 			{
 				do
@@ -167,11 +168,14 @@ namespace test_input___listener_4_keyboard
 		{
 			LS();
 
-			std::cout << "[ESC] Exit" << r2tm::linefeed;
-			std::cout << "[WASD] Move" << r2tm::linefeed;
+			{
+				OUT_STRING( "[ESC] Exit" );
+				OUT_STRING( "[WASD] Move" );
+			}
+
+			LS();
 
 			r2bix_input::InputManager input_manager( 0, 0 );
-
 			r2bix_input::Listener4Keyboard keyboard_listener;
 
 			r2tm::WindowsUtility::CursorPoint new_pos{ 20, 20 };
@@ -197,8 +201,6 @@ namespace test_input___listener_4_keyboard
 			} );
 
 			input_manager.AddListener( &keyboard_listener );
-
-			LS();
 
 			{
 				r2::FPSTimer fps_timer( 60u );
