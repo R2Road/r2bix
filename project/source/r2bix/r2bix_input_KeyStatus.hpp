@@ -48,7 +48,7 @@ namespace r2bix_input
 					break;
 
 				case eKeyStep::Pressed:
-					Set( eKeyStep::Pressed, false );
+					Set( eKeyStep::Pressed, true );
 					break;
 
 				case eKeyStep::Release:

@@ -119,12 +119,17 @@ namespace test_input___listener_4_keyboard
 
 			r2bix_input::Listener4Keyboard keyboard_listener;
 
-			bool bAChanged = false;
-			r2bix_input::eKeyStep as = r2bix_input::eKeyStep::None;
-			keyboard_listener.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_A, [&bAChanged, &as]( r2bix_input::eKeyStep s )->bool
+			long long frame = 0ll;
+			r2bix_input::eKeyStep last_step = r2bix_input::eKeyStep::None;
+			keyboard_listener.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_A, [&frame, &last_step]( r2bix_input::eKeyStep s )->bool
 			{
-				bAChanged = true;
-				as = s;
+				if( last_step != s )
+				{
+					std::cout << "status : " << static_cast<int>( s ) << "    " << frame << r2tm::linefeed;
+				}
+
+				last_step = s;
+
 				return false;
 			} );
 
@@ -133,20 +138,10 @@ namespace test_input___listener_4_keyboard
 			LS();
 
 			{
-				long long frame = 0ll;
 				do
 				{
 
 					input_manager.Update();
-
-					//
-					// A
-					//
-					if( bAChanged )
-					{
-						bAChanged = false;
-						std::cout << "status : " << static_cast< int >( as ) << "    " << frame << r2tm::linefeed;
-					}
 
 					++frame;
 
