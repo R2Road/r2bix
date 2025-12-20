@@ -38,8 +38,8 @@ namespace test_input___observation_key_list
 
 			LF();
 
-			EXPECT_EQ( 0, o.GetKeyIndex() );
-			EXPECT_EQ( 0, o.GetKeyCode() );
+			EXPECT_EQ( 0, o.GetIndex() );
+			EXPECT_EQ( 0, o.GetCode() );
 
 			LS();
 
@@ -105,14 +105,14 @@ namespace test_input___observation_key_list
 
 				LF();
 
-				EXPECT_EQ( 0, c[0].GetKeyIndex() );
-				EXPECT_TRUE( r2bix_input::eKeyCode::VK_1 == c[0].GetKeyCode() );
+				EXPECT_EQ( 0, c[0].GetIndex() );
+				EXPECT_TRUE( r2bix_input::eKeyCode::VK_1 == c[0].GetCode() );
 				EXPECT_TRUE( c.Has( r2bix_input::eKeyCode::VK_1 ) );
 
 				LF();
 
-				EXPECT_EQ( 1, c[1].GetKeyIndex() );
-				EXPECT_TRUE( r2bix_input::eKeyCode::VK_2 == c[1].GetKeyCode() );
+				EXPECT_EQ( 1, c[1].GetIndex() );
+				EXPECT_TRUE( r2bix_input::eKeyCode::VK_2 == c[1].GetCode() );
 				EXPECT_TRUE( c.Has( r2bix_input::eKeyCode::VK_2 ) );
 
 				LF();
@@ -198,7 +198,7 @@ namespace test_input___observation_key_list
 
 				for( const auto& k : c )
 				{
-					std::cout << (int)k.GetKeyIndex() << " : " << (int)k.GetKeyCode() << r2tm::linefeed;
+					std::cout << (int)k.GetIndex() << " : " << (int)k.GetCode() << r2tm::linefeed;
 				}
 			}
 

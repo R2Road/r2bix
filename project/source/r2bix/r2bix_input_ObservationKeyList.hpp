@@ -23,11 +23,11 @@ namespace r2bix_input
 			, key_status()
 		{}
 
-		inline KeyIndexTypeT GetKeyIndex() const
+		inline KeyIndexTypeT GetIndex() const
 		{
 			return key_index;
 		}
-		inline KeyCodeTypeT GetKeyCode() const
+		inline KeyCodeTypeT GetCode() const
 		{
 			return key_code;
 		}
@@ -35,7 +35,7 @@ namespace r2bix_input
 		{
 			return key_status.GetChanged();
 		}
-		inline r2bix_input::eKeyStep GetKeyStep() const
+		inline r2bix_input::eKeyStep GetStep() const
 		{
 			return key_status.GetStep();
 		}
@@ -122,7 +122,7 @@ namespace r2bix_input
 		{
 			for( const auto& k : mContainer )
 			{
-				if( k.GetKeyCode() == key_code )
+				if( k.GetCode() == key_code )
 				{
 					R2ASSERT( false, "ObservationKeyList::Add 동일한 키를 반복 등록 시도" );
 					return;
@@ -136,7 +136,7 @@ namespace r2bix_input
 		{
 			for( const auto& o : mContainer )
 			{
-				if( o.GetKeyCode() == key_code )
+				if( o.GetCode() == key_code )
 				{
 					return true;
 				}
@@ -149,7 +149,7 @@ namespace r2bix_input
 		{
 			for( auto& o : mContainer )
 			{
-				if( o.GetKeyCode() == key_code )
+				if( o.GetCode() == key_code )
 				{
 					return o;
 				}

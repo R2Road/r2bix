@@ -57,7 +57,7 @@ namespace r2bix_input
 		//
 		// Invalid ObservationKey
 		//
-		if( 0 == observation_key.GetKeyCode() )
+		if( 0 == observation_key.GetCode() )
 		{
 			return false;
 		}
@@ -78,6 +78,6 @@ namespace r2bix_input
 		//
 		// Callback
 		//
-		return mContainer4KeyStepChangedCallback[observation_key.GetKeyIndex()](observation_key.GetKeyStep());
+		return mContainer4KeyStepChangedCallback[observation_key.GetIndex()](observation_key.GetStep());
 	}
 }
