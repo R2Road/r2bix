@@ -57,7 +57,7 @@ namespace r2bix_input
 		//
 		// Invalid ObservationKey
 		//
-		if( 0 == observation_key.key_code )
+		if( 0 == observation_key.GetKeyCode() )
 		{
 			return false;
 		}
@@ -65,12 +65,12 @@ namespace r2bix_input
 		//
 		// Update KeyStep
 		//
-		observation_key.key_status.Update( key_signal_flag );
+		observation_key.Update( key_signal_flag );
 
 		//
 		// Check KeyStep Changed
 		//
-		if( !observation_key.key_status.GetChanged() )
+		if( !observation_key.GetChanged() )
 		{
 			return false;
 		}
@@ -78,6 +78,6 @@ namespace r2bix_input
 		//
 		// Callback
 		//
-		return mContainer4KeyStepChangedCallback[observation_key.key_index]( observation_key.key_status.GetStep() );
+		return mContainer4KeyStepChangedCallback[observation_key.GetKeyIndex()](observation_key.GetKeyStep());
 	}
 }

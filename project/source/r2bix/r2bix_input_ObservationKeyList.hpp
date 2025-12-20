@@ -8,10 +8,45 @@
 
 namespace r2bix_input
 {
-	struct ObservationKey
+	class ObservationKey
 	{
-		KeyIndexTypeT key_index = 0;
-		KeyCodeTypeT key_code = 0;
+	public:
+		ObservationKey() : 
+			  key_index( 0 )
+			, key_code( 0 )
+			, key_status()
+		{}
+
+		ObservationKey( const KeyIndexTypeT key_index, const KeyCodeTypeT key_code ) :
+			  key_index( key_index )
+			, key_code( key_code )
+			, key_status()
+		{}
+
+		inline KeyIndexTypeT GetKeyIndex() const
+		{
+			return key_index;
+		}
+		inline KeyCodeTypeT GetKeyCode() const
+		{
+			return key_code;
+		}
+		inline bool GetChanged() const
+		{
+			return key_status.GetChanged();
+		}
+		inline r2bix_input::eKeyStep GetKeyStep() const
+		{
+			return key_status.GetStep();
+		}
+		inline void Update( const bool signal_flag )
+		{
+			key_status.Update( signal_flag );
+		}
+
+	private:
+		KeyIndexTypeT key_index;
+		KeyCodeTypeT key_code;
 		KeyStatus key_status;
 	};
 
@@ -87,7 +122,7 @@ namespace r2bix_input
 		{
 			for( const auto& k : mContainer )
 			{
-				if( k.key_code == key_code )
+				if( k.GetKeyCode() == key_code )
 				{
 					R2ASSERT( false, "ObservationKeyList::Add 동일한 키를 반복 등록 시도" );
 					return;
@@ -101,7 +136,7 @@ namespace r2bix_input
 		{
 			for( const auto& o : mContainer )
 			{
-				if( o.key_code == key_code )
+				if( o.GetKeyCode() == key_code )
 				{
 					return true;
 				}
@@ -114,7 +149,7 @@ namespace r2bix_input
 		{
 			for( auto& o : mContainer )
 			{
-				if( o.key_code == key_code )
+				if( o.GetKeyCode() == key_code )
 				{
 					return o;
 				}

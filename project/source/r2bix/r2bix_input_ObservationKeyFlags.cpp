@@ -13,7 +13,7 @@ namespace r2bix_input
 	{
 		for( const auto k : key_list )
 		{
-			++mFlags[k.key_code];
+			++mFlags[k.GetKeyCode()];
 		}
 	}
 
@@ -25,7 +25,7 @@ namespace r2bix_input
 	{
 		for( const auto k : key_list )
 		{
-			--mFlags[k.key_code];
+			--mFlags[k.GetKeyCode()];
 		}
 	}
 }
