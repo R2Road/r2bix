@@ -205,13 +205,17 @@ namespace test_input___manager
 	{
 		return []()->const char*
 		{
-			return "InputManager : Order : eListenMode::Block";
+			return "InputManager : Order : Keyboard : eListenMode::Block";
 		};
 	}
 	r2tm::DoFunctionT Order_Keyboard___ListenMode_Block::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
+			LS();
+
+			OUT_SUBJECT( "ListenMode 를 Block 으로 설정한 Listener가 작동하면 이후 Listener는 신호 없음 처리된다." );
+
 			LS();
 
 			{
@@ -296,13 +300,17 @@ namespace test_input___manager
 	{
 		return []()->const char*
 		{
-			return "InputManager : Order : Callback Result";
+			return "InputManager : Order : Keyboard : Callback Block";
 		};
 	}
 	r2tm::DoFunctionT Order_Keyboard___Callback_Result::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
+			LS();
+
+			OUT_SUBJECT( "Listener의 Callback이 true를 반환하면 이후 Listener는 신호 없음 처리된다." );
+
 			LS();
 
 			{
@@ -396,7 +404,7 @@ namespace test_input___manager
 		{
 			LS();
 
-			OUT_SUBJECT( "ListenMode 를 Block 으로 설정한 Listener가 작동하면 이후 처리되는 Listener는 신호 없음 처리된다." );
+			OUT_SUBJECT( "ListenMode 를 Block 으로 설정한 Listener가 작동하면 이후 Listener는 신호 없음 처리된다." );
 
 			LS();
 
