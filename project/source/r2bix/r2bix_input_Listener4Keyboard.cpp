@@ -35,7 +35,7 @@ namespace r2bix_input
 
 
 
-	void Listener4Keyboard::Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag )
+	bool Listener4Keyboard::Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag )
 	{
 		auto& observation_key = mObservationKeyList.GetByKeycode( key_code );
 
@@ -44,7 +44,7 @@ namespace r2bix_input
 		//
 		if( 0 == observation_key.key_code )
 		{
-			return;
+			return false;
 		}
 
 		//
@@ -57,12 +57,12 @@ namespace r2bix_input
 		//
 		if( !observation_key.key_status.GetChanged() )
 		{
-			return;
+			return false;
 		}
 
 		//
 		// Callback
 		//
-		mContainer4KeyStepChangedCallback[observation_key.key_index]( observation_key.key_status.GetStep() );
+		return mContainer4KeyStepChangedCallback[observation_key.key_index]( observation_key.key_status.GetStep() );
 	}
 }

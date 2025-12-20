@@ -78,6 +78,7 @@ namespace r2bix_input
 					}
 
 					eListenMode listen_mode = eListenMode::Pass;
+					bool spend_input_signal = false;
 					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
 					{
 						if( !l->IsActivated() )
@@ -85,9 +86,14 @@ namespace r2bix_input
 							continue;
 						}
 
-						if( eListenMode::Pass == listen_mode )
+						if( !l->IsObservationKey( key_code ) )
 						{
-							l->Listen4Key( key_code, mMachineInputSignals.HasInput( key_code ) );
+							continue;
+						}
+
+						if( eListenMode::Pass == listen_mode && !spend_input_signal )
+						{
+							spend_input_signal = l->Listen4Key( key_code, mMachineInputSignals.HasInput( key_code ) );
 							listen_mode = l->GetListenMode();
 						}
 						else
@@ -116,6 +122,7 @@ namespace r2bix_input
 				}
 
 				eListenMode listen_mode = eListenMode::Pass;
+				bool spend_input_signal = false;
 				for( r2bix_input::Listener4Keyboard* l : mListenerContainer4Keyboard )
 				{
 					if( !l->IsActivated() )
@@ -123,9 +130,14 @@ namespace r2bix_input
 						continue;
 					}
 
-					if( eListenMode::Pass == listen_mode )
+					if( !l->IsObservationKey( key_code ) )
 					{
-						l->Listen( key_code, mMachineInputSignals.HasInput( key_code ) );
+						continue;
+					}
+
+					if( eListenMode::Pass == listen_mode && !spend_input_signal )
+					{
+						spend_input_signal = l->Listen( key_code, mMachineInputSignals.HasInput( key_code ) );
 						listen_mode = l->GetListenMode();
 					}
 					else

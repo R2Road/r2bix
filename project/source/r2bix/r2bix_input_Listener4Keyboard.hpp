@@ -36,6 +36,10 @@ namespace r2bix_input
 			return mbActivate;
 		}
 
+		bool IsObservationKey( const r2bix_input::KeyCodeTypeT key_code ) const
+		{
+			return mObservationKeyList.Has( key_code );
+		}
 		const ObservationKeyList& GetObservationKeyList() const
 		{
 			return mObservationKeyList;
@@ -63,7 +67,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		void Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag );
+		bool Listen( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag );
 
 
 

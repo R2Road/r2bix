@@ -221,7 +221,7 @@ namespace test_input___manager
 
 				LF();
 
-				OUT_NOTE( "숫자 1 키를 누르면 Listener가 2, 1 순으로 작동하고 0번은 무시 되어야 한다." );
+				OUT_SUBJECT( "숫자 1 키를 누르면 Listener가 2, 1 순으로 작동하고 0번은 무시 되어야 한다." );
 			}
 
 			LS();
@@ -250,6 +250,97 @@ namespace test_input___manager
 			input_manager.AddListener( &l_0 );
 
 			r2bix_input::Listener4Keyboard l_1( 1, r2bix_input::eListenMode::Block );
+			l_1.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, [last_step = r2bix_input::eKeyStep::None]( r2bix_input::eKeyStep s ) mutable
+			{
+				if( last_step != s )
+				{
+					std::cout << "\t\t\t" << "Order 1 : " << ( int )s << r2tm::linefeed;
+				}
+
+				last_step = s;
+
+				return false;
+			} );
+			input_manager.AddListener( &l_1 );
+
+			r2bix_input::Listener4Keyboard l_2( 2, r2bix_input::eListenMode::Pass );
+			l_2.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, [last_step = r2bix_input::eKeyStep::None]( r2bix_input::eKeyStep s ) mutable
+			{
+				if( last_step != s )
+				{
+					std::cout << "\t\t\t\t\t\t" << "Order 2 : " << ( int )s << r2tm::linefeed;
+				}
+
+				last_step = s;
+
+				return false;
+			} );
+			input_manager.AddListener( &l_2 );
+
+			{
+				do
+				{
+
+					input_manager.Update();
+
+				} while( !input_manager.HasInput( r2bix_input::eKeyCode::VK_ESCAPE ) );
+			}
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT Order_Callback_Result::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "InputManager : Order : Callback Result";
+		};
+	}
+	r2tm::DoFunctionT Order_Callback_Result::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUT_NOTE( "Listener 3개 추가" );
+				OUT_NOTE( "각각 order 0, 1, 2" );
+				OUT_NOTE( "1번 Listener의 Callback 은 true를 반환." );
+
+				LF();
+
+				OUT_SUBJECT( "숫자 1 키를 누르면 Listener가 2, 1 순으로 작동하고 0번은 무시 되어야 한다." );
+			}
+
+			LS();
+
+			{
+				OUT_STRING( "[ESC] Exit" );
+				OUT_STRING( "[1] Check" );
+			}
+
+			LS();
+
+			r2bix_input::InputManager input_manager( 0, 0 );
+
+			r2bix_input::Listener4Keyboard l_0( 0, r2bix_input::eListenMode::Pass );
+			l_0.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, [last_step = r2bix_input::eKeyStep::None]( r2bix_input::eKeyStep s ) mutable
+			{
+				if( last_step != s )
+				{
+					std::cout << "Order 0 : " << ( int )s << r2tm::linefeed;
+				}
+
+				last_step = s;
+
+				return false;
+			} );
+			input_manager.AddListener( &l_0 );
+
+			r2bix_input::Listener4Keyboard l_1( 1, r2bix_input::eListenMode::Pass );
 			l_1.SetCallback4KeyStepChanged( r2bix_input::eKeyCode::VK_1, [last_step = r2bix_input::eKeyStep::None]( r2bix_input::eKeyStep s ) mutable
 			{
 				if( last_step != s )

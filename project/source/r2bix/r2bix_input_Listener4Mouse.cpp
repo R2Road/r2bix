@@ -48,7 +48,7 @@ namespace r2bix_input
 			mCallback4CursorMoved( cursor_point );
 		}
 	}
-	void Listener4Mouse::Listen4Key( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag )
+	bool Listener4Mouse::Listen4Key( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag )
 	{
 		auto& observation_key = mObservationKeyList.GetByKeycode( key_code );
 
@@ -57,7 +57,7 @@ namespace r2bix_input
 		//
 		if( 0 == observation_key.key_code )
 		{
-			return;
+			return false;
 		}
 
 		//
@@ -70,12 +70,12 @@ namespace r2bix_input
 		//
 		if( !observation_key.key_status.GetChanged() )
 		{
-			return;
+			return false;
 		}
 
 		//
 		// Callback
 		//
-		mContainer4KeyStepChangedCallback[observation_key.key_index]( observation_key.key_status.GetStep() );
+		return mContainer4KeyStepChangedCallback[observation_key.key_index]( observation_key.key_status.GetStep() );
 	}
 }
