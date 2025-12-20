@@ -70,7 +70,7 @@ namespace r2bix_input
 		//
 		//
 		//
-		void Listen4Cursor( const r2bix_input::CursorPoint cursor_point );
+		bool Listen4Cursor( const r2bix_input::CursorPoint cursor_point );
 		bool Listen4Key( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag );
 
 

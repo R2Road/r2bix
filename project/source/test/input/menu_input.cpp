@@ -88,6 +88,7 @@ r2tm::WriteFunctionT Menu_R2bix_Input::GetWriteFunction() const
 		mp->AddItem( 'x', test_input___manager::Order_2() );
 		mp->AddItem( 'c', test_input___manager::Order_ListenMode_Block() );
 		mp->AddItem( 'v', test_input___manager::Order_Callback_Result() );
+		mp->AddItem( 'b', test_input___manager::Order_Cursor___ListenMode_Block() );
 
 
 		mp->AddSplit();

@@ -380,4 +380,99 @@ namespace test_input___manager
 			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2tm::TitleFunctionT Order_Cursor___ListenMode_Block::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "InputManager : Order : Cursor : ListenMode Block";
+		};
+	}
+	r2tm::DoFunctionT Order_Cursor___ListenMode_Block::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			OUT_SUBJECT( "ListenMode 를 Block 으로 설정한 Listener가 작동하면 이후 처리되는 Listener는 신호 없음 처리된다." );
+
+			LS();
+
+			{
+				OUT_NOTE( "Listener 3개 추가" );
+				OUT_NOTE( "각각 order 0, 1, 2" );
+				OUT_NOTE( "1번 Listener의 eListenMode 는 Block" );
+
+				LF();
+
+				OUT_SUBJECT( "숫자 1 키를 누르면 Listener가 2, 1 순으로 작동하고 0번은 무시 되어야 한다." );
+			}
+
+			LS();
+
+			{
+				OUT_STRING( "[ESC] Exit" );
+				OUT_STRING( "[1] Check" );
+			}
+
+			LS();
+
+			r2bix_input::InputManager input_manager( 0, 0 );
+
+			r2bix_input::Listener4Mouse l_0( 0, r2bix_input::eListenMode::Pass );
+			l_0.SetCallback4CursorMoved( [last_cursor = r2bix_input::CursorPoint()](r2bix_input::CursorPoint c) mutable
+			{
+				if( last_cursor != c )
+				{
+					std::cout << "Order 0 : " << ( int )c.GetX() << "   " << ( int )c.GetY() << r2tm::linefeed;
+				}
+
+				last_cursor = c;
+
+				return false;
+			} );
+			input_manager.AddListener( &l_0 );
+
+			r2bix_input::Listener4Mouse l_1( 1, r2bix_input::eListenMode::Block );
+			l_1.SetCallback4CursorMoved( [last_cursor = r2bix_input::CursorPoint()]( r2bix_input::CursorPoint c ) mutable
+			{
+				if( last_cursor != c )
+				{
+					std::cout << "Order 1 : " << ( int )c.GetX() << "   " << ( int )c.GetY() << r2tm::linefeed;
+				}
+
+				last_cursor = c;
+
+				return false;
+			} );
+			input_manager.AddListener( &l_1 );
+
+			r2bix_input::Listener4Mouse l_2( 2, r2bix_input::eListenMode::Pass );
+			l_2.SetCallback4CursorMoved( [last_cursor = r2bix_input::CursorPoint()]( r2bix_input::CursorPoint c ) mutable
+			{
+				if( last_cursor != c )
+				{
+					std::cout << "Order 2 : " << ( int )c.GetX() << "   " << ( int )c.GetY() << r2tm::linefeed;
+				}
+
+				last_cursor = c;
+
+				return false;
+			} );
+			input_manager.AddListener( &l_2 );
+
+			{
+				do
+				{
+
+					input_manager.Update();
+
+				} while( !input_manager.HasInput( r2bix_input::eKeyCode::VK_ESCAPE ) );
+			}
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
 }

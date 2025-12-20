@@ -41,12 +41,14 @@ namespace r2bix_input
 
 
 
-	void Listener4Mouse::Listen4Cursor( const r2bix_input::CursorPoint cursor_point )
+	bool Listener4Mouse::Listen4Cursor( const r2bix_input::CursorPoint cursor_point )
 	{
-		if( mCallback4CursorMoved )
+		if( !mCallback4CursorMoved )
 		{
-			mCallback4CursorMoved( cursor_point );
+			return false;
 		}
+
+		return mCallback4CursorMoved( cursor_point );
 	}
 	bool Listener4Mouse::Listen4Key( const r2bix_input::KeyCodeTypeT key_code, const bool key_signal_flag )
 	{

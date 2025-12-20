@@ -39,6 +39,7 @@ namespace r2bix_input
 				if( mMachineInputSignals.IsMouseMoved() )
 				{
 					eListenMode listen_mode = eListenMode::Pass;
+					bool spend_input_signal = false;
 					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
 					{
 						if( !l->IsActivated() )
@@ -47,9 +48,9 @@ namespace r2bix_input
 							continue;
 						}
 
-						if( eListenMode::Pass == listen_mode )
+						if( eListenMode::Pass == listen_mode && !spend_input_signal )
 						{
-							l->Listen4Cursor( mMachineInputSignals.GetCursorPoint() );
+							spend_input_signal = l->Listen4Cursor( mMachineInputSignals.GetCursorPoint() );
 							listen_mode = l->GetListenMode();
 						}
 						else
