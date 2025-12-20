@@ -201,14 +201,14 @@ namespace test_input___manager
 
 
 
-	r2tm::TitleFunctionT Order_ListenMode_Block::GetTitleFunction() const
+	r2tm::TitleFunctionT Order_Keyboard___ListenMode_Block::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "InputManager : Order : eListenMode::Block";
 		};
 	}
-	r2tm::DoFunctionT Order_ListenMode_Block::GetDoFunction() const
+	r2tm::DoFunctionT Order_Keyboard___ListenMode_Block::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -292,14 +292,14 @@ namespace test_input___manager
 
 
 
-	r2tm::TitleFunctionT Order_Callback_Result::GetTitleFunction() const
+	r2tm::TitleFunctionT Order_Keyboard___Callback_Result::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "InputManager : Order : Callback Result";
 		};
 	}
-	r2tm::DoFunctionT Order_Callback_Result::GetDoFunction() const
+	r2tm::DoFunctionT Order_Keyboard___Callback_Result::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

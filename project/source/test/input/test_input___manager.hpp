@@ -18,14 +18,14 @@ namespace test_input___manager
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Order_ListenMode_Block : public r2tm::iItem
+	class Order_Keyboard___ListenMode_Block : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Order_Callback_Result: public r2tm::iItem
+	class Order_Keyboard___Callback_Result: public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
