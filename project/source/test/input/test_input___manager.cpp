@@ -296,14 +296,14 @@ namespace test_input___manager
 
 
 
-	r2tm::TitleFunctionT Order_Keyboard___Callback_Result::GetTitleFunction() const
+	r2tm::TitleFunctionT Order_Keyboard___Callback_Block::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "InputManager : Order : Keyboard : Callback Block";
 		};
 	}
-	r2tm::DoFunctionT Order_Keyboard___Callback_Result::GetDoFunction() const
+	r2tm::DoFunctionT Order_Keyboard___Callback_Block::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

@@ -25,7 +25,7 @@ namespace test_input___manager
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Order_Keyboard___Callback_Result: public r2tm::iItem
+	class Order_Keyboard___Callback_Block: public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
