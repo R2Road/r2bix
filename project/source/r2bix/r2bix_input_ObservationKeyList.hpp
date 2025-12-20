@@ -12,42 +12,42 @@ namespace r2bix_input
 	{
 	public:
 		ObservationKey() : 
-			  key_index( 0 )
-			, key_code( 0 )
-			, key_status()
+			  mIndex( 0 )
+			, mCode( 0 )
+			, mStatus()
 		{}
 
 		ObservationKey( const KeyIndexTypeT key_index, const KeyCodeTypeT key_code ) :
-			  key_index( key_index )
-			, key_code( key_code )
-			, key_status()
+			  mIndex( key_index )
+			, mCode( key_code )
+			, mStatus()
 		{}
 
 		inline KeyIndexTypeT GetIndex() const
 		{
-			return key_index;
+			return mIndex;
 		}
 		inline KeyCodeTypeT GetCode() const
 		{
-			return key_code;
+			return mCode;
 		}
 		inline bool GetChanged() const
 		{
-			return key_status.GetChanged();
+			return mStatus.GetChanged();
 		}
 		inline r2bix_input::eKeyStep GetStep() const
 		{
-			return key_status.GetStep();
+			return mStatus.GetStep();
 		}
 		inline void Update( const bool signal_flag )
 		{
-			key_status.Update( signal_flag );
+			mStatus.Update( signal_flag );
 		}
 
 	private:
-		KeyIndexTypeT key_index;
-		KeyCodeTypeT key_code;
-		KeyStatus key_status;
+		KeyIndexTypeT mIndex;
+		KeyCodeTypeT mCode;
+		KeyStatus mStatus;
 	};
 
 	class ObservationKeyList
