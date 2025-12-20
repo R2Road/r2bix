@@ -201,14 +201,14 @@ namespace test_input___manager
 
 
 
-	r2tm::TitleFunctionT Order_3::GetTitleFunction() const
+	r2tm::TitleFunctionT Order_ListenMode_Block::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "InputManager : Order 3";
+			return "InputManager : Order : eListenMode::Block";
 		};
 	}
-	r2tm::DoFunctionT Order_3::GetDoFunction() const
+	r2tm::DoFunctionT Order_ListenMode_Block::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

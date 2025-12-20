@@ -18,7 +18,7 @@ namespace test_input___manager
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Order_3 : public r2tm::iItem
+	class Order_ListenMode_Block : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;
