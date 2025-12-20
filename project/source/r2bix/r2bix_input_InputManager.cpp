@@ -64,11 +64,15 @@ namespace r2bix_input
 			// Mouse Key Update
 			//
 			{
+
 				static const r2bix_input::KeyCodeTypeT mouse_keys[3] = {
 					  r2bix_input::eKeyCode::VK_LBUTTON
 					, r2bix_input::eKeyCode::VK_MBUTTON
 					, r2bix_input::eKeyCode::VK_RBUTTON
 				};
+
+				eListenMode listen_mode = eListenMode::Pass;
+				bool spend_input_signal = false;
 
 				for( const auto key_code : mouse_keys )
 				{
@@ -77,8 +81,8 @@ namespace r2bix_input
 						continue;
 					}
 
-					eListenMode listen_mode = eListenMode::Pass;
-					bool spend_input_signal = false;
+					listen_mode = eListenMode::Pass;
+					spend_input_signal = false;
 					for( r2bix_input::Listener4Mouse* l : mListenerContainer4Mouse )
 					{
 						if( !l->IsActivated() )
@@ -110,6 +114,9 @@ namespace r2bix_input
 		//
 		if( !mListenerContainer4Keyboard.empty() )
 		{
+			eListenMode listen_mode = eListenMode::Pass;
+			bool spend_input_signal = false;
+
 			for(
 				r2bix_input::KeyCodeTypeT key_code = r2bix_input::eKeyCode::START, end_code = r2bix_input::eKeyCode::END;
 				end_code >= key_code;
@@ -121,8 +128,8 @@ namespace r2bix_input
 					continue;
 				}
 
-				eListenMode listen_mode = eListenMode::Pass;
-				bool spend_input_signal = false;
+				listen_mode = eListenMode::Pass;
+				spend_input_signal = false;
 				for( r2bix_input::Listener4Keyboard* l : mListenerContainer4Keyboard )
 				{
 					if( !l->IsActivated() )
