@@ -1,13 +1,13 @@
-#include "menu_director.h"
+#include "menu_director.hpp"
 
 #include "r2tm/r2tm_menu_processor.hpp"
 
-#include "../menu_r2bix_2d.h"
+#include "menu_dev.hpp"
 
-#include "test_director.h"
-#include "test_director__defarred_task_queue.h"
-#include "test_director__scheduler.h"
-#include "test_director__screen_buffer_manager.h"
+#include "test_director.hpp"
+#include "test_director__defarred_task_queue.hpp"
+#include "test_director__scheduler.hpp"
+#include "test_director__screen_buffer_manager.hpp"
 
 #include "r2bix/r2bix_Director.h"
 #include "r2bix/r2bix_component_CustomTextureComponent.h"
@@ -150,6 +150,6 @@ r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
 		mp->AddSplit();
 
 
-		mp->AddMenu( 27, Menu_R2bix() );
+		mp->AddMenu( 27, Menu_Dev() );
 	};
 }

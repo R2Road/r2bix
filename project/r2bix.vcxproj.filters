@@ -37,14 +37,8 @@
     <Filter Include="project">
       <UniqueIdentifier>{c7a51a55-284c-4391-925a-8792221ae03c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="test\base">
-      <UniqueIdentifier>{fc1d90a9-c79e-49e8-bdaa-654f149deb49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test\2d">
       <UniqueIdentifier>{ce01231e-9d83-4225-aab5-74e589fae17f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="test\2d\director">
-      <UniqueIdentifier>{40805b48-317e-4b65-b938-c9543be6085f}</UniqueIdentifier>
     </Filter>
     <Filter Include="test\2d\texture">
       <UniqueIdentifier>{46d08307-eb1b-4137-a70e-75be0cb0bafb}</UniqueIdentifier>
@@ -135,6 +129,9 @@
     </Filter>
     <Filter Include="test\input">
       <UniqueIdentifier>{7192193c-9b24-4ffe-b88f-d52883ac3001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test\director">
+      <UniqueIdentifier>{fc1d90a9-c79e-49e8-bdaa-654f149deb49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -365,18 +362,6 @@
     <ClCompile Include="source\view\view_terminal_info.cpp">
       <Filter>view</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\2d\director\menu_director.cpp">
-      <Filter>test\2d\director</Filter>
-    </ClCompile>
-    <ClCompile Include="source\test\2d\director\test_director__defarred_task_queue.cpp">
-      <Filter>test\2d\director</Filter>
-    </ClCompile>
-    <ClCompile Include="source\test\2d\director\test_director__scheduler.cpp">
-      <Filter>test\2d\director</Filter>
-    </ClCompile>
-    <ClCompile Include="source\test\2d\director\test_director__screen_buffer_manager.cpp">
-      <Filter>test\2d\director</Filter>
-    </ClCompile>
     <ClCompile Include="source\helper\r2bix_helper_Printer4Texture.cpp">
       <Filter>helper</Filter>
     </ClCompile>
@@ -433,9 +418,6 @@
     </ClCompile>
     <ClCompile Include="source\test\2d\variable\test_render.cpp">
       <Filter>test\2d\variable</Filter>
-    </ClCompile>
-    <ClCompile Include="source\test\2d\director\test_director.cpp">
-      <Filter>test\2d\director</Filter>
     </ClCompile>
     <ClCompile Include="source\test\2d\node\test_node___child.cpp">
       <Filter>test\2d\node</Filter>
@@ -686,6 +668,21 @@
     </ClCompile>
     <ClCompile Include="source\test\input\test_input___listener_4_mouse.cpp">
       <Filter>test\input</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\director\menu_director.cpp">
+      <Filter>test\director</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\director\test_director.cpp">
+      <Filter>test\director</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\director\test_director__defarred_task_queue.cpp">
+      <Filter>test\director</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\director\test_director__scheduler.cpp">
+      <Filter>test\director</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\director\test_director__screen_buffer_manager.cpp">
+      <Filter>test\director</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1005,18 +1002,6 @@
     <ClInclude Include="source\view\view_terminal_info.h">
       <Filter>view</Filter>
     </ClInclude>
-    <ClInclude Include="source\test\2d\director\menu_director.h">
-      <Filter>test\2d\director</Filter>
-    </ClInclude>
-    <ClInclude Include="source\test\2d\director\test_director__defarred_task_queue.h">
-      <Filter>test\2d\director</Filter>
-    </ClInclude>
-    <ClInclude Include="source\test\2d\director\test_director__scheduler.h">
-      <Filter>test\2d\director</Filter>
-    </ClInclude>
-    <ClInclude Include="source\test\2d\director\test_director__screen_buffer_manager.h">
-      <Filter>test\2d\director</Filter>
-    </ClInclude>
     <ClInclude Include="source\helper\r2bix_helper_Printer4Texture.h">
       <Filter>helper</Filter>
     </ClInclude>
@@ -1076,9 +1061,6 @@
     </ClInclude>
     <ClInclude Include="source\test\2d\variable\test_render.h">
       <Filter>test\2d\variable</Filter>
-    </ClInclude>
-    <ClInclude Include="source\test\2d\director\test_director.h">
-      <Filter>test\2d\director</Filter>
     </ClInclude>
     <ClInclude Include="source\test\2d\node\test_node___child.h">
       <Filter>test\2d\node</Filter>
@@ -1692,6 +1674,21 @@
     </ClInclude>
     <ClInclude Include="source\test\input\test_input___listener_4_mouse.hpp">
       <Filter>test\input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\director\menu_director.hpp">
+      <Filter>test\director</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\director\test_director.hpp">
+      <Filter>test\director</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\director\test_director__defarred_task_queue.hpp">
+      <Filter>test\director</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\director\test_director__scheduler.hpp">
+      <Filter>test\director</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\director\test_director__screen_buffer_manager.hpp">
+      <Filter>test\director</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

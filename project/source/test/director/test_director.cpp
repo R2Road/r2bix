@@ -1,4 +1,4 @@
-#include "test_director.h"
+#include "test_director.hpp"
 
 #include "r2tm/r2tm_inspector.hpp"
 #include "r2tm/r2tm_ostream.hpp"

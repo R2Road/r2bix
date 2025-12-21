@@ -166,11 +166,6 @@
     <ClCompile Include="source\test\2d\component\test_component.cpp" />
     <ClCompile Include="source\test\2d\component\test_component___mesh_renderer.cpp" />
     <ClCompile Include="source\test\2d\component\test_component___static_mesh.cpp" />
-    <ClCompile Include="source\test\2d\director\menu_director.cpp" />
-    <ClCompile Include="source\test\2d\director\test_director.cpp" />
-    <ClCompile Include="source\test\2d\director\test_director__defarred_task_queue.cpp" />
-    <ClCompile Include="source\test\2d\director\test_director__scheduler.cpp" />
-    <ClCompile Include="source\test\2d\director\test_director__screen_buffer_manager.cpp" />
     <ClCompile Include="source\test\2d\geometry\menu_geometry.cpp" />
     <ClCompile Include="source\test\2d\node\menu_node.cpp" />
     <ClCompile Include="source\test\2d\node\test_node.cpp" />
@@ -185,6 +180,11 @@
     <ClCompile Include="source\test\2d\ui\menu_ui.cpp" />
     <ClCompile Include="source\test\2d\variable\research_visible_resource.cpp" />
     <ClCompile Include="source\test\2d\variable\test_render.cpp" />
+    <ClCompile Include="source\test\director\menu_director.cpp" />
+    <ClCompile Include="source\test\director\test_director.cpp" />
+    <ClCompile Include="source\test\director\test_director__defarred_task_queue.cpp" />
+    <ClCompile Include="source\test\director\test_director__scheduler.cpp" />
+    <ClCompile Include="source\test\director\test_director__screen_buffer_manager.cpp" />
     <ClCompile Include="source\test\input\menu_input.cpp" />
     <ClCompile Include="source\test\input\test_input___listener_4_mouse.cpp" />
     <ClCompile Include="source\test\input\test_input___observation_key_flags.cpp" />
@@ -504,11 +504,6 @@
     <ClInclude Include="source\test\2d\component\test_component.h" />
     <ClInclude Include="source\test\2d\component\test_component___mesh_renderer.h" />
     <ClInclude Include="source\test\2d\component\test_component___static_mesh.h" />
-    <ClInclude Include="source\test\2d\director\menu_director.h" />
-    <ClInclude Include="source\test\2d\director\test_director.h" />
-    <ClInclude Include="source\test\2d\director\test_director__defarred_task_queue.h" />
-    <ClInclude Include="source\test\2d\director\test_director__scheduler.h" />
-    <ClInclude Include="source\test\2d\director\test_director__screen_buffer_manager.h" />
     <ClInclude Include="source\test\2d\geometry\menu_geometry.h" />
     <ClInclude Include="source\test\2d\node\menu_node.h" />
     <ClInclude Include="source\test\2d\node\test_node.h" />
@@ -523,6 +518,11 @@
     <ClInclude Include="source\test\2d\ui\menu_ui.h" />
     <ClInclude Include="source\test\2d\variable\research_visible_resource.h" />
     <ClInclude Include="source\test\2d\variable\test_render.h" />
+    <ClInclude Include="source\test\director\menu_director.hpp" />
+    <ClInclude Include="source\test\director\test_director.hpp" />
+    <ClInclude Include="source\test\director\test_director__defarred_task_queue.hpp" />
+    <ClInclude Include="source\test\director\test_director__scheduler.hpp" />
+    <ClInclude Include="source\test\director\test_director__screen_buffer_manager.hpp" />
     <ClInclude Include="source\test\input\menu_input.hpp" />
     <ClInclude Include="source\test\input\test_input___listener_4_mouse.hpp" />
     <ClInclude Include="source\test\input\test_input___observation_key_flags.hpp" />
