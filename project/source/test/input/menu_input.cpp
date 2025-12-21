@@ -16,7 +16,7 @@ r2tm::TitleFunctionT Menu_R2bix_Input::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "r2bix : Input";
+		return "Input";
 	};
 }
 r2tm::DescriptionFunctionT Menu_R2bix_Input::GetDescriptionFunction() const

@@ -20,7 +20,7 @@ r2tm::TitleFunctionT Menu_R2bix::GetTitleFunction() const
 {
 	return []()->const char*
 	{
-		return "r2bix : 2D";
+		return "2D";
 	};
 }
 r2tm::DescriptionFunctionT Menu_R2bix::GetDescriptionFunction() const
