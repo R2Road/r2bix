@@ -18,21 +18,21 @@
 #include "r2bix/r2bix_node_LabelSNode.h"
 #include "r2bix/r2bix_utility_InputUtil.h"
 
-r2tm::TitleFunctionT DirectorMenu::GetTitleFunction() const
+r2tm::TitleFunctionT Menu_Director::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Director";
 	};
 }
-r2tm::DescriptionFunctionT DirectorMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT Menu_Director::GetDescriptionFunction() const
 {
 	return []()->const char*
 	{
 		return "";
 	};
 }
-r2tm::WriteFunctionT DirectorMenu::GetWriteFunction() const
+r2tm::WriteFunctionT Menu_Director::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* mp )
 	{
