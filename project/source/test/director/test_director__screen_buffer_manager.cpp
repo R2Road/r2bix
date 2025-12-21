@@ -11,6 +11,43 @@
 
 namespace test_director__screen_buffer_manager
 {
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Screen Buffer Manager : Declaration";
+		};
+	}
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			{
+				OUT_SUBJECT( "기본 생성자" );
+
+				LF();
+
+				DECL_MAIN( r2bix_director::ScreenBufferManager s );
+
+				LF();
+
+				OUT_SIZE( s );
+
+				LF();
+
+				OUT_BINARY( s );
+			}
+
+			LS();
+
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2tm::TitleFunctionT Swap::GetTitleFunction() const
 	{
 		return []()->const char*
