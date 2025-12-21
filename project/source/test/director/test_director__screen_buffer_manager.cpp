@@ -70,7 +70,11 @@ namespace test_director__screen_buffer_manager
 
 				LF();
 
-				PROC_MAIN( t.Reset( "Screen Buffer 1" ) );
+				PROC_MAIN( t.Reset(
+					"[ESC] End\n"
+					"[ 1 ] Swap\n"
+					"Screen Buffer 1\n"
+				) );
 				PROC_MAIN( s.Write2BackBuffer( 0, 0, &t) );
 
 				LF();
@@ -79,32 +83,23 @@ namespace test_director__screen_buffer_manager
 
 				LF();
 
-				PROC_MAIN( t.Reset( "                   Screen Buffer 2" ) );
+				PROC_MAIN( t.Reset(
+					"                   [ESC] End\n"
+					"                   [ 1 ] Swap\n"
+					"                   Screen Buffer 2\n"
+				) );
 				PROC_MAIN( s.Write2BackBuffer( 0, 0, &t ) );
 			}
 
-			LS();
-
 			{
-				std::cout << r2tm::tab << "[ESC] End" << r2tm::linefeed;
-			}
-
-			LS();
-
-			{
-				r2::FPSTimer timer( 10 );
-
 				int key_code = -1;
 				do
 				{
-					if( timer.Update() )
+					key_code = _getch();
+
+					if( '1' == key_code )
 					{
 						s.Swap();
-					}
-
-					if( _kbhit() )
-					{
-						key_code = _getch();
 					}
 
 				} while( 27 != key_code );
