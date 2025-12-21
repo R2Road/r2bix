@@ -20,16 +20,16 @@ namespace test_director
 			{
 				LS();
 
-				OUT_SUBJECT( "Config 를 인자로 받는 생성자." );
-
-				LS();
-
-				DECL_MAIN( r2bix_director::Config c );
-				DECL_MAIN( r2bix::Director d( c ) );
-
-				LS();
-
 				{
+					OUT_SUBJECT( "Config 를 인자로 받는 생성자." );
+
+					SS();
+
+					DECL_MAIN( r2bix_director::Config c );
+					DECL_MAIN( r2bix::Director d( c ) );
+
+					SS();
+
 					EXPECT_EQ( c.ScreenSize_Width, d.GetScreenSize().GetWidth() );
 					EXPECT_EQ( c.ScreenSize_Height, d.GetScreenSize().GetHeight() );
 
