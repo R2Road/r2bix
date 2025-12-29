@@ -441,33 +441,6 @@
       <Filter>_r2bix\3d\camera</Filter>
     </ClCompile>
     <ClCompile Include="source\menu_portfolio.cpp" />
-    <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_director.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_input.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_menu_processor.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_print_binary.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_print_file.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_stop_watch.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2tm\r2tm_file.cpp">
-      <Filter>_external\r2tm</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_counter_infinite_int.cpp">
       <Filter>_external\r2</Filter>
     </ClCompile>
@@ -683,6 +656,45 @@
     </ClCompile>
     <ClCompile Include="source\test\director\test_director__screen_buffer_manager.cpp">
       <Filter>test\director</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_cache_cleaner.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_director.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_file.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_input.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_menu_processor.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_print_address.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_print_binary.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_print_file.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_stop_watch.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_viewer_key.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_viewer_version.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_viewer_window_size.cpp">
+      <Filter>_external\r2tm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2tm\r2tm_windows_utility.cpp">
+      <Filter>_external\r2tm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1084,57 +1096,6 @@
       <Filter>_r2bix\3d\camera</Filter>
     </ClInclude>
     <ClInclude Include="source\menu_portfolio.hpp" />
-    <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_color.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_color_modifier.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_director.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_input.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_inspector.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_interface_item.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_interface_menu.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_menu_constant.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_menu_processor.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_ostream.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_print_binary.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_print_file.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_stop_watch.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_version_info.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2tm\r2tm_file.hpp">
-      <Filter>_external\r2tm</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_array_iterator.hpp">
       <Filter>_external\r2</Filter>
     </ClInclude>
@@ -1689,6 +1650,69 @@
     </ClInclude>
     <ClInclude Include="source\test\director\test_director__screen_buffer_manager.hpp">
       <Filter>test\director</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_cache_cleaner.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_color.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_color_modifier.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_director.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_file.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_input.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_inspector.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_interface_item.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_interface_menu.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_menu_constant.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_menu_processor.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_ostream.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_print_address.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_print_binary.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_print_file.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_stop_watch.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_version_info.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_viewer_key.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_viewer_version.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_viewer_window_size.hpp">
+      <Filter>_external\r2tm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2tm\r2tm_windows_utility.hpp">
+      <Filter>_external\r2tm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

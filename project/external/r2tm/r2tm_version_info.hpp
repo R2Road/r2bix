@@ -26,8 +26,8 @@ namespace r2tm
 
 		const char VersionNumber_1 = '2';
 		const char VersionNumber_2 = '0';
-		const char VersionNumber_3 = '3';
-		const char VersionNumber_4 = '1';
+		const char VersionNumber_3 = '7';
+		const char VersionNumber_4 = '2';
 		const char VersionNumber_5 = '0';
 
 		const char String4Version[18] = { 'r', '2', 't', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '.', VersionNumber_5, '\0' };
@@ -41,10 +41,16 @@ namespace r2tm
 			"\n"	"[o] " "update    inspector  : Add - OUT_ALIGN"
 			"\n"	"[o] " "update    inspector  : Add - DIR_OPEN"
 			"\n"	"[o] " "update    inspector  : Rename - OUTPUT_... > OUT_..."
+			"\n"	"[o] " "add       viewer     : r2tm_viewer - Viewer를 r2tm 네임 스페이스에 편입"
+			"\n"	"[o] " "update    inspector  : Add - OUT_FILE_CUR_DIR"
+			"\n"	"[o] " "update    inspector  : Add - OUT_ADDRESS_AND_OFFSET"
+			"\n"	"[o] " "update    inspector  : Add - OUT_FILE_RANGE_CUR_DIR"
 			"\n"
 			"\n"    "------------------------------------------------------------"
 			"\n"
 			"\n"	"[o] " "update    inspector  : r2tm_print_file - 파일 열기 실패시 __debugbreak 작동"
+			"\n"	"[o] " "update    inspector  : OUT_BINARY - 배열을 넣어도 배열 전체를 출력"
+			"\n"	"[o] " "update    inspector  : OUT_ADDRESS - 멤버 함수 포인터 정상 출력"
 		;
 
 		const char* const String4Road2Version_1_8_0_0_0 =

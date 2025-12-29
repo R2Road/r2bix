@@ -1,10 +1,10 @@
 #pragma once
 
 #include <iostream>
-#include <stdint.h>
 
 #include "r2tm_file.hpp"
 #include "r2tm_input.hpp"
+#include "r2tm_print_address.hpp"
 #include "r2tm_print_binary.hpp"
 #include "r2tm_print_file.hpp"
 
@@ -241,8 +241,17 @@ do {																						\
 //
 #define	OUT_ADDRESS( condition )															\
 do {																						\
-	printf( "[ADDRESS]" " %s" "\n", #condition );											\
-	std::cout << "\t> " << ( &condition ) << "\n";											\
+	printf( "[ADDRESS]" " %s" "\n" "\t> ", #condition );									\
+	printf( "%p" "\n", r2tm::Convert2VoidPointer( &( condition ) ) );						\
+} while( false )
+
+#define	OUT_ADDRESS_AND_OFFSET( condition_1, condition_2 )									\
+do {																						\
+	const void* p_1 = r2tm::Convert2VoidPointer( &( condition_1 ) );						\
+	const void* p_2 = r2tm::Convert2VoidPointer( &( condition_2 ) );						\
+	printf( "[ADDRESS]" " %s" ", %s" "\n", #condition_1, #condition_2 );					\
+	printf( "\t> " "%p ~ %p", p_1, p_2 );													\
+	printf( " : %lld " "\n", r2tm::CalculatePointerOffset( p_1, p_2 ) );					\
 } while( false )
 
 
@@ -351,9 +360,19 @@ do {																						\
 	r2tm::PrintFile( file_path );															\
 } while( false )
 
+#define OUT_FILE_CUR_DIR( file_name_extension )												\
+do {																						\
+	r2tm::PrintFile( __FILE__, file_name_extension );										\
+} while( false )
+
 #define OUT_FILE_RANGE( file_path, min, max )											\
 do {																						\
 	r2tm::PrintFile( file_path, min, max );													\
+} while( false )
+
+#define OUT_FILE_RANGE_CUR_DIR( file_name_extension, min, max )								\
+do {																						\
+	r2tm::PrintFile( __FILE__, file_name_extension, min, max );								\
 } while( false )
 
 #define OUT_SOURCE_READY		int src_begin, src_end = -1
