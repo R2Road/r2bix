@@ -26,7 +26,7 @@ namespace r2bix
 
 		const char VersionNumber_1 = '0';
 		const char VersionNumber_2 = '3';
-		const char VersionNumber_3 = '0';
+		const char VersionNumber_3 = '2';
 		const char VersionNumber_4 = '0';
 		const char VersionNumber_5 = '0';
 
@@ -41,8 +41,8 @@ namespace r2bix
 			"\n"	"\t"	"> "	"Director"
 			"\n"	"\t"	"\t"	"[ ] " "..."
 			"\n"	"\t"	"> "	"Input"
-			"\n"	"\t"	"\t"	"[ ] " "Keyboard"
-			"\n"	"\t"	"\t"	"[ ] " "Mouse"
+			"\n"	"\t"	"\t"	"[o] " "Keyboard : 시스템 보강"
+			"\n"	"\t"	"\t"	"[o] " "Mouse : 시스템 보강"
 			"\n"	"\t"	"> "	"Node"
 			"\n"	"\t"	"\t"	"[ ] " "Add Method : Remove"
 			"\n"	"\t"	"> "	"Node3D"
