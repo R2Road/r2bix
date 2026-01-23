@@ -39,7 +39,7 @@ namespace r2bix
 			"\n"
 			"\n"	"+ " "System"
 			"\n"	"\t"	"> "	"Director"
-			"\n"	"\t"	"\t"	"[ ] " "..."
+			"\n"	"\t"	"\t"	"[ ] " "노드 업데이트 체계 구축 : 씬그래프 구조와 업데이트 분리"
 			"\n"	"\t"	"> "	"Input"
 			"\n"	"\t"	"\t"	"[o] " "Keyboard : 시스템 보강"
 			"\n"	"\t"	"\t"	"[o] " "Mouse : 시스템 보강"
